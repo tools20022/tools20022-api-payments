@@ -147,8 +147,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAttribute mmFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Frequency";
 			definition = "Frequency of the investment or divestment, eg, daily, weekly, or monthly.";
@@ -198,8 +198,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Currency and amount of the periodical payments. When the standing order is related to a fund investment plan, this is the cash part of the invested amount.";
@@ -254,8 +254,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Asset";
 			definition = "Security that an investment plan invests in, or from which the investment plan divests.";
@@ -304,8 +304,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmInstalment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Instalment";
 			definition = "Specifies information on the successive payments in an investment plan.";
@@ -352,8 +352,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedService";
 			definition = "Service which provides a systematic investment plan.";
@@ -401,8 +401,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmInsurance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Insurance";
 			definition = "Insurance contract which covers the investment plan.";
@@ -451,8 +451,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrder";
 			definition = "Order generated automatically, according to the terms of the investment plan.";
@@ -492,8 +492,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAttribute mmMultiCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultiCurrency";
 			definition = "Specifies whether the investment plan is multi currency or not.";
@@ -538,8 +538,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency of the investment plan.";
@@ -593,8 +593,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Portfolio";
 			definition = "Portfolio for which the investment plan invests or divests.";
@@ -642,8 +642,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestmentPeriod";
 			definition = "Period during which an investment plan has to be executed.";
@@ -683,8 +683,8 @@ public class InvestmentPlan {
 	 */
 	public static final MMBusinessAttribute mmPlanStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlanStatus";
 			definition = "Status of the savings or withdrawal investment plan. ";

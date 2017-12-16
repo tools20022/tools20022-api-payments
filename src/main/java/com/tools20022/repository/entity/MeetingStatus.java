@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -66,8 +68,6 @@ import java.util.List;
  * MeetingStatusReason.mmMeetingStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -115,8 +115,8 @@ public class MeetingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmMeetingResolutionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingResolutionStatus";
 			definition = "Indicates whether the resolution is active or withdrawn.";
@@ -163,8 +163,8 @@ public class MeetingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmInstructionCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionCancellationStatus";
 			definition = "Status of the request for cancellation of an instruction.";
@@ -220,8 +220,8 @@ public class MeetingStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Specifies the underlying reason for a status of a meeting or related instructions.";
@@ -260,8 +260,8 @@ public class MeetingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmNotificationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationStatus";
 			definition = "Specifies the status of the related notification.";
@@ -313,8 +313,8 @@ public class MeetingStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which a status is provided.";

@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.CardPaymentServiceTypeCode;
+import com.tools20022.repository.codeset.CardPaymentServiceType2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Service provided by the card payment transaction, in addition to the main
@@ -31,46 +35,46 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode
- * CardPaymentServiceTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmAggregation
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Aggregation
  * CardPaymentServiceType2Code.mmAggregation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmDCC
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#DCC
  * CardPaymentServiceType2Code.mmDCC}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmGratuity
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Gratuity
  * CardPaymentServiceType2Code.mmGratuity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmInstalment
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Instalment
  * CardPaymentServiceType2Code.mmInstalment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmLoyalty
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Loyalty
  * CardPaymentServiceType2Code.mmLoyalty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmNoShow
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#NoShow
  * CardPaymentServiceType2Code.mmNoShow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmPurchaseCorporate
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#PurchaseCorporate
  * CardPaymentServiceType2Code.mmPurchaseCorporate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmRecurringPayment
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#RecurringPayment
  * CardPaymentServiceType2Code.mmRecurringPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmSolicitedAvailableFunds
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#SolicitedAvailableFunds
  * CardPaymentServiceType2Code.mmSolicitedAvailableFunds}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmUnsolicitedAvailableFunds
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#UnsolicitedAvailableFunds
  * CardPaymentServiceType2Code.mmUnsolicitedAvailableFunds}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#mmVoiceAuthorisation
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#VoiceAuthorisation
  * CardPaymentServiceType2Code.mmVoiceAuthorisation}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode
+ * CardPaymentServiceTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -94,7 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CardPaymentServiceType2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -113,11 +118,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "Aggregation"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAggregation = new MMCode() {
+	public static final CardPaymentServiceType2Code Aggregation = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Aggregation";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.Aggregation.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -136,11 +142,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "DCC"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDCC = new MMCode() {
+	public static final CardPaymentServiceType2Code DCC = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DCC";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.DCC.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -159,11 +166,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "Gratuity"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGratuity = new MMCode() {
+	public static final CardPaymentServiceType2Code Gratuity = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Gratuity";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.Gratuity.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -182,11 +190,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "Instalment"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstalment = new MMCode() {
+	public static final CardPaymentServiceType2Code Instalment = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Instalment";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.Instalment.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -205,11 +214,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "Loyalty"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLoyalty = new MMCode() {
+	public static final CardPaymentServiceType2Code Loyalty = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Loyalty";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.Loyalty.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -228,11 +238,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "NoShow"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoShow = new MMCode() {
+	public static final CardPaymentServiceType2Code NoShow = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoShow";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.NoShow.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -251,11 +262,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "PurchaseCorporate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPurchaseCorporate = new MMCode() {
+	public static final CardPaymentServiceType2Code PurchaseCorporate = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PurchaseCorporate";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.PurchaseCorporate.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -274,11 +286,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "RecurringPayment"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRecurringPayment = new MMCode() {
+	public static final CardPaymentServiceType2Code RecurringPayment = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RecurringPayment";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.RecurringPayment.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -297,11 +310,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "SolicitedAvailableFunds"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSolicitedAvailableFunds = new MMCode() {
+	public static final CardPaymentServiceType2Code SolicitedAvailableFunds = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SolicitedAvailableFunds";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.SolicitedAvailableFunds.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -320,11 +334,12 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "UnsolicitedAvailableFunds"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnsolicitedAvailableFunds = new MMCode() {
+	public static final CardPaymentServiceType2Code UnsolicitedAvailableFunds = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnsolicitedAvailableFunds";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.UnsolicitedAvailableFunds.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -343,15 +358,20 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 	 * name} = "VoiceAuthorisation"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVoiceAuthorisation = new MMCode() {
+	public static final CardPaymentServiceType2Code VoiceAuthorisation = new CardPaymentServiceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VoiceAuthorisation";
-			owner_lazy = () -> CardPaymentServiceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardPaymentServiceType2Code.mmObject();
+			codeName = CardPaymentServiceTypeCode.VoiceAuthorisation.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, CardPaymentServiceType2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CardPaymentServiceType2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -359,12 +379,50 @@ public class CardPaymentServiceType2Code extends CardPaymentServiceTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType2Code";
 				definition = "Service provided by the card payment transaction, in addition to the main service.";
-				code_lazy = () -> Arrays.asList(CardPaymentServiceType2Code.mmAggregation, CardPaymentServiceType2Code.mmDCC, CardPaymentServiceType2Code.mmGratuity, CardPaymentServiceType2Code.mmInstalment,
-						CardPaymentServiceType2Code.mmLoyalty, CardPaymentServiceType2Code.mmNoShow, CardPaymentServiceType2Code.mmPurchaseCorporate, CardPaymentServiceType2Code.mmRecurringPayment,
-						CardPaymentServiceType2Code.mmSolicitedAvailableFunds, CardPaymentServiceType2Code.mmUnsolicitedAvailableFunds, CardPaymentServiceType2Code.mmVoiceAuthorisation);
 				trace_lazy = () -> CardPaymentServiceTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CardPaymentServiceType2Code.Aggregation, com.tools20022.repository.codeset.CardPaymentServiceType2Code.DCC,
+						com.tools20022.repository.codeset.CardPaymentServiceType2Code.Gratuity, com.tools20022.repository.codeset.CardPaymentServiceType2Code.Instalment,
+						com.tools20022.repository.codeset.CardPaymentServiceType2Code.Loyalty, com.tools20022.repository.codeset.CardPaymentServiceType2Code.NoShow,
+						com.tools20022.repository.codeset.CardPaymentServiceType2Code.PurchaseCorporate, com.tools20022.repository.codeset.CardPaymentServiceType2Code.RecurringPayment,
+						com.tools20022.repository.codeset.CardPaymentServiceType2Code.SolicitedAvailableFunds, com.tools20022.repository.codeset.CardPaymentServiceType2Code.UnsolicitedAvailableFunds,
+						com.tools20022.repository.codeset.CardPaymentServiceType2Code.VoiceAuthorisation);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Aggregation.getCodeName().get(), Aggregation);
+		codesByName.put(DCC.getCodeName().get(), DCC);
+		codesByName.put(Gratuity.getCodeName().get(), Gratuity);
+		codesByName.put(Instalment.getCodeName().get(), Instalment);
+		codesByName.put(Loyalty.getCodeName().get(), Loyalty);
+		codesByName.put(NoShow.getCodeName().get(), NoShow);
+		codesByName.put(PurchaseCorporate.getCodeName().get(), PurchaseCorporate);
+		codesByName.put(RecurringPayment.getCodeName().get(), RecurringPayment);
+		codesByName.put(SolicitedAvailableFunds.getCodeName().get(), SolicitedAvailableFunds);
+		codesByName.put(UnsolicitedAvailableFunds.getCodeName().get(), UnsolicitedAvailableFunds);
+		codesByName.put(VoiceAuthorisation.getCodeName().get(), VoiceAuthorisation);
+	}
+
+	public static CardPaymentServiceType2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CardPaymentServiceType2Code[] values() {
+		CardPaymentServiceType2Code[] values = new CardPaymentServiceType2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CardPaymentServiceType2Code> {
+		@Override
+		public CardPaymentServiceType2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CardPaymentServiceType2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

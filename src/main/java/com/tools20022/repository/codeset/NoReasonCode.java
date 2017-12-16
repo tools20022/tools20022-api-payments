@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NoReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies that there is no reason available.
@@ -31,7 +36,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.NoReasonCode#mmNoReason
+ * <li>{@linkplain com.tools20022.repository.codeset.NoReasonCode#NoReason
  * NoReasonCode.mmNoReason}</li>
  * </ul>
  * </li>
@@ -56,7 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies that there is no reason available."</li>
  * </ul>
  */
-public class NoReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NoReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -79,17 +85,21 @@ public class NoReasonCode {
 	 * definition} = "No reason to report or no reason available to report."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoReason = new MMCode() {
+	public static final NoReasonCode NoReason = new NoReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoReason";
 			definition = "No reason to report or no reason available to report.";
-			owner_lazy = () -> NoReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoReasonCode.mmObject();
 			codeName = "NORE";
 		}
 	};
+	final static private LinkedHashMap<String, NoReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NoReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -97,9 +107,34 @@ public class NoReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NoReasonCode";
 				definition = "Specifies that there is no reason available.";
-				code_lazy = () -> Arrays.asList(NoReasonCode.mmNoReason);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NoReasonCode.NoReason);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(NoReason.getCodeName().get(), NoReason);
+	}
+
+	public static NoReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NoReasonCode[] values() {
+		NoReasonCode[] values = new NoReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NoReasonCode> {
+		@Override
+		public NoReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NoReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

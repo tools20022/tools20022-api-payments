@@ -116,8 +116,8 @@ public class CounterpartyRisk {
 	 */
 	public static final MMBusinessAssociationEnd mmParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Party";
 			definition = "Specifies which role played by a party was taken into consideration for the risk calculation, for instance clearing member role.";
@@ -158,8 +158,8 @@ public class CounterpartyRisk {
 	 */
 	public static final MMBusinessAttribute mmExposedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExposedAmount";
 			definition = "The amount which needs to be covered for the counterparty risk.";
@@ -215,8 +215,8 @@ public class CounterpartyRisk {
 	 */
 	public static final MMBusinessAssociationEnd mmExposureCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExposureCalculation";
 			definition = "Specifies the exposure for which the risk is calculated on a counterparty basis.";

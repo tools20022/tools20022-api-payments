@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.POIComponentAssessmentCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of assessment of a POI component (Point of Interaction).
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#mmEvaluation
+ * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#Evaluation
  * POIComponentAssessmentCode.mmEvaluation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#mmCertification
+ * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#Certification
  * POIComponentAssessmentCode.mmCertification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#mmApproval
+ * {@linkplain com.tools20022.repository.codeset.POIComponentAssessmentCode#Approval
  * POIComponentAssessmentCode.mmApproval}</li>
  * </ul>
  * </li>
@@ -64,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class POIComponentAssessmentCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class POIComponentAssessmentCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class POIComponentAssessmentCode {
 	 * definition} = "Evaluation by a lab or a tool."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEvaluation = new MMCode() {
+	public static final POIComponentAssessmentCode Evaluation = new POIComponentAssessmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Evaluation";
 			definition = "Evaluation by a lab or a tool.";
-			owner_lazy = () -> POIComponentAssessmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentAssessmentCode.mmObject();
 			codeName = "EVAL";
 		}
 	};
@@ -118,12 +124,12 @@ public class POIComponentAssessmentCode {
 	 * definition} = "Certification number delivered by a certification body."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCertification = new MMCode() {
+	public static final POIComponentAssessmentCode Certification = new POIComponentAssessmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Certification";
 			definition = "Certification number delivered by a certification body.";
-			owner_lazy = () -> POIComponentAssessmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentAssessmentCode.mmObject();
 			codeName = "CERT";
 		}
 	};
@@ -148,17 +154,21 @@ public class POIComponentAssessmentCode {
 	 * definition} = "Approval number delivered by an approval centre."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmApproval = new MMCode() {
+	public static final POIComponentAssessmentCode Approval = new POIComponentAssessmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Approval";
 			definition = "Approval number delivered by an approval centre.";
-			owner_lazy = () -> POIComponentAssessmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentAssessmentCode.mmObject();
 			codeName = "APPL";
 		}
 	};
+	final static private LinkedHashMap<String, POIComponentAssessmentCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected POIComponentAssessmentCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +176,37 @@ public class POIComponentAssessmentCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentAssessmentCode";
 				definition = "Type of assessment of a POI component (Point of Interaction).";
-				code_lazy = () -> Arrays.asList(POIComponentAssessmentCode.mmEvaluation, POIComponentAssessmentCode.mmCertification, POIComponentAssessmentCode.mmApproval);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.POIComponentAssessmentCode.Evaluation, com.tools20022.repository.codeset.POIComponentAssessmentCode.Certification,
+						com.tools20022.repository.codeset.POIComponentAssessmentCode.Approval);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Evaluation.getCodeName().get(), Evaluation);
+		codesByName.put(Certification.getCodeName().get(), Certification);
+		codesByName.put(Approval.getCodeName().get(), Approval);
+	}
+
+	public static POIComponentAssessmentCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static POIComponentAssessmentCode[] values() {
+		POIComponentAssessmentCode[] values = new POIComponentAssessmentCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, POIComponentAssessmentCode> {
+		@Override
+		public POIComponentAssessmentCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(POIComponentAssessmentCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

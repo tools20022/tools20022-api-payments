@@ -119,8 +119,8 @@ public class ProxyAppointmentCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmNotificationAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationAddress";
 			definition = "Address where the information on the proxy should be sent.";
@@ -167,8 +167,8 @@ public class ProxyAppointmentCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Specifies the meeting to which the proxy appointment conditions aplly.";
@@ -207,8 +207,8 @@ public class ProxyAppointmentCondition {
 	 */
 	public static final MMBusinessAttribute mmRegistrationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationMethod";
 			definition = "Indicates how to register a proxy.";
@@ -254,8 +254,8 @@ public class ProxyAppointmentCondition {
 	 */
 	public static final MMBusinessAttribute mmAllowedProxyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllowedProxyType";
 			definition = "Specifies who can be assigned as a proxy.";

@@ -147,8 +147,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmGovernanceRules = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GovernanceRules";
 			definition = "Rules for which an applicable law and a jurisdiction are specified.";
@@ -194,8 +194,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Specifies the jurisdiction (country, county, state, province, city).";
@@ -241,8 +241,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmRegisteredSecurities = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredSecurities";
 			definition = "Securities which are registered under a specific jurisdiction.";
@@ -289,8 +289,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmAssociatedStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssociatedStrategy";
 			definition = "Strategy which is based on a specific jurisdiction.";
@@ -337,8 +337,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesRestriction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesRestriction";
 			definition = "Securities restrictions which apply in a specific jurisdiction.";
@@ -384,8 +384,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesTax";
 			definition = "Securities tax for which a jurisdiction is specified.";
@@ -430,8 +430,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMarket";
 			definition = "Market to which the jurisdiction is related.";
@@ -477,8 +477,8 @@ public class Jurisdiction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAgreement";
 			definition = "Agreement which is subject to a specific jurisdiction.";

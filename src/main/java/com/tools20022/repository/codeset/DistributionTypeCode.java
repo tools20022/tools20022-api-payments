@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DistributionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the proceeds of the event will be distributed on a rolling
@@ -33,16 +38,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmRollingBasis
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#RollingBasis
  * DistributionTypeCode.mmRollingBasis}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmFinal
+ * <li>{@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Final
  * DistributionTypeCode.mmFinal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmInterim
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Interim
  * DistributionTypeCode.mmInterim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmOngoing
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Ongoing
  * DistributionTypeCode.mmOngoing}</li>
  * </ul>
  * </li>
@@ -69,7 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class DistributionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DistributionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -96,12 +101,12 @@ public class DistributionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRollingBasis = new MMCode() {
+	public static final DistributionTypeCode RollingBasis = new DistributionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RollingBasis";
 			definition = "Event will have a number of acceptance and payment dates until further announcement by the Issuer or its agent.";
-			owner_lazy = () -> DistributionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DistributionTypeCode.mmObject();
 			codeName = "ROLL";
 		}
 	};
@@ -126,12 +131,12 @@ public class DistributionTypeCode {
 	 * definition} = "Final payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFinal = new MMCode() {
+	public static final DistributionTypeCode Final = new DistributionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Final";
 			definition = "Final payment.";
-			owner_lazy = () -> DistributionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DistributionTypeCode.mmObject();
 			codeName = "FINL";
 		}
 	};
@@ -156,12 +161,12 @@ public class DistributionTypeCode {
 	 * definition} = "Interim payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterim = new MMCode() {
+	public static final DistributionTypeCode Interim = new DistributionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Interim";
 			definition = "Interim payment.";
-			owner_lazy = () -> DistributionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DistributionTypeCode.mmObject();
 			codeName = "INTE";
 		}
 	};
@@ -186,17 +191,21 @@ public class DistributionTypeCode {
 	 * definition} = "Event is ongoing for acceptance on an unsolicited basis."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOngoing = new MMCode() {
+	public static final DistributionTypeCode Ongoing = new DistributionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ongoing";
 			definition = "Event is ongoing for acceptance on an unsolicited basis.";
-			owner_lazy = () -> DistributionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DistributionTypeCode.mmObject();
 			codeName = "ONGO";
 		}
 	};
+	final static private LinkedHashMap<String, DistributionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DistributionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -204,9 +213,38 @@ public class DistributionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DistributionTypeCode";
 				definition = "Specifies whether the proceeds of the event will be distributed on a rolling basis rather than on a specific date.";
-				code_lazy = () -> Arrays.asList(DistributionTypeCode.mmRollingBasis, DistributionTypeCode.mmFinal, DistributionTypeCode.mmInterim, DistributionTypeCode.mmOngoing);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DistributionTypeCode.RollingBasis, com.tools20022.repository.codeset.DistributionTypeCode.Final,
+						com.tools20022.repository.codeset.DistributionTypeCode.Interim, com.tools20022.repository.codeset.DistributionTypeCode.Ongoing);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(RollingBasis.getCodeName().get(), RollingBasis);
+		codesByName.put(Final.getCodeName().get(), Final);
+		codesByName.put(Interim.getCodeName().get(), Interim);
+		codesByName.put(Ongoing.getCodeName().get(), Ongoing);
+	}
+
+	public static DistributionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DistributionTypeCode[] values() {
+		DistributionTypeCode[] values = new DistributionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DistributionTypeCode> {
+		@Override
+		public DistributionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DistributionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

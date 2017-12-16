@@ -39,6 +39,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SettlementPartyRole
+ * SettlementPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -61,10 +65,6 @@ import java.util.List;
  * CashSettlement.mmPartyRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SettlementPartyRole
- * SettlementPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -155,8 +155,8 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementInstruction4.mmInstructingReimbursementAgentAccount, SettlementInstruction4.mmInstructedReimbursementAgentAccount, SettlementInstruction4.mmThirdReimbursementAgentAccount,
 					SettlementInstruction3.mmInstructingReimbursementAgentAccount, SettlementInstruction3.mmInstructedReimbursementAgentAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Unambiguous identification of the account used in the context of the party role such as instructing reimbursement agent account...";
@@ -203,8 +203,8 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementInstruction";
 			definition = "Identifies the settlement instruction in which a party plays a role.";

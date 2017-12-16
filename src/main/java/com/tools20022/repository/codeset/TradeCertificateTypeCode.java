@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradeCertificateTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of trade certificate.
@@ -32,37 +37,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmAnalysis
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Analysis
  * TradeCertificateTypeCode.mmAnalysis}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmQuality
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Quality
  * TradeCertificateTypeCode.mmQuality}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmQuantity
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Quantity
  * TradeCertificateTypeCode.mmQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmWeight
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Weight
  * TradeCertificateTypeCode.mmWeight}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmOrigin
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Origin
  * TradeCertificateTypeCode.mmOrigin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmHealth
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Health
  * TradeCertificateTypeCode.mmHealth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmPhytosanitary
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Phytosanitary
  * TradeCertificateTypeCode.mmPhytosanitary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmBeneficiary
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Beneficiary
  * TradeCertificateTypeCode.mmBeneficiary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmShippingLine
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#ShippingLine
  * TradeCertificateTypeCode.mmShippingLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmUndefined1
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Undefined1
  * TradeCertificateTypeCode.mmUndefined1}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#mmUndefined2
+ * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Undefined2
  * TradeCertificateTypeCode.mmUndefined2}</li>
  * </ul>
  * </li>
@@ -87,7 +92,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of trade certificate."</li>
  * </ul>
  */
-public class TradeCertificateTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradeCertificateTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -111,12 +117,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of analysis."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAnalysis = new MMCode() {
+	public static final TradeCertificateTypeCode Analysis = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Analysis";
 			definition = "Certificate of analysis.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "ANLY";
 		}
 	};
@@ -141,12 +147,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of quality."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmQuality = new MMCode() {
+	public static final TradeCertificateTypeCode Quality = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quality";
 			definition = "Certificate of quality.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "QUAL";
 		}
 	};
@@ -171,12 +177,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of quantity."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmQuantity = new MMCode() {
+	public static final TradeCertificateTypeCode Quantity = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Certificate of quantity.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "QUAN";
 		}
 	};
@@ -201,12 +207,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of weight."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWeight = new MMCode() {
+	public static final TradeCertificateTypeCode Weight = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Weight";
 			definition = "Certificate of weight.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "WEIG";
 		}
 	};
@@ -231,12 +237,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of origin."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOrigin = new MMCode() {
+	public static final TradeCertificateTypeCode Origin = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Origin";
 			definition = "Certificate of origin.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "ORIG";
 		}
 	};
@@ -261,12 +267,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Certificate of health."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHealth = new MMCode() {
+	public static final TradeCertificateTypeCode Health = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Health";
 			definition = "Certificate of health.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "HEAL";
 		}
 	};
@@ -291,12 +297,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Phytosanitary certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPhytosanitary = new MMCode() {
+	public static final TradeCertificateTypeCode Phytosanitary = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Phytosanitary";
 			definition = "Phytosanitary certificate.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "PHYT";
 		}
 	};
@@ -321,12 +327,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Beneficiary certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBeneficiary = new MMCode() {
+	public static final TradeCertificateTypeCode Beneficiary = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Beneficiary";
 			definition = "Beneficiary certificate.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "BENE";
 		}
 	};
@@ -351,12 +357,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Shipping line certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmShippingLine = new MMCode() {
+	public static final TradeCertificateTypeCode ShippingLine = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShippingLine";
 			definition = "Shipping line certificate.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "SHIP";
 		}
 	};
@@ -381,12 +387,12 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Undefined certificate at this stage."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUndefined1 = new MMCode() {
+	public static final TradeCertificateTypeCode Undefined1 = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undefined1";
 			definition = "Undefined certificate at this stage.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "UND1";
 		}
 	};
@@ -411,17 +417,21 @@ public class TradeCertificateTypeCode {
 	 * definition} = "Undefined certificate at this stage."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUndefined2 = new MMCode() {
+	public static final TradeCertificateTypeCode Undefined2 = new TradeCertificateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undefined2";
 			definition = "Undefined certificate at this stage.";
-			owner_lazy = () -> TradeCertificateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeCertificateTypeCode.mmObject();
 			codeName = "UND2";
 		}
 	};
+	final static private LinkedHashMap<String, TradeCertificateTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradeCertificateTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -429,11 +439,47 @@ public class TradeCertificateTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeCertificateTypeCode";
 				definition = "Specifies the type of trade certificate.";
-				code_lazy = () -> Arrays.asList(TradeCertificateTypeCode.mmAnalysis, TradeCertificateTypeCode.mmQuality, TradeCertificateTypeCode.mmQuantity, TradeCertificateTypeCode.mmWeight, TradeCertificateTypeCode.mmOrigin,
-						TradeCertificateTypeCode.mmHealth, TradeCertificateTypeCode.mmPhytosanitary, TradeCertificateTypeCode.mmBeneficiary, TradeCertificateTypeCode.mmShippingLine, TradeCertificateTypeCode.mmUndefined1,
-						TradeCertificateTypeCode.mmUndefined2);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradeCertificateTypeCode.Analysis, com.tools20022.repository.codeset.TradeCertificateTypeCode.Quality,
+						com.tools20022.repository.codeset.TradeCertificateTypeCode.Quantity, com.tools20022.repository.codeset.TradeCertificateTypeCode.Weight, com.tools20022.repository.codeset.TradeCertificateTypeCode.Origin,
+						com.tools20022.repository.codeset.TradeCertificateTypeCode.Health, com.tools20022.repository.codeset.TradeCertificateTypeCode.Phytosanitary, com.tools20022.repository.codeset.TradeCertificateTypeCode.Beneficiary,
+						com.tools20022.repository.codeset.TradeCertificateTypeCode.ShippingLine, com.tools20022.repository.codeset.TradeCertificateTypeCode.Undefined1, com.tools20022.repository.codeset.TradeCertificateTypeCode.Undefined2);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Analysis.getCodeName().get(), Analysis);
+		codesByName.put(Quality.getCodeName().get(), Quality);
+		codesByName.put(Quantity.getCodeName().get(), Quantity);
+		codesByName.put(Weight.getCodeName().get(), Weight);
+		codesByName.put(Origin.getCodeName().get(), Origin);
+		codesByName.put(Health.getCodeName().get(), Health);
+		codesByName.put(Phytosanitary.getCodeName().get(), Phytosanitary);
+		codesByName.put(Beneficiary.getCodeName().get(), Beneficiary);
+		codesByName.put(ShippingLine.getCodeName().get(), ShippingLine);
+		codesByName.put(Undefined1.getCodeName().get(), Undefined1);
+		codesByName.put(Undefined2.getCodeName().get(), Undefined2);
+	}
+
+	public static TradeCertificateTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradeCertificateTypeCode[] values() {
+		TradeCertificateTypeCode[] values = new TradeCertificateTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradeCertificateTypeCode> {
+		@Override
+		public TradeCertificateTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradeCertificateTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

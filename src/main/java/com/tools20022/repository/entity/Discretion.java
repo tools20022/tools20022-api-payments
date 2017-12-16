@@ -130,8 +130,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrderExecution";
 			definition = "Order instruction for which a discretion is specified.";
@@ -170,8 +170,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmOffset = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Offset";
 			definition = "Amount added to the 'related to' price.";
@@ -219,8 +219,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmOffsetSign = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetSign";
 			definition = "Indicates whether the offset should be added or subtracted from the related price.";
@@ -268,8 +268,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmRelatedPriceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPriceType";
 			definition = "Identify the type of price an offset is related to. The offset can either be added or subtracted.";
@@ -314,8 +314,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmMoveType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MoveType";
 			definition = "Describes whether discretion price is static/fixed or floats.";
@@ -362,8 +362,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmLimitType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitType";
 			definition = "Specifies the nature of the resulting discretion price (e.g. or better limit, strict limit etc).";
@@ -410,8 +410,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmRoundDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundDirection";
 			definition = "If the calculated discretion price is not a valid tick price, specifies how to round the price (e.g. to be more or less aggressive)";
@@ -459,8 +459,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmScope = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Scope";
 			definition = "The scope of \"related to\" price of the discretion (e.g. local, global etc)";
@@ -505,8 +505,8 @@ public class Discretion {
 	 */
 	public static final MMBusinessAttribute mmOffsetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetType";
 			definition = "Describes the type of Discretion Offset .";

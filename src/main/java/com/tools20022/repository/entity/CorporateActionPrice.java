@@ -148,8 +148,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate event for which a price is specified.";
@@ -203,8 +203,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionExercisePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionExercisePrice";
 			definition = "1. Price at which security will be purchased/sold if warrant is exercised, either as an actual amount or a percentage.\r\n2. Price at which a bond is converted to underlying security either as an actual amount or a percentage.\r\n3. Strike price of an option, represented either as an actual amount or a percentage.";
@@ -254,8 +254,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmGenericCashPriceReceivedPerProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericCashPriceReceivedPerProduct";
 			definition = "Generic cash price received per product by the underlying security holder either as a percentage or an amount, eg, redemption price.";
@@ -306,8 +306,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmGenericCashPricePaidPerProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericCashPricePaidPerProduct";
 			definition = "Amount included in the dividend/NAV that is identified as gains directly or indirectly derived from interest payments within the scope of the EU Savings directive.";
@@ -357,8 +357,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmCashInLieuOfSharePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashInLieuOfSharePrice";
 			definition = "Cash disbursement in lieu of equities; usually in lieu of fractional quantity.";
@@ -408,8 +408,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmOverSubscriptionDepositPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverSubscriptionDepositPrice";
 			definition = "Amount of money required per over-subscribed equity as defined by the issuer.";
@@ -459,8 +459,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmCashValueForTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashValueForTax";
 			definition = "Cash value of resulting securities proceeds for tax calculation and/or reporting.";
@@ -508,8 +508,8 @@ public class CorporateActionPrice {
 	 */
 	public static final MMBusinessAssociationEnd mmPricingCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PricingCalculation";
 			definition = "Specifies the parameters taken into account to calculate the price.";

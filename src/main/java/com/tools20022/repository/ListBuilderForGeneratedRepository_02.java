@@ -213,6 +213,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) Max3NumericText.mmObject());
 		list.add((T) PaymentInstrumentCode.mmObject());
 		list.add((T) DebitCreditCode.mmObject());
+		list.add((T) AmountDirectionCode.mmObject());
 		list.add((T) CreditDebitCode.mmObject());
 		list.add((T) PaymentInstructionStatusCode.mmObject());
 		list.add((T) Max10Text.mmObject());
@@ -223,6 +224,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) ReservationTypeCode.mmObject());
 		list.add((T) BalanceTypeCode.mmObject());
 		list.add((T) BalanceCounterpartyCode.mmObject());
+		list.add((T) QueryTypeCode.mmObject());
 		list.add((T) ExternalCashAccountType1Code.mmObject());
 		list.add((T) BICNonFIIdentifier.mmObject());
 		list.add((T) EANGLNIdentifier.mmObject());
@@ -428,6 +430,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) Frequency7Code.mmObject());
 		list.add((T) CommunicationMethod2Code.mmObject());
 		list.add((T) ExternalCommunicationFormat1Code.mmObject());
+		list.add((T) ModificationCode.mmObject());
 		list.add((T) Modification1Code.mmObject());
 		list.add((T) Max15PlusSignedNumericText.mmObject());
 		list.add((T) Max10KBinary.mmObject());
@@ -439,6 +442,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) ExternalChannelCode.mmObject());
 		list.add((T) CommunicationMethod3Code.mmObject());
 		list.add((T) Unlimited9Text.mmObject());
+		list.add((T) UseCasesCode.mmObject());
 		list.add((T) UseCases1Code.mmObject());
 		list.add((T) Max500Text.mmObject());
 		list.add((T) InterestCode.mmObject());
@@ -504,6 +508,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) Instruction3Code.mmObject());
 		list.add((T) RegulatoryReportingTypeCode.mmObject());
 		list.add((T) RegulatoryReportingType1Code.mmObject());
+		list.add((T) AuthorisationCode.mmObject());
 		list.add((T) Authorisation1Code.mmObject());
 		list.add((T) ExternalServiceLevel1Code.mmObject());
 		list.add((T) ExternalLocalInstrument1Code.mmObject());
@@ -527,11 +532,6 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) ExternalDocumentFormatCode.mmObject());
 		list.add((T) Instruction4Code.mmObject());
 		list.add((T) Priority3Code.mmObject());
-		list.add((T) SettlementMethod2Code.mmObject());
-		list.add((T) Instruction5Code.mmObject());
-		list.add((T) ExternalMandateReason1Code.mmObject());
-		list.add((T) SequenceType2Code.mmObject());
-		list.add((T) ISONormalisedDateTime.mmObject());
 		ListBuilderForGeneratedRepository_03.addElems(list);
 		return list;
 	}

@@ -136,8 +136,8 @@ public class InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestCalculation";
 			definition = "Calculation parameters used to obtain the interest amount.";
@@ -185,8 +185,8 @@ public class InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the order belongs.";
@@ -233,8 +233,8 @@ public class InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest information used in the interest management process.";
@@ -283,8 +283,8 @@ public class InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Payment information for the settlement of interest or payment obligation to which interest charges are attached.";

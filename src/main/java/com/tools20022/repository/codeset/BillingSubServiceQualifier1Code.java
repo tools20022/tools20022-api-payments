@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Qualifies the content of the subservice code.
@@ -32,22 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#mmLockbox
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#Lockbox
  * BillingSubServiceQualifier1Code.mmLockbox}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#mmStore
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#Store
  * BillingSubServiceQualifier1Code.mmStore}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#mmBilaterallyAgreed
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#BilaterallyAgreed
  * BillingSubServiceQualifier1Code.mmBilaterallyAgreed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#mmSequenceNumber
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#SequenceNumber
  * BillingSubServiceQualifier1Code.mmSequenceNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#mmMemberAccount
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#MemberAccount
  * BillingSubServiceQualifier1Code.mmMemberAccount}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifierCode
+ * BillingSubServiceQualifierCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -69,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Qualifies the content of the subservice code."</li>
  * </ul>
  */
-public class BillingSubServiceQualifier1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BillingSubServiceQualifier1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,11 +97,12 @@ public class BillingSubServiceQualifier1Code {
 	 * name} = "Lockbox"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLockbox = new MMCode() {
+	public static final BillingSubServiceQualifier1Code Lockbox = new BillingSubServiceQualifier1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Lockbox";
-			owner_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.mmObject();
+			codeName = BillingSubServiceQualifierCode.Lockbox.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -111,11 +121,12 @@ public class BillingSubServiceQualifier1Code {
 	 * name} = "Store"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStore = new MMCode() {
+	public static final BillingSubServiceQualifier1Code Store = new BillingSubServiceQualifier1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Store";
-			owner_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.mmObject();
+			codeName = BillingSubServiceQualifierCode.Store.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -134,11 +145,12 @@ public class BillingSubServiceQualifier1Code {
 	 * name} = "BilaterallyAgreed"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBilaterallyAgreed = new MMCode() {
+	public static final BillingSubServiceQualifier1Code BilaterallyAgreed = new BillingSubServiceQualifier1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BilaterallyAgreed";
-			owner_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.mmObject();
+			codeName = BillingSubServiceQualifierCode.BilaterallyAgreed.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -157,11 +169,12 @@ public class BillingSubServiceQualifier1Code {
 	 * name} = "SequenceNumber"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSequenceNumber = new MMCode() {
+	public static final BillingSubServiceQualifier1Code SequenceNumber = new BillingSubServiceQualifier1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SequenceNumber";
-			owner_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.mmObject();
+			codeName = BillingSubServiceQualifierCode.SequenceNumber.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -180,15 +193,20 @@ public class BillingSubServiceQualifier1Code {
 	 * name} = "MemberAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMemberAccount = new MMCode() {
+	public static final BillingSubServiceQualifier1Code MemberAccount = new BillingSubServiceQualifier1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MemberAccount";
-			owner_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.mmObject();
+			codeName = BillingSubServiceQualifierCode.MemberAccount.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, BillingSubServiceQualifier1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BillingSubServiceQualifier1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -196,10 +214,41 @@ public class BillingSubServiceQualifier1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingSubServiceQualifier1Code";
 				definition = "Qualifies the content of the subservice code.";
-				code_lazy = () -> Arrays.asList(BillingSubServiceQualifier1Code.mmLockbox, BillingSubServiceQualifier1Code.mmStore, BillingSubServiceQualifier1Code.mmBilaterallyAgreed, BillingSubServiceQualifier1Code.mmSequenceNumber,
-						BillingSubServiceQualifier1Code.mmMemberAccount);
+				trace_lazy = () -> BillingSubServiceQualifierCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.Lockbox, com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.Store,
+						com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.BilaterallyAgreed, com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.SequenceNumber,
+						com.tools20022.repository.codeset.BillingSubServiceQualifier1Code.MemberAccount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Lockbox.getCodeName().get(), Lockbox);
+		codesByName.put(Store.getCodeName().get(), Store);
+		codesByName.put(BilaterallyAgreed.getCodeName().get(), BilaterallyAgreed);
+		codesByName.put(SequenceNumber.getCodeName().get(), SequenceNumber);
+		codesByName.put(MemberAccount.getCodeName().get(), MemberAccount);
+	}
+
+	public static BillingSubServiceQualifier1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BillingSubServiceQualifier1Code[] values() {
+		BillingSubServiceQualifier1Code[] values = new BillingSubServiceQualifier1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BillingSubServiceQualifier1Code> {
+		@Override
+		public BillingSubServiceQualifier1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BillingSubServiceQualifier1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExecutionTimeLimitCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates from/until when an order must be executed.
@@ -32,34 +37,34 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmAtTheOpening
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#AtTheOpening
  * ExecutionTimeLimitCode.mmAtTheOpening}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmAtTheClosing
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#AtTheClosing
  * ExecutionTimeLimitCode.mmAtTheClosing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodUntilCancelled
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodUntilCancelled
  * ExecutionTimeLimitCode.mmGoodUntilCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodForTheDay
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodForTheDay
  * ExecutionTimeLimitCode.mmGoodForTheDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodThroughDate
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodThroughDate
  * ExecutionTimeLimitCode.mmGoodThroughDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodForTheMonth
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodForTheMonth
  * ExecutionTimeLimitCode.mmGoodForTheMonth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmFillOrKill
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#FillOrKill
  * ExecutionTimeLimitCode.mmFillOrKill}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodUntilTheEndOfNextMonth
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodUntilTheEndOfNextMonth
  * ExecutionTimeLimitCode.mmGoodUntilTheEndOfNextMonth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmGoodTillCrossed
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodTillCrossed
  * ExecutionTimeLimitCode.mmGoodTillCrossed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#mmImmediateOrCancel
+ * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#ImmediateOrCancel
  * ExecutionTimeLimitCode.mmImmediateOrCancel}</li>
  * </ul>
  * </li>
@@ -84,7 +89,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates from/until when an order must be executed."</li>
  * </ul>
  */
-public class ExecutionTimeLimitCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExecutionTimeLimitCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -109,12 +115,12 @@ public class ExecutionTimeLimitCode {
 	 * "A round lot order to be executed at the opening of the market."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAtTheOpening = new MMCode() {
+	public static final ExecutionTimeLimitCode AtTheOpening = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtTheOpening";
 			definition = "A round lot order to be executed at the opening of the market.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "OPEN";
 		}
 	};
@@ -143,12 +149,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAtTheClosing = new MMCode() {
+	public static final ExecutionTimeLimitCode AtTheClosing = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtTheClosing";
 			definition = "An order to buy or sell at the closing price or an odd lot order to buy or sell to be filled at the closing of the round lot offer, plus a differential for a buy order or minus the differential on a sell order.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "CLOS";
 		}
 	};
@@ -175,12 +181,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodUntilCancelled = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodUntilCancelled = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodUntilCancelled";
 			definition = "An order that remains in effect until it is either executed or cancelled.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GTCA";
 		}
 	};
@@ -208,12 +214,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodForTheDay = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodForTheDay = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodForTheDay";
 			definition = "An order that, if not executed, expires at the end of the trading day on which the order is entered.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GDAY";
 		}
 	};
@@ -241,12 +247,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodThroughDate = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodThroughDate = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodThroughDate";
 			definition = "An Order that if not executed, expires at the end of the specified expiry date.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GTHD";
 		}
 	};
@@ -274,12 +280,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodForTheMonth = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodForTheMonth = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodForTheMonth";
 			definition = "An order that, if not executed, expires at the end of the month on which the order is entered.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GTMO";
 		}
 	};
@@ -307,12 +313,12 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFillOrKill = new MMCode() {
+	public static final ExecutionTimeLimitCode FillOrKill = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FillOrKill";
 			definition = "A market or limit order that is to be executed in its entirety as soon as it is submitted; if not so executed, the order is to be cancelled.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "FIKI";
 		}
 	};
@@ -338,12 +344,12 @@ public class ExecutionTimeLimitCode {
 	 * "Indicates an order that is good until the end of next month."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodUntilTheEndOfNextMonth = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodUntilTheEndOfNextMonth = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodUntilTheEndOfNextMonth";
 			definition = "Indicates an order that is good until the end of next month.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GTNM";
 		}
 	};
@@ -368,12 +374,12 @@ public class ExecutionTimeLimitCode {
 	 * definition} = "Indicates an order that is good till crossed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGoodTillCrossed = new MMCode() {
+	public static final ExecutionTimeLimitCode GoodTillCrossed = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodTillCrossed";
 			definition = "Indicates an order that is good till crossed.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "GTXO";
 		}
 	};
@@ -401,17 +407,21 @@ public class ExecutionTimeLimitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmImmediateOrCancel = new MMCode() {
+	public static final ExecutionTimeLimitCode ImmediateOrCancel = new ExecutionTimeLimitCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImmediateOrCancel";
 			definition = "A market or limit order to be executed in whole or in part as soon as it is submitted; any portion not so executed is to be cancelled.";
-			owner_lazy = () -> ExecutionTimeLimitCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExecutionTimeLimitCode.mmObject();
 			codeName = "IOCA";
 		}
 	};
+	final static private LinkedHashMap<String, ExecutionTimeLimitCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExecutionTimeLimitCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -419,11 +429,47 @@ public class ExecutionTimeLimitCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExecutionTimeLimitCode";
 				definition = "Indicates from/until when an order must be executed.";
-				code_lazy = () -> Arrays.asList(ExecutionTimeLimitCode.mmAtTheOpening, ExecutionTimeLimitCode.mmAtTheClosing, ExecutionTimeLimitCode.mmGoodUntilCancelled, ExecutionTimeLimitCode.mmGoodForTheDay,
-						ExecutionTimeLimitCode.mmGoodThroughDate, ExecutionTimeLimitCode.mmGoodForTheMonth, ExecutionTimeLimitCode.mmFillOrKill, ExecutionTimeLimitCode.mmGoodUntilTheEndOfNextMonth, ExecutionTimeLimitCode.mmGoodTillCrossed,
-						ExecutionTimeLimitCode.mmImmediateOrCancel);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ExecutionTimeLimitCode.AtTheOpening, com.tools20022.repository.codeset.ExecutionTimeLimitCode.AtTheClosing,
+						com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodUntilCancelled, com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodForTheDay,
+						com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodThroughDate, com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodForTheMonth,
+						com.tools20022.repository.codeset.ExecutionTimeLimitCode.FillOrKill, com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodUntilTheEndOfNextMonth,
+						com.tools20022.repository.codeset.ExecutionTimeLimitCode.GoodTillCrossed, com.tools20022.repository.codeset.ExecutionTimeLimitCode.ImmediateOrCancel);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AtTheOpening.getCodeName().get(), AtTheOpening);
+		codesByName.put(AtTheClosing.getCodeName().get(), AtTheClosing);
+		codesByName.put(GoodUntilCancelled.getCodeName().get(), GoodUntilCancelled);
+		codesByName.put(GoodForTheDay.getCodeName().get(), GoodForTheDay);
+		codesByName.put(GoodThroughDate.getCodeName().get(), GoodThroughDate);
+		codesByName.put(GoodForTheMonth.getCodeName().get(), GoodForTheMonth);
+		codesByName.put(FillOrKill.getCodeName().get(), FillOrKill);
+		codesByName.put(GoodUntilTheEndOfNextMonth.getCodeName().get(), GoodUntilTheEndOfNextMonth);
+		codesByName.put(GoodTillCrossed.getCodeName().get(), GoodTillCrossed);
+		codesByName.put(ImmediateOrCancel.getCodeName().get(), ImmediateOrCancel);
+	}
+
+	public static ExecutionTimeLimitCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExecutionTimeLimitCode[] values() {
+		ExecutionTimeLimitCode[] values = new ExecutionTimeLimitCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExecutionTimeLimitCode> {
+		@Override
+		public ExecutionTimeLimitCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExecutionTimeLimitCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

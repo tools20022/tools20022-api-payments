@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PortfolioStrategy
+ * PortfolioStrategy}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -53,9 +56,6 @@ import java.util.List;
  * AssetClassification.mmStrategy}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PortfolioStrategy
- * PortfolioStrategy}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -110,8 +110,8 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetClass";
 			definition = "Strategy based on asset classes.";

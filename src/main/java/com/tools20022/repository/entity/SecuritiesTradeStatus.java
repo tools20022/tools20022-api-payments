@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -100,8 +102,6 @@ import java.util.List;
  * SecuritiesTradeStatusReason.mmSecuritiesTradeStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -149,8 +149,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmMatchingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingStatus";
 			definition = "Status of matching of a trade.";
@@ -196,8 +196,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmAffirmationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AffirmationStatus";
 			definition = "Status of affirmation of a trade.";
@@ -254,8 +254,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reasons for the status. It is derived from the relationship between Status and Status Reason.";
@@ -301,8 +301,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Specifies the trade which has a specific status.";
@@ -341,8 +341,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmTransactionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionStatus";
 			definition = "Status of an investment fund transaction.";
@@ -389,8 +389,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmReplacementProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReplacementProcessingStatus";
 			definition = "Provides the processing status of the replacement request.";
@@ -436,8 +436,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationStatus";
 			definition = "Status of the cancellation of a trade.";
@@ -484,8 +484,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationRight = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRight";
 			definition = "Cancellation right of an investor with respect to an order.";
@@ -534,8 +534,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmTransferStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferStatus";
 			definition = "Status of the transfer is accepted, sent to next party, matched, already executed, or settled.";
@@ -581,8 +581,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmAllegedStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllegedStatus";
 			definition = "Provides the status of an allegement.";
@@ -630,8 +630,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCollateralAllocationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAllocationStatus";
 			definition = "Provides the status of allocation of collateral to cover the instruction.";
@@ -680,8 +680,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmRepoCallRequestStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepoCallRequestStatus";
 			definition = "Specifies additional information about the status of the repurchase agreement call processed instruction.";
@@ -730,8 +730,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSettlementConditionModificationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementConditionModificationStatus";
 			definition = "Provides the status of the securities settlement condition modification request.";
@@ -777,8 +777,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmMatchingProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingProcess";
 			definition = "Specifies the matching status of a trade.";
@@ -831,8 +831,8 @@ public class SecuritiesTradeStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesTransfer";
 			definition = "Transfer operation for which a status is provided";

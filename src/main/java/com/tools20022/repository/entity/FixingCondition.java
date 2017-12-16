@@ -124,8 +124,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAttribute mmFixingDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingDateTime";
 			definition = "Date and time at which a rate is observed.";
@@ -179,8 +179,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmNonDeliverableTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonDeliverableTrade";
 			definition = "Non Deliverable trade for which fixing conditions are specified.";
@@ -230,8 +230,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmFixingRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingRate";
 			definition = "Rate obtained at fixing time by following the fixing conditions (agreed upon by the trading parties).";
@@ -273,8 +273,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAttribute mmSettlementRateOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementRateOption";
 			definition = "Source used for determining the fixing rate, as provided by various financial publishing organisations.";
@@ -323,8 +323,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place taken into account to adjust the date and time, as defined within the business day convention.";
@@ -374,8 +374,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAttribute mmDisruptionFallback = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisruptionFallback";
 			definition = "Method that gives rise to either an alternative basis for determining the settlement rate, or an alternative basis for settling a transaction when a disruption event has occurred.";
@@ -422,8 +422,8 @@ public class FixingCondition {
 	 */
 	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";

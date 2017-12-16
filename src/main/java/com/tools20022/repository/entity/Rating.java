@@ -109,8 +109,8 @@ public class Rating {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a rating is provided.";
@@ -155,8 +155,8 @@ public class Rating {
 	 */
 	public static final MMBusinessAssociationEnd mmRatingScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RatingScheme";
 			definition = "Information regarding the entity that assigns the rating.";
@@ -194,8 +194,8 @@ public class Rating {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time as from which the rating is valid.";
@@ -243,8 +243,8 @@ public class Rating {
 	 */
 	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Specifies the rating, which has been assigned to a security by a rating agency.";

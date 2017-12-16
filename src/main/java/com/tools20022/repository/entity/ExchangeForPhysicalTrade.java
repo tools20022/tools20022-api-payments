@@ -118,8 +118,8 @@ public class ExchangeForPhysicalTrade {
 	 */
 	public static final MMBusinessAttribute mmOutsideIndex = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OutsideIndex";
 			definition = "Unexpected divergence between the price behaviour of an underlying position or portfolio and the price behaviour of a hedging position or benchmark.";
@@ -169,8 +169,8 @@ public class ExchangeForPhysicalTrade {
 	 */
 	public static final MMBusinessAttribute mmFairValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FairValue";
 			definition = "Difference between the value of a future and the value of the underlying equities after allowing for the discounted cash flows associated with the underlying stocks.";
@@ -218,8 +218,8 @@ public class ExchangeForPhysicalTrade {
 	 */
 	public static final MMBusinessAttribute mmValueForFutures = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueForFutures";
 			definition = "Value of a futures position involved in an Exchange For Physical trade.";
@@ -268,8 +268,8 @@ public class ExchangeForPhysicalTrade {
 	 */
 	public static final MMBusinessAttribute mmOutMainCountryIndex = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OutMainCountryIndex";
 			definition = "Accepted value of stocks composing an index located outside its country of origin.";
@@ -325,8 +325,8 @@ public class ExchangeForPhysicalTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Order for which parameters for exchange for physical trading are specified.";

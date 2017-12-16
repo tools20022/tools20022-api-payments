@@ -127,8 +127,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing for which an analytics calculation is specified.";
@@ -175,8 +175,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmValue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Result of the defined analytics calculation.";
@@ -216,8 +216,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationType";
 			definition = "Specifies the type of calculation.";
@@ -265,8 +265,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time on which the calculation is based. For example: valuation on October 1 (price date) based on price of September 19 ( value date).";
@@ -312,8 +312,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAttribute mmValuePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuePeriod";
 			definition = "Period on which the calculation is based.";
@@ -362,8 +362,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAttribute mmEstimatedInterestRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedInterestRate";
 			definition = "Estimated per annum ratio of interest paid to the principal amount of the financial instrument for a specific period of time.";
@@ -408,8 +408,8 @@ public class AnalyticsCalculation {
 	 */
 	public static final MMBusinessAttribute mmVariableRateValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateValueDate";
 			definition = "Date/time as of which the variable rate is valid.";

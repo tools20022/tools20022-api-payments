@@ -40,6 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Product Product}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -53,8 +55,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Service.mmRate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Product Product}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -142,8 +142,8 @@ public class Service extends Product {
 			derivation_lazy = () -> Arrays.asList(BillingCompensation1.mmValue, BillingServicesAmount1.mmHostAmount, BillingServicesAmount2.mmHostAmount, BillingServicesAmount2.mmSettlementAmount, BillingServicesAmount3.mmSourceAmount,
 					BillingServicesAmount3.mmHostAmount, TaxCalculation1.mmTotalTaxableServiceChargeHostAmount, BillingServiceAdjustment1.mmAmount, BillingServiceAdjustment1.mmOriginalChargeAmount,
 					BillingServiceAdjustment1.mmNewChargeAmount, BillingService2.mmOriginalChargeSettlementAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount charged for the service.";
@@ -196,8 +196,8 @@ public class Service extends Product {
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingServiceAdjustment1.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type used to classify and organise different services.";
@@ -242,8 +242,8 @@ public class Service extends Product {
 	 */
 	public static final MMBusinessAttribute mmTaxDesignation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxDesignation";
 			definition = "Identifies the taxable status of the service.";
@@ -289,8 +289,8 @@ public class Service extends Product {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Rate applied on a basis amount to calculate the service charge.";

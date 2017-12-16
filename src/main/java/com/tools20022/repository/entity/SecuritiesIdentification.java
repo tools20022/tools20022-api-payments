@@ -114,16 +114,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.OtherIdentification1
- * OtherIdentification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SecurityIdentification19
- * SecurityIdentification19}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -158,6 +148,16 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.SecurityIdentification19#mmDescription
  * SecurityIdentification19.mmDescription}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.OtherIdentification1
+ * OtherIdentification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SecurityIdentification19
+ * SecurityIdentification19}</li>
  * </ul>
  * </li>
  * <li>
@@ -215,8 +215,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentifiedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentifiedSecurity";
 			definition = "Security for which an identification is provided.";
@@ -267,8 +267,8 @@ public class SecuritiesIdentification {
 	public static final MMBusinessAttribute mmSecurityIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BenchmarkCurveName4Choice.mmISIN, SecurityIdentification19.mmISIN);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityIdentification";
 			definition = "Identification of a security by an ISIN.";
@@ -320,8 +320,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmRIC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RIC";
 			definition = "Reuters Identification Code (RIC). A numbering system used within the Reuters system to identify instruments worldwide. The RIC contains an X-character market specific code (can be the CUSIP or EPIC codes) followed by a full stop, then the two-digit ISO country code, eg, IBM in UK is IBM.UK.";
@@ -371,8 +371,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmTickerSymbol = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TickerSymbol";
 			definition = "Letters that identify a stock traded on a stock exchange. The Ticker Symbol is a short and convenient way of identifying a stock, eg, RTR.L for Reuters quoted in London.";
@@ -419,8 +419,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmBloomberg = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bloomberg";
 			definition = "Identifier of a security assigned by the Bloomberg organisation.";
@@ -468,8 +468,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmCTA = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CTA";
 			definition = "Identifier of a security assigned by the Consolidated Tape Association.";
@@ -518,8 +518,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmCommon = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Common";
 			definition = "Identifier of securities issued in Luxembourg.  The common code is a 9-digit code that replaces the CEDEL (Clearstream) and Euroclear codes.";
@@ -572,8 +572,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the financial instrument in free format text.";
@@ -617,8 +617,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmSEDOL = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SEDOL";
 			definition = "Stock Exchange Daily Official List (SEDOL) number.  A code used by the London Stock Exchange to identify foreign stocks, especially those that aren't actively traded in the US and don't have a CUSIP number.";
@@ -670,8 +670,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmCUSIP = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CUSIP";
 			definition = "Committee on Uniform Securities and Identification Procedures (CUSIP). The standards body that created and maintains the securities classification system in the US. The CUSIP is composed of a 9-character number that uniquely identifies a particular security.  Non-US securities have a similar number called the CINS number.";
@@ -720,8 +720,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmQUICK = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QUICK";
 			definition = "Identifier of a security assigned by the Japanese QUICK identification scheme for financial instruments.";
@@ -772,8 +772,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmWertpapier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Wertpapier";
 			definition = "Wertpapier Kenn-nummer.  A number issued in Germany by the Wertpapier Mitteilungen. The Wertpapier Kenn-nummer, sometimes called WPK, contains 6-digits, but no check digit. There are different ranges of numbers representing different classes of securities.";
@@ -819,8 +819,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmDutch = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dutch";
 			definition = "Identifier for Dutch securities.";
@@ -869,8 +869,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmValoren = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Valoren";
 			definition = "Identifier for Swiss securities assigned by Telekurs Financial, the Swiss numbering agency.";
@@ -920,8 +920,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmSicovam = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sicovam";
 			definition = "Identifier for French securities assigned by the Societe Interprofessionnelle Pour La Compensation des Valeurs Mobilieres in France.  The Sicovam is composed of 5-digits.";
@@ -967,8 +967,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmBelgian = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Belgian";
 			definition = "Identifier for Belgian securities.";
@@ -1022,8 +1022,8 @@ public class SecuritiesIdentification {
 	public static final MMBusinessAttribute mmIdentificationSuffix = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(OtherIdentification1.mmSuffix);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentificationSuffix";
 			definition = "Identifies the suffix of the security identification.";
@@ -1080,8 +1080,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmGenericIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericIdentification";
 			definition = "Proprietary identification of a security assigned by an institution or organisation.";
@@ -1129,8 +1129,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which an identification is valid.";
@@ -1176,8 +1176,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmApplicableTradingMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableTradingMarket";
 			definition = "Market(s) on which the trading identification is used.";
@@ -1224,8 +1224,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmPrimeIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrimeIdentification";
 			definition = "Specifies the main identification of a security.";
@@ -1276,8 +1276,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOtherIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOtherIdentification";
 			definition = "Alternate security identification(s) related to the security trading identification.";
@@ -1318,8 +1318,8 @@ public class SecuritiesIdentification {
 	 */
 	public static final MMBusinessAttribute mmTradingIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingIdentification";
 			definition = "Security identifier specific to a trading market or markets, for example, Ticker.";

@@ -36,6 +36,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement
+ * CorporateActionEntitlement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,10 +60,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesQuantity.mmSecuritiesEntitlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement
- * CorporateActionEntitlement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	 */
 	public static final MMBusinessAssociationEnd mmEntitledSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitledSecuritiesQuantity";
 			definition = "Quantity of securities based on the terms of the corporate action event and balance of underlying securities entitled to the account owner. (This quantity can be positive or negative).";
@@ -162,8 +162,8 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	 */
 	public static final MMBusinessAttribute mmRenounceableEntitlementStatusType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenounceableEntitlementStatusType";
 			definition = "Specifies whether terms of the event allow resale of the rights.";

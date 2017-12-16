@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.StatisticalReportingStatus1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of a group of statistical reporting transactions.
@@ -32,34 +37,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Accepted
  * StatisticalReportingStatus1Code.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmAcceptedTechnicalValidation
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#AcceptedTechnicalValidation
  * StatisticalReportingStatus1Code.mmAcceptedTechnicalValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmPartiallyAccepted
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#PartiallyAccepted
  * StatisticalReportingStatus1Code.mmPartiallyAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmPending
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Pending
  * StatisticalReportingStatus1Code.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Received
  * StatisticalReportingStatus1Code.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Rejected
  * StatisticalReportingStatus1Code.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmReminder
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Reminder
  * StatisticalReportingStatus1Code.mmReminder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmIncorrectFilename
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#IncorrectFilename
  * StatisticalReportingStatus1Code.mmIncorrectFilename}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#mmCorruptedFile
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#CorruptedFile
  * StatisticalReportingStatus1Code.mmCorruptedFile}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatusCode
+ * StatisticalReportingStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,7 +84,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the status of a group of statistical reporting transactions."</li>
  * </ul>
  */
-public class StatisticalReportingStatus1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class StatisticalReportingStatus1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,11 +104,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "Accepted"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final StatisticalReportingStatus1Code Accepted = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.Accepted.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -118,11 +128,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "AcceptedTechnicalValidation"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedTechnicalValidation = new MMCode() {
+	public static final StatisticalReportingStatus1Code AcceptedTechnicalValidation = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedTechnicalValidation";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.AcceptedTechnicalValidation.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -141,11 +152,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "PartiallyAccepted"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyAccepted = new MMCode() {
+	public static final StatisticalReportingStatus1Code PartiallyAccepted = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyAccepted";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.PartiallyAccepted.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -164,11 +176,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "Pending"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final StatisticalReportingStatus1Code Pending = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.Pending.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -187,11 +200,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "Received"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final StatisticalReportingStatus1Code Received = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.Received.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -210,11 +224,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "Rejected"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final StatisticalReportingStatus1Code Rejected = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.Rejected.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -233,11 +248,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "Reminder"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReminder = new MMCode() {
+	public static final StatisticalReportingStatus1Code Reminder = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reminder";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.Reminder.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -256,11 +272,12 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "IncorrectFilename"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncorrectFilename = new MMCode() {
+	public static final StatisticalReportingStatus1Code IncorrectFilename = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncorrectFilename";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.IncorrectFilename.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -279,26 +296,67 @@ public class StatisticalReportingStatus1Code {
 	 * name} = "CorruptedFile"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorruptedFile = new MMCode() {
+	public static final StatisticalReportingStatus1Code CorruptedFile = new StatisticalReportingStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorruptedFile";
-			owner_lazy = () -> StatisticalReportingStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatisticalReportingStatus1Code.mmObject();
+			codeName = StatisticalReportingStatusCode.CorruptedFile.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, StatisticalReportingStatus1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected StatisticalReportingStatus1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatisticalReportingStatus1Code";
 				definition = "Specifies the status of a group of statistical reporting transactions.";
-				code_lazy = () -> Arrays.asList(StatisticalReportingStatus1Code.mmAccepted, StatisticalReportingStatus1Code.mmAcceptedTechnicalValidation, StatisticalReportingStatus1Code.mmPartiallyAccepted,
-						StatisticalReportingStatus1Code.mmPending, StatisticalReportingStatus1Code.mmReceived, StatisticalReportingStatus1Code.mmRejected, StatisticalReportingStatus1Code.mmReminder,
-						StatisticalReportingStatus1Code.mmIncorrectFilename, StatisticalReportingStatus1Code.mmCorruptedFile);
+				trace_lazy = () -> StatisticalReportingStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StatisticalReportingStatus1Code.Accepted, com.tools20022.repository.codeset.StatisticalReportingStatus1Code.AcceptedTechnicalValidation,
+						com.tools20022.repository.codeset.StatisticalReportingStatus1Code.PartiallyAccepted, com.tools20022.repository.codeset.StatisticalReportingStatus1Code.Pending,
+						com.tools20022.repository.codeset.StatisticalReportingStatus1Code.Received, com.tools20022.repository.codeset.StatisticalReportingStatus1Code.Rejected,
+						com.tools20022.repository.codeset.StatisticalReportingStatus1Code.Reminder, com.tools20022.repository.codeset.StatisticalReportingStatus1Code.IncorrectFilename,
+						com.tools20022.repository.codeset.StatisticalReportingStatus1Code.CorruptedFile);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(AcceptedTechnicalValidation.getCodeName().get(), AcceptedTechnicalValidation);
+		codesByName.put(PartiallyAccepted.getCodeName().get(), PartiallyAccepted);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(Reminder.getCodeName().get(), Reminder);
+		codesByName.put(IncorrectFilename.getCodeName().get(), IncorrectFilename);
+		codesByName.put(CorruptedFile.getCodeName().get(), CorruptedFile);
+	}
+
+	public static StatisticalReportingStatus1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static StatisticalReportingStatus1Code[] values() {
+		StatisticalReportingStatus1Code[] values = new StatisticalReportingStatus1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, StatisticalReportingStatus1Code> {
+		@Override
+		public StatisticalReportingStatus1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(StatisticalReportingStatus1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

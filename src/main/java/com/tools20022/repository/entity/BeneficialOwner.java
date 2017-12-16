@@ -40,6 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
+ * SecuritiesPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -74,10 +78,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Country.mmCountryForBeneficialOwner}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
- * SecuritiesPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -127,8 +127,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmCertificationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationType";
 			definition = "Type of certification which is required.";
@@ -183,8 +183,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmNonDomicileCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonDomicileCountry";
 			definition = "The holder of the security has to certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.";
@@ -230,8 +230,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmCertificationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationIndicator";
 			definition = "Indicates whether or not certification is required from the account owner, for instance a certification is required to participate to a corporate action event.\r\nY: certification required \r\nN: no certification required";
@@ -280,8 +280,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmCertificationFormat = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationFormat";
 			definition = "Specifies the certification format required, that is, physical or electronic format.";
@@ -328,8 +328,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmERISAEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ERISAEligibility";
 			definition = "Eligibility to federal Employee Retirement Income Security Act.";
@@ -376,8 +376,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmERISARate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ERISARate";
 			definition = "Federal Employee Retirement Income Security Act (ERISA) rate.";
@@ -424,8 +424,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmBenefitPlanDeclarationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenefitPlanDeclarationIndicator";
 			definition = "Indicates whether the investor is a benefit plan investor.";

@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
+ * SecuritiesTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -94,9 +97,6 @@ import java.util.List;
  * Charges.mmInvestmentFundTransaction}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
- * SecuritiesTrade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -156,8 +156,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundOrder";
 			definition = "An investor's instruction to either subscribe or redeem an amount of money or its equivalent, eg, other assets, into or out of an investment fund.";
@@ -198,8 +198,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmClientReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientReference";
 			definition = "Unique and unambiguous investor's identification of an order assigned by a client.";
@@ -245,8 +245,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of investment fund transaction.";
@@ -299,8 +299,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionCharge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionCharge";
 			definition = "Charge for the placement of an order and/or for its execution.";
@@ -347,8 +347,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Account related to an investment fund transaction.";
@@ -397,8 +397,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundClass";
 			definition = "Investment fund class to which an investment fund order and its execution are related.";
@@ -445,8 +445,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionTax";
 			definition = "Tax applicable to an investment fund order and/or to its execution.";
@@ -489,8 +489,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Direction of the transaction, ie, securities are received (credited) or delivered (debited).";
@@ -547,8 +547,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundOrderExecution";
 			definition = "Creation/cancellation of investment units on the books of the fund or its designated agent, as a result of executing an investment fund order.";

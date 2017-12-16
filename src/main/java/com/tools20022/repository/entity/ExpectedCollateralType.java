@@ -117,8 +117,8 @@ public class ExpectedCollateralType {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginRelatedCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginRelatedCall";
 			definition = "Call for which a variation margin type is specified.";
@@ -158,8 +158,8 @@ public class ExpectedCollateralType {
 	 */
 	public static final MMBusinessAttribute mmDelivery = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Delivery";
 			definition = "Type of collateral that will be delivered.";
@@ -205,8 +205,8 @@ public class ExpectedCollateralType {
 	 */
 	public static final MMBusinessAttribute mmReturn = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Return";
 			definition = "Type of collateral that will be returned.";
@@ -260,8 +260,8 @@ public class ExpectedCollateralType {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountRelatedCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmountRelatedCall";
 			definition = "Call for which a segregated independent amount type is specified.";

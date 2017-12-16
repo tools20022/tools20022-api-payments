@@ -34,6 +34,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.InformationPartyRole
+ * InformationPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -53,10 +57,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * TradingMarket.mmSourceOfPrice}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.InformationPartyRole
- * InformationPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -111,8 +111,8 @@ public class SourceOfPrice extends InformationPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmMarketIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketIdentification";
 			definition = "Market on which this price is valid (MIC - ISO 3166).";
@@ -152,8 +152,8 @@ public class SourceOfPrice extends InformationPartyRole {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of the source of the price.";

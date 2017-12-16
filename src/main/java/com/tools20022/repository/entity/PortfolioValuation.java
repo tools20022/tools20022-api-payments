@@ -124,8 +124,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmTotalPortfolioValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalPortfolioValue";
 			definition = "Total value of the portfolio. It is derived from the sum of the values of the asset holdings, of the unrealised gain/loss and of the liabilities.";
@@ -174,8 +174,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmTotalBookValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalBookValue";
 			definition = "Net asset on balance sheet - total portfolio value minus or plus the unrealised gain or loss.";
@@ -221,8 +221,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmTotalReceipts = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalReceipts";
 			definition = "Total receipts attributable to the portfolio.";
@@ -268,8 +268,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmTotalDisbursements = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalDisbursements";
 			definition = "Total disbursements attributable to the portfolio.";
@@ -315,8 +315,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmIncomeReceived = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomeReceived";
 			definition = "Income attributable to the portfolio.";
@@ -362,8 +362,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAttribute mmExpensesPaid = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpensesPaid";
 			definition = "Expenses attributable to the portfolio";
@@ -417,8 +417,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Portfolio";
 			definition = "Specifies the portfolio for which a valuation is calculated.";
@@ -465,8 +465,8 @@ public class PortfolioValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmValuationPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationPeriod";
 			definition = "Period for which the valuation is calculated.";

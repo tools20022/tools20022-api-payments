@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.VariationTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of variation.
@@ -31,11 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.VariationTypeCode#mmIncrease
+ * <li>{@linkplain com.tools20022.repository.codeset.VariationTypeCode#Increase
  * VariationTypeCode.mmIncrease}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.VariationTypeCode#mmDecrease
+ * <li>{@linkplain com.tools20022.repository.codeset.VariationTypeCode#Decrease
  * VariationTypeCode.mmDecrease}</li>
  * </ul>
  * </li>
@@ -60,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of variation."</li>
  * </ul>
  */
-public class VariationTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class VariationTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +88,12 @@ public class VariationTypeCode {
 	 * definition} = "Increase to undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncrease = new MMCode() {
+	public static final VariationTypeCode Increase = new VariationTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Increase";
 			definition = "Increase to undertaking amount.";
-			owner_lazy = () -> VariationTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VariationTypeCode.mmObject();
 			codeName = "INCR";
 		}
 	};
@@ -114,17 +118,21 @@ public class VariationTypeCode {
 	 * definition} = "Decrease to undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDecrease = new MMCode() {
+	public static final VariationTypeCode Decrease = new VariationTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Decrease";
 			definition = "Decrease to undertaking amount.";
-			owner_lazy = () -> VariationTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VariationTypeCode.mmObject();
 			codeName = "DECR";
 		}
 	};
+	final static private LinkedHashMap<String, VariationTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected VariationTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +140,35 @@ public class VariationTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VariationTypeCode";
 				definition = "Specifies the type of variation.";
-				code_lazy = () -> Arrays.asList(VariationTypeCode.mmIncrease, VariationTypeCode.mmDecrease);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.VariationTypeCode.Increase, com.tools20022.repository.codeset.VariationTypeCode.Decrease);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Increase.getCodeName().get(), Increase);
+		codesByName.put(Decrease.getCodeName().get(), Decrease);
+	}
+
+	public static VariationTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static VariationTypeCode[] values() {
+		VariationTypeCode[] values = new VariationTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, VariationTypeCode> {
+		@Override
+		public VariationTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(VariationTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

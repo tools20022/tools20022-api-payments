@@ -106,8 +106,8 @@ public class PercentageAndPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Period";
 			definition = "Period related to percentage.";
@@ -147,8 +147,8 @@ public class PercentageAndPeriod {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Percentage rate.";

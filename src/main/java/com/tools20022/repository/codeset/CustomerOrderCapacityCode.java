@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CustomerOrderCapacityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Designation of the capacity of the firm placing the order.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#mmMemberOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#MemberOwnAccount
  * CustomerOrderCapacityCode.mmMemberOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#mmClearingProprietary
+ * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#ClearingProprietary
  * CustomerOrderCapacityCode.mmClearingProprietary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#mmMemberOtherMember
+ * {@linkplain com.tools20022.repository.codeset.CustomerOrderCapacityCode#MemberOtherMember
  * CustomerOrderCapacityCode.mmMemberOtherMember}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Designation of the capacity of the firm placing the order."</li>
  * </ul>
  */
-public class CustomerOrderCapacityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CustomerOrderCapacityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class CustomerOrderCapacityCode {
 	 * definition} = "Member trading for their own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMemberOwnAccount = new MMCode() {
+	public static final CustomerOrderCapacityCode MemberOwnAccount = new CustomerOrderCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MemberOwnAccount";
 			definition = "Member trading for their own account.";
-			owner_lazy = () -> CustomerOrderCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerOrderCapacityCode.mmObject();
 			codeName = "OWNE";
 		}
 	};
@@ -117,12 +123,12 @@ public class CustomerOrderCapacityCode {
 	 * definition} = "Clearing firm trading for its proprietary account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClearingProprietary = new MMCode() {
+	public static final CustomerOrderCapacityCode ClearingProprietary = new CustomerOrderCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingProprietary";
 			definition = "Clearing firm trading for its proprietary account.";
-			owner_lazy = () -> CustomerOrderCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerOrderCapacityCode.mmObject();
 			codeName = "CLAR";
 		}
 	};
@@ -147,17 +153,21 @@ public class CustomerOrderCapacityCode {
 	 * definition} = "Member trading for another member."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMemberOtherMember = new MMCode() {
+	public static final CustomerOrderCapacityCode MemberOtherMember = new CustomerOrderCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MemberOtherMember";
 			definition = "Member trading for another member.";
-			owner_lazy = () -> CustomerOrderCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerOrderCapacityCode.mmObject();
 			codeName = "OTHM";
 		}
 	};
+	final static private LinkedHashMap<String, CustomerOrderCapacityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CustomerOrderCapacityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,37 @@ public class CustomerOrderCapacityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerOrderCapacityCode";
 				definition = "Designation of the capacity of the firm placing the order.";
-				code_lazy = () -> Arrays.asList(CustomerOrderCapacityCode.mmMemberOwnAccount, CustomerOrderCapacityCode.mmClearingProprietary, CustomerOrderCapacityCode.mmMemberOtherMember);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CustomerOrderCapacityCode.MemberOwnAccount, com.tools20022.repository.codeset.CustomerOrderCapacityCode.ClearingProprietary,
+						com.tools20022.repository.codeset.CustomerOrderCapacityCode.MemberOtherMember);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MemberOwnAccount.getCodeName().get(), MemberOwnAccount);
+		codesByName.put(ClearingProprietary.getCodeName().get(), ClearingProprietary);
+		codesByName.put(MemberOtherMember.getCodeName().get(), MemberOtherMember);
+	}
+
+	public static CustomerOrderCapacityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CustomerOrderCapacityCode[] values() {
+		CustomerOrderCapacityCode[] values = new CustomerOrderCapacityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CustomerOrderCapacityCode> {
+		@Override
+		public CustomerOrderCapacityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CustomerOrderCapacityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

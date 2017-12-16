@@ -125,8 +125,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Quantity of a financial instrument for which liquidity range details are provided.";
@@ -173,8 +173,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAssociationEnd mmListTrading = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListTrading";
 			definition = "List trading process for which liquidity data is provided.";
@@ -214,8 +214,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAttribute mmIndicatorType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicatorType";
 			definition = "Type of liquidity measure, of a financial instrument, on a market.";
@@ -263,8 +263,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAttribute mmUpper = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Upper";
 			definition = "Upper liquidity indicator, represented as a percentage of the average trade daily volume.";
@@ -312,8 +312,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAttribute mmLower = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lower";
 			definition = "Lower liquidity indicator, represented as a percentage of the average trade daily volume.";
@@ -361,8 +361,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Market value of the securities position for which liquidity details are provided.";
@@ -410,8 +410,8 @@ public class Liquidity {
 	 */
 	public static final MMBusinessAttribute mmWeightedAverageLiquidity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WeightedAverageLiquidity";
 			definition = "Indicates the overall weighted average liquidity expressed as a percentage of average daily volume.";

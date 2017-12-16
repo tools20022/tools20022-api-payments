@@ -37,6 +37,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.RolePlayer
+ * RolePlayer}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -115,9 +118,6 @@ import java.util.List;
  * Position.mmSystem}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.RolePlayer
- * RolePlayer}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -187,8 +187,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemIdentification";
 			definition = "Identification of the system.";
@@ -234,8 +234,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location, address and country in which the system is located.";
@@ -281,8 +281,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reconciliation";
 			definition = "Reconciliation process provided by the system.";
@@ -329,8 +329,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Availability";
 			definition = "Information about the activity or non-activity of the system.";
@@ -383,8 +383,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Event";
 			definition = "Specific point in time associated with the system's processing cycle. Operations of a system are composed of a series of processes, the closing, or completion, of which constitutes an event with an associated time stamp. An event may have a series of time stamps associated with it, such as the scheduled and effective completion times.";
@@ -430,8 +430,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to a system.";
@@ -476,8 +476,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the system.";
@@ -524,8 +524,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemGeneratedInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemGeneratedInformation";
 			definition = "Business details provided for an information system.";
@@ -574,8 +574,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmVersionValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VersionValidityPeriod";
 			definition = "Date at, or period of time during which, the stipulated version is in effect.";
@@ -613,8 +613,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAttribute mmSystemDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemDateTime";
 			definition = "Date time of a system performing a task.";
@@ -666,8 +666,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmNegotiation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Negotiation";
 			definition = "Negotiation process which uses a ssystem.";
@@ -712,8 +712,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account managed by a system and held by a system member.";
@@ -757,8 +757,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Trade";
 			definition = "Trade processed by a system.";
@@ -804,8 +804,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmAssessment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Assessment";
 			definition = "Assessment associated with a system.";
@@ -851,8 +851,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmTradesPosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradesPosition";
 			definition = "Specifies the status of trades and their value inside a system.";
@@ -891,8 +891,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAttribute mmSystemLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SystemLanguage";
 			definition = "Specifies the language used by the system.";

@@ -41,6 +41,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -93,8 +95,6 @@ import java.util.List;
  * InsurancePartyRole.mmInsuranceCertificate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -144,8 +144,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date upon which cover under an insurance policy becomes effective.";
@@ -192,8 +192,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmInsuredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuredAmount";
 			definition = "Value of the goods as insured under the insurance policy.";
@@ -241,8 +241,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmInsuranceConditions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceConditions";
 			definition = "Description of the conditions and exclusion clauses under which insurance is granted.";
@@ -291,8 +291,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmInsuranceClauses = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceClauses";
 			definition = "Standard insurance clauses defined by the Institute of London Underwriters (or the American Institute of marine Underwriters).";
@@ -345,8 +345,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmClaimsPayableAt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClaimsPayableAt";
 			definition = "Place where claims under the insurance policy will be paid.";
@@ -385,8 +385,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmClaimsPayableIn = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClaimsPayableIn";
 			definition = "Currency in which claims, if valid, will be paid.";
@@ -439,8 +439,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmInsurancePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsurancePartyRole";
 			definition = "Role played by a party in the context of insurance.";
@@ -486,8 +486,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductDelivery";
 			definition = "Delivery parameters of a trade.";
@@ -527,8 +527,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmInsuranceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceType";
 			definition = "Specifies the type of insurance.";
@@ -581,8 +581,8 @@ public class InsuranceCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentPlan";
 			definition = "Investment plan covered by an insurance contract.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PositionEffectCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates whether the resulting position after a trade should be an opening
@@ -32,16 +37,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#mmOpen
+ * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Open
  * PositionEffectCode.mmOpen}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#mmClose
+ * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Close
  * PositionEffectCode.mmClose}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PositionEffectCode#mmRolled
+ * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Rolled
  * PositionEffectCode.mmRolled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#mmFifo
+ * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Fifo
  * PositionEffectCode.mmFifo}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#mmLifo
+ * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Lifo
  * PositionEffectCode.mmLifo}</li>
  * </ul>
  * </li>
@@ -68,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class PositionEffectCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PositionEffectCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,12 +97,12 @@ public class PositionEffectCode {
 	 * definition} = "Position after the trade should be open."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOpen = new MMCode() {
+	public static final PositionEffectCode Open = new PositionEffectCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Open";
 			definition = "Position after the trade should be open.";
-			owner_lazy = () -> PositionEffectCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PositionEffectCode.mmObject();
 			codeName = "OPEN";
 		}
 	};
@@ -122,12 +127,12 @@ public class PositionEffectCode {
 	 * definition} = "Position after the trade should be closed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClose = new MMCode() {
+	public static final PositionEffectCode Close = new PositionEffectCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Close";
 			definition = "Position after the trade should be closed.";
-			owner_lazy = () -> PositionEffectCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PositionEffectCode.mmObject();
 			codeName = "CLOS";
 		}
 	};
@@ -155,12 +160,12 @@ public class PositionEffectCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRolled = new MMCode() {
+	public static final PositionEffectCode Rolled = new PositionEffectCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rolled";
 			definition = "Results in a position obtained in a security previously held, sold and repurchased.";
-			owner_lazy = () -> PositionEffectCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PositionEffectCode.mmObject();
 			codeName = "ROLL";
 		}
 	};
@@ -188,12 +193,12 @@ public class PositionEffectCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFifo = new MMCode() {
+	public static final PositionEffectCode Fifo = new PositionEffectCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fifo";
 			definition = "First in, first out. Results in a position obtained after having sold in priority the securities bought chronologically.";
-			owner_lazy = () -> PositionEffectCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PositionEffectCode.mmObject();
 			codeName = "FIFO";
 		}
 	};
@@ -221,17 +226,21 @@ public class PositionEffectCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLifo = new MMCode() {
+	public static final PositionEffectCode Lifo = new PositionEffectCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Lifo";
 			definition = "Last in, last out. Results in a position obtained after having sold in priority the securities bought chronologically.";
-			owner_lazy = () -> PositionEffectCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PositionEffectCode.mmObject();
 			codeName = "LIFO";
 		}
 	};
+	final static private LinkedHashMap<String, PositionEffectCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PositionEffectCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -239,9 +248,39 @@ public class PositionEffectCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PositionEffectCode";
 				definition = "Indicates whether the resulting position after a  trade should be an opening position or closing position.";
-				code_lazy = () -> Arrays.asList(PositionEffectCode.mmOpen, PositionEffectCode.mmClose, PositionEffectCode.mmRolled, PositionEffectCode.mmFifo, PositionEffectCode.mmLifo);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PositionEffectCode.Open, com.tools20022.repository.codeset.PositionEffectCode.Close, com.tools20022.repository.codeset.PositionEffectCode.Rolled,
+						com.tools20022.repository.codeset.PositionEffectCode.Fifo, com.tools20022.repository.codeset.PositionEffectCode.Lifo);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Open.getCodeName().get(), Open);
+		codesByName.put(Close.getCodeName().get(), Close);
+		codesByName.put(Rolled.getCodeName().get(), Rolled);
+		codesByName.put(Fifo.getCodeName().get(), Fifo);
+		codesByName.put(Lifo.getCodeName().get(), Lifo);
+	}
+
+	public static PositionEffectCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PositionEffectCode[] values() {
+		PositionEffectCode[] values = new PositionEffectCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PositionEffectCode> {
+		@Override
+		public PositionEffectCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PositionEffectCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.GeographicalEnvironmentCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the geographic environment, or zone, in which a payment is
@@ -34,19 +39,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmDomestic
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#Domestic
  * GeographicalEnvironmentCode.mmDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmEuroDomestic
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#EuroDomestic
  * GeographicalEnvironmentCode.mmEuroDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmFrenchDomTom
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#FrenchDomTom
  * GeographicalEnvironmentCode.mmFrenchDomTom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmInternational
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#International
  * GeographicalEnvironmentCode.mmInternational}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmNAFTA
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#NAFTA
  * GeographicalEnvironmentCode.mmNAFTA}</li>
  * </ul>
  * </li>
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class GeographicalEnvironmentCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class GeographicalEnvironmentCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDomestic = new MMCode() {
+	public static final GeographicalEnvironmentCode Domestic = new GeographicalEnvironmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Domestic";
 			definition = "Transaction has an origin and a destination in the same country and is made in the currency of that country.";
-			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GeographicalEnvironmentCode.mmObject();
 			codeName = "DMST";
 		}
 	};
@@ -128,12 +134,12 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEuroDomestic = new MMCode() {
+	public static final GeographicalEnvironmentCode EuroDomestic = new GeographicalEnvironmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EuroDomestic";
 			definition = "Transaction is a credit transfer in Euro with its country of origin and country of destination within the European Union. Origin and destination countries may be one and the same country.";
-			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GeographicalEnvironmentCode.mmObject();
 			codeName = "EUDM";
 		}
 	};
@@ -161,12 +167,12 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFrenchDomTom = new MMCode() {
+	public static final GeographicalEnvironmentCode FrenchDomTom = new GeographicalEnvironmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FrenchDomTom";
 			definition = "Transaction is between a French Overseas Departments and Territories (Dom/Tom) and some country in the European Union (France included).";
-			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GeographicalEnvironmentCode.mmObject();
 			codeName = "FRDT";
 		}
 	};
@@ -194,12 +200,12 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInternational = new MMCode() {
+	public static final GeographicalEnvironmentCode International = new GeographicalEnvironmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "International";
 			definition = "Transaction has an origin in one country and a destination in another and is made in the currency of either the origin or destination country.";
-			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GeographicalEnvironmentCode.mmObject();
 			codeName = "INTL";
 		}
 	};
@@ -228,27 +234,61 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNAFTA = new MMCode() {
+	public static final GeographicalEnvironmentCode NAFTA = new GeographicalEnvironmentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NAFTA";
 			definition = "Transaction is a North American Free Trade Association (NAFTA) transaction, ie, the first and final agent are both located in the NAFTA area.";
-			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GeographicalEnvironmentCode.mmObject();
 			codeName = "NFTA";
 		}
 	};
+	final static private LinkedHashMap<String, GeographicalEnvironmentCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected GeographicalEnvironmentCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeographicalEnvironmentCode";
 				definition = "Specifies the geographic environment, or zone, in which a payment is executed, from the perspective of the forwarding or first agent, eg, international.";
-				code_lazy = () -> Arrays.asList(GeographicalEnvironmentCode.mmDomestic, GeographicalEnvironmentCode.mmEuroDomestic, GeographicalEnvironmentCode.mmFrenchDomTom, GeographicalEnvironmentCode.mmInternational,
-						GeographicalEnvironmentCode.mmNAFTA);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GeographicalEnvironmentCode.Domestic, com.tools20022.repository.codeset.GeographicalEnvironmentCode.EuroDomestic,
+						com.tools20022.repository.codeset.GeographicalEnvironmentCode.FrenchDomTom, com.tools20022.repository.codeset.GeographicalEnvironmentCode.International,
+						com.tools20022.repository.codeset.GeographicalEnvironmentCode.NAFTA);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Domestic.getCodeName().get(), Domestic);
+		codesByName.put(EuroDomestic.getCodeName().get(), EuroDomestic);
+		codesByName.put(FrenchDomTom.getCodeName().get(), FrenchDomTom);
+		codesByName.put(International.getCodeName().get(), International);
+		codesByName.put(NAFTA.getCodeName().get(), NAFTA);
+	}
+
+	public static GeographicalEnvironmentCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static GeographicalEnvironmentCode[] values() {
+		GeographicalEnvironmentCode[] values = new GeographicalEnvironmentCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, GeographicalEnvironmentCode> {
+		@Override
+		public GeographicalEnvironmentCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(GeographicalEnvironmentCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

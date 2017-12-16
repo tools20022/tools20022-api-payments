@@ -165,8 +165,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for a standing order, as assigned by the account servicer or the account owner.";
@@ -212,8 +212,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of the standing order.";
@@ -266,8 +266,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Dates during which the standing order is in effect.";
@@ -309,8 +309,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmLinkSetIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LinkSetIdentification";
 			definition = "Unique identification to unambiguously identiy the link set in which the standing order is defined.";
@@ -359,8 +359,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmStandingOrderSequence = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrderSequence";
 			definition = "Specifies the sequence in which the system will execute the liquidity transfers standing order within the link set when additional liquidity is required.";
@@ -410,8 +410,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Currency and amount of the periodical payments. When the standing order is related to a fund investment plan, this is the cash part of the invested amount.";
@@ -464,8 +464,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditAccount";
 			definition = "Cash account credited from a  standing order mechanism.";
@@ -512,8 +512,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmDebitAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitAccount";
 			definition = "Cash account debited from a standing order mechanism.";
@@ -555,8 +555,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Frequency";
 			definition = "Frequency of the investment or divestment, eg, daily, weekly, or monthly.";
@@ -604,8 +604,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmEventDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventDescription";
 			definition = "Describes the event which triggers the exercise of a standing order for instance the reception of a report or the closing of an account.";
@@ -650,8 +650,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmDay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Day";
 			definition = "Specifies the date in a month for instance the 30th.";
@@ -697,8 +697,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmTimeSpecification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TimeSpecification";
 			definition = "Specifies the period for the time event, for instance end of day.";
@@ -754,8 +754,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentInstructionTrigger = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentInstructionTrigger";
 			definition = "Standing order causes a payment instruction at regular intervals, eg, as specified by its frequency. ";
@@ -802,8 +802,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmIncludedStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncludedStandingOrder";
 			definition = "Specifies the standing order included in the linkset.";
@@ -851,8 +851,8 @@ public class StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmLinkSet = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LinkSet";
 			definition = "Collection of standing orders defined in a specific sequence.";

@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SystemPartyRole
+ * SystemPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -91,9 +94,6 @@ import java.util.List;
  * ClearingMemberRole.mmRelatedClearingMemberRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SystemPartyRole
- * SystemPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -154,8 +154,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingSystemMemberIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystemMemberIdentification";
 			definition = "Unique and unambiguous identifier of a clearing system member, assigned by the system or system administrator.";
@@ -195,8 +195,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAttribute mmSide = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Side";
 			definition = "Specifies the side of the clearing member.";
@@ -252,8 +252,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingAccount";
 			definition = "Identifies the clearing member account at the CCP through which the trade must be cleared (sometimes called position account).";
@@ -302,8 +302,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmMarginAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginAccount";
 			definition = "Margin account where the negociation and liquidation risks will be calculated.";
@@ -353,8 +353,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmDeliveryAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryAccount";
 			definition = "Account opened by the central counterparty in the name of the clearing member within the account structure, for settlement purposes (gives information about the clearing member account at central counterparty).";
@@ -402,8 +402,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmDefaultFundAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultFundAccount";
 			definition = "Specifies the account identification of the clearing member at the ICSD (International Central Securities Depository) or at the Central Bank.";
@@ -452,8 +452,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingSegment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSegment";
 			definition = "Clearing segment within a clearing organisation that allows the segregation of flows coming from clearing counterparty's clearing system. ";
@@ -501,8 +501,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedClearingMemberRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedClearingMemberRole";
 			definition = "Clearing member for which a clearing segment is specified.";

@@ -128,8 +128,8 @@ public class Incoterms {
 	 */
 	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Specifies the transport information to which the incoterms apply.";
@@ -168,8 +168,8 @@ public class Incoterms {
 	 */
 	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Specifies the applicable Incoterm by means of a code.";
@@ -220,8 +220,8 @@ public class Incoterms {
 	 */
 	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location where the Incoterms are actioned.";

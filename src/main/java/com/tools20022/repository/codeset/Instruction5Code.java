@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.InstructionCode;
+import com.tools20022.repository.codeset.Instruction5Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies further instructions concerning the processing of a payment
@@ -31,18 +35,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.InstructionCode
- * InstructionCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction5Code#mmPhoneBeneficiary
+ * {@linkplain com.tools20022.repository.codeset.Instruction5Code#PhoneBeneficiary
  * Instruction5Code.mmPhoneBeneficiary}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Instruction5Code#mmTelecom
+ * <li>{@linkplain com.tools20022.repository.codeset.Instruction5Code#Telecom
  * Instruction5Code.mmTelecom}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.InstructionCode
+ * InstructionCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class Instruction5Code extends InstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Instruction5Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,11 +90,12 @@ public class Instruction5Code extends InstructionCode {
 	 * name} = "PhoneBeneficiary"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPhoneBeneficiary = new MMCode() {
+	public static final Instruction5Code PhoneBeneficiary = new Instruction5Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PhoneBeneficiary";
-			owner_lazy = () -> Instruction5Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction5Code.mmObject();
+			codeName = InstructionCode.PhoneBeneficiary.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -108,15 +114,20 @@ public class Instruction5Code extends InstructionCode {
 	 * name} = "Telecom"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTelecom = new MMCode() {
+	public static final Instruction5Code Telecom = new Instruction5Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Telecom";
-			owner_lazy = () -> Instruction5Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction5Code.mmObject();
+			codeName = InstructionCode.Telecom.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Instruction5Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Instruction5Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -124,10 +135,36 @@ public class Instruction5Code extends InstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instruction5Code";
 				definition = "Specifies further instructions concerning the processing of a payment instruction, provided by the sending clearing agent to the next agent(s).";
-				code_lazy = () -> Arrays.asList(Instruction5Code.mmPhoneBeneficiary, Instruction5Code.mmTelecom);
 				trace_lazy = () -> InstructionCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Instruction5Code.PhoneBeneficiary, com.tools20022.repository.codeset.Instruction5Code.Telecom);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PhoneBeneficiary.getCodeName().get(), PhoneBeneficiary);
+		codesByName.put(Telecom.getCodeName().get(), Telecom);
+	}
+
+	public static Instruction5Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Instruction5Code[] values() {
+		Instruction5Code[] values = new Instruction5Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Instruction5Code> {
+		@Override
+		public Instruction5Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Instruction5Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

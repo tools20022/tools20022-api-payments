@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.LendingTransactionMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Lending method applied to the securities financing contract.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#mmOnDemandTrade
+ * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#OnDemandTrade
  * LendingTransactionMethodCode.mmOnDemandTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#mmExclusiveTrade
+ * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#ExclusiveTrade
  * LendingTransactionMethodCode.mmExclusiveTrade}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Lending method applied to the securities financing contract."</li>
  * </ul>
  */
-public class LendingTransactionMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class LendingTransactionMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class LendingTransactionMethodCode {
 	 * definition} = "Contract applies to a specific security only."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnDemandTrade = new MMCode() {
+	public static final LendingTransactionMethodCode OnDemandTrade = new LendingTransactionMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnDemandTrade";
 			definition = "Contract applies to a specific security only.";
-			owner_lazy = () -> LendingTransactionMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LendingTransactionMethodCode.mmObject();
 			codeName = "ODTR";
 		}
 	};
@@ -117,17 +123,21 @@ public class LendingTransactionMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmExclusiveTrade = new MMCode() {
+	public static final LendingTransactionMethodCode ExclusiveTrade = new LendingTransactionMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExclusiveTrade";
 			definition = "Contract applies to a number of different securities within the same pool/fund.";
-			owner_lazy = () -> LendingTransactionMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LendingTransactionMethodCode.mmObject();
 			codeName = "EXTR";
 		}
 	};
+	final static private LinkedHashMap<String, LendingTransactionMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected LendingTransactionMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -135,9 +145,35 @@ public class LendingTransactionMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LendingTransactionMethodCode";
 				definition = "Lending method applied to the securities financing contract.";
-				code_lazy = () -> Arrays.asList(LendingTransactionMethodCode.mmOnDemandTrade, LendingTransactionMethodCode.mmExclusiveTrade);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LendingTransactionMethodCode.OnDemandTrade, com.tools20022.repository.codeset.LendingTransactionMethodCode.ExclusiveTrade);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(OnDemandTrade.getCodeName().get(), OnDemandTrade);
+		codesByName.put(ExclusiveTrade.getCodeName().get(), ExclusiveTrade);
+	}
+
+	public static LendingTransactionMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static LendingTransactionMethodCode[] values() {
+		LendingTransactionMethodCode[] values = new LendingTransactionMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, LendingTransactionMethodCode> {
+		@Override
+		public LendingTransactionMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(LendingTransactionMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

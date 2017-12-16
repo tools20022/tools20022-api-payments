@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PaymentScheduleType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a payment schedule type.
@@ -32,13 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentScheduleType1Code#mmContract
+ * {@linkplain com.tools20022.repository.codeset.PaymentScheduleType1Code#Contract
  * PaymentScheduleType1Code.mmContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentScheduleType1Code#mmEstimated
+ * {@linkplain com.tools20022.repository.codeset.PaymentScheduleType1Code#Estimated
  * PaymentScheduleType1Code.mmEstimated}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PaymentScheduleTypeCode
+ * PaymentScheduleTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -54,7 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a payment schedule type."</li>
  * </ul>
  */
-public class PaymentScheduleType1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentScheduleType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -73,11 +82,12 @@ public class PaymentScheduleType1Code {
 	 * name} = "Contract"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmContract = new MMCode() {
+	public static final PaymentScheduleType1Code Contract = new PaymentScheduleType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Contract";
-			owner_lazy = () -> PaymentScheduleType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentScheduleType1Code.mmObject();
+			codeName = PaymentScheduleTypeCode.Contract.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -96,24 +106,56 @@ public class PaymentScheduleType1Code {
 	 * name} = "Estimated"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEstimated = new MMCode() {
+	public static final PaymentScheduleType1Code Estimated = new PaymentScheduleType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Estimated";
-			owner_lazy = () -> PaymentScheduleType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentScheduleType1Code.mmObject();
+			codeName = PaymentScheduleTypeCode.Estimated.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, PaymentScheduleType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentScheduleType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentScheduleType1Code";
 				definition = "Specifies a payment schedule type.";
-				code_lazy = () -> Arrays.asList(PaymentScheduleType1Code.mmContract, PaymentScheduleType1Code.mmEstimated);
+				trace_lazy = () -> PaymentScheduleTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentScheduleType1Code.Contract, com.tools20022.repository.codeset.PaymentScheduleType1Code.Estimated);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Contract.getCodeName().get(), Contract);
+		codesByName.put(Estimated.getCodeName().get(), Estimated);
+	}
+
+	public static PaymentScheduleType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentScheduleType1Code[] values() {
+		PaymentScheduleType1Code[] values = new PaymentScheduleType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentScheduleType1Code> {
+		@Override
+		public PaymentScheduleType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentScheduleType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

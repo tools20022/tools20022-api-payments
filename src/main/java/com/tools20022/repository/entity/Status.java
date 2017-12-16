@@ -67,23 +67,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.GenericValidationRuleIdentification1
- * GenericValidationRuleIdentification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1
- * CurrencyControlGroupStatus1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1
- * CurrencyControlPackageStatus1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ValidationStatusReason1
- * ValidationStatusReason1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlRecordStatus1
- * CurrencyControlRecordStatus1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -147,6 +130,23 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.QuoteStatus QuoteStatus}</li>
  * <li>{@linkplain com.tools20022.repository.entity.InvoiceStatus InvoiceStatus}
  * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GenericValidationRuleIdentification1
+ * GenericValidationRuleIdentification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1
+ * CurrencyControlGroupStatus1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1
+ * CurrencyControlPackageStatus1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ValidationStatusReason1
+ * ValidationStatusReason1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyControlRecordStatus1
+ * CurrencyControlRecordStatus1}</li>
  * </ul>
  * </li>
  * <li>
@@ -269,8 +269,8 @@ public class Status {
 					OriginalPaymentInstruction23.mmStatusReasonInformation, OriginalPaymentInstruction21.mmReversalReasonInformation, MandateAmendment5.mmAmendmentReason, OriginalPaymentInstruction24.mmStatusReasonInformation,
 					OriginalGroupInformation28.mmStatusReasonInformation, PaymentTransaction76.mmReturnReasonInformation, OriginalPaymentInstruction20.mmCancellationReasonInformation, PaymentTransaction83.mmStatusReasonInformation,
 					PaymentTransaction77.mmReversalReasonInformation, PaymentTransaction82.mmStatusReasonInformation, MandateSuspensionReason1.mmReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusReason";
 			definition = "Specifies the reasons for the status.";
@@ -328,8 +328,8 @@ public class Status {
 		{
 			derivation_lazy = () -> Arrays.asList(CaseStatus2.mmDateTime, CurrencyControlGroupStatus1.mmStatusDateTime, CurrencyControlPackageStatus1.mmStatusDateTime, RegisteredContractJournal1.mmClosureDate,
 					CurrencyControlRecordStatus1.mmStatusDateTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusDateTime";
 			definition = "Date and time at which the status was assigned.";
@@ -381,8 +381,8 @@ public class Status {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityTime = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityTime";
 			definition = "Period of time during which the status is valid.";
@@ -445,8 +445,8 @@ public class Status {
 		{
 			derivation_lazy = () -> Arrays.asList(StatusReasonInformation9.mmAdditionalInformation, GenericValidationRuleIdentification1.mmDescription, CurrencyControlGroupStatus1.mmStatus, ValidationStatusReason1.mmValidationRule,
 					ValidationStatusReason1.mmAdditionalInformation, CurrencyControlRecordStatus1.mmStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusDescription";
 			definition = "Specifies the state or the condition.";
@@ -499,8 +499,8 @@ public class Status {
 	public static final MMBusinessAttribute mmInstructionProcessingStatus = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CurrencyControlPackageStatus1.mmStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionProcessingStatus";
 			definition = "Status of the processing of an instruction.";
@@ -554,8 +554,8 @@ public class Status {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of assigning a status.";
@@ -594,8 +594,8 @@ public class Status {
 	 */
 	public static final MMBusinessAttribute mmSettlementStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementStatus";
 			definition = "Status of settlement of a transaction.";
@@ -640,8 +640,8 @@ public class Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationProcessingStatus";
 			definition = "Specifies the status of a cancellation request.";
@@ -687,8 +687,8 @@ public class Status {
 	 */
 	public static final MMBusinessAttribute mmTransactionProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionProcessingStatus";
 			definition = "Status of processing of a transaction at account servicer level.";
@@ -733,8 +733,8 @@ public class Status {
 	 */
 	public static final MMBusinessAttribute mmModificationProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationProcessingStatus";
 			definition = "Provides the status of a modification request.";

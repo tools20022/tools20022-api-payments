@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -103,14 +105,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.SecuritiesAccount19
- * SecuritiesAccount19}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -170,8 +164,14 @@ import java.util.List;
  * DisclosedListTrading.mmDisclosedListTradingAccount}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.SecuritiesAccount19
+ * SecuritiesAccount19}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -227,8 +227,8 @@ public class SecuritiesAccount extends Account {
 	public static final MMBusinessAttribute mmSecuritiesAccountType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SecuritiesAccount19.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccountType";
 			definition = "Specifies the type of securities account.";
@@ -284,8 +284,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentAccount";
 			definition = "Investment account which contains a securities account to make securities movements.";
@@ -335,8 +335,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransfer";
 			definition = "Specifies the process which moves securities out of an account to another one.";
@@ -382,8 +382,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPartyRole";
 			definition = "Specifies the role which uses a securities account.";
@@ -429,8 +429,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security which is held on the securities account.";
@@ -477,8 +477,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRegistrar = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRegistrar";
 			definition = "Specifies where the financial instruments are registered.";
@@ -525,8 +525,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSafekeepingPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingPlace";
 			definition = "Location where the financial instruments are safekept.";
@@ -575,8 +575,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Value of financial assets held by a person or an organisation. It is derived from the association between Account and Balance.";
@@ -626,8 +626,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionServicing";
 			definition = "Actions taken in relation with the securities account in the context of the corporate action.";
@@ -673,8 +673,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAllocation";
 			definition = "Allocation process for which an account is specified.";
@@ -721,8 +721,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesEntry";
 			definition = "Record of the movements into or out of an account.";
@@ -768,8 +768,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingAccountOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingAccountOwner";
 			definition = "Clearing member which holds a clearing account at a CCP.";
@@ -816,8 +816,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmMarginAccountOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginAccountOwner";
 			definition = "Clearing member which holds a margin account at a CCP.";
@@ -864,8 +864,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmDeliveryAccountOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryAccountOwner";
 			definition = "Clearing member which holds a delivery account at a CCP.";
@@ -912,8 +912,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPowerOfAttorney = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPowerOfAttorney";
 			definition = "Power of attorney related to the securities account.";
@@ -961,8 +961,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeetingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeetingInstruction";
 			definition = "Meeting instruction which specifies an account.";
@@ -1002,8 +1002,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmClearingAccountType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingAccountType";
 			definition = "Specifies the clearing account type.";
@@ -1057,8 +1057,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order process for which an ordering account is specified.";
@@ -1108,8 +1108,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmDisclosedListTrading = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisclosedListTrading";
 			definition = "Disclosed list trading process for which a trading account is specified.";
@@ -1157,8 +1157,8 @@ public class SecuritiesAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountLink";
 			definition = "Defines the link between a cash account and a securities account.";

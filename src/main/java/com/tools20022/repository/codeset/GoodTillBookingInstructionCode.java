@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.GoodTillBookingInstructionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * States whether executions are booked out or accumulated on a partially filled
@@ -33,13 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#mmBookOnExecutionDay
+ * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#BookOnExecutionDay
  * GoodTillBookingInstructionCode.mmBookOnExecutionDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#mmAccumulateTillEnd
+ * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#AccumulateTillEnd
  * GoodTillBookingInstructionCode.mmAccumulateTillEnd}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#mmAccumulateTillTold
+ * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#AccumulateTillTold
  * GoodTillBookingInstructionCode.mmAccumulateTillTold}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class GoodTillBookingInstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class GoodTillBookingInstructionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class GoodTillBookingInstructionCode {
 	 * definition} = "Book out all trades on day of execution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBookOnExecutionDay = new MMCode() {
+	public static final GoodTillBookingInstructionCode BookOnExecutionDay = new GoodTillBookingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BookOnExecutionDay";
 			definition = "Book out all trades on day of execution.";
-			owner_lazy = () -> GoodTillBookingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GoodTillBookingInstructionCode.mmObject();
 			codeName = "BOEX";
 		}
 	};
@@ -120,12 +126,12 @@ public class GoodTillBookingInstructionCode {
 	 * definition} = "Accumulate executions until order is filled or expires."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccumulateTillEnd = new MMCode() {
+	public static final GoodTillBookingInstructionCode AccumulateTillEnd = new GoodTillBookingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccumulateTillEnd";
 			definition = "Accumulate executions until order is filled or expires.";
-			owner_lazy = () -> GoodTillBookingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GoodTillBookingInstructionCode.mmObject();
 			codeName = "ACTE";
 		}
 	};
@@ -150,17 +156,21 @@ public class GoodTillBookingInstructionCode {
 	 * definition} = "Accumulate until verbally notified otherwise."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccumulateTillTold = new MMCode() {
+	public static final GoodTillBookingInstructionCode AccumulateTillTold = new GoodTillBookingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccumulateTillTold";
 			definition = "Accumulate until verbally notified otherwise.";
-			owner_lazy = () -> GoodTillBookingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GoodTillBookingInstructionCode.mmObject();
 			codeName = "ACTT";
 		}
 	};
+	final static private LinkedHashMap<String, GoodTillBookingInstructionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected GoodTillBookingInstructionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -168,9 +178,37 @@ public class GoodTillBookingInstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GoodTillBookingInstructionCode";
 				definition = "States whether executions are booked out or accumulated on a partially filled good till order on the day of execution or to accumulate.";
-				code_lazy = () -> Arrays.asList(GoodTillBookingInstructionCode.mmBookOnExecutionDay, GoodTillBookingInstructionCode.mmAccumulateTillEnd, GoodTillBookingInstructionCode.mmAccumulateTillTold);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GoodTillBookingInstructionCode.BookOnExecutionDay, com.tools20022.repository.codeset.GoodTillBookingInstructionCode.AccumulateTillEnd,
+						com.tools20022.repository.codeset.GoodTillBookingInstructionCode.AccumulateTillTold);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(BookOnExecutionDay.getCodeName().get(), BookOnExecutionDay);
+		codesByName.put(AccumulateTillEnd.getCodeName().get(), AccumulateTillEnd);
+		codesByName.put(AccumulateTillTold.getCodeName().get(), AccumulateTillTold);
+	}
+
+	public static GoodTillBookingInstructionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static GoodTillBookingInstructionCode[] values() {
+		GoodTillBookingInstructionCode[] values = new GoodTillBookingInstructionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, GoodTillBookingInstructionCode> {
+		@Override
+		public GoodTillBookingInstructionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(GoodTillBookingInstructionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

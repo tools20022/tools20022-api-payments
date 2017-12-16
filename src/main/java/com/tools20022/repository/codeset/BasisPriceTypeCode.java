@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BasisPriceTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Basis price type in a bid order. Used for list trading.
@@ -32,31 +37,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmMorningSessionClosePrice
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#MorningSessionClosePrice
  * BasisPriceTypeCode.mmMorningSessionClosePrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmClosingPrice
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#ClosingPrice
  * BasisPriceTypeCode.mmClosingPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmCurrentPrice
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#CurrentPrice
  * BasisPriceTypeCode.mmCurrentPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmSpecialQuotation
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#SpecialQuotation
  * BasisPriceTypeCode.mmSpecialQuotation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmVWAPDay
+ * <li>{@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPDay
  * BasisPriceTypeCode.mmVWAPDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmVWAPMorning
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPMorning
  * BasisPriceTypeCode.mmVWAPMorning}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmVWAPAfternoon
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPAfternoon
  * BasisPriceTypeCode.mmVWAPAfternoon}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmStrikePrice
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#StrikePrice
  * BasisPriceTypeCode.mmStrikePrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#mmOpenPrice
+ * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#OpenPrice
  * BasisPriceTypeCode.mmOpenPrice}</li>
  * </ul>
  * </li>
@@ -81,7 +85,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Basis price type in a bid order. Used for list trading."</li>
  * </ul>
  */
-public class BasisPriceTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BasisPriceTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -105,12 +110,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Closing price at morning session."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMorningSessionClosePrice = new MMCode() {
+	public static final BasisPriceTypeCode MorningSessionClosePrice = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MorningSessionClosePrice";
 			definition = "Closing price at morning session.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "MSCP";
 		}
 	};
@@ -135,12 +140,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Closing price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClosingPrice = new MMCode() {
+	public static final BasisPriceTypeCode ClosingPrice = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingPrice";
 			definition = "Closing price.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "CLOS";
 		}
 	};
@@ -165,12 +170,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Current price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCurrentPrice = new MMCode() {
+	public static final BasisPriceTypeCode CurrentPrice = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrentPrice";
 			definition = "Current price.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "CURR";
 		}
 	};
@@ -195,12 +200,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Price computed after a trading halt."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpecialQuotation = new MMCode() {
+	public static final BasisPriceTypeCode SpecialQuotation = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecialQuotation";
 			definition = "Price computed after a trading halt.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "SPQO";
 		}
 	};
@@ -225,12 +230,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Value weighted average price through the day."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVWAPDay = new MMCode() {
+	public static final BasisPriceTypeCode VWAPDay = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPDay";
 			definition = "Value weighted average price through the day.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "VWPD";
 		}
 	};
@@ -255,12 +260,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Value weighted average price through a morning session."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVWAPMorning = new MMCode() {
+	public static final BasisPriceTypeCode VWAPMorning = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPMorning";
 			definition = "Value weighted average price through a morning session.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "VWPM";
 		}
 	};
@@ -286,12 +291,12 @@ public class BasisPriceTypeCode {
 	 * "Value weighted average price through an afternoon session."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVWAPAfternoon = new MMCode() {
+	public static final BasisPriceTypeCode VWAPAfternoon = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPAfternoon";
 			definition = "Value weighted average price through an afternoon session.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "VWPA";
 		}
 	};
@@ -316,12 +321,12 @@ public class BasisPriceTypeCode {
 	 * definition} = "Exercise price defined on a derivative product."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStrikePrice = new MMCode() {
+	public static final BasisPriceTypeCode StrikePrice = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikePrice";
 			definition = "Exercise price defined on a derivative product.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "STIK";
 		}
 	};
@@ -346,17 +351,21 @@ public class BasisPriceTypeCode {
 	 * definition} = "Price of a trade opening session."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOpenPrice = new MMCode() {
+	public static final BasisPriceTypeCode OpenPrice = new BasisPriceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpenPrice";
 			definition = "Price of a trade opening session.";
-			owner_lazy = () -> BasisPriceTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BasisPriceTypeCode.mmObject();
 			codeName = "OPEN";
 		}
 	};
+	final static private LinkedHashMap<String, BasisPriceTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BasisPriceTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -364,10 +373,45 @@ public class BasisPriceTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BasisPriceTypeCode";
 				definition = "Basis price type in a bid order. Used for list trading.";
-				code_lazy = () -> Arrays.asList(BasisPriceTypeCode.mmMorningSessionClosePrice, BasisPriceTypeCode.mmClosingPrice, BasisPriceTypeCode.mmCurrentPrice, BasisPriceTypeCode.mmSpecialQuotation, BasisPriceTypeCode.mmVWAPDay,
-						BasisPriceTypeCode.mmVWAPMorning, BasisPriceTypeCode.mmVWAPAfternoon, BasisPriceTypeCode.mmStrikePrice, BasisPriceTypeCode.mmOpenPrice);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BasisPriceTypeCode.MorningSessionClosePrice, com.tools20022.repository.codeset.BasisPriceTypeCode.ClosingPrice,
+						com.tools20022.repository.codeset.BasisPriceTypeCode.CurrentPrice, com.tools20022.repository.codeset.BasisPriceTypeCode.SpecialQuotation, com.tools20022.repository.codeset.BasisPriceTypeCode.VWAPDay,
+						com.tools20022.repository.codeset.BasisPriceTypeCode.VWAPMorning, com.tools20022.repository.codeset.BasisPriceTypeCode.VWAPAfternoon, com.tools20022.repository.codeset.BasisPriceTypeCode.StrikePrice,
+						com.tools20022.repository.codeset.BasisPriceTypeCode.OpenPrice);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MorningSessionClosePrice.getCodeName().get(), MorningSessionClosePrice);
+		codesByName.put(ClosingPrice.getCodeName().get(), ClosingPrice);
+		codesByName.put(CurrentPrice.getCodeName().get(), CurrentPrice);
+		codesByName.put(SpecialQuotation.getCodeName().get(), SpecialQuotation);
+		codesByName.put(VWAPDay.getCodeName().get(), VWAPDay);
+		codesByName.put(VWAPMorning.getCodeName().get(), VWAPMorning);
+		codesByName.put(VWAPAfternoon.getCodeName().get(), VWAPAfternoon);
+		codesByName.put(StrikePrice.getCodeName().get(), StrikePrice);
+		codesByName.put(OpenPrice.getCodeName().get(), OpenPrice);
+	}
+
+	public static BasisPriceTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BasisPriceTypeCode[] values() {
+		BasisPriceTypeCode[] values = new BasisPriceTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BasisPriceTypeCode> {
+		@Override
+		public BasisPriceTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BasisPriceTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

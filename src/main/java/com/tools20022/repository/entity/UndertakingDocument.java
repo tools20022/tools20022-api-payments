@@ -113,8 +113,8 @@ public class UndertakingDocument {
 	 */
 	public static final MMBusinessAttribute mmDocumentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentType";
 			definition = "Type of document.";
@@ -160,8 +160,8 @@ public class UndertakingDocument {
 	 */
 	public static final MMBusinessAttribute mmFormat = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Format";
 			definition = "Format of the document.";
@@ -214,8 +214,8 @@ public class UndertakingDocument {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which document content is specified.";
@@ -255,8 +255,8 @@ public class UndertakingDocument {
 	 */
 	public static final MMBusinessAttribute mmCopyIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CopyIndicator";
 			definition = "Indicates whether the document is a copy.";
@@ -308,8 +308,8 @@ public class UndertakingDocument {
 	 */
 	public static final MMBusinessAssociationEnd mmDemand = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Demand";
 			definition = "Demand for which associated documents are specified.";

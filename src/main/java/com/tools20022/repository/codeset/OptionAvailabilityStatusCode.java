@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OptionAvailabilityStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the option availability.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#mmInactive
+ * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#Inactive
  * OptionAvailabilityStatusCode.mmInactive}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#mmCancelled
+ * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#Cancelled
  * OptionAvailabilityStatusCode.mmCancelled}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of the option availability."</li>
  * </ul>
  */
-public class OptionAvailabilityStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OptionAvailabilityStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class OptionAvailabilityStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInactive = new MMCode() {
+	public static final OptionAvailabilityStatusCode Inactive = new OptionAvailabilityStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Inactive";
 			definition = "Option is not active and can no longer be responded to. Any responses already processed against this option will remain valid, for example, expired option.";
-			owner_lazy = () -> OptionAvailabilityStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OptionAvailabilityStatusCode.mmObject();
 			codeName = "INTV";
 		}
 	};
@@ -123,17 +129,21 @@ public class OptionAvailabilityStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelled = new MMCode() {
+	public static final OptionAvailabilityStatusCode Cancelled = new OptionAvailabilityStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancelled";
 			definition = "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required.";
-			owner_lazy = () -> OptionAvailabilityStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OptionAvailabilityStatusCode.mmObject();
 			codeName = "CANC";
 		}
 	};
+	final static private LinkedHashMap<String, OptionAvailabilityStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OptionAvailabilityStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -141,9 +151,35 @@ public class OptionAvailabilityStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionAvailabilityStatusCode";
 				definition = "Specifies the status of the option availability.";
-				code_lazy = () -> Arrays.asList(OptionAvailabilityStatusCode.mmInactive, OptionAvailabilityStatusCode.mmCancelled);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionAvailabilityStatusCode.Inactive, com.tools20022.repository.codeset.OptionAvailabilityStatusCode.Cancelled);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Inactive.getCodeName().get(), Inactive);
+		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
+	}
+
+	public static OptionAvailabilityStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OptionAvailabilityStatusCode[] values() {
+		OptionAvailabilityStatusCode[] values = new OptionAvailabilityStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OptionAvailabilityStatusCode> {
+		@Override
+		public OptionAvailabilityStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OptionAvailabilityStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

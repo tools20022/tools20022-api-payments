@@ -100,63 +100,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice
- * CreditorReferenceType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditorReferenceType2
- * CreditorReferenceType2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RemittanceAmount2
- * RemittanceAmount2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation2
- * RemittanceInformation2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification22
- * DocumentIdentification22}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentLineType1
- * DocumentLineType1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentLineIdentification1
- * DocumentLineIdentification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentLineInformation1
- * DocumentLineInformation1}</li>
- * <li>{@linkplain com.tools20022.repository.choice.DocumentLineType1Choice
- * DocumentLineType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.GarnishmentType1Choice
- * GarnishmentType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GarnishmentType1
- * GarnishmentType1}</li>
- * <li>{@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice
- * ReferredDocumentType3Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReferredDocumentType4
- * ReferredDocumentType4}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1
- * SupportingDocumentRequestOrLetter1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification29
- * DocumentIdentification29}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1
- * SupportingDocumentEntry1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3
- * DocumentGeneralInformation3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CertificateReference1
- * CertificateReference1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification28
- * DocumentIdentification28}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation11
- * RemittanceInformation11}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13
- * StructuredRemittanceInformation13}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7
- * ReferredDocumentInformation7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation13
- * RemittanceInformation13}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReferredMandateDocument1
- * ReferredMandateDocument1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -257,6 +200,63 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice
+ * CreditorReferenceType1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditorReferenceType2
+ * CreditorReferenceType2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RemittanceAmount2
+ * RemittanceAmount2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation2
+ * RemittanceInformation2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification22
+ * DocumentIdentification22}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentLineType1
+ * DocumentLineType1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentLineIdentification1
+ * DocumentLineIdentification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentLineInformation1
+ * DocumentLineInformation1}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.DocumentLineType1Choice
+ * DocumentLineType1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.GarnishmentType1Choice
+ * GarnishmentType1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GarnishmentType1
+ * GarnishmentType1}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice
+ * ReferredDocumentType3Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReferredDocumentType4
+ * ReferredDocumentType4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1
+ * SupportingDocumentRequestOrLetter1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification29
+ * DocumentIdentification29}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1
+ * SupportingDocumentEntry1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3
+ * DocumentGeneralInformation3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CertificateReference1
+ * CertificateReference1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification28
+ * DocumentIdentification28}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation11
+ * RemittanceInformation11}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13
+ * StructuredRemittanceInformation13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7
+ * ReferredDocumentInformation7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RemittanceInformation13
+ * RemittanceInformation13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReferredMandateDocument1
+ * ReferredMandateDocument1}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -341,8 +341,8 @@ public class Document {
 			derivation_lazy = () -> Arrays.asList(DocumentIdentification22.mmDateOfIssue, DocumentLineIdentification1.mmRelatedDate, SupportingDocumentRequestOrLetter1.mmDate, SupportingDocumentRequestOrLetter1.mmDueDate,
 					DocumentIdentification29.mmDateOfIssue, DocumentGeneralInformation3.mmIssueDate, DocumentIdentification28.mmDateOfIssue, ReferredDocumentInformation7.mmRelatedDate, BillingStatement2.mmCreationDateTime,
 					ReferredMandateDocument1.mmRelatedDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDate";
 			definition = "Issue date of the document.";
@@ -390,8 +390,8 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute mmCopyDuplicate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CopyDuplicate";
 			definition = "Specifies if this document is a copy, a duplicate, or a duplicate of a copy.";
@@ -465,8 +465,8 @@ public class Document {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalItemReference4.mmRelatedRemittanceInformation, EntryTransaction8.mmRelatedRemittanceInformation, NotificationItem6.mmRelatedRemittanceInformation,
 					DirectDebitTransactionInformation21.mmRelatedRemittanceInformation, DirectDebitTransactionInformation22.mmRelatedRemittanceInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfStorage";
 			definition = "Specifies where the document is stored.";
@@ -511,8 +511,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Document which is referred to in a payment obligation.";
@@ -602,8 +602,8 @@ public class Document {
 			derivation_lazy = () -> Arrays.asList(CreditorReferenceType1Choice.mmCode, CreditorReferenceType1Choice.mmProprietary, DocumentLineIdentification1.mmType, DocumentLineType1Choice.mmCode, DocumentLineType1Choice.mmProprietary,
 					GarnishmentType1Choice.mmCode, GarnishmentType1Choice.mmProprietary, ReferredDocumentType3Choice.mmCode, ReferredDocumentType3Choice.mmProprietary, SupportingDocumentRequestOrLetter1.mmType,
 					SupportingDocumentEntry1.mmDocumentType, DocumentGeneralInformation3.mmDocumentType, ReferredDocumentInformation7.mmType, ReferredMandateDocument1.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of the document, for example commercial invoice.";
@@ -681,8 +681,8 @@ public class Document {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentLineInformation1.mmAmount, SupportingDocumentEntry1.mmTotalAmount, SupportingDocumentEntry1.mmTotalAmountAfterShipment, SupportingDocumentEntry1.mmTotalAmountInContractCurrency,
 					SupportingDocumentEntry1.mmTotalAmountAfterShipmentInContractCurrency, TransactionCertificateContract1.mmTransactionAmountInContractCurrency, StructuredRemittanceInformation13.mmReferredDocumentAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money and currency of a document. \r\nThe amount can be either the original amount due and payable for instance the ordered amount, or the amount actually remitted for the referred document.";
@@ -734,8 +734,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agreement";
 			definition = "Agreement which is materialised by a document";
@@ -779,8 +779,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfIssue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfIssue";
 			definition = "Place where the document was issued.";
@@ -818,8 +818,8 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute mmDocumentVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentVersion";
 			definition = "Unambiguous identification of the version of a document.";
@@ -874,8 +874,8 @@ public class Document {
 	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractRegistrationStatement1.mmRegulatoryRuleValidation, BillingStatement2.mmStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the document (eg delivered, paid, etc.)";
@@ -928,8 +928,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Reconciliation process for which a document is specified.";
@@ -975,8 +975,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmLetterOfCredit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterOfCredit";
 			definition = "Written undertaking by a bank to honour a demand for payment.";
@@ -1025,8 +1025,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of a document or in the context of the business linked to the document.";
@@ -1065,8 +1065,8 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute mmDataSetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DataSetType";
 			definition = "Specifies the type of data set in which the document is included.";
@@ -1119,8 +1119,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Transport process for which related documents are specified.";
@@ -1159,8 +1159,8 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute mmSignedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignedIndicator";
 			definition = "Indication whether the document must be signed or not.";
@@ -1217,8 +1217,8 @@ public class Document {
 	public static final MMBusinessAttribute mmRemittedAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmRemittedAmount, Garnishment1.mmRemittedAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemittedAmount";
 			definition = "Amount of money remitted for the referred document.";
@@ -1270,8 +1270,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guarantee";
 			definition = "Guarantee that is described in a document.";
@@ -1308,8 +1308,8 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language used for textual information in the document.";
@@ -1362,8 +1362,8 @@ public class Document {
 	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmSubject);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Specifies the function of the document.";
@@ -1466,8 +1466,8 @@ public class Document {
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification, SupportingDocumentRequestOrLetter1.mmOriginalReferences, TransactionCertificate1.mmCertificate,
 					SupportingDocumentEntry1.mmOriginalDocument, CertificateReference1.mmIdentification, TransactionCertificateContract1.mmContractReference, ContractRegistrationReference1Choice.mmContract,
 					CurrencyControlRecordStatus1.mmDocumentIdentification, Mandate10.mmMandateReference, Mandate9.mmMandateReference, Mandate11.mmMandateReference, ReferredMandateDocument1.mmCreditorReference, Mandate8.mmMandateReference);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentIdentification";
 			definition = "Identification of a document for instance unique identification of the purchase order, assigned by the buyer.";
@@ -1512,8 +1512,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmEvidence = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Evidence";
 			definition = "Proof of evidence which uses a document.";
@@ -1558,8 +1558,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialTrade";
 			definition = "Trade for which a certificare is issued.";
@@ -1604,8 +1604,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmPresentation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Presentation";
 			definition = "Presentation of documents and statements.";
@@ -1651,8 +1651,8 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedContract";
 			definition = "Related document which materialises the agreement.";

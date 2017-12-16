@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.EntryStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of an entry.
@@ -31,14 +36,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#mmBooked
+ * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Booked
  * EntryStatusCode.mmBooked}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#mmPending
+ * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Pending
  * EntryStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EntryStatusCode#mmInformation
+ * {@linkplain com.tools20022.repository.codeset.EntryStatusCode#Information
  * EntryStatusCode.mmInformation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#mmFuture
+ * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Future
  * EntryStatusCode.mmFuture}</li>
  * </ul>
  * </li>
@@ -70,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of an entry."</li>
  * </ul>
  */
-public class EntryStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class EntryStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -103,12 +109,12 @@ public class EntryStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBooked = new MMCode() {
+	public static final EntryStatusCode Booked = new EntryStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Booked";
 			definition = "Booked means that the transfer of money has been completed between account servicer and account owner\n\nUsage :   \nStatus Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.\nStatus Booked is the only status that can be reversed.";
-			owner_lazy = () -> EntryStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "BOOK";
 		}
 	};
@@ -142,12 +148,12 @@ public class EntryStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final EntryStatusCode Pending = new EntryStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
 			definition = "Booking on the account owner's account in the account servicer's ledger has not been completed.\n\nUsage : this can be used for expected items, or for items for which some conditions still need to be fulfilled before they can be booked. If booking takes place, the entry will be included with status Booked in subsequent account report or statement. Status Pending cannot be reversed.";
-			owner_lazy = () -> EntryStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "PDNG";
 		}
 	};
@@ -175,12 +181,12 @@ public class EntryStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInformation = new MMCode() {
+	public static final EntryStatusCode Information = new EntryStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Information";
 			definition = "Entry is only provided for information, and no booking on the account owner's account in the account servicer's ledger has been performed.";
-			owner_lazy = () -> EntryStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "INFO";
 		}
 	};
@@ -208,17 +214,21 @@ public class EntryStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFuture = new MMCode() {
+	public static final EntryStatusCode Future = new EntryStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Future";
 			definition = "Entry is on the books of the account servicer and value will be applied to the account owner at a future date and time.";
-			owner_lazy = () -> EntryStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "FUTR";
 		}
 	};
+	final static private LinkedHashMap<String, EntryStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected EntryStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -226,10 +236,39 @@ public class EntryStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EntryStatusCode";
 				definition = "Specifies the status of an entry.";
-				code_lazy = () -> Arrays.asList(EntryStatusCode.mmBooked, EntryStatusCode.mmPending, EntryStatusCode.mmInformation, EntryStatusCode.mmFuture);
 				derivation_lazy = () -> Arrays.asList(EntryStatus2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EntryStatusCode.Booked, com.tools20022.repository.codeset.EntryStatusCode.Pending, com.tools20022.repository.codeset.EntryStatusCode.Information,
+						com.tools20022.repository.codeset.EntryStatusCode.Future);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Booked.getCodeName().get(), Booked);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Information.getCodeName().get(), Information);
+		codesByName.put(Future.getCodeName().get(), Future);
+	}
+
+	public static EntryStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static EntryStatusCode[] values() {
+		EntryStatusCode[] values = new EntryStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, EntryStatusCode> {
+		@Override
+		public EntryStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(EntryStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

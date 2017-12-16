@@ -128,8 +128,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmQualifier = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Qualifier";
 			definition = "Further information about the criticality or importance of a general business information system.";
@@ -171,8 +171,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAttribute mmSubject = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Subject";
 			definition = "Subject line of an item of general business information, summarizing the topic and intended destination of the information.";
@@ -217,8 +217,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAttribute mmSubjectDetails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubjectDetails";
 			definition = "General business information, in unstructured form.";
@@ -266,8 +266,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of a general business information system, as assigned by the system transaction administrator.";
@@ -315,8 +315,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAttribute mmReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reference";
 			definition = "Unique and unambiguous reference assigned to a general business information system.";
@@ -368,8 +368,8 @@ public class SystemBusinessInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which business information is generated.";

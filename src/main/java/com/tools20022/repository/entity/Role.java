@@ -51,15 +51,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionAgents3
- * TransactionAgents3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TradeParty2 TradeParty2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -146,6 +137,15 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionAgents3
+ * TransactionAgents3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeParty2 TradeParty2}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -201,8 +201,8 @@ public class Role {
 	 */
 	public static final MMBusinessAssociationEnd mmPlayer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Player";
 			definition = "Entity which plays a role in the context of the business domain in which the role is defined.";
@@ -248,8 +248,8 @@ public class Role {
 	 */
 	public static final MMBusinessAssociationEnd mmContactPersonRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPersonRole";
 			definition = "Contact person in the context of a role played by an organisation.";
@@ -288,8 +288,8 @@ public class Role {
 	 */
 	public static final MMBusinessAttribute mmPartyRole = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies the role of the party in the transaction.";
@@ -342,8 +342,8 @@ public class Role {
 	 */
 	public static final MMBusinessAssociationEnd mmCounterpartyRisk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyRisk";
 			definition = "Specifies the risk which is related to the role played by a party.";
@@ -387,8 +387,8 @@ public class Role {
 	 */
 	public static final MMBusinessAssociationEnd mmEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entry";
 			definition = "Entry for which a role is specified.";

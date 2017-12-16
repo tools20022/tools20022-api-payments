@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Codes that apply special information that the Broker / Dealer needs to
@@ -37,34 +42,34 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmFillOrKill
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#FillOrKill
  * CustomerHandlingInstructionsCode.mmFillOrKill}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmImmediateOrCancel
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ImmediateOrCancel
  * CustomerHandlingInstructionsCode.mmImmediateOrCancel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmAllOrNone
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#AllOrNone
  * CustomerHandlingInstructionsCode.mmAllOrNone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmScale
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Scale
  * CustomerHandlingInstructionsCode.mmScale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmWork
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Work
  * CustomerHandlingInstructionsCode.mmWork}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmAddOnOrder
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#AddOnOrder
  * CustomerHandlingInstructionsCode.mmAddOnOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmExchangeForPhysicalTransaction
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ExchangeForPhysicalTransaction
  * CustomerHandlingInstructionsCode.mmExchangeForPhysicalTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmImbalanceOnly
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ImbalanceOnly
  * CustomerHandlingInstructionsCode.mmImbalanceOnly}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmPegged
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Pegged
  * CustomerHandlingInstructionsCode.mmPegged}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#mmNotHeld
+ * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#NotHeld
  * CustomerHandlingInstructionsCode.mmNotHeld}</li>
  * </ul>
  * </li>
@@ -91,7 +96,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CustomerHandlingInstructionsCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CustomerHandlingInstructionsCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -118,12 +124,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFillOrKill = new MMCode() {
+	public static final CustomerHandlingInstructionsCode FillOrKill = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FillOrKill";
 			definition = "Market or limit order that is to be executed in its entirety as soon as it is submitted; if not so executed, the order is to be cancelled.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "FIKI";
 		}
 	};
@@ -151,12 +157,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmImmediateOrCancel = new MMCode() {
+	public static final CustomerHandlingInstructionsCode ImmediateOrCancel = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImmediateOrCancel";
 			definition = "Market or limit order to be executed in whole or in part as soon as it is submitted; any portion not so executed is to be cancelled.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "IOCA";
 		}
 	};
@@ -186,12 +192,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAllOrNone = new MMCode() {
+	public static final CustomerHandlingInstructionsCode AllOrNone = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllOrNone";
 			definition = "Round-lot market or limit-price order that must be executed in its entirety or not at all; unlike Fill or Kill orders, All Or None orders are not treated as canceled if they are not executed as soon as represented in the Trading Crowd.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "ALON";
 		}
 	};
@@ -220,12 +226,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmScale = new MMCode() {
+	public static final CustomerHandlingInstructionsCode Scale = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Scale";
 			definition = "Order to buy (or sell) a financial instrument which specifies the total amount to be bought (or sold) and the amount to be bought (or sold) at specified price variations.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "SCAL";
 		}
 	};
@@ -250,12 +256,12 @@ public class CustomerHandlingInstructionsCode {
 	 * definition} = "Make the order active until notified."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWork = new MMCode() {
+	public static final CustomerHandlingInstructionsCode Work = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Work";
 			definition = "Make the order active until notified.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "WORK";
 		}
 	};
@@ -280,12 +286,12 @@ public class CustomerHandlingInstructionsCode {
 	 * definition} = "Add on another order."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddOnOrder = new MMCode() {
+	public static final CustomerHandlingInstructionsCode AddOnOrder = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AddOnOrder";
 			definition = "Add on another order.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "ADOO";
 		}
 	};
@@ -313,12 +319,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmExchangeForPhysicalTransaction = new MMCode() {
+	public static final CustomerHandlingInstructionsCode ExchangeForPhysicalTransaction = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExchangeForPhysicalTransaction";
 			definition = "Indicates that a position in the underlying is traded for a futures position in the physical commodity markets.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "EFPH";
 		}
 	};
@@ -347,12 +353,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmImbalanceOnly = new MMCode() {
+	public static final CustomerHandlingInstructionsCode ImbalanceOnly = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImbalanceOnly";
 			definition = "Indicates that the order can only hit the imbalance during a call auction. The imbalance is the remaining quantity when other buy and sell orders are matched at the auction clearing price.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "IMBO";
 		}
 	};
@@ -381,12 +387,12 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPegged = new MMCode() {
+	public static final CustomerHandlingInstructionsCode Pegged = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pegged";
 			definition = "Limit order, where the limit price fluctuates relative to another quantity, such as the last sale, midpoint, opening price, bid, offer, or VWAP (Volume Weighted Average Price).";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "PGGD";
 		}
 	};
@@ -414,17 +420,21 @@ public class CustomerHandlingInstructionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotHeld = new MMCode() {
+	public static final CustomerHandlingInstructionsCode NotHeld = new CustomerHandlingInstructionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotHeld";
 			definition = "Indicates an order which may be executed in partials or outside the hours of the exchange or other exchange rules.";
-			owner_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.mmObject();
 			codeName = "NOHE";
 		}
 	};
+	final static private LinkedHashMap<String, CustomerHandlingInstructionsCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CustomerHandlingInstructionsCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -432,11 +442,47 @@ public class CustomerHandlingInstructionsCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerHandlingInstructionsCode";
 				definition = "Codes that apply special information that the Broker / Dealer needs to report, as specified by the customer. Firms that are taking in orders manually but routing for execution electronically and for compliance reporting must capture the client's handling instructions.This is intended for reporting only ( OATS =  Order Audit Trail System - Phase III regulatory requirement).";
-				code_lazy = () -> Arrays.asList(CustomerHandlingInstructionsCode.mmFillOrKill, CustomerHandlingInstructionsCode.mmImmediateOrCancel, CustomerHandlingInstructionsCode.mmAllOrNone, CustomerHandlingInstructionsCode.mmScale,
-						CustomerHandlingInstructionsCode.mmWork, CustomerHandlingInstructionsCode.mmAddOnOrder, CustomerHandlingInstructionsCode.mmExchangeForPhysicalTransaction, CustomerHandlingInstructionsCode.mmImbalanceOnly,
-						CustomerHandlingInstructionsCode.mmPegged, CustomerHandlingInstructionsCode.mmNotHeld);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.FillOrKill, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.ImmediateOrCancel,
+						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.AllOrNone, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.Scale,
+						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.Work, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.AddOnOrder,
+						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.ExchangeForPhysicalTransaction, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.ImbalanceOnly,
+						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.Pegged, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.NotHeld);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(FillOrKill.getCodeName().get(), FillOrKill);
+		codesByName.put(ImmediateOrCancel.getCodeName().get(), ImmediateOrCancel);
+		codesByName.put(AllOrNone.getCodeName().get(), AllOrNone);
+		codesByName.put(Scale.getCodeName().get(), Scale);
+		codesByName.put(Work.getCodeName().get(), Work);
+		codesByName.put(AddOnOrder.getCodeName().get(), AddOnOrder);
+		codesByName.put(ExchangeForPhysicalTransaction.getCodeName().get(), ExchangeForPhysicalTransaction);
+		codesByName.put(ImbalanceOnly.getCodeName().get(), ImbalanceOnly);
+		codesByName.put(Pegged.getCodeName().get(), Pegged);
+		codesByName.put(NotHeld.getCodeName().get(), NotHeld);
+	}
+
+	public static CustomerHandlingInstructionsCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CustomerHandlingInstructionsCode[] values() {
+		CustomerHandlingInstructionsCode[] values = new CustomerHandlingInstructionsCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CustomerHandlingInstructionsCode> {
+		@Override
+		public CustomerHandlingInstructionsCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CustomerHandlingInstructionsCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

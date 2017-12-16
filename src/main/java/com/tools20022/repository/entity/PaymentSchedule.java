@@ -124,8 +124,8 @@ public class PaymentSchedule {
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmExpectedDate, PaymentDateRange2.mmDueDate, PaymentDateRange1.mmExpectedDate, PaymentDateRange1.mmDueDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date/time at which the partial payment is to be done.";
@@ -179,8 +179,8 @@ public class PaymentSchedule {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of the partial payment.";
@@ -226,8 +226,8 @@ public class PaymentSchedule {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Partial payment expressed as a rate.";

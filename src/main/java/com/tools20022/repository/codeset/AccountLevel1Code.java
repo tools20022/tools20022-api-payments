@@ -20,29 +20,32 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.AccountLevelCode;
+import com.tools20022.repository.codeset.AccountLevel1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the level of an account within the account hierarchy.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.AccountLevelCode
- * AccountLevelCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountLevel1Code#mmIntermediate
+ * {@linkplain com.tools20022.repository.codeset.AccountLevel1Code#Intermediate
  * AccountLevel1Code.mmIntermediate}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountLevel1Code#mmSummary
+ * <li>{@linkplain com.tools20022.repository.codeset.AccountLevel1Code#Summary
  * AccountLevel1Code.mmSummary}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.AccountLevelCode
+ * AccountLevelCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -65,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class AccountLevel1Code extends AccountLevelCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AccountLevel1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,11 +88,12 @@ public class AccountLevel1Code extends AccountLevelCode {
 	 * name} = "Intermediate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntermediate = new MMCode() {
+	public static final AccountLevel1Code Intermediate = new AccountLevel1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Intermediate";
-			owner_lazy = () -> AccountLevel1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountLevel1Code.mmObject();
+			codeName = AccountLevelCode.Intermediate.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -107,15 +112,20 @@ public class AccountLevel1Code extends AccountLevelCode {
 	 * name} = "Summary"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSummary = new MMCode() {
+	public static final AccountLevel1Code Summary = new AccountLevel1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Summary";
-			owner_lazy = () -> AccountLevel1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountLevel1Code.mmObject();
+			codeName = AccountLevelCode.Summary.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, AccountLevel1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AccountLevel1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -123,10 +133,36 @@ public class AccountLevel1Code extends AccountLevelCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountLevel1Code";
 				definition = "Defines the level of an account within the account hierarchy.";
-				code_lazy = () -> Arrays.asList(AccountLevel1Code.mmIntermediate, AccountLevel1Code.mmSummary);
 				trace_lazy = () -> AccountLevelCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountLevel1Code.Intermediate, com.tools20022.repository.codeset.AccountLevel1Code.Summary);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Intermediate.getCodeName().get(), Intermediate);
+		codesByName.put(Summary.getCodeName().get(), Summary);
+	}
+
+	public static AccountLevel1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AccountLevel1Code[] values() {
+		AccountLevel1Code[] values = new AccountLevel1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AccountLevel1Code> {
+		@Override
+		public AccountLevel1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AccountLevel1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Signature
+ * Signature}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -47,14 +50,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.ElectronicSignature#mmRelatedSecurityCertificate
  * ElectronicSignature.mmRelatedSecurityCertificate}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2
- * PartyAndSignature2}</li>
  * </ul>
  * </li>
  * <li>
@@ -80,9 +75,14 @@ import java.util.List;
  * MandateRelatedInformation11.mmElectronicSignature}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Signature
- * Signature}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2
+ * PartyAndSignature2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -137,8 +137,8 @@ public class ElectronicSignature extends Signature {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a signature is provided.";
@@ -185,8 +185,8 @@ public class ElectronicSignature extends Signature {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecurityCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecurityCertificate";
 			definition = "Certificate linked to a digital signature.";

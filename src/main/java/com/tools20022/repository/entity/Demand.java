@@ -127,8 +127,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a document signed by the beneficiary demanding payment is specified.";
@@ -166,8 +166,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAttribute mmSubmissionDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionDateTime";
 			definition = "Date and time the demand is submitted.";
@@ -212,8 +212,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAttribute mmDemandAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DemandAmount";
 			definition = "Amount to be paid.";
@@ -258,8 +258,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of demand, for example, pay or extend.";
@@ -307,8 +307,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAttribute mmTotalClaimAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalClaimAmount";
 			definition = "Amount and currency of the total amount claimed (sum of the demand amount plus counterparty commission and charges).";
@@ -360,8 +360,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment of the demand.";
@@ -407,8 +407,8 @@ public class Demand {
 	 */
 	public static final MMBusinessAssociationEnd mmAssociatedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssociatedDocument";
 			definition = "Documents which are associated with a demand.";

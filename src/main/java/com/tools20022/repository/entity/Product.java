@@ -76,13 +76,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Product2 Product2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -121,6 +114,13 @@ import java.util.List;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Service Service}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Goods Goods}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Product2 Product2}</li>
  * </ul>
  * </li>
  * <li>
@@ -177,8 +177,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardPayment";
 			definition = "Card payment for which a product was specified.";
@@ -255,8 +255,8 @@ public class Product {
 		{
 			derivation_lazy = () -> Arrays.asList(Product2.mmUnitPrice, BillingServicesAmount1.mmPricingAmount, BillingServicesAmount2.mmPricingAmount, BillingServiceParameters2.mmUnitPrice, BillingServiceAdjustment1.mmPriceChange,
 					BillingServiceAdjustment1.mmOriginalPrice, BillingServiceAdjustment1.mmNewPrice, BillingService2.mmPrice, BillingService2.mmOriginalChargePrice);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitPrice";
 			definition = "Price per unit of product.";
@@ -301,8 +301,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmProductCategory = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductCategory";
 			definition = "Category of the product.";
@@ -347,8 +347,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineItem";
 			definition = "Specifies the line item in which the product is specified.";
@@ -395,8 +395,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmProductIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductIdentification";
 			definition = "Identification of the product.";
@@ -442,8 +442,8 @@ public class Product {
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingServiceIdentification3.mmIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of a product.";
@@ -488,8 +488,8 @@ public class Product {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Information about the goods and/or services of a trade transaction.";
@@ -540,8 +540,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmOrigin = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Origin";
 			definition = "Country from which the product originates.";
@@ -588,8 +588,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Characteristics";
 			definition = "Characteristics of the product.";
@@ -633,8 +633,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmNetPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPrice";
 			definition = "Net price of the goods and/or service.";
@@ -680,8 +680,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Specifies the quantity of the product.";
@@ -725,8 +725,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossPrice";
 			definition = "Gross price of the goods and/or service.";
@@ -764,8 +764,8 @@ public class Product {
 	 */
 	public static final MMBusinessAttribute mmQuality = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quality";
 			definition = "Quality of the product.";
@@ -817,8 +817,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Delivery";
 			definition = "Delivery process of a product";
@@ -865,8 +865,8 @@ public class Product {
 	 */
 	public static final MMBusinessAssociationEnd mmPurchaseOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PurchaseOrder";
 			definition = "Specifies the purchase order in which a specific product is ordered.";
@@ -922,8 +922,8 @@ public class Product {
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingService2.mmTaxCalculation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters linked to the value of the goods and services in a trade transaction.";

@@ -111,8 +111,8 @@ public class Discrepancy {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingStatusReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingStatusReason";
 			definition = "Undertaking status reason for which discrepancy information is provided.";
@@ -151,8 +151,8 @@ public class Discrepancy {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Type of discrepancy.";
@@ -196,8 +196,8 @@ public class Discrepancy {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discrepancy.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Description";
 			definition = "Description of the discrepancy.";

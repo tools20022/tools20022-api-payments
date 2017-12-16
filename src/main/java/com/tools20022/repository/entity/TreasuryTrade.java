@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -72,8 +74,6 @@ import java.util.List;
  * TreasurySettlementPartyRole.mmTreasuryTrade}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -142,8 +142,8 @@ public class TreasuryTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTreasuryTradeSettlementStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryTradeSettlementStatus";
 			definition = "Specifies the settlement status of a treasury trade.";
@@ -191,8 +191,8 @@ public class TreasuryTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmInformationPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationPartyRole";
 			definition = "Party which provides prices, interest rates or exchange rates.";
@@ -243,8 +243,8 @@ public class TreasuryTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTreasurySettlementPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasurySettlementPartyRole";
 			definition = "Role played by a party in the context of the settlement of a treasury trade.";
@@ -292,8 +292,8 @@ public class TreasuryTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role played by a party in a treasury trade.";

@@ -116,8 +116,8 @@ public class HaircutValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetHolding";
 			definition = "Asset holding for which a haircut is specified.";
@@ -166,8 +166,8 @@ public class HaircutValuation {
 	public static final MMBusinessAttribute mmHaircut = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmHaircut);
-			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Haircut";
 			definition = "Haircut or valuation factor on the security expressed as a percentage.";
@@ -217,8 +217,8 @@ public class HaircutValuation {
 	 */
 	public static final MMBusinessAttribute mmSign = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sign";
 			definition = "One of the following PlusOrMinusIndicator values must be used:\r\nMeaningWhenTrue: Plus (the haircut is added)\r\nMeaningWhenFalse: Minus (the haircut is deducted)";
@@ -273,8 +273,8 @@ public class HaircutValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies the role of a party in the haircut valuation process.";

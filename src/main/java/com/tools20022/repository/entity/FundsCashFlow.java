@@ -137,8 +137,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAttribute mmExceptionalCashFlowIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExceptionalCashFlowIndicator";
 			definition = "Indicates whether the cash flow is exceptional , eg, extraordinary cash amounts in or out.";
@@ -187,8 +187,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAttribute mmFlowDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FlowDirection";
 			definition = "Specifies the direction of the cash flow from the perspective of the fund.";
@@ -242,8 +242,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAssociationEnd mmFundSubscriptionAccountEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundSubscriptionAccountEntry";
 			definition = "Account entry which is linked to a fund subscription process.";
@@ -291,8 +291,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAssociationEnd mmFundRedemptionAccountEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundRedemptionAccountEntry";
 			definition = "Account entry which is linked to a fund redemption process.";
@@ -342,8 +342,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Trade which is the source for the calculation of the cash flow movements.";
@@ -384,8 +384,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAttribute mmNetIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetIndicator";
 			definition = "Indicates whether the cash flow is the result of netting.";
@@ -440,8 +440,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Net asset value incorporating the net cash flow for a valuation date.";
@@ -488,8 +488,8 @@ public class FundsCashFlow {
 	 */
 	public static final MMBusinessAssociationEnd mmCashFlowQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashFlowQuantity";
 			definition = "Value and quantity of the cash flow.";

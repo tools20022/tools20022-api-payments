@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AdjustmentTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of adjustment.
@@ -31,17 +36,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#mmRebate
+ * <li>{@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Rebate
  * AdjustmentTypeCode.mmRebate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#mmDiscount
+ * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Discount
  * AdjustmentTypeCode.mmDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#mmCreditNote
+ * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#CreditNote
  * AdjustmentTypeCode.mmCreditNote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#mmSurcharge
+ * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Surcharge
  * AdjustmentTypeCode.mmSurcharge}</li>
  * </ul>
  * </li>
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of adjustment."</li>
  * </ul>
  */
-public class AdjustmentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AdjustmentTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +95,12 @@ public class AdjustmentTypeCode {
 	 * definition} = "Adjustment is a rebate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRebate = new MMCode() {
+	public static final AdjustmentTypeCode Rebate = new AdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rebate";
 			definition = "Adjustment is a rebate.";
-			owner_lazy = () -> AdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdjustmentTypeCode.mmObject();
 			codeName = "REBA";
 		}
 	};
@@ -120,12 +125,12 @@ public class AdjustmentTypeCode {
 	 * definition} = "Adjustment is a discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscount = new MMCode() {
+	public static final AdjustmentTypeCode Discount = new AdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discount";
 			definition = "Adjustment is a discount.";
-			owner_lazy = () -> AdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdjustmentTypeCode.mmObject();
 			codeName = "DISC";
 		}
 	};
@@ -150,12 +155,12 @@ public class AdjustmentTypeCode {
 	 * definition} = "Adjustment is a credit note."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditNote = new MMCode() {
+	public static final AdjustmentTypeCode CreditNote = new AdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditNote";
 			definition = "Adjustment is a credit note.";
-			owner_lazy = () -> AdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdjustmentTypeCode.mmObject();
 			codeName = "CREN";
 		}
 	};
@@ -180,17 +185,21 @@ public class AdjustmentTypeCode {
 	 * definition} = "Adjustment is a surcharge."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSurcharge = new MMCode() {
+	public static final AdjustmentTypeCode Surcharge = new AdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Surcharge";
 			definition = "Adjustment is a surcharge.";
-			owner_lazy = () -> AdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdjustmentTypeCode.mmObject();
 			codeName = "SURC";
 		}
 	};
+	final static private LinkedHashMap<String, AdjustmentTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AdjustmentTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -198,9 +207,38 @@ public class AdjustmentTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdjustmentTypeCode";
 				definition = "Specifies the type of adjustment.";
-				code_lazy = () -> Arrays.asList(AdjustmentTypeCode.mmRebate, AdjustmentTypeCode.mmDiscount, AdjustmentTypeCode.mmCreditNote, AdjustmentTypeCode.mmSurcharge);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AdjustmentTypeCode.Rebate, com.tools20022.repository.codeset.AdjustmentTypeCode.Discount, com.tools20022.repository.codeset.AdjustmentTypeCode.CreditNote,
+						com.tools20022.repository.codeset.AdjustmentTypeCode.Surcharge);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Rebate.getCodeName().get(), Rebate);
+		codesByName.put(Discount.getCodeName().get(), Discount);
+		codesByName.put(CreditNote.getCodeName().get(), CreditNote);
+		codesByName.put(Surcharge.getCodeName().get(), Surcharge);
+	}
+
+	public static AdjustmentTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AdjustmentTypeCode[] values() {
+		AdjustmentTypeCode[] values = new AdjustmentTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AdjustmentTypeCode> {
+		@Override
+		public AdjustmentTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AdjustmentTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

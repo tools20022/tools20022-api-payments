@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -55,8 +57,6 @@ import java.util.List;
  * AccountLink.mmMarketInfrastructure}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -115,8 +115,8 @@ public class MarketInfrastructure extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarketInfrastructure.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarketInfrastructure.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountLink";
 			definition = "Defines the link between the accounts held with a market infrastructure.";

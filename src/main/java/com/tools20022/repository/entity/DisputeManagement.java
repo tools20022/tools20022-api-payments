@@ -111,8 +111,8 @@ public class DisputeManagement {
 	 */
 	public static final MMBusinessAttribute mmDisputedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputedAmount";
 			definition = "Disputed amount.";
@@ -157,8 +157,8 @@ public class DisputeManagement {
 	 */
 	public static final MMBusinessAttribute mmDisputeDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputeDate";
 			definition = "Date of dispute.";
@@ -207,8 +207,8 @@ public class DisputeManagement {
 	 */
 	public static final MMBusinessAttribute mmDisputeResolutionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputeResolutionType";
 			definition = "Specifies the type of dispute that is to be resolved regarding the disputed collateral amount.";
@@ -263,8 +263,8 @@ public class DisputeManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";

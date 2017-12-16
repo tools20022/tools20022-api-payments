@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.VoteInstructionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the possible types of voting instructions.
@@ -31,40 +36,40 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmFor
+ * <li>{@linkplain com.tools20022.repository.codeset.VoteInstructionCode#For
  * VoteInstructionCode.mmFor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmAgainst
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#Against
  * VoteInstructionCode.mmAgainst}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmAbstain
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#Abstain
  * VoteInstructionCode.mmAbstain}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmWithhold
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#Withhold
  * VoteInstructionCode.mmWithhold}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmWithManagement
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#WithManagement
  * VoteInstructionCode.mmWithManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmAgainstManagement
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#AgainstManagement
  * VoteInstructionCode.mmAgainstManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmDiscretionary
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#Discretionary
  * VoteInstructionCode.mmDiscretionary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmNoAction
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#NoAction
  * VoteInstructionCode.mmNoAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmChairman
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#Chairman
  * VoteInstructionCode.mmChairman}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmOneYear
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#OneYear
  * VoteInstructionCode.mmOneYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmTwoYears
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#TwoYears
  * VoteInstructionCode.mmTwoYears}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#mmThreeYears
+ * {@linkplain com.tools20022.repository.codeset.VoteInstructionCode#ThreeYears
  * VoteInstructionCode.mmThreeYears}</li>
  * </ul>
  * </li>
@@ -89,7 +94,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the possible types of voting instructions."</li>
  * </ul>
  */
-public class VoteInstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class VoteInstructionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -113,12 +119,12 @@ public class VoteInstructionCode {
 	 * definition} = "Vote in favour of a meeting resolution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFor = new MMCode() {
+	public static final VoteInstructionCode For = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "For";
 			definition = "Vote in favour of a meeting resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "CFOR";
 		}
 	};
@@ -143,12 +149,12 @@ public class VoteInstructionCode {
 	 * definition} = "Vote against a meeting resolution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgainst = new MMCode() {
+	public static final VoteInstructionCode Against = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Against";
 			definition = "Vote against a meeting resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "CAGS";
 		}
 	};
@@ -173,12 +179,12 @@ public class VoteInstructionCode {
 	 * definition} = "Active vote expressed as abstain (no opinion)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAbstain = new MMCode() {
+	public static final VoteInstructionCode Abstain = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Abstain";
 			definition = "Active vote expressed as abstain (no opinion).";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "ABST";
 		}
 	};
@@ -207,12 +213,12 @@ public class VoteInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmWithhold = new MMCode() {
+	public static final VoteInstructionCode Withhold = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withhold";
 			definition = "Participant to a meeting withholds its vote for a meeting resolution . This action is usually taken in order to indicate a strong disagreement with a resolution (US market).";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "WTHH";
 		}
 	};
@@ -240,12 +246,12 @@ public class VoteInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmWithManagement = new MMCode() {
+	public static final VoteInstructionCode WithManagement = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithManagement";
 			definition = "Vote instruction is in line with the voting recommendations of the management.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "WMGT";
 		}
 	};
@@ -273,12 +279,12 @@ public class VoteInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgainstManagement = new MMCode() {
+	public static final VoteInstructionCode AgainstManagement = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgainstManagement";
 			definition = "Vote instruction is in against the voting recommendations of the management.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "AMGT";
 		}
 	};
@@ -305,12 +311,12 @@ public class VoteInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscretionary = new MMCode() {
+	public static final VoteInstructionCode Discretionary = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discretionary";
 			definition = "Voting party is assigned discretionary right to vote for one resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "DISC";
 		}
 	};
@@ -335,12 +341,12 @@ public class VoteInstructionCode {
 	 * definition} = "Indicates a recommendation to take no action"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoAction = new MMCode() {
+	public static final VoteInstructionCode NoAction = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoAction";
 			definition = "Indicates a recommendation to take no action";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "NOAC";
 		}
 	};
@@ -368,12 +374,12 @@ public class VoteInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmChairman = new MMCode() {
+	public static final VoteInstructionCode Chairman = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Chairman";
 			definition = "Specifies that the rights holder gives authority to the chairman to vote on his behalf.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "CHRM";
 		}
 	};
@@ -399,12 +405,12 @@ public class VoteInstructionCode {
 	 * "Vote in favour for one year for \"say on pay\" type of resolution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOneYear = new MMCode() {
+	public static final VoteInstructionCode OneYear = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneYear";
 			definition = "Vote in favour for one year for \"say on pay\" type of resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "ONEY";
 		}
 	};
@@ -430,12 +436,12 @@ public class VoteInstructionCode {
 	 * "Vote in favour for two years for \"say on pay\" type of resolution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTwoYears = new MMCode() {
+	public static final VoteInstructionCode TwoYears = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TwoYears";
 			definition = "Vote in favour for two years for \"say on pay\" type of resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "TWOY";
 		}
 	};
@@ -461,17 +467,21 @@ public class VoteInstructionCode {
 	 * "Vote in favour for three years for \"say on pay\" type of resolution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmThreeYears = new MMCode() {
+	public static final VoteInstructionCode ThreeYears = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ThreeYears";
 			definition = "Vote in favour for three years for \"say on pay\" type of resolution.";
-			owner_lazy = () -> VoteInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "THRY";
 		}
 	};
+	final static private LinkedHashMap<String, VoteInstructionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected VoteInstructionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -479,11 +489,48 @@ public class VoteInstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteInstructionCode";
 				definition = "Specifies the possible types of voting instructions.";
-				code_lazy = () -> Arrays.asList(VoteInstructionCode.mmFor, VoteInstructionCode.mmAgainst, VoteInstructionCode.mmAbstain, VoteInstructionCode.mmWithhold, VoteInstructionCode.mmWithManagement,
-						VoteInstructionCode.mmAgainstManagement, VoteInstructionCode.mmDiscretionary, VoteInstructionCode.mmNoAction, VoteInstructionCode.mmChairman, VoteInstructionCode.mmOneYear, VoteInstructionCode.mmTwoYears,
-						VoteInstructionCode.mmThreeYears);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.VoteInstructionCode.For, com.tools20022.repository.codeset.VoteInstructionCode.Against, com.tools20022.repository.codeset.VoteInstructionCode.Abstain,
+						com.tools20022.repository.codeset.VoteInstructionCode.Withhold, com.tools20022.repository.codeset.VoteInstructionCode.WithManagement, com.tools20022.repository.codeset.VoteInstructionCode.AgainstManagement,
+						com.tools20022.repository.codeset.VoteInstructionCode.Discretionary, com.tools20022.repository.codeset.VoteInstructionCode.NoAction, com.tools20022.repository.codeset.VoteInstructionCode.Chairman,
+						com.tools20022.repository.codeset.VoteInstructionCode.OneYear, com.tools20022.repository.codeset.VoteInstructionCode.TwoYears, com.tools20022.repository.codeset.VoteInstructionCode.ThreeYears);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(For.getCodeName().get(), For);
+		codesByName.put(Against.getCodeName().get(), Against);
+		codesByName.put(Abstain.getCodeName().get(), Abstain);
+		codesByName.put(Withhold.getCodeName().get(), Withhold);
+		codesByName.put(WithManagement.getCodeName().get(), WithManagement);
+		codesByName.put(AgainstManagement.getCodeName().get(), AgainstManagement);
+		codesByName.put(Discretionary.getCodeName().get(), Discretionary);
+		codesByName.put(NoAction.getCodeName().get(), NoAction);
+		codesByName.put(Chairman.getCodeName().get(), Chairman);
+		codesByName.put(OneYear.getCodeName().get(), OneYear);
+		codesByName.put(TwoYears.getCodeName().get(), TwoYears);
+		codesByName.put(ThreeYears.getCodeName().get(), ThreeYears);
+	}
+
+	public static VoteInstructionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static VoteInstructionCode[] values() {
+		VoteInstructionCode[] values = new VoteInstructionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, VoteInstructionCode> {
+		@Override
+		public VoteInstructionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(VoteInstructionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

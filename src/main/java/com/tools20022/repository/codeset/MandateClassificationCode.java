@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MandateClassificationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of direct debit amount, such as fixed or variable.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#mmFixed
+ * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#Fixed
  * MandateClassificationCode.mmFixed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#mmVariable
+ * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#Variable
  * MandateClassificationCode.mmVariable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#mmUsageBased
+ * {@linkplain com.tools20022.repository.codeset.MandateClassificationCode#UsageBased
  * MandateClassificationCode.mmUsageBased}</li>
  * </ul>
  * </li>
@@ -71,7 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of direct debit amount, such as fixed or variable."</li>
  * </ul>
  */
-public class MandateClassificationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MandateClassificationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,12 +101,12 @@ public class MandateClassificationCode {
 	 * definition} = "Direct debit amount is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFixed = new MMCode() {
+	public static final MandateClassificationCode Fixed = new MandateClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fixed";
 			definition = "Direct debit amount is fixed.";
-			owner_lazy = () -> MandateClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateClassificationCode.mmObject();
 			codeName = "FIXE";
 		}
 	};
@@ -125,12 +131,12 @@ public class MandateClassificationCode {
 	 * definition} = "Direct debit amount is variable."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVariable = new MMCode() {
+	public static final MandateClassificationCode Variable = new MandateClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Variable";
 			definition = "Direct debit amount is variable.";
-			owner_lazy = () -> MandateClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateClassificationCode.mmObject();
 			codeName = "VARI";
 		}
 	};
@@ -155,17 +161,21 @@ public class MandateClassificationCode {
 	 * definition} = "Direct debit amount is based on usage."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUsageBased = new MMCode() {
+	public static final MandateClassificationCode UsageBased = new MandateClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UsageBased";
 			definition = "Direct debit amount is based on usage.";
-			owner_lazy = () -> MandateClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateClassificationCode.mmObject();
 			codeName = "USGB";
 		}
 	};
+	final static private LinkedHashMap<String, MandateClassificationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MandateClassificationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -173,10 +183,38 @@ public class MandateClassificationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateClassificationCode";
 				definition = "Specifies the type of direct debit amount, such as fixed or variable.";
-				code_lazy = () -> Arrays.asList(MandateClassificationCode.mmFixed, MandateClassificationCode.mmVariable, MandateClassificationCode.mmUsageBased);
 				derivation_lazy = () -> Arrays.asList(MandateClassification1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MandateClassificationCode.Fixed, com.tools20022.repository.codeset.MandateClassificationCode.Variable,
+						com.tools20022.repository.codeset.MandateClassificationCode.UsageBased);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Fixed.getCodeName().get(), Fixed);
+		codesByName.put(Variable.getCodeName().get(), Variable);
+		codesByName.put(UsageBased.getCodeName().get(), UsageBased);
+	}
+
+	public static MandateClassificationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MandateClassificationCode[] values() {
+		MandateClassificationCode[] values = new MandateClassificationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MandateClassificationCode> {
+		@Override
+		public MandateClassificationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MandateClassificationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

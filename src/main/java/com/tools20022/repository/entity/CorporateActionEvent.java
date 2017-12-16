@@ -186,14 +186,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CorporateAction9
- * CorporateAction9}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -270,6 +262,14 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CorporateAction9
+ * CorporateAction9}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -327,8 +327,8 @@ public class CorporateActionEvent {
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction9.mmEventType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of corporate action event.";
@@ -377,8 +377,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmMandatoryVoluntaryEventType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MandatoryVoluntaryEventType";
 			definition = "Specifies whether the event is mandatory, mandatory with options or voluntary.";
@@ -430,8 +430,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingSecurity";
 			definition = "Security to which this instruction or event applies.";
@@ -479,8 +479,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionPrice";
 			definition = "Specifies prices related to a corporate action.";
@@ -529,8 +529,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Rate, specified by the issuer, when the paid amount is not in the same currency as the specified amount.";
@@ -568,8 +568,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmRegistrationDetails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDetails";
 			definition = "Provides information required for the registration.";
@@ -617,8 +617,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmBasketOrIndexInformation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasketOrIndexInformation";
 			definition = "Provides additional information on the basket or index underlying a security, for example a warrant.";
@@ -671,8 +671,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmDeadline = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deadline";
 			definition = "Specifies the different deadlines related to a corporate event.";
@@ -715,8 +715,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmAdditionalBusinessProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalBusinessProcess";
 			definition = "Specifies the type of the additional business process linked to a corporate action event such as a claim compensation or tax refund.";
@@ -761,8 +761,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingDate";
 			definition = "Date/time at which the deal (rights) was agreed.";
@@ -817,8 +817,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionCharge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionCharge";
 			definition = "Specifies the charges relative to a corporate action event.";
@@ -860,8 +860,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmPariPassuDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PariPassuDate";
 			definition = "Date on which security will assimilate, become fungible, or have the same rights to dividends as the parent issue.";
@@ -910,8 +910,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmInformationConditions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationConditions";
 			definition = "Provides conditional information related to the event, eg, an offer is subject to 50% acceptance, the offeror allows the securities holder to set some conditions.";
@@ -967,8 +967,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmFractionalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionalQuantity";
 			definition = "Fractional quantity resulting from an event which will be paid with cash in lieu. ";
@@ -1007,8 +1007,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmEventProcessingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventProcessingType";
 			definition = "Type of processing involved by a Corporate Action.";
@@ -1062,8 +1062,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatus";
 			definition = "Status of the corporate action process.";
@@ -1104,8 +1104,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmAnnouncementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnnouncementDate";
 			definition = "Date/time at which the issuer announced that a corporate action event will occur such as the issue of securities or an official meeting.";
@@ -1153,8 +1153,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date/time at which an event is officially effective from the issuer's perspective.";
@@ -1202,8 +1202,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmFurtherDetailsAnnouncementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FurtherDetailsAnnouncementDate";
 			definition = "Date/time at which additional information on the event will be announced, for instance exchange ratio announcement date.";
@@ -1248,8 +1248,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmMarginFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginFixingDate";
 			definition = "Date/time at which the margin rate will be determined .";
@@ -1297,8 +1297,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmResultPublicationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultPublicationDate";
 			definition = "Date on which results are published, eg, results of an offer, of a meeting.";
@@ -1346,8 +1346,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmUnconditionalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnconditionalDate";
 			definition = "Date upon which the terms of the take-over become unconditional as to acceptances.";
@@ -1395,8 +1395,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmWhollyUnconditionalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WhollyUnconditionalDate";
 			definition = "Date on which all conditions, including regulatory, legal etc. pertaining to the take-over, have been met.";
@@ -1442,8 +1442,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmLapsedDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LapsedDate";
 			definition = "Date/time at which an event/offer is terminated or lapsed.";
@@ -1500,8 +1500,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmBookClosurePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookClosurePeriod";
 			definition = "Period defining the last date on which shareholder registration will be accepted by the issuer and the date on which shareholder registration will resume.";
@@ -1551,8 +1551,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Provides information about securities quantity linked to a corporate action.";
@@ -1597,8 +1597,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmRestrictionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictionIndicator";
 			definition = "Indicates whether there are legal or other restrictions associated with a rights offer or other corporate event, for example, domicile, citizenship, residency, type of investor.\r\nYes = There are restrictions.\r\nNo = There are no restrictions.";
@@ -1644,8 +1644,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmEventStage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventStage";
 			definition = "Stage in the corporate action event life cycle.";
@@ -1702,8 +1702,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmDocumentationLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentationLocation";
 			definition = "Information on where additional information published for the event, can be received. for instance the address for the Universal Resource Locator (URL), eg, used over the www (HTTP) service.";
@@ -1752,8 +1752,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesQuantitySought = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantitySought";
 			definition = "Quantity of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
@@ -1797,8 +1797,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmPartialElectionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialElectionIndicator";
 			definition = "Specifies if the issuer will allow the agent to accept partial elections. It is to allow split voting over options. It allows the client to elect more than one option to be selected per designated holding.";
@@ -1855,8 +1855,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionPartyRole";
 			definition = "Specifies the role played by a party in the context of a corporate action.";
@@ -1903,8 +1903,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmMarketClaim = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketClaim";
 			definition = "Market claim information.";
@@ -1953,8 +1953,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BiddingConditions";
 			definition = "Specifies the conditions under which securities can be acquired as part of a corporate action.";
@@ -2002,8 +2002,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedClassAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedClassAction";
 			definition = "Specifies the underlying class action related to the event.";
@@ -2050,8 +2050,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEventRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEventRegistration";
 			definition = "Official registration of the event.";
@@ -2101,8 +2101,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmSuspensionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuspensionPeriod";
 			definition = "Period defining the last date for which an action will be accepted and the date on which the suspension will be released and normal processing will resume.";
@@ -2152,8 +2152,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmLottery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lottery";
 			definition = "Organisation of draws for cash prizes on bonds (instead of coupon payments). Every issued bond (similar to a lottery ticket) has an equal opportunity at winning payments in the draws.";
@@ -2193,8 +2193,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmMarginType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginType";
 			definition = "Specifies the margin type for a remarketing procedure.";
@@ -2247,8 +2247,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeeting";
 			definition = "Provides information on the meeting  related to the corporate event.";
@@ -2296,8 +2296,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Specifies the different services linked to a corporate action event.";
@@ -2345,8 +2345,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Information specified when the corporate event relates to the issuance of securities.";
@@ -2396,8 +2396,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesModification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesModification";
 			definition = "Modification of the reference data of a security or of the organisation that issued it.";
@@ -2444,8 +2444,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriod";
 			definition = "Period during which a financial instrument is available for trading.";
@@ -2491,8 +2491,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionTax";
 			definition = "Tax rate of financial transactions related to an event.";
@@ -2536,8 +2536,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAttribute mmConsentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConsentType";
 			definition = "Corporate actions may be approved by shareholders without a meeting or a vote by means of execution of a consent by a majority of shareholders entitled to vote.";
@@ -2590,8 +2590,8 @@ public class CorporateActionEvent {
 	 */
 	public static final MMBusinessAssociationEnd mmProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProceedsDefinition";
 			definition = "Specifies the proceeds of a corporate action.";

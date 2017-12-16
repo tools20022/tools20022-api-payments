@@ -37,6 +37,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.CardPaymentPartyRole
+ * CardPaymentPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -53,10 +57,6 @@ import java.util.List;
  * Authentication.mmCardholder}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.CardPaymentPartyRole
- * CardPaymentPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class CardholderRole extends CardPaymentPartyRole {
 	public static final MMBusinessAssociationEnd mmAuthentication = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAuthenticationMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardholderRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardholderRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authentication";
 			definition = "Data related to the authentication of the cardholder.";

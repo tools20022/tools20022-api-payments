@@ -169,8 +169,8 @@ public class Issuance {
 	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmStartDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDate";
 			definition = "Date/time at which the security was made available.";
@@ -215,8 +215,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAttribute mmIssueDiscountAllowance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDiscountAllowance";
 			definition = "Discount on a new issue or tranche of an existing issue.";
@@ -273,8 +273,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestShortfall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestShortfall";
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the interest payment and the expected or scheduled rate of the interest payment .";
@@ -325,8 +325,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmRealisedLoss = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RealisedLoss";
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the capital or principal repayment and the scheduled capital repayment.";
@@ -365,8 +365,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Reason for which money is raised through the issuance of a security.";
@@ -410,8 +410,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAttribute mmIssueSize = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueSize";
 			definition = "Identifies the issue size range.";
@@ -463,8 +463,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmIssueNominalAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueNominalAmount";
 			definition = "Total original amount or quantity published.";
@@ -511,8 +511,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmEventInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventInformation";
 			definition = "Parameters of the event.";
@@ -557,8 +557,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuedAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedAsset";
 			definition = "Asset which is issued.";
@@ -605,8 +605,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmOriginalIssueDiscount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginalIssueDiscount";
 			definition = "Discount from par value at the time the security is issued.";
@@ -655,8 +655,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuePlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuePlace";
 			definition = "Primary market or country where an asset is issued by the issuer or its agent.";
@@ -704,8 +704,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAttribute mmGlobalNoteType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GlobalNoteType";
 			definition = "Identifies if the security will be issued in New Global Note (NGN) or Classical Global Note (CGN).\r\nNew Global Note (NGN): Form of global certificate which refers to the books and records of the ICSDs to determine the issue outstanding amount (IOA). \r\nClassical Global Note (CGN): Form of global certificate which requires physical annotation on the attached schedule to reflect changes in the issue outstanding amount (IOA).";
@@ -756,8 +756,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmCapitalRaised = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalRaised";
 			definition = "Capital raised through the issuance of an asset.";
@@ -802,8 +802,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmSubscriptionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPeriod";
 			definition = "Period during which the security can be subscribed to.";
@@ -852,8 +852,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimum = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Minimum";
 			definition = "Minimum or incremental denomination required for the transfer or change of ownership of a security.";
@@ -892,8 +892,8 @@ public class Issuance {
 	 */
 	public static final MMBusinessAttribute mmIssuePrice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuePrice";
 			definition = "Initial issue price of a financial instrument.";

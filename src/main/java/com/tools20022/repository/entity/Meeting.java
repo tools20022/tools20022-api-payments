@@ -190,8 +190,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmDateAndTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateAndTime";
 			definition = "Date and time at which the meeting will take place.";
@@ -236,8 +236,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmDateStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateStatus";
 			definition = "Indicates the status of a meeting date.";
@@ -290,8 +290,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingLocation";
 			definition = "Place of the company meeting for the scheduled meeting date.";
@@ -331,8 +331,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification assigned to a general meeting by the party notifying the meeting. It must be unique for the party notifying the meeting.";
@@ -386,8 +386,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmDeadline = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deadline";
 			definition = "Specifies the different deadlines available for the different processes related to meeting attendance, proxy voting and entitlement assessment.";
@@ -433,8 +433,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingServicing";
 			definition = "Servicing processes related to the organisation of a meeting.";
@@ -480,8 +480,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Person";
 			definition = "Specifies the person who is the contact for a meeting.";
@@ -527,8 +527,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies the role played by a party in the context of a meeting.";
@@ -573,8 +573,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the imeeting and of the related nstructions.";
@@ -620,8 +620,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateEvent";
 			definition = "Corporate event for which a meeting is organised.";
@@ -669,8 +669,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmQuorum = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quorum";
 			definition = "Specifies whether a quorum is required or not together with the quorum parameters.";
@@ -716,8 +716,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmVotingCondition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotingCondition";
 			definition = "Specifies the different voting types, channels and premium.";
@@ -758,8 +758,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmAttendanceRequired = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendanceRequired";
 			definition = "Indicates whether physical participation to a meeting is required in order to be allowed to vote.";
@@ -806,8 +806,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmAttendanceConfirmation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendanceConfirmation";
 			definition = "Indicates how to order the attendance card or to give notice of attendance.";
@@ -862,8 +862,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmIncentivePremium = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncentivePremium";
 			definition = "Cash premium made available to encourage participation by a certain deadline (avoids to have a second call).";
@@ -910,8 +910,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmParticipation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Participation";
 			definition = "Potential participation to the voting process.";
@@ -959,8 +959,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmResolutionProposalConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposalConditions";
 			definition = "Specifies the conditions to fulfill in order to be able to propose a resolution.";
@@ -1006,8 +1006,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmAgendaItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgendaItem";
 			definition = "Item proposed for the vote or presented for information only.";
@@ -1053,8 +1053,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmProxyAppointmentConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProxyAppointmentConditions";
 			definition = "Information on how to appoint proxy.";
@@ -1104,8 +1104,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmAdditionalRight = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalRight";
 			definition = "Specifies how the additional rights can be granted to the shareholder. These rights can be exercised at shareholders meetings (for example, the right to ask questions, the right to add items to the agenda or table draft resolutions).";
@@ -1144,8 +1144,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of meeting for which an invitation is sent.";
@@ -1201,8 +1201,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAssociationEnd mmPowerOfAttorneyRequirements = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PowerOfAttorneyRequirements";
 			definition = "Specifies the conditions to be filled in to obtain a valid power of attorney.";
@@ -1241,8 +1241,8 @@ public class Meeting {
 	 */
 	public static final MMBusinessAttribute mmMeetingEventClassification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingEventClassification";
 			definition = "Classifies the meeting.";

@@ -107,8 +107,8 @@ public class Tranche {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Asset";
 			definition = "Specifies the asset for which tranche information is reported.";
@@ -146,8 +146,8 @@ public class Tranche {
 	 */
 	public static final MMBusinessAttribute mmDetachmentPoint = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DetachmentPoint";
 			definition = "Point beyond which losses do not affect the tranche.";
@@ -194,8 +194,8 @@ public class Tranche {
 	 */
 	public static final MMBusinessAttribute mmAttachmentPoint = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AttachmentPoint";
 			definition = "The attachment point defines the amount of subordination a tranche enjoys.";

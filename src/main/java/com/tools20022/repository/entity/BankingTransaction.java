@@ -126,8 +126,8 @@ public class BankingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Payment obligation resulting from a banking transaction.";
@@ -176,8 +176,8 @@ public class BankingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the banking transaction is associated.";
@@ -225,8 +225,8 @@ public class BankingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmCashDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDelivery";
 			definition = "Specifies the cash which is delivered by a financial institution.";
@@ -274,8 +274,8 @@ public class BankingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmCashDeposit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDeposit";
 			definition = "Specifies the cash which is received by a financial institution.";

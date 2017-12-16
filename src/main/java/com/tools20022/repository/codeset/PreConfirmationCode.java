@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PreConfirmationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if there is a pre-confirmation of cash or securities.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PreConfirmationCode#mmPreConfirmCash
+ * {@linkplain com.tools20022.repository.codeset.PreConfirmationCode#PreConfirmCash
  * PreConfirmationCode.mmPreConfirmCash}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PreConfirmationCode#mmPreConfirmSecurities
+ * {@linkplain com.tools20022.repository.codeset.PreConfirmationCode#PreConfirmSecurities
  * PreConfirmationCode.mmPreConfirmSecurities}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies if there is a pre-confirmation of cash or securities."</li>
  * </ul>
  */
-public class PreConfirmationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PreConfirmationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class PreConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreConfirmCash = new MMCode() {
+	public static final PreConfirmationCode PreConfirmCash = new PreConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreConfirmCash";
 			definition = "Pre-confirmation of the movement of the cash, pending the movement of securities.";
-			owner_lazy = () -> PreConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PreConfirmationCode.mmObject();
 			codeName = "PRCA";
 		}
 	};
@@ -121,17 +127,21 @@ public class PreConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreConfirmSecurities = new MMCode() {
+	public static final PreConfirmationCode PreConfirmSecurities = new PreConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreConfirmSecurities";
 			definition = "Pre-confirmation of the movement of the securities, pending the movement of cash.";
-			owner_lazy = () -> PreConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PreConfirmationCode.mmObject();
 			codeName = "PRSE";
 		}
 	};
+	final static private LinkedHashMap<String, PreConfirmationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PreConfirmationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -139,9 +149,35 @@ public class PreConfirmationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PreConfirmationCode";
 				definition = "Specifies if there is a pre-confirmation of cash or securities.";
-				code_lazy = () -> Arrays.asList(PreConfirmationCode.mmPreConfirmCash, PreConfirmationCode.mmPreConfirmSecurities);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PreConfirmationCode.PreConfirmCash, com.tools20022.repository.codeset.PreConfirmationCode.PreConfirmSecurities);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PreConfirmCash.getCodeName().get(), PreConfirmCash);
+		codesByName.put(PreConfirmSecurities.getCodeName().get(), PreConfirmSecurities);
+	}
+
+	public static PreConfirmationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PreConfirmationCode[] values() {
+		PreConfirmationCode[] values = new PreConfirmationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PreConfirmationCode> {
+		@Override
+		public PreConfirmationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PreConfirmationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -48,20 +48,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1
- * TimePeriodDetails1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.entity.SystemAvailability#mmAvailableSessionPeriod
  * SystemAvailability.mmAvailableSessionPeriod}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1
+ * TimePeriodDetails1}</li>
  * </ul>
  * </li>
  * <li>
@@ -119,8 +119,8 @@ public class TimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemAvailability";
 			definition = "System for which a session period is specified.";
@@ -167,8 +167,8 @@ public class TimePeriod {
 	public static final MMBusinessAttribute mmFromTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TimePeriodDetails1.mmFromTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromTime";
 			definition = "Time at which the time span starts.";
@@ -221,8 +221,8 @@ public class TimePeriod {
 	public static final MMBusinessAttribute mmToTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TimePeriodDetails1.mmToTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToTime";
 			definition = "Time at which the time span ends.";

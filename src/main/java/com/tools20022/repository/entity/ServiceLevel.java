@@ -52,14 +52,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ServiceLevel8Choice
- * ServiceLevel8Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -75,6 +67,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.choice.ServiceLevel8Choice#mmProprietary
  * ServiceLevel8Choice.mmProprietary}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ServiceLevel8Choice
+ * ServiceLevel8Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -132,8 +132,8 @@ public class ServiceLevel {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentProcessing";
 			definition = "Payment process for which a service level is specified.";
@@ -184,8 +184,8 @@ public class ServiceLevel {
 	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Identification of a pre-agreed level of service between the parties in a coded form.";
@@ -231,8 +231,8 @@ public class ServiceLevel {
 	 */
 	public static final MMBusinessAttribute mmOther = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "SWIFT defined service level applies to the payment instruction.";
@@ -279,8 +279,8 @@ public class ServiceLevel {
 	 */
 	public static final MMBusinessAttribute mmBilateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bilateral";
 			definition = "Unambiguous identification of a pre-agreed level of service between the parties.";

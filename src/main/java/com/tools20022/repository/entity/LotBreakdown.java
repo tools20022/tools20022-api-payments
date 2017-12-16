@@ -136,8 +136,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAttribute mmLotUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotUnit";
 			definition = "Quantity of securities included in the lot.";
@@ -189,8 +189,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Number of securities included in a lot.";
@@ -237,8 +237,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmLotNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotNumber";
 			definition = "Specifies the number of the lot.";
@@ -275,8 +275,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAttribute mmLotDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotDateTime";
 			definition = "Date and time at which the lot was purchased.";
@@ -328,8 +328,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmLotPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotPrice";
 			definition = "Specifies the price of the lot.";
@@ -369,8 +369,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAttribute mmLotIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotIdentifier";
 			definition = "Identifies the lot constituting an asset backed or mortgage backed security issue.";
@@ -422,8 +422,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeLotMarket";
 			definition = "Market for which a trade lot is specified.";
@@ -469,8 +469,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmQuoteLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteLotMarket";
 			definition = "Market for which a quote lot is specified.";
@@ -516,8 +516,8 @@ public class LotBreakdown {
 	 */
 	public static final MMBusinessAssociationEnd mmRoundLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundLotMarket";
 			definition = "Market for which a round lot size is specified.";

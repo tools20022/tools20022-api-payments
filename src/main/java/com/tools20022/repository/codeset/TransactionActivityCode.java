@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TransactionActivityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of activity to which this transaction relates.
@@ -32,19 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmBorrowingLendingActivity
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#BorrowingLendingActivity
  * TransactionActivityCode.mmBorrowingLendingActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmMarketClaim
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#MarketClaim
  * TransactionActivityCode.mmMarketClaim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmCollateralActivity
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#CollateralActivity
  * TransactionActivityCode.mmCollateralActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmCorporateActionActivity
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#CorporateActionActivity
  * TransactionActivityCode.mmCorporateActionActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmSettlementandClearingActivity
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#SettlementandClearingActivity
  * TransactionActivityCode.mmSettlementandClearingActivity}</li>
  * </ul>
  * </li>
@@ -70,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of activity to which this transaction relates."</li>
  * </ul>
  */
-public class TransactionActivityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TransactionActivityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to lending/borrowing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBorrowingLendingActivity = new MMCode() {
+	public static final TransactionActivityCode BorrowingLendingActivity = new TransactionActivityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BorrowingLendingActivity";
 			definition = "Transaction relates to lending/borrowing.";
-			owner_lazy = () -> TransactionActivityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionActivityCode.mmObject();
 			codeName = "BOLE";
 		}
 	};
@@ -125,12 +131,12 @@ public class TransactionActivityCode {
 	 * "Transaction relates to a market claim following a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarketClaim = new MMCode() {
+	public static final TransactionActivityCode MarketClaim = new TransactionActivityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketClaim";
 			definition = "Transaction relates to a market claim following a corporate action.";
-			owner_lazy = () -> TransactionActivityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionActivityCode.mmObject();
 			codeName = "CLAI";
 		}
 	};
@@ -155,12 +161,12 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCollateralActivity = new MMCode() {
+	public static final TransactionActivityCode CollateralActivity = new TransactionActivityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralActivity";
 			definition = "Transaction relates to collateral.";
-			owner_lazy = () -> TransactionActivityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionActivityCode.mmObject();
 			codeName = "COLL";
 		}
 	};
@@ -185,12 +191,12 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorporateActionActivity = new MMCode() {
+	public static final TransactionActivityCode CorporateActionActivity = new TransactionActivityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateActionActivity";
 			definition = "Transaction relates to corporate action.";
-			owner_lazy = () -> TransactionActivityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionActivityCode.mmObject();
 			codeName = "CORP";
 		}
 	};
@@ -215,17 +221,21 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to settlement and clearing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlementandClearingActivity = new MMCode() {
+	public static final TransactionActivityCode SettlementandClearingActivity = new TransactionActivityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementandClearingActivity";
 			definition = "Transaction relates to settlement and clearing.";
-			owner_lazy = () -> TransactionActivityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionActivityCode.mmObject();
 			codeName = "SETT";
 		}
 	};
+	final static private LinkedHashMap<String, TransactionActivityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TransactionActivityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -233,10 +243,40 @@ public class TransactionActivityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionActivityCode";
 				definition = "Specifies the type of activity to which this transaction relates.";
-				code_lazy = () -> Arrays.asList(TransactionActivityCode.mmBorrowingLendingActivity, TransactionActivityCode.mmMarketClaim, TransactionActivityCode.mmCollateralActivity, TransactionActivityCode.mmCorporateActionActivity,
-						TransactionActivityCode.mmSettlementandClearingActivity);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionActivityCode.BorrowingLendingActivity, com.tools20022.repository.codeset.TransactionActivityCode.MarketClaim,
+						com.tools20022.repository.codeset.TransactionActivityCode.CollateralActivity, com.tools20022.repository.codeset.TransactionActivityCode.CorporateActionActivity,
+						com.tools20022.repository.codeset.TransactionActivityCode.SettlementandClearingActivity);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(BorrowingLendingActivity.getCodeName().get(), BorrowingLendingActivity);
+		codesByName.put(MarketClaim.getCodeName().get(), MarketClaim);
+		codesByName.put(CollateralActivity.getCodeName().get(), CollateralActivity);
+		codesByName.put(CorporateActionActivity.getCodeName().get(), CorporateActionActivity);
+		codesByName.put(SettlementandClearingActivity.getCodeName().get(), SettlementandClearingActivity);
+	}
+
+	public static TransactionActivityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TransactionActivityCode[] values() {
+		TransactionActivityCode[] values = new TransactionActivityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TransactionActivityCode> {
+		@Override
+		public TransactionActivityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TransactionActivityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

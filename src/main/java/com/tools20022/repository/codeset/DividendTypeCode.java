@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DividendTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the nature of the dividend.
@@ -31,13 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#mmCash
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#Cash
  * DividendTypeCode.mmCash}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#mmUnits
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#Units
  * DividendTypeCode.mmUnits}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#mmScrip
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#Scrip
  * DividendTypeCode.mmScrip}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#mmInKind
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendTypeCode#InKind
  * DividendTypeCode.mmInKind}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the nature of the dividend."</li>
  * </ul>
  */
-public class DividendTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DividendTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class DividendTypeCode {
 	 * definition} = "Dividend is paid in cash."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCash = new MMCode() {
+	public static final DividendTypeCode Cash = new DividendTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cash";
 			definition = "Dividend is paid in cash.";
-			owner_lazy = () -> DividendTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendTypeCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -116,12 +122,12 @@ public class DividendTypeCode {
 	 * definition} = "Dividend is paid in units."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnits = new MMCode() {
+	public static final DividendTypeCode Units = new DividendTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Units";
 			definition = "Dividend is paid in units.";
-			owner_lazy = () -> DividendTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendTypeCode.mmObject();
 			codeName = "UNIT";
 		}
 	};
@@ -146,12 +152,12 @@ public class DividendTypeCode {
 	 * definition} = "Dividend is paid in the form of scrip."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmScrip = new MMCode() {
+	public static final DividendTypeCode Scrip = new DividendTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Scrip";
 			definition = "Dividend is paid in the form of scrip.";
-			owner_lazy = () -> DividendTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendTypeCode.mmObject();
 			codeName = "SCRI";
 		}
 	};
@@ -176,17 +182,21 @@ public class DividendTypeCode {
 	 * definition} = "Dividend is paid in kind."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInKind = new MMCode() {
+	public static final DividendTypeCode InKind = new DividendTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InKind";
 			definition = "Dividend is paid in kind.";
-			owner_lazy = () -> DividendTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendTypeCode.mmObject();
 			codeName = "KIND";
 		}
 	};
+	final static private LinkedHashMap<String, DividendTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DividendTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -194,9 +204,38 @@ public class DividendTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DividendTypeCode";
 				definition = "Specifies the nature of the dividend.";
-				code_lazy = () -> Arrays.asList(DividendTypeCode.mmCash, DividendTypeCode.mmUnits, DividendTypeCode.mmScrip, DividendTypeCode.mmInKind);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DividendTypeCode.Cash, com.tools20022.repository.codeset.DividendTypeCode.Units, com.tools20022.repository.codeset.DividendTypeCode.Scrip,
+						com.tools20022.repository.codeset.DividendTypeCode.InKind);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cash.getCodeName().get(), Cash);
+		codesByName.put(Units.getCodeName().get(), Units);
+		codesByName.put(Scrip.getCodeName().get(), Scrip);
+		codesByName.put(InKind.getCodeName().get(), InKind);
+	}
+
+	public static DividendTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DividendTypeCode[] values() {
+		DividendTypeCode[] values = new DividendTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DividendTypeCode> {
+		@Override
+		public DividendTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DividendTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

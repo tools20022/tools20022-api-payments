@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MoveTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Describes whether peg or discretion price is static/fixed or floats.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.MoveTypeCode#mmStatic
+ * <li>{@linkplain com.tools20022.repository.codeset.MoveTypeCode#Static
  * MoveTypeCode.mmStatic}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MoveTypeCode#mmFloat
+ * <li>{@linkplain com.tools20022.repository.codeset.MoveTypeCode#Float
  * MoveTypeCode.mmFloat}</li>
  * </ul>
  * </li>
@@ -59,7 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Describes whether peg or discretion price is static/fixed or floats."</li>
  * </ul>
  */
-public class MoveTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MoveTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -82,12 +88,12 @@ public class MoveTypeCode {
 	 * definition} = "Indicates that the peg is static/fixed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStatic = new MMCode() {
+	public static final MoveTypeCode Static = new MoveTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Static";
 			definition = "Indicates that the peg is static/fixed.";
-			owner_lazy = () -> MoveTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MoveTypeCode.mmObject();
 			codeName = "STAT";
 		}
 	};
@@ -111,17 +117,21 @@ public class MoveTypeCode {
 	 * definition} = "Indicates that peg floats."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFloat = new MMCode() {
+	public static final MoveTypeCode Float = new MoveTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Float";
 			definition = "Indicates that peg floats.";
-			owner_lazy = () -> MoveTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MoveTypeCode.mmObject();
 			codeName = "FLOA";
 		}
 	};
+	final static private LinkedHashMap<String, MoveTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MoveTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -129,9 +139,35 @@ public class MoveTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoveTypeCode";
 				definition = "Describes whether peg or discretion price is static/fixed or floats.";
-				code_lazy = () -> Arrays.asList(MoveTypeCode.mmStatic, MoveTypeCode.mmFloat);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MoveTypeCode.Static, com.tools20022.repository.codeset.MoveTypeCode.Float);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Static.getCodeName().get(), Static);
+		codesByName.put(Float.getCodeName().get(), Float);
+	}
+
+	public static MoveTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MoveTypeCode[] values() {
+		MoveTypeCode[] values = new MoveTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MoveTypeCode> {
+		@Override
+		public MoveTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MoveTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

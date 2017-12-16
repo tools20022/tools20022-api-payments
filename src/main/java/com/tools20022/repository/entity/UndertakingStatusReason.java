@@ -38,6 +38,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
+ * StatusReason}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,9 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Discrepancy.mmUndertakingStatusReason}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
- * StatusReason}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -130,8 +130,8 @@ public class UndertakingStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmDiscrepancy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discrepancy";
 			definition = "Demand is refused because of a discrepancy in the demand.";
@@ -181,8 +181,8 @@ public class UndertakingStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingStatus";
 			definition = "Status for which a reason is provided. It is derived from the association between StatusReason and Status.";
@@ -222,8 +222,8 @@ public class UndertakingStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmTerminationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationReason";
 			definition = "Reason for the termination.";
@@ -270,8 +270,8 @@ public class UndertakingStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmDemandRefusalStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DemandRefusalStatusReason";
 			definition = "Processing status reported by the issuer for the refusal of a demand.";
@@ -317,8 +317,8 @@ public class UndertakingStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmSettlementReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementReason";
 			definition = "Specifies the reason for the settlement of an amount.";

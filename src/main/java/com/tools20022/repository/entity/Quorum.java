@@ -105,8 +105,8 @@ public class Quorum {
 	 */
 	public static final MMBusinessAttribute mmQuantity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Minimum quantity of securities required to hold a meeting.";
@@ -154,8 +154,8 @@ public class Quorum {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Minimum quantity of securities, expressed as a percentage, required to hold a meeting.";
@@ -203,8 +203,8 @@ public class Quorum {
 	 */
 	public static final MMBusinessAttribute mmQuorumRequired = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuorumRequired";
 			definition = "Specifies whether a minimum number of security representation is required to hold a meeting.";
@@ -255,8 +255,8 @@ public class Quorum {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which a quorum is specified.";

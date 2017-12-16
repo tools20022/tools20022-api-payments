@@ -95,17 +95,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.BillingCompensationType1Choice
- * BillingCompensationType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingStatement2
- * BillingStatement2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -134,6 +123,17 @@ import java.util.List;
  * CommercialTradeSettlement.mmInvoice}</li>
  * <li>{@linkplain com.tools20022.repository.entity.InvoiceStatus#mmInvoice
  * InvoiceStatus.mmInvoice}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.BillingCompensationType1Choice
+ * BillingCompensationType1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingStatement2
+ * BillingStatement2}</li>
  * </ul>
  * </li>
  * <li>
@@ -193,8 +193,8 @@ public class Invoice {
 	public static final MMBusinessAttribute mmCreditDebitNoteAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmCreditNoteAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitNoteAmount";
 			definition = "Amount of credit/debit note related to the invoice.";
@@ -251,8 +251,8 @@ public class Invoice {
 	public static final MMBusinessAttribute mmTotalTaxAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmTaxAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalTaxAmount";
 			definition = "Sum of all tax amounts related to the invoice. It is derived from the association between line item and tax.";
@@ -301,8 +301,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmTotalInvoiceAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalInvoiceAmount";
 			definition = "Total amount of the invoice, being the sum of total invoice lines amounts, total invoice additional amounts (allowances and charges) and total tax amounts.";
@@ -346,8 +346,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmInvoiceCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceCurrency";
 			definition = "Code specifying the currency of the invoice.";
@@ -411,8 +411,8 @@ public class Invoice {
 	public static final MMBusinessAssociationEnd mmPeriodCovered = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingStatement2.mmFromToDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodCovered";
 			definition = "Specifies the period covered by an invoice for instance for recurring services.";
@@ -459,8 +459,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlement";
 			definition = "Specifies the process which takes place to settle an invoice.";
@@ -498,8 +498,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmTotalCharge = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalCharge";
 			definition = "Algebraical sum of charges related to the invoice.";
@@ -547,8 +547,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmTotalPrepaidAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalPrepaidAmount";
 			definition = "Monetary value of the total prepaid amount being reported for this settlement.";
@@ -602,8 +602,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineItem";
 			definition = "Unit of information  showing the related  provision of products and/or services and monetary summations reported as a discrete line item.";
@@ -641,8 +641,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmTotalNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNetAmount";
 			definition = "Total amount after taxes, adjustments and charges.";
@@ -706,8 +706,8 @@ public class Invoice {
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingStatement2.mmCurrencyExchange);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Specifies currency exchange information which is used when currency conversion is necessary.";
@@ -760,8 +760,8 @@ public class Invoice {
 	public static final MMBusinessAttribute mmBillingCompensationType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingCompensationType1Choice.mmCode, BillingCompensationType1Choice.mmProprietary, BillingCompensation1.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BillingCompensationType";
 			definition = "Defines the type of billing compensation.";
@@ -813,8 +813,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoicePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoicePartyRole";
 			definition = "Role played by a party in the context of invoices.";
@@ -858,8 +858,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmOriginalInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginalInvoice";
 			definition = "Invoice to which another invoice is associated.";
@@ -907,8 +907,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvoice";
 			definition = "Specifies another invoice linked to the current one, for instance a previous invoice for which a credit note is available.";
@@ -954,8 +954,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceFinancingTransaction";
 			definition = "Financing transaction related to an invoice.";
@@ -995,8 +995,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmBillingCompensationAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BillingCompensationAmount";
 			definition = "Specifies the compensation amount of an incorrect billing.";
@@ -1048,8 +1048,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoiceStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceStatus";
 			definition = "Status of the invoice or of the billing process.";
@@ -1094,8 +1094,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment related to an invoice.";
@@ -1133,8 +1133,8 @@ public class Invoice {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates the direction of the invoice amount.";

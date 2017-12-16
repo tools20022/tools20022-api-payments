@@ -132,8 +132,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmForeignStatusCertification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForeignStatusCertification";
 			definition = "Specifies if documentary evidence has been provided for the foreign resident.";
@@ -189,8 +189,8 @@ public class PersonProfile {
 	public static final MMBusinessAttribute mmEmployeeTerminationIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Garnishment1.mmEmployeeTerminationIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployeeTerminationIndicator";
 			definition = "Indicates if the employment of the person has been terminated.";
@@ -240,8 +240,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmKnowYourCustomerCheckType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "KnowYourCustomerCheckType";
 			definition = "Specifies the type of due diligence checks carried out on a party. For definitions of ordinary, simple and enhanced know your customer checks, local market regulations should be consulted.";
@@ -287,8 +287,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmRiskLevel = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RiskLevel";
 			definition = "Specifies the customer’s money laundering risk.";
@@ -340,8 +340,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Person";
 			definition = "Person for which the profile parameters are described.";
@@ -387,8 +387,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmPoliticalExposureType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PoliticalExposureType";
 			definition = "Specifies if due diligence checks on the political exposure of the investor have been carried out and whether these checks are national or foreign. (A politically exposed person is someone who has been entrusted with a prominent public function, or an individual who is closely related to such a person.)";
@@ -437,8 +437,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmCustomerConductClassification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomerConductClassification";
 			definition = "Assessment of the customer’s behaviour at the time of the account opening application.";
@@ -495,8 +495,8 @@ public class PersonProfile {
 	public static final MMBusinessAttribute mmFamilyMedicalInsuranceIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Garnishment1.mmFamilyMedicalInsuranceIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FamilyMedicalInsuranceIndicator";
 			definition = "Indicates if the person has family medical insurance coverage available. ";
@@ -549,8 +549,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAssociationEnd mmProfileCertification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProfileCertification";
 			definition = "Information to support the Know Your Customer processes.";
@@ -588,8 +588,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmSourceOfWealth = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SourceOfWealth";
 			definition = "Indicates the main sources of the money.";
@@ -634,8 +634,8 @@ public class PersonProfile {
 	 */
 	public static final MMBusinessAttribute mmSalaryRange = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SalaryRange";
 			definition = "Specifies the level of salary.";

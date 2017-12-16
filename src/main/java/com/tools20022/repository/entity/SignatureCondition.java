@@ -125,8 +125,8 @@ public class SignatureCondition {
 	 */
 	public static final MMBusinessAttribute mmRequiredSignatureNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequiredSignatureNumber";
 			definition = "Number of account owners or related parties required to authorise transactions on the account.";
@@ -175,8 +175,8 @@ public class SignatureCondition {
 	 */
 	public static final MMBusinessAttribute mmSignatoryRightIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignatoryRightIndicator";
 			definition = "Indicates whether the signature of the account owner is required to authorise transactions on the account.";
@@ -228,8 +228,8 @@ public class SignatureCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mandate";
 			definition = "Mandate for which signature conditions are provided.";
@@ -284,8 +284,8 @@ public class SignatureCondition {
 	public static final MMBusinessAttribute mmSignatureOrderIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(OperationMandate2.mmSignatureOrderIndicator, OperationMandate3.mmSignatureOrderIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignatureOrderIndicator";
 			definition = "Indicator whether a certain order of signatures has to be respected or not.";
@@ -344,8 +344,8 @@ public class SignatureCondition {
 	public static final MMBusinessAttribute mmSignatureOrder = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyAndAuthorisation1.mmSignatureOrder, PartyAndAuthorisation3.mmSignatureOrder);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignatureOrder";
 			definition = "Indicates the order in which the mandate holders are allowed to sign.";
@@ -401,8 +401,8 @@ public class SignatureCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmSignature = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Signature";
 			definition = "Manual or digital signature added as security provision by each party involved in the business covered by the document.";

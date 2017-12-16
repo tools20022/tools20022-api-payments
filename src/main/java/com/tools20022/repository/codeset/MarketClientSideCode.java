@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MarketClientSideCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if an instruction is for a market or client side transaction.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#mmMarketSide
+ * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#MarketSide
  * MarketClientSideCode.mmMarketSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#mmClientSide
+ * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#ClientSide
  * MarketClientSideCode.mmClientSide}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies if an instruction is for a market or client side transaction."</li>
  * </ul>
  */
-public class MarketClientSideCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MarketClientSideCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class MarketClientSideCode {
 	 * definition} = "Instruction is for a market side transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarketSide = new MMCode() {
+	public static final MarketClientSideCode MarketSide = new MarketClientSideCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketSide";
 			definition = "Instruction is for a market side transaction.";
-			owner_lazy = () -> MarketClientSideCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MarketClientSideCode.mmObject();
 			codeName = "MAKT";
 		}
 	};
@@ -115,17 +121,21 @@ public class MarketClientSideCode {
 	 * definition} = "Instruction is for a client side transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClientSide = new MMCode() {
+	public static final MarketClientSideCode ClientSide = new MarketClientSideCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientSide";
 			definition = "Instruction is for a client side transaction.";
-			owner_lazy = () -> MarketClientSideCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MarketClientSideCode.mmObject();
 			codeName = "CLNT";
 		}
 	};
+	final static private LinkedHashMap<String, MarketClientSideCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MarketClientSideCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -133,9 +143,35 @@ public class MarketClientSideCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketClientSideCode";
 				definition = "Specifies if an instruction is for a market or client side transaction.";
-				code_lazy = () -> Arrays.asList(MarketClientSideCode.mmMarketSide, MarketClientSideCode.mmClientSide);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MarketClientSideCode.MarketSide, com.tools20022.repository.codeset.MarketClientSideCode.ClientSide);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MarketSide.getCodeName().get(), MarketSide);
+		codesByName.put(ClientSide.getCodeName().get(), ClientSide);
+	}
+
+	public static MarketClientSideCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MarketClientSideCode[] values() {
+		MarketClientSideCode[] values = new MarketClientSideCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MarketClientSideCode> {
+		@Override
+		public MarketClientSideCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MarketClientSideCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

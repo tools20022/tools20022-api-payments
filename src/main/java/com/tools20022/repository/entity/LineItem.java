@@ -196,8 +196,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialAdjustment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialAdjustment";
 			definition = "Modification on the value of goods and / or services taking into account discounts, allowances and charges.";
@@ -242,8 +242,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmLogisticsCharge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LogisticsCharge";
 			definition = "Logistics service charge for this line item.";
@@ -284,8 +284,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmount";
 			definition = "Monetary value of the line amount total being reported for this settlement.";
@@ -329,8 +329,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Uniquely identifies a line item.";
@@ -383,8 +383,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoicedProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoicedProduct";
 			definition = "Specifies the product and the quantity for which an invoice is generated.";
@@ -430,8 +430,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmNetWeight = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetWeight";
 			definition = "Net weight of the physical item which is invoiced.";
@@ -477,8 +477,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmBilledQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BilledQuantity";
 			definition = "Quantity billed for this line item.";
@@ -523,8 +523,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmChargeFreeQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargeFreeQuantity";
 			definition = "Quantity that is free of charge for this line item.";
@@ -569,8 +569,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmMeasureQuantityStartRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MeasureQuantityStartRelatedLineItem";
 			definition = "Line item for which a measure quantity end is specified.";
@@ -616,8 +616,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmMeasureQuantityEndRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MeasureQuantityEndRelatedLineItem";
 			definition = "Line item for which a measure quantity end is specified.";
@@ -656,8 +656,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmMeasureDateTimeStart = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeasureDateTimeStart";
 			definition = "Date/time on which the clock time measure started for a line item.";
@@ -702,8 +702,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmMeasureDateTimeEnd = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeasureDateTimeEnd";
 			definition = "Date/time on which the clock time measure ended for a line item.";
@@ -755,8 +755,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Invoice";
 			definition = "Specifies the invoice in which the line item is included.";
@@ -798,8 +798,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAmount";
 			definition = "Total amount resulting from the gross amount plus freight charges, tax and plus/minus Adjustments.";
@@ -851,8 +851,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmPackaging = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Packaging";
 			definition = "Physical packaging of the product.";
@@ -892,8 +892,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAttribute mmDeliveryDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryDateTime";
 			definition = "Actual delivery date/time of the products and/or services for this line item.";
@@ -944,8 +944,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmCharges = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Charges";
 			definition = "Charges specified for this line item.";
@@ -992,8 +992,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmNetPriceCharge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPriceCharge";
 			definition = "Allowance or charge applied to the net price. When the charge amount is added (credit)";
@@ -1042,8 +1042,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossPriceQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossPriceQuantity";
 			definition = "Quantity and conversion factor on which the gross price is based for this line item product and/or service.";
@@ -1091,8 +1091,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmNetPriceQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPriceQuantity";
 			definition = "Quantity and conversion factor on which the net price is based for this line item product and/or service.";
@@ -1137,8 +1137,8 @@ public class LineItem {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossWeight = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossWeight";
 			definition = "Gross weight of the physical item which is invoiced.";

@@ -132,8 +132,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which restriction information is provided.";
@@ -174,8 +174,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmLegalRestrictionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalRestrictionType";
 			definition = "Specifies the regulatory restrictions applicable to a security.";
@@ -231,8 +231,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Jurisdiction";
 			definition = "Jurisdiction (country, county, state, province, city) where the restriction applies.";
@@ -274,8 +274,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmRestrictionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictionType";
 			definition = "Type of the restriction, for example, selling restriction, buying restriction, placing restriction.";
@@ -324,8 +324,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmInvestorStatusRestrictionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestorStatusRestrictionType";
 			definition = "Specifies whether the restriction to be applied is relevant for citizen, resident, country.";
@@ -371,8 +371,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the restriction applies.";
@@ -418,8 +418,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Rate used for the calculation of the restriction.";
@@ -465,8 +465,8 @@ public class SecuritiesRestriction {
 	 */
 	public static final MMBusinessAttribute mmInvestorType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestorType";
 			definition = "Type of investor that is allowed to hold the security.";

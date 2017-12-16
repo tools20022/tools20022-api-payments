@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CaseStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of an investigation case.
@@ -31,16 +36,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#mmClosed
+ * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Closed
  * CaseStatusCode.mmClosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#mmAssigned
+ * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Assigned
  * CaseStatusCode.mmAssigned}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CaseStatusCode#mmUnderInvestigation
+ * {@linkplain com.tools20022.repository.codeset.CaseStatusCode#UnderInvestigation
  * CaseStatusCode.mmUnderInvestigation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#mmUnknown
+ * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Unknown
  * CaseStatusCode.mmUnknown}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#mmOverdue
+ * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Overdue
  * CaseStatusCode.mmOverdue}</li>
  * </ul>
  * </li>
@@ -72,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of an investigation case."</li>
  * </ul>
  */
-public class CaseStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CaseStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -96,12 +102,12 @@ public class CaseStatusCode {
 	 * definition} = "Case has been closed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClosed = new MMCode() {
+	public static final CaseStatusCode Closed = new CaseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Closed";
 			definition = "Case has been closed.";
-			owner_lazy = () -> CaseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CaseStatusCode.mmObject();
 			codeName = "CLSD";
 		}
 	};
@@ -126,12 +132,12 @@ public class CaseStatusCode {
 	 * definition} = "Case has been assigned to another party."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAssigned = new MMCode() {
+	public static final CaseStatusCode Assigned = new CaseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Assigned";
 			definition = "Case has been assigned to another party.";
-			owner_lazy = () -> CaseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CaseStatusCode.mmObject();
 			codeName = "ASGN";
 		}
 	};
@@ -156,12 +162,12 @@ public class CaseStatusCode {
 	 * definition} = "Case is currently under investigation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnderInvestigation = new MMCode() {
+	public static final CaseStatusCode UnderInvestigation = new CaseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderInvestigation";
 			definition = "Case is currently under investigation.";
-			owner_lazy = () -> CaseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CaseStatusCode.mmObject();
 			codeName = "INVE";
 		}
 	};
@@ -186,12 +192,12 @@ public class CaseStatusCode {
 	 * definition} = "Case has never been assigned before."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknown = new MMCode() {
+	public static final CaseStatusCode Unknown = new CaseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unknown";
 			definition = "Case has never been assigned before.";
-			owner_lazy = () -> CaseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CaseStatusCode.mmObject();
 			codeName = "UKNW";
 		}
 	};
@@ -216,17 +222,21 @@ public class CaseStatusCode {
 	 * definition} = "Investigation is taking too long."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOverdue = new MMCode() {
+	public static final CaseStatusCode Overdue = new CaseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Overdue";
 			definition = "Investigation is taking too long.";
-			owner_lazy = () -> CaseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CaseStatusCode.mmObject();
 			codeName = "ODUE";
 		}
 	};
+	final static private LinkedHashMap<String, CaseStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CaseStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -234,10 +244,40 @@ public class CaseStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseStatusCode";
 				definition = "Specifies the status of an investigation case.";
-				code_lazy = () -> Arrays.asList(CaseStatusCode.mmClosed, CaseStatusCode.mmAssigned, CaseStatusCode.mmUnderInvestigation, CaseStatusCode.mmUnknown, CaseStatusCode.mmOverdue);
 				derivation_lazy = () -> Arrays.asList(CaseStatus2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CaseStatusCode.Closed, com.tools20022.repository.codeset.CaseStatusCode.Assigned, com.tools20022.repository.codeset.CaseStatusCode.UnderInvestigation,
+						com.tools20022.repository.codeset.CaseStatusCode.Unknown, com.tools20022.repository.codeset.CaseStatusCode.Overdue);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Closed.getCodeName().get(), Closed);
+		codesByName.put(Assigned.getCodeName().get(), Assigned);
+		codesByName.put(UnderInvestigation.getCodeName().get(), UnderInvestigation);
+		codesByName.put(Unknown.getCodeName().get(), Unknown);
+		codesByName.put(Overdue.getCodeName().get(), Overdue);
+	}
+
+	public static CaseStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CaseStatusCode[] values() {
+		CaseStatusCode[] values = new CaseStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CaseStatusCode> {
+		@Override
+		public CaseStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CaseStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -19,8 +19,12 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
+import com.tools20022.repository.datatype.Max3NumericText.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a numeric string with a maximum length of 3 digits.
@@ -45,9 +49,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class Max3NumericText {
 
 	final static private AtomicReference<MMText> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMText mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMText() {
@@ -60,5 +66,26 @@ public class Max3NumericText {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max3NumericText(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Max3NumericText> {
+		@Override
+		public Max3NumericText unmarshal(String value) {
+			return new Max3NumericText(value);
+		}
+
+		@Override
+		public String marshal(Max3NumericText typedData) {
+			return typedData.value;
+		}
 	}
 }

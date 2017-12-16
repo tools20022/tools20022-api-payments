@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -59,8 +61,6 @@ import java.util.List;
  * CardPayment.mmCardPaymentStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -108,8 +108,8 @@ public class CardPaymentStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectionReason";
 			definition = "Reason of the rejection of a request or an advice.";
@@ -155,8 +155,8 @@ public class CardPaymentStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmFailureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailureReason";
 			definition = "List of incidents during the transaction.";
@@ -209,8 +209,8 @@ public class CardPaymentStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPayment";
 			definition = "Card payment for which a status is provided.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PaymentStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the status of a single payment transaction or of a group of payment
@@ -33,46 +38,42 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedTechnicalValidation
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedTechnicalValidation
  * PaymentStatusCode.mmAcceptedTechnicalValidation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmReceived
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Received
  * PaymentStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmPartiallyAccepted
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PartiallyAccepted
  * PaymentStatusCode.mmPartiallyAccepted}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmRejected
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Rejected
  * PaymentStatusCode.mmRejected}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmPending
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Pending
  * PaymentStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedCustomerProfile
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedCustomerProfile
  * PaymentStatusCode.mmAcceptedCustomerProfile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedSettlementInProcess
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedSettlementInProcess
  * PaymentStatusCode.mmAcceptedSettlementInProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedSettlementCompleted
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedSettlementCompleted
  * PaymentStatusCode.mmAcceptedSettlementCompleted}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAccepted
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Accepted
  * PaymentStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedCancellationRequest
  * PaymentStatusCode.mmAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmRejectedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#RejectedCancellationRequest
  * PaymentStatusCode.mmRejectedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmAcceptedWithChange
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedWithChange
  * PaymentStatusCode.mmAcceptedWithChange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmPartiallyAcceptedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PartiallyAcceptedCancellationRequest
  * PaymentStatusCode.mmPartiallyAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#mmPendingCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PendingCancellationRequest
  * PaymentStatusCode.mmPendingCancellationRequest}</li>
  * </ul>
  * </li>
@@ -113,7 +114,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class PaymentStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -139,12 +141,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedTechnicalValidation = new MMCode() {
+	public static final PaymentStatusCode AcceptedTechnicalValidation = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedTechnicalValidation";
 			definition = "Authentication and syntactical and semantical validation are successful.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACTC";
 		}
 	};
@@ -170,12 +172,12 @@ public class PaymentStatusCode {
 	 * "Payment initiation has been received by the receiving agent."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final PaymentStatusCode Received = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Received";
 			definition = "Payment initiation has been received by the receiving agent.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "RCVD";
 		}
 	};
@@ -203,12 +205,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyAccepted = new MMCode() {
+	public static final PaymentStatusCode PartiallyAccepted = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartiallyAccepted";
 			definition = "A number of transactions have been accepted, whereas another number of transactions have not yet achieved 'accepted' status.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "PART";
 		}
 	};
@@ -236,12 +238,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final PaymentStatusCode Rejected = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rejected";
 			definition = "Payment initiation or individual transaction included in the payment initiation has been rejected.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "RJCT";
 		}
 	};
@@ -270,12 +272,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final PaymentStatusCode Pending = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
 			definition = "Payment initiation or individual transaction included in the payment initiation is pending.  Further checks and status update will be performed.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "PDNG";
 		}
 	};
@@ -303,12 +305,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedCustomerProfile = new MMCode() {
+	public static final PaymentStatusCode AcceptedCustomerProfile = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedCustomerProfile";
 			definition = "Preceding check of technical validation was successful. Customer profile check was also successful.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACCP";
 		}
 	};
@@ -337,12 +339,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedSettlementInProcess = new MMCode() {
+	public static final PaymentStatusCode AcceptedSettlementInProcess = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedSettlementInProcess";
 			definition = "All preceding checks such as technical validation and customer profile were successful and therefore the payment initiation has been accepted for execution.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACSP";
 		}
 	};
@@ -374,12 +376,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedSettlementCompleted = new MMCode() {
+	public static final PaymentStatusCode AcceptedSettlementCompleted = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedSettlementCompleted";
 			definition = "Settlement on the debtor's account has been completed. \n\nUsage : this can be used by the first agent to report to the debtor that the transaction has been completed. Warning : this status is provided for transaction status reasons, not for financial information. It can only be used after bilateral agreement";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACSC";
 		}
 	};
@@ -404,12 +406,12 @@ public class PaymentStatusCode {
 	 * definition} = "Request is accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final PaymentStatusCode Accepted = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
 			definition = "Request is accepted.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACPT";
 		}
 	};
@@ -434,12 +436,12 @@ public class PaymentStatusCode {
 	 * definition} = "Cancellation is accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedCancellationRequest = new MMCode() {
+	public static final PaymentStatusCode AcceptedCancellationRequest = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedCancellationRequest";
 			definition = "Cancellation is accepted.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACCR";
 		}
 	};
@@ -464,12 +466,12 @@ public class PaymentStatusCode {
 	 * definition} = "Cancellation request is rejected"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejectedCancellationRequest = new MMCode() {
+	public static final PaymentStatusCode RejectedCancellationRequest = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedCancellationRequest";
 			definition = "Cancellation request is rejected";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "RJCR";
 		}
 	};
@@ -497,12 +499,12 @@ public class PaymentStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedWithChange = new MMCode() {
+	public static final PaymentStatusCode AcceptedWithChange = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedWithChange";
 			definition = "Instruction is accepted but a change will be made, such as date or remittance not sent.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "ACWC";
 		}
 	};
@@ -527,12 +529,12 @@ public class PaymentStatusCode {
 	 * definition} = "Cancellation is partially accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyAcceptedCancellationRequest = new MMCode() {
+	public static final PaymentStatusCode PartiallyAcceptedCancellationRequest = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartiallyAcceptedCancellationRequest";
 			definition = "Cancellation is partially accepted.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "PACR";
 		}
 	};
@@ -557,17 +559,21 @@ public class PaymentStatusCode {
 	 * definition} = "Cancellation request is pending."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPendingCancellationRequest = new MMCode() {
+	public static final PaymentStatusCode PendingCancellationRequest = new PaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingCancellationRequest";
 			definition = "Cancellation request is pending.";
-			owner_lazy = () -> PaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentStatusCode.mmObject();
 			codeName = "PDCR";
 		}
 	};
+	final static private LinkedHashMap<String, PaymentStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -575,13 +581,54 @@ public class PaymentStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentStatusCode";
 				definition = "Indicates the status of a single payment transaction or of a group of payment transactions.";
-				code_lazy = () -> Arrays.asList(PaymentStatusCode.mmAcceptedTechnicalValidation, PaymentStatusCode.mmReceived, PaymentStatusCode.mmPartiallyAccepted, PaymentStatusCode.mmRejected, PaymentStatusCode.mmPending,
-						PaymentStatusCode.mmAcceptedCustomerProfile, PaymentStatusCode.mmAcceptedSettlementInProcess, PaymentStatusCode.mmAcceptedSettlementCompleted, PaymentStatusCode.mmAccepted,
-						PaymentStatusCode.mmAcceptedCancellationRequest, PaymentStatusCode.mmRejectedCancellationRequest, PaymentStatusCode.mmAcceptedWithChange, PaymentStatusCode.mmPartiallyAcceptedCancellationRequest,
-						PaymentStatusCode.mmPendingCancellationRequest);
 				derivation_lazy = () -> Arrays.asList(TransactionIndividualStatus1Code.mmObject(), GroupCancellationStatus1Code.mmObject(), CancellationIndividualStatus1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentStatusCode.AcceptedTechnicalValidation, com.tools20022.repository.codeset.PaymentStatusCode.Received,
+						com.tools20022.repository.codeset.PaymentStatusCode.PartiallyAccepted, com.tools20022.repository.codeset.PaymentStatusCode.Rejected, com.tools20022.repository.codeset.PaymentStatusCode.Pending,
+						com.tools20022.repository.codeset.PaymentStatusCode.AcceptedCustomerProfile, com.tools20022.repository.codeset.PaymentStatusCode.AcceptedSettlementInProcess,
+						com.tools20022.repository.codeset.PaymentStatusCode.AcceptedSettlementCompleted, com.tools20022.repository.codeset.PaymentStatusCode.Accepted,
+						com.tools20022.repository.codeset.PaymentStatusCode.AcceptedCancellationRequest, com.tools20022.repository.codeset.PaymentStatusCode.RejectedCancellationRequest,
+						com.tools20022.repository.codeset.PaymentStatusCode.AcceptedWithChange, com.tools20022.repository.codeset.PaymentStatusCode.PartiallyAcceptedCancellationRequest,
+						com.tools20022.repository.codeset.PaymentStatusCode.PendingCancellationRequest);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AcceptedTechnicalValidation.getCodeName().get(), AcceptedTechnicalValidation);
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(PartiallyAccepted.getCodeName().get(), PartiallyAccepted);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(AcceptedCustomerProfile.getCodeName().get(), AcceptedCustomerProfile);
+		codesByName.put(AcceptedSettlementInProcess.getCodeName().get(), AcceptedSettlementInProcess);
+		codesByName.put(AcceptedSettlementCompleted.getCodeName().get(), AcceptedSettlementCompleted);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(AcceptedCancellationRequest.getCodeName().get(), AcceptedCancellationRequest);
+		codesByName.put(RejectedCancellationRequest.getCodeName().get(), RejectedCancellationRequest);
+		codesByName.put(AcceptedWithChange.getCodeName().get(), AcceptedWithChange);
+		codesByName.put(PartiallyAcceptedCancellationRequest.getCodeName().get(), PartiallyAcceptedCancellationRequest);
+		codesByName.put(PendingCancellationRequest.getCodeName().get(), PendingCancellationRequest);
+	}
+
+	public static PaymentStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentStatusCode[] values() {
+		PaymentStatusCode[] values = new PaymentStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentStatusCode> {
+		@Override
+		public PaymentStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

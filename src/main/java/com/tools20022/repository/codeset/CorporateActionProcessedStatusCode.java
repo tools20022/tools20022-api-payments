@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the processing status of a corporate action transaction.
@@ -32,25 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Received
  * CorporateActionProcessedStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Accepted
  * CorporateActionProcessedStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmPending
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Pending
  * CorporateActionProcessedStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmCompleted
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Completed
  * CorporateActionProcessedStatusCode.mmCompleted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmWaitingDeactivationDate
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#WaitingDeactivationDate
  * CorporateActionProcessedStatusCode.mmWaitingDeactivationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmSentToMarket
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#SentToMarket
  * CorporateActionProcessedStatusCode.mmSentToMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#mmAcceptedWithWarning
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#AcceptedWithWarning
  * CorporateActionProcessedStatusCode.mmAcceptedWithWarning}</li>
  * </ul>
  * </li>
@@ -76,7 +81,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the processing status of a corporate action transaction."</li>
  * </ul>
  */
-public class CorporateActionProcessedStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CorporateActionProcessedStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -100,12 +106,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "The instruction/request has been received."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final CorporateActionProcessedStatusCode Received = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Received";
 			definition = "The instruction/request has been received.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "RECE";
 		}
 	};
@@ -130,12 +136,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "The request is accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final CorporateActionProcessedStatusCode Accepted = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
 			definition = "The request is accepted.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "PACK";
 		}
 	};
@@ -160,12 +166,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "The processing of the request is pending."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final CorporateActionProcessedStatusCode Pending = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
 			definition = "The processing of the request is pending.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "PEND";
 		}
 	};
@@ -190,12 +196,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "The request has been completed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCompleted = new MMCode() {
+	public static final CorporateActionProcessedStatusCode Completed = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Completed";
 			definition = "The request has been completed.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "COMP";
 		}
 	};
@@ -220,12 +226,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "Awaiting the deactivation date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWaitingDeactivationDate = new MMCode() {
+	public static final CorporateActionProcessedStatusCode WaitingDeactivationDate = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaitingDeactivationDate";
 			definition = "Awaiting the deactivation date.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "DEAC";
 		}
 	};
@@ -250,12 +256,12 @@ public class CorporateActionProcessedStatusCode {
 	 * definition} = "The advice has been sent to the market."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSentToMarket = new MMCode() {
+	public static final CorporateActionProcessedStatusCode SentToMarket = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SentToMarket";
 			definition = "The advice has been sent to the market.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "SENT";
 		}
 	};
@@ -283,17 +289,21 @@ public class CorporateActionProcessedStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedWithWarning = new MMCode() {
+	public static final CorporateActionProcessedStatusCode AcceptedWithWarning = new CorporateActionProcessedStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedWithWarning";
 			definition = "The announcement has been accepted but another source has provided different information.";
-			owner_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.mmObject();
 			codeName = "WARN";
 		}
 	};
+	final static private LinkedHashMap<String, CorporateActionProcessedStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CorporateActionProcessedStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -301,10 +311,43 @@ public class CorporateActionProcessedStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionProcessedStatusCode";
 				definition = "Specifies the processing status of a corporate action transaction.";
-				code_lazy = () -> Arrays.asList(CorporateActionProcessedStatusCode.mmReceived, CorporateActionProcessedStatusCode.mmAccepted, CorporateActionProcessedStatusCode.mmPending, CorporateActionProcessedStatusCode.mmCompleted,
-						CorporateActionProcessedStatusCode.mmWaitingDeactivationDate, CorporateActionProcessedStatusCode.mmSentToMarket, CorporateActionProcessedStatusCode.mmAcceptedWithWarning);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.Received, com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.Accepted,
+						com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.Pending, com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.Completed,
+						com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.WaitingDeactivationDate, com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.SentToMarket,
+						com.tools20022.repository.codeset.CorporateActionProcessedStatusCode.AcceptedWithWarning);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Completed.getCodeName().get(), Completed);
+		codesByName.put(WaitingDeactivationDate.getCodeName().get(), WaitingDeactivationDate);
+		codesByName.put(SentToMarket.getCodeName().get(), SentToMarket);
+		codesByName.put(AcceptedWithWarning.getCodeName().get(), AcceptedWithWarning);
+	}
+
+	public static CorporateActionProcessedStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CorporateActionProcessedStatusCode[] values() {
+		CorporateActionProcessedStatusCode[] values = new CorporateActionProcessedStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CorporateActionProcessedStatusCode> {
+		@Override
+		public CorporateActionProcessedStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CorporateActionProcessedStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

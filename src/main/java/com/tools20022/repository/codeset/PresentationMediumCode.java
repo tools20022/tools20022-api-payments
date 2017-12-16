@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PresentationMediumCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the presentation medium.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#mmPaper
+ * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#Paper
  * PresentationMediumCode.mmPaper}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#mmElectronic
+ * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#Electronic
  * PresentationMediumCode.mmElectronic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#mmPaperElectronic
+ * {@linkplain com.tools20022.repository.codeset.PresentationMediumCode#PaperElectronic
  * PresentationMediumCode.mmPaperElectronic}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the presentation medium."</li>
  * </ul>
  */
-public class PresentationMediumCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PresentationMediumCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class PresentationMediumCode {
 	 * definition} = "Presentation is made on paper."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaper = new MMCode() {
+	public static final PresentationMediumCode Paper = new PresentationMediumCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Paper";
 			definition = "Presentation is made on paper.";
-			owner_lazy = () -> PresentationMediumCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PresentationMediumCode.mmObject();
 			codeName = "PAPR";
 		}
 	};
@@ -117,12 +123,12 @@ public class PresentationMediumCode {
 	 * definition} = "Presentation is made electronically."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmElectronic = new MMCode() {
+	public static final PresentationMediumCode Electronic = new PresentationMediumCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Electronic";
 			definition = "Presentation is made electronically.";
-			owner_lazy = () -> PresentationMediumCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PresentationMediumCode.mmObject();
 			codeName = "ELEC";
 		}
 	};
@@ -147,17 +153,21 @@ public class PresentationMediumCode {
 	 * definition} = "Presentation is made on paper and/or electronically."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaperElectronic = new MMCode() {
+	public static final PresentationMediumCode PaperElectronic = new PresentationMediumCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaperElectronic";
 			definition = "Presentation is made on paper and/or electronically.";
-			owner_lazy = () -> PresentationMediumCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PresentationMediumCode.mmObject();
 			codeName = "BOTH";
 		}
 	};
+	final static private LinkedHashMap<String, PresentationMediumCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PresentationMediumCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,37 @@ public class PresentationMediumCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PresentationMediumCode";
 				definition = "Specifies the presentation medium.";
-				code_lazy = () -> Arrays.asList(PresentationMediumCode.mmPaper, PresentationMediumCode.mmElectronic, PresentationMediumCode.mmPaperElectronic);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PresentationMediumCode.Paper, com.tools20022.repository.codeset.PresentationMediumCode.Electronic,
+						com.tools20022.repository.codeset.PresentationMediumCode.PaperElectronic);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Paper.getCodeName().get(), Paper);
+		codesByName.put(Electronic.getCodeName().get(), Electronic);
+		codesByName.put(PaperElectronic.getCodeName().get(), PaperElectronic);
+	}
+
+	public static PresentationMediumCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PresentationMediumCode[] values() {
+		PresentationMediumCode[] values = new PresentationMediumCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PresentationMediumCode> {
+		@Override
+		public PresentationMediumCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PresentationMediumCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -112,8 +112,8 @@ public class ProductCategory {
 	 */
 	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the product for which a category is specified.";
@@ -154,8 +154,8 @@ public class ProductCategory {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of product category by means of a code.";
@@ -200,8 +200,8 @@ public class ProductCategory {
 	 */
 	public static final MMBusinessAttribute mmCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Category";
 			definition = "Specifies the category of a product.";
@@ -255,8 +255,8 @@ public class ProductCategory {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPaymentValidation";
 			definition = "Validation process which declined a product code.";

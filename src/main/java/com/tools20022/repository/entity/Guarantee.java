@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -75,8 +77,6 @@ import java.util.List;
  * GuaranteePartyRole.mmGuarantee}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -124,8 +124,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAttribute mmCoveredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoveredAmount";
 			definition = "Amount covered by the guarantee.";
@@ -177,8 +177,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the guarantee is valid.";
@@ -220,8 +220,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAttribute mmGuaranteeType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteeType";
 			definition = "Specifies the type of security granted by an organisation with the role as 'guarantor', for example, suretyship.";
@@ -267,8 +267,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAttribute mmCoveredPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoveredPercentage";
 			definition = "Amount covered by the guarantee, expressed as a percentage.";
@@ -320,8 +320,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document which contains the description of the guarantee.";
@@ -366,8 +366,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmGuaranteedTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GuaranteedTrade";
 			definition = "Trade which is partially or fully covered by a guarantee.";
@@ -406,8 +406,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAttribute mmExcessAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExcessAmount";
 			definition = "Amount not covered by the guarantee.";
@@ -460,8 +460,8 @@ public class Guarantee extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmGuaranteePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GuaranteePartyRole";
 			definition = "Specifies the roles played by a party in the context of guarantees.";

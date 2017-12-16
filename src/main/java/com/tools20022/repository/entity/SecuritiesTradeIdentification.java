@@ -38,6 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.TradeIdentification
+ * TradeIdentification}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -93,13 +97,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.References3 References3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -108,10 +105,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.TradeIdentification
- * TradeIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.References3 References3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -169,8 +169,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentifiedTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentifiedTrade";
 			definition = "Trade for which one or more identifications are provided.";
@@ -221,8 +221,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	public static final MMBusinessAttribute mmMarketInfrastructureTransactionIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmMarketInfrastructureTransactionIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketInfrastructureTransactionIdentification";
 			definition = "Identification of a transaction assigned by a market infrastructure other than a central securities depository, for example, Target2-Securities.";
@@ -271,8 +271,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmProcessorTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessorTransactionIdentification";
 			definition = "Identification of the transaction assigned by the processor of the instruction other than the account owner the account servicer and the market infrastructure.";
@@ -317,8 +317,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmPoolIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PoolIdentification";
 			definition = "Collective reference identifying a set of messages.";
@@ -363,8 +363,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCollateralTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralTransactionIdentification";
 			definition = "Unambiguous identification of a collateral transaction.";
@@ -412,8 +412,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmClientTripartyCollateralTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientTripartyCollateralTransactionIdentification";
 			definition = "Unique reference identifying the triparty collateral management transaction from the client's point of view.";
@@ -461,8 +461,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmTripartyAgentCollateralTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TripartyAgentCollateralTransactionIdentification";
 			definition = "Unique reference identifying the triparty collateral management transaction from the triparty agent's point of view.";
@@ -507,8 +507,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmBasketIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasketIdentification";
 			definition = "Identification of a basket trade.";
@@ -553,8 +553,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmProgramIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProgramIdentification";
 			definition = "Program reference which identifies a program trade.";
@@ -602,8 +602,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmBlockIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockIdentification";
 			definition = "Reference of the linked message at the trade/block level which identifies a centrally matched transaction.";
@@ -648,8 +648,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmAllocationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocationIdentification";
 			definition = "Identification at the allocation level.";
@@ -696,8 +696,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmComplianceIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComplianceIdentification";
 			definition = "Identification which represents this transaction for compliance purposes.";
@@ -745,8 +745,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCSDTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSDTransactionIdentification";
 			definition = "Identification given by the central securities depository  to the transaction.";
@@ -793,8 +793,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCentralCounterpartyTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CentralCounterpartyTransactionIdentification";
 			definition = "Identification of the transaction assigned by the central counterparty.";
@@ -842,8 +842,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCancellationRequestIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRequestIdentification";
 			definition = "Unambiguous identification of the cancellation request as known by the instructing party.";

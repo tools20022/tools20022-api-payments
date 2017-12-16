@@ -116,8 +116,8 @@ public class AttendanceCard {
 	 */
 	public static final MMBusinessAttribute mmAttendanceCardLabelling = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendanceCardLabelling";
 			definition = "Information to be indicated on the attendance card.";
@@ -170,8 +170,8 @@ public class AttendanceCard {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingAttendance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingAttendance";
 			definition = "Attendance card which is required to attend the meeting.";
@@ -211,8 +211,8 @@ public class AttendanceCard {
 	 */
 	public static final MMBusinessAttribute mmDeliveryMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryMethod";
 			definition = "Specifies where the attendance card must be delivered.";
@@ -265,8 +265,8 @@ public class AttendanceCard {
 	 */
 	public static final MMBusinessAssociationEnd mmDeliveryPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryPlace";
 			definition = "Address where the attendance card should be delivered.";

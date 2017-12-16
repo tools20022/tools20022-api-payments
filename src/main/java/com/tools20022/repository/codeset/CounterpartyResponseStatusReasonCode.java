@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of counterparty's action the response is related to.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#mmCounterpartyTransaction
+ * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#CounterpartyTransaction
  * CounterpartyResponseStatusReasonCode.mmCounterpartyTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#mmCounterpartyCancellation
+ * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#CounterpartyCancellation
  * CounterpartyResponseStatusReasonCode.mmCounterpartyCancellation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#mmCounterpartyModification
+ * {@linkplain com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode#CounterpartyModification
  * CounterpartyResponseStatusReasonCode.mmCounterpartyModification}</li>
  * </ul>
  * </li>
@@ -64,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of counterparty's action the response is related to."</li>
  * </ul>
  */
-public class CounterpartyResponseStatusReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CounterpartyResponseStatusReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class CounterpartyResponseStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterpartyTransaction = new MMCode() {
+	public static final CounterpartyResponseStatusReasonCode CounterpartyTransaction = new CounterpartyResponseStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyTransaction";
 			definition = "Specifies  that the response is related to an allegement from the counterparty.";
-			owner_lazy = () -> CounterpartyResponseStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPTR";
 		}
 	};
@@ -124,12 +130,12 @@ public class CounterpartyResponseStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterpartyCancellation = new MMCode() {
+	public static final CounterpartyResponseStatusReasonCode CounterpartyCancellation = new CounterpartyResponseStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyCancellation";
 			definition = "Specifies  that the response is related to the cancellation request of the counterparty.";
-			owner_lazy = () -> CounterpartyResponseStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPCX";
 		}
 	};
@@ -157,17 +163,21 @@ public class CounterpartyResponseStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterpartyModification = new MMCode() {
+	public static final CounterpartyResponseStatusReasonCode CounterpartyModification = new CounterpartyResponseStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyModification";
 			definition = "Specifies  that the response is related to the modification request of the counterparty.";
-			owner_lazy = () -> CounterpartyResponseStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPMD";
 		}
 	};
+	final static private LinkedHashMap<String, CounterpartyResponseStatusReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CounterpartyResponseStatusReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -175,10 +185,37 @@ public class CounterpartyResponseStatusReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CounterpartyResponseStatusReasonCode";
 				definition = "Specifies the type of counterparty's action the response is related to.";
-				code_lazy = () -> Arrays.asList(CounterpartyResponseStatusReasonCode.mmCounterpartyTransaction, CounterpartyResponseStatusReasonCode.mmCounterpartyCancellation,
-						CounterpartyResponseStatusReasonCode.mmCounterpartyModification);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.CounterpartyTransaction,
+						com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.CounterpartyCancellation, com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.CounterpartyModification);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CounterpartyTransaction.getCodeName().get(), CounterpartyTransaction);
+		codesByName.put(CounterpartyCancellation.getCodeName().get(), CounterpartyCancellation);
+		codesByName.put(CounterpartyModification.getCodeName().get(), CounterpartyModification);
+	}
+
+	public static CounterpartyResponseStatusReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CounterpartyResponseStatusReasonCode[] values() {
+		CounterpartyResponseStatusReasonCode[] values = new CounterpartyResponseStatusReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CounterpartyResponseStatusReasonCode> {
+		@Override
+		public CounterpartyResponseStatusReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CounterpartyResponseStatusReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

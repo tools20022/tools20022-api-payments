@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FloorLimitTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates whether the floor limit applies to credit, to debit or to both
@@ -32,12 +37,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#mmCredit
+ * <li>{@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#Credit
  * FloorLimitTypeCode.mmCredit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#mmDebit
+ * <li>{@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#Debit
  * FloorLimitTypeCode.mmDebit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#mmBoth
+ * <li>{@linkplain com.tools20022.repository.codeset.FloorLimitTypeCode#Both
  * FloorLimitTypeCode.mmBoth}</li>
  * </ul>
  * </li>
@@ -71,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class FloorLimitTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FloorLimitTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,12 +100,12 @@ public class FloorLimitTypeCode {
 	 * definition} = "Floor limit applies to credit entries."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final FloorLimitTypeCode Credit = new FloorLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Credit";
 			definition = "Floor limit applies to credit entries.";
-			owner_lazy = () -> FloorLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FloorLimitTypeCode.mmObject();
 			codeName = "CRED";
 		}
 	};
@@ -125,12 +130,12 @@ public class FloorLimitTypeCode {
 	 * definition} = "Floor limit applies to debit entries."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final FloorLimitTypeCode Debit = new FloorLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Debit";
 			definition = "Floor limit applies to debit entries.";
-			owner_lazy = () -> FloorLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FloorLimitTypeCode.mmObject();
 			codeName = "DEBT";
 		}
 	};
@@ -155,17 +160,21 @@ public class FloorLimitTypeCode {
 	 * definition} = "Floor limit applies to both credit and debit entries."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBoth = new MMCode() {
+	public static final FloorLimitTypeCode Both = new FloorLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Both";
 			definition = "Floor limit applies to both credit and debit entries.";
-			owner_lazy = () -> FloorLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FloorLimitTypeCode.mmObject();
 			codeName = "BOTH";
 		}
 	};
+	final static private LinkedHashMap<String, FloorLimitTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FloorLimitTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -173,10 +182,37 @@ public class FloorLimitTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FloorLimitTypeCode";
 				definition = "Indicates whether the floor limit applies to credit, to debit or to both credit and debit entries.";
-				code_lazy = () -> Arrays.asList(FloorLimitTypeCode.mmCredit, FloorLimitTypeCode.mmDebit, FloorLimitTypeCode.mmBoth);
 				derivation_lazy = () -> Arrays.asList(FloorLimitType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FloorLimitTypeCode.Credit, com.tools20022.repository.codeset.FloorLimitTypeCode.Debit, com.tools20022.repository.codeset.FloorLimitTypeCode.Both);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(Debit.getCodeName().get(), Debit);
+		codesByName.put(Both.getCodeName().get(), Both);
+	}
+
+	public static FloorLimitTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FloorLimitTypeCode[] values() {
+		FloorLimitTypeCode[] values = new FloorLimitTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FloorLimitTypeCode> {
+		@Override
+		public FloorLimitTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FloorLimitTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

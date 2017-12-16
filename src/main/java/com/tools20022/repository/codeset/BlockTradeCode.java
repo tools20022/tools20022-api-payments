@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BlockTradeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the instruction is the parent or a children of a block
@@ -32,9 +37,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#mmParent
+ * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#Parent
  * BlockTradeCode.mmParent}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#mmChild
+ * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#Child
  * BlockTradeCode.mmChild}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class BlockTradeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BlockTradeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class BlockTradeCode {
 	 * definition} = "Transaction is a block trade parent."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmParent = new MMCode() {
+	public static final BlockTradeCode Parent = new BlockTradeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Parent";
 			definition = "Transaction is a block trade parent.";
-			owner_lazy = () -> BlockTradeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BlockTradeCode.mmObject();
 			codeName = "BLPA";
 		}
 	};
@@ -115,17 +121,21 @@ public class BlockTradeCode {
 	 * definition} = "Transaction is a block trade child."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmChild = new MMCode() {
+	public static final BlockTradeCode Child = new BlockTradeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Child";
 			definition = "Transaction is a block trade child.";
-			owner_lazy = () -> BlockTradeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BlockTradeCode.mmObject();
 			codeName = "BLCH";
 		}
 	};
+	final static private LinkedHashMap<String, BlockTradeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BlockTradeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -133,9 +143,35 @@ public class BlockTradeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BlockTradeCode";
 				definition = "Specifies whether the instruction is the parent or a children of a block trade.";
-				code_lazy = () -> Arrays.asList(BlockTradeCode.mmParent, BlockTradeCode.mmChild);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BlockTradeCode.Parent, com.tools20022.repository.codeset.BlockTradeCode.Child);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Parent.getCodeName().get(), Parent);
+		codesByName.put(Child.getCodeName().get(), Child);
+	}
+
+	public static BlockTradeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BlockTradeCode[] values() {
+		BlockTradeCode[] values = new BlockTradeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BlockTradeCode> {
+		@Override
+		public BlockTradeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BlockTradeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

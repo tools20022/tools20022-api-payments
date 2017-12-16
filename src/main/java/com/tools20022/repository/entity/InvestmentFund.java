@@ -174,8 +174,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmDomicileCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomicileCountry";
 			definition = "Country in which the investment fund is domiciled.";
@@ -223,8 +223,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderDesk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderDesk";
 			definition = "Entity appointed by the fund, to which orders should be submitted.";
@@ -270,8 +270,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundClass";
 			definition = "Sub-set of an investment fund.";
@@ -310,8 +310,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmFundType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundType";
 			definition = "Legal form of the fund, eg, UCITS, SICAV, OEIC, Unit Trust, and FCP.";
@@ -366,8 +366,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmTreasuryTradingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryTradingParty";
 			definition = "Party which executes a treasury trade on behalf of an investment fund.";
@@ -407,8 +407,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the investment fund.";
@@ -462,8 +462,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmCustodian = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Custodian";
 			definition = "Party which settles the trades for the account of the fund.";
@@ -513,8 +513,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to an investment fund and played by a party in that context.";
@@ -561,8 +561,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmFamily = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Family";
 			definition = "Family to which the investment fund belongs.";
@@ -602,8 +602,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmStructure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Structure";
 			definition = "Structure of the subfund, eg, single fund, multi-class.";
@@ -649,8 +649,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmLegalForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalForm";
 			definition = "Legal form of a fund, eg, corporation or trust.";
@@ -700,8 +700,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmSubFundIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubFundIndicator";
 			definition = "Indicates whether the investment fund is a subfund, when it is a compartment of an umbrella fund. In this case, subfund is a synonym of investment fund and therefore has the same attributes as investment fund.";
@@ -747,8 +747,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmEndOfFiscalYear = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndOfFiscalYear";
 			definition = "Date at which the books are closed and profit and loss is determined.";
@@ -793,8 +793,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmAccountingYearEndDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountingYearEndDate";
 			definition = "Last day of the accounting year for the fund.";
@@ -839,8 +839,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmFirstAccountingYearEndDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstAccountingYearEndDate";
 			definition = "Last day of the first accounting year for the fund.";
@@ -893,8 +893,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAssociationEnd mmUmbrellaFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UmbrellaFund";
 			definition = "Umbrella fund for which compartments are specified.";
@@ -934,8 +934,8 @@ public class InvestmentFund {
 	 */
 	public static final MMBusinessAttribute mmAuthorisedCountry = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisedCountry";
 			definition = "Country in which it is authorised to commercialise the fund.";

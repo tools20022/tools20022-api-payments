@@ -65,15 +65,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1
- * RegisteredContractCommunication1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -84,6 +75,15 @@ import java.util.List;
  * Document.mmPresentation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Undertaking#mmPresentation
  * Undertaking.mmPresentation}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1
+ * RegisteredContractCommunication1}</li>
  * </ul>
  * </li>
  * <li>
@@ -146,8 +146,8 @@ public class Presentation {
 	public static final MMBusinessAttribute mmCommunicationMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Channel2Choice.mmCode, Channel2Choice.mmProprietary, RegisteredContractCommunication1.mmMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommunicationMethod";
 			definition = "Method by which the document is to be delivered.";
@@ -202,8 +202,8 @@ public class Presentation {
 	 */
 	public static final MMBusinessAssociationEnd mmPresentedUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PresentedUndertaking";
 			definition = "Specifies the undertaking which is presented and its associated documents.";
@@ -245,8 +245,8 @@ public class Presentation {
 	 */
 	public static final MMBusinessAttribute mmMedium = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Medium";
 			definition = "Medium through which the presentation can be submitted such as paper, electronic or both.";
@@ -297,8 +297,8 @@ public class Presentation {
 	 */
 	public static final MMBusinessAssociationEnd mmPresentedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PresentedDocument";
 			definition = "Documents which are presented.";
@@ -343,8 +343,8 @@ public class Presentation {
 	 */
 	public static final MMBusinessAssociationEnd mmElectronicPresentationAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicPresentationAddress";
 			definition = "Electronic address for the presentation of documents.";
@@ -391,8 +391,8 @@ public class Presentation {
 	public static final MMBusinessAttribute mmPresentationDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContractCommunication1.mmDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PresentationDate";
 			definition = "Date on which the presentation is made.";
@@ -437,8 +437,8 @@ public class Presentation {
 	 */
 	public static final MMBusinessAttribute mmApplicableChannel = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableChannel";
 			definition = "Channel used for the transmission of a document.";

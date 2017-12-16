@@ -121,8 +121,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmPerSecurity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerSecurity";
 			definition = "Number of securities giving right to a premium.";
@@ -167,8 +167,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmPerVote = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerVote";
 			definition = "Number of votes giving right to a premium.";
@@ -214,8 +214,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmPerAttendee = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerAttendee";
 			definition = "Indicates that the premium is given per attendee.";
@@ -260,8 +260,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Description of the premium.";
@@ -308,8 +308,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumAmount";
 			definition = "Cash premium paid per security, per vote or per attendee.";
@@ -354,8 +354,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date/time for the payment of the premium.";
@@ -407,8 +407,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which an incentive premium is specified.";
@@ -457,8 +457,8 @@ public class IncentivePremium {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "CorporateActionDistribution for which an incentive premium is specified.";

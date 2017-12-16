@@ -38,6 +38,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -66,8 +68,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesPricing.mmEntitlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -126,8 +126,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmStrikePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikePrice";
 			definition = "Predetermined price at which the holder buys or sells the underlying assets.";
@@ -169,8 +169,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAttribute mmCoveredIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoveredIndicator";
 			definition = "Indicates whether the underlying security is owned by the writer of the entitlement.";
@@ -215,8 +215,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAttribute mmOptionStyle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionStyle";
 			definition = "Specifies how an option can be exercised.";
@@ -265,8 +265,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAttribute mmOptionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionType";
 			definition = "Specifies whether it is a call option (right to purchase a specific underlying asset) or a put option (right to sell a specific underlying asset).";
@@ -315,8 +315,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAttribute mmCappedValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CappedValue";
 			definition = "Limit on the pay-out on the expiration of the entitlement. The positive difference between the cap value and the strike price is the maximum amount that would be paid off at expiration.";
@@ -361,8 +361,8 @@ public class Entitlement extends Security {
 	 */
 	public static final MMBusinessAttribute mmCappedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CappedIndicator";
 			definition = "Indicates whether an entitlement is capped.";

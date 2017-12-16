@@ -195,8 +195,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantity";
 			definition = "Specifies the maximum quantity of the financial instrument.";
@@ -242,8 +242,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Quantity of a Financial Instrument.";
@@ -290,8 +290,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantity";
 			definition = "Specifies the minimal quantity of the financial instrument.";
@@ -339,8 +339,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role played by a party in a quotation process.";
@@ -385,8 +385,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedNegotiation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedNegotiation";
 			definition = "Negotiation process during which quotes are provided.";
@@ -432,8 +432,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmQuotedRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuotedRate";
 			definition = "Exchange rate specified in a quote.";
@@ -481,8 +481,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmPreviousClosingPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviousClosingPrice";
 			definition = "Previous closing price of the financial instrument - Useful for verifying its identification.";
@@ -532,8 +532,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmRequestedPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedPrice";
 			definition = "Is used to specify the desired currency of the quoted price when they differ from the normal trading currency of the instrument being quote requested.";
@@ -580,8 +580,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Indicates the price of the instrument, applicable to the quote.";
@@ -628,8 +628,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmMarketPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketPrice";
 			definition = "Used by markets to indicate the current best bid and offer.";
@@ -676,8 +676,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmMidSideQuoteVariable = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MidSideQuoteVariable";
 			definition = "Quote details for which mid information is provided.";
@@ -724,8 +724,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmBidSideQuoteVariable = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BidSideQuoteVariable";
 			definition = "Quote details for which bid information is provided.";
@@ -772,8 +772,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmOfferSideQuoteVariable = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferSideQuoteVariable";
 			definition = "Quote details for which offer information is provided.";
@@ -820,8 +820,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurityQuoteVariable = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityQuoteVariable";
 			definition = "Proposition of price for a financial instrument.";
@@ -871,8 +871,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmQuoteSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteSwap";
 			definition = "Characteristics and conditions, quoted by the seller, by which a borrower can exchange one type of fund for another.";
@@ -910,8 +910,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAttribute mmValidUntilDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidUntilDateTime";
 			definition = "Expresses the validity date and time of the Quote.";
@@ -959,8 +959,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Can be used to specify the desired currency of the quoted price that may differ from the normal trading currency of the instrument being quote requested.";
@@ -1012,8 +1012,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Provide the status for the quote.";
@@ -1058,8 +1058,8 @@ public class Quote {
 	 */
 	public static final MMBusinessAssociationEnd mmQuotedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuotedSecurity";
 			definition = "Security specified in a quote.";

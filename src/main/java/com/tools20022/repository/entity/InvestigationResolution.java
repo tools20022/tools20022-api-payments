@@ -48,15 +48,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice
- * CancellationStatusReason2Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -74,6 +65,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.entity.Reassignment Reassignment}</li>
  * <li>{@linkplain com.tools20022.repository.entity.DuplicateCase DuplicateCase}
  * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice
+ * CancellationStatusReason2Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -139,8 +139,8 @@ public class InvestigationResolution {
 	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalPaymentInstruction22.mmResolvedCase);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestigationCase";
 			definition = "Case for which a resolution is provided.";
@@ -179,8 +179,8 @@ public class InvestigationResolution {
 	 */
 	public static final MMBusinessAttribute mmInvestigationCaseReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestigationCaseReference";
 			definition = "Identifies the case for which a resolution is provided.";

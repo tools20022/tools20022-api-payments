@@ -102,8 +102,8 @@ public class LocalName {
 	 */
 	public static final MMBusinessAttribute mmFullName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullName";
 			definition = "Name of the security.";
@@ -156,8 +156,8 @@ public class LocalName {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecurity";
 			definition = "Identification which contains a name.";
@@ -195,8 +195,8 @@ public class LocalName {
 	 */
 	public static final MMBusinessAttribute mmShortName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortName";
 			definition = "Short name of the security";
@@ -240,8 +240,8 @@ public class LocalName {
 	 */
 	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which the security name is expressed.";

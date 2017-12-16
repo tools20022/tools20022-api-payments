@@ -126,8 +126,8 @@ public class CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Payment which uses the credit instrument.";
@@ -184,8 +184,8 @@ public class CreditInstrument {
 	public static final MMBusinessAttribute mmMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentInstruction21.mmPaymentMethod, PaymentInstruction23.mmPaymentMethod, PaymentInstruction22.mmPaymentMethod, OriginalTransactionReference24.mmPaymentMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Method";
 			definition = "Transfer method to be used for the transfer.";
@@ -238,8 +238,8 @@ public class CreditInstrument {
 	public static final MMBusinessAttribute mmCreditInstrumentIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmChequeNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditInstrumentIdentification";
 			definition = "Identifies the credit instrument.";
@@ -288,8 +288,8 @@ public class CreditInstrument {
 	 */
 	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAmount";
 			definition = "Amount less fees and charges, that will be exchanged on settlement date of the trade.";
@@ -334,8 +334,8 @@ public class CreditInstrument {
 	 */
 	public static final MMBusinessAttribute mmDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditInstrument.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deadline";
 			definition = "Time by which the amount must be paid in.";

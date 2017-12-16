@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.UnderlyingTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the underlying financial instrument.
@@ -31,63 +36,59 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmEquity
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Equity
  * UnderlyingTypeCode.mmEquity}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmIndex
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Index
  * UnderlyingTypeCode.mmIndex}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmInterest
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Interest
  * UnderlyingTypeCode.mmInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmCurrency
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Currency
  * UnderlyingTypeCode.mmCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmPreciousMetal
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#PreciousMetal
  * UnderlyingTypeCode.mmPreciousMetal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmFuture
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Future
  * UnderlyingTypeCode.mmFuture}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmOption
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Option
  * UnderlyingTypeCode.mmOption}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmBasket
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Basket
  * UnderlyingTypeCode.mmBasket}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmSwap
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Swap
  * UnderlyingTypeCode.mmSwap}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmCommodity
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Commodity
  * UnderlyingTypeCode.mmCommodity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmStockIndex
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#StockIndex
  * UnderlyingTypeCode.mmStockIndex}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmShare
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Share
  * UnderlyingTypeCode.mmShare}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmDividendIndex
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#DividendIndex
  * UnderlyingTypeCode.mmDividendIndex}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmStockDividend
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#StockDividend
  * UnderlyingTypeCode.mmStockDividend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmOther
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Other
  * UnderlyingTypeCode.mmOther}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmVolatilityIndex
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#VolatilityIndex
  * UnderlyingTypeCode.mmVolatilityIndex}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmExchangeTradedFund
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#ExchangeTradedFund
  * UnderlyingTypeCode.mmExchangeTradedFund}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmBond
+ * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Bond
  * UnderlyingTypeCode.mmBond}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmFutureOnEquity
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#FutureOnEquity
  * UnderlyingTypeCode.mmFutureOnEquity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmOptionOnEquity
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#OptionOnEquity
  * UnderlyingTypeCode.mmOptionOnEquity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#mmBondFuture
+ * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#BondFuture
  * UnderlyingTypeCode.mmBondFuture}</li>
  * </ul>
  * </li>
@@ -112,7 +113,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the underlying financial instrument."</li>
  * </ul>
  */
-public class UnderlyingTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class UnderlyingTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -136,12 +138,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is an equity."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEquity = new MMCode() {
+	public static final UnderlyingTypeCode Equity = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Equity";
 			definition = "The underlying is an equity.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "EQUI";
 		}
 	};
@@ -166,12 +168,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is an index."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndex = new MMCode() {
+	public static final UnderlyingTypeCode Index = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "The underlying is an index.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "INDX";
 		}
 	};
@@ -196,12 +198,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is an interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterest = new MMCode() {
+	public static final UnderlyingTypeCode Interest = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "The underlying is an interest.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "INTR";
 		}
 	};
@@ -226,12 +228,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCurrency = new MMCode() {
+	public static final UnderlyingTypeCode Currency = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "The underlying is a currency.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "CURR";
 		}
 	};
@@ -256,12 +258,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a precious metal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreciousMetal = new MMCode() {
+	public static final UnderlyingTypeCode PreciousMetal = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreciousMetal";
 			definition = "The underlying is a precious metal.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "PRME";
 		}
 	};
@@ -286,12 +288,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a future."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFuture = new MMCode() {
+	public static final UnderlyingTypeCode Future = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Future";
 			definition = "The underlying is a future.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "FUTR";
 		}
 	};
@@ -316,12 +318,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is an option."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOption = new MMCode() {
+	public static final UnderlyingTypeCode Option = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Option";
 			definition = "The underlying is an option.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "OPTN";
 		}
 	};
@@ -346,12 +348,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a basket."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBasket = new MMCode() {
+	public static final UnderlyingTypeCode Basket = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Basket";
 			definition = "The underlying is a basket.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "BASK";
 		}
 	};
@@ -376,12 +378,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a swap."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSwap = new MMCode() {
+	public static final UnderlyingTypeCode Swap = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Swap";
 			definition = "The underlying is a swap.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "SWAP";
 		}
 	};
@@ -406,12 +408,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "The underlying is a commodity."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCommodity = new MMCode() {
+	public static final UnderlyingTypeCode Commodity = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commodity";
 			definition = "The underlying is a commodity.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "COMM";
 		}
 	};
@@ -436,12 +438,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a stock index."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStockIndex = new MMCode() {
+	public static final UnderlyingTypeCode StockIndex = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StockIndex";
 			definition = "Underlying is a stock index.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "STIX";
 		}
 	};
@@ -466,12 +468,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a share."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmShare = new MMCode() {
+	public static final UnderlyingTypeCode Share = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Share";
 			definition = "Underlying is a share.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "SHAR";
 		}
 	};
@@ -496,12 +498,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a dividend index."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDividendIndex = new MMCode() {
+	public static final UnderlyingTypeCode DividendIndex = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DividendIndex";
 			definition = "Underlying is a dividend index.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "DIVI";
 		}
 	};
@@ -526,12 +528,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a stock dividend."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStockDividend = new MMCode() {
+	public static final UnderlyingTypeCode StockDividend = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StockDividend";
 			definition = "Underlying is a stock dividend.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "DVSE";
 		}
 	};
@@ -556,12 +558,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is of other type."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final UnderlyingTypeCode Other = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Underlying is of other type.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
@@ -586,12 +588,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a volatility index."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmVolatilityIndex = new MMCode() {
+	public static final UnderlyingTypeCode VolatilityIndex = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VolatilityIndex";
 			definition = "Underlying is a volatility index.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "VOLI";
 		}
 	};
@@ -616,12 +618,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is an exchange traded fund."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmExchangeTradedFund = new MMCode() {
+	public static final UnderlyingTypeCode ExchangeTradedFund = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExchangeTradedFund";
 			definition = "Underlying is an exchange traded fund.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "ETFT";
 		}
 	};
@@ -646,12 +648,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a bond."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBond = new MMCode() {
+	public static final UnderlyingTypeCode Bond = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Bond";
 			definition = "Underlying is a bond.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "BOND";
 		}
 	};
@@ -676,12 +678,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a future on equity."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFutureOnEquity = new MMCode() {
+	public static final UnderlyingTypeCode FutureOnEquity = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FutureOnEquity";
 			definition = "Underlying is a future on equity.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "FTEQ";
 		}
 	};
@@ -706,12 +708,12 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is an option on equity."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOptionOnEquity = new MMCode() {
+	public static final UnderlyingTypeCode OptionOnEquity = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OptionOnEquity";
 			definition = "Underlying is an option on equity.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "OPEQ";
 		}
 	};
@@ -736,17 +738,21 @@ public class UnderlyingTypeCode {
 	 * definition} = "Underlying is a bond future."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBondFuture = new MMCode() {
+	public static final UnderlyingTypeCode BondFuture = new UnderlyingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondFuture";
 			definition = "Underlying is a bond future.";
-			owner_lazy = () -> UnderlyingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnderlyingTypeCode.mmObject();
 			codeName = "BNDF";
 		}
 	};
+	final static private LinkedHashMap<String, UnderlyingTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected UnderlyingTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -754,12 +760,60 @@ public class UnderlyingTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTypeCode";
 				definition = "Specifies the underlying financial instrument.";
-				code_lazy = () -> Arrays.asList(UnderlyingTypeCode.mmEquity, UnderlyingTypeCode.mmIndex, UnderlyingTypeCode.mmInterest, UnderlyingTypeCode.mmCurrency, UnderlyingTypeCode.mmPreciousMetal, UnderlyingTypeCode.mmFuture,
-						UnderlyingTypeCode.mmOption, UnderlyingTypeCode.mmBasket, UnderlyingTypeCode.mmSwap, UnderlyingTypeCode.mmCommodity, UnderlyingTypeCode.mmStockIndex, UnderlyingTypeCode.mmShare, UnderlyingTypeCode.mmDividendIndex,
-						UnderlyingTypeCode.mmStockDividend, UnderlyingTypeCode.mmOther, UnderlyingTypeCode.mmVolatilityIndex, UnderlyingTypeCode.mmExchangeTradedFund, UnderlyingTypeCode.mmBond, UnderlyingTypeCode.mmFutureOnEquity,
-						UnderlyingTypeCode.mmOptionOnEquity, UnderlyingTypeCode.mmBondFuture);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UnderlyingTypeCode.Equity, com.tools20022.repository.codeset.UnderlyingTypeCode.Index, com.tools20022.repository.codeset.UnderlyingTypeCode.Interest,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.Currency, com.tools20022.repository.codeset.UnderlyingTypeCode.PreciousMetal, com.tools20022.repository.codeset.UnderlyingTypeCode.Future,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.Option, com.tools20022.repository.codeset.UnderlyingTypeCode.Basket, com.tools20022.repository.codeset.UnderlyingTypeCode.Swap,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.Commodity, com.tools20022.repository.codeset.UnderlyingTypeCode.StockIndex, com.tools20022.repository.codeset.UnderlyingTypeCode.Share,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.DividendIndex, com.tools20022.repository.codeset.UnderlyingTypeCode.StockDividend, com.tools20022.repository.codeset.UnderlyingTypeCode.Other,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.VolatilityIndex, com.tools20022.repository.codeset.UnderlyingTypeCode.ExchangeTradedFund, com.tools20022.repository.codeset.UnderlyingTypeCode.Bond,
+						com.tools20022.repository.codeset.UnderlyingTypeCode.FutureOnEquity, com.tools20022.repository.codeset.UnderlyingTypeCode.OptionOnEquity, com.tools20022.repository.codeset.UnderlyingTypeCode.BondFuture);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Equity.getCodeName().get(), Equity);
+		codesByName.put(Index.getCodeName().get(), Index);
+		codesByName.put(Interest.getCodeName().get(), Interest);
+		codesByName.put(Currency.getCodeName().get(), Currency);
+		codesByName.put(PreciousMetal.getCodeName().get(), PreciousMetal);
+		codesByName.put(Future.getCodeName().get(), Future);
+		codesByName.put(Option.getCodeName().get(), Option);
+		codesByName.put(Basket.getCodeName().get(), Basket);
+		codesByName.put(Swap.getCodeName().get(), Swap);
+		codesByName.put(Commodity.getCodeName().get(), Commodity);
+		codesByName.put(StockIndex.getCodeName().get(), StockIndex);
+		codesByName.put(Share.getCodeName().get(), Share);
+		codesByName.put(DividendIndex.getCodeName().get(), DividendIndex);
+		codesByName.put(StockDividend.getCodeName().get(), StockDividend);
+		codesByName.put(Other.getCodeName().get(), Other);
+		codesByName.put(VolatilityIndex.getCodeName().get(), VolatilityIndex);
+		codesByName.put(ExchangeTradedFund.getCodeName().get(), ExchangeTradedFund);
+		codesByName.put(Bond.getCodeName().get(), Bond);
+		codesByName.put(FutureOnEquity.getCodeName().get(), FutureOnEquity);
+		codesByName.put(OptionOnEquity.getCodeName().get(), OptionOnEquity);
+		codesByName.put(BondFuture.getCodeName().get(), BondFuture);
+	}
+
+	public static UnderlyingTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static UnderlyingTypeCode[] values() {
+		UnderlyingTypeCode[] values = new UnderlyingTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, UnderlyingTypeCode> {
+		@Override
+		public UnderlyingTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(UnderlyingTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

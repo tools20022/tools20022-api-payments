@@ -127,8 +127,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesPricing";
 			definition = "Securities pricing for which a duration calculation is specified.";
@@ -175,8 +175,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableInterest";
 			definition = "Variable interest used for the calculation.";
@@ -216,8 +216,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAttribute mmYears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Years";
 			definition = "Result of the duration calculation measured in number of years.";
@@ -263,8 +263,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationType";
 			definition = "Specifies the type of calculation.";
@@ -312,8 +312,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time on which the calculation is based, eg, valuation on October 1 (price date) based on price of September 19 ( value date).";
@@ -359,8 +359,8 @@ public class DurationCalculation {
 	 */
 	public static final MMBusinessAttribute mmValuePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuePeriod";
 			definition = "Period on which the calculation is based.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.StayOnSideTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates that an order is pegged against the offer/bid at the time of the
@@ -32,12 +37,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#mmOffer
+ * <li>{@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#Offer
  * StayOnSideTypeCode.mmOffer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#mmBid
+ * <li>{@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#Bid
  * StayOnSideTypeCode.mmBid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#mmDontCare
+ * {@linkplain com.tools20022.repository.codeset.StayOnSideTypeCode#DontCare
  * StayOnSideTypeCode.mmDontCare}</li>
  * </ul>
  * </li>
@@ -64,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class StayOnSideTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class StayOnSideTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class StayOnSideTypeCode {
 	 * definition} = "An order pegged against the offer price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffer = new MMCode() {
+	public static final StayOnSideTypeCode Offer = new StayOnSideTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Offer";
 			definition = "An order pegged against the offer price.";
-			owner_lazy = () -> StayOnSideTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StayOnSideTypeCode.mmObject();
 			codeName = "OFFR";
 		}
 	};
@@ -118,12 +124,12 @@ public class StayOnSideTypeCode {
 	 * definition} = "An order pegged against  the bid price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBid = new MMCode() {
+	public static final StayOnSideTypeCode Bid = new StayOnSideTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Bid";
 			definition = "An order pegged against  the bid price.";
-			owner_lazy = () -> StayOnSideTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StayOnSideTypeCode.mmObject();
 			codeName = "BIDE";
 		}
 	};
@@ -148,17 +154,21 @@ public class StayOnSideTypeCode {
 	 * definition} = "Indicates a voluntary absence of choice/decision."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDontCare = new MMCode() {
+	public static final StayOnSideTypeCode DontCare = new StayOnSideTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DontCare";
 			definition = "Indicates a voluntary absence of choice/decision.";
-			owner_lazy = () -> StayOnSideTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StayOnSideTypeCode.mmObject();
 			codeName = "DCAR";
 		}
 	};
+	final static private LinkedHashMap<String, StayOnSideTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected StayOnSideTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +176,36 @@ public class StayOnSideTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StayOnSideTypeCode";
 				definition = "Indicates that an order is pegged against the offer/bid at the time of the order submission.";
-				code_lazy = () -> Arrays.asList(StayOnSideTypeCode.mmOffer, StayOnSideTypeCode.mmBid, StayOnSideTypeCode.mmDontCare);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StayOnSideTypeCode.Offer, com.tools20022.repository.codeset.StayOnSideTypeCode.Bid, com.tools20022.repository.codeset.StayOnSideTypeCode.DontCare);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Offer.getCodeName().get(), Offer);
+		codesByName.put(Bid.getCodeName().get(), Bid);
+		codesByName.put(DontCare.getCodeName().get(), DontCare);
+	}
+
+	public static StayOnSideTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static StayOnSideTypeCode[] values() {
+		StayOnSideTypeCode[] values = new StayOnSideTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, StayOnSideTypeCode> {
+		@Override
+		public StayOnSideTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(StayOnSideTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

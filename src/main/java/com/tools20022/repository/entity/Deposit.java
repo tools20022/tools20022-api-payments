@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Money Money}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -55,8 +57,6 @@ import java.util.List;
  * Interest.mmDeposit}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Money Money}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -115,8 +115,8 @@ public class Deposit extends Money {
 	public static final MMBusinessAttribute mmDepositType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositType";
 			definition = "Specifies whether the deposit is fixed term or call/notice.";
@@ -170,8 +170,8 @@ public class Deposit extends Money {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest amount linked to a deposit. It is derived from the relationship between AssetHolding and Interest.";

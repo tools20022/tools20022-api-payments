@@ -39,6 +39,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -74,10 +78,6 @@ import java.util.List;
  * SecuritiesClearing.mmBuyIn}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -133,8 +133,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesCompensation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesCompensation";
 			definition = "Securities bought in a buy-in process.";
@@ -171,8 +171,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmBuyinDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyinDate";
 			definition = "Date at which the buy-in occurs.";
@@ -224,8 +224,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmBuyInPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyInPrice";
 			definition = "Provides the price of the buy-in.";
@@ -266,8 +266,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmFees = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fees";
 			definition = "Fees related to a cash compensation or to a securities compensation in a buy-in process";
@@ -324,8 +324,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmCashCompensation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashCompensation";
 			definition = "In case securities are not available to be bought-in by the buyer/CCP, a cash compensation is required from the seller. It is derived from the association ResultingObligation between ObligationFulfillment and Obligation.";
@@ -370,8 +370,8 @@ public class BuyIn extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesClearingProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesClearingProcess";
 			definition = "Clearing process which includes the buy-in.";

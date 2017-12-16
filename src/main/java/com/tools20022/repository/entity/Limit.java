@@ -78,14 +78,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CreditLine2 CreditLine2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Limit2 Limit2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -109,6 +101,14 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.Reservation Reservation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.LiquidityManagementLimit
  * LiquidityManagementLimit}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditLine2 CreditLine2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Limit2 Limit2}</li>
  * </ul>
  * </li>
  * <li>
@@ -159,8 +159,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of the limit.";
@@ -215,8 +215,8 @@ public class Limit {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditLine2.mmAmount, Limit2.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money of the limit, expressed in a currency.";
@@ -270,8 +270,8 @@ public class Limit {
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Limit2.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies if a limit is a debit limit or a credit limit.";
@@ -316,8 +316,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmUsedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UsedAmount";
 			definition = "Actual usage of the limit expressed as an amount.";
@@ -362,8 +362,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmUsedPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UsedPercentage";
 			definition = "Actual usage of the limit expressed as a percentage.";
@@ -407,8 +407,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency unit used to specify the limit amount.";
@@ -460,8 +460,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmLimitStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitStatus";
 			definition = "Current status of the limit.";
@@ -500,8 +500,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Specifies that the limit is a percentage of a related amount.";
@@ -554,8 +554,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDebitCreditFacility = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDebitCreditFacility";
 			definition = "Overdraft conditions for which limit parameters are specified.";
@@ -597,8 +597,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmPeriodicity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Periodicity";
 			definition = "Specifies the periodicity linked to a limit for example the periodicity can indicate that the limit can be reached daily or monthly.";
@@ -643,8 +643,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmQuantity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Specifies that the limit is a quantity.";
@@ -696,8 +696,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Period at which the limit is effective.";
@@ -742,8 +742,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentCard";
 			definition = "Payment card for which a limit is specified.";
@@ -782,8 +782,8 @@ public class Limit {
 	 */
 	public static final MMBusinessAttribute mmAvailableAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableAmount";
 			definition = "Remaining amount of money of the limit.";

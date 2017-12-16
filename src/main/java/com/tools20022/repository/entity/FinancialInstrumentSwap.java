@@ -147,8 +147,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmMaturity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Maturity";
 			definition = "Range of time during which a swap is in effect.";
@@ -195,8 +195,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmSpotSell = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpotSell";
 			definition = "Details of the spot leg of the sell-side of a swap.";
@@ -243,8 +243,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmSpotBuy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpotBuy";
 			definition = "Details of the spot leg of the buy-side of a swap.";
@@ -294,8 +294,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmForwardBuyBack = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardBuyBack";
 			definition = "Details of the forward leg of a swap that has been sold and is being returned, ie, bought back.";
@@ -345,8 +345,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmForwardSellBack = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardSellBack";
 			definition = "Details of the forward leg of a swap that has been bought and is being returned, ie, sold back.";
@@ -392,8 +392,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedQuote";
 			definition = "Quote related to a swap.";
@@ -434,8 +434,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAttribute mmForwardSellBackFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardSellBackFrequency";
 			definition = "Frequency at which the sold financial instrument is being returned.";
@@ -482,8 +482,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAttribute mmForwardBuyBackFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardBuyBackFrequency";
 			definition = "Frequency at which the bought financial instrument is being returned.";
@@ -530,8 +530,8 @@ public class FinancialInstrumentSwap {
 	 */
 	public static final MMBusinessAttribute mmInterestComputation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestComputation";
 			definition = "Method used to compute the accrued interest of a financial instrument.";

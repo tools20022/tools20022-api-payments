@@ -125,8 +125,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmTradeMinus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeMinus";
 			definition = "An agreed number of days before the Trade date (T) used to define standard timeframes e.g. T-1 Dealing cut off or T-2 prepayment condition\r\nWhere = T is the date that the price is applied to a transaction,";
@@ -173,8 +173,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmRenunciationMinus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenunciationMinus";
 			definition = "An agreed number of days before the Renunciation of Title documents are received used to define standard timeframes in redemption.";
@@ -228,8 +228,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAssociationEnd mmSubscriptionSettlementRelatedFundProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionSettlementRelatedFundProcessing";
 			definition = "Fund processing characteristics related to a subscription cycle.";
@@ -271,8 +271,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmTradePlus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePlus";
 			definition = "An agreed number of days after the Trade date (T) used to define standard timeframes e.g T+3 settlement period. \r\nWhere = T is the date that the price is applied to a transaction.";
@@ -320,8 +320,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmRenunciationPlus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenunciationPlus";
 			definition = "An agreed number of days after the renunciation of title documents are received used to define standard timeframes in Redemption e.g R+3 Redemption settlement cycle.";
@@ -366,8 +366,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmPrepayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Prepayment";
 			definition = "Indicates whether pre-payment is necessary.";
@@ -414,8 +414,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAttribute mmOtherTimeFrameDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherTimeFrameDescription";
 			definition = "Specifies a description of any other TimeFrame that may be used for the DealingCutOffTimeFrame";
@@ -470,8 +470,8 @@ public class TimeFrame {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedProcessingCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedProcessingCharacteristics";
 			definition = "Processing characteristics for which a cut off time frame is specified.";

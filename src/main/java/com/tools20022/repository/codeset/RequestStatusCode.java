@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RequestStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the coded status of invoice financing request.
@@ -31,14 +36,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.RequestStatusCode#mmFinanced
+ * <li>{@linkplain com.tools20022.repository.codeset.RequestStatusCode#Financed
  * RequestStatusCode.mmFinanced}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.RequestStatusCode#mmPending
+ * <li>{@linkplain com.tools20022.repository.codeset.RequestStatusCode#Pending
  * RequestStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RequestStatusCode#mmNotFinanced
+ * {@linkplain com.tools20022.repository.codeset.RequestStatusCode#NotFinanced
  * RequestStatusCode.mmNotFinanced}</li>
  * </ul>
  * </li>
@@ -63,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the coded status of invoice financing request."</li>
  * </ul>
  */
-public class RequestStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RequestStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +92,12 @@ public class RequestStatusCode {
 	 * "Single Invoice/Instalment financing request has been financed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFinanced = new MMCode() {
+	public static final RequestStatusCode Financed = new RequestStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Financed";
 			definition = "Single Invoice/Instalment financing request has been financed.";
-			owner_lazy = () -> RequestStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RequestStatusCode.mmObject();
 			codeName = "FNCD";
 		}
 	};
@@ -121,12 +125,12 @@ public class RequestStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final RequestStatusCode Pending = new RequestStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
 			definition = "Single Invoice/Instalment financing request is in a pending status and more checks are ongoing.";
-			owner_lazy = () -> RequestStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RequestStatusCode.mmObject();
 			codeName = "PDNG";
 		}
 	};
@@ -152,17 +156,21 @@ public class RequestStatusCode {
 	 * "Single Invoice/Instalment financing request has not been financed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotFinanced = new MMCode() {
+	public static final RequestStatusCode NotFinanced = new RequestStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotFinanced";
 			definition = "Single Invoice/Instalment financing request has not been financed.";
-			owner_lazy = () -> RequestStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RequestStatusCode.mmObject();
 			codeName = "NTFD";
 		}
 	};
+	final static private LinkedHashMap<String, RequestStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RequestStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -170,9 +178,36 @@ public class RequestStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RequestStatusCode";
 				definition = "Specifies the coded status of invoice financing request.";
-				code_lazy = () -> Arrays.asList(RequestStatusCode.mmFinanced, RequestStatusCode.mmPending, RequestStatusCode.mmNotFinanced);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RequestStatusCode.Financed, com.tools20022.repository.codeset.RequestStatusCode.Pending, com.tools20022.repository.codeset.RequestStatusCode.NotFinanced);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Financed.getCodeName().get(), Financed);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(NotFinanced.getCodeName().get(), NotFinanced);
+	}
+
+	public static RequestStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RequestStatusCode[] values() {
+		RequestStatusCode[] values = new RequestStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RequestStatusCode> {
+		@Override
+		public RequestStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RequestStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

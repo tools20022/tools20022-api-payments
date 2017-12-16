@@ -165,8 +165,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmOptionNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionNumber";
 			definition = "Number identifying the available corporate action options.";
@@ -213,8 +213,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmOptionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionType";
 			definition = "Type of corporate action options available to the account owner.";
@@ -264,8 +264,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmFractionDisposition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionDisposition";
 			definition = "Treatment of the fractions resulting from derived securities will be processed or how prorated decisions will be rounding, if provided with a pro ration rate.";
@@ -310,8 +310,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmCurrencyOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyOption";
 			definition = "Currency choice given to the investor.";
@@ -366,8 +366,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedChoiceCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedChoiceCorporateAction";
 			definition = "Corporate action for which one or more options are provided.";
@@ -415,8 +415,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionElection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionElection";
 			definition = "Election process which selected a specific option.";
@@ -456,8 +456,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmOptionFeatures = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionFeatures";
 			definition = "Features that may apply to a corporate action option.";
@@ -512,8 +512,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmActionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionPeriod";
 			definition = "Period during which the specified option remains valid, eg, offer period.";
@@ -553,8 +553,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmOfferType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferType";
 			definition = "Conditions that apply to the offer.";
@@ -603,8 +603,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmChargesAppliedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargesAppliedIndicator";
 			definition = "Indicates whether charges apply to the holder, for instance redemption charges.";
@@ -650,8 +650,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmWithdrawalAllowedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalAllowedIndicator";
 			definition = "Indicates whether withdrawal of instruction is allowed.";
@@ -697,8 +697,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmChangeAllowedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChangeAllowedIndicator";
 			definition = "Indicates whether change of instruction is allowed.";
@@ -753,8 +753,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionOptionServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOptionServicing";
 			definition = "Calculation of the entitlement on the basis of the proposed option.";
@@ -803,8 +803,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProceedsDefinition";
 			definition = "Definition of exchanges of cash and / or securities available in the processing of corporate actions.";
@@ -851,8 +851,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAssociationEnd mmDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Distribution";
 			definition = "Distribution process for which an option is selected.";
@@ -892,8 +892,8 @@ public class CorporateActionOption {
 	 */
 	public static final MMBusinessAttribute mmDefault = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Default";
 			definition = "Specifies whether the option is the default option or not.";

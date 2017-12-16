@@ -90,14 +90,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ContractCollateral1
- * ContractCollateral1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -142,6 +134,14 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.ContractCollateral1#mmCollateralDescription
  * ContractCollateral1.mmCollateralDescription}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ContractCollateral1
+ * ContractCollateral1}</li>
  * </ul>
  * </li>
  * <li>
@@ -201,8 +201,8 @@ public class Collateral {
 	public static final MMBusinessAttribute mmCollateralAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractCollateral1.mmTotalAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAmount";
 			definition = "Value of the collateral as an amount.";
@@ -254,8 +254,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmValuation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Valuation";
 			definition = "Valuation process of specific collateral elements.";
@@ -293,8 +293,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAttribute mmCollateralType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralType";
 			definition = "Specifies the type of collateral.";
@@ -340,8 +340,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAttribute mmBaseCurrencyAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BaseCurrencyAmount";
 			definition = "Value of the collateral in the currency used for reporting.";
@@ -389,8 +389,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAttribute mmCollateralPurpose = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralPurpose";
 			definition = "Specifies whether the collateral has been posted against the variation margin or the segregated independent amount.";
@@ -443,8 +443,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralBalance";
 			definition = "Collateral balance which contain specific collateral elements.";
@@ -489,8 +489,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAccount";
 			definition = "Account from or to which collateral is delivered.";
@@ -537,8 +537,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralManagement";
 			definition = "Series of processes which are related to the collateral processes.";
@@ -587,8 +587,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralPartyRole";
 			definition = "Specifies the roles played by a party in the context of collateral processes.";
@@ -636,8 +636,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the status of the collateral or of an event related to collateral.";
@@ -683,8 +683,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AssetHolding";
 			definition = "Specifies the securities or physical entities given as collateral.";
@@ -733,8 +733,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariationMarginAssetHolding";
 			definition = "Specifies in terms of value and quantity the assets held as collateral against the variation margin.";
@@ -782,8 +782,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SegregatedIndependentAmountAssetHolding";
 			definition = "Specifies in terms of value and quantity the assets held as collateral against the segregated independent amount.";
@@ -828,8 +828,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralAgreement";
 			definition = "Collateral agreement which governs the collateral.";
@@ -867,8 +867,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAttribute mmCollateralOwnership = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralOwnership";
 			definition = "Specifies who is the owner of the collateral.";
@@ -924,8 +924,8 @@ public class Collateral {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralSubstitution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralSubstitution";
 			definition = "Collateral substitution for which new collateral is replacing the returned one.";

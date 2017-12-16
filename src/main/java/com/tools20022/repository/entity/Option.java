@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Derivative
+ * Derivative}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -113,9 +116,6 @@ import java.util.List;
  * SecuritiesOptionTrade.mmOption}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Derivative
- * Derivative}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -164,8 +164,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmInstrumentAssignmentMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstrumentAssignmentMethod";
 			definition = "Method under which assignment was conducted.";
@@ -213,8 +213,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmSettleStyle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettleStyle";
 			definition = "Specifies whether the option contract settles at the open or close of the market.";
@@ -263,8 +263,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmStandardisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Standardisation";
 			definition = "Specifies whether the terms of the security (underlying instruments, expiration date, contract size) are defined according to the exchange specifications or whether they can be user defined.";
@@ -312,8 +312,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmPositionLimit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PositionLimit";
 			definition = "Indicates the maximum number of listed option contracts on a single security which can be held by an investor or group of investors acting jointly.";
@@ -359,8 +359,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmUnderlyingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingType";
 			definition = "Specifies the type of underlying to which the option relates.";
@@ -408,8 +408,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmCoverIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverIndicator";
 			definition = "Indicates whether the underlying financial instrument of an option is owned by the writer of the option.";
@@ -465,8 +465,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAssociationEnd mmOptionConversionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionConversionInformation";
 			definition = "Information on the conversion exchange of an option into another form of securities.";
@@ -508,8 +508,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmOptionRatio = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionRatio";
 			definition = "Expresses the risk of an option leg. Value must be between -1 and 1. A Call Option will require a ratio value between 0 and 1. A Put Option will require a ratio value between -1 and 0.";
@@ -562,8 +562,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOptionTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesOptionTrade";
 			definition = "Specifies the trade elements for the option.";
@@ -605,8 +605,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmSettlementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementType";
 			definition = "Indicates whether the trade is to be settled as principal or netted off against another trade.";
@@ -653,8 +653,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmStrikeMultiplier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikeMultiplier";
 			definition = "Multiplier applied to the strike price for the purpose of calculating the settlement value (Used for derivatives).";
@@ -699,8 +699,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmExpiryLocation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryLocation";
 			definition = "Financial center where option expires.";
@@ -745,8 +745,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmFinalSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinalSettlementDate";
 			definition = "Date on which the trade is settled. i.e., the amounts are due.";
@@ -793,8 +793,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmOptionStyle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionStyle";
 			definition = "Specifies how an option can be exercised (American, European, Bermudan)";
@@ -846,8 +846,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyOption";
 			definition = "Information specific to a currency option.";
@@ -884,8 +884,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmEarliestExerciseDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarliestExerciseDate";
 			definition = "First date on which an american option can be exercised.";
@@ -932,8 +932,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmSettlementDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDays";
 			definition = "Number of business days between the hit date and the payment date in case of settlement at hit.";
@@ -986,8 +986,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAssociationEnd mmStrikePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikePrice";
 			definition = "Predetermined price at which the holder will have to buy or sell the underlying instrument.";
@@ -1025,8 +1025,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmOptionStartDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionStartDate";
 			definition = "First date on which an option becomes effective.";
@@ -1074,8 +1074,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmExpiryDateAndTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDateAndTime";
 			definition = "For European options, date on which the option holder can only exercise the right or let it lapse. For American options, the option holder can exercise the right up to the expiry date.";
@@ -1124,8 +1124,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmOptionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionType";
 			definition = "Specifies whether it is a Call option (right to purchase a specific underlying asset) or a Put option (right to sell a specific underlying asset).";
@@ -1172,8 +1172,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmStrikeValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikeValue";
 			definition = "Number of shares/units for the financial instrument involved in the option trade (Used for derivatives).";
@@ -1220,8 +1220,8 @@ public class Option extends Derivative {
 	 */
 	public static final MMBusinessAttribute mmSettlementPeriodType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementPeriodType";
 			definition = "Specifies how settlement will take place for instance at expiration or at hit.";

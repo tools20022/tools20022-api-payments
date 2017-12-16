@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExchangeRateTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Code used to define the type of the currency exchange.
@@ -31,14 +36,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#mmSpot
+ * <li>{@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#Spot
  * ExchangeRateTypeCode.mmSpot}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#mmSale
+ * <li>{@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#Sale
  * ExchangeRateTypeCode.mmSale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#mmAgreed
+ * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode#Agreed
  * ExchangeRateTypeCode.mmAgreed}</li>
  * </ul>
  * </li>
@@ -70,7 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Code used to define the type of the currency exchange."</li>
  * </ul>
  */
-public class ExchangeRateTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExchangeRateTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +98,12 @@ public class ExchangeRateTypeCode {
 	 * definition} = "Exchange rate applied is the spot rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpot = new MMCode() {
+	public static final ExchangeRateTypeCode Spot = new ExchangeRateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spot";
 			definition = "Exchange rate applied is the spot rate.";
-			owner_lazy = () -> ExchangeRateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateTypeCode.mmObject();
 			codeName = "SPOT";
 		}
 	};
@@ -125,12 +129,12 @@ public class ExchangeRateTypeCode {
 	 * "Exchange rate applied is the market rate at the time of the sale."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSale = new MMCode() {
+	public static final ExchangeRateTypeCode Sale = new ExchangeRateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sale";
 			definition = "Exchange rate applied is the market rate at the time of the sale.";
-			owner_lazy = () -> ExchangeRateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateTypeCode.mmObject();
 			codeName = "SALE";
 		}
 	};
@@ -156,17 +160,21 @@ public class ExchangeRateTypeCode {
 	 * "Exchange rate applied is the rate agreed between the parties."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgreed = new MMCode() {
+	public static final ExchangeRateTypeCode Agreed = new ExchangeRateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agreed";
 			definition = "Exchange rate applied is the rate agreed between the parties.";
-			owner_lazy = () -> ExchangeRateTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateTypeCode.mmObject();
 			codeName = "AGRD";
 		}
 	};
+	final static private LinkedHashMap<String, ExchangeRateTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExchangeRateTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,10 +182,37 @@ public class ExchangeRateTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExchangeRateTypeCode";
 				definition = "Code used to define the type of the currency exchange.";
-				code_lazy = () -> Arrays.asList(ExchangeRateTypeCode.mmSpot, ExchangeRateTypeCode.mmSale, ExchangeRateTypeCode.mmAgreed);
 				derivation_lazy = () -> Arrays.asList(ExchangeRateType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ExchangeRateTypeCode.Spot, com.tools20022.repository.codeset.ExchangeRateTypeCode.Sale, com.tools20022.repository.codeset.ExchangeRateTypeCode.Agreed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Spot.getCodeName().get(), Spot);
+		codesByName.put(Sale.getCodeName().get(), Sale);
+		codesByName.put(Agreed.getCodeName().get(), Agreed);
+	}
+
+	public static ExchangeRateTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExchangeRateTypeCode[] values() {
+		ExchangeRateTypeCode[] values = new ExchangeRateTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExchangeRateTypeCode> {
+		@Override
+		public ExchangeRateTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExchangeRateTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

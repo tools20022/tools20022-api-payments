@@ -36,6 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.InterestManagement
+ * InterestManagement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -65,9 +68,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * CollateralBalance.mmCollateralInterestManagement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.InterestManagement
- * InterestManagement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -124,8 +124,8 @@ public class CollateralInterestAdministration extends InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralManagement";
 			definition = "Collateral processes that interest management is part of.";
@@ -174,8 +174,8 @@ public class CollateralInterestAdministration extends InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmClosingCollateralBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingCollateralBalance";
 			definition = "Specifies the opening collateral balance for the calculation of interest.";
@@ -224,8 +224,8 @@ public class CollateralInterestAdministration extends InterestManagement {
 	 */
 	public static final MMBusinessAssociationEnd mmOpeningCollateralBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OpeningCollateralBalance";
 			definition = "Specifies the opening collateral balance for the calculation of interest.";

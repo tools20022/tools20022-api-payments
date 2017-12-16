@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RoundingMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines how the rounding amount was applied in the calculation. For example,
@@ -33,14 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#mmDown
+ * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Down
  * RoundingMethodCode.mmDown}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#mmUp
+ * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Up
  * RoundingMethodCode.mmUp}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#mmNone
+ * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#None
  * RoundingMethodCode.mmNone}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.RoundingMethodCode#mmCloser
+ * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Closer
  * RoundingMethodCode.mmCloser}</li>
  * </ul>
  * </li>
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class RoundingMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RoundingMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +96,12 @@ public class RoundingMethodCode {
 	 * definition} = "Rounds the amount down."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDown = new MMCode() {
+	public static final RoundingMethodCode Down = new RoundingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Down";
 			definition = "Rounds the amount down.";
-			owner_lazy = () -> RoundingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RoundingMethodCode.mmObject();
 			codeName = "DRDW";
 		}
 	};
@@ -121,12 +126,12 @@ public class RoundingMethodCode {
 	 * definition} = "Rounds the amount up."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUp = new MMCode() {
+	public static final RoundingMethodCode Up = new RoundingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Up";
 			definition = "Rounds the amount up.";
-			owner_lazy = () -> RoundingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RoundingMethodCode.mmObject();
 			codeName = "DRUP";
 		}
 	};
@@ -151,12 +156,12 @@ public class RoundingMethodCode {
 	 * definition} = "Do not round."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNone = new MMCode() {
+	public static final RoundingMethodCode None = new RoundingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "None";
 			definition = "Do not round.";
-			owner_lazy = () -> RoundingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RoundingMethodCode.mmObject();
 			codeName = "NONE";
 		}
 	};
@@ -182,17 +187,21 @@ public class RoundingMethodCode {
 	 * "Rounds the amount to the closer integral multiple specified."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCloser = new MMCode() {
+	public static final RoundingMethodCode Closer = new RoundingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Closer";
 			definition = "Rounds the amount to the closer integral multiple specified.";
-			owner_lazy = () -> RoundingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RoundingMethodCode.mmObject();
 			codeName = "CLSR";
 		}
 	};
+	final static private LinkedHashMap<String, RoundingMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RoundingMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -200,9 +209,38 @@ public class RoundingMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RoundingMethodCode";
 				definition = "Defines how the rounding amount was applied in the calculation. For example, should the amount of collateral required be rounded up, down, to the closer integral multiple specified or not rounded.";
-				code_lazy = () -> Arrays.asList(RoundingMethodCode.mmDown, RoundingMethodCode.mmUp, RoundingMethodCode.mmNone, RoundingMethodCode.mmCloser);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RoundingMethodCode.Down, com.tools20022.repository.codeset.RoundingMethodCode.Up, com.tools20022.repository.codeset.RoundingMethodCode.None,
+						com.tools20022.repository.codeset.RoundingMethodCode.Closer);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Down.getCodeName().get(), Down);
+		codesByName.put(Up.getCodeName().get(), Up);
+		codesByName.put(None.getCodeName().get(), None);
+		codesByName.put(Closer.getCodeName().get(), Closer);
+	}
+
+	public static RoundingMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RoundingMethodCode[] values() {
+		RoundingMethodCode[] values = new RoundingMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RoundingMethodCode> {
+		@Override
+		public RoundingMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RoundingMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

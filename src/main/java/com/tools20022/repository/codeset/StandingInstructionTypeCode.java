@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.StandingInstructionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of standing instruction.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmCashDistribution
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#CashDistribution
  * StandingInstructionTypeCode.mmCashDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmGrossNet
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#GrossNet
  * StandingInstructionTypeCode.mmGrossNet}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmSecuritiesDistribution
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#SecuritiesDistribution
  * StandingInstructionTypeCode.mmSecuritiesDistribution}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of standing instruction."</li>
  * </ul>
  */
-public class StandingInstructionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class StandingInstructionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class StandingInstructionTypeCode {
 	 * definition} = "Standing instruction for a cash distribution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCashDistribution = new MMCode() {
+	public static final StandingInstructionTypeCode CashDistribution = new StandingInstructionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistribution";
 			definition = "Standing instruction for a cash distribution.";
-			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StandingInstructionTypeCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -118,12 +124,12 @@ public class StandingInstructionTypeCode {
 	 * "Standing instruction for the payment modality, gross or net."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGrossNet = new MMCode() {
+	public static final StandingInstructionTypeCode GrossNet = new StandingInstructionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossNet";
 			definition = "Standing instruction for the payment modality, gross or net.";
-			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StandingInstructionTypeCode.mmObject();
 			codeName = "PAYM";
 		}
 	};
@@ -148,17 +154,21 @@ public class StandingInstructionTypeCode {
 	 * definition} = "Standing instruction for a securities distribution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecuritiesDistribution = new MMCode() {
+	public static final StandingInstructionTypeCode SecuritiesDistribution = new StandingInstructionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDistribution";
 			definition = "Standing instruction for a securities distribution.";
-			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StandingInstructionTypeCode.mmObject();
 			codeName = "SECU";
 		}
 	};
+	final static private LinkedHashMap<String, StandingInstructionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected StandingInstructionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +176,37 @@ public class StandingInstructionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingInstructionTypeCode";
 				definition = "Specifies the type of standing instruction.";
-				code_lazy = () -> Arrays.asList(StandingInstructionTypeCode.mmCashDistribution, StandingInstructionTypeCode.mmGrossNet, StandingInstructionTypeCode.mmSecuritiesDistribution);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StandingInstructionTypeCode.CashDistribution, com.tools20022.repository.codeset.StandingInstructionTypeCode.GrossNet,
+						com.tools20022.repository.codeset.StandingInstructionTypeCode.SecuritiesDistribution);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CashDistribution.getCodeName().get(), CashDistribution);
+		codesByName.put(GrossNet.getCodeName().get(), GrossNet);
+		codesByName.put(SecuritiesDistribution.getCodeName().get(), SecuritiesDistribution);
+	}
+
+	public static StandingInstructionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static StandingInstructionTypeCode[] values() {
+		StandingInstructionTypeCode[] values = new StandingInstructionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, StandingInstructionTypeCode> {
+		@Override
+		public StandingInstructionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(StandingInstructionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

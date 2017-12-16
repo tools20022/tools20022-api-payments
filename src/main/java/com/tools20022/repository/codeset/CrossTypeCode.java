@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CrossTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of cross being submitted to a market.
@@ -31,14 +36,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#mmAllOrNone
+ * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#AllOrNone
  * CrossTypeCode.mmAllOrNone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CrossTypeCode#mmImmediateOrCancel
+ * {@linkplain com.tools20022.repository.codeset.CrossTypeCode#ImmediateOrCancel
  * CrossTypeCode.mmImmediateOrCancel}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#mmOneSide
+ * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#OneSide
  * CrossTypeCode.mmOneSide}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#mmSamePrice
+ * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#SamePrice
  * CrossTypeCode.mmSamePrice}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Type of cross being submitted to a market."</li>
  * </ul>
  */
-public class CrossTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CrossTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,12 +98,12 @@ public class CrossTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAllOrNone = new MMCode() {
+	public static final CrossTypeCode AllOrNone = new CrossTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllOrNone";
 			definition = "Cross All or None - Cross trade that is executed completely or not. Both sides are treated in the same manner. This is equivalent to Fill or Kill type behavior, where the cross order meets the crossing criteria  within the market and is executed or it is rejected.";
-			owner_lazy = () -> CrossTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTypeCode.mmObject();
 			codeName = "ALON";
 		}
 	};
@@ -128,12 +134,12 @@ public class CrossTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmImmediateOrCancel = new MMCode() {
+	public static final CrossTypeCode ImmediateOrCancel = new CrossTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImmediateOrCancel";
 			definition = "Cross trade that is executed partially and the rest is canceled. One side is fully executed, the other side is partially executed with the remainder being canceled. This is equivalent to an Immediate or Cancel on the other side. Note: The CrossPrioritization field is used to indicate which side should fully execute in this scenario.";
-			owner_lazy = () -> CrossTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTypeCode.mmObject();
 			codeName = "IMOC";
 		}
 	};
@@ -162,12 +168,12 @@ public class CrossTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOneSide = new MMCode() {
+	public static final CrossTypeCode OneSide = new CrossTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneSide";
 			definition = "Cross trade that is partially executed with the unfilled portions remaining active. One side of the cross is fully executed (the side that was prioritised) but the unfilled portion remains active.";
-			owner_lazy = () -> CrossTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTypeCode.mmObject();
 			codeName = "ONSI";
 		}
 	};
@@ -198,17 +204,21 @@ public class CrossTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSamePrice = new MMCode() {
+	public static final CrossTypeCode SamePrice = new CrossTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SamePrice";
 			definition = "Cross trade is executed with existing orders with the same price. In the case other orders exist with the same price, the quantity of the Cross is executed against the existing orders and quotes, the remainder of the cross is executed against the other side of the cross.The two sides potentially have different quantities.";
-			owner_lazy = () -> CrossTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTypeCode.mmObject();
 			codeName = "SAPR";
 		}
 	};
+	final static private LinkedHashMap<String, CrossTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CrossTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -216,9 +226,38 @@ public class CrossTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTypeCode";
 				definition = "Type of cross being submitted to a market.";
-				code_lazy = () -> Arrays.asList(CrossTypeCode.mmAllOrNone, CrossTypeCode.mmImmediateOrCancel, CrossTypeCode.mmOneSide, CrossTypeCode.mmSamePrice);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CrossTypeCode.AllOrNone, com.tools20022.repository.codeset.CrossTypeCode.ImmediateOrCancel, com.tools20022.repository.codeset.CrossTypeCode.OneSide,
+						com.tools20022.repository.codeset.CrossTypeCode.SamePrice);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AllOrNone.getCodeName().get(), AllOrNone);
+		codesByName.put(ImmediateOrCancel.getCodeName().get(), ImmediateOrCancel);
+		codesByName.put(OneSide.getCodeName().get(), OneSide);
+		codesByName.put(SamePrice.getCodeName().get(), SamePrice);
+	}
+
+	public static CrossTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CrossTypeCode[] values() {
+		CrossTypeCode[] values = new CrossTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CrossTypeCode> {
+		@Override
+		public CrossTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CrossTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

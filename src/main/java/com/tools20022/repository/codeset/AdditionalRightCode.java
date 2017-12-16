@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AdditionalRightCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Define specific rights that the shareholder has (for example, the right to
@@ -34,13 +39,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#mmWrittenQuestionProposal
+ * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#WrittenQuestionProposal
  * AdditionalRightCode.mmWrittenQuestionProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#mmResolutionProposal
+ * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#ResolutionProposal
  * AdditionalRightCode.mmResolutionProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#mmAgendaItemProposal
+ * {@linkplain com.tools20022.repository.codeset.AdditionalRightCode#AgendaItemProposal
  * AdditionalRightCode.mmAgendaItemProposal}</li>
  * </ul>
  * </li>
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class AdditionalRightCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AdditionalRightCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class AdditionalRightCode {
 	 * definition} = "Defines a written question proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWrittenQuestionProposal = new MMCode() {
+	public static final AdditionalRightCode WrittenQuestionProposal = new AdditionalRightCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WrittenQuestionProposal";
 			definition = "Defines a written question proposal.";
-			owner_lazy = () -> AdditionalRightCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalRightCode.mmObject();
 			codeName = "WQPS";
 		}
 	};
@@ -121,12 +127,12 @@ public class AdditionalRightCode {
 	 * definition} = "Defines a resolution proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmResolutionProposal = new MMCode() {
+	public static final AdditionalRightCode ResolutionProposal = new AdditionalRightCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposal";
 			definition = "Defines a resolution proposal.";
-			owner_lazy = () -> AdditionalRightCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalRightCode.mmObject();
 			codeName = "RSPS";
 		}
 	};
@@ -151,17 +157,21 @@ public class AdditionalRightCode {
 	 * definition} = "Defines a resolution proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgendaItemProposal = new MMCode() {
+	public static final AdditionalRightCode AgendaItemProposal = new AdditionalRightCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgendaItemProposal";
 			definition = "Defines a resolution proposal.";
-			owner_lazy = () -> AdditionalRightCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalRightCode.mmObject();
 			codeName = "AIPS";
 		}
 	};
+	final static private LinkedHashMap<String, AdditionalRightCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AdditionalRightCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -169,9 +179,37 @@ public class AdditionalRightCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalRightCode";
 				definition = "Define specific rights that the shareholder has (for example, the right to ask questions, the right to add items to the agenda or table draft resolutions).";
-				code_lazy = () -> Arrays.asList(AdditionalRightCode.mmWrittenQuestionProposal, AdditionalRightCode.mmResolutionProposal, AdditionalRightCode.mmAgendaItemProposal);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AdditionalRightCode.WrittenQuestionProposal, com.tools20022.repository.codeset.AdditionalRightCode.ResolutionProposal,
+						com.tools20022.repository.codeset.AdditionalRightCode.AgendaItemProposal);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(WrittenQuestionProposal.getCodeName().get(), WrittenQuestionProposal);
+		codesByName.put(ResolutionProposal.getCodeName().get(), ResolutionProposal);
+		codesByName.put(AgendaItemProposal.getCodeName().get(), AgendaItemProposal);
+	}
+
+	public static AdditionalRightCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AdditionalRightCode[] values() {
+		AdditionalRightCode[] values = new AdditionalRightCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AdditionalRightCode> {
+		@Override
+		public AdditionalRightCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AdditionalRightCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

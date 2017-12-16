@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PaymentCategoryPurposeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of transaction that resulted in the payment.
@@ -32,58 +37,58 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmIntraCompanyPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#IntraCompanyPayment
  * PaymentCategoryPurposeCode.mmIntraCompanyPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmTradeSettlementPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TradeSettlementPayment
  * PaymentCategoryPurposeCode.mmTradeSettlementPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmSalaryPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SalaryPayment
  * PaymentCategoryPurposeCode.mmSalaryPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmTreasuryPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TreasuryPayment
  * PaymentCategoryPurposeCode.mmTreasuryPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmCashManagementTransfer
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#CashManagementTransfer
  * PaymentCategoryPurposeCode.mmCashManagementTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmDividend
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Dividend
  * PaymentCategoryPurposeCode.mmDividend}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmGovernmentPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#GovernmentPayment
  * PaymentCategoryPurposeCode.mmGovernmentPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmInterest
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Interest
  * PaymentCategoryPurposeCode.mmInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmLoan
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Loan
  * PaymentCategoryPurposeCode.mmLoan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmPensionPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#PensionPayment
  * PaymentCategoryPurposeCode.mmPensionPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmSecurities
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Securities
  * PaymentCategoryPurposeCode.mmSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmSocialSecurityBenefit
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SocialSecurityBenefit
  * PaymentCategoryPurposeCode.mmSocialSecurityBenefit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmTaxPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TaxPayment
  * PaymentCategoryPurposeCode.mmTaxPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmValueAddedTaxPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#ValueAddedTaxPayment
  * PaymentCategoryPurposeCode.mmValueAddedTaxPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmSupplierPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SupplierPayment
  * PaymentCategoryPurposeCode.mmSupplierPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmHedging
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Hedging
  * PaymentCategoryPurposeCode.mmHedging}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmTrade
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Trade
  * PaymentCategoryPurposeCode.mmTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#mmWithHolding
+ * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#WithHolding
  * PaymentCategoryPurposeCode.mmWithHolding}</li>
  * </ul>
  * </li>
@@ -109,7 +114,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of transaction that resulted in the payment."</li>
  * </ul>
  */
-public class PaymentCategoryPurposeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentCategoryPurposeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -136,12 +142,12 @@ public class PaymentCategoryPurposeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntraCompanyPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode IntraCompanyPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntraCompanyPayment";
 			definition = "Transaction is an intra-company payment, ie, a payment between two companies belonging to the same group.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "INTC";
 		}
 	};
@@ -169,12 +175,12 @@ public class PaymentCategoryPurposeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTradeSettlementPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode TradeSettlementPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlementPayment";
 			definition = "Transaction is related to settlement of a trade, eg a foreign exchange deal or a securities transaction.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "CORT";
 		}
 	};
@@ -199,12 +205,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of salaries."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSalaryPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode SalaryPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SalaryPayment";
 			definition = "Transaction is the payment of salaries.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "SALA";
 		}
 	};
@@ -229,12 +235,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is related to treasury operations."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTreasuryPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode TreasuryPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryPayment";
 			definition = "Transaction is related to treasury operations.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "TREA";
 		}
 	};
@@ -259,12 +265,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is a general cash management instruction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCashManagementTransfer = new MMCode() {
+	public static final PaymentCategoryPurposeCode CashManagementTransfer = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashManagementTransfer";
 			definition = "Transaction is a general cash management instruction.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -289,12 +295,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of dividends."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDividend = new MMCode() {
+	public static final PaymentCategoryPurposeCode Dividend = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Transaction is the payment of dividends.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "DIVI";
 		}
 	};
@@ -320,12 +326,12 @@ public class PaymentCategoryPurposeCode {
 	 * "Transaction is a payment to or from a government department."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGovernmentPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode GovernmentPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GovernmentPayment";
 			definition = "Transaction is a payment to or from a government department.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "GOVT";
 		}
 	};
@@ -350,12 +356,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterest = new MMCode() {
+	public static final PaymentCategoryPurposeCode Interest = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Transaction is the payment of interest.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "INTE";
 		}
 	};
@@ -381,12 +387,12 @@ public class PaymentCategoryPurposeCode {
 	 * "Transaction is related to the transfer of a loan to a borrower."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLoan = new MMCode() {
+	public static final PaymentCategoryPurposeCode Loan = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Loan";
 			definition = "Transaction is related to the transfer of a loan to a borrower.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "LOAN";
 		}
 	};
@@ -411,12 +417,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of pension."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPensionPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode PensionPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PensionPayment";
 			definition = "Transaction is the payment of pension.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "PENS";
 		}
 	};
@@ -441,12 +447,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of securities."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecurities = new MMCode() {
+	public static final PaymentCategoryPurposeCode Securities = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Securities";
 			definition = "Transaction is the payment of securities.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "SECU";
 		}
 	};
@@ -474,12 +480,12 @@ public class PaymentCategoryPurposeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSocialSecurityBenefit = new MMCode() {
+	public static final PaymentCategoryPurposeCode SocialSecurityBenefit = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SocialSecurityBenefit";
 			definition = "Transaction is a social security benefit, ie payment made by a government to support individuals.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "SSBE";
 		}
 	};
@@ -504,12 +510,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of taxes."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTaxPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode TaxPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxPayment";
 			definition = "Transaction is the payment of taxes.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "TAXS";
 		}
 	};
@@ -534,12 +540,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of value added tax."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmValueAddedTaxPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode ValueAddedTaxPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueAddedTaxPayment";
 			definition = "Transaction is the payment of value added tax.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "VATX";
 		}
 	};
@@ -564,12 +570,12 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is related to a payment to a supplier."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSupplierPayment = new MMCode() {
+	public static final PaymentCategoryPurposeCode SupplierPayment = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SupplierPayment";
 			definition = "Transaction is related to a payment to a supplier.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "SUPP";
 		}
 	};
@@ -595,12 +601,12 @@ public class PaymentCategoryPurposeCode {
 	 * "Transaction is related to the payment of a hedging operation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHedging = new MMCode() {
+	public static final PaymentCategoryPurposeCode Hedging = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Hedging";
 			definition = "Transaction is related to the payment of a hedging operation.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "HEDG";
 		}
 	};
@@ -626,12 +632,12 @@ public class PaymentCategoryPurposeCode {
 	 * "Transaction is related to the payment of a trade transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTrade = new MMCode() {
+	public static final PaymentCategoryPurposeCode Trade = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Transaction is related to the payment of a trade transaction.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "TRAD";
 		}
 	};
@@ -656,17 +662,21 @@ public class PaymentCategoryPurposeCode {
 	 * definition} = "Transaction is the payment of withholding tax."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWithHolding = new MMCode() {
+	public static final PaymentCategoryPurposeCode WithHolding = new PaymentCategoryPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithHolding";
 			definition = "Transaction is the payment of withholding tax.";
-			owner_lazy = () -> PaymentCategoryPurposeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCategoryPurposeCode.mmObject();
 			codeName = "WHLD";
 		}
 	};
+	final static private LinkedHashMap<String, PaymentCategoryPurposeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentCategoryPurposeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -674,13 +684,59 @@ public class PaymentCategoryPurposeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCategoryPurposeCode";
 				definition = "Specifies the type of transaction that resulted in the payment.";
-				code_lazy = () -> Arrays.asList(PaymentCategoryPurposeCode.mmIntraCompanyPayment, PaymentCategoryPurposeCode.mmTradeSettlementPayment, PaymentCategoryPurposeCode.mmSalaryPayment,
-						PaymentCategoryPurposeCode.mmTreasuryPayment, PaymentCategoryPurposeCode.mmCashManagementTransfer, PaymentCategoryPurposeCode.mmDividend, PaymentCategoryPurposeCode.mmGovernmentPayment,
-						PaymentCategoryPurposeCode.mmInterest, PaymentCategoryPurposeCode.mmLoan, PaymentCategoryPurposeCode.mmPensionPayment, PaymentCategoryPurposeCode.mmSecurities, PaymentCategoryPurposeCode.mmSocialSecurityBenefit,
-						PaymentCategoryPurposeCode.mmTaxPayment, PaymentCategoryPurposeCode.mmValueAddedTaxPayment, PaymentCategoryPurposeCode.mmSupplierPayment, PaymentCategoryPurposeCode.mmHedging, PaymentCategoryPurposeCode.mmTrade,
-						PaymentCategoryPurposeCode.mmWithHolding);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentCategoryPurposeCode.IntraCompanyPayment, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.TradeSettlementPayment,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.SalaryPayment, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.TreasuryPayment,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.CashManagementTransfer, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Dividend,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.GovernmentPayment, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Interest,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Loan, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.PensionPayment,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Securities, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.SocialSecurityBenefit,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.TaxPayment, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.ValueAddedTaxPayment,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.SupplierPayment, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Hedging, com.tools20022.repository.codeset.PaymentCategoryPurposeCode.Trade,
+						com.tools20022.repository.codeset.PaymentCategoryPurposeCode.WithHolding);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(IntraCompanyPayment.getCodeName().get(), IntraCompanyPayment);
+		codesByName.put(TradeSettlementPayment.getCodeName().get(), TradeSettlementPayment);
+		codesByName.put(SalaryPayment.getCodeName().get(), SalaryPayment);
+		codesByName.put(TreasuryPayment.getCodeName().get(), TreasuryPayment);
+		codesByName.put(CashManagementTransfer.getCodeName().get(), CashManagementTransfer);
+		codesByName.put(Dividend.getCodeName().get(), Dividend);
+		codesByName.put(GovernmentPayment.getCodeName().get(), GovernmentPayment);
+		codesByName.put(Interest.getCodeName().get(), Interest);
+		codesByName.put(Loan.getCodeName().get(), Loan);
+		codesByName.put(PensionPayment.getCodeName().get(), PensionPayment);
+		codesByName.put(Securities.getCodeName().get(), Securities);
+		codesByName.put(SocialSecurityBenefit.getCodeName().get(), SocialSecurityBenefit);
+		codesByName.put(TaxPayment.getCodeName().get(), TaxPayment);
+		codesByName.put(ValueAddedTaxPayment.getCodeName().get(), ValueAddedTaxPayment);
+		codesByName.put(SupplierPayment.getCodeName().get(), SupplierPayment);
+		codesByName.put(Hedging.getCodeName().get(), Hedging);
+		codesByName.put(Trade.getCodeName().get(), Trade);
+		codesByName.put(WithHolding.getCodeName().get(), WithHolding);
+	}
+
+	public static PaymentCategoryPurposeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentCategoryPurposeCode[] values() {
+		PaymentCategoryPurposeCode[] values = new PaymentCategoryPurposeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentCategoryPurposeCode> {
+		@Override
+		public PaymentCategoryPurposeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentCategoryPurposeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -65,6 +65,10 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Identifies a document by a unique identification and a date of issue."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.DocumentIdentification22
+ * DocumentIdentification22}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -72,10 +76,6 @@ import javax.xml.bind.annotation.XmlType;
  * DocumentIdentification29}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.DocumentIdentification22
- * DocumentIdentification22}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
@@ -114,6 +114,11 @@ public class DocumentIdentification28 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identifies the document."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#mmIdentification
+	 * DocumentIdentification22.mmIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -122,11 +127,6 @@ public class DocumentIdentification28 {
 	 * DocumentIdentification29.mmIdentification}</li>
 	 * </ul>
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#mmIdentification
-	 * DocumentIdentification22.mmIdentification}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
@@ -176,6 +176,11 @@ public class DocumentIdentification28 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date of issuance of the document."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#mmDateOfIssue
+	 * DocumentIdentification22.mmDateOfIssue}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -184,11 +189,6 @@ public class DocumentIdentification28 {
 	 * DocumentIdentification29.mmDateOfIssue}</li>
 	 * </ul>
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#mmDateOfIssue
-	 * DocumentIdentification22.mmDateOfIssue}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmDateOfIssue = new MMMessageAttribute() {

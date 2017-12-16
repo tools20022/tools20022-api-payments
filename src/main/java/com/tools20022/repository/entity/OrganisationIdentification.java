@@ -38,6 +38,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
+ * PartyIdentificationInformation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -74,34 +78,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.OrganisationIdentification#mmMIC
  * OrganisationIdentification.mmMIC}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.GenericFinancialIdentification1
- * GenericFinancialIdentification1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.FinancialInstitutionIdentification8
- * FinancialInstitutionIdentification8}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BranchData2 BranchData2}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice
- * OrganisationIdentificationSchemeName1Choice}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.GenericOrganisationIdentification1
- * GenericOrganisationIdentification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OrganisationIdentification8
- * OrganisationIdentification8}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OrganisationIdentification7
- * OrganisationIdentification7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryAgent3
- * ProprietaryAgent3}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.FinancialInstitutionIdentification9
- * FinancialInstitutionIdentification9}</li>
  * </ul>
  * </li>
  * <li>
@@ -156,10 +132,34 @@ import java.util.List;
  * CashAccountCharacteristics2.mmAccountServicer}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
- * PartyIdentificationInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GenericFinancialIdentification1
+ * GenericFinancialIdentification1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.FinancialInstitutionIdentification8
+ * FinancialInstitutionIdentification8}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BranchData2 BranchData2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice
+ * OrganisationIdentificationSchemeName1Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GenericOrganisationIdentification1
+ * GenericOrganisationIdentification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OrganisationIdentification8
+ * OrganisationIdentification8}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OrganisationIdentification7
+ * OrganisationIdentification7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryAgent3
+ * ProprietaryAgent3}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.FinancialInstitutionIdentification9
+ * FinancialInstitutionIdentification9}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -224,8 +224,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	public static final MMBusinessAttribute mmBICFI = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmBICFI, FinancialInstitutionIdentification9.mmBICFI);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BICFI";
 			definition = "Code allocated to a financial institution by the ISO 9362 Registration Authority as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
@@ -288,8 +288,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	public static final MMBusinessAttribute mmAnyBIC = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(OrganisationIdentification8.mmAnyBIC, OrganisationIdentification7.mmAnyBIC);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnyBIC";
 			definition = "Code allocated to a financial or non-financial institution by the ISO 9362 Registration Authority, as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
@@ -346,8 +346,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisationName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationName";
 			definition = "Name by which an organisation is known and which is usually used to identify that organisation. It is derived from the association between PartyIdentificationInformation and PartyName.";
@@ -393,8 +393,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Organisation";
 			definition = "Organisation which is identified";
@@ -459,8 +459,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	public static final MMBusinessAssociationEnd mmClearingSystemMemberIdentificationType = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmClearingSystemMemberIdentification, FinancialInstitutionIdentification9.mmClearingSystemMemberIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystemMemberIdentificationType";
 			definition = "Unique and unambiguous identifier of a clearing system member, assigned by the system or system administrator.";
@@ -504,8 +504,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmBICNonFI = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BICNonFI";
 			definition = "Code allocated to a non-financial institution by the ISO 9362 Registration Authority as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
@@ -557,8 +557,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmEANGLN = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EANGLN";
 			definition = "Global Location Number. A non-significant reference number used to identify legal entities, functional entities, or physical entities according to the European Association for Numbering (EAN) numbering scheme rules. The number is used to retrieve detailed information that is linked to it.";
@@ -609,8 +609,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmCHIPSUniversalIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CHIPSUniversalIdentifier";
 			definition = "(United States) Clearing House Interbank Payments System (CHIPS) Universal Identification (UID). Identifies entities that own accounts at CHIPS participating financial institutions, through which CHIPS payments are effected. The CHIPS UID is assigned by the New York Clearing House.";
@@ -659,8 +659,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmDUNS = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DUNS";
 			definition = "Data Universal Numbering System. A unique identification number provided by Dun & Bradstreet to identify an organization.";
@@ -708,8 +708,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmBankPartyIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankPartyIdentification";
 			definition = "Unique and unambiguous assignment made by a specific bank to identify a relationship as defined between the bank and its client.";
@@ -759,8 +759,8 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmMIC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MIC";
 			definition = "Market Identifier Code. Identification of a financial market, as stipulated in the norm ISO 10383 \"Codes for exchanges and market identifications\".";

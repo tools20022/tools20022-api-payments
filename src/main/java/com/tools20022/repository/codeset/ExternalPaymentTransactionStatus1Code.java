@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalPaymentTransactionStatus1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of an individual payment instructions, as published in
@@ -53,11 +59,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalPaymentTransactionStatus1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalPaymentTransactionStatus1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalPaymentTransactionStatus1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalPaymentTransactionStatus1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -65,8 +76,34 @@ public class ExternalPaymentTransactionStatus1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalPaymentTransactionStatus1Code";
 				definition = "Specifies the status of an individual payment instructions, as published in an external payment transaction status code set.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalPaymentTransactionStatus1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalPaymentTransactionStatus1Code[] values() {
+		ExternalPaymentTransactionStatus1Code[] values = new ExternalPaymentTransactionStatus1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalPaymentTransactionStatus1Code> {
+		@Override
+		public ExternalPaymentTransactionStatus1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalPaymentTransactionStatus1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

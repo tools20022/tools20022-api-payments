@@ -34,6 +34,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
+ * SecuritiesPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -71,10 +75,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesBalance.mmSafekeepingPlace}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
- * SecuritiesPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -123,8 +123,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmSafekeepingPlaceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingPlaceType";
 			definition = "Place of safekeeping.";
@@ -177,8 +177,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = true;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country where the financial instruments are/will be safekept.";
@@ -228,8 +228,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesAccount";
 			definition = "Account at the safekeeping place where financial instruments are safekept.";
@@ -276,8 +276,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Balance which is held at a safekeeping place.";
@@ -326,8 +326,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Specifies the settlement operation which uses the safekeeping place.";

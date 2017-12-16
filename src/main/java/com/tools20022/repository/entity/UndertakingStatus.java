@@ -36,6 +36,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,8 +72,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * UndertakingStatusReason.mmUndertakingStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -126,8 +126,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a status is specified.";
@@ -167,8 +167,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmDemandStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DemandStatus";
 			definition = "Processing status reported by the applicant.";
@@ -214,8 +214,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the undertaking.";
@@ -272,8 +272,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingStatusReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingStatusReason";
 			definition = "Specifies the reason for the status. it is derived from the association between Status and StatusReason.";
@@ -313,8 +313,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmStatusCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusCategory";
 			definition = "Specifies the category of the status.";
@@ -360,8 +360,8 @@ public class UndertakingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmPresentationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PresentationStatus";
 			definition = "Status of the presentation.";

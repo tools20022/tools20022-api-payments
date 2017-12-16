@@ -36,6 +36,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -85,10 +89,6 @@ import java.util.List;
  * ProductDeliveryObligation.mmProductDeliveryOffset}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -144,8 +144,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmDeliveryPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryPeriod";
 			definition = "Actual delivery period of the products and/or services.";
@@ -192,8 +192,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmRouting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Routing";
 			definition = "Information related to the conveyance of goods.";
@@ -243,8 +243,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlement";
 			definition = "Specifies the settlement operation which originates the delivery of a product.";
@@ -293,8 +293,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Obligation";
 			definition = "Specifies the obligation which is offset by the delivery of a product.";
@@ -344,8 +344,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificate";
 			definition = "Formal document used to record a fact and used as proof of the fact, in the context of a commercial trade transaction.";
@@ -395,8 +395,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceCertificate";
 			definition = "Formal document used to record a fact and used as proof of the fact that goods have been insured under an insurance policy.";
@@ -442,8 +442,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the type of goods and services linked to the quantity.";

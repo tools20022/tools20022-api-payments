@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TaxExemptReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reason a specific tax has not been levied/deducted on a given
@@ -32,136 +37,133 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmNone
+ * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#None
  * TaxExemptReasonCode.mmNone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmMaxiISA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MaxiISA
  * TaxExemptReasonCode.mmMaxiISA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmMiniCashISA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniCashISA
  * TaxExemptReasonCode.mmMiniCashISA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmMiniStocksAndSharesISA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniStocksAndSharesISA
  * TaxExemptReasonCode.mmMiniStocksAndSharesISA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmMiniInsuranceISA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniInsuranceISA
  * TaxExemptReasonCode.mmMiniInsuranceISA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmCurrentYearPayment
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#CurrentYearPayment
  * TaxExemptReasonCode.mmCurrentYearPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmPriorYearPayment
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#PriorYearPayment
  * TaxExemptReasonCode.mmPriorYearPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmAssetTransfer
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#AssetTransfer
  * TaxExemptReasonCode.mmAssetTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEmployeePriorYear
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployeePriorYear
  * TaxExemptReasonCode.mmEmployeePriorYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEmployeeCurrentYear
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployeeCurrentYear
  * TaxExemptReasonCode.mmEmployeeCurrentYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEmployerPriorYear
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployerPriorYear
  * TaxExemptReasonCode.mmEmployerPriorYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEmployerCurrentYear
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployerCurrentYear
  * TaxExemptReasonCode.mmEmployerCurrentYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmNonFundPrototypeIRA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#NonFundPrototypeIRA
  * TaxExemptReasonCode.mmNonFundPrototypeIRA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmNonFundQualifiedPlan
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#NonFundQualifiedPlan
  * TaxExemptReasonCode.mmNonFundQualifiedPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmDefinedContributionPlan
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#DefinedContributionPlan
  * TaxExemptReasonCode.mmDefinedContributionPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmIndividualRetirementAccount
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#IndividualRetirementAccount
  * TaxExemptReasonCode.mmIndividualRetirementAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmIndividualRetirementAccountRollover
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#IndividualRetirementAccountRollover
  * TaxExemptReasonCode.mmIndividualRetirementAccountRollover}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmKEOGH
+ * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#KEOGH
  * TaxExemptReasonCode.mmKEOGH}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmProfitSharingPlan
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#ProfitSharingPlan
  * TaxExemptReasonCode.mmProfitSharingPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmFourHundredAndOneK
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredAndOneK
  * TaxExemptReasonCode.mmFourHundredAndOneK}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmSelfDirectedIRA
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#SelfDirectedIRA
  * TaxExemptReasonCode.mmSelfDirectedIRA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmFourHundredAndThreeB
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredAndThreeB
  * TaxExemptReasonCode.mmFourHundredAndThreeB}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmFourHundredFiftySeven
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredFiftySeven
  * TaxExemptReasonCode.mmFourHundredFiftySeven}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRothIRAFundPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothIRAFundPrototype
  * TaxExemptReasonCode.mmRothIRAFundPrototype}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRothIRANonPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothIRANonPrototype
  * TaxExemptReasonCode.mmRothIRANonPrototype}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRothConversionIRAFundPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothConversionIRAFundPrototype
  * TaxExemptReasonCode.mmRothConversionIRAFundPrototype}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRothConversionIRANonPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothConversionIRANonPrototype
  * TaxExemptReasonCode.mmRothConversionIRANonPrototype}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEducationIRAFundPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EducationIRAFundPrototype
  * TaxExemptReasonCode.mmEducationIRAFundPrototype}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmEducationIRANonPrototype
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EducationIRANonPrototype
  * TaxExemptReasonCode.mmEducationIRANonPrototype}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmOther
+ * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Other
  * TaxExemptReasonCode.mmOther}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmMinor
+ * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Minor
  * TaxExemptReasonCode.mmMinor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmIncapacity
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Incapacity
  * TaxExemptReasonCode.mmIncapacity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmForeigner
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Foreigner
  * TaxExemptReasonCode.mmForeigner}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmOrdinary
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Ordinary
  * TaxExemptReasonCode.mmOrdinary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmAssociation
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Association
  * TaxExemptReasonCode.mmAssociation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmDomestic
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Domestic
  * TaxExemptReasonCode.mmDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmOneOrBothForeign
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#OneOrBothForeign
  * TaxExemptReasonCode.mmOneOrBothForeign}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRightsHolder
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RightsHolder
  * TaxExemptReasonCode.mmRightsHolder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmPensionFund
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#PensionFund
  * TaxExemptReasonCode.mmPensionFund}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmDiplomat
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Diplomat
  * TaxExemptReasonCode.mmDiplomat}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmRefugee
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Refugee
  * TaxExemptReasonCode.mmRefugee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmOneNonResident
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#OneNonResident
  * TaxExemptReasonCode.mmOneNonResident}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmTwoNonResident
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#TwoNonResident
  * TaxExemptReasonCode.mmTwoNonResident}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#mmAdministrator
+ * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Administrator
  * TaxExemptReasonCode.mmAdministrator}</li>
  * </ul>
  * </li>
@@ -195,7 +197,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TaxExemptReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TaxExemptReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -219,12 +222,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Account is not tax exempt."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNone = new MMCode() {
+	public static final TaxExemptReasonCode None = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "None";
 			definition = "Account is not tax exempt.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "NONE";
 		}
 	};
@@ -256,12 +259,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMaxiISA = new MMCode() {
+	public static final TaxExemptReasonCode MaxiISA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaxiISA";
 			definition = "Maxi Individual Savings Account (ISA). Account is an ISA with a single ISA manager that may contain cash, stocks and shares, investment funds and life assurance up to the prescribed annual subscription limit (required for UK). The Maxi ISA allows an investor to save all three of the different elements of ISA investments that are allowed, with one savings institution in a single account.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "MASA";
 		}
 	};
@@ -294,12 +297,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiniCashISA = new MMCode() {
+	public static final TaxExemptReasonCode MiniCashISA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniCashISA";
 			definition = "Mini Cash Individual Savings Account (ISA). Account is an ISA with a single ISA manager that may contain cash, stocks and shares, investment funds and life assurance up to the prescribed annual subscription limit (required for UK). An investor can hold more than one Mini ISA to utilise the overall Mini ISA investment limit, and can invest with more than one savings institution, however only one of the three elements of ISA investment is allowed in a single account.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "MISA";
 		}
 	};
@@ -329,12 +332,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiniStocksAndSharesISA = new MMCode() {
+	public static final TaxExemptReasonCode MiniStocksAndSharesISA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniStocksAndSharesISA";
 			definition = "Mini Stocks and Shares Individual Savings Account (ISA). Account is an ISA with an ISA manager that may only contain stocks, shares and collective investments up to the prescribed annual subscription limit (required for UK).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "SISA";
 		}
 	};
@@ -363,12 +366,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiniInsuranceISA = new MMCode() {
+	public static final TaxExemptReasonCode MiniInsuranceISA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniInsuranceISA";
 			definition = "Mini Insurance Individual Savings Account (ISA). Account is an ISA  with an ISA manager that may only contain life insurance investments up to the prescribed annual subscription limit (required for UK).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "IISA";
 		}
 	};
@@ -396,12 +399,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCurrentYearPayment = new MMCode() {
+	public static final TaxExemptReasonCode CurrentYearPayment = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrentYearPayment";
 			definition = "Account is for current year payments into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "CUYP";
 		}
 	};
@@ -429,12 +432,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPriorYearPayment = new MMCode() {
+	public static final TaxExemptReasonCode PriorYearPayment = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriorYearPayment";
 			definition = "Account is for a prior year payment into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "PRYP";
 		}
 	};
@@ -462,12 +465,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAssetTransfer = new MMCode() {
+	public static final TaxExemptReasonCode AssetTransfer = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetTransfer";
 			definition = "Account is for an asset transfer into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "ASTR";
 		}
 	};
@@ -495,12 +498,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEmployeePriorYear = new MMCode() {
+	public static final TaxExemptReasonCode EmployeePriorYear = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployeePriorYear";
 			definition = "Account is for employee - prior year contributions into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EMPY";
 		}
 	};
@@ -528,12 +531,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEmployeeCurrentYear = new MMCode() {
+	public static final TaxExemptReasonCode EmployeeCurrentYear = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployeeCurrentYear";
 			definition = "Account is for employee - current year contributions into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EMCY";
 		}
 	};
@@ -561,12 +564,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEmployerPriorYear = new MMCode() {
+	public static final TaxExemptReasonCode EmployerPriorYear = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerPriorYear";
 			definition = "Account is for employer - prior year contributions into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EPRY";
 		}
 	};
@@ -594,12 +597,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEmployerCurrentYear = new MMCode() {
+	public static final TaxExemptReasonCode EmployerCurrentYear = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerCurrentYear";
 			definition = "Account is for employer - current year contributions into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "ECYE";
 		}
 	};
@@ -627,12 +630,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonFundPrototypeIRA = new MMCode() {
+	public static final TaxExemptReasonCode NonFundPrototypeIRA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonFundPrototypeIRA";
 			definition = "Account is for non-fund prototype Individual Retirement Account (IRA) into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "NFPI";
 		}
 	};
@@ -660,12 +663,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonFundQualifiedPlan = new MMCode() {
+	public static final TaxExemptReasonCode NonFundQualifiedPlan = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonFundQualifiedPlan";
 			definition = "Account is for non-fund qualified plan into an investment retirement account (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "NFQP";
 		}
 	};
@@ -691,12 +694,12 @@ public class TaxExemptReasonCode {
 	 * "Account is for a defined contribution plan (required for US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDefinedContributionPlan = new MMCode() {
+	public static final TaxExemptReasonCode DefinedContributionPlan = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefinedContributionPlan";
 			definition = "Account is for a defined contribution plan (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "DECP";
 		}
 	};
@@ -722,12 +725,12 @@ public class TaxExemptReasonCode {
 	 * "Account is an Individual Retirement Account (IRA) (required for US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndividualRetirementAccount = new MMCode() {
+	public static final TaxExemptReasonCode IndividualRetirementAccount = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndividualRetirementAccount";
 			definition = "Account is an Individual Retirement Account (IRA) (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "IRAC";
 		}
 	};
@@ -755,12 +758,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndividualRetirementAccountRollover = new MMCode() {
+	public static final TaxExemptReasonCode IndividualRetirementAccountRollover = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndividualRetirementAccountRollover";
 			definition = "Account is for an Individual Retirement Account (IRA) - Rollover (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "IRAR";
 		}
 	};
@@ -789,12 +792,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmKEOGH = new MMCode() {
+	public static final TaxExemptReasonCode KEOGH = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "KEOGH";
 			definition = "KEOGH. Account is a tax-deferred retirement plan designed to help self-employed workers or individuals who earn self-employed income establish a retirement savings program (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "KEOG";
 		}
 	};
@@ -819,12 +822,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Account is a Profit Sharing Plan (required for US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProfitSharingPlan = new MMCode() {
+	public static final TaxExemptReasonCode ProfitSharingPlan = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProfitSharingPlan";
 			definition = "Account is a Profit Sharing Plan (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "PFSP";
 		}
 	};
@@ -852,12 +855,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFourHundredAndOneK = new MMCode() {
+	public static final TaxExemptReasonCode FourHundredAndOneK = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FourHundredAndOneK";
 			definition = "401k. Account is an optional retirement plan supported by many companies, in which income is invested before it is taxed (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "401K";
 		}
 	};
@@ -883,12 +886,12 @@ public class TaxExemptReasonCode {
 	 * "Self-Directed Individual Retirement Account (IRA) (required for US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSelfDirectedIRA = new MMCode() {
+	public static final TaxExemptReasonCode SelfDirectedIRA = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SelfDirectedIRA";
 			definition = "Self-Directed Individual Retirement Account (IRA) (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "SIRA";
 		}
 	};
@@ -919,12 +922,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFourHundredAndThreeB = new MMCode() {
+	public static final TaxExemptReasonCode FourHundredAndThreeB = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FourHundredAndThreeB";
 			definition = "403(b). Account is a tax-deferred investment and savings program for employees of hospitals, educational institutions and other non-profit organisations, to save and invest in their own retirement. The name refers to the relevant section in the US Internal Revenue Code (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "403B";
 		}
 	};
@@ -953,12 +956,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFourHundredFiftySeven = new MMCode() {
+	public static final TaxExemptReasonCode FourHundredFiftySeven = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FourHundredFiftySeven";
 			definition = "457. Account is a non-qualified deferred compensation program that is available to state and local governments and not-for-profit employers (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "457X";
 		}
 	};
@@ -990,12 +993,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRothIRAFundPrototype = new MMCode() {
+	public static final TaxExemptReasonCode RothIRAFundPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RothIRAFundPrototype";
 			definition = "Roth Individual Retirement Account (IRA) Fund Prototype. Account is a tax-deferred retirement account based on the reverse principle of a traditional IRA. Retirement contributions are taxed upfront, but withdrawals may be made tax-free when a certain age is reached, provided the Roth IRA has been set up for a certain period of time (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "RIRA";
 		}
 	};
@@ -1027,12 +1030,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRothIRANonPrototype = new MMCode() {
+	public static final TaxExemptReasonCode RothIRANonPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RothIRANonPrototype";
 			definition = "Roth Individual Retirement Account (IRA) Non-Prototype. Account is a tax-deferred retirement account based on the reverse principle of a traditional IRA. Retirement contributions are taxed upfront, but withdrawals may be made tax-free when a certain age is reached, provided the Roth IRA has been set up for a certain period of time (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "RIAN";
 		}
 	};
@@ -1061,12 +1064,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRothConversionIRAFundPrototype = new MMCode() {
+	public static final TaxExemptReasonCode RothConversionIRAFundPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RothConversionIRAFundPrototype";
 			definition = "Roth Conversion Individual Retirement Account (IRA) Fund Prototype. Account is a retirement account established when a party switches from a regular IRA ( required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "RCRF";
 		}
 	};
@@ -1095,12 +1098,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRothConversionIRANonPrototype = new MMCode() {
+	public static final TaxExemptReasonCode RothConversionIRANonPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RothConversionIRANonPrototype";
 			definition = "Roth Conversion Individual Retirement Account (IRA) Non-Prototype. Account is a retirement account established when a party switches from a Regular IRA (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "RCIP";
 		}
 	};
@@ -1131,12 +1134,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEducationIRAFundPrototype = new MMCode() {
+	public static final TaxExemptReasonCode EducationIRAFundPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EducationIRAFundPrototype";
 			definition = "Education Individual Retirement Account Fund Prototype (also known as an Education Savings Account). Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required for US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EIFP";
 		}
 	};
@@ -1167,12 +1170,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEducationIRANonPrototype = new MMCode() {
+	public static final TaxExemptReasonCode EducationIRANonPrototype = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EducationIRANonPrototype";
 			definition = "Education Individual Retirement Account Non-Prototype (also known as an Education Savings Account).  Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required in the US).";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EIOP";
 		}
 	};
@@ -1197,12 +1200,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Another type of tax exemption."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final TaxExemptReasonCode Other = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another type of tax exemption.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
@@ -1228,12 +1231,12 @@ public class TaxExemptReasonCode {
 	 * "Account is for a minor for which a tax exemption is permitted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMinor = new MMCode() {
+	public static final TaxExemptReasonCode Minor = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Minor";
 			definition = "Account is for a minor for which a tax exemption is permitted.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "MINO";
 		}
 	};
@@ -1258,12 +1261,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Exemption due to incapacitation "</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncapacity = new MMCode() {
+	public static final TaxExemptReasonCode Incapacity = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Incapacity";
 			definition = "Exemption due to incapacitation ";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "INCA";
 		}
 	};
@@ -1289,12 +1292,12 @@ public class TaxExemptReasonCode {
 	 * "Account is for a foreigner for which a tax exemption is permitted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmForeigner = new MMCode() {
+	public static final TaxExemptReasonCode Foreigner = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Foreigner";
 			definition = "Account is for a foreigner for which a tax exemption is permitted.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "FORE";
 		}
 	};
@@ -1319,12 +1322,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Ordinary reporting."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOrdinary = new MMCode() {
+	public static final TaxExemptReasonCode Ordinary = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ordinary";
 			definition = "Ordinary reporting.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "ORDR";
 		}
 	};
@@ -1352,12 +1355,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAssociation = new MMCode() {
+	public static final TaxExemptReasonCode Association = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Association";
 			definition = "Account is for an association, for example, a sports club, for which a tax exemption is permitted.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "ASSO";
 		}
 	};
@@ -1383,12 +1386,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDomestic = new MMCode() {
+	public static final TaxExemptReasonCode Domestic = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Domestic";
 			definition = "Account is for two account owners that are both domestic.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "DOME";
 		}
 	};
@@ -1414,12 +1417,12 @@ public class TaxExemptReasonCode {
 	 * "Account is for two account owners where one or both are foreign."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOneOrBothForeign = new MMCode() {
+	public static final TaxExemptReasonCode OneOrBothForeign = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneOrBothForeign";
 			definition = "Account is for two account owners where one or both are foreign.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "FORP";
 		}
 	};
@@ -1444,12 +1447,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Account is for a rights holder."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRightsHolder = new MMCode() {
+	public static final TaxExemptReasonCode RightsHolder = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RightsHolder";
 			definition = "Account is for a rights holder.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "RIHO";
 		}
 	};
@@ -1476,12 +1479,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPensionFund = new MMCode() {
+	public static final TaxExemptReasonCode PensionFund = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PensionFund";
 			definition = "Account is for a pension fund for which a tax exemption is permitted.\r\n";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "PENF";
 		}
 	};
@@ -1507,12 +1510,12 @@ public class TaxExemptReasonCode {
 	 * "Account is for a diplomat for which a tax exemption is permitted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiplomat = new MMCode() {
+	public static final TaxExemptReasonCode Diplomat = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Diplomat";
 			definition = "Account is for a diplomat for which a tax exemption is permitted.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "DIPL";
 		}
 	};
@@ -1541,12 +1544,12 @@ public class TaxExemptReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRefugee = new MMCode() {
+	public static final TaxExemptReasonCode Refugee = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Refugee";
 			definition = "Account is for a refugee or person without a number assigned by a government organisation, for example, without a Danish Central Securities Number.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "REFU";
 		}
 	};
@@ -1571,12 +1574,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "One of the account owners is a foreign resident."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOneNonResident = new MMCode() {
+	public static final TaxExemptReasonCode OneNonResident = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OneNonResident";
 			definition = "One of the account owners is a foreign resident.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "OANR";
 		}
 	};
@@ -1601,12 +1604,12 @@ public class TaxExemptReasonCode {
 	 * definition} = "Two or more of the account owners are foreign residents."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTwoNonResident = new MMCode() {
+	public static final TaxExemptReasonCode TwoNonResident = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TwoNonResident";
 			definition = "Two or more of the account owners are foreign residents.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "TANR";
 		}
 	};
@@ -1631,17 +1634,21 @@ public class TaxExemptReasonCode {
 	 * definition} = "Administrator of the account is not the owner."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAdministrator = new MMCode() {
+	public static final TaxExemptReasonCode Administrator = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Administrator";
 			definition = "Administrator of the account is not the owner.";
-			owner_lazy = () -> TaxExemptReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "ADMI";
 		}
 	};
+	final static private LinkedHashMap<String, TaxExemptReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TaxExemptReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1649,18 +1656,96 @@ public class TaxExemptReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxExemptReasonCode";
 				definition = "Specifies the reason a specific tax has not been levied/deducted on a given transaction.";
-				code_lazy = () -> Arrays.asList(TaxExemptReasonCode.mmNone, TaxExemptReasonCode.mmMaxiISA, TaxExemptReasonCode.mmMiniCashISA, TaxExemptReasonCode.mmMiniStocksAndSharesISA, TaxExemptReasonCode.mmMiniInsuranceISA,
-						TaxExemptReasonCode.mmCurrentYearPayment, TaxExemptReasonCode.mmPriorYearPayment, TaxExemptReasonCode.mmAssetTransfer, TaxExemptReasonCode.mmEmployeePriorYear, TaxExemptReasonCode.mmEmployeeCurrentYear,
-						TaxExemptReasonCode.mmEmployerPriorYear, TaxExemptReasonCode.mmEmployerCurrentYear, TaxExemptReasonCode.mmNonFundPrototypeIRA, TaxExemptReasonCode.mmNonFundQualifiedPlan,
-						TaxExemptReasonCode.mmDefinedContributionPlan, TaxExemptReasonCode.mmIndividualRetirementAccount, TaxExemptReasonCode.mmIndividualRetirementAccountRollover, TaxExemptReasonCode.mmKEOGH,
-						TaxExemptReasonCode.mmProfitSharingPlan, TaxExemptReasonCode.mmFourHundredAndOneK, TaxExemptReasonCode.mmSelfDirectedIRA, TaxExemptReasonCode.mmFourHundredAndThreeB, TaxExemptReasonCode.mmFourHundredFiftySeven,
-						TaxExemptReasonCode.mmRothIRAFundPrototype, TaxExemptReasonCode.mmRothIRANonPrototype, TaxExemptReasonCode.mmRothConversionIRAFundPrototype, TaxExemptReasonCode.mmRothConversionIRANonPrototype,
-						TaxExemptReasonCode.mmEducationIRAFundPrototype, TaxExemptReasonCode.mmEducationIRANonPrototype, TaxExemptReasonCode.mmOther, TaxExemptReasonCode.mmMinor, TaxExemptReasonCode.mmIncapacity,
-						TaxExemptReasonCode.mmForeigner, TaxExemptReasonCode.mmOrdinary, TaxExemptReasonCode.mmAssociation, TaxExemptReasonCode.mmDomestic, TaxExemptReasonCode.mmOneOrBothForeign, TaxExemptReasonCode.mmRightsHolder,
-						TaxExemptReasonCode.mmPensionFund, TaxExemptReasonCode.mmDiplomat, TaxExemptReasonCode.mmRefugee, TaxExemptReasonCode.mmOneNonResident, TaxExemptReasonCode.mmTwoNonResident, TaxExemptReasonCode.mmAdministrator);
 				derivation_lazy = () -> Arrays.asList(TaxExemptReason1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TaxExemptReasonCode.None, com.tools20022.repository.codeset.TaxExemptReasonCode.MaxiISA, com.tools20022.repository.codeset.TaxExemptReasonCode.MiniCashISA,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.MiniStocksAndSharesISA, com.tools20022.repository.codeset.TaxExemptReasonCode.MiniInsuranceISA,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.CurrentYearPayment, com.tools20022.repository.codeset.TaxExemptReasonCode.PriorYearPayment, com.tools20022.repository.codeset.TaxExemptReasonCode.AssetTransfer,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.EmployeePriorYear, com.tools20022.repository.codeset.TaxExemptReasonCode.EmployeeCurrentYear,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.EmployerPriorYear, com.tools20022.repository.codeset.TaxExemptReasonCode.EmployerCurrentYear,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.NonFundPrototypeIRA, com.tools20022.repository.codeset.TaxExemptReasonCode.NonFundQualifiedPlan,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.DefinedContributionPlan, com.tools20022.repository.codeset.TaxExemptReasonCode.IndividualRetirementAccount,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.IndividualRetirementAccountRollover, com.tools20022.repository.codeset.TaxExemptReasonCode.KEOGH,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.ProfitSharingPlan, com.tools20022.repository.codeset.TaxExemptReasonCode.FourHundredAndOneK,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.SelfDirectedIRA, com.tools20022.repository.codeset.TaxExemptReasonCode.FourHundredAndThreeB,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.FourHundredFiftySeven, com.tools20022.repository.codeset.TaxExemptReasonCode.RothIRAFundPrototype,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.RothIRANonPrototype, com.tools20022.repository.codeset.TaxExemptReasonCode.RothConversionIRAFundPrototype,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.RothConversionIRANonPrototype, com.tools20022.repository.codeset.TaxExemptReasonCode.EducationIRAFundPrototype,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.EducationIRANonPrototype, com.tools20022.repository.codeset.TaxExemptReasonCode.Other, com.tools20022.repository.codeset.TaxExemptReasonCode.Minor,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.Incapacity, com.tools20022.repository.codeset.TaxExemptReasonCode.Foreigner, com.tools20022.repository.codeset.TaxExemptReasonCode.Ordinary,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.Association, com.tools20022.repository.codeset.TaxExemptReasonCode.Domestic, com.tools20022.repository.codeset.TaxExemptReasonCode.OneOrBothForeign,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.RightsHolder, com.tools20022.repository.codeset.TaxExemptReasonCode.PensionFund, com.tools20022.repository.codeset.TaxExemptReasonCode.Diplomat,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.Refugee, com.tools20022.repository.codeset.TaxExemptReasonCode.OneNonResident, com.tools20022.repository.codeset.TaxExemptReasonCode.TwoNonResident,
+						com.tools20022.repository.codeset.TaxExemptReasonCode.Administrator);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(None.getCodeName().get(), None);
+		codesByName.put(MaxiISA.getCodeName().get(), MaxiISA);
+		codesByName.put(MiniCashISA.getCodeName().get(), MiniCashISA);
+		codesByName.put(MiniStocksAndSharesISA.getCodeName().get(), MiniStocksAndSharesISA);
+		codesByName.put(MiniInsuranceISA.getCodeName().get(), MiniInsuranceISA);
+		codesByName.put(CurrentYearPayment.getCodeName().get(), CurrentYearPayment);
+		codesByName.put(PriorYearPayment.getCodeName().get(), PriorYearPayment);
+		codesByName.put(AssetTransfer.getCodeName().get(), AssetTransfer);
+		codesByName.put(EmployeePriorYear.getCodeName().get(), EmployeePriorYear);
+		codesByName.put(EmployeeCurrentYear.getCodeName().get(), EmployeeCurrentYear);
+		codesByName.put(EmployerPriorYear.getCodeName().get(), EmployerPriorYear);
+		codesByName.put(EmployerCurrentYear.getCodeName().get(), EmployerCurrentYear);
+		codesByName.put(NonFundPrototypeIRA.getCodeName().get(), NonFundPrototypeIRA);
+		codesByName.put(NonFundQualifiedPlan.getCodeName().get(), NonFundQualifiedPlan);
+		codesByName.put(DefinedContributionPlan.getCodeName().get(), DefinedContributionPlan);
+		codesByName.put(IndividualRetirementAccount.getCodeName().get(), IndividualRetirementAccount);
+		codesByName.put(IndividualRetirementAccountRollover.getCodeName().get(), IndividualRetirementAccountRollover);
+		codesByName.put(KEOGH.getCodeName().get(), KEOGH);
+		codesByName.put(ProfitSharingPlan.getCodeName().get(), ProfitSharingPlan);
+		codesByName.put(FourHundredAndOneK.getCodeName().get(), FourHundredAndOneK);
+		codesByName.put(SelfDirectedIRA.getCodeName().get(), SelfDirectedIRA);
+		codesByName.put(FourHundredAndThreeB.getCodeName().get(), FourHundredAndThreeB);
+		codesByName.put(FourHundredFiftySeven.getCodeName().get(), FourHundredFiftySeven);
+		codesByName.put(RothIRAFundPrototype.getCodeName().get(), RothIRAFundPrototype);
+		codesByName.put(RothIRANonPrototype.getCodeName().get(), RothIRANonPrototype);
+		codesByName.put(RothConversionIRAFundPrototype.getCodeName().get(), RothConversionIRAFundPrototype);
+		codesByName.put(RothConversionIRANonPrototype.getCodeName().get(), RothConversionIRANonPrototype);
+		codesByName.put(EducationIRAFundPrototype.getCodeName().get(), EducationIRAFundPrototype);
+		codesByName.put(EducationIRANonPrototype.getCodeName().get(), EducationIRANonPrototype);
+		codesByName.put(Other.getCodeName().get(), Other);
+		codesByName.put(Minor.getCodeName().get(), Minor);
+		codesByName.put(Incapacity.getCodeName().get(), Incapacity);
+		codesByName.put(Foreigner.getCodeName().get(), Foreigner);
+		codesByName.put(Ordinary.getCodeName().get(), Ordinary);
+		codesByName.put(Association.getCodeName().get(), Association);
+		codesByName.put(Domestic.getCodeName().get(), Domestic);
+		codesByName.put(OneOrBothForeign.getCodeName().get(), OneOrBothForeign);
+		codesByName.put(RightsHolder.getCodeName().get(), RightsHolder);
+		codesByName.put(PensionFund.getCodeName().get(), PensionFund);
+		codesByName.put(Diplomat.getCodeName().get(), Diplomat);
+		codesByName.put(Refugee.getCodeName().get(), Refugee);
+		codesByName.put(OneNonResident.getCodeName().get(), OneNonResident);
+		codesByName.put(TwoNonResident.getCodeName().get(), TwoNonResident);
+		codesByName.put(Administrator.getCodeName().get(), Administrator);
+	}
+
+	public static TaxExemptReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TaxExemptReasonCode[] values() {
+		TaxExemptReasonCode[] values = new TaxExemptReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TaxExemptReasonCode> {
+		@Override
+		public TaxExemptReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TaxExemptReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

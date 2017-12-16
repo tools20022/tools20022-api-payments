@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PortfolioStrategy
+ * PortfolioStrategy}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -51,9 +54,6 @@ import java.util.List;
  * Sector.mmStrategy}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PortfolioStrategy
- * PortfolioStrategy}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -108,8 +108,8 @@ public class SectorStrategy extends PortfolioStrategy {
 	 */
 	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SectorStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SectorStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Sector of business of the organisation, for example, pharmaceutical.";

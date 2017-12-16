@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ISATypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of the current year ISA.
@@ -31,13 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#mmMiniEquity
+ * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#MiniEquity
  * ISATypeCode.mmMiniEquity}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#mmMaxi
+ * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#Maxi
  * ISATypeCode.mmMaxi}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#mmMiniCash
+ * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#MiniCash
  * ISATypeCode.mmMiniCash}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#mmAny
+ * <li>{@linkplain com.tools20022.repository.codeset.ISATypeCode#Any
  * ISATypeCode.mmAny}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of the current year ISA."</li>
  * </ul>
  */
-public class ISATypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ISATypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class ISATypeCode {
 	 * "Type of ISA that offers a stocks and shares component only (no cash)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiniEquity = new MMCode() {
+	public static final ISATypeCode MiniEquity = new ISATypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniEquity";
 			definition = "Type of ISA that offers a stocks and shares component only (no cash).";
-			owner_lazy = () -> ISATypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ISATypeCode.mmObject();
 			codeName = "MINE";
 		}
 	};
@@ -118,12 +124,12 @@ public class ISATypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMaxi = new MMCode() {
+	public static final ISATypeCode Maxi = new ISATypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Maxi";
 			definition = "Type of ISA that must offer a stocks and shares component and, optionally, a cash component.";
-			owner_lazy = () -> ISATypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ISATypeCode.mmObject();
 			codeName = "MAXI";
 		}
 	};
@@ -148,12 +154,12 @@ public class ISATypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiniCash = new MMCode() {
+	public static final ISATypeCode MiniCash = new ISATypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniCash";
 			definition = "Type of ISA that offers a cash component only (no stock).";
-			owner_lazy = () -> ISATypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ISATypeCode.mmObject();
 			codeName = "MINC";
 		}
 	};
@@ -177,17 +183,21 @@ public class ISATypeCode {
 	 * definition} = "Any ISA."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAny = new MMCode() {
+	public static final ISATypeCode Any = new ISATypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Any";
 			definition = "Any ISA.";
-			owner_lazy = () -> ISATypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ISATypeCode.mmObject();
 			codeName = "ANYI";
 		}
 	};
+	final static private LinkedHashMap<String, ISATypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ISATypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -195,9 +205,38 @@ public class ISATypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ISATypeCode";
 				definition = "Specifies the type of the current year ISA.";
-				code_lazy = () -> Arrays.asList(ISATypeCode.mmMiniEquity, ISATypeCode.mmMaxi, ISATypeCode.mmMiniCash, ISATypeCode.mmAny);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ISATypeCode.MiniEquity, com.tools20022.repository.codeset.ISATypeCode.Maxi, com.tools20022.repository.codeset.ISATypeCode.MiniCash,
+						com.tools20022.repository.codeset.ISATypeCode.Any);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MiniEquity.getCodeName().get(), MiniEquity);
+		codesByName.put(Maxi.getCodeName().get(), Maxi);
+		codesByName.put(MiniCash.getCodeName().get(), MiniCash);
+		codesByName.put(Any.getCodeName().get(), Any);
+	}
+
+	public static ISATypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ISATypeCode[] values() {
+		ISATypeCode[] values = new ISATypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ISATypeCode> {
+		@Override
+		public ISATypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ISATypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

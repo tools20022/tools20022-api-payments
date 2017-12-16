@@ -142,8 +142,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmAdditionalQuantityForResultantSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalQuantityForResultantSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which an additional quantity for subscribed resultant securities is specified.";
@@ -183,8 +183,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAttribute mmQuantity1 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity1";
 			definition = "Numerator of the quotient of quantities.";
@@ -230,8 +230,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAttribute mmQuantity2 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity2";
 			definition = "Denominator of the quotient of quantities.";
@@ -288,8 +288,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalQuantityForSubscribedSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which an additional quantity for existing securities is specified.";
@@ -338,8 +338,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmNewToOldProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewToOldProceedsDefinition";
 			definition = "Securities procceds for which a nwe to old ratio is specified.";
@@ -388,8 +388,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmNewToUnderlyingProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewToUnderlyingProceedsDefinition";
 			definition = "Securities proceeds for which a new to underlying ratio is specified.";
@@ -440,8 +440,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which a quantity of intermediate securities is specified.";
@@ -489,8 +489,8 @@ public class QuantityRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmwarrant = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "warrant";
 			definition = "Provides the warrant for the related quantity or the underlying quantity. ";

@@ -135,8 +135,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAttribute mmTradingSessionName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSessionName";
 			definition = "Identification of a specific execution time bracket code through its trading session name or description.";
@@ -192,8 +192,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAssociationEnd mmTimeBracket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TimeBracket";
 			definition = "Specifies the time bracket of a trading session in actual date and time format.";
@@ -241,8 +241,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Market";
 			definition = "Market for which trading session information is specified..";
@@ -290,8 +290,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quote";
 			definition = "Quote to which a trading session is associated.";
@@ -338,8 +338,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Securities order associated with a trading session.";
@@ -382,8 +382,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAttribute mmTradingSessionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSessionIndicator";
 			definition = "Indicates the trading phase at the stock exchange, eg, opening auction phase, main trading phase, closing auction phase, etc.";
@@ -434,8 +434,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAttribute mmTradingSessionPhase = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSessionPhase";
 			definition = "Specific execution time period expressed through its trading session identifier. This identifier is for example used by exchanges, electronic communication networks (ECNs) and alternative trading systems (ATSs) to identify opening and closing hours of a trading session.";
@@ -483,8 +483,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAttribute mmUSFuturesTradingSession = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "USFuturesTradingSession";
 			definition = "Identification of a specific execution time bracket code, required by US regulations. This only applies to the US futures market.";
@@ -538,8 +538,8 @@ public class TradingSession {
 	 */
 	public static final MMBusinessAssociationEnd mmListTrading = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListTrading";
 			definition = "List trading process for which a trading session is specified.";

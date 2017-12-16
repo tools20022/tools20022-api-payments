@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BalanceStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the balance of transactions with a certain status.
@@ -31,20 +36,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#mmPending
+ * <li>{@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Pending
  * BalanceStatusCode.mmPending}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#mmSettled
+ * <li>{@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Settled
  * BalanceStatusCode.mmSettled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#mmSuspended
+ * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Suspended
  * BalanceStatusCode.mmSuspended}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#mmSettledUnregistered
+ * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#SettledUnregistered
  * BalanceStatusCode.mmSettledUnregistered}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#mmSettledRegistered
+ * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#SettledRegistered
  * BalanceStatusCode.mmSettledRegistered}</li>
  * </ul>
  * </li>
@@ -69,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the balance of transactions with a certain status."</li>
  * </ul>
  */
-public class BalanceStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BalanceStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +97,12 @@ public class BalanceStatusCode {
 	 * definition} = "Balance corresponding to the pending transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final BalanceStatusCode Pending = new BalanceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
 			definition = "Balance corresponding to the pending transactions.";
-			owner_lazy = () -> BalanceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceStatusCode.mmObject();
 			codeName = "PDNG";
 		}
 	};
@@ -126,12 +130,12 @@ public class BalanceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettled = new MMCode() {
+	public static final BalanceStatusCode Settled = new BalanceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settled";
 			definition = "Final status of a transaction when the associated transfer of cash has been successfully processed.";
-			owner_lazy = () -> BalanceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceStatusCode.mmObject();
 			codeName = "STLD";
 		}
 	};
@@ -159,12 +163,12 @@ public class BalanceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSuspended = new MMCode() {
+	public static final BalanceStatusCode Suspended = new BalanceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Suspended";
 			definition = "Balance corresponding to transactions that have been executed, but not yet settled.";
-			owner_lazy = () -> BalanceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceStatusCode.mmObject();
 			codeName = "SUSP";
 		}
 	};
@@ -192,12 +196,12 @@ public class BalanceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettledUnregistered = new MMCode() {
+	public static final BalanceStatusCode SettledUnregistered = new BalanceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettledUnregistered";
 			definition = "Balance corresponding to transactions that have been executed and settled, but not yet fully registered on the books of the registrar.";
-			owner_lazy = () -> BalanceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceStatusCode.mmObject();
 			codeName = "SETU";
 		}
 	};
@@ -225,17 +229,21 @@ public class BalanceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettledRegistered = new MMCode() {
+	public static final BalanceStatusCode SettledRegistered = new BalanceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettledRegistered";
 			definition = "Balance corresponding to transactions that have been executed, settled and fully registered.";
-			owner_lazy = () -> BalanceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceStatusCode.mmObject();
 			codeName = "SETR";
 		}
 	};
+	final static private LinkedHashMap<String, BalanceStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BalanceStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -243,9 +251,39 @@ public class BalanceStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceStatusCode";
 				definition = "Specifies the balance of transactions with a certain status.";
-				code_lazy = () -> Arrays.asList(BalanceStatusCode.mmPending, BalanceStatusCode.mmSettled, BalanceStatusCode.mmSuspended, BalanceStatusCode.mmSettledUnregistered, BalanceStatusCode.mmSettledRegistered);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceStatusCode.Pending, com.tools20022.repository.codeset.BalanceStatusCode.Settled, com.tools20022.repository.codeset.BalanceStatusCode.Suspended,
+						com.tools20022.repository.codeset.BalanceStatusCode.SettledUnregistered, com.tools20022.repository.codeset.BalanceStatusCode.SettledRegistered);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Settled.getCodeName().get(), Settled);
+		codesByName.put(Suspended.getCodeName().get(), Suspended);
+		codesByName.put(SettledUnregistered.getCodeName().get(), SettledUnregistered);
+		codesByName.put(SettledRegistered.getCodeName().get(), SettledRegistered);
+	}
+
+	public static BalanceStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BalanceStatusCode[] values() {
+		BalanceStatusCode[] values = new BalanceStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BalanceStatusCode> {
+		@Override
+		public BalanceStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BalanceStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

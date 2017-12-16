@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PartyTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the entitled party.
@@ -31,131 +36,126 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmSaleSystem
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#SaleSystem
  * PartyTypeCode.mmSaleSystem}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmPOIComponent
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POIComponent
  * PartyTypeCode.mmPOIComponent}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmIssuer
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Issuer
  * PartyTypeCode.mmIssuer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmHolder
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Holder
  * PartyTypeCode.mmHolder}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmInvestor
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Investor
  * PartyTypeCode.mmInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmExecutingFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ExecutingFirm
  * PartyTypeCode.mmExecutingFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmBrokerOfCredit
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#BrokerOfCredit
  * PartyTypeCode.mmBrokerOfCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCorrespondentClearingFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CorrespondentClearingFirm
  * PartyTypeCode.mmCorrespondentClearingFirm}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmContraFirm
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#ContraFirm
  * PartyTypeCode.mmContraFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmContraClearingFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ContraClearingFirm
  * PartyTypeCode.mmContraClearingFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmUnderlyingContraFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#UnderlyingContraFirm
  * PartyTypeCode.mmUnderlyingContraFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmGiveUpClearingFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#GiveUpClearingFirm
  * PartyTypeCode.mmGiveUpClearingFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmOrderOriginationFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OrderOriginationFirm
  * PartyTypeCode.mmOrderOriginationFirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmSponsoringFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#SponsoringFirm
  * PartyTypeCode.mmSponsoringFirm}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmClearingfirm
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Clearingfirm
  * PartyTypeCode.mmClearingfirm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmIntroducingFirm
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#IntroducingFirm
  * PartyTypeCode.mmIntroducingFirm}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmEnteringFirm
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#EnteringFirm
  * PartyTypeCode.mmEnteringFirm}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmClient
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Client
  * PartyTypeCode.mmClient}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmStepInBroker
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#StepInBroker
  * PartyTypeCode.mmStepInBroker}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAffirmingParty
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AffirmingParty
  * PartyTypeCode.mmAffirmingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmETCServiceProvider1
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ETCServiceProvider1
  * PartyTypeCode.mmETCServiceProvider1}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmETCServiceProvider2
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ETCServiceProvider2
  * PartyTypeCode.mmETCServiceProvider2}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmRequestedBroker
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#RequestedBroker
  * PartyTypeCode.mmRequestedBroker}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmTaxAuthority
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#TaxAuthority
  * PartyTypeCode.mmTaxAuthority}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmDelegateIssuer
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#DelegateIssuer
  * PartyTypeCode.mmDelegateIssuer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmOriginatingPOI
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingPOI
  * PartyTypeCode.mmOriginatingPOI}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCardIssuer
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardIssuer
  * PartyTypeCode.mmCardIssuer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAcceptor
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Acceptor
  * PartyTypeCode.mmAcceptor}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmMerchant
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Merchant
  * PartyTypeCode.mmMerchant}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAcquirer
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Acquirer
  * PartyTypeCode.mmAcquirer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmIntermediaryAgent
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#IntermediaryAgent
  * PartyTypeCode.mmIntermediaryAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmMasterTerminalManager
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#MasterTerminalManager
  * PartyTypeCode.mmMasterTerminalManager}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmTerminalManager
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#TerminalManager
  * PartyTypeCode.mmTerminalManager}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAcquirerProcessor
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AcquirerProcessor
  * PartyTypeCode.mmAcquirerProcessor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCardIssuerProcessor
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardIssuerProcessor
  * PartyTypeCode.mmCardIssuerProcessor}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCardScheme
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardScheme
  * PartyTypeCode.mmCardScheme}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCardSchemeProcessor
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardSchemeProcessor
  * PartyTypeCode.mmCardSchemeProcessor}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmATMManager
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#ATMManager
  * PartyTypeCode.mmATMManager}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmHostingEntity
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#HostingEntity
  * PartyTypeCode.mmHostingEntity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmOriginatingATM
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingATM
  * PartyTypeCode.mmOriginatingATM}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmOriginatingTerminal
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingTerminal
  * PartyTypeCode.mmOriginatingTerminal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmCardApplication
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardApplication
  * PartyTypeCode.mmCardApplication}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmPOISystem
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POISystem
  * PartyTypeCode.mmPOISystem}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmPOIGroup
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POIGroup
  * PartyTypeCode.mmPOIGroup}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmSinglePOI
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#SinglePOI
  * PartyTypeCode.mmSinglePOI}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAccountFromBank
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AccountFromBank
  * PartyTypeCode.mmAccountFromBank}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#mmAccountToBank
+ * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AccountToBank
  * PartyTypeCode.mmAccountToBank}</li>
  * </ul>
  * </li>
@@ -189,7 +189,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the entitled party."</li>
  * </ul>
  */
-public class PartyTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PartyTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -213,12 +214,12 @@ public class PartyTypeCode {
 	 * definition} = "Party selling goods and services."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSaleSystem = new MMCode() {
+	public static final PartyTypeCode SaleSystem = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SaleSystem";
 			definition = "Party selling goods and services.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "SALE";
 		}
 	};
@@ -245,12 +246,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPOIComponent = new MMCode() {
+	public static final PartyTypeCode POIComponent = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "POIComponent";
 			definition = "Party component of a POI system or POI terminal (Point of Interaction).";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "PCPT";
 		}
 	};
@@ -275,12 +276,12 @@ public class PartyTypeCode {
 	 * definition} = "Issuer is the entitled party."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuer = new MMCode() {
+	public static final PartyTypeCode Issuer = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuer";
 			definition = "Issuer is the entitled party.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ISUR";
 		}
 	};
@@ -305,12 +306,12 @@ public class PartyTypeCode {
 	 * definition} = "Holder is the entitled party."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHolder = new MMCode() {
+	public static final PartyTypeCode Holder = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Holder";
 			definition = "Holder is the entitled party.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "HLDR";
 		}
 	};
@@ -338,12 +339,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInvestor = new MMCode() {
+	public static final PartyTypeCode Investor = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Investor";
 			definition = "Party, either an individual or organisation, whose assets are being invested.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "INVE";
 		}
 	};
@@ -368,12 +369,12 @@ public class PartyTypeCode {
 	 * definition} = "Party that identifies an executing / give-up broker."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmExecutingFirm = new MMCode() {
+	public static final PartyTypeCode ExecutingFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExecutingFirm";
 			definition = "Party that identifies an executing / give-up broker.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "EXEC";
 		}
 	};
@@ -398,12 +399,12 @@ public class PartyTypeCode {
 	 * definition} = "Party that receives the trade credit."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBrokerOfCredit = new MMCode() {
+	public static final PartyTypeCode BrokerOfCredit = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BrokerOfCredit";
 			definition = "Party that receives the trade credit.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "BROK";
 		}
 	};
@@ -431,12 +432,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorrespondentClearingFirm = new MMCode() {
+	public static final PartyTypeCode CorrespondentClearingFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorrespondentClearingFirm";
 			definition = "Party that is going to carry the position on their books at another clearinghouse (exchanges).";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CORR";
 		}
 	};
@@ -461,12 +462,12 @@ public class PartyTypeCode {
 	 * definition} = "Party that is the counterparty in a trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmContraFirm = new MMCode() {
+	public static final PartyTypeCode ContraFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContraFirm";
 			definition = "Party that is the counterparty in a trade.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "COFI";
 		}
 	};
@@ -492,12 +493,12 @@ public class PartyTypeCode {
 	 * "Party that is the clearing firm of the counterparty in a trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmContraClearingFirm = new MMCode() {
+	public static final PartyTypeCode ContraClearingFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContraClearingFirm";
 			definition = "Party that is the clearing firm of the counterparty in a trade.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "COCL";
 		}
 	};
@@ -525,12 +526,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnderlyingContraFirm = new MMCode() {
+	public static final PartyTypeCode UnderlyingContraFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnderlyingContraFirm";
 			definition = "Party (broker or other firm), which is the contra side of the trade for the underlying security.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "UNDE";
 		}
 	};
@@ -558,12 +559,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGiveUpClearingFirm = new MMCode() {
+	public static final PartyTypeCode GiveUpClearingFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GiveUpClearingFirm";
 			definition = "Party to which the trade is given up (carries the position that results from a trade).";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "GIVE";
 		}
 	};
@@ -588,12 +589,12 @@ public class PartyTypeCode {
 	 * definition} = "Party that originates an order."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOrderOriginationFirm = new MMCode() {
+	public static final PartyTypeCode OrderOriginationFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrderOriginationFirm";
 			definition = "Party that originates an order.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ORDE";
 		}
 	};
@@ -621,12 +622,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSponsoringFirm = new MMCode() {
+	public static final PartyTypeCode SponsoringFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SponsoringFirm";
 			definition = "Party (member of an exchange)that is sponsoring an entering firm to send orders directly to the exchange.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "SPON";
 		}
 	};
@@ -654,12 +655,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmClearingfirm = new MMCode() {
+	public static final PartyTypeCode Clearingfirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Clearingfirm";
 			definition = "Party (broker) that settles security transactions from another broker for a fee = take up broker.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CLEA";
 		}
 	};
@@ -688,12 +689,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntroducingFirm = new MMCode() {
+	public static final PartyTypeCode IntroducingFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntroducingFirm";
 			definition = "Party that can relay an order directly to the trading floor, or give clients direct access to the floor. The introducing firm delegates the work of the floor operation, trade execution and accounting.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "INTR";
 		}
 	};
@@ -723,12 +724,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEnteringFirm = new MMCode() {
+	public static final PartyTypeCode EnteringFirm = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EnteringFirm";
 			definition = "Party that has recorded or reported an execution of a trade. When an entering firm that is not a party to a trade enters the trade into a trade recording system, any inquiries can be directed to the appropriate source.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ENTE";
 		}
 	};
@@ -756,12 +757,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmClient = new MMCode() {
+	public static final PartyTypeCode Client = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Client";
 			definition = "A client is identified in third party-transactions or for investor in intermediary transactions.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CLIE";
 		}
 	};
@@ -789,12 +790,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmStepInBroker = new MMCode() {
+	public static final PartyTypeCode StepInBroker = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StepInBroker";
 			definition = "Broker to which the investment manager directs the execution of a portion of the trade.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "STEP";
 		}
 	};
@@ -822,12 +823,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAffirmingParty = new MMCode() {
+	public static final PartyTypeCode AffirmingParty = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AffirmingParty";
 			definition = "Party (buyer or seller) that positively affirms the details of a previously agreed security trade confirmation.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "AFFI";
 		}
 	};
@@ -855,12 +856,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmETCServiceProvider1 = new MMCode() {
+	public static final PartyTypeCode ETCServiceProvider1 = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ETCServiceProvider1";
 			definition = "Party acting as the Electronic Trade Confirmation (ETC) service provider 1.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ETC1";
 		}
 	};
@@ -888,12 +889,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmETCServiceProvider2 = new MMCode() {
+	public static final PartyTypeCode ETCServiceProvider2 = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ETCServiceProvider2";
 			definition = "Party acting as the Electronic Trade Confirmation (ETC) service provider 2.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ETC2";
 		}
 	};
@@ -921,12 +922,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequestedBroker = new MMCode() {
+	public static final PartyTypeCode RequestedBroker = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestedBroker";
 			definition = "In a directed order, broker with which the Receiver of the message is requested to execute the order.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "RQBR";
 		}
 	};
@@ -951,12 +952,12 @@ public class PartyTypeCode {
 	 * definition} = "Tax authority."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTaxAuthority = new MMCode() {
+	public static final PartyTypeCode TaxAuthority = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxAuthority";
 			definition = "Tax authority.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "TAXH";
 		}
 	};
@@ -984,12 +985,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDelegateIssuer = new MMCode() {
+	public static final PartyTypeCode DelegateIssuer = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DelegateIssuer";
 			definition = "Party to whom the card issuer delegates to authorise card payment transactions.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "DLIS";
 		}
 	};
@@ -1015,12 +1016,12 @@ public class PartyTypeCode {
 	 * "Point Of Interaction initiating the card payment transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginatingPOI = new MMCode() {
+	public static final PartyTypeCode OriginatingPOI = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginatingPOI";
 			definition = "Point Of Interaction initiating the card payment transaction.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "OPOI";
 		}
 	};
@@ -1045,12 +1046,12 @@ public class PartyTypeCode {
 	 * definition} = "Party that issues cards."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardIssuer = new MMCode() {
+	public static final PartyTypeCode CardIssuer = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardIssuer";
 			definition = "Party that issues cards.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CISS";
 		}
 	};
@@ -1078,12 +1079,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptor = new MMCode() {
+	public static final PartyTypeCode Acceptor = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Acceptor";
 			definition = "Card acceptor, party accepting the card and presenting transaction data to the acquirer.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ACCP";
 		}
 	};
@@ -1109,12 +1110,12 @@ public class PartyTypeCode {
 	 * "Merchant providing goods and service in the card payment transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMerchant = new MMCode() {
+	public static final PartyTypeCode Merchant = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Merchant";
 			definition = "Merchant providing goods and service in the card payment transaction.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "MERC";
 		}
 	};
@@ -1139,12 +1140,12 @@ public class PartyTypeCode {
 	 * definition} = "Entity acquiring card transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcquirer = new MMCode() {
+	public static final PartyTypeCode Acquirer = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Acquirer";
 			definition = "Entity acquiring card transactions.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ACQR";
 		}
 	};
@@ -1172,12 +1173,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntermediaryAgent = new MMCode() {
+	public static final PartyTypeCode IntermediaryAgent = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediaryAgent";
 			definition = "Party acting on behalf of other parties to process or forward data to other parties.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ITAG";
 		}
 	};
@@ -1203,12 +1204,12 @@ public class PartyTypeCode {
 	 * "Responsible for the maintenance of a card payment acceptance terminal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMasterTerminalManager = new MMCode() {
+	public static final PartyTypeCode MasterTerminalManager = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterTerminalManager";
 			definition = "Responsible for the maintenance of a card payment acceptance terminal.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "MTMG";
 		}
 	};
@@ -1236,12 +1237,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTerminalManager = new MMCode() {
+	public static final PartyTypeCode TerminalManager = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManager";
 			definition = "Responsible for one or several maintenance functions of a card payment acceptance terminal.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "TMGT";
 		}
 	};
@@ -1269,12 +1270,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcquirerProcessor = new MMCode() {
+	public static final PartyTypeCode AcquirerProcessor = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcquirerProcessor";
 			definition = "Entity providing acquiring card payment processing services on behalf on an acquirer.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ACQP";
 		}
 	};
@@ -1302,12 +1303,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardIssuerProcessor = new MMCode() {
+	public static final PartyTypeCode CardIssuerProcessor = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardIssuerProcessor";
 			definition = "Entity providing issuing card payment processing services on behalf on an issuer.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CISP";
 		}
 	};
@@ -1335,12 +1336,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardScheme = new MMCode() {
+	public static final PartyTypeCode CardScheme = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardScheme";
 			definition = "Entity defining rules and procedures for card payment transactions acting as an intermediary between an acquirer and an issuer.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "CSCH";
 		}
 	};
@@ -1368,12 +1369,12 @@ public class PartyTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardSchemeProcessor = new MMCode() {
+	public static final PartyTypeCode CardSchemeProcessor = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardSchemeProcessor";
 			definition = "Entity providing card payment processing services acting on behalf of a card scheme.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "SCHP";
 		}
 	};
@@ -1398,12 +1399,12 @@ public class PartyTypeCode {
 	 * definition} = "Entity managing the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmATMManager = new MMCode() {
+	public static final PartyTypeCode ATMManager = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ATMManager";
 			definition = "Entity managing the ATM.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ATMG";
 		}
 	};
@@ -1428,12 +1429,12 @@ public class PartyTypeCode {
 	 * definition} = "Entity hosting the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHostingEntity = new MMCode() {
+	public static final PartyTypeCode HostingEntity = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HostingEntity";
 			definition = "Entity hosting the ATM.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "HSTG";
 		}
 	};
@@ -1458,12 +1459,12 @@ public class PartyTypeCode {
 	 * definition} = "ATM initiating the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginatingATM = new MMCode() {
+	public static final PartyTypeCode OriginatingATM = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginatingATM";
 			definition = "ATM initiating the transaction.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "OATM";
 		}
 	};
@@ -1489,12 +1490,12 @@ public class PartyTypeCode {
 	 * "Application on the terminal which has initiated the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginatingTerminal = new MMCode() {
+	public static final PartyTypeCode OriginatingTerminal = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginatingTerminal";
 			definition = "Application on the terminal which has initiated the transaction.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "OTRM";
 		}
 	};
@@ -1519,12 +1520,12 @@ public class PartyTypeCode {
 	 * definition} = "Application in the smart card."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardApplication = new MMCode() {
+	public static final PartyTypeCode CardApplication = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardApplication";
 			definition = "Application in the smart card.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "ICCA";
 		}
 	};
@@ -1549,12 +1550,12 @@ public class PartyTypeCode {
 	 * definition} = "Configuration to apply to the whole POI system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPOISystem = new MMCode() {
+	public static final PartyTypeCode POISystem = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "POISystem";
 			definition = "Configuration to apply to the whole POI system.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "PSYS";
 		}
 	};
@@ -1580,12 +1581,12 @@ public class PartyTypeCode {
 	 * "Configuration to apply to a subset of the whole POI system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPOIGroup = new MMCode() {
+	public static final PartyTypeCode POIGroup = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "POIGroup";
 			definition = "Configuration to apply to a subset of the whole POI system.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "PGRP";
 		}
 	};
@@ -1610,12 +1611,12 @@ public class PartyTypeCode {
 	 * definition} = "Configuration to apply to a single POI terminal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSinglePOI = new MMCode() {
+	public static final PartyTypeCode SinglePOI = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SinglePOI";
 			definition = "Configuration to apply to a single POI terminal.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "PSNG";
 		}
 	};
@@ -1640,12 +1641,12 @@ public class PartyTypeCode {
 	 * definition} = "The bank of the source account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccountFromBank = new MMCode() {
+	public static final PartyTypeCode AccountFromBank = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountFromBank";
 			definition = "The bank of the source account.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "BKAF";
 		}
 	};
@@ -1670,17 +1671,21 @@ public class PartyTypeCode {
 	 * definition} = "The bank of the destination account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccountToBank = new MMCode() {
+	public static final PartyTypeCode AccountToBank = new PartyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountToBank";
 			definition = "The bank of the destination account.";
-			owner_lazy = () -> PartyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartyTypeCode.mmObject();
 			codeName = "BKAT";
 		}
 	};
+	final static private LinkedHashMap<String, PartyTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PartyTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1688,17 +1693,96 @@ public class PartyTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyTypeCode";
 				definition = "Specifies the entitled party.";
-				code_lazy = () -> Arrays.asList(PartyTypeCode.mmSaleSystem, PartyTypeCode.mmPOIComponent, PartyTypeCode.mmIssuer, PartyTypeCode.mmHolder, PartyTypeCode.mmInvestor, PartyTypeCode.mmExecutingFirm,
-						PartyTypeCode.mmBrokerOfCredit, PartyTypeCode.mmCorrespondentClearingFirm, PartyTypeCode.mmContraFirm, PartyTypeCode.mmContraClearingFirm, PartyTypeCode.mmUnderlyingContraFirm, PartyTypeCode.mmGiveUpClearingFirm,
-						PartyTypeCode.mmOrderOriginationFirm, PartyTypeCode.mmSponsoringFirm, PartyTypeCode.mmClearingfirm, PartyTypeCode.mmIntroducingFirm, PartyTypeCode.mmEnteringFirm, PartyTypeCode.mmClient,
-						PartyTypeCode.mmStepInBroker, PartyTypeCode.mmAffirmingParty, PartyTypeCode.mmETCServiceProvider1, PartyTypeCode.mmETCServiceProvider2, PartyTypeCode.mmRequestedBroker, PartyTypeCode.mmTaxAuthority,
-						PartyTypeCode.mmDelegateIssuer, PartyTypeCode.mmOriginatingPOI, PartyTypeCode.mmCardIssuer, PartyTypeCode.mmAcceptor, PartyTypeCode.mmMerchant, PartyTypeCode.mmAcquirer, PartyTypeCode.mmIntermediaryAgent,
-						PartyTypeCode.mmMasterTerminalManager, PartyTypeCode.mmTerminalManager, PartyTypeCode.mmAcquirerProcessor, PartyTypeCode.mmCardIssuerProcessor, PartyTypeCode.mmCardScheme, PartyTypeCode.mmCardSchemeProcessor,
-						PartyTypeCode.mmATMManager, PartyTypeCode.mmHostingEntity, PartyTypeCode.mmOriginatingATM, PartyTypeCode.mmOriginatingTerminal, PartyTypeCode.mmCardApplication, PartyTypeCode.mmPOISystem, PartyTypeCode.mmPOIGroup,
-						PartyTypeCode.mmSinglePOI, PartyTypeCode.mmAccountFromBank, PartyTypeCode.mmAccountToBank);
 				derivation_lazy = () -> Arrays.asList(PartyType3Code.mmObject(), PartyType4Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PartyTypeCode.SaleSystem, com.tools20022.repository.codeset.PartyTypeCode.POIComponent, com.tools20022.repository.codeset.PartyTypeCode.Issuer,
+						com.tools20022.repository.codeset.PartyTypeCode.Holder, com.tools20022.repository.codeset.PartyTypeCode.Investor, com.tools20022.repository.codeset.PartyTypeCode.ExecutingFirm,
+						com.tools20022.repository.codeset.PartyTypeCode.BrokerOfCredit, com.tools20022.repository.codeset.PartyTypeCode.CorrespondentClearingFirm, com.tools20022.repository.codeset.PartyTypeCode.ContraFirm,
+						com.tools20022.repository.codeset.PartyTypeCode.ContraClearingFirm, com.tools20022.repository.codeset.PartyTypeCode.UnderlyingContraFirm, com.tools20022.repository.codeset.PartyTypeCode.GiveUpClearingFirm,
+						com.tools20022.repository.codeset.PartyTypeCode.OrderOriginationFirm, com.tools20022.repository.codeset.PartyTypeCode.SponsoringFirm, com.tools20022.repository.codeset.PartyTypeCode.Clearingfirm,
+						com.tools20022.repository.codeset.PartyTypeCode.IntroducingFirm, com.tools20022.repository.codeset.PartyTypeCode.EnteringFirm, com.tools20022.repository.codeset.PartyTypeCode.Client,
+						com.tools20022.repository.codeset.PartyTypeCode.StepInBroker, com.tools20022.repository.codeset.PartyTypeCode.AffirmingParty, com.tools20022.repository.codeset.PartyTypeCode.ETCServiceProvider1,
+						com.tools20022.repository.codeset.PartyTypeCode.ETCServiceProvider2, com.tools20022.repository.codeset.PartyTypeCode.RequestedBroker, com.tools20022.repository.codeset.PartyTypeCode.TaxAuthority,
+						com.tools20022.repository.codeset.PartyTypeCode.DelegateIssuer, com.tools20022.repository.codeset.PartyTypeCode.OriginatingPOI, com.tools20022.repository.codeset.PartyTypeCode.CardIssuer,
+						com.tools20022.repository.codeset.PartyTypeCode.Acceptor, com.tools20022.repository.codeset.PartyTypeCode.Merchant, com.tools20022.repository.codeset.PartyTypeCode.Acquirer,
+						com.tools20022.repository.codeset.PartyTypeCode.IntermediaryAgent, com.tools20022.repository.codeset.PartyTypeCode.MasterTerminalManager, com.tools20022.repository.codeset.PartyTypeCode.TerminalManager,
+						com.tools20022.repository.codeset.PartyTypeCode.AcquirerProcessor, com.tools20022.repository.codeset.PartyTypeCode.CardIssuerProcessor, com.tools20022.repository.codeset.PartyTypeCode.CardScheme,
+						com.tools20022.repository.codeset.PartyTypeCode.CardSchemeProcessor, com.tools20022.repository.codeset.PartyTypeCode.ATMManager, com.tools20022.repository.codeset.PartyTypeCode.HostingEntity,
+						com.tools20022.repository.codeset.PartyTypeCode.OriginatingATM, com.tools20022.repository.codeset.PartyTypeCode.OriginatingTerminal, com.tools20022.repository.codeset.PartyTypeCode.CardApplication,
+						com.tools20022.repository.codeset.PartyTypeCode.POISystem, com.tools20022.repository.codeset.PartyTypeCode.POIGroup, com.tools20022.repository.codeset.PartyTypeCode.SinglePOI,
+						com.tools20022.repository.codeset.PartyTypeCode.AccountFromBank, com.tools20022.repository.codeset.PartyTypeCode.AccountToBank);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(SaleSystem.getCodeName().get(), SaleSystem);
+		codesByName.put(POIComponent.getCodeName().get(), POIComponent);
+		codesByName.put(Issuer.getCodeName().get(), Issuer);
+		codesByName.put(Holder.getCodeName().get(), Holder);
+		codesByName.put(Investor.getCodeName().get(), Investor);
+		codesByName.put(ExecutingFirm.getCodeName().get(), ExecutingFirm);
+		codesByName.put(BrokerOfCredit.getCodeName().get(), BrokerOfCredit);
+		codesByName.put(CorrespondentClearingFirm.getCodeName().get(), CorrespondentClearingFirm);
+		codesByName.put(ContraFirm.getCodeName().get(), ContraFirm);
+		codesByName.put(ContraClearingFirm.getCodeName().get(), ContraClearingFirm);
+		codesByName.put(UnderlyingContraFirm.getCodeName().get(), UnderlyingContraFirm);
+		codesByName.put(GiveUpClearingFirm.getCodeName().get(), GiveUpClearingFirm);
+		codesByName.put(OrderOriginationFirm.getCodeName().get(), OrderOriginationFirm);
+		codesByName.put(SponsoringFirm.getCodeName().get(), SponsoringFirm);
+		codesByName.put(Clearingfirm.getCodeName().get(), Clearingfirm);
+		codesByName.put(IntroducingFirm.getCodeName().get(), IntroducingFirm);
+		codesByName.put(EnteringFirm.getCodeName().get(), EnteringFirm);
+		codesByName.put(Client.getCodeName().get(), Client);
+		codesByName.put(StepInBroker.getCodeName().get(), StepInBroker);
+		codesByName.put(AffirmingParty.getCodeName().get(), AffirmingParty);
+		codesByName.put(ETCServiceProvider1.getCodeName().get(), ETCServiceProvider1);
+		codesByName.put(ETCServiceProvider2.getCodeName().get(), ETCServiceProvider2);
+		codesByName.put(RequestedBroker.getCodeName().get(), RequestedBroker);
+		codesByName.put(TaxAuthority.getCodeName().get(), TaxAuthority);
+		codesByName.put(DelegateIssuer.getCodeName().get(), DelegateIssuer);
+		codesByName.put(OriginatingPOI.getCodeName().get(), OriginatingPOI);
+		codesByName.put(CardIssuer.getCodeName().get(), CardIssuer);
+		codesByName.put(Acceptor.getCodeName().get(), Acceptor);
+		codesByName.put(Merchant.getCodeName().get(), Merchant);
+		codesByName.put(Acquirer.getCodeName().get(), Acquirer);
+		codesByName.put(IntermediaryAgent.getCodeName().get(), IntermediaryAgent);
+		codesByName.put(MasterTerminalManager.getCodeName().get(), MasterTerminalManager);
+		codesByName.put(TerminalManager.getCodeName().get(), TerminalManager);
+		codesByName.put(AcquirerProcessor.getCodeName().get(), AcquirerProcessor);
+		codesByName.put(CardIssuerProcessor.getCodeName().get(), CardIssuerProcessor);
+		codesByName.put(CardScheme.getCodeName().get(), CardScheme);
+		codesByName.put(CardSchemeProcessor.getCodeName().get(), CardSchemeProcessor);
+		codesByName.put(ATMManager.getCodeName().get(), ATMManager);
+		codesByName.put(HostingEntity.getCodeName().get(), HostingEntity);
+		codesByName.put(OriginatingATM.getCodeName().get(), OriginatingATM);
+		codesByName.put(OriginatingTerminal.getCodeName().get(), OriginatingTerminal);
+		codesByName.put(CardApplication.getCodeName().get(), CardApplication);
+		codesByName.put(POISystem.getCodeName().get(), POISystem);
+		codesByName.put(POIGroup.getCodeName().get(), POIGroup);
+		codesByName.put(SinglePOI.getCodeName().get(), SinglePOI);
+		codesByName.put(AccountFromBank.getCodeName().get(), AccountFromBank);
+		codesByName.put(AccountToBank.getCodeName().get(), AccountToBank);
+	}
+
+	public static PartyTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PartyTypeCode[] values() {
+		PartyTypeCode[] values = new PartyTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PartyTypeCode> {
+		@Override
+		public PartyTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PartyTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

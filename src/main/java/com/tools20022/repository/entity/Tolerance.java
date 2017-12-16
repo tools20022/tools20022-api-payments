@@ -116,8 +116,8 @@ public class Tolerance {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedUndertakingAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedUndertakingAmount";
 			definition = "Undertaking amount for which a tolerance is provided.";
@@ -163,8 +163,8 @@ public class Tolerance {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Quantity of product on which a tolerance is allowed.";
@@ -206,8 +206,8 @@ public class Tolerance {
 	 */
 	public static final MMBusinessAttribute mmPlusPercent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlusPercent";
 			definition = "Variance in percentage allowed over the agreed dimension. For example, plus 10 percent.";
@@ -255,8 +255,8 @@ public class Tolerance {
 	 */
 	public static final MMBusinessAttribute mmMinusPercent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinusPercent";
 			definition = "Variance in percentage allowed below the agreed dimension. For example, minus 10 percent.";
@@ -307,8 +307,8 @@ public class Tolerance {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Price on which a tolerance is allowed.";

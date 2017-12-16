@@ -107,8 +107,8 @@ public class Evidence {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Evidence.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Evidence.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDocument";
 			definition = "Document which is used as a proof of evidence.";

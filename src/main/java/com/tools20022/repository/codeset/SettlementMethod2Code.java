@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.SettlementMethodCode;
+import com.tools20022.repository.codeset.SettlementMethod2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the method used to settle the credit transfer instruction.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode
- * SettlementMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmInstructedAgent
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#InstructedAgent
  * SettlementMethod2Code.mmInstructedAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmInstructingAgent
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#InstructingAgent
  * SettlementMethod2Code.mmInstructingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmClearingSystem
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#ClearingSystem
  * SettlementMethod2Code.mmClearingSystem}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode
+ * SettlementMethodCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -68,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the method used to settle the credit transfer instruction."</li>
  * </ul>
  */
-public class SettlementMethod2Code extends SettlementMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SettlementMethod2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,11 +92,12 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "InstructedAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstructedAgent = new MMCode() {
+	public static final SettlementMethod2Code InstructedAgent = new SettlementMethod2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructedAgent";
-			owner_lazy = () -> SettlementMethod2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementMethod2Code.mmObject();
+			codeName = SettlementMethodCode.InstructedAgent.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -110,11 +116,12 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "InstructingAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstructingAgent = new MMCode() {
+	public static final SettlementMethod2Code InstructingAgent = new SettlementMethod2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructingAgent";
-			owner_lazy = () -> SettlementMethod2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementMethod2Code.mmObject();
+			codeName = SettlementMethodCode.InstructingAgent.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -133,15 +140,20 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "ClearingSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClearingSystem = new MMCode() {
+	public static final SettlementMethod2Code ClearingSystem = new SettlementMethod2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystem";
-			owner_lazy = () -> SettlementMethod2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementMethod2Code.mmObject();
+			codeName = SettlementMethodCode.ClearingSystem.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, SettlementMethod2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SettlementMethod2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -149,10 +161,38 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementMethod2Code";
 				definition = "Specifies the method used to settle the credit transfer instruction.";
-				code_lazy = () -> Arrays.asList(SettlementMethod2Code.mmInstructedAgent, SettlementMethod2Code.mmInstructingAgent, SettlementMethod2Code.mmClearingSystem);
 				trace_lazy = () -> SettlementMethodCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementMethod2Code.InstructedAgent, com.tools20022.repository.codeset.SettlementMethod2Code.InstructingAgent,
+						com.tools20022.repository.codeset.SettlementMethod2Code.ClearingSystem);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(InstructedAgent.getCodeName().get(), InstructedAgent);
+		codesByName.put(InstructingAgent.getCodeName().get(), InstructingAgent);
+		codesByName.put(ClearingSystem.getCodeName().get(), ClearingSystem);
+	}
+
+	public static SettlementMethod2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SettlementMethod2Code[] values() {
+		SettlementMethod2Code[] values = new SettlementMethod2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SettlementMethod2Code> {
+		@Override
+		public SettlementMethod2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SettlementMethod2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

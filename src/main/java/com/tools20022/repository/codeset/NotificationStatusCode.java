@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NotificationStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if the occurrence of the event contained in the notification is
@@ -33,19 +38,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmComplete
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#Complete
  * NotificationStatusCode.mmComplete}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmPreliminaryEventConfirmed
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#PreliminaryEventConfirmed
  * NotificationStatusCode.mmPreliminaryEventConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmPreliminaryEventUnconfirmed
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#PreliminaryEventUnconfirmed
  * NotificationStatusCode.mmPreliminaryEventUnconfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmEventConfirmed
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#EventConfirmed
  * NotificationStatusCode.mmEventConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmEventUnconfirmed
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#EventUnconfirmed
  * NotificationStatusCode.mmEventUnconfirmed}</li>
  * </ul>
  * </li>
@@ -72,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class NotificationStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NotificationStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -96,12 +102,12 @@ public class NotificationStatusCode {
 	 * definition} = "The notification contains all the details."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmComplete = new MMCode() {
+	public static final NotificationStatusCode Complete = new NotificationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Complete";
 			definition = "The notification contains all the details.";
-			owner_lazy = () -> NotificationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatusCode.mmObject();
 			codeName = "COMP";
 		}
 	};
@@ -129,12 +135,12 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreliminaryEventConfirmed = new MMCode() {
+	public static final NotificationStatusCode PreliminaryEventConfirmed = new NotificationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreliminaryEventConfirmed";
 			definition = "Notification may not contain complete details, however, the occurrence of the event has been confirmed by the issuer or other official source.";
-			owner_lazy = () -> NotificationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatusCode.mmObject();
 			codeName = "PREC";
 		}
 	};
@@ -163,12 +169,12 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreliminaryEventUnconfirmed = new MMCode() {
+	public static final NotificationStatusCode PreliminaryEventUnconfirmed = new NotificationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreliminaryEventUnconfirmed";
 			definition = "Notification may not contain complete details as the occurrence of the event has not been confirmed by the issuer or other official source at the time the notification was sent.";
-			owner_lazy = () -> NotificationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatusCode.mmObject();
 			codeName = "PREU";
 		}
 	};
@@ -196,12 +202,12 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEventConfirmed = new MMCode() {
+	public static final NotificationStatusCode EventConfirmed = new NotificationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EventConfirmed";
 			definition = "Notification may not contain complete details, however, the occurrence of the event has been confirmed by the issuer or other official source.";
-			owner_lazy = () -> NotificationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatusCode.mmObject();
 			codeName = "ECON";
 		}
 	};
@@ -229,17 +235,21 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEventUnconfirmed = new MMCode() {
+	public static final NotificationStatusCode EventUnconfirmed = new NotificationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EventUnconfirmed";
 			definition = "The occurrence of the event has not been confirmed by the issuer or other official source at the time the notification was sent.";
-			owner_lazy = () -> NotificationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatusCode.mmObject();
 			codeName = "EUNC";
 		}
 	};
+	final static private LinkedHashMap<String, NotificationStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NotificationStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -247,10 +257,40 @@ public class NotificationStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationStatusCode";
 				definition = "Specifies if the occurrence of the event contained in the notification is confirmed or unconfirmed. Details of the event can be complete or incomplete.";
-				code_lazy = () -> Arrays.asList(NotificationStatusCode.mmComplete, NotificationStatusCode.mmPreliminaryEventConfirmed, NotificationStatusCode.mmPreliminaryEventUnconfirmed, NotificationStatusCode.mmEventConfirmed,
-						NotificationStatusCode.mmEventUnconfirmed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NotificationStatusCode.Complete, com.tools20022.repository.codeset.NotificationStatusCode.PreliminaryEventConfirmed,
+						com.tools20022.repository.codeset.NotificationStatusCode.PreliminaryEventUnconfirmed, com.tools20022.repository.codeset.NotificationStatusCode.EventConfirmed,
+						com.tools20022.repository.codeset.NotificationStatusCode.EventUnconfirmed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Complete.getCodeName().get(), Complete);
+		codesByName.put(PreliminaryEventConfirmed.getCodeName().get(), PreliminaryEventConfirmed);
+		codesByName.put(PreliminaryEventUnconfirmed.getCodeName().get(), PreliminaryEventUnconfirmed);
+		codesByName.put(EventConfirmed.getCodeName().get(), EventConfirmed);
+		codesByName.put(EventUnconfirmed.getCodeName().get(), EventUnconfirmed);
+	}
+
+	public static NotificationStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NotificationStatusCode[] values() {
+		NotificationStatusCode[] values = new NotificationStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NotificationStatusCode> {
+		@Override
+		public NotificationStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NotificationStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

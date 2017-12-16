@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TransactionRequestType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of information request related to a transaction number.
@@ -32,13 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionRequestType1Code#mmDateTimeTransaction
+ * {@linkplain com.tools20022.repository.codeset.TransactionRequestType1Code#DateTimeTransaction
  * TransactionRequestType1Code.mmDateTimeTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionRequestType1Code#mmOriginalReceipt
+ * {@linkplain com.tools20022.repository.codeset.TransactionRequestType1Code#OriginalReceipt
  * TransactionRequestType1Code.mmOriginalReceipt}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.TransactionRequestTypeCode
+ * TransactionRequestTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -61,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of information request related to a transaction number."</li>
  * </ul>
  */
-public class TransactionRequestType1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TransactionRequestType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -80,11 +89,12 @@ public class TransactionRequestType1Code {
 	 * name} = "DateTimeTransaction"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDateTimeTransaction = new MMCode() {
+	public static final TransactionRequestType1Code DateTimeTransaction = new TransactionRequestType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DateTimeTransaction";
-			owner_lazy = () -> TransactionRequestType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionRequestType1Code.mmObject();
+			codeName = TransactionRequestTypeCode.DateTimeTransaction.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -103,15 +113,20 @@ public class TransactionRequestType1Code {
 	 * name} = "OriginalReceipt"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginalReceipt = new MMCode() {
+	public static final TransactionRequestType1Code OriginalReceipt = new TransactionRequestType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalReceipt";
-			owner_lazy = () -> TransactionRequestType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionRequestType1Code.mmObject();
+			codeName = TransactionRequestTypeCode.OriginalReceipt.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, TransactionRequestType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TransactionRequestType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -119,9 +134,36 @@ public class TransactionRequestType1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionRequestType1Code";
 				definition = "Specifies the type of information request related to a transaction number.";
-				code_lazy = () -> Arrays.asList(TransactionRequestType1Code.mmDateTimeTransaction, TransactionRequestType1Code.mmOriginalReceipt);
+				trace_lazy = () -> TransactionRequestTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionRequestType1Code.DateTimeTransaction, com.tools20022.repository.codeset.TransactionRequestType1Code.OriginalReceipt);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DateTimeTransaction.getCodeName().get(), DateTimeTransaction);
+		codesByName.put(OriginalReceipt.getCodeName().get(), OriginalReceipt);
+	}
+
+	public static TransactionRequestType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TransactionRequestType1Code[] values() {
+		TransactionRequestType1Code[] values = new TransactionRequestType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TransactionRequestType1Code> {
+		@Override
+		public TransactionRequestType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TransactionRequestType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.LegalFrameworkCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies the legal framework of the transaction.
@@ -32,7 +37,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalFrameworkCode#mmPensionLivree
+ * {@linkplain com.tools20022.repository.codeset.LegalFrameworkCode#PensionLivree
  * LegalFrameworkCode.mmPensionLivree}</li>
  * </ul>
  * </li>
@@ -57,7 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies the legal framework of the transaction."</li>
  * </ul>
  */
-public class LegalFrameworkCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class LegalFrameworkCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,17 +90,21 @@ public class LegalFrameworkCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPensionLivree = new MMCode() {
+	public static final LegalFrameworkCode PensionLivree = new LegalFrameworkCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PensionLivree";
 			definition = "Relates to the French legal framework for repos, that is, relates to a \"Pension Livrée\".";
-			owner_lazy = () -> LegalFrameworkCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LegalFrameworkCode.mmObject();
 			codeName = "FRAN";
 		}
 	};
+	final static private LinkedHashMap<String, LegalFrameworkCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected LegalFrameworkCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -102,9 +112,34 @@ public class LegalFrameworkCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalFrameworkCode";
 				definition = "Identifies the legal framework of the transaction.";
-				code_lazy = () -> Arrays.asList(LegalFrameworkCode.mmPensionLivree);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LegalFrameworkCode.PensionLivree);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PensionLivree.getCodeName().get(), PensionLivree);
+	}
+
+	public static LegalFrameworkCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static LegalFrameworkCode[] values() {
+		LegalFrameworkCode[] values = new LegalFrameworkCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, LegalFrameworkCode> {
+		@Override
+		public LegalFrameworkCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(LegalFrameworkCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

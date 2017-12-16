@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ResolutionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of resolution.
@@ -32,13 +37,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmOrdinary
+ * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Ordinary
  * ResolutionTypeCode.mmOrdinary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmExtraordinary
+ * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Extraordinary
  * ResolutionTypeCode.mmExtraordinary}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmSpecial
+ * <li>{@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Special
  * ResolutionTypeCode.mmSpecial}</li>
  * </ul>
  * </li>
@@ -63,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of resolution."</li>
  * </ul>
  */
-public class ResolutionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ResolutionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +95,12 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOrdinary = new MMCode() {
+	public static final ResolutionTypeCode Ordinary = new ResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ordinary";
 			definition = "Meeting resolution is ordinary and is not subject to any specific voting requirements.";
-			owner_lazy = () -> ResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResolutionTypeCode.mmObject();
 			codeName = "ORDI";
 		}
 	};
@@ -123,12 +128,12 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmExtraordinary = new MMCode() {
+	public static final ResolutionTypeCode Extraordinary = new ResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Extraordinary";
 			definition = "Meeting resolution is extraordinary and may be subject to specific voting requirements.";
-			owner_lazy = () -> ResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResolutionTypeCode.mmObject();
 			codeName = "EXTR";
 		}
 	};
@@ -156,17 +161,21 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpecial = new MMCode() {
+	public static final ResolutionTypeCode Special = new ResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Special";
 			definition = "Resolution that is neither ordinary nor extraordinary (eg. decision on an investment strategy).";
-			owner_lazy = () -> ResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResolutionTypeCode.mmObject();
 			codeName = "SPCL";
 		}
 	};
+	final static private LinkedHashMap<String, ResolutionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ResolutionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,9 +183,37 @@ public class ResolutionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResolutionTypeCode";
 				definition = "Specifies the type of resolution.";
-				code_lazy = () -> Arrays.asList(ResolutionTypeCode.mmOrdinary, ResolutionTypeCode.mmExtraordinary, ResolutionTypeCode.mmSpecial);
+				code_lazy = () -> Arrays
+						.asList(com.tools20022.repository.codeset.ResolutionTypeCode.Ordinary, com.tools20022.repository.codeset.ResolutionTypeCode.Extraordinary, com.tools20022.repository.codeset.ResolutionTypeCode.Special);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Ordinary.getCodeName().get(), Ordinary);
+		codesByName.put(Extraordinary.getCodeName().get(), Extraordinary);
+		codesByName.put(Special.getCodeName().get(), Special);
+	}
+
+	public static ResolutionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ResolutionTypeCode[] values() {
+		ResolutionTypeCode[] values = new ResolutionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ResolutionTypeCode> {
+		@Override
+		public ResolutionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ResolutionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

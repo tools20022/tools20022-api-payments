@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FundStructureCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the structure of the fund.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundStructureCode#mmMultiClassFund
+ * {@linkplain com.tools20022.repository.codeset.FundStructureCode#MultiClassFund
  * FundStructureCode.mmMultiClassFund}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundStructureCode#mmSingleClassFund
+ * {@linkplain com.tools20022.repository.codeset.FundStructureCode#SingleClassFund
  * FundStructureCode.mmSingleClassFund}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the structure of the fund."</li>
  * </ul>
  */
-public class FundStructureCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FundStructureCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class FundStructureCode {
 	 * "Investment fund that contains more than one investment fund class."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMultiClassFund = new MMCode() {
+	public static final FundStructureCode MultiClassFund = new FundStructureCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultiClassFund";
 			definition = "Investment fund that contains more than one investment fund class.";
-			owner_lazy = () -> FundStructureCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FundStructureCode.mmObject();
 			codeName = "MFUN";
 		}
 	};
@@ -116,17 +122,21 @@ public class FundStructureCode {
 	 * "Investment fund that contains only one investment fund class."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSingleClassFund = new MMCode() {
+	public static final FundStructureCode SingleClassFund = new FundStructureCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SingleClassFund";
 			definition = "Investment fund that contains only one investment fund class.";
-			owner_lazy = () -> FundStructureCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FundStructureCode.mmObject();
 			codeName = "SFUN";
 		}
 	};
+	final static private LinkedHashMap<String, FundStructureCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FundStructureCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -134,9 +144,35 @@ public class FundStructureCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundStructureCode";
 				definition = "Specifies the structure of the fund.";
-				code_lazy = () -> Arrays.asList(FundStructureCode.mmMultiClassFund, FundStructureCode.mmSingleClassFund);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FundStructureCode.MultiClassFund, com.tools20022.repository.codeset.FundStructureCode.SingleClassFund);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MultiClassFund.getCodeName().get(), MultiClassFund);
+		codesByName.put(SingleClassFund.getCodeName().get(), SingleClassFund);
+	}
+
+	public static FundStructureCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FundStructureCode[] values() {
+		FundStructureCode[] values = new FundStructureCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FundStructureCode> {
+		@Override
+		public FundStructureCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FundStructureCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

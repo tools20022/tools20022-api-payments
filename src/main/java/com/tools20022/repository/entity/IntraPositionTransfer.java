@@ -37,6 +37,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTransfer
+ * SecuritiesTransfer}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -63,9 +66,6 @@ import java.util.List;
  * SecuritiesBalance.mmRelatedIntraPositionTransfer}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTransfer
- * SecuritiesTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -123,8 +123,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reservation";
 			definition = "Quantity of securities set aside by a party for specific purpose.";
@@ -164,8 +164,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 */
 	public static final MMBusinessAttribute mmCollateralAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAmount";
 			definition = "Value of the collateral available for the delivery settlement process.";
@@ -221,8 +221,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Specifies the securities balance or sub-balance from/to which the securities are transferred.";

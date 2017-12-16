@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FinancialAdviceCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if advice has been received from an independent financial advisor.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#Received
  * FinancialAdviceCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#mmNotReceived
+ * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#NotReceived
  * FinancialAdviceCode.mmNotReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#mmUnknown
+ * {@linkplain com.tools20022.repository.codeset.FinancialAdviceCode#Unknown
  * FinancialAdviceCode.mmUnknown}</li>
  * </ul>
  * </li>
@@ -65,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class FinancialAdviceCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FinancialAdviceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class FinancialAdviceCode {
 	 * "Advice has been received from an independent financial advisor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final FinancialAdviceCode Received = new FinancialAdviceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Received";
 			definition = "Advice has been received from an independent financial advisor.";
-			owner_lazy = () -> FinancialAdviceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAdviceCode.mmObject();
 			codeName = "RECE";
 		}
 	};
@@ -121,12 +127,12 @@ public class FinancialAdviceCode {
 	 * "Advice has not been received from an independent financial advisor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotReceived = new MMCode() {
+	public static final FinancialAdviceCode NotReceived = new FinancialAdviceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotReceived";
 			definition = "Advice has not been received from an independent financial advisor.";
-			owner_lazy = () -> FinancialAdviceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAdviceCode.mmObject();
 			codeName = "NREC";
 		}
 	};
@@ -154,17 +160,21 @@ public class FinancialAdviceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknown = new MMCode() {
+	public static final FinancialAdviceCode Unknown = new FinancialAdviceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unknown";
 			definition = "It is not known whether or not advice has been received from an independent financial advisor.";
-			owner_lazy = () -> FinancialAdviceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAdviceCode.mmObject();
 			codeName = "UKWN";
 		}
 	};
+	final static private LinkedHashMap<String, FinancialAdviceCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FinancialAdviceCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -172,9 +182,37 @@ public class FinancialAdviceCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialAdviceCode";
 				definition = "Specifies if advice has been received from an independent financial advisor.";
-				code_lazy = () -> Arrays.asList(FinancialAdviceCode.mmReceived, FinancialAdviceCode.mmNotReceived, FinancialAdviceCode.mmUnknown);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialAdviceCode.Received, com.tools20022.repository.codeset.FinancialAdviceCode.NotReceived,
+						com.tools20022.repository.codeset.FinancialAdviceCode.Unknown);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(NotReceived.getCodeName().get(), NotReceived);
+		codesByName.put(Unknown.getCodeName().get(), Unknown);
+	}
+
+	public static FinancialAdviceCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FinancialAdviceCode[] values() {
+		FinancialAdviceCode[] values = new FinancialAdviceCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FinancialAdviceCode> {
+		@Override
+		public FinancialAdviceCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FinancialAdviceCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

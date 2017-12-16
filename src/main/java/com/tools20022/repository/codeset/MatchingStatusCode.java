@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MatchingStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Provides the matching status of the instruction at the time the settlement
@@ -32,17 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#mmMatched
+ * <li>{@linkplain com.tools20022.repository.codeset.MatchingStatusCode#Matched
  * MatchingStatusCode.mmMatched}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#mmUnmatched
+ * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#Unmatched
  * MatchingStatusCode.mmUnmatched}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#mmMatchingAlleged
+ * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#MatchingAlleged
  * MatchingStatusCode.mmMatchingAlleged}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#mmMisMatched
+ * {@linkplain com.tools20022.repository.codeset.MatchingStatusCode#MisMatched
  * MatchingStatusCode.mmMisMatched}</li>
  * </ul>
  * </li>
@@ -69,7 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class MatchingStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MatchingStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +98,12 @@ public class MatchingStatusCode {
 	 * definition} = "Instruction has been matched."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMatched = new MMCode() {
+	public static final MatchingStatusCode Matched = new MatchingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Matched";
 			definition = "Instruction has been matched.";
-			owner_lazy = () -> MatchingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MatchingStatusCode.mmObject();
 			codeName = "MACH";
 		}
 	};
@@ -123,12 +128,12 @@ public class MatchingStatusCode {
 	 * definition} = "Instruction has not been matched."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnmatched = new MMCode() {
+	public static final MatchingStatusCode Unmatched = new MatchingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unmatched";
 			definition = "Instruction has not been matched.";
-			owner_lazy = () -> MatchingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MatchingStatusCode.mmObject();
 			codeName = "NMAT";
 		}
 	};
@@ -153,12 +158,12 @@ public class MatchingStatusCode {
 	 * definition} = "Instruction has been alleged matched."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMatchingAlleged = new MMCode() {
+	public static final MatchingStatusCode MatchingAlleged = new MatchingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MatchingAlleged";
 			definition = "Instruction has been alleged matched.";
-			owner_lazy = () -> MatchingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MatchingStatusCode.mmObject();
 			codeName = "ALGE";
 		}
 	};
@@ -183,17 +188,21 @@ public class MatchingStatusCode {
 	 * definition} = "Instruction has been mis-matched."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMisMatched = new MMCode() {
+	public static final MatchingStatusCode MisMatched = new MatchingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MisMatched";
 			definition = "Instruction has been mis-matched.";
-			owner_lazy = () -> MatchingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MatchingStatusCode.mmObject();
 			codeName = "MMAT";
 		}
 	};
+	final static private LinkedHashMap<String, MatchingStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MatchingStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -201,9 +210,38 @@ public class MatchingStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MatchingStatusCode";
 				definition = "Provides the matching status of the instruction at the time the settlement instruction was sent.";
-				code_lazy = () -> Arrays.asList(MatchingStatusCode.mmMatched, MatchingStatusCode.mmUnmatched, MatchingStatusCode.mmMatchingAlleged, MatchingStatusCode.mmMisMatched);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MatchingStatusCode.Matched, com.tools20022.repository.codeset.MatchingStatusCode.Unmatched,
+						com.tools20022.repository.codeset.MatchingStatusCode.MatchingAlleged, com.tools20022.repository.codeset.MatchingStatusCode.MisMatched);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Matched.getCodeName().get(), Matched);
+		codesByName.put(Unmatched.getCodeName().get(), Unmatched);
+		codesByName.put(MatchingAlleged.getCodeName().get(), MatchingAlleged);
+		codesByName.put(MisMatched.getCodeName().get(), MisMatched);
+	}
+
+	public static MatchingStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MatchingStatusCode[] values() {
+		MatchingStatusCode[] values = new MatchingStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MatchingStatusCode> {
+		@Override
+		public MatchingStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MatchingStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

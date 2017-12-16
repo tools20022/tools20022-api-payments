@@ -304,22 +304,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalAndCurrentQuantities1
- * OriginalAndCurrentQuantities1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.FinancialInstrumentQuantityChoice
- * FinancialInstrumentQuantityChoice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryQuantity1
- * ProprietaryQuantity1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.TransactionQuantities2Choice
- * TransactionQuantities2Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -573,6 +557,22 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalAndCurrentQuantities1
+ * OriginalAndCurrentQuantities1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.FinancialInstrumentQuantityChoice
+ * FinancialInstrumentQuantityChoice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryQuantity1
+ * ProprietaryQuantity1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.TransactionQuantities2Choice
+ * TransactionQuantities2Choice}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -628,8 +628,8 @@ public class SecuritiesQuantity {
 	public static final MMBusinessAttribute mmUnit = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstrumentQuantityChoice.mmUnit);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Quantity of a security.";
@@ -682,8 +682,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTransfer";
 			definition = "Transfer of a specific quantity of securities.";
@@ -729,8 +729,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurityIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityIdentification";
 			definition = "Identifies the security.";
@@ -777,8 +777,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Order";
 			definition = "Order for which a number of units is specified.";
@@ -818,8 +818,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAttribute mmGroup1Or2Units = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Group1Or2Units";
 			definition = "Tax group to which the purchased units belong.";
@@ -874,8 +874,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrderExecution";
 			definition = "Order execution process for which a number of units is specified.";
@@ -923,8 +923,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Settlement of a specific amount of securities.";
@@ -970,8 +970,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantityDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantityDebt";
 			definition = "Security for which a minimum quantity is specified.";
@@ -1022,8 +1022,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmLotBreakdown = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotBreakdown";
 			definition = "Number of securities purchased or sold in one transaction. In terms of options, a lot represents the number of contracts contained in one derivative security.";
@@ -1073,8 +1073,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumExercisableQuantitySecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableQuantitySecuritiesConversion";
 			definition = "Securities conversion process for which a minimum exercisable quantity is specified.";
@@ -1124,8 +1124,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumExercisableMultipleQuantitySecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableMultipleQuantitySecuritiesConversion";
 			definition = "Securities conversion process for which a minimum exercisable multiple quantity is specified.";
@@ -1173,8 +1173,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmAggregateQuantityBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AggregateQuantityBalance";
 			definition = "Securities balance which contains the aggregate quantity.";
@@ -1223,8 +1223,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which an amount of securities is posted.";
@@ -1273,8 +1273,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmConditionalQuantitySecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ConditionalQuantitySecuritiesProceeds";
 			definition = "Securities proceeds for which a conditional quantity has been defined.";
@@ -1326,8 +1326,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmOverAndAboveQuantitySecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverAndAboveQuantitySecuritiesProceeds";
 			definition = "Securities proceeds for which an over and above normal endured quantity has been provided.";
@@ -1375,8 +1375,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entry";
 			definition = "Entry in a securities account of a specific quantity of securities.";
@@ -1415,8 +1415,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Quantity expressed as a code.";
@@ -1473,8 +1473,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmExpectedQuantitySecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpectedQuantitySecuritiesProceeds";
 			definition = "Securities proceeds for which a quantity of securities to receive has been specified.";
@@ -1523,8 +1523,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmStatusRelatedSecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusRelatedSecuritiesProceeds";
 			definition = "Securities proceeds related to securities with a specific status.";
@@ -1575,8 +1575,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "Corporate action distribution process for which a quantity of securities has been posted.";
@@ -1627,8 +1627,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedEventForFractionalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedEventForFractionalQuantity";
 			definition = "Event for which the resulting fractional quantity will be paid with cash in lieu. ";
@@ -1679,8 +1679,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumExercisableQuantitySecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumExercisableQuantitySecuritiesConversion";
 			definition = "Securities conversion process for which a maximum exercisable quantity is specified.";
@@ -1727,8 +1727,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmBoardLotSecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BoardLotSecuritiesProceeds";
 			definition = "Securities proceeds related to a board lot.";
@@ -1777,8 +1777,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNewDenominationSecuritiesProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewDenominationSecuritiesProceeds";
 			definition = "Securities proceeds related to a quantity of redenominated securities.";
@@ -1826,8 +1826,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmBackEndOddLotBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BackEndOddLotBiddingConditions";
 			definition = "BiddingConditions for which a back end odd lot is provided.";
@@ -1878,8 +1878,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesEntitlement";
 			definition = "Specifies the entitlement parameters relative to the securities entitlement.";
@@ -1928,8 +1928,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate action for which a quantity of securities is specified.";
@@ -1977,8 +1977,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BiddingConditions";
 			definition = "Bidding conditions related to the base denomination quantity.";
@@ -2025,8 +2025,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmLottery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lottery";
 			definition = "Lottery for which an incremental denomination is specified.";
@@ -2073,8 +2073,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSubBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSubBalance";
 			definition = "Sub balance which contains a quantity of securities.";
@@ -2122,8 +2122,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmAvailableQuantityBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableQuantityBalance";
 			definition = "Securities balance which contains the securities quantity.";
@@ -2170,8 +2170,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Trade for which a quantity is specified.";
@@ -2222,8 +2222,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRatioDenominatorSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RatioDenominatorSecuritiesConversion";
 			definition = "Securities conversion process for which a conversion ratio denominator quantity is specified.";
@@ -2274,8 +2274,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRatioNumeratorSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RatioNumeratorSecuritiesConversion";
 			definition = "Securities conversion process for which a conversion ratio denominator quantity is specified.";
@@ -2322,8 +2322,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumTradedQuantityMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumTradedQuantityMarket";
 			definition = "Market for which a minimum traded quantity is specified.";
@@ -2369,8 +2369,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumDenominationDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumDenominationDebt";
 			definition = "Debt for which a minimum denomination is specified.";
@@ -2416,8 +2416,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumIncrementDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumIncrementDebt";
 			definition = "Debt for which a minimum increment is specified.";
@@ -2464,8 +2464,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which a specific quantity is requested.";
@@ -2512,8 +2512,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Allocation";
 			definition = "Allocation process for which a quantity is specified.";
@@ -2557,8 +2557,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Quantity expressed as an amount, eg,  in the investment fund business, a quantity of a financial instrument may be expressed as an amount of money.";
@@ -2611,8 +2611,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmDenominatorRatio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DenominatorRatio";
 			definition = "Ratio for which a denominator is specified.";
@@ -2659,8 +2659,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNumeratorRatio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumeratorRatio";
 			definition = "Ratio for which a numerator is specified.";
@@ -2708,8 +2708,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTradeExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeExecution";
 			definition = "Trade for which settlement takes place.";
@@ -2760,8 +2760,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCorporateActionEvent";
 			definition = "Corporate action for which the offeror/issuer has specified a quantity of securities to purchase or redeem under the terms of the event.";
@@ -2810,8 +2810,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionElection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateActionElection";
 			definition = "Election process which selected a quantity of securities.";
@@ -2861,8 +2861,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxVoucher";
 			definition = "Tax voucher for which the calculation of holdings at record date took place.";
@@ -2911,8 +2911,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedBuyIn = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedBuyIn";
 			definition = "Buy-in process for which a compensation amount of securities is specified.";
@@ -2960,8 +2960,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPreviousDayOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviousDayOrder";
 			definition = "Securities order which uses information on a day order quantity.";
@@ -3009,8 +3009,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmLiquidity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Liquidity";
 			definition = "Liquidity information related to a quantity of a financial instrument.";
@@ -3053,8 +3053,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Quantity expressed as a percentage rate, eg,  in the investment fund business, a quantity of a financial instrument may be expressed as percentage of the investor's total holding.";
@@ -3109,8 +3109,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantityOrderParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantityOrderParameters";
 			definition = "Securities order for which a minimum quantity to execute is specified.";
@@ -3156,8 +3156,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumQuantityRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantityRelatedQuote";
 			definition = "Quote process for which a maximum quantity of securities is specified.";
@@ -3205,8 +3205,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmUnavailableQuantityBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnavailableQuantityBalance";
 			definition = "Securities balance which contains the unavailable quantity.";
@@ -3257,8 +3257,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMatchIncrementOrderParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchIncrementOrderParameters";
 			definition = "Securities order parameters for which a match increment quantity is provided.";
@@ -3307,8 +3307,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIssuance";
 			definition = "Issuance for which a minimum subscription quantity of securities is specified.";
@@ -3355,8 +3355,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPairoff = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pairoff";
 			definition = "Pair off process for which a quantity has been specified.";
@@ -3402,8 +3402,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which the nominal amount is specified.";
@@ -3454,8 +3454,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingDenominatorDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingDenominatorDistributionInformation";
 			definition = "Cash and securities distribution information for which an intermediate to underlying denominator quantity is specified.";
@@ -3506,8 +3506,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumHoldingDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumHoldingDistributionInformation";
 			definition = "Cash and securities distribution information for which a maximum holding quantity is specified.";
@@ -3558,8 +3558,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumExercisableQuantityDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumExercisableQuantityDistributionInformation";
 			definition = "Cash and securities distribution information for which a maximum exercisable quantity is specified.";
@@ -3610,8 +3610,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumExercisableQuantityDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableQuantityDistributionInformation";
 			definition = "Cash and securities distribution information for which a minimum exercisable quantity is specified.";
@@ -3662,8 +3662,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingDenominatorDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingDenominatorDistributionInformation";
 			definition = "Cash and securities distribution information for which a distributed to underlying denominator quantity is specified.";
@@ -3714,8 +3714,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingNumeratorDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingNumeratorDistributionInformation";
 			definition = "Cash and securities distribution information for which an intermediate to underlying numerator quantity is specified.";
@@ -3766,8 +3766,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumHoldingDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHoldingDistributionInformation";
 			definition = "Cash and securities distribution information for which a minimum holding quantity is specified.";
@@ -3818,8 +3818,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingNumeratorDistributionInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingNumeratorDistributionInformation";
 			definition = "Cash and securities distribution information for which a distributed to underlying numerator quantity is specified.";
@@ -3869,8 +3869,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumHoldingRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumHoldingRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a maximum holding quantity is provided.";
@@ -3921,8 +3921,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which an intermediate to underlying numerator quantity is provided.";
@@ -3974,8 +3974,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which an intermediate to underlying denominator quantity is provided.";
@@ -4027,8 +4027,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a distributed to underlying denominator quantity is provided.";
@@ -4079,8 +4079,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a distributed to underlying numerator quantity is provided.";
@@ -4130,8 +4130,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumHoldingRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHoldingRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a minimum holding quantity is provided.";
@@ -4178,8 +4178,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumTradedQuantityMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumTradedQuantityMarket";
 			definition = "Market for which a maximum traded quantity is specified.";
@@ -4226,8 +4226,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantityRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityRelatedQuote";
 			definition = "Quote process for which a quantity of securities is specified.";
@@ -4274,8 +4274,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantityRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantityRelatedQuote";
 			definition = "Quote process for which a minimum quantity of securities is specified.";
@@ -4323,8 +4323,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Net asset value calculation parameters.";
@@ -4371,8 +4371,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSidePocket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SidePocket";
 			definition = "Side pocket for which a quantity is specified.";
@@ -4421,8 +4421,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNetting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Netting";
 			definition = "Netting process for which a net quantity of securities has been calculated.";
@@ -4471,8 +4471,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrderStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrderStatus";
 			definition = "Order status for which a remaining quantity is specified.";
@@ -4521,8 +4521,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrderStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesOrderStatus";
 			definition = "Order status for which a cumulative quantity is specified.";
@@ -4572,8 +4572,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTurnaroundSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTurnaroundSettlement";
 			definition = "Securities settlement process for which a turned quantity is specified.";
@@ -4620,8 +4620,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCashFlow = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashFlow";
 			definition = "Cash flow for which quantities are specified.";
@@ -4667,8 +4667,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Position";
 			definition = "Position which contains the net quantity.";
@@ -4716,8 +4716,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumQuantityBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantityBiddingConditions";
 			definition = "Bidding conditions for which a maximum quantity is specified.";
@@ -4765,8 +4765,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmFrontEndOddLotBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FrontEndOddLotBiddingConditions";
 			definition = "Bidding conditions for which a front end odd lot is specified.";
@@ -4814,8 +4814,8 @@ public class SecuritiesQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantityBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantityBiddingConditions";
 			definition = "Bidding conditions for which a minimum quantity is specified.";

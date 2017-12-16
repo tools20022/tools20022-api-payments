@@ -119,8 +119,8 @@ public class ClearingBrokerIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTradeIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTradeIdentification";
 			definition = "Other identifications of a trade for which clearing broker identifications are provided.";
@@ -161,8 +161,8 @@ public class ClearingBrokerIdentification {
 	 */
 	public static final MMBusinessAttribute mmSideIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SideIndicator";
 			definition = "Distinguishes the client leg from the central counterpatry (CCP) leg in the clearing broker identification.";
@@ -207,8 +207,8 @@ public class ClearingBrokerIdentification {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingBrokerIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification assigned by the clearing broker.";

@@ -169,8 +169,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmIncoterms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Incoterms";
 			definition = "Specifies the applicable Incoterm and associated location.";
@@ -211,8 +211,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique identification of the means of transport, such as the International Maritime Organization number of a vessel.";
@@ -264,8 +264,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmPackaging = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Packaging";
 			definition = "Physical packaging of goods for transport.";
@@ -303,8 +303,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAttribute mmArrivalDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArrivalDateTime";
 			definition = "Date and time when the goods reach their destination..";
@@ -349,8 +349,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAttribute mmPartialShipment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialShipment";
 			definition = "Indicates whether or not partial shipments are allowed.";
@@ -396,8 +396,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAttribute mmTransShipment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransShipment";
 			definition = "Indicates whether or not transshipment of goods is allowed.";
@@ -449,8 +449,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductDelivery";
 			definition = "Specifies the delivery parameters of a trade.";
@@ -495,8 +495,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfDeparture = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfDeparture";
 			definition = "Place from where the goods must leave.";
@@ -541,8 +541,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfDestination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfDestination";
 			definition = "Place where the goods must arrive.";
@@ -587,8 +587,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmTransportCharges = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransportCharges";
 			definition = "Charges related to the conveyance of goods.";
@@ -629,8 +629,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAttribute mmFreightChargesPrepaidOrCollect = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FreightChargesPrepaidOrCollect";
 			definition = "Identifies whether the freight charges associated with the items are \"prepaid\" or \"collect\".";
@@ -697,8 +697,8 @@ public class Transport {
 	public static final MMBusinessAssociationEnd mmShipmentDates = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentEntry1.mmShipmentAttributes, TradeContract1.mmShipmentSchedule);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShipmentDates";
 			definition = "Specifies the shipment date, the earliest shipment date and the latest shipment date.";
@@ -743,8 +743,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmTransportedGoods = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransportedGoods";
 			definition = "Goods that are transported.";
@@ -789,8 +789,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to the transport of goods.";
@@ -835,8 +835,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmTransitLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransitLocation";
 			definition = "Place through which the goods are transiting.";
@@ -883,8 +883,8 @@ public class Transport {
 	 */
 	public static final MMBusinessAssociationEnd mmTransportDocuments = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransportDocuments";
 			definition = "Documents which may be required in relation with the transportation of goods.";

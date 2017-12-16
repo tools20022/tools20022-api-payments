@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CapitalTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of capital.
@@ -31,40 +36,38 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmApproved
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Approved
  * CapitalTypeCode.mmApproved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmIssuedVotingRights
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#IssuedVotingRights
  * CapitalTypeCode.mmIssuedVotingRights}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmMaximumIncrease
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#MaximumIncrease
  * CapitalTypeCode.mmMaximumIncrease}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmOutstanding
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Outstanding
  * CapitalTypeCode.mmOutstanding}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmRedeemed
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Redeemed
  * CapitalTypeCode.mmRedeemed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmStatedCapital
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#StatedCapital
  * CapitalTypeCode.mmStatedCapital}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmTreasuryStock
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#TreasuryStock
  * CapitalTypeCode.mmTreasuryStock}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmUnissued
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Unissued
  * CapitalTypeCode.mmUnissued}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmWithdrawn
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Withdrawn
  * CapitalTypeCode.mmWithdrawn}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmAuthorised
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Authorised
  * CapitalTypeCode.mmAuthorised}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmInCirculation
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#InCirculation
  * CapitalTypeCode.mmInCirculation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmIssued
+ * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Issued
  * CapitalTypeCode.mmIssued}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#mmIssuedReserveCapital
+ * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#IssuedReserveCapital
  * CapitalTypeCode.mmIssuedReserveCapital}</li>
  * </ul>
  * </li>
@@ -89,7 +92,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of capital."</li>
  * </ul>
  */
-public class CapitalTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CapitalTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -113,12 +117,12 @@ public class CapitalTypeCode {
 	 * definition} = "Approved capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmApproved = new MMCode() {
+	public static final CapitalTypeCode Approved = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Approved";
 			definition = "Approved capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "APPD";
 		}
 	};
@@ -143,12 +147,12 @@ public class CapitalTypeCode {
 	 * definition} = "Issued voting rights."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuedVotingRights = new MMCode() {
+	public static final CapitalTypeCode IssuedVotingRights = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedVotingRights";
 			definition = "Issued voting rights.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "ISVR";
 		}
 	};
@@ -173,12 +177,12 @@ public class CapitalTypeCode {
 	 * definition} = "Maximum amount of increase."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMaximumIncrease = new MMCode() {
+	public static final CapitalTypeCode MaximumIncrease = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumIncrease";
 			definition = "Maximum amount of increase.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "MXIN";
 		}
 	};
@@ -203,12 +207,12 @@ public class CapitalTypeCode {
 	 * definition} = "Outstanding capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOutstanding = new MMCode() {
+	public static final CapitalTypeCode Outstanding = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Outstanding";
 			definition = "Outstanding capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "OUTS";
 		}
 	};
@@ -233,12 +237,12 @@ public class CapitalTypeCode {
 	 * definition} = "Redeemed capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRedeemed = new MMCode() {
+	public static final CapitalTypeCode Redeemed = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Redeemed";
 			definition = "Redeemed capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "REDE";
 		}
 	};
@@ -263,12 +267,12 @@ public class CapitalTypeCode {
 	 * definition} = "Stated capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStatedCapital = new MMCode() {
+	public static final CapitalTypeCode StatedCapital = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatedCapital";
 			definition = "Stated capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "STCA";
 		}
 	};
@@ -293,12 +297,12 @@ public class CapitalTypeCode {
 	 * definition} = "Issued reserve capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTreasuryStock = new MMCode() {
+	public static final CapitalTypeCode TreasuryStock = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryStock";
 			definition = "Issued reserve capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "TRSO";
 		}
 	};
@@ -323,12 +327,12 @@ public class CapitalTypeCode {
 	 * definition} = "Contingent capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnissued = new MMCode() {
+	public static final CapitalTypeCode Unissued = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unissued";
 			definition = "Contingent capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "UISS";
 		}
 	};
@@ -353,12 +357,12 @@ public class CapitalTypeCode {
 	 * definition} = "Withdrawn capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWithdrawn = new MMCode() {
+	public static final CapitalTypeCode Withdrawn = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withdrawn";
 			definition = "Withdrawn capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "WTHD";
 		}
 	};
@@ -383,12 +387,12 @@ public class CapitalTypeCode {
 	 * definition} = "Authorised capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuthorised = new MMCode() {
+	public static final CapitalTypeCode Authorised = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authorised";
 			definition = "Authorised capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "AUTD";
 		}
 	};
@@ -413,12 +417,12 @@ public class CapitalTypeCode {
 	 * definition} = "In circulation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInCirculation = new MMCode() {
+	public static final CapitalTypeCode InCirculation = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InCirculation";
 			definition = "In circulation.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "ICIR";
 		}
 	};
@@ -443,12 +447,12 @@ public class CapitalTypeCode {
 	 * definition} = "Issued capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssued = new MMCode() {
+	public static final CapitalTypeCode Issued = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issued";
 			definition = "Issued capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "ISUD";
 		}
 	};
@@ -473,17 +477,21 @@ public class CapitalTypeCode {
 	 * definition} = "Issued reserve capital."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuedReserveCapital = new MMCode() {
+	public static final CapitalTypeCode IssuedReserveCapital = new CapitalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedReserveCapital";
 			definition = "Issued reserve capital.";
-			owner_lazy = () -> CapitalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CapitalTypeCode.mmObject();
 			codeName = "IRCA";
 		}
 	};
+	final static private LinkedHashMap<String, CapitalTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CapitalTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -491,11 +499,50 @@ public class CapitalTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CapitalTypeCode";
 				definition = "Specifies the type of capital.";
-				code_lazy = () -> Arrays.asList(CapitalTypeCode.mmApproved, CapitalTypeCode.mmIssuedVotingRights, CapitalTypeCode.mmMaximumIncrease, CapitalTypeCode.mmOutstanding, CapitalTypeCode.mmRedeemed,
-						CapitalTypeCode.mmStatedCapital, CapitalTypeCode.mmTreasuryStock, CapitalTypeCode.mmUnissued, CapitalTypeCode.mmWithdrawn, CapitalTypeCode.mmAuthorised, CapitalTypeCode.mmInCirculation, CapitalTypeCode.mmIssued,
-						CapitalTypeCode.mmIssuedReserveCapital);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CapitalTypeCode.Approved, com.tools20022.repository.codeset.CapitalTypeCode.IssuedVotingRights,
+						com.tools20022.repository.codeset.CapitalTypeCode.MaximumIncrease, com.tools20022.repository.codeset.CapitalTypeCode.Outstanding, com.tools20022.repository.codeset.CapitalTypeCode.Redeemed,
+						com.tools20022.repository.codeset.CapitalTypeCode.StatedCapital, com.tools20022.repository.codeset.CapitalTypeCode.TreasuryStock, com.tools20022.repository.codeset.CapitalTypeCode.Unissued,
+						com.tools20022.repository.codeset.CapitalTypeCode.Withdrawn, com.tools20022.repository.codeset.CapitalTypeCode.Authorised, com.tools20022.repository.codeset.CapitalTypeCode.InCirculation,
+						com.tools20022.repository.codeset.CapitalTypeCode.Issued, com.tools20022.repository.codeset.CapitalTypeCode.IssuedReserveCapital);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Approved.getCodeName().get(), Approved);
+		codesByName.put(IssuedVotingRights.getCodeName().get(), IssuedVotingRights);
+		codesByName.put(MaximumIncrease.getCodeName().get(), MaximumIncrease);
+		codesByName.put(Outstanding.getCodeName().get(), Outstanding);
+		codesByName.put(Redeemed.getCodeName().get(), Redeemed);
+		codesByName.put(StatedCapital.getCodeName().get(), StatedCapital);
+		codesByName.put(TreasuryStock.getCodeName().get(), TreasuryStock);
+		codesByName.put(Unissued.getCodeName().get(), Unissued);
+		codesByName.put(Withdrawn.getCodeName().get(), Withdrawn);
+		codesByName.put(Authorised.getCodeName().get(), Authorised);
+		codesByName.put(InCirculation.getCodeName().get(), InCirculation);
+		codesByName.put(Issued.getCodeName().get(), Issued);
+		codesByName.put(IssuedReserveCapital.getCodeName().get(), IssuedReserveCapital);
+	}
+
+	public static CapitalTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CapitalTypeCode[] values() {
+		CapitalTypeCode[] values = new CapitalTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CapitalTypeCode> {
+		@Override
+		public CapitalTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CapitalTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

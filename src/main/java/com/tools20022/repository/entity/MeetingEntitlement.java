@@ -119,8 +119,8 @@ public class MeetingEntitlement {
 	 */
 	public static final MMBusinessAttribute mmEntitlementFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementFixingDate";
 			definition = "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date...";
@@ -165,8 +165,8 @@ public class MeetingEntitlement {
 	 */
 	public static final MMBusinessAttribute mmEntitlementRatio = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementRatio";
 			definition = "Number of votes assigned to one security.";
@@ -219,8 +219,8 @@ public class MeetingEntitlement {
 	 */
 	public static final MMBusinessAssociationEnd mmEligiblePosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligiblePosition";
 			definition = "Amount of securities that are eligible for the vote.";
@@ -266,8 +266,8 @@ public class MeetingEntitlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Services which include the entitlement calculation.";
@@ -306,8 +306,8 @@ public class MeetingEntitlement {
 	 */
 	public static final MMBusinessAttribute mmEntitlementCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementCalculationDate";
 			definition = "Date at which the positions are calculated.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CSCManagementCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * CSC (Card Security Code) management associated with the transaction.
@@ -32,15 +37,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#mmCSCPresent
+ * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#CSCPresent
  * CSCManagementCode.mmCSCPresent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#mmCSCByPass
+ * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#CSCByPass
  * CSCManagementCode.mmCSCByPass}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#mmCSCUnread
+ * {@linkplain com.tools20022.repository.codeset.CSCManagementCode#CSCUnread
  * CSCManagementCode.mmCSCUnread}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCManagementCode#mmNoCSC
+ * <li>{@linkplain com.tools20022.repository.codeset.CSCManagementCode#NoCSC
  * CSCManagementCode.mmNoCSC}</li>
  * </ul>
  * </li>
@@ -73,7 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "CSC (Card Security Code) management associated with the transaction."</li>
  * </ul>
  */
-public class CSCManagementCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CSCManagementCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -97,12 +103,12 @@ public class CSCManagementCode {
 	 * definition} = "Card security code present."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCSCPresent = new MMCode() {
+	public static final CSCManagementCode CSCPresent = new CSCManagementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCPresent";
 			definition = "Card security code present.";
-			owner_lazy = () -> CSCManagementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CSCManagementCode.mmObject();
 			codeName = "PRST";
 		}
 	};
@@ -128,12 +134,12 @@ public class CSCManagementCode {
 	 * "Card security code by-passed or not provided by the merchant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCSCByPass = new MMCode() {
+	public static final CSCManagementCode CSCByPass = new CSCManagementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCByPass";
 			definition = "Card security code by-passed or not provided by the merchant.";
-			owner_lazy = () -> CSCManagementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CSCManagementCode.mmObject();
 			codeName = "BYPS";
 		}
 	};
@@ -158,12 +164,12 @@ public class CSCManagementCode {
 	 * definition} = "Card security code unreadable."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCSCUnread = new MMCode() {
+	public static final CSCManagementCode CSCUnread = new CSCManagementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCUnread";
 			definition = "Card security code unreadable.";
-			owner_lazy = () -> CSCManagementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CSCManagementCode.mmObject();
 			codeName = "UNRD";
 		}
 	};
@@ -188,17 +194,21 @@ public class CSCManagementCode {
 	 * definition} = "No card security code imprint."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoCSC = new MMCode() {
+	public static final CSCManagementCode NoCSC = new CSCManagementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoCSC";
 			definition = "No card security code imprint.";
-			owner_lazy = () -> CSCManagementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CSCManagementCode.mmObject();
 			codeName = "NCSC";
 		}
 	};
+	final static private LinkedHashMap<String, CSCManagementCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CSCManagementCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -206,10 +216,39 @@ public class CSCManagementCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CSCManagementCode";
 				definition = "CSC (Card Security Code) management associated with the transaction.";
-				code_lazy = () -> Arrays.asList(CSCManagementCode.mmCSCPresent, CSCManagementCode.mmCSCByPass, CSCManagementCode.mmCSCUnread, CSCManagementCode.mmNoCSC);
 				derivation_lazy = () -> Arrays.asList(CSCManagement1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CSCManagementCode.CSCPresent, com.tools20022.repository.codeset.CSCManagementCode.CSCByPass, com.tools20022.repository.codeset.CSCManagementCode.CSCUnread,
+						com.tools20022.repository.codeset.CSCManagementCode.NoCSC);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CSCPresent.getCodeName().get(), CSCPresent);
+		codesByName.put(CSCByPass.getCodeName().get(), CSCByPass);
+		codesByName.put(CSCUnread.getCodeName().get(), CSCUnread);
+		codesByName.put(NoCSC.getCodeName().get(), NoCSC);
+	}
+
+	public static CSCManagementCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CSCManagementCode[] values() {
+		CSCManagementCode[] values = new CSCManagementCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CSCManagementCode> {
+		@Override
+		public CSCManagementCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CSCManagementCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

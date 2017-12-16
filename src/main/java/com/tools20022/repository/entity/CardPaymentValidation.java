@@ -157,8 +157,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmTransactionSuccess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionSuccess";
 			definition = "Outcome of the transaction at the acceptor.";
@@ -208,8 +208,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmMerchantOverride = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MerchantOverride";
 			definition = "Indicate that the acceptor has forced the transaction in spite of the authorisation result (online or offline), or incident to complete the transaction.";
@@ -255,8 +255,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmValidityDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityDate";
 			definition = "Transaction authorisation deadline to complete the related payment.";
@@ -310,8 +310,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPayment";
 			definition = "Card payment to which the validation process applies.";
@@ -357,8 +357,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAssociationEnd mmResponse = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Response";
 			definition = "Response to an authorisation request.";
@@ -397,8 +397,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmAuthorisationCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisationCode";
 			definition = "Value assigned by the authorising party.";
@@ -444,8 +444,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmOnLineReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLineReason";
 			definition = "Reason to process an online authorisation.";
@@ -498,8 +498,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Balance of the account attached to the payment card.";
@@ -542,8 +542,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmCardholderAddressVerificationResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderAddressVerificationResult";
 			definition = "Result of the cardholder verification address checks on the street number and the postal code.";
@@ -590,8 +590,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmCSCResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCResult";
 			definition = "Result of the printed CSC (Card Security Code) validation.";
@@ -645,8 +645,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAssociationEnd mmDeclinedProductCode = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclinedProductCode";
 			definition = "Product code for which the payment authorisation was declined.";
@@ -684,8 +684,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmElectronicCommerceAuthenticationResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicCommerceAuthenticationResult";
 			definition = "Result of an e-commerce authentication process.";
@@ -731,8 +731,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute mmFailureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailureReason";
 			definition = "Incident occuring during the transaction.";
@@ -785,8 +785,8 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAssociationEnd mmSignature = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Signature";
 			definition = "Signature of the message to display or print.";

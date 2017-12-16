@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradeTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of executed order.
@@ -31,84 +36,81 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBasket
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Basket
  * TradeTypeCode.mmBasket}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmIndex
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Index
  * TradeTypeCode.mmIndex}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmList
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#List
  * TradeTypeCode.mmList}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmPreAllocation
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#PreAllocation
  * TradeTypeCode.mmPreAllocation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmProgram
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Program
  * TradeTypeCode.mmProgram}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmTrade
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Trade
  * TradeTypeCode.mmTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBrokerToBroker
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BrokerToBroker
  * TradeTypeCode.mmBrokerToBroker}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmFundToFund
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#FundToFund
  * TradeTypeCode.mmFundToFund}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmRiskTrade
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#RiskTrade
  * TradeTypeCode.mmRiskTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmVWAPGuarantee
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#VWAPGuarantee
  * TradeTypeCode.mmVWAPGuarantee}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmAgency
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Agency
  * TradeTypeCode.mmAgency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmGuaranteedClose
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#GuaranteedClose
  * TradeTypeCode.mmGuaranteedClose}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmOnOrderBookTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OnOrderBookTrade
  * TradeTypeCode.mmOnOrderBookTrade}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmLinkedTrade
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#LinkedTrade
  * TradeTypeCode.mmLinkedTrade}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmTradeGiveUp
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#TradeGiveUp
  * TradeTypeCode.mmTradeGiveUp}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmCorrectiveTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#CorrectiveTrade
  * TradeTypeCode.mmCorrectiveTrade}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBackUpTrade
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BackUpTrade
  * TradeTypeCode.mmBackUpTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmOffOrderBookTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OffOrderBookTrade
  * TradeTypeCode.mmOffOrderBookTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmEmployeeTradeReporting
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#EmployeeTradeReporting
  * TradeTypeCode.mmEmployeeTradeReporting}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmIPO
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#IPO
  * TradeTypeCode.mmIPO}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmOfferingIssuingTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OfferingIssuingTrade
  * TradeTypeCode.mmOfferingIssuingTrade}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmIssuance
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Issuance
  * TradeTypeCode.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBondRepricing
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondRepricing
  * TradeTypeCode.mmBondRepricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBondSubstitution
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondSubstitution
  * TradeTypeCode.mmBondSubstitution}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBondEnd
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondEnd
  * TradeTypeCode.mmBondEnd}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmBondStart
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondStart
  * TradeTypeCode.mmBondStart}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmLendingAndBorrowing
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#LendingAndBorrowing
  * TradeTypeCode.mmLendingAndBorrowing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmFutures
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Futures
  * TradeTypeCode.mmFutures}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmOptions
+ * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Options
  * TradeTypeCode.mmOptions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmFuturesOption
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#FuturesOption
  * TradeTypeCode.mmFuturesOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#mmFutureBuyBackTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#FutureBuyBackTrade
  * TradeTypeCode.mmFutureBuyBackTrade}</li>
  * </ul>
  * </li>
@@ -133,7 +135,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of executed order."</li>
  * </ul>
  */
-public class TradeTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradeTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -160,12 +163,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBasket = new MMCode() {
+	public static final TradeTypeCode Basket = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Basket";
 			definition = "A basket trade, i.e. a unit of 15 or more financial instruments used in program trading.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BSKT";
 		}
 	};
@@ -190,12 +193,12 @@ public class TradeTypeCode {
 	 * definition} = "A trade of a predetermined set of financial instruments."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndex = new MMCode() {
+	public static final TradeTypeCode Index = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "A trade of a predetermined set of financial instruments.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "INDX";
 		}
 	};
@@ -220,12 +223,12 @@ public class TradeTypeCode {
 	 * definition} = "A trade of a predetermined set of financial instruments."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmList = new MMCode() {
+	public static final TradeTypeCode List = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "List";
 			definition = "A trade of a predetermined set of financial instruments.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "LIST";
 		}
 	};
@@ -250,12 +253,12 @@ public class TradeTypeCode {
 	 * definition} = "A pre-allocated trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreAllocation = new MMCode() {
+	public static final TradeTypeCode PreAllocation = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAllocation";
 			definition = "A pre-allocated trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "PRAL";
 		}
 	};
@@ -284,12 +287,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmProgram = new MMCode() {
+	public static final TradeTypeCode Program = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Program";
 			definition = "A program trade, i.e. a computer-driven trade of buying and selling of baskets of 15 or more financial instruments by index arbitrage specialists or institutional traders.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "PROG";
 		}
 	};
@@ -314,12 +317,12 @@ public class TradeTypeCode {
 	 * definition} = "An executed order."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTrade = new MMCode() {
+	public static final TradeTypeCode Trade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "An executed order.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "TRAD";
 		}
 	};
@@ -344,12 +347,12 @@ public class TradeTypeCode {
 	 * definition} = "A trade from a broker to another broker."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBrokerToBroker = new MMCode() {
+	public static final TradeTypeCode BrokerToBroker = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BrokerToBroker";
 			definition = "A trade from a broker to another broker.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BRBR";
 		}
 	};
@@ -375,12 +378,12 @@ public class TradeTypeCode {
 	 * "A trade from an investment fund to another  investment fund."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFundToFund = new MMCode() {
+	public static final TradeTypeCode FundToFund = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundToFund";
 			definition = "A trade from an investment fund to another  investment fund.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "FDFD";
 		}
 	};
@@ -405,12 +408,12 @@ public class TradeTypeCode {
 	 * definition} = "Trade involving risk"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRiskTrade = new MMCode() {
+	public static final TradeTypeCode RiskTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RiskTrade";
 			definition = "Trade involving risk";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "RISK";
 		}
 	};
@@ -438,12 +441,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmVWAPGuarantee = new MMCode() {
+	public static final TradeTypeCode VWAPGuarantee = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPGuarantee";
 			definition = "Trade whose price is guaranteed as the weighted average of the trade prices on a specific day.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "VWAP";
 		}
 	};
@@ -469,12 +472,12 @@ public class TradeTypeCode {
 	 * "Trade in which an agent intermediates between a buyer and a seller."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgency = new MMCode() {
+	public static final TradeTypeCode Agency = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agency";
 			definition = "Trade in which an agent intermediates between a buyer and a seller.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "AGEN";
 		}
 	};
@@ -499,12 +502,12 @@ public class TradeTypeCode {
 	 * definition} = "Trade which is guaranteed to be finalized"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGuaranteedClose = new MMCode() {
+	public static final TradeTypeCode GuaranteedClose = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteedClose";
 			definition = "Trade which is guaranteed to be finalized";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "GUAR";
 		}
 	};
@@ -529,12 +532,12 @@ public class TradeTypeCode {
 	 * definition} = "On order book/market trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnOrderBookTrade = new MMCode() {
+	public static final TradeTypeCode OnOrderBookTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnOrderBookTrade";
 			definition = "On order book/market trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "OOBK";
 		}
 	};
@@ -560,12 +563,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLinkedTrade = new MMCode() {
+	public static final TradeTypeCode LinkedTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LinkedTrade";
 			definition = "Trades coming from the application of a coorporate event.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "LKTR";
 		}
 	};
@@ -590,12 +593,12 @@ public class TradeTypeCode {
 	 * definition} = "Trade generated by a give-up."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTradeGiveUp = new MMCode() {
+	public static final TradeTypeCode TradeGiveUp = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradeGiveUp";
 			definition = "Trade generated by a give-up.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "GUTR";
 		}
 	};
@@ -620,12 +623,12 @@ public class TradeTypeCode {
 	 * definition} = "Trade that is generated following a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorrectiveTrade = new MMCode() {
+	public static final TradeTypeCode CorrectiveTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorrectiveTrade";
 			definition = "Trade that is generated following a corporate action.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "COTR";
 		}
 	};
@@ -653,12 +656,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBackUpTrade = new MMCode() {
+	public static final TradeTypeCode BackUpTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BackUpTrade";
 			definition = "Trade that is input manually in case of issue on the original trade that either was not processed or not received.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BKTR";
 		}
 	};
@@ -683,12 +686,12 @@ public class TradeTypeCode {
 	 * definition} = "Trade that is over the counter."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffOrderBookTrade = new MMCode() {
+	public static final TradeTypeCode OffOrderBookTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OffOrderBookTrade";
 			definition = "Trade that is over the counter.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "OFBK";
 		}
 	};
@@ -713,12 +716,12 @@ public class TradeTypeCode {
 	 * definition} = "Transaction relates to employee trade reporting."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEmployeeTradeReporting = new MMCode() {
+	public static final TradeTypeCode EmployeeTradeReporting = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmployeeTradeReporting";
 			definition = "Transaction relates to employee trade reporting.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "EMTR";
 		}
 	};
@@ -743,12 +746,12 @@ public class TradeTypeCode {
 	 * definition} = "Transaction is an Initial Public Offer (IPO) order."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIPO = new MMCode() {
+	public static final TradeTypeCode IPO = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IPO";
 			definition = "Transaction is an Initial Public Offer (IPO) order.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "IPOO";
 		}
 	};
@@ -773,12 +776,12 @@ public class TradeTypeCode {
 	 * definition} = "Indicates that the trade is a Offering issue trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOfferingIssuingTrade = new MMCode() {
+	public static final TradeTypeCode OfferingIssuingTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OfferingIssuingTrade";
 			definition = "Indicates that the trade is a Offering issue trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "OFIT";
 		}
 	};
@@ -806,12 +809,12 @@ public class TradeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuance = new MMCode() {
+	public static final TradeTypeCode Issuance = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuance";
 			definition = "Relates to the issuance of a security such as an equity or a depositary receipt.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "ISSU";
 		}
 	};
@@ -836,12 +839,12 @@ public class TradeTypeCode {
 	 * definition} = "The trade is a Bond repricing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBondRepricing = new MMCode() {
+	public static final TradeTypeCode BondRepricing = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondRepricing";
 			definition = "The trade is a Bond repricing.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BORE";
 		}
 	};
@@ -866,12 +869,12 @@ public class TradeTypeCode {
 	 * definition} = "The trade is a Bond substitution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBondSubstitution = new MMCode() {
+	public static final TradeTypeCode BondSubstitution = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondSubstitution";
 			definition = "The trade is a Bond substitution.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BOSU";
 		}
 	};
@@ -896,12 +899,12 @@ public class TradeTypeCode {
 	 * definition} = "The trade is a Bond end."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBondEnd = new MMCode() {
+	public static final TradeTypeCode BondEnd = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondEnd";
 			definition = "The trade is a Bond end.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BOEN";
 		}
 	};
@@ -926,12 +929,12 @@ public class TradeTypeCode {
 	 * definition} = "The trade is a Bond start."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBondStart = new MMCode() {
+	public static final TradeTypeCode BondStart = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondStart";
 			definition = "The trade is a Bond start.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "BOST";
 		}
 	};
@@ -956,12 +959,12 @@ public class TradeTypeCode {
 	 * definition} = "Indicates that the trade is a Lending and borrowing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLendingAndBorrowing = new MMCode() {
+	public static final TradeTypeCode LendingAndBorrowing = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LendingAndBorrowing";
 			definition = "Indicates that the trade is a Lending and borrowing.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "LABO";
 		}
 	};
@@ -986,12 +989,12 @@ public class TradeTypeCode {
 	 * definition} = "Indicates that the trade is a Futures contract trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFutures = new MMCode() {
+	public static final TradeTypeCode Futures = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Futures";
 			definition = "Indicates that the trade is a Futures contract trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "FUTR";
 		}
 	};
@@ -1016,12 +1019,12 @@ public class TradeTypeCode {
 	 * definition} = "Indicates that the trade is a Option contract trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOptions = new MMCode() {
+	public static final TradeTypeCode Options = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Options";
 			definition = "Indicates that the trade is a Option contract trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "OPTN";
 		}
 	};
@@ -1047,12 +1050,12 @@ public class TradeTypeCode {
 	 * "Indicates that the trade is a Futures option contract trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFuturesOption = new MMCode() {
+	public static final TradeTypeCode FuturesOption = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FuturesOption";
 			definition = "Indicates that the trade is a Futures option contract trade.";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "FUOP";
 		}
 	};
@@ -1077,17 +1080,21 @@ public class TradeTypeCode {
 	 * definition} = "The security will be bought back in the future.."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFutureBuyBackTrade = new MMCode() {
+	public static final TradeTypeCode FutureBuyBackTrade = new TradeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FutureBuyBackTrade";
 			definition = "The security will be bought back in the future..";
-			owner_lazy = () -> TradeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeTypeCode.mmObject();
 			codeName = "FBBT";
 		}
 	};
+	final static private LinkedHashMap<String, TradeTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradeTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1095,13 +1102,74 @@ public class TradeTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeTypeCode";
 				definition = "Specifies the type of executed order.";
-				code_lazy = () -> Arrays.asList(TradeTypeCode.mmBasket, TradeTypeCode.mmIndex, TradeTypeCode.mmList, TradeTypeCode.mmPreAllocation, TradeTypeCode.mmProgram, TradeTypeCode.mmTrade, TradeTypeCode.mmBrokerToBroker,
-						TradeTypeCode.mmFundToFund, TradeTypeCode.mmRiskTrade, TradeTypeCode.mmVWAPGuarantee, TradeTypeCode.mmAgency, TradeTypeCode.mmGuaranteedClose, TradeTypeCode.mmOnOrderBookTrade, TradeTypeCode.mmLinkedTrade,
-						TradeTypeCode.mmTradeGiveUp, TradeTypeCode.mmCorrectiveTrade, TradeTypeCode.mmBackUpTrade, TradeTypeCode.mmOffOrderBookTrade, TradeTypeCode.mmEmployeeTradeReporting, TradeTypeCode.mmIPO,
-						TradeTypeCode.mmOfferingIssuingTrade, TradeTypeCode.mmIssuance, TradeTypeCode.mmBondRepricing, TradeTypeCode.mmBondSubstitution, TradeTypeCode.mmBondEnd, TradeTypeCode.mmBondStart,
-						TradeTypeCode.mmLendingAndBorrowing, TradeTypeCode.mmFutures, TradeTypeCode.mmOptions, TradeTypeCode.mmFuturesOption, TradeTypeCode.mmFutureBuyBackTrade);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradeTypeCode.Basket, com.tools20022.repository.codeset.TradeTypeCode.Index, com.tools20022.repository.codeset.TradeTypeCode.List,
+						com.tools20022.repository.codeset.TradeTypeCode.PreAllocation, com.tools20022.repository.codeset.TradeTypeCode.Program, com.tools20022.repository.codeset.TradeTypeCode.Trade,
+						com.tools20022.repository.codeset.TradeTypeCode.BrokerToBroker, com.tools20022.repository.codeset.TradeTypeCode.FundToFund, com.tools20022.repository.codeset.TradeTypeCode.RiskTrade,
+						com.tools20022.repository.codeset.TradeTypeCode.VWAPGuarantee, com.tools20022.repository.codeset.TradeTypeCode.Agency, com.tools20022.repository.codeset.TradeTypeCode.GuaranteedClose,
+						com.tools20022.repository.codeset.TradeTypeCode.OnOrderBookTrade, com.tools20022.repository.codeset.TradeTypeCode.LinkedTrade, com.tools20022.repository.codeset.TradeTypeCode.TradeGiveUp,
+						com.tools20022.repository.codeset.TradeTypeCode.CorrectiveTrade, com.tools20022.repository.codeset.TradeTypeCode.BackUpTrade, com.tools20022.repository.codeset.TradeTypeCode.OffOrderBookTrade,
+						com.tools20022.repository.codeset.TradeTypeCode.EmployeeTradeReporting, com.tools20022.repository.codeset.TradeTypeCode.IPO, com.tools20022.repository.codeset.TradeTypeCode.OfferingIssuingTrade,
+						com.tools20022.repository.codeset.TradeTypeCode.Issuance, com.tools20022.repository.codeset.TradeTypeCode.BondRepricing, com.tools20022.repository.codeset.TradeTypeCode.BondSubstitution,
+						com.tools20022.repository.codeset.TradeTypeCode.BondEnd, com.tools20022.repository.codeset.TradeTypeCode.BondStart, com.tools20022.repository.codeset.TradeTypeCode.LendingAndBorrowing,
+						com.tools20022.repository.codeset.TradeTypeCode.Futures, com.tools20022.repository.codeset.TradeTypeCode.Options, com.tools20022.repository.codeset.TradeTypeCode.FuturesOption,
+						com.tools20022.repository.codeset.TradeTypeCode.FutureBuyBackTrade);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Basket.getCodeName().get(), Basket);
+		codesByName.put(Index.getCodeName().get(), Index);
+		codesByName.put(List.getCodeName().get(), List);
+		codesByName.put(PreAllocation.getCodeName().get(), PreAllocation);
+		codesByName.put(Program.getCodeName().get(), Program);
+		codesByName.put(Trade.getCodeName().get(), Trade);
+		codesByName.put(BrokerToBroker.getCodeName().get(), BrokerToBroker);
+		codesByName.put(FundToFund.getCodeName().get(), FundToFund);
+		codesByName.put(RiskTrade.getCodeName().get(), RiskTrade);
+		codesByName.put(VWAPGuarantee.getCodeName().get(), VWAPGuarantee);
+		codesByName.put(Agency.getCodeName().get(), Agency);
+		codesByName.put(GuaranteedClose.getCodeName().get(), GuaranteedClose);
+		codesByName.put(OnOrderBookTrade.getCodeName().get(), OnOrderBookTrade);
+		codesByName.put(LinkedTrade.getCodeName().get(), LinkedTrade);
+		codesByName.put(TradeGiveUp.getCodeName().get(), TradeGiveUp);
+		codesByName.put(CorrectiveTrade.getCodeName().get(), CorrectiveTrade);
+		codesByName.put(BackUpTrade.getCodeName().get(), BackUpTrade);
+		codesByName.put(OffOrderBookTrade.getCodeName().get(), OffOrderBookTrade);
+		codesByName.put(EmployeeTradeReporting.getCodeName().get(), EmployeeTradeReporting);
+		codesByName.put(IPO.getCodeName().get(), IPO);
+		codesByName.put(OfferingIssuingTrade.getCodeName().get(), OfferingIssuingTrade);
+		codesByName.put(Issuance.getCodeName().get(), Issuance);
+		codesByName.put(BondRepricing.getCodeName().get(), BondRepricing);
+		codesByName.put(BondSubstitution.getCodeName().get(), BondSubstitution);
+		codesByName.put(BondEnd.getCodeName().get(), BondEnd);
+		codesByName.put(BondStart.getCodeName().get(), BondStart);
+		codesByName.put(LendingAndBorrowing.getCodeName().get(), LendingAndBorrowing);
+		codesByName.put(Futures.getCodeName().get(), Futures);
+		codesByName.put(Options.getCodeName().get(), Options);
+		codesByName.put(FuturesOption.getCodeName().get(), FuturesOption);
+		codesByName.put(FutureBuyBackTrade.getCodeName().get(), FutureBuyBackTrade);
+	}
+
+	public static TradeTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradeTypeCode[] values() {
+		TradeTypeCode[] values = new TradeTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradeTypeCode> {
+		@Override
+		public TradeTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradeTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

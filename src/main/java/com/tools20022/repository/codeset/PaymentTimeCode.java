@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PaymentTimeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the payment conditions.
@@ -32,43 +37,43 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmPaymentOnDelivery
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#PaymentOnDelivery
  * PaymentTimeCode.mmPaymentOnDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfMonthOfDelivery
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfMonthOfDelivery
  * PaymentTimeCode.mmEndOfMonthOfDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterDelivery
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterDelivery
  * PaymentTimeCode.mmEndOfPeriodAfterDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterEndOfDeliveryMonth
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterEndOfDeliveryMonth
  * PaymentTimeCode.mmEndOfPeriodAfterEndOfDeliveryMonth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmPaymentOnReceiptOfInvoice
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#PaymentOnReceiptOfInvoice
  * PaymentTimeCode.mmPaymentOnReceiptOfInvoice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterEndOfReceiptMonth
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterEndOfReceiptMonth
  * PaymentTimeCode.mmEndOfPeriodAfterEndOfReceiptMonth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterReceipt
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterReceipt
  * PaymentTimeCode.mmEndOfPeriodAfterReceipt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfMonthOfReceipt
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfMonthOfReceipt
  * PaymentTimeCode.mmEndOfMonthOfReceipt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterMatch
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterMatch
  * PaymentTimeCode.mmEndOfPeriodAfterMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterShipmentDate
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterShipmentDate
  * PaymentTimeCode.mmEndOfPeriodAfterShipmentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterPurchaseOrderDate
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterPurchaseOrderDate
  * PaymentTimeCode.mmEndOfPeriodAfterPurchaseOrderDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterBaselineEstablishment
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterBaselineEstablishment
  * PaymentTimeCode.mmEndOfPeriodAfterBaselineEstablishment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#mmEndOfPeriodAfterInvoiceDate
+ * {@linkplain com.tools20022.repository.codeset.PaymentTimeCode#EndOfPeriodAfterInvoiceDate
  * PaymentTimeCode.mmEndOfPeriodAfterInvoiceDate}</li>
  * </ul>
  * </li>
@@ -93,7 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the payment conditions."</li>
  * </ul>
  */
-public class PaymentTimeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentTimeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -117,12 +123,12 @@ public class PaymentTimeCode {
 	 * definition} = "Code for payment on delivery."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaymentOnDelivery = new MMCode() {
+	public static final PaymentTimeCode PaymentOnDelivery = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentOnDelivery";
 			definition = "Code for payment on delivery.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -147,12 +153,12 @@ public class PaymentTimeCode {
 	 * definition} = "Code for payment at end of month of delivery."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfMonthOfDelivery = new MMCode() {
+	public static final PaymentTimeCode EndOfMonthOfDelivery = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfMonthOfDelivery";
 			definition = "Code for payment at end of month of delivery.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EMTD";
 		}
 	};
@@ -177,12 +183,12 @@ public class PaymentTimeCode {
 	 * definition} = "Code for payment at end of period after delivery."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterDelivery = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterDelivery = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterDelivery";
 			definition = "Code for payment at end of period after delivery.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPRD";
 		}
 	};
@@ -208,12 +214,12 @@ public class PaymentTimeCode {
 	 * "Code for payment at end of period after end of month of delivery"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterEndOfDeliveryMonth = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterEndOfDeliveryMonth = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterEndOfDeliveryMonth";
 			definition = "Code for payment at end of period after end of month of delivery";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "PRMD";
 		}
 	};
@@ -238,12 +244,12 @@ public class PaymentTimeCode {
 	 * definition} = "Code for payment on receipt of invoice."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaymentOnReceiptOfInvoice = new MMCode() {
+	public static final PaymentTimeCode PaymentOnReceiptOfInvoice = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentOnReceiptOfInvoice";
 			definition = "Code for payment on receipt of invoice.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "IREC";
 		}
 	};
@@ -271,12 +277,12 @@ public class PaymentTimeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterEndOfReceiptMonth = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterEndOfReceiptMonth = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterEndOfReceiptMonth";
 			definition = "Code for payment at end of period after end of month of receipt of invoice.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "PRMR";
 		}
 	};
@@ -302,12 +308,12 @@ public class PaymentTimeCode {
 	 * "Code for payment at end of period after receipt of invoice."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterReceipt = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterReceipt = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterReceipt";
 			definition = "Code for payment at end of period after receipt of invoice.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPRR";
 		}
 	};
@@ -332,12 +338,12 @@ public class PaymentTimeCode {
 	 * definition} = "Code for payment at end of month of receipt of invoice."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfMonthOfReceipt = new MMCode() {
+	public static final PaymentTimeCode EndOfMonthOfReceipt = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfMonthOfReceipt";
 			definition = "Code for payment at end of month of receipt of invoice.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EMTR";
 		}
 	};
@@ -363,12 +369,12 @@ public class PaymentTimeCode {
 	 * "Code for payment at end of period after match or mismatch acceptance."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterMatch = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterMatch = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterMatch";
 			definition = "Code for payment at end of period after match or mismatch acceptance.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPAM";
 		}
 	};
@@ -393,12 +399,12 @@ public class PaymentTimeCode {
 	 * definition} = "Payment at end of period after shipment date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterShipmentDate = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterShipmentDate = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterShipmentDate";
 			definition = "Payment at end of period after shipment date.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPSD";
 		}
 	};
@@ -423,12 +429,12 @@ public class PaymentTimeCode {
 	 * definition} = "Payment at end of period after purchase order date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterPurchaseOrderDate = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterPurchaseOrderDate = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterPurchaseOrderDate";
 			definition = "Payment at end of period after purchase order date.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPPO";
 		}
 	};
@@ -454,12 +460,12 @@ public class PaymentTimeCode {
 	 * "Payment at end of period after baseline establishment date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterBaselineEstablishment = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterBaselineEstablishment = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterBaselineEstablishment";
 			definition = "Payment at end of period after baseline establishment date.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPBE";
 		}
 	};
@@ -484,17 +490,21 @@ public class PaymentTimeCode {
 	 * definition} = "Payment at end of period after invoice date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfPeriodAfterInvoiceDate = new MMCode() {
+	public static final PaymentTimeCode EndOfPeriodAfterInvoiceDate = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterInvoiceDate";
 			definition = "Payment at end of period after invoice date.";
-			owner_lazy = () -> PaymentTimeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "EPIN";
 		}
 	};
+	final static private LinkedHashMap<String, PaymentTimeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentTimeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -502,12 +512,52 @@ public class PaymentTimeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentTimeCode";
 				definition = "Specifies the payment conditions.";
-				code_lazy = () -> Arrays.asList(PaymentTimeCode.mmPaymentOnDelivery, PaymentTimeCode.mmEndOfMonthOfDelivery, PaymentTimeCode.mmEndOfPeriodAfterDelivery, PaymentTimeCode.mmEndOfPeriodAfterEndOfDeliveryMonth,
-						PaymentTimeCode.mmPaymentOnReceiptOfInvoice, PaymentTimeCode.mmEndOfPeriodAfterEndOfReceiptMonth, PaymentTimeCode.mmEndOfPeriodAfterReceipt, PaymentTimeCode.mmEndOfMonthOfReceipt,
-						PaymentTimeCode.mmEndOfPeriodAfterMatch, PaymentTimeCode.mmEndOfPeriodAfterShipmentDate, PaymentTimeCode.mmEndOfPeriodAfterPurchaseOrderDate, PaymentTimeCode.mmEndOfPeriodAfterBaselineEstablishment,
-						PaymentTimeCode.mmEndOfPeriodAfterInvoiceDate);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentTimeCode.PaymentOnDelivery, com.tools20022.repository.codeset.PaymentTimeCode.EndOfMonthOfDelivery,
+						com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterDelivery, com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterEndOfDeliveryMonth,
+						com.tools20022.repository.codeset.PaymentTimeCode.PaymentOnReceiptOfInvoice, com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterEndOfReceiptMonth,
+						com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterReceipt, com.tools20022.repository.codeset.PaymentTimeCode.EndOfMonthOfReceipt,
+						com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterMatch, com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterShipmentDate,
+						com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterPurchaseOrderDate, com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterBaselineEstablishment,
+						com.tools20022.repository.codeset.PaymentTimeCode.EndOfPeriodAfterInvoiceDate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PaymentOnDelivery.getCodeName().get(), PaymentOnDelivery);
+		codesByName.put(EndOfMonthOfDelivery.getCodeName().get(), EndOfMonthOfDelivery);
+		codesByName.put(EndOfPeriodAfterDelivery.getCodeName().get(), EndOfPeriodAfterDelivery);
+		codesByName.put(EndOfPeriodAfterEndOfDeliveryMonth.getCodeName().get(), EndOfPeriodAfterEndOfDeliveryMonth);
+		codesByName.put(PaymentOnReceiptOfInvoice.getCodeName().get(), PaymentOnReceiptOfInvoice);
+		codesByName.put(EndOfPeriodAfterEndOfReceiptMonth.getCodeName().get(), EndOfPeriodAfterEndOfReceiptMonth);
+		codesByName.put(EndOfPeriodAfterReceipt.getCodeName().get(), EndOfPeriodAfterReceipt);
+		codesByName.put(EndOfMonthOfReceipt.getCodeName().get(), EndOfMonthOfReceipt);
+		codesByName.put(EndOfPeriodAfterMatch.getCodeName().get(), EndOfPeriodAfterMatch);
+		codesByName.put(EndOfPeriodAfterShipmentDate.getCodeName().get(), EndOfPeriodAfterShipmentDate);
+		codesByName.put(EndOfPeriodAfterPurchaseOrderDate.getCodeName().get(), EndOfPeriodAfterPurchaseOrderDate);
+		codesByName.put(EndOfPeriodAfterBaselineEstablishment.getCodeName().get(), EndOfPeriodAfterBaselineEstablishment);
+		codesByName.put(EndOfPeriodAfterInvoiceDate.getCodeName().get(), EndOfPeriodAfterInvoiceDate);
+	}
+
+	public static PaymentTimeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentTimeCode[] values() {
+		PaymentTimeCode[] values = new PaymentTimeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentTimeCode> {
+		@Override
+		public PaymentTimeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentTimeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

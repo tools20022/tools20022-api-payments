@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FundLegalFormCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * The legal form of a Fund.
@@ -32,12 +37,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmContractual
+ * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Contractual
  * FundLegalFormCode.mmContractual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmTrust
+ * <li>{@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Trust
  * FundLegalFormCode.mmTrust}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmCorporate
+ * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Corporate
  * FundLegalFormCode.mmCorporate}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "The legal form of a Fund."</li>
  * </ul>
  */
-public class FundLegalFormCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FundLegalFormCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmContractual = new MMCode() {
+	public static final FundLegalFormCode Contractual = new FundLegalFormCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Contractual";
 			definition = "The fund is constituted under the law of contract. Contractual fund issue units and investors are called unitholders. The fund is run by a management company which may or may not delegate to third agents certain investment and/or administration tasks.";
-			owner_lazy = () -> FundLegalFormCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FundLegalFormCode.mmObject();
 			codeName = "CONT";
 		}
 	};
@@ -127,12 +133,12 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTrust = new MMCode() {
+	public static final FundLegalFormCode Trust = new FundLegalFormCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trust";
 			definition = "The fund is constituted under the trust law. Whereby an independant person (a trustee) holds the assets of the investment fund for the benefit of the underlying investors. The trustee is placed under the fiduciary responsibility to ensure that the fund is managed in accordance with its investment policy and objectives.";
-			owner_lazy = () -> FundLegalFormCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FundLegalFormCode.mmObject();
 			codeName = "TRUS";
 		}
 	};
@@ -162,17 +168,21 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorporate = new MMCode() {
+	public static final FundLegalFormCode Corporate = new FundLegalFormCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Corporate";
 			definition = "The fund is constituted as a company . It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks.";
-			owner_lazy = () -> FundLegalFormCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FundLegalFormCode.mmObject();
 			codeName = "CORP";
 		}
 	};
+	final static private LinkedHashMap<String, FundLegalFormCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FundLegalFormCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -180,9 +190,36 @@ public class FundLegalFormCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundLegalFormCode";
 				definition = "The legal form of a Fund.";
-				code_lazy = () -> Arrays.asList(FundLegalFormCode.mmContractual, FundLegalFormCode.mmTrust, FundLegalFormCode.mmCorporate);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FundLegalFormCode.Contractual, com.tools20022.repository.codeset.FundLegalFormCode.Trust, com.tools20022.repository.codeset.FundLegalFormCode.Corporate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Contractual.getCodeName().get(), Contractual);
+		codesByName.put(Trust.getCodeName().get(), Trust);
+		codesByName.put(Corporate.getCodeName().get(), Corporate);
+	}
+
+	public static FundLegalFormCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FundLegalFormCode[] values() {
+		FundLegalFormCode[] values = new FundLegalFormCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FundLegalFormCode> {
+		@Override
+		public FundLegalFormCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FundLegalFormCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

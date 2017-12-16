@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Additional process to perform before starting or after completing a terminal
@@ -33,13 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#mmManualConfirmation
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#ManualConfirmation
  * TerminalManagementAdditionalProcessCode.mmManualConfirmation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#mmReconciliation
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#Reconciliation
  * TerminalManagementAdditionalProcessCode.mmReconciliation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#mmRestartSystem
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode#RestartSystem
  * TerminalManagementAdditionalProcessCode.mmRestartSystem}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TerminalManagementAdditionalProcessCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TerminalManagementAdditionalProcessCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class TerminalManagementAdditionalProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmManualConfirmation = new MMCode() {
+	public static final TerminalManagementAdditionalProcessCode ManualConfirmation = new TerminalManagementAdditionalProcessCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManualConfirmation";
 			definition = "Manual confirmation of the merchant before the terminal management action.";
-			owner_lazy = () -> TerminalManagementAdditionalProcessCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.mmObject();
 			codeName = "MANC";
 		}
 	};
@@ -126,12 +132,12 @@ public class TerminalManagementAdditionalProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconciliation = new MMCode() {
+	public static final TerminalManagementAdditionalProcessCode Reconciliation = new TerminalManagementAdditionalProcessCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Acquirer reconciliation to be performed before the terminal management action.";
-			owner_lazy = () -> TerminalManagementAdditionalProcessCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.mmObject();
 			codeName = "RCNC";
 		}
 	};
@@ -157,17 +163,21 @@ public class TerminalManagementAdditionalProcessCode {
 	 * "Restart the system after performing the terminal management action."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRestartSystem = new MMCode() {
+	public static final TerminalManagementAdditionalProcessCode RestartSystem = new TerminalManagementAdditionalProcessCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestartSystem";
 			definition = "Restart the system after performing the terminal management action.";
-			owner_lazy = () -> TerminalManagementAdditionalProcessCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.mmObject();
 			codeName = "RSRT";
 		}
 	};
+	final static private LinkedHashMap<String, TerminalManagementAdditionalProcessCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TerminalManagementAdditionalProcessCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -175,9 +185,37 @@ public class TerminalManagementAdditionalProcessCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementAdditionalProcessCode";
 				definition = "Additional process to perform before starting or after completing a terminal management action.";
-				code_lazy = () -> Arrays.asList(TerminalManagementAdditionalProcessCode.mmManualConfirmation, TerminalManagementAdditionalProcessCode.mmReconciliation, TerminalManagementAdditionalProcessCode.mmRestartSystem);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.ManualConfirmation, com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.Reconciliation,
+						com.tools20022.repository.codeset.TerminalManagementAdditionalProcessCode.RestartSystem);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ManualConfirmation.getCodeName().get(), ManualConfirmation);
+		codesByName.put(Reconciliation.getCodeName().get(), Reconciliation);
+		codesByName.put(RestartSystem.getCodeName().get(), RestartSystem);
+	}
+
+	public static TerminalManagementAdditionalProcessCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TerminalManagementAdditionalProcessCode[] values() {
+		TerminalManagementAdditionalProcessCode[] values = new TerminalManagementAdditionalProcessCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TerminalManagementAdditionalProcessCode> {
+		@Override
+		public TerminalManagementAdditionalProcessCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TerminalManagementAdditionalProcessCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

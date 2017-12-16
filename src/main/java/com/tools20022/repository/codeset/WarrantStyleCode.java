@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.WarrantStyleCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines how a warrant can be exercised.
@@ -31,14 +36,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.WarrantStyleCode#mmEuropean
+ * <li>{@linkplain com.tools20022.repository.codeset.WarrantStyleCode#European
  * WarrantStyleCode.mmEuropean}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.WarrantStyleCode#mmAmerican
+ * <li>{@linkplain com.tools20022.repository.codeset.WarrantStyleCode#American
  * WarrantStyleCode.mmAmerican}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.WarrantStyleCode#mmBermudan
+ * <li>{@linkplain com.tools20022.repository.codeset.WarrantStyleCode#Bermudan
  * WarrantStyleCode.mmBermudan}</li>
  * </ul>
  * </li>
@@ -63,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Defines how a warrant can be exercised."</li>
  * </ul>
  */
-public class WarrantStyleCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class WarrantStyleCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +90,12 @@ public class WarrantStyleCode {
 	 * definition} = "Option that can be exercised on expiry date only."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEuropean = new MMCode() {
+	public static final WarrantStyleCode European = new WarrantStyleCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "European";
 			definition = "Option that can be exercised on expiry date only.";
-			owner_lazy = () -> WarrantStyleCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WarrantStyleCode.mmObject();
 			codeName = "EURO";
 		}
 	};
@@ -117,12 +120,12 @@ public class WarrantStyleCode {
 	 * definition} = "Option can be exercised before or on expiry date."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAmerican = new MMCode() {
+	public static final WarrantStyleCode American = new WarrantStyleCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "American";
 			definition = "Option can be exercised before or on expiry date.";
-			owner_lazy = () -> WarrantStyleCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WarrantStyleCode.mmObject();
 			codeName = "AMER";
 		}
 	};
@@ -150,17 +153,21 @@ public class WarrantStyleCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBermudan = new MMCode() {
+	public static final WarrantStyleCode Bermudan = new WarrantStyleCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bermudan";
 			definition = "Option that can be exercised on multiple discrete dates prior to, or on expiry date.";
-			owner_lazy = () -> WarrantStyleCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WarrantStyleCode.mmObject();
 			codeName = "BERM";
 		}
 	};
+	final static private LinkedHashMap<String, WarrantStyleCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected WarrantStyleCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -168,9 +175,36 @@ public class WarrantStyleCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "WarrantStyleCode";
 				definition = "Defines how a warrant can be exercised.";
-				code_lazy = () -> Arrays.asList(WarrantStyleCode.mmEuropean, WarrantStyleCode.mmAmerican, WarrantStyleCode.mmBermudan);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.WarrantStyleCode.European, com.tools20022.repository.codeset.WarrantStyleCode.American, com.tools20022.repository.codeset.WarrantStyleCode.Bermudan);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(European.getCodeName().get(), European);
+		codesByName.put(American.getCodeName().get(), American);
+		codesByName.put(Bermudan.getCodeName().get(), Bermudan);
+	}
+
+	public static WarrantStyleCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static WarrantStyleCode[] values() {
+		WarrantStyleCode[] values = new WarrantStyleCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, WarrantStyleCode> {
+		@Override
+		public WarrantStyleCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(WarrantStyleCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

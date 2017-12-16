@@ -5,3 +5,9 @@ language: java
 jdk: openjdk8
 
 script: "mvn -B test"
+
+cache:
+  directories:
+  - "$HOME/.m2"
+after_success:
+  - mvn deploy --settings depoly/settings.xml -B -Ptravis -DskipTests=true

@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -45,14 +47,6 @@ import java.util.List;
  * PaymentPartyRole.mmCashAccount}</li>
  * <li>{@linkplain com.tools20022.repository.entity.PaymentPartyRole#mmPayment
  * PaymentPartyRole.mmPayment}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3
- * TransactionParties3}</li>
  * </ul>
  * </li>
  * <li>
@@ -66,14 +60,20 @@ import java.util.List;
  * Payment.mmPartyRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.CreditorRole CreditorRole}</li>
  * <li>{@linkplain com.tools20022.repository.entity.InitiatingPartyRole
  * InitiatingPartyRole}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3
+ * TransactionParties3}</li>
  * </ul>
  * </li>
  * <li>
@@ -409,8 +409,8 @@ public class PaymentPartyRole extends Role {
 					AmendmentInformationDetails11.mmOriginalDebtorAccount, AmendmentInformationDetails11.mmOriginalDebtorAgentAccount, PaymentComplementaryInformation6.mmDebtorAccount, PaymentComplementaryInformation6.mmDebtorAgentAccount,
 					PaymentComplementaryInformation6.mmIntermediaryAgent1Account, PaymentComplementaryInformation6.mmIntermediaryAgent2Account, PaymentComplementaryInformation6.mmIntermediaryAgent3Account,
 					PaymentComplementaryInformation6.mmCreditorAgentAccount, PaymentComplementaryInformation6.mmCreditorAccount, PaymentComplementaryInformation6.mmPreviousInstructingAgentAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Unambiguous identification of the account used in the context of the party role such as debtor account, instructing agent account...";
@@ -455,8 +455,8 @@ public class PaymentPartyRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Identifies the payment in which a party plays a role.";

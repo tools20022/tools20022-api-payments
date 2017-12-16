@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AllocationStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of allocation of collateral to cover the instruction.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#mmFullyAllocated
+ * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#FullyAllocated
  * AllocationStatusCode.mmFullyAllocated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#mmPartiallyAllocated
+ * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#PartiallyAllocated
  * AllocationStatusCode.mmPartiallyAllocated}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class AllocationStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AllocationStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class AllocationStatusCode {
 	 * definition} = "Instruction has been fully covered by collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFullyAllocated = new MMCode() {
+	public static final AllocationStatusCode FullyAllocated = new AllocationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullyAllocated";
 			definition = "Instruction has been fully covered by collateral.";
-			owner_lazy = () -> AllocationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllocationStatusCode.mmObject();
 			codeName = "AOLF";
 		}
 	};
@@ -116,17 +122,21 @@ public class AllocationStatusCode {
 	 * definition} = "Instruction has been partially covered by collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyAllocated = new MMCode() {
+	public static final AllocationStatusCode PartiallyAllocated = new AllocationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyAllocated";
 			definition = "Instruction has been partially covered by collateral.";
-			owner_lazy = () -> AllocationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllocationStatusCode.mmObject();
 			codeName = "AOLP";
 		}
 	};
+	final static private LinkedHashMap<String, AllocationStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AllocationStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -134,9 +144,35 @@ public class AllocationStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllocationStatusCode";
 				definition = "Specifies the  status of allocation of collateral to cover the instruction.";
-				code_lazy = () -> Arrays.asList(AllocationStatusCode.mmFullyAllocated, AllocationStatusCode.mmPartiallyAllocated);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AllocationStatusCode.FullyAllocated, com.tools20022.repository.codeset.AllocationStatusCode.PartiallyAllocated);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(FullyAllocated.getCodeName().get(), FullyAllocated);
+		codesByName.put(PartiallyAllocated.getCodeName().get(), PartiallyAllocated);
+	}
+
+	public static AllocationStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AllocationStatusCode[] values() {
+		AllocationStatusCode[] values = new AllocationStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AllocationStatusCode> {
+		@Override
+		public AllocationStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AllocationStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

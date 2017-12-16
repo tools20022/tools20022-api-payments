@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RegulatoryReportingTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies whether the regulatory reporting information applies to the debit
@@ -34,13 +39,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#mmCredit
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#Credit
  * RegulatoryReportingTypeCode.mmCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#mmDebit
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#Debit
  * RegulatoryReportingTypeCode.mmDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#mmBoth
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode#Both
  * RegulatoryReportingTypeCode.mmBoth}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class RegulatoryReportingTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RegulatoryReportingTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,12 +105,12 @@ public class RegulatoryReportingTypeCode {
 	 * definition} = "Regulatory information applies to the credit side."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final RegulatoryReportingTypeCode Credit = new RegulatoryReportingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Credit";
 			definition = "Regulatory information applies to the credit side.";
-			owner_lazy = () -> RegulatoryReportingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingTypeCode.mmObject();
 			codeName = "CRED";
 		}
 	};
@@ -129,12 +135,12 @@ public class RegulatoryReportingTypeCode {
 	 * definition} = "Regulatory information applies to the debit side."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final RegulatoryReportingTypeCode Debit = new RegulatoryReportingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Debit";
 			definition = "Regulatory information applies to the debit side.";
-			owner_lazy = () -> RegulatoryReportingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingTypeCode.mmObject();
 			codeName = "DEBT";
 		}
 	};
@@ -160,17 +166,21 @@ public class RegulatoryReportingTypeCode {
 	 * "Regulatory information applies to both credit and debit sides."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBoth = new MMCode() {
+	public static final RegulatoryReportingTypeCode Both = new RegulatoryReportingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Both";
 			definition = "Regulatory information applies to both credit and debit sides.";
-			owner_lazy = () -> RegulatoryReportingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingTypeCode.mmObject();
 			codeName = "BOTH";
 		}
 	};
+	final static private LinkedHashMap<String, RegulatoryReportingTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RegulatoryReportingTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -178,10 +188,38 @@ public class RegulatoryReportingTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReportingTypeCode";
 				definition = "Identifies whether the regulatory reporting information applies to the debit side, to the credit side or to both debit and credit sides of the transaction.";
-				code_lazy = () -> Arrays.asList(RegulatoryReportingTypeCode.mmCredit, RegulatoryReportingTypeCode.mmDebit, RegulatoryReportingTypeCode.mmBoth);
 				derivation_lazy = () -> Arrays.asList(RegulatoryReportingType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RegulatoryReportingTypeCode.Credit, com.tools20022.repository.codeset.RegulatoryReportingTypeCode.Debit,
+						com.tools20022.repository.codeset.RegulatoryReportingTypeCode.Both);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(Debit.getCodeName().get(), Debit);
+		codesByName.put(Both.getCodeName().get(), Both);
+	}
+
+	public static RegulatoryReportingTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RegulatoryReportingTypeCode[] values() {
+		RegulatoryReportingTypeCode[] values = new RegulatoryReportingTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RegulatoryReportingTypeCode> {
+		@Override
+		public RegulatoryReportingTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RegulatoryReportingTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -42,6 +42,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
+ * PartyIdentificationInformation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -72,23 +76,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice
- * PersonIdentificationSchemeName1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GenericPersonIdentification1
- * GenericPersonIdentification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification5
- * PersonIdentification5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ContactDetails2
- * ContactDetails2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ContactDetails3
- * ContactDetails3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -111,10 +98,23 @@ import java.util.List;
  * Party10Choice.mmPrivateIdentification}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
- * PartyIdentificationInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice
+ * PersonIdentificationSchemeName1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GenericPersonIdentification1
+ * GenericPersonIdentification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification5
+ * PersonIdentification5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ContactDetails2
+ * ContactDetails2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ContactDetails3
+ * ContactDetails3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -161,8 +161,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmSocialSecurityNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SocialSecurityNumber";
 			definition = "Number assigned by a social security agency.";
@@ -223,8 +223,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Person";
 			definition = "Person for which an identification is provided.";
@@ -275,8 +275,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmPersonName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonName";
 			definition = "Name by which a person is known and which is usually used to identify that person. It is derived from PartyName (association between PartyIdentificationInformation and PartyName).";
@@ -315,8 +315,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmDriversLicenseNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DriversLicenseNumber";
 			definition = "Number assigned by a license authority to a driver's license.";
@@ -362,8 +362,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmAlienRegistrationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AlienRegistrationNumber";
 			definition = "Number assigned by a government agency to identify foreign nationals.";
@@ -408,8 +408,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmPassportNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PassportNumber";
 			definition = "Number assigned by a passport authority to a passport.";
@@ -455,8 +455,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmIdentityCardNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentityCardNumber";
 			definition = "Number assigned by a national authority to an identity card.";
@@ -502,8 +502,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmEmployerIdentificationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerIdentificationNumber";
 			definition = "Number assigned to an employer by a registration authority.";

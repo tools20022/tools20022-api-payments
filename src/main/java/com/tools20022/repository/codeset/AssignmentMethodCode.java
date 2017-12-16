@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AssignmentMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Method under which assignment was conducted.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AssignmentMethodCode#mmRandom
+ * {@linkplain com.tools20022.repository.codeset.AssignmentMethodCode#Random
  * AssignmentMethodCode.mmRandom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AssignmentMethodCode#mmProrata
+ * {@linkplain com.tools20022.repository.codeset.AssignmentMethodCode#Prorata
  * AssignmentMethodCode.mmProrata}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Method under which assignment was conducted."</li>
  * </ul>
  */
-public class AssignmentMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AssignmentMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class AssignmentMethodCode {
 	 * definition} = "Assignment was conducted randomly."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRandom = new MMCode() {
+	public static final AssignmentMethodCode Random = new AssignmentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Random";
 			definition = "Assignment was conducted randomly.";
-			owner_lazy = () -> AssignmentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AssignmentMethodCode.mmObject();
 			codeName = "RAND";
 		}
 	};
@@ -114,17 +120,21 @@ public class AssignmentMethodCode {
 	 * definition} = "Assignment was conducted on a prorata basis."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProrata = new MMCode() {
+	public static final AssignmentMethodCode Prorata = new AssignmentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Prorata";
 			definition = "Assignment was conducted on a prorata basis.";
-			owner_lazy = () -> AssignmentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AssignmentMethodCode.mmObject();
 			codeName = "PROR";
 		}
 	};
+	final static private LinkedHashMap<String, AssignmentMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AssignmentMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +142,35 @@ public class AssignmentMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssignmentMethodCode";
 				definition = "Method under which assignment was conducted.";
-				code_lazy = () -> Arrays.asList(AssignmentMethodCode.mmRandom, AssignmentMethodCode.mmProrata);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AssignmentMethodCode.Random, com.tools20022.repository.codeset.AssignmentMethodCode.Prorata);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Random.getCodeName().get(), Random);
+		codesByName.put(Prorata.getCodeName().get(), Prorata);
+	}
+
+	public static AssignmentMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AssignmentMethodCode[] values() {
+		AssignmentMethodCode[] values = new AssignmentMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AssignmentMethodCode> {
+		@Override
+		public AssignmentMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AssignmentMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

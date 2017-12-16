@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CollateralSubstitutionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if the collateral that is substituted was posted against the
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralSubstitutionTypeCode#mmAgainstVariationMargin
+ * {@linkplain com.tools20022.repository.codeset.CollateralSubstitutionTypeCode#AgainstVariationMargin
  * CollateralSubstitutionTypeCode.mmAgainstVariationMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralSubstitutionTypeCode#mmAgainstSegregatedIndependentAmount
+ * {@linkplain com.tools20022.repository.codeset.CollateralSubstitutionTypeCode#AgainstSegregatedIndependentAmount
  * CollateralSubstitutionTypeCode.mmAgainstSegregatedIndependentAmount}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CollateralSubstitutionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CollateralSubstitutionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class CollateralSubstitutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgainstVariationMargin = new MMCode() {
+	public static final CollateralSubstitutionTypeCode AgainstVariationMargin = new CollateralSubstitutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AgainstVariationMargin";
 			definition = "Specifies if the collateral that is substituted was posted against the variation margin.";
-			owner_lazy = () -> CollateralSubstitutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralSubstitutionTypeCode.mmObject();
 			codeName = "AVMG";
 		}
 	};
@@ -123,17 +129,21 @@ public class CollateralSubstitutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgainstSegregatedIndependentAmount = new MMCode() {
+	public static final CollateralSubstitutionTypeCode AgainstSegregatedIndependentAmount = new CollateralSubstitutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AgainstSegregatedIndependentAmount";
 			definition = "Specifies if the collateral that is substituted was posted against the independent amount.";
-			owner_lazy = () -> CollateralSubstitutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralSubstitutionTypeCode.mmObject();
 			codeName = "ASIA";
 		}
 	};
+	final static private LinkedHashMap<String, CollateralSubstitutionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CollateralSubstitutionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -141,9 +151,35 @@ public class CollateralSubstitutionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralSubstitutionTypeCode";
 				definition = "Specifies if the collateral that is substituted was posted against the variation margin or the independent amount.";
-				code_lazy = () -> Arrays.asList(CollateralSubstitutionTypeCode.mmAgainstVariationMargin, CollateralSubstitutionTypeCode.mmAgainstSegregatedIndependentAmount);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CollateralSubstitutionTypeCode.AgainstVariationMargin, com.tools20022.repository.codeset.CollateralSubstitutionTypeCode.AgainstSegregatedIndependentAmount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AgainstVariationMargin.getCodeName().get(), AgainstVariationMargin);
+		codesByName.put(AgainstSegregatedIndependentAmount.getCodeName().get(), AgainstSegregatedIndependentAmount);
+	}
+
+	public static CollateralSubstitutionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CollateralSubstitutionTypeCode[] values() {
+		CollateralSubstitutionTypeCode[] values = new CollateralSubstitutionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CollateralSubstitutionTypeCode> {
+		@Override
+		public CollateralSubstitutionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CollateralSubstitutionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

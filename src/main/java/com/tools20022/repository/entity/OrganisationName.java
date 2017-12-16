@@ -37,6 +37,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PartyName
+ * PartyName}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -55,6 +58,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.OrganisationIdentification#mmOrganisationName
+ * OrganisationIdentification.mmOrganisationName}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
@@ -64,18 +76,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * TradingNameModification1}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.OrganisationIdentification#mmOrganisationName
- * OrganisationIdentification.mmOrganisationName}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PartyName
- * PartyName}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -133,8 +133,8 @@ public class OrganisationName extends PartyName {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Organisation";
 			definition = "Organisation identification which contains a name.";
@@ -194,8 +194,8 @@ public class OrganisationName extends PartyName {
 	public static final MMBusinessAttribute mmLegalName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Organisation12.mmFullLegalName, Organisation14.mmFullLegalName, FullLegalNameModification1.mmFullLegalName, OrganisationModification1.mmFullLegalName, PartyIdentification58.mmLegalName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalName";
 			definition = "Official name under which an organisation is registered.";
@@ -259,8 +259,8 @@ public class OrganisationName extends PartyName {
 	public static final MMBusinessAttribute mmTradingName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Organisation12.mmTradingName, TradingNameModification1.mmTradingName, OrganisationModification1.mmTradingName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingName";
 			definition = "Name used by a business for commercial purposes, although its registered legal name, used for contracts and other formal situations, may be another.";
@@ -314,8 +314,8 @@ public class OrganisationName extends PartyName {
 	public static final MMBusinessAttribute mmShortName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(GenericIdentification32.mmShortName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortName";
 			definition = "Specifies the short name of the organisation.";

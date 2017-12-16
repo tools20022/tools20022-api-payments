@@ -94,14 +94,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1
- * DocumentAdjustment1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -148,6 +140,14 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.Commission Commission}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Charges Charges}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Discount Discount}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1
+ * DocumentAdjustment1}</li>
  * </ul>
  * </li>
  * <li>
@@ -232,8 +232,8 @@ public class Adjustment {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentAdjustment1.mmAmount, ChargesRecord1.mmAmount, Charges3.mmTotalChargesAndTaxAmount, DiscountAmountAndType1.mmAmount, ChargesRecord2.mmAmount, Charges4.mmTotalChargesAndTaxAmount,
 					Charges2.mmAmount, PaymentTransaction81.mmCompensationAmount, PaymentTransaction76.mmCompensationAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money that results from the application of an adjustment (charges. fees, discount or allowance) to the amount due.";
@@ -291,8 +291,8 @@ public class Adjustment {
 	public static final MMBusinessAttribute mmChargeRate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ChargesRecord1.mmRate, ChargesRecord2.mmRate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargeRate";
 			definition = "Rate used to calculate the amount of the adjustment, allowance, charge or fee.";
@@ -340,8 +340,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCalculationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationMethod";
 			definition = "Method used to calculate an adjustment (financial adjustment, charge or allowance).";
@@ -395,8 +395,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Specifies the payment resulting from charges due by one party to another or the payment to which adjustements (for instance charges) are applied.";
@@ -446,8 +446,8 @@ public class Adjustment {
 	public static final MMBusinessAttribute mmDirection = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentAdjustment1.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Direction";
 			definition = "Specifies whether the adjustment must be subtracted or added to the total amount.";
@@ -501,8 +501,8 @@ public class Adjustment {
 	public static final MMBusinessAttribute mmReason = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentAdjustment1.mmReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Reason for the amount adjustment.";
@@ -554,8 +554,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedLineItem";
 			definition = "Specifies the line item on which a financial adjustment took place.";
@@ -598,8 +598,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute mmAllowanceChargeIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllowanceChargeIndicator";
 			definition = "Indication of whether or not this allowance charge is a charge (Indicator is Yes) that should be added or an allowance that should be subtracted (Indicator is No).";
@@ -650,8 +650,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Specifies the price which is adjusted.";
@@ -691,8 +691,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute mmChargeIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargeIndicator";
 			definition = "Indication of whether or not this allowance charge is a charge.";
@@ -740,8 +740,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of adjustment applied to the amount of goods/services by means of a code.";
@@ -795,8 +795,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralManagement";
 			definition = "Process which groups the activities related to collateral.";
@@ -841,8 +841,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmAdjustedBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdjustedBalance";
 			definition = "Balance for which adjustments are specified.";
@@ -888,8 +888,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmChargesPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargesPartyRole";
 			definition = "Role played by a party in the context of charges due.";
@@ -934,8 +934,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the adjustment is applicable.";
@@ -984,8 +984,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Currency exchange for which adjustments such as fees or commissions are applied.";
@@ -1031,8 +1031,8 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Order for which adjustments are specified.";
@@ -1091,8 +1091,8 @@ public class Adjustment {
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(ChargesRecord1.mmTax, ChargesRecord2.mmTax);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Information on the calculation method resulting in the tax amount included in the charge transfer. The tax is expressed as a fixed amount, or as a percentage of the charge amount, upon which the tax is applied.";

@@ -66,17 +66,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.GenericAccountIdentification1
- * GenericAccountIdentification1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice
- * AccountIdentification4Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -88,6 +77,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * GenericIdentification.mmIdentificationForAccountCostReferencePattern}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Account#mmIdentification
  * Account.mmIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.GenericAccountIdentification1
+ * GenericAccountIdentification1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice
+ * AccountIdentification4Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -144,8 +144,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account for which an identification is provided.";
@@ -204,8 +204,8 @@ public class AccountIdentification {
 	public static final MMBusinessAttribute mmIBAN = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountIdentification4Choice.mmIBAN, AccountIdentification4Choice.mmOther);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IBAN";
 			definition = "International Bank Account Number (IBAN) - identifier used internationally by financial institutions to uniquely identify the account of a customer. Further specifications of the format and content of the IBAN can be found in the standard ISO 13616 \"Banking and related financial services - International Bank Account Number (IBAN)\" version 1997-10-01, or later revisions.";
@@ -256,8 +256,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute mmBBAN = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BBAN";
 			definition = "Basic Bank Account Number (BBAN) - identifier used nationally by financial institutions, ie, in individual countries, generally as part of a National Account Numbering Scheme(s), to uniquely identify the account of a customer.";
@@ -308,8 +308,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute mmUPIC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UPIC";
 			definition = "Universal Payment Identification Code (UPIC) - identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes.";
@@ -366,8 +366,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmProprietaryIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Unique identifier for an account. It is assigned by the account servicer using a proprietary identification scheme.";
@@ -431,8 +431,8 @@ public class AccountIdentification {
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccount24.mmName, CashAccount25.mmName, AccountForAction2.mmName, CustomerAccount5.mmName, CustomerAccountModification1.mmName, CustomerAccount4.mmName, SecuritiesAccount19.mmName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the account. It provides an additional means of identification, and is designated by the account servicer in agreement with the account owner.";
@@ -490,8 +490,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmCostReferencePattern = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CostReferencePattern";
 			definition = "Template describing the mask of the structure for the format of the accounting account identifier; for example \"AABBBBCC\" where AA represents the country, BBBB the service classification, CC the sales area.";
@@ -531,8 +531,8 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "String of characters (mainly numbers) used to identify an account.";

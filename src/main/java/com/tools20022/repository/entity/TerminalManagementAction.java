@@ -117,8 +117,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Types of terminal management action to be performed by a point of interaction.";
@@ -167,8 +167,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAttribute mmTrigger = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trigger";
 			definition = "Event to start the terminal management action by the point of interaction (POI).";
@@ -217,8 +217,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAttribute mmAdditionalProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalProcess";
 			definition = "Additional process to perform before starting or after the terminal management action by the point of interaction (POI).";
@@ -264,8 +264,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAttribute mmActionResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionResult";
 			definition = "List of action result codes.";
@@ -311,8 +311,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAttribute mmActionToProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionToProcess";
 			definition = "Action to be processed.";
@@ -367,8 +367,8 @@ public class TerminalManagementAction {
 	 */
 	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManagementSystem";
 			definition = "Terminal management system from which an action took place";

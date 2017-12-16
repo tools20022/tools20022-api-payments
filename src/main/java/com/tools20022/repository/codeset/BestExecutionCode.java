@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BestExecutionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether best execution rules as defined in the EU MiFID directive
@@ -32,7 +37,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BestExecutionCode#mmBest
+ * <li>{@linkplain com.tools20022.repository.codeset.BestExecutionCode#Best
  * BestExecutionCode.mmBest}</li>
  * </ul>
  * </li>
@@ -59,7 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class BestExecutionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BestExecutionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,17 +89,21 @@ public class BestExecutionCode {
 	 * definition} = "Best execution rules were followed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBest = new MMCode() {
+	public static final BestExecutionCode Best = new BestExecutionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Best";
 			definition = "Best execution rules were followed.";
-			owner_lazy = () -> BestExecutionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BestExecutionCode.mmObject();
 			codeName = "BTEX";
 		}
 	};
+	final static private LinkedHashMap<String, BestExecutionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BestExecutionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -101,9 +111,34 @@ public class BestExecutionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BestExecutionCode";
 				definition = "Specifies whether best execution rules as defined in the EU MiFID directive were followed for a transaction.";
-				code_lazy = () -> Arrays.asList(BestExecutionCode.mmBest);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BestExecutionCode.Best);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Best.getCodeName().get(), Best);
+	}
+
+	public static BestExecutionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BestExecutionCode[] values() {
+		BestExecutionCode[] values = new BestExecutionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BestExecutionCode> {
+		@Override
+		public BestExecutionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BestExecutionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

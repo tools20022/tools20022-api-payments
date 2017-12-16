@@ -141,8 +141,8 @@ public class FinancialTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "Distribution of the proceeds of a CA event.";
@@ -192,8 +192,8 @@ public class FinancialTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestManagement";
 			definition = "Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.";
@@ -239,8 +239,8 @@ public class FinancialTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Agreement between two parties to buy and sell assets.";
@@ -288,8 +288,8 @@ public class FinancialTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralMovement";
 			definition = "Collateral in or out as a result of collateral management.";
@@ -339,8 +339,8 @@ public class FinancialTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmBankingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BankingTransaction";
 			definition = "Transaction executed by the client of a financial institution from/to the account serviced by the financial institution, such as mortgage payment.";
@@ -412,8 +412,8 @@ public class FinancialTransaction {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditTransferTransaction25.mmRegulatoryReporting, CreditTransferTransaction26.mmRegulatoryReporting, CreditTransferTransaction22.mmRegulatoryReporting,
 					DirectDebitTransactionInformation21.mmRegulatoryReporting, DirectDebitTransactionInformation22.mmRegulatoryReporting);
-			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryReport";
 			definition = "Information related to a trade and that has to be reported to a regulatory authority.";

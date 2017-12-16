@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reason for a confirmation rejected status.
@@ -32,174 +37,174 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentInvestmentAccountDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentInvestmentAccountDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentInvestmentAccountDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentFinancialInstrumentDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentFinancialInstrumentDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentFinancialInstrumentDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentBeneficiaryDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentBeneficiaryDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentBeneficiaryDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPlaceOfTrade
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPlaceOfTrade
  * RejectedConfirmationStatusReasonCode.mmDifferentPlaceOfTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentOrderDateTime
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentOrderDateTime
  * RejectedConfirmationStatusReasonCode.mmDifferentOrderDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentCancellationRight
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentCancellationRight
  * RejectedConfirmationStatusReasonCode.mmDifferentCancellationRight}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentUnitsNumber
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentUnitsNumber
  * RejectedConfirmationStatusReasonCode.mmDifferentUnitsNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentOrderType
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentOrderType
  * RejectedConfirmationStatusReasonCode.mmDifferentOrderType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentRounding
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentRounding
  * RejectedConfirmationStatusReasonCode.mmDifferentRounding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentNetAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentNetAmount
  * RejectedConfirmationStatusReasonCode.mmDifferentNetAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentGrossAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentGrossAmount
  * RejectedConfirmationStatusReasonCode.mmDifferentGrossAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentHoldingsRedemptionRate
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentHoldingsRedemptionRate
  * RejectedConfirmationStatusReasonCode.mmDifferentHoldingsRedemptionRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentGroup1Or2Units
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentGroup1Or2Units
  * RejectedConfirmationStatusReasonCode.mmDifferentGroup1Or2Units}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentIncomePreference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentIncomePreference
  * RejectedConfirmationStatusReasonCode.mmDifferentIncomePreference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentLetterIntentReference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentLetterIntentReference
  * RejectedConfirmationStatusReasonCode.mmDifferentLetterIntentReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentAccumulationRightReference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentAccumulationRightReference
  * RejectedConfirmationStatusReasonCode.mmDifferentAccumulationRightReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPhysicalDeliveryIndicator
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPhysicalDeliveryIndicator
  * RejectedConfirmationStatusReasonCode.mmDifferentPhysicalDeliveryIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentRequestedSettlementCurrency
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentRequestedSettlementCurrency
  * RejectedConfirmationStatusReasonCode.mmDifferentRequestedSettlementCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentRequestedNAVCurrency
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentRequestedNAVCurrency
  * RejectedConfirmationStatusReasonCode.mmDifferentRequestedNAVCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentForeignExchangeDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentForeignExchangeDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentForeignExchangeDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentChargeDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentChargeDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentChargeDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentCommissionDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentCommissionDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentCommissionDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentTaxDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentTaxDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentTaxDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPhysicalDeliveryDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPhysicalDeliveryDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentPhysicalDeliveryDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentSettlementAndCustodyDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentSettlementAndCustodyDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentSettlementAndCustodyDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPaymentInstrumentDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPaymentInstrumentDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentPaymentInstrumentDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentSettlementAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentSettlementAmount
  * RejectedConfirmationStatusReasonCode.mmDifferentSettlementAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentSettlementDate
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentSettlementDate
  * RejectedConfirmationStatusReasonCode.mmDifferentSettlementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentExtensionDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentExtensionDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentExtensionDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentIntermediaryDetails
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentIntermediaryDetails
  * RejectedConfirmationStatusReasonCode.mmDifferentIntermediaryDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentTotalRedemptionAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentTotalRedemptionAmount
  * RejectedConfirmationStatusReasonCode.mmDifferentTotalRedemptionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentTotalSubscriptionAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentTotalSubscriptionAmount
  * RejectedConfirmationStatusReasonCode.mmDifferentTotalSubscriptionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentAdditionalCashIn
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentAdditionalCashIn
  * RejectedConfirmationStatusReasonCode.mmDifferentAdditionalCashIn}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentResultingCashOut
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentResultingCashOut
  * RejectedConfirmationStatusReasonCode.mmDifferentResultingCashOut}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPercentageOfTotalSubscriptionAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPercentageOfTotalSubscriptionAmount
  * RejectedConfirmationStatusReasonCode.
  * mmDifferentPercentageOfTotalSubscriptionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentPercentageOfTotalRedemptionAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentPercentageOfTotalRedemptionAmount
  * RejectedConfirmationStatusReasonCode.
  * mmDifferentPercentageOfTotalRedemptionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentLegIdentification
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentLegIdentification
  * RejectedConfirmationStatusReasonCode.mmDifferentLegIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDifferentOrderReference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DifferentOrderReference
  * RejectedConfirmationStatusReasonCode.mmDifferentOrderReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmUnknownLinkagesReference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#UnknownLinkagesReference
  * RejectedConfirmationStatusReasonCode.mmUnknownLinkagesReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDuplicateDealReference
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DuplicateDealReference
  * RejectedConfirmationStatusReasonCode.mmDuplicateDealReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmReceivingAgent
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#ReceivingAgent
  * RejectedConfirmationStatusReasonCode.mmReceivingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmReceiversCustodian
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#ReceiversCustodian
  * RejectedConfirmationStatusReasonCode.mmReceiversCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmReceiversIntermediary
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#ReceiversIntermediary
  * RejectedConfirmationStatusReasonCode.mmReceiversIntermediary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDeliveringAgent
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DeliveringAgent
  * RejectedConfirmationStatusReasonCode.mmDeliveringAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDeliverersCustodian
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DeliverersCustodian
  * RejectedConfirmationStatusReasonCode.mmDeliverersCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmDeliverersIntermediary
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#DeliverersIntermediary
  * RejectedConfirmationStatusReasonCode.mmDeliverersIntermediary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmInvalidCreditTransfer
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#InvalidCreditTransfer
  * RejectedConfirmationStatusReasonCode.mmInvalidCreditTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmSettlementAmount
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#SettlementAmount
  * RejectedConfirmationStatusReasonCode.mmSettlementAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmSettlementDate
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#SettlementDate
  * RejectedConfirmationStatusReasonCode.mmSettlementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmNotCompliantWithSLA
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#NotCompliantWithSLA
  * RejectedConfirmationStatusReasonCode.mmNotCompliantWithSLA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmMissingEUTaxInformation
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#MissingEUTaxInformation
  * RejectedConfirmationStatusReasonCode.mmMissingEUTaxInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmMissingCommission
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#MissingCommission
  * RejectedConfirmationStatusReasonCode.mmMissingCommission}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmMissingCharge
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#MissingCharge
  * RejectedConfirmationStatusReasonCode.mmMissingCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmMissingTaxInformation
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#MissingTaxInformation
  * RejectedConfirmationStatusReasonCode.mmMissingTaxInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmNotAllowedtoAmend
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#NotAllowedtoAmend
  * RejectedConfirmationStatusReasonCode.mmNotAllowedtoAmend}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#mmAmendmentTooLate
+ * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode#AmendmentTooLate
  * RejectedConfirmationStatusReasonCode.mmAmendmentTooLate}</li>
  * </ul>
  * </li>
@@ -224,7 +229,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the reason for a confirmation rejected status."</li>
  * </ul>
  */
-public class RejectedConfirmationStatusReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RejectedConfirmationStatusReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -249,12 +255,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Investment account information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentInvestmentAccountDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentInvestmentAccountDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentInvestmentAccountDetails";
 			definition = "Investment account information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DSAF";
 		}
 	};
@@ -280,12 +286,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Financial instrument information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentFinancialInstrumentDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentFinancialInstrumentDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentFinancialInstrumentDetails";
 			definition = "Financial instrument information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DFIN";
 		}
 	};
@@ -310,12 +316,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Beneficiary details is not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentBeneficiaryDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentBeneficiaryDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentBeneficiaryDetails";
 			definition = "Beneficiary details is not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DBEN";
 		}
 	};
@@ -340,12 +346,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Place of trade not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPlaceOfTrade = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPlaceOfTrade = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPlaceOfTrade";
 			definition = "Place of trade not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPTD";
 		}
 	};
@@ -370,12 +376,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Order date time not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentOrderDateTime = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentOrderDateTime = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentOrderDateTime";
 			definition = "Order date time not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DORD";
 		}
 	};
@@ -400,12 +406,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Cancellation right not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentCancellationRight = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentCancellationRight = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentCancellationRight";
 			definition = "Cancellation right not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DCXR";
 		}
 	};
@@ -430,12 +436,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Units number information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentUnitsNumber = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentUnitsNumber = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentUnitsNumber";
 			definition = "Units number information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DUNB";
 		}
 	};
@@ -460,12 +466,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Order type information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentOrderType = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentOrderType = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentOrderType";
 			definition = "Order type information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DORT";
 		}
 	};
@@ -490,12 +496,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Rounding information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentRounding = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentRounding = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentRounding";
 			definition = "Rounding information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DROU";
 		}
 	};
@@ -520,12 +526,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Net amount information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentNetAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentNetAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentNetAmount";
 			definition = "Net amount information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DNAM";
 		}
 	};
@@ -550,12 +556,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Gross amount information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentGrossAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentGrossAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentGrossAmount";
 			definition = "Gross amount information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DGAM";
 		}
 	};
@@ -580,12 +586,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Holdings redemption rate not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentHoldingsRedemptionRate = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentHoldingsRedemptionRate = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentHoldingsRedemptionRate";
 			definition = "Holdings redemption rate not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DHRR";
 		}
 	};
@@ -610,12 +616,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Group 1 or 2 units not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentGroup1Or2Units = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentGroup1Or2Units = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentGroup1Or2Units";
 			definition = "Group 1 or 2 units not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DGRP";
 		}
 	};
@@ -641,12 +647,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentIncomePreference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentIncomePreference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentIncomePreference";
 			definition = "Income preference information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DINP";
 		}
 	};
@@ -672,12 +678,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Letter Intent reference information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentLetterIntentReference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentLetterIntentReference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentLetterIntentReference";
 			definition = "Letter Intent reference information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DLIR";
 		}
 	};
@@ -703,12 +709,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Accumulation right reference information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentAccumulationRightReference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentAccumulationRightReference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentAccumulationRightReference";
 			definition = "Accumulation right reference information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DARR";
 		}
 	};
@@ -734,12 +740,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Physical delivery indicator information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPhysicalDeliveryIndicator = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPhysicalDeliveryIndicator = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPhysicalDeliveryIndicator";
 			definition = "Physical delivery indicator information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPDI";
 		}
 	};
@@ -765,12 +771,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Requested settlement currency information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentRequestedSettlementCurrency = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentRequestedSettlementCurrency = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentRequestedSettlementCurrency";
 			definition = "Requested settlement currency information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DRSC";
 		}
 	};
@@ -796,12 +802,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Requested NAV currency information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentRequestedNAVCurrency = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentRequestedNAVCurrency = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentRequestedNAVCurrency";
 			definition = "Requested NAV currency information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DNAV";
 		}
 	};
@@ -827,12 +833,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Foreign exchange details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentForeignExchangeDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentForeignExchangeDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentForeignExchangeDetails";
 			definition = "Foreign exchange details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DFXD";
 		}
 	};
@@ -857,12 +863,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Charge details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentChargeDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentChargeDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentChargeDetails";
 			definition = "Charge details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DCHD";
 		}
 	};
@@ -888,12 +894,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Commission details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentCommissionDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentCommissionDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentCommissionDetails";
 			definition = "Commission details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DXOD";
 		}
 	};
@@ -918,12 +924,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Tax details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentTaxDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentTaxDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentTaxDetails";
 			definition = "Tax details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DTAD";
 		}
 	};
@@ -949,12 +955,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Physical delivery details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPhysicalDeliveryDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPhysicalDeliveryDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPhysicalDeliveryDetails";
 			definition = "Physical delivery details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPDD";
 		}
 	};
@@ -980,12 +986,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Settlement and custody details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentSettlementAndCustodyDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentSettlementAndCustodyDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentSettlementAndCustodyDetails";
 			definition = "Settlement and custody details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DSCA";
 		}
 	};
@@ -1011,12 +1017,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Payment Instrument details information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPaymentInstrumentDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPaymentInstrumentDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPaymentInstrumentDetails";
 			definition = "Payment Instrument details information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPID";
 		}
 	};
@@ -1041,12 +1047,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Settlement amount not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentSettlementAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentSettlementAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentSettlementAmount";
 			definition = "Settlement amount not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DSAM";
 		}
 	};
@@ -1071,12 +1077,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Settlement date not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentSettlementDate = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentSettlementDate = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentSettlementDate";
 			definition = "Settlement date not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DSDT";
 		}
 	};
@@ -1101,12 +1107,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Extension information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentExtensionDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentExtensionDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentExtensionDetails";
 			definition = "Extension information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DEXD";
 		}
 	};
@@ -1131,12 +1137,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Intermediary information not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentIntermediaryDetails = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentIntermediaryDetails = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentIntermediaryDetails";
 			definition = "Intermediary information not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DIMD";
 		}
 	};
@@ -1161,12 +1167,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Total redemption amount not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentTotalRedemptionAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentTotalRedemptionAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentTotalRedemptionAmount";
 			definition = "Total redemption amount not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DTRA";
 		}
 	};
@@ -1191,12 +1197,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Total subscription amount not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentTotalSubscriptionAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentTotalSubscriptionAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentTotalSubscriptionAmount";
 			definition = "Total subscription amount not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DTSA";
 		}
 	};
@@ -1221,12 +1227,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Additional cash in not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentAdditionalCashIn = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentAdditionalCashIn = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentAdditionalCashIn";
 			definition = "Additional cash in not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DACI";
 		}
 	};
@@ -1251,12 +1257,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Resulting cash out not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentResultingCashOut = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentResultingCashOut = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentResultingCashOut";
 			definition = "Resulting cash out not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DACO";
 		}
 	};
@@ -1282,12 +1288,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Percentage of total subscription amount not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPercentageOfTotalSubscriptionAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPercentageOfTotalSubscriptionAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPercentageOfTotalSubscriptionAmount";
 			definition = "Percentage of total subscription amount not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPSA";
 		}
 	};
@@ -1313,12 +1319,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Percentage of total redemption amount not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentPercentageOfTotalRedemptionAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentPercentageOfTotalRedemptionAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentPercentageOfTotalRedemptionAmount";
 			definition = "Percentage of total redemption amount not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DPRA";
 		}
 	};
@@ -1343,12 +1349,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Leg Identification not the same as instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentLegIdentification = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentLegIdentification = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentLegIdentification";
 			definition = "Leg Identification not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DLID";
 		}
 	};
@@ -1376,12 +1382,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDifferentOrderReference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DifferentOrderReference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentOrderReference";
 			definition = "Confirmation is recognised by the Receiver because the message reference is identified, but the order reference is not the same as instructed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DORF";
 		}
 	};
@@ -1406,12 +1412,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Linked reference is not known."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknownLinkagesReference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode UnknownLinkagesReference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnknownLinkagesReference";
 			definition = "Linked reference is not known.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "ULNK";
 		}
 	};
@@ -1437,12 +1443,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Deal reference is a duplicate of a previously received deal reference."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDuplicateDealReference = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DuplicateDealReference = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DuplicateDealReference";
 			definition = "Deal reference is a duplicate of a previously received deal reference.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DREF";
 		}
 	};
@@ -1467,12 +1473,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Receiving agent is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceivingAgent = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode ReceivingAgent = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceivingAgent";
 			definition = "Receiving agent is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "IVAG";
 		}
 	};
@@ -1497,12 +1503,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Receiver's Custodian is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceiversCustodian = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode ReceiversCustodian = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceiversCustodian";
 			definition = "Receiver's Custodian is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "IRCU";
 		}
 	};
@@ -1527,12 +1533,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Receiver's Intermediary is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceiversIntermediary = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode ReceiversIntermediary = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceiversIntermediary";
 			definition = "Receiver's Intermediary is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "IRIN";
 		}
 	};
@@ -1557,12 +1563,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Delivering agent is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeliveringAgent = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DeliveringAgent = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DeliveringAgent";
 			definition = "Delivering agent is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "ICAG";
 		}
 	};
@@ -1587,12 +1593,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Deliverer's Custodian is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeliverersCustodian = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DeliverersCustodian = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DeliverersCustodian";
 			definition = "Deliverer's Custodian is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "IDCU";
 		}
 	};
@@ -1618,12 +1624,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeliverersIntermediary = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode DeliverersIntermediary = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DeliverersIntermediary";
 			definition = "Deliverer's Intermediary is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "IDIN";
 		}
 	};
@@ -1648,12 +1654,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Credit transfer details are incorrect."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInvalidCreditTransfer = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode InvalidCreditTransfer = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvalidCreditTransfer";
 			definition = "Credit transfer details are incorrect.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "ICTR";
 		}
 	};
@@ -1678,12 +1684,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Settlement Amount is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlementAmount = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode SettlementAmount = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementAmount";
 			definition = "Settlement Amount is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DMON";
 		}
 	};
@@ -1709,12 +1715,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Settlement date or transfer date is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlementDate = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode SettlementDate = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementDate";
 			definition = "Settlement date or transfer date is not recognised or is invalid.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "DDAT";
 		}
 	};
@@ -1740,12 +1746,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * "Confirmation is not compliant with the service level agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotCompliantWithSLA = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode NotCompliantWithSLA = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotCompliantWithSLA";
 			definition = "Confirmation is not compliant with the service level agreement.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "NSLA";
 		}
 	};
@@ -1770,12 +1776,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "EU tax information is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMissingEUTaxInformation = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode MissingEUTaxInformation = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MissingEUTaxInformation";
 			definition = "EU tax information is missing.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "MEUT";
 		}
 	};
@@ -1800,12 +1806,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Commission information is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMissingCommission = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode MissingCommission = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MissingCommission";
 			definition = "Commission information is missing.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "MCOM";
 		}
 	};
@@ -1830,12 +1836,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Charge information is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMissingCharge = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode MissingCharge = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MissingCharge";
 			definition = "Charge information is missing.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "MCHA";
 		}
 	};
@@ -1860,12 +1866,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Tax information is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMissingTaxInformation = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode MissingTaxInformation = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MissingTaxInformation";
 			definition = "Tax information is missing.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "MTAX";
 		}
 	};
@@ -1890,12 +1896,12 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Amendment of order confirmation not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotAllowedtoAmend = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode NotAllowedtoAmend = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotAllowedtoAmend";
 			definition = "Amendment of order confirmation not allowed.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "NATA";
 		}
 	};
@@ -1920,17 +1926,21 @@ public class RejectedConfirmationStatusReasonCode {
 	 * definition} = "Amendment of order confirmation too late."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAmendmentTooLate = new MMCode() {
+	public static final RejectedConfirmationStatusReasonCode AmendmentTooLate = new RejectedConfirmationStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AmendmentTooLate";
 			definition = "Amendment of order confirmation too late.";
-			owner_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.mmObject();
 			codeName = "ALAT";
 		}
 	};
+	final static private LinkedHashMap<String, RejectedConfirmationStatusReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RejectedConfirmationStatusReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1938,29 +1948,117 @@ public class RejectedConfirmationStatusReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedConfirmationStatusReasonCode";
 				definition = "Specifies the reason for a confirmation rejected status.";
-				code_lazy = () -> Arrays.asList(RejectedConfirmationStatusReasonCode.mmDifferentInvestmentAccountDetails, RejectedConfirmationStatusReasonCode.mmDifferentFinancialInstrumentDetails,
-						RejectedConfirmationStatusReasonCode.mmDifferentBeneficiaryDetails, RejectedConfirmationStatusReasonCode.mmDifferentPlaceOfTrade, RejectedConfirmationStatusReasonCode.mmDifferentOrderDateTime,
-						RejectedConfirmationStatusReasonCode.mmDifferentCancellationRight, RejectedConfirmationStatusReasonCode.mmDifferentUnitsNumber, RejectedConfirmationStatusReasonCode.mmDifferentOrderType,
-						RejectedConfirmationStatusReasonCode.mmDifferentRounding, RejectedConfirmationStatusReasonCode.mmDifferentNetAmount, RejectedConfirmationStatusReasonCode.mmDifferentGrossAmount,
-						RejectedConfirmationStatusReasonCode.mmDifferentHoldingsRedemptionRate, RejectedConfirmationStatusReasonCode.mmDifferentGroup1Or2Units, RejectedConfirmationStatusReasonCode.mmDifferentIncomePreference,
-						RejectedConfirmationStatusReasonCode.mmDifferentLetterIntentReference, RejectedConfirmationStatusReasonCode.mmDifferentAccumulationRightReference,
-						RejectedConfirmationStatusReasonCode.mmDifferentPhysicalDeliveryIndicator, RejectedConfirmationStatusReasonCode.mmDifferentRequestedSettlementCurrency,
-						RejectedConfirmationStatusReasonCode.mmDifferentRequestedNAVCurrency, RejectedConfirmationStatusReasonCode.mmDifferentForeignExchangeDetails, RejectedConfirmationStatusReasonCode.mmDifferentChargeDetails,
-						RejectedConfirmationStatusReasonCode.mmDifferentCommissionDetails, RejectedConfirmationStatusReasonCode.mmDifferentTaxDetails, RejectedConfirmationStatusReasonCode.mmDifferentPhysicalDeliveryDetails,
-						RejectedConfirmationStatusReasonCode.mmDifferentSettlementAndCustodyDetails, RejectedConfirmationStatusReasonCode.mmDifferentPaymentInstrumentDetails,
-						RejectedConfirmationStatusReasonCode.mmDifferentSettlementAmount, RejectedConfirmationStatusReasonCode.mmDifferentSettlementDate, RejectedConfirmationStatusReasonCode.mmDifferentExtensionDetails,
-						RejectedConfirmationStatusReasonCode.mmDifferentIntermediaryDetails, RejectedConfirmationStatusReasonCode.mmDifferentTotalRedemptionAmount, RejectedConfirmationStatusReasonCode.mmDifferentTotalSubscriptionAmount,
-						RejectedConfirmationStatusReasonCode.mmDifferentAdditionalCashIn, RejectedConfirmationStatusReasonCode.mmDifferentResultingCashOut,
-						RejectedConfirmationStatusReasonCode.mmDifferentPercentageOfTotalSubscriptionAmount, RejectedConfirmationStatusReasonCode.mmDifferentPercentageOfTotalRedemptionAmount,
-						RejectedConfirmationStatusReasonCode.mmDifferentLegIdentification, RejectedConfirmationStatusReasonCode.mmDifferentOrderReference, RejectedConfirmationStatusReasonCode.mmUnknownLinkagesReference,
-						RejectedConfirmationStatusReasonCode.mmDuplicateDealReference, RejectedConfirmationStatusReasonCode.mmReceivingAgent, RejectedConfirmationStatusReasonCode.mmReceiversCustodian,
-						RejectedConfirmationStatusReasonCode.mmReceiversIntermediary, RejectedConfirmationStatusReasonCode.mmDeliveringAgent, RejectedConfirmationStatusReasonCode.mmDeliverersCustodian,
-						RejectedConfirmationStatusReasonCode.mmDeliverersIntermediary, RejectedConfirmationStatusReasonCode.mmInvalidCreditTransfer, RejectedConfirmationStatusReasonCode.mmSettlementAmount,
-						RejectedConfirmationStatusReasonCode.mmSettlementDate, RejectedConfirmationStatusReasonCode.mmNotCompliantWithSLA, RejectedConfirmationStatusReasonCode.mmMissingEUTaxInformation,
-						RejectedConfirmationStatusReasonCode.mmMissingCommission, RejectedConfirmationStatusReasonCode.mmMissingCharge, RejectedConfirmationStatusReasonCode.mmMissingTaxInformation,
-						RejectedConfirmationStatusReasonCode.mmNotAllowedtoAmend, RejectedConfirmationStatusReasonCode.mmAmendmentTooLate);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentInvestmentAccountDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentFinancialInstrumentDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentBeneficiaryDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPlaceOfTrade, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentOrderDateTime,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentCancellationRight, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentUnitsNumber,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentOrderType, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentRounding,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentNetAmount, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentGrossAmount,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentHoldingsRedemptionRate, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentGroup1Or2Units,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentIncomePreference, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentLetterIntentReference,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentAccumulationRightReference, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPhysicalDeliveryIndicator,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentRequestedSettlementCurrency, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentRequestedNAVCurrency,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentForeignExchangeDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentChargeDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentCommissionDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentTaxDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPhysicalDeliveryDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentSettlementAndCustodyDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPaymentInstrumentDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentSettlementAmount,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentSettlementDate, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentExtensionDetails,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentIntermediaryDetails, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentTotalRedemptionAmount,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentTotalSubscriptionAmount, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentAdditionalCashIn,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentResultingCashOut, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPercentageOfTotalSubscriptionAmount,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentPercentageOfTotalRedemptionAmount, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentLegIdentification,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DifferentOrderReference, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.UnknownLinkagesReference,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DuplicateDealReference, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.ReceivingAgent,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.ReceiversCustodian, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.ReceiversIntermediary,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DeliveringAgent, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DeliverersCustodian,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.DeliverersIntermediary, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.InvalidCreditTransfer,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.SettlementAmount, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.SettlementDate,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.NotCompliantWithSLA, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.MissingEUTaxInformation,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.MissingCommission, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.MissingCharge,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.MissingTaxInformation, com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.NotAllowedtoAmend,
+						com.tools20022.repository.codeset.RejectedConfirmationStatusReasonCode.AmendmentTooLate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DifferentInvestmentAccountDetails.getCodeName().get(), DifferentInvestmentAccountDetails);
+		codesByName.put(DifferentFinancialInstrumentDetails.getCodeName().get(), DifferentFinancialInstrumentDetails);
+		codesByName.put(DifferentBeneficiaryDetails.getCodeName().get(), DifferentBeneficiaryDetails);
+		codesByName.put(DifferentPlaceOfTrade.getCodeName().get(), DifferentPlaceOfTrade);
+		codesByName.put(DifferentOrderDateTime.getCodeName().get(), DifferentOrderDateTime);
+		codesByName.put(DifferentCancellationRight.getCodeName().get(), DifferentCancellationRight);
+		codesByName.put(DifferentUnitsNumber.getCodeName().get(), DifferentUnitsNumber);
+		codesByName.put(DifferentOrderType.getCodeName().get(), DifferentOrderType);
+		codesByName.put(DifferentRounding.getCodeName().get(), DifferentRounding);
+		codesByName.put(DifferentNetAmount.getCodeName().get(), DifferentNetAmount);
+		codesByName.put(DifferentGrossAmount.getCodeName().get(), DifferentGrossAmount);
+		codesByName.put(DifferentHoldingsRedemptionRate.getCodeName().get(), DifferentHoldingsRedemptionRate);
+		codesByName.put(DifferentGroup1Or2Units.getCodeName().get(), DifferentGroup1Or2Units);
+		codesByName.put(DifferentIncomePreference.getCodeName().get(), DifferentIncomePreference);
+		codesByName.put(DifferentLetterIntentReference.getCodeName().get(), DifferentLetterIntentReference);
+		codesByName.put(DifferentAccumulationRightReference.getCodeName().get(), DifferentAccumulationRightReference);
+		codesByName.put(DifferentPhysicalDeliveryIndicator.getCodeName().get(), DifferentPhysicalDeliveryIndicator);
+		codesByName.put(DifferentRequestedSettlementCurrency.getCodeName().get(), DifferentRequestedSettlementCurrency);
+		codesByName.put(DifferentRequestedNAVCurrency.getCodeName().get(), DifferentRequestedNAVCurrency);
+		codesByName.put(DifferentForeignExchangeDetails.getCodeName().get(), DifferentForeignExchangeDetails);
+		codesByName.put(DifferentChargeDetails.getCodeName().get(), DifferentChargeDetails);
+		codesByName.put(DifferentCommissionDetails.getCodeName().get(), DifferentCommissionDetails);
+		codesByName.put(DifferentTaxDetails.getCodeName().get(), DifferentTaxDetails);
+		codesByName.put(DifferentPhysicalDeliveryDetails.getCodeName().get(), DifferentPhysicalDeliveryDetails);
+		codesByName.put(DifferentSettlementAndCustodyDetails.getCodeName().get(), DifferentSettlementAndCustodyDetails);
+		codesByName.put(DifferentPaymentInstrumentDetails.getCodeName().get(), DifferentPaymentInstrumentDetails);
+		codesByName.put(DifferentSettlementAmount.getCodeName().get(), DifferentSettlementAmount);
+		codesByName.put(DifferentSettlementDate.getCodeName().get(), DifferentSettlementDate);
+		codesByName.put(DifferentExtensionDetails.getCodeName().get(), DifferentExtensionDetails);
+		codesByName.put(DifferentIntermediaryDetails.getCodeName().get(), DifferentIntermediaryDetails);
+		codesByName.put(DifferentTotalRedemptionAmount.getCodeName().get(), DifferentTotalRedemptionAmount);
+		codesByName.put(DifferentTotalSubscriptionAmount.getCodeName().get(), DifferentTotalSubscriptionAmount);
+		codesByName.put(DifferentAdditionalCashIn.getCodeName().get(), DifferentAdditionalCashIn);
+		codesByName.put(DifferentResultingCashOut.getCodeName().get(), DifferentResultingCashOut);
+		codesByName.put(DifferentPercentageOfTotalSubscriptionAmount.getCodeName().get(), DifferentPercentageOfTotalSubscriptionAmount);
+		codesByName.put(DifferentPercentageOfTotalRedemptionAmount.getCodeName().get(), DifferentPercentageOfTotalRedemptionAmount);
+		codesByName.put(DifferentLegIdentification.getCodeName().get(), DifferentLegIdentification);
+		codesByName.put(DifferentOrderReference.getCodeName().get(), DifferentOrderReference);
+		codesByName.put(UnknownLinkagesReference.getCodeName().get(), UnknownLinkagesReference);
+		codesByName.put(DuplicateDealReference.getCodeName().get(), DuplicateDealReference);
+		codesByName.put(ReceivingAgent.getCodeName().get(), ReceivingAgent);
+		codesByName.put(ReceiversCustodian.getCodeName().get(), ReceiversCustodian);
+		codesByName.put(ReceiversIntermediary.getCodeName().get(), ReceiversIntermediary);
+		codesByName.put(DeliveringAgent.getCodeName().get(), DeliveringAgent);
+		codesByName.put(DeliverersCustodian.getCodeName().get(), DeliverersCustodian);
+		codesByName.put(DeliverersIntermediary.getCodeName().get(), DeliverersIntermediary);
+		codesByName.put(InvalidCreditTransfer.getCodeName().get(), InvalidCreditTransfer);
+		codesByName.put(SettlementAmount.getCodeName().get(), SettlementAmount);
+		codesByName.put(SettlementDate.getCodeName().get(), SettlementDate);
+		codesByName.put(NotCompliantWithSLA.getCodeName().get(), NotCompliantWithSLA);
+		codesByName.put(MissingEUTaxInformation.getCodeName().get(), MissingEUTaxInformation);
+		codesByName.put(MissingCommission.getCodeName().get(), MissingCommission);
+		codesByName.put(MissingCharge.getCodeName().get(), MissingCharge);
+		codesByName.put(MissingTaxInformation.getCodeName().get(), MissingTaxInformation);
+		codesByName.put(NotAllowedtoAmend.getCodeName().get(), NotAllowedtoAmend);
+		codesByName.put(AmendmentTooLate.getCodeName().get(), AmendmentTooLate);
+	}
+
+	public static RejectedConfirmationStatusReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RejectedConfirmationStatusReasonCode[] values() {
+		RejectedConfirmationStatusReasonCode[] values = new RejectedConfirmationStatusReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RejectedConfirmationStatusReasonCode> {
+		@Override
+		public RejectedConfirmationStatusReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RejectedConfirmationStatusReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

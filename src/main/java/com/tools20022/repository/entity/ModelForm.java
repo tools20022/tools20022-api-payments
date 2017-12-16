@@ -120,8 +120,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAssociationEnd mmGovernanceRules = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GovernanceRules";
 			definition = "Rules governing an undertaking such as a guarantee or standby letter of credit.";
@@ -167,8 +167,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which the model form is used.";
@@ -207,8 +207,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the model form.";
@@ -252,8 +252,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Version";
 			definition = "Version of the model form.";
@@ -298,8 +298,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAttribute mmRequestedWordingLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedWordingLanguage";
 			definition = "Language of the standard wording provided by the issuer.";
@@ -343,8 +343,8 @@ public class ModelForm {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date on which the use of the model form is effective.";

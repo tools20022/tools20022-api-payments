@@ -114,8 +114,8 @@ public class RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Role";
 			definition = "Role of the entity in the activity.";
@@ -160,8 +160,8 @@ public class RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which a role player is valid";

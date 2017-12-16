@@ -110,8 +110,8 @@ public class Lottery {
 	 */
 	public static final MMBusinessAttribute mmLotteryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotteryDate";
 			definition = "Date on which the lottery is run and applied to the holder's positions. This is also applicable to partial calls.";
@@ -166,8 +166,8 @@ public class Lottery {
 	 */
 	public static final MMBusinessAssociationEnd mmIncrementalDenomination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncrementalDenomination";
 			definition = "Amount used when the called amount is not met by running the lottery with the base denomination.";
@@ -206,8 +206,8 @@ public class Lottery {
 	 */
 	public static final MMBusinessAttribute mmLotteryType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotteryType";
 			definition = "Specifies the type of lottery announced.";
@@ -261,8 +261,8 @@ public class Lottery {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateEvent";
 			definition = "Corporate event for which lottery information is provided.";

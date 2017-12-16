@@ -19,8 +19,12 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
+import com.tools20022.repository.datatype.Min8Max28NumericText.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a numeric string with a minimum length of 8 digits, and a maximum
@@ -47,9 +51,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class Min8Max28NumericText {
 
 	final static private AtomicReference<MMText> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMText mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMText() {
@@ -62,5 +68,26 @@ public class Min8Max28NumericText {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Min8Max28NumericText(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Min8Max28NumericText> {
+		@Override
+		public Min8Max28NumericText unmarshal(String value) {
+			return new Min8Max28NumericText(value);
+		}
+
+		@Override
+		public String marshal(Min8Max28NumericText typedData) {
+			return typedData.value;
+		}
 	}
 }

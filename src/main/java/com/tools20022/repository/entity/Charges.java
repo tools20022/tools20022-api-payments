@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
+ * Adjustment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -89,19 +92,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.Charges#mmChargePaymentMethod
  * Charges.mmChargePaymentMethod}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ChargeType3Choice
- * ChargeType3Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord1 ChargesRecord1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Charges3 Charges3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord2 ChargesRecord2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Charges4 Charges4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Charges2 Charges2}</li>
  * </ul>
  * </li>
  * <li>
@@ -168,9 +158,6 @@ import java.util.List;
  * PaymentTransaction82.mmChargesInformation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
- * Adjustment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -179,6 +166,19 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CorporateActionFeesAndCharges
  * CorporateActionFeesAndCharges}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ChargeType3Choice
+ * ChargeType3Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord1 ChargesRecord1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Charges3 Charges3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord2 ChargesRecord2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Charges4 Charges4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Charges2 Charges2}</li>
  * </ul>
  * </li>
  * <li>
@@ -243,8 +243,8 @@ public class Charges extends Adjustment {
 	public static final MMBusinessAttribute mmChargeType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ChargeType3Choice.mmCode, ChargeType3Choice.mmProprietary, ChargesRecord1.mmType, ChargesRecord2.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargeType";
 			definition = "Type of service for which a charge is asked or paid.";
@@ -289,8 +289,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCalculationBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationBasis";
 			definition = "Calculation basis for the charge or fee.";
@@ -389,8 +389,8 @@ public class Charges extends Adjustment {
 			derivation_lazy = () -> Arrays.asList(ChargesRecord1.mmBearer, ChargesRecord2.mmBearer, CreditTransferTransaction25.mmChargeBearer, CreditTransferTransaction26.mmChargeBearer, CreditTransferTransaction22.mmChargeBearer,
 					PaymentInstruction21.mmChargeBearer, DirectDebitTransactionInformation21.mmChargeBearer, PaymentTransaction81.mmChargeBearer, RequestedModification6.mmChargeBearer, PaymentInstruction23.mmChargeBearer,
 					PaymentTransaction76.mmChargeBearer, PaymentInstruction22.mmChargeBearer, PaymentTransaction77.mmChargeBearer, DirectDebitTransactionInformation22.mmChargeBearer, PaymentComplementaryInformation6.mmChargeBearer);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BearerType";
 			definition = "Specifies which party/parties will bear the charges associated with the processing of the payment transaction.";
@@ -454,8 +454,8 @@ public class Charges extends Adjustment {
 	public static final MMBusinessAssociationEnd mmChargesDebitAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentInstruction21.mmChargesAccount, PaymentInstruction22.mmChargesAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargesDebitAccount";
 			definition = "Account from which a charge is debited.";
@@ -500,8 +500,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Entry which contains the charges.";
@@ -552,8 +552,8 @@ public class Charges extends Adjustment {
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ChargesRecord1.mmCreditDebitIndicator, ChargesRecord2.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether a charge is a credit or a debit.";
@@ -601,8 +601,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAmount";
 			definition = "Maximum amount of money asked or paid for the charge for example depending on the type of investors.";
@@ -656,8 +656,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundTransaction";
 			definition = "Investment fund transaction for which charges are specified.";
@@ -703,8 +703,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmLogisticsChargeLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LogisticsChargeLineItem";
 			definition = "Specifies the line item to which the logistics charge applies.";
@@ -751,8 +751,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Specifies the transport process to which the charges apply.";
@@ -800,8 +800,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Account services for which account administration charges are specified.";
@@ -847,8 +847,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedUndertaking";
 			definition = "Undertaking for which charges are specified.";
@@ -893,8 +893,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineItem";
 			definition = "Line item for which charges are specified";
@@ -940,8 +940,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmNetPriceChargeLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPriceChargeLineItem";
 			definition = "Specifies the line item to which the net price charge applies.";
@@ -980,8 +980,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmBaseAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BaseAmount";
 			definition = "Amount on which the charges are calculated.";
@@ -1029,8 +1029,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmMaximumRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumRate";
 			definition = "Maximum rate used to calculate the amount of the charge or fee for example depending on the type of investors.";
@@ -1078,8 +1078,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmMinimumRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumRate";
 			definition = "Minimum rate used to calculate the amount of the charge or fee for example depending on the type of investors.";
@@ -1127,8 +1127,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmMinimumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumAmount";
 			definition = "Minimum amount of money asked or paid for the charge for example depending on the type of investors.";
@@ -1180,8 +1180,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterest";
 			definition = "Interest on which charges are applied.";
@@ -1219,8 +1219,8 @@ public class Charges extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmChargePaymentMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargePaymentMethod";
 			definition = "Specifies how charges are paid.";

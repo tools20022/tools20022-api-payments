@@ -119,8 +119,8 @@ public class SecuritiesCertificate {
 	 */
 	public static final MMBusinessAssociationEnd mmNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Identifier of a certificate assigned by the issuer.";
@@ -169,8 +169,8 @@ public class SecuritiesCertificate {
 	 */
 	public static final MMBusinessAssociationEnd mmBasicRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasicRegistration";
 			definition = "Registration process which requires a securities certificate.";
@@ -218,8 +218,8 @@ public class SecuritiesCertificate {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDelivery";
 			definition = "Delivery parameters which specify the certificate parameters.";

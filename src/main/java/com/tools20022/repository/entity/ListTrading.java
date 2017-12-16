@@ -150,8 +150,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmListIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListIdentification";
 			definition = "Unique identifier for a list, as assigned by the trading party. The identifier must be unique within a single trading day.";
@@ -206,8 +206,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesListOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesListOrder";
 			definition = "Order list containing the details of the individual orders within the program.";
@@ -253,8 +253,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAssociationEnd mmListTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListTradingSession";
 			definition = "Details of a specific trading session for a list trading.";
@@ -292,8 +292,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmListName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListName";
 			definition = "Provides the name of the order list.";
@@ -339,8 +339,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmBasisPriceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasisPriceType";
 			definition = "Represents the basis price type in a bid order (list trading).";
@@ -387,8 +387,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmStrikeTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikeTime";
 			definition = "Time at which current market prices are used to determine the value of a basket.";
@@ -436,8 +436,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmGrossAmountIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmountIndicator";
 			definition = "Indicates whether an amount is a gross amount (including all charges, commissions and tax), or a net amount.";
@@ -485,8 +485,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmSellSideIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellSideIdentification";
 			definition = "Unique identifier for a bid, as assigned by the the sell-side (broker, exchange, electronic communication network (ECN)). The identifier must be unique within a single trading day.";
@@ -533,8 +533,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmBuySideIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuySideIdentification";
 			definition = "Unique identifier for a bid, as assigned by the buy-side institution. The identifier must be unique within a single trading day.";
@@ -586,8 +586,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAssociationEnd mmLiquidity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Liquidity";
 			definition = "Information on the liquidity of a financial instrument.";
@@ -624,8 +624,8 @@ public class ListTrading {
 	 */
 	public static final MMBusinessAttribute mmBidType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BidType";
 			definition = "Indicates the type of bid for a list order.";

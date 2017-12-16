@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.RolePlayer
+ * RolePlayer}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -58,16 +61,6 @@ import java.util.List;
  * Party.mmLocation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Party#mmCloseLinkSecurity
  * Party.mmCloseLinkSecurity}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndAuthorisation1
- * PartyAndAuthorisation1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndAuthorisation3
- * PartyAndAuthorisation3}</li>
  * </ul>
  * </li>
  * <li>
@@ -106,14 +99,21 @@ import java.util.List;
  * PartyAndAuthorisation3.mmPartyOrGroup}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.RolePlayer
- * RolePlayer}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Organisation Organisation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Person Person}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndAuthorisation1
+ * PartyAndAuthorisation1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndAuthorisation3
+ * PartyAndAuthorisation3}</li>
  * </ul>
  * </li>
  * <li>
@@ -198,8 +198,8 @@ public class Party extends RolePlayer {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyIdentification43.mmContactDetails, PartyIdentification40.mmContactDetails, PartyIdentification42.mmContactDetails, ContactDetails3.mmPreferredMethod,
 					PartyIdentification58.mmContactDetails, AccountTax1.mmNonResidenceCountry, PartyIdentification77.mmContactDetails);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPoint";
 			definition = "Number, physical or virtual address, used for communication.";
@@ -685,8 +685,8 @@ public class Party extends RolePlayer {
 					Mandate8.mmCreditorSchemeIdentification, Mandate8.mmCreditor, Mandate8.mmUltimateCreditor, Mandate8.mmDebtor, Mandate8.mmUltimateDebtor, AmendmentInformationDetails11.mmOriginalCreditorSchemeIdentification,
 					AmendmentInformationDetails11.mmOriginalDebtor, PaymentTransaction79.mmAssigner, PaymentTransaction79.mmAssignee, PaymentComplementaryInformation6.mmUltimateDebtor, PaymentComplementaryInformation6.mmDebtor,
 					PaymentComplementaryInformation6.mmCreditorAgent, PaymentComplementaryInformation6.mmCreditor, PaymentComplementaryInformation6.mmUltimateCreditor);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Specific identification assigned to a party.";
@@ -727,8 +727,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAttribute mmMoneyLaunderingCheck = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MoneyLaunderingCheck";
 			definition = "Status of an identity check to prevent money laundering. This includes the counter-terrorism check.";
@@ -782,8 +782,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxationConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxationConditions";
 			definition = "Taxation parameters which apply to an individual person or to an organisation.";
@@ -831,8 +831,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmDomicile = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Domicile";
 			definition = "Location in which a person is permanently domiciled (the place of a person's permanent home).";
@@ -880,8 +880,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmResidence = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Residence";
 			definition = "Location from which the affairs of a company are directed or location in which a person resides (the place of a person's home).";
@@ -926,8 +926,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmPowerOfAttorney = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PowerOfAttorney";
 			definition = "Power of attorney which is held by the party.";
@@ -972,8 +972,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location of the taxable party.";
@@ -1019,8 +1019,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd mmCloseLinkSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CloseLinkSecurity";
 			definition = "Security for which a close link with a party is identified.";

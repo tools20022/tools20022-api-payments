@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FinancialCaptureCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Mode for the financial capture of the transaction by the acquirer.
@@ -32,13 +37,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmAuthorisation
+ * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Authorisation
  * FinancialCaptureCode.mmAuthorisation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmCompletion
+ * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Completion
  * FinancialCaptureCode.mmCompletion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmBatch
+ * <li>{@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Batch
  * FinancialCaptureCode.mmBatch}</li>
  * </ul>
  * </li>
@@ -64,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Mode for the financial capture of the transaction by the acquirer."</li>
  * </ul>
  */
-public class FinancialCaptureCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FinancialCaptureCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +96,12 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuthorisation = new MMCode() {
+	public static final FinancialCaptureCode Authorisation = new FinancialCaptureCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authorisation";
 			definition = "Financial capture of the transaction is performed by the acquirer during the authorisation exchange.";
-			owner_lazy = () -> FinancialCaptureCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCaptureCode.mmObject();
 			codeName = "AUTH";
 		}
 	};
@@ -124,12 +129,12 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCompletion = new MMCode() {
+	public static final FinancialCaptureCode Completion = new FinancialCaptureCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Completion";
 			definition = "Financial capture of the transaction is performed by the acquirer during the completion exchange.";
-			owner_lazy = () -> FinancialCaptureCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCaptureCode.mmObject();
 			codeName = "COMP";
 		}
 	};
@@ -157,17 +162,21 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBatch = new MMCode() {
+	public static final FinancialCaptureCode Batch = new FinancialCaptureCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Batch";
 			definition = "Financial capture of the transaction is performed by the acquirer at the reception of a batch transfer.";
-			owner_lazy = () -> FinancialCaptureCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCaptureCode.mmObject();
 			codeName = "BTCH";
 		}
 	};
+	final static private LinkedHashMap<String, FinancialCaptureCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FinancialCaptureCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -175,9 +184,37 @@ public class FinancialCaptureCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialCaptureCode";
 				definition = "Mode for the financial capture of the transaction by the acquirer.";
-				code_lazy = () -> Arrays.asList(FinancialCaptureCode.mmAuthorisation, FinancialCaptureCode.mmCompletion, FinancialCaptureCode.mmBatch);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialCaptureCode.Authorisation, com.tools20022.repository.codeset.FinancialCaptureCode.Completion,
+						com.tools20022.repository.codeset.FinancialCaptureCode.Batch);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Authorisation.getCodeName().get(), Authorisation);
+		codesByName.put(Completion.getCodeName().get(), Completion);
+		codesByName.put(Batch.getCodeName().get(), Batch);
+	}
+
+	public static FinancialCaptureCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FinancialCaptureCode[] values() {
+		FinancialCaptureCode[] values = new FinancialCaptureCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FinancialCaptureCode> {
+		@Override
+		public FinancialCaptureCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FinancialCaptureCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

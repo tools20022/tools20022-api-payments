@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -159,8 +161,6 @@ import java.util.List;
  * Reinvestment.mmInvestmentFundClass}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -215,8 +215,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmClassType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassType";
 			definition = "Features of units offered by a fund. For example, a unit may have a specific load structure, eg, front end or back end, an income policy, eg, pay out or accumulate, or a trailer policy, eg, with or without. Fund classes are typically denoted by a single character, eg, 'Class A', 'Class 2'.";
@@ -265,8 +265,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmDistributionPolicy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributionPolicy";
 			definition = "Income policy relating to a class type, ie, if income is paid out or retained in the fund.";
@@ -312,8 +312,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmDividendPolicy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendPolicy";
 			definition = "Dividend policy of the fund, eg, cash, units.";
@@ -359,8 +359,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmDualFundIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DualFundIndicator";
 			definition = "Indicates whether the fund has two prices.";
@@ -409,8 +409,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmRequestedNAVCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedNAVCurrency";
 			definition = "Currency to be used for pricing the fund. This currency must be among the set of currencies in which the price may be expressed, as stated in the prospectus.";
@@ -455,8 +455,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmTradingCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingCurrency";
 			definition = "Currency of the investment fund class.";
@@ -510,8 +510,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFund";
 			definition = "Investment fund which is related to the investment fund class.";
@@ -554,8 +554,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmPhysicalBearerSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalBearerSecurities";
 			definition = "Indicates whether or not it is possible to hold bearer units/shares in this class in certified form";
@@ -604,8 +604,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmDematerialisedBearerSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DematerialisedBearerSecurities";
 			definition = "Indicate whether or not it is possible to hold bearer units/shares in paperless form";
@@ -654,8 +654,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmPhysicalRegisteredSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalRegisteredSecurities";
 			definition = "Indicate whether or not it is possible to hold registered units/shares in this class in paperless form";
@@ -704,8 +704,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmDematerialisedRegisteredSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DematerialisedRegisteredSecurities";
 			definition = "Indicate whether or not it is possible to hold registered units/shares in this class in paperless form";
@@ -762,8 +762,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmProcessingCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingCharacteristics";
 			definition = "Processing characteristics linked to the investment fund class, ie, not to  the market.";
@@ -801,8 +801,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmProductGroup = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductGroup";
 			definition = "Company specific description of a group of funds.";
@@ -855,8 +855,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Account which holds investment fund classes.";
@@ -903,8 +903,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Calculation of the value of the fund.";
@@ -952,8 +952,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundTransaction";
 			definition = "Transaction which is related to the fund class.";
@@ -995,8 +995,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmSeriesIssueIdentificationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeriesIssueIdentificationDate";
 			definition = "Date that identifies the issue of a fund series. Typically applicable to a redemption or order confirmation, but may be specified in the subscription, if known.";
@@ -1045,8 +1045,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmSeriesName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeriesName";
 			definition = "Identifies the name of a fund series. Typically applicable to a redemption or order confirmation, but may be specified in the subscription, if known.";
@@ -1095,8 +1095,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmNewIssueIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewIssueIndicator";
 			definition = "Indicates that the financial instrument and/or series included in the message is a new issue.";
@@ -1152,8 +1152,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmEqualisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Equalisation";
 			definition = "Part of an investor's subscription amount that is held by the fund in order to pay incentive / performance fees at the end of the fiscal year.";
@@ -1196,8 +1196,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmTopUpAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TopUpAmount";
 			definition = "Additional amount of money (top-up amount) required to meet the minimum subscription amount.";
@@ -1243,8 +1243,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmHoldBackAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldBackAmount";
 			definition = "Value of the redemption amount subject to hold back.";
@@ -1289,8 +1289,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmHoldBackReleaseDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldBackReleaseDate";
 			definition = "Date on which the hold back amount is to be released.";
@@ -1335,8 +1335,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmLotDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotDescription";
 			definition = "Description of the lot.";
@@ -1390,8 +1390,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmFundClassification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundClassification";
 			definition = "Method of classifying a fund.";
@@ -1431,8 +1431,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmUnderlyingAssetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingAssetType";
 			definition = "Specifies the type of assets in which the fund invests.";
@@ -1478,8 +1478,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmInvestorType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestorType";
 			definition = "Type of investor that can invest in the fund class.";
@@ -1533,8 +1533,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmReinvestment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reinvestment";
 			definition = "Reinvestment information which involves this investment fund class.";
@@ -1574,8 +1574,8 @@ public class InvestmentFundClass extends Security {
 	 */
 	public static final MMBusinessAttribute mmOutstandingUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OutstandingUnits";
 			definition = "Investment fund class currently held by shareholders.";

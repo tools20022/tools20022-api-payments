@@ -51,13 +51,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxPeriod1 TaxPeriod1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -65,6 +58,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * DateTimePeriod.mmTaxPeriod}</li>
  * <li>{@linkplain com.tools20022.repository.entity.TaxRecord#mmPeriod
  * TaxRecord.mmPeriod}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxPeriod1 TaxPeriod1}</li>
  * </ul>
  * </li>
  * <li>
@@ -120,8 +120,8 @@ public class TaxPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxRecord = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxRecord";
 			definition = "Tax record for which a period is specified.";
@@ -167,8 +167,8 @@ public class TaxPeriod {
 	public static final MMBusinessAttribute mmYear = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TaxPeriod1.mmYear);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Year";
 			definition = "Year related to the tax payment.";
@@ -221,8 +221,8 @@ public class TaxPeriod {
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TaxPeriod1.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Identification of the period related to the tax payment.";
@@ -285,8 +285,8 @@ public class TaxPeriod {
 	public static final MMBusinessAssociationEnd mmFromToDate = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TaxPeriod1.mmFromToDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromToDate";
 			definition = "Range of time between a start date and an end date for which the tax report is provided.";
@@ -324,8 +324,8 @@ public class TaxPeriod {
 	 */
 	public static final MMBusinessAttribute mmEndOfFiscalYear = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndOfFiscalYear";
 			definition = "Date on which the fiscal year is closed.";

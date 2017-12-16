@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TypeTransactionTotalsCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identification of the type of transactions which are included in the totals.
@@ -32,22 +37,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmDebit
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Debit
  * TypeTransactionTotalsCode.mmDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmDebitReverse
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#DebitReverse
  * TypeTransactionTotalsCode.mmDebitReverse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmCredit
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Credit
  * TypeTransactionTotalsCode.mmCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmCreditReverse
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#CreditReverse
  * TypeTransactionTotalsCode.mmCreditReverse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmDeclined
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Declined
  * TypeTransactionTotalsCode.mmDeclined}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#mmFailed
+ * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Failed
  * TypeTransactionTotalsCode.mmFailed}</li>
  * </ul>
  * </li>
@@ -74,7 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TypeTransactionTotalsCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TypeTransactionTotalsCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -98,12 +104,12 @@ public class TypeTransactionTotalsCode {
 	 * definition} = "Debit transactions on the cardholder account ."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final TypeTransactionTotalsCode Debit = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Debit";
 			definition = "Debit transactions on the cardholder account .";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "DEBT";
 		}
 	};
@@ -128,12 +134,12 @@ public class TypeTransactionTotalsCode {
 	 * definition} = "Reversal of debit transactions (cancellation)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebitReverse = new MMCode() {
+	public static final TypeTransactionTotalsCode DebitReverse = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitReverse";
 			definition = "Reversal of debit transactions (cancellation).";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "DBTR";
 		}
 	};
@@ -161,12 +167,12 @@ public class TypeTransactionTotalsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final TypeTransactionTotalsCode Credit = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Credit";
 			definition = "Credit transactions (refund, account, cash service, as defined  in the transaction service type).";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "CRDT";
 		}
 	};
@@ -191,12 +197,12 @@ public class TypeTransactionTotalsCode {
 	 * definition} = "Reversal of credit transactions (cancellation)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditReverse = new MMCode() {
+	public static final TypeTransactionTotalsCode CreditReverse = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditReverse";
 			definition = "Reversal of credit transactions (cancellation).";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "CRDR";
 		}
 	};
@@ -221,12 +227,12 @@ public class TypeTransactionTotalsCode {
 	 * definition} = "Declined transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeclined = new MMCode() {
+	public static final TypeTransactionTotalsCode Declined = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declined";
 			definition = "Declined transactions.";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "DECL";
 		}
 	};
@@ -251,17 +257,21 @@ public class TypeTransactionTotalsCode {
 	 * definition} = "Failed transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFailed = new MMCode() {
+	public static final TypeTransactionTotalsCode Failed = new TypeTransactionTotalsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Failed";
 			definition = "Failed transactions.";
-			owner_lazy = () -> TypeTransactionTotalsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeTransactionTotalsCode.mmObject();
 			codeName = "FAIL";
 		}
 	};
+	final static private LinkedHashMap<String, TypeTransactionTotalsCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TypeTransactionTotalsCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -269,10 +279,41 @@ public class TypeTransactionTotalsCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeTransactionTotalsCode";
 				definition = "Identification of the type of transactions which are included in the totals.";
-				code_lazy = () -> Arrays.asList(TypeTransactionTotalsCode.mmDebit, TypeTransactionTotalsCode.mmDebitReverse, TypeTransactionTotalsCode.mmCredit, TypeTransactionTotalsCode.mmCreditReverse,
-						TypeTransactionTotalsCode.mmDeclined, TypeTransactionTotalsCode.mmFailed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TypeTransactionTotalsCode.Debit, com.tools20022.repository.codeset.TypeTransactionTotalsCode.DebitReverse,
+						com.tools20022.repository.codeset.TypeTransactionTotalsCode.Credit, com.tools20022.repository.codeset.TypeTransactionTotalsCode.CreditReverse, com.tools20022.repository.codeset.TypeTransactionTotalsCode.Declined,
+						com.tools20022.repository.codeset.TypeTransactionTotalsCode.Failed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Debit.getCodeName().get(), Debit);
+		codesByName.put(DebitReverse.getCodeName().get(), DebitReverse);
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(CreditReverse.getCodeName().get(), CreditReverse);
+		codesByName.put(Declined.getCodeName().get(), Declined);
+		codesByName.put(Failed.getCodeName().get(), Failed);
+	}
+
+	public static TypeTransactionTotalsCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TypeTransactionTotalsCode[] values() {
+		TypeTransactionTotalsCode[] values = new TypeTransactionTotalsCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TypeTransactionTotalsCode> {
+		@Override
+		public TypeTransactionTotalsCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TypeTransactionTotalsCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

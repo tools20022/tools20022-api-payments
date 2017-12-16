@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CashSettlementSystemCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the cash settlement system used.
@@ -32,25 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmBankOfKoreaWire
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#BankOfKoreaWire
  * CashSettlementSystemCode.mmBankOfKoreaWire}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmCheque
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#Cheque
  * CashSettlementSystemCode.mmCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmUKDomestic
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#UKDomestic
  * CashSettlementSystemCode.mmUKDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmGrossSettlementSystem
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#GrossSettlementSystem
  * CashSettlementSystemCode.mmGrossSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmNetSettlementSystem
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#NetSettlementSystem
  * CashSettlementSystemCode.mmNetSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmUSChips
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#USChips
  * CashSettlementSystemCode.mmUSChips}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#mmFedWireUS
+ * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#FedWireUS
  * CashSettlementSystemCode.mmFedWireUS}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the cash settlement system used."</li>
  * </ul>
  */
-public class CashSettlementSystemCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CashSettlementSystemCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,12 +105,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through Bank of Korea Wire."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBankOfKoreaWire = new MMCode() {
+	public static final CashSettlementSystemCode BankOfKoreaWire = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BankOfKoreaWire";
 			definition = "Settle money through Bank of Korea Wire.";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "BOKW";
 		}
 	};
@@ -129,12 +135,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through cheque."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCheque = new MMCode() {
+	public static final CashSettlementSystemCode Cheque = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cheque";
 			definition = "Settle money through cheque.";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "CHEC";
 		}
 	};
@@ -159,12 +165,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through UK domestic."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUKDomestic = new MMCode() {
+	public static final CashSettlementSystemCode UKDomestic = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UKDomestic";
 			definition = "Settle money through UK domestic.";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "GBSC";
 		}
 	};
@@ -189,12 +195,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through gross settlement system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGrossSettlementSystem = new MMCode() {
+	public static final CashSettlementSystemCode GrossSettlementSystem = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GrossSettlementSystem";
 			definition = "Settle money through gross settlement system.";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "GROS";
 		}
 	};
@@ -219,12 +225,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through net settlement system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetSettlementSystem = new MMCode() {
+	public static final CashSettlementSystemCode NetSettlementSystem = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NetSettlementSystem";
 			definition = "Settle money through net settlement system.";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "NETS";
 		}
 	};
@@ -249,12 +255,12 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through CHIPS (US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUSChips = new MMCode() {
+	public static final CashSettlementSystemCode USChips = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "USChips";
 			definition = "Settle money through CHIPS (US).";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "USCH";
 		}
 	};
@@ -279,17 +285,21 @@ public class CashSettlementSystemCode {
 	 * definition} = "Settle money through Fedwire (US)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFedWireUS = new MMCode() {
+	public static final CashSettlementSystemCode FedWireUS = new CashSettlementSystemCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FedWireUS";
 			definition = "Settle money through Fedwire (US).";
-			owner_lazy = () -> CashSettlementSystemCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSettlementSystemCode.mmObject();
 			codeName = "USFW";
 		}
 	};
+	final static private LinkedHashMap<String, CashSettlementSystemCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CashSettlementSystemCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -297,10 +307,43 @@ public class CashSettlementSystemCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlementSystemCode";
 				definition = "Specifies the cash settlement system used.";
-				code_lazy = () -> Arrays.asList(CashSettlementSystemCode.mmBankOfKoreaWire, CashSettlementSystemCode.mmCheque, CashSettlementSystemCode.mmUKDomestic, CashSettlementSystemCode.mmGrossSettlementSystem,
-						CashSettlementSystemCode.mmNetSettlementSystem, CashSettlementSystemCode.mmUSChips, CashSettlementSystemCode.mmFedWireUS);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CashSettlementSystemCode.BankOfKoreaWire, com.tools20022.repository.codeset.CashSettlementSystemCode.Cheque,
+						com.tools20022.repository.codeset.CashSettlementSystemCode.UKDomestic, com.tools20022.repository.codeset.CashSettlementSystemCode.GrossSettlementSystem,
+						com.tools20022.repository.codeset.CashSettlementSystemCode.NetSettlementSystem, com.tools20022.repository.codeset.CashSettlementSystemCode.USChips,
+						com.tools20022.repository.codeset.CashSettlementSystemCode.FedWireUS);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(BankOfKoreaWire.getCodeName().get(), BankOfKoreaWire);
+		codesByName.put(Cheque.getCodeName().get(), Cheque);
+		codesByName.put(UKDomestic.getCodeName().get(), UKDomestic);
+		codesByName.put(GrossSettlementSystem.getCodeName().get(), GrossSettlementSystem);
+		codesByName.put(NetSettlementSystem.getCodeName().get(), NetSettlementSystem);
+		codesByName.put(USChips.getCodeName().get(), USChips);
+		codesByName.put(FedWireUS.getCodeName().get(), FedWireUS);
+	}
+
+	public static CashSettlementSystemCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CashSettlementSystemCode[] values() {
+		CashSettlementSystemCode[] values = new CashSettlementSystemCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CashSettlementSystemCode> {
+		@Override
+		public CashSettlementSystemCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CashSettlementSystemCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ConsentTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of consent announced.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ConsentTypeCode#mmChangeInTerms
+ * {@linkplain com.tools20022.repository.codeset.ConsentTypeCode#ChangeInTerms
  * ConsentTypeCode.mmChangeInTerms}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ConsentTypeCode#mmDueAndPayable
+ * {@linkplain com.tools20022.repository.codeset.ConsentTypeCode#DueAndPayable
  * ConsentTypeCode.mmDueAndPayable}</li>
  * </ul>
  * </li>
@@ -54,7 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of consent announced."</li>
  * </ul>
  */
-public class ConsentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ConsentTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -78,12 +84,12 @@ public class ConsentTypeCode {
 	 * definition} = "Change in the terms and conditions of the bond."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmChangeInTerms = new MMCode() {
+	public static final ConsentTypeCode ChangeInTerms = new ConsentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChangeInTerms";
 			definition = "Change in the terms and conditions of the bond.";
-			owner_lazy = () -> ConsentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConsentTypeCode.mmObject();
 			codeName = "CTRM";
 		}
 	};
@@ -108,26 +114,56 @@ public class ConsentTypeCode {
 	 * definition} = "Change in the due and payable conditions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDueAndPayable = new MMCode() {
+	public static final ConsentTypeCode DueAndPayable = new ConsentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DueAndPayable";
 			definition = "Change in the due and payable conditions.";
-			owner_lazy = () -> ConsentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConsentTypeCode.mmObject();
 			codeName = "DUPY";
 		}
 	};
+	final static private LinkedHashMap<String, ConsentTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ConsentTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConsentTypeCode";
 				definition = "Specifies the type of consent announced.";
-				code_lazy = () -> Arrays.asList(ConsentTypeCode.mmChangeInTerms, ConsentTypeCode.mmDueAndPayable);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ConsentTypeCode.ChangeInTerms, com.tools20022.repository.codeset.ConsentTypeCode.DueAndPayable);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ChangeInTerms.getCodeName().get(), ChangeInTerms);
+		codesByName.put(DueAndPayable.getCodeName().get(), DueAndPayable);
+	}
+
+	public static ConsentTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ConsentTypeCode[] values() {
+		ConsentTypeCode[] values = new ConsentTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ConsentTypeCode> {
+		@Override
+		public ConsentTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ConsentTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -34,6 +34,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -71,8 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Collateral.mmStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -125,8 +125,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmResponseStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseStatus";
 			definition = "Specifies the status of the response to a collateral claim, proposal or substitution proposal.";
@@ -172,8 +172,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCollateralManagementCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralManagementCancellationReason";
 			definition = "Specifies the reason for the cancellation of a message.";
@@ -222,8 +222,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSubstitutionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubstitutionStatus";
 			definition = "Provides details about the status of the collateral substitution, either released or returned.";
@@ -270,8 +270,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmInterestRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestRejectionReason";
 			definition = "Provides the interest rejection reason using an ISO 20022 code.";
@@ -320,8 +320,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmMarginCallResponse = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginCallResponse";
 			definition = "Specifies whether the margin call request was sent on a non valuation day or was received after notification time.";
@@ -367,8 +367,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Provides the settlement status of the collateral.";
@@ -415,8 +415,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationReason";
 			definition = "Provides details about the status of the collateral cancellation.";
@@ -469,8 +469,8 @@ public class CollateralStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collateral";
 			definition = "Collateral for which a status is provided.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MaturityRedemptionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the type of redemption at maturity.
@@ -32,25 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmFinalRedemption
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#FinalRedemption
  * MaturityRedemptionTypeCode.mmFinalRedemption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmPartialRedemptionWithoutReduction
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#PartialRedemptionWithoutReduction
  * MaturityRedemptionTypeCode.mmPartialRedemptionWithoutReduction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmPartialRedemptionWithReduction
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#PartialRedemptionWithReduction
  * MaturityRedemptionTypeCode.mmPartialRedemptionWithReduction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmDrawingAtRandom
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#DrawingAtRandom
  * MaturityRedemptionTypeCode.mmDrawingAtRandom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmDrawingProRata
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#DrawingProRata
  * MaturityRedemptionTypeCode.mmDrawingProRata}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmCall
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#Call
  * MaturityRedemptionTypeCode.mmCall}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#mmPut
+ * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#Put
  * MaturityRedemptionTypeCode.mmPut}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates the type of redemption at maturity."</li>
  * </ul>
  */
-public class MaturityRedemptionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MaturityRedemptionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -100,12 +106,12 @@ public class MaturityRedemptionTypeCode {
 	 * "Indicates that the type of redemption at maturity is final."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFinalRedemption = new MMCode() {
+	public static final MaturityRedemptionTypeCode FinalRedemption = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinalRedemption";
 			definition = "Indicates that the type of redemption at maturity is final.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "FRED";
 		}
 	};
@@ -133,12 +139,12 @@ public class MaturityRedemptionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialRedemptionWithoutReduction = new MMCode() {
+	public static final MaturityRedemptionTypeCode PartialRedemptionWithoutReduction = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialRedemptionWithoutReduction";
 			definition = "Indicates that the type of redemption at maturity is partial without reduction.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "PRNR";
 		}
 	};
@@ -166,12 +172,12 @@ public class MaturityRedemptionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialRedemptionWithReduction = new MMCode() {
+	public static final MaturityRedemptionTypeCode PartialRedemptionWithReduction = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialRedemptionWithReduction";
 			definition = "Indicates that the type of redemption at maturity is partial with reduction.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "PRWR";
 		}
 	};
@@ -198,12 +204,12 @@ public class MaturityRedemptionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDrawingAtRandom = new MMCode() {
+	public static final MaturityRedemptionTypeCode DrawingAtRandom = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DrawingAtRandom";
 			definition = "Indicates that the type of redemption at maturity is drawing at random.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "RNDM";
 		}
 	};
@@ -229,12 +235,12 @@ public class MaturityRedemptionTypeCode {
 	 * "Indicates that the type of redemption at maturity is drawing pro-rata."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDrawingProRata = new MMCode() {
+	public static final MaturityRedemptionTypeCode DrawingProRata = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DrawingProRata";
 			definition = "Indicates that the type of redemption at maturity is drawing pro-rata.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "PRRA";
 		}
 	};
@@ -260,12 +266,12 @@ public class MaturityRedemptionTypeCode {
 	 * "Indicates that the type of redemption at maturity is call."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCall = new MMCode() {
+	public static final MaturityRedemptionTypeCode Call = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Call";
 			definition = "Indicates that the type of redemption at maturity is call.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "CALL";
 		}
 	};
@@ -291,17 +297,21 @@ public class MaturityRedemptionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPut = new MMCode() {
+	public static final MaturityRedemptionTypeCode Put = new MaturityRedemptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Put";
 			definition = "Indicates that the type of redemption at maturity is put.";
-			owner_lazy = () -> MaturityRedemptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MaturityRedemptionTypeCode.mmObject();
 			codeName = "PUUT";
 		}
 	};
+	final static private LinkedHashMap<String, MaturityRedemptionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MaturityRedemptionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -309,10 +319,42 @@ public class MaturityRedemptionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MaturityRedemptionTypeCode";
 				definition = "Indicates the type of redemption at maturity.";
-				code_lazy = () -> Arrays.asList(MaturityRedemptionTypeCode.mmFinalRedemption, MaturityRedemptionTypeCode.mmPartialRedemptionWithoutReduction, MaturityRedemptionTypeCode.mmPartialRedemptionWithReduction,
-						MaturityRedemptionTypeCode.mmDrawingAtRandom, MaturityRedemptionTypeCode.mmDrawingProRata, MaturityRedemptionTypeCode.mmCall, MaturityRedemptionTypeCode.mmPut);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MaturityRedemptionTypeCode.FinalRedemption, com.tools20022.repository.codeset.MaturityRedemptionTypeCode.PartialRedemptionWithoutReduction,
+						com.tools20022.repository.codeset.MaturityRedemptionTypeCode.PartialRedemptionWithReduction, com.tools20022.repository.codeset.MaturityRedemptionTypeCode.DrawingAtRandom,
+						com.tools20022.repository.codeset.MaturityRedemptionTypeCode.DrawingProRata, com.tools20022.repository.codeset.MaturityRedemptionTypeCode.Call, com.tools20022.repository.codeset.MaturityRedemptionTypeCode.Put);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(FinalRedemption.getCodeName().get(), FinalRedemption);
+		codesByName.put(PartialRedemptionWithoutReduction.getCodeName().get(), PartialRedemptionWithoutReduction);
+		codesByName.put(PartialRedemptionWithReduction.getCodeName().get(), PartialRedemptionWithReduction);
+		codesByName.put(DrawingAtRandom.getCodeName().get(), DrawingAtRandom);
+		codesByName.put(DrawingProRata.getCodeName().get(), DrawingProRata);
+		codesByName.put(Call.getCodeName().get(), Call);
+		codesByName.put(Put.getCodeName().get(), Put);
+	}
+
+	public static MaturityRedemptionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MaturityRedemptionTypeCode[] values() {
+		MaturityRedemptionTypeCode[] values = new MaturityRedemptionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MaturityRedemptionTypeCode> {
+		@Override
+		public MaturityRedemptionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MaturityRedemptionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

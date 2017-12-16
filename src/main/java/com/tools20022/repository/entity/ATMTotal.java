@@ -111,8 +111,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAttribute mmATMBalance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMBalance";
 			definition = "Total balance of the ATM including reject cassette, but excluding the retract cassette.";
@@ -156,8 +156,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency of the totals.";
@@ -202,8 +202,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAttribute mmATMCurrentNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMCurrentNumber";
 			definition = "Total number of units for non-valued media, excluding reject cassette.";
@@ -248,8 +248,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAttribute mmATMBalanceNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMBalanceNumber";
 			definition = "Total number of units for non-valued media, including reject cassette.";
@@ -294,8 +294,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAttribute mmATMCurrent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMCurrent";
 			definition = "Available amount for dispense in the ATM.";
@@ -348,8 +348,8 @@ public class ATMTotal {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPayment";
 			definition = "Related payments representing the current totals of the ATM.";

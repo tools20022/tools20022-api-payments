@@ -120,8 +120,8 @@ public class AutomaticVariation {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a predefined variation is specified.";
@@ -161,8 +161,8 @@ public class AutomaticVariation {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of predefined variation.";
@@ -211,8 +211,8 @@ public class AutomaticVariation {
 	 */
 	public static final MMBusinessAttribute mmVariationAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariationAmount";
 			definition = "Variation specified as a monetary amount increase or decrease to the undertaking amount.";
@@ -264,8 +264,8 @@ public class AutomaticVariation {
 	 */
 	public static final MMBusinessAssociationEnd mmTrigger = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trigger";
 			definition = "Trigger that causes the variation to come into effect.";

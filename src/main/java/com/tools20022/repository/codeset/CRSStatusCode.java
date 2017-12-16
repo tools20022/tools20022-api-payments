@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CRSStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the Common Reporting Status (CRS) status.
@@ -31,33 +36,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS101
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS101
  * CRSStatusCode.mmCRS101}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS102
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS102
  * CRSStatusCode.mmCRS102}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS103
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS103
  * CRSStatusCode.mmCRS103}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS104
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS104
  * CRSStatusCode.mmCRS104}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS105
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS105
  * CRSStatusCode.mmCRS105}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS106
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS106
  * CRSStatusCode.mmCRS106}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS107
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS107
  * CRSStatusCode.mmCRS107}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS108
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS108
  * CRSStatusCode.mmCRS108}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS109
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS109
  * CRSStatusCode.mmCRS109}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS110
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS110
  * CRSStatusCode.mmCRS110}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS111
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS111
  * CRSStatusCode.mmCRS111}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS112
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS112
  * CRSStatusCode.mmCRS112}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS113
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS113
  * CRSStatusCode.mmCRS113}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#mmCRS114
+ * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS114
  * CRSStatusCode.mmCRS114}</li>
  * </ul>
  * </li>
@@ -76,7 +81,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the Common Reporting Status (CRS) status."</li>
  * </ul>
  */
-public class CRSStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CRSStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -103,12 +109,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS101 = new MMCode() {
+	public static final CRSStatusCode CRS101 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS101";
 			definition = "Account holder type is a passive non-financial entity with one or more controlling persons that are foreign persons.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C101";
 		}
 	};
@@ -133,12 +139,12 @@ public class CRSStatusCode {
 	 * definition} = "Account holder type is a foreign person."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS102 = new MMCode() {
+	public static final CRSStatusCode CRS102 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS102";
 			definition = "Account holder type is a foreign person.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C102";
 		}
 	};
@@ -166,12 +172,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS103 = new MMCode() {
+	public static final CRSStatusCode CRS103 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS103";
 			definition = "Account holder type is a passive foreign non-financial entity without controlling persons that are foreign persons.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C103";
 		}
 	};
@@ -199,12 +205,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS104 = new MMCode() {
+	public static final CRSStatusCode CRS104 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS104";
 			definition = "Account holder type is a financial institution such as a depositary , a custodial institution or a specified insurance company.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C104";
 		}
 	};
@@ -234,12 +240,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS105 = new MMCode() {
+	public static final CRSStatusCode CRS105 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS105";
 			definition = "Account holder type is a financial institution such as an investment entity of a non-participating jurisdiction and managed by another financial institution without one or more controlling persons that are foreign persons.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C105";
 		}
 	};
@@ -269,12 +275,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS106 = new MMCode() {
+	public static final CRSStatusCode CRS106 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS106";
 			definition = "Account holder type is a financial institution such as an investment entity of a non-participating jurisdiction and managed by another financial institution with one or more controlling persons that are foreign persons.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C106";
 		}
 	};
@@ -302,12 +308,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS107 = new MMCode() {
+	public static final CRSStatusCode CRS107 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS107";
 			definition = "Account holder type is a financial institution such as another investment entity.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C107";
 		}
 	};
@@ -336,12 +342,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS108 = new MMCode() {
+	public static final CRSStatusCode CRS108 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS108";
 			definition = "Account holder type is an active non-financial entity such as a corporation for which the stock is regularly traded on an established securities market.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C108";
 		}
 	};
@@ -370,12 +376,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS109 = new MMCode() {
+	public static final CRSStatusCode CRS109 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS109";
 			definition = "Account holder type is an active non-financial entity such as a corporation which is a related entity of a corporation for which the stock is regularly traded on an established securities market.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C109";
 		}
 	};
@@ -403,12 +409,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS110 = new MMCode() {
+	public static final CRSStatusCode CRS110 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS110";
 			definition = "Account holder type is an active non-financial entity such as a government entity.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C110";
 		}
 	};
@@ -436,12 +442,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS111 = new MMCode() {
+	public static final CRSStatusCode CRS111 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS111";
 			definition = "Account holder type is an active non-financial entity such as a central bank.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C111";
 		}
 	};
@@ -469,12 +475,12 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS112 = new MMCode() {
+	public static final CRSStatusCode CRS112 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS112";
 			definition = "Account holder type is an active non-financial entity such as an international organisation.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C112";
 		}
 	};
@@ -499,12 +505,12 @@ public class CRSStatusCode {
 	 * definition} = "Account holder type is not a foreign person."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS113 = new MMCode() {
+	public static final CRSStatusCode CRS113 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS113";
 			definition = "Account holder type is not a foreign person.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C113";
 		}
 	};
@@ -533,27 +539,72 @@ public class CRSStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCRS114 = new MMCode() {
+	public static final CRSStatusCode CRS114 = new CRSStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS114";
 			definition = "Account holder type is a financial institution such as an investment entity of a participating jurisdiction and managed by another financial institution.";
-			owner_lazy = () -> CRSStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C114";
 		}
 	};
+	final static private LinkedHashMap<String, CRSStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CRSStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CRSStatusCode";
 				definition = "Specifies the Common Reporting Status (CRS) status.";
-				code_lazy = () -> Arrays.asList(CRSStatusCode.mmCRS101, CRSStatusCode.mmCRS102, CRSStatusCode.mmCRS103, CRSStatusCode.mmCRS104, CRSStatusCode.mmCRS105, CRSStatusCode.mmCRS106, CRSStatusCode.mmCRS107, CRSStatusCode.mmCRS108,
-						CRSStatusCode.mmCRS109, CRSStatusCode.mmCRS110, CRSStatusCode.mmCRS111, CRSStatusCode.mmCRS112, CRSStatusCode.mmCRS113, CRSStatusCode.mmCRS114);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CRSStatusCode.CRS101, com.tools20022.repository.codeset.CRSStatusCode.CRS102, com.tools20022.repository.codeset.CRSStatusCode.CRS103,
+						com.tools20022.repository.codeset.CRSStatusCode.CRS104, com.tools20022.repository.codeset.CRSStatusCode.CRS105, com.tools20022.repository.codeset.CRSStatusCode.CRS106,
+						com.tools20022.repository.codeset.CRSStatusCode.CRS107, com.tools20022.repository.codeset.CRSStatusCode.CRS108, com.tools20022.repository.codeset.CRSStatusCode.CRS109,
+						com.tools20022.repository.codeset.CRSStatusCode.CRS110, com.tools20022.repository.codeset.CRSStatusCode.CRS111, com.tools20022.repository.codeset.CRSStatusCode.CRS112,
+						com.tools20022.repository.codeset.CRSStatusCode.CRS113, com.tools20022.repository.codeset.CRSStatusCode.CRS114);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CRS101.getCodeName().get(), CRS101);
+		codesByName.put(CRS102.getCodeName().get(), CRS102);
+		codesByName.put(CRS103.getCodeName().get(), CRS103);
+		codesByName.put(CRS104.getCodeName().get(), CRS104);
+		codesByName.put(CRS105.getCodeName().get(), CRS105);
+		codesByName.put(CRS106.getCodeName().get(), CRS106);
+		codesByName.put(CRS107.getCodeName().get(), CRS107);
+		codesByName.put(CRS108.getCodeName().get(), CRS108);
+		codesByName.put(CRS109.getCodeName().get(), CRS109);
+		codesByName.put(CRS110.getCodeName().get(), CRS110);
+		codesByName.put(CRS111.getCodeName().get(), CRS111);
+		codesByName.put(CRS112.getCodeName().get(), CRS112);
+		codesByName.put(CRS113.getCodeName().get(), CRS113);
+		codesByName.put(CRS114.getCodeName().get(), CRS114);
+	}
+
+	public static CRSStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CRSStatusCode[] values() {
+		CRSStatusCode[] values = new CRSStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CRSStatusCode> {
+		@Override
+		public CRSStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CRSStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

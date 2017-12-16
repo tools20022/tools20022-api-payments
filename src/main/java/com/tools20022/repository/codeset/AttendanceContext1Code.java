@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.AttendanceContextCode;
+import com.tools20022.repository.codeset.AttendanceContext1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Human attendance at the POI location during the transaction.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode
- * AttendanceContextCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#mmAttended
+ * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#Attended
  * AttendanceContext1Code.mmAttended}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#mmSemiAttended
+ * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#SemiAttended
  * AttendanceContext1Code.mmSemiAttended}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#mmUnattended
+ * {@linkplain com.tools20022.repository.codeset.AttendanceContext1Code#Unattended
  * AttendanceContext1Code.mmUnattended}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode
+ * AttendanceContextCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Human attendance at the POI location during the transaction."</li>
  * </ul>
  */
-public class AttendanceContext1Code extends AttendanceContextCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AttendanceContext1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +91,12 @@ public class AttendanceContext1Code extends AttendanceContextCode {
 	 * name} = "Attended"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAttended = new MMCode() {
+	public static final AttendanceContext1Code Attended = new AttendanceContext1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Attended";
-			owner_lazy = () -> AttendanceContext1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AttendanceContext1Code.mmObject();
+			codeName = AttendanceContextCode.Attended.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +115,12 @@ public class AttendanceContext1Code extends AttendanceContextCode {
 	 * name} = "SemiAttended"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSemiAttended = new MMCode() {
+	public static final AttendanceContext1Code SemiAttended = new AttendanceContext1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAttended";
-			owner_lazy = () -> AttendanceContext1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AttendanceContext1Code.mmObject();
+			codeName = AttendanceContextCode.SemiAttended.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,15 +139,20 @@ public class AttendanceContext1Code extends AttendanceContextCode {
 	 * name} = "Unattended"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnattended = new MMCode() {
+	public static final AttendanceContext1Code Unattended = new AttendanceContext1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unattended";
-			owner_lazy = () -> AttendanceContext1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AttendanceContext1Code.mmObject();
+			codeName = AttendanceContextCode.Unattended.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, AttendanceContext1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AttendanceContext1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -148,10 +160,38 @@ public class AttendanceContext1Code extends AttendanceContextCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AttendanceContext1Code";
 				definition = "Human attendance at the POI location during the transaction.";
-				code_lazy = () -> Arrays.asList(AttendanceContext1Code.mmAttended, AttendanceContext1Code.mmSemiAttended, AttendanceContext1Code.mmUnattended);
 				trace_lazy = () -> AttendanceContextCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AttendanceContext1Code.Attended, com.tools20022.repository.codeset.AttendanceContext1Code.SemiAttended,
+						com.tools20022.repository.codeset.AttendanceContext1Code.Unattended);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Attended.getCodeName().get(), Attended);
+		codesByName.put(SemiAttended.getCodeName().get(), SemiAttended);
+		codesByName.put(Unattended.getCodeName().get(), Unattended);
+	}
+
+	public static AttendanceContext1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AttendanceContext1Code[] values() {
+		AttendanceContext1Code[] values = new AttendanceContext1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AttendanceContext1Code> {
+		@Override
+		public AttendanceContext1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AttendanceContext1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

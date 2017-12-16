@@ -121,8 +121,8 @@ public class PerformanceFactors {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Calculation for which the performance factors are obtained.";
@@ -165,8 +165,8 @@ public class PerformanceFactors {
 	 */
 	public static final MMBusinessAttribute mmCorporateActionFactor = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionFactor";
 			definition = "Value of the NAV before all corporate events of the valuation date, divided by the value of the NAV after the corporate event.";
@@ -216,8 +216,8 @@ public class PerformanceFactors {
 	 */
 	public static final MMBusinessAttribute mmCumulativeCorporateActionFactor = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CumulativeCorporateActionFactor";
 			definition = "Value of the NAV before a corporate event, divided by the value of the NAV after the corporate event, accumulated for a number of corporate events over the defined period of time.";
@@ -273,8 +273,8 @@ public class PerformanceFactors {
 	 */
 	public static final MMBusinessAssociationEnd mmAccumulationPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccumulationPeriod";
 			definition = "Period of time for the calculation of the cumulative corporate action factor.";
@@ -314,8 +314,8 @@ public class PerformanceFactors {
 	 */
 	public static final MMBusinessAttribute mmNormalPerformance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NormalPerformance";
 			definition = "Normal performance value of the NAV.";

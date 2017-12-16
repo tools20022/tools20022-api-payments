@@ -40,6 +40,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.StandingOrder
+ * StandingOrder}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -78,9 +81,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * CreditTransfer.mmRelatedStandingOrder}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.StandingOrder
- * StandingOrder}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -135,8 +135,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmZeroSweepIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ZeroSweepIndicator";
 			definition = "Indicates whether the liquidity transfer standing order is defined as a zero sweeping order. When true, the liquidity transfer standing order will transfer all amount of money out of the account so the resulting balance is  zero.";
@@ -191,8 +191,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCashServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashServices";
 			definition = "Cash management services which provide standing order facilities.";
@@ -233,8 +233,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies if the account is debited or credited by the standing order.";
@@ -290,8 +290,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditTransfer";
 			definition = "Standing order causes a payment instruction at regular intervals, eg, as specified by its frequency.";
@@ -334,8 +334,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAttribute mmFloorAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FloorAmount";
 			definition = "Minimum amount of money that should remain on the debtor's account, for cash management purposes.";
@@ -388,8 +388,8 @@ public class CashStandingOrder extends StandingOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Cash account for which a standing order applies.";

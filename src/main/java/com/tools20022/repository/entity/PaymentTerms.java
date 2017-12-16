@@ -61,14 +61,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.InterestPaymentDateRange2
- * InterestPaymentDateRange2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -84,6 +76,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.Loan#mmInterestPaymentsSchedule
  * Loan.mmInterestPaymentsSchedule}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.InterestPaymentDateRange2
+ * InterestPaymentDateRange2}</li>
  * </ul>
  * </li>
  * <li>
@@ -144,8 +144,8 @@ public class PaymentTerms {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContractTranche1.mmAmount, InterestPaymentDateRange2.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Specifies that the payment terms apply to an amount.";
@@ -202,8 +202,8 @@ public class PaymentTerms {
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmInterestRate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Specifies that the payment conditions apply to a percentage of the amount due.";
@@ -255,8 +255,8 @@ public class PaymentTerms {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentPeriod";
 			definition = "Period to which the payment terms apply.";
@@ -303,8 +303,8 @@ public class PaymentTerms {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentObligation";
 			definition = "Payment obligation for which payment terms are specified.";
@@ -346,8 +346,8 @@ public class PaymentTerms {
 	 */
 	public static final MMBusinessAttribute mmPaymentTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentTime";
 			definition = "Specifies the time of the payment relative to an event such as product delivery or receipt of invoice. ";
@@ -400,8 +400,8 @@ public class PaymentTerms {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentScheduleType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentScheduleType";
 			definition = "Related type of the payment schedule provided in the contract.";
@@ -447,8 +447,8 @@ public class PaymentTerms {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedLoan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedLoan";
 			definition = "Schedule for the payment of the interests due on the related loan.";

@@ -106,8 +106,8 @@ public class Expiry {
 	 */
 	public static final MMBusinessAttribute mmExpiryDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDateTime";
 			definition = "Date and time when the expiry of the undertaking takes effect.";
@@ -159,8 +159,8 @@ public class Expiry {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which expiry information is specified.";
@@ -201,8 +201,8 @@ public class Expiry {
 	 */
 	public static final MMBusinessAttribute mmExpiryCondition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryCondition";
 			definition = "Condition that indicates when the undertaking will cease to be available at the place for presentation. ";
@@ -247,8 +247,8 @@ public class Expiry {
 	 */
 	public static final MMBusinessAttribute mmOpenEndedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpenEndedIndicator";
 			definition = "Specifies whether the expiry period is open ended.";
@@ -299,8 +299,8 @@ public class Expiry {
 	 */
 	public static final MMBusinessAssociationEnd mmExpiryPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpiryPlace";
 			definition = "Place where the expiry of the undertaking takes effect.";

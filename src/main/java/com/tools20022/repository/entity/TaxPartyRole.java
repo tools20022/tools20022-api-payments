@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -44,19 +46,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.TaxPartyRole#mmVATRegistrationNumber
  * TaxPartyRole.mmVATRegistrationNumber}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty1 TaxParty1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxAuthorisation1
- * TaxAuthorisation1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty2 TaxParty2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty3 TaxParty3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingTaxIdentification1
- * BillingTaxIdentification1}</li>
  * </ul>
  * </li>
  * <li>
@@ -77,8 +66,6 @@ import java.util.List;
  * TradeParty2.mmTaxParty}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -87,6 +74,19 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.TaxPayer TaxPayer}</li>
  * <li>{@linkplain com.tools20022.repository.entity.DebitSideTaxDebtor
  * DebitSideTaxDebtor}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty1 TaxParty1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxAuthorisation1
+ * TaxAuthorisation1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty2 TaxParty2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty3 TaxParty3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingTaxIdentification1
+ * BillingTaxIdentification1}</li>
  * </ul>
  * </li>
  * <li>
@@ -140,8 +140,8 @@ public class TaxPartyRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Identifies the taxfor which a party plays a role.";
@@ -187,8 +187,8 @@ public class TaxPartyRole extends Role {
 	public static final MMBusinessAttribute mmVATRegistrationNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingTaxIdentification1.mmVATRegistrationNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VATRegistrationNumber";
 			definition = "Value added tax (VAT) registration number.";

@@ -118,8 +118,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAttribute mmClassActionNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassActionNumber";
 			definition = "Reference assigned by a court to a class action.";
@@ -163,8 +163,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAttribute mmLeadPlaintiffDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LeadPlaintiffDeadline";
 			definition = "Last day an investor can become a lead plaintiff.";
@@ -208,8 +208,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAttribute mmCourtApprovalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CourtApprovalDate";
 			definition = "Date upon which the High Court provided approval.";
@@ -265,8 +265,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAssociationEnd mmClaimPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClaimPeriod";
 			definition = "Period assigned by the court in a class action. It determines the client's eligible transactions that will be included in the class action and used to determine the resulting entitlement.";
@@ -305,8 +305,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAttribute mmFilingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FilingDate";
 			definition = "Date on which the action was filed at the applicable court.";
@@ -353,8 +353,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAttribute mmHearingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HearingDate";
 			definition = "Date for the hearing between the plaintiff and defendant, as set by the court.";
@@ -407,8 +407,8 @@ public class ClassAction {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateEvent";
 			definition = "Corporate event for which class action is specified.";

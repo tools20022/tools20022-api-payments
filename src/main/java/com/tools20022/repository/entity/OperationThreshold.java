@@ -50,21 +50,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.MaximumAmountByPeriod1
- * MaximumAmountByPeriod1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Authorisation2 Authorisation2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.entity.BankOperation#mmOperationThreshold
  * BankOperation.mmOperationThreshold}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.MaximumAmountByPeriod1
+ * MaximumAmountByPeriod1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Authorisation2 Authorisation2}</li>
  * </ul>
  * </li>
  * <li>
@@ -121,8 +121,8 @@ public class OperationThreshold {
 	 */
 	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankOperation";
 			definition = "Bank operation for which a threshold is specified.";
@@ -162,8 +162,8 @@ public class OperationThreshold {
 	 */
 	public static final MMBusinessAttribute mmMininumAmountPerTransaction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MininumAmountPerTransaction";
 			definition = "Lower limit for the operation.";
@@ -230,8 +230,8 @@ public class OperationThreshold {
 	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MaximumAmountByPeriod1.mmMaximumAmount, Authorisation2.mmMaximumAmountByTransaction, Authorisation2.mmMaximumAmountByPeriod, Authorisation2.mmMaximumAmountByBulkSubmission);
-			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAmount";
 			definition = "Maximum amount allowed over a specific period of time and/or amount which is the upper limit for an operation.";

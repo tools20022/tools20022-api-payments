@@ -196,8 +196,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmProposedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProposedRate";
 			definition = "Rate proposed in a remarketing of variable rate notes.";
@@ -243,8 +243,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmOversubscriptionRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionRate";
 			definition = "Rate of allowed over-subscription.";
@@ -293,8 +293,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmInformationToComplyWith = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationToComplyWith";
 			definition = "Provides information conditions to the account owner that are to be complied with, eg, not open to US/Canadian residents, QIB or SIL to be provided.";
@@ -341,8 +341,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmSubscriptionCostDebitDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionCostDebitDate";
 			definition = "Date by which cash must be in place in order to take part in the event.";
@@ -400,8 +400,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumAllowedOverSubscription = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAllowedOverSubscription";
 			definition = "A maximum percentage of shares available through the over subscription privilege, usually a percentage of the basic subscription shares, eg, an account owner subscribing to 100 shares may over subscribe to a maximum of 50 additional shares when the over subscription maximum is 50%.";
@@ -441,8 +441,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmProrationRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProrationRate";
 			definition = "Proportionate allocation used for the offer.";
@@ -498,8 +498,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmApplicableRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableRate";
 			definition = "Rate applicable to the event announced, eg, redemption rate for a redemption event.";
@@ -550,8 +550,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmFrontEndOddLotQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FrontEndOddLotQuantity";
 			definition = "Specifies that if an order is prorated holders of odd lots who tender their full position will not have tendered position prorated but rather accepted in full.";
@@ -601,8 +601,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmBackEndOddLotQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BackEndOddLotQuantity";
 			definition = "Represents the presence of a back end odd lot provision and the quantity of equity required after proration to be eligible for this privilege.";
@@ -646,8 +646,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmTransformationRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransformationRate";
 			definition = "Rate used to determine the cash consideration split across outturn settlement transactions that are the result of a transformation of the parent transaction.";
@@ -695,8 +695,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmProrationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProrationDate";
 			definition = "Date (and time) at which an issuer will determine the proration amount/quantity of an offer.";
@@ -752,8 +752,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmCompulsoryPurchasePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CompulsoryPurchasePeriod";
 			definition = "Period during a take-over where any outstanding equity must be purchased by the take-over company.";
@@ -796,8 +796,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmPercentageSought = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageSought";
 			definition = "Percentage of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
@@ -843,8 +843,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmBidInterval = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BidInterval";
 			definition = "Acceptable price increment used for submitting a bid.";
@@ -900,8 +900,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumPrice";
 			definition = "Maximum or cap price at which a holder can bid, e.g. on a Dutch auction offer.";
@@ -951,8 +951,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumPrice";
 			definition = "Minimum or floor price at which a holder can bid, e.g. on a Dutch auction offer.";
@@ -1002,8 +1002,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantity";
 			definition = "Maximum number of securities the offeror is requesting to complete the event.";
@@ -1054,8 +1054,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantitySought = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantitySought";
 			definition = "Minimum quantity of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
@@ -1105,8 +1105,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmBaseDenomination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BaseDenomination";
 			definition = "The minimum integral amount of securities that each account owner must have remaining after the called amounts are applied.";
@@ -1147,8 +1147,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmCalculationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationMethod";
 			definition = "The method of calculation of drawings and partial redemptions.";
@@ -1197,8 +1197,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAttribute mmAdditionalSubscriptionCost = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalSubscriptionCost";
 			definition = "Additional costs - coming on top of the subscription costs - which the subscriber should pay as per the subscription process.";
@@ -1252,8 +1252,8 @@ public class BiddingConditions {
 	 */
 	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Event";
 			definition = "Event to which the bidding conditions apply.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NovationStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the novation.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#mmNovation
+ * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#Novation
  * NovationStatusCode.mmNovation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#mmNoNovation
+ * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#NoNovation
  * NovationStatusCode.mmNoNovation}</li>
  * </ul>
  * </li>
@@ -54,7 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of the novation."</li>
  * </ul>
  */
-public class NovationStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NovationStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -78,12 +84,12 @@ public class NovationStatusCode {
 	 * definition} = "Transaction is a novation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNovation = new MMCode() {
+	public static final NovationStatusCode Novation = new NovationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Novation";
 			definition = "Transaction is a novation.";
-			owner_lazy = () -> NovationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NovationStatusCode.mmObject();
 			codeName = "NOVA";
 		}
 	};
@@ -108,26 +114,56 @@ public class NovationStatusCode {
 	 * definition} = "Transaction is not a novation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoNovation = new MMCode() {
+	public static final NovationStatusCode NoNovation = new NovationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoNovation";
 			definition = "Transaction is not a novation.";
-			owner_lazy = () -> NovationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NovationStatusCode.mmObject();
 			codeName = "NONO";
 		}
 	};
+	final static private LinkedHashMap<String, NovationStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NovationStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NovationStatusCode";
 				definition = "Specifies the status of the novation.";
-				code_lazy = () -> Arrays.asList(NovationStatusCode.mmNovation, NovationStatusCode.mmNoNovation);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NovationStatusCode.Novation, com.tools20022.repository.codeset.NovationStatusCode.NoNovation);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Novation.getCodeName().get(), Novation);
+		codesByName.put(NoNovation.getCodeName().get(), NoNovation);
+	}
+
+	public static NovationStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NovationStatusCode[] values() {
+		NovationStatusCode[] values = new NovationStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NovationStatusCode> {
+		@Override
+		public NovationStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NovationStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

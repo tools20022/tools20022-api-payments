@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
+ * SecuritiesTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -160,9 +163,6 @@ import java.util.List;
  * BuyOrSellIndicationOfInterest.mmTwoLegTransaction}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
- * SecuritiesTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -225,8 +225,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmReturnLegInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReturnLegInstruction";
 			definition = "Specifies whether, for a securities lending/borrowing settlement transaction, the lender will instruct the return leg as agreed with the borrower.";
@@ -276,8 +276,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of securities financing transaction, that is, repurchase agreement, reverse repurchase agreement, securities lending or securities borrowing.";
@@ -323,8 +323,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmTerminationDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationDateTime";
 			definition = "Closing date/time or maturity date/time of the repo transaction.";
@@ -369,8 +369,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmRateChangeDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateChangeDateTime";
 			definition = "Date/Time at which rate change has taken place.";
@@ -419,8 +419,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmRevaluationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RevaluationIndicator";
 			definition = "Specifies whether the collateral position should be subject to automatic revaluation by the account servicer.";
@@ -469,8 +469,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmInterestPayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestPayment";
 			definition = "Specifies whether the interest is to be paid to the collateral taker. If set to no, the interest is paid to the collateral giver.";
@@ -518,8 +518,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmVariableRateSupport = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateSupport";
 			definition = "Index or support rate used together with the spread to calculate the repurchase rate.";
@@ -565,8 +565,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmRepurchaseRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRate";
 			definition = "Rate to be used to recalculate the repurchase amount.";
@@ -615,8 +615,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmStockLoanMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockLoanMargin";
 			definition = "Percentage mark-up on a loan consideration used to reflect the lender's risk.";
@@ -668,8 +668,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest to be paid on the transaction amount.";
@@ -717,8 +717,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmRepurchaseSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseSpread";
 			definition = "Repurchase spread expressed as a rate; margin over or under an index that determines the repurchase rate.";
@@ -761,8 +761,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmTransactionCallDelay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionCallDelay";
 			definition = "Minimum number of days' notice a counterparty needs for terminating the transaction.";
@@ -811,8 +811,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmTotalNumberOfCollateralInstructions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfCollateralInstructions";
 			definition = "Indicates the total Number of collateral instructions involved in the transaction.";
@@ -858,8 +858,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmDealAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealAmount";
 			definition = "Deal amount of the second leg.";
@@ -908,8 +908,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmForfeitRepurchaseAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForfeitRepurchaseAmount";
 			definition = "Fixed amount which has to be paid (instead of interest) in the case of a recall.";
@@ -958,8 +958,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumAmount";
 			definition = "Difference between the cash amount of the first leg and the cash amount of the \nsecond leg of the repurchase agreement.";
@@ -1008,8 +1008,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmTerminationAmountPerPieceOfCollateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationAmountPerPieceOfCollateral";
 			definition = "Amount of money to be settled per piece of collateral to terminate the transaction.";
@@ -1056,8 +1056,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmTerminationTransactionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationTransactionAmount";
 			definition = "Total amount of money to be settled to terminate the transaction.";
@@ -1106,8 +1106,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmMaturityDateModification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaturityDateModification";
 			definition = "Specifies whether the maturity date of the securities financing transaction may be modified.";
@@ -1153,8 +1153,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmEarliestCallBackDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarliestCallBackDate";
 			definition = "Earliest date/time at which the call back can take place.";
@@ -1200,8 +1200,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmOpeningSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningSettlementDate";
 			definition = "Date and time at which the securities are to be delivered or received.";
@@ -1247,8 +1247,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmRepurchaseType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseType";
 			definition = "Specifies the type of repurchase transaction.";
@@ -1301,8 +1301,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmEndPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndPrice";
 			definition = "Negotiated fixed price of the security to buy it back.";
@@ -1345,8 +1345,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmSpreadTransaction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpreadTransaction";
 			definition = "Specifies that there will be one price and one transaction when two contracts are carried out simultaneously, one to buy and the other one to sell with two different expiration dates.";
@@ -1403,8 +1403,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancingAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingAgreement";
 			definition = "Provides the contractual details related to the agreement between parties.";
@@ -1447,8 +1447,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmOpeningSettlementAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningSettlementAmount";
 			definition = "Total amount of money to be paid or received in exchange for the securities at the opening of a securities financing transaction.";
@@ -1504,8 +1504,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmClosingLegExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingLegExecution";
 			definition = "Repayment of the previously received cash by one party in exchange of the return of the security by the counterparty.";
@@ -1556,8 +1556,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmOpeningLegExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningLegExecution";
 			definition = "Transfer of cash to a party against the legal transfer of securities. The cash receiver agrees to buy the same security from the counterparty at a fixed price at some later date.";
@@ -1608,8 +1608,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process which is the source of a securities financing process.";
@@ -1648,8 +1648,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique identification of the repurchase agreement.";

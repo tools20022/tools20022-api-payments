@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.LiquidityLimitTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the precise type of liquidity management limit.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#mmGlobal
+ * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#Global
  * LiquidityLimitTypeCode.mmGlobal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#mmCashReservation
+ * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#CashReservation
  * LiquidityLimitTypeCode.mmCashReservation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#mmCriticalPaymentReservation
+ * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#CriticalPaymentReservation
  * LiquidityLimitTypeCode.mmCriticalPaymentReservation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#mmNetSSSReservation
+ * {@linkplain com.tools20022.repository.codeset.LiquidityLimitTypeCode#NetSSSReservation
  * LiquidityLimitTypeCode.mmNetSSSReservation}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the precise type of liquidity management limit."</li>
  * </ul>
  */
-public class LiquidityLimitTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class LiquidityLimitTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -97,12 +103,12 @@ public class LiquidityLimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGlobal = new MMCode() {
+	public static final LiquidityLimitTypeCode Global = new LiquidityLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Global";
 			definition = "Maximum value set by either the transaction administrator or by a member for the participation of a member in the system. The global limit may be expressed as a credit or debit maximum value and is taken into account by the transaction administrator when processing transaction inside the system. With the help of the global limit, the direct participant may limit the use of liquidity when clearing specific type of payments.";
-			owner_lazy = () -> LiquidityLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LiquidityLimitTypeCode.mmObject();
 			codeName = "GLBL";
 		}
 	};
@@ -130,12 +136,12 @@ public class LiquidityLimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCashReservation = new MMCode() {
+	public static final LiquidityLimitTypeCode CashReservation = new LiquidityLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashReservation";
 			definition = "Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing cash withdrawals.";
-			owner_lazy = () -> LiquidityLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LiquidityLimitTypeCode.mmObject();
 			codeName = "CARE";
 		}
 	};
@@ -164,12 +170,12 @@ public class LiquidityLimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCriticalPaymentReservation = new MMCode() {
+	public static final LiquidityLimitTypeCode CriticalPaymentReservation = new LiquidityLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CriticalPaymentReservation";
 			definition = "Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing critical payments called urgent payments.";
-			owner_lazy = () -> LiquidityLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LiquidityLimitTypeCode.mmObject();
 			codeName = "CPAR";
 		}
 	};
@@ -198,17 +204,21 @@ public class LiquidityLimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetSSSReservation = new MMCode() {
+	public static final LiquidityLimitTypeCode NetSSSReservation = new LiquidityLimitTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NetSSSReservation";
 			definition = "Amount set aside by a participant to reserve liquidity from its own account, exclusively for the settlement of the multilateral cash balance stemming from the Net Security Settlement System.";
-			owner_lazy = () -> LiquidityLimitTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LiquidityLimitTypeCode.mmObject();
 			codeName = "NSSR";
 		}
 	};
+	final static private LinkedHashMap<String, LiquidityLimitTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected LiquidityLimitTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -216,9 +226,38 @@ public class LiquidityLimitTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LiquidityLimitTypeCode";
 				definition = "Specifies the precise type of liquidity management limit.";
-				code_lazy = () -> Arrays.asList(LiquidityLimitTypeCode.mmGlobal, LiquidityLimitTypeCode.mmCashReservation, LiquidityLimitTypeCode.mmCriticalPaymentReservation, LiquidityLimitTypeCode.mmNetSSSReservation);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LiquidityLimitTypeCode.Global, com.tools20022.repository.codeset.LiquidityLimitTypeCode.CashReservation,
+						com.tools20022.repository.codeset.LiquidityLimitTypeCode.CriticalPaymentReservation, com.tools20022.repository.codeset.LiquidityLimitTypeCode.NetSSSReservation);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Global.getCodeName().get(), Global);
+		codesByName.put(CashReservation.getCodeName().get(), CashReservation);
+		codesByName.put(CriticalPaymentReservation.getCodeName().get(), CriticalPaymentReservation);
+		codesByName.put(NetSSSReservation.getCodeName().get(), NetSSSReservation);
+	}
+
+	public static LiquidityLimitTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static LiquidityLimitTypeCode[] values() {
+		LiquidityLimitTypeCode[] values = new LiquidityLimitTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, LiquidityLimitTypeCode> {
+		@Override
+		public LiquidityLimitTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(LiquidityLimitTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

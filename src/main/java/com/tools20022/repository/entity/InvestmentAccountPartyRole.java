@@ -37,6 +37,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.AccountPartyRole
+ * AccountPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -72,9 +75,6 @@ import java.util.List;
  * CRSStatus.mmInvestmentAccountParty}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.AccountPartyRole
- * AccountPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -128,8 +128,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 */
 	public static final MMBusinessAttribute mmOwnershipBeneficiaryRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnershipBeneficiaryRate";
 			definition = "Percentage of ownership or of beneficial ownership of the shares/units in the account. All subsequent subscriptions and or redemptions will be allocated using the same percentage.";
@@ -185,8 +185,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Specifies the account for which the party plays a role. It is derived from the association between AccountPartyRole and Account.";
@@ -228,8 +228,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 */
 	public static final MMBusinessAttribute mmFATCAFormType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAFormType";
 			definition = "Type of Foreign Account Tax Compliance Act (FATCA) form submitted by the investor.";
@@ -283,8 +283,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmFATCAStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAStatus";
 			definition = "Foreign Account Tax Compliance Act (FATCA) status of the investor.";
@@ -330,8 +330,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmCRSStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CRSStatus";
 			definition = "Common Reporting Standard (CRS) status of the investor.";

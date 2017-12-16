@@ -110,8 +110,8 @@ public class DefaultFund {
 	 */
 	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount required by the Clearing Member to participate to the Default Fund.";
@@ -164,8 +164,8 @@ public class DefaultFund {
 	 */
 	public static final MMBusinessAssociationEnd mmContribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Contribution";
 			definition = "Contribution information for a default fund.";
@@ -214,8 +214,8 @@ public class DefaultFund {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystem";
 			definition = "Clearing system for which assets are posted by participants in the default fund.";

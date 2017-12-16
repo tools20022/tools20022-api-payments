@@ -40,6 +40,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
+ * ContactPoint}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -115,19 +118,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PostalAddress6 PostalAddress6}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AddressModification1
- * AddressModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PostalAddress11
- * PostalAddress11}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PostalAddress19
- * PostalAddress19}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -198,9 +188,19 @@ import java.util.List;
  * PartyIdentification77.mmPostalAddress}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
- * ContactPoint}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress6 PostalAddress6}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AddressModification1
+ * AddressModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress11
+ * PostalAddress11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress19
+ * PostalAddress19}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -263,8 +263,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmAddressType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmAddressType, PostalAddress11.mmAddressType, PostalAddress19.mmAddressType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressType";
 			definition = "Specifies the type of address.";
@@ -324,8 +324,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmStreetName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmStreetName, PostalAddress11.mmStreetName, PostalAddress19.mmStreetName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StreetName";
 			definition = "Name of a street or thoroughfare.";
@@ -386,8 +386,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmStreetBuildingIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmBuildingNumber, PostalAddress11.mmBuildingNumber, PostalAddress19.mmBuildingNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StreetBuildingIdentification";
 			definition = "Number that identifies the position of a building on a street.";
@@ -447,8 +447,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmPostCodeIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmPostCode, PostalAddress11.mmPostCode, PostalAddress19.mmPostCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostCodeIdentification";
 			definition = "Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.";
@@ -510,8 +510,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmTownName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmTownName, DateAndPlaceOfBirth.mmCityOfBirth, PostalAddress11.mmTownName, PostalAddress19.mmTownName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TownName";
 			definition = "Name of a built-up area, with defined boundaries, and a local government.";
@@ -572,8 +572,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmState = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmCountrySubDivision, PostalAddress11.mmCountrySubDivision, PostalAddress19.mmCountrySubDivision);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "State";
 			definition = "Organised political community or area forming a part of a federation.";
@@ -627,8 +627,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmBuildingName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmBuildingName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuildingName";
 			definition = "Name of the building or house.";
@@ -681,8 +681,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmFloor = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmFloor);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Floor";
 			definition = "Floor or storey within a building.";
@@ -736,8 +736,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmDistrictName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress19.mmDistrictName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistrictName";
 			definition = "Name of a district, ie, a part of a town or region.";
@@ -794,8 +794,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmRegionIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ResidenceLocation1Choice.mmArea);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegionIdentification";
 			definition = "Identification of an administrative division of a country, state, or territory.";
@@ -849,8 +849,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmCountyIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress19.mmTownLocationName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CountyIdentification";
 			definition = "Identifier of a county.";
@@ -906,8 +906,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmPostOfficeBox = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmPostBox);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostOfficeBox";
 			definition = "Numbered box in a post office, assigned to a person or organisation, where letters are kept until called for.";
@@ -963,8 +963,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmProvince = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmProvinceOfBirth);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Province";
 			definition = "A territory governed as an administrative or political unit of a country.";
@@ -1025,8 +1025,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmDepartment = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmDepartment, PostalAddress11.mmDepartment, PostalAddress19.mmDepartment);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Department";
 			definition = "Identification of a division of a large organisation or building.";
@@ -1087,8 +1087,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmSubDepartment = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmSubDepartment, PostalAddress11.mmSubDepartment, PostalAddress19.mmSubDepartment);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubDepartment";
 			definition = "Identification of a sub-division of a large organisation or building.";
@@ -1140,8 +1140,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Specifies a place.";
@@ -1189,8 +1189,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmChequeIssue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequeIssue";
 			definition = "Cheque issue information for which a delivery address is specified.";
@@ -1248,8 +1248,8 @@ public class PostalAddress extends ContactPoint {
 	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionCertificate1.mmBankAccountDomiciliationCountry, ShipmentAttribute1.mmCountryOfCounterParty);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country of the address.";
@@ -1297,8 +1297,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which a postal address is valid.";
@@ -1336,8 +1336,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmSuiteIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuiteIdentification";
 			definition = "Identification of a suite or apartment.";
@@ -1385,8 +1385,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmBuildingIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuildingIdentification";
 			definition = "Identification of a building, within a group of buildings, that have the same street number identifier.";
@@ -1432,8 +1432,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmMailDeliverySubLocation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MailDeliverySubLocation";
 			definition = "Specific place to deliver mail within a pre-defined postal address.";
@@ -1478,8 +1478,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmBlock = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Block";
 			definition = "Area of land bounded by streets.";
@@ -1524,8 +1524,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmLot = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lot";
 			definition = "Identification of an allotment of land.";
@@ -1570,8 +1570,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmDistrictSubDivisionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistrictSubDivisionIdentification";
 			definition = "Identification of a sub-division of a district.";
@@ -1624,8 +1624,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmMailingInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MailingInstructions";
 			definition = "Specifies the characteristics of an address.";
@@ -1671,8 +1671,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmPhysicalDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalDelivery";
 			definition = "Physical delivery information related to an address.";

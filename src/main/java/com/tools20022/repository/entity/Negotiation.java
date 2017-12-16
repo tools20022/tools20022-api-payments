@@ -123,8 +123,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAttribute mmTradingMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingMethod";
 			definition = "Method used by the trading parties to negotiate and/or execute a deal.";
@@ -178,8 +178,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeExecution";
 			definition = "Execution of a trade as a result of a successful negotiation between two trading parties.";
@@ -225,8 +225,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSystem";
 			definition = "Electronic system through which parties are able to negotiate trades.";
@@ -264,8 +264,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAttribute mmNegotiationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NegotiationIdentification";
 			definition = "Reference of a negotiation.";
@@ -316,8 +316,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quote";
 			definition = "Quote details shown in a negotiation process.";
@@ -365,8 +365,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAssociationEnd mmIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicationOfInterest";
 			definition = "Indication of interest process which is the start of the negotiation.";
@@ -412,8 +412,8 @@ public class Negotiation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Result of a successful negotiation.";

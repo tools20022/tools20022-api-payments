@@ -35,6 +35,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole
+ * InvestmentFundPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -55,10 +59,6 @@ import java.util.List;
  * InvestmentAccount.mmAccountForInvestmentFundProcessing}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole
- * InvestmentFundPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -111,8 +111,8 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 	 */
 	public static final MMBusinessAttribute mmMainFundOrderDeskIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MainFundOrderDeskIndicator";
 			definition = "Indicates whether the fund order desk is the principal entity appointed by the fund to which orders should be submitted.";
@@ -168,8 +168,8 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmMainFundOrderDeskAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MainFundOrderDeskAccount";
 			definition = "Settlement details for the main fund order desk as defined in the prospectus of the investment fund class.";

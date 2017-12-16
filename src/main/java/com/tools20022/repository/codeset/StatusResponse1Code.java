@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.StatusResponse1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the response.
@@ -32,16 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#mmNoResponseYet
+ * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#NoResponseYet
  * StatusResponse1Code.mmNoResponseYet}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#mmPartialResponse
+ * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#PartialResponse
  * StatusResponse1Code.mmPartialResponse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#mmCompleteResponse
+ * {@linkplain com.tools20022.repository.codeset.StatusResponse1Code#CompleteResponse
  * StatusResponse1Code.mmCompleteResponse}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.StatusResponseCode
+ * StatusResponseCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -63,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of the response."</li>
  * </ul>
  */
-public class StatusResponse1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class StatusResponse1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -82,11 +91,12 @@ public class StatusResponse1Code {
 	 * name} = "NoResponseYet"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoResponseYet = new MMCode() {
+	public static final StatusResponse1Code NoResponseYet = new StatusResponse1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoResponseYet";
-			owner_lazy = () -> StatusResponse1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatusResponse1Code.mmObject();
+			codeName = StatusResponseCode.NoResponseYet.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -105,11 +115,12 @@ public class StatusResponse1Code {
 	 * name} = "PartialResponse"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialResponse = new MMCode() {
+	public static final StatusResponse1Code PartialResponse = new StatusResponse1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialResponse";
-			owner_lazy = () -> StatusResponse1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatusResponse1Code.mmObject();
+			codeName = StatusResponseCode.PartialResponse.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -128,15 +139,20 @@ public class StatusResponse1Code {
 	 * name} = "CompleteResponse"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCompleteResponse = new MMCode() {
+	public static final StatusResponse1Code CompleteResponse = new StatusResponse1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CompleteResponse";
-			owner_lazy = () -> StatusResponse1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StatusResponse1Code.mmObject();
+			codeName = StatusResponseCode.CompleteResponse.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, StatusResponse1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected StatusResponse1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -144,9 +160,38 @@ public class StatusResponse1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusResponse1Code";
 				definition = "Specifies the status of the response.";
-				code_lazy = () -> Arrays.asList(StatusResponse1Code.mmNoResponseYet, StatusResponse1Code.mmPartialResponse, StatusResponse1Code.mmCompleteResponse);
+				trace_lazy = () -> StatusResponseCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StatusResponse1Code.NoResponseYet, com.tools20022.repository.codeset.StatusResponse1Code.PartialResponse,
+						com.tools20022.repository.codeset.StatusResponse1Code.CompleteResponse);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(NoResponseYet.getCodeName().get(), NoResponseYet);
+		codesByName.put(PartialResponse.getCodeName().get(), PartialResponse);
+		codesByName.put(CompleteResponse.getCodeName().get(), CompleteResponse);
+	}
+
+	public static StatusResponse1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static StatusResponse1Code[] values() {
+		StatusResponse1Code[] values = new StatusResponse1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, StatusResponse1Code> {
+		@Override
+		public StatusResponse1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(StatusResponse1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

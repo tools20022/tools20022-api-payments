@@ -206,8 +206,8 @@ public class Trade {
 	public static final MMBusinessAttribute mmTradeDateTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionDates2.mmTradeDate, TransactionDates2.mmTransactionDateTime, Garnishment1.mmDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeDateTime";
 			definition = "Specifies the date/time on which the trade was executed.";
@@ -259,8 +259,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCommission";
 			definition = "Commission parameters associated with a trade.";
@@ -298,8 +298,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date on which the trade is settled, ie, the amounts are due.";
@@ -356,8 +356,8 @@ public class Trade {
 	public static final MMBusinessAttribute mmEndDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionDates2.mmEndDate, TradeContract1.mmMaturityDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndDate";
 			definition = "End date of the trade, such as a treasury trade or a derivative trade.";
@@ -410,8 +410,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeRelatedIdentifications = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeRelatedIdentifications";
 			definition = "Specifies the different identifications associated with a trade.";
@@ -448,8 +448,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute mmAllocationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocationIndicator";
 			definition = "Specifies the type of allocation for a trade.";
@@ -493,8 +493,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute mmCollateralisationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralisationType";
 			definition = "Specifies the type of collateralisation.";
@@ -539,8 +539,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute mmBlockIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockIndicator";
 			definition = "Indicates whether the trade is a block or single trade.";
@@ -588,8 +588,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute mmSettlementNetting = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementNetting";
 			definition = "Indicates to the clearing member whether the trade is eligible for settlement netting or not.";
@@ -641,8 +641,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTradePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePartyRole";
 			definition = "Role played by a party in relation with a trade.";
@@ -691,8 +691,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Obligation";
 			definition = "Specifies the trade which originates the obligation to deliver a product, cash or securities..";
@@ -738,8 +738,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedNegotiation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedNegotiation";
 			definition = "Negotiation process which is the source of the treasury trade.";
@@ -785,8 +785,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmGoverningDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GoverningDocument";
 			definition = "Legal agreement applicable to a trade.";
@@ -837,8 +837,8 @@ public class Trade {
 	public static final MMBusinessAttribute mmStartDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionDates2.mmStartDate, TradeContract1.mmStartDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StartDate";
 			definition = "Start date of the trade, such as a treasury trade or a derivative trade.";
@@ -891,8 +891,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System involved in the processing of a trade such as clearing, settlement or matching system.";
@@ -936,8 +936,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Asset";
 			definition = "Asset which is the object of a trade.";
@@ -980,8 +980,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Market";
 			definition = "Market where a trade is negotiated and executed.";
@@ -1027,8 +1027,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guarantee";
 			definition = "Guarantee which covers a trade.";
@@ -1074,8 +1074,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Transfer of proceeds.";
@@ -1119,8 +1119,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Order";
 			definition = "Specifies the order related to a trade.";
@@ -1165,8 +1165,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmLeg = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Leg";
 			definition = "Separate transactions which combined together form a trade.";
@@ -1212,8 +1212,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the trade belongs.";
@@ -1262,8 +1262,8 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Process which compares and matches trade information with entries in an account.";

@@ -46,6 +46,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -93,14 +95,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth
- * DateAndPlaceOfBirth}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -131,8 +125,14 @@ import java.util.List;
  * Household.mmMember}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth
+ * DateAndPlaceOfBirth}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -180,8 +180,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmGender = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Gender";
 			definition = "Specifies the gender of the person.";
@@ -225,8 +225,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which a person communicates.";
@@ -279,8 +279,8 @@ public class Person extends Party {
 	public static final MMBusinessAttribute mmBirthDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmBirthDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BirthDate";
 			definition = "Date on which a person is born.";
@@ -332,8 +332,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfBirth = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfBirth";
 			definition = "Place (for instance Country and City) where a person was born.";
@@ -371,8 +371,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmProfession = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Profession";
 			definition = "Name of the occupation or job of a person.";
@@ -419,8 +419,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmResidentialStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResidentialStatus";
 			definition = "Residential status of an individual, for example, non-permanent resident.";
@@ -474,8 +474,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmNationality = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Nationality";
 			definition = "Specifies the country where a person was born or is legally accepted as belonging to the country.";
@@ -517,8 +517,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmMinorIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinorIndicator";
 			definition = "Indicates whether the person is a legal minor. It may depend on the nationality, the domicile country or the transaction in which the person is involved.";
@@ -570,8 +570,8 @@ public class Person extends Party {
 	public static final MMBusinessAttribute mmBusinessFunctionTitle = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TaxAuthorisation1.mmTitle);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessFunctionTitle";
 			definition = "Title of the function in an organisation.";
@@ -639,8 +639,8 @@ public class Person extends Party {
 	public static final MMBusinessAssociationEnd mmPersonIdentification = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingTaxIdentification1.mmTaxContact, CashAccountCharacteristics2.mmAccountServicerContact);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonIdentification";
 			definition = "Specific identification assigned to a person. It is derived from the association between Party and PartyIdentification.";
@@ -685,8 +685,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmEmployingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployingParty";
 			definition = "Party which is the employer of a person.";
@@ -733,8 +733,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingAttendee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingAttendee";
 			definition = "Specifies the meeting attendee which is an individual person.";
@@ -781,8 +781,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRole";
 			definition = "Role performed by the person for the proxy voting process.";
@@ -828,8 +828,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmPreAssignedProxyPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAssignedProxyPerson";
 			definition = "Specifies the person who is the pre-assigned proxy for a meeting.";
@@ -875,8 +875,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmPersonProfile = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonProfile";
 			definition = "Information to support the Know Your Customer processes.";
@@ -922,8 +922,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmContactPersonRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPersonRole";
 			definition = "Contact role played by a person.";
@@ -972,8 +972,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmHousehold = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Household";
 			definition = "Specifies the members of a household in relation with the ownership of an account.";
@@ -1012,8 +1012,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmCivilStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CivilStatus";
 			definition = "Specifies the civil status of a person.";
@@ -1057,8 +1057,8 @@ public class Person extends Party {
 	 */
 	public static final MMBusinessAttribute mmDeathDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeathDate";
 			definition = "Date on which a person is dead.";

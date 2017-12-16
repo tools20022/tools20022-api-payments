@@ -107,8 +107,8 @@ public class MarketClaim {
 	 */
 	public static final MMBusinessAttribute mmMarketClaimAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketClaimAmount";
 			definition = "Amount of money resulting from a market claim.";
@@ -155,8 +155,8 @@ public class MarketClaim {
 	 */
 	public static final MMBusinessAttribute mmMarketClaimTrackingEndDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketClaimTrackingEndDate";
 			definition = "Date by which the depository stops monitoring activities of the event, for instance, accounting and tracking activities for due bills end.";
@@ -210,8 +210,8 @@ public class MarketClaim {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateEvent";
 			definition = "Corporate event for which market claim information is provided.";

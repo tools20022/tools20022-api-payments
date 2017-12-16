@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Distribution
+ * Distribution}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -159,9 +162,6 @@ import java.util.List;
  * SecuritiesAndCashDistribution.mmSecuritiesDistribution}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Distribution
- * Distribution}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -219,8 +219,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumHolding";
 			definition = "Indicates the maximum quantity of financial instrument that must be held in order to be entitled to take part in the event.";
@@ -271,8 +271,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingNumerator";
 			definition = "The quantity of interim securities awarded for a given quantity of underlying shares.";
@@ -322,8 +322,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingDenominator";
 			definition = "The quantity of interim securities awarded for a given quantity of underlying shares.";
@@ -373,8 +373,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingDenominator";
 			definition = "Quantity of new securities that will be derived by the exercise of a given quantity of intermediate securities.";
@@ -424,8 +424,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingNumerator";
 			definition = "Quantity of new securities that will be derived by the exercise of a given quantity of intermediate securities.";
@@ -474,8 +474,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHolding";
 			definition = "Indicates the minimum quantity of financial instrument that must be held in order to be entitled to take part in the event.";
@@ -522,8 +522,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmCashFractionsPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashFractionsPrice";
 			definition = "Price paid by the issuer for the remaining fraction.";
@@ -572,8 +572,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmSubscriptionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPrice";
 			definition = "The amount of money required per unit for the purchase of an instrument.";
@@ -621,8 +621,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmReinvestmentPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentPrice";
 			definition = "Price at which a cash disbursement will be reinvested into a security.";
@@ -664,8 +664,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmIntermediateSecurityExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecurityExpiryDate";
 			definition = "Date/time at which a privilege or an intermediate security is no longer available.";
@@ -710,8 +710,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmTradingAvailabilityDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingAvailabilityDate";
 			definition = "Date/time at which a security starts or resumes trading.";
@@ -757,8 +757,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmOfferExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferExpiryDate";
 			definition = "Date/time at which a privilege or a security is no longer available.";
@@ -804,8 +804,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmOversubscriptionRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionRate";
 			definition = "Rate of oversubscription allowed by the issuer.";
@@ -851,8 +851,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmOversubscriptionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionAmount";
 			definition = "Amount of oversubscription allowed by the issuer.";
@@ -900,8 +900,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmReinvestmentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentAmount";
 			definition = "Amount at which a cash disbursement will be reinvested into a security.";
@@ -947,8 +947,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmReinvestmentRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentRate";
 			definition = "Rate at which a cash disbursement will be reinvested into a security.";
@@ -997,8 +997,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmLoyalityPremiumIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LoyalityPremiumIndicator";
 			definition = "Dividend, in addition to regular dividends, payable to loyal (time, size, amount) investors.";
@@ -1047,8 +1047,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmOversubscriptionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionIndicator";
 			definition = "Indicates that the event permits the holder to subscribe to more securities than the underlying position allows.";
@@ -1097,8 +1097,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmRenounceableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenounceableIndicator";
 			definition = "Indicates whether the intermediate securities held by the beneficial owner or agent can be sold.";
@@ -1144,8 +1144,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmDecimalPrecision = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecimalPrecision";
 			definition = "Indicates the number of digits to the right of the decimal point.";
@@ -1191,8 +1191,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmReinvestmentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentType";
 			definition = "Specifies whether the investment will be net or gross.";
@@ -1239,8 +1239,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmRevocableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RevocableIndicator";
 			definition = "Action or event can be reversed at anytime, or otherwise annulled.";
@@ -1295,8 +1295,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAndCashDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAndCashDistribution";
 			definition = "Distribution for which the cash distribution elements are provided.";
@@ -1336,8 +1336,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmFractionTreatment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionTreatment";
 			definition = "Specifies how the fractions will be treated.";
@@ -1386,8 +1386,8 @@ public class SecuritiesDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmIntermediateSecurityDistributionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecurityDistributionIndicator";
 			definition = "Indicates whether there will be a distribution of intermediate securities or privilege.";

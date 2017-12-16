@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of tax identification number.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode#mmTaxIdentificationNumber
+ * {@linkplain com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode#TaxIdentificationNumber
  * TaxIdentificationNumberTypeCode.mmTaxIdentificationNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode#mmGlobalIntermediaryIdentificationNumber
+ * {@linkplain com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode#GlobalIntermediaryIdentificationNumber
  * TaxIdentificationNumberTypeCode.mmGlobalIntermediaryIdentificationNumber}</li>
  * </ul>
  * </li>
@@ -54,7 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of tax identification number."</li>
  * </ul>
  */
-public class TaxIdentificationNumberTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TaxIdentificationNumberTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -78,12 +84,12 @@ public class TaxIdentificationNumberTypeCode {
 	 * definition} = "Tax identification number."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTaxIdentificationNumber = new MMCode() {
+	public static final TaxIdentificationNumberTypeCode TaxIdentificationNumber = new TaxIdentificationNumberTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxIdentificationNumber";
 			definition = "Tax identification number.";
-			owner_lazy = () -> TaxIdentificationNumberTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode.mmObject();
 			codeName = "GTIN";
 		}
 	};
@@ -108,26 +114,57 @@ public class TaxIdentificationNumberTypeCode {
 	 * definition} = "Global intermediary tax identification number."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGlobalIntermediaryIdentificationNumber = new MMCode() {
+	public static final TaxIdentificationNumberTypeCode GlobalIntermediaryIdentificationNumber = new TaxIdentificationNumberTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GlobalIntermediaryIdentificationNumber";
 			definition = "Global intermediary tax identification number.";
-			owner_lazy = () -> TaxIdentificationNumberTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode.mmObject();
 			codeName = "GIIN";
 		}
 	};
+	final static private LinkedHashMap<String, TaxIdentificationNumberTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TaxIdentificationNumberTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxIdentificationNumberTypeCode";
 				definition = "Specifies the type of tax identification number.";
-				code_lazy = () -> Arrays.asList(TaxIdentificationNumberTypeCode.mmTaxIdentificationNumber, TaxIdentificationNumberTypeCode.mmGlobalIntermediaryIdentificationNumber);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode.TaxIdentificationNumber,
+						com.tools20022.repository.codeset.TaxIdentificationNumberTypeCode.GlobalIntermediaryIdentificationNumber);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(TaxIdentificationNumber.getCodeName().get(), TaxIdentificationNumber);
+		codesByName.put(GlobalIntermediaryIdentificationNumber.getCodeName().get(), GlobalIntermediaryIdentificationNumber);
+	}
+
+	public static TaxIdentificationNumberTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TaxIdentificationNumberTypeCode[] values() {
+		TaxIdentificationNumberTypeCode[] values = new TaxIdentificationNumberTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TaxIdentificationNumberTypeCode> {
+		@Override
+		public TaxIdentificationNumberTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TaxIdentificationNumberTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

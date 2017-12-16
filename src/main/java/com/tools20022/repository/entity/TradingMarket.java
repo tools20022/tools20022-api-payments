@@ -39,6 +39,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Market Market}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -142,8 +144,6 @@ import java.util.List;
  * StockExchange.mmMarket}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Market Market}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -199,8 +199,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmTradedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradedSecurity";
 			definition = "Security which is traded on a specific market.";
@@ -239,8 +239,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of a market in which transactions take place.";
@@ -292,8 +292,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmListedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListedSecurity";
 			definition = "Security whch is listed on a specific market.";
@@ -339,8 +339,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmSourceOfPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SourceOfPrice";
 			definition = "Party which provides a price on a market.";
@@ -388,8 +388,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeLotSize = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeLotSize";
 			definition = "Specifies the number of securities that have to be traded in one lot .";
@@ -436,8 +436,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumTradedNominalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumTradedNominalQuantity";
 			definition = "Minimum number of securities that can be traded.";
@@ -477,8 +477,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmListingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListingDate";
 			definition = "Date/time at which the security is listed at the specific exchange.";
@@ -531,8 +531,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which a place of trade is requested.";
@@ -571,8 +571,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmTradingCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingCurrency";
 			definition = "Currency of the trading.";
@@ -625,8 +625,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumTradedNominalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumTradedNominalQuantity";
 			definition = "Miaximum number of securities that can be traded.";
@@ -673,8 +673,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmStockExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockExchange";
 			definition = "Stock exchange which operates on a specific market.";
@@ -726,8 +726,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmQuoteLot = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteLot";
 			definition = "Lot size associated with the price. Most exchanges require that pricing be quoted in round lot size. However, some exchanges have pricing quoted in many different lot sizes, for example, Latin America, some Asian markets, Turkey.";
@@ -779,8 +779,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmRoundLot = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundLot";
 			definition = "Minimum quantity of securities that can be purchased without incurring a larger fee. For example, if the round lot size is 100 and the trade is for 125  shares, then 100 will be processed without a fee and the remaining 25 will incur a service fee for being an odd lot size.";
@@ -827,8 +827,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSession";
 			definition = "Trading session associated with a market.";
@@ -875,8 +875,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmListedSecurityTradingIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListedSecurityTradingIdentification";
 			definition = "Trading identification used on this trading market.";
@@ -916,8 +916,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmDefaultCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultCurrency";
 			definition = "Default currency for the securities trading on this market.";
@@ -963,8 +963,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmFirstTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstTradingDate";
 			definition = "First date/time at which the security is eligible for trading.";
@@ -1010,8 +1010,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAttribute mmLastTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LastTradingDate";
 			definition = "Last date/time at which the security is eligible for trading.";
@@ -1063,8 +1063,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which the place has been defined.";
@@ -1112,8 +1112,8 @@ public class TradingMarket extends Market {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPlaceOfSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPlaceOfSettlement";
 			definition = "Place of settlement for which a settlement market is specified.";

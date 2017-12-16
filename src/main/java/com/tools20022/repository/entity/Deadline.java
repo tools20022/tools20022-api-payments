@@ -118,8 +118,8 @@ public class Deadline {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionEvent";
 			definition = "Related corporate action event.";
@@ -160,8 +160,8 @@ public class Deadline {
 	 */
 	public static final MMBusinessAttribute mmMarketDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketDeadline";
 			definition = "Date by which the action should have been completed.  This deadline is set by the issuer.";
@@ -208,8 +208,8 @@ public class Deadline {
 	 */
 	public static final MMBusinessAttribute mmIntermediaryDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediaryDeadline";
 			definition = "Date by which the action should have been completed. This deadline is set by an intermediary.";
@@ -256,8 +256,8 @@ public class Deadline {
 	 */
 	public static final MMBusinessAttribute mmSTPDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "STPDeadline";
 			definition = "Date by which the action should have been completed. This deadline is set by the issuer. (STP or Electronic mode)";
@@ -308,8 +308,8 @@ public class Deadline {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeeting";
 			definition = "Meeting for which deadlines are specified.";

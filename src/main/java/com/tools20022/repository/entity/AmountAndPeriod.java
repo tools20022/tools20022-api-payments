@@ -104,8 +104,8 @@ public class AmountAndPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Period";
 			definition = "Period related to an amount.";
@@ -145,8 +145,8 @@ public class AmountAndPeriod {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of this period.";

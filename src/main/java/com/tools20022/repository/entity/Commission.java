@@ -41,6 +41,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
+ * Adjustment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -106,9 +109,6 @@ import java.util.List;
  * SecuritiesQuoteVariable.mmCommission}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
- * Adjustment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -164,8 +164,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCommissionWaiving = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionWaiving";
 			definition = "Voluntary non-enforcement of the right to all or part of a commission.";
@@ -210,8 +210,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Trade for which commission parameters are specified.";
@@ -250,8 +250,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCommissionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionType";
 			definition = "Service for which the commission is asked or paid.";
@@ -296,8 +296,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Basis";
 			definition = "Basis upon which a commission is charged, eg, flat fee.";
@@ -345,8 +345,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCommercialAgreementReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialAgreementReference";
 			definition = "Reference to the agreement established between the fund and another party. This element, amongst others, defines the conditions of the commissions.";
@@ -390,8 +390,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationDate";
 			definition = "Date/time at which the commission is calculated.";
@@ -436,8 +436,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Commission expressed as a percentage.";
@@ -482,8 +482,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCommissionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionAmount";
 			definition = "Commission expressed as an amount of money.";
@@ -534,8 +534,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmBroker = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Broker";
 			definition = "Broker to which a commission is paid.";
@@ -580,8 +580,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCommissionPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionPartyRole";
 			definition = "Role played by a party in the context of commissions.";
@@ -626,8 +626,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account used for the commission fees.";
@@ -673,8 +673,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedQuote";
 			definition = "Quote which includes a commission.";
@@ -714,8 +714,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmSplitRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitRate";
 			definition = "Percentage of the total commission received by an intermediary.";
@@ -759,8 +759,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency in which the commission has to be settled.";
@@ -814,8 +814,8 @@ public class Commission extends Adjustment {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionFeesAndCharges = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionFeesAndCharges";
 			definition = "Corporate action fees to which commission fees are added.";

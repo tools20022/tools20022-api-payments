@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the legal constraint on the power of attorney.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#mmNotary
+ * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#Notary
  * PowerOfAttorneyLegalisationCode.mmNotary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#mmLocalAuthority
+ * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#LocalAuthority
  * PowerOfAttorneyLegalisationCode.mmLocalAuthority}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#mmApostilled
+ * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#Apostilled
  * PowerOfAttorneyLegalisationCode.mmApostilled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#mmConsularized
+ * {@linkplain com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode#Consularized
  * PowerOfAttorneyLegalisationCode.mmConsularized}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates the legal constraint on the power of attorney."</li>
  * </ul>
  */
-public class PowerOfAttorneyLegalisationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PowerOfAttorneyLegalisationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class PowerOfAttorneyLegalisationCode {
 	 * "Indicates that the power of attorney must be legalised by a notary."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotary = new MMCode() {
+	public static final PowerOfAttorneyLegalisationCode Notary = new PowerOfAttorneyLegalisationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Notary";
 			definition = "Indicates that the power of attorney must be legalised by a notary.";
-			owner_lazy = () -> PowerOfAttorneyLegalisationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.mmObject();
 			codeName = "NOTA";
 		}
 	};
@@ -124,12 +130,12 @@ public class PowerOfAttorneyLegalisationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLocalAuthority = new MMCode() {
+	public static final PowerOfAttorneyLegalisationCode LocalAuthority = new PowerOfAttorneyLegalisationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LocalAuthority";
 			definition = "Indicates that the power of attorney must be legalised by a local authority.";
-			owner_lazy = () -> PowerOfAttorneyLegalisationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.mmObject();
 			codeName = "LOCA";
 		}
 	};
@@ -157,12 +163,12 @@ public class PowerOfAttorneyLegalisationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmApostilled = new MMCode() {
+	public static final PowerOfAttorneyLegalisationCode Apostilled = new PowerOfAttorneyLegalisationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Apostilled";
 			definition = "Indicates that the power of attorney must be legalised by a legal officer.";
-			owner_lazy = () -> PowerOfAttorneyLegalisationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.mmObject();
 			codeName = "APOS";
 		}
 	};
@@ -190,17 +196,21 @@ public class PowerOfAttorneyLegalisationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmConsularized = new MMCode() {
+	public static final PowerOfAttorneyLegalisationCode Consularized = new PowerOfAttorneyLegalisationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Consularized";
 			definition = "Indicates that the power of attorney must be legalised by a consular officer.";
-			owner_lazy = () -> PowerOfAttorneyLegalisationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.mmObject();
 			codeName = "COUN";
 		}
 	};
+	final static private LinkedHashMap<String, PowerOfAttorneyLegalisationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PowerOfAttorneyLegalisationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -208,9 +218,38 @@ public class PowerOfAttorneyLegalisationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PowerOfAttorneyLegalisationCode";
 				definition = "Indicates the legal constraint on the power of attorney.";
-				code_lazy = () -> Arrays.asList(PowerOfAttorneyLegalisationCode.mmNotary, PowerOfAttorneyLegalisationCode.mmLocalAuthority, PowerOfAttorneyLegalisationCode.mmApostilled, PowerOfAttorneyLegalisationCode.mmConsularized);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.Notary, com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.LocalAuthority,
+						com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.Apostilled, com.tools20022.repository.codeset.PowerOfAttorneyLegalisationCode.Consularized);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Notary.getCodeName().get(), Notary);
+		codesByName.put(LocalAuthority.getCodeName().get(), LocalAuthority);
+		codesByName.put(Apostilled.getCodeName().get(), Apostilled);
+		codesByName.put(Consularized.getCodeName().get(), Consularized);
+	}
+
+	public static PowerOfAttorneyLegalisationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PowerOfAttorneyLegalisationCode[] values() {
+		PowerOfAttorneyLegalisationCode[] values = new PowerOfAttorneyLegalisationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PowerOfAttorneyLegalisationCode> {
+		@Override
+		public PowerOfAttorneyLegalisationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PowerOfAttorneyLegalisationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,26 +20,30 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PriorityCode;
+import com.tools20022.repository.codeset.Priority2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the priority level of an event.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PriorityCode PriorityCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.Priority2Code#mmHigh
+ * <li>{@linkplain com.tools20022.repository.codeset.Priority2Code#High
  * Priority2Code.mmHigh}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Priority2Code#mmNormal
+ * <li>{@linkplain com.tools20022.repository.codeset.Priority2Code#Normal
  * Priority2Code.mmNormal}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PriorityCode PriorityCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -61,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the priority level of an event."</li>
  * </ul>
  */
-public class Priority2Code extends PriorityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Priority2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -80,11 +85,12 @@ public class Priority2Code extends PriorityCode {
 	 * name} = "High"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHigh = new MMCode() {
+	public static final Priority2Code High = new Priority2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "High";
-			owner_lazy = () -> Priority2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Priority2Code.mmObject();
+			codeName = PriorityCode.High.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -103,15 +109,20 @@ public class Priority2Code extends PriorityCode {
 	 * name} = "Normal"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNormal = new MMCode() {
+	public static final Priority2Code Normal = new Priority2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Normal";
-			owner_lazy = () -> Priority2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Priority2Code.mmObject();
+			codeName = PriorityCode.Normal.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Priority2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Priority2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -119,10 +130,36 @@ public class Priority2Code extends PriorityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Priority2Code";
 				definition = "Specifies the priority level of an event.";
-				code_lazy = () -> Arrays.asList(Priority2Code.mmHigh, Priority2Code.mmNormal);
 				trace_lazy = () -> PriorityCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Priority2Code.High, com.tools20022.repository.codeset.Priority2Code.Normal);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(High.getCodeName().get(), High);
+		codesByName.put(Normal.getCodeName().get(), Normal);
+	}
+
+	public static Priority2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Priority2Code[] values() {
+		Priority2Code[] values = new Priority2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Priority2Code> {
+		@Override
+		public Priority2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Priority2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -117,8 +117,8 @@ public class AustralianBSBIdentification {
 	 */
 	public static final MMBusinessAttribute mmExtensiveBranchNetworkIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExtensiveBranchNetworkIdentification";
 			definition = "Extensive branch network list of the Australian Bank State Branch (BSB) Code. The codes are used for identifying Australian financial institutions, as assigned by the Australian Payments Clearing Association (APCA).";
@@ -168,8 +168,8 @@ public class AustralianBSBIdentification {
 	 */
 	public static final MMBusinessAttribute mmSmallNetworkIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SmallNetworkIdentification";
 			definition = "Small network list of the Australian Bank State Branch (BSB) Code. The codes are used for identifying Australian financial institutions , as assigned by the Australian Payments Clearing Association (APCA).";
@@ -226,8 +226,8 @@ public class AustralianBSBIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingSystemMemberIdentificationType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystemMemberIdentificationType";
 			definition = "Clearing system member identification for which an Australian BSB identification is provided.";
@@ -268,8 +268,8 @@ public class AustralianBSBIdentification {
 	 */
 	public static final MMBusinessAttribute mmClearingSystemMember = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AustralianBSBIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystemMember";
 			definition = "Clearing system for which an Australian code is provided.";

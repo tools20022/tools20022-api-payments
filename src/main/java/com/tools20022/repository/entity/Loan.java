@@ -39,6 +39,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Debt Debt}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -50,17 +52,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.Loan#mmIntraCompanyLoanIndicator
  * Loan.mmIntraCompanyLoanIndicator}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.LoanContractTranche1
- * LoanContractTranche1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SyndicatedLoan1
- * SyndicatedLoan1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.LoanContract1 LoanContract1}</li>
  * </ul>
  * </li>
  * <li>
@@ -82,8 +73,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * LoanContract1.mmSyndicatedLoan}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Debt Debt}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.LoanContractTranche1
+ * LoanContractTranche1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SyndicatedLoan1
+ * SyndicatedLoan1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.LoanContract1 LoanContract1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -151,8 +151,8 @@ public class Loan extends Debt {
 	public static final MMBusinessAttribute mmPrincipalAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmLoanPrincipalAmount, RegisteredContract5.mmLoanPrincipalAmount, SyndicatedLoan1.mmAmount, LoanContract1.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrincipalAmount";
 			definition = "Amount of money borrowed, or part of that amount which remains unpaid (excluding interest).";
@@ -214,8 +214,8 @@ public class Loan extends Debt {
 	public static final MMBusinessAssociationEnd mmInterestPaymentsSchedule = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmInterestSchedule);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestPaymentsSchedule";
 			definition = "Schedule for the payment of the interests due on the loan.";
@@ -269,8 +269,8 @@ public class Loan extends Debt {
 	public static final MMBusinessAttribute mmIntraCompanyLoanIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmInterCompanyLoan, RegisteredContract5.mmInterCompanyLoan, LoanContract1.mmIntraCompanyLoan);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntraCompanyLoanIndicator";
 			definition = "Loan is an intra-company loan.";

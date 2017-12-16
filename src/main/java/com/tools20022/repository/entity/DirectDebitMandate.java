@@ -43,6 +43,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -79,26 +81,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.DirectDebitMandate#mmPointInTime
  * DirectDebitMandate.mmPointInTime}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Mandate10 Mandate10}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateAcceptance5
- * MandateAcceptance5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Mandate9 Mandate9}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateRelatedInformation11
- * MandateRelatedInformation11}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Mandate11 Mandate11}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateAdjustment1
- * MandateAdjustment1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateOccurrences4
- * MandateOccurrences4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Mandate8 Mandate8}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11
- * AmendmentInformationDetails11}</li>
  * </ul>
  * </li>
  * <li>
@@ -141,8 +123,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * OriginalMandate5Choice.mmOriginalMandate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Mandate10 Mandate10}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateAcceptance5
+ * MandateAcceptance5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Mandate9 Mandate9}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateRelatedInformation11
+ * MandateRelatedInformation11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Mandate11 Mandate11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateAdjustment1
+ * MandateAdjustment1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateOccurrences4
+ * MandateOccurrences4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Mandate8 Mandate8}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11
+ * AmendmentInformationDetails11}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -199,8 +199,8 @@ public class DirectDebitMandate extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDirectDebit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDirectDebit";
 			definition = "Direct debit to which a mandate applies.";
@@ -255,8 +255,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAttribute mmFinalCollectionDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateRelatedInformation11.mmFinalCollectionDate, MandateOccurrences4.mmFinalCollectionDate, AmendmentInformationDetails11.mmOriginalFinalCollectionDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinalCollectionDate";
 			definition = "Date of the final collection of a direct debit as per the mandate.";
@@ -323,8 +323,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAttribute mmFrequency = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateRelatedInformation11.mmFrequency, MandateAdjustment1.mmCategory, MandateOccurrences4.mmFrequency, AmendmentInformationDetails11.mmOriginalFrequency);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Frequency";
 			definition = "Regularity with which direct debit instructions are to be created and processed.";
@@ -382,8 +382,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAttribute mmFirstCollectionDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateRelatedInformation11.mmFirstCollectionDate, MandateOccurrences4.mmFirstCollectionDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstCollectionDate";
 			definition = "Date of the first collection of a direct debit as per the mandate.";
@@ -457,8 +457,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAssociationEnd mmMandatePaymentType = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(Mandate10.mmType, MandateTypeInformation2.mmLocalInstrument, Mandate9.mmType, Mandate11.mmType, Mandate8.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MandatePaymentType";
 			definition = "Set of elements that further identifies the type of mandate (service level and/or paper or electronic) being requested or given by the initiating party.";
@@ -535,8 +535,8 @@ public class DirectDebitMandate extends Mandate {
 		{
 			derivation_lazy = () -> Arrays.asList(Mandate10.mmFirstCollectionAmount, Mandate10.mmCollectionAmount, Mandate9.mmFirstCollectionAmount, Mandate9.mmCollectionAmount, Mandate11.mmFirstCollectionAmount,
 					Mandate11.mmCollectionAmount, MandateAdjustment1.mmAmount, Mandate8.mmFirstCollectionAmount, Mandate8.mmCollectionAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollectionAmount";
 			definition = "Fixed amount that the debtor has agreed will be collected from their account.";
@@ -599,8 +599,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Mandate10.mmMaximumAmount, Mandate9.mmMaximumAmount, Mandate11.mmMaximumAmount, Mandate8.mmMaximumAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAmount";
 			definition = "Maximum amount that may be collected from the debtor's account, per instruction.";
@@ -649,8 +649,8 @@ public class DirectDebitMandate extends Mandate {
 	 */
 	public static final MMBusinessAttribute mmPreNotification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreNotification";
 			definition = "Indicates wether a pre-notification must be sent by the creditor to the debtor before a direct debit occurs";
@@ -698,8 +698,8 @@ public class DirectDebitMandate extends Mandate {
 	 */
 	public static final MMBusinessAttribute mmPreNotificationThreshold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreNotificationThreshold";
 			definition = "Specifies the number of days before the direct debit for notifying the debtor.";
@@ -754,8 +754,8 @@ public class DirectDebitMandate extends Mandate {
 	public static final MMBusinessAttribute mmClassification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateTypeInformation2.mmClassification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Classification";
 			definition = "Type of direct debit instruction.";
@@ -804,8 +804,8 @@ public class DirectDebitMandate extends Mandate {
 	 */
 	public static final MMBusinessAttribute mmPointInTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PointInTime";
 			definition = "Specifies a frequency in terms of an exact point in time or moment within a specified period type.";

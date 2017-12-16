@@ -35,6 +35,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PaymentPartyRole
+ * PaymentPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -51,9 +54,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Scheme.mmCreditorRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PaymentPartyRole
- * PaymentPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -106,8 +106,8 @@ public class CreditorRole extends PaymentPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmSchemeIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SchemeIdentification";
 			definition = "Credit party that signs a direct debit mandate.";

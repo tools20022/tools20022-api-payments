@@ -35,6 +35,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -93,8 +95,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesOrder.mmStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -143,8 +143,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmConfirmationRejectedStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConfirmationRejectedStatusReason";
 			definition = "Specifies the reason for a confirmation rejected status.";
@@ -190,8 +190,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmConfirmationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConfirmationStatus";
 			definition = "Status of the confirmation of a status order.";
@@ -237,8 +237,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationStatus";
 			definition = "Status of the cancellation of a securities order.";
@@ -284,8 +284,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmPartiallySettledStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartiallySettledStatusReason";
 			definition = "Reason for the partially settled status.";
@@ -331,8 +331,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSuspendedStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuspendedStatusReason";
 			definition = "Reason for the suspended status.";
@@ -378,8 +378,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmListOrderStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListOrderStatus";
 			definition = "Specifies the status of a list order.";
@@ -432,8 +432,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Order for which a status is specified.";
@@ -480,8 +480,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundOrder";
 			definition = "Investment fund order for which a status is provided.";
@@ -528,8 +528,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmCumulativeQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CumulativeQuantity";
 			definition = "Total quantity (for instance number of shares) filled.";
@@ -576,8 +576,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmRemainingQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemainingQuantity";
 			definition = "Quantity opened for further execution.";
@@ -617,8 +617,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmConditionallyAcceptedStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConditionallyAcceptedStatus";
 			definition = "Reason for the conditionally accepted status.";
@@ -665,8 +665,8 @@ public class SecuritiesOrderStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmOrderStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderStatus";
 			definition = "Indicates the status of an order at a specific point in time.";

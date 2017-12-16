@@ -43,6 +43,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Limit Limit}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -65,8 +67,6 @@ import java.util.List;
  * CashManagementService.mmRiskManagementLimit}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Limit Limit}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -125,8 +125,8 @@ public class RiskManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmCashManagementService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashManagementService";
 			definition = "Cash management service which offers limit management services.";
@@ -175,8 +175,8 @@ public class RiskManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmCounterparty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Counterparty";
 			definition = "Identification of the system member for which the limit is established.";

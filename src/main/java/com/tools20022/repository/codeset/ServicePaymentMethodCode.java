@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ServicePaymentMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the method for the payment of the tax applied on the services.
@@ -32,22 +37,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmBalanceCompensable
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#BalanceCompensable
  * ServicePaymentMethodCode.mmBalanceCompensable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmHardCharge
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#HardCharge
  * ServicePaymentMethodCode.mmHardCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmPreviouslyCharged
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#PreviouslyCharged
  * ServicePaymentMethodCode.mmPreviouslyCharged}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmInvoicedSeparately
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#InvoicedSeparately
  * ServicePaymentMethodCode.mmInvoicedSeparately}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmWaived
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#Waived
  * ServicePaymentMethodCode.mmWaived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#mmFree
+ * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#Free
  * ServicePaymentMethodCode.mmFree}</li>
  * </ul>
  * </li>
@@ -80,7 +85,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Defines the method for the payment of the tax applied on the services."</li>
  * </ul>
  */
-public class ServicePaymentMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ServicePaymentMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -109,12 +115,12 @@ public class ServicePaymentMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBalanceCompensable = new MMCode() {
+	public static final ServicePaymentMethodCode BalanceCompensable = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BalanceCompensable";
 			definition = "Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end.  Used in the USA.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "BCMP";
 		}
 	};
@@ -143,12 +149,12 @@ public class ServicePaymentMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmHardCharge = new MMCode() {
+	public static final ServicePaymentMethodCode HardCharge = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HardCharge";
 			definition = "Charge is not balance compensable and is due. In the absence of balance compensable charges in Europe, this would be the most commonly used code for services that are billed at month end.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "FLAT";
 		}
 	};
@@ -177,12 +183,12 @@ public class ServicePaymentMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreviouslyCharged = new MMCode() {
+	public static final ServicePaymentMethodCode PreviouslyCharged = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreviouslyCharged";
 			definition = "Charge was previously assessed and is not part of the amount due as of this statement. This code is used for charges that were debited as the chargeable event took place.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "PVCH";
 		}
 	};
@@ -211,12 +217,12 @@ public class ServicePaymentMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInvoicedSeparately = new MMCode() {
+	public static final ServicePaymentMethodCode InvoicedSeparately = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvoicedSeparately";
 			definition = "Charge was previously invoiced and is not part of the amount due as of this statement. This code is used for charges that were invoiced as the chargeable event took place.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "INVS";
 		}
 	};
@@ -244,12 +250,12 @@ public class ServicePaymentMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmWaived = new MMCode() {
+	public static final ServicePaymentMethodCode Waived = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Waived";
 			definition = "Charge is waived and not due. The waived amount must be placed in original charge amount.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "WVED";
 		}
 	};
@@ -274,17 +280,21 @@ public class ServicePaymentMethodCode {
 	 * definition} = "Service is free, no charge, to the customer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFree = new MMCode() {
+	public static final ServicePaymentMethodCode Free = new ServicePaymentMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Free";
 			definition = "Service is free, no charge, to the customer.";
-			owner_lazy = () -> ServicePaymentMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "FREE";
 		}
 	};
+	final static private LinkedHashMap<String, ServicePaymentMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ServicePaymentMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -292,11 +302,42 @@ public class ServicePaymentMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServicePaymentMethodCode";
 				definition = "Defines the method for the payment of the tax applied on the services.";
-				code_lazy = () -> Arrays.asList(ServicePaymentMethodCode.mmBalanceCompensable, ServicePaymentMethodCode.mmHardCharge, ServicePaymentMethodCode.mmPreviouslyCharged, ServicePaymentMethodCode.mmInvoicedSeparately,
-						ServicePaymentMethodCode.mmWaived, ServicePaymentMethodCode.mmFree);
 				derivation_lazy = () -> Arrays.asList(ServicePaymentMethod1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ServicePaymentMethodCode.BalanceCompensable, com.tools20022.repository.codeset.ServicePaymentMethodCode.HardCharge,
+						com.tools20022.repository.codeset.ServicePaymentMethodCode.PreviouslyCharged, com.tools20022.repository.codeset.ServicePaymentMethodCode.InvoicedSeparately,
+						com.tools20022.repository.codeset.ServicePaymentMethodCode.Waived, com.tools20022.repository.codeset.ServicePaymentMethodCode.Free);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(BalanceCompensable.getCodeName().get(), BalanceCompensable);
+		codesByName.put(HardCharge.getCodeName().get(), HardCharge);
+		codesByName.put(PreviouslyCharged.getCodeName().get(), PreviouslyCharged);
+		codesByName.put(InvoicedSeparately.getCodeName().get(), InvoicedSeparately);
+		codesByName.put(Waived.getCodeName().get(), Waived);
+		codesByName.put(Free.getCodeName().get(), Free);
+	}
+
+	public static ServicePaymentMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ServicePaymentMethodCode[] values() {
+		ServicePaymentMethodCode[] values = new ServicePaymentMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ServicePaymentMethodCode> {
+		@Override
+		public ServicePaymentMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ServicePaymentMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

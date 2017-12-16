@@ -19,8 +19,12 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
+import com.tools20022.repository.datatype.Max10Text.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a character string with a maximum length of 10 characters.
@@ -43,9 +47,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies a character string with a maximum length of 10 characters."</li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class Max10Text {
 
 	final static private AtomicReference<MMText> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMText mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMText() {
@@ -59,5 +65,26 @@ public class Max10Text {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max10Text(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Max10Text> {
+		@Override
+		public Max10Text unmarshal(String value) {
+			return new Max10Text(value);
+		}
+
+		@Override
+		public String marshal(Max10Text typedData) {
+			return typedData.value;
+		}
 	}
 }

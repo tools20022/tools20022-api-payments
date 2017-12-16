@@ -110,8 +110,8 @@ public class SystemName {
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteraction1.mmSystemName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of a system for instance the common name assigned by the acquirer to the POI system.";
@@ -164,8 +164,8 @@ public class SystemName {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemIdentification";
 			definition = "System identification which contains a name.";

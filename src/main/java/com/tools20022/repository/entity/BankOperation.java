@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
+ * CashAccountService}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -67,9 +70,6 @@ import java.util.List;
  * BankTransaction.mmBankOperation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
- * CashAccountService}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -138,8 +138,8 @@ public class BankOperation extends CashAccountService {
 	public static final MMBusinessAssociationEnd mmOperationThreshold = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyAndAuthorisation1.mmAuthorisation, PartyAndAuthorisation3.mmAuthorisation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OperationThreshold";
 			definition = "Threshold related to a bank account operation.";
@@ -199,8 +199,8 @@ public class BankOperation extends CashAccountService {
 	public static final MMBusinessAssociationEnd mmOperationType = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(OperationMandate2.mmBankOperation, OperationMandate3.mmBankOperation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OperationType";
 			definition = "Specifies the type of the operation related to a bank account.";
@@ -259,8 +259,8 @@ public class BankOperation extends CashAccountService {
 	public static final MMBusinessAssociationEnd mmApplicablePeriod = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(MaximumAmountByPeriod1.mmNumberOfDays);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicablePeriod";
 			definition = "Specifies the period, for instance a number of days, for which the bank operations are permitted. ";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.UserInterfaceCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of user interface to display or print information.
@@ -32,26 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmCardholderDisplay
+ * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#CardholderDisplay
  * UserInterfaceCode.mmCardholderDisplay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmCardholderReceipt
+ * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#CardholderReceipt
  * UserInterfaceCode.mmCardholderReceipt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmMerchantDisplay
+ * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#MerchantDisplay
  * UserInterfaceCode.mmMerchantDisplay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmMerchantReceipt
+ * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#MerchantReceipt
  * UserInterfaceCode.mmMerchantReceipt}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmAcquirer
+ * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Acquirer
  * UserInterfaceCode.mmAcquirer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmIssuer
+ * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Issuer
  * UserInterfaceCode.mmIssuer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmAgent
+ * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Agent
  * UserInterfaceCode.mmAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#mmOtherCardholderInterface
+ * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#OtherCardholderInterface
  * UserInterfaceCode.mmOtherCardholderInterface}</li>
  * </ul>
  * </li>
@@ -83,7 +87,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Type of user interface to display or print information."</li>
  * </ul>
  */
-public class UserInterfaceCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class UserInterfaceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -107,12 +112,12 @@ public class UserInterfaceCode {
 	 * definition} = "Cardholder display or interface."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardholderDisplay = new MMCode() {
+	public static final UserInterfaceCode CardholderDisplay = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderDisplay";
 			definition = "Cardholder display or interface.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "CDSP";
 		}
 	};
@@ -137,12 +142,12 @@ public class UserInterfaceCode {
 	 * definition} = "Cardholder receipt."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardholderReceipt = new MMCode() {
+	public static final UserInterfaceCode CardholderReceipt = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderReceipt";
 			definition = "Cardholder receipt.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "CRCP";
 		}
 	};
@@ -167,12 +172,12 @@ public class UserInterfaceCode {
 	 * definition} = "Merchant display or interface."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMerchantDisplay = new MMCode() {
+	public static final UserInterfaceCode MerchantDisplay = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MerchantDisplay";
 			definition = "Merchant display or interface.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "MDSP";
 		}
 	};
@@ -197,12 +202,12 @@ public class UserInterfaceCode {
 	 * definition} = "Merchant receipt."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMerchantReceipt = new MMCode() {
+	public static final UserInterfaceCode MerchantReceipt = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MerchantReceipt";
 			definition = "Merchant receipt.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "MRCP";
 		}
 	};
@@ -227,12 +232,12 @@ public class UserInterfaceCode {
 	 * definition} = "Acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcquirer = new MMCode() {
+	public static final UserInterfaceCode Acquirer = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Acquirer";
 			definition = "Acquirer.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "ACQU";
 		}
 	};
@@ -257,12 +262,12 @@ public class UserInterfaceCode {
 	 * definition} = "Issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuer = new MMCode() {
+	public static final UserInterfaceCode Issuer = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Issuer.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "ISSR";
 		}
 	};
@@ -287,12 +292,12 @@ public class UserInterfaceCode {
 	 * definition} = "Agent."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgent = new MMCode() {
+	public static final UserInterfaceCode Agent = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Agent";
 			definition = "Agent.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "AGNT";
 		}
 	};
@@ -320,17 +325,21 @@ public class UserInterfaceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOtherCardholderInterface = new MMCode() {
+	public static final UserInterfaceCode OtherCardholderInterface = new UserInterfaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OtherCardholderInterface";
 			definition = "Other interface of the cardholder, for instance e-mail or smartphone message.";
-			owner_lazy = () -> UserInterfaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UserInterfaceCode.mmObject();
 			codeName = "CRDO";
 		}
 	};
+	final static private LinkedHashMap<String, UserInterfaceCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected UserInterfaceCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -338,11 +347,44 @@ public class UserInterfaceCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UserInterfaceCode";
 				definition = "Type of user interface to display or print information.";
-				code_lazy = () -> Arrays.asList(UserInterfaceCode.mmCardholderDisplay, UserInterfaceCode.mmCardholderReceipt, UserInterfaceCode.mmMerchantDisplay, UserInterfaceCode.mmMerchantReceipt, UserInterfaceCode.mmAcquirer,
-						UserInterfaceCode.mmIssuer, UserInterfaceCode.mmAgent, UserInterfaceCode.mmOtherCardholderInterface);
 				derivation_lazy = () -> Arrays.asList(UserInterface2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UserInterfaceCode.CardholderDisplay, com.tools20022.repository.codeset.UserInterfaceCode.CardholderReceipt,
+						com.tools20022.repository.codeset.UserInterfaceCode.MerchantDisplay, com.tools20022.repository.codeset.UserInterfaceCode.MerchantReceipt, com.tools20022.repository.codeset.UserInterfaceCode.Acquirer,
+						com.tools20022.repository.codeset.UserInterfaceCode.Issuer, com.tools20022.repository.codeset.UserInterfaceCode.Agent, com.tools20022.repository.codeset.UserInterfaceCode.OtherCardholderInterface);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CardholderDisplay.getCodeName().get(), CardholderDisplay);
+		codesByName.put(CardholderReceipt.getCodeName().get(), CardholderReceipt);
+		codesByName.put(MerchantDisplay.getCodeName().get(), MerchantDisplay);
+		codesByName.put(MerchantReceipt.getCodeName().get(), MerchantReceipt);
+		codesByName.put(Acquirer.getCodeName().get(), Acquirer);
+		codesByName.put(Issuer.getCodeName().get(), Issuer);
+		codesByName.put(Agent.getCodeName().get(), Agent);
+		codesByName.put(OtherCardholderInterface.getCodeName().get(), OtherCardholderInterface);
+	}
+
+	public static UserInterfaceCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static UserInterfaceCode[] values() {
+		UserInterfaceCode[] values = new UserInterfaceCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, UserInterfaceCode> {
+		@Override
+		public UserInterfaceCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(UserInterfaceCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

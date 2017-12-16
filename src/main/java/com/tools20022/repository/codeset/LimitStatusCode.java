@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.LimitStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the current status of a limit.
@@ -31,14 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmEnabled
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Enabled
  * LimitStatusCode.mmEnabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmDisabled
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Disabled
  * LimitStatusCode.mmDisabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmDeleted
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Deleted
  * LimitStatusCode.mmDeleted}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmRequested
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Requested
  * LimitStatusCode.mmRequested}</li>
  * </ul>
  * </li>
@@ -63,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the current status of a limit."</li>
  * </ul>
  */
-public class LimitStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class LimitStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +92,12 @@ public class LimitStatusCode {
 	 * definition} = "Limit is currently in effect."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEnabled = new MMCode() {
+	public static final LimitStatusCode Enabled = new LimitStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
 			definition = "Limit is currently in effect.";
-			owner_lazy = () -> LimitStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LimitStatusCode.mmObject();
 			codeName = "ENAB";
 		}
 	};
@@ -117,12 +122,12 @@ public class LimitStatusCode {
 	 * definition} = "Limit is not currently in effect."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDisabled = new MMCode() {
+	public static final LimitStatusCode Disabled = new LimitStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disabled";
 			definition = "Limit is not currently in effect.";
-			owner_lazy = () -> LimitStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LimitStatusCode.mmObject();
 			codeName = "DISA";
 		}
 	};
@@ -147,12 +152,12 @@ public class LimitStatusCode {
 	 * definition} = "Limit has been deleted or suspended."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeleted = new MMCode() {
+	public static final LimitStatusCode Deleted = new LimitStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deleted";
 			definition = "Limit has been deleted or suspended.";
-			owner_lazy = () -> LimitStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LimitStatusCode.mmObject();
 			codeName = "DELD";
 		}
 	};
@@ -177,17 +182,21 @@ public class LimitStatusCode {
 	 * definition} = "Limit has been asked for and is not yet enabled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequested = new MMCode() {
+	public static final LimitStatusCode Requested = new LimitStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Requested";
 			definition = "Limit has been asked for and is not yet enabled.";
-			owner_lazy = () -> LimitStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.LimitStatusCode.mmObject();
 			codeName = "REQD";
 		}
 	};
+	final static private LinkedHashMap<String, LimitStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected LimitStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -195,9 +204,38 @@ public class LimitStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitStatusCode";
 				definition = "Specifies the current status of a limit.";
-				code_lazy = () -> Arrays.asList(LimitStatusCode.mmEnabled, LimitStatusCode.mmDisabled, LimitStatusCode.mmDeleted, LimitStatusCode.mmRequested);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LimitStatusCode.Enabled, com.tools20022.repository.codeset.LimitStatusCode.Disabled, com.tools20022.repository.codeset.LimitStatusCode.Deleted,
+						com.tools20022.repository.codeset.LimitStatusCode.Requested);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Enabled.getCodeName().get(), Enabled);
+		codesByName.put(Disabled.getCodeName().get(), Disabled);
+		codesByName.put(Deleted.getCodeName().get(), Deleted);
+		codesByName.put(Requested.getCodeName().get(), Requested);
+	}
+
+	public static LimitStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static LimitStatusCode[] values() {
+		LimitStatusCode[] values = new LimitStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, LimitStatusCode> {
+		@Override
+		public LimitStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(LimitStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

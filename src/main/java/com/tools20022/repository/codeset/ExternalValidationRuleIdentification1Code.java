@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalValidationRuleIdentification1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the external validation rule identification scheme name code in the
@@ -54,11 +60,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalValidationRuleIdentification1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalValidationRuleIdentification1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalValidationRuleIdentification1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalValidationRuleIdentification1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -66,8 +77,34 @@ public class ExternalValidationRuleIdentification1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalValidationRuleIdentification1Code";
 				definition = "Specifies the external validation rule identification scheme name code in the format of character string with a maximum length of 4 characters.\r\nThe list of valid codes is an external code list published separately.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalValidationRuleIdentification1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalValidationRuleIdentification1Code[] values() {
+		ExternalValidationRuleIdentification1Code[] values = new ExternalValidationRuleIdentification1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalValidationRuleIdentification1Code> {
+		@Override
+		public ExternalValidationRuleIdentification1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalValidationRuleIdentification1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -37,6 +37,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Payment Payment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -62,8 +64,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * TransactionCertificate2.mmReferredDocument}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Payment Payment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -132,8 +132,8 @@ public class IndividualPayment extends Payment {
 	 */
 	public static final MMBusinessAssociationEnd mmBulkPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IndividualPayment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndividualPayment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BulkPayment";
 			definition = "Payment hich groups a series of individual payments.";

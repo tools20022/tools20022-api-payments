@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SettlementSystemMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the settlement instruction is to be settled through the
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementSystemMethodCode#mmDefault
+ * {@linkplain com.tools20022.repository.codeset.SettlementSystemMethodCode#Default
  * SettlementSystemMethodCode.mmDefault}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementSystemMethodCode#mmAlternative
+ * {@linkplain com.tools20022.repository.codeset.SettlementSystemMethodCode#Alternative
  * SettlementSystemMethodCode.mmAlternative}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class SettlementSystemMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SettlementSystemMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,12 +98,12 @@ public class SettlementSystemMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDefault = new MMCode() {
+	public static final SettlementSystemMethodCode Default = new SettlementSystemMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Default";
 			definition = "Settle through the default settlement system/method. If there is a standing instruction in place for settlement through the alternate settlement system/method, then this standing instruction is to be ignored.";
-			owner_lazy = () -> SettlementSystemMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementSystemMethodCode.mmObject();
 			codeName = "NSET";
 		}
 	};
@@ -127,17 +133,21 @@ public class SettlementSystemMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAlternative = new MMCode() {
+	public static final SettlementSystemMethodCode Alternative = new SettlementSystemMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Alternative";
 			definition = "Settle through the alternate settlement system/method. If there is a standing instruction in place for settlement through the default settlement system/method, then this standing instruction is to be ignored.";
-			owner_lazy = () -> SettlementSystemMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementSystemMethodCode.mmObject();
 			codeName = "YSET";
 		}
 	};
+	final static private LinkedHashMap<String, SettlementSystemMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SettlementSystemMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -145,9 +155,35 @@ public class SettlementSystemMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementSystemMethodCode";
 				definition = "Specifies whether the settlement instruction is to be settled through the default or the alternate settlement system.";
-				code_lazy = () -> Arrays.asList(SettlementSystemMethodCode.mmDefault, SettlementSystemMethodCode.mmAlternative);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementSystemMethodCode.Default, com.tools20022.repository.codeset.SettlementSystemMethodCode.Alternative);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Default.getCodeName().get(), Default);
+		codesByName.put(Alternative.getCodeName().get(), Alternative);
+	}
+
+	public static SettlementSystemMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SettlementSystemMethodCode[] values() {
+		SettlementSystemMethodCode[] values = new SettlementSystemMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SettlementSystemMethodCode> {
+		@Override
+		public SettlementSystemMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SettlementSystemMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

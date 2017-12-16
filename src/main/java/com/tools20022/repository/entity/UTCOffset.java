@@ -100,8 +100,8 @@ public class UTCOffset {
 	 */
 	public static final MMBusinessAttribute mmSign = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sign";
 			definition = "Indicates whether the offset is before or after 00:00 hour UTC.";
@@ -147,8 +147,8 @@ public class UTCOffset {
 	 */
 	public static final MMBusinessAttribute mmNumberOfHours = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfHours";
 			definition = "Offset of the reporting time, in hours,  before or after 00:00 hour UTC.";
@@ -199,8 +199,8 @@ public class UTCOffset {
 	 */
 	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location to which the time zone applies.";

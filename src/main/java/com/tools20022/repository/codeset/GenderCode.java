@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.GenderCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the gender of a person.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.GenderCode#mmMale
+ * <li>{@linkplain com.tools20022.repository.codeset.GenderCode#Male
  * GenderCode.mmMale}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.GenderCode#mmFemale
+ * <li>{@linkplain com.tools20022.repository.codeset.GenderCode#Female
  * GenderCode.mmFemale}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the gender of a person."</li>
  * </ul>
  */
-public class GenderCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class GenderCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -81,12 +87,12 @@ public class GenderCode {
 	 * definition} = "Individual is a male."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMale = new MMCode() {
+	public static final GenderCode Male = new GenderCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Male";
 			definition = "Individual is a male.";
-			owner_lazy = () -> GenderCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GenderCode.mmObject();
 			codeName = "MALE";
 		}
 	};
@@ -110,17 +116,21 @@ public class GenderCode {
 	 * definition} = "Individual is a female."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFemale = new MMCode() {
+	public static final GenderCode Female = new GenderCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Female";
 			definition = "Individual is a female.";
-			owner_lazy = () -> GenderCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GenderCode.mmObject();
 			codeName = "FEMA";
 		}
 	};
+	final static private LinkedHashMap<String, GenderCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected GenderCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -128,9 +138,35 @@ public class GenderCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenderCode";
 				definition = "Specifies the gender of a person.";
-				code_lazy = () -> Arrays.asList(GenderCode.mmMale, GenderCode.mmFemale);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GenderCode.Male, com.tools20022.repository.codeset.GenderCode.Female);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Male.getCodeName().get(), Male);
+		codesByName.put(Female.getCodeName().get(), Female);
+	}
+
+	public static GenderCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static GenderCode[] values() {
+		GenderCode[] values = new GenderCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, GenderCode> {
+		@Override
+		public GenderCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(GenderCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the result of an investigation.
@@ -32,65 +37,65 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmCancelledAsPerRequest
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#CancelledAsPerRequest
  * InvestigationExecutionConfirmationCode.mmCancelledAsPerRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmModifiedAsPerRequest
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#ModifiedAsPerRequest
  * InvestigationExecutionConfirmationCode.mmModifiedAsPerRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmAcceptedDebitAuthorisation
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#AcceptedDebitAuthorisation
  * InvestigationExecutionConfirmationCode.mmAcceptedDebitAuthorisation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmPaymentInitiated
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#PaymentInitiated
  * InvestigationExecutionConfirmationCode.mmPaymentInitiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmCoverInitiated
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#CoverInitiated
  * InvestigationExecutionConfirmationCode.mmCoverInitiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmCoverModified
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#CoverModified
  * InvestigationExecutionConfirmationCode.mmCoverModified}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmPaymentInstructionInitiated
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#PaymentInstructionInitiated
  * InvestigationExecutionConfirmationCode.mmPaymentInstructionInitiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmAdditionalInformationSent
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#AdditionalInformationSent
  * InvestigationExecutionConfirmationCode.mmAdditionalInformationSent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmConfirmationOfPayment
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#ConfirmationOfPayment
  * InvestigationExecutionConfirmationCode.mmConfirmationOfPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmCancellationWillFollow
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#CancellationWillFollow
  * InvestigationExecutionConfirmationCode.mmCancellationWillFollow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmModificationWillFollow
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#ModificationWillFollow
  * InvestigationExecutionConfirmationCode.mmModificationWillFollow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmUnableToApplyWillFollow
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#UnableToApplyWillFollow
  * InvestigationExecutionConfirmationCode.mmUnableToApplyWillFollow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmPartiallyExecutedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#PartiallyExecutedCancellationRequest
  * InvestigationExecutionConfirmationCode.mmPartiallyExecutedCancellationRequest
  * }</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmRejectedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#RejectedCancellationRequest
  * InvestigationExecutionConfirmationCode.mmRejectedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmPendingCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#PendingCancellationRequest
  * InvestigationExecutionConfirmationCode.mmPendingCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmStatementEntryCorrect
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#StatementEntryCorrect
  * InvestigationExecutionConfirmationCode.mmStatementEntryCorrect}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmStatementEntryIncorrect
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#StatementEntryIncorrect
  * InvestigationExecutionConfirmationCode.mmStatementEntryIncorrect}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmChargesDetailsProvided
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#ChargesDetailsProvided
  * InvestigationExecutionConfirmationCode.mmChargesDetailsProvided}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmPurposeDetailsProvided
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#PurposeDetailsProvided
  * InvestigationExecutionConfirmationCode.mmPurposeDetailsProvided}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#mmInstructionIsDuplicate
+ * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode#InstructionIsDuplicate
  * InvestigationExecutionConfirmationCode.mmInstructionIsDuplicate}</li>
  * </ul>
  * </li>
@@ -123,7 +128,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates the result of an investigation."</li>
  * </ul>
  */
-public class InvestigationExecutionConfirmationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InvestigationExecutionConfirmationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -147,12 +153,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when a requested cancellation is successful."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelledAsPerRequest = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode CancelledAsPerRequest = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancelledAsPerRequest";
 			definition = "Used when a requested cancellation is successful.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "CNCL";
 		}
 	};
@@ -177,12 +183,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when a requested modification is successful."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmModifiedAsPerRequest = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode ModifiedAsPerRequest = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModifiedAsPerRequest";
 			definition = "Used when a requested modification is successful.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "MODI";
 		}
 	};
@@ -207,12 +213,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when a creditor accepts the debit authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedDebitAuthorisation = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode AcceptedDebitAuthorisation = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedDebitAuthorisation";
 			definition = "Used when a creditor accepts the debit authorisation.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "ACDA";
 		}
 	};
@@ -240,12 +246,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaymentInitiated = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode PaymentInitiated = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentInitiated";
 			definition = "Used when the result of an investigation is, or will be, the initiation of a payment instruction.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "IPAY";
 		}
 	};
@@ -273,12 +279,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCoverInitiated = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode CoverInitiated = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CoverInitiated";
 			definition = "Used when a transfer of funds has been initiated (a cover payment) to resolve a case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "ICOV";
 		}
 	};
@@ -306,12 +312,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCoverModified = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode CoverModified = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CoverModified";
 			definition = "Used when a transfer of funds has been modified (a cover payment) to resolve a case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "MCOV";
 		}
 	};
@@ -339,12 +345,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaymentInstructionInitiated = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode PaymentInstructionInitiated = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentInstructionInitiated";
 			definition = "Used when a payment instruction (eg. MT103) has been initiated to resolve a case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "IPYI";
 		}
 	};
@@ -372,12 +378,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAdditionalInformationSent = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode AdditionalInformationSent = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformationSent";
 			definition = "Used when additional information has been sent to the beneficiary of a payment.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "INFO";
 		}
 	};
@@ -405,12 +411,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmConfirmationOfPayment = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode ConfirmationOfPayment = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ConfirmationOfPayment";
 			definition = "Used when a payment has been checked and was correctly executed without any intervention.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "CONF";
 		}
 	};
@@ -436,12 +442,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * "Used when a payment will be cancelled to solve an investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancellationWillFollow = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode CancellationWillFollow = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancellationWillFollow";
 			definition = "Used when a payment will be cancelled to solve an investigation case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "CWFW";
 		}
 	};
@@ -467,12 +473,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * "Used when the payment will be modified to solve an investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmModificationWillFollow = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode ModificationWillFollow = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationWillFollow";
 			definition = "Used when the payment will be modified to solve an investigation case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "MWFW";
 		}
 	};
@@ -500,12 +506,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnableToApplyWillFollow = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode UnableToApplyWillFollow = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToApplyWillFollow";
 			definition = "Used when sender wants to respond to an assignment with an Unable To Apply workflow.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "UWFW";
 		}
 	};
@@ -531,12 +537,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * "Used when a requested cancellation has been partially executed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyExecutedCancellationRequest = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode PartiallyExecutedCancellationRequest = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyExecutedCancellationRequest";
 			definition = "Used when a requested cancellation has been partially executed.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "PECR";
 		}
 	};
@@ -561,12 +567,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when a requested cancellation has been rejected."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejectedCancellationRequest = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode RejectedCancellationRequest = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectedCancellationRequest";
 			definition = "Used when a requested cancellation has been rejected.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "RJCR";
 		}
 	};
@@ -591,12 +597,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when a requested cancellation is pending."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPendingCancellationRequest = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode PendingCancellationRequest = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingCancellationRequest";
 			definition = "Used when a requested cancellation is pending.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "PDCR";
 		}
 	};
@@ -621,12 +627,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * definition} = "Used when the entry in the statement is correct."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStatementEntryCorrect = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode StatementEntryCorrect = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatementEntryCorrect";
 			definition = "Used when the entry in the statement is correct.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "SMTC";
 		}
 	};
@@ -654,12 +660,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmStatementEntryIncorrect = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode StatementEntryIncorrect = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatementEntryIncorrect";
 			definition = "Used when the entry in the statement is incorrect and further information is provided with the resolution.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "SMTI";
 		}
 	};
@@ -685,12 +691,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmChargesDetailsProvided = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode ChargesDetailsProvided = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargesDetailsProvided";
 			definition = "Further charges details are provided to resolve the case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "CHRG";
 		}
 	};
@@ -716,12 +722,12 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPurposeDetailsProvided = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode PurposeDetailsProvided = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PurposeDetailsProvided";
 			definition = "Further purpose details are provided to resolve the case.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "PURP";
 		}
 	};
@@ -749,17 +755,21 @@ public class InvestigationExecutionConfirmationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstructionIsDuplicate = new MMCode() {
+	public static final InvestigationExecutionConfirmationCode InstructionIsDuplicate = new InvestigationExecutionConfirmationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructionIsDuplicate";
 			definition = "Used when the requested check for a possible duplicate instruction is confirmed.";
-			owner_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.mmObject();
 			codeName = "IDUP";
 		}
 	};
+	final static private LinkedHashMap<String, InvestigationExecutionConfirmationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InvestigationExecutionConfirmationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -767,16 +777,63 @@ public class InvestigationExecutionConfirmationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationExecutionConfirmationCode";
 				definition = "Indicates the result of an investigation.";
-				code_lazy = () -> Arrays.asList(InvestigationExecutionConfirmationCode.mmCancelledAsPerRequest, InvestigationExecutionConfirmationCode.mmModifiedAsPerRequest,
-						InvestigationExecutionConfirmationCode.mmAcceptedDebitAuthorisation, InvestigationExecutionConfirmationCode.mmPaymentInitiated, InvestigationExecutionConfirmationCode.mmCoverInitiated,
-						InvestigationExecutionConfirmationCode.mmCoverModified, InvestigationExecutionConfirmationCode.mmPaymentInstructionInitiated, InvestigationExecutionConfirmationCode.mmAdditionalInformationSent,
-						InvestigationExecutionConfirmationCode.mmConfirmationOfPayment, InvestigationExecutionConfirmationCode.mmCancellationWillFollow, InvestigationExecutionConfirmationCode.mmModificationWillFollow,
-						InvestigationExecutionConfirmationCode.mmUnableToApplyWillFollow, InvestigationExecutionConfirmationCode.mmPartiallyExecutedCancellationRequest, InvestigationExecutionConfirmationCode.mmRejectedCancellationRequest,
-						InvestigationExecutionConfirmationCode.mmPendingCancellationRequest, InvestigationExecutionConfirmationCode.mmStatementEntryCorrect, InvestigationExecutionConfirmationCode.mmStatementEntryIncorrect,
-						InvestigationExecutionConfirmationCode.mmChargesDetailsProvided, InvestigationExecutionConfirmationCode.mmPurposeDetailsProvided, InvestigationExecutionConfirmationCode.mmInstructionIsDuplicate);
 				derivation_lazy = () -> Arrays.asList(InvestigationExecutionConfirmation3Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CancelledAsPerRequest, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.ModifiedAsPerRequest,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.AcceptedDebitAuthorisation, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PaymentInitiated,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CoverInitiated, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CoverModified,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PaymentInstructionInitiated, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.AdditionalInformationSent,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.ConfirmationOfPayment, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CancellationWillFollow,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.ModificationWillFollow, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.UnableToApplyWillFollow,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PartiallyExecutedCancellationRequest, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.RejectedCancellationRequest,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PendingCancellationRequest, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.StatementEntryCorrect,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.StatementEntryIncorrect, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.ChargesDetailsProvided,
+						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PurposeDetailsProvided, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.InstructionIsDuplicate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CancelledAsPerRequest.getCodeName().get(), CancelledAsPerRequest);
+		codesByName.put(ModifiedAsPerRequest.getCodeName().get(), ModifiedAsPerRequest);
+		codesByName.put(AcceptedDebitAuthorisation.getCodeName().get(), AcceptedDebitAuthorisation);
+		codesByName.put(PaymentInitiated.getCodeName().get(), PaymentInitiated);
+		codesByName.put(CoverInitiated.getCodeName().get(), CoverInitiated);
+		codesByName.put(CoverModified.getCodeName().get(), CoverModified);
+		codesByName.put(PaymentInstructionInitiated.getCodeName().get(), PaymentInstructionInitiated);
+		codesByName.put(AdditionalInformationSent.getCodeName().get(), AdditionalInformationSent);
+		codesByName.put(ConfirmationOfPayment.getCodeName().get(), ConfirmationOfPayment);
+		codesByName.put(CancellationWillFollow.getCodeName().get(), CancellationWillFollow);
+		codesByName.put(ModificationWillFollow.getCodeName().get(), ModificationWillFollow);
+		codesByName.put(UnableToApplyWillFollow.getCodeName().get(), UnableToApplyWillFollow);
+		codesByName.put(PartiallyExecutedCancellationRequest.getCodeName().get(), PartiallyExecutedCancellationRequest);
+		codesByName.put(RejectedCancellationRequest.getCodeName().get(), RejectedCancellationRequest);
+		codesByName.put(PendingCancellationRequest.getCodeName().get(), PendingCancellationRequest);
+		codesByName.put(StatementEntryCorrect.getCodeName().get(), StatementEntryCorrect);
+		codesByName.put(StatementEntryIncorrect.getCodeName().get(), StatementEntryIncorrect);
+		codesByName.put(ChargesDetailsProvided.getCodeName().get(), ChargesDetailsProvided);
+		codesByName.put(PurposeDetailsProvided.getCodeName().get(), PurposeDetailsProvided);
+		codesByName.put(InstructionIsDuplicate.getCodeName().get(), InstructionIsDuplicate);
+	}
+
+	public static InvestigationExecutionConfirmationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InvestigationExecutionConfirmationCode[] values() {
+		InvestigationExecutionConfirmationCode[] values = new InvestigationExecutionConfirmationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InvestigationExecutionConfirmationCode> {
+		@Override
+		public InvestigationExecutionConfirmationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InvestigationExecutionConfirmationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

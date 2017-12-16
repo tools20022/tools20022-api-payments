@@ -52,10 +52,6 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMBusinessProcessCatalogue#getRepository
-	 * repository} = {@linkplain com.tools20022.repository.GeneratedRepository
-	 * GeneratedRepository}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessProcessCatalogue#getTopLevelCatalogueEntry
 	 * topLevelCatalogueEntry} =
 	 * <ul>
@@ -81,6 +77,10 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * PaymentsRemittanceAdviceLatestVersion}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessProcessCatalogue#getRepository
+	 * repository} = {@linkplain com.tools20022.repository.GeneratedRepository
+	 * GeneratedRepository}</li>
 	 * </ul>
 	 */
 	public static final MMBusinessProcessCatalogue mmcatalogue = new MMBusinessProcessCatalogue() {
@@ -95,18 +95,18 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMDataDictionary#getTopLevelDictionaryEntry
-	 * topLevelDictionaryEntry} = List of 1824 elements</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMDataDictionary#getRepository
 	 * repository} = {@linkplain com.tools20022.repository.GeneratedRepository
 	 * GeneratedRepository}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMDataDictionary#getTopLevelDictionaryEntry
+	 * topLevelDictionaryEntry} = List of 1844 elements</li>
 	 * </ul>
 	 */
 	public static final MMDataDictionary mmdataDict = new MMDataDictionary() {
 		{
-			topLevelDictionaryEntry_lazy = () -> ListBuilderForGeneratedRepository_00.addElems(new ArrayList<>());
 			repository_lazy = () -> GeneratedRepository.mmObject();
+			topLevelDictionaryEntry_lazy = () -> ListBuilderForGeneratedRepository_00.addElems(new ArrayList<>());
 		}
 	};
 

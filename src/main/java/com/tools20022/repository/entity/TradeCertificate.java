@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -55,14 +57,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionCertificate1
- * TransactionCertificate1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -77,8 +71,14 @@ import java.util.List;
  * TradeCertificatePartyRole.mmTradeCertificate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionCertificate1
+ * TransactionCertificate1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -128,8 +128,8 @@ public class TradeCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCertificateType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificateType";
 			definition = "Specifies the type of the certificate.";
@@ -182,8 +182,8 @@ public class TradeCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmInspectionDate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InspectionDate";
 			definition = "Date(s) at which inspection of the goods took place.";
@@ -232,8 +232,8 @@ public class TradeCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeCertificatePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificatePartyRole";
 			definition = "Role played by a party in the context of issuing a trade certificate.";
@@ -279,8 +279,8 @@ public class TradeCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductDelivery";
 			definition = "Delivery parameters of a trade.";

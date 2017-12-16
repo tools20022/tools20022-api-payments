@@ -106,8 +106,8 @@ public class AnalyticsValue {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Analytics expressed as a currency and value.";
@@ -153,8 +153,8 @@ public class AnalyticsValue {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Analytics expressed as a rate.";
@@ -199,8 +199,8 @@ public class AnalyticsValue {
 	 */
 	public static final MMBusinessAttribute mmNumberOfYears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfYears";
 			definition = "Analytics expressed as a number of years.";
@@ -255,8 +255,8 @@ public class AnalyticsValue {
 	 */
 	public static final MMBusinessAssociationEnd mmAnalyticsCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnalyticsCalculation";
 			definition = "Analytics calculation for which an analytics value is specified.";

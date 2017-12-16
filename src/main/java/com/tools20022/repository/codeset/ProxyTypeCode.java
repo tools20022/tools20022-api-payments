@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ProxyTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of proxy person.
@@ -31,13 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ProxyTypeCode#mmChairman
+ * <li>{@linkplain com.tools20022.repository.codeset.ProxyTypeCode#Chairman
  * ProxyTypeCode.mmChairman}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProxyTypeCode#mmDiscretionary
+ * {@linkplain com.tools20022.repository.codeset.ProxyTypeCode#Discretionary
  * ProxyTypeCode.mmDiscretionary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProxyTypeCode#mmSecurityHolder
+ * {@linkplain com.tools20022.repository.codeset.ProxyTypeCode#SecurityHolder
  * ProxyTypeCode.mmSecurityHolder}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of proxy person."</li>
  * </ul>
  */
-public class ProxyTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ProxyTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class ProxyTypeCode {
 	 * definition} = "Chairman of the meeting is the proxy."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmChairman = new MMCode() {
+	public static final ProxyTypeCode Chairman = new ProxyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Chairman";
 			definition = "Chairman of the meeting is the proxy.";
-			owner_lazy = () -> ProxyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ProxyTypeCode.mmObject();
 			codeName = "CHRM";
 		}
 	};
@@ -116,12 +122,12 @@ public class ProxyTypeCode {
 	 * definition} = "Any type of proxy is allowed"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscretionary = new MMCode() {
+	public static final ProxyTypeCode Discretionary = new ProxyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discretionary";
 			definition = "Any type of proxy is allowed";
-			owner_lazy = () -> ProxyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ProxyTypeCode.mmObject();
 			codeName = "DISC";
 		}
 	};
@@ -146,17 +152,21 @@ public class ProxyTypeCode {
 	 * definition} = "Proxy can only be a security holder."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecurityHolder = new MMCode() {
+	public static final ProxyTypeCode SecurityHolder = new ProxyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityHolder";
 			definition = "Proxy can only be a security holder.";
-			owner_lazy = () -> ProxyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ProxyTypeCode.mmObject();
 			codeName = "HLDR";
 		}
 	};
+	final static private LinkedHashMap<String, ProxyTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ProxyTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -164,9 +174,36 @@ public class ProxyTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProxyTypeCode";
 				definition = "Specifies the type of proxy person.";
-				code_lazy = () -> Arrays.asList(ProxyTypeCode.mmChairman, ProxyTypeCode.mmDiscretionary, ProxyTypeCode.mmSecurityHolder);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ProxyTypeCode.Chairman, com.tools20022.repository.codeset.ProxyTypeCode.Discretionary, com.tools20022.repository.codeset.ProxyTypeCode.SecurityHolder);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Chairman.getCodeName().get(), Chairman);
+		codesByName.put(Discretionary.getCodeName().get(), Discretionary);
+		codesByName.put(SecurityHolder.getCodeName().get(), SecurityHolder);
+	}
+
+	public static ProxyTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ProxyTypeCode[] values() {
+		ProxyTypeCode[] values = new ProxyTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ProxyTypeCode> {
+		@Override
+		public ProxyTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ProxyTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

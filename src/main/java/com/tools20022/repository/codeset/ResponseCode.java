@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ResponseCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Response code of a transaction.
@@ -31,23 +36,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmDeclined
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Declined
  * ResponseCode.mmDeclined}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmApproved
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Approved
  * ResponseCode.mmApproved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmPartialApproved
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#PartialApproved
  * ResponseCode.mmPartialApproved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmTechnicalError
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#TechnicalError
  * ResponseCode.mmTechnicalError}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmFurtherAction
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#FurtherAction
  * ResponseCode.mmFurtherAction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmNotProcessed
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#NotProcessed
  * ResponseCode.mmNotProcessed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmProcessed
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Processed
  * ResponseCode.mmProcessed}</li>
  * </ul>
  * </li>
@@ -72,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Response code of a transaction."</li>
  * </ul>
  */
-public class ResponseCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ResponseCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,12 +99,12 @@ public class ResponseCode {
 	 * definition} = "Service is declined."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeclined = new MMCode() {
+	public static final ResponseCode Declined = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declined";
 			definition = "Service is declined.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "DECL";
 		}
 	};
@@ -124,12 +128,12 @@ public class ResponseCode {
 	 * definition} = "Service has been successfuly provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmApproved = new MMCode() {
+	public static final ResponseCode Approved = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Approved";
 			definition = "Service has been successfuly provided.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "APPR";
 		}
 	};
@@ -153,12 +157,12 @@ public class ResponseCode {
 	 * definition} = "Service has been partialy provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialApproved = new MMCode() {
+	public static final ResponseCode PartialApproved = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialApproved";
 			definition = "Service has been partialy provided.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "PART";
 		}
 	};
@@ -185,12 +189,12 @@ public class ResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTechnicalError = new MMCode() {
+	public static final ResponseCode TechnicalError = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TechnicalError";
 			definition = "Service cannot be provided for technical reason (eg timeout contacting the Issuer, security problem).";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "TECH";
 		}
 	};
@@ -217,12 +221,12 @@ public class ResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFurtherAction = new MMCode() {
+	public static final ResponseCode FurtherAction = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FurtherAction";
 			definition = "Further action required to complete the transaction, for instance a referral.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "FRTH";
 		}
 	};
@@ -246,12 +250,12 @@ public class ResponseCode {
 	 * definition} = "Advice message could not be processed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotProcessed = new MMCode() {
+	public static final ResponseCode NotProcessed = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotProcessed";
 			definition = "Advice message could not be processed.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "UNPR";
 		}
 	};
@@ -275,17 +279,21 @@ public class ResponseCode {
 	 * definition} = "Advice message is processed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProcessed = new MMCode() {
+	public static final ResponseCode Processed = new ResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Processed";
 			definition = "Advice message is processed.";
-			owner_lazy = () -> ResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseCode.mmObject();
 			codeName = "PRCS";
 		}
 	};
+	final static private LinkedHashMap<String, ResponseCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ResponseCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -293,10 +301,42 @@ public class ResponseCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseCode";
 				definition = "Response code of a transaction.";
-				code_lazy = () -> Arrays.asList(ResponseCode.mmDeclined, ResponseCode.mmApproved, ResponseCode.mmPartialApproved, ResponseCode.mmTechnicalError, ResponseCode.mmFurtherAction, ResponseCode.mmNotProcessed,
-						ResponseCode.mmProcessed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ResponseCode.Declined, com.tools20022.repository.codeset.ResponseCode.Approved, com.tools20022.repository.codeset.ResponseCode.PartialApproved,
+						com.tools20022.repository.codeset.ResponseCode.TechnicalError, com.tools20022.repository.codeset.ResponseCode.FurtherAction, com.tools20022.repository.codeset.ResponseCode.NotProcessed,
+						com.tools20022.repository.codeset.ResponseCode.Processed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Declined.getCodeName().get(), Declined);
+		codesByName.put(Approved.getCodeName().get(), Approved);
+		codesByName.put(PartialApproved.getCodeName().get(), PartialApproved);
+		codesByName.put(TechnicalError.getCodeName().get(), TechnicalError);
+		codesByName.put(FurtherAction.getCodeName().get(), FurtherAction);
+		codesByName.put(NotProcessed.getCodeName().get(), NotProcessed);
+		codesByName.put(Processed.getCodeName().get(), Processed);
+	}
+
+	public static ResponseCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ResponseCode[] values() {
+		ResponseCode[] values = new ResponseCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ResponseCode> {
+		@Override
+		public ResponseCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ResponseCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

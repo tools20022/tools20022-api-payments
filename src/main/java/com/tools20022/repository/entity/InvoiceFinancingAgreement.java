@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Agreement
+ * Agreement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -101,9 +104,6 @@ import java.util.List;
  * Assignment.mmFinancingAgreement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Agreement
- * Agreement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -159,8 +159,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmAuthorisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authorisation";
 			definition = "User identification or any user key that allows to check if the financing requestor is allowed to ask for invoice financing.\r\nUsage: the content is not of a technical nature, but reflects the organisational structure at the requesting side. The authorisation element can typically be used in case the financing requestor acts on behalf of one or more suppliers.";
@@ -208,8 +208,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmFinancingMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingMethod";
 			definition = "Specifies the financing method related to invoice financing (eg collection mandate).";
@@ -258,8 +258,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmRequestedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedAmount";
 			definition = "Amount requested by the requestor party, related to a single invoice to be financed.";
@@ -308,8 +308,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmRequestedPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedPercentage";
 			definition = "Percentage of the amount requested by the requestor party, related to a single invoice, to be financed.";
@@ -356,8 +356,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmAppliedPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AppliedPercentage";
 			definition = "The percentage rate applied to calculate the amount financed.";
@@ -406,8 +406,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmFinancedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancedAmount";
 			definition = "Specifies the amount financed which is derived from the applied percentage and the invoice amount..";
@@ -452,8 +452,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies unambiguously the financing transaction.";
@@ -508,8 +508,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoiceFinancingPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceFinancingPartyRole";
 			definition = "Role played by a party in the context of financing an invoice.";
@@ -559,8 +559,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoiceFinancingStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceFinancingStatus";
 			definition = "Status of the invoice financing transaction and of the different requests linked to it.";
@@ -606,8 +606,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Invoice";
 			definition = "Invoice to which is referred financing request.";
@@ -656,8 +656,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmResultingCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultingCashEntry";
 			definition = "Information related to the crediting of the amount financed, such as dates, amount, charges...";
@@ -705,8 +705,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmAssignment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Assignment";
 			definition = "Assignments resulting from an invoice financing agreement.";

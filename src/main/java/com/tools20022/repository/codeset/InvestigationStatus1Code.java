@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.InvestigationStatus1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Provides the status of the investigation response related to a previously
@@ -33,16 +38,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#mmDataFound
+ * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#DataFound
  * InvestigationStatus1Code.mmDataFound}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#mmDataNotFound
+ * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#DataNotFound
  * InvestigationStatus1Code.mmDataNotFound}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#mmNotApplicable
+ * {@linkplain com.tools20022.repository.codeset.InvestigationStatus1Code#NotApplicable
  * InvestigationStatus1Code.mmNotApplicable}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.InvestigationStatusCode
+ * InvestigationStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -66,7 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class InvestigationStatus1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InvestigationStatus1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,11 +94,12 @@ public class InvestigationStatus1Code {
 	 * name} = "DataFound"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDataFound = new MMCode() {
+	public static final InvestigationStatus1Code DataFound = new InvestigationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DataFound";
-			owner_lazy = () -> InvestigationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationStatus1Code.mmObject();
+			codeName = InvestigationStatusCode.DataFound.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -108,11 +118,12 @@ public class InvestigationStatus1Code {
 	 * name} = "DataNotFound"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDataNotFound = new MMCode() {
+	public static final InvestigationStatus1Code DataNotFound = new InvestigationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DataNotFound";
-			owner_lazy = () -> InvestigationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationStatus1Code.mmObject();
+			codeName = InvestigationStatusCode.DataNotFound.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -131,15 +142,20 @@ public class InvestigationStatus1Code {
 	 * name} = "NotApplicable"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotApplicable = new MMCode() {
+	public static final InvestigationStatus1Code NotApplicable = new InvestigationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotApplicable";
-			owner_lazy = () -> InvestigationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestigationStatus1Code.mmObject();
+			codeName = InvestigationStatusCode.NotApplicable.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, InvestigationStatus1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InvestigationStatus1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -147,9 +163,38 @@ public class InvestigationStatus1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationStatus1Code";
 				definition = "Provides the status of the investigation response related to a previously sent request.";
-				code_lazy = () -> Arrays.asList(InvestigationStatus1Code.mmDataFound, InvestigationStatus1Code.mmDataNotFound, InvestigationStatus1Code.mmNotApplicable);
+				trace_lazy = () -> InvestigationStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestigationStatus1Code.DataFound, com.tools20022.repository.codeset.InvestigationStatus1Code.DataNotFound,
+						com.tools20022.repository.codeset.InvestigationStatus1Code.NotApplicable);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DataFound.getCodeName().get(), DataFound);
+		codesByName.put(DataNotFound.getCodeName().get(), DataNotFound);
+		codesByName.put(NotApplicable.getCodeName().get(), NotApplicable);
+	}
+
+	public static InvestigationStatus1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InvestigationStatus1Code[] values() {
+		InvestigationStatus1Code[] values = new InvestigationStatus1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InvestigationStatus1Code> {
+		@Override
+		public InvestigationStatus1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InvestigationStatus1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

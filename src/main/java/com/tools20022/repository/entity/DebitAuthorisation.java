@@ -134,8 +134,8 @@ public class DebitAuthorisation {
 	public static final MMBusinessAttribute mmValueDateToDebit = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmValueDateToDebit, DebitAuthorisation2.mmValueDateToDebit);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDateToDebit";
 			definition = "Value date for debiting the amount.";
@@ -193,8 +193,8 @@ public class DebitAuthorisation {
 	public static final MMBusinessAttribute mmDebitAuthorisationDecision = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmDebitAuthorisation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitAuthorisationDecision";
 			definition = "Code expressing the decision taken by the account owner relative to the request for debit authorization.";
@@ -255,8 +255,8 @@ public class DebitAuthorisation {
 	public static final MMBusinessAttribute mmAmountToDebit = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmAmountToDebit, DebitAuthorisation2.mmAmountToDebit);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountToDebit";
 			definition = "Specifies the amount to debit when the amount is lower than the amount of the underlying transaction.";
@@ -310,8 +310,8 @@ public class DebitAuthorisation {
 	public static final MMBusinessAttribute mmReason = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Justification of the (partial) debit authorisation.";
@@ -366,8 +366,8 @@ public class DebitAuthorisation {
 	 */
 	public static final MMBusinessAssociationEnd mmAuthorisedReturn = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisedReturn";
 			definition = "Authorisation given by a credited party to return the payment which was the reason for the credit and therefore to debit its account.";
@@ -418,8 +418,8 @@ public class DebitAuthorisation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestigationCaseResolution";
 			definition = "Payment investigation case resolution which is the source of the debit authorisation.";

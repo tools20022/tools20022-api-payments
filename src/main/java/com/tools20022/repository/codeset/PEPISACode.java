@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PEPISACode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of Transfer, PEP or ISA.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PEPISACode#mmPEP
+ * <li>{@linkplain com.tools20022.repository.codeset.PEPISACode#PEP
  * PEPISACode.mmPEP}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PEPISACode#mmISA
+ * <li>{@linkplain com.tools20022.repository.codeset.PEPISACode#ISA
  * PEPISACode.mmISA}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of Transfer, PEP or ISA."</li>
  * </ul>
  */
-public class PEPISACode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PEPISACode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -81,12 +87,12 @@ public class PEPISACode {
 	 * definition} = "Personal equity plan."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPEP = new MMCode() {
+	public static final PEPISACode PEP = new PEPISACode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PEP";
 			definition = "Personal equity plan.";
-			owner_lazy = () -> PEPISACode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PEPISACode.mmObject();
 			codeName = "PEPT";
 		}
 	};
@@ -110,17 +116,21 @@ public class PEPISACode {
 	 * definition} = "Individual savings account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmISA = new MMCode() {
+	public static final PEPISACode ISA = new PEPISACode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ISA";
 			definition = "Individual savings account.";
-			owner_lazy = () -> PEPISACode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PEPISACode.mmObject();
 			codeName = "ISAT";
 		}
 	};
+	final static private LinkedHashMap<String, PEPISACode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PEPISACode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -128,9 +138,35 @@ public class PEPISACode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PEPISACode";
 				definition = "Specifies the type of Transfer, PEP or ISA.";
-				code_lazy = () -> Arrays.asList(PEPISACode.mmPEP, PEPISACode.mmISA);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PEPISACode.PEP, com.tools20022.repository.codeset.PEPISACode.ISA);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PEP.getCodeName().get(), PEP);
+		codesByName.put(ISA.getCodeName().get(), ISA);
+	}
+
+	public static PEPISACode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PEPISACode[] values() {
+		PEPISACode[] values = new PEPISACode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PEPISACode> {
+		@Override
+		public PEPISACode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PEPISACode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

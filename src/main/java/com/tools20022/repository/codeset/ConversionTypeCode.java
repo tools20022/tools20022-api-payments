@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ConversionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of conversion.
@@ -31,10 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ConversionTypeCode#mmFinal
+ * <li>{@linkplain com.tools20022.repository.codeset.ConversionTypeCode#Final
  * ConversionTypeCode.mmFinal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ConversionTypeCode#mmInterim
+ * <li>{@linkplain com.tools20022.repository.codeset.ConversionTypeCode#Interim
  * ConversionTypeCode.mmInterim}</li>
  * </ul>
  * </li>
@@ -59,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of conversion."</li>
  * </ul>
  */
-public class ConversionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ConversionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,12 +88,12 @@ public class ConversionTypeCode {
 	 * definition} = "This is a final conversion."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFinal = new MMCode() {
+	public static final ConversionTypeCode Final = new ConversionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Final";
 			definition = "This is a final conversion.";
-			owner_lazy = () -> ConversionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConversionTypeCode.mmObject();
 			codeName = "FINL";
 		}
 	};
@@ -113,17 +118,21 @@ public class ConversionTypeCode {
 	 * definition} = "This is an interim conversion."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterim = new MMCode() {
+	public static final ConversionTypeCode Interim = new ConversionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interim";
 			definition = "This is an interim conversion.";
-			owner_lazy = () -> ConversionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConversionTypeCode.mmObject();
 			codeName = "INTE";
 		}
 	};
+	final static private LinkedHashMap<String, ConversionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ConversionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -131,9 +140,35 @@ public class ConversionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConversionTypeCode";
 				definition = "Specifies the type of conversion.";
-				code_lazy = () -> Arrays.asList(ConversionTypeCode.mmFinal, ConversionTypeCode.mmInterim);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ConversionTypeCode.Final, com.tools20022.repository.codeset.ConversionTypeCode.Interim);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Final.getCodeName().get(), Final);
+		codesByName.put(Interim.getCodeName().get(), Interim);
+	}
+
+	public static ConversionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ConversionTypeCode[] values() {
+		ConversionTypeCode[] values = new ConversionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ConversionTypeCode> {
+		@Override
+		public ConversionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ConversionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

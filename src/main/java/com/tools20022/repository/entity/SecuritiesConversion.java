@@ -215,8 +215,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmConversionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionPrice";
 			definition = "Price of one target security in the conversion.";
@@ -258,8 +258,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionDate";
 			definition = "Deadline by which a convertible security must be converted according to the terms of the issue.";
@@ -315,8 +315,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumExercisableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableQuantity";
 			definition = "Minimum quantity of financial instrument or lot of rights/warrants that must be exercised.";
@@ -367,8 +367,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumExercisableMultipleQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableMultipleQuantity";
 			definition = "Minimum multiple quantity of financial instrument or lot of rights/warrants that must be exercised.";
@@ -418,8 +418,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumExercisableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumExercisableQuantity";
 			definition = "Indicates the maximum quantity of financial instrument that may be exercised in the event.";
@@ -459,8 +459,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionType";
 			definition = "Specifies the conversion type of an instrument.";
@@ -516,8 +516,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmConversionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionPeriod";
 			definition = "Period during which a convertible security may be converted according to the terms of the issue.";
@@ -564,8 +564,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmConversionRatioDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionRatioDenominator";
 			definition = "Number of held securities for the conversion.";
@@ -612,8 +612,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmConversionRatioNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionRatioNumerator";
 			definition = "Number of target securities for the conversion.";
@@ -660,8 +660,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmRatio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ratio";
 			definition = "Ratio applied to convert the related security.";
@@ -710,8 +710,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmConversionUnitCurrency = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionUnitCurrency";
 			definition = "Currency in which the rate of exchange is expressed in a currency exchange. In the example 1GBP = xxxCUR, the unit currency is GBP.";
@@ -758,8 +758,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOption";
 			definition = "Option for which securities conversion information is provided.";
@@ -800,8 +800,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";
@@ -847,8 +847,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionChoice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionChoice";
 			definition = "Specifies whether the conversion is mandatory or optional.";
@@ -896,8 +896,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionFixedExchangeRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionFixedExchangeRate";
 			definition = "Currency exchange rate between the bond currency and the underlying equity currency used to calculate the convertion ratio.";
@@ -943,8 +943,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionMarginAmount";
 			definition = "Amount of cash needed for the conversion.";
@@ -993,8 +993,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmConversionOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionOption";
 			definition = "Specifies information about the choices offered to the holder of a conversion.";
@@ -1051,8 +1051,8 @@ public class SecuritiesConversion {
 	public static final MMBusinessAttribute mmConversionQuotedCurrency = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmSettlementCurrency);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionQuotedCurrency";
 			definition = "Currency into which the base currency is converted, in a currency exchange.";
@@ -1101,8 +1101,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place  taken into account to adjust the date and time, as defined within the business day convention.";
@@ -1150,8 +1150,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmMinimumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumNoticeDays";
 			definition = "Minimum number of days that must be given by either the issuer or the holder before conversion can take place.";
@@ -1197,8 +1197,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmNoticePeriodType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoticePeriodType";
 			definition = "Specifies the type of notice period.";
@@ -1247,8 +1247,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmProtectionAgainstDilutionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProtectionAgainstDilutionIndicator";
 			definition = "Indicates whether the security is protected against dilution with regards to capital events.";
@@ -1297,8 +1297,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmReverseConversionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReverseConversionIndicator";
 			definition = "Indicates whether the bond is convertible into an equity and back to the bond.";
@@ -1353,8 +1353,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurityIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityIdentification";
 			definition = "ISIN identification of the related financial instrument into which this security can be converted.";
@@ -1397,8 +1397,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Specifies if the issuer or the holder are allowed to convert the security into another one.";
@@ -1445,8 +1445,8 @@ public class SecuritiesConversion {
 	 */
 	public static final MMBusinessAttribute mmContractSize = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractSize";
 			definition = "Ratio or multiplying factor used to convert one contract into a quantity.";

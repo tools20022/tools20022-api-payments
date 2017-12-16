@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CashPaymentStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the state of a payment instruction at a specified time.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#mmPending
+ * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#Pending
  * CashPaymentStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#mmFinal
+ * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#Final
  * CashPaymentStatusCode.mmFinal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#mmCancelled
+ * {@linkplain com.tools20022.repository.codeset.CashPaymentStatusCode#Cancelled
  * CashPaymentStatusCode.mmCancelled}</li>
  * </ul>
  * </li>
@@ -64,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the state of a payment instruction at a specified time."</li>
  * </ul>
  */
-public class CashPaymentStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CashPaymentStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class CashPaymentStatusCode {
 	 * definition} = "The payment is awaiting settlement."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final CashPaymentStatusCode Pending = new CashPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
 			definition = "The payment is awaiting settlement.";
-			owner_lazy = () -> CashPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashPaymentStatusCode.mmObject();
 			codeName = "PDNG";
 		}
 	};
@@ -118,12 +124,12 @@ public class CashPaymentStatusCode {
 	 * definition} = "The payment has been settled or stopped."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFinal = new MMCode() {
+	public static final CashPaymentStatusCode Final = new CashPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Final";
 			definition = "The payment has been settled or stopped.";
-			owner_lazy = () -> CashPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashPaymentStatusCode.mmObject();
 			codeName = "FINL";
 		}
 	};
@@ -148,17 +154,21 @@ public class CashPaymentStatusCode {
 	 * definition} = "The payment is cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelled = new MMCode() {
+	public static final CashPaymentStatusCode Cancelled = new CashPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cancelled";
 			definition = "The payment is cancelled.";
-			owner_lazy = () -> CashPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashPaymentStatusCode.mmObject();
 			codeName = "CANC";
 		}
 	};
+	final static private LinkedHashMap<String, CashPaymentStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CashPaymentStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +176,37 @@ public class CashPaymentStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashPaymentStatusCode";
 				definition = "Specifies the state of a payment instruction at a specified time.";
-				code_lazy = () -> Arrays.asList(CashPaymentStatusCode.mmPending, CashPaymentStatusCode.mmFinal, CashPaymentStatusCode.mmCancelled);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CashPaymentStatusCode.Pending, com.tools20022.repository.codeset.CashPaymentStatusCode.Final,
+						com.tools20022.repository.codeset.CashPaymentStatusCode.Cancelled);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Final.getCodeName().get(), Final);
+		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
+	}
+
+	public static CashPaymentStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CashPaymentStatusCode[] values() {
+		CashPaymentStatusCode[] values = new CashPaymentStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CashPaymentStatusCode> {
+		@Override
+		public CashPaymentStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CashPaymentStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OnLineCapabilityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * On-line and off-line capabilities of the POI (Point Of Interaction).
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#mmOffLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#OffLine
  * OnLineCapabilityCode.mmOffLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#mmOnLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#OnLine
  * OnLineCapabilityCode.mmOnLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#mmSemiOffLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode#SemiOffLine
  * OnLineCapabilityCode.mmSemiOffLine}</li>
  * </ul>
  * </li>
@@ -71,7 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "On-line and off-line capabilities of the POI (Point Of Interaction)."</li>
  * </ul>
  */
-public class OnLineCapabilityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OnLineCapabilityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,12 +101,12 @@ public class OnLineCapabilityCode {
 	 * definition} = "Off-line only capable."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffLine = new MMCode() {
+	public static final OnLineCapabilityCode OffLine = new OnLineCapabilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffLine";
 			definition = "Off-line only capable.";
-			owner_lazy = () -> OnLineCapabilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapabilityCode.mmObject();
 			codeName = "OFLN";
 		}
 	};
@@ -125,12 +131,12 @@ public class OnLineCapabilityCode {
 	 * definition} = "On-line only capable."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnLine = new MMCode() {
+	public static final OnLineCapabilityCode OnLine = new OnLineCapabilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLine";
 			definition = "On-line only capable.";
-			owner_lazy = () -> OnLineCapabilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapabilityCode.mmObject();
 			codeName = "ONLN";
 		}
 	};
@@ -156,17 +162,21 @@ public class OnLineCapabilityCode {
 	 * "Off-line capable with possible on-line requests to the acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSemiOffLine = new MMCode() {
+	public static final OnLineCapabilityCode SemiOffLine = new OnLineCapabilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SemiOffLine";
 			definition = "Off-line capable with possible on-line requests to the acquirer.";
-			owner_lazy = () -> OnLineCapabilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapabilityCode.mmObject();
 			codeName = "SMON";
 		}
 	};
+	final static private LinkedHashMap<String, OnLineCapabilityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OnLineCapabilityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,10 +184,38 @@ public class OnLineCapabilityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OnLineCapabilityCode";
 				definition = "On-line and off-line capabilities of the POI (Point Of Interaction).";
-				code_lazy = () -> Arrays.asList(OnLineCapabilityCode.mmOffLine, OnLineCapabilityCode.mmOnLine, OnLineCapabilityCode.mmSemiOffLine);
 				derivation_lazy = () -> Arrays.asList(OnLineCapability1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OnLineCapabilityCode.OffLine, com.tools20022.repository.codeset.OnLineCapabilityCode.OnLine,
+						com.tools20022.repository.codeset.OnLineCapabilityCode.SemiOffLine);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(OffLine.getCodeName().get(), OffLine);
+		codesByName.put(OnLine.getCodeName().get(), OnLine);
+		codesByName.put(SemiOffLine.getCodeName().get(), SemiOffLine);
+	}
+
+	public static OnLineCapabilityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OnLineCapabilityCode[] values() {
+		OnLineCapabilityCode[] values = new OnLineCapabilityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OnLineCapabilityCode> {
+		@Override
+		public OnLineCapabilityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OnLineCapabilityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the seniority type of a specific debt instrument.
@@ -32,19 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmSeniorDebt
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#SeniorDebt
  * DebtInstrumentSeniorityTypeCode.mmSeniorDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmMezzanineDebt
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#MezzanineDebt
  * DebtInstrumentSeniorityTypeCode.mmMezzanineDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmSubordinatedDebt
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#SubordinatedDebt
  * DebtInstrumentSeniorityTypeCode.mmSubordinatedDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmJuniorDebt
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#JuniorDebt
  * DebtInstrumentSeniorityTypeCode.mmJuniorDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmOther
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#Other
  * DebtInstrumentSeniorityTypeCode.mmOther}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the seniority type of a specific debt instrument."</li>
  * </ul>
  */
-public class DebtInstrumentSeniorityTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DebtInstrumentSeniorityTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSeniorDebt = new MMCode() {
+	public static final DebtInstrumentSeniorityTypeCode SeniorDebt = new DebtInstrumentSeniorityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SeniorDebt";
 			definition = "Debt that takes priority over other unsecured or otherwise more junior debt owed by the issuer.";
-			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.mmObject();
 			codeName = "SNDB";
 		}
 	};
@@ -123,12 +129,12 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMezzanineDebt = new MMCode() {
+	public static final DebtInstrumentSeniorityTypeCode MezzanineDebt = new DebtInstrumentSeniorityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MezzanineDebt";
 			definition = "Subordinated debt or preferred equity instrument that represents a claim on a company's assets which is senior only to that of the common shares.";
-			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.mmObject();
 			codeName = "MZZD";
 		}
 	};
@@ -156,12 +162,12 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSubordinatedDebt = new MMCode() {
+	public static final DebtInstrumentSeniorityTypeCode SubordinatedDebt = new DebtInstrumentSeniorityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubordinatedDebt";
 			definition = "Debt owed to an unsecured creditor that can only be paid, in the event of a liquidation, after the claims of secured creditors have been met.";
-			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.mmObject();
 			codeName = "SBOD";
 		}
 	};
@@ -189,12 +195,12 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmJuniorDebt = new MMCode() {
+	public static final DebtInstrumentSeniorityTypeCode JuniorDebt = new DebtInstrumentSeniorityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "JuniorDebt";
 			definition = "Debt that is either unsecured or has a lower priority than of another debt claim on the same asset or property.";
-			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.mmObject();
 			codeName = "JUND";
 		}
 	};
@@ -219,27 +225,61 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * definition} = "Other type of debts."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final DebtInstrumentSeniorityTypeCode Other = new DebtInstrumentSeniorityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other type of debts.";
-			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
+	final static private LinkedHashMap<String, DebtInstrumentSeniorityTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DebtInstrumentSeniorityTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebtInstrumentSeniorityTypeCode";
 				definition = "Specifies the seniority type of a specific debt instrument.";
-				code_lazy = () -> Arrays.asList(DebtInstrumentSeniorityTypeCode.mmSeniorDebt, DebtInstrumentSeniorityTypeCode.mmMezzanineDebt, DebtInstrumentSeniorityTypeCode.mmSubordinatedDebt,
-						DebtInstrumentSeniorityTypeCode.mmJuniorDebt, DebtInstrumentSeniorityTypeCode.mmOther);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.SeniorDebt, com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.MezzanineDebt,
+						com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.SubordinatedDebt, com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.JuniorDebt,
+						com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(SeniorDebt.getCodeName().get(), SeniorDebt);
+		codesByName.put(MezzanineDebt.getCodeName().get(), MezzanineDebt);
+		codesByName.put(SubordinatedDebt.getCodeName().get(), SubordinatedDebt);
+		codesByName.put(JuniorDebt.getCodeName().get(), JuniorDebt);
+		codesByName.put(Other.getCodeName().get(), Other);
+	}
+
+	public static DebtInstrumentSeniorityTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DebtInstrumentSeniorityTypeCode[] values() {
+		DebtInstrumentSeniorityTypeCode[] values = new DebtInstrumentSeniorityTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DebtInstrumentSeniorityTypeCode> {
+		@Override
+		public DebtInstrumentSeniorityTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DebtInstrumentSeniorityTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

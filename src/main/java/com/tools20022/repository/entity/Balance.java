@@ -75,14 +75,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice
- * ContractBalanceType1Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -105,6 +97,14 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.CashBalance CashBalance}</li>
  * <li>{@linkplain com.tools20022.repository.entity.SecuritiesBalance
  * SecuritiesBalance}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice
+ * ContractBalanceType1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -201,8 +201,8 @@ public class Balance {
 			derivation_lazy = () -> Arrays.asList(BalanceType5Choice.mmCode, BalanceType5Choice.mmProprietary, BalanceSubType1Choice.mmCode, BalanceSubType1Choice.mmProprietary, BalanceType12.mmCodeOrProprietary, BalanceType12.mmSubType,
 					ReportingRequest3.mmRequestedBalanceType, BillingBalanceType1Choice.mmCode, BillingBalanceType1Choice.mmProprietary, BillingBalance1.mmType, ContractBalanceType1Choice.mmCode, ContractBalanceType1Choice.mmProprietary,
 					ContractBalance1.mmType, CashBalance7.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the nature of a balance.";
@@ -255,8 +255,8 @@ public class Balance {
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashBalance7.mmDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time at which the balance is or will be available.";
@@ -319,8 +319,8 @@ public class Balance {
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractBalance1.mmCreditDebitIndicator, CashBalance7.mmCreditDebitIndicator, CashAvailability1.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance";
@@ -373,8 +373,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetHolding";
 			definition = "Specifies in terms of value and quantity the assets held in a balance.";
@@ -412,8 +412,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAttribute mmCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationDate";
 			definition = "Specifies the date and time at which the balance is calculated.";
@@ -474,8 +474,8 @@ public class Balance {
 	public static final MMBusinessAssociationEnd mmAdjustment = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BalanceAdjustment1.mmEarningsAdjustmentAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Adjustment";
 			definition = "Specifies the balance adjustments.";
@@ -520,8 +520,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account or sub-account for which a balance is calculated.";
@@ -569,8 +569,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Set of elements used to provide interest information that applies to the balance.";
@@ -613,8 +613,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmBalanceEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BalanceEntry";
 			definition = "Credit or debit postings used to calculate a balance.";
@@ -655,8 +655,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAttribute mmProcessingRestriction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingRestriction";
 			definition = "Specifies the type of balance processing restrictions that must be applied.";
@@ -702,8 +702,8 @@ public class Balance {
 	 */
 	public static final MMBusinessAttribute mmOpeningClosingCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningClosingCode";
 			definition = "Specifies whether the balance is an opening or a closing one.";

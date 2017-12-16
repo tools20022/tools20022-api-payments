@@ -132,8 +132,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collateral";
 			definition = "Collateral which is the subject of the valuation.";
@@ -180,8 +180,8 @@ public class CollateralValuation {
 	public static final MMBusinessAttribute mmCollateralValuationDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmValueDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralValuationDate";
 			definition = "Valuation date of the collateral.";
@@ -236,8 +236,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";
@@ -279,8 +279,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAttribute mmReportedCurrencyAndAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportedCurrencyAndAmount";
 			definition = "Specifies the total amount of the collateral in the reporting currency.";
@@ -330,8 +330,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAttribute mmMarketValueAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketValueAmount";
 			definition = "Specifies the total market to market value of the collateral in the reporting currency. It is the dirty price, that is, the accrued interest is included if any.";
@@ -377,8 +377,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAttribute mmAdjustedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdjustedRate";
 			definition = "Percentage by which the collateral amount needs to be adjusted.";
@@ -423,8 +423,8 @@ public class CollateralValuation {
 	 */
 	public static final MMBusinessAttribute mmCollateralValuationCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralValuationCurrency";
 			definition = "Currency used for the valuation.";

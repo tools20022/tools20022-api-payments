@@ -107,8 +107,8 @@ public class OrderBook {
 	 */
 	public static final MMBusinessAssociationEnd mmOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrderBook.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrderBook.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Order";
 			definition = "Instruction to a broker or dealer to buy or sell a specific security.";
@@ -147,8 +147,8 @@ public class OrderBook {
 	 */
 	public static final MMBusinessAttribute mmPriceTimePriority = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.OrderBook.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.OrderBook.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceTimePriority";
 			definition = "Priority given to an order based on its price and/or time specification.";

@@ -140,8 +140,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmValuation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Valuation";
 			definition = "Valuation process for the portfolio.";
@@ -187,8 +187,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transfer";
 			definition = "Transfer information related to a portfolio.";
@@ -235,8 +235,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetDescription = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetDescription";
 			definition = "Specifies the assets included in the portfolio together with their value.";
@@ -273,8 +273,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the portfolio.";
@@ -318,8 +318,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the portfolio.";
@@ -371,8 +371,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy set for the portfolio.";
@@ -417,8 +417,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmBenchmark = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Benchmark";
 			definition = "Information on the benchmark set for the portfolio.";
@@ -463,8 +463,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan associated with a portfolio.";
@@ -510,8 +510,8 @@ public class Portfolio {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Account on which the portfolio is held.";

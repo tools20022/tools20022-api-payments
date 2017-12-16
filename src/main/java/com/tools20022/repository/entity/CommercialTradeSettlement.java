@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Settlement
+ * Settlement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,9 +80,6 @@ import java.util.List;
  * LetterOfCredit.mmCommercialTradeSettlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Settlement
- * Settlement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -135,8 +135,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Settlement of the payment side of a commercial trade.";
@@ -181,8 +181,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Invoice";
 			definition = "Specifies for which invoice the settlement takes place.";
@@ -229,8 +229,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmLetterOfCredit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterOfCredit";
 			definition = "Written undertaking by a bank to honour a demand for payment.";
@@ -276,8 +276,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductDelivery";
 			definition = "Delivery of the goods or services to the buyer.";
@@ -323,8 +323,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialTrade";
 			definition = "Specifies the commercial trade which is settled.";

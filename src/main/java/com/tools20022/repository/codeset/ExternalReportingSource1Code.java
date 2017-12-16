@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalReportingSource1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reporting source, as published in an external reporting source
@@ -53,11 +59,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalReportingSource1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalReportingSource1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalReportingSource1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalReportingSource1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -65,8 +76,34 @@ public class ExternalReportingSource1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalReportingSource1Code";
 				definition = "Specifies the reporting source, as published in an external reporting source code list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalReportingSource1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalReportingSource1Code[] values() {
+		ExternalReportingSource1Code[] values = new ExternalReportingSource1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalReportingSource1Code> {
+		@Override
+		public ExternalReportingSource1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalReportingSource1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

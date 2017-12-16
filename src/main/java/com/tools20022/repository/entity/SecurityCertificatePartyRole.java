@@ -39,6 +39,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,8 +58,6 @@ import java.util.List;
  * SecurityCertificate.mmSecurityCertificatePartyRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -126,8 +126,8 @@ public class SecurityCertificatePartyRole extends Role {
 	public static final MMBusinessAssociationEnd mmSecurityCertificate = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyAndCertificate2.mmCertificate, PartyAndCertificate3.mmCertificate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityCertificate";
 			definition = "Identifies the security certificate for which a party plays a role.";

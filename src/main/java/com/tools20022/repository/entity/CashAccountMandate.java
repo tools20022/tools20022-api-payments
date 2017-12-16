@@ -39,6 +39,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -48,16 +50,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CashAccountMandate#mmCashAccountContract
  * CashAccountMandate.mmCashAccountContract}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.OperationMandate2
- * OperationMandate2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OperationMandate3
- * OperationMandate3}</li>
  * </ul>
  * </li>
  * <li>
@@ -72,8 +64,16 @@ import java.util.List;
  * CashAccountService.mmCashAccountMandate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.OperationMandate2
+ * OperationMandate2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OperationMandate3
+ * OperationMandate3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -131,8 +131,8 @@ public class CashAccountMandate extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Services that the holder of an account mandate can exercise.";
@@ -178,8 +178,8 @@ public class CashAccountMandate extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountContract";
 			definition = "Contract to which a mandate applies.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.QualityIndicationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the relative quality of the indication of interest.
@@ -31,14 +36,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.QualityIndicationCode#mmLow
+ * <li>{@linkplain com.tools20022.repository.codeset.QualityIndicationCode#Low
  * QualityIndicationCode.mmLow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.QualityIndicationCode#mmMedium
+ * {@linkplain com.tools20022.repository.codeset.QualityIndicationCode#Medium
  * QualityIndicationCode.mmMedium}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.QualityIndicationCode#mmHigh
+ * <li>{@linkplain com.tools20022.repository.codeset.QualityIndicationCode#High
  * QualityIndicationCode.mmHigh}</li>
  * </ul>
  * </li>
@@ -64,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class QualityIndicationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class QualityIndicationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +92,12 @@ public class QualityIndicationCode {
 	 * definition} = "Low quality."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLow = new MMCode() {
+	public static final QualityIndicationCode Low = new QualityIndicationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Low";
 			definition = "Low quality.";
-			owner_lazy = () -> QualityIndicationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QualityIndicationCode.mmObject();
 			codeName = "LOWE";
 		}
 	};
@@ -118,12 +122,12 @@ public class QualityIndicationCode {
 	 * definition} = "Medium quality."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMedium = new MMCode() {
+	public static final QualityIndicationCode Medium = new QualityIndicationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Medium";
 			definition = "Medium quality.";
-			owner_lazy = () -> QualityIndicationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QualityIndicationCode.mmObject();
 			codeName = "MEDI";
 		}
 	};
@@ -148,17 +152,21 @@ public class QualityIndicationCode {
 	 * definition} = "High quality."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHigh = new MMCode() {
+	public static final QualityIndicationCode High = new QualityIndicationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "High";
 			definition = "High quality.";
-			owner_lazy = () -> QualityIndicationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QualityIndicationCode.mmObject();
 			codeName = "HIGH";
 		}
 	};
+	final static private LinkedHashMap<String, QualityIndicationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected QualityIndicationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +174,36 @@ public class QualityIndicationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QualityIndicationCode";
 				definition = "Indicates the relative quality of the indication of interest.";
-				code_lazy = () -> Arrays.asList(QualityIndicationCode.mmLow, QualityIndicationCode.mmMedium, QualityIndicationCode.mmHigh);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.QualityIndicationCode.Low, com.tools20022.repository.codeset.QualityIndicationCode.Medium, com.tools20022.repository.codeset.QualityIndicationCode.High);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Low.getCodeName().get(), Low);
+		codesByName.put(Medium.getCodeName().get(), Medium);
+		codesByName.put(High.getCodeName().get(), High);
+	}
+
+	public static QualityIndicationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static QualityIndicationCode[] values() {
+		QualityIndicationCode[] values = new QualityIndicationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, QualityIndicationCode> {
+		@Override
+		public QualityIndicationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(QualityIndicationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

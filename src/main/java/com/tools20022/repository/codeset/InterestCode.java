@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.InterestCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates which type of interest is applied to a balance left on an account.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestCode#mmIntraDay
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestCode#IntraDay
  * InterestCode.mmIntraDay}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestCode#mmOverNight
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestCode#OverNight
  * InterestCode.mmOverNight}</li>
  * </ul>
  * </li>
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class InterestCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InterestCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class InterestCode {
 	 * definition} = "During or within a business day."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntraDay = new MMCode() {
+	public static final InterestCode IntraDay = new InterestCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntraDay";
 			definition = "During or within a business day.";
-			owner_lazy = () -> InterestCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestCode.mmObject();
 			codeName = "INDY";
 		}
 	};
@@ -122,17 +128,21 @@ public class InterestCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOverNight = new MMCode() {
+	public static final InterestCode OverNight = new InterestCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverNight";
 			definition = "Period of time between the end of a business day and the start of the next business day (usually the day after).";
-			owner_lazy = () -> InterestCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestCode.mmObject();
 			codeName = "OVRN";
 		}
 	};
+	final static private LinkedHashMap<String, InterestCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InterestCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -140,10 +150,36 @@ public class InterestCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestCode";
 				definition = "Indicates which type of interest is applied to a balance left on an account.";
-				code_lazy = () -> Arrays.asList(InterestCode.mmIntraDay, InterestCode.mmOverNight);
 				derivation_lazy = () -> Arrays.asList(InterestType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InterestCode.IntraDay, com.tools20022.repository.codeset.InterestCode.OverNight);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(IntraDay.getCodeName().get(), IntraDay);
+		codesByName.put(OverNight.getCodeName().get(), OverNight);
+	}
+
+	public static InterestCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InterestCode[] values() {
+		InterestCode[] values = new InterestCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InterestCode> {
+		@Override
+		public InterestCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InterestCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

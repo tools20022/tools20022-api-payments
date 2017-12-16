@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.ClearingChannelCode;
+import com.tools20022.repository.codeset.ClearingChannel2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the clearing channel for the routing of the transaction, as part of
@@ -31,25 +35,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.ClearingChannelCode
- * ClearingChannelCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmRealTimeGrossSettlementSystem
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeGrossSettlementSystem
  * ClearingChannel2Code.mmRealTimeGrossSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmRealTimeNetSettlementSystem
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeNetSettlementSystem
  * ClearingChannel2Code.mmRealTimeNetSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmMassPaymentNetSystem
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#MassPaymentNetSystem
  * ClearingChannel2Code.mmMassPaymentNetSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmBookTransfer
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#BookTransfer
  * ClearingChannel2Code.mmBookTransfer}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannelCode
+ * ClearingChannelCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -73,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ClearingChannel2Code extends ClearingChannelCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ClearingChannel2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,11 +97,12 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "RealTimeGrossSettlementSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRealTimeGrossSettlementSystem = new MMCode() {
+	public static final ClearingChannel2Code RealTimeGrossSettlementSystem = new ClearingChannel2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RealTimeGrossSettlementSystem";
-			owner_lazy = () -> ClearingChannel2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingChannel2Code.mmObject();
+			codeName = ClearingChannelCode.RealTimeGrossSettlementSystem.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -115,11 +121,12 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "RealTimeNetSettlementSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRealTimeNetSettlementSystem = new MMCode() {
+	public static final ClearingChannel2Code RealTimeNetSettlementSystem = new ClearingChannel2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RealTimeNetSettlementSystem";
-			owner_lazy = () -> ClearingChannel2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingChannel2Code.mmObject();
+			codeName = ClearingChannelCode.RealTimeNetSettlementSystem.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -138,11 +145,12 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "MassPaymentNetSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMassPaymentNetSystem = new MMCode() {
+	public static final ClearingChannel2Code MassPaymentNetSystem = new ClearingChannel2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MassPaymentNetSystem";
-			owner_lazy = () -> ClearingChannel2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingChannel2Code.mmObject();
+			codeName = ClearingChannelCode.MassPaymentNetSystem.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -161,15 +169,20 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "BookTransfer"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBookTransfer = new MMCode() {
+	public static final ClearingChannel2Code BookTransfer = new ClearingChannel2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BookTransfer";
-			owner_lazy = () -> ClearingChannel2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingChannel2Code.mmObject();
+			codeName = ClearingChannelCode.BookTransfer.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, ClearingChannel2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ClearingChannel2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -177,10 +190,39 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingChannel2Code";
 				definition = "Specifies the clearing channel for the routing of the transaction, as part of the payment type identification.";
-				code_lazy = () -> Arrays.asList(ClearingChannel2Code.mmRealTimeGrossSettlementSystem, ClearingChannel2Code.mmRealTimeNetSettlementSystem, ClearingChannel2Code.mmMassPaymentNetSystem, ClearingChannel2Code.mmBookTransfer);
 				trace_lazy = () -> ClearingChannelCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ClearingChannel2Code.RealTimeGrossSettlementSystem, com.tools20022.repository.codeset.ClearingChannel2Code.RealTimeNetSettlementSystem,
+						com.tools20022.repository.codeset.ClearingChannel2Code.MassPaymentNetSystem, com.tools20022.repository.codeset.ClearingChannel2Code.BookTransfer);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(RealTimeGrossSettlementSystem.getCodeName().get(), RealTimeGrossSettlementSystem);
+		codesByName.put(RealTimeNetSettlementSystem.getCodeName().get(), RealTimeNetSettlementSystem);
+		codesByName.put(MassPaymentNetSystem.getCodeName().get(), MassPaymentNetSystem);
+		codesByName.put(BookTransfer.getCodeName().get(), BookTransfer);
+	}
+
+	public static ClearingChannel2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ClearingChannel2Code[] values() {
+		ClearingChannel2Code[] values = new ClearingChannel2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ClearingChannel2Code> {
+		@Override
+		public ClearingChannel2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ClearingChannel2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

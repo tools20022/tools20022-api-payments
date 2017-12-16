@@ -42,6 +42,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.System System}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -90,19 +92,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1
- * PointOfInteractionCapabilities1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PointOfInteractionComponent1
- * PointOfInteractionComponent1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PointOfInteraction1
- * PointOfInteraction1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -123,8 +112,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * PointOfInteraction1.mmCapabilities}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.System System}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1
+ * PointOfInteractionCapabilities1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PointOfInteractionComponent1
+ * PointOfInteractionComponent1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PointOfInteraction1
+ * PointOfInteraction1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -182,8 +182,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPaymentAcquiring = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentAcquiring";
 			definition = "Process which uses the point of interaction.";
@@ -233,8 +233,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmCardReadingCapabilities = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmCardReadingCapabilities);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardReadingCapabilities";
 			definition = "Card reading capabilities of the POI performing the transaction.";
@@ -292,8 +292,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmCardholderVerificationCapabilities = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmCardholderVerificationCapabilities);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderVerificationCapabilities";
 			definition = "Type of cardholder verification that could be performed during a transaction.";
@@ -348,8 +348,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmOnLineCapabilities = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmOnLineCapabilities);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLineCapabilities";
 			definition = "On-line and off-line capabilities of the POI.";
@@ -404,8 +404,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmDisplayCapabilities = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmDisplayCapabilities);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisplayCapabilities";
 			definition = "Display interfaces components.";
@@ -460,8 +460,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmPrintLineWidth = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmPrintLineWidth);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrintLineWidth";
 			definition = "Number of columns of the printer component.";
@@ -516,8 +516,8 @@ public class PointOfInteraction extends System {
 	public static final MMBusinessAttribute mmComponent = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteraction1.mmComponent);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Component";
 			definition = "Type of components belonging to a POI.";
@@ -563,8 +563,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmComponentIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentIdentification";
 			definition = "Identification of the POI component assigned by its provider.";
@@ -612,8 +612,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmGroupIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GroupIdentifier";
 			definition = "Identifier assigned by the merchant identifying a set of POI terminals performing some categories of transactions.";
@@ -659,8 +659,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmLineWidth = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineWidth";
 			definition = "Number of columns of the display component.";
@@ -706,8 +706,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmNumberOfLines = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfLines";
 			definition = "Number of lines of the display component.";
@@ -755,8 +755,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmErrorLog = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ErrorLog";
 			definition = "Error logging transferred by the point of interaction to the terminal management system.";
@@ -802,8 +802,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute mmComponentVersionNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentVersionNumber";
 			definition = "Identification of a version of component belonging to a given model.";
@@ -859,8 +859,8 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAssociationEnd mmControllingTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ControllingTerminalManagementSystem";
 			definition = "Terminal management system for which a point of interaction is specified.";

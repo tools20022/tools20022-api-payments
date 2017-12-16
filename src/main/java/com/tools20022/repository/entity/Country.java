@@ -167,8 +167,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmDomiciledFunds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomiciledFunds";
 			definition = "Investment funds which are domiciled in a specific country.";
@@ -252,8 +252,8 @@ public class Country {
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmCountry, DateAndPlaceOfBirth.mmCountryOfBirth, PartyIdentification43.mmCountryOfResidence, PartyIdentification40.mmCountryOfResidence, Organisation12.mmCountryOfOperation,
 					OrganisationModification1.mmCountryOfOperation, RegulatoryAuthority2.mmCountry, StructuredRegulatoryReporting3.mmCountry, PartyIdentification42.mmCountryOfResidence, PostalAddress11.mmCountry,
 					PartyIdentification58.mmCountryOfResidence, ResidenceLocation1Choice.mmCountry, PartyIdentification77.mmCountryOfResidence, PostalAddress19.mmCountry);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Identifies a nation with its own government (ISO 3166).";
@@ -304,8 +304,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmCitizen = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Citizen";
 			definition = "Specifies a person which is a citizen of a country.";
@@ -349,8 +349,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Tax parameters applicable in a country.";
@@ -397,8 +397,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmCountryForSafekeepingPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountryForSafekeepingPlace";
 			definition = "Specifies the safekeeping places located in a specific country.";
@@ -446,8 +446,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmCountryForBeneficialOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CountryForBeneficialOwner";
 			definition = "Specifies the beneficial owner which has certified that it is not domiciled in the country.";
@@ -492,8 +492,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmProducedProducts = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProducedProducts";
 			definition = "Specifies the product for which an origin is specified.";
@@ -539,8 +539,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmNationalRegulatoryAuthority = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NationalRegulatoryAuthority";
 			definition = "Regulatory authority of the country.";
@@ -586,8 +586,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPayment";
 			definition = "Card payment which took place in the specified country.";
@@ -627,8 +627,8 @@ public class Country {
 	 */
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name by which a country is known. It is normally the name attached to the ISO country code.";
@@ -681,8 +681,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmPostalAddressSpecification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalAddressSpecification";
 			definition = "Specifies the representation of a postal address per country.";
@@ -731,8 +731,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmCountryRelatedInvestmentFundProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CountryRelatedInvestmentFundProcessing";
 			definition = "Specifies the other parameters of the investment fund class which apply in that country.";
@@ -777,8 +777,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Market";
 			definition = "Market for which a country is specified.";
@@ -824,8 +824,8 @@ public class Country {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentCard";
 			definition = "Payment card for which a country code is attached.";

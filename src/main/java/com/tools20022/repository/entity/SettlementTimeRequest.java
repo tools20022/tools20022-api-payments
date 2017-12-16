@@ -57,20 +57,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.SettlementTimeRequest2
- * SettlementTimeRequest2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.entity.Payment#mmSettlementTimeRequest
  * Payment.mmSettlementTimeRequest}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.SettlementTimeRequest2
+ * SettlementTimeRequest2}</li>
  * </ul>
  * </li>
  * <li>
@@ -128,8 +128,8 @@ public class SettlementTimeRequest {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment for which settlement times are specified.";
@@ -181,8 +181,8 @@ public class SettlementTimeRequest {
 	public static final MMBusinessAttribute mmCLSTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementTimeRequest2.mmCLSTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CLSTime";
 			definition = "Time by which the amount of money must be credited, with confirmation, to the CLS Bank's account at the central bank.\r\nUsage: Time must be expressed in Central European Time (CET).";
@@ -236,8 +236,8 @@ public class SettlementTimeRequest {
 	public static final MMBusinessAttribute mmTillTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementTimeRequest2.mmTillTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TillTime";
 			definition = "Time until when the payment may be settled.";
@@ -291,8 +291,8 @@ public class SettlementTimeRequest {
 	public static final MMBusinessAttribute mmFromTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementTimeRequest2.mmFromTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromTime";
 			definition = "Time as from when the payment may be settled.";
@@ -347,8 +347,8 @@ public class SettlementTimeRequest {
 	public static final MMBusinessAttribute mmRejectTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementTimeRequest2.mmRejectTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectTime";
 			definition = "Time by when the payment must be settled to avoid rejection.";

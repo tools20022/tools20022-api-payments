@@ -20,31 +20,35 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PriceValueTypeCode;
+import com.tools20022.repository.codeset.PriceValueType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a type of value of the price.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode
- * PriceValueTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceValueType1Code#mmDiscount
+ * {@linkplain com.tools20022.repository.codeset.PriceValueType1Code#Discount
  * PriceValueType1Code.mmDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceValueType1Code#mmPremium
+ * {@linkplain com.tools20022.repository.codeset.PriceValueType1Code#Premium
  * PriceValueType1Code.mmPremium}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PriceValueType1Code#mmPar
+ * <li>{@linkplain com.tools20022.repository.codeset.PriceValueType1Code#Par
  * PriceValueType1Code.mmPar}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode
+ * PriceValueTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a type of value of the price."</li>
  * </ul>
  */
-public class PriceValueType1Code extends PriceValueTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PriceValueType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,11 +90,12 @@ public class PriceValueType1Code extends PriceValueTypeCode {
 	 * name} = "Discount"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscount = new MMCode() {
+	public static final PriceValueType1Code Discount = new PriceValueType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Discount";
-			owner_lazy = () -> PriceValueType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceValueType1Code.mmObject();
+			codeName = PriceValueTypeCode.Discount.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -108,11 +114,12 @@ public class PriceValueType1Code extends PriceValueTypeCode {
 	 * name} = "Premium"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPremium = new MMCode() {
+	public static final PriceValueType1Code Premium = new PriceValueType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Premium";
-			owner_lazy = () -> PriceValueType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceValueType1Code.mmObject();
+			codeName = PriceValueTypeCode.Premium.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -131,15 +138,20 @@ public class PriceValueType1Code extends PriceValueTypeCode {
 	 * name} = "Par"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPar = new MMCode() {
+	public static final PriceValueType1Code Par = new PriceValueType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Par";
-			owner_lazy = () -> PriceValueType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceValueType1Code.mmObject();
+			codeName = PriceValueTypeCode.Par.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, PriceValueType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PriceValueType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -147,10 +159,37 @@ public class PriceValueType1Code extends PriceValueTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceValueType1Code";
 				definition = "Specifies a type of value of the price.";
-				code_lazy = () -> Arrays.asList(PriceValueType1Code.mmDiscount, PriceValueType1Code.mmPremium, PriceValueType1Code.mmPar);
 				trace_lazy = () -> PriceValueTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PriceValueType1Code.Discount, com.tools20022.repository.codeset.PriceValueType1Code.Premium, com.tools20022.repository.codeset.PriceValueType1Code.Par);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Discount.getCodeName().get(), Discount);
+		codesByName.put(Premium.getCodeName().get(), Premium);
+		codesByName.put(Par.getCodeName().get(), Par);
+	}
+
+	public static PriceValueType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PriceValueType1Code[] values() {
+		PriceValueType1Code[] values = new PriceValueType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PriceValueType1Code> {
+		@Override
+		public PriceValueType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PriceValueType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

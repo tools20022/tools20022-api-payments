@@ -20,34 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.FrequencyCode;
+import com.tools20022.repository.codeset.Frequency10Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the regularity of an event.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.FrequencyCode FrequencyCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmNever
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Never
  * Frequency10Code.mmNever}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmAnnual
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Annual
  * Frequency10Code.mmAnnual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmRate
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Rate
  * Frequency10Code.mmRate}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.Frequency10Code#mmSemiAnnual
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#SemiAnnual
  * Frequency10Code.mmSemiAnnual}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.Frequency10Code#mmQuarterly
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Quarterly
  * Frequency10Code.mmQuarterly}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.FrequencyCode FrequencyCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -63,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the regularity of an event."</li>
  * </ul>
  */
-public class Frequency10Code extends FrequencyCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Frequency10Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -82,11 +85,12 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Never"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNever = new MMCode() {
+	public static final Frequency10Code Never = new Frequency10Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Never";
-			owner_lazy = () -> Frequency10Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
+			codeName = FrequencyCode.Never.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -105,11 +109,12 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Annual"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAnnual = new MMCode() {
+	public static final Frequency10Code Annual = new Frequency10Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
-			owner_lazy = () -> Frequency10Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
+			codeName = FrequencyCode.Annual.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -128,11 +133,12 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Rate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRate = new MMCode() {
+	public static final Frequency10Code Rate = new Frequency10Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rate";
-			owner_lazy = () -> Frequency10Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
+			codeName = FrequencyCode.Rate.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -151,11 +157,12 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "SemiAnnual"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSemiAnnual = new MMCode() {
+	public static final Frequency10Code SemiAnnual = new Frequency10Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAnnual";
-			owner_lazy = () -> Frequency10Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
+			codeName = FrequencyCode.SemiAnnual.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -174,25 +181,60 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Quarterly"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmQuarterly = new MMCode() {
+	public static final Frequency10Code Quarterly = new Frequency10Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quarterly";
-			owner_lazy = () -> Frequency10Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
+			codeName = FrequencyCode.Quarterly.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Frequency10Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Frequency10Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency10Code";
 				definition = "Specifies the regularity of an event.";
-				code_lazy = () -> Arrays.asList(Frequency10Code.mmNever, Frequency10Code.mmAnnual, Frequency10Code.mmRate, Frequency10Code.mmSemiAnnual, Frequency10Code.mmQuarterly);
 				trace_lazy = () -> FrequencyCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Frequency10Code.Never, com.tools20022.repository.codeset.Frequency10Code.Annual, com.tools20022.repository.codeset.Frequency10Code.Rate,
+						com.tools20022.repository.codeset.Frequency10Code.SemiAnnual, com.tools20022.repository.codeset.Frequency10Code.Quarterly);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Never.getCodeName().get(), Never);
+		codesByName.put(Annual.getCodeName().get(), Annual);
+		codesByName.put(Rate.getCodeName().get(), Rate);
+		codesByName.put(SemiAnnual.getCodeName().get(), SemiAnnual);
+		codesByName.put(Quarterly.getCodeName().get(), Quarterly);
+	}
+
+	public static Frequency10Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Frequency10Code[] values() {
+		Frequency10Code[] values = new Frequency10Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Frequency10Code> {
+		@Override
+		public Frequency10Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Frequency10Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

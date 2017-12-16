@@ -119,8 +119,8 @@ public class PremiumCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Option";
 			definition = "Option for which a premium is calculated.";
@@ -161,8 +161,8 @@ public class PremiumCalculation {
 	 */
 	public static final MMBusinessAttribute mmPercentageOfCallAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfCallAmount";
 			definition = "Premium calculation is based on a percentage of the call amount.";
@@ -209,8 +209,8 @@ public class PremiumCalculation {
 	 */
 	public static final MMBusinessAttribute mmPercentageOfPutAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfPutAmount";
 			definition = "Premium calculation is based on a percentage of the put amount.";
@@ -256,8 +256,8 @@ public class PremiumCalculation {
 	 */
 	public static final MMBusinessAttribute mmPointsOfCallAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PointsOfCallAmount";
 			definition = "Premium calculation is based on points of the call amount.";
@@ -303,8 +303,8 @@ public class PremiumCalculation {
 	 */
 	public static final MMBusinessAttribute mmPointsOfPutAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PremiumCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PointsOfPutAmount";
 			definition = "Premium calculation is based on points of the put amount.";

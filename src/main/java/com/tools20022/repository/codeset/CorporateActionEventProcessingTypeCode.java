@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of event processing.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmGeneral
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#General
  * CorporateActionEventProcessingTypeCode.mmGeneral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmDistribution
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#Distribution
  * CorporateActionEventProcessingTypeCode.mmDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmReorganisation
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#Reorganisation
  * CorporateActionEventProcessingTypeCode.mmReorganisation}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of event processing."</li>
  * </ul>
  */
-public class CorporateActionEventProcessingTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CorporateActionEventProcessingTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class CorporateActionEventProcessingTypeCode {
 	 * definition} = "No debit or credit of resources."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGeneral = new MMCode() {
+	public static final CorporateActionEventProcessingTypeCode General = new CorporateActionEventProcessingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "General";
 			definition = "No debit or credit of resources.";
-			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.mmObject();
 			codeName = "GENL";
 		}
 	};
@@ -121,12 +127,12 @@ public class CorporateActionEventProcessingTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDistribution = new MMCode() {
+	public static final CorporateActionEventProcessingTypeCode Distribution = new CorporateActionEventProcessingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Distribution";
 			definition = "Holder of the relevant security on a certain date, for example, the record date, will receive a benefit without giving up the underlying security.";
-			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.mmObject();
 			codeName = "DISN";
 		}
 	};
@@ -154,17 +160,21 @@ public class CorporateActionEventProcessingTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReorganisation = new MMCode() {
+	public static final CorporateActionEventProcessingTypeCode Reorganisation = new CorporateActionEventProcessingTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reorganisation";
 			definition = "Underlying security will be debited and may be replaced by another resource (or resources).";
-			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.mmObject();
 			codeName = "REOR";
 		}
 	};
+	final static private LinkedHashMap<String, CorporateActionEventProcessingTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CorporateActionEventProcessingTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -172,9 +182,37 @@ public class CorporateActionEventProcessingTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventProcessingTypeCode";
 				definition = "Specifies the type of event processing.";
-				code_lazy = () -> Arrays.asList(CorporateActionEventProcessingTypeCode.mmGeneral, CorporateActionEventProcessingTypeCode.mmDistribution, CorporateActionEventProcessingTypeCode.mmReorganisation);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.General, com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.Distribution,
+						com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.Reorganisation);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(General.getCodeName().get(), General);
+		codesByName.put(Distribution.getCodeName().get(), Distribution);
+		codesByName.put(Reorganisation.getCodeName().get(), Reorganisation);
+	}
+
+	public static CorporateActionEventProcessingTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CorporateActionEventProcessingTypeCode[] values() {
+		CorporateActionEventProcessingTypeCode[] values = new CorporateActionEventProcessingTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CorporateActionEventProcessingTypeCode> {
+		@Override
+		public CorporateActionEventProcessingTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CorporateActionEventProcessingTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

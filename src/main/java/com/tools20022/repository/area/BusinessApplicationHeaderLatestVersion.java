@@ -68,8 +68,8 @@ public class BusinessApplicationHeaderLatestVersion {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Business Application Header - Latest version - master";
 				definition = "Header that contains business information that is relevant before processing a message.";
-				messageDefinition_lazy = () -> Arrays.asList(BusinessApplicationHeaderV01.mmObject());
 				code = "head";
+				messageDefinition_lazy = () -> Arrays.asList(BusinessApplicationHeaderV01.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

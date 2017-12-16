@@ -38,6 +38,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing
+ * CorporateActionServicing}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -78,10 +82,6 @@ import java.util.List;
  * MeetingResultDissemination.mmRelatedServicing}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing
- * CorporateActionServicing}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -137,8 +137,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingSpecification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingSpecification";
 			definition = "Meeting for which services are provided.";
@@ -188,8 +188,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingNotice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingNotice";
 			definition = "Service which consists in notifying the investor of a meeting. It may contain details of the meeting as defined by the agent in addition to the details defined by the issuer.";
@@ -236,8 +236,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingEntitlement";
 			definition = "Calculation of the entitlementbased on the balance in the account.";
@@ -287,8 +287,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingInstruction";
 			definition = "Service which consists in validating, calculating and transferring the investor's instruction.";
@@ -338,8 +338,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingResultDissemination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingResultDissemination";
 			definition = "Service which consists in distributing the results of the meeting to the investor.";

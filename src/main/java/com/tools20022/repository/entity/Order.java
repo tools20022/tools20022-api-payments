@@ -114,8 +114,8 @@ public class Order {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Agreement between two parties to buy and sell assets.";
@@ -157,8 +157,8 @@ public class Order {
 	 */
 	public static final MMBusinessAttribute mmMasterIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterIdentification";
 			definition = "Unique and unambiguous identifier for a group of individual orders, as assigned by the instructing party. This identifier links the individual orders together.";

@@ -36,6 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
+ * CashAccountService}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -62,9 +65,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Interest.mmRelatedDebitCreditFacility}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
- * CashAccountService}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -128,8 +128,8 @@ public class DebitCreditFacility extends CashAccountService {
 	public static final MMBusinessAssociationEnd mmCreditLine = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashBalance7.mmCreditLine);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditLine";
 			definition = "Credit or Debit limit applied to a cash account.";
@@ -178,8 +178,8 @@ public class DebitCreditFacility extends CashAccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccountInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountInterest";
 			definition = "Interest that applies to a cash account at a particular moment in time, as per a contractual relationship.";
@@ -220,8 +220,8 @@ public class DebitCreditFacility extends CashAccountService {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies if the line is a debit limit or a credit limit.";

@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -68,8 +70,6 @@ import java.util.List;
  * NetworkAccess.mmClientCertificate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -134,8 +134,8 @@ public class SecurityCertificate extends Document {
 	public static final MMBusinessAssociationEnd mmElectronicSignature = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation3.mmLinkFileHash);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicSignature";
 			definition = "Additional security provisions, such as a digital signature.";
@@ -184,8 +184,8 @@ public class SecurityCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurityCertificatePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityCertificatePartyRole";
 			definition = "Role played by a party in the context of a security certificate.";
@@ -231,8 +231,8 @@ public class SecurityCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmNetworkAccess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetworkAccess";
 			definition = "Network access which uses a security certificate.";
@@ -271,8 +271,8 @@ public class SecurityCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCertificateType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificateType";
 			definition = "Type of the security certificate.";

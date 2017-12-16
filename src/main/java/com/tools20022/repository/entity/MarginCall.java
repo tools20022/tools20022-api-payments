@@ -174,8 +174,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarginCallValuationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginCallValuationDate";
 			definition = "Close of business date that initiating party is valuing the margin call.";
@@ -220,8 +220,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmAgreedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AgreedAmount";
 			definition = "Specifies the amount which is undisputed.";
@@ -269,8 +269,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmVariationMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMargin";
 			definition = "Provides the summation of the call amounts for the variation margin and optionally the segregated independent amount.";
@@ -318,8 +318,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmSegregatedIndependentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmount";
 			definition = "Provides the summation of the call amounts for the segregated independent amount only.";
@@ -375,8 +375,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmDefaultFundContribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefaultFundContribution";
 			definition = "Portion of the participation to the default fund that clearing member must provide. It is the sum of the individual contributions.";
@@ -423,8 +423,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmExpectedVariationMarginType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpectedVariationMarginType";
 			definition = "Specifies the expected collateral type and direction.";
@@ -471,8 +471,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmExpectedSegregatedIndependentAmountType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpectedSegregatedIndependentAmountType";
 			definition = "Specifies the expected collateral type and direction.";
@@ -514,8 +514,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmTotalMarkToMarket = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalMarkToMarket";
 			definition = "Net unrealised profit or loss on the value of the netted, gross and failing positions.";
@@ -561,8 +561,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarkToMarketNetted = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarkToMarketNetted";
 			definition = "Unrealised net loss calculated at the participant portfolio level.";
@@ -607,8 +607,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarkToMarketGross = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarkToMarketGross";
 			definition = "Unrealised net loss calculated in that market/boundary.";
@@ -654,8 +654,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarkToMarketFails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarkToMarketFails";
 			definition = "Sum of the unrealised loss without taking profit into consideration.";
@@ -703,8 +703,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmFailsHaircut = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FailsHaircut";
 			definition = "Haircut applied to the absolute value of the participants net positions. Calculation depends on a participants credit rating.";
@@ -753,8 +753,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmInitialMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InitialMargin";
 			definition = "Margin required for absorbing future market price fluctuations (market risks) occurring between the default of a member and close-out of unsettled securities positions by the CCP.";
@@ -802,8 +802,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmIncreaseCoverage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncreaseCoverage";
 			definition = "Amount added to the requirement amount. Its value is at the discretion of the central clearing counterparty.";
@@ -852,8 +852,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmCollateralisedMarginAccountIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralisedMarginAccountIndicator";
 			definition = "Used to indicate whether the reported margin account is collateralised or not. If not collateralised, the account is configured for informational reporting.";
@@ -905,8 +905,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralMovement";
 			definition = "Movements resulting from the margin call calculation.";
@@ -953,8 +953,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";
@@ -1000,8 +1000,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Security";
 			definition = "Description of the securities related to the margin call.";
@@ -1039,8 +1039,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarginProduct = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginProduct";
 			definition = "Specifies the underlying product of the margin.";
@@ -1088,8 +1088,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmMarginType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginType";
 			definition = "Specifies the type of margin, for example, initial margin, variation margin, initial deposit or coupon margin.";
@@ -1138,8 +1138,8 @@ public class MarginCall {
 	 */
 	public static final MMBusinessAttribute mmTotalMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalMarginAmount";
 			definition = "Total margin requirement (expressed in the reporting currency) that must be provided. This is the total requirement calculated to cover the initial margin and the variation margin.";

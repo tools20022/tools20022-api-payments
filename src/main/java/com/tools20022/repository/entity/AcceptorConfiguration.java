@@ -138,8 +138,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmApplicationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicationIdentification";
 			definition = "Identification of the payment application.";
@@ -186,8 +186,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmFinancialCapture = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCapture";
 			definition = "Mode for the financial capture of the transaction by the acquirer.";
@@ -233,8 +233,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmBatchTransferContent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BatchTransferContent";
 			definition = "Types of transaction to include in the batch.";
@@ -280,8 +280,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmExchangePolicy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangePolicy";
 			definition = "Exchange policy between parties.";
@@ -326,8 +326,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmMaximumNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumNumber";
 			definition = "Maximum number of transactions without exchange.";
@@ -374,8 +374,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAmount";
 			definition = "Maximum cumulative amount of the transactions without exchange.";
@@ -424,8 +424,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmReconciliationByAcquirer = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReconciliationByAcquirer";
 			definition = "Indicates the reconciliation period is assigned by the acquirer instead of the acceptor.";
@@ -472,8 +472,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmTotalsPerCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalsPerCurrency";
 			definition = "Indicates the reconciliation total amounts are computed per currency.";
@@ -520,8 +520,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmProtectCardData = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProtectCardData";
 			definition = "Indicator to require protection of sensitive card data in messages.";
@@ -567,8 +567,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmRetailerParameters = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RetailerParameters";
 			definition = "Acceptor parameters dedicated to the retailer.";
@@ -615,8 +615,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmApplicationParameters = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicationParameters";
 			definition = "Configuration parameters attached to the payment application.";
@@ -673,8 +673,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManagementSystem";
 			definition = "Terminal management system for which an acceptor configuration is provided.";
@@ -713,8 +713,8 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute mmApplicationVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicationVersion";
 			definition = "Version of the application.";

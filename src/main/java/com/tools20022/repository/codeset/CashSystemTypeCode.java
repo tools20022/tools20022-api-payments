@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CashSystemTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a type of payment system.
@@ -31,12 +36,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmACH
+ * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#ACH
  * CashSystemTypeCode.mmACH}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmChequeClearing
+ * {@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#ChequeClearing
  * CashSystemTypeCode.mmChequeClearing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmRTGS
+ * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#RTGS
  * CashSystemTypeCode.mmRTGS}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a type of payment system."</li>
  * </ul>
  */
-public class CashSystemTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CashSystemTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,12 +95,12 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmACH = new MMCode() {
+	public static final CashSystemTypeCode ACH = new CashSystemTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ACH";
 			definition = "Automated Clearing House. Payment system that clears cash transfers and settles the proceeds in a lump sum, usually on a multilateral netting basis.";
-			owner_lazy = () -> CashSystemTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSystemTypeCode.mmObject();
 			codeName = "ACHS";
 		}
 	};
@@ -122,12 +128,12 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmChequeClearing = new MMCode() {
+	public static final CashSystemTypeCode ChequeClearing = new CashSystemTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequeClearing";
 			definition = "Payment system that clears physical or truncated cheques and settles the proceeds in a lump sum, usually on a multilateral netting basis.";
-			owner_lazy = () -> CashSystemTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSystemTypeCode.mmObject();
 			codeName = "CHCL";
 		}
 	};
@@ -155,17 +161,21 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRTGS = new MMCode() {
+	public static final CashSystemTypeCode RTGS = new CashSystemTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RTGS";
 			definition = "Real Time Gross Settlement System. Payment system that simultaneously clears individual transfers and settles them in central bank money.";
-			owner_lazy = () -> CashSystemTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashSystemTypeCode.mmObject();
 			codeName = "RTGS";
 		}
 	};
+	final static private LinkedHashMap<String, CashSystemTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CashSystemTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -173,9 +183,36 @@ public class CashSystemTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSystemTypeCode";
 				definition = "Specifies a type of payment system.";
-				code_lazy = () -> Arrays.asList(CashSystemTypeCode.mmACH, CashSystemTypeCode.mmChequeClearing, CashSystemTypeCode.mmRTGS);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CashSystemTypeCode.ACH, com.tools20022.repository.codeset.CashSystemTypeCode.ChequeClearing, com.tools20022.repository.codeset.CashSystemTypeCode.RTGS);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ACH.getCodeName().get(), ACH);
+		codesByName.put(ChequeClearing.getCodeName().get(), ChequeClearing);
+		codesByName.put(RTGS.getCodeName().get(), RTGS);
+	}
+
+	public static CashSystemTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CashSystemTypeCode[] values() {
+		CashSystemTypeCode[] values = new CashSystemTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CashSystemTypeCode> {
+		@Override
+		public CashSystemTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CashSystemTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

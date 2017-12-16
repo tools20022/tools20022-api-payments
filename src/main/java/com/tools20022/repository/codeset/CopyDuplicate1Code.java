@@ -20,31 +20,35 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.CopyDuplicateCode;
+import com.tools20022.repository.codeset.CopyDuplicate1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if this document is a copy, a duplicate, or a duplicate of a copy.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.CopyDuplicateCode
- * CopyDuplicateCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmCopyDuplicate
+ * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#CopyDuplicate
  * CopyDuplicate1Code.mmCopyDuplicate}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmCopy
+ * <li>{@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#Copy
  * CopyDuplicate1Code.mmCopy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmDuplicate
+ * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#Duplicate
  * CopyDuplicate1Code.mmDuplicate}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.CopyDuplicateCode
+ * CopyDuplicateCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -68,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CopyDuplicate1Code extends CopyDuplicateCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CopyDuplicate1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,11 +92,12 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "CopyDuplicate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCopyDuplicate = new MMCode() {
+	public static final CopyDuplicate1Code CopyDuplicate = new CopyDuplicate1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CopyDuplicate";
-			owner_lazy = () -> CopyDuplicate1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CopyDuplicate1Code.mmObject();
+			codeName = CopyDuplicateCode.CopyDuplicate.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -110,11 +116,12 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "Copy"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCopy = new MMCode() {
+	public static final CopyDuplicate1Code Copy = new CopyDuplicate1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Copy";
-			owner_lazy = () -> CopyDuplicate1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CopyDuplicate1Code.mmObject();
+			codeName = CopyDuplicateCode.Copy.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -133,15 +140,20 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "Duplicate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDuplicate = new MMCode() {
+	public static final CopyDuplicate1Code Duplicate = new CopyDuplicate1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Duplicate";
-			owner_lazy = () -> CopyDuplicate1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CopyDuplicate1Code.mmObject();
+			codeName = CopyDuplicateCode.Duplicate.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, CopyDuplicate1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CopyDuplicate1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -149,10 +161,37 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CopyDuplicate1Code";
 				definition = "Specifies if this document is a copy, a duplicate, or a duplicate of a copy.";
-				code_lazy = () -> Arrays.asList(CopyDuplicate1Code.mmCopyDuplicate, CopyDuplicate1Code.mmCopy, CopyDuplicate1Code.mmDuplicate);
 				trace_lazy = () -> CopyDuplicateCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CopyDuplicate1Code.CopyDuplicate, com.tools20022.repository.codeset.CopyDuplicate1Code.Copy, com.tools20022.repository.codeset.CopyDuplicate1Code.Duplicate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CopyDuplicate.getCodeName().get(), CopyDuplicate);
+		codesByName.put(Copy.getCodeName().get(), Copy);
+		codesByName.put(Duplicate.getCodeName().get(), Duplicate);
+	}
+
+	public static CopyDuplicate1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CopyDuplicate1Code[] values() {
+		CopyDuplicate1Code[] values = new CopyDuplicate1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CopyDuplicate1Code> {
+		@Override
+		public CopyDuplicate1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CopyDuplicate1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

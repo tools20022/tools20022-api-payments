@@ -38,6 +38,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PartyName
+ * PartyName}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -64,9 +67,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * PersonIdentification.mmPersonName}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PartyName
- * PartyName}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -114,8 +114,8 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAttribute mmBirthName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BirthName";
 			definition = "Name received at birth, eg, maiden name.";
@@ -172,8 +172,8 @@ public class PersonName extends PartyName {
 	public static final MMBusinessAttribute mmNamePrefix = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmNamePrefix, ContactDetails3.mmNamePrefix);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NamePrefix";
 			definition = "Specifies the terms used to formally address a person.";
@@ -217,8 +217,8 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAttribute mmGivenName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GivenName";
 			definition = "First name of a person.";
@@ -262,8 +262,8 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAttribute mmMiddleName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiddleName";
 			definition = "Second name of a person.";
@@ -310,8 +310,8 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAttribute mmNameSuffix = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameSuffix";
 			definition = "Additional information about a person that follows a person's name, eg, qualification such as Doctor of Philosophy (PhD).";
@@ -364,8 +364,8 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Person identification which contains a name.";

@@ -112,8 +112,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAsset";
 			definition = "Asset for which leg information is provided.";
@@ -154,8 +154,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAttribute mmRatioQuantity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RatioQuantity";
 			definition = "Only for multileg instrument - Ratio of quantity for an individual leg relative to the entire multileg security.";
@@ -201,8 +201,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Only for multileg instrument - Currency associated with a particular Leg's quantity.";
@@ -249,8 +249,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAttribute mmSwapType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwapType";
 			definition = "For Fixed Income, used instead of LegQty or LegOrderQty to requests the respondent to calculate the quantity based on the quantity on the opposite side of the swap.";
@@ -296,8 +296,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAttribute mmPool = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pool";
 			definition = "For Fixed Income, identifies MBS / ABS pool for a specific leg of a multi-leg instrument.";
@@ -346,8 +346,8 @@ public class Leg {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Trade which is composed of several legs.";

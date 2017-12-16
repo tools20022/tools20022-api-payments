@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the type of allowed balance adjustment.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmLedger
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Ledger
  * BalanceAdjustmentTypeCode.mmLedger}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmFloat
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Float
  * BalanceAdjustmentTypeCode.mmFloat}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmCollected
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Collected
  * BalanceAdjustmentTypeCode.mmCollected}</li>
  * </ul>
  * </li>
@@ -70,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Defines the type of allowed balance adjustment."</li>
  * </ul>
  */
-public class BalanceAdjustmentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BalanceAdjustmentTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class BalanceAdjustmentTypeCode {
 	 * definition} = "Adjustment applies to the average ledger (book) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLedger = new MMCode() {
+	public static final BalanceAdjustmentTypeCode Ledger = new BalanceAdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ledger";
 			definition = "Adjustment applies to the average ledger (book) balance.";
-			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.mmObject();
 			codeName = "LDGR";
 		}
 	};
@@ -125,12 +131,12 @@ public class BalanceAdjustmentTypeCode {
 	 * "Adjustment applies to the average float (unavailable) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFloat = new MMCode() {
+	public static final BalanceAdjustmentTypeCode Float = new BalanceAdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Float";
 			definition = "Adjustment applies to the average float (unavailable) balance.";
-			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.mmObject();
 			codeName = "FLOT";
 		}
 	};
@@ -156,17 +162,21 @@ public class BalanceAdjustmentTypeCode {
 	 * "Adjustment applies to the average collected (book less float) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCollected = new MMCode() {
+	public static final BalanceAdjustmentTypeCode Collected = new BalanceAdjustmentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collected";
 			definition = "Adjustment applies to the average collected (book less float) balance.";
-			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.mmObject();
 			codeName = "CLLD";
 		}
 	};
+	final static private LinkedHashMap<String, BalanceAdjustmentTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BalanceAdjustmentTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,10 +184,38 @@ public class BalanceAdjustmentTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceAdjustmentTypeCode";
 				definition = "Defines the type of allowed balance adjustment.";
-				code_lazy = () -> Arrays.asList(BalanceAdjustmentTypeCode.mmLedger, BalanceAdjustmentTypeCode.mmFloat, BalanceAdjustmentTypeCode.mmCollected);
 				derivation_lazy = () -> Arrays.asList(BalanceAdjustmentType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Ledger, com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Float,
+						com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Collected);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Ledger.getCodeName().get(), Ledger);
+		codesByName.put(Float.getCodeName().get(), Float);
+		codesByName.put(Collected.getCodeName().get(), Collected);
+	}
+
+	public static BalanceAdjustmentTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BalanceAdjustmentTypeCode[] values() {
+		BalanceAdjustmentTypeCode[] values = new BalanceAdjustmentTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BalanceAdjustmentTypeCode> {
+		@Override
+		public BalanceAdjustmentTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BalanceAdjustmentTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

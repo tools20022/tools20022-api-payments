@@ -105,8 +105,8 @@ public class UmbrellaFund {
 	 */
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the fund.";
@@ -158,8 +158,8 @@ public class UmbrellaFund {
 	 */
 	public static final MMBusinessAssociationEnd mmSubFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubFund";
 			definition = "Compartment of an umbrellla fund.";

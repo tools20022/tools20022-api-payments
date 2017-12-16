@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Agreement
+ * Agreement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -89,9 +92,6 @@ import java.util.List;
  * CollateralManagement.mmAgreedTerms}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Agreement
- * Agreement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -140,8 +140,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmBaseCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BaseCurrency";
 			definition = "Denomination currency.";
@@ -197,8 +197,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmAssociatedMasterAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AssociatedMasterAgreement";
 			definition = "Agreement in which the parties agree to most of the terms that will govern collateral transactions.";
@@ -248,8 +248,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmStandingSettlementInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StandingSettlementInstructions";
 			definition = "Settlement instructions which must be used for the settlement of collateral unless otherwise specified.";
@@ -291,8 +291,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmMarginConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginConvention";
 			definition = "Determines how the variation margin requirement will be calculated, either net or gross.";
@@ -347,8 +347,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmExposureTerm = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExposureTerm";
 			definition = "Specifies the terms used to calculate a risk exposure and its coverage.";
@@ -390,8 +390,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmCallFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CallFrequency";
 			definition = "Specifies the frequency at which collateral positions are evaluated and margin calls are issued.";
@@ -453,8 +453,8 @@ public class CollateralAgreement extends Agreement {
 	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmCollateral);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collateral";
 			definition = "Specifies the collateral which is the subject of the agreement.";
@@ -504,8 +504,8 @@ public class CollateralAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmRiskCoverage = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RiskCoverage";
 			definition = "Collateral management process which applies the terms agreed in the collateral agreement.";

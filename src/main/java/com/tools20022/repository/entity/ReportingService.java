@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.AccountService
+ * AccountService}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,19 +59,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.ReportingService#mmRelatedInvestmentAccountService
  * ReportingService.mmRelatedInvestmentAccountService}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.StatementFrequencyAndForm1
- * StatementFrequencyAndForm1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.StatementFrequencyAndFormModification1
- * StatementFrequencyAndFormModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportingRequest3
- * ReportingRequest3}</li>
  * </ul>
  * </li>
  * <li>
@@ -92,9 +82,19 @@ import java.util.List;
  * StatementFrequencyAndFormModification1.mmStatementFrequencyAndForm}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.AccountService
- * AccountService}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.StatementFrequencyAndForm1
+ * StatementFrequencyAndForm1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StatementFrequencyAndFormModification1
+ * StatementFrequencyAndFormModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportingRequest3
+ * ReportingRequest3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -166,8 +166,8 @@ public class ReportingService extends AccountService {
 		{
 			derivation_lazy = () -> Arrays.asList(StatementFrequencyAndForm1.mmFrequency, CustomerAccount5.mmStatementFrequencyAndFormat, CustomerAccountModification1.mmStatementFrequencyAndFormat,
 					CustomerAccount4.mmStatementFrequencyAndFormat);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatementFrequency";
 			definition = "Specifies the frequency at which a statement must be created by the account servicer.";
@@ -231,8 +231,8 @@ public class ReportingService extends AccountService {
 	public static final MMBusinessAttribute mmFloorNotificationAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmFloorNotificationAmount, CustomerAccountModification1.mmFloorNotificationAmount, CustomerAccount4.mmFloorNotificationAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FloorNotificationAmount";
 			definition = "Specifies the balance amount of an account under which a notification should be sent from the account servicer to the account owner.";
@@ -296,8 +296,8 @@ public class ReportingService extends AccountService {
 	public static final MMBusinessAttribute mmCeilingNotificationAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmCeilingNotificationAmount, CustomerAccountModification1.mmCeilingNotificationAmount, CustomerAccount4.mmCeilingNotificationAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CeilingNotificationAmount";
 			definition = "Specifies the balance amount of an account above which a notification should be sent from the account servicer to the account owner.";
@@ -362,8 +362,8 @@ public class ReportingService extends AccountService {
 	public static final MMBusinessAssociationEnd mmReportingChannel = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(StatementFrequencyAndForm1.mmCommunicationMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingChannel";
 			definition = "Specifies the channel through which the statement must be made available to the account owner or to the information recipient.";
@@ -411,8 +411,8 @@ public class ReportingService extends AccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestmentAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentAccountService";
 			definition = "Investment account services which include reporting services.";

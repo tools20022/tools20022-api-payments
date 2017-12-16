@@ -61,16 +61,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.CashAvailabilityDate1Choice
- * CashAvailabilityDate1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAvailability1
- * CashAvailability1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -78,6 +68,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * CashEntry.mmAvailability}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CashBalance#mmAvailability
  * CashBalance.mmAvailability}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.CashAvailabilityDate1Choice
+ * CashAvailabilityDate1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAvailability1
+ * CashAvailability1}</li>
  * </ul>
  * </li>
  * <li>
@@ -136,8 +136,8 @@ public class CashAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmCashBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashBalance";
 			definition = "Cash balance for which the availability is provided.";
@@ -187,8 +187,8 @@ public class CashAvailability {
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailabilityDate1Choice.mmActualDate, CashAvailability1.mmDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Identifies the availability date.";
@@ -244,8 +244,8 @@ public class CashAvailability {
 	public static final MMBusinessAttribute mmNumberOfDays = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailabilityDate1Choice.mmNumberOfDays);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfDays";
 			definition = "Indicates the number of float days attached to the balance.";
@@ -299,8 +299,8 @@ public class CashAvailability {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailability1.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Available amount.";
@@ -356,8 +356,8 @@ public class CashAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Specifies the cash entry for which the availability information is provided.";
@@ -400,8 +400,8 @@ public class CashAvailability {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the availability balance is a credit or a debit balance. A zero balance is considered to be a credit balance.";

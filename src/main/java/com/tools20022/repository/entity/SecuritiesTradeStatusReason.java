@@ -35,6 +35,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
+ * StatusReason}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -82,9 +85,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesTradeStatus.mmReason}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
- * StatusReason}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -133,8 +133,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmUnmatchedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnmatchedReason";
 			definition = "Reason for the unmatched status.";
@@ -180,8 +180,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmDeniedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeniedReason";
 			definition = "Specifies the reason why the request was denied.";
@@ -238,8 +238,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTradeStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeStatus";
 			definition = "Status for which a reason is provided. It is derived from the association between StatusReason and Status.";
@@ -279,8 +279,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmGeneratedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GeneratedReason";
 			definition = "Specifies the reason why the transaction was generated.";
@@ -326,8 +326,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmAllegementReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllegementReason";
 			definition = "Reason why the instruction has an allegement status.";
@@ -373,8 +373,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmPendingSettlementReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingSettlementReason";
 			definition = "Reason for the settlement pending status.";
@@ -421,8 +421,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmRepoCallAcknowledgementReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepoCallAcknowledgementReason";
 			definition = "Specifies additional information about the processed instruction.";
@@ -469,8 +469,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmRepairReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepairReason";
 			definition = "Specifies the reason why the instruction/request has a repair status.";
@@ -516,8 +516,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmDeliveryReturnReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryReturnReason";
 			definition = "Reason why the trade was returned.";
@@ -566,8 +566,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmCounterpartyStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyStatusReason";
 			definition = "Specifies the counterparty action which is the reason of the trade status.";
@@ -614,8 +614,8 @@ public class SecuritiesTradeStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmModifiedStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ModifiedStatusReason";
 			definition = "Specifies the reason why the related instruction is modified.";

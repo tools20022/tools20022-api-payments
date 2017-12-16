@@ -20,44 +20,47 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.POIComponentTypeCode;
+import com.tools20022.repository.codeset.POIComponentType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Generic component type belonging to a POI (Point of Interaction) Terminal.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode
- * POIComponentTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmSoft
+ * <li>{@linkplain com.tools20022.repository.codeset.POIComponentType1Code#Soft
  * POIComponentType1Code.mmSoft}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmEMVKernel
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#EMVKernel
  * POIComponentType1Code.mmEMVKernel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmEMVLevel1
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#EMVLevel1
  * POIComponentType1Code.mmEMVLevel1}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmMerchantInterface
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#MerchantInterface
  * POIComponentType1Code.mmMerchantInterface}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmCardholderInterface
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#CardholderInterface
  * POIComponentType1Code.mmCardholderInterface}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmSecureModule
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#SecureModule
  * POIComponentType1Code.mmSecureModule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#mmPINEntryDevice
+ * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#PINEntryDevice
  * POIComponentType1Code.mmPINEntryDevice}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode
+ * POIComponentTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -80,7 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Generic component type belonging to a POI (Point of Interaction) Terminal."</li>
  * </ul>
  */
-public class POIComponentType1Code extends POIComponentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class POIComponentType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,11 +103,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "Soft"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSoft = new MMCode() {
+	public static final POIComponentType1Code Soft = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Soft";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.Soft.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -122,11 +127,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "EMVKernel"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEMVKernel = new MMCode() {
+	public static final POIComponentType1Code EMVKernel = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EMVKernel";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.EMVKernel.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -145,11 +151,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "EMVLevel1"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEMVLevel1 = new MMCode() {
+	public static final POIComponentType1Code EMVLevel1 = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EMVLevel1";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.EMVLevel1.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -168,11 +175,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "MerchantInterface"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMerchantInterface = new MMCode() {
+	public static final POIComponentType1Code MerchantInterface = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MerchantInterface";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.MerchantInterface.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -191,11 +199,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "CardholderInterface"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardholderInterface = new MMCode() {
+	public static final POIComponentType1Code CardholderInterface = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardholderInterface";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.CardholderInterface.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -214,11 +223,12 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "SecureModule"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecureModule = new MMCode() {
+	public static final POIComponentType1Code SecureModule = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecureModule";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.SecureModule.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -237,15 +247,20 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 	 * name} = "PINEntryDevice"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPINEntryDevice = new MMCode() {
+	public static final POIComponentType1Code PINEntryDevice = new POIComponentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PINEntryDevice";
-			owner_lazy = () -> POIComponentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentType1Code.mmObject();
+			codeName = POIComponentTypeCode.PINEntryDevice.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, POIComponentType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected POIComponentType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -253,11 +268,44 @@ public class POIComponentType1Code extends POIComponentTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentType1Code";
 				definition = "Generic component type belonging to a POI (Point of Interaction) Terminal.";
-				code_lazy = () -> Arrays.asList(POIComponentType1Code.mmSoft, POIComponentType1Code.mmEMVKernel, POIComponentType1Code.mmEMVLevel1, POIComponentType1Code.mmMerchantInterface, POIComponentType1Code.mmCardholderInterface,
-						POIComponentType1Code.mmSecureModule, POIComponentType1Code.mmPINEntryDevice);
 				trace_lazy = () -> POIComponentTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.POIComponentType1Code.Soft, com.tools20022.repository.codeset.POIComponentType1Code.EMVKernel,
+						com.tools20022.repository.codeset.POIComponentType1Code.EMVLevel1, com.tools20022.repository.codeset.POIComponentType1Code.MerchantInterface,
+						com.tools20022.repository.codeset.POIComponentType1Code.CardholderInterface, com.tools20022.repository.codeset.POIComponentType1Code.SecureModule,
+						com.tools20022.repository.codeset.POIComponentType1Code.PINEntryDevice);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Soft.getCodeName().get(), Soft);
+		codesByName.put(EMVKernel.getCodeName().get(), EMVKernel);
+		codesByName.put(EMVLevel1.getCodeName().get(), EMVLevel1);
+		codesByName.put(MerchantInterface.getCodeName().get(), MerchantInterface);
+		codesByName.put(CardholderInterface.getCodeName().get(), CardholderInterface);
+		codesByName.put(SecureModule.getCodeName().get(), SecureModule);
+		codesByName.put(PINEntryDevice.getCodeName().get(), PINEntryDevice);
+	}
+
+	public static POIComponentType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static POIComponentType1Code[] values() {
+		POIComponentType1Code[] values = new POIComponentType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, POIComponentType1Code> {
+		@Override
+		public POIComponentType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(POIComponentType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

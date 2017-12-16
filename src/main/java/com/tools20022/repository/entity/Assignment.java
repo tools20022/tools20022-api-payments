@@ -111,8 +111,8 @@ public class Assignment {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Payment obligations included in an assignment.";
@@ -159,8 +159,8 @@ public class Assignment {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancingAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingAgreement";
 			definition = "Invoice financing agreement which creates a payment obligation.";

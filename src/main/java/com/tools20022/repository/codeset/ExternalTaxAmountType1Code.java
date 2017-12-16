@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalTaxAmountType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the nature, or use, of the amount in the format of character string
@@ -54,11 +60,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalTaxAmountType1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalTaxAmountType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalTaxAmountType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalTaxAmountType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -66,8 +77,34 @@ public class ExternalTaxAmountType1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalTaxAmountType1Code";
 				definition = "Specifies the nature, or use, of the amount in the format of character string with a maximum length of 4 characters.\r\nThe list of valid codes is an external code list published separately.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalTaxAmountType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalTaxAmountType1Code[] values() {
+		ExternalTaxAmountType1Code[] values = new ExternalTaxAmountType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalTaxAmountType1Code> {
+		@Override
+		public ExternalTaxAmountType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalTaxAmountType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

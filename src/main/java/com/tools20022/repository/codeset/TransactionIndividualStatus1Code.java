@@ -20,47 +20,51 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PaymentStatusCode;
+import com.tools20022.repository.codeset.TransactionIndividualStatus1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of a single payment transaction.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode
- * PaymentStatusCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedTechnicalValidation
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedTechnicalValidation
  * TransactionIndividualStatus1Code.mmAcceptedTechnicalValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Rejected
  * TransactionIndividualStatus1Code.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmPending
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Pending
  * TransactionIndividualStatus1Code.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedCustomerProfile
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCustomerProfile
  * TransactionIndividualStatus1Code.mmAcceptedCustomerProfile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedSettlementInProcess
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementInProcess
  * TransactionIndividualStatus1Code.mmAcceptedSettlementInProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedSettlementCompleted
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementCompleted
  * TransactionIndividualStatus1Code.mmAcceptedSettlementCompleted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCancellationRequest
  * TransactionIndividualStatus1Code.mmAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedWithChange
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedWithChange
  * TransactionIndividualStatus1Code.mmAcceptedWithChange}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode
+ * PaymentStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -82,7 +86,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of a single payment transaction."</li>
  * </ul>
  */
-public class TransactionIndividualStatus1Code extends PaymentStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TransactionIndividualStatus1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -101,11 +106,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedTechnicalValidation"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedTechnicalValidation = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedTechnicalValidation = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedTechnicalValidation";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedTechnicalValidation.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -124,11 +130,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "Rejected"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final TransactionIndividualStatus1Code Rejected = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.Rejected.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -147,11 +154,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "Pending"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final TransactionIndividualStatus1Code Pending = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.Pending.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -170,11 +178,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCustomerProfile"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedCustomerProfile = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedCustomerProfile = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCustomerProfile";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedCustomerProfile.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -193,11 +202,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedSettlementInProcess"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedSettlementInProcess = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedSettlementInProcess = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedSettlementInProcess";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedSettlementInProcess.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -216,11 +226,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedSettlementCompleted"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedSettlementCompleted = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedSettlementCompleted = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedSettlementCompleted";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedSettlementCompleted.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -239,11 +250,12 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedCancellationRequest = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedCancellationRequest = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCancellationRequest";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedCancellationRequest.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -262,15 +274,20 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedWithChange"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedWithChange = new MMCode() {
+	public static final TransactionIndividualStatus1Code AcceptedWithChange = new TransactionIndividualStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedWithChange";
-			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TransactionIndividualStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedWithChange.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, TransactionIndividualStatus1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TransactionIndividualStatus1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -278,12 +295,45 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionIndividualStatus1Code";
 				definition = "Specifies the status of a single payment transaction.";
-				code_lazy = () -> Arrays.asList(TransactionIndividualStatus1Code.mmAcceptedTechnicalValidation, TransactionIndividualStatus1Code.mmRejected, TransactionIndividualStatus1Code.mmPending,
-						TransactionIndividualStatus1Code.mmAcceptedCustomerProfile, TransactionIndividualStatus1Code.mmAcceptedSettlementInProcess, TransactionIndividualStatus1Code.mmAcceptedSettlementCompleted,
-						TransactionIndividualStatus1Code.mmAcceptedCancellationRequest, TransactionIndividualStatus1Code.mmAcceptedWithChange);
 				trace_lazy = () -> PaymentStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedTechnicalValidation, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.Rejected,
+						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.Pending, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedCustomerProfile,
+						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedSettlementInProcess, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedSettlementCompleted,
+						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedCancellationRequest, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedWithChange);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AcceptedTechnicalValidation.getCodeName().get(), AcceptedTechnicalValidation);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(AcceptedCustomerProfile.getCodeName().get(), AcceptedCustomerProfile);
+		codesByName.put(AcceptedSettlementInProcess.getCodeName().get(), AcceptedSettlementInProcess);
+		codesByName.put(AcceptedSettlementCompleted.getCodeName().get(), AcceptedSettlementCompleted);
+		codesByName.put(AcceptedCancellationRequest.getCodeName().get(), AcceptedCancellationRequest);
+		codesByName.put(AcceptedWithChange.getCodeName().get(), AcceptedWithChange);
+	}
+
+	public static TransactionIndividualStatus1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TransactionIndividualStatus1Code[] values() {
+		TransactionIndividualStatus1Code[] values = new TransactionIndividualStatus1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TransactionIndividualStatus1Code> {
+		@Override
+		public TransactionIndividualStatus1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TransactionIndividualStatus1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

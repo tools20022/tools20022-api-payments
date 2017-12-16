@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CashMarginOrderCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies whether an order is a non-margin, an opening margin or a closing
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#mmCash
+ * <li>{@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#Cash
  * CashMarginOrderCode.mmCash}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#mmMarginOpen
+ * {@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#MarginOpen
  * CashMarginOrderCode.mmMarginOpen}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#mmMarginClose
+ * {@linkplain com.tools20022.repository.codeset.CashMarginOrderCode#MarginClose
  * CashMarginOrderCode.mmMarginClose}</li>
  * </ul>
  * </li>
@@ -65,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CashMarginOrderCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CashMarginOrderCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class CashMarginOrderCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCash = new MMCode() {
+	public static final CashMarginOrderCode Cash = new CashMarginOrderCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cash";
 			definition = "The principal owns the cash in case of a purchase, or the securities in case of a sale so the execution, if it occurs, will not generate any margin account opening or margin call.";
-			owner_lazy = () -> CashMarginOrderCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashMarginOrderCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -127,12 +133,12 @@ public class CashMarginOrderCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarginOpen = new MMCode() {
+	public static final CashMarginOrderCode MarginOpen = new CashMarginOrderCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginOpen";
 			definition = "The principal order, if  executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale.";
-			owner_lazy = () -> CashMarginOrderCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashMarginOrderCode.mmObject();
 			codeName = "MRGO";
 		}
 	};
@@ -162,17 +168,21 @@ public class CashMarginOrderCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarginClose = new MMCode() {
+	public static final CashMarginOrderCode MarginClose = new CashMarginOrderCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginClose";
 			definition = "The principal order, if executed, will enable the margin position to be closed and the positions to be covered (for example: purchase of securities that have previously been short-sold, or sale of securities that have been bought on margin).";
-			owner_lazy = () -> CashMarginOrderCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CashMarginOrderCode.mmObject();
 			codeName = "MRGC";
 		}
 	};
+	final static private LinkedHashMap<String, CashMarginOrderCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CashMarginOrderCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -180,9 +190,37 @@ public class CashMarginOrderCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashMarginOrderCode";
 				definition = "Identifies whether an order is a non-margin, an opening margin or a closing margin order.";
-				code_lazy = () -> Arrays.asList(CashMarginOrderCode.mmCash, CashMarginOrderCode.mmMarginOpen, CashMarginOrderCode.mmMarginClose);
+				code_lazy = () -> Arrays
+						.asList(com.tools20022.repository.codeset.CashMarginOrderCode.Cash, com.tools20022.repository.codeset.CashMarginOrderCode.MarginOpen, com.tools20022.repository.codeset.CashMarginOrderCode.MarginClose);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cash.getCodeName().get(), Cash);
+		codesByName.put(MarginOpen.getCodeName().get(), MarginOpen);
+		codesByName.put(MarginClose.getCodeName().get(), MarginClose);
+	}
+
+	public static CashMarginOrderCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CashMarginOrderCode[] values() {
+		CashMarginOrderCode[] values = new CashMarginOrderCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CashMarginOrderCode> {
+		@Override
+		public CashMarginOrderCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CashMarginOrderCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

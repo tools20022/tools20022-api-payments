@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DisputeResolutionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the nature of the disputed collateral amount.
@@ -32,28 +37,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileCollateral
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileCollateral
  * DisputeResolutionTypeCode.mmReconcileCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileExposure
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileExposure
  * DisputeResolutionTypeCode.mmReconcileExposure}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileThreshold
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileThreshold
  * DisputeResolutionTypeCode.mmReconcileThreshold}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileMinimumTransferAmount
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileMinimumTransferAmount
  * DisputeResolutionTypeCode.mmReconcileMinimumTransferAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileRounding
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileRounding
  * DisputeResolutionTypeCode.mmReconcileRounding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileValuationFrequency
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileValuationFrequency
  * DisputeResolutionTypeCode.mmReconcileValuationFrequency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileNettedIndependentAmount
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileNettedIndependentAmount
  * DisputeResolutionTypeCode.mmReconcileNettedIndependentAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#mmReconcileSegregatedIndependentAmount
+ * {@linkplain com.tools20022.repository.codeset.DisputeResolutionTypeCode#ReconcileSegregatedIndependentAmount
  * DisputeResolutionTypeCode.mmReconcileSegregatedIndependentAmount}</li>
  * </ul>
  * </li>
@@ -78,7 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the nature of the disputed collateral amount."</li>
  * </ul>
  */
-public class DisputeResolutionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DisputeResolutionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -105,12 +111,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileCollateral = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileCollateral = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileCollateral";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the collateral.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RECO";
 		}
 	};
@@ -138,12 +144,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileExposure = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileExposure = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileExposure";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the exposure.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "REEX";
 		}
 	};
@@ -171,12 +177,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileThreshold = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileThreshold = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileThreshold";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the threshold.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RETH";
 		}
 	};
@@ -204,12 +210,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileMinimumTransferAmount = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileMinimumTransferAmount = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileMinimumTransferAmount";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the minimum transfer amount.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RMTA";
 		}
 	};
@@ -237,12 +243,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileRounding = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileRounding = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileRounding";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the rounding.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RERO";
 		}
 	};
@@ -270,12 +276,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileValuationFrequency = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileValuationFrequency = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileValuationFrequency";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the valuation frequency.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "REVF";
 		}
 	};
@@ -303,12 +309,12 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileNettedIndependentAmount = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileNettedIndependentAmount = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileNettedIndependentAmount";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the independent amount.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RNIA";
 		}
 	};
@@ -336,17 +342,21 @@ public class DisputeResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReconcileSegregatedIndependentAmount = new MMCode() {
+	public static final DisputeResolutionTypeCode ReconcileSegregatedIndependentAmount = new DisputeResolutionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconcileSegregatedIndependentAmount";
 			definition = "Indicates that the disputed collateral amount should be confirmed through reconciliation of the initial margin.";
-			owner_lazy = () -> DisputeResolutionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DisputeResolutionTypeCode.mmObject();
 			codeName = "RESA";
 		}
 	};
+	final static private LinkedHashMap<String, DisputeResolutionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DisputeResolutionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -354,11 +364,44 @@ public class DisputeResolutionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisputeResolutionTypeCode";
 				definition = "Specifies the nature of the disputed collateral amount.";
-				code_lazy = () -> Arrays.asList(DisputeResolutionTypeCode.mmReconcileCollateral, DisputeResolutionTypeCode.mmReconcileExposure, DisputeResolutionTypeCode.mmReconcileThreshold,
-						DisputeResolutionTypeCode.mmReconcileMinimumTransferAmount, DisputeResolutionTypeCode.mmReconcileRounding, DisputeResolutionTypeCode.mmReconcileValuationFrequency,
-						DisputeResolutionTypeCode.mmReconcileNettedIndependentAmount, DisputeResolutionTypeCode.mmReconcileSegregatedIndependentAmount);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileCollateral, com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileExposure,
+						com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileThreshold, com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileMinimumTransferAmount,
+						com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileRounding, com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileValuationFrequency,
+						com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileNettedIndependentAmount, com.tools20022.repository.codeset.DisputeResolutionTypeCode.ReconcileSegregatedIndependentAmount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ReconcileCollateral.getCodeName().get(), ReconcileCollateral);
+		codesByName.put(ReconcileExposure.getCodeName().get(), ReconcileExposure);
+		codesByName.put(ReconcileThreshold.getCodeName().get(), ReconcileThreshold);
+		codesByName.put(ReconcileMinimumTransferAmount.getCodeName().get(), ReconcileMinimumTransferAmount);
+		codesByName.put(ReconcileRounding.getCodeName().get(), ReconcileRounding);
+		codesByName.put(ReconcileValuationFrequency.getCodeName().get(), ReconcileValuationFrequency);
+		codesByName.put(ReconcileNettedIndependentAmount.getCodeName().get(), ReconcileNettedIndependentAmount);
+		codesByName.put(ReconcileSegregatedIndependentAmount.getCodeName().get(), ReconcileSegregatedIndependentAmount);
+	}
+
+	public static DisputeResolutionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DisputeResolutionTypeCode[] values() {
+		DisputeResolutionTypeCode[] values = new DisputeResolutionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DisputeResolutionTypeCode> {
+		@Override
+		public DisputeResolutionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DisputeResolutionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

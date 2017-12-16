@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.Authorisation1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the level of approval depending on a number of factors, including
@@ -33,19 +38,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#mmPreAuthorisedFile
+ * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#PreAuthorisedFile
  * Authorisation1Code.mmPreAuthorisedFile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#mmFileLevelAuthorisationDetails
+ * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#FileLevelAuthorisationDetails
  * Authorisation1Code.mmFileLevelAuthorisationDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#mmFileLevelAuthorisationSummary
+ * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#FileLevelAuthorisationSummary
  * Authorisation1Code.mmFileLevelAuthorisationSummary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#mmInstructionLevelAuthorisation
+ * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#InstructionLevelAuthorisation
  * Authorisation1Code.mmInstructionLevelAuthorisation}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.AuthorisationCode
+ * AuthorisationCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -69,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class Authorisation1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Authorisation1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,11 +97,12 @@ public class Authorisation1Code {
 	 * name} = "PreAuthorisedFile"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreAuthorisedFile = new MMCode() {
+	public static final Authorisation1Code PreAuthorisedFile = new Authorisation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreAuthorisedFile";
-			owner_lazy = () -> Authorisation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Authorisation1Code.mmObject();
+			codeName = AuthorisationCode.PreAuthorisedFile.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -111,11 +121,12 @@ public class Authorisation1Code {
 	 * name} = "FileLevelAuthorisationDetails"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFileLevelAuthorisationDetails = new MMCode() {
+	public static final Authorisation1Code FileLevelAuthorisationDetails = new Authorisation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FileLevelAuthorisationDetails";
-			owner_lazy = () -> Authorisation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Authorisation1Code.mmObject();
+			codeName = AuthorisationCode.FileLevelAuthorisationDetails.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -134,11 +145,12 @@ public class Authorisation1Code {
 	 * name} = "FileLevelAuthorisationSummary"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFileLevelAuthorisationSummary = new MMCode() {
+	public static final Authorisation1Code FileLevelAuthorisationSummary = new Authorisation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FileLevelAuthorisationSummary";
-			owner_lazy = () -> Authorisation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Authorisation1Code.mmObject();
+			codeName = AuthorisationCode.FileLevelAuthorisationSummary.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -157,15 +169,20 @@ public class Authorisation1Code {
 	 * name} = "InstructionLevelAuthorisation"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstructionLevelAuthorisation = new MMCode() {
+	public static final Authorisation1Code InstructionLevelAuthorisation = new Authorisation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructionLevelAuthorisation";
-			owner_lazy = () -> Authorisation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Authorisation1Code.mmObject();
+			codeName = AuthorisationCode.InstructionLevelAuthorisation.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Authorisation1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Authorisation1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -173,10 +190,39 @@ public class Authorisation1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Authorisation1Code";
 				definition = "Specifies the level of approval depending on a number of factors, including payment type, threshold amount or local country or operations practice.";
-				code_lazy = () -> Arrays.asList(Authorisation1Code.mmPreAuthorisedFile, Authorisation1Code.mmFileLevelAuthorisationDetails, Authorisation1Code.mmFileLevelAuthorisationSummary,
-						Authorisation1Code.mmInstructionLevelAuthorisation);
+				trace_lazy = () -> AuthorisationCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Authorisation1Code.PreAuthorisedFile, com.tools20022.repository.codeset.Authorisation1Code.FileLevelAuthorisationDetails,
+						com.tools20022.repository.codeset.Authorisation1Code.FileLevelAuthorisationSummary, com.tools20022.repository.codeset.Authorisation1Code.InstructionLevelAuthorisation);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PreAuthorisedFile.getCodeName().get(), PreAuthorisedFile);
+		codesByName.put(FileLevelAuthorisationDetails.getCodeName().get(), FileLevelAuthorisationDetails);
+		codesByName.put(FileLevelAuthorisationSummary.getCodeName().get(), FileLevelAuthorisationSummary);
+		codesByName.put(InstructionLevelAuthorisation.getCodeName().get(), InstructionLevelAuthorisation);
+	}
+
+	public static Authorisation1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Authorisation1Code[] values() {
+		Authorisation1Code[] values = new Authorisation1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Authorisation1Code> {
+		@Override
+		public Authorisation1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Authorisation1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

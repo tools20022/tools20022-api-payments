@@ -52,17 +52,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.CodeOrProprietary1Choice
- * CodeOrProprietary1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Restriction1 Restriction1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RestrictionModification1
- * RestrictionModification1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -83,6 +72,17 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.RestrictionModification1#mmRestriction
  * RestrictionModification1.mmRestriction}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.CodeOrProprietary1Choice
+ * CodeOrProprietary1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Restriction1 Restriction1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RestrictionModification1
+ * RestrictionModification1}</li>
  * </ul>
  * </li>
  * <li>
@@ -138,8 +138,8 @@ public class AccountRestriction {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account on which restrictions are specified.";
@@ -190,8 +190,8 @@ public class AccountRestriction {
 	public static final MMBusinessAttribute mmRestrictionType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CodeOrProprietary1Choice.mmCode, CodeOrProprietary1Choice.mmProprietary);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictionType";
 			definition = "Type of the restriction.";
@@ -244,8 +244,8 @@ public class AccountRestriction {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Period during which the restriction is effective.";

@@ -37,6 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.TradeIdentification
+ * TradeIdentification}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -64,6 +68,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Payment#mmPaymentRelatedIdentifications
+ * Payment.mmPaymentRelatedIdentifications}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
@@ -81,19 +94,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * CertificateIdentification1}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Payment#mmPaymentRelatedIdentifications
- * Payment.mmPaymentRelatedIdentifications}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.TradeIdentification
- * TradeIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -259,8 +259,8 @@ public class PaymentIdentification extends TradeIdentification {
 					OriginalMessage2.mmOriginalMessageIdentification, OriginalMessage3.mmOriginalMessageIdentification, OriginalGroupInformation27.mmOriginalMessageIdentification, OriginalGroupHeader7.mmOriginalMessageIdentification,
 					RequestedModification6.mmInstructionIdentification, OriginalGroupInformation28.mmOriginalMessageIdentification, OriginalPaymentInstruction22.mmOriginalPaymentInformationCancellationIdentification,
 					OriginalPaymentInstruction20.mmPaymentCancellationIdentification, UnderlyingPaymentInstruction3.mmOriginalPaymentInformationIdentification, OriginalGroupHeader6.mmOriginalMessageIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutionIdentification";
 			definition = "Unique and unambiguous identifier for a payment execution, as assigned by the clearing agent or the initiating party.";
@@ -403,8 +403,8 @@ public class PaymentIdentification extends TradeIdentification {
 					PaymentTransaction83.mmOriginalEndToEndIdentification, PaymentTransaction77.mmOriginalEndToEndIdentification, CorrectivePaymentInitiation2.mmEndToEndIdentification,
 					UnderlyingPaymentInstruction3.mmOriginalEndToEndIdentification, PaymentTransaction75.mmOriginalEndToEndIdentification, PaymentTransaction82.mmOriginalEndToEndIdentification,
 					PaymentTransaction79.mmOriginalEndToEndIdentification, PaymentComplementaryInformation6.mmEndToEndIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndToEndIdentification";
 			definition = "Unique and unambiguous identifier for a payment as assigned by the originator. The payment transaction reference is used for reconciliation or to link tasks relating to the payment.";
@@ -534,8 +534,8 @@ public class PaymentIdentification extends TradeIdentification {
 					PaymentTransaction83.mmOriginalInstructionIdentification, PaymentTransaction77.mmOriginalInstructionIdentification, CorrectivePaymentInitiation2.mmInstructionIdentification,
 					UnderlyingPaymentInstruction3.mmOriginalInstructionIdentification, PaymentTransaction75.mmOriginalInstructionIdentification, PaymentTransaction82.mmOriginalInstructionIdentification,
 					PaymentTransaction79.mmOriginalInstructionIdentification, PaymentComplementaryInformation6.mmInstructionIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionIdentification";
 			definition = "Unique identification assigned by an instructing party for an instructed party to unambiguously identify the instruction.";
@@ -633,8 +633,8 @@ public class PaymentIdentification extends TradeIdentification {
 					PaymentTransaction73.mmOriginalTransactionIdentification, PaymentTransaction80.mmOriginalTransactionIdentification, PaymentTransaction81.mmOriginalTransactionIdentification,
 					PaymentTransaction76.mmOriginalTransactionIdentification, PaymentTransaction75.mmOriginalTransactionIdentification, PaymentTransaction79.mmOriginalTransactionIdentification,
 					PaymentComplementaryInformation6.mmTransactionIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionIdentification";
 			definition = "Unique identification assigned by the first instructing agent to unambiguously identify the transaction and passed on, unchanged, throughout the entire interbank chain. ";
@@ -723,8 +723,8 @@ public class PaymentIdentification extends TradeIdentification {
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmClearingSystemReference, PaymentIdentification3.mmClearingSystemReference, PaymentIdentification4.mmClearingSystemReference,
 					PaymentTransaction73.mmClearingSystemReference, PaymentTransaction80.mmClearingSystemReference, PaymentTransaction81.mmOriginalClearingSystemReference, PaymentTransaction76.mmOriginalClearingSystemReference,
 					PaymentTransaction83.mmClearingSystemReference, PaymentTransaction75.mmOriginalClearingSystemReference, PaymentTransaction82.mmClearingSystemReference, PaymentTransaction79.mmOriginalClearingSystemReference);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystemReference";
 			definition = "Unique and unambiguous identifier for a payment instruction, as assigned by the clearing system.";
@@ -784,8 +784,8 @@ public class PaymentIdentification extends TradeIdentification {
 	public static final MMBusinessAttribute mmCreditorReference = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditorReferenceInformation2.mmReference, StructuredRemittanceInformation13.mmCreditorReferenceInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditorReference";
 			definition = "Unique and unambiguous reference assigned by the creditor to refer to the payment obligation.";
@@ -837,8 +837,8 @@ public class PaymentIdentification extends TradeIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment for which identifications are provided.";

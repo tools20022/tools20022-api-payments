@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CRSSourceStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the source of Common Reporting Standard (CRS) status.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CRSSourceStatusCode#mmCalculated
+ * {@linkplain com.tools20022.repository.codeset.CRSSourceStatusCode#Calculated
  * CRSSourceStatusCode.mmCalculated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CRSSourceStatusCode#mmDeclared
+ * {@linkplain com.tools20022.repository.codeset.CRSSourceStatusCode#Declared
  * CRSSourceStatusCode.mmDeclared}</li>
  * </ul>
  * </li>
@@ -55,7 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the source of Common Reporting Standard (CRS) status."</li>
  * </ul>
  */
-public class CRSSourceStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CRSSourceStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -80,12 +86,12 @@ public class CRSSourceStatusCode {
 	 * "Source of the Common Reporting Standard (CRS) status is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCalculated = new MMCode() {
+	public static final CRSSourceStatusCode Calculated = new CRSSourceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Calculated";
 			definition = "Source of the Common Reporting Standard (CRS) status is calculated.";
-			owner_lazy = () -> CRSSourceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSSourceStatusCode.mmObject();
 			codeName = "CALC";
 		}
 	};
@@ -113,26 +119,56 @@ public class CRSSourceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeclared = new MMCode() {
+	public static final CRSSourceStatusCode Declared = new CRSSourceStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Declared";
 			definition = "Source of the Common Reporting Standard (CRS) status is as declared by the investor.";
-			owner_lazy = () -> CRSSourceStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CRSSourceStatusCode.mmObject();
 			codeName = "DECL";
 		}
 	};
+	final static private LinkedHashMap<String, CRSSourceStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CRSSourceStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CRSSourceStatusCode";
 				definition = "Specifies the source of Common Reporting Standard (CRS) status.";
-				code_lazy = () -> Arrays.asList(CRSSourceStatusCode.mmCalculated, CRSSourceStatusCode.mmDeclared);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CRSSourceStatusCode.Calculated, com.tools20022.repository.codeset.CRSSourceStatusCode.Declared);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Calculated.getCodeName().get(), Calculated);
+		codesByName.put(Declared.getCodeName().get(), Declared);
+	}
+
+	public static CRSSourceStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CRSSourceStatusCode[] values() {
+		CRSSourceStatusCode[] values = new CRSSourceStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CRSSourceStatusCode> {
+		@Override
+		public CRSSourceStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CRSSourceStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

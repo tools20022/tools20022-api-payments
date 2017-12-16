@@ -42,6 +42,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Settlement
+ * Settlement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -162,14 +165,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AdditionalInformation5
- * AdditionalInformation5}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -220,9 +215,14 @@ import java.util.List;
  * Position.mmSecuritiesSettlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Settlement
- * Settlement}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AdditionalInformation5
+ * AdditionalInformation5}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -279,8 +279,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmTransferOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferOperation";
 			definition = "Set of processes resulting in a securities transfer.";
@@ -324,8 +324,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDate";
 			definition = "Date and time at which a transaction is completed and cleared. \r\nIt can be an effective settlement date, that is, payment is effected and securities are delivered or an intended settlement date that is, the date and time at which the amount of money is intended to be moved.";
@@ -382,8 +382,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to the settlement of securities and played by a party at that step in a securities transaction flow.";
@@ -422,8 +422,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAmount";
 			definition = "Amount of money settled or to be settled.";
@@ -471,8 +471,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmHoldingsPlanType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingsPlanType";
 			definition = "Identifies whether or not saving plan or withdrawal or switch plan are included in the holdings.";
@@ -521,8 +521,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesMovementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesMovementType";
 			definition = "Specifies if the movement on a securities account results from a deliver or a receive instruction.";
@@ -575,8 +575,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementQuantity";
 			definition = "Total quantity of securities to be settled.";
@@ -625,8 +625,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTradeExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeExecution";
 			definition = "Specifies the trade which originates the settlement process.";
@@ -668,8 +668,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmCurrencyToBuy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyToBuy";
 			definition = "Account servicer is instructed to buy the indicated currency after the receipt of cash proceeds.";
@@ -717,8 +717,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmCurrencyToSell = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyToSell";
 			definition = "Account servicer is instructed to sell a currency in order to obtain the currency needed to fund the transaction.";
@@ -766,8 +766,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmDenominationChoice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DenominationChoice";
 			definition = "Denomination (stated value found on financial instruments) of the security to be received or delivered.";
@@ -813,8 +813,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementTransactionCondition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementTransactionCondition";
 			definition = "Conditions under which the order/trade is to be settled.";
@@ -861,8 +861,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmBeneficialOwnershipIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficialOwnershipIndicator";
 			definition = "Specifies whether there is change of beneficial ownership.";
@@ -911,8 +911,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmMarketClientSide = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketClientSide";
 			definition = "Specifies if an instruction is for a market side or a client side transaction.";
@@ -958,8 +958,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmTracking = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tracking";
 			definition = "Specifies whether the loan and/or collateral is tracked.";
@@ -1008,8 +1008,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmLetterOfGuarantee = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterOfGuarantee";
 			definition = "Specifies whether physical settlement may be executed using a letter of guarantee or if the physical certificates should be used.";
@@ -1058,8 +1058,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmEligibleForCollateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleForCollateral";
 			definition = "Specifies whether securities should be included in the pool of securities eligible for collateral purposes.";
@@ -1108,8 +1108,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmAccruedInterestIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccruedInterestIndicator";
 			definition = "Indicates whether the net proceeds include interest accrued on the financial instrument.";
@@ -1158,8 +1158,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmPreConfirmation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreConfirmation";
 			definition = "Pre-confirmation of the cash transfer pending the securities transfer, or vice versa.";
@@ -1208,8 +1208,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesRealTimeGrossSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesRealTimeGrossSettlement";
 			definition = "Specifies whether the settlement transaction is to be settled through an RTGS or a non RTGS system.";
@@ -1257,8 +1257,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmBlockTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockTrade";
 			definition = "Specifies whether the settlement instruction is a block parent or child.";
@@ -1307,8 +1307,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementSystemMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementSystemMethod";
 			definition = "Specifies whether the settlement instruction is to be settled through the default or the alternate settlement system.";
@@ -1354,8 +1354,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmAutomaticBorrowing = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutomaticBorrowing";
 			definition = "Condition for automatic borrowing.";
@@ -1401,8 +1401,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmPartialSettlementIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialSettlementIndicator";
 			definition = "Specifies whether partial settlement is allowed.";
@@ -1449,8 +1449,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmHoldIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldIndicator";
 			definition = "Specifies whether the transaction is on hold/blocked/frozen.";
@@ -1503,8 +1503,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRequestedSafekeepingPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSafekeepingPlace";
 			definition = "Place requested as the place of safekeeping.";
@@ -1553,8 +1553,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPairOff = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PairOff";
 			definition = "Buy and sell trades are settled in cash, based on the difference in the prices between the off-setting trades.";
@@ -1599,8 +1599,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmAccruedInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccruedInterest";
 			definition = "Interest included in the settlement.";
@@ -1646,8 +1646,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesClearing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesClearing";
 			definition = "Clearing process which triggers the settlement process.";
@@ -1694,8 +1694,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Specifies the cash payment information of a securities settlement.";
@@ -1742,8 +1742,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSettledAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettledAllocation";
 			definition = "Allocation which is settled.";
@@ -1791,8 +1791,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedForeignExchangeOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedForeignExchangeOperation";
 			definition = "Entry details related to currency exchange information.";
@@ -1837,8 +1837,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security which is settled.";
@@ -1884,8 +1884,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Position";
 			definition = "Information on the quantities and amounts to be settled in a position.";
@@ -1932,8 +1932,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRollover = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rollover";
 			definition = "Process whereby a financial instrument is reinvested at maturity.";
@@ -1983,8 +1983,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmTurnedQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TurnedQuantity";
 			definition = "Relates to a turnaround: the same security is bought and sold to settle the same day, to or from different brokers.";
@@ -2027,8 +2027,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementReason";
 			definition = "Specifies the reason for the settlement related to the type of underlying trade.";
@@ -2075,8 +2075,8 @@ public class SecuritiesSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmSettlementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementType";
 			definition = "Specifies how the transaction is to be settled, eg, against payment.";

@@ -194,8 +194,8 @@ public class ProductQuantity {
 	public static final MMBusinessAttribute mmUnitOfMeasure = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Product2.mmUnitOfMeasure);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitOfMeasure";
 			definition = "Specifies the unit of measurement. For example, kilo, tons.";
@@ -268,8 +268,8 @@ public class ProductQuantity {
 		{
 			derivation_lazy = () -> Arrays.asList(Product2.mmProductQuantity, BillingServiceParameters2.mmVolume, BillingServiceAdjustment1.mmVolumeChange, BillingServiceAdjustment1.mmOriginalVolume, BillingServiceAdjustment1.mmNewVolume,
 					BillingServiceParameters3.mmVolume);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Quantity of a product on a line specified by a number. For example, 100 (kgs), 50 (pieces).";
@@ -322,8 +322,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the type of goods and services linked to the quantity.";
@@ -365,8 +365,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAttribute mmFactor = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Factor";
 			definition = "Multiplication factor of measurement values. For example: goods that can be ordered by 36 pieces.";
@@ -418,8 +418,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNetWeightRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetWeightRelatedLineItem";
 			definition = "Line item for which a net weight is specified.";
@@ -465,8 +465,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmBilledQuantityRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BilledQuantityRelatedLineItem";
 			definition = "Line item which contains this quantity.";
@@ -513,8 +513,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPackaging = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPackaging";
 			definition = "Packaging for which a quantity is specified.";
@@ -562,8 +562,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPackagingForUnitQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackagingForUnitQuantity";
 			definition = "Packaging for which a unit quantity per package is specified.";
@@ -610,8 +610,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmChargeFreeQuantityRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargeFreeQuantityRelatedLineItem";
 			definition = "Line item for which a charge free quantity of product is specified.";
@@ -661,8 +661,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMeasureQuantityStart = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeasureQuantityStart";
 			definition = "Quantity value on which the quantity measurement started for a line item. For instance the start amount of a meter reading for an electricity supplier.";
@@ -712,8 +712,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmMeasureQuantityEnd = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeasureQuantityEnd";
 			definition = "Quantity value on which the quantity measurement ended for a line item. For instance the end amount of a meter reading for an electricity supplier.";
@@ -760,8 +760,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantityTolerance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityTolerance";
 			definition = "Variance allowed in the quantity of goods.";
@@ -809,8 +809,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPackagingForConsignmentlQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackagingForConsignmentlQuantity";
 			definition = "Packaging for which a total consignment quantity is specified.";
@@ -857,8 +857,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPackagingForVolume = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackagingForVolume";
 			definition = "Packaging for which a volume is specified.";
@@ -905,8 +905,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmPackagingForWeight = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackagingForWeight";
 			definition = "Packaging for which a weight is specified.";
@@ -952,8 +952,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossPriceQuantityRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossPriceQuantityRelatedLineItem";
 			definition = "Line item for which gross price quantity is specified.";
@@ -999,8 +999,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmNetPriceQuantityRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPriceQuantityRelatedLineItem";
 			definition = "Line item for which a net price quantity is specified.";
@@ -1046,8 +1046,8 @@ public class ProductQuantity {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossWeightRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossWeightRelatedLineItem";
 			definition = "Line item for which a gross weight is specified.";

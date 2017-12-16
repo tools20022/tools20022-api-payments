@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Distribution
+ * Distribution}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -91,9 +94,6 @@ import java.util.List;
  * SecuritiesAndCashDistribution.mmCashDistribution}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Distribution
- * Distribution}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -150,8 +150,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributionCurrencyExchangeInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributionCurrencyExchangeInformation";
 			definition = "Detailed information about the currency exchange in a distribution event.";
@@ -199,8 +199,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAndCashDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAndCashDistribution";
 			definition = "Distribution for which the cash distribution elements are provided.";
@@ -242,8 +242,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmAmortisedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmortisedRate";
 			definition = "Rate that will be applicable as of the next factor date and defines the outstanding principal of the factored security.";
@@ -292,8 +292,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Amount of cash, expressed as a percentage, disbursed per financial instrument.";
@@ -340,8 +340,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmCashIndemnityRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashIndemnityRate";
 			definition = "Ratio of compensation for damage/loss versus value of insured entity";
@@ -390,8 +390,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmDividendReinvestmentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendReinvestmentIndicator";
 			definition = "Indicates whether a cash dividend can be rolled over into shares of the issuing company.";
@@ -440,8 +440,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmInterestAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestAmount";
 			definition = "Amount of interest paid to the principal amount of the financial instrument for a specific period of time.";
@@ -490,8 +490,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmInterestRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestRate";
 			definition = "Ratio of the amount of interest paid to the principal amount of the financial instrument for a specific period of time.";
@@ -540,8 +540,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmLoyaltyPremiumIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LoyaltyPremiumIndicator";
 			definition = "Indicates whether dividends, in addition to regular dividends, are payable to loyal (time, size, amount) investors.";
@@ -590,8 +590,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmPaymentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentType";
 			definition = "Provides information about the whether the payment will be before or after tax.";
@@ -639,8 +639,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmSelectionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SelectionDate";
 			definition = "Date/time at which securities are selected for redemption prior to maturity.";
@@ -689,8 +689,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmCashDistributionRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistributionRate";
 			definition = "Amount, expressed as a percentage, of cash disbursed per financial instrument.";
@@ -736,8 +736,8 @@ public class CashDistribution extends Distribution {
 	 */
 	public static final MMBusinessAttribute mmCashDistributionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistributionAmount";
 			definition = "Amount of cash disbursed per financial instrument.";

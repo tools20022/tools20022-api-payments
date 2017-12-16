@@ -38,6 +38,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -69,8 +71,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * PersonProfile.mmProfileCertification}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Document Document}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCertificateType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificateType";
 			definition = "Identifies the type of certificate.";
@@ -168,8 +168,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCertificationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationIndicator";
 			definition = "Indicates whether the certificate type has been obtained and verified.";
@@ -215,8 +215,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCheckingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CheckingDate";
 			definition = "Date at which the certification check has been performed.";
@@ -262,8 +262,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmCheckingFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CheckingFrequency";
 			definition = "Specifies how frequently the check is performed.";
@@ -311,8 +311,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAttribute mmNextRevisionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NextRevisionDate";
 			definition = "Specifies the date at which the next certification check will be performed.";
@@ -366,8 +366,8 @@ public class PrivateCertificate extends Document {
 	 */
 	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Person";
 			definition = "Profile of a person for which a private certificate is described.";

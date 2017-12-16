@@ -137,8 +137,8 @@ public class AccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountContract";
 			definition = "Account contract which specifies the services linked to an account.";
@@ -186,8 +186,8 @@ public class AccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reservation";
 			definition = "Reservation information included in the services related to an account.";
@@ -233,8 +233,8 @@ public class AccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Account for which services are specified.";
@@ -289,8 +289,8 @@ public class AccountService {
 	public static final MMBusinessAssociationEnd mmAccountAdministrationCharge = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingServiceParameters2.mmServiceChargeAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountAdministrationCharge";
 			definition = "Charge applied for the administration of an account.";

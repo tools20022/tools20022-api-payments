@@ -114,8 +114,8 @@ public class MeetingParticipation {
 	 */
 	public static final MMBusinessAttribute mmTotalNumberOfSecuritiesOutstanding = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfSecuritiesOutstanding";
 			definition = "Number of securities admitted to the vote, expressed as an amount and a currency.";
@@ -160,8 +160,8 @@ public class MeetingParticipation {
 	 */
 	public static final MMBusinessAttribute mmTotalNumberOfVotingRights = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfVotingRights";
 			definition = "Number of rights admitted to the vote.";
@@ -207,8 +207,8 @@ public class MeetingParticipation {
 	 */
 	public static final MMBusinessAttribute mmCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationDate";
 			definition = "Date of calculation of the total number of oustanding securities.";
@@ -256,8 +256,8 @@ public class MeetingParticipation {
 	 */
 	public static final MMBusinessAttribute mmTotalNumberOfSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfSecurities";
 			definition = "Number of securities admitted to the vote, expressed as a number of securities.";
@@ -310,8 +310,8 @@ public class MeetingParticipation {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which participation conditions are specified.";

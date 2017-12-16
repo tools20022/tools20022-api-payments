@@ -116,8 +116,8 @@ public class MeetingAttendance {
 	 */
 	public static final MMBusinessAssociationEnd mmAttendanceCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendanceCard";
 			definition = "Specifies details linked to the attendance card.";
@@ -160,8 +160,8 @@ public class MeetingAttendance {
 	 */
 	public static final MMBusinessAttribute mmPercentageOfVotingRights = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfVotingRights";
 			definition = "Percentage of rights participating to the vote versus total voting rights.";
@@ -216,8 +216,8 @@ public class MeetingAttendance {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeeting";
 			definition = "Instruction in which the meeting attendance conditions are specified.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AmountFullfilTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if the redemption is partly or fully.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#mmCompletely
+ * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#Completely
  * AmountFullfilTypeCode.mmCompletely}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#mmPartial
+ * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#Partial
  * AmountFullfilTypeCode.mmPartial}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#mmTotalOrPartial
+ * {@linkplain com.tools20022.repository.codeset.AmountFullfilTypeCode#TotalOrPartial
  * AmountFullfilTypeCode.mmTotalOrPartial}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies if the redemption is partly or fully."</li>
  * </ul>
  */
-public class AmountFullfilTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AmountFullfilTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class AmountFullfilTypeCode {
 	 * definition} = "Full redemption."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCompletely = new MMCode() {
+	public static final AmountFullfilTypeCode Completely = new AmountFullfilTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Completely";
 			definition = "Full redemption.";
-			owner_lazy = () -> AmountFullfilTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AmountFullfilTypeCode.mmObject();
 			codeName = "COMP";
 		}
 	};
@@ -117,12 +123,12 @@ public class AmountFullfilTypeCode {
 	 * definition} = "Partial redemption."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartial = new MMCode() {
+	public static final AmountFullfilTypeCode Partial = new AmountFullfilTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Partial";
 			definition = "Partial redemption.";
-			owner_lazy = () -> AmountFullfilTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AmountFullfilTypeCode.mmObject();
 			codeName = "PART";
 		}
 	};
@@ -147,17 +153,21 @@ public class AmountFullfilTypeCode {
 	 * definition} = "Full or partial redemption."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTotalOrPartial = new MMCode() {
+	public static final AmountFullfilTypeCode TotalOrPartial = new AmountFullfilTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalOrPartial";
 			definition = "Full or partial redemption.";
-			owner_lazy = () -> AmountFullfilTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AmountFullfilTypeCode.mmObject();
 			codeName = "TOPA";
 		}
 	};
+	final static private LinkedHashMap<String, AmountFullfilTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AmountFullfilTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,37 @@ public class AmountFullfilTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountFullfilTypeCode";
 				definition = "Specifies if the redemption is partly or fully.";
-				code_lazy = () -> Arrays.asList(AmountFullfilTypeCode.mmCompletely, AmountFullfilTypeCode.mmPartial, AmountFullfilTypeCode.mmTotalOrPartial);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AmountFullfilTypeCode.Completely, com.tools20022.repository.codeset.AmountFullfilTypeCode.Partial,
+						com.tools20022.repository.codeset.AmountFullfilTypeCode.TotalOrPartial);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Completely.getCodeName().get(), Completely);
+		codesByName.put(Partial.getCodeName().get(), Partial);
+		codesByName.put(TotalOrPartial.getCodeName().get(), TotalOrPartial);
+	}
+
+	public static AmountFullfilTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AmountFullfilTypeCode[] values() {
+		AmountFullfilTypeCode[] values = new AmountFullfilTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AmountFullfilTypeCode> {
+		@Override
+		public AmountFullfilTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AmountFullfilTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

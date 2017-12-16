@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FailedSettlementReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reason of a settlement failure.
@@ -32,25 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmCreditAccountNotEligible
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#CreditAccountNotEligible
  * FailedSettlementReasonCode.mmCreditAccountNotEligible}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmCreditAccountDisabled
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#CreditAccountDisabled
  * FailedSettlementReasonCode.mmCreditAccountDisabled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmDebitAccountNotEligible
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#DebitAccountNotEligible
  * FailedSettlementReasonCode.mmDebitAccountNotEligible}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmDebitAccountDisabled
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#DebitAccountDisabled
  * FailedSettlementReasonCode.mmDebitAccountDisabled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmInsufficientSecurities
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#InsufficientSecurities
  * FailedSettlementReasonCode.mmInsufficientSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmIncompleteDistribution
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#IncompleteDistribution
  * FailedSettlementReasonCode.mmIncompleteDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#mmInsufficientCash
+ * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#InsufficientCash
  * FailedSettlementReasonCode.mmInsufficientCash}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the reason of a settlement failure."</li>
  * </ul>
  */
-public class FailedSettlementReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FailedSettlementReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,12 +105,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Credit account is not eligible."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditAccountNotEligible = new MMCode() {
+	public static final FailedSettlementReasonCode CreditAccountNotEligible = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditAccountNotEligible";
 			definition = "Credit account is not eligible.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "CANE";
 		}
 	};
@@ -129,12 +135,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Credit account is disabled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditAccountDisabled = new MMCode() {
+	public static final FailedSettlementReasonCode CreditAccountDisabled = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditAccountDisabled";
 			definition = "Credit account is disabled.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "CADI";
 		}
 	};
@@ -159,12 +165,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Debit account is not eligible."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebitAccountNotEligible = new MMCode() {
+	public static final FailedSettlementReasonCode DebitAccountNotEligible = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitAccountNotEligible";
 			definition = "Debit account is not eligible.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "DANE";
 		}
 	};
@@ -189,12 +195,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Debit account is disabled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebitAccountDisabled = new MMCode() {
+	public static final FailedSettlementReasonCode DebitAccountDisabled = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitAccountDisabled";
 			definition = "Debit account is disabled.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "AADI";
 		}
 	};
@@ -219,12 +225,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Insufficient securities on the account to settle."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInsufficientSecurities = new MMCode() {
+	public static final FailedSettlementReasonCode InsufficientSecurities = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientSecurities";
 			definition = "Insufficient securities on the account to settle.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "INSE";
 		}
 	};
@@ -249,12 +255,12 @@ public class FailedSettlementReasonCode {
 	 * definition} = "The distribution is incomplete."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncompleteDistribution = new MMCode() {
+	public static final FailedSettlementReasonCode IncompleteDistribution = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncompleteDistribution";
 			definition = "The distribution is incomplete.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "INDI";
 		}
 	};
@@ -279,17 +285,21 @@ public class FailedSettlementReasonCode {
 	 * definition} = "Insufficient cash on the account to settle."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInsufficientCash = new MMCode() {
+	public static final FailedSettlementReasonCode InsufficientCash = new FailedSettlementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientCash";
 			definition = "Insufficient cash on the account to settle.";
-			owner_lazy = () -> FailedSettlementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FailedSettlementReasonCode.mmObject();
 			codeName = "INCA";
 		}
 	};
+	final static private LinkedHashMap<String, FailedSettlementReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FailedSettlementReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -297,10 +307,43 @@ public class FailedSettlementReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailedSettlementReasonCode";
 				definition = "Specifies the reason of a settlement failure.";
-				code_lazy = () -> Arrays.asList(FailedSettlementReasonCode.mmCreditAccountNotEligible, FailedSettlementReasonCode.mmCreditAccountDisabled, FailedSettlementReasonCode.mmDebitAccountNotEligible,
-						FailedSettlementReasonCode.mmDebitAccountDisabled, FailedSettlementReasonCode.mmInsufficientSecurities, FailedSettlementReasonCode.mmIncompleteDistribution, FailedSettlementReasonCode.mmInsufficientCash);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FailedSettlementReasonCode.CreditAccountNotEligible, com.tools20022.repository.codeset.FailedSettlementReasonCode.CreditAccountDisabled,
+						com.tools20022.repository.codeset.FailedSettlementReasonCode.DebitAccountNotEligible, com.tools20022.repository.codeset.FailedSettlementReasonCode.DebitAccountDisabled,
+						com.tools20022.repository.codeset.FailedSettlementReasonCode.InsufficientSecurities, com.tools20022.repository.codeset.FailedSettlementReasonCode.IncompleteDistribution,
+						com.tools20022.repository.codeset.FailedSettlementReasonCode.InsufficientCash);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CreditAccountNotEligible.getCodeName().get(), CreditAccountNotEligible);
+		codesByName.put(CreditAccountDisabled.getCodeName().get(), CreditAccountDisabled);
+		codesByName.put(DebitAccountNotEligible.getCodeName().get(), DebitAccountNotEligible);
+		codesByName.put(DebitAccountDisabled.getCodeName().get(), DebitAccountDisabled);
+		codesByName.put(InsufficientSecurities.getCodeName().get(), InsufficientSecurities);
+		codesByName.put(IncompleteDistribution.getCodeName().get(), IncompleteDistribution);
+		codesByName.put(InsufficientCash.getCodeName().get(), InsufficientCash);
+	}
+
+	public static FailedSettlementReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FailedSettlementReasonCode[] values() {
+		FailedSettlementReasonCode[] values = new FailedSettlementReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FailedSettlementReasonCode> {
+		@Override
+		public FailedSettlementReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FailedSettlementReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

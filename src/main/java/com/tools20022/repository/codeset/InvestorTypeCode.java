@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.InvestorTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of investor.
@@ -31,27 +36,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmRetail
+ * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Retail
  * InvestorTypeCode.mmRetail}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmProfessional
+ * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Professional
  * InvestorTypeCode.mmProfessional}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmStaff
+ * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Staff
  * InvestorTypeCode.mmStaff}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmPhysicalPerson
+ * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#PhysicalPerson
  * InvestorTypeCode.mmPhysicalPerson}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmInstitutional
+ * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Institutional
  * InvestorTypeCode.mmInstitutional}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmRetailAndInstitutional
+ * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#RetailAndInstitutional
  * InvestorTypeCode.mmRetailAndInstitutional}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmGrossDistribution
+ * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#GrossDistribution
  * InvestorTypeCode.mmGrossDistribution}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#mmQualified
+ * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Qualified
  * InvestorTypeCode.mmQualified}</li>
  * </ul>
  * </li>
@@ -76,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the  type of investor."</li>
  * </ul>
  */
-public class InvestorTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InvestorTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -100,12 +105,12 @@ public class InvestorTypeCode {
 	 * definition} = "Investor is a retail investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRetail = new MMCode() {
+	public static final InvestorTypeCode Retail = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Retail";
 			definition = "Investor is a retail investor.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "RETL";
 		}
 	};
@@ -130,12 +135,12 @@ public class InvestorTypeCode {
 	 * definition} = "Investor is a professional or institutional investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProfessional = new MMCode() {
+	public static final InvestorTypeCode Professional = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Professional";
 			definition = "Investor is a professional or institutional investor.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "PROF";
 		}
 	};
@@ -160,12 +165,12 @@ public class InvestorTypeCode {
 	 * definition} = "Investor is an employee."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStaff = new MMCode() {
+	public static final InvestorTypeCode Staff = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Staff";
 			definition = "Investor is an employee.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "STAF";
 		}
 	};
@@ -190,12 +195,12 @@ public class InvestorTypeCode {
 	 * definition} = "Investor is a physical person."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPhysicalPerson = new MMCode() {
+	public static final InvestorTypeCode PhysicalPerson = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalPerson";
 			definition = "Investor is a physical person.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "PPER";
 		}
 	};
@@ -220,12 +225,12 @@ public class InvestorTypeCode {
 	 * definition} = "Investor is an institutional investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInstitutional = new MMCode() {
+	public static final InvestorTypeCode Institutional = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Institutional";
 			definition = "Investor is an institutional investor.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "INST";
 		}
 	};
@@ -251,12 +256,12 @@ public class InvestorTypeCode {
 	 * "Investor is both an institutional and an individual investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRetailAndInstitutional = new MMCode() {
+	public static final InvestorTypeCode RetailAndInstitutional = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RetailAndInstitutional";
 			definition = "Investor is both an institutional and an individual investor.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "BOTH";
 		}
 	};
@@ -282,12 +287,12 @@ public class InvestorTypeCode {
 	 * "Investor is eligible to receive income gross, eg, a pension scheme."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGrossDistribution = new MMCode() {
+	public static final InvestorTypeCode GrossDistribution = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossDistribution";
 			definition = "Investor is eligible to receive income gross, eg, a pension scheme.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "GROS";
 		}
 	};
@@ -312,17 +317,21 @@ public class InvestorTypeCode {
 	 * definition} = "Investor meets the fund entry policy restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmQualified = new MMCode() {
+	public static final InvestorTypeCode Qualified = new InvestorTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Qualified";
 			definition = "Investor meets the fund entry policy restriction.";
-			owner_lazy = () -> InvestorTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestorTypeCode.mmObject();
 			codeName = "QUAL";
 		}
 	};
+	final static private LinkedHashMap<String, InvestorTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InvestorTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -330,10 +339,43 @@ public class InvestorTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestorTypeCode";
 				definition = "Specifies the  type of investor.";
-				code_lazy = () -> Arrays.asList(InvestorTypeCode.mmRetail, InvestorTypeCode.mmProfessional, InvestorTypeCode.mmStaff, InvestorTypeCode.mmPhysicalPerson, InvestorTypeCode.mmInstitutional,
-						InvestorTypeCode.mmRetailAndInstitutional, InvestorTypeCode.mmGrossDistribution, InvestorTypeCode.mmQualified);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestorTypeCode.Retail, com.tools20022.repository.codeset.InvestorTypeCode.Professional, com.tools20022.repository.codeset.InvestorTypeCode.Staff,
+						com.tools20022.repository.codeset.InvestorTypeCode.PhysicalPerson, com.tools20022.repository.codeset.InvestorTypeCode.Institutional, com.tools20022.repository.codeset.InvestorTypeCode.RetailAndInstitutional,
+						com.tools20022.repository.codeset.InvestorTypeCode.GrossDistribution, com.tools20022.repository.codeset.InvestorTypeCode.Qualified);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Retail.getCodeName().get(), Retail);
+		codesByName.put(Professional.getCodeName().get(), Professional);
+		codesByName.put(Staff.getCodeName().get(), Staff);
+		codesByName.put(PhysicalPerson.getCodeName().get(), PhysicalPerson);
+		codesByName.put(Institutional.getCodeName().get(), Institutional);
+		codesByName.put(RetailAndInstitutional.getCodeName().get(), RetailAndInstitutional);
+		codesByName.put(GrossDistribution.getCodeName().get(), GrossDistribution);
+		codesByName.put(Qualified.getCodeName().get(), Qualified);
+	}
+
+	public static InvestorTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InvestorTypeCode[] values() {
+		InvestorTypeCode[] values = new InvestorTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InvestorTypeCode> {
+		@Override
+		public InvestorTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InvestorTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

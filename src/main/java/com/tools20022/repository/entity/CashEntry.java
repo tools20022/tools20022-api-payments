@@ -39,6 +39,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Entry Entry}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,30 +79,6 @@ import java.util.List;
  * CashEntry.mmRelatedInvestigationCaseResolution}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CashEntry#mmChargesIncluded
  * CashEntry.mmChargesIncluded}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3
- * AmountAndCurrencyExchangeDetails3}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4
- * AmountAndCurrencyExchangeDetails4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchange3
- * AmountAndCurrencyExchange3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection35
- * AmountAndDirection35}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionType1
- * TransactionType1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.StatementResolutionEntry2
- * StatementResolutionEntry2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34
- * AmountAndDirection34}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportEntry8 ReportEntry8}</li>
- * <li>{@linkplain com.tools20022.repository.msg.EntryDetails7 EntryDetails7}</li>
  * </ul>
  * </li>
  * <li>
@@ -161,8 +139,30 @@ import java.util.List;
  * UnderlyingTransaction3Choice.mmStatementEntry}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Entry Entry}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3
+ * AmountAndCurrencyExchangeDetails3}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4
+ * AmountAndCurrencyExchangeDetails4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndCurrencyExchange3
+ * AmountAndCurrencyExchange3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection35
+ * AmountAndDirection35}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionType1
+ * TransactionType1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.StatementResolutionEntry2
+ * StatementResolutionEntry2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34
+ * AmountAndDirection34}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportEntry8 ReportEntry8}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.EntryDetails7 EntryDetails7}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -242,8 +242,8 @@ public class CashEntry extends Entry {
 	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalNotificationReference8.mmAccount, OriginalItemReference4.mmAccount, OriginalNotificationReference7.mmAccount, EntryTransaction8.mmSafekeepingAccount, NotificationItem6.mmAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Cash account on which the amount of the entry is debited or credited. It is derived from the association between Entry and Account.";
@@ -307,8 +307,8 @@ public class CashEntry extends Entry {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountAndCurrencyExchangeDetails3.mmAmount, AmountAndCurrencyExchangeDetails4.mmAmount, StatementResolutionEntry2.mmCorrectedAmount, AmountAndDirection34.mmAmount, ReportEntry8.mmAmount,
 					ReportEntry8.mmAmountDetails, EntryTransaction8.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money in the cash entry.";
@@ -361,8 +361,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedBookEntry";
 			definition = "Account entry for which one or more cash entries are specified.";
@@ -411,8 +411,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmCashBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashBalance";
 			definition = "Cash amount that is the result of the sum of the cash entries from or to a cash account.";
@@ -469,8 +469,8 @@ public class CashEntry extends Entry {
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountAndCurrencyExchangeDetails3.mmCurrencyExchange, AmountAndCurrencyExchangeDetails4.mmCurrencyExchange);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Entry details related to currency exchange information.";
@@ -530,8 +530,8 @@ public class CashEntry extends Entry {
 	public static final MMBusinessAssociationEnd mmCharges = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(StatementResolutionEntry2.mmCharges, ReportEntry8.mmCharges, EntryTransaction8.mmCharges);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Charges";
 			definition = "Provides information on the charges included in the entry amount.";
@@ -589,8 +589,8 @@ public class CashEntry extends Entry {
 	public static final MMBusinessAssociationEnd mmAvailability = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmAvailability);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Availability";
 			definition = "Availability information on the entry.\r\nElements used to indicate when the booked amount of money will become available, that is can be accessed and start generating interest.";
@@ -635,8 +635,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest amount included in the entry amount.";
@@ -682,8 +682,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmDebitRelatedBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitRelatedBookEntry";
 			definition = "Book entry which is the source of the cash entry.";
@@ -729,8 +729,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditRelatedBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditRelatedBookEntry";
 			definition = "Book entry which is the source of the cash entry.";
@@ -779,8 +779,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvoiceFinancingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvoiceFinancingTransaction";
 			definition = "Specifies the invoice financing transaction which originates the entry.";
@@ -827,8 +827,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestigationCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestigationCase";
 			definition = "Case which is investigating a cash entry.";
@@ -878,8 +878,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestigationCaseResolution";
 			definition = "Payment investigation case resolution which created a correction resulting in a cash entry.";
@@ -920,8 +920,8 @@ public class CashEntry extends Entry {
 	 */
 	public static final MMBusinessAttribute mmChargesIncluded = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargesIncluded";
 			definition = "Indicates whether charges have already been included in the entry amount.";

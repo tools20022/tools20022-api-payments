@@ -78,19 +78,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice
- * FinancialIdentificationSchemeName1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice
- * AccountSchemeName1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.MandateStatus1Choice
- * MandateStatus1Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -113,6 +100,19 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CreditorRole#mmSchemeIdentification
  * CreditorRole.mmSchemeIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice
+ * FinancialIdentificationSchemeName1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice
+ * AccountSchemeName1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.MandateStatus1Choice
+ * MandateStatus1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -178,8 +178,8 @@ public class Scheme {
 	public static final MMBusinessAttribute mmNameShort = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmSchemeName, GenericIdentification13.mmSchemeName, PersonIdentificationSchemeName1Choice.mmProprietary, GenericIdentification30.mmSchemeName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameShort";
 			definition = "Short textual description of the scheme.";
@@ -263,8 +263,8 @@ public class Scheme {
 			derivation_lazy = () -> Arrays.asList(FinancialIdentificationSchemeName1Choice.mmCode, FinancialIdentificationSchemeName1Choice.mmProprietary, AccountSchemeName1Choice.mmCode, AccountSchemeName1Choice.mmProprietary,
 					OrganisationIdentificationSchemeName1Choice.mmCode, OrganisationIdentificationSchemeName1Choice.mmProprietary, PersonIdentificationSchemeName1Choice.mmCode, IdentificationSource3Choice.mmCode,
 					MandateStatus1Choice.mmCode, MandateStatus1Choice.mmProprietary);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Code that represents the enumerated list, for example, ISO 6166 for ISIN.";
@@ -327,8 +327,8 @@ public class Scheme {
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(OtherIdentification1.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification information for which a scheme is specified.";
@@ -373,8 +373,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmRating = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rating";
 			definition = "Rating for which an identification by scheme is specified.";
@@ -421,8 +421,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditorRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditorRole";
 			definition = "Creditor for which an identification by scheme is specified.";
@@ -469,8 +469,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmInformationPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationPartyRole";
 			definition = "Role played by a party as source of a scheme code.";
@@ -507,8 +507,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Version";
 			definition = "Version number of the scheme.";
@@ -561,8 +561,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmAssessmentValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssessmentValidityPeriod";
 			definition = "Period during which the version of the scheme applies (see ISO-8601).";
@@ -600,8 +600,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute mmNameLong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameLong";
 			definition = "Long textual description of the scheme.";
@@ -645,8 +645,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Textual description of the scheme.";
@@ -693,8 +693,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute mmDomainValueCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomainValueCode";
 			definition = "Code for a specific instance of an entry within the enumerated list, for example, ISIN.";
@@ -741,8 +741,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute mmDomainValueName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomainValueName";
 			definition = "Textual description of the DomainValueCode, for example, International Securities Identification Number.";
@@ -792,8 +792,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Specifies the sector to which the scheme applies.";
@@ -839,8 +839,8 @@ public class Scheme {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetClassification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AssetClassification";
 			definition = "Asset for which a classification by scheme is specified.";

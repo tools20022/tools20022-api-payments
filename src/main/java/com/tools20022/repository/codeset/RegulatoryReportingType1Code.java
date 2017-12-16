@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.RegulatoryReportingTypeCode;
+import com.tools20022.repository.codeset.RegulatoryReportingType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies whether the regulatory reporting information applies to the debit
@@ -32,22 +36,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode
- * RegulatoryReportingTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#mmCredit
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#Credit
  * RegulatoryReportingType1Code.mmCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#mmDebit
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#Debit
  * RegulatoryReportingType1Code.mmDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#mmBoth
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingType1Code#Both
  * RegulatoryReportingType1Code.mmBoth}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.RegulatoryReportingTypeCode
+ * RegulatoryReportingTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -71,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class RegulatoryReportingType1Code extends RegulatoryReportingTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RegulatoryReportingType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,11 +95,12 @@ public class RegulatoryReportingType1Code extends RegulatoryReportingTypeCode {
 	 * name} = "Credit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final RegulatoryReportingType1Code Credit = new RegulatoryReportingType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Credit";
-			owner_lazy = () -> RegulatoryReportingType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingType1Code.mmObject();
+			codeName = RegulatoryReportingTypeCode.Credit.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -113,11 +119,12 @@ public class RegulatoryReportingType1Code extends RegulatoryReportingTypeCode {
 	 * name} = "Debit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final RegulatoryReportingType1Code Debit = new RegulatoryReportingType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debit";
-			owner_lazy = () -> RegulatoryReportingType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingType1Code.mmObject();
+			codeName = RegulatoryReportingTypeCode.Debit.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -136,15 +143,20 @@ public class RegulatoryReportingType1Code extends RegulatoryReportingTypeCode {
 	 * name} = "Both"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBoth = new MMCode() {
+	public static final RegulatoryReportingType1Code Both = new RegulatoryReportingType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Both";
-			owner_lazy = () -> RegulatoryReportingType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegulatoryReportingType1Code.mmObject();
+			codeName = RegulatoryReportingTypeCode.Both.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, RegulatoryReportingType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RegulatoryReportingType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -152,10 +164,38 @@ public class RegulatoryReportingType1Code extends RegulatoryReportingTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReportingType1Code";
 				definition = "Identifies whether the regulatory reporting information applies to the debit side, to the credit side or to both debit and credit sides of the transaction.";
-				code_lazy = () -> Arrays.asList(RegulatoryReportingType1Code.mmCredit, RegulatoryReportingType1Code.mmDebit, RegulatoryReportingType1Code.mmBoth);
 				trace_lazy = () -> RegulatoryReportingTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RegulatoryReportingType1Code.Credit, com.tools20022.repository.codeset.RegulatoryReportingType1Code.Debit,
+						com.tools20022.repository.codeset.RegulatoryReportingType1Code.Both);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(Debit.getCodeName().get(), Debit);
+		codesByName.put(Both.getCodeName().get(), Both);
+	}
+
+	public static RegulatoryReportingType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RegulatoryReportingType1Code[] values() {
+		RegulatoryReportingType1Code[] values = new RegulatoryReportingType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RegulatoryReportingType1Code> {
+		@Override
+		public RegulatoryReportingType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RegulatoryReportingType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

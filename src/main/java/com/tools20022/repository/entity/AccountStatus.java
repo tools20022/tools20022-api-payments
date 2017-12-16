@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -68,8 +70,6 @@ import java.util.List;
  * Account.mmStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -125,8 +125,8 @@ public class AccountStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Identifies the account for which a status is provided.";
@@ -178,8 +178,8 @@ public class AccountStatus extends Status {
 	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmStatus, CustomerAccountModification1.mmStatus, CustomerAccount4.mmStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the status of an account.";
@@ -225,8 +225,8 @@ public class AccountStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmBlocked = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Blocked";
 			definition = "Indicates whether the account is blocked.";
@@ -275,8 +275,8 @@ public class AccountStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmManagementStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManagementStatus";
 			definition = "Specifies the status of the processing of a request linked to the management of an account.";
@@ -332,8 +332,8 @@ public class AccountStatus extends Status {
 	public static final MMBusinessAttribute mmEntryStatus = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionType1.mmStatus, ReportEntry8.mmStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntryStatus";
 			definition = "Status of an entry on the books of the account servicer.";
@@ -379,8 +379,8 @@ public class AccountStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmBalanceStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BalanceStatus";
 			definition = "Current status of a cash balance.";
@@ -427,8 +427,8 @@ public class AccountStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmBlockedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockedReason";
 			definition = "Specifies the different reasons for which the account is blocked.";

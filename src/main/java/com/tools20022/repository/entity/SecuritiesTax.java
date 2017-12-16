@@ -36,6 +36,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Tax Tax}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -104,8 +106,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Jurisdiction.mmRelatedSecuritiesTax}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Tax Tax}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -166,8 +166,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxableIncomePerShare = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableIncomePerShare";
 			definition = "Amount included in the NAV that corresponds to gains directly or indirectly derived from interest payment in the scope of the European Directive on taxation of savings income in the form of interest payments.";
@@ -215,8 +215,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxableIncomePerShareCalculated = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableIncomePerShareCalculated";
 			definition = "Specifies whether the fund calculates a taxable interest per share (TIS).";
@@ -267,8 +267,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmEUCapitalGain = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EUCapitalGain";
 			definition = "Specifies whether capital gain is in the scope of the European directive on taxation of savings income in the form of interest payments (Council Directive 2003/48/EC 3 June), or an income realised upon sale, a refund or redemption of shares and units, etc.";
@@ -319,8 +319,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmEUDividendStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EUDividendStatus";
 			definition = "Specifies whether dividend is in the scope of the European directive on taxation of savings income in the form of interest payments (Council Directive 2003/48/EC 3 June), or an income realised upon sale, a refund or redemption of shares and units, etc.";
@@ -370,8 +370,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxableIncomePerDividend = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableIncomePerDividend";
 			definition = "Amount included in the dividend that corresponds to gains directly or indirectly derived from interest payment in the scope of the European Directive on taxation of savings income in the form of interest payments.";
@@ -417,8 +417,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmStampDutyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StampDutyType";
 			definition = "Indicates how the stamp duty should be applied.";
@@ -467,8 +467,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmStampDutyTaxBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StampDutyTaxBasis";
 			definition = "Specifies the stamp duty type or exemption reason applicable to the settlement transaction.";
@@ -521,8 +521,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxVoucher";
 			definition = "Tax voucher which is related to a securities tax.";
@@ -566,8 +566,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxableIncomePerDividendShare = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableIncomePerDividendShare";
 			definition = "Amount included in the dividend/NAV that is identified as gains directly or indirectly derived from interest payments within the scope of the EU Savings directive";
@@ -621,8 +621,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTax";
 			definition = "Percentage of the gross dividend rate on which tax must be paid .";
@@ -665,8 +665,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxLotNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxLotNumber";
 			definition = "Identification, for tax purposes, of a lot of identical securities that are bought at a certain date and at a certain price.";
@@ -718,8 +718,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security on which the tax applies.";
@@ -762,8 +762,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTaxRuleExemptIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxRuleExemptIndicator";
 			definition = "Indicates whether the tax rule applies within the jurisdiction as a condition of this security.";
@@ -810,8 +810,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the tax rule applies within the jurisdiction.";
@@ -857,8 +857,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmFrankedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FrankedRate";
 			definition = "Percentage of dividend for which tax is already paid.";
@@ -905,8 +905,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAttribute mmTEFRARule = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TEFRARule";
 			definition = "Indicates the TEFRA rule under which the security is issued.";
@@ -959,8 +959,8 @@ public class SecuritiesTax extends Tax {
 	 */
 	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Jurisdiction";
 			definition = "Jurisdiction in which the tax rule applies.";

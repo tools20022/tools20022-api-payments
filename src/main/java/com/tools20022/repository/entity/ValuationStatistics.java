@@ -133,8 +133,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency of the net asset value calculation.";
@@ -183,8 +183,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAttribute mmPriceTypeChangeBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceTypeChangeBasis";
 			definition = "Type of price from which the change is calculated, eg, bid, offer, or single.";
@@ -237,8 +237,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceChange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChange";
 			definition = "Change in price since the last valuation.";
@@ -282,8 +282,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAttribute mmYield = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Yield";
 			definition = "Rate of income from the financial instrument, usually calculated as total dividends or coupon interest available to investors in the last year,divided by the current price.";
@@ -336,8 +336,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAssociationEnd mmHighestPriceValue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HighestPriceValue";
 			definition = "Highest price for the referenced period.";
@@ -384,8 +384,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAssociationEnd mmLowestPriceValue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LowestPriceValue";
 			definition = "Lowest price for the referenced period.";
@@ -432,8 +432,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Period";
 			definition = "Reference period for the valuation.";
@@ -483,8 +483,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Information related to the price valuation of an investment fund class.";
@@ -524,8 +524,8 @@ public class ValuationStatistics {
 	 */
 	public static final MMBusinessAttribute mmNetAssetValueChangeRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueChangeRate";
 			definition = "Rate of change of the net asset value.";

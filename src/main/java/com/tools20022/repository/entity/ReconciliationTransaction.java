@@ -42,6 +42,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Reconciliation
+ * Reconciliation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,9 +80,6 @@ import java.util.List;
  * CardPayment.mmReconciliation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Reconciliation
- * Reconciliation}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -142,8 +142,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	public static final MMBusinessAttribute mmReconciliationIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmSaleReconciliationIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReconciliationIdentification";
 			definition = "Unique identification of the reconciliation period between the acceptor and the acquirer. This identification might be linked to the identification of the settlement for further verification by the merchant.";
@@ -188,8 +188,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency associated with thecumulative amount.";
@@ -235,8 +235,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAttribute mmTransactionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionType";
 			definition = "Identification of the type of transaction.";
@@ -282,8 +282,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAttribute mmTotalNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumber";
 			definition = "Total number of transactions during a reconciliation period.";
@@ -329,8 +329,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAttribute mmCumulativeAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CumulativeAmount";
 			definition = "Total amount of a collection of transactions.";
@@ -379,8 +379,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAttribute mmClosePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosePeriod";
 			definition = "Indicates if the exchange requires a closure of the reconciliation period.";
@@ -436,8 +436,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPaymentTotal = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentTotal";
 			definition = "Specifies the card payments which are part of the transaction reconciliation.";

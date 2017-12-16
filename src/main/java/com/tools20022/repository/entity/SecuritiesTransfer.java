@@ -42,6 +42,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -126,10 +130,6 @@ import java.util.List;
  * SecuritiesDeliveryObligation.mmSecuritiesTransfer}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -188,8 +188,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of a transfer, as assigned by the instructing party.";
@@ -242,8 +242,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmTransferredQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredQuantity";
 			definition = "Total quantity of securities settled.";
@@ -291,8 +291,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Specifies the account from/to which the securities are transferred.";
@@ -334,8 +334,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmTransferType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferType";
 			definition = "Specifies whether the financial instrument is transferred as an asset or as cash.";
@@ -390,8 +390,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSettlement";
 			definition = "Settlement process which is the source of the transfer operation.";
@@ -433,8 +433,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmOwnAccountTransferIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnAccountTransferIndicator";
 			definition = "Indicates whether the transfer results in a change of beneficial owner.";
@@ -488,8 +488,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmPhysicalDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalDelivery";
 			definition = "Information related to physical delivery of the securities.";
@@ -531,8 +531,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmLateDeliveryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LateDeliveryDate";
 			definition = "Date and time after the settlement date specified in the trade, used for pool trades resulting from the original To Be Assigned (TBA) securities.";
@@ -584,8 +584,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmTransferTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferTax";
 			definition = "Tax related to the transfer of a financial instrument.";
@@ -625,8 +625,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmTransferReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferReason";
 			definition = "Identifies the transfer reason.";
@@ -672,8 +672,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmPartialSettlementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialSettlementType";
 			definition = "Information about partial settlement.";
@@ -728,8 +728,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Obligation for one party to deliver securities to another party.";
@@ -777,8 +777,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntry";
 			definition = "Record in a securities account resulting from the transfer of a security.";
@@ -816,8 +816,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionIdentification";
 			definition = "Unambiguous identification of a securities transfer.";
@@ -869,8 +869,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security which is transferred.";
@@ -917,8 +917,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of a securities transfer.";

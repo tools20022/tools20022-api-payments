@@ -179,8 +179,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmPostingQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostingQuantity";
 			definition = "Quantity of securities that have been posted (credit or debit) to the account.";
@@ -219,8 +219,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmPostingDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostingDateTime";
 			definition = "Date of the posting (credit or debit) to the account.";
@@ -268,8 +268,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmMovementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementDate";
 			definition = "Date/time at which the movement is due to take place (cash and/or securities).";
@@ -324,8 +324,8 @@ public class CorporateActionDistribution {
 	public static final MMBusinessAttribute mmPostingAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountAndCurrencyExchange3.mmAnnouncedPostingAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostingAmount";
 			definition = "Amount of money that is to be/was posted to the account.";
@@ -379,8 +379,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxVoucher";
 			definition = "Specifies tax vouchers in the framework of a corporate action event.";
@@ -431,8 +431,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Process which groups the activities related to corporate action servicing.";
@@ -472,8 +472,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmOrderType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderType";
 			definition = "Type of movement instruction.";
@@ -519,8 +519,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmMovementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementType";
 			definition = "Type of movement.";
@@ -570,8 +570,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmHighPriorityIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HighPriorityIndicator";
 			definition = "Indicates whether the movement is a high priority or not.\r\nMeaning when true: High priority\r\nMeaning when false: Standard";
@@ -617,8 +617,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmRequestedExecutionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedExecutionDate";
 			definition = "Date at which the distribution movement must be executed.";
@@ -664,8 +664,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmFractionTreatment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionTreatment";
 			definition = "Specifies the rounding direction.";
@@ -712,8 +712,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies whether the posting amount is a debit or credit.";
@@ -767,8 +767,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Option";
 			definition = "Option on which the distribution is based.";
@@ -808,8 +808,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAmount";
 			definition = "Cash amount after any deductions and allowances have been made";
@@ -856,8 +856,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmount";
 			definition = "Cash amount before any deductions and allowances have been made.";
@@ -912,8 +912,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the CA distribution belongs.";
@@ -964,8 +964,8 @@ public class CorporateActionDistribution {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionProceedsDeliveryInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionProceedsDeliveryInstruction";
 			definition = "Specifies the delivery instructions for the securities and cash proceeds at any stage of the Corporate Action process.";

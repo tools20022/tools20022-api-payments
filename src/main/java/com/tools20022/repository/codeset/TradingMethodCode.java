@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradingMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the method used for the negotiation and execution of a trade.
@@ -32,11 +37,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmElectronic
+ * {@linkplain com.tools20022.repository.codeset.TradingMethodCode#Electronic
  * TradingMethodCode.mmElectronic}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmPhone
+ * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#Phone
  * TradingMethodCode.mmPhone}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmBroker
+ * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#Broker
  * TradingMethodCode.mmBroker}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the method used for the negotiation and execution of a trade."</li>
  * </ul>
  */
-public class TradingMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradingMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed through an electronic trading system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmElectronic = new MMCode() {
+	public static final TradingMethodCode Electronic = new TradingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Electronic";
 			definition = "Trade executed through an electronic trading system.";
-			owner_lazy = () -> TradingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradingMethodCode.mmObject();
 			codeName = "ELEC";
 		}
 	};
@@ -116,12 +122,12 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed over the phone."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPhone = new MMCode() {
+	public static final TradingMethodCode Phone = new TradingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Phone";
 			definition = "Trade executed over the phone.";
-			owner_lazy = () -> TradingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradingMethodCode.mmObject();
 			codeName = "PHON";
 		}
 	};
@@ -146,17 +152,21 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed through a broker."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBroker = new MMCode() {
+	public static final TradingMethodCode Broker = new TradingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Broker";
 			definition = "Trade executed through a broker.";
-			owner_lazy = () -> TradingMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradingMethodCode.mmObject();
 			codeName = "BROK";
 		}
 	};
+	final static private LinkedHashMap<String, TradingMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradingMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -164,9 +174,36 @@ public class TradingMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingMethodCode";
 				definition = "Specifies the method used for the negotiation and execution of a trade.";
-				code_lazy = () -> Arrays.asList(TradingMethodCode.mmElectronic, TradingMethodCode.mmPhone, TradingMethodCode.mmBroker);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradingMethodCode.Electronic, com.tools20022.repository.codeset.TradingMethodCode.Phone, com.tools20022.repository.codeset.TradingMethodCode.Broker);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Electronic.getCodeName().get(), Electronic);
+		codesByName.put(Phone.getCodeName().get(), Phone);
+		codesByName.put(Broker.getCodeName().get(), Broker);
+	}
+
+	public static TradingMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradingMethodCode[] values() {
+		TradingMethodCode[] values = new TradingMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradingMethodCode> {
+		@Override
+		public TradingMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradingMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -19,9 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.datatype.NewZealandNCCIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * New Zealand Bank/Branch Code. Identifies New Zealand institutions on the New
@@ -58,9 +62,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class NewZealandNCCIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
@@ -75,5 +81,26 @@ public class NewZealandNCCIdentifier {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public NewZealandNCCIdentifier(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NewZealandNCCIdentifier> {
+		@Override
+		public NewZealandNCCIdentifier unmarshal(String value) {
+			return new NewZealandNCCIdentifier(value);
+		}
+
+		@Override
+		public String marshal(NewZealandNCCIdentifier typedData) {
+			return typedData.value;
+		}
 	}
 }

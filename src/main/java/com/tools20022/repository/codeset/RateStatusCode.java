@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RateStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of rate.
@@ -31,11 +36,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.RateStatusCode#mmActualRate
+ * <li>{@linkplain com.tools20022.repository.codeset.RateStatusCode#ActualRate
  * RateStatusCode.mmActualRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RateStatusCode#mmIndicativeRate
+ * {@linkplain com.tools20022.repository.codeset.RateStatusCode#IndicativeRate
  * RateStatusCode.mmIndicativeRate}</li>
  * </ul>
  * </li>
@@ -60,7 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of rate."</li>
  * </ul>
  */
-public class RateStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RateStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +89,12 @@ public class RateStatusCode {
 	 * definition} = "Rate is actual."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmActualRate = new MMCode() {
+	public static final RateStatusCode ActualRate = new RateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualRate";
 			definition = "Rate is actual.";
-			owner_lazy = () -> RateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RateStatusCode.mmObject();
 			codeName = "ACTU";
 		}
 	};
@@ -114,17 +119,21 @@ public class RateStatusCode {
 	 * definition} = "Rate is indicative."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndicativeRate = new MMCode() {
+	public static final RateStatusCode IndicativeRate = new RateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicativeRate";
 			definition = "Rate is indicative.";
-			owner_lazy = () -> RateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RateStatusCode.mmObject();
 			codeName = "INDI";
 		}
 	};
+	final static private LinkedHashMap<String, RateStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RateStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +141,35 @@ public class RateStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateStatusCode";
 				definition = "Specifies the type of rate.";
-				code_lazy = () -> Arrays.asList(RateStatusCode.mmActualRate, RateStatusCode.mmIndicativeRate);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RateStatusCode.ActualRate, com.tools20022.repository.codeset.RateStatusCode.IndicativeRate);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ActualRate.getCodeName().get(), ActualRate);
+		codesByName.put(IndicativeRate.getCodeName().get(), IndicativeRate);
+	}
+
+	public static RateStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RateStatusCode[] values() {
+		RateStatusCode[] values = new RateStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RateStatusCode> {
+		@Override
+		public RateStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RateStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

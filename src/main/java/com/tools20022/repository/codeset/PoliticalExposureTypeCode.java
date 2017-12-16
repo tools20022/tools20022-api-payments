@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PoliticalExposureTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the political exposure type.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#mmPoliticalExposureDomestic
+ * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#PoliticalExposureDomestic
  * PoliticalExposureTypeCode.mmPoliticalExposureDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#mmPoliticalExposureForeign
+ * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#PoliticalExposureForeign
  * PoliticalExposureTypeCode.mmPoliticalExposureForeign}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#mmNoPoliticalExposure
+ * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#NoPoliticalExposure
  * PoliticalExposureTypeCode.mmNoPoliticalExposure}</li>
  * </ul>
  * </li>
@@ -57,7 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the political exposure type."</li>
  * </ul>
  */
-public class PoliticalExposureTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PoliticalExposureTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -81,12 +87,12 @@ public class PoliticalExposureTypeCode {
 	 * definition} = "Political exposure type is domestic."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPoliticalExposureDomestic = new MMCode() {
+	public static final PoliticalExposureTypeCode PoliticalExposureDomestic = new PoliticalExposureTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PoliticalExposureDomestic";
 			definition = "Political exposure type is domestic.";
-			owner_lazy = () -> PoliticalExposureTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PoliticalExposureTypeCode.mmObject();
 			codeName = "PEXD";
 		}
 	};
@@ -111,12 +117,12 @@ public class PoliticalExposureTypeCode {
 	 * definition} = "Political exposure type is foreign."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPoliticalExposureForeign = new MMCode() {
+	public static final PoliticalExposureTypeCode PoliticalExposureForeign = new PoliticalExposureTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PoliticalExposureForeign";
 			definition = "Political exposure type is foreign.";
-			owner_lazy = () -> PoliticalExposureTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PoliticalExposureTypeCode.mmObject();
 			codeName = "PEXF";
 		}
 	};
@@ -141,26 +147,58 @@ public class PoliticalExposureTypeCode {
 	 * definition} = "No political exposure."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoPoliticalExposure = new MMCode() {
+	public static final PoliticalExposureTypeCode NoPoliticalExposure = new PoliticalExposureTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoPoliticalExposure";
 			definition = "No political exposure.";
-			owner_lazy = () -> PoliticalExposureTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PoliticalExposureTypeCode.mmObject();
 			codeName = "NPEX";
 		}
 	};
+	final static private LinkedHashMap<String, PoliticalExposureTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PoliticalExposureTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PoliticalExposureTypeCode";
 				definition = "Specifies the political exposure type.";
-				code_lazy = () -> Arrays.asList(PoliticalExposureTypeCode.mmPoliticalExposureDomestic, PoliticalExposureTypeCode.mmPoliticalExposureForeign, PoliticalExposureTypeCode.mmNoPoliticalExposure);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PoliticalExposureTypeCode.PoliticalExposureDomestic, com.tools20022.repository.codeset.PoliticalExposureTypeCode.PoliticalExposureForeign,
+						com.tools20022.repository.codeset.PoliticalExposureTypeCode.NoPoliticalExposure);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PoliticalExposureDomestic.getCodeName().get(), PoliticalExposureDomestic);
+		codesByName.put(PoliticalExposureForeign.getCodeName().get(), PoliticalExposureForeign);
+		codesByName.put(NoPoliticalExposure.getCodeName().get(), NoPoliticalExposure);
+	}
+
+	public static PoliticalExposureTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PoliticalExposureTypeCode[] values() {
+		PoliticalExposureTypeCode[] values = new PoliticalExposureTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PoliticalExposureTypeCode> {
+		@Override
+		public PoliticalExposureTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PoliticalExposureTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

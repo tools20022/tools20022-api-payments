@@ -138,8 +138,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDistribution";
 			definition = "Parameters of the distribution of the proceeds of a CA event.";
@@ -190,8 +190,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesProceedsMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesProceedsMovement";
 			definition = "Instructions for the movement of securities related to a corporate action.";
@@ -238,8 +238,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmCashProceedsMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashProceedsMovement";
 			definition = "Instructions for the movement of cash related to a corporate action.";
@@ -287,8 +287,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAccount";
 			definition = "Information relative to the account(s) to be used for the delivery of the proceeds (cash or securities)";
@@ -335,8 +335,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionStandingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStandingInstruction";
 			definition = "Standing instruction related to a corporate action.";

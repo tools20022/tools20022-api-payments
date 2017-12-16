@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ModifiedStatusReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies that the transaction has been modified.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModifiedStatusReasonCode#mmModifiedByYourself
+ * {@linkplain com.tools20022.repository.codeset.ModifiedStatusReasonCode#ModifiedByYourself
  * ModifiedStatusReasonCode.mmModifiedByYourself}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModifiedStatusReasonCode#mmOther
+ * {@linkplain com.tools20022.repository.codeset.ModifiedStatusReasonCode#Other
  * ModifiedStatusReasonCode.mmOther}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies that the transaction has been modified."</li>
  * </ul>
  */
-public class ModifiedStatusReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ModifiedStatusReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class ModifiedStatusReasonCode {
 	 * definition} = "Modification of a transaction by the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmModifiedByYourself = new MMCode() {
+	public static final ModifiedStatusReasonCode ModifiedByYourself = new ModifiedStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModifiedByYourself";
 			definition = "Modification of a transaction by the account owner.";
-			owner_lazy = () -> ModifiedStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ModifiedStatusReasonCode.mmObject();
 			codeName = "MDBY";
 		}
 	};
@@ -114,17 +120,21 @@ public class ModifiedStatusReasonCode {
 	 * definition} = "Other. See Narrative."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final ModifiedStatusReasonCode Other = new ModifiedStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other. See Narrative.";
-			owner_lazy = () -> ModifiedStatusReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ModifiedStatusReasonCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
+	final static private LinkedHashMap<String, ModifiedStatusReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ModifiedStatusReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +142,35 @@ public class ModifiedStatusReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModifiedStatusReasonCode";
 				definition = "Specifies that the transaction has been modified.";
-				code_lazy = () -> Arrays.asList(ModifiedStatusReasonCode.mmModifiedByYourself, ModifiedStatusReasonCode.mmOther);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ModifiedStatusReasonCode.ModifiedByYourself, com.tools20022.repository.codeset.ModifiedStatusReasonCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ModifiedByYourself.getCodeName().get(), ModifiedByYourself);
+		codesByName.put(Other.getCodeName().get(), Other);
+	}
+
+	public static ModifiedStatusReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ModifiedStatusReasonCode[] values() {
+		ModifiedStatusReasonCode[] values = new ModifiedStatusReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ModifiedStatusReasonCode> {
+		@Override
+		public ModifiedStatusReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ModifiedStatusReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

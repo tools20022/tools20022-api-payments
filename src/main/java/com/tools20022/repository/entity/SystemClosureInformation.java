@@ -104,8 +104,8 @@ public class SystemClosureInformation {
 	 */
 	public static final MMBusinessAttribute mmPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Period";
 			definition = "Period of time when the system is closed/not operating.";
@@ -158,8 +158,8 @@ public class SystemClosureInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemAvailability";
 			definition = "System for which closure information is specified.";
@@ -199,8 +199,8 @@ public class SystemClosureInformation {
 	 */
 	public static final MMBusinessAttribute mmClosureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureReason";
 			definition = "Reason the system is closed/not operating.";

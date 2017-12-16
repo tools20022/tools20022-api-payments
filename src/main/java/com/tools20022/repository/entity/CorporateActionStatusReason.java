@@ -35,6 +35,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
+ * StatusReason}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -67,9 +70,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * CorporateActionStatus.mmCorporateActionStatusReason}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.StatusReason
- * StatusReason}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -119,8 +119,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmCorporateActionCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionCancellationReason";
 			definition = "Specifies reasons for cancellation of a corporate action event.";
@@ -174,8 +174,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatus";
 			definition = "Corporate actions status for which a reason is provided.";
@@ -216,8 +216,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmAcceptedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedReason";
 			definition = "Specifies additional information about the processed instruction.";
@@ -263,8 +263,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmReversalReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReversalReason";
 			definition = "Reason for the reversal.";
@@ -310,8 +310,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmMovementFailureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementFailureReason";
 			definition = "The reason for the failure.";
@@ -357,8 +357,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 */
 	public static final MMBusinessAttribute mmMovementRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementRejectionReason";
 			definition = "Provides information about the rejection status.";

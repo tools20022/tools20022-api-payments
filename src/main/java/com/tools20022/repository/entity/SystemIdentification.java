@@ -130,8 +130,8 @@ public class SystemIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentificationForSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentificationForSystem";
 			definition = "System which is identified.";
@@ -179,8 +179,8 @@ public class SystemIdentification {
 	public static final MMBusinessAttribute mmModel = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionComponent1.mmModel);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Model";
 			definition = "Identification of a model for a given manufacturer.";
@@ -234,8 +234,8 @@ public class SystemIdentification {
 	public static final MMBusinessAttribute mmSerialNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionComponent1.mmSerialNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SerialNumber";
 			definition = "Serial number of a component.";
@@ -292,8 +292,8 @@ public class SystemIdentification {
 	public static final MMBusinessAttribute mmApprovalNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteractionComponent1.mmApprovalNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApprovalNumber";
 			definition = "Unique approval number for a component, delivered by a certification body.";
@@ -339,8 +339,8 @@ public class SystemIdentification {
 	 */
 	public static final MMBusinessAttribute mmSystemVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemVersion";
 			definition = "Version of the system, eg, \"4.0.1\" to indicate version 4.0.1.";
@@ -393,8 +393,8 @@ public class SystemIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemName";
 			definition = "Name by which a system is known.";
@@ -441,8 +441,8 @@ public class SystemIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of a system.";

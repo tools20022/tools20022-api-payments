@@ -42,6 +42,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
+ * Adjustment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,6 +59,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#mmType
+ * DiscountAmountAndType1.mmType}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
@@ -65,17 +76,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * DiscountAmountAndType1}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#mmType
- * DiscountAmountAndType1.mmType}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Adjustment
- * Adjustment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -139,8 +139,8 @@ public class Discount extends Adjustment {
 	public static final MMBusinessAttribute mmDiscountAppliedAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmDiscountAppliedAmount, RemittanceAmount3.mmDiscountAppliedAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DiscountAppliedAmount";
 			definition = "Amount of money that results from the application of an agreed discount to the amount due and payable to the creditor.";
@@ -195,8 +195,8 @@ public class Discount extends Adjustment {
 	public static final MMBusinessAttribute mmDiscountType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DiscountAmountType1Choice.mmCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DiscountType";
 			definition = "Specifies the type of discount applied to the original amount.";
@@ -241,8 +241,8 @@ public class Discount extends Adjustment {
 	 */
 	public static final MMBusinessAttribute mmDiscountBasisAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DiscountBasisAmount";
 			definition = "Amount used as a basis to calculate the discount amount.";

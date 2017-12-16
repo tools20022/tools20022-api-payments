@@ -123,8 +123,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAttribute mmClassificationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassificationType";
 			definition = "Classification type of the financial instrument, as per the ISO Classification of Financial Instrument (CFI) codification, for example, common share with voting rights, fully paid, or registered.";
@@ -176,8 +176,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Asset";
 			definition = "Asset for which classification information is provided.";
@@ -216,8 +216,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which the asset classification is expressed.";
@@ -271,8 +271,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetClassScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetClassScheme";
 			definition = "Information regarding the entity that assigns the asset classification.";
@@ -312,8 +312,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAttribute mmProductType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductType";
 			definition = "Identifies the product type.";
@@ -366,8 +366,8 @@ public class AssetClassification {
 	 */
 	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy related to a class of assets.";

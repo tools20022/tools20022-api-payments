@@ -127,8 +127,8 @@ public class Position {
 	 */
 	public static final MMBusinessAssociationEnd mmNetQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetQuantity";
 			definition = "Specifies the net quantity position of the trade legs of one member within the system.";
@@ -170,8 +170,8 @@ public class Position {
 	 */
 	public static final MMBusinessAttribute mmNetPositionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPositionAmount";
 			definition = "Specifies the net position amount of the trade legs of one member within the system.";
@@ -222,8 +222,8 @@ public class Position {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which trades position is specified.";
@@ -269,8 +269,8 @@ public class Position {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Price applied to the position.";
@@ -317,8 +317,8 @@ public class Position {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Information related to the settlement of the position.";
@@ -358,8 +358,8 @@ public class Position {
 	 */
 	public static final MMBusinessAttribute mmInitialPositionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Position.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialPositionAmount";
 			definition = "Specifies the position at the beginning of a reporting period.";

@@ -147,8 +147,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";
@@ -202,8 +202,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the issuer or holder may give notice.";
@@ -249,8 +249,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceChange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChange";
 			definition = "Redemption or amortisation price change.";
@@ -296,8 +296,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Redemption or amortisation price.";
@@ -336,8 +336,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Party type entitled to ask for the redemption.";
@@ -384,8 +384,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmAmountFulfilType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountFulfilType";
 			definition = "Specifies if the full amount or only part of it is redeemed.";
@@ -433,8 +433,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmMinimumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumNoticeDays";
 			definition = "Minimum number of notice in days that must be given by either the issuer or the holder before redemption can take place.";
@@ -482,8 +482,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmMaximumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumNoticeDays";
 			definition = "Maximum number of notice in days that must be given by either the issuer or the holder before redemption can take place.";
@@ -532,8 +532,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place  taken into account to adjust the date and time, as defined within the business day convention.";
@@ -579,8 +579,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmNoticePeriodType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoticePeriodType";
 			definition = "Specifies the type of notice period.";
@@ -626,8 +626,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmPriceChangeFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChangeFrequency";
 			definition = "Redemption or amortisation price change frequency.";
@@ -673,8 +673,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAttribute mmPriceFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceFrequency";
 			definition = "Specifies the frequency of the redemption.";
@@ -726,8 +726,8 @@ public class RedemptionSchedule {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a redemption schedule is specified.";

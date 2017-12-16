@@ -36,6 +36,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -58,10 +62,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesSettlement.mmPairOff}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -117,8 +117,8 @@ public class PairOff extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmPairedOffQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
 			isDerived = true;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PairedOffQuantity";
 			definition = "Quantity of financial instruments to be paired-off.";
@@ -166,8 +166,8 @@ public class PairOff extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesSettlement";
 			definition = "Trade settlement process which is the source of the pair off.";

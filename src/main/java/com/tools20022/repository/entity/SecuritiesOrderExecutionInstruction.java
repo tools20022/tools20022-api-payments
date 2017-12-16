@@ -213,8 +213,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmAllOrNone = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllOrNone";
 			definition = "Round-lot market or limit-price order that must be executed in its entirety or not at all; unlike Fill or Kill orders, AON orders are not treated as canceled if they are not executed as soon as represented in the Trading Crowd.";
@@ -264,8 +264,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCallFirst = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallFirst";
 			definition = "Refers to the client before trading in order to catch all verbal instructions on trading strategy usually because the strategy is too complex or cannot be represented in the trading application.";
@@ -311,8 +311,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCross = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cross";
 			definition = "Allow crossing of an order.";
@@ -362,8 +362,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCustomerDisplay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomerDisplay";
 			definition = "Exchange or ECN required by the SEC to display limit orders in the public order book. A customer can choose not to have his limit order displayed to the public.";
@@ -412,8 +412,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmHold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Hold";
 			definition = "Indicates whether the firm executing the order is held to best execution requirements and may be able to make some discretionary decisions.";
@@ -462,8 +462,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmIncrease = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Increase";
 			definition = "Indicates whether the order is to be increased in shares on the ex-dividend date as a result of a stock dividend or distribution.";
@@ -512,8 +512,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmInstitutionsOnly = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstitutionsOnly";
 			definition = "Identifies that the broker is restricted to dealing with other buy side firms.";
@@ -562,8 +562,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmNonNegotiable = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonNegotiable";
 			definition = "Qualifies an asset (usually a payment instrument) of which rights cannot be transferred to a party other then the original debtor and creditor.";
@@ -612,8 +612,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmOverTheDay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverTheDay";
 			definition = "Indicates whether to execute parts of the order over the course of the day. Usually done with large block orders.";
@@ -662,8 +662,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmParticipateDontInitiate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParticipateDontInitiate";
 			definition = "An order that may participate in a transaction initiated by another party, but may not initiate a transaction.";
@@ -711,8 +711,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmPercentOfVolume = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentOfVolume";
 			definition = "Indicates that the Sender does not want all of the volume on the floor.";
@@ -762,8 +762,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Scale";
 			definition = "An order to buy (or sell) a financial instrument which specifies the total amount to be bought (or sold) and the amount to be bought (or sold) at specified price variations.";
@@ -812,8 +812,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmStayOnSide = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StayOnSide";
 			definition = "Specifies the order limit based on the offer/bid at the time of the order submission.";
@@ -859,8 +859,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmWork = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Work";
 			definition = "Make the order active until notified.";
@@ -910,8 +910,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmGoAlong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GoAlong";
 			definition = "Used for listed equity securities. Buy or sell at prices that randomly occur on the floor, participating in what\ntrades the specialist and other players will allow.";
@@ -962,8 +962,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmTryScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TryScale";
 			definition = "Order to buy (sell) a security that specifies the total amount to be bought (sold) and the amount to be bought (sold) at successively decreasing (increasing) price intervals; often placed in order to average the price.";
@@ -1015,8 +1015,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmDoNotReduce = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DoNotReduce";
 			definition = "Indicates whether to buy, to stop order to sell, or to stop limit order to sell that is not to be reduced in price by the amount of an ordinary cash dividend on the ex-dividend date.  A \"do not reduce\" order applies only to ordinary cash dividends; it should be reduced for other distributions - such as when a stock goes ex stock dividend or ex rights.";
@@ -1067,8 +1067,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCancelOnSystemFailure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelOnSystemFailure";
 			definition = "If a system failure interrupts trading or order routing, attempt to cancel this order or attempt to reinstate this order, subject to time in force limitations. Note that depending on the type and severity of the failure, this might not be possible.";
@@ -1117,8 +1117,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCancelOnTradingHalt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelOnTradingHalt";
 			definition = "If trading in this instrument is halted, cancel this order or reinstate this order when/if trading resumes, subject to time in force limitations.";
@@ -1168,8 +1168,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmTradeAlong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeAlong";
 			definition = "Indicates whether the broker has permission to handle and place the order in the market even if  the broker already has its own proprietary orders for the same financial instrument placed in the market.";
@@ -1218,8 +1218,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmStrictLimit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrictLimit";
 			definition = "Limit order that must be traded at the exact limit price specified without any price improvement.";
@@ -1268,8 +1268,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmIgnorePriceValidityChecks = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IgnorePriceValidityChecks";
 			definition = "Disables validity checking of price fields for an order or change request.";
@@ -1319,8 +1319,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmReinstateOnSystemFailure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinstateOnSystemFailure";
 			definition = "If a system failure interrupts trading or order routing, attempt to reinstate this order, subject to time in force limitations. Depending on the type and severity of the failure, this might not be possible.";
@@ -1369,8 +1369,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmReinstateOnTradingHalt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinstateOnTradingHalt";
 			definition = "If trading in this instrument is halted, reinstate this order when/if trading resumes, subject to time in force limitations.";
@@ -1419,8 +1419,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmCancelIfNotBest = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelIfNotBest";
 			definition = "Indicates that an order should be cancelled if it is no longer the best bid if buying, or the best offer if selling.";
@@ -1473,8 +1473,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmExternalRoutingAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExternalRoutingAllowed";
 			definition = "Indicates that an order sent to one market may be routed by that market to other external markets, especially in cases where the order locks or crosses the market and it can be executed against another markets superior price. The absence of this instruction does not imply that an order should not be routed externally; rather, the order receivers default will apply.";
@@ -1528,8 +1528,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmExternalRoutingNotAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExternalRoutingNotAllowed";
 			definition = "Indicates that an order sent to one market may never be routed by that market to other external markets. Should the order lock or cross the market but be unable to execute due to price protection reasons, a market may have to take alternate action, which might include rejecting the order, depending on the markets rules.The absence of this instruction does not imply that an order should be routed externally; rather, the order receivers default will apply.";
@@ -1579,8 +1579,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmImbalanceOnly = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ImbalanceOnly";
 			definition = "Indicates that the order can only hit the imbalance during a call auction. The imbalance is the remaining quantity when other buy and sell orders are matched at the auction clearing price.";
@@ -1633,8 +1633,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmIntermarketSweep = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermarketSweep";
 			definition = "Indicates that the party sending the order has taken responsibility for price protection, and the recipient of the order should execute it, if possible, without regard to protection of other markets prices. While the term \"Intermarket sweep\" is specific to the United States, it may be used in other markets, where appropriate, to indicate an order that should be executed without regard to price protection.";
@@ -1683,8 +1683,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmNetting = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Netting";
 			definition = "Used when sending multiple orders indicating that you would be 'netting' the F/X later.";
@@ -1737,8 +1737,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order which is executed.";
@@ -1781,8 +1781,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmForeignExchangeNetting = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForeignExchangeNetting";
 			definition = "Reduction of transfers of cash (resulting of a foreign exchange operation between subsidiaries or separate companies) to a net amount.";
@@ -1833,8 +1833,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmStrictScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrictScale";
 			definition = "Order to buy (sell) a security that strictly specifies the total amount to be bought (sold) and the amount to be bought (sold) at successively decreasing (increasing) price intervals; often placed in order to average the price.";
@@ -1883,8 +1883,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmSuspend = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Suspend";
 			definition = "Used in specialist driven markets to direct the specialist to try to suspend the order.";
@@ -1933,8 +1933,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAttribute mmTryToStop = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TryToStop";
 			definition = "Used in specialist driven markets to direct the specialist to try and stop the order.";
@@ -1987,8 +1987,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderPriceStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderPriceStrategy";
 			definition = "Strategy used to obtain the order price.";

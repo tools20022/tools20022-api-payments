@@ -138,8 +138,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Number of packages for a  supply chain trade delivery.";
@@ -186,8 +186,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmPerPackageUnitQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerPackageUnitQuantity";
 			definition = "Number of units per package  for a supply chain trade delivery.";
@@ -233,8 +233,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Transport process which uses a specific packaging.";
@@ -275,8 +275,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAttribute mmPackagingName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackagingName";
 			definition = "Name given to the type of supply chain packaging. For instance Halogenated Resin (PVC).";
@@ -331,8 +331,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmTotalConsignmentQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalConsignmentQuantity";
 			definition = "Total quantity of packaging units, eg number of boxes, containers, pallets, etc";
@@ -379,8 +379,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmTotalVolume = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalVolume";
 			definition = "Total volume of goods shipped, eg number of cubic meters.";
@@ -426,8 +426,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmTotalWeight = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalWeight";
 			definition = "Total weight of goods shipped, eg number of kg, tons.";
@@ -472,8 +472,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedLineItem";
 			definition = "Line item information for the package goods.";
@@ -513,8 +513,8 @@ public class Packaging {
 	 */
 	public static final MMBusinessAttribute mmPackageType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PackageType";
 			definition = "Code specifying the properties of packaging for the supply chain delivery of goods.";

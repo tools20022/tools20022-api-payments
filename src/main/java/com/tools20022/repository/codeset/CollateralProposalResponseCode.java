@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CollateralProposalResponseCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if the collateral proposal response is an initial or a counter
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#mmInitialProposal
+ * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#InitialProposal
  * CollateralProposalResponseCode.mmInitialProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#mmCounterProposal
+ * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#CounterProposal
  * CollateralProposalResponseCode.mmCounterProposal}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CollateralProposalResponseCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CollateralProposalResponseCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,12 +95,12 @@ public class CollateralProposalResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInitialProposal = new MMCode() {
+	public static final CollateralProposalResponseCode InitialProposal = new CollateralProposalResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InitialProposal";
 			definition = "Indicates that the collateral proposal response is an initial proposal.";
-			owner_lazy = () -> CollateralProposalResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralProposalResponseCode.mmObject();
 			codeName = "INPR";
 		}
 	};
@@ -120,17 +126,21 @@ public class CollateralProposalResponseCode {
 	 * "Indicates that the collateral proposal response is a counter proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterProposal = new MMCode() {
+	public static final CollateralProposalResponseCode CounterProposal = new CollateralProposalResponseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterProposal";
 			definition = "Indicates that the collateral proposal response is a counter proposal.";
-			owner_lazy = () -> CollateralProposalResponseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralProposalResponseCode.mmObject();
 			codeName = "COPR";
 		}
 	};
+	final static private LinkedHashMap<String, CollateralProposalResponseCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CollateralProposalResponseCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -138,9 +148,35 @@ public class CollateralProposalResponseCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralProposalResponseCode";
 				definition = "Specifies if the collateral proposal response is an initial or a counter proposal.";
-				code_lazy = () -> Arrays.asList(CollateralProposalResponseCode.mmInitialProposal, CollateralProposalResponseCode.mmCounterProposal);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CollateralProposalResponseCode.InitialProposal, com.tools20022.repository.codeset.CollateralProposalResponseCode.CounterProposal);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(InitialProposal.getCodeName().get(), InitialProposal);
+		codesByName.put(CounterProposal.getCodeName().get(), CounterProposal);
+	}
+
+	public static CollateralProposalResponseCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CollateralProposalResponseCode[] values() {
+		CollateralProposalResponseCode[] values = new CollateralProposalResponseCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CollateralProposalResponseCode> {
+		@Override
+		public CollateralProposalResponseCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CollateralProposalResponseCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

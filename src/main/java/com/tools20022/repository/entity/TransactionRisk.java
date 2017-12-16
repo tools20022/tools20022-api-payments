@@ -123,8 +123,8 @@ public class TransactionRisk {
 	 */
 	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Obligation";
 			definition = "Specifies the obligations used to calculate the transaction risk.\r\nSpecifies the quantity of securities and/or the cash amounts that have to be taken into account to calculate the exposure of one trading party versus one of its counterparties.";
@@ -167,8 +167,8 @@ public class TransactionRisk {
 	 */
 	public static final MMBusinessAttribute mmExposedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExposedAmount";
 			definition = "The sum of the exposures of all transactions which are in favour of a Party. That is, all transactions which would have an amount payable by the counterparty if they were being terminated.";
@@ -224,8 +224,8 @@ public class TransactionRisk {
 	 */
 	public static final MMBusinessAssociationEnd mmExposureCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExposureCalculation";
 			definition = "Specifies the exposure for which the risk is calculated on a transaction basis.";

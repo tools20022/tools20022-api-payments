@@ -62,19 +62,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange
- * FromToAmountRange}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice
- * ImpliedCurrencyAmountRangeChoice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyAndAmountRange2
- * CurrencyAndAmountRange2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -99,6 +86,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.msg.CurrencyAndAmountRange2#mmAmount
  * CurrencyAndAmountRange2.mmAmount}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange
+ * FromToAmountRange}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice
+ * ImpliedCurrencyAmountRangeChoice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyAndAmountRange2
+ * CurrencyAndAmountRange2}</li>
  * </ul>
  * </li>
  * <li>
@@ -166,8 +166,8 @@ public class AmountRange {
 	public static final MMBusinessAssociationEnd mmFromAmount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(FromToAmountRange.mmFromAmount, ImpliedCurrencyAmountRangeChoice.mmFromAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromAmount";
 			definition = "Lower boundary of a range of amount values.";
@@ -225,8 +225,8 @@ public class AmountRange {
 	public static final MMBusinessAssociationEnd mmToAmount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(FromToAmountRange.mmToAmount, ImpliedCurrencyAmountRangeChoice.mmToAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToAmount";
 			definition = "Upper boundary of a range of amount values.";
@@ -274,8 +274,8 @@ public class AmountRange {
 	public static final MMBusinessAttribute mmEqualAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ImpliedCurrencyAmountRangeChoice.mmEqualAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EqualAmount";
 			definition = "Exact value an amount must match to be considered valid.";
@@ -330,8 +330,8 @@ public class AmountRange {
 	public static final MMBusinessAttribute mmNotEqualAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ImpliedCurrencyAmountRangeChoice.mmNotEqualAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotEqualAmount";
 			definition = "Value that an amount must not match to be considered valid.";
@@ -389,8 +389,8 @@ public class AmountRange {
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CurrencyAndAmountRange2.mmCreditDebitIndicator, InterestRecord1.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the amount is a credited or debited amount.";
@@ -443,8 +443,8 @@ public class AmountRange {
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CurrencyAndAmountRange2.mmCurrency);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Medium of exchange of value, used to qualify an amount.";
@@ -496,8 +496,8 @@ public class AmountRange {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterest";
 			definition = "Interest which applies on a specific amount range.";

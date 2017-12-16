@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OpeningClosingCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies additional information relative to the processing of the trade.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OpeningClosingCode#mmClosePosition
+ * {@linkplain com.tools20022.repository.codeset.OpeningClosingCode#ClosePosition
  * OpeningClosingCode.mmClosePosition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OpeningClosingCode#mmOpenPosition
+ * {@linkplain com.tools20022.repository.codeset.OpeningClosingCode#OpenPosition
  * OpeningClosingCode.mmOpenPosition}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies additional information relative to the processing of the trade."</li>
  * </ul>
  */
-public class OpeningClosingCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OpeningClosingCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class OpeningClosingCode {
 	 * definition} = "Indicates that the trade is to close a position."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClosePosition = new MMCode() {
+	public static final OpeningClosingCode ClosePosition = new OpeningClosingCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosePosition";
 			definition = "Indicates that the trade is to close a position.";
-			owner_lazy = () -> OpeningClosingCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OpeningClosingCode.mmObject();
 			codeName = "CLOP";
 		}
 	};
@@ -115,17 +121,21 @@ public class OpeningClosingCode {
 	 * definition} = "Indicates that the trade is to open a position."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOpenPosition = new MMCode() {
+	public static final OpeningClosingCode OpenPosition = new OpeningClosingCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpenPosition";
 			definition = "Indicates that the trade is to open a position.";
-			owner_lazy = () -> OpeningClosingCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OpeningClosingCode.mmObject();
 			codeName = "OPEP";
 		}
 	};
+	final static private LinkedHashMap<String, OpeningClosingCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OpeningClosingCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -133,9 +143,35 @@ public class OpeningClosingCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OpeningClosingCode";
 				definition = "Specifies additional information relative to the processing of the trade.";
-				code_lazy = () -> Arrays.asList(OpeningClosingCode.mmClosePosition, OpeningClosingCode.mmOpenPosition);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OpeningClosingCode.ClosePosition, com.tools20022.repository.codeset.OpeningClosingCode.OpenPosition);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ClosePosition.getCodeName().get(), ClosePosition);
+		codesByName.put(OpenPosition.getCodeName().get(), OpenPosition);
+	}
+
+	public static OpeningClosingCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OpeningClosingCode[] values() {
+		OpeningClosingCode[] values = new OpeningClosingCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OpeningClosingCode> {
+		@Override
+		public OpeningClosingCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OpeningClosingCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

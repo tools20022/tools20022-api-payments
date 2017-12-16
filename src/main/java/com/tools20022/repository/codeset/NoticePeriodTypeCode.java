@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NoticePeriodTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of notice period.
@@ -32,22 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmBankWorkingDay
+ * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#BankWorkingDay
  * NoticePeriodTypeCode.mmBankWorkingDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmCalendarDay
+ * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#CalendarDay
  * NoticePeriodTypeCode.mmCalendarDay}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmMonth
+ * <li>{@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#Month
  * NoticePeriodTypeCode.mmMonth}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmWeek
+ * <li>{@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#Week
  * NoticePeriodTypeCode.mmWeek}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmWorkingDay
+ * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#WorkingDay
  * NoticePeriodTypeCode.mmWorkingDay}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#mmYear
+ * <li>{@linkplain com.tools20022.repository.codeset.NoticePeriodTypeCode#Year
  * NoticePeriodTypeCode.mmYear}</li>
  * </ul>
  * </li>
@@ -72,7 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of notice period."</li>
  * </ul>
  */
-public class NoticePeriodTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NoticePeriodTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -96,12 +99,12 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in banking working days."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBankWorkingDay = new MMCode() {
+	public static final NoticePeriodTypeCode BankWorkingDay = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankWorkingDay";
 			definition = "The notice period is expressed in banking working days.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "BKWD";
 		}
 	};
@@ -126,12 +129,12 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in calendar days."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCalendarDay = new MMCode() {
+	public static final NoticePeriodTypeCode CalendarDay = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalendarDay";
 			definition = "The notice period is expressed in calendar days.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "DAYC";
 		}
 	};
@@ -156,12 +159,12 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in months."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMonth = new MMCode() {
+	public static final NoticePeriodTypeCode Month = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Month";
 			definition = "The notice period is expressed in months.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "MNTH";
 		}
 	};
@@ -186,12 +189,12 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in weeks."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWeek = new MMCode() {
+	public static final NoticePeriodTypeCode Week = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Week";
 			definition = "The notice period is expressed in weeks.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "WEEK";
 		}
 	};
@@ -216,12 +219,12 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in working days."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWorkingDay = new MMCode() {
+	public static final NoticePeriodTypeCode WorkingDay = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WorkingDay";
 			definition = "The notice period is expressed in working days.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "WOKD";
 		}
 	};
@@ -246,17 +249,21 @@ public class NoticePeriodTypeCode {
 	 * definition} = "The notice period is expressed in years."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmYear = new MMCode() {
+	public static final NoticePeriodTypeCode Year = new NoticePeriodTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Year";
 			definition = "The notice period is expressed in years.";
-			owner_lazy = () -> NoticePeriodTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NoticePeriodTypeCode.mmObject();
 			codeName = "YEAR";
 		}
 	};
+	final static private LinkedHashMap<String, NoticePeriodTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NoticePeriodTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -264,10 +271,41 @@ public class NoticePeriodTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NoticePeriodTypeCode";
 				definition = "Specifies the type of notice period.";
-				code_lazy = () -> Arrays.asList(NoticePeriodTypeCode.mmBankWorkingDay, NoticePeriodTypeCode.mmCalendarDay, NoticePeriodTypeCode.mmMonth, NoticePeriodTypeCode.mmWeek, NoticePeriodTypeCode.mmWorkingDay,
-						NoticePeriodTypeCode.mmYear);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NoticePeriodTypeCode.BankWorkingDay, com.tools20022.repository.codeset.NoticePeriodTypeCode.CalendarDay,
+						com.tools20022.repository.codeset.NoticePeriodTypeCode.Month, com.tools20022.repository.codeset.NoticePeriodTypeCode.Week, com.tools20022.repository.codeset.NoticePeriodTypeCode.WorkingDay,
+						com.tools20022.repository.codeset.NoticePeriodTypeCode.Year);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(BankWorkingDay.getCodeName().get(), BankWorkingDay);
+		codesByName.put(CalendarDay.getCodeName().get(), CalendarDay);
+		codesByName.put(Month.getCodeName().get(), Month);
+		codesByName.put(Week.getCodeName().get(), Week);
+		codesByName.put(WorkingDay.getCodeName().get(), WorkingDay);
+		codesByName.put(Year.getCodeName().get(), Year);
+	}
+
+	public static NoticePeriodTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NoticePeriodTypeCode[] values() {
+		NoticePeriodTypeCode[] values = new NoticePeriodTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NoticePeriodTypeCode> {
+		@Override
+		public NoticePeriodTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NoticePeriodTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -40,6 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -65,10 +69,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * ClearingSystem.mmClearing}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -128,8 +128,8 @@ public class Clearing extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmClearingThresholdIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingThresholdIndicator";
 			definition = "Specifies whether the contract is above or below the clearing threshold. Where N indicates the contract is below the clearing threshold and Y indicates the contract is above the clearing threshold.";
@@ -174,8 +174,8 @@ public class Clearing extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmClearedIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearedIdentification";
 			definition = "Reference number assigned by the Central Counterparty (CCP).";
@@ -223,8 +223,8 @@ public class Clearing extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmGuaranteedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteedTrade";
 			definition = "Indicates if the central counterparty has to novate and guarantee the trade or not.";
@@ -270,8 +270,8 @@ public class Clearing extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmTradePostingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradePostingType";
 			definition = "Indicates how a trade is maintained in the clearing account.";
@@ -326,8 +326,8 @@ public class Clearing extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystem";
 			definition = "Specifies the system which plays a role in the clearing of securities or cash.";

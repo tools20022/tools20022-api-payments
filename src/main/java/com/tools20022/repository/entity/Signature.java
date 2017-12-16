@@ -38,6 +38,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Evidence Evidence}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -68,8 +70,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * Cheque7.mmSignature}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Evidence Evidence}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -132,8 +132,8 @@ public class Signature extends Evidence {
 	 */
 	public static final MMBusinessAssociationEnd mmConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Conditions";
 			definition = "Parameters related to the signature provided.";
@@ -181,8 +181,8 @@ public class Signature extends Evidence {
 	 */
 	public static final MMBusinessAssociationEnd mmCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentValidation";
 			definition = "Validation of a payment by card for which a signeture is specified.";

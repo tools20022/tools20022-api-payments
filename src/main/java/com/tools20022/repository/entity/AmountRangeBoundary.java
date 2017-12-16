@@ -53,14 +53,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AmountRangeBoundary1
- * AmountRangeBoundary1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -68,6 +60,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * AmountRange.mmFromAmount}</li>
  * <li>{@linkplain com.tools20022.repository.entity.AmountRange#mmToAmount
  * AmountRange.mmToAmount}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountRangeBoundary1
+ * AmountRangeBoundary1}</li>
  * </ul>
  * </li>
  * <li>
@@ -124,8 +124,8 @@ public class AmountRangeBoundary {
 	 */
 	public static final MMBusinessAssociationEnd mmFromAmountRange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromAmountRange";
 			definition = "Amount range for which a lower boundary is provided.";
@@ -174,8 +174,8 @@ public class AmountRangeBoundary {
 	public static final MMBusinessAttribute mmBoundaryAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmBoundaryAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BoundaryAmount";
 			definition = "Amount value of the range limit.";
@@ -233,8 +233,8 @@ public class AmountRangeBoundary {
 	public static final MMBusinessAttribute mmIncluded = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmIncluded);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Included";
 			definition = "Indicates whether the boundary amount is included in the range of amount values.";
@@ -287,8 +287,8 @@ public class AmountRangeBoundary {
 	 */
 	public static final MMBusinessAssociationEnd mmToAmountRange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToAmountRange";
 			definition = "Amount range for which an upper boundary is provided.";

@@ -75,16 +75,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.UnderlyingStatementEntry1
- * UnderlyingStatementEntry1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.EntryTransaction8
- * EntryTransaction8}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -104,6 +94,16 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.CashEntry CashEntry}</li>
  * <li>{@linkplain com.tools20022.repository.entity.SecuritiesEntry
  * SecuritiesEntry}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.UnderlyingStatementEntry1
+ * UnderlyingStatementEntry1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.EntryTransaction8
+ * EntryTransaction8}</li>
  * </ul>
  * </li>
  * <li>
@@ -172,8 +172,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountAndDirection35.mmCreditDebitIndicator, TransactionType1.mmCreditDebitIndicator, ReportEntry8.mmCreditDebitIndicator, EntryTransaction8.mmCreditDebitIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether an entry is a credit or a debit.";
@@ -231,8 +231,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmEntryDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BalanceAdjustment1.mmPostingDate, ReportEntry8.mmBookingDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntryDate";
 			definition = "Date and time at which an entry is posted to an account on the account servicer's books.";
@@ -297,8 +297,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(UnderlyingStatementEntry1.mmOriginalEntryIdentification, CertificateIdentification1.mmAccountServicerReference, ReportEntry8.mmEntryReference, EntryTransaction8.mmReferences);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identifier for an entry, as assigned by the account servicer.";
@@ -354,8 +354,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmAccountOwnerTransactionIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmAccountOwnerTransactionIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountOwnerTransactionIdentification";
 			definition = "Unambiguous identification of the transaction as known by the account owner (or the instructing party managing the account).";
@@ -430,8 +430,8 @@ public class Entry {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmAccountServicerReference, TransactionReferences3.mmAccountServicerTransactionIdentification, StatementResolutionEntry2.mmAccountServicerReference,
 					ReportEntry8.mmAccountServicerReference, PaymentTransaction80.mmAccountServicerReference, PaymentTransaction83.mmAccountServicerReference, PaymentTransaction82.mmAccountServicerReference);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountServicerTransactionIdentification";
 			definition = "Unambiguous identification of the transaction as known by the account servicer.";
@@ -486,8 +486,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmReversalIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ReportEntry8.mmReversalIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReversalIndicator";
 			definition = "Indicates whether or not the entry is the result of a reversal.";
@@ -545,8 +545,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmDelayedDebitDate, ReportEntry8.mmValueDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time assets become available to the account owner (in a credit entry), or cease to be available to the account owner (in a debit entry).";
@@ -613,8 +613,8 @@ public class Entry {
 	public static final MMBusinessAssociationEnd mmBankTransactionCode = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(ReportEntry8.mmBankTransactionCode, BillingServiceIdentification3.mmBankTransactionCode, EntryTransaction8.mmBankTransactionCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankTransactionCode";
 			definition = "Type of underlying transaction resulting in the entry.";
@@ -663,8 +663,8 @@ public class Entry {
 	public static final MMBusinessAttribute mmCommissionWaiverIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ReportEntry8.mmCommissionWaiverIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionWaiverIndicator";
 			definition = "Indicates whether the transaction is exempt from commission or not.";
@@ -717,8 +717,8 @@ public class Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Role";
 			definition = "Specifies the role played by a party or a system in the context of an entry in an account.";
@@ -764,8 +764,8 @@ public class Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Posting of an item to an account, that results in an increase or a decrease to the balance of the account.";
@@ -812,8 +812,8 @@ public class Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Amount that is the result of the sum of the entries from or to an account.";
@@ -850,8 +850,8 @@ public class Entry {
 	 */
 	public static final MMBusinessAttribute mmEntryType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntryType";
 			definition = "Specifies the type of an entry in a report.";

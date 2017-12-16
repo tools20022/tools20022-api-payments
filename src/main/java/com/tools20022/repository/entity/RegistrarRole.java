@@ -34,6 +34,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
+ * SecuritiesPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -54,10 +58,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesAccount.mmRelatedRegistrar}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole
- * SecuritiesPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -114,8 +114,8 @@ public class RegistrarRole extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmRegistrarAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrarAccount";
 			definition = "Account at the registrar where financial instruments are registered.";
@@ -155,8 +155,8 @@ public class RegistrarRole extends SecuritiesPartyRole {
 	 */
 	public static final MMBusinessAttribute mmRegisterName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisterName";
 			definition = "Name of the register managed by a registration authority.";

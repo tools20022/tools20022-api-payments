@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TypeOfAmountCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identification or qualification of the type of amount.
@@ -31,98 +36,90 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmCashback
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Cashback
  * TypeOfAmountCode.mmCashback}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmGratuity
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Gratuity
  * TypeOfAmountCode.mmGratuity}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmFees
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Fees
  * TypeOfAmountCode.mmFees}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmRebates
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Rebates
  * TypeOfAmountCode.mmRebates}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmValueAddedTax
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ValueAddedTax
  * TypeOfAmountCode.mmValueAddedTax}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmActual
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Actual
  * TypeOfAmountCode.mmActual}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmReplacement
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Replacement
  * TypeOfAmountCode.mmReplacement}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmMaximum
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Maximum
  * TypeOfAmountCode.mmMaximum}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmDefault
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Default
  * TypeOfAmountCode.mmDefault}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmEstimated
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Estimated
  * TypeOfAmountCode.mmEstimated}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmOriginal
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Original
  * TypeOfAmountCode.mmOriginal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmSurcharge
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Surcharge
  * TypeOfAmountCode.mmSurcharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmServiceFee
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ServiceFee
  * TypeOfAmountCode.mmServiceFee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmInterchangeFee
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InterchangeFee
  * TypeOfAmountCode.mmInterchangeFee}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmDiscount
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Discount
  * TypeOfAmountCode.mmDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmATMCommissionFee
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ATMCommissionFee
  * TypeOfAmountCode.mmATMCommissionFee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmAuthorisedAmount
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#AuthorisedAmount
  * TypeOfAmountCode.mmAuthorisedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmCardRemainingBalance
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#CardRemainingBalance
  * TypeOfAmountCode.mmCardRemainingBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmMaximumAllowedAmount
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#MaximumAllowedAmount
  * TypeOfAmountCode.mmMaximumAllowedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmMinimumAllowedAmount
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#MinimumAllowedAmount
  * TypeOfAmountCode.mmMinimumAllowedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmRequestedAmount
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#RequestedAmount
  * TypeOfAmountCode.mmRequestedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmIssuerFees
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#IssuerFees
  * TypeOfAmountCode.mmIssuerFees}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmIssuerCommission
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#IssuerCommission
  * TypeOfAmountCode.mmIssuerCommission}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmInterchangeFees
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InterchangeFees
  * TypeOfAmountCode.mmInterchangeFees}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmProcessingFees
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ProcessingFees
  * TypeOfAmountCode.mmProcessingFees}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmCurrencyConversionFees
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#CurrencyConversionFees
  * TypeOfAmountCode.mmCurrencyConversionFees}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmInternationalServiceAssessmentFees
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InternationalServiceAssessmentFees
  * TypeOfAmountCode.mmInternationalServiceAssessmentFees}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmCommission
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Commission
  * TypeOfAmountCode.mmCommission}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmDonation
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Donation
  * TypeOfAmountCode.mmDonation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmTax
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Tax
  * TypeOfAmountCode.mmTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmIncremental
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Incremental
  * TypeOfAmountCode.mmIncremental}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmDecremental
+ * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Decremental
  * TypeOfAmountCode.mmDecremental}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#mmReserved
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Reserved
  * TypeOfAmountCode.mmReserved}</li>
  * </ul>
  * </li>
@@ -147,7 +144,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identification or qualification of the type of amount."</li>
  * </ul>
  */
-public class TypeOfAmountCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TypeOfAmountCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -171,12 +169,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Cash-back amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCashback = new MMCode() {
+	public static final TypeOfAmountCode Cashback = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cashback";
 			definition = "Cash-back amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "CSHB";
 		}
 	};
@@ -201,12 +199,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Gratuity amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGratuity = new MMCode() {
+	public static final TypeOfAmountCode Gratuity = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Gratuity";
 			definition = "Gratuity amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "GRTY";
 		}
 	};
@@ -231,12 +229,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Fees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFees = new MMCode() {
+	public static final TypeOfAmountCode Fees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fees";
 			definition = "Fees.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEES";
 		}
 	};
@@ -264,12 +262,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRebates = new MMCode() {
+	public static final TypeOfAmountCode Rebates = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rebates";
 			definition = "Global rebate of the transaction. This amount is counted as a negative amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "RBTS";
 		}
 	};
@@ -294,12 +292,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Value added tax amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmValueAddedTax = new MMCode() {
+	public static final TypeOfAmountCode ValueAddedTax = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueAddedTax";
 			definition = "Value added tax amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "VATX";
 		}
 	};
@@ -324,12 +322,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Actual amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmActual = new MMCode() {
+	public static final TypeOfAmountCode Actual = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Actual";
 			definition = "Actual amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "ACTL";
 		}
 	};
@@ -354,12 +352,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Replacement amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReplacement = new MMCode() {
+	public static final TypeOfAmountCode Replacement = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Replacement";
 			definition = "Replacement amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "RPLT";
 		}
 	};
@@ -384,12 +382,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Maximum amount (the final amount must be less or equal)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMaximum = new MMCode() {
+	public static final TypeOfAmountCode Maximum = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Maximum";
 			definition = "Maximum amount (the final amount must be less or equal).";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "MAXI";
 		}
 	};
@@ -414,12 +412,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Default amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDefault = new MMCode() {
+	public static final TypeOfAmountCode Default = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Default";
 			definition = "Default amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "DFLT";
 		}
 	};
@@ -445,12 +443,12 @@ public class TypeOfAmountCode {
 	 * "Estimated amount (the final amount could be above or below)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEstimated = new MMCode() {
+	public static final TypeOfAmountCode Estimated = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Estimated";
 			definition = "Estimated amount (the final amount could be above or below).";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "ESTM";
 		}
 	};
@@ -476,12 +474,12 @@ public class TypeOfAmountCode {
 	 * "Original amount authorised during the real-time authorisation process."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginal = new MMCode() {
+	public static final TypeOfAmountCode Original = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Original";
 			definition = "Original amount authorised during the real-time authorisation process.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "ORIG";
 		}
 	};
@@ -506,12 +504,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Extra fee for a purchase or a withdrawal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSurcharge = new MMCode() {
+	public static final TypeOfAmountCode Surcharge = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Surcharge";
 			definition = "Extra fee for a purchase or a withdrawal.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "SRCH";
 		}
 	};
@@ -536,12 +534,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Service fee."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmServiceFee = new MMCode() {
+	public static final TypeOfAmountCode ServiceFee = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ServiceFee";
 			definition = "Service fee.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "SRVF";
 		}
 	};
@@ -566,12 +564,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Interchange fee."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterchangeFee = new MMCode() {
+	public static final TypeOfAmountCode InterchangeFee = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterchangeFee";
 			definition = "Interchange fee.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "INTC";
 		}
 	};
@@ -599,12 +597,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscount = new MMCode() {
+	public static final TypeOfAmountCode Discount = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Discount";
 			definition = "Discount, rebate or voucher, related to loyalty programs. This amount is counted as a negative amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "DCNT";
 		}
 	};
@@ -632,12 +630,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmATMCommissionFee = new MMCode() {
+	public static final TypeOfAmountCode ATMCommissionFee = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ATMCommissionFee";
 			definition = "Commission that the issuer will charge to the cardholder, which should be shown and accepted by the cardholder before the money is disbursed.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "ATMF";
 		}
 	};
@@ -662,12 +660,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Transaction amount that has been authorised."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuthorisedAmount = new MMCode() {
+	public static final TypeOfAmountCode AuthorisedAmount = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AuthorisedAmount";
 			definition = "Transaction amount that has been authorised.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "AMTH";
 		}
 	};
@@ -695,12 +693,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardRemainingBalance = new MMCode() {
+	public static final TypeOfAmountCode CardRemainingBalance = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardRemainingBalance";
 			definition = "Remaining allowed amount for this type of transaction with this card, after the transaction, until the end of the card limit period.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "CRDB";
 		}
 	};
@@ -728,12 +726,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMaximumAllowedAmount = new MMCode() {
+	public static final TypeOfAmountCode MaximumAllowedAmount = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MaximumAllowedAmount";
 			definition = "Maximum amount allowed for the transaction in the transaction amount currency if the transaction amount of the request was declined.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "AMTX";
 		}
 	};
@@ -761,12 +759,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMinimumAllowedAmount = new MMCode() {
+	public static final TypeOfAmountCode MinimumAllowedAmount = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MinimumAllowedAmount";
 			definition = "Minimum amount allowed in the TransactionAmount currency if the transaction amount of the request was declined.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "AMTN";
 		}
 	};
@@ -792,12 +790,12 @@ public class TypeOfAmountCode {
 	 * "Transaction amount that has been requested to be authorised."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequestedAmount = new MMCode() {
+	public static final TypeOfAmountCode RequestedAmount = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestedAmount";
 			definition = "Transaction amount that has been requested to be authorised.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "AMTQ";
 		}
 	};
@@ -822,12 +820,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Fees amount from the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuerFees = new MMCode() {
+	public static final TypeOfAmountCode IssuerFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IssuerFees";
 			definition = "Fees amount from the card issuer.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEI";
 		}
 	};
@@ -852,12 +850,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Commission from the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuerCommission = new MMCode() {
+	public static final TypeOfAmountCode IssuerCommission = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IssuerCommission";
 			definition = "Commission from the card issuer.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "COMI";
 		}
 	};
@@ -882,12 +880,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Interchange fees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterchangeFees = new MMCode() {
+	public static final TypeOfAmountCode InterchangeFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InterchangeFees";
 			definition = "Interchange fees.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEH";
 		}
 	};
@@ -912,12 +910,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Processing fees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProcessingFees = new MMCode() {
+	public static final TypeOfAmountCode ProcessingFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingFees";
 			definition = "Processing fees.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEP";
 		}
 	};
@@ -942,12 +940,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Currency conversion fees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCurrencyConversionFees = new MMCode() {
+	public static final TypeOfAmountCode CurrencyConversionFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrencyConversionFees";
 			definition = "Currency conversion fees.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEC";
 		}
 	};
@@ -972,12 +970,12 @@ public class TypeOfAmountCode {
 	 * definition} = "International  service assessment fees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInternationalServiceAssessmentFees = new MMCode() {
+	public static final TypeOfAmountCode InternationalServiceAssessmentFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InternationalServiceAssessmentFees";
 			definition = "International  service assessment fees.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEA";
 		}
 	};
@@ -1005,12 +1003,12 @@ public class TypeOfAmountCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCommission = new MMCode() {
+	public static final TypeOfAmountCode Commission = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Commission";
 			definition = "Commission, for example for DCC (Dynamic Currency Conversion) transactions.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "COMM";
 		}
 	};
@@ -1035,12 +1033,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Donation amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDonation = new MMCode() {
+	public static final TypeOfAmountCode Donation = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Donation";
 			definition = "Donation amount.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "DONN";
 		}
 	};
@@ -1065,12 +1063,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Taxes applicable to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTax = new MMCode() {
+	public static final TypeOfAmountCode Tax = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tax";
 			definition = "Taxes applicable to the transaction.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "TAXT";
 		}
 	};
@@ -1095,12 +1093,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Incremental amount for reservation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncremental = new MMCode() {
+	public static final TypeOfAmountCode Incremental = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Incremental";
 			definition = "Incremental amount for reservation.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "INCR";
 		}
 	};
@@ -1125,12 +1123,12 @@ public class TypeOfAmountCode {
 	 * definition} = "Decremental amount for reservation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDecremental = new MMCode() {
+	public static final TypeOfAmountCode Decremental = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Decremental";
 			definition = "Decremental amount for reservation.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "DECR";
 		}
 	};
@@ -1155,17 +1153,21 @@ public class TypeOfAmountCode {
 	 * definition} = "Reserved or updated reserved amount for reservation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReserved = new MMCode() {
+	public static final TypeOfAmountCode Reserved = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reserved";
 			definition = "Reserved or updated reserved amount for reservation.";
-			owner_lazy = () -> TypeOfAmountCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "RESD";
 		}
 	};
+	final static private LinkedHashMap<String, TypeOfAmountCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TypeOfAmountCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1173,14 +1175,77 @@ public class TypeOfAmountCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmountCode";
 				definition = "Identification or qualification of the type of amount.";
-				code_lazy = () -> Arrays.asList(TypeOfAmountCode.mmCashback, TypeOfAmountCode.mmGratuity, TypeOfAmountCode.mmFees, TypeOfAmountCode.mmRebates, TypeOfAmountCode.mmValueAddedTax, TypeOfAmountCode.mmActual,
-						TypeOfAmountCode.mmReplacement, TypeOfAmountCode.mmMaximum, TypeOfAmountCode.mmDefault, TypeOfAmountCode.mmEstimated, TypeOfAmountCode.mmOriginal, TypeOfAmountCode.mmSurcharge, TypeOfAmountCode.mmServiceFee,
-						TypeOfAmountCode.mmInterchangeFee, TypeOfAmountCode.mmDiscount, TypeOfAmountCode.mmATMCommissionFee, TypeOfAmountCode.mmAuthorisedAmount, TypeOfAmountCode.mmCardRemainingBalance,
-						TypeOfAmountCode.mmMaximumAllowedAmount, TypeOfAmountCode.mmMinimumAllowedAmount, TypeOfAmountCode.mmRequestedAmount, TypeOfAmountCode.mmIssuerFees, TypeOfAmountCode.mmIssuerCommission,
-						TypeOfAmountCode.mmInterchangeFees, TypeOfAmountCode.mmProcessingFees, TypeOfAmountCode.mmCurrencyConversionFees, TypeOfAmountCode.mmInternationalServiceAssessmentFees, TypeOfAmountCode.mmCommission,
-						TypeOfAmountCode.mmDonation, TypeOfAmountCode.mmTax, TypeOfAmountCode.mmIncremental, TypeOfAmountCode.mmDecremental, TypeOfAmountCode.mmReserved);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TypeOfAmountCode.Cashback, com.tools20022.repository.codeset.TypeOfAmountCode.Gratuity, com.tools20022.repository.codeset.TypeOfAmountCode.Fees,
+						com.tools20022.repository.codeset.TypeOfAmountCode.Rebates, com.tools20022.repository.codeset.TypeOfAmountCode.ValueAddedTax, com.tools20022.repository.codeset.TypeOfAmountCode.Actual,
+						com.tools20022.repository.codeset.TypeOfAmountCode.Replacement, com.tools20022.repository.codeset.TypeOfAmountCode.Maximum, com.tools20022.repository.codeset.TypeOfAmountCode.Default,
+						com.tools20022.repository.codeset.TypeOfAmountCode.Estimated, com.tools20022.repository.codeset.TypeOfAmountCode.Original, com.tools20022.repository.codeset.TypeOfAmountCode.Surcharge,
+						com.tools20022.repository.codeset.TypeOfAmountCode.ServiceFee, com.tools20022.repository.codeset.TypeOfAmountCode.InterchangeFee, com.tools20022.repository.codeset.TypeOfAmountCode.Discount,
+						com.tools20022.repository.codeset.TypeOfAmountCode.ATMCommissionFee, com.tools20022.repository.codeset.TypeOfAmountCode.AuthorisedAmount, com.tools20022.repository.codeset.TypeOfAmountCode.CardRemainingBalance,
+						com.tools20022.repository.codeset.TypeOfAmountCode.MaximumAllowedAmount, com.tools20022.repository.codeset.TypeOfAmountCode.MinimumAllowedAmount, com.tools20022.repository.codeset.TypeOfAmountCode.RequestedAmount,
+						com.tools20022.repository.codeset.TypeOfAmountCode.IssuerFees, com.tools20022.repository.codeset.TypeOfAmountCode.IssuerCommission, com.tools20022.repository.codeset.TypeOfAmountCode.InterchangeFees,
+						com.tools20022.repository.codeset.TypeOfAmountCode.ProcessingFees, com.tools20022.repository.codeset.TypeOfAmountCode.CurrencyConversionFees,
+						com.tools20022.repository.codeset.TypeOfAmountCode.InternationalServiceAssessmentFees, com.tools20022.repository.codeset.TypeOfAmountCode.Commission, com.tools20022.repository.codeset.TypeOfAmountCode.Donation,
+						com.tools20022.repository.codeset.TypeOfAmountCode.Tax, com.tools20022.repository.codeset.TypeOfAmountCode.Incremental, com.tools20022.repository.codeset.TypeOfAmountCode.Decremental,
+						com.tools20022.repository.codeset.TypeOfAmountCode.Reserved);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cashback.getCodeName().get(), Cashback);
+		codesByName.put(Gratuity.getCodeName().get(), Gratuity);
+		codesByName.put(Fees.getCodeName().get(), Fees);
+		codesByName.put(Rebates.getCodeName().get(), Rebates);
+		codesByName.put(ValueAddedTax.getCodeName().get(), ValueAddedTax);
+		codesByName.put(Actual.getCodeName().get(), Actual);
+		codesByName.put(Replacement.getCodeName().get(), Replacement);
+		codesByName.put(Maximum.getCodeName().get(), Maximum);
+		codesByName.put(Default.getCodeName().get(), Default);
+		codesByName.put(Estimated.getCodeName().get(), Estimated);
+		codesByName.put(Original.getCodeName().get(), Original);
+		codesByName.put(Surcharge.getCodeName().get(), Surcharge);
+		codesByName.put(ServiceFee.getCodeName().get(), ServiceFee);
+		codesByName.put(InterchangeFee.getCodeName().get(), InterchangeFee);
+		codesByName.put(Discount.getCodeName().get(), Discount);
+		codesByName.put(ATMCommissionFee.getCodeName().get(), ATMCommissionFee);
+		codesByName.put(AuthorisedAmount.getCodeName().get(), AuthorisedAmount);
+		codesByName.put(CardRemainingBalance.getCodeName().get(), CardRemainingBalance);
+		codesByName.put(MaximumAllowedAmount.getCodeName().get(), MaximumAllowedAmount);
+		codesByName.put(MinimumAllowedAmount.getCodeName().get(), MinimumAllowedAmount);
+		codesByName.put(RequestedAmount.getCodeName().get(), RequestedAmount);
+		codesByName.put(IssuerFees.getCodeName().get(), IssuerFees);
+		codesByName.put(IssuerCommission.getCodeName().get(), IssuerCommission);
+		codesByName.put(InterchangeFees.getCodeName().get(), InterchangeFees);
+		codesByName.put(ProcessingFees.getCodeName().get(), ProcessingFees);
+		codesByName.put(CurrencyConversionFees.getCodeName().get(), CurrencyConversionFees);
+		codesByName.put(InternationalServiceAssessmentFees.getCodeName().get(), InternationalServiceAssessmentFees);
+		codesByName.put(Commission.getCodeName().get(), Commission);
+		codesByName.put(Donation.getCodeName().get(), Donation);
+		codesByName.put(Tax.getCodeName().get(), Tax);
+		codesByName.put(Incremental.getCodeName().get(), Incremental);
+		codesByName.put(Decremental.getCodeName().get(), Decremental);
+		codesByName.put(Reserved.getCodeName().get(), Reserved);
+	}
+
+	public static TypeOfAmountCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TypeOfAmountCode[] values() {
+		TypeOfAmountCode[] values = new TypeOfAmountCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TypeOfAmountCode> {
+		@Override
+		public TypeOfAmountCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TypeOfAmountCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalBillingCompensationType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the type of billing compensation to be applied, as published in an
@@ -53,11 +59,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalBillingCompensationType1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalBillingCompensationType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalBillingCompensationType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalBillingCompensationType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -65,8 +76,34 @@ public class ExternalBillingCompensationType1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBillingCompensationType1Code";
 				definition = "Defines the type of billing compensation to be applied, as published in an external billing compensation type code list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalBillingCompensationType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalBillingCompensationType1Code[] values() {
+		ExternalBillingCompensationType1Code[] values = new ExternalBillingCompensationType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalBillingCompensationType1Code> {
+		@Override
+		public ExternalBillingCompensationType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalBillingCompensationType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

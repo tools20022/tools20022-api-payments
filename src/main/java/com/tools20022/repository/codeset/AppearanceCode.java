@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AppearanceCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the deliverability of a security.
@@ -31,26 +36,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.AppearanceCode#mmDeliverable
+ * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Deliverable
  * AppearanceCode.mmDeliverable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AppearanceCode#mmNotDeliverable
+ * {@linkplain com.tools20022.repository.codeset.AppearanceCode#NotDeliverable
  * AppearanceCode.mmNotDeliverable}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#mmLimited
+ * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Limited
  * AppearanceCode.mmLimited}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#mmBookEntry
+ * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#BookEntry
  * AppearanceCode.mmBookEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AppearanceCode#mmDeferredBookEntry
+ * {@linkplain com.tools20022.repository.codeset.AppearanceCode#DeferredBookEntry
  * AppearanceCode.mmDeferredBookEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AppearanceCode#mmDeliverableBookEntry
+ * {@linkplain com.tools20022.repository.codeset.AppearanceCode#DeliverableBookEntry
  * AppearanceCode.mmDeliverableBookEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AppearanceCode#mmTemporaryGlobal
+ * {@linkplain com.tools20022.repository.codeset.AppearanceCode#TemporaryGlobal
  * AppearanceCode.mmTemporaryGlobal}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#mmGlobal
+ * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Global
  * AppearanceCode.mmGlobal}</li>
  * </ul>
  * </li>
@@ -75,7 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the deliverability of a security."</li>
  * </ul>
  */
-public class AppearanceCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AppearanceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,12 +104,12 @@ public class AppearanceCode {
 	 * definition} = "Physical certificates exist."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeliverable = new MMCode() {
+	public static final AppearanceCode Deliverable = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deliverable";
 			definition = "Physical certificates exist.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "DELI";
 		}
 	};
@@ -129,12 +134,12 @@ public class AppearanceCode {
 	 * definition} = "Not yet deliverable contract."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotDeliverable = new MMCode() {
+	public static final AppearanceCode NotDeliverable = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotDeliverable";
 			definition = "Not yet deliverable contract.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "NDEL";
 		}
 	};
@@ -159,12 +164,12 @@ public class AppearanceCode {
 	 * definition} = "Limited or partial deliverability."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLimited = new MMCode() {
+	public static final AppearanceCode Limited = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Limited";
 			definition = "Limited or partial deliverability.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "LIMI";
 		}
 	};
@@ -192,12 +197,12 @@ public class AppearanceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBookEntry = new MMCode() {
+	public static final AppearanceCode BookEntry = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntry";
 			definition = "Security exists only as an electronic record, ie, there are no physical certificates representing the security.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "BENT";
 		}
 	};
@@ -222,12 +227,12 @@ public class AppearanceCode {
 	 * definition} = "Deferred printing, book entry."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeferredBookEntry = new MMCode() {
+	public static final AppearanceCode DeferredBookEntry = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeferredBookEntry";
 			definition = "Deferred printing, book entry.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "DFBE";
 		}
 	};
@@ -252,12 +257,12 @@ public class AppearanceCode {
 	 * definition} = "Deliverable, book entry."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeliverableBookEntry = new MMCode() {
+	public static final AppearanceCode DeliverableBookEntry = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliverableBookEntry";
 			definition = "Deliverable, book entry.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "DLBE";
 		}
 	};
@@ -282,12 +287,12 @@ public class AppearanceCode {
 	 * definition} = "Deferred printing, global certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTemporaryGlobal = new MMCode() {
+	public static final AppearanceCode TemporaryGlobal = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TemporaryGlobal";
 			definition = "Deferred printing, global certificate.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "TMPG";
 		}
 	};
@@ -312,17 +317,21 @@ public class AppearanceCode {
 	 * definition} = "Not deliverable, global certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGlobal = new MMCode() {
+	public static final AppearanceCode Global = new AppearanceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Global";
 			definition = "Not deliverable, global certificate.";
-			owner_lazy = () -> AppearanceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AppearanceCode.mmObject();
 			codeName = "GLOB";
 		}
 	};
+	final static private LinkedHashMap<String, AppearanceCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AppearanceCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -330,10 +339,43 @@ public class AppearanceCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AppearanceCode";
 				definition = "Specifies the deliverability of a security.";
-				code_lazy = () -> Arrays.asList(AppearanceCode.mmDeliverable, AppearanceCode.mmNotDeliverable, AppearanceCode.mmLimited, AppearanceCode.mmBookEntry, AppearanceCode.mmDeferredBookEntry, AppearanceCode.mmDeliverableBookEntry,
-						AppearanceCode.mmTemporaryGlobal, AppearanceCode.mmGlobal);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AppearanceCode.Deliverable, com.tools20022.repository.codeset.AppearanceCode.NotDeliverable, com.tools20022.repository.codeset.AppearanceCode.Limited,
+						com.tools20022.repository.codeset.AppearanceCode.BookEntry, com.tools20022.repository.codeset.AppearanceCode.DeferredBookEntry, com.tools20022.repository.codeset.AppearanceCode.DeliverableBookEntry,
+						com.tools20022.repository.codeset.AppearanceCode.TemporaryGlobal, com.tools20022.repository.codeset.AppearanceCode.Global);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Deliverable.getCodeName().get(), Deliverable);
+		codesByName.put(NotDeliverable.getCodeName().get(), NotDeliverable);
+		codesByName.put(Limited.getCodeName().get(), Limited);
+		codesByName.put(BookEntry.getCodeName().get(), BookEntry);
+		codesByName.put(DeferredBookEntry.getCodeName().get(), DeferredBookEntry);
+		codesByName.put(DeliverableBookEntry.getCodeName().get(), DeliverableBookEntry);
+		codesByName.put(TemporaryGlobal.getCodeName().get(), TemporaryGlobal);
+		codesByName.put(Global.getCodeName().get(), Global);
+	}
+
+	public static AppearanceCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AppearanceCode[] values() {
+		AppearanceCode[] values = new AppearanceCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AppearanceCode> {
+		@Override
+		public AppearanceCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AppearanceCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

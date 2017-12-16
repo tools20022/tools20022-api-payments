@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.SequenceTypeCode;
+import com.tools20022.repository.codeset.SequenceType2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether a once off transaction is covered or whether recurring
@@ -31,18 +35,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.SequenceTypeCode
- * SequenceTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SequenceType2Code#mmRecurring
+ * {@linkplain com.tools20022.repository.codeset.SequenceType2Code#Recurring
  * SequenceType2Code.mmRecurring}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.SequenceType2Code#mmOneOff
+ * <li>{@linkplain com.tools20022.repository.codeset.SequenceType2Code#OneOff
  * SequenceType2Code.mmOneOff}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.SequenceTypeCode
+ * SequenceTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class SequenceType2Code extends SequenceTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SequenceType2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,11 +90,12 @@ public class SequenceType2Code extends SequenceTypeCode {
 	 * name} = "Recurring"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRecurring = new MMCode() {
+	public static final SequenceType2Code Recurring = new SequenceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Recurring";
-			owner_lazy = () -> SequenceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SequenceType2Code.mmObject();
+			codeName = SequenceTypeCode.Recurring.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -108,15 +114,20 @@ public class SequenceType2Code extends SequenceTypeCode {
 	 * name} = "OneOff"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOneOff = new MMCode() {
+	public static final SequenceType2Code OneOff = new SequenceType2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneOff";
-			owner_lazy = () -> SequenceType2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SequenceType2Code.mmObject();
+			codeName = SequenceTypeCode.OneOff.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, SequenceType2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SequenceType2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -124,10 +135,36 @@ public class SequenceType2Code extends SequenceTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SequenceType2Code";
 				definition = "Specifies whether a once off transaction is covered or whether recurring transactions are covered.";
-				code_lazy = () -> Arrays.asList(SequenceType2Code.mmRecurring, SequenceType2Code.mmOneOff);
 				trace_lazy = () -> SequenceTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SequenceType2Code.Recurring, com.tools20022.repository.codeset.SequenceType2Code.OneOff);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Recurring.getCodeName().get(), Recurring);
+		codesByName.put(OneOff.getCodeName().get(), OneOff);
+	}
+
+	public static SequenceType2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SequenceType2Code[] values() {
+		SequenceType2Code[] values = new SequenceType2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SequenceType2Code> {
+		@Override
+		public SequenceType2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SequenceType2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

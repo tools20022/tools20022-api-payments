@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ProposalTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the proposal is an initial or a counter proposal.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ProposalTypeCode#mmInitial
+ * <li>{@linkplain com.tools20022.repository.codeset.ProposalTypeCode#Initial
  * ProposalTypeCode.mmInitial}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ProposalTypeCode#mmCounter
+ * <li>{@linkplain com.tools20022.repository.codeset.ProposalTypeCode#Counter
  * ProposalTypeCode.mmCounter}</li>
  * </ul>
  * </li>
@@ -59,7 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies whether the proposal is an initial or a counter proposal."</li>
  * </ul>
  */
-public class ProposalTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ProposalTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,12 +89,12 @@ public class ProposalTypeCode {
 	 * definition} = "Specifies this is an initial proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInitial = new MMCode() {
+	public static final ProposalTypeCode Initial = new ProposalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Initial";
 			definition = "Specifies this is an initial proposal.";
-			owner_lazy = () -> ProposalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ProposalTypeCode.mmObject();
 			codeName = "INIT";
 		}
 	};
@@ -113,17 +119,21 @@ public class ProposalTypeCode {
 	 * definition} = "Specifies this is a counter proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounter = new MMCode() {
+	public static final ProposalTypeCode Counter = new ProposalTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Counter";
 			definition = "Specifies this is a counter proposal.";
-			owner_lazy = () -> ProposalTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ProposalTypeCode.mmObject();
 			codeName = "COUN";
 		}
 	};
+	final static private LinkedHashMap<String, ProposalTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ProposalTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -131,9 +141,35 @@ public class ProposalTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProposalTypeCode";
 				definition = "Specifies whether the proposal is an initial or a counter proposal.";
-				code_lazy = () -> Arrays.asList(ProposalTypeCode.mmInitial, ProposalTypeCode.mmCounter);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ProposalTypeCode.Initial, com.tools20022.repository.codeset.ProposalTypeCode.Counter);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Initial.getCodeName().get(), Initial);
+		codesByName.put(Counter.getCodeName().get(), Counter);
+	}
+
+	public static ProposalTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ProposalTypeCode[] values() {
+		ProposalTypeCode[] values = new ProposalTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ProposalTypeCode> {
+		@Override
+		public ProposalTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ProposalTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

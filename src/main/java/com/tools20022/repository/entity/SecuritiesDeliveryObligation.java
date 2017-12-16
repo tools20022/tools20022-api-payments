@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Obligation
+ * Obligation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -104,9 +107,6 @@ import java.util.List;
  * CollateralMovement.mmSecuritiesCollateralMovement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Obligation
- * Obligation}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -158,8 +158,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmCCPEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CCPEligibility";
 			definition = "Specifies whether the settlement transaction is CCP (Central Counterparty) eligible.";
@@ -206,8 +206,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmNettingEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NettingEligibility";
 			definition = "Specifies whether the settlement transaction is eligible for netting.";
@@ -253,8 +253,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmTransferInstructionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferInstructionDate";
 			definition = "Date at which the instructing party places the transfer instruction.";
@@ -300,8 +300,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmTransferCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferCurrency";
 			definition = "Identifies the currency to be used to transfer the holdings.";
@@ -358,8 +358,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateAction";
 			definition = "Corporate action processes which are the source of the securities delivery obligation.";
@@ -407,8 +407,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralMovement";
 			definition = "Collateral movement which is the source of the obligation.";
@@ -457,8 +457,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTradeExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeExecution";
 			definition = "Specifies the trade which originates the delivery obligation.";
@@ -508,8 +508,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPortfolioTransfer";
 			definition = "Portfolio transfer which is the source of the securities delivery obligation.";
@@ -559,8 +559,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTransfer";
 			definition = "Completion of a securities settlement instruction, wherein securities are delivered/debited from a securities account and received/credited to the designated securities account.";
@@ -602,8 +602,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmSettlementInstructionGeneration = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementInstructionGeneration";
 			definition = "Specifies whether the ETC provider should generate settlement instructions or not.";
@@ -652,8 +652,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmSettlementDateCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDateCode";
 			definition = "Requested date of trade settlement, in coded form, for example, trade date +1).";
@@ -709,8 +709,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesLending = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesLending";
 			definition = "Securities lending process which covers the delivery of securities by the seller.";

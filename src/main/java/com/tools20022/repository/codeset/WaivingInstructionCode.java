@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.WaivingInstructionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the form of the rebate when commission is waived.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#mmWaiveInCash
+ * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#WaiveInCash
  * WaivingInstructionCode.mmWaiveInCash}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#mmWaiveInUnits
+ * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#WaiveInUnits
  * WaivingInstructionCode.mmWaiveInUnits}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#mmOther
+ * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#Other
  * WaivingInstructionCode.mmOther}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the form of the rebate when commission is waived."</li>
  * </ul>
  */
-public class WaivingInstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class WaivingInstructionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class WaivingInstructionCode {
 	 * definition} = "Form of commission waived is cash."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWaiveInCash = new MMCode() {
+	public static final WaivingInstructionCode WaiveInCash = new WaivingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaiveInCash";
 			definition = "Form of commission waived is cash.";
-			owner_lazy = () -> WaivingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WaivingInstructionCode.mmObject();
 			codeName = "WICA";
 		}
 	};
@@ -119,12 +125,12 @@ public class WaivingInstructionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmWaiveInUnits = new MMCode() {
+	public static final WaivingInstructionCode WaiveInUnits = new WaivingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaiveInUnits";
 			definition = "Form of commission waived is additional units of a financial instrument.";
-			owner_lazy = () -> WaivingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WaivingInstructionCode.mmObject();
 			codeName = "WIUN";
 		}
 	};
@@ -149,17 +155,21 @@ public class WaivingInstructionCode {
 	 * definition} = "Another type of commission waiving."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final WaivingInstructionCode Other = new WaivingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another type of commission waiving.";
-			owner_lazy = () -> WaivingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.WaivingInstructionCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
+	final static private LinkedHashMap<String, WaivingInstructionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected WaivingInstructionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -167,9 +177,37 @@ public class WaivingInstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "WaivingInstructionCode";
 				definition = "Specifies the form of the rebate when commission is waived.";
-				code_lazy = () -> Arrays.asList(WaivingInstructionCode.mmWaiveInCash, WaivingInstructionCode.mmWaiveInUnits, WaivingInstructionCode.mmOther);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.WaivingInstructionCode.WaiveInCash, com.tools20022.repository.codeset.WaivingInstructionCode.WaiveInUnits,
+						com.tools20022.repository.codeset.WaivingInstructionCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(WaiveInCash.getCodeName().get(), WaiveInCash);
+		codesByName.put(WaiveInUnits.getCodeName().get(), WaiveInUnits);
+		codesByName.put(Other.getCodeName().get(), Other);
+	}
+
+	public static WaivingInstructionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static WaivingInstructionCode[] values() {
+		WaivingInstructionCode[] values = new WaivingInstructionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, WaivingInstructionCode> {
+		@Override
+		public WaivingInstructionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(WaivingInstructionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

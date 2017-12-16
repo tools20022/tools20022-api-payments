@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DiscountTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of discount, that is, the reason why a discount is
@@ -33,28 +38,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmQuantityDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#QuantityDiscount
  * DiscountTypeCode.mmQuantityDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmPromotionalDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#PromotionalDiscount
  * DiscountTypeCode.mmPromotionalDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmPricingDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#PricingDiscount
  * DiscountTypeCode.mmPricingDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmSpecialAgreementDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#SpecialAgreementDiscount
  * DiscountTypeCode.mmSpecialAgreementDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmEndOfRangeDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#EndOfRangeDiscount
  * DiscountTypeCode.mmEndOfRangeDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmAdditionalPromotionalDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#AdditionalPromotionalDiscount
  * DiscountTypeCode.mmAdditionalPromotionalDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmStandingDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#StandingDiscount
  * DiscountTypeCode.mmStandingDiscount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#mmTermsDiscount
+ * {@linkplain com.tools20022.repository.codeset.DiscountTypeCode#TermsDiscount
  * DiscountTypeCode.mmTermsDiscount}</li>
  * </ul>
  * </li>
@@ -81,7 +86,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class DiscountTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DiscountTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -105,12 +111,12 @@ public class DiscountTypeCode {
 	 * definition} = "Quantity discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmQuantityDiscount = new MMCode() {
+	public static final DiscountTypeCode QuantityDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "QuantityDiscount";
 			definition = "Quantity discount.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "QUAN";
 		}
 	};
@@ -135,12 +141,12 @@ public class DiscountTypeCode {
 	 * definition} = "Promotional discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPromotionalDiscount = new MMCode() {
+	public static final DiscountTypeCode PromotionalDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PromotionalDiscount";
 			definition = "Promotional discount.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "PROM";
 		}
 	};
@@ -165,12 +171,12 @@ public class DiscountTypeCode {
 	 * definition} = "Pricing discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPricingDiscount = new MMCode() {
+	public static final DiscountTypeCode PricingDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PricingDiscount";
 			definition = "Pricing discount.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "PRIC";
 		}
 	};
@@ -195,12 +201,12 @@ public class DiscountTypeCode {
 	 * definition} = "Special agreement discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpecialAgreementDiscount = new MMCode() {
+	public static final DiscountTypeCode SpecialAgreementDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SpecialAgreementDiscount";
 			definition = "Special agreement discount.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "SPAG";
 		}
 	};
@@ -225,12 +231,12 @@ public class DiscountTypeCode {
 	 * definition} = "End-of-range discount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEndOfRangeDiscount = new MMCode() {
+	public static final DiscountTypeCode EndOfRangeDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfRangeDiscount";
 			definition = "End-of-range discount.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "ENOR";
 		}
 	};
@@ -258,12 +264,12 @@ public class DiscountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAdditionalPromotionalDiscount = new MMCode() {
+	public static final DiscountTypeCode AdditionalPromotionalDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalPromotionalDiscount";
 			definition = "Addition discount based on third-party agreed business promotional activity, i.e., extra 10 percent discount for 15 days)";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "ADPS";
 		}
 	};
@@ -288,12 +294,12 @@ public class DiscountTypeCode {
 	 * definition} = "Discount based on volume purchased."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStandingDiscount = new MMCode() {
+	public static final DiscountTypeCode StandingDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StandingDiscount";
 			definition = "Discount based on volume purchased.";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "STDS";
 		}
 	};
@@ -322,17 +328,21 @@ public class DiscountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTermsDiscount = new MMCode() {
+	public static final DiscountTypeCode TermsDiscount = new DiscountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TermsDiscount";
 			definition = "Discount based on terms negotiated for payment within a specified time period, i.e., 2/10 Net 30 (2 percent discount if paid in 10 days; otherwise, net amount is due in 30 days).";
-			owner_lazy = () -> DiscountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "TMDS";
 		}
 	};
+	final static private LinkedHashMap<String, DiscountTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DiscountTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -340,10 +350,45 @@ public class DiscountTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DiscountTypeCode";
 				definition = "Specifies the type of discount, that is, the reason why a discount is granted.";
-				code_lazy = () -> Arrays.asList(DiscountTypeCode.mmQuantityDiscount, DiscountTypeCode.mmPromotionalDiscount, DiscountTypeCode.mmPricingDiscount, DiscountTypeCode.mmSpecialAgreementDiscount,
-						DiscountTypeCode.mmEndOfRangeDiscount, DiscountTypeCode.mmAdditionalPromotionalDiscount, DiscountTypeCode.mmStandingDiscount, DiscountTypeCode.mmTermsDiscount);
+				code_lazy = () -> Arrays
+						.asList(com.tools20022.repository.codeset.DiscountTypeCode.QuantityDiscount, com.tools20022.repository.codeset.DiscountTypeCode.PromotionalDiscount,
+								com.tools20022.repository.codeset.DiscountTypeCode.PricingDiscount, com.tools20022.repository.codeset.DiscountTypeCode.SpecialAgreementDiscount,
+								com.tools20022.repository.codeset.DiscountTypeCode.EndOfRangeDiscount, com.tools20022.repository.codeset.DiscountTypeCode.AdditionalPromotionalDiscount,
+								com.tools20022.repository.codeset.DiscountTypeCode.StandingDiscount, com.tools20022.repository.codeset.DiscountTypeCode.TermsDiscount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(QuantityDiscount.getCodeName().get(), QuantityDiscount);
+		codesByName.put(PromotionalDiscount.getCodeName().get(), PromotionalDiscount);
+		codesByName.put(PricingDiscount.getCodeName().get(), PricingDiscount);
+		codesByName.put(SpecialAgreementDiscount.getCodeName().get(), SpecialAgreementDiscount);
+		codesByName.put(EndOfRangeDiscount.getCodeName().get(), EndOfRangeDiscount);
+		codesByName.put(AdditionalPromotionalDiscount.getCodeName().get(), AdditionalPromotionalDiscount);
+		codesByName.put(StandingDiscount.getCodeName().get(), StandingDiscount);
+		codesByName.put(TermsDiscount.getCodeName().get(), TermsDiscount);
+	}
+
+	public static DiscountTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DiscountTypeCode[] values() {
+		DiscountTypeCode[] values = new DiscountTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DiscountTypeCode> {
+		@Override
+		public DiscountTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DiscountTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

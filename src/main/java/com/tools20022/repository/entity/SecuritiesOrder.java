@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Order Order}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -243,8 +245,6 @@ import java.util.List;
  * CrossTrade.mmSellSideOrder}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Order Order}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -300,8 +300,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmOrderEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderEffectiveDate";
 			definition = "Date/time on which the order is effective.";
@@ -346,8 +346,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmOrderExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderExpiryDate";
 			definition = "Date/time on which the order is to expire.";
@@ -395,8 +395,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique identifier for an order, as assigned by the sell-side. The identifier must be unique within a single trading day.";
@@ -449,8 +449,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmCashMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashMargin";
 			definition = "Identifies whether an order is a margin order or a non-margin order. This is primarily used when sending orders to Japanese exchanges to indicate sell margin or buy to cover. The same tag could be assigned also by buy-side to indicate the intent to sell or buy margin and the sell-side to accept or reject (base on some validation criteria) the margin request.";
@@ -495,8 +495,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmSide = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Side";
 			definition = "Coded list to specify the side of the order.";
@@ -545,8 +545,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmSolicitedOrder = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SolicitedOrder";
 			definition = "Indicates that an order has been generated in response to an advertisement or an indication of interest.";
@@ -596,8 +596,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmCustomerCapacity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomerCapacity";
 			definition = "Capacity of customer placing the order. Primarily used by futures exchanges to indicate the CTI code (customer type indicator) as required by the US CFTC (Commodity Futures Trading Commission).";
@@ -647,8 +647,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmPositionEffect = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PositionEffect";
 			definition = "Indicates whether the resulting position after a  trade should be an opening position or closing position. Used for omnibus accounting - where accounts are held on a gross basis instead of being netted together.";
@@ -697,8 +697,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmForeignExchangeExecutionRequested = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForeignExchangeExecutionRequested";
 			definition = "Indicates a request for a foreign exchange accommodation trade to be executed along with security transaction.";
@@ -743,8 +743,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementCurrency";
 			definition = "Currency to be used for settlement.";
@@ -794,8 +794,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmOrderOriginatorEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderOriginatorEligibility";
 			definition = "Counterparties eligibility as defined by article 24 of the EU MiFID Directive applicable to transactions executed by investment firms for eligible counterparties.";
@@ -848,8 +848,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderedQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderedQuantity";
 			definition = "Quantity of financial instrument to be ordered.";
@@ -890,8 +890,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmBusinessProcessType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessProcessType";
 			definition = "Type of business process model used to carry out the transaction.";
@@ -944,8 +944,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfTrade";
 			definition = "Market at which the order is to be traded.";
@@ -988,8 +988,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmOrderedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderedAmount";
 			definition = "Cash amount to be used to derive the appropriate quantity of financial instrument to be bought or sold.";
@@ -1037,8 +1037,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmGiveUpNumberOfDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GiveUpNumberOfDays";
 			definition = "Specifies the number of days from trade date that the counterparty on the other side of the trade should be \"given up\" or divulged.";
@@ -1084,8 +1084,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmTradeRegulatoryConditionsType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeRegulatoryConditionsType";
 			definition = "Specifies the regulatory conditions type of the trade.";
@@ -1141,8 +1141,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmDayOrderQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DayOrderQuantity";
 			definition = "For good till orders, the order quantity less all quantity (adjusted for stock splits) that traded on previous days.";
@@ -1193,8 +1193,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrderPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrderPartyRole";
 			definition = "Specifies the party which plays a role in the process of ordering securities.";
@@ -1242,8 +1242,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Indicates the status of an order at a specific point in time.";
@@ -1289,8 +1289,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedNegotiation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedNegotiation";
 			definition = "Negotiation which resulted in an order.";
@@ -1338,8 +1338,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmAdjustments = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Adjustments";
 			definition = "Charges and commissions associated with a securities order.";
@@ -1388,8 +1388,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmLegalParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalParameters";
 			definition = "Legal parameters required in a securities order for regulatory purposes.";
@@ -1439,8 +1439,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderPrice";
 			definition = "Indicates the requested price for the order. This can be a \"stop\" price a \"limit\" price or a \"deal\" price.";
@@ -1489,8 +1489,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmStopPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StopPrice";
 			definition = "Indicates the stop price in case of a stop order or a stop limit order.";
@@ -1537,8 +1537,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrderAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrderAllocation";
 			definition = "Information about the pre-allocation of an order.";
@@ -1586,8 +1586,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderExecutionParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderExecutionParameters";
 			definition = "Conditions under which a securities order must be executed.";
@@ -1634,8 +1634,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderExecution";
 			definition = "Result of a securities order.";
@@ -1682,8 +1682,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderingAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderingAccount";
 			definition = "Account impacted by a security transaction.";
@@ -1730,8 +1730,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quote";
 			definition = "Quote for which the order conditions are specified.";
@@ -1771,8 +1771,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmFundTransactionDirectionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundTransactionDirectionIndicator";
 			definition = "Indicates the type of investment funds transaction.";
@@ -1820,8 +1820,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmOrderDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderDate";
 			definition = "Date/time on which the order was placed by the investor with the \ntrading party.";
@@ -1867,8 +1867,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmPegDifference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PegDifference";
 			definition = "Price difference for a pegged order.";
@@ -1923,8 +1923,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrderTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrderTradingSession";
 			definition = "Details of a specific trading session associated with a securities order.";
@@ -1971,8 +1971,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrderBook = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrderBook";
 			definition = "Order book whichgenerates an order.";
@@ -2019,8 +2019,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmListTrading = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListTrading";
 			definition = "List trading information containing a serie of orders.";
@@ -2068,8 +2068,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmBuySideRelatedCrossTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuySideRelatedCrossTrade";
 			definition = "Cross trade for which the buy side information is provided.";
@@ -2117,8 +2117,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmSellSideRelatedCrossTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellSideRelatedCrossTrade";
 			definition = "Cross trade for which the sell side information is provided.";
@@ -2164,8 +2164,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderedSecurity";
 			definition = "Security for which an order is specified.";
@@ -2212,8 +2212,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmBookingInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookingInstructions";
 			definition = "Information about the booking of executions.";
@@ -2264,8 +2264,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmExchangeForPhysicalTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeForPhysicalTrade";
 			definition = "Conditions under which an exchange for physical trade takes place in the case of a non disclosed bid.";
@@ -2308,8 +2308,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmQuantityType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityType";
 			definition = "Describes how the quantity is specified, that is by quantity of units or by amount of money.";
@@ -2360,8 +2360,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmClientOrderIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientOrderIdentification";
 			definition = "Unique identifier for the order as assigned by the buy-side.  Uniqueness must be guaranteed within a single trading day.  Firms, particularly those  that  electronically submit multi-day orders, trade globally or throughout market close periods, should ensure  uniqueness across days, for example by embedding a date within the ClientOrderIdentification element.";
@@ -2417,8 +2417,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAssociationEnd mmExecutionInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutionInstructions";
 			definition = "Execution instructions in which securities order parameters are defined.";
@@ -2461,8 +2461,8 @@ public class SecuritiesOrder extends Order {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Indicates the type of  instruction to a broker or dealer to buy or sell a financial instrument.";

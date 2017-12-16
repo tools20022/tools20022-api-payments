@@ -36,6 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
+ * ContactPoint}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -80,9 +83,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * RemittanceLocationDetails1.mmElectronicAddress}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
- * ContactPoint}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -141,8 +141,8 @@ public class ElectronicAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmEmailAddress = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmEmailAddress, ContactDetails3.mmEmailAddress);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmailAddress";
 			definition = "Address for electronic mail (e-mail).";
@@ -199,8 +199,8 @@ public class ElectronicAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmURLAddress = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation3.mmURL);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "URLAddress";
 			definition = "Address for the Universal Resource Locator (URL), eg, used over the www (HTTP) service.";
@@ -245,8 +245,8 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmTelexAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TelexAddress";
 			definition = "Address for a telex machine.";
@@ -302,8 +302,8 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPresentation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedPresentation";
 			definition = "Presentation process for which an electronic presentation address is specified.";
@@ -342,8 +342,8 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmTeletextAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TeletextAddress";
 			definition = "Address for a teletext.";
@@ -388,8 +388,8 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute mmISDNAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ISDNAddress";
 			definition = "Address for an Integrated Services Digital Network.";

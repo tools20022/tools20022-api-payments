@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradeRegulatoryConditionsCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * indicates if the Trade Regulatory Conditions is solicited or not.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeRegulatoryConditionsCode#mmSolicited
+ * {@linkplain com.tools20022.repository.codeset.TradeRegulatoryConditionsCode#Solicited
  * TradeRegulatoryConditionsCode.mmSolicited}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeRegulatoryConditionsCode#mmUnsolicited
+ * {@linkplain com.tools20022.repository.codeset.TradeRegulatoryConditionsCode#Unsolicited
  * TradeRegulatoryConditionsCode.mmUnsolicited}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "indicates if the Trade Regulatory Conditions is solicited or not."</li>
  * </ul>
  */
-public class TradeRegulatoryConditionsCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradeRegulatoryConditionsCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class TradeRegulatoryConditionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSolicited = new MMCode() {
+	public static final TradeRegulatoryConditionsCode Solicited = new TradeRegulatoryConditionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Solicited";
 			definition = "Trade was solicited by the executing broker. The broker has suggested to his client to buy/sell financial instruments.";
-			owner_lazy = () -> TradeRegulatoryConditionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeRegulatoryConditionsCode.mmObject();
 			codeName = "SOLI";
 		}
 	};
@@ -121,17 +127,21 @@ public class TradeRegulatoryConditionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnsolicited = new MMCode() {
+	public static final TradeRegulatoryConditionsCode Unsolicited = new TradeRegulatoryConditionsCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unsolicited";
 			definition = "Trade was unsolicited. The client acts on its own without advice from the executing broker.";
-			owner_lazy = () -> TradeRegulatoryConditionsCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeRegulatoryConditionsCode.mmObject();
 			codeName = "USOL";
 		}
 	};
+	final static private LinkedHashMap<String, TradeRegulatoryConditionsCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradeRegulatoryConditionsCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -139,9 +149,35 @@ public class TradeRegulatoryConditionsCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeRegulatoryConditionsCode";
 				definition = "indicates if the Trade Regulatory Conditions is solicited or not.";
-				code_lazy = () -> Arrays.asList(TradeRegulatoryConditionsCode.mmSolicited, TradeRegulatoryConditionsCode.mmUnsolicited);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradeRegulatoryConditionsCode.Solicited, com.tools20022.repository.codeset.TradeRegulatoryConditionsCode.Unsolicited);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Solicited.getCodeName().get(), Solicited);
+		codesByName.put(Unsolicited.getCodeName().get(), Unsolicited);
+	}
+
+	public static TradeRegulatoryConditionsCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradeRegulatoryConditionsCode[] values() {
+		TradeRegulatoryConditionsCode[] values = new TradeRegulatoryConditionsCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradeRegulatoryConditionsCode> {
+		@Override
+		public TradeRegulatoryConditionsCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradeRegulatoryConditionsCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

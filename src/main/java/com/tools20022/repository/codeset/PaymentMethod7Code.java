@@ -20,29 +20,32 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PaymentMethodCode;
+import com.tools20022.repository.codeset.PaymentMethod7Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the transfer method that will be used to transfer the cash.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode
- * PaymentMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod7Code#mmCheque
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentMethod7Code#Cheque
  * PaymentMethod7Code.mmCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod7Code#mmCreditTransfer
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod7Code#CreditTransfer
  * PaymentMethod7Code.mmCreditTransfer}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode
+ * PaymentMethodCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -65,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the transfer method that will be used  to transfer the cash."</li>
  * </ul>
  */
-public class PaymentMethod7Code extends PaymentMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentMethod7Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,11 +88,12 @@ public class PaymentMethod7Code extends PaymentMethodCode {
 	 * name} = "Cheque"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCheque = new MMCode() {
+	public static final PaymentMethod7Code Cheque = new PaymentMethod7Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cheque";
-			owner_lazy = () -> PaymentMethod7Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentMethod7Code.mmObject();
+			codeName = PaymentMethodCode.Cheque.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -107,15 +112,20 @@ public class PaymentMethod7Code extends PaymentMethodCode {
 	 * name} = "CreditTransfer"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditTransfer = new MMCode() {
+	public static final PaymentMethod7Code CreditTransfer = new PaymentMethod7Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditTransfer";
-			owner_lazy = () -> PaymentMethod7Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentMethod7Code.mmObject();
+			codeName = PaymentMethodCode.CreditTransfer.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, PaymentMethod7Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentMethod7Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -123,10 +133,36 @@ public class PaymentMethod7Code extends PaymentMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod7Code";
 				definition = "Specifies the transfer method that will be used  to transfer the cash.";
-				code_lazy = () -> Arrays.asList(PaymentMethod7Code.mmCheque, PaymentMethod7Code.mmCreditTransfer);
 				trace_lazy = () -> PaymentMethodCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod7Code.Cheque, com.tools20022.repository.codeset.PaymentMethod7Code.CreditTransfer);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cheque.getCodeName().get(), Cheque);
+		codesByName.put(CreditTransfer.getCodeName().get(), CreditTransfer);
+	}
+
+	public static PaymentMethod7Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentMethod7Code[] values() {
+		PaymentMethod7Code[] values = new PaymentMethod7Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentMethod7Code> {
+		@Override
+		public PaymentMethod7Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentMethod7Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

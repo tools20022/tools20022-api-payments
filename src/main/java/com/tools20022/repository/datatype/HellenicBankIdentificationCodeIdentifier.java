@@ -19,9 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.datatype.HellenicBankIdentificationCodeIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Hellenic Bank Identification Code Identifier. Identifies Greek financial
@@ -57,9 +61,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class HellenicBankIdentificationCodeIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
@@ -74,5 +80,26 @@ public class HellenicBankIdentificationCodeIdentifier {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public HellenicBankIdentificationCodeIdentifier(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, HellenicBankIdentificationCodeIdentifier> {
+		@Override
+		public HellenicBankIdentificationCodeIdentifier unmarshal(String value) {
+			return new HellenicBankIdentificationCodeIdentifier(value);
+		}
+
+		@Override
+		public String marshal(HellenicBankIdentificationCodeIdentifier typedData) {
+			return typedData.value;
+		}
 	}
 }

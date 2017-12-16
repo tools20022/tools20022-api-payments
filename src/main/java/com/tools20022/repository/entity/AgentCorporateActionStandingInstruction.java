@@ -42,6 +42,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction
+ * StandingSettlementInstruction}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -72,10 +76,6 @@ import java.util.List;
  * mmCorporateActionStandingInstruction}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction
- * StandingSettlementInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -125,8 +125,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	 */
 	public static final MMBusinessAttribute mmStandingInstructionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingInstructionType";
 			definition = "Type of standing instruction.";
@@ -173,8 +173,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	 */
 	public static final MMBusinessAttribute mmGrossOrNetIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossOrNetIndicator";
 			definition = "Indicates whether the payments must always be gross or net.";
@@ -232,8 +232,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDeliveryInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDeliveryInstructions";
 			definition = "Corporate action delivery instructions which contain settlement standing instructions.";
@@ -280,8 +280,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Financial instrument to which the standing instruction applies.";

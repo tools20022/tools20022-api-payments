@@ -120,8 +120,8 @@ public class UnderlyingRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesConversion";
 			definition = "Other parameters used to convert securities.";
@@ -167,8 +167,8 @@ public class UnderlyingRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingQuantityDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingQuantityDenominator";
 			definition = "Number of held securities for the exercise.";
@@ -215,8 +215,8 @@ public class UnderlyingRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingQuantityNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingQuantityNumerator";
 			definition = "Number of related securities for the exercise.";

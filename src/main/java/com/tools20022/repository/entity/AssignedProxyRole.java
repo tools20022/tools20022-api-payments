@@ -41,6 +41,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.MeetingPartyRole
+ * MeetingPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -63,9 +66,6 @@ import java.util.List;
  * Person.mmPreAssignedProxyPerson}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.MeetingPartyRole
- * MeetingPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -122,8 +122,8 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmProxyPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProxyPerson";
 			definition = "Specifies the person who is the assigned proxy for a meeting.";
@@ -170,8 +170,8 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmPreAssignedProxyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAssignedProxyRole";
 			definition = "Identifies a proxy that has been assigned by the issuer of the meeting.";

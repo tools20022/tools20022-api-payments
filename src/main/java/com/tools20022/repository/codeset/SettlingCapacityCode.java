@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SettlingCapacityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the role of the party in the settlement of the transaction.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingCustodian
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingCustodian
  * SettlingCapacityCode.mmSettlingCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingAgent
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingAgent
  * SettlingCapacityCode.mmSettlingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingPrincipal
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingPrincipal
  * SettlingCapacityCode.mmSettlingPrincipal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingRisklessPrincipal
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingRisklessPrincipal
  * SettlingCapacityCode.mmSettlingRisklessPrincipal}</li>
  * </ul>
  * </li>
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the role of the party in the settlement of the transaction."</li>
  * </ul>
  */
-public class SettlingCapacityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SettlingCapacityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class SettlingCapacityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlingCustodian = new MMCode() {
+	public static final SettlingCapacityCode SettlingCustodian = new SettlingCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingCustodian";
 			definition = "Settlement party is a custodian. It receives/delivers the securities and carries out custodial duties.";
-			owner_lazy = () -> SettlingCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlingCapacityCode.mmObject();
 			codeName = "CUST";
 		}
 	};
@@ -127,12 +133,12 @@ public class SettlingCapacityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlingAgent = new MMCode() {
+	public static final SettlingCapacityCode SettlingAgent = new SettlingCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingAgent";
 			definition = "Settlement party is trading and settling transactions in financial instruments on behalf of its client(s).";
-			owner_lazy = () -> SettlingCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlingCapacityCode.mmObject();
 			codeName = "SAGE";
 		}
 	};
@@ -157,12 +163,12 @@ public class SettlingCapacityCode {
 	 * definition} = "Settlement party is settling its own trades."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlingPrincipal = new MMCode() {
+	public static final SettlingCapacityCode SettlingPrincipal = new SettlingCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingPrincipal";
 			definition = "Settlement party is settling its own trades.";
-			owner_lazy = () -> SettlingCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlingCapacityCode.mmObject();
 			codeName = "SPRI";
 		}
 	};
@@ -187,17 +193,21 @@ public class SettlingCapacityCode {
 	 * definition} = "Party settles trades that were simultaneously offset."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlingRisklessPrincipal = new MMCode() {
+	public static final SettlingCapacityCode SettlingRisklessPrincipal = new SettlingCapacityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlingRisklessPrincipal";
 			definition = "Party settles trades that were simultaneously offset.";
-			owner_lazy = () -> SettlingCapacityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlingCapacityCode.mmObject();
 			codeName = "RISP";
 		}
 	};
+	final static private LinkedHashMap<String, SettlingCapacityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SettlingCapacityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -205,9 +215,38 @@ public class SettlingCapacityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlingCapacityCode";
 				definition = "Specifies the role of the party in the settlement of the transaction.";
-				code_lazy = () -> Arrays.asList(SettlingCapacityCode.mmSettlingCustodian, SettlingCapacityCode.mmSettlingAgent, SettlingCapacityCode.mmSettlingPrincipal, SettlingCapacityCode.mmSettlingRisklessPrincipal);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlingCapacityCode.SettlingCustodian, com.tools20022.repository.codeset.SettlingCapacityCode.SettlingAgent,
+						com.tools20022.repository.codeset.SettlingCapacityCode.SettlingPrincipal, com.tools20022.repository.codeset.SettlingCapacityCode.SettlingRisklessPrincipal);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(SettlingCustodian.getCodeName().get(), SettlingCustodian);
+		codesByName.put(SettlingAgent.getCodeName().get(), SettlingAgent);
+		codesByName.put(SettlingPrincipal.getCodeName().get(), SettlingPrincipal);
+		codesByName.put(SettlingRisklessPrincipal.getCodeName().get(), SettlingRisklessPrincipal);
+	}
+
+	public static SettlingCapacityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SettlingCapacityCode[] values() {
+		SettlingCapacityCode[] values = new SettlingCapacityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SettlingCapacityCode> {
+		@Override
+		public SettlingCapacityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SettlingCapacityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

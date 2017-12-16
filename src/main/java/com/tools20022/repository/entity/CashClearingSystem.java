@@ -40,6 +40,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ClearingSystem
+ * ClearingSystem}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -60,18 +63,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ClearingSystemIdentification3Choice
- * ClearingSystemIdentification3Choice}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ClearingSystemIdentification2Choice
- * ClearingSystemIdentification2Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -83,9 +74,18 @@ import java.util.List;
  * SettlementInstructionSystemRole.mmSystem}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ClearingSystem
- * ClearingSystem}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ClearingSystemIdentification3Choice
+ * ClearingSystemIdentification3Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ClearingSystemIdentification2Choice
+ * ClearingSystemIdentification2Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -155,8 +155,8 @@ public class CashClearingSystem extends ClearingSystem {
 		{
 			derivation_lazy = () -> Arrays.asList(ClearingSystemIdentification3Choice.mmCode, ClearingSystemIdentification3Choice.mmProprietary, ClearingSystemIdentification2Choice.mmCode, ClearingSystemIdentification2Choice.mmProprietary,
 					ClearingSystemMemberIdentification2.mmClearingSystemIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Information used to identify a cash clearing system.";
@@ -213,8 +213,8 @@ public class CashClearingSystem extends ClearingSystem {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionAdministrator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionAdministrator";
 			definition = "Set of integrated applications that provides centralised services such as clearing and settlement.";
@@ -261,8 +261,8 @@ public class CashClearingSystem extends ClearingSystem {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemRole";
 			definition = "Specifies the role played by the cash clearing system.";
@@ -303,8 +303,8 @@ public class CashClearingSystem extends ClearingSystem {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the category of cash clearing system, eg, cheque clearing.";
@@ -350,8 +350,8 @@ public class CashClearingSystem extends ClearingSystem {
 	 */
 	public static final MMBusinessAttribute mmCashSettlementSystem = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashSettlementSystem";
 			definition = "Specifies the cash settlement system used.";

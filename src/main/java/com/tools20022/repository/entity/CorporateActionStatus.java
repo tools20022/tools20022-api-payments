@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -97,8 +99,6 @@ import java.util.List;
  * CorporateActionEvent.mmCorporateActionStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -145,8 +145,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmAgentStandingInstructionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgentStandingInstructionStatus";
 			definition = "Specifies the state or the condition.";
@@ -192,8 +192,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingStatus";
 			definition = "Specifies the status of the details of the event.";
@@ -239,8 +239,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmEventProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventProcessingStatus";
 			definition = "Processing status of the corporate action event.";
@@ -297,8 +297,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionStatusReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatusReason";
 			definition = "Specifies the reasons for the status. It is derived from the relationship between Status and Status Reason.";
@@ -337,8 +337,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmInstructionCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionCancellationStatus";
 			definition = "Status of the instruction cancellation process.";
@@ -384,8 +384,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCorporateActionInstructionProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionInstructionProcessingStatus";
 			definition = "Status of the corporate action instruction process.";
@@ -431,8 +431,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmRateStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateStatus";
 			definition = "Specifies whether the rate is indicative or actual.";
@@ -478,8 +478,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmOptionAvailabilityStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionAvailabilityStatus";
 			definition = "Availability status of the option.";
@@ -533,8 +533,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate event for which a status is provided.";
@@ -574,8 +574,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmEventStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventStatus";
 			definition = "Status of the corporate action event.";
@@ -624,8 +624,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmRelatedInstructionProcessedStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInstructionProcessedStatus";
 			definition = "Information on the status of the processing of an instruction related to a corporate action.";
@@ -673,8 +673,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmDeactivationDateAndTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeactivationDateAndTime";
 			definition = "Date and time at which the the corporate action event or the option is deactivated.";
@@ -720,8 +720,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmEventConfirmationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventConfirmationStatus";
 			definition = "Indicates the status of the occurrence of an event.";
@@ -770,8 +770,8 @@ public class CorporateActionStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmEventCompletenessStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventCompletenessStatus";
 			definition = "Indicates whether the details provided about an event are complete or incomplete.";

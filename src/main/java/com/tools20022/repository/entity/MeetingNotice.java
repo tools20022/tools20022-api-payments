@@ -113,8 +113,8 @@ public class MeetingNotice {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Meeting servicing process which comprises the notification of a meeting.";
@@ -157,8 +157,8 @@ public class MeetingNotice {
 	 */
 	public static final MMBusinessAttribute mmBeneficialOwnerExclusiveIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficialOwnerExclusiveIndicator";
 			definition = "Indicates that only the beneficial owner may participate in the event, ie no proxy or nominee voting is allowed.";

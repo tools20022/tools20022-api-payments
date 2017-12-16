@@ -212,8 +212,8 @@ public class Obligation {
 					OriginalTransactionReference24.mmRequestedCollectionDate, OriginalTransactionReference24.mmRequestedExecutionDate, PaymentTransaction74.mmOriginalRequestedExecutionDate,
 					PaymentTransaction74.mmOriginalRequestedCollectionDate, OriginalPaymentInformation7.mmRequestedCollectionDate, OriginalTransactionReference26.mmRequestedExecutionDate,
 					CorrectivePaymentInitiation2.mmRequestedCollectionDate, UnderlyingPaymentInstruction3.mmRequestedCollectionDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementDate";
 			definition = "Date and time at which a trade must be executed. For a direct debit, it is the date and time at which the creditor requests that the amount of money is to be collected from the debtor. For a credit transfer, it is the date and time at which the debtor requests the clearing agent to process the payment. For a securities trade, it is the date and time at which the securities are to be delivered or received.";
@@ -258,8 +258,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAttribute mmRequestedSettlementAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementAmount";
 			definition = "Total amount of money to be paid or received.";
@@ -306,8 +306,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Specifies whether the transaction is to be executed with a high priority.";
@@ -361,8 +361,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Specifies the trade which originates the obligation to deliver a product, cash or securities..";
@@ -408,8 +408,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionRisk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionRisk";
 			definition = "Transaction risk calculated per obligation type.";
@@ -456,8 +456,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmParentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParentObligation";
 			definition = "Obligation which is divided into several sub-obligations.";
@@ -507,8 +507,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmSubObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubObligation";
 			definition = "Specifies an obligation resulting from another existing obligation, for instance each leg of a financing agreement is a sub-obligation of the global financing obligation.";
@@ -555,8 +555,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmOffset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Offset";
 			definition = "Specifies the method used to settle a specific obligation.";
@@ -606,8 +606,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmOriginalObligationProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginalObligationProcess";
 			definition = "Obligation fulfilment process which did not extinguish the obligation but replaced it by a new one, for instance in case of netting.";
@@ -646,8 +646,8 @@ public class Obligation {
 	 */
 	public static final MMBusinessAttribute mmExposureType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExposureType";
 			definition = "Type of exposure related to this obligation.";

@@ -165,8 +165,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmStampDutyIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StampDutyIndicator";
 			definition = "Whether the net proceeds include stamp duty amount.";
@@ -214,8 +214,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmProcessingPosition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingPosition";
 			definition = "When the transaction is to be executed relative to a linked transaction.";
@@ -269,8 +269,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Process of settling securities.";
@@ -332,8 +332,8 @@ public class SecuritiesTradeExecution {
 	public static final MMBusinessAssociationEnd mmDealPrice = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmRelatedPrice);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealPrice";
 			definition = "Specifies the price of the traded financial instrument.\nThis is the deal price of the individual trade transaction. \nIf there is only one trade transaction for the execution of the trade, then the deal price could equal the executed trade price (unless, for example, the price includes commissions or rounding, or some other factor has been applied to the deal price or the executed trade price, or both).";
@@ -374,8 +374,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginAmount";
 			definition = "Difference in prices at which a dealer will buy and sell.";
@@ -429,8 +429,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAssociationEnd mmExecutedTradeQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutedTradeQuantity";
 			definition = "Quantity of financial instrument executed by the trading party.";
@@ -469,8 +469,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmOffMarketReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffMarketReason";
 			definition = "Reason for which the trade was executed off-market.";
@@ -524,8 +524,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTrade";
 			definition = "Trade which is executed through one or more execution trades.";
@@ -568,8 +568,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmDealExecutionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealExecutionAmount";
 			definition = "Deal price multiplied by the quantity of a financial instrument traded for the specific trade transaction i.e. the partially filled quantity.";
@@ -623,8 +623,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Specifies the cash delivery obligations resulting from the trade.";
@@ -673,8 +673,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Specifies the securities delivery obligations resulting from the trade.";
@@ -714,8 +714,8 @@ public class SecuritiesTradeExecution {
 	 */
 	public static final MMBusinessAttribute mmReportingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingType";
 			definition = "Specifies that a trade is to be reported to a third party.";

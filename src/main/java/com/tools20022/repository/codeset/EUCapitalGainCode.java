@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.EUCapitalGainCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether capital gain is in the scope of the European directive on
@@ -35,15 +40,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#mmCapitalGainInScope
+ * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#CapitalGainInScope
  * EUCapitalGainCode.mmCapitalGainInScope}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#mmCapitalGainOutScope
+ * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#CapitalGainOutScope
  * EUCapitalGainCode.mmCapitalGainOutScope}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#mmCapitalGainUnknown
+ * {@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#CapitalGainUnknown
  * EUCapitalGainCode.mmCapitalGainUnknown}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#mmOther
+ * <li>{@linkplain com.tools20022.repository.codeset.EUCapitalGainCode#Other
  * EUCapitalGainCode.mmOther}</li>
  * </ul>
  * </li>
@@ -70,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class EUCapitalGainCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class EUCapitalGainCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class EUCapitalGainCode {
 	 * definition} = "Capital gain is in the scope of the directive."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCapitalGainInScope = new MMCode() {
+	public static final EUCapitalGainCode CapitalGainInScope = new EUCapitalGainCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalGainInScope";
 			definition = "Capital gain is in the scope of the directive.";
-			owner_lazy = () -> EUCapitalGainCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EUCapitalGainCode.mmObject();
 			codeName = "EUSI";
 		}
 	};
@@ -124,12 +130,12 @@ public class EUCapitalGainCode {
 	 * definition} = "Capital gain is out of the scope of the directive."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCapitalGainOutScope = new MMCode() {
+	public static final EUCapitalGainCode CapitalGainOutScope = new EUCapitalGainCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalGainOutScope";
 			definition = "Capital gain is out of the scope of the directive.";
-			owner_lazy = () -> EUCapitalGainCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EUCapitalGainCode.mmObject();
 			codeName = "EUSO";
 		}
 	};
@@ -156,12 +162,12 @@ public class EUCapitalGainCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCapitalGainUnknown = new MMCode() {
+	public static final EUCapitalGainCode CapitalGainUnknown = new EUCapitalGainCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalGainUnknown";
 			definition = "Unknown whether capital gain is in or out of the scope of the directive.";
-			owner_lazy = () -> EUCapitalGainCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EUCapitalGainCode.mmObject();
 			codeName = "UKWN";
 		}
 	};
@@ -186,17 +192,21 @@ public class EUCapitalGainCode {
 	 * definition} = "Another type of EU capital gain."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final EUCapitalGainCode Other = new EUCapitalGainCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another type of EU capital gain.";
-			owner_lazy = () -> EUCapitalGainCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EUCapitalGainCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
+	final static private LinkedHashMap<String, EUCapitalGainCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected EUCapitalGainCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -204,9 +214,38 @@ public class EUCapitalGainCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUCapitalGainCode";
 				definition = "Specifies whether capital gain is in the scope of the European directive on taxation of savings income in the form of interest payments (Council Directive 2003/48/EC 3 June) for an income realised upon sale, a refund or redemption of shares and units etc.";
-				code_lazy = () -> Arrays.asList(EUCapitalGainCode.mmCapitalGainInScope, EUCapitalGainCode.mmCapitalGainOutScope, EUCapitalGainCode.mmCapitalGainUnknown, EUCapitalGainCode.mmOther);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EUCapitalGainCode.CapitalGainInScope, com.tools20022.repository.codeset.EUCapitalGainCode.CapitalGainOutScope,
+						com.tools20022.repository.codeset.EUCapitalGainCode.CapitalGainUnknown, com.tools20022.repository.codeset.EUCapitalGainCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CapitalGainInScope.getCodeName().get(), CapitalGainInScope);
+		codesByName.put(CapitalGainOutScope.getCodeName().get(), CapitalGainOutScope);
+		codesByName.put(CapitalGainUnknown.getCodeName().get(), CapitalGainUnknown);
+		codesByName.put(Other.getCodeName().get(), Other);
+	}
+
+	public static EUCapitalGainCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static EUCapitalGainCode[] values() {
+		EUCapitalGainCode[] values = new EUCapitalGainCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, EUCapitalGainCode> {
+		@Override
+		public EUCapitalGainCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(EUCapitalGainCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

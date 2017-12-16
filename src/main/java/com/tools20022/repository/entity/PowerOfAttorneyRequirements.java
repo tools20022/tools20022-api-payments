@@ -117,8 +117,8 @@ public class PowerOfAttorneyRequirements {
 	 */
 	public static final MMBusinessAttribute mmLegalRequirement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalRequirement";
 			definition = "Specifies whether the power of attorney needs to be validated by some authority.";
@@ -164,8 +164,8 @@ public class PowerOfAttorneyRequirements {
 	 */
 	public static final MMBusinessAttribute mmOtherDocumentation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherDocumentation";
 			definition = "Specifies the documents needed to obtain a valid power of attorney.";
@@ -219,8 +219,8 @@ public class PowerOfAttorneyRequirements {
 	 */
 	public static final MMBusinessAssociationEnd mmPowerOfAttorney = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PowerOfAttorney";
 			definition = "Power of attorney for which the requirements are provided.";
@@ -267,8 +267,8 @@ public class PowerOfAttorneyRequirements {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting to which the power  of attorney requirements apply.";

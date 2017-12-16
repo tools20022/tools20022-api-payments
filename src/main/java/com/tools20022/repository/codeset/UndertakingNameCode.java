@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.UndertakingNameCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the named type of the undertaking.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#mmDemandGuarantee
+ * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#DemandGuarantee
  * UndertakingNameCode.mmDemandGuarantee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#mmStandbyLetterOfCredit
+ * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#StandbyLetterOfCredit
  * UndertakingNameCode.mmStandbyLetterOfCredit}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the named type of the undertaking."</li>
  * </ul>
  */
-public class UndertakingNameCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class UndertakingNameCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class UndertakingNameCode {
 	 * definition} = "Undertaking is a demand guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDemandGuarantee = new MMCode() {
+	public static final UndertakingNameCode DemandGuarantee = new UndertakingNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DemandGuarantee";
 			definition = "Undertaking is a demand guarantee.";
-			owner_lazy = () -> UndertakingNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingNameCode.mmObject();
 			codeName = "DGAR";
 		}
 	};
@@ -114,17 +120,21 @@ public class UndertakingNameCode {
 	 * definition} = "Undertaking is a standby letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStandbyLetterOfCredit = new MMCode() {
+	public static final UndertakingNameCode StandbyLetterOfCredit = new UndertakingNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StandbyLetterOfCredit";
 			definition = "Undertaking is a standby letter of credit.";
-			owner_lazy = () -> UndertakingNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingNameCode.mmObject();
 			codeName = "STBY";
 		}
 	};
+	final static private LinkedHashMap<String, UndertakingNameCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected UndertakingNameCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +142,35 @@ public class UndertakingNameCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingNameCode";
 				definition = "Specifies the named type of the undertaking.";
-				code_lazy = () -> Arrays.asList(UndertakingNameCode.mmDemandGuarantee, UndertakingNameCode.mmStandbyLetterOfCredit);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UndertakingNameCode.DemandGuarantee, com.tools20022.repository.codeset.UndertakingNameCode.StandbyLetterOfCredit);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DemandGuarantee.getCodeName().get(), DemandGuarantee);
+		codesByName.put(StandbyLetterOfCredit.getCodeName().get(), StandbyLetterOfCredit);
+	}
+
+	public static UndertakingNameCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static UndertakingNameCode[] values() {
+		UndertakingNameCode[] values = new UndertakingNameCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, UndertakingNameCode> {
+		@Override
+		public UndertakingNameCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(UndertakingNameCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

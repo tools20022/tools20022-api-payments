@@ -37,6 +37,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Agreement
+ * Agreement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,9 +73,6 @@ import java.util.List;
  * CollateralAgreement.mmAssociatedMasterAgreement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Agreement
- * Agreement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -131,8 +131,8 @@ public class MasterAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralAgreement";
 			definition = "Collateral agreement which is governed by the related master agreement.";
@@ -175,8 +175,8 @@ public class MasterAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmMasterAgreementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterAgreementType";
 			definition = "Nature of the agreement, eg, ISDA Master Agreement or bilateral agreement.";
@@ -228,8 +228,8 @@ public class MasterAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmGovernedTrades = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GovernedTrades";
 			definition = "Trades to which the master agreement applies.";
@@ -274,8 +274,8 @@ public class MasterAgreement extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmGovernedContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GovernedContract";
 			definition = "Contract which is governed by the master agreement.";
@@ -315,8 +315,8 @@ public class MasterAgreement extends Agreement {
 	 */
 	public static final MMBusinessAttribute mmGoverningLaw = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GoverningLaw";
 			definition = "National law under which a non-deliverable contract has been agreed.";

@@ -103,8 +103,8 @@ public class MailingInstructions {
 	 */
 	public static final MMBusinessAttribute mmMailingIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MailingIndicator";
 			definition = "Indicates whether mail should be sent to an address.";
@@ -151,8 +151,8 @@ public class MailingInstructions {
 	 */
 	public static final MMBusinessAttribute mmRegistrationAddressIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationAddressIndicator";
 			definition = "Indicates whether the address is the official address of the party.";
@@ -206,8 +206,8 @@ public class MailingInstructions {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPostalAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPostalAddress";
 			definition = "Postal address for which mailing instructions are specified.";

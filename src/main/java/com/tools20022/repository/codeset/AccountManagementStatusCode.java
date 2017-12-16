@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AccountManagementStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of an account management instruction.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#Received
  * AccountManagementStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#Accepted
  * AccountManagementStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#mmProcessingOngoing
+ * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#ProcessingOngoing
  * AccountManagementStatusCode.mmProcessingOngoing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#mmSentToNextParty
+ * {@linkplain com.tools20022.repository.codeset.AccountManagementStatusCode#SentToNextParty
  * AccountManagementStatusCode.mmSentToNextParty}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of an account management instruction."</li>
  * </ul>
  */
-public class AccountManagementStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AccountManagementStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,12 +98,12 @@ public class AccountManagementStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final AccountManagementStatusCode Received = new AccountManagementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
 			definition = "The account management instruction has been received and is acknowledged.";
-			owner_lazy = () -> AccountManagementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountManagementStatusCode.mmObject();
 			codeName = "RECE";
 		}
 	};
@@ -123,12 +129,12 @@ public class AccountManagementStatusCode {
 	 * "The account management instruction has been validated and accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final AccountManagementStatusCode Accepted = new AccountManagementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
 			definition = "The account management instruction has been validated and accepted.";
-			owner_lazy = () -> AccountManagementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountManagementStatusCode.mmObject();
 			codeName = "ACCP";
 		}
 	};
@@ -156,12 +162,12 @@ public class AccountManagementStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmProcessingOngoing = new MMCode() {
+	public static final AccountManagementStatusCode ProcessingOngoing = new AccountManagementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingOngoing";
 			definition = "The account management instruction is being processed and the confirmation will follow.";
-			owner_lazy = () -> AccountManagementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountManagementStatusCode.mmObject();
 			codeName = "EXEC";
 		}
 	};
@@ -189,17 +195,21 @@ public class AccountManagementStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSentToNextParty = new MMCode() {
+	public static final AccountManagementStatusCode SentToNextParty = new AccountManagementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SentToNextParty";
 			definition = "The account management instruction has been sent to the next party, eg, the next intermediary.";
-			owner_lazy = () -> AccountManagementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountManagementStatusCode.mmObject();
 			codeName = "STNP";
 		}
 	};
+	final static private LinkedHashMap<String, AccountManagementStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AccountManagementStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -207,9 +217,38 @@ public class AccountManagementStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountManagementStatusCode";
 				definition = "Specifies the status of an account management instruction.";
-				code_lazy = () -> Arrays.asList(AccountManagementStatusCode.mmReceived, AccountManagementStatusCode.mmAccepted, AccountManagementStatusCode.mmProcessingOngoing, AccountManagementStatusCode.mmSentToNextParty);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountManagementStatusCode.Received, com.tools20022.repository.codeset.AccountManagementStatusCode.Accepted,
+						com.tools20022.repository.codeset.AccountManagementStatusCode.ProcessingOngoing, com.tools20022.repository.codeset.AccountManagementStatusCode.SentToNextParty);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(ProcessingOngoing.getCodeName().get(), ProcessingOngoing);
+		codesByName.put(SentToNextParty.getCodeName().get(), SentToNextParty);
+	}
+
+	public static AccountManagementStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AccountManagementStatusCode[] values() {
+		AccountManagementStatusCode[] values = new AccountManagementStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AccountManagementStatusCode> {
+		@Override
+		public AccountManagementStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AccountManagementStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

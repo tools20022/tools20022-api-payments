@@ -129,16 +129,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionIdentifier1
- * TransactionIdentifier1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentContext3
- * PaymentContext3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -157,6 +147,16 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmCardPayment
  * CardPaymentValidation.mmCardPayment}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionIdentifier1
+ * TransactionIdentifier1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentContext3
+ * PaymentContext3}</li>
  * </ul>
  * </li>
  * <li>
@@ -226,8 +226,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAssociationEnd mmPointOfInteraction = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardTransaction2.mmPOI, CardEntry2.mmPOI);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PointOfInteraction";
 			definition = "Describes the Point of Interaction through which the payment by card was initiated.";
@@ -279,8 +279,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmCardPaymentService = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardAggregated1.mmAdditionalService, CardIndividualTransaction2.mmAdditionalService);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentService";
 			definition = "Type of service provided by the transaction.";
@@ -340,8 +340,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmTransactionIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionIdentifier1.mmTransactionReference, CardIndividualTransaction2.mmTransactionIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionIdentification";
 			definition = "Identification of the transaction assigned by the POI (Point Of Interaction).";
@@ -398,8 +398,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmTransactionDateTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionIdentifier1.mmTransactionDateTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionDateTime";
 			definition = "Local date and time of the transaction assigned by the POI (Point Of Interaction).";
@@ -456,8 +456,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmICCRelatedData = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmICCRelatedData);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ICCRelatedData";
 			definition = "Data related to the interface of an integrated circuit card application.";
@@ -511,8 +511,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPayment";
 			definition = "Card payment which is at the origin of the acquiring process.";
@@ -564,8 +564,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmCardPresent = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmCardPresent);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPresent";
 			definition = "Indicates whether the transaction has been initiated by a card physically present or not.";
@@ -623,8 +623,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmCardholderPresent = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmCardholderPresent);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderPresent";
 			definition = "Indicates whether the transaction has been initiated in presence of the cardholder or not.";
@@ -679,8 +679,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmOnLineContext = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmOnLineContext);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLineContext";
 			definition = "On-line or off-line context of the transaction.";
@@ -736,8 +736,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmAttendanceContext = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAttendanceContext);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendanceContext";
 			definition = "Human attendance at the POI location during the transaction.";
@@ -792,8 +792,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmTransactionEnvironment = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmTransactionEnvironment);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionEnvironment";
 			definition = "Indicates the environment of the transaction.";
@@ -851,8 +851,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmTransactionChannel = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmTransactionChannel);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionChannel";
 			definition = "Identifies the type of the communication channels used by the cardholder to the acceptor system.";
@@ -910,8 +910,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmAttendantMessageCapable = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAttendantMessageCapable);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendantMessageCapable";
 			definition = "Indicates whether a message can be sent or not on an attendant display (attendant display present or not).";
@@ -966,8 +966,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmAttendantLanguage = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAttendantLanguage);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AttendantLanguage";
 			definition = "Language used to display messages to the attendant.";
@@ -1022,8 +1022,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmCardDataEntryMode = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmCardDataEntryMode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardDataEntryMode";
 			definition = "Entry mode of the card data.";
@@ -1078,8 +1078,8 @@ public class CardPaymentAcquiring {
 	public static final MMBusinessAttribute mmFallbackIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmFallbackIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FallbackIndicator";
 			definition = "Indicator of a transaction fallback.";
@@ -1137,8 +1137,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAssociationEnd mmTMSTrigger = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TMSTrigger";
 			definition = "Instructs the POI (Point Of Interaction) how to contact the host of the terminal management system (TMS), to initiate the maintenance of the terminal.";
@@ -1179,8 +1179,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmInitiatorTransactionIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitiatorTransactionIdentifier";
 			definition = "Identification of the transaction assigned by the initiating party for the recipient party.";
@@ -1229,8 +1229,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmReversal = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reversal";
 			definition = "Notify that a previous transaction has to be reversed if this original transaction has been approved by the acquirer.";
@@ -1275,8 +1275,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmInterchangeData = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterchangeData";
 			definition = "Interchange information related to the card scheme.";
@@ -1324,8 +1324,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmUnattendedLevelCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnattendedLevelCategory";
 			definition = "Transaction category level on an unattended POI (Point Of Interaction).";
@@ -1379,8 +1379,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAssociationEnd mmValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Validation";
 			definition = "Results and parameters of the card payment verification.";
@@ -1422,8 +1422,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmCompletionRequired = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CompletionRequired";
 			definition = "Indicates whether the acquirer requires a further exchange after the completion of the transaction.";
@@ -1471,8 +1471,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmActionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionType";
 			definition = "Type of action to be performed by the POI (Point Of Interaction) system.";
@@ -1518,8 +1518,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmActionMessage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionMessage";
 			definition = "Message to be displayed or printed to the cardholder or the cashier.";
@@ -1565,8 +1565,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmCaptureIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CaptureIndicator";
 			definition = "Indicates whether the transaction is captured or not.";
@@ -1614,8 +1614,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmRecipientTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RecipientTransactionIdentification";
 			definition = "Identification of the transaction assigned by the recipient party for the initiating party.";
@@ -1664,8 +1664,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAttribute mmLocation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location category of the place where the merchant actually performed the transaction.";
@@ -1718,8 +1718,8 @@ public class CardPaymentAcquiring {
 	 */
 	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country of the merchant where the transaction took place.";

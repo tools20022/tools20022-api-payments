@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.QuantityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Quantity is unknown by the sender or has not been established.
@@ -31,15 +36,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#mmOpen
+ * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#Open
  * QuantityCode.mmOpen}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.QuantityCode#mmUnknownQuantity
+ * {@linkplain com.tools20022.repository.codeset.QuantityCode#UnknownQuantity
  * QuantityCode.mmUnknownQuantity}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.QuantityCode#mmAllSecurities
+ * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#AllSecurities
  * QuantityCode.mmAllSecurities}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#mmAnyAndAll
+ * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#AnyAndAll
  * QuantityCode.mmAnyAndAll}</li>
  * </ul>
  * </li>
@@ -65,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Quantity is unknown by the sender or has not been established."</li>
  * </ul>
  */
-public class QuantityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class QuantityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +93,12 @@ public class QuantityCode {
 	 * definition} = "Quantity has not been established."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOpen = new MMCode() {
+	public static final QuantityCode Open = new QuantityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Open";
 			definition = "Quantity has not been established.";
-			owner_lazy = () -> QuantityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QuantityCode.mmObject();
 			codeName = "OPEN";
 		}
 	};
@@ -118,12 +123,12 @@ public class QuantityCode {
 	 * "Quantity is unknown by the sender or has not been established."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknownQuantity = new MMCode() {
+	public static final QuantityCode UnknownQuantity = new QuantityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnknownQuantity";
 			definition = "Quantity is unknown by the sender or has not been established.";
-			owner_lazy = () -> QuantityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QuantityCode.mmObject();
 			codeName = "UKWN";
 		}
 	};
@@ -150,12 +155,12 @@ public class QuantityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAllSecurities = new MMCode() {
+	public static final QuantityCode AllSecurities = new QuantityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllSecurities";
 			definition = "Instruction applies to the entire eligible balance of underlying securities.";
-			owner_lazy = () -> QuantityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QuantityCode.mmObject();
 			codeName = "QALL";
 		}
 	};
@@ -182,17 +187,21 @@ public class QuantityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAnyAndAll = new MMCode() {
+	public static final QuantityCode AnyAndAll = new QuantityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AnyAndAll";
 			definition = "Instruction applies to the entire eligible balance of underlying securities.";
-			owner_lazy = () -> QuantityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.QuantityCode.mmObject();
 			codeName = "ANYA";
 		}
 	};
+	final static private LinkedHashMap<String, QuantityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected QuantityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -200,9 +209,38 @@ public class QuantityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuantityCode";
 				definition = "Quantity is unknown by the sender or has not been established.";
-				code_lazy = () -> Arrays.asList(QuantityCode.mmOpen, QuantityCode.mmUnknownQuantity, QuantityCode.mmAllSecurities, QuantityCode.mmAnyAndAll);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.QuantityCode.Open, com.tools20022.repository.codeset.QuantityCode.UnknownQuantity, com.tools20022.repository.codeset.QuantityCode.AllSecurities,
+						com.tools20022.repository.codeset.QuantityCode.AnyAndAll);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Open.getCodeName().get(), Open);
+		codesByName.put(UnknownQuantity.getCodeName().get(), UnknownQuantity);
+		codesByName.put(AllSecurities.getCodeName().get(), AllSecurities);
+		codesByName.put(AnyAndAll.getCodeName().get(), AnyAndAll);
+	}
+
+	public static QuantityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static QuantityCode[] values() {
+		QuantityCode[] values = new QuantityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, QuantityCode> {
+		@Override
+		public QuantityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(QuantityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

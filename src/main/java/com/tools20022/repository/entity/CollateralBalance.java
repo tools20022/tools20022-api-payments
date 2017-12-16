@@ -142,8 +142,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralDescription = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralDescription";
 			definition = "Describes the collateral included in the collateral balance,";
@@ -182,8 +182,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAttribute mmHeldAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HeldAmount";
 			definition = "Specifies the collateral currently held.";
@@ -232,8 +232,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAttribute mmPriorAgreed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PriorAgreed";
 			definition = "Specifies the collateral which has been agreed but is not yet transferred.";
@@ -287,8 +287,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginRelatedRiskCalculation";
 			definition = "Risk coverage for which a current variation margin is provided.";
@@ -328,8 +328,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAttribute mmInTransit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InTransit";
 			definition = "Specifies the collateral which is being transferred.";
@@ -383,8 +383,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmountRelatedRiskCalculation";
 			definition = "Risk coverage for which a collateral balance is provided.";
@@ -434,8 +434,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralInterestManagement";
 			definition = "Collateral interest management for which an opening balance is specified.";
@@ -485,8 +485,8 @@ public class CollateralBalance {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralInterestManagement";
 			definition = "Collateral interest management for which a closing balance is specified.";

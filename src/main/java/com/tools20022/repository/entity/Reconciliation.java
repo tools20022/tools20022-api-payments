@@ -125,8 +125,8 @@ public class Reconciliation {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System which provides the reconciliation process.";
@@ -171,8 +171,8 @@ public class Reconciliation {
 	 */
 	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document submitted in a reconciliation process.";
@@ -218,8 +218,8 @@ public class Reconciliation {
 	 */
 	public static final MMBusinessAssociationEnd mmReconciledTrades = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReconciledTrades";
 			definition = "Trades which are reconciled with entries in an account.";
@@ -274,8 +274,8 @@ public class Reconciliation {
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionCertificate1.mmAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account for which a reconciliation process is performed.";

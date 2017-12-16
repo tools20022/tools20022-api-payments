@@ -40,6 +40,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -283,8 +285,6 @@ import java.util.List;
  * ComponentSecurity.mmSecurity}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -363,8 +363,8 @@ public class Security extends Asset {
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmContractDocumentIdentification, EntryTransaction8.mmFinancialInstrumentIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Way(s) of identifying the security.";
@@ -401,8 +401,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmRegisteredDistributionCountry = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredDistributionCountry";
 			definition = "Country in which the processing characteristic applies.";
@@ -446,8 +446,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmDenominationCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DenominationCurrency";
 			definition = "Currency in which a security is issued or redenominated.";
@@ -492,8 +492,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmRegistrationForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationForm";
 			definition = "Specifies the form, ie, ownership, of the security.";
@@ -541,8 +541,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmDematerialisedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DematerialisedIndicator";
 			definition = "Indicates whether a security exists only as an electronic record, ie, there is no physical document representing the security.";
@@ -590,8 +590,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmEUSavingsDirective = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EUSavingsDirective";
 			definition = "Indicates whether the investment fund class is subject to the European Union Saving Directive.";
@@ -643,8 +643,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Specifies the quantity associated with a security.";
@@ -690,8 +690,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmFees = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fees";
 			definition = "Fees related to securities.";
@@ -736,8 +736,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pricing";
 			definition = "Information on the price of the security.";
@@ -782,8 +782,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account on which the security is held.";
@@ -829,8 +829,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingMarket";
 			definition = "Market(s) on which the security is traded.";
@@ -875,8 +875,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfListing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfListing";
 			definition = "Market(s) on which the security is listed.";
@@ -922,8 +922,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Registration";
 			definition = "Information related to registration of securities.";
@@ -969,8 +969,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRestriction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Restriction";
 			definition = "Regulatory restriction(s) linked to the security.";
@@ -1025,8 +1025,8 @@ public class Security extends Asset {
 	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmCorporateAction);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateEvent";
 			definition = "Corporate event linked to the security";
@@ -1064,8 +1064,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmTemporaryFinancialInstrumentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TemporaryFinancialInstrumentIndicator";
 			definition = "Specifies that the security is a temporary security.";
@@ -1109,8 +1109,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmAvailableDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableDate";
 			definition = "Date on which securities become available for sale.";
@@ -1157,8 +1157,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmDeclarationDetails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclarationDetails";
 			definition = "Provides declaration details narrative relative to the financial instrument, eg, beneficial ownership.";
@@ -1209,8 +1209,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Spread that uses the security as benchmark reference.";
@@ -1255,8 +1255,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Dividend per financial instrument.";
@@ -1301,8 +1301,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Balance of the account which holds a specific security.";
@@ -1344,8 +1344,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmFungibleIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FungibleIndicator";
 			definition = "Indicates whether a security is interchangeable, ie, the security is allowed to be replaced by another security, without loss of value.";
@@ -1390,8 +1390,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmAppearance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Appearance";
 			definition = "Specifies the deliverability of a security.";
@@ -1438,8 +1438,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmNearTermPositionLimit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NearTermPositionLimit";
 			definition = "Position limit in the near-term contract for a given exchange-traded product.";
@@ -1484,8 +1484,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmContractSettlementMonth = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractSettlementMonth";
 			definition = "Specifies when the contract (i.e. MBS/TBA) will settle.";
@@ -1530,8 +1530,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmMinimumTradingPricingIncrement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumTradingPricingIncrement";
 			definition = "Minimum price increase for a given exchange-traded Instrument";
@@ -1582,8 +1582,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRating = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rating";
 			definition = "Rating(s) of the security.";
@@ -1628,8 +1628,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmCouponAttached = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CouponAttached";
 			definition = "Coupon information of the security.";
@@ -1676,8 +1676,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Indicates the market sector the security is classified as pharmaceuticals, automobile, housing, etc.";
@@ -1719,8 +1719,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmWarrantAttachedOnDelivery = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WarrantAttachedOnDelivery";
 			definition = "Indicates whether the warrants on a financial instrument (which has been traded cum warrants) will be attached on delivery.";
@@ -1766,8 +1766,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmStrippableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrippableIndicator";
 			definition = "Indicates whether the interest is separable from the principal.";
@@ -1811,8 +1811,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmFirstDealingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstDealingDate";
 			definition = "Date on which new securities begin trading.";
@@ -1864,8 +1864,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxDetails = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxDetails";
 			definition = "Tax details of the security.";
@@ -1910,8 +1910,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Trade in which the security is involved.";
@@ -1960,8 +1960,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRegistrationJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationJurisdiction";
 			definition = "Jurisdiction (country, county, state, province, city) in which the security is legally recorded for regulatory and/or tax purposes.";
@@ -2010,8 +2010,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies roles played by a party that are linked to the handling of securities but not related to a specific process.";
@@ -2057,8 +2057,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurityStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityStatus";
 			definition = "Specifies the status of the security within its lifecycle.";
@@ -2105,8 +2105,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmModification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Modification";
 			definition = "Modification process which applies to a specific security.";
@@ -2152,8 +2152,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionSchedule";
 			definition = "RedemptionSchedule(s) linked to the security.";
@@ -2199,8 +2199,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Settlement of a specific security.";
@@ -2245,8 +2245,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesTransfer";
 			definition = "Transfer process in which that security is transferred..";
@@ -2296,8 +2296,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionStandingInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStandingInstructions";
 			definition = "Standing instructions related to the security in the context of corporate action.";
@@ -2341,8 +2341,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quote";
 			definition = "Quote of a security.";
@@ -2388,8 +2388,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Order for which a specific security is indicated.";
@@ -2438,8 +2438,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedVariableInterest";
 			definition = "Variable interest parameters specified for interest related to a financial instrument.";
@@ -2490,8 +2490,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Conversion";
 			definition = "Information on the conversion exchange of an entitlement or of preferred equities or of convertible bonds, into another form of securities, usually common equities.";
@@ -2536,8 +2536,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmComponentSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentSecurity";
 			definition = "The security is part of the component security.";
@@ -2578,8 +2578,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmRecompositionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RecompositionIndicator";
 			definition = "Indicates whether the interest and the principal can be recomposed. This is the reverse operation of stripping.";
@@ -2623,8 +2623,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmSeries = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Series";
 			definition = "Identifier that links multiple security classes.";
@@ -2672,8 +2672,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmPercentageOfDebtClaim = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfDebtClaim";
 			definition = "Percentage of the underlying assets of a fund that represents a debt and is in the scope of the EU Savings directive.";
@@ -2721,8 +2721,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmCoverRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverRate";
 			definition = "Amount of dividends the issuer intends to pay out the following year based on their normalised earnings.";
@@ -2768,8 +2768,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmMaturityRedemption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MaturityRedemption";
 			definition = "Return of an investor's principal in a security at maturity.";
@@ -2822,8 +2822,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedMarginCall";
 			definition = "Margin call for which the associated securities are specified.";
@@ -2872,8 +2872,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmCloseLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CloseLink";
 			definition = "Situation in which two entities are linked because one of these entities owns some of the capital of the other one, or has a control relationship with it.";
@@ -2915,8 +2915,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmPotentialEuroSystemEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PotentialEuroSystemEligibility";
 			definition = "Indicates that the security is intended to be held in a manner that could allow the Eurosystem eligibility.";
@@ -2968,8 +2968,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantity";
 			definition = "Indicates the minimum tradable quantity of a security.";
@@ -3012,8 +3012,8 @@ public class Security extends Asset {
 	 */
 	public static final MMBusinessAttribute mmRestrictedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictedIndicator";
 			definition = "Identifies if the securities is restricted or not (as per Rule 144 of the Securities and Exchange Commission,that sets the conditions under which restricted, unregistered and control securities can be sold).";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MeetingDateStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies the possible statuses of a meeting date.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#mmTentative
+ * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#Tentative
  * MeetingDateStatusCode.mmTentative}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#mmConfirmed
+ * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#Confirmed
  * MeetingDateStatusCode.mmConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#mmCancelled
+ * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#Cancelled
  * MeetingDateStatusCode.mmCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#mmNoQuorum
+ * {@linkplain com.tools20022.repository.codeset.MeetingDateStatusCode#NoQuorum
  * MeetingDateStatusCode.mmNoQuorum}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies the possible statuses of a meeting date."</li>
  * </ul>
  */
-public class MeetingDateStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MeetingDateStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class MeetingDateStatusCode {
 	 * definition} = "Meeting date is tentative."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTentative = new MMCode() {
+	public static final MeetingDateStatusCode Tentative = new MeetingDateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tentative";
 			definition = "Meeting date is tentative.";
-			owner_lazy = () -> MeetingDateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MeetingDateStatusCode.mmObject();
 			codeName = "TNTA";
 		}
 	};
@@ -120,12 +126,12 @@ public class MeetingDateStatusCode {
 	 * definition} = "Meeting date is confirmed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmConfirmed = new MMCode() {
+	public static final MeetingDateStatusCode Confirmed = new MeetingDateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Confirmed";
 			definition = "Meeting date is confirmed.";
-			owner_lazy = () -> MeetingDateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MeetingDateStatusCode.mmObject();
 			codeName = "CNFR";
 		}
 	};
@@ -150,12 +156,12 @@ public class MeetingDateStatusCode {
 	 * definition} = "Meeting date has been cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelled = new MMCode() {
+	public static final MeetingDateStatusCode Cancelled = new MeetingDateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cancelled";
 			definition = "Meeting date has been cancelled.";
-			owner_lazy = () -> MeetingDateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MeetingDateStatusCode.mmObject();
 			codeName = "CANC";
 		}
 	};
@@ -181,17 +187,21 @@ public class MeetingDateStatusCode {
 	 * "Meeting could not take place as the quorum was not reached."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoQuorum = new MMCode() {
+	public static final MeetingDateStatusCode NoQuorum = new MeetingDateStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoQuorum";
 			definition = "Meeting could not take place as the quorum was not reached.";
-			owner_lazy = () -> MeetingDateStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MeetingDateStatusCode.mmObject();
 			codeName = "NOQO";
 		}
 	};
+	final static private LinkedHashMap<String, MeetingDateStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MeetingDateStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -199,9 +209,38 @@ public class MeetingDateStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingDateStatusCode";
 				definition = "Identifies the possible statuses of a meeting date.";
-				code_lazy = () -> Arrays.asList(MeetingDateStatusCode.mmTentative, MeetingDateStatusCode.mmConfirmed, MeetingDateStatusCode.mmCancelled, MeetingDateStatusCode.mmNoQuorum);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MeetingDateStatusCode.Tentative, com.tools20022.repository.codeset.MeetingDateStatusCode.Confirmed,
+						com.tools20022.repository.codeset.MeetingDateStatusCode.Cancelled, com.tools20022.repository.codeset.MeetingDateStatusCode.NoQuorum);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Tentative.getCodeName().get(), Tentative);
+		codesByName.put(Confirmed.getCodeName().get(), Confirmed);
+		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
+		codesByName.put(NoQuorum.getCodeName().get(), NoQuorum);
+	}
+
+	public static MeetingDateStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MeetingDateStatusCode[] values() {
+		MeetingDateStatusCode[] values = new MeetingDateStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MeetingDateStatusCode> {
+		@Override
+		public MeetingDateStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MeetingDateStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

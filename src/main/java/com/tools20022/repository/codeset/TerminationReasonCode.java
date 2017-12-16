@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TerminationReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the termination reason.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#mmUnderlyingBusinessFinished
+ * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#UnderlyingBusinessFinished
  * TerminationReasonCode.mmUnderlyingBusinessFinished}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#mmWarrantyObligationPeriodExpired
+ * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#WarrantyObligationPeriodExpired
  * TerminationReasonCode.mmWarrantyObligationPeriodExpired}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#mmTenderNonAcceptance
+ * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#TenderNonAcceptance
  * TerminationReasonCode.mmTenderNonAcceptance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#mmReductionTermsFulfilled
+ * {@linkplain com.tools20022.repository.codeset.TerminationReasonCode#ReductionTermsFulfilled
  * TerminationReasonCode.mmReductionTermsFulfilled}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the termination reason."</li>
  * </ul>
  */
-public class TerminationReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TerminationReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class TerminationReasonCode {
 	 * "Reason for termination is underlying business has finished."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnderlyingBusinessFinished = new MMCode() {
+	public static final TerminationReasonCode UnderlyingBusinessFinished = new TerminationReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnderlyingBusinessFinished";
 			definition = "Reason for termination is underlying business has finished.";
-			owner_lazy = () -> TerminationReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminationReasonCode.mmObject();
 			codeName = "BUFI";
 		}
 	};
@@ -122,12 +128,12 @@ public class TerminationReasonCode {
 	 * "Reason for termination is warranty obligation period has expired."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWarrantyObligationPeriodExpired = new MMCode() {
+	public static final TerminationReasonCode WarrantyObligationPeriodExpired = new TerminationReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WarrantyObligationPeriodExpired";
 			definition = "Reason for termination is warranty obligation period has expired.";
-			owner_lazy = () -> TerminationReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminationReasonCode.mmObject();
 			codeName = "WOEX";
 		}
 	};
@@ -152,12 +158,12 @@ public class TerminationReasonCode {
 	 * definition} = "Reason for termination is non-acceptance of a tender."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTenderNonAcceptance = new MMCode() {
+	public static final TerminationReasonCode TenderNonAcceptance = new TerminationReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TenderNonAcceptance";
 			definition = "Reason for termination is non-acceptance of a tender.";
-			owner_lazy = () -> TerminationReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminationReasonCode.mmObject();
 			codeName = "NOAC";
 		}
 	};
@@ -183,17 +189,21 @@ public class TerminationReasonCode {
 	 * "Reason for termination is reduction terms have been fulfilled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReductionTermsFulfilled = new MMCode() {
+	public static final TerminationReasonCode ReductionTermsFulfilled = new TerminationReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReductionTermsFulfilled";
 			definition = "Reason for termination is reduction terms have been fulfilled.";
-			owner_lazy = () -> TerminationReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminationReasonCode.mmObject();
 			codeName = "REFU";
 		}
 	};
+	final static private LinkedHashMap<String, TerminationReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TerminationReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -201,10 +211,38 @@ public class TerminationReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminationReasonCode";
 				definition = "Specifies the termination reason.";
-				code_lazy = () -> Arrays.asList(TerminationReasonCode.mmUnderlyingBusinessFinished, TerminationReasonCode.mmWarrantyObligationPeriodExpired, TerminationReasonCode.mmTenderNonAcceptance,
-						TerminationReasonCode.mmReductionTermsFulfilled);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminationReasonCode.UnderlyingBusinessFinished, com.tools20022.repository.codeset.TerminationReasonCode.WarrantyObligationPeriodExpired,
+						com.tools20022.repository.codeset.TerminationReasonCode.TenderNonAcceptance, com.tools20022.repository.codeset.TerminationReasonCode.ReductionTermsFulfilled);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(UnderlyingBusinessFinished.getCodeName().get(), UnderlyingBusinessFinished);
+		codesByName.put(WarrantyObligationPeriodExpired.getCodeName().get(), WarrantyObligationPeriodExpired);
+		codesByName.put(TenderNonAcceptance.getCodeName().get(), TenderNonAcceptance);
+		codesByName.put(ReductionTermsFulfilled.getCodeName().get(), ReductionTermsFulfilled);
+	}
+
+	public static TerminationReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TerminationReasonCode[] values() {
+		TerminationReasonCode[] values = new TerminationReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TerminationReasonCode> {
+		@Override
+		public TerminationReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TerminationReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

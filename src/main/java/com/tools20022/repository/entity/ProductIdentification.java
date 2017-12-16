@@ -116,8 +116,8 @@ public class ProductIdentification {
 	public static final MMBusinessAttribute mmIdentifier = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Product2.mmProductCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identifier";
 			definition = "Specifies the product identifier.";
@@ -170,8 +170,8 @@ public class ProductIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the product for which an identification is specified.";
@@ -212,8 +212,8 @@ public class ProductIdentification {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of product identifier by means of a code.";
@@ -258,8 +258,8 @@ public class ProductIdentification {
 	 */
 	public static final MMBusinessAttribute mmGlobalSerialIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GlobalSerialIdentifier";
 			definition = "Unique global serial identifier for a product instance.";

@@ -153,8 +153,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account on which the entitlement is calculated.";
@@ -204,8 +204,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEventNotification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEventNotification";
 			definition = "Service which consists in notifying the investor or its agent of a corporate event.";
@@ -255,8 +255,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "Distribution of cash or securities as a result of a corporate action election.";
@@ -306,8 +306,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionOptionServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOptionServicing";
 			definition = "Service which consists in notifying the investor or its entitlement per option.";
@@ -355,8 +355,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Event";
 			definition = "Specifies the event which is at the origin of the action.";
@@ -406,8 +406,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionElection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionElection";
 			definition = "Service which consists in validating, calculating and transferring the investor's instruction.";
@@ -455,8 +455,8 @@ public class CorporateActionServicing {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEntitlement";
 			definition = "Calculation of the proceeds based on the balance in the account.";

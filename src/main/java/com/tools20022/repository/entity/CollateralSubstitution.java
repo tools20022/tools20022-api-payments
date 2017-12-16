@@ -121,8 +121,8 @@ public class CollateralSubstitution {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies if the collateral that is substituted was posted against the variation margin or the independent amount.";
@@ -168,8 +168,8 @@ public class CollateralSubstitution {
 	 */
 	public static final MMBusinessAttribute mmAcceptedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedAmount";
 			definition = "Provides the accepted collateral substitution amount.";
@@ -216,8 +216,8 @@ public class CollateralSubstitution {
 	 */
 	public static final MMBusinessAttribute mmRejectedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectedAmount";
 			definition = "Specifies the collateral substitution amount that is rejected.";
@@ -272,8 +272,8 @@ public class CollateralSubstitution {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";
@@ -321,8 +321,8 @@ public class CollateralSubstitution {
 	 */
 	public static final MMBusinessAssociationEnd mmNewCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NewCollateral";
 			definition = "Specifies the collateral which is replacing the returned one.";

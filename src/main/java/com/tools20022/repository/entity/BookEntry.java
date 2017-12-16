@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.CreditInstrument
+ * CreditInstrument}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -81,9 +84,6 @@ import java.util.List;
  * FundsCashFlow.mmFundRedemptionAccountEntry}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.CreditInstrument
- * CreditInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -143,8 +143,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Specifies the amount transferred on the account. An account entry may result in several cash entries for instance net amount (credited) and charges (debited).";
@@ -190,8 +190,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmDebitEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitEntry";
 			definition = "Specifies the debit entry resuling from a settlement instruction.";
@@ -237,8 +237,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditEntry";
 			definition = "Specifies the credit entry resuling from a settlement instruction.";
@@ -280,8 +280,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAttribute mmTransferAdvice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferAdvice";
 			definition = "Indicates that when an amount of money has been transferred in the books of the account servicer, an advice should be sent back to the account owner.";
@@ -334,8 +334,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmFundSubscriptionCashInFlow = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundSubscriptionCashInFlow";
 			definition = "Amount of money received from investors as a result of a subscription.";
@@ -382,8 +382,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmFundRedemptionCashOutFlow = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundRedemptionCashOutFlow";
 			definition = "Amount of money paid to investors as a result of a redemption.";
@@ -430,8 +430,8 @@ public class BookEntry extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedSettlementInstruction";
 			definition = "Related settlement instruction wich is the source of the book entry.";

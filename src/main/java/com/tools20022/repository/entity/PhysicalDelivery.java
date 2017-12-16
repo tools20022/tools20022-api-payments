@@ -122,8 +122,8 @@ public class PhysicalDelivery {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransfer";
 			definition = "Transfer process which requires physical delivery of the securities.";
@@ -166,8 +166,8 @@ public class PhysicalDelivery {
 	 */
 	public static final MMBusinessAttribute mmRegisteredAddressIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredAddressIndicator";
 			definition = "Indicates whether the address for the physical delivery is the registered address.";
@@ -221,8 +221,8 @@ public class PhysicalDelivery {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuedCertificateNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedCertificateNumber";
 			definition = "Certificate representing a security that is delivered.";
@@ -269,8 +269,8 @@ public class PhysicalDelivery {
 	 */
 	public static final MMBusinessAssociationEnd mmAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Address";
 			definition = "Address for physical delivery.";
@@ -310,8 +310,8 @@ public class PhysicalDelivery {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of delivery.";

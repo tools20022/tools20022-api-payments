@@ -36,6 +36,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Charges Charges}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -71,8 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * RateAndAmount.mmEarlySolicitationFeeCorporateActionParameters}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Charges Charges}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -130,8 +130,8 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateAction";
 			definition = "Corporate action for which fees and charges are specified.";
@@ -184,8 +184,8 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 */
 	public static final MMBusinessAssociationEnd mmSolicitationFee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SolicitationFee";
 			definition = "Cash amount made available in a corporate event in order to encourage participation in the event or to vote with management's position. Payment is made to a third party who has solicited an entity to take part in the offer.\r\nAlso called consent fee.";
@@ -235,8 +235,8 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 */
 	public static final MMBusinessAssociationEnd mmEarlySolicitationFeeRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarlySolicitationFeeRate";
 			definition = "Cash rate made available, as an incentive, in addition to the solicitation fee, in order to encourage early participation in an offer.";
@@ -283,8 +283,8 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 */
 	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commission";
 			definition = "Commission associated with a corporate action.";

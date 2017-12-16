@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Clearing Clearing}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,8 +72,6 @@ import java.util.List;
  * Novation.mmSecuritiesClearing}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Clearing Clearing}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -128,8 +128,8 @@ public class SecuritiesClearing extends Clearing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Settlement process performed as part of the securities clearing.";
@@ -175,8 +175,8 @@ public class SecuritiesClearing extends Clearing {
 	 */
 	public static final MMBusinessAssociationEnd mmBuyIn = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyIn";
 			definition = "Buy-in process performed as part of the securities clearing.";
@@ -222,8 +222,8 @@ public class SecuritiesClearing extends Clearing {
 	 */
 	public static final MMBusinessAssociationEnd mmNovation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Novation";
 			definition = "Novation process performed as part of the securities clearing.";
@@ -269,8 +269,8 @@ public class SecuritiesClearing extends Clearing {
 	 */
 	public static final MMBusinessAssociationEnd mmNetting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Netting";
 			definition = "Netting process performed as part of the securities clearing.";

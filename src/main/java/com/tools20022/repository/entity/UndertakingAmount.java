@@ -125,8 +125,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which an amount is specified.";
@@ -166,8 +166,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of the undertaking.";
@@ -223,8 +223,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmTolerance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tolerance";
 			definition = "Percentage (original or updated in case of amendment) by which the amount claimed under the undertaking may vary.";
@@ -267,8 +267,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAttribute mmBalanceAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BalanceAmount";
 			definition = "Calculated undertaking available balance amount resulting from the application of the variation amount.";
@@ -317,8 +317,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Qualification of the costs and other amounts covered by the amount of the undertaking.";
@@ -370,8 +370,8 @@ public class UndertakingAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest associated with the undertaking amount.";

@@ -238,19 +238,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice
- * YieldedOrValueType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.PriceRateOrAmountChoice
- * PriceRateOrAmountChoice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Price2 Price2}</li>
- * <li>{@linkplain com.tools20022.repository.choice.TransactionPrice3Choice
- * TransactionPrice3Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -414,6 +401,19 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice
+ * YieldedOrValueType1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.PriceRateOrAmountChoice
+ * PriceRateOrAmountChoice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Price2 Price2}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.TransactionPrice3Choice
+ * TransactionPrice3Choice}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -460,8 +460,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmPriceMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceMethod";
 			definition = "Type of pricing calculation method.";
@@ -515,8 +515,8 @@ public class SecuritiesPricing {
 	public static final MMBusinessAttribute mmPriceType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Price2.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceType";
 			definition = "Type and information about a price.";
@@ -566,8 +566,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmCumDividendIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CumDividendIndicator";
 			definition = "Indicates whether the dividend is included, ie, cum-dividend, in the executed price. When the dividend is not included, the price will be ex-dividend.";
@@ -613,8 +613,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmCalculationBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationBasis";
 			definition = "Ratio applied on the non-adjusted price.";
@@ -668,8 +668,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceChangeRelatedStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChangeRelatedStatistics";
 			definition = "Valuation statistics for which a change of price is specified.";
@@ -717,8 +717,8 @@ public class SecuritiesPricing {
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PriceRateOrAmountChoice.mmRate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Price expressed as a rate, ie, percentage.";
@@ -772,8 +772,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmHighestPriceValueRelatedStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HighestPriceValueRelatedStatistics";
 			definition = "Valuation statistics for which a highest price value is specified.";
@@ -821,8 +821,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmLowestPriceValueRelatedStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LowestPriceValueRelatedStatistics";
 			definition = "Valuation statistics for which a lowest price value is specified.";
@@ -868,8 +868,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Identifies the security for which a price is given.";
@@ -916,8 +916,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTradeExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeExecution";
 			definition = "Trade execution for which a deal price is specified.";
@@ -969,8 +969,8 @@ public class SecuritiesPricing {
 	public static final MMBusinessAttribute mmYielded = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldedOrValueType1Choice.mmYielded);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Yielded";
 			definition = "Indicates whether the price is expressed as a yield (yield is the annual rate of return expressed as a percentage).";
@@ -1026,8 +1026,8 @@ public class SecuritiesPricing {
 	public static final MMBusinessAttribute mmTypeOfRate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldedOrValueType1Choice.mmValueType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfRate";
 			definition = "Type of value in which the price (as a rate)  is expressed.";
@@ -1080,8 +1080,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmDerivative = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Derivative";
 			definition = "Derivative for which an exercise price is specified.";
@@ -1126,8 +1126,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedWarrant = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedWarrant";
 			definition = "Warrant for which a subscription price is provided.";
@@ -1176,8 +1176,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesConversion";
 			definition = "Securities conversion process for which a conversion price is specified.";
@@ -1224,8 +1224,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmLotBreakdown = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotBreakdown";
 			definition = "Lot for which a price is specified.";
@@ -1266,8 +1266,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmTypeOfAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfAmount";
 			definition = "Type of value in which the price (as a rate)  is expressed.";
@@ -1322,8 +1322,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmExercisePriceRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePriceRelatedEvent";
 			definition = "Corporate action event for which an exercise price is provided.";
@@ -1374,8 +1374,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmGenericCashPriceReceivedPerProductRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericCashPriceReceivedPerProductRelatedEvent";
 			definition = "Corporate action event for which a generic cash price received per product is provided.";
@@ -1423,8 +1423,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmAmountPricePerFinancialInstrumentQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountPricePerFinancialInstrumentQuantity";
 			definition = "Price expressed as an amount per a quantity of financial instruments.";
@@ -1471,8 +1471,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmAmountPricePerAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountPricePerAmount";
 			definition = "Price expressed as an amount per another amount.";
@@ -1523,8 +1523,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmGenericCashPricePaidPerProductRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericCashPricePaidPerProductRelatedEvent";
 			definition = "Corporate action event for which a generic cash price paid per product is provided.";
@@ -1574,8 +1574,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceCalculationPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceCalculationPeriod";
 			definition = "Period during which the price of a security is determined (For outturn securities).";
@@ -1626,8 +1626,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmCashInLieuOfSharePriceRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashInLieuOfSharePriceRelatedEvent";
 			definition = "Corporate action event for which a cash in lieu of share price is provided.";
@@ -1678,8 +1678,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmOverSubscriptionDepositPriceRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverSubscriptionDepositPriceRelatedEvent";
 			definition = "Corporate action event for which an over subscription deposit price is provided.";
@@ -1728,8 +1728,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmCashValueForTaxRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashValueForTaxRelatedEvent";
 			definition = "Corporate action event for which a cash value has been provided.";
@@ -1777,8 +1777,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumPriceBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumPriceBiddingConditions";
 			definition = "Bidding conditions for which a maximum price is specified.";
@@ -1826,8 +1826,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmMinimumPriceBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumPriceBiddingConditions";
 			definition = "Bidding conditions for which a minimum price is specified.";
@@ -1866,8 +1866,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmQuotationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuotationDate";
 			definition = "Date on which the price is obtained.";
@@ -1920,8 +1920,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculation";
 			definition = "Rate of return on an investment, based on the price.";
@@ -1968,8 +1968,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesFinancing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesFinancing";
 			definition = "Securities financing process for which an end price is specified.";
@@ -2016,8 +2016,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmFundOrderRelatedToExecutedPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundOrderRelatedToExecutedPrice";
 			definition = "Fund order for which an executed price is specified.";
@@ -2065,8 +2065,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmFundOrderRelatedToInformativePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundOrderRelatedToInformativePrice";
 			definition = "Fund order for which an informative price is specified.";
@@ -2113,8 +2113,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxVoucher";
 			definition = "Tax voucher for which the cost per share is specified.";
@@ -2161,8 +2161,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Trade for which the trade price is calculated.";
@@ -2211,8 +2211,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Value calculation for which a securities pricing is specified.";
@@ -2257,8 +2257,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedBuyIn = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedBuyIn";
 			definition = "BuyIn process for which a price is specified.";
@@ -2305,8 +2305,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "Specifies the index information when used for calculating the price.";
@@ -2353,8 +2353,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmInformationPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationPartyRole";
 			definition = "Party which provided the pricing.";
@@ -2401,8 +2401,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceFactPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceFactPeriod";
 			definition = "Period during which the price fact type is valid.";
@@ -2450,8 +2450,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmAnalyticsCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnalyticsCalculation";
 			definition = "Calculated analytics based on the price.";
@@ -2497,8 +2497,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmDurationCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DurationCalculation";
 			definition = "Calculated duration based on the price.";
@@ -2544,8 +2544,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmLifeCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LifeCalculation";
 			definition = "Calculated  life based on the price.";
@@ -2583,8 +2583,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date/time of the price. For CIV, this is the NAV date.";
@@ -2636,8 +2636,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Spread which uses the price as benchmark.";
@@ -2684,8 +2684,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Order";
 			definition = "Securities order for which a price is specified.";
@@ -2732,8 +2732,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmStopPriceOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StopPriceOrder";
 			definition = "Order for which a stop price is specified.";
@@ -2780,8 +2780,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Allocation";
 			definition = "Allocation process for which a price is specified.";
@@ -2829,8 +2829,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which a previous closing price is specified.";
@@ -2876,8 +2876,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which a discount is specified.";
@@ -2924,8 +2924,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entitlement";
 			definition = "Entitlement for which a strike price is specified.";
@@ -2974,8 +2974,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmCashFractionsPriceRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashFractionsPriceRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a cash fractions price is provided.";
@@ -3024,8 +3024,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmSuscriptionPriceRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuscriptionPriceRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a subscription price is provided.";
@@ -3074,8 +3074,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmReinvestmentPriceRelatedSecuritiesDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentPriceRelatedSecuritiesDistribution";
 			definition = "Securities distribution for which a reinvestment price is provided.";
@@ -3122,8 +3122,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedFuture = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedFuture";
 			definition = "Contract for which a tick is specified.";
@@ -3170,8 +3170,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Distribution";
 			definition = "Distribution for which an offer price is specified.";
@@ -3219,8 +3219,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceChangeRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChangeRedemptionSchedule";
 			definition = "Redemption schedule for which a change in price is provided.";
@@ -3267,8 +3267,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRedemptionSchedule";
 			definition = "Redemption schedule for which a price is specified.";
@@ -3314,8 +3314,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPreviousClosingPriceRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviousClosingPriceRelatedQuote";
 			definition = "Quote which contains a previous closing price.";
@@ -3361,8 +3361,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRequestedPriceRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedPriceRelatedQuote";
 			definition = "Quote which contains a requested price.";
@@ -3407,8 +3407,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceRelatedQuote";
 			definition = "Quote which contains a price.";
@@ -3454,8 +3454,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmMarketPriceRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketPriceRelatedQuote";
 			definition = "Quote which contains a market price.";
@@ -3513,8 +3513,8 @@ public class SecuritiesPricing {
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PriceRateOrAmountChoice.mmAmount, TransactionPrice3Choice.mmDealPrice);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Value of the price.";
@@ -3563,8 +3563,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateActionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCorporateActionPrice";
 			definition = "Corporate action price for which pricing information is provided.";
@@ -3610,8 +3610,8 @@ public class SecuritiesPricing {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPosition";
 			definition = "Position for which a price is provided.";

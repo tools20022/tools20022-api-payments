@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ObligationTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of the obligation.
@@ -31,12 +36,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmFails
+ * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#Fails
  * ObligationTypeCode.mmFails}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmNew
+ * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#New
  * ObligationTypeCode.mmNew}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmCorporateEvent
+ * {@linkplain com.tools20022.repository.codeset.ObligationTypeCode#CorporateEvent
  * ObligationTypeCode.mmCorporateEvent}</li>
  * </ul>
  * </li>
@@ -61,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of the obligation."</li>
  * </ul>
  */
-public class ObligationTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ObligationTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class ObligationTypeCode {
 	 * "Specifies that the obligation is related to a failed trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFails = new MMCode() {
+	public static final ObligationTypeCode Fails = new ObligationTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fails";
 			definition = "Specifies that the obligation is related to a failed trade.";
-			owner_lazy = () -> ObligationTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ObligationTypeCode.mmObject();
 			codeName = "FAIL";
 		}
 	};
@@ -116,12 +122,12 @@ public class ObligationTypeCode {
 	 * definition} = "Specifies that the obligation is related to new a trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNew = new MMCode() {
+	public static final ObligationTypeCode New = new ObligationTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "New";
 			definition = "Specifies that the obligation is related to new a trade.";
-			owner_lazy = () -> ObligationTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ObligationTypeCode.mmObject();
 			codeName = "NEW1";
 		}
 	};
@@ -147,17 +153,21 @@ public class ObligationTypeCode {
 	 * "Specifies that the obligation is related to a corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCorporateEvent = new MMCode() {
+	public static final ObligationTypeCode CorporateEvent = new ObligationTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateEvent";
 			definition = "Specifies that the obligation is related to a corporate event.";
-			owner_lazy = () -> ObligationTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ObligationTypeCode.mmObject();
 			codeName = "COEV";
 		}
 	};
+	final static private LinkedHashMap<String, ObligationTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ObligationTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,36 @@ public class ObligationTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ObligationTypeCode";
 				definition = "Specifies the type of the obligation.";
-				code_lazy = () -> Arrays.asList(ObligationTypeCode.mmFails, ObligationTypeCode.mmNew, ObligationTypeCode.mmCorporateEvent);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ObligationTypeCode.Fails, com.tools20022.repository.codeset.ObligationTypeCode.New, com.tools20022.repository.codeset.ObligationTypeCode.CorporateEvent);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Fails.getCodeName().get(), Fails);
+		codesByName.put(New.getCodeName().get(), New);
+		codesByName.put(CorporateEvent.getCodeName().get(), CorporateEvent);
+	}
+
+	public static ObligationTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ObligationTypeCode[] values() {
+		ObligationTypeCode[] values = new ObligationTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ObligationTypeCode> {
+		@Override
+		public ObligationTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ObligationTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

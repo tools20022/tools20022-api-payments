@@ -112,8 +112,8 @@ public class ChoiceCorporateAction {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionOptionDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ChoiceCorporateAction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ChoiceCorporateAction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOptionDefinition";
 			definition = "Definition of the option of a corporate event.";

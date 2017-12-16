@@ -40,6 +40,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Settlement
+ * Settlement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -82,22 +85,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction4
- * SettlementInstruction4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1
- * SettlementDateTimeIndication1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction2
- * SettlementInstruction2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ResolutionInformation1
- * ResolutionInformation1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction3
- * SettlementInstruction3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -133,9 +120,22 @@ import java.util.List;
  * RequestedModification6.mmSettlementInformation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Settlement
- * Settlement}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction4
+ * SettlementInstruction4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1
+ * SettlementDateTimeIndication1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction2
+ * SettlementInstruction2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ResolutionInformation1
+ * ResolutionInformation1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SettlementInstruction3
+ * SettlementInstruction3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -263,8 +263,8 @@ public class CashSettlement extends Settlement {
 					PaymentTransaction81.mmReversedInterbankSettlementAmount, RequestedModification6.mmInterbankSettlementAmount, PaymentTransaction76.mmOriginalInterbankSettlementAmount,
 					PaymentTransaction76.mmReturnedInterbankSettlementAmount, OriginalTransactionReference24.mmInterbankSettlementAmount, PaymentTransaction75.mmOriginalInterbankSettlementAmount,
 					PaymentTransaction79.mmOriginalInterbankSettlementAmount, PaymentComplementaryInformation6.mmInterbankSettlementAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterbankSettlementAmount";
 			definition = "Amount of money moved between the instructing agent and the instructed agent.";
@@ -384,8 +384,8 @@ public class CashSettlement extends Settlement {
 					GroupHeader72.mmInterbankSettlementDate, GroupHeader71.mmInterbankSettlementDate, DirectDebitTransactionInformation21.mmInterbankSettlementDate, PaymentTransaction81.mmInterbankSettlementDate,
 					RequestedModification6.mmInterbankSettlementDate, PaymentTransaction76.mmInterbankSettlementDate, OriginalTransactionReference24.mmInterbankSettlementDate, PaymentTransaction75.mmOriginalInterbankSettlementDate,
 					PaymentTransaction79.mmOriginalInterbankSettlementDate, PaymentComplementaryInformation6.mmInterbankSettlementDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterbankSettlementDate";
 			definition = "Date on which the amount of money ceases to be available to the agent that owes it and when the amount of money becomes available to the agent to which it is due.";
@@ -431,8 +431,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAttribute mmRTGS = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RTGS";
 			definition = "Qualifies the RTGS status.";
@@ -489,8 +489,8 @@ public class CashSettlement extends Settlement {
 	public static final MMBusinessAttribute mmCreditDateTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementDateTimeIndication1.mmCreditDateTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDateTime";
 			definition = "Information on the occurred settlement time(s) of the payment transaction for the credit side.";
@@ -544,8 +544,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentInstruction";
 			definition = "PaymentInstruction which is the source of the settlement instruction.";
@@ -598,8 +598,8 @@ public class CashSettlement extends Settlement {
 	public static final MMBusinessAttribute mmSettlementMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementInstruction4.mmSettlementMethod, SettlementInstruction2.mmSettlementMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementMethod";
 			definition = "Method used to settle the (batch of) payment instructions.";
@@ -667,8 +667,8 @@ public class CashSettlement extends Settlement {
 	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementInstruction4.mmSettlementAccount, SettlementInstruction2.mmSettlementAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAccount";
 			definition = "A specific purpose account used to post debit and credit entries as a result of the transaction.";
@@ -719,8 +719,8 @@ public class CashSettlement extends Settlement {
 	public static final MMBusinessAttribute mmDebitDateTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementDateTimeIndication1.mmDebitDateTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitDateTime";
 			definition = "Information on the occurred settlement time(s) of the payment transaction for the debit side.";
@@ -777,8 +777,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to the settlement of a payment and played by a party at that step in a payment flow.";
@@ -828,8 +828,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransactionAdministrator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransactionAdministrator";
 			definition = "Transaction administrator which manages the related settlement instructions.";
@@ -878,8 +878,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntry";
 			definition = "Movement of cash between two accounts in the same financial institution, resulting from the settlement of an instruction.";
@@ -930,8 +930,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestigationCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestigationCase";
 			definition = "Case resolution which is the source of the correction of a settlement instruction.";
@@ -978,8 +978,8 @@ public class CashSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reservation";
 			definition = "Liquidity set aside by the payer for specific purposes.";

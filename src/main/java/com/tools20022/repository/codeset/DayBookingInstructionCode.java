@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DayBookingInstructionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Description of the nature of execution booking process.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DayBookingInstructionCode#mmAuto
+ * {@linkplain com.tools20022.repository.codeset.DayBookingInstructionCode#Auto
  * DayBookingInstructionCode.mmAuto}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DayBookingInstructionCode#mmSpeakFirst
+ * {@linkplain com.tools20022.repository.codeset.DayBookingInstructionCode#SpeakFirst
  * DayBookingInstructionCode.mmSpeakFirst}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Description of the nature of execution booking process."</li>
  * </ul>
  */
-public class DayBookingInstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DayBookingInstructionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class DayBookingInstructionCode {
 	 * "Can trigger booking without reference to the order initiator."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuto = new MMCode() {
+	public static final DayBookingInstructionCode Auto = new DayBookingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Auto";
 			definition = "Can trigger booking without reference to the order initiator.";
-			owner_lazy = () -> DayBookingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DayBookingInstructionCode.mmObject();
 			codeName = "AUTO";
 		}
 	};
@@ -115,17 +121,21 @@ public class DayBookingInstructionCode {
 	 * definition} = "Speak with order initiator before booking."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpeakFirst = new MMCode() {
+	public static final DayBookingInstructionCode SpeakFirst = new DayBookingInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SpeakFirst";
 			definition = "Speak with order initiator before booking.";
-			owner_lazy = () -> DayBookingInstructionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DayBookingInstructionCode.mmObject();
 			codeName = "TALK";
 		}
 	};
+	final static private LinkedHashMap<String, DayBookingInstructionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DayBookingInstructionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -133,9 +143,35 @@ public class DayBookingInstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DayBookingInstructionCode";
 				definition = "Description of the nature of execution booking process.";
-				code_lazy = () -> Arrays.asList(DayBookingInstructionCode.mmAuto, DayBookingInstructionCode.mmSpeakFirst);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DayBookingInstructionCode.Auto, com.tools20022.repository.codeset.DayBookingInstructionCode.SpeakFirst);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Auto.getCodeName().get(), Auto);
+		codesByName.put(SpeakFirst.getCodeName().get(), SpeakFirst);
+	}
+
+	public static DayBookingInstructionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DayBookingInstructionCode[] values() {
+		DayBookingInstructionCode[] values = new DayBookingInstructionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DayBookingInstructionCode> {
+		@Override
+		public DayBookingInstructionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DayBookingInstructionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

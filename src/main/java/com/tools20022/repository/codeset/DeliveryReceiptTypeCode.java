@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DeliveryReceiptTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies how the transaction is to be settled.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#mmSeparateSettlement
+ * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#SeparateSettlement
  * DeliveryReceiptTypeCode.mmSeparateSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#mmAgainstPaymentSettlement
+ * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#AgainstPaymentSettlement
  * DeliveryReceiptTypeCode.mmAgainstPaymentSettlement}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies how the transaction is to be settled."</li>
  * </ul>
  */
-public class DeliveryReceiptTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DeliveryReceiptTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class DeliveryReceiptTypeCode {
 	 * "Settlement of the financial instrument and cash is separate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSeparateSettlement = new MMCode() {
+	public static final DeliveryReceiptTypeCode SeparateSettlement = new DeliveryReceiptTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparateSettlement";
 			definition = "Settlement of the financial instrument and cash is separate.";
-			owner_lazy = () -> DeliveryReceiptTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DeliveryReceiptTypeCode.mmObject();
 			codeName = "FREE";
 		}
 	};
@@ -119,17 +125,21 @@ public class DeliveryReceiptTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgainstPaymentSettlement = new MMCode() {
+	public static final DeliveryReceiptTypeCode AgainstPaymentSettlement = new DeliveryReceiptTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgainstPaymentSettlement";
 			definition = "Settlement of the financial instrument and cash takes place in a delivery versus payment (DVP) environment, ie, through an International Central Securities Depository (ICSD) or Central Securities Depository (CSD).";
-			owner_lazy = () -> DeliveryReceiptTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DeliveryReceiptTypeCode.mmObject();
 			codeName = "APMT";
 		}
 	};
+	final static private LinkedHashMap<String, DeliveryReceiptTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DeliveryReceiptTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -137,9 +147,35 @@ public class DeliveryReceiptTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryReceiptTypeCode";
 				definition = "Specifies how the transaction is to be settled.";
-				code_lazy = () -> Arrays.asList(DeliveryReceiptTypeCode.mmSeparateSettlement, DeliveryReceiptTypeCode.mmAgainstPaymentSettlement);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DeliveryReceiptTypeCode.SeparateSettlement, com.tools20022.repository.codeset.DeliveryReceiptTypeCode.AgainstPaymentSettlement);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(SeparateSettlement.getCodeName().get(), SeparateSettlement);
+		codesByName.put(AgainstPaymentSettlement.getCodeName().get(), AgainstPaymentSettlement);
+	}
+
+	public static DeliveryReceiptTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DeliveryReceiptTypeCode[] values() {
+		DeliveryReceiptTypeCode[] values = new DeliveryReceiptTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DeliveryReceiptTypeCode> {
+		@Override
+		public DeliveryReceiptTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DeliveryReceiptTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

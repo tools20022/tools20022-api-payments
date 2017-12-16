@@ -113,8 +113,8 @@ public class SecuritiesPostTradeBooking {
 	 */
 	public static final MMBusinessAttribute mmDayBooking = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DayBooking";
 			definition = "Indicates whether or not automatic booking can occur.";
@@ -163,8 +163,8 @@ public class SecuritiesPostTradeBooking {
 	 */
 	public static final MMBusinessAttribute mmBookingUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookingUnit";
 			definition = "Indicates what constitutes a bookable unit, ie, a partial execution, or an aggregated execution.";
@@ -210,8 +210,8 @@ public class SecuritiesPostTradeBooking {
 	 */
 	public static final MMBusinessAttribute mmPreAllocationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAllocationMethod";
 			definition = "Indicates the method of preallocation.";
@@ -257,8 +257,8 @@ public class SecuritiesPostTradeBooking {
 	 */
 	public static final MMBusinessAttribute mmBookingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookingType";
 			definition = "Method for booking out an order.";
@@ -311,8 +311,8 @@ public class SecuritiesPostTradeBooking {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPostTradeBooking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which booking instructions are specified.";

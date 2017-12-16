@@ -39,6 +39,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ListTrading
+ * ListTrading}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -65,9 +68,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesAccount.mmDisclosedListTrading}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ListTrading
- * ListTrading}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -127,8 +127,8 @@ public class DisclosedListTrading extends ListTrading {
 	 */
 	public static final MMBusinessAssociationEnd mmDisclosedListTradingAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisclosedListTradingAccount";
 			definition = "Securities account used for the trade of a disclosed list of securities, eg, in basket or program trading.";
@@ -171,8 +171,8 @@ public class DisclosedListTrading extends ListTrading {
 	 */
 	public static final MMBusinessAttribute mmBuyAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyAmount";
 			definition = "Total trade value for which a party is willing to purchase financial instruments.";
@@ -221,8 +221,8 @@ public class DisclosedListTrading extends ListTrading {
 	 */
 	public static final MMBusinessAttribute mmSellAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellAmount";
 			definition = "Total trade value for which a party is willing to sell financial instruments.";
@@ -269,8 +269,8 @@ public class DisclosedListTrading extends ListTrading {
 	 */
 	public static final MMBusinessAttribute mmRequestedSettlementDateCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementDateCode";
 			definition = "Requested date of trade settlement in coded form (eg, trade date +1).";

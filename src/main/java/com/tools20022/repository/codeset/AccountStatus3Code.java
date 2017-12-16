@@ -20,35 +20,37 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.AccountStatusCode;
+import com.tools20022.repository.codeset.AccountStatus3Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Qualifies further the current state of an account.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.AccountStatusCode
- * AccountStatusCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmEnabled
+ * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Enabled
  * AccountStatus3Code.mmEnabled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmDisabled
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Disabled
  * AccountStatus3Code.mmDisabled}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmDeleted
+ * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Deleted
  * AccountStatus3Code.mmDeleted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmProForma
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#ProForma
  * AccountStatus3Code.mmProForma}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.AccountStatusCode
+ * AccountStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -70,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Qualifies further the current state of an account."</li>
  * </ul>
  */
-public class AccountStatus3Code extends AccountStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AccountStatus3Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,11 +92,12 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Enabled"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEnabled = new MMCode() {
+	public static final AccountStatus3Code Enabled = new AccountStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
-			owner_lazy = () -> AccountStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountStatus3Code.mmObject();
+			codeName = AccountStatusCode.Enabled.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -112,11 +116,12 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Disabled"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDisabled = new MMCode() {
+	public static final AccountStatus3Code Disabled = new AccountStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disabled";
-			owner_lazy = () -> AccountStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountStatus3Code.mmObject();
+			codeName = AccountStatusCode.Disabled.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -135,11 +140,12 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Deleted"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeleted = new MMCode() {
+	public static final AccountStatus3Code Deleted = new AccountStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deleted";
-			owner_lazy = () -> AccountStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountStatus3Code.mmObject();
+			codeName = AccountStatusCode.Deleted.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -158,15 +164,20 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "ProForma"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmProForma = new MMCode() {
+	public static final AccountStatus3Code ProForma = new AccountStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProForma";
-			owner_lazy = () -> AccountStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountStatus3Code.mmObject();
+			codeName = AccountStatusCode.ProForma.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, AccountStatus3Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AccountStatus3Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,10 +185,39 @@ public class AccountStatus3Code extends AccountStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus3Code";
 				definition = "Qualifies further the current state of an account.";
-				code_lazy = () -> Arrays.asList(AccountStatus3Code.mmEnabled, AccountStatus3Code.mmDisabled, AccountStatus3Code.mmDeleted, AccountStatus3Code.mmProForma);
 				trace_lazy = () -> AccountStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountStatus3Code.Enabled, com.tools20022.repository.codeset.AccountStatus3Code.Disabled, com.tools20022.repository.codeset.AccountStatus3Code.Deleted,
+						com.tools20022.repository.codeset.AccountStatus3Code.ProForma);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Enabled.getCodeName().get(), Enabled);
+		codesByName.put(Disabled.getCodeName().get(), Disabled);
+		codesByName.put(Deleted.getCodeName().get(), Deleted);
+		codesByName.put(ProForma.getCodeName().get(), ProForma);
+	}
+
+	public static AccountStatus3Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AccountStatus3Code[] values() {
+		AccountStatus3Code[] values = new AccountStatus3Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AccountStatus3Code> {
+		@Override
+		public AccountStatus3Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AccountStatus3Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -161,8 +161,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmNegotiationDetails = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NegotiationDetails";
 			definition = "Negotiation details associated with an indication of interest.";
@@ -212,8 +212,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisations = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Organisations";
 			definition = "Organisations to be included from the targeted list of firms, managed by the vendor, receiving indications.";
@@ -252,8 +252,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmRelativeSize = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelativeSize";
 			definition = "Indicates a quantity in relative size.";
@@ -302,8 +302,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmPrice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Indicates the price of the instrument, applicable to the indication of interest.";
@@ -350,8 +350,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmQualityIndication = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QualityIndication";
 			definition = "Indicates the relative quality of the indication of interest.";
@@ -401,8 +401,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmNaturalIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NaturalIndicator";
 			definition = "Indicates whether or not the indication of interest is the result of an existing agency order or a facilitation position resulting from an agency order, not from principal trading or order solicitation activity.";
@@ -448,8 +448,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmQualifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Qualifier";
 			definition = "Qualifies the use of the indication of interest.";
@@ -497,8 +497,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmNumberOfLegs = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfLegs";
 			definition = "In case of multilegs indication of interest, indicates number of instrumentLeg repeating group .";
@@ -552,8 +552,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmSpreadToBenchmark = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpreadToBenchmark";
 			definition = "Indicates the spread to benchmark details of an indication of interest.";
@@ -600,8 +600,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmSwapSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwapSpread";
 			definition = "Indicates the swap spread details of an indication of interest.";
@@ -652,8 +652,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmTwoLegTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TwoLegTransaction";
 			definition = "Securities Financing is the process of lending or borrowing cash or securities against securities or cash collateral. It aims at optimising liquidity, support a trading strategy, or increase settlement efficiency.";
@@ -692,8 +692,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmRoutingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoutingType";
 			definition = "Indicates if the type of routing is allowed or blocked.";
@@ -738,8 +738,8 @@ public class BuyOrSellIndicationOfInterest {
 	 */
 	public static final MMBusinessAttribute mmOrganisationListName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationListName";
 			definition = "Name of the organisation list.";

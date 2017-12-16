@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AllegementStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of an allegement.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#mmCancelled
+ * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Cancelled
  * AllegementStatusCode.mmCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#mmRemoved
+ * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Removed
  * AllegementStatusCode.mmRemoved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#mmPending
+ * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Pending
  * AllegementStatusCode.mmPending}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of an allegement."</li>
  * </ul>
  */
-public class AllegementStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AllegementStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,12 +97,12 @@ public class AllegementStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelled = new MMCode() {
+	public static final AllegementStatusCode Cancelled = new AllegementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cancelled";
 			definition = "Allegement has been cancelled since the previous delta statement. The allegement was cancelled because of a mistake by the sender or because the alleging party cancelled its instruction.";
-			owner_lazy = () -> AllegementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementStatusCode.mmObject();
 			codeName = "CANC";
 		}
 	};
@@ -124,12 +130,12 @@ public class AllegementStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRemoved = new MMCode() {
+	public static final AllegementStatusCode Removed = new AllegementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Removed";
 			definition = "Allegement has been removed since the previous delta statement. The allegement was removed because the alleged party sent its instruction.";
-			owner_lazy = () -> AllegementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementStatusCode.mmObject();
 			codeName = "REMO";
 		}
 	};
@@ -154,17 +160,21 @@ public class AllegementStatusCode {
 	 * definition} = "Allegement is pending."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final AllegementStatusCode Pending = new AllegementStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
 			definition = "Allegement is pending.";
-			owner_lazy = () -> AllegementStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementStatusCode.mmObject();
 			codeName = "PEND";
 		}
 	};
+	final static private LinkedHashMap<String, AllegementStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AllegementStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -172,9 +182,37 @@ public class AllegementStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllegementStatusCode";
 				definition = "Specifies the status of an allegement.";
-				code_lazy = () -> Arrays.asList(AllegementStatusCode.mmCancelled, AllegementStatusCode.mmRemoved, AllegementStatusCode.mmPending);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AllegementStatusCode.Cancelled, com.tools20022.repository.codeset.AllegementStatusCode.Removed,
+						com.tools20022.repository.codeset.AllegementStatusCode.Pending);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
+		codesByName.put(Removed.getCodeName().get(), Removed);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+	}
+
+	public static AllegementStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AllegementStatusCode[] values() {
+		AllegementStatusCode[] values = new AllegementStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AllegementStatusCode> {
+		@Override
+		public AllegementStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AllegementStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

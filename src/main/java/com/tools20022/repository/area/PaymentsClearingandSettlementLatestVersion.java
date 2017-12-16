@@ -87,9 +87,9 @@ public class PaymentsClearingandSettlementLatestVersion {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Payments Clearing and Settlement - Latest version - master";
 				definition = "Messages that support the clearing and settlement processes for payment transactions between financial institutions ";
+				code = "pacs";
 				messageDefinition_lazy = () -> Arrays.asList(FinancialInstitutionCreditTransferV06.mmObject(), FIToFICustomerCreditTransferV06.mmObject(), FinancialInstitutionDirectDebitV02.mmObject(),
 						FIToFIPaymentStatusRequestV01.mmObject(), PaymentReturnV07.mmObject(), FIToFIPaymentStatusReportV08.mmObject(), FIToFIPaymentReversalV07.mmObject(), FIToFICustomerDirectDebitV07.mmObject());
-				code = "pacs";
 			}
 		});
 		return mmObject_lazy.get();

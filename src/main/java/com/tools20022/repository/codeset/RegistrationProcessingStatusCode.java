@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.RegistrationProcessingStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the registration processing.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationProcessingStatusCode#mmAcknowledgedAccepted
+ * {@linkplain com.tools20022.repository.codeset.RegistrationProcessingStatusCode#AcknowledgedAccepted
  * RegistrationProcessingStatusCode.mmAcknowledgedAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationProcessingStatusCode#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.RegistrationProcessingStatusCode#Rejected
  * RegistrationProcessingStatusCode.mmRejected}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of the registration processing."</li>
  * </ul>
  */
-public class RegistrationProcessingStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class RegistrationProcessingStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class RegistrationProcessingStatusCode {
 	 * "Registration has been acknowledged/accepted by the issuer/registrar."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcknowledgedAccepted = new MMCode() {
+	public static final RegistrationProcessingStatusCode AcknowledgedAccepted = new RegistrationProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcknowledgedAccepted";
 			definition = "Registration has been acknowledged/accepted by the issuer/registrar.";
-			owner_lazy = () -> RegistrationProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegistrationProcessingStatusCode.mmObject();
 			codeName = "PACK";
 		}
 	};
@@ -115,17 +121,21 @@ public class RegistrationProcessingStatusCode {
 	 * definition} = "Registration has been rejected by the issuer/registrar."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final RegistrationProcessingStatusCode Rejected = new RegistrationProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
 			definition = "Registration has been rejected by the issuer/registrar.";
-			owner_lazy = () -> RegistrationProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.RegistrationProcessingStatusCode.mmObject();
 			codeName = "REJT";
 		}
 	};
+	final static private LinkedHashMap<String, RegistrationProcessingStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected RegistrationProcessingStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -133,9 +143,35 @@ public class RegistrationProcessingStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegistrationProcessingStatusCode";
 				definition = "Specifies the status of the registration processing.";
-				code_lazy = () -> Arrays.asList(RegistrationProcessingStatusCode.mmAcknowledgedAccepted, RegistrationProcessingStatusCode.mmRejected);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RegistrationProcessingStatusCode.AcknowledgedAccepted, com.tools20022.repository.codeset.RegistrationProcessingStatusCode.Rejected);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AcknowledgedAccepted.getCodeName().get(), AcknowledgedAccepted);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+	}
+
+	public static RegistrationProcessingStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static RegistrationProcessingStatusCode[] values() {
+		RegistrationProcessingStatusCode[] values = new RegistrationProcessingStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, RegistrationProcessingStatusCode> {
+		@Override
+		public RegistrationProcessingStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(RegistrationProcessingStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

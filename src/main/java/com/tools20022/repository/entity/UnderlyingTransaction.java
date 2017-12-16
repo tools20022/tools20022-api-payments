@@ -136,8 +136,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking issued to support a contract.";
@@ -178,8 +178,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of commercial obligation such as a tender, order, contract, etc.";
@@ -224,8 +224,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the commercial obligation.";
@@ -270,8 +270,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDate";
 			definition = "Date the commercial obligation was issued or awarded.";
@@ -316,8 +316,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmTenderClosingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TenderClosingDate";
 			definition = "Date the tender closes.";
@@ -363,8 +363,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalAmount";
 			definition = "Amount of the commercial obligation.";
@@ -411,8 +411,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAttribute mmContractAmountPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractAmountPercentage";
 			definition = "Percentage of the underlying contract covered by the undertaking.";
@@ -465,8 +465,8 @@ public class UnderlyingTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommercialTrade";
 			definition = "Commercial trade for which an undertaking is issued.";

@@ -157,8 +157,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmTransferredYear = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredYear";
 			definition = "Specifies the year during which the investment plan to be transferred was issued.";
@@ -207,8 +207,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmCashComponentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashComponentIndicator";
 			definition = "Indicates whether an ISA investment plan contains a cash component asset for transfer.";
@@ -264,8 +264,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountFrom = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountFrom";
 			definition = "Specifies the account owned by an investor and from which the assets are transferred.";
@@ -314,8 +314,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountTo = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountTo";
 			definition = "Specifies the account owned by an investor and to which the assets are transferred.";
@@ -364,8 +364,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Specifies the cash amount to be transferred in relation with a portfolio transfer.";
@@ -411,8 +411,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmTransferredPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredPortfolio";
 			definition = "Specifies the portfolio which has to be transferred.";
@@ -462,8 +462,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Specifies the financial instrument to be transferred in relation with a portfolio transfer.";
@@ -505,8 +505,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmTransferredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredAmount";
 			definition = "Quantity of financial instrument to transfer expressed as an amount of money.";
@@ -555,8 +555,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmTransferredPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredPercentage";
 			definition = "Quantity of financial instrument to transfer expressed as a percentage of the investor's total holding.";
@@ -601,8 +601,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmTransferDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferDate";
 			definition = "Execution date of the transfer instruction.";
@@ -658,8 +658,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAssociationEnd mmNomineeAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NomineeAccount";
 			definition = "Account held in the name of a party that is not the name of the beneficial owner of the shares.";
@@ -699,8 +699,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmPEPOrISAPlan = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PEPOrISAPlan";
 			definition = "Specifies whether the investment plan is a PEP or ISA type.";
@@ -748,8 +748,8 @@ public class PortfolioTransfer {
 	 */
 	public static final MMBusinessAttribute mmCurrentYearISAType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrentYearISAType";
 			definition = "Current year ISA is an ISA that was issued during the current fiscal year.";

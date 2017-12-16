@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OffMarketCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates that the trade was executed off-market.
@@ -31,10 +36,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.OffMarketCode#mmOffMarket
+ * <li>{@linkplain com.tools20022.repository.codeset.OffMarketCode#OffMarket
  * OffMarketCode.mmOffMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OffMarketCode#mmNotAdmittedOnExchange
+ * {@linkplain com.tools20022.repository.codeset.OffMarketCode#NotAdmittedOnExchange
  * OffMarketCode.mmNotAdmittedOnExchange}</li>
  * </ul>
  * </li>
@@ -59,7 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates that the trade was executed off-market."</li>
  * </ul>
  */
-public class OffMarketCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OffMarketCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,12 +89,12 @@ public class OffMarketCode {
 	 * definition} = "Trade was executed off-market."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffMarket = new MMCode() {
+	public static final OffMarketCode OffMarket = new OffMarketCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffMarket";
 			definition = "Trade was executed off-market.";
-			owner_lazy = () -> OffMarketCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffMarketCode.mmObject();
 			codeName = "XOFF";
 		}
 	};
@@ -116,17 +122,21 @@ public class OffMarketCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotAdmittedOnExchange = new MMCode() {
+	public static final OffMarketCode NotAdmittedOnExchange = new OffMarketCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotAdmittedOnExchange";
 			definition = "Trade was executed off-exchange because the instrument is not admitted to trade on an exchange.";
-			owner_lazy = () -> OffMarketCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffMarketCode.mmObject();
 			codeName = "XXXX";
 		}
 	};
+	final static private LinkedHashMap<String, OffMarketCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OffMarketCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -134,9 +144,35 @@ public class OffMarketCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OffMarketCode";
 				definition = "Indicates that the trade was executed off-market.";
-				code_lazy = () -> Arrays.asList(OffMarketCode.mmOffMarket, OffMarketCode.mmNotAdmittedOnExchange);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OffMarketCode.OffMarket, com.tools20022.repository.codeset.OffMarketCode.NotAdmittedOnExchange);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(OffMarket.getCodeName().get(), OffMarket);
+		codesByName.put(NotAdmittedOnExchange.getCodeName().get(), NotAdmittedOnExchange);
+	}
+
+	public static OffMarketCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OffMarketCode[] values() {
+		OffMarketCode[] values = new OffMarketCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OffMarketCode> {
+		@Override
+		public OffMarketCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OffMarketCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

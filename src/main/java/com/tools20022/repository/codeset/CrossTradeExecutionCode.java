@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CrossTradeExecutionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of cross being submitted to a market.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#mmExecuted
+ * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#Executed
  * CrossTradeExecutionCode.mmExecuted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#mmPartialCancel
+ * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#PartialCancel
  * CrossTradeExecutionCode.mmPartialCancel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#mmPartialActive
+ * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#PartialActive
  * CrossTradeExecutionCode.mmPartialActive}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#mmExecutedWithExisting
+ * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#ExecutedWithExisting
  * CrossTradeExecutionCode.mmExecutedWithExisting}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Type of cross being submitted to a market."</li>
  * </ul>
  */
-public class CrossTradeExecutionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CrossTradeExecutionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class CrossTradeExecutionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmExecuted = new MMCode() {
+	public static final CrossTradeExecutionCode Executed = new CrossTradeExecutionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Executed";
 			definition = "Identifies a cross trade which is executed completely or not. Both sides are treated in the same manner.";
-			owner_lazy = () -> CrossTradeExecutionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTradeExecutionCode.mmObject();
 			codeName = "EXEC";
 		}
 	};
@@ -128,12 +134,12 @@ public class CrossTradeExecutionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialCancel = new MMCode() {
+	public static final CrossTradeExecutionCode PartialCancel = new CrossTradeExecutionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialCancel";
 			definition = "Identifies a cross trade which is executed partially and the rest is cancelled. One side is fully executed, the other side is partially executed with the remainder being cancelled. This is equivalent to an Immediate or Cancel on the other side.";
-			owner_lazy = () -> CrossTradeExecutionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTradeExecutionCode.mmObject();
 			codeName = "PACA";
 		}
 	};
@@ -162,12 +168,12 @@ public class CrossTradeExecutionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialActive = new MMCode() {
+	public static final CrossTradeExecutionCode PartialActive = new CrossTradeExecutionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialActive";
 			definition = "Identifies a cross trade which is partially executed with the unfilled portions remaining active. One side of the cross is fully executed but the unfilled portion remains active.";
-			owner_lazy = () -> CrossTradeExecutionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTradeExecutionCode.mmObject();
 			codeName = "PAAC";
 		}
 	};
@@ -198,17 +204,21 @@ public class CrossTradeExecutionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmExecutedWithExisting = new MMCode() {
+	public static final CrossTradeExecutionCode ExecutedWithExisting = new CrossTradeExecutionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExecutedWithExisting";
 			definition = "Identifies a cross trade which is executed with existing orders with the same price. In the case other orders exist with the same price, the quantity of the cross is executed against the existing orders and quotes, the remainder of the cross is executed against the other side of the cross. The two sides potentially have different quantities.";
-			owner_lazy = () -> CrossTradeExecutionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CrossTradeExecutionCode.mmObject();
 			codeName = "EXWI";
 		}
 	};
+	final static private LinkedHashMap<String, CrossTradeExecutionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CrossTradeExecutionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -216,9 +226,38 @@ public class CrossTradeExecutionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTradeExecutionCode";
 				definition = "Type of cross being submitted to a market.";
-				code_lazy = () -> Arrays.asList(CrossTradeExecutionCode.mmExecuted, CrossTradeExecutionCode.mmPartialCancel, CrossTradeExecutionCode.mmPartialActive, CrossTradeExecutionCode.mmExecutedWithExisting);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CrossTradeExecutionCode.Executed, com.tools20022.repository.codeset.CrossTradeExecutionCode.PartialCancel,
+						com.tools20022.repository.codeset.CrossTradeExecutionCode.PartialActive, com.tools20022.repository.codeset.CrossTradeExecutionCode.ExecutedWithExisting);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Executed.getCodeName().get(), Executed);
+		codesByName.put(PartialCancel.getCodeName().get(), PartialCancel);
+		codesByName.put(PartialActive.getCodeName().get(), PartialActive);
+		codesByName.put(ExecutedWithExisting.getCodeName().get(), ExecutedWithExisting);
+	}
+
+	public static CrossTradeExecutionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CrossTradeExecutionCode[] values() {
+		CrossTradeExecutionCode[] values = new CrossTradeExecutionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CrossTradeExecutionCode> {
+		@Override
+		public CrossTradeExecutionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CrossTradeExecutionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

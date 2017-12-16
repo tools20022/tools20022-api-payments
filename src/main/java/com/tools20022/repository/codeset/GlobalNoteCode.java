@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.GlobalNoteCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies if the security will be issued in New Global Note (NGN) or
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#mmNewGlobalNote
+ * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#NewGlobalNote
  * GlobalNoteCode.mmNewGlobalNote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#mmClassicalGlobalNote
+ * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#ClassicalGlobalNote
  * GlobalNoteCode.mmClassicalGlobalNote}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class GlobalNoteCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class GlobalNoteCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class GlobalNoteCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNewGlobalNote = new MMCode() {
+	public static final GlobalNoteCode NewGlobalNote = new GlobalNoteCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NewGlobalNote";
 			definition = "Form of global certificate which refers to the books and records of the ICSDs to determine the Issue Outstanding Amount (IOA).";
-			owner_lazy = () -> GlobalNoteCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GlobalNoteCode.mmObject();
 			codeName = "NGNO";
 		}
 	};
@@ -124,17 +130,21 @@ public class GlobalNoteCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmClassicalGlobalNote = new MMCode() {
+	public static final GlobalNoteCode ClassicalGlobalNote = new GlobalNoteCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClassicalGlobalNote";
 			definition = "Form of global certificate which requires physical annotation on the attached schedule to reflect changes in the Issue Outstanding Amount (IOA).";
-			owner_lazy = () -> GlobalNoteCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GlobalNoteCode.mmObject();
 			codeName = "CGNO";
 		}
 	};
+	final static private LinkedHashMap<String, GlobalNoteCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected GlobalNoteCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -142,9 +152,35 @@ public class GlobalNoteCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GlobalNoteCode";
 				definition = "Identifies if the security will be issued in New Global Note (NGN) or Classical Global Note (CGN).";
-				code_lazy = () -> Arrays.asList(GlobalNoteCode.mmNewGlobalNote, GlobalNoteCode.mmClassicalGlobalNote);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GlobalNoteCode.NewGlobalNote, com.tools20022.repository.codeset.GlobalNoteCode.ClassicalGlobalNote);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(NewGlobalNote.getCodeName().get(), NewGlobalNote);
+		codesByName.put(ClassicalGlobalNote.getCodeName().get(), ClassicalGlobalNote);
+	}
+
+	public static GlobalNoteCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static GlobalNoteCode[] values() {
+		GlobalNoteCode[] values = new GlobalNoteCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, GlobalNoteCode> {
+		@Override
+		public GlobalNoteCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(GlobalNoteCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

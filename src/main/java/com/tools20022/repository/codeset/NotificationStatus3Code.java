@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.NotificationToReceiveStatusCode;
+import com.tools20022.repository.codeset.NotificationStatus3Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the notification in a coded form.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode
- * NotificationToReceiveStatusCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#mmReceivedButDifferent
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#ReceivedButDifferent
  * NotificationStatus3Code.mmReceivedButDifferent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#Received
  * NotificationStatus3Code.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#mmNotReceived
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatus3Code#NotReceived
  * NotificationStatus3Code.mmNotReceived}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode
+ * NotificationToReceiveStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of the notification in a coded form."</li>
  * </ul>
  */
-public class NotificationStatus3Code extends NotificationToReceiveStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NotificationStatus3Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +91,12 @@ public class NotificationStatus3Code extends NotificationToReceiveStatusCode {
 	 * name} = "ReceivedButDifferent"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceivedButDifferent = new MMCode() {
+	public static final NotificationStatus3Code ReceivedButDifferent = new NotificationStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceivedButDifferent";
-			owner_lazy = () -> NotificationStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatus3Code.mmObject();
+			codeName = NotificationToReceiveStatusCode.ReceivedButDifferent.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +115,12 @@ public class NotificationStatus3Code extends NotificationToReceiveStatusCode {
 	 * name} = "Received"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final NotificationStatus3Code Received = new NotificationStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
-			owner_lazy = () -> NotificationStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatus3Code.mmObject();
+			codeName = NotificationToReceiveStatusCode.Received.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,15 +139,20 @@ public class NotificationStatus3Code extends NotificationToReceiveStatusCode {
 	 * name} = "NotReceived"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotReceived = new MMCode() {
+	public static final NotificationStatus3Code NotReceived = new NotificationStatus3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotReceived";
-			owner_lazy = () -> NotificationStatus3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationStatus3Code.mmObject();
+			codeName = NotificationToReceiveStatusCode.NotReceived.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, NotificationStatus3Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NotificationStatus3Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -148,10 +160,38 @@ public class NotificationStatus3Code extends NotificationToReceiveStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationStatus3Code";
 				definition = "Specifies the status of the notification in a coded form.";
-				code_lazy = () -> Arrays.asList(NotificationStatus3Code.mmReceivedButDifferent, NotificationStatus3Code.mmReceived, NotificationStatus3Code.mmNotReceived);
 				trace_lazy = () -> NotificationToReceiveStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NotificationStatus3Code.ReceivedButDifferent, com.tools20022.repository.codeset.NotificationStatus3Code.Received,
+						com.tools20022.repository.codeset.NotificationStatus3Code.NotReceived);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ReceivedButDifferent.getCodeName().get(), ReceivedButDifferent);
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(NotReceived.getCodeName().get(), NotReceived);
+	}
+
+	public static NotificationStatus3Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NotificationStatus3Code[] values() {
+		NotificationStatus3Code[] values = new NotificationStatus3Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NotificationStatus3Code> {
+		@Override
+		public NotificationStatus3Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NotificationStatus3Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

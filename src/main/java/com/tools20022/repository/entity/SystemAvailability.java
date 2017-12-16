@@ -123,8 +123,8 @@ public class SystemAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmAvailableSessionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableSessionPeriod";
 			definition = "Time window of system activity.";
@@ -170,8 +170,8 @@ public class SystemAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which the system availability is provided.";
@@ -220,8 +220,8 @@ public class SystemAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmClosureInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureInformation";
 			definition = "System availability parameters which contain closure information.";
@@ -260,8 +260,8 @@ public class SystemAvailability {
 	 */
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date for which the availability information is provided.";
@@ -314,8 +314,8 @@ public class SystemAvailability {
 	 */
 	public static final MMBusinessAssociationEnd mmClosurePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosurePeriod";
 			definition = "Period for which the system is closed/not operating.";

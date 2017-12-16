@@ -115,8 +115,8 @@ public class SidePocket {
 	 */
 	public static final MMBusinessAttribute mmSidePocketInclusionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SidePocketInclusionIndicator";
 			definition = "Indicates whether the investor wants to participate in the optional side pocket.";
@@ -167,8 +167,8 @@ public class SidePocket {
 	 */
 	public static final MMBusinessAttribute mmSidePocketIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SidePocketIdentification";
 			definition = "Identifies the side pocket.\r\nType of account used in hedge funds to separate illiquid assets from other more liquid investments. \r\nOnce an asset is designated for inclusion in a side pocket, new investors do not share in it, and when existing investors redeem from the hedge fund, they remain as investors in the side pocket until it is liquidated.";
@@ -221,8 +221,8 @@ public class SidePocket {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Investment account which contains the liquid assets of a hedge fund.";
@@ -268,8 +268,8 @@ public class SidePocket {
 	 */
 	public static final MMBusinessAssociationEnd mmSidePocketQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SidePocketQuantity";
 			definition = "Quantity of the side pocket.";

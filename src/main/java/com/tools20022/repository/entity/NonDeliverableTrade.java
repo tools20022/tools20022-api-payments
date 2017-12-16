@@ -36,6 +36,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ForeignExchangeTrade
+ * ForeignExchangeTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -68,10 +72,6 @@ import java.util.List;
  * FixingCondition.mmNonDeliverableTrade}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ForeignExchangeTrade
- * ForeignExchangeTrade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	 */
 	public static final MMBusinessAttribute mmSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementCurrency";
 			definition = "Currency in which a non-deliverable contract is settled.";
@@ -177,8 +177,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmFixingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingConditions";
 			definition = "Set of parameters used to calculate a rate for instance the fixing rate to be applied to a non-deliverable agreement.";
@@ -229,8 +229,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmOpeningLeg = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningLeg";
 			definition = "Specifies the opening leg of a non deliverable trade in which the forward rate and amount are specified together with the fixing conditions.";
@@ -281,8 +281,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmClosingLeg = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingLeg";
 			definition = "Specifies the closing leg of a non deliverable trade in which the amount to be settled is the difference in the deliverable currency betweem its original value and the countervalue calculated against the fixing rate.";

@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesOrder
+ * SecuritiesOrder}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -65,9 +68,6 @@ import java.util.List;
  * SecuritiesOrder.mmSellSideRelatedCrossTrade}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesOrder
- * SecuritiesOrder}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -123,8 +123,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmBuySideOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuySideOrder";
 			definition = "Buyside order details.";
@@ -169,8 +169,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmSellSideOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellSideOrder";
 			definition = "Sell side order details.";
@@ -208,8 +208,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmExecutionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutionType";
 			definition = "Identifies the type of execution of a cross trade.";
@@ -254,8 +254,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmCrossType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CrossType";
 			definition = "Type of cross being submitted to a market.";
@@ -308,8 +308,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmPrioritisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Prioritisation";
 			definition = "Indicates whether one side or the other of a cross order should be prioritized.\r\nThe definition of prioritization depends on the market. In some markets prioritization means which side of the cross order is applied to the market first. In other markets, prioritization may mean that the prioritized side is fully executed (sometimes referred to as the side being protected).";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PaymentCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates whether the cash payment occurs or will occur in advance of receipt
@@ -33,11 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCode#mmActualPayment
+ * <li>{@linkplain com.tools20022.repository.codeset.PaymentCode#ActualPayment
  * PaymentCode.mmActualPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCode#mmContractualPayment
+ * {@linkplain com.tools20022.repository.codeset.PaymentCode#ContractualPayment
  * PaymentCode.mmContractualPayment}</li>
  * </ul>
  * </li>
@@ -64,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class PaymentCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +95,12 @@ public class PaymentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmActualPayment = new MMCode() {
+	public static final PaymentCode ActualPayment = new PaymentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualPayment";
 			definition = "The cash payment occurs or will occur upon receipt of proceeds from the issuer.";
-			owner_lazy = () -> PaymentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCode.mmObject();
 			codeName = "ACTU";
 		}
 	};
@@ -123,17 +128,21 @@ public class PaymentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmContractualPayment = new MMCode() {
+	public static final PaymentCode ContractualPayment = new PaymentCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractualPayment";
 			definition = "The cash payment occurs or will occur in advance of receipt of proceeds from the issuer and based on a contractual agreement established with the account servicer.";
-			owner_lazy = () -> PaymentCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentCode.mmObject();
 			codeName = "CONT";
 		}
 	};
+	final static private LinkedHashMap<String, PaymentCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -141,9 +150,35 @@ public class PaymentCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCode";
 				definition = "Indicates whether the cash payment occurs or will occur in advance of receipt of proceeds from the issuer and based on a contractual agreement established with the account servicer or upon receipt of proceeds from the issuer.";
-				code_lazy = () -> Arrays.asList(PaymentCode.mmActualPayment, PaymentCode.mmContractualPayment);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentCode.ActualPayment, com.tools20022.repository.codeset.PaymentCode.ContractualPayment);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ActualPayment.getCodeName().get(), ActualPayment);
+		codesByName.put(ContractualPayment.getCodeName().get(), ContractualPayment);
+	}
+
+	public static PaymentCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentCode[] values() {
+		PaymentCode[] values = new PaymentCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentCode> {
+		@Override
+		public PaymentCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

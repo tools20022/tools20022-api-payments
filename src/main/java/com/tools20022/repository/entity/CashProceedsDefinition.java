@@ -43,6 +43,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ProceedsDefinition
+ * ProceedsDefinition}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -98,9 +101,6 @@ import java.util.List;
  * Interest.mmRelatedCashProceedsDefinition}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ProceedsDefinition
- * ProceedsDefinition}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -153,8 +153,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmCashIncentiveRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashIncentiveRate";
 			definition = "Cash premium made available if the securities holder consents or participates to an event, e.g. consent fees.";
@@ -199,8 +199,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmContractualPaymentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractualPaymentIndicator";
 			definition = "Indicates exceptions to contractual payment service.";
@@ -258,8 +258,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAssociationEnd mmIncomeType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomeType";
 			definition = "Specifies the type of income.\r\nThe lists of income type codes to be used, are available on the SMPG website at www.smpg.info.";
@@ -302,8 +302,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmIndemnityAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndemnityAmount";
 			definition = "(Unique to France) Amount due to a buyer of securities dealt prior to ex date which may be subject to different rate of taxation.";
@@ -352,8 +352,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmCashIncentiveAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashIncentiveAmount";
 			definition = "Rate of the cash premium made available if the securities holder consents or participates to an event, e.g. consent fees.";
@@ -402,8 +402,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmPrincipalOrCorpus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrincipalOrCorpus";
 			definition = "Amount of money representing a distribution of a bond's principal, eg, repayment of outstanding debt.";
@@ -452,8 +452,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmRedemptionPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionPremiumAmount";
 			definition = "Amount of money (not interest) in addition to the principal at the redemption of a bond.";
@@ -502,8 +502,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmIncomePortion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomePortion";
 			definition = "Amount relating to the underlying security for which income is distributed.";
@@ -555,8 +555,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest paid as the proceeds of a CA event.";
@@ -595,8 +595,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Cash amount which is posted.";
@@ -652,8 +652,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, eg, company products or property. The dividend amount is decided by the board of directors.";
@@ -691,8 +691,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmPaymentCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentCurrency";
 			definition = "Currency for the payment of the cash proceeds.";

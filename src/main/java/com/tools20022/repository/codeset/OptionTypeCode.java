@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.OptionDefinitionTypeCode;
+import com.tools20022.repository.codeset.OptionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates whether it is a Call option (right to purchase a specific
@@ -32,17 +36,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.OptionDefinitionTypeCode
- * OptionDefinitionTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#mmCall
+ * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#Call
  * OptionTypeCode.mmCall}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#mmPut
+ * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#Put
  * OptionTypeCode.mmPut}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.OptionDefinitionTypeCode
+ * OptionDefinitionTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class OptionTypeCode extends OptionDefinitionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OptionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,11 +90,12 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 	 * name} = "Call"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCall = new MMCode() {
+	public static final OptionTypeCode Call = new OptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Call";
-			owner_lazy = () -> OptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OptionTypeCode.mmObject();
+			codeName = OptionDefinitionTypeCode.Call.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -108,15 +114,20 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 	 * name} = "Put"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPut = new MMCode() {
+	public static final OptionTypeCode Put = new OptionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Put";
-			owner_lazy = () -> OptionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OptionTypeCode.mmObject();
+			codeName = OptionDefinitionTypeCode.Put.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, OptionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OptionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -124,10 +135,36 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionTypeCode";
 				definition = "Indicates whether it is a Call option (right to purchase a specific underlying asset) or a Put option (right to sell a specific underlying asset).";
-				code_lazy = () -> Arrays.asList(OptionTypeCode.mmCall, OptionTypeCode.mmPut);
 				trace_lazy = () -> OptionDefinitionTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionTypeCode.Call, com.tools20022.repository.codeset.OptionTypeCode.Put);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Call.getCodeName().get(), Call);
+		codesByName.put(Put.getCodeName().get(), Put);
+	}
+
+	public static OptionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OptionTypeCode[] values() {
+		OptionTypeCode[] values = new OptionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OptionTypeCode> {
+		@Override
+		public OptionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OptionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

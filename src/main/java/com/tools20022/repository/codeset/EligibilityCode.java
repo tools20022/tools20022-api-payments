@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.EligibilityCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies the type of investor. The rules that apply to each type of client
@@ -33,13 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EligibilityCode#mmEligibleCounterparty
+ * {@linkplain com.tools20022.repository.codeset.EligibilityCode#EligibleCounterparty
  * EligibilityCode.mmEligibleCounterparty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EligibilityCode#mmRetailClient
+ * {@linkplain com.tools20022.repository.codeset.EligibilityCode#RetailClient
  * EligibilityCode.mmRetailClient}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EligibilityCode#mmProfessionalClient
+ * {@linkplain com.tools20022.repository.codeset.EligibilityCode#ProfessionalClient
  * EligibilityCode.mmProfessionalClient}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class EligibilityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class EligibilityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class EligibilityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEligibleCounterparty = new MMCode() {
+	public static final EligibilityCode EligibleCounterparty = new EligibilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleCounterparty";
 			definition = "Eligible customers are the most sophisticated level of investor, able to opt out of some the protections afforded by conduct of business rules.";
-			owner_lazy = () -> EligibilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EligibilityCode.mmObject();
 			codeName = "ELIG";
 		}
 	};
@@ -124,12 +130,12 @@ public class EligibilityCode {
 	 * "Retail customers are the least sophisticated level of investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRetailClient = new MMCode() {
+	public static final EligibilityCode RetailClient = new EligibilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RetailClient";
 			definition = "Retail customers are the least sophisticated level of investor.";
-			owner_lazy = () -> EligibilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EligibilityCode.mmObject();
 			codeName = "RETL";
 		}
 	};
@@ -157,17 +163,21 @@ public class EligibilityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmProfessionalClient = new MMCode() {
+	public static final EligibilityCode ProfessionalClient = new EligibilityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProfessionalClient";
 			definition = "Professional customers are, for example, investment firms, credit institutions, insurance companies.";
-			owner_lazy = () -> EligibilityCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.EligibilityCode.mmObject();
 			codeName = "PROF";
 		}
 	};
+	final static private LinkedHashMap<String, EligibilityCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected EligibilityCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -175,9 +185,37 @@ public class EligibilityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EligibilityCode";
 				definition = "Identifies  the type of investor. The rules that apply to each type of client are different.";
-				code_lazy = () -> Arrays.asList(EligibilityCode.mmEligibleCounterparty, EligibilityCode.mmRetailClient, EligibilityCode.mmProfessionalClient);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EligibilityCode.EligibleCounterparty, com.tools20022.repository.codeset.EligibilityCode.RetailClient,
+						com.tools20022.repository.codeset.EligibilityCode.ProfessionalClient);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(EligibleCounterparty.getCodeName().get(), EligibleCounterparty);
+		codesByName.put(RetailClient.getCodeName().get(), RetailClient);
+		codesByName.put(ProfessionalClient.getCodeName().get(), ProfessionalClient);
+	}
+
+	public static EligibilityCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static EligibilityCode[] values() {
+		EligibilityCode[] values = new EligibilityCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, EligibilityCode> {
+		@Override
+		public EligibilityCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(EligibilityCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

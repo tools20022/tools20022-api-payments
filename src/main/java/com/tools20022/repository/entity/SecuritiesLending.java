@@ -42,6 +42,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing
+ * SecuritiesFinancing}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -95,10 +99,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesDeliveryObligation.mmSecuritiesLending}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing
- * SecuritiesFinancing}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -151,8 +151,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmBorrowingFee = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingFee";
 			definition = "Amount to be paid by the borrower to the lender for the securities borrowed calculated based on the bond loan rate.";
@@ -198,8 +198,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmCallableTradeIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallableTradeIndicator";
 			definition = "Indicates whether the trade is callable or not.";
@@ -245,8 +245,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmLendingTransactionMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LendingTransactionMethod";
 			definition = "Method applied to a lending transaction.";
@@ -295,8 +295,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmBorrowingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingReason";
 			definition = "Underlying reason for the borrowing, for instance, sale on my behalf or on behalf of a third party.";
@@ -345,8 +345,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmReversible = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reversible";
 			definition = "Indicates the possibility to terminate the securitiesc lending contract either by the borrower or lender before the expiration date.";
@@ -392,8 +392,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesLendingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesLendingType";
 			definition = "Type of securities lending.";
@@ -441,8 +441,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmLendingWithCollateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LendingWithCollateral";
 			definition = "Indicates if the contract is with or without an exchange of collateral.";
@@ -490,8 +490,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmMinimumDateForCallBack = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumDateForCallBack";
 			definition = "Minimum date at which the borrower is allowed to give back the securities.";
@@ -540,8 +540,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmNumberOfDaysLendingBorrowing = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfDaysLendingBorrowing";
 			definition = "Number of days the securities are lent or borrowed for a contract which has an agreed closing date.";
@@ -590,8 +590,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmPeriodicPayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodicPayment";
 			definition = "Indicates whether the securities lending fees can be paid periodically or at the end of the contract.";
@@ -637,8 +637,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmRollover = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rollover";
 			definition = "Indicates that the contract can be rolled over.";
@@ -685,8 +685,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAttribute mmBorrowingRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingRate";
 			definition = "Rate paid by the borrower to the lender for the securities borrowed.";
@@ -740,8 +740,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Obligation covered by the lending of securities.";

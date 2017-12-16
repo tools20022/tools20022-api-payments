@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Result of the cardholder verification address checks on the street number and
@@ -33,40 +38,40 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressMatch
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressMatch
  * CardholderAddressVerificationResultCode.mmAddressMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressNotMatch
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressNotMatch
  * CardholderAddressVerificationResultCode.mmAddressNotMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressTechnical
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressTechnical
  * CardholderAddressVerificationResultCode.mmAddressTechnical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressNotTechnical
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressNotTechnical
  * CardholderAddressVerificationResultCode.mmAddressNotTechnical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressMissing
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressMissing
  * CardholderAddressVerificationResultCode.mmAddressMissing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmAddressNotUsed
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#AddressNotUsed
  * CardholderAddressVerificationResultCode.mmAddressNotUsed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalMatch
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalMatch
  * CardholderAddressVerificationResultCode.mmPostalMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalNotMatch
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalNotMatch
  * CardholderAddressVerificationResultCode.mmPostalNotMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalTechnical
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalTechnical
  * CardholderAddressVerificationResultCode.mmPostalTechnical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalNotTechnical
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalNotTechnical
  * CardholderAddressVerificationResultCode.mmPostalNotTechnical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalMissing
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalMissing
  * CardholderAddressVerificationResultCode.mmPostalMissing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#mmPostalNotUsed
+ * {@linkplain com.tools20022.repository.codeset.CardholderAddressVerificationResultCode#PostalNotUsed
  * CardholderAddressVerificationResultCode.mmPostalNotUsed}</li>
  * </ul>
  * </li>
@@ -93,7 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class CardholderAddressVerificationResultCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CardholderAddressVerificationResultCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -117,12 +123,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numeric match."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressMatch = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressMatch = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressMatch";
 			definition = "Address numeric match.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "AMCH";
 		}
 	};
@@ -147,12 +153,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numerics do not match."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressNotMatch = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressNotMatch = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressNotMatch";
 			definition = "Address numerics do not match.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "ANMH";
 		}
 	};
@@ -177,12 +183,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numeric not processed for technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressTechnical = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressTechnical = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressTechnical";
 			definition = "Address numeric not processed for technical reason.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "ANMT";
 		}
 	};
@@ -207,12 +213,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numeric not processed for non-technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressNotTechnical = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressNotTechnical = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressNotTechnical";
 			definition = "Address numeric not processed for non-technical reason.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "ANMO";
 		}
 	};
@@ -237,12 +243,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numeric missing in request."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressMissing = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressMissing = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressMissing";
 			definition = "Address numeric missing in request.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "AMSS";
 		}
 	};
@@ -267,12 +273,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Address numeric not used by issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddressNotUsed = new MMCode() {
+	public static final CardholderAddressVerificationResultCode AddressNotUsed = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressNotUsed";
 			definition = "Address numeric not used by issuer.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "ANUS";
 		}
 	};
@@ -297,12 +303,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code matches."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalMatch = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalMatch = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalMatch";
 			definition = "Postal code matches.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PMCH";
 		}
 	};
@@ -327,12 +333,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code does not match."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalNotMatch = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalNotMatch = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalNotMatch";
 			definition = "Postal code does not match.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PNMH";
 		}
 	};
@@ -357,12 +363,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code not processed for technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalTechnical = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalTechnical = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalTechnical";
 			definition = "Postal code not processed for technical reason.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PNMT";
 		}
 	};
@@ -387,12 +393,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code not processed for non-technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalNotTechnical = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalNotTechnical = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalNotTechnical";
 			definition = "Postal code not processed for non-technical reason.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PNMO";
 		}
 	};
@@ -417,12 +423,12 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code missing in request."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalMissing = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalMissing = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalMissing";
 			definition = "Postal code missing in request.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PMSS";
 		}
 	};
@@ -447,17 +453,21 @@ public class CardholderAddressVerificationResultCode {
 	 * definition} = "Postal code not used by issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPostalNotUsed = new MMCode() {
+	public static final CardholderAddressVerificationResultCode PostalNotUsed = new CardholderAddressVerificationResultCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalNotUsed";
 			definition = "Postal code not used by issuer.";
-			owner_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.mmObject();
 			codeName = "PNUS";
 		}
 	};
+	final static private LinkedHashMap<String, CardholderAddressVerificationResultCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CardholderAddressVerificationResultCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -465,12 +475,50 @@ public class CardholderAddressVerificationResultCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderAddressVerificationResultCode";
 				definition = "Result of the cardholder verification address checks on the street number and the postal code from the cardholder's address.";
-				code_lazy = () -> Arrays.asList(CardholderAddressVerificationResultCode.mmAddressMatch, CardholderAddressVerificationResultCode.mmAddressNotMatch, CardholderAddressVerificationResultCode.mmAddressTechnical,
-						CardholderAddressVerificationResultCode.mmAddressNotTechnical, CardholderAddressVerificationResultCode.mmAddressMissing, CardholderAddressVerificationResultCode.mmAddressNotUsed,
-						CardholderAddressVerificationResultCode.mmPostalMatch, CardholderAddressVerificationResultCode.mmPostalNotMatch, CardholderAddressVerificationResultCode.mmPostalTechnical,
-						CardholderAddressVerificationResultCode.mmPostalNotTechnical, CardholderAddressVerificationResultCode.mmPostalMissing, CardholderAddressVerificationResultCode.mmPostalNotUsed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressMatch, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressNotMatch,
+						com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressTechnical, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressNotTechnical,
+						com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressMissing, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.AddressNotUsed,
+						com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalMatch, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalNotMatch,
+						com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalTechnical, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalNotTechnical,
+						com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalMissing, com.tools20022.repository.codeset.CardholderAddressVerificationResultCode.PostalNotUsed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AddressMatch.getCodeName().get(), AddressMatch);
+		codesByName.put(AddressNotMatch.getCodeName().get(), AddressNotMatch);
+		codesByName.put(AddressTechnical.getCodeName().get(), AddressTechnical);
+		codesByName.put(AddressNotTechnical.getCodeName().get(), AddressNotTechnical);
+		codesByName.put(AddressMissing.getCodeName().get(), AddressMissing);
+		codesByName.put(AddressNotUsed.getCodeName().get(), AddressNotUsed);
+		codesByName.put(PostalMatch.getCodeName().get(), PostalMatch);
+		codesByName.put(PostalNotMatch.getCodeName().get(), PostalNotMatch);
+		codesByName.put(PostalTechnical.getCodeName().get(), PostalTechnical);
+		codesByName.put(PostalNotTechnical.getCodeName().get(), PostalNotTechnical);
+		codesByName.put(PostalMissing.getCodeName().get(), PostalMissing);
+		codesByName.put(PostalNotUsed.getCodeName().get(), PostalNotUsed);
+	}
+
+	public static CardholderAddressVerificationResultCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CardholderAddressVerificationResultCode[] values() {
+		CardholderAddressVerificationResultCode[] values = new CardholderAddressVerificationResultCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CardholderAddressVerificationResultCode> {
+		@Override
+		public CardholderAddressVerificationResultCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CardholderAddressVerificationResultCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

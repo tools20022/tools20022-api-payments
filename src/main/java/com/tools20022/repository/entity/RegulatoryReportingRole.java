@@ -36,6 +36,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -71,8 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * RegisteredContract.mmSendingParty}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -130,8 +130,8 @@ public class RegulatoryReportingRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedReportingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedReportingParty";
 			definition = "Related party which must register the contract for regulatory reporting reasons.";
@@ -179,8 +179,8 @@ public class RegulatoryReportingRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRegistrationAgent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRegistrationAgent";
 			definition = "Related agent which is in charge of the registration of the contract.";
@@ -230,8 +230,8 @@ public class RegulatoryReportingRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedReceivingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedReceivingParty";
 			definition = "Related party which receives support information about the registered contract.";
@@ -281,8 +281,8 @@ public class RegulatoryReportingRole extends Role {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSendingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSendingParty";
 			definition = "Related Party which sends support information about the registered contract.";

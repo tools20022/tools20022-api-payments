@@ -188,8 +188,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmDividendFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendFrequency";
 			definition = "Frequency with which the income is allocated to investors.";
@@ -234,8 +234,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmAnnualTotalDividendRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnnualTotalDividendRate";
 			definition = "Provides the annual total dividend rate.";
@@ -287,8 +287,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmFinalDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinalDividend";
 			definition = "Dividend is final.";
@@ -339,8 +339,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmFullyFrankedRateAndAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullyFrankedRateAndAmount";
 			definition = "Rate of a fully franked dividend paid by a company, or amount resulting from a fully franked dividend paid by a company; amount includes tax credit for companies that have made sufficient tax payments during the fiscal period.";
@@ -389,8 +389,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossDividend";
 			definition = "Cash dividend amount per equity before deductions or allowances have been made.";
@@ -429,8 +429,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmRateType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateType";
 			definition = "Specifies the type of dividend rate.";
@@ -485,8 +485,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmNetDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetDividend";
 			definition = "Cash dividend amount per equity after deductions or allowances have been made.";
@@ -532,8 +532,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmProvisionalDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProvisionalDividend";
 			definition = "Dividend is provisional.";
@@ -571,8 +571,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmDividendRankingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendRankingDate";
 			definition = "Date on which a security will be entitled to a dividend.";
@@ -621,8 +621,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmManufacturedDividendAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManufacturedDividendAmount";
 			definition = "Amount of money that the borrower pays to the lender as a compensation. It does not entitle the lender to reclaim any tax credit and is sometimes treated differently by the local tax authorities of the lender.";
@@ -670,8 +670,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmUnfrankedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnfrankedAmount";
 			definition = "Amount resulting from an unfranked dividend paid by a company; the amount does not include tax credit and is subject to withholding tax.";
@@ -719,8 +719,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmNotionalDividendPayableAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalDividendPayableAmount";
 			definition = "Amount of cash that would have been payable if the dividend had been taken in the form of cash rather than shares.";
@@ -766,8 +766,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Planned dividend rate, for example, for preferred shares.";
@@ -814,8 +814,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmExDividendDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExDividendDate";
 			definition = "Date/time as from which trading (including exchange and OTC trading) occurs on the underlying security without the benefit.";
@@ -866,8 +866,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a dividend is specified.";
@@ -905,8 +905,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of the dividend.";
@@ -959,8 +959,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmCashProceeds = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashProceeds";
 			definition = "Defines the proceeds which resulted in dividends.";
@@ -1005,8 +1005,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Obligation";
 			definition = "Specifies the  payment terms of the dividend.";
@@ -1049,8 +1049,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Tax on dividend.";
@@ -1096,8 +1096,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedDistribution";
 			definition = "Distribution for which a dividend is specified.";
@@ -1136,8 +1136,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmDividendFrequenceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendFrequenceType";
 			definition = "Specifies the cycle of dividends.";
@@ -1183,8 +1183,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmDividendRatio = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendRatio";
 			definition = "Percentage of earnings paid to shareholders in dividends.";
@@ -1228,8 +1228,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date upon which the dividend is paid.";
@@ -1274,8 +1274,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmPaymentFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentFrequency";
 			definition = "Specifies the cycle of dividend payments.";
@@ -1319,8 +1319,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmReinvestmentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentDate";
 			definition = "Date upon which the dividend is reinvested.";
@@ -1365,8 +1365,8 @@ public class Dividend {
 	 */
 	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Value of the dividend expressed as an amount.";

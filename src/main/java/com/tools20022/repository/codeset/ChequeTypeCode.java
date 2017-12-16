@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ChequeTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of cheque.
@@ -32,35 +37,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmCrossedCheque
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CrossedCheque
  * ChequeTypeCode.mmCrossedCheque}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmOpenCheque
+ * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OpenCheque
  * ChequeTypeCode.mmOpenCheque}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmOrderCheque
+ * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OrderCheque
  * ChequeTypeCode.mmOrderCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmCircularCheque
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CircularCheque
  * ChequeTypeCode.mmCircularCheque}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmBankDraft
+ * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#BankDraft
  * ChequeTypeCode.mmBankDraft}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmCustomerCheque
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CustomerCheque
  * ChequeTypeCode.mmCustomerCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmCertifiedCustomerCheque
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CertifiedCustomerCheque
  * ChequeTypeCode.mmCertifiedCustomerCheque}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmBankCheque
+ * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#BankCheque
  * ChequeTypeCode.mmBankCheque}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmDraft
+ * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#Draft
  * ChequeTypeCode.mmDraft}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmElectronicDraft
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#ElectronicDraft
  * ChequeTypeCode.mmElectronicDraft}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#mmOnlineCheque
+ * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OnlineCheque
  * ChequeTypeCode.mmOnlineCheque}</li>
  * </ul>
  * </li>
@@ -92,7 +94,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of cheque."</li>
  * </ul>
  */
-public class ChequeTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ChequeTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -119,12 +122,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCrossedCheque = new MMCode() {
+	public static final ChequeTypeCode CrossedCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CrossedCheque";
 			definition = "Cheque that must be paid into an account and not cashed over the counter. There are two parallel lines across the face of a crossed cheque.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "CRCQ";
 		}
 	};
@@ -149,12 +152,12 @@ public class ChequeTypeCode {
 	 * definition} = "Cheque that may only be cashed at the bank of origin."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOpenCheque = new MMCode() {
+	public static final ChequeTypeCode OpenCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpenCheque";
 			definition = "Cheque that may only be cashed at the bank of origin.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "OPCQ";
 		}
 	};
@@ -182,12 +185,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOrderCheque = new MMCode() {
+	public static final ChequeTypeCode OrderCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderCheque";
 			definition = "Cheque made payable to a named recipient 'or order'.  The payee can either deposit the cheque in an account or endorse it to a third party.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "ORCQ";
 		}
 	};
@@ -215,12 +218,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCircularCheque = new MMCode() {
+	public static final ChequeTypeCode CircularCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CircularCheque";
 			definition = "An instruction from a bank to its correspondent bank to pay the creditor a stated sum upon the presentation of a means of identification.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "CLCQ";
 		}
 	};
@@ -251,12 +254,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBankDraft = new MMCode() {
+	public static final ChequeTypeCode BankDraft = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankDraft";
 			definition = "Cheque drawn by a bank on itself or its agent. A person who owes money to another buys the draft from a bank for cash and hands it to the creditor who need have no fear that it might be dishonoured. A bank draft is also called a banker's cheque, banker's draft, bank check, or treasurer's check.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "BKDF";
 		}
 	};
@@ -284,12 +287,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCustomerCheque = new MMCode() {
+	public static final ChequeTypeCode CustomerCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomerCheque";
 			definition = "Cheque drawn on the account of the debtor, and debited on the debtor's account when the cheque is cashed. Synonym is 'corporate cheque'.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "CCHQ";
 		}
 	};
@@ -318,12 +321,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCertifiedCustomerCheque = new MMCode() {
+	public static final ChequeTypeCode CertifiedCustomerCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertifiedCustomerCheque";
 			definition = "Cheque drawn on the account of the debtor, and debited on the debtor's account when the cheque is cashed. The financial institution prints and certifies the cheque, guaranteeing the payment.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "CCCH";
 		}
 	};
@@ -353,12 +356,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBankCheque = new MMCode() {
+	public static final ChequeTypeCode BankCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankCheque";
 			definition = "Cheque drawn on the account of the debtor's financial institution, which is debited on the debtor's account when the cheque is issued.These cheques are printed by the debtor's financial institution and payment is guaranteed by the financial institution. Synonym is 'cashier's cheque'.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "BCHQ";
 		}
 	};
@@ -388,12 +391,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDraft = new MMCode() {
+	public static final ChequeTypeCode Draft = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Draft";
 			definition = "A guaranteed bank cheque with a future value date (do not pay before], which in commercial terms is a 'negotiatable instrument': the beneficiary can receive early payment from any bank under subtraction of a discount. The ordering customer's account is debited on value date.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "DRFT";
 		}
 	};
@@ -423,12 +426,12 @@ public class ChequeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmElectronicDraft = new MMCode() {
+	public static final ChequeTypeCode ElectronicDraft = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicDraft";
 			definition = "An instrument with a future value date (do not pay before], which in commercial terms is a 'negotiatable instrument': the beneficiary can receive early payment from any bank under subtraction of a discount. The ordering customer's account is debited on value date.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "ELDR";
 		}
 	};
@@ -453,17 +456,21 @@ public class ChequeTypeCode {
 	 * definition} = "Cheque intiated or completed through an online service."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnlineCheque = new MMCode() {
+	public static final ChequeTypeCode OnlineCheque = new ChequeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnlineCheque";
 			definition = "Cheque intiated or completed through an online service.";
-			owner_lazy = () -> ChequeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "OCHQ";
 		}
 	};
+	final static private LinkedHashMap<String, ChequeTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ChequeTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -471,11 +478,48 @@ public class ChequeTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequeTypeCode";
 				definition = "Specifies the type of cheque.";
-				code_lazy = () -> Arrays.asList(ChequeTypeCode.mmCrossedCheque, ChequeTypeCode.mmOpenCheque, ChequeTypeCode.mmOrderCheque, ChequeTypeCode.mmCircularCheque, ChequeTypeCode.mmBankDraft, ChequeTypeCode.mmCustomerCheque,
-						ChequeTypeCode.mmCertifiedCustomerCheque, ChequeTypeCode.mmBankCheque, ChequeTypeCode.mmDraft, ChequeTypeCode.mmElectronicDraft, ChequeTypeCode.mmOnlineCheque);
 				derivation_lazy = () -> Arrays.asList(ChequeType2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ChequeTypeCode.CrossedCheque, com.tools20022.repository.codeset.ChequeTypeCode.OpenCheque, com.tools20022.repository.codeset.ChequeTypeCode.OrderCheque,
+						com.tools20022.repository.codeset.ChequeTypeCode.CircularCheque, com.tools20022.repository.codeset.ChequeTypeCode.BankDraft, com.tools20022.repository.codeset.ChequeTypeCode.CustomerCheque,
+						com.tools20022.repository.codeset.ChequeTypeCode.CertifiedCustomerCheque, com.tools20022.repository.codeset.ChequeTypeCode.BankCheque, com.tools20022.repository.codeset.ChequeTypeCode.Draft,
+						com.tools20022.repository.codeset.ChequeTypeCode.ElectronicDraft, com.tools20022.repository.codeset.ChequeTypeCode.OnlineCheque);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CrossedCheque.getCodeName().get(), CrossedCheque);
+		codesByName.put(OpenCheque.getCodeName().get(), OpenCheque);
+		codesByName.put(OrderCheque.getCodeName().get(), OrderCheque);
+		codesByName.put(CircularCheque.getCodeName().get(), CircularCheque);
+		codesByName.put(BankDraft.getCodeName().get(), BankDraft);
+		codesByName.put(CustomerCheque.getCodeName().get(), CustomerCheque);
+		codesByName.put(CertifiedCustomerCheque.getCodeName().get(), CertifiedCustomerCheque);
+		codesByName.put(BankCheque.getCodeName().get(), BankCheque);
+		codesByName.put(Draft.getCodeName().get(), Draft);
+		codesByName.put(ElectronicDraft.getCodeName().get(), ElectronicDraft);
+		codesByName.put(OnlineCheque.getCodeName().get(), OnlineCheque);
+	}
+
+	public static ChequeTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ChequeTypeCode[] values() {
+		ChequeTypeCode[] values = new ChequeTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ChequeTypeCode> {
+		@Override
+		public ChequeTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ChequeTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

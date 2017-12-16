@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.MandateReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reason for requesting the amendment or cancellation of a
@@ -33,22 +38,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmIncorrectAgent
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#IncorrectAgent
  * MandateReasonCode.mmIncorrectAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmIncorrectCurrency
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#IncorrectCurrency
  * MandateReasonCode.mmIncorrectCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmRequestedByCustomer
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#RequestedByCustomer
  * MandateReasonCode.mmRequestedByCustomer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmInsufficientDebtorDetails
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#InsufficientDebtorDetails
  * MandateReasonCode.mmInsufficientDebtorDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmInsufficientCreditorDetails
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#InsufficientCreditorDetails
  * MandateReasonCode.mmInsufficientCreditorDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#mmIncorrectAccount
+ * {@linkplain com.tools20022.repository.codeset.MandateReasonCode#IncorrectAccount
  * MandateReasonCode.mmIncorrectAccount}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class MandateReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class MandateReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -99,12 +105,12 @@ public class MandateReasonCode {
 	 * definition} = "Agent details are incorrect or have changed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncorrectAgent = new MMCode() {
+	public static final MandateReasonCode IncorrectAgent = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncorrectAgent";
 			definition = "Agent details are incorrect or have changed.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "AGNT";
 		}
 	};
@@ -129,12 +135,12 @@ public class MandateReasonCode {
 	 * definition} = "Currency for the mandate is incorrect or has changed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncorrectCurrency = new MMCode() {
+	public static final MandateReasonCode IncorrectCurrency = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncorrectCurrency";
 			definition = "Currency for the mandate is incorrect or has changed.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "CURR";
 		}
 	};
@@ -159,12 +165,12 @@ public class MandateReasonCode {
 	 * definition} = "Customer requested the change."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequestedByCustomer = new MMCode() {
+	public static final MandateReasonCode RequestedByCustomer = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestedByCustomer";
 			definition = "Customer requested the change.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "CUST";
 		}
 	};
@@ -189,12 +195,12 @@ public class MandateReasonCode {
 	 * definition} = "Insufficient or incoherent details about the debtor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInsufficientDebtorDetails = new MMCode() {
+	public static final MandateReasonCode InsufficientDebtorDetails = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InsufficientDebtorDetails";
 			definition = "Insufficient or incoherent details about the debtor.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "DBTR";
 		}
 	};
@@ -219,12 +225,12 @@ public class MandateReasonCode {
 	 * definition} = "Insufficient or incoherent details about the creditor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInsufficientCreditorDetails = new MMCode() {
+	public static final MandateReasonCode InsufficientCreditorDetails = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InsufficientCreditorDetails";
 			definition = "Insufficient or incoherent details about the creditor.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "CDTR";
 		}
 	};
@@ -249,17 +255,21 @@ public class MandateReasonCode {
 	 * definition} = "Account details are not correct."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncorrectAccount = new MMCode() {
+	public static final MandateReasonCode IncorrectAccount = new MandateReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IncorrectAccount";
 			definition = "Account details are not correct.";
-			owner_lazy = () -> MandateReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.MandateReasonCode.mmObject();
 			codeName = "ACCT";
 		}
 	};
+	final static private LinkedHashMap<String, MandateReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected MandateReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -267,10 +277,41 @@ public class MandateReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateReasonCode";
 				definition = "Specifies the reason for requesting the amendment or cancellation of a mandate.";
-				code_lazy = () -> Arrays.asList(MandateReasonCode.mmIncorrectAgent, MandateReasonCode.mmIncorrectCurrency, MandateReasonCode.mmRequestedByCustomer, MandateReasonCode.mmInsufficientDebtorDetails,
-						MandateReasonCode.mmInsufficientCreditorDetails, MandateReasonCode.mmIncorrectAccount);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MandateReasonCode.IncorrectAgent, com.tools20022.repository.codeset.MandateReasonCode.IncorrectCurrency,
+						com.tools20022.repository.codeset.MandateReasonCode.RequestedByCustomer, com.tools20022.repository.codeset.MandateReasonCode.InsufficientDebtorDetails,
+						com.tools20022.repository.codeset.MandateReasonCode.InsufficientCreditorDetails, com.tools20022.repository.codeset.MandateReasonCode.IncorrectAccount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(IncorrectAgent.getCodeName().get(), IncorrectAgent);
+		codesByName.put(IncorrectCurrency.getCodeName().get(), IncorrectCurrency);
+		codesByName.put(RequestedByCustomer.getCodeName().get(), RequestedByCustomer);
+		codesByName.put(InsufficientDebtorDetails.getCodeName().get(), InsufficientDebtorDetails);
+		codesByName.put(InsufficientCreditorDetails.getCodeName().get(), InsufficientCreditorDetails);
+		codesByName.put(IncorrectAccount.getCodeName().get(), IncorrectAccount);
+	}
+
+	public static MandateReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static MandateReasonCode[] values() {
+		MandateReasonCode[] values = new MandateReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, MandateReasonCode> {
+		@Override
+		public MandateReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(MandateReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

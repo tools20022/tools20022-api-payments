@@ -117,8 +117,8 @@ public class ProxyAppointment {
 	 */
 	public static final MMBusinessAttribute mmProxyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProxyType";
 			definition = "Specifies the type of proxy.";
@@ -174,8 +174,8 @@ public class ProxyAppointment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeetingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeetingInstruction";
 			definition = "Instruction in which the parameters for proxy appointment are included.";
@@ -214,8 +214,8 @@ public class ProxyAppointment {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Uniquely identifies a proxy card.";
@@ -269,8 +269,8 @@ public class ProxyAppointment {
 	 */
 	public static final MMBusinessAssociationEnd mmVote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vote";
 			definition = "Voting instructions for the proxy.";
@@ -312,8 +312,8 @@ public class ProxyAppointment {
 	 */
 	public static final MMBusinessAttribute mmAdditionalParticipationCost = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalParticipationCost";
 			definition = "Aditional fee associated to the participation of a proxy person such as hotel expenses.";

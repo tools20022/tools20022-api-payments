@@ -20,26 +20,30 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PaymentMethodCode;
+import com.tools20022.repository.codeset.PaymentMethod2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the transfer method that will be used to transfer the cash.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode
- * PaymentMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod2Code#mmDirectDebit
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod2Code#DirectDebit
  * PaymentMethod2Code.mmDirectDebit}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode
+ * PaymentMethodCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -62,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the transfer method that will be used  to transfer the cash."</li>
  * </ul>
  */
-public class PaymentMethod2Code extends PaymentMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PaymentMethod2Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -81,15 +86,20 @@ public class PaymentMethod2Code extends PaymentMethodCode {
 	 * name} = "DirectDebit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDirectDebit = new MMCode() {
+	public static final PaymentMethod2Code DirectDebit = new PaymentMethod2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DirectDebit";
-			owner_lazy = () -> PaymentMethod2Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PaymentMethod2Code.mmObject();
+			codeName = PaymentMethodCode.DirectDebit.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, PaymentMethod2Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PaymentMethod2Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -97,10 +107,35 @@ public class PaymentMethod2Code extends PaymentMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod2Code";
 				definition = "Specifies the transfer method that will be used  to transfer the cash.";
-				code_lazy = () -> Arrays.asList(PaymentMethod2Code.mmDirectDebit);
 				trace_lazy = () -> PaymentMethodCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod2Code.DirectDebit);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DirectDebit.getCodeName().get(), DirectDebit);
+	}
+
+	public static PaymentMethod2Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PaymentMethod2Code[] values() {
+		PaymentMethod2Code[] values = new PaymentMethod2Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PaymentMethod2Code> {
+		@Override
+		public PaymentMethod2Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PaymentMethod2Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

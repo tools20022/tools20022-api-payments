@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NegotiatedTradeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the trade is negotiated.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#mmNegotiated
+ * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#Negotiated
  * NegotiatedTradeCode.mmNegotiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#mmNotNegotiated
+ * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#NotNegotiated
  * NegotiatedTradeCode.mmNotNegotiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#mmUnknown
+ * {@linkplain com.tools20022.repository.codeset.NegotiatedTradeCode#Unknown
  * NegotiatedTradeCode.mmUnknown}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies whether the trade is negotiated."</li>
  * </ul>
  */
-public class NegotiatedTradeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NegotiatedTradeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class NegotiatedTradeCode {
 	 * definition} = "Trade is negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNegotiated = new MMCode() {
+	public static final NegotiatedTradeCode Negotiated = new NegotiatedTradeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Negotiated";
 			definition = "Trade is negotiated.";
-			owner_lazy = () -> NegotiatedTradeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NegotiatedTradeCode.mmObject();
 			codeName = "NEGO";
 		}
 	};
@@ -117,12 +123,12 @@ public class NegotiatedTradeCode {
 	 * definition} = "Trade is not negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotNegotiated = new MMCode() {
+	public static final NegotiatedTradeCode NotNegotiated = new NegotiatedTradeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotNegotiated";
 			definition = "Trade is not negotiated.";
-			owner_lazy = () -> NegotiatedTradeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NegotiatedTradeCode.mmObject();
 			codeName = "NNGO";
 		}
 	};
@@ -147,17 +153,21 @@ public class NegotiatedTradeCode {
 	 * definition} = "Whether the trade is negotiated or not is unknown."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknown = new MMCode() {
+	public static final NegotiatedTradeCode Unknown = new NegotiatedTradeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unknown";
 			definition = "Whether the trade is negotiated or not is unknown.";
-			owner_lazy = () -> NegotiatedTradeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NegotiatedTradeCode.mmObject();
 			codeName = "UNKW";
 		}
 	};
+	final static private LinkedHashMap<String, NegotiatedTradeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NegotiatedTradeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,37 @@ public class NegotiatedTradeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NegotiatedTradeCode";
 				definition = "Specifies whether the trade is negotiated.";
-				code_lazy = () -> Arrays.asList(NegotiatedTradeCode.mmNegotiated, NegotiatedTradeCode.mmNotNegotiated, NegotiatedTradeCode.mmUnknown);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NegotiatedTradeCode.Negotiated, com.tools20022.repository.codeset.NegotiatedTradeCode.NotNegotiated,
+						com.tools20022.repository.codeset.NegotiatedTradeCode.Unknown);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Negotiated.getCodeName().get(), Negotiated);
+		codesByName.put(NotNegotiated.getCodeName().get(), NotNegotiated);
+		codesByName.put(Unknown.getCodeName().get(), Unknown);
+	}
+
+	public static NegotiatedTradeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NegotiatedTradeCode[] values() {
+		NegotiatedTradeCode[] values = new NegotiatedTradeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NegotiatedTradeCode> {
+		@Override
+		public NegotiatedTradeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NegotiatedTradeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

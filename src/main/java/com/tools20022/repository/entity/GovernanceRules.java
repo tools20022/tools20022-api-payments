@@ -121,8 +121,8 @@ public class GovernanceRules {
 	 */
 	public static final MMBusinessAssociationEnd mmModelForm = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ModelForm";
 			definition = "Model form to which the governance rules apply.";
@@ -162,8 +162,8 @@ public class GovernanceRules {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the governance rules.";
@@ -208,8 +208,8 @@ public class GovernanceRules {
 	 */
 	public static final MMBusinessAttribute mmApplicableLaw = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableLaw";
 			definition = "Law under which the undertaking has been issued.";
@@ -262,8 +262,8 @@ public class GovernanceRules {
 	 */
 	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Jurisdiction";
 			definition = "Jurisdiction which applies to the governance rules.";
@@ -302,8 +302,8 @@ public class GovernanceRules {
 	 */
 	public static final MMBusinessAttribute mmPublicationAgency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PublicationAgency";
 			definition = "Agency that publishes the governance rules.";

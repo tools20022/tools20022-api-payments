@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Product Product}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -64,8 +66,6 @@ import java.util.List;
  * GoodsPartyRole.mmItem}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Product Product}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -122,8 +122,8 @@ public class Goods extends Product {
 	 */
 	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Specifies the transport information related to the delivery of goods.";
@@ -162,8 +162,8 @@ public class Goods extends Product {
 	 */
 	public static final MMBusinessAttribute mmAnalysis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Analysis";
 			definition = "Analysis of the goods, as proven by the trade certificate.";
@@ -208,8 +208,8 @@ public class Goods extends Product {
 	 */
 	public static final MMBusinessAttribute mmHealthCheck = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HealthCheck";
 			definition = "Indicates if the goods have passed the health check.";
@@ -255,8 +255,8 @@ public class Goods extends Product {
 	 */
 	public static final MMBusinessAttribute mmPhytosanitaryInspection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhytosanitaryInspection";
 			definition = "Indicates if the goods have passed the phytosanitary inspection.";
@@ -309,8 +309,8 @@ public class Goods extends Product {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of producing goods.";

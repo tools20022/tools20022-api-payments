@@ -128,8 +128,8 @@ public class DefaultFundContribution {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedMarginCall";
 			definition = "Margin call for which a contribution to a default fund is specified.";
@@ -180,8 +180,8 @@ public class DefaultFundContribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDefaultFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefaultFund";
 			definition = "Management of the assets posted by participants in a clearing fund that can be used in the event of a default by a participant to compensate non-defaulting participants for losses they suffer due to this default.";
@@ -223,8 +223,8 @@ public class DefaultFundContribution {
 	 */
 	public static final MMBusinessAttribute mmExcessOrDeficitAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExcessOrDeficitAmount";
 			definition = "Excess amount that the CCP will restitute to the Clearing member OR deficit to be provided by the member for the guarantee fund.";
@@ -279,8 +279,8 @@ public class DefaultFundContribution {
 	 */
 	public static final MMBusinessAssociationEnd mmContributionAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContributionAccount";
 			definition = "Sub account segregated by the central counterparty on the basis of trading venues/products or other attributes.";
@@ -321,8 +321,8 @@ public class DefaultFundContribution {
 	 */
 	public static final MMBusinessAttribute mmAmountDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AmountDirection";
 			definition = "Specifies whether the amount is a deficit (debit) or an excess (credit).";

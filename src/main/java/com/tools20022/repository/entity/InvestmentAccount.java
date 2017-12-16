@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -144,8 +146,6 @@ import java.util.List;
  * FundOrderDesk.mmMainFundOrderDeskAccount}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -198,8 +198,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmInvestmentAccountType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountType";
 			definition = "Purpose of the account/source fund type. This is typically linked to an investment product, eg, wrapper, PEP, ISA.";
@@ -245,8 +245,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmOwnershipType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnershipType";
 			definition = "Ownership status of the account, eg, joint owners.";
@@ -297,8 +297,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmDesignation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Designation";
 			definition = "Supplementary registration information applying to a specific block of units for dealing and reporting purposes. The supplementary registration information may be used when all the units are registered, for example, to a funds supermarket, but holdings for each investor have to be reconciled individually.";
@@ -346,8 +346,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmReferenceCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReferenceCurrency";
 			definition = "Currency chosen for reporting purposes by the account owner in agreement with the account servicer.";
@@ -400,8 +400,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundClass";
 			definition = "Investment fund classes held in an investment account.";
@@ -448,8 +448,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Part of the investment account to or from which cash entries are made.";
@@ -498,8 +498,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Part of the investment account to or from which securities entries are made.";
@@ -545,8 +545,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundTax";
 			definition = "Taxes specific to the account.";
@@ -594,8 +594,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundTransaction";
 			definition = "Investment fund transaction which uses the investment account.";
@@ -642,8 +642,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSidePocket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SidePocket";
 			definition = "Separate account containing illiquid assets of a hedge fund portfolio.";
@@ -693,8 +693,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccountPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountPartyRole";
 			definition = "Specifies each role linked to an investment account and played by a party in that context.";
@@ -741,8 +741,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmDebitPortfolioTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitPortfolioTransfer";
 			definition = "Transfer process for which a debit investment account is specified.";
@@ -791,8 +791,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCreditPortfolioTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditPortfolioTransfer";
 			definition = "Transfer process for which a beneficiary investment account is specified.";
@@ -839,8 +839,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountForInvestmentFundProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountForInvestmentFundProcessing";
 			definition = "Order desk for which an account is specified.";
@@ -888,8 +888,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountContract";
 			definition = "Contract defining the related account";
@@ -932,8 +932,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmAccountUsageType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountUsageType";
 			definition = "Specifies whether the account is used for investment or for settlement purpose.";
@@ -979,8 +979,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAttribute mmCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Category";
 			definition = "Specifies the investment account category.";
@@ -1033,8 +1033,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Portfolio";
 			definition = "Portfolio held on an account.";
@@ -1081,8 +1081,8 @@ public class InvestmentAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPortfolioTransfer";
 			definition = "Transfer of a portfolio held on a nominee account.";

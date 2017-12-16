@@ -109,8 +109,8 @@ public class SystemEventInformation {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of the event that has occurred.";
@@ -155,8 +155,8 @@ public class SystemEventInformation {
 	 */
 	public static final MMBusinessAttribute mmTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Time";
 			definition = "Date and time at which the event occurred.";
@@ -207,8 +207,8 @@ public class SystemEventInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which event information is provided.";

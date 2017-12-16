@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
+ * TreasuryTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -109,9 +112,6 @@ import java.util.List;
  * CurrencyOption.mmExercisedOption}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
- * TreasuryTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -178,8 +178,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmAgreedRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgreedRate";
 			definition = "Exchange rate between two currencies. The rate is agreed by the trading parties during the negotiation process.";
@@ -218,8 +218,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmTypeOfProduct = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfProduct";
 			definition = "Specifies the type of trade.";
@@ -265,8 +265,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmBuyAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyAmount";
 			definition = "Currency and amount bought in a foreign exchange trade.";
@@ -312,8 +312,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmSellAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellAmount";
 			definition = "Currency and amount sold in a foreign exchange trade.";
@@ -371,8 +371,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmResultingSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultingSettlement";
 			definition = "Payment of the settlement amount to the account(s) of the final beneficiary. A payment may be settled gross, through split amounts at several agents of the buyer, or netted with several other treasury agreements.";
@@ -421,8 +421,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchangeForSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchangeForSecuritiesSettlement";
 			definition = "Securities settlement process for which a currency exchange is provided.";
@@ -470,8 +470,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmOpeningLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningLegRelatedNonDeliverableTrade";
 			definition = "Non deliverable trade for which an opening closing leg is specified.";
@@ -519,8 +519,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmClosingLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingLegRelatedNonDeliverableTrade";
 			definition = "Non deliverable trade for which a closing leg is specified.";
@@ -567,8 +567,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSwap";
 			definition = "FX swap for which the FX trade is one leg.";
@@ -615,8 +615,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOption";
 			definition = "Option which is executed by one (or more) FX trade.";
@@ -664,8 +664,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchangeForTaxVoucher = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchangeForTaxVoucher";
 			definition = "Tax voucher for which currency exchange information is specified.";
@@ -709,8 +709,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmExchangeForwardPoint = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeForwardPoint";
 			definition = "Difference between the foreign exchange spot rate and the foreign exchange forward rate expressed in basis points quoted in accordance with the prevailing market conventions for the currency pair. ";

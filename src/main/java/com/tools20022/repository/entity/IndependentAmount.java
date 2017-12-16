@@ -117,8 +117,8 @@ public class IndependentAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedRiskCalculation";
 			definition = "Risk coverage for which an independent amount is provided.";
@@ -161,8 +161,8 @@ public class IndependentAmount {
 	 */
 	public static final MMBusinessAttribute mmIndependentAmountPerTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountPerTrade";
 			definition = "Independent amounts that are related to specific trades or groups of trades.";
@@ -212,8 +212,8 @@ public class IndependentAmount {
 	 */
 	public static final MMBusinessAttribute mmIndependentAmountValueAtRisk = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountValueAtRisk";
 			definition = "Portfolio level independent amount which reflects portfolio change over a short time period using statistical techniques such as volatility and risk factor correlations.";
@@ -264,8 +264,8 @@ public class IndependentAmount {
 	 */
 	public static final MMBusinessAttribute mmIndependentAmountNetOpenPosition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountNetOpenPosition";
 			definition = "Portfolio level independent amount related to FX net open position, i.e. to the difference between assets and liabilities in a particular currency. This may be measured on a per currency basis or the position of all currencies when calculated in base currency.";

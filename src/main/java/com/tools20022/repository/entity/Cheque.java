@@ -136,8 +136,8 @@ public class Cheque {
 	 */
 	public static final MMBusinessAssociationEnd mmChequeDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequeDelivery";
 			definition = "Specifies the parameters related to the delivery of the cheque.";
@@ -187,8 +187,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmChequeNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Unique and unambiguous identifier for a cheque as assigned by the financial institution.";
@@ -241,8 +241,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmChequeType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmChequeType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequeType";
 			definition = "Specifies the type of cheque.";
@@ -297,8 +297,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmMaturityDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmChequeMaturityDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaturityDate";
 			definition = "Date when the draft becomes payable and the debtor's account is debited.";
@@ -354,8 +354,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmFormsCode = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmFormsCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FormsCode";
 			definition = "Code agreed between the initiating party and the debtor's agent, that specifies the cheque layout, company logo and digitised signature to be used to print the cheque.";
@@ -410,8 +410,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmMemoField = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmMemoField);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MemoField";
 			definition = "Information that needs to be printed on a cheque, used by the payer to add miscellaneous information.";
@@ -467,8 +467,8 @@ public class Cheque {
 	public static final MMBusinessAttribute mmRegionalClearingZone = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmRegionalClearingZone);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegionalClearingZone";
 			definition = "Regional area in which the cheque can be cleared, when a country has no nation-wide cheque clearing organisation.";
@@ -520,8 +520,8 @@ public class Cheque {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Payment which uses a cheque.";
@@ -568,8 +568,8 @@ public class Cheque {
 	 */
 	public static final MMBusinessAssociationEnd mmChequePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequePartyRole";
 			definition = "Specifies each role played by a party in the process of paying by cheque.";
@@ -614,8 +614,8 @@ public class Cheque {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashAccount";
 			definition = "Cash account on which a cheque is drawn.";

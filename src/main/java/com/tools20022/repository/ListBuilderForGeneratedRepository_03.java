@@ -25,6 +25,11 @@ class ListBuilderForGeneratedRepository_03 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
+		list.add((T) SettlementMethod2Code.mmObject());
+		list.add((T) Instruction5Code.mmObject());
+		list.add((T) ExternalMandateReason1Code.mmObject());
+		list.add((T) SequenceType2Code.mmObject());
+		list.add((T) ISONormalisedDateTime.mmObject());
 		list.add((T) UndertakingStatusCode.mmObject());
 		list.add((T) TerminationReasonCode.mmObject());
 		list.add((T) ExternalTypeOfPartyCode.mmObject());
@@ -145,6 +150,7 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) NotificationStatus3Code.mmObject());
 		list.add((T) AMLIndicator.mmObject());
 		list.add((T) UnableToApplyMissingInformationV2Code.mmObject());
+		list.add((T) UnableToApplyIncorrectInformationV2Code.mmObject());
 		list.add((T) InvestigationExecutionConfirmation3Code.mmObject());
 		list.add((T) ModificationRejection2Code.mmObject());
 		list.add((T) GroupCancellationStatus1Code.mmObject());
@@ -200,17 +206,24 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) TradePostingCode.mmObject());
 		list.add((T) MarginProductCode.mmObject());
 		list.add((T) MarginTypeCode.mmObject());
+		list.add((T) InvestigatedPartiesCode.mmObject());
 		list.add((T) InvestigatedParties1Code.mmObject());
+		list.add((T) TransactionRequestTypeCode.mmObject());
 		list.add((T) TransactionRequestType1Code.mmObject());
+		list.add((T) StatusResponseCode.mmObject());
 		list.add((T) StatusResponse1Code.mmObject());
+		list.add((T) InvestigationStatusCode.mmObject());
 		list.add((T) InvestigationStatus1Code.mmObject());
+		list.add((T) PreferredContactMethodCode.mmObject());
 		list.add((T) PreferredContactMethod1Code.mmObject());
+		list.add((T) BillingStatementStatusCode.mmObject());
 		list.add((T) BillingStatementStatus1Code.mmObject());
 		list.add((T) AccountLevelCode.mmObject());
 		list.add((T) AccountLevel2Code.mmObject());
 		list.add((T) AccountLevel1Code.mmObject());
 		list.add((T) CompensationMethodCode.mmObject());
 		list.add((T) CompensationMethod1Code.mmObject());
+		list.add((T) BillingTaxCalculationMethodCode.mmObject());
 		list.add((T) BillingTaxCalculationMethod1Code.mmObject());
 		list.add((T) ExternalBillingRateIdentification1Code.mmObject());
 		list.add((T) ExternalBillingBalanceType1Code.mmObject());
@@ -219,6 +232,7 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ExternalBillingCompensationTypeCode.mmObject());
 		list.add((T) ExternalBillingCompensationType1Code.mmObject());
 		list.add((T) BillingCurrencyType2Code.mmObject());
+		list.add((T) BillingSubServiceQualifierCode.mmObject());
 		list.add((T) BillingSubServiceQualifier1Code.mmObject());
 		list.add((T) Max12Text.mmObject());
 		list.add((T) BillingChargeMethodCode.mmObject());
@@ -229,6 +243,7 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ServiceTaxDesignation1Code.mmObject());
 		list.add((T) BalanceAdjustmentTypeCode.mmObject());
 		list.add((T) BalanceAdjustmentType1Code.mmObject());
+		list.add((T) ServiceAdjustmentTypeCode.mmObject());
 		list.add((T) ServiceAdjustmentType1Code.mmObject());
 		list.add((T) PartiallySettledStatusReasonCode.mmObject());
 		list.add((T) OrderWaiverReasonCode.mmObject());
@@ -314,11 +329,14 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) PlanStatusCode.mmObject());
 		list.add((T) DocumentType6Code.mmObject());
 		list.add((T) ExternalMandateSetupReason1Code.mmObject());
+		list.add((T) ExternalMandateSetupReasonCode.mmObject());
 		list.add((T) PledgeeTypeCode.mmObject());
 		list.add((T) ExternalValidationRuleIdentification1Code.mmObject());
 		list.add((T) StatisticalReportingStatus1Code.mmObject());
+		list.add((T) StatisticalReportingStatusCode.mmObject());
 		list.add((T) Max25Text.mmObject());
 		list.add((T) RateBasis1Code.mmObject());
+		list.add((T) RateBasisCode.mmObject());
 		list.add((T) DebtInstrumentSeniorityTypeCode.mmObject());
 		list.add((T) BenchmarkCurveName2Code.mmObject());
 		list.add((T) ExternalContractBalanceType1Code.mmObject());
@@ -327,6 +345,8 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) SupportDocumentType1Code.mmObject());
 		list.add((T) ExternalContractClosureReason1Code.mmObject());
 		list.add((T) ExternalShipmentCondition1Code.mmObject());
+		list.add((T) SupportDocumentTypeCode.mmObject());
+		list.add((T) PaymentScheduleTypeCode.mmObject());
 		list.add((T) CreditDebit3Code.mmObject());
 		list.add((T) CivilStatusCode.mmObject());
 		list.add((T) ISINOct2015Identifier.mmObject());

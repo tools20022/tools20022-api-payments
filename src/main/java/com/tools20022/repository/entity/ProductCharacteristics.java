@@ -111,8 +111,8 @@ public class ProductCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the product for which characteristics are specified.";
@@ -151,8 +151,8 @@ public class ProductCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmCharacteristics = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Characteristics";
 			definition = "Specifies the characteristic of a product.";
@@ -199,8 +199,8 @@ public class ProductCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of product characteristic by means of a code.";

@@ -80,39 +80,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Party11Choice Party11Choice}
- * </li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification43
- * PartyIdentification43}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification40
- * PartyIdentification40}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyModification1
- * PartyModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10
- * NameAndAddress10}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryParty3
- * ProprietaryParty3}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party12Choice Party12Choice}
- * </li>
- * <li>{@linkplain com.tools20022.repository.choice.Party10Choice Party10Choice}
- * </li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification42
- * PartyIdentification42}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party9Choice Party9Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party13Choice Party13Choice}
- * </li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification58
- * PartyIdentification58}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification77
- * PartyIdentification77}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party28Choice Party28Choice}
- * </li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -168,6 +135,39 @@ import java.util.List;
  * OrganisationIdentification}</li>
  * <li>{@linkplain com.tools20022.repository.entity.PersonIdentification
  * PersonIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.Party11Choice Party11Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification43
+ * PartyIdentification43}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification40
+ * PartyIdentification40}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyModification1
+ * PartyModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10
+ * NameAndAddress10}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryParty3
+ * ProprietaryParty3}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party12Choice Party12Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party10Choice Party10Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification42
+ * PartyIdentification42}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party9Choice Party9Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party13Choice Party13Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification58
+ * PartyIdentification58}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification77
+ * PartyIdentification77}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party28Choice Party28Choice}
+ * </li>
  * </ul>
  * </li>
  * <li>
@@ -247,8 +247,8 @@ public class PartyIdentificationInformation {
 	public static final MMBusinessAssociationEnd mmOtherIdentification = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmOther, ContactDetails2.mmOther, OrganisationIdentification8.mmOther, OrganisationIdentification7.mmOther, ContactDetails3.mmOther);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherIdentification";
 			definition = "Identifier issued to a party for which no specific identifier has been defined.";
@@ -294,8 +294,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentifiedParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentifiedParty";
 			definition = "Party for which an identification is provided.";
@@ -362,8 +362,8 @@ public class PartyIdentificationInformation {
 		{
 			derivation_lazy = () -> Arrays.asList(TaxParty1.mmTaxIdentification, TaxParty1.mmRegistrationIdentification, TaxParty2.mmTaxIdentification, TaxParty2.mmRegistrationIdentification, TaxParty3.mmTaxIdentification,
 					TaxParty3.mmRegistrationIdentification, BillingTaxRegion1.mmCustomerTaxIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxIdentificationNumber";
 			definition = "Number assigned by a tax authority to an entity.";
@@ -411,8 +411,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmNationalRegistrationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NationalRegistrationNumber";
 			definition = "Number assigned by a national registration authority to an entity. In Singapore this is known as the NRIC.";
@@ -461,8 +461,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmTypeOfIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfIdentification";
 			definition = "Specifies the type of alternate identification which can be used to identify a party.";
@@ -507,8 +507,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmDeclaration = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declaration";
 			definition = "Provides declaration details relative to the party.";
@@ -555,8 +555,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Specifies the type of party in different business contexts.";
@@ -612,8 +612,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyName";
 			definition = "Name by which a party is known and which is usually used to identify that party.";
@@ -660,8 +660,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which an identification is valid";
@@ -707,8 +707,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentifiedMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IdentifiedMarket";
 			definition = "Market for which an identification is provided.";
@@ -751,8 +751,8 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute mmLEI = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LEI";
 			definition = "Legal Entity Identifier is a code allocated to a party as described in ISO 17442 \"Financial Services - Legal Entity Identifier (LEI)\".";

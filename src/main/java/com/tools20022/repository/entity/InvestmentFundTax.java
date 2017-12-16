@@ -35,6 +35,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTax
+ * SecuritiesTax}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,9 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * InvestmentFundTransaction.mmTransactionTax}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTax
- * SecuritiesTax}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -124,8 +124,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAttribute mmFiscalExemption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FiscalExemption";
 			definition = "Indicates whether an owner of an investment account may benefit from a fiscal exemption or amnesty for instance for declaring overseas investments.";
@@ -178,8 +178,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Investment account for which taxes are specified.";
@@ -224,8 +224,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAttribute mmPercentageOfDebtClaim = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfDebtClaim";
 			definition = "Percentage of the underlying assets of the funds that represents a debt and is in the scope of the European directive on taxation of savings income in the form of interest payments (Council Directive 2003/48/EC 3 June).";
@@ -271,8 +271,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAttribute mmPercentageGrandfatheredDebt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageGrandfatheredDebt";
 			definition = "Percentage of grandfathered debt claim.";
@@ -318,8 +318,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAttribute mmExemptionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExemptionIndicator";
 			definition = "Indicates whether a tax exemption applies.";
@@ -373,8 +373,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 */
 	public static final MMBusinessAssociationEnd mmTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transaction";
 			definition = "Transaction for which the tax is specified.";

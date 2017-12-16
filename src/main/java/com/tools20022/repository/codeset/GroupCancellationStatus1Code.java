@@ -20,35 +20,39 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.PaymentStatusCode;
+import com.tools20022.repository.codeset.GroupCancellationStatus1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of a group of cancellation requests.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode
- * PaymentStatusCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmPartiallyAcceptedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#PartiallyAcceptedCancellationRequest
  * GroupCancellationStatus1Code.mmPartiallyAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmRejectedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#RejectedCancellationRequest
  * GroupCancellationStatus1Code.mmRejectedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmAcceptedCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#AcceptedCancellationRequest
  * GroupCancellationStatus1Code.mmAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmPendingCancellationRequest
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#PendingCancellationRequest
  * GroupCancellationStatus1Code.mmPendingCancellationRequest}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode
+ * PaymentStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -70,7 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of a group of cancellation requests."</li>
  * </ul>
  */
-public class GroupCancellationStatus1Code extends PaymentStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class GroupCancellationStatus1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,11 +94,12 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "PartiallyAcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyAcceptedCancellationRequest = new MMCode() {
+	public static final GroupCancellationStatus1Code PartiallyAcceptedCancellationRequest = new GroupCancellationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyAcceptedCancellationRequest";
-			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GroupCancellationStatus1Code.mmObject();
+			codeName = PaymentStatusCode.PartiallyAcceptedCancellationRequest.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -112,11 +118,12 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "RejectedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejectedCancellationRequest = new MMCode() {
+	public static final GroupCancellationStatus1Code RejectedCancellationRequest = new GroupCancellationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectedCancellationRequest";
-			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GroupCancellationStatus1Code.mmObject();
+			codeName = PaymentStatusCode.RejectedCancellationRequest.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -135,11 +142,12 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedCancellationRequest = new MMCode() {
+	public static final GroupCancellationStatus1Code AcceptedCancellationRequest = new GroupCancellationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCancellationRequest";
-			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GroupCancellationStatus1Code.mmObject();
+			codeName = PaymentStatusCode.AcceptedCancellationRequest.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -158,15 +166,20 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "PendingCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPendingCancellationRequest = new MMCode() {
+	public static final GroupCancellationStatus1Code PendingCancellationRequest = new GroupCancellationStatus1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingCancellationRequest";
-			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.GroupCancellationStatus1Code.mmObject();
+			codeName = PaymentStatusCode.PendingCancellationRequest.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, GroupCancellationStatus1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected GroupCancellationStatus1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -174,11 +187,40 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupCancellationStatus1Code";
 				definition = "Specifies the status of a group of cancellation requests.";
-				code_lazy = () -> Arrays.asList(GroupCancellationStatus1Code.mmPartiallyAcceptedCancellationRequest, GroupCancellationStatus1Code.mmRejectedCancellationRequest, GroupCancellationStatus1Code.mmAcceptedCancellationRequest,
-						GroupCancellationStatus1Code.mmPendingCancellationRequest);
 				trace_lazy = () -> PaymentStatusCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GroupCancellationStatus1Code.PartiallyAcceptedCancellationRequest,
+						com.tools20022.repository.codeset.GroupCancellationStatus1Code.RejectedCancellationRequest, com.tools20022.repository.codeset.GroupCancellationStatus1Code.AcceptedCancellationRequest,
+						com.tools20022.repository.codeset.GroupCancellationStatus1Code.PendingCancellationRequest);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PartiallyAcceptedCancellationRequest.getCodeName().get(), PartiallyAcceptedCancellationRequest);
+		codesByName.put(RejectedCancellationRequest.getCodeName().get(), RejectedCancellationRequest);
+		codesByName.put(AcceptedCancellationRequest.getCodeName().get(), AcceptedCancellationRequest);
+		codesByName.put(PendingCancellationRequest.getCodeName().get(), PendingCancellationRequest);
+	}
+
+	public static GroupCancellationStatus1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static GroupCancellationStatus1Code[] values() {
+		GroupCancellationStatus1Code[] values = new GroupCancellationStatus1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, GroupCancellationStatus1Code> {
+		@Override
+		public GroupCancellationStatus1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(GroupCancellationStatus1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

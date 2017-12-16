@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.AccountContract
+ * AccountContract}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,20 +59,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmCashAccountMandate
  * CashAccountContract.mmCashAccountMandate}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AccountContract4
- * AccountContract4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountContract2
- * AccountContract2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountContract3
- * AccountContract3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountReport15
- * AccountReport15}</li>
  * </ul>
  * </li>
  * <li>
@@ -105,9 +94,20 @@ import java.util.List;
  * AccountReport15.mmContractDates}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.AccountContract
- * AccountContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountContract4
+ * AccountContract4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountContract2
+ * AccountContract2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountContract3
+ * AccountContract3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountReport15
+ * AccountReport15}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -185,8 +185,8 @@ public class CashAccountContract extends AccountContract {
 	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountReport15.mmAccount, AccountReport15.mmReferenceAccount, ReportingRequest3.mmAccount, BillingStatement2.mmAccountCharacteristics);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Specifies the account which is managed by the stipulations of the contract. it is derived from the association between AccountContract and Account.";
@@ -235,8 +235,8 @@ public class CashAccountContract extends AccountContract {
 	 */
 	public static final MMBusinessAssociationEnd mmTransferCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferCashAccount";
 			definition = "Identification of the account to/from which the balance of the account must be transferred.";
@@ -286,8 +286,8 @@ public class CashAccountContract extends AccountContract {
 	 */
 	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Operations on a bank account that are allowed as part of the services offered to the owners of a bank account. It is derived from the association between AccountContract and AccountService.";
@@ -338,8 +338,8 @@ public class CashAccountContract extends AccountContract {
 	 */
 	public static final MMBusinessAssociationEnd mmBalanceTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BalanceTransfer";
 			definition = "Specifies the transfer of a positive balance (fully or partially) or the transfer of cash to compensate a negative balance. This transfer occurs at the closing of the account. It contains the identification of the account to which or from which the amount must be transferred.";
@@ -385,8 +385,8 @@ public class CashAccountContract extends AccountContract {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccountMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountMandate";
 			definition = "Mandate associated with a cash account contract.";

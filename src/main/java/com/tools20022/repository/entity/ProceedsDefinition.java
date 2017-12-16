@@ -147,8 +147,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmSpecialConcessionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecialConcessionAmount";
 			definition = "Amount of drawdown or other reduction from or in addition to the deal price.";
@@ -194,8 +194,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies whether the value is a debit or credit.";
@@ -243,8 +243,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmEarliestPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarliestPaymentDate";
 			definition = "Date on which a payment can be made, eg, if payment date is a non-business day or to indicate the first payment date of an offer.";
@@ -293,8 +293,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time at which assets become available to the account owner (in a credit entry), or cease to be available to the account owner (in a debit entry).";
@@ -344,8 +344,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmNonEligibleProceedsIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonEligibleProceedsIndicator";
 			definition = "Specifies information regarding outturn resources that cannot be processed by the CSD. Special delivery instruction is required from the account owner for the CA outcome to be credited.";
@@ -393,8 +393,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmIssuerOfferorTaxabilityIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuerOfferorTaxabilityIndicator";
 			definition = "Proceeds are taxable according to the information provided by the issuer / offeror.";
@@ -442,8 +442,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmOfferPriceFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPriceFixingDate";
 			definition = "Date/time at which an offer price is determined (as compared to its reset date if applicable).";
@@ -497,8 +497,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Option";
 			definition = "Option for which proceeds are specified.";
@@ -546,8 +546,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateAction";
 			definition = "Corporate action for which the proceeds are specified.";
@@ -586,8 +586,8 @@ public class ProceedsDefinition {
 	 */
 	public static final MMBusinessAttribute mmCountryOfIncomeSource = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CountryOfIncomeSource";
 			definition = "Indicates the country from which the income originates.";

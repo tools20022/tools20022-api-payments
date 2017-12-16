@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TypeOfPriceCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of price and information about the price.
@@ -31,129 +36,123 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmAverage
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Average
  * TypeOfPriceCode.mmAverage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmAverageOverride
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#AverageOverride
  * TypeOfPriceCode.mmAverageOverride}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmCombined
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Combined
  * TypeOfPriceCode.mmCombined}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmGrossOfAll
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#GrossOfAll
  * TypeOfPriceCode.mmGrossOfAll}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmLimit
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Limit
  * TypeOfPriceCode.mmLimit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNet
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Net
  * TypeOfPriceCode.mmNet}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNetDisclosed
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetDisclosed
  * TypeOfPriceCode.mmNetDisclosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNetOfAll
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetOfAll
  * TypeOfPriceCode.mmNetOfAll}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNetUndisclosed
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetUndisclosed
  * TypeOfPriceCode.mmNetUndisclosed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNotionalGross
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NotionalGross
  * TypeOfPriceCode.mmNotionalGross}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmParValue
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#ParValue
  * TypeOfPriceCode.mmParValue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmRoundedAverage
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#RoundedAverage
  * TypeOfPriceCode.mmRoundedAverage}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmStop
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Stop
  * TypeOfPriceCode.mmStop}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmBid
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Bid
  * TypeOfPriceCode.mmBid}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmOffer
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Offer
  * TypeOfPriceCode.mmOffer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNetAssetValue
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetAssetValue
  * TypeOfPriceCode.mmNetAssetValue}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmCreation
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Creation
  * TypeOfPriceCode.mmCreation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmCancellation
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Cancellation
  * TypeOfPriceCode.mmCancellation}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmInterim
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Interim
  * TypeOfPriceCode.mmInterim}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSwing
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Swing
  * TypeOfPriceCode.mmSwing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmOther
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Other
  * TypeOfPriceCode.mmOther}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmMid
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Mid
  * TypeOfPriceCode.mmMid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmReinvestment
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Reinvestment
  * TypeOfPriceCode.mmReinvestment}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSwitch
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Switch
  * TypeOfPriceCode.mmSwitch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmDailyDividendRate
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#DailyDividendRate
  * TypeOfPriceCode.mmDailyDividendRate}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmMarket
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Market
  * TypeOfPriceCode.mmMarket}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmIndicative
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Indicative
  * TypeOfPriceCode.mmIndicative}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmActual
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Actual
  * TypeOfPriceCode.mmActual}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmNonAdjustedUnpublished
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NonAdjustedUnpublished
  * TypeOfPriceCode.mmNonAdjustedUnpublished}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmGuaranteed
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Guaranteed
  * TypeOfPriceCode.mmGuaranteed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmEstimatedNAV
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#EstimatedNAV
  * TypeOfPriceCode.mmEstimatedNAV}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmGrossAssetValue
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#GrossAssetValue
  * TypeOfPriceCode.mmGrossAssetValue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmEstimatedGAV
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#EstimatedGAV
  * TypeOfPriceCode.mmEstimatedGAV}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSidePocketNAV
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#SidePocketNAV
  * TypeOfPriceCode.mmSidePocketNAV}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmAsk
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Ask
  * TypeOfPriceCode.mmAsk}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmAuction
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Auction
  * TypeOfPriceCode.mmAuction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmCalculated
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Calculated
  * TypeOfPriceCode.mmCalculated}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmClean
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Clean
  * TypeOfPriceCode.mmClean}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmDirty
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Dirty
  * TypeOfPriceCode.mmDirty}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmDraw
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Draw
  * TypeOfPriceCode.mmDraw}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmFairValue
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#FairValue
  * TypeOfPriceCode.mmFairValue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmIndicativePaid
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#IndicativePaid
  * TypeOfPriceCode.mmIndicativePaid}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmKassa
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Kassa
  * TypeOfPriceCode.mmKassa}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmPaid
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Paid
  * TypeOfPriceCode.mmPaid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmRedemptionNAV
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#RedemptionNAV
  * TypeOfPriceCode.mmRedemptionNAV}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSettlement
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Settlement
  * TypeOfPriceCode.mmSettlement}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSpread
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Spread
  * TypeOfPriceCode.mmSpread}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmSubscriptionNAV
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#SubscriptionNAV
  * TypeOfPriceCode.mmSubscriptionNAV}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmTax
+ * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Tax
  * TypeOfPriceCode.mmTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#mmTaxableIncomePerShareCalculated
+ * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#TaxableIncomePerShareCalculated
  * TypeOfPriceCode.mmTaxableIncomePerShareCalculated}</li>
  * </ul>
  * </li>
@@ -178,7 +177,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of price and information about the price."</li>
  * </ul>
  */
-public class TypeOfPriceCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TypeOfPriceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -202,12 +202,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is an average execution price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAverage = new MMCode() {
+	public static final TypeOfPriceCode Average = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Average";
 			definition = "Price is an average execution price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "AVER";
 		}
 	};
@@ -232,12 +232,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is an override of the average price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAverageOverride = new MMCode() {
+	public static final TypeOfPriceCode AverageOverride = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AverageOverride";
 			definition = "Price is an override of the average price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "AVOV";
 		}
 	};
@@ -263,12 +263,12 @@ public class TypeOfPriceCode {
 	 * "Price is composed of the combined expenses (used in the UK market)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCombined = new MMCode() {
+	public static final TypeOfPriceCode Combined = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Combined";
 			definition = "Price is composed of the combined expenses (used in the UK market).";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "COMB";
 		}
 	};
@@ -296,12 +296,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGrossOfAll = new MMCode() {
+	public static final TypeOfPriceCode GrossOfAll = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossOfAll";
 			definition = "Price is a gross execution price. The price is an all inclusive price, ie, including all charges, fees, and taxes.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "GREX";
 		}
 	};
@@ -329,12 +329,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLimit = new MMCode() {
+	public static final TypeOfPriceCode Limit = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Limit";
 			definition = "Price is the limit price of a limit order, eg, a customer might put in a limit order to sell financial instruments at 67 or to buy at 60.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "LIMI";
 		}
 	};
@@ -362,12 +362,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNet = new MMCode() {
+	public static final TypeOfPriceCode Net = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Net";
 			definition = "Price is a net price, ie, net only of local broker's commission, local fees and local taxes.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NET2";
 		}
 	};
@@ -392,12 +392,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is net to the disclosed client."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetDisclosed = new MMCode() {
+	public static final TypeOfPriceCode NetDisclosed = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetDisclosed";
 			definition = "Price is net to the disclosed client.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NDIS";
 		}
 	};
@@ -423,12 +423,12 @@ public class TypeOfPriceCode {
 	 * "Price is a net price, ie, net of all charges, fees and taxes."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetOfAll = new MMCode() {
+	public static final TypeOfPriceCode NetOfAll = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetOfAll";
 			definition = "Price is a net price, ie, net of all charges, fees and taxes.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NET1";
 		}
 	};
@@ -454,12 +454,12 @@ public class TypeOfPriceCode {
 	 * "Price is net to the client undisclosed (used in the UK market)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetUndisclosed = new MMCode() {
+	public static final TypeOfPriceCode NetUndisclosed = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetUndisclosed";
 			definition = "Price is net to the client undisclosed (used in the UK market).";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NUND";
 		}
 	};
@@ -484,12 +484,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is notional gross (used in the UK market)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotionalGross = new MMCode() {
+	public static final TypeOfPriceCode NotionalGross = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalGross";
 			definition = "Price is notional gross (used in the UK market).";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NOGR";
 		}
 	};
@@ -515,12 +515,12 @@ public class TypeOfPriceCode {
 	 * "Price is equal to the nominal or face value of the instrument."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmParValue = new MMCode() {
+	public static final TypeOfPriceCode ParValue = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParValue";
 			definition = "Price is equal to the nominal or face value of the instrument.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "PARV";
 		}
 	};
@@ -545,12 +545,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price  is a rounded average price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRoundedAverage = new MMCode() {
+	public static final TypeOfPriceCode RoundedAverage = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundedAverage";
 			definition = "Price  is a rounded average price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "RDAV";
 		}
 	};
@@ -581,12 +581,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmStop = new MMCode() {
+	public static final TypeOfPriceCode Stop = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stop";
 			definition = "Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "STOP";
 		}
 	};
@@ -614,12 +614,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBid = new MMCode() {
+	public static final TypeOfPriceCode Bid = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bid";
 			definition = "Price is the calculated bid price of a dual-priced fund (offer-bid prices), ie, the selling price of the units for the investor.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "BIDE";
 		}
 	};
@@ -647,12 +647,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffer = new MMCode() {
+	public static final TypeOfPriceCode Offer = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Offer";
 			definition = "Price is the calculated offer price of a dual-priced investment fund (offer-bid prices), ie, the buying price of the units for an investor.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "OFFR";
 		}
 	};
@@ -681,12 +681,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNetAssetValue = new MMCode() {
+	public static final TypeOfPriceCode NetAssetValue = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValue";
 			definition = "Price is the net asset value per unit that is used either as a transacting price for a single-priced investment fund class, or as a notional price for the calculation of other prices.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NAVL";
 		}
 	};
@@ -716,12 +716,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreation = new MMCode() {
+	public static final TypeOfPriceCode Creation = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Creation";
 			definition = "Price is the calculated creation price of a dual-priced investment fund (creation-cancellation prices) and the highest possible buying price of the units before the initial charge. The actual buying or offer price, which includes charges, will be higher.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "CREA";
 		}
 	};
@@ -751,12 +751,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancellation = new MMCode() {
+	public static final TypeOfPriceCode Cancellation = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancellation";
 			definition = "Price is the calculated cancellation price of a dual-priced investment fund (creation-cancellation price), and the lowest possible valuation of the units on any one-day. The actual selling or bid price is usually higher.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "CANC";
 		}
 	};
@@ -784,12 +784,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInterim = new MMCode() {
+	public static final TypeOfPriceCode Interim = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interim";
 			definition = "Price is the non-official interim price given to an investor before the executed price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "INTE";
 		}
 	};
@@ -820,12 +820,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSwing = new MMCode() {
+	public static final TypeOfPriceCode Swing = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Swing";
 			definition = "Price is the calculated net asset value price of a single-priced investment fund. The price is adjusted to take into account the dealing costs due to individual large deals, or due to a significant imbalance in volumes of subscriptions vs redemptions, as an alternative to dilution levy.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "SWNG";
 		}
 	};
@@ -851,12 +851,12 @@ public class TypeOfPriceCode {
 	 * "Price is another type of price, which is not explicitly defined."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final TypeOfPriceCode Other = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Price is another type of price, which is not explicitly defined.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
@@ -882,12 +882,12 @@ public class TypeOfPriceCode {
 	 * "Price is the average price between the bid and offer prices."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMid = new MMCode() {
+	public static final TypeOfPriceCode Mid = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mid";
 			definition = "Price is the average price between the bid and offer prices.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "MIDD";
 		}
 	};
@@ -913,12 +913,12 @@ public class TypeOfPriceCode {
 	 * "Price is the price used when reinvesting units after distribution."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReinvestment = new MMCode() {
+	public static final TypeOfPriceCode Reinvestment = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reinvestment";
 			definition = "Price is the price used when reinvesting units after distribution.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "RINV";
 		}
 	};
@@ -944,12 +944,12 @@ public class TypeOfPriceCode {
 	 * "Price is the price used when transferring units between products."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSwitch = new MMCode() {
+	public static final TypeOfPriceCode Switch = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Switch";
 			definition = "Price is the price used when transferring units between products.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "SWIC";
 		}
 	};
@@ -977,12 +977,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDailyDividendRate = new MMCode() {
+	public static final TypeOfPriceCode DailyDividendRate = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DailyDividendRate";
 			definition = "Price is the net income of a financial instrument, calculated on each dealing day, and divided by all the units outstanding on that day.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "DDVR";
 		}
 	};
@@ -1007,12 +1007,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is the current market price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarket = new MMCode() {
+	public static final TypeOfPriceCode Market = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Market";
 			definition = "Price is the current market price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "MRKT";
 		}
 	};
@@ -1037,12 +1037,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is the estimated indicative price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndicative = new MMCode() {
+	public static final TypeOfPriceCode Indicative = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Indicative";
 			definition = "Price is the estimated indicative price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "INDC";
 		}
 	};
@@ -1067,12 +1067,12 @@ public class TypeOfPriceCode {
 	 * definition} = "True offer price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmActual = new MMCode() {
+	public static final TypeOfPriceCode Actual = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Actual";
 			definition = "True offer price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ACTU";
 		}
 	};
@@ -1098,12 +1098,12 @@ public class TypeOfPriceCode {
 	 * "The original NAV before the price of the investment fund was swung."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonAdjustedUnpublished = new MMCode() {
+	public static final TypeOfPriceCode NonAdjustedUnpublished = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonAdjustedUnpublished";
 			definition = "The original NAV before the price of the investment fund was swung.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NAUP";
 		}
 	};
@@ -1128,12 +1128,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is a guaranteed price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGuaranteed = new MMCode() {
+	public static final TypeOfPriceCode Guaranteed = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guaranteed";
 			definition = "Price is a guaranteed price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "GUAR";
 		}
 	};
@@ -1158,12 +1158,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is an estimated net asset value per unit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEstimatedNAV = new MMCode() {
+	public static final TypeOfPriceCode EstimatedNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedNAV";
 			definition = "Price is an estimated net asset value per unit";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ENAV";
 		}
 	};
@@ -1192,12 +1192,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGrossAssetValue = new MMCode() {
+	public static final TypeOfPriceCode GrossAssetValue = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAssetValue";
 			definition = "Price is the gross asset value per unit and includes the performance fee per share. It is used as the transacting price for a fund with equalisation. GAVL price minus the NAVL price = performance fee.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "GAVL";
 		}
 	};
@@ -1226,12 +1226,12 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEstimatedGAV = new MMCode() {
+	public static final TypeOfPriceCode EstimatedGAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedGAV";
 			definition = "Price is the estimated gross asset value per unit and includes the performance fee per share. It is used as the transacting price for a fund with equalisation. GAVL price minus the NAVL price = performance fee.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "EGAV";
 		}
 	};
@@ -1257,12 +1257,12 @@ public class TypeOfPriceCode {
 	 * "Price is the estimated net asset value for the side pocket."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSidePocketNAV = new MMCode() {
+	public static final TypeOfPriceCode SidePocketNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SidePocketNAV";
 			definition = "Price is the estimated net asset value for the side pocket.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "NAVS";
 		}
 	};
@@ -1287,12 +1287,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Offer.  Price for which seller is willing to sell item."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAsk = new MMCode() {
+	public static final TypeOfPriceCode Ask = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ask";
 			definition = "Offer.  Price for which seller is willing to sell item.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ASKK";
 		}
 	};
@@ -1317,12 +1317,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price selected as a crossing of an auction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuction = new MMCode() {
+	public static final TypeOfPriceCode Auction = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Auction";
 			definition = "Price selected as a crossing of an auction.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "AUCT";
 		}
 	};
@@ -1347,12 +1347,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCalculated = new MMCode() {
+	public static final TypeOfPriceCode Calculated = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Calculated";
 			definition = "Price is calculated.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "CALC";
 		}
 	};
@@ -1377,12 +1377,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Paid without accumulated interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmClean = new MMCode() {
+	public static final TypeOfPriceCode Clean = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Clean";
 			definition = "Paid without accumulated interest.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "CLEN";
 		}
 	};
@@ -1407,12 +1407,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Paid with accumulated interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDirty = new MMCode() {
+	public static final TypeOfPriceCode Dirty = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dirty";
 			definition = "Paid with accumulated interest.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "DIRT";
 		}
 	};
@@ -1437,12 +1437,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price selected as a result of a lottery/tiebreaker."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDraw = new MMCode() {
+	public static final TypeOfPriceCode Draw = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Draw";
 			definition = "Price selected as a result of a lottery/tiebreaker.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "DRAW";
 		}
 	};
@@ -1467,12 +1467,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Estimate of the potential market price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFairValue = new MMCode() {
+	public static final TypeOfPriceCode FairValue = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FairValue";
 			definition = "Estimate of the potential market price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "FAVA";
 		}
 	};
@@ -1498,12 +1498,12 @@ public class TypeOfPriceCode {
 	 * "Reduced and partial execution based on high bids and ask orders."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndicativePaid = new MMCode() {
+	public static final TypeOfPriceCode IndicativePaid = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicativePaid";
 			definition = "Reduced and partial execution based on high bids and ask orders.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "INPA";
 		}
 	};
@@ -1528,12 +1528,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Official declared price."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmKassa = new MMCode() {
+	public static final TypeOfPriceCode Kassa = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Kassa";
 			definition = "Official declared price.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "KASA";
 		}
 	};
@@ -1558,12 +1558,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price at which the trade was done."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaid = new MMCode() {
+	public static final TypeOfPriceCode Paid = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Paid";
 			definition = "Price at which the trade was done.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "PAID";
 		}
 	};
@@ -1588,12 +1588,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Net Asset Value (NAV) applicable to redemptions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRedemptionNAV = new MMCode() {
+	public static final TypeOfPriceCode RedemptionNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionNAV";
 			definition = "Net Asset Value (NAV) applicable to redemptions.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "REDN";
 		}
 	};
@@ -1618,12 +1618,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price used for the settlement of futures and options."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlement = new MMCode() {
+	public static final TypeOfPriceCode Settlement = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Price used for the settlement of futures and options.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "SETM";
 		}
 	};
@@ -1648,12 +1648,12 @@ public class TypeOfPriceCode {
 	 * definition} = "The difference between bid and ask."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpread = new MMCode() {
+	public static final TypeOfPriceCode Spread = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "The difference between bid and ask.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "SPRE";
 		}
 	};
@@ -1678,12 +1678,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Net Asset Value (NAV) applicable to subscriptions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSubscriptionNAV = new MMCode() {
+	public static final TypeOfPriceCode SubscriptionNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionNAV";
 			definition = "Net Asset Value (NAV) applicable to subscriptions.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "SUBN";
 		}
 	};
@@ -1708,12 +1708,12 @@ public class TypeOfPriceCode {
 	 * definition} = "Price for tax declaration purpose."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTax = new MMCode() {
+	public static final TypeOfPriceCode Tax = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Price for tax declaration purpose.";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "TAXE";
 		}
 	};
@@ -1740,17 +1740,21 @@ public class TypeOfPriceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTaxableIncomePerShareCalculated = new MMCode() {
+	public static final TypeOfPriceCode TaxableIncomePerShareCalculated = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableIncomePerShareCalculated";
 			definition = "Specifies whether the fund calculates a taxable interest per share (TIS).";
-			owner_lazy = () -> TypeOfPriceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "TISC";
 		}
 	};
+	final static private LinkedHashMap<String, TypeOfPriceCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TypeOfPriceCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -1758,16 +1762,99 @@ public class TypeOfPriceCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPriceCode";
 				definition = "Specifies the type of price and information about the price.";
-				code_lazy = () -> Arrays.asList(TypeOfPriceCode.mmAverage, TypeOfPriceCode.mmAverageOverride, TypeOfPriceCode.mmCombined, TypeOfPriceCode.mmGrossOfAll, TypeOfPriceCode.mmLimit, TypeOfPriceCode.mmNet,
-						TypeOfPriceCode.mmNetDisclosed, TypeOfPriceCode.mmNetOfAll, TypeOfPriceCode.mmNetUndisclosed, TypeOfPriceCode.mmNotionalGross, TypeOfPriceCode.mmParValue, TypeOfPriceCode.mmRoundedAverage, TypeOfPriceCode.mmStop,
-						TypeOfPriceCode.mmBid, TypeOfPriceCode.mmOffer, TypeOfPriceCode.mmNetAssetValue, TypeOfPriceCode.mmCreation, TypeOfPriceCode.mmCancellation, TypeOfPriceCode.mmInterim, TypeOfPriceCode.mmSwing,
-						TypeOfPriceCode.mmOther, TypeOfPriceCode.mmMid, TypeOfPriceCode.mmReinvestment, TypeOfPriceCode.mmSwitch, TypeOfPriceCode.mmDailyDividendRate, TypeOfPriceCode.mmMarket, TypeOfPriceCode.mmIndicative,
-						TypeOfPriceCode.mmActual, TypeOfPriceCode.mmNonAdjustedUnpublished, TypeOfPriceCode.mmGuaranteed, TypeOfPriceCode.mmEstimatedNAV, TypeOfPriceCode.mmGrossAssetValue, TypeOfPriceCode.mmEstimatedGAV,
-						TypeOfPriceCode.mmSidePocketNAV, TypeOfPriceCode.mmAsk, TypeOfPriceCode.mmAuction, TypeOfPriceCode.mmCalculated, TypeOfPriceCode.mmClean, TypeOfPriceCode.mmDirty, TypeOfPriceCode.mmDraw, TypeOfPriceCode.mmFairValue,
-						TypeOfPriceCode.mmIndicativePaid, TypeOfPriceCode.mmKassa, TypeOfPriceCode.mmPaid, TypeOfPriceCode.mmRedemptionNAV, TypeOfPriceCode.mmSettlement, TypeOfPriceCode.mmSpread, TypeOfPriceCode.mmSubscriptionNAV,
-						TypeOfPriceCode.mmTax, TypeOfPriceCode.mmTaxableIncomePerShareCalculated);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TypeOfPriceCode.Average, com.tools20022.repository.codeset.TypeOfPriceCode.AverageOverride, com.tools20022.repository.codeset.TypeOfPriceCode.Combined,
+						com.tools20022.repository.codeset.TypeOfPriceCode.GrossOfAll, com.tools20022.repository.codeset.TypeOfPriceCode.Limit, com.tools20022.repository.codeset.TypeOfPriceCode.Net,
+						com.tools20022.repository.codeset.TypeOfPriceCode.NetDisclosed, com.tools20022.repository.codeset.TypeOfPriceCode.NetOfAll, com.tools20022.repository.codeset.TypeOfPriceCode.NetUndisclosed,
+						com.tools20022.repository.codeset.TypeOfPriceCode.NotionalGross, com.tools20022.repository.codeset.TypeOfPriceCode.ParValue, com.tools20022.repository.codeset.TypeOfPriceCode.RoundedAverage,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Stop, com.tools20022.repository.codeset.TypeOfPriceCode.Bid, com.tools20022.repository.codeset.TypeOfPriceCode.Offer,
+						com.tools20022.repository.codeset.TypeOfPriceCode.NetAssetValue, com.tools20022.repository.codeset.TypeOfPriceCode.Creation, com.tools20022.repository.codeset.TypeOfPriceCode.Cancellation,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Interim, com.tools20022.repository.codeset.TypeOfPriceCode.Swing, com.tools20022.repository.codeset.TypeOfPriceCode.Other,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Mid, com.tools20022.repository.codeset.TypeOfPriceCode.Reinvestment, com.tools20022.repository.codeset.TypeOfPriceCode.Switch,
+						com.tools20022.repository.codeset.TypeOfPriceCode.DailyDividendRate, com.tools20022.repository.codeset.TypeOfPriceCode.Market, com.tools20022.repository.codeset.TypeOfPriceCode.Indicative,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Actual, com.tools20022.repository.codeset.TypeOfPriceCode.NonAdjustedUnpublished, com.tools20022.repository.codeset.TypeOfPriceCode.Guaranteed,
+						com.tools20022.repository.codeset.TypeOfPriceCode.EstimatedNAV, com.tools20022.repository.codeset.TypeOfPriceCode.GrossAssetValue, com.tools20022.repository.codeset.TypeOfPriceCode.EstimatedGAV,
+						com.tools20022.repository.codeset.TypeOfPriceCode.SidePocketNAV, com.tools20022.repository.codeset.TypeOfPriceCode.Ask, com.tools20022.repository.codeset.TypeOfPriceCode.Auction,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Calculated, com.tools20022.repository.codeset.TypeOfPriceCode.Clean, com.tools20022.repository.codeset.TypeOfPriceCode.Dirty,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Draw, com.tools20022.repository.codeset.TypeOfPriceCode.FairValue, com.tools20022.repository.codeset.TypeOfPriceCode.IndicativePaid,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Kassa, com.tools20022.repository.codeset.TypeOfPriceCode.Paid, com.tools20022.repository.codeset.TypeOfPriceCode.RedemptionNAV,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Settlement, com.tools20022.repository.codeset.TypeOfPriceCode.Spread, com.tools20022.repository.codeset.TypeOfPriceCode.SubscriptionNAV,
+						com.tools20022.repository.codeset.TypeOfPriceCode.Tax, com.tools20022.repository.codeset.TypeOfPriceCode.TaxableIncomePerShareCalculated);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Average.getCodeName().get(), Average);
+		codesByName.put(AverageOverride.getCodeName().get(), AverageOverride);
+		codesByName.put(Combined.getCodeName().get(), Combined);
+		codesByName.put(GrossOfAll.getCodeName().get(), GrossOfAll);
+		codesByName.put(Limit.getCodeName().get(), Limit);
+		codesByName.put(Net.getCodeName().get(), Net);
+		codesByName.put(NetDisclosed.getCodeName().get(), NetDisclosed);
+		codesByName.put(NetOfAll.getCodeName().get(), NetOfAll);
+		codesByName.put(NetUndisclosed.getCodeName().get(), NetUndisclosed);
+		codesByName.put(NotionalGross.getCodeName().get(), NotionalGross);
+		codesByName.put(ParValue.getCodeName().get(), ParValue);
+		codesByName.put(RoundedAverage.getCodeName().get(), RoundedAverage);
+		codesByName.put(Stop.getCodeName().get(), Stop);
+		codesByName.put(Bid.getCodeName().get(), Bid);
+		codesByName.put(Offer.getCodeName().get(), Offer);
+		codesByName.put(NetAssetValue.getCodeName().get(), NetAssetValue);
+		codesByName.put(Creation.getCodeName().get(), Creation);
+		codesByName.put(Cancellation.getCodeName().get(), Cancellation);
+		codesByName.put(Interim.getCodeName().get(), Interim);
+		codesByName.put(Swing.getCodeName().get(), Swing);
+		codesByName.put(Other.getCodeName().get(), Other);
+		codesByName.put(Mid.getCodeName().get(), Mid);
+		codesByName.put(Reinvestment.getCodeName().get(), Reinvestment);
+		codesByName.put(Switch.getCodeName().get(), Switch);
+		codesByName.put(DailyDividendRate.getCodeName().get(), DailyDividendRate);
+		codesByName.put(Market.getCodeName().get(), Market);
+		codesByName.put(Indicative.getCodeName().get(), Indicative);
+		codesByName.put(Actual.getCodeName().get(), Actual);
+		codesByName.put(NonAdjustedUnpublished.getCodeName().get(), NonAdjustedUnpublished);
+		codesByName.put(Guaranteed.getCodeName().get(), Guaranteed);
+		codesByName.put(EstimatedNAV.getCodeName().get(), EstimatedNAV);
+		codesByName.put(GrossAssetValue.getCodeName().get(), GrossAssetValue);
+		codesByName.put(EstimatedGAV.getCodeName().get(), EstimatedGAV);
+		codesByName.put(SidePocketNAV.getCodeName().get(), SidePocketNAV);
+		codesByName.put(Ask.getCodeName().get(), Ask);
+		codesByName.put(Auction.getCodeName().get(), Auction);
+		codesByName.put(Calculated.getCodeName().get(), Calculated);
+		codesByName.put(Clean.getCodeName().get(), Clean);
+		codesByName.put(Dirty.getCodeName().get(), Dirty);
+		codesByName.put(Draw.getCodeName().get(), Draw);
+		codesByName.put(FairValue.getCodeName().get(), FairValue);
+		codesByName.put(IndicativePaid.getCodeName().get(), IndicativePaid);
+		codesByName.put(Kassa.getCodeName().get(), Kassa);
+		codesByName.put(Paid.getCodeName().get(), Paid);
+		codesByName.put(RedemptionNAV.getCodeName().get(), RedemptionNAV);
+		codesByName.put(Settlement.getCodeName().get(), Settlement);
+		codesByName.put(Spread.getCodeName().get(), Spread);
+		codesByName.put(SubscriptionNAV.getCodeName().get(), SubscriptionNAV);
+		codesByName.put(Tax.getCodeName().get(), Tax);
+		codesByName.put(TaxableIncomePerShareCalculated.getCodeName().get(), TaxableIncomePerShareCalculated);
+	}
+
+	public static TypeOfPriceCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TypeOfPriceCode[] values() {
+		TypeOfPriceCode[] values = new TypeOfPriceCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TypeOfPriceCode> {
+		@Override
+		public TypeOfPriceCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TypeOfPriceCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

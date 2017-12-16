@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ConductClassificationCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the classification of the conduct.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#mmStandard
+ * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#Standard
  * ConductClassificationCode.mmStandard}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#mmNonStandard
+ * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#NonStandard
  * ConductClassificationCode.mmNonStandard}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#mmReluctant
+ * {@linkplain com.tools20022.repository.codeset.ConductClassificationCode#Reluctant
  * ConductClassificationCode.mmReluctant}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the classification of the conduct."</li>
  * </ul>
  */
-public class ConductClassificationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ConductClassificationCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class ConductClassificationCode {
 	 * definition} = "Standard."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStandard = new MMCode() {
+	public static final ConductClassificationCode Standard = new ConductClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Standard";
 			definition = "Standard.";
-			owner_lazy = () -> ConductClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConductClassificationCode.mmObject();
 			codeName = "STAN";
 		}
 	};
@@ -117,12 +123,12 @@ public class ConductClassificationCode {
 	 * definition} = "Non standard or unusual."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonStandard = new MMCode() {
+	public static final ConductClassificationCode NonStandard = new ConductClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonStandard";
 			definition = "Non standard or unusual.";
-			owner_lazy = () -> ConductClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConductClassificationCode.mmObject();
 			codeName = "NSTA";
 		}
 	};
@@ -147,17 +153,21 @@ public class ConductClassificationCode {
 	 * definition} = "Reluctant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReluctant = new MMCode() {
+	public static final ConductClassificationCode Reluctant = new ConductClassificationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reluctant";
 			definition = "Reluctant.";
-			owner_lazy = () -> ConductClassificationCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ConductClassificationCode.mmObject();
 			codeName = "RCLT";
 		}
 	};
+	final static private LinkedHashMap<String, ConductClassificationCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ConductClassificationCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -165,9 +175,37 @@ public class ConductClassificationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConductClassificationCode";
 				definition = "Specifies the classification of the conduct.";
-				code_lazy = () -> Arrays.asList(ConductClassificationCode.mmStandard, ConductClassificationCode.mmNonStandard, ConductClassificationCode.mmReluctant);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ConductClassificationCode.Standard, com.tools20022.repository.codeset.ConductClassificationCode.NonStandard,
+						com.tools20022.repository.codeset.ConductClassificationCode.Reluctant);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Standard.getCodeName().get(), Standard);
+		codesByName.put(NonStandard.getCodeName().get(), NonStandard);
+		codesByName.put(Reluctant.getCodeName().get(), Reluctant);
+	}
+
+	public static ConductClassificationCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ConductClassificationCode[] values() {
+		ConductClassificationCode[] values = new ConductClassificationCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ConductClassificationCode> {
+		@Override
+		public ConductClassificationCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ConductClassificationCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

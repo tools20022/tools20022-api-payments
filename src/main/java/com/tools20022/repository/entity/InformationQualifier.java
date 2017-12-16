@@ -115,8 +115,8 @@ public class InformationQualifier {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemBusinessInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemBusinessInformation";
 			definition = "System for which a qualifier is specified.";
@@ -156,8 +156,8 @@ public class InformationQualifier {
 	 */
 	public static final MMBusinessAttribute mmIsFormatted = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IsFormatted";
 			definition = "Indicates whether the information is formatted.";
@@ -202,8 +202,8 @@ public class InformationQualifier {
 	 */
 	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Priority of the information.";

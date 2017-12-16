@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalUnderlyingTradeTransactionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the external commercial reference type code in the format of a
@@ -54,11 +60,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalUnderlyingTradeTransactionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalUnderlyingTradeTransactionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalUnderlyingTradeTransactionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalUnderlyingTradeTransactionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -66,8 +77,34 @@ public class ExternalUnderlyingTradeTransactionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalUnderlyingTradeTransactionTypeCode";
 				definition = "Specifies the external commercial reference type code in the format of a character string with a maximum length of 4 characters. The list of valid codes is an external code list published separately.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalUnderlyingTradeTransactionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalUnderlyingTradeTransactionTypeCode[] values() {
+		ExternalUnderlyingTradeTransactionTypeCode[] values = new ExternalUnderlyingTradeTransactionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalUnderlyingTradeTransactionTypeCode> {
+		@Override
+		public ExternalUnderlyingTradeTransactionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalUnderlyingTradeTransactionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

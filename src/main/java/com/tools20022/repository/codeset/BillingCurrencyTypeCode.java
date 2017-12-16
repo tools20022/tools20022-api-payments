@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BillingCurrencyTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the currency type to be used in the billing balance.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#mmAccount
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#Account
  * BillingCurrencyTypeCode.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#mmSettlement
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#Settlement
  * BillingCurrencyTypeCode.mmSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#mmPricing
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#Pricing
  * BillingCurrencyTypeCode.mmPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#mmHost
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyTypeCode#Host
  * BillingCurrencyTypeCode.mmHost}</li>
  * </ul>
  * </li>
@@ -75,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Defines the currency type to be used in the billing balance."</li>
  * </ul>
  */
-public class BillingCurrencyTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BillingCurrencyTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -100,12 +106,12 @@ public class BillingCurrencyTypeCode {
 	 * "Currency type used for the billing is the account currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccount = new MMCode() {
+	public static final BillingCurrencyTypeCode Account = new BillingCurrencyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Currency type used for the billing is the account currency.";
-			owner_lazy = () -> BillingCurrencyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingCurrencyTypeCode.mmObject();
 			codeName = "ACCT";
 		}
 	};
@@ -131,12 +137,12 @@ public class BillingCurrencyTypeCode {
 	 * "Currency type used for the billing is the settlement currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlement = new MMCode() {
+	public static final BillingCurrencyTypeCode Settlement = new BillingCurrencyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Settlement";
 			definition = "Currency type used for the billing is the settlement currency.";
-			owner_lazy = () -> BillingCurrencyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingCurrencyTypeCode.mmObject();
 			codeName = "STLM";
 		}
 	};
@@ -162,12 +168,12 @@ public class BillingCurrencyTypeCode {
 	 * "Currency type used for the billing is the pricing currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPricing = new MMCode() {
+	public static final BillingCurrencyTypeCode Pricing = new BillingCurrencyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pricing";
 			definition = "Currency type used for the billing is the pricing currency.";
-			owner_lazy = () -> BillingCurrencyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingCurrencyTypeCode.mmObject();
 			codeName = "PRCG";
 		}
 	};
@@ -192,17 +198,21 @@ public class BillingCurrencyTypeCode {
 	 * definition} = "Currency type used for the billing is the host currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHost = new MMCode() {
+	public static final BillingCurrencyTypeCode Host = new BillingCurrencyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Host";
 			definition = "Currency type used for the billing is the host currency.";
-			owner_lazy = () -> BillingCurrencyTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BillingCurrencyTypeCode.mmObject();
 			codeName = "HOST";
 		}
 	};
+	final static private LinkedHashMap<String, BillingCurrencyTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BillingCurrencyTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -210,10 +220,39 @@ public class BillingCurrencyTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingCurrencyTypeCode";
 				definition = "Defines the currency type to be used in the billing balance.";
-				code_lazy = () -> Arrays.asList(BillingCurrencyTypeCode.mmAccount, BillingCurrencyTypeCode.mmSettlement, BillingCurrencyTypeCode.mmPricing, BillingCurrencyTypeCode.mmHost);
 				derivation_lazy = () -> Arrays.asList(BillingCurrencyType1Code.mmObject(), BillingCurrencyType2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingCurrencyTypeCode.Account, com.tools20022.repository.codeset.BillingCurrencyTypeCode.Settlement,
+						com.tools20022.repository.codeset.BillingCurrencyTypeCode.Pricing, com.tools20022.repository.codeset.BillingCurrencyTypeCode.Host);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Account.getCodeName().get(), Account);
+		codesByName.put(Settlement.getCodeName().get(), Settlement);
+		codesByName.put(Pricing.getCodeName().get(), Pricing);
+		codesByName.put(Host.getCodeName().get(), Host);
+	}
+
+	public static BillingCurrencyTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BillingCurrencyTypeCode[] values() {
+		BillingCurrencyTypeCode[] values = new BillingCurrencyTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BillingCurrencyTypeCode> {
+		@Override
+		public BillingCurrencyTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BillingCurrencyTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

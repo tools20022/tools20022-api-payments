@@ -20,28 +20,31 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.InterestCode;
+import com.tools20022.repository.codeset.InterestType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates which type of interest is applied to a balance left on an account.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.InterestCode InterestCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestType1Code#mmIntraDay
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestType1Code#IntraDay
  * InterestType1Code.mmIntraDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestType1Code#mmOverNight
+ * {@linkplain com.tools20022.repository.codeset.InterestType1Code#OverNight
  * InterestType1Code.mmOverNight}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.InterestCode InterestCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -65,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class InterestType1Code extends InterestCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InterestType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,11 +88,12 @@ public class InterestType1Code extends InterestCode {
 	 * name} = "IntraDay"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIntraDay = new MMCode() {
+	public static final InterestType1Code IntraDay = new InterestType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntraDay";
-			owner_lazy = () -> InterestType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestType1Code.mmObject();
+			codeName = InterestCode.IntraDay.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -107,15 +112,20 @@ public class InterestType1Code extends InterestCode {
 	 * name} = "OverNight"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOverNight = new MMCode() {
+	public static final InterestType1Code OverNight = new InterestType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OverNight";
-			owner_lazy = () -> InterestType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestType1Code.mmObject();
+			codeName = InterestCode.OverNight.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, InterestType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InterestType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -123,10 +133,36 @@ public class InterestType1Code extends InterestCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestType1Code";
 				definition = "Indicates which type of interest is applied to a balance left on an account.";
-				code_lazy = () -> Arrays.asList(InterestType1Code.mmIntraDay, InterestType1Code.mmOverNight);
 				trace_lazy = () -> InterestCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InterestType1Code.IntraDay, com.tools20022.repository.codeset.InterestType1Code.OverNight);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(IntraDay.getCodeName().get(), IntraDay);
+		codesByName.put(OverNight.getCodeName().get(), OverNight);
+	}
+
+	public static InterestType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InterestType1Code[] values() {
+		InterestType1Code[] values = new InterestType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InterestType1Code> {
+		@Override
+		public InterestType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InterestType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

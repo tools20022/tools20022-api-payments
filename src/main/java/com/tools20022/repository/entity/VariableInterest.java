@@ -83,14 +83,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.FloatingInterestRate4
- * FloatingInterestRate4}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -120,6 +112,14 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.choice.InterestRate2Choice#mmFloating
  * InterestRate2Choice.mmFloating}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.FloatingInterestRate4
+ * FloatingInterestRate4}</li>
  * </ul>
  * </li>
  * <li>
@@ -174,8 +174,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmVariableRateChangeFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateChangeFrequency";
 			definition = "Specifies the frequency of change to the variable rate of an interest bearing instrument.";
@@ -224,8 +224,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingDate";
 			definition = "Date/time at which the rate determination is made, also called determination date, for instance the date the interest rate of a floating rate note will be/was calculated, according to the terms of the issue.";
@@ -279,8 +279,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestCalculation";
 			definition = "Interest calculation for which a variable interest is used.";
@@ -319,8 +319,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmReportingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingDate";
 			definition = "Last date the new interest rate must be reported to the market.";
@@ -368,8 +368,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmResetDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResetDate";
 			definition = "Date/time at which the interest rate of an interest bearing instrument will be reset, according to the terms of the issue.";
@@ -417,8 +417,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmArrears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Arrears";
 			definition = "Indicates that the rate reset will occur at the end of the payment period (True case)";
@@ -470,8 +470,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "Identifies the index used for calculating the interest";
@@ -517,8 +517,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculation";
 			definition = "Yield calculation for which a variable interest is used.";
@@ -567,8 +567,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmBenchmarkReference = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkReference";
 			definition = "Benchmark rate against which variable rate instruments are measured to determine the interest rate, for example, LIBOR.";
@@ -611,8 +611,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmEstimatedInterestRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedInterestRate";
 			definition = "Estimated per annum ratio of interest paid to the principal amount of the financial instrument for a specific period of time.";
@@ -657,8 +657,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAttribute mmVariableRateValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateValueDate";
 			definition = "Date/time as of which the variable rate is valid.";
@@ -711,8 +711,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmLifeCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LifeCalculation";
 			definition = "Lfe calculation for which a variable interest is used.";
@@ -760,8 +760,8 @@ public class VariableInterest {
 	 */
 	public static final MMBusinessAssociationEnd mmDurationCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DurationCalculation";
 			definition = "Duration calculation for which a variable interest is used.";

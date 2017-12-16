@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalBankTransactionFamilyCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the external family code of the bank transaction code in the format
@@ -55,11 +61,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalBankTransactionFamilyCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalBankTransactionFamilyCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalBankTransactionFamilyCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalBankTransactionFamilyCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -67,8 +78,34 @@ public class ExternalBankTransactionFamilyCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBankTransactionFamilyCode";
 				definition = "Specifies the external family code of the bank transaction code in the format of character string with a maximum length of 4 characters.\r\nThe list of valid codes is an external code list published separately, and is a sub-list of the bank transaction domain list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalBankTransactionFamilyCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalBankTransactionFamilyCode[] values() {
+		ExternalBankTransactionFamilyCode[] values = new ExternalBankTransactionFamilyCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalBankTransactionFamilyCode> {
+		@Override
+		public ExternalBankTransactionFamilyCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalBankTransactionFamilyCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

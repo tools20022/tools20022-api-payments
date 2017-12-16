@@ -121,8 +121,8 @@ public class MarginAmountRequirement {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginAmountRequirementCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginAmountRequirementCalculation";
 			definition = "Exposure valuation which takes into account amount requirements.";
@@ -166,8 +166,8 @@ public class MarginAmountRequirement {
 	 */
 	public static final MMBusinessAttribute mmDeliverMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DeliverMarginAmount";
 			definition = "Amount of new Variation Margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
@@ -217,8 +217,8 @@ public class MarginAmountRequirement {
 	 */
 	public static final MMBusinessAttribute mmReturnMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReturnMarginAmount";
 			definition = "Amount of new Variation Margin that will be recalled to one party from the other party after rounding, threshold and minimum transfer amount are taken into account.";
@@ -272,8 +272,8 @@ public class MarginAmountRequirement {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregatedAmountRequirementCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedAmountRequirementCalculation";
 			definition = "Exposure valuation which takes into account amount requirements.";

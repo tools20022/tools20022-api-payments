@@ -117,8 +117,8 @@ public class MeetingResultDissemination {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Meeting servicing process which comprises the dissemination of the results.";
@@ -168,8 +168,8 @@ public class MeetingResultDissemination {
 	 */
 	public static final MMBusinessAssociationEnd mmVoteResult = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteResult";
 			definition = "Specifies whether a resolution is accepted and the number of votes which were cast.";

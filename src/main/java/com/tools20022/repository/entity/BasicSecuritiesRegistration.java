@@ -127,8 +127,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which registration information is provided.";
@@ -169,8 +169,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAttribute mmRegistrationInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationInstruction";
 			definition = "Specifies whether registration should occur upon receipt.";
@@ -215,8 +215,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAttribute mmCertificationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationIdentification";
 			definition = "Identification assigned to a deposit.";
@@ -264,8 +264,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAttribute mmCertificationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationDate";
 			definition = "Date/time at which the certificates in the deposit were validated by the agent.";
@@ -322,8 +322,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesCertificate";
 			definition = "Unique and unambiguous identification of a certificate assigned by the issuer.";
@@ -369,8 +369,8 @@ public class BasicSecuritiesRegistration {
 	 */
 	public static final MMBusinessAssociationEnd mmSplitPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitPeriod";
 			definition = "Period during which a physical certificate can be split.";

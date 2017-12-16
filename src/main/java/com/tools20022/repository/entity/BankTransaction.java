@@ -60,18 +60,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure6
- * BankTransactionCodeStructure6}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure5
- * BankTransactionCodeStructure5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4
- * BankTransactionCodeStructure4}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -101,6 +89,18 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.TotalsPerBankTransactionCode4#mmBankTransactionCode
  * TotalsPerBankTransactionCode4.mmBankTransactionCode}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure6
+ * BankTransactionCodeStructure6}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure5
+ * BankTransactionCodeStructure5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4
+ * BankTransactionCodeStructure4}</li>
  * </ul>
  * </li>
  * <li>
@@ -160,8 +160,8 @@ public class BankTransaction {
 	public static final MMBusinessAttribute mmDomain = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BankTransactionCodeStructure5.mmCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Domain";
 			definition = "Specifies the business area of the underlying transaction.";
@@ -219,8 +219,8 @@ public class BankTransaction {
 	public static final MMBusinessAttribute mmFamily = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BankTransactionCodeStructure6.mmCode, BankTransactionCodeStructure5.mmFamily);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Family";
 			definition = "Specifies the family within a domain.";
@@ -276,8 +276,8 @@ public class BankTransaction {
 	public static final MMBusinessAttribute mmSubFamily = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BankTransactionCodeStructure6.mmSubFamilyCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubFamily";
 			definition = "Specifies the sub-product family within a specific family.";
@@ -341,8 +341,8 @@ public class BankTransaction {
 	public static final MMBusinessAssociationEnd mmProprietaryIdentification = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BankTransactionCodeStructure4.mmProprietary);
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Bank transaction code in a proprietary form, as defined by the issuer.";
@@ -388,8 +388,8 @@ public class BankTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankOperation";
 			definition = "Bank operation for which a type is detailed.";
@@ -435,8 +435,8 @@ public class BankTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedEntry";
 			definition = "Entry for which a bank transaction code is provided.";
@@ -484,8 +484,8 @@ public class BankTransaction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Payment for which bank transaction information is specified.";

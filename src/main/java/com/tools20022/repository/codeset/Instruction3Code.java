@@ -20,10 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.InstructionCode;
+import com.tools20022.repository.codeset.Instruction3Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies further instructions concerning the processing of a payment
@@ -31,24 +35,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.InstructionCode
- * InstructionCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction3Code#mmPayCreditorByCheque
+ * {@linkplain com.tools20022.repository.codeset.Instruction3Code#PayCreditorByCheque
  * Instruction3Code.mmPayCreditorByCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction3Code#mmHoldCashForCreditor
+ * {@linkplain com.tools20022.repository.codeset.Instruction3Code#HoldCashForCreditor
  * Instruction3Code.mmHoldCashForCreditor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction3Code#mmPhoneBeneficiary
+ * {@linkplain com.tools20022.repository.codeset.Instruction3Code#PhoneBeneficiary
  * Instruction3Code.mmPhoneBeneficiary}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Instruction3Code#mmTelecom
+ * <li>{@linkplain com.tools20022.repository.codeset.Instruction3Code#Telecom
  * Instruction3Code.mmTelecom}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.InstructionCode
+ * InstructionCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -72,7 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class Instruction3Code extends InstructionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Instruction3Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -91,11 +96,12 @@ public class Instruction3Code extends InstructionCode {
 	 * name} = "PayCreditorByCheque"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPayCreditorByCheque = new MMCode() {
+	public static final Instruction3Code PayCreditorByCheque = new Instruction3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PayCreditorByCheque";
-			owner_lazy = () -> Instruction3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction3Code.mmObject();
+			codeName = InstructionCode.PayCreditorByCheque.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -114,11 +120,12 @@ public class Instruction3Code extends InstructionCode {
 	 * name} = "HoldCashForCreditor"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmHoldCashForCreditor = new MMCode() {
+	public static final Instruction3Code HoldCashForCreditor = new Instruction3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HoldCashForCreditor";
-			owner_lazy = () -> Instruction3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction3Code.mmObject();
+			codeName = InstructionCode.HoldCashForCreditor.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -137,11 +144,12 @@ public class Instruction3Code extends InstructionCode {
 	 * name} = "PhoneBeneficiary"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPhoneBeneficiary = new MMCode() {
+	public static final Instruction3Code PhoneBeneficiary = new Instruction3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PhoneBeneficiary";
-			owner_lazy = () -> Instruction3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction3Code.mmObject();
+			codeName = InstructionCode.PhoneBeneficiary.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -160,15 +168,20 @@ public class Instruction3Code extends InstructionCode {
 	 * name} = "Telecom"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTelecom = new MMCode() {
+	public static final Instruction3Code Telecom = new Instruction3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Telecom";
-			owner_lazy = () -> Instruction3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Instruction3Code.mmObject();
+			codeName = InstructionCode.Telecom.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Instruction3Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Instruction3Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -176,10 +189,39 @@ public class Instruction3Code extends InstructionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instruction3Code";
 				definition = "Specifies further instructions concerning the processing of a payment instruction, provided by the sending clearing agent to the next agent(s).";
-				code_lazy = () -> Arrays.asList(Instruction3Code.mmPayCreditorByCheque, Instruction3Code.mmHoldCashForCreditor, Instruction3Code.mmPhoneBeneficiary, Instruction3Code.mmTelecom);
 				trace_lazy = () -> InstructionCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Instruction3Code.PayCreditorByCheque, com.tools20022.repository.codeset.Instruction3Code.HoldCashForCreditor,
+						com.tools20022.repository.codeset.Instruction3Code.PhoneBeneficiary, com.tools20022.repository.codeset.Instruction3Code.Telecom);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PayCreditorByCheque.getCodeName().get(), PayCreditorByCheque);
+		codesByName.put(HoldCashForCreditor.getCodeName().get(), HoldCashForCreditor);
+		codesByName.put(PhoneBeneficiary.getCodeName().get(), PhoneBeneficiary);
+		codesByName.put(Telecom.getCodeName().get(), Telecom);
+	}
+
+	public static Instruction3Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Instruction3Code[] values() {
+		Instruction3Code[] values = new Instruction3Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Instruction3Code> {
+		@Override
+		public Instruction3Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Instruction3Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -38,6 +38,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Payment Payment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -54,8 +56,6 @@ import java.util.List;
  * IndividualPayment.mmBulkPayment}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Payment Payment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -114,8 +114,8 @@ public class BulkPayment extends Payment {
 	 */
 	public static final MMBusinessAssociationEnd mmGroups = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.BulkPayment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.BulkPayment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Groups";
 			definition = "Indicates that a bulk payment groups several individual payments of the same type (credit transfer or direct debit).";

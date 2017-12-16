@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OffsetTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of peg offset or type of discretion offset (e.g. price offset, tick
@@ -32,15 +37,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.OffsetTypeCode#mmPrice
+ * <li>{@linkplain com.tools20022.repository.codeset.OffsetTypeCode#Price
  * OffsetTypeCode.mmPrice}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.OffsetTypeCode#mmBasisPoint
+ * <li>{@linkplain com.tools20022.repository.codeset.OffsetTypeCode#BasisPoint
  * OffsetTypeCode.mmBasisPoint}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.OffsetTypeCode#mmTick
+ * <li>{@linkplain com.tools20022.repository.codeset.OffsetTypeCode#Tick
  * OffsetTypeCode.mmTick}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OffsetTypeCode#mmPriceTierLevel
+ * {@linkplain com.tools20022.repository.codeset.OffsetTypeCode#PriceTierLevel
  * OffsetTypeCode.mmPriceTierLevel}</li>
  * </ul>
  * </li>
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class OffsetTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OffsetTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +98,12 @@ public class OffsetTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPrice = new MMCode() {
+	public static final OffsetTypeCode Price = new OffsetTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Price";
 			definition = "Indicates that range of peg order or discretion offset value is a price.";
-			owner_lazy = () -> OffsetTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffsetTypeCode.mmObject();
 			codeName = "PRIC";
 		}
 	};
@@ -126,12 +131,12 @@ public class OffsetTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBasisPoint = new MMCode() {
+	public static final OffsetTypeCode BasisPoint = new OffsetTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BasisPoint";
 			definition = "The range of peg order or discretion offset value is measured in basis points.";
-			owner_lazy = () -> OffsetTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffsetTypeCode.mmObject();
 			codeName = "BAPO";
 		}
 	};
@@ -157,12 +162,12 @@ public class OffsetTypeCode {
 	 * "The range of peg order or discretion offset value is a tick."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTick = new MMCode() {
+	public static final OffsetTypeCode Tick = new OffsetTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tick";
 			definition = "The range of peg order or discretion offset value is a tick.";
-			owner_lazy = () -> OffsetTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffsetTypeCode.mmObject();
 			codeName = "TICK";
 		}
 	};
@@ -188,17 +193,21 @@ public class OffsetTypeCode {
 	 * "The range of peg order or discretion offset is a price level."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPriceTierLevel = new MMCode() {
+	public static final OffsetTypeCode PriceTierLevel = new OffsetTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PriceTierLevel";
 			definition = "The range of peg order or discretion offset is a price level.";
-			owner_lazy = () -> OffsetTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OffsetTypeCode.mmObject();
 			codeName = "PTLE";
 		}
 	};
+	final static private LinkedHashMap<String, OffsetTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OffsetTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -206,9 +215,38 @@ public class OffsetTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OffsetTypeCode";
 				definition = "Type of peg offset or type of discretion offset (e.g. price offset, tick offset etc).";
-				code_lazy = () -> Arrays.asList(OffsetTypeCode.mmPrice, OffsetTypeCode.mmBasisPoint, OffsetTypeCode.mmTick, OffsetTypeCode.mmPriceTierLevel);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OffsetTypeCode.Price, com.tools20022.repository.codeset.OffsetTypeCode.BasisPoint, com.tools20022.repository.codeset.OffsetTypeCode.Tick,
+						com.tools20022.repository.codeset.OffsetTypeCode.PriceTierLevel);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Price.getCodeName().get(), Price);
+		codesByName.put(BasisPoint.getCodeName().get(), BasisPoint);
+		codesByName.put(Tick.getCodeName().get(), Tick);
+		codesByName.put(PriceTierLevel.getCodeName().get(), PriceTierLevel);
+	}
+
+	public static OffsetTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OffsetTypeCode[] values() {
+		OffsetTypeCode[] values = new OffsetTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OffsetTypeCode> {
+		@Override
+		public OffsetTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OffsetTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

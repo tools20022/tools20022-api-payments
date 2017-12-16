@@ -203,8 +203,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmExercisePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePeriod";
 			definition = "Period during which the right and/or privilege on an underlying financial instrument may be executed.";
@@ -250,8 +250,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmOfferPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPeriod";
 			definition = "Period during which an open offer remains valid.";
@@ -298,8 +298,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriod";
 			definition = "Period during which a financial instrument is available for trading.";
@@ -348,8 +348,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmBlockingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockingPeriod";
 			definition = "Period, set by the issuer, during which the security is blocked, ie, not available for exchange.";
@@ -395,8 +395,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestPeriod";
 			definition = "Period during which interest has accrued.";
@@ -442,8 +442,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDistributionTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributionTax";
 			definition = "Provides the tax description associated with the corporate event.";
@@ -492,8 +492,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmOfferPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPrice";
 			definition = "Price, determined by the offerer, at which the investor is entitled to take part in an event.";
@@ -542,8 +542,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmIncentivePremium = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncentivePremium";
 			definition = "Cash premium made available to encourage participation by a certain deadline (avoids to have a second call).";
@@ -584,8 +584,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date/time at which the event or part of the event, for example, an option, becomes valid and should be processed and/or applied to holdings.";
@@ -632,8 +632,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmEventConditions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventConditions";
 			definition = "Conditions that the issuer has placed on the completion of the event, for example, tender percentage required.";
@@ -680,8 +680,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmExDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExDate";
 			definition = "Date/time as from which trading (including exchange and OTC trading) occurs on the underlying security without the benefit.";
@@ -727,8 +727,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmGrossRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossRate";
 			definition = "Percentage paid before deductions and/or allowances have been made.";
@@ -772,8 +772,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmMeetingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingDate";
 			definition = "Date/time at which the meeting will take place.";
@@ -819,8 +819,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmNetRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetRate";
 			definition = "Percentage paid after deductions and/or allowances have been made.";
@@ -865,8 +865,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmNewFaceValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewFaceValue";
 			definition = "New unit value of a debt security.";
@@ -911,8 +911,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmNewParValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewParValue";
 			definition = "New nominal value of an equity security.";
@@ -959,8 +959,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date/time at which the distribution is due to take place (cash and/or securities).";
@@ -1011,8 +1011,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Dividend";
 			definition = "Dividend per financial instrument.";
@@ -1054,8 +1054,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmCorporateActionOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOption";
 			definition = "Specifies information about the choices offered to the holder of a corporate action.";
@@ -1099,8 +1099,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmCurrencyOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyOption";
 			definition = "Currency choice given to the investor.";
@@ -1147,8 +1147,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmDecreaseAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecreaseAmount";
 			definition = "Amount by which the issuer devalues a share  (in a decrease value event).";
@@ -1196,8 +1196,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmDecreaseRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecreaseRate";
 			definition = "Amount, expressed as a percentage, by which the issuer devalues a share  (in a decrease value event).";
@@ -1244,8 +1244,8 @@ public class Distribution {
 	 */
 	public static final MMBusinessAttribute mmOfferPriceFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPriceFixingDate";
 			definition = "Date/time at which an offer price is determined (as compared to its reset date if applicable).";

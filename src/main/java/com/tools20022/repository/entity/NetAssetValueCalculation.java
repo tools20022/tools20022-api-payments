@@ -186,8 +186,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmValuationFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationFrequency";
 			definition = "Frequency of the valuation.";
@@ -234,8 +234,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmValuationDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationDateTime";
 			definition = "Date and time of the price valuation for the investment fund/fund class.";
@@ -284,8 +284,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmNetAssetValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValue";
 			definition = "Value of all the holdings, less the fund's liabilities, attributable to a specific investment fund class.";
@@ -339,8 +339,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedFund";
 			definition = "Specifies the fund for which the NAV is calculated (per fund unit).";
@@ -383,8 +383,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmValuationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationType";
 			definition = "Specifies how the valuation is done, based on the schedule stated in the prospectus.";
@@ -433,8 +433,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmSuspendedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuspendedIndicator";
 			definition = "Indicates whether the valuation of the investment fund class is suspended.";
@@ -483,8 +483,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmForExecutionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForExecutionIndicator";
 			definition = "Indicates whether the price information can be used for the execution of a transaction.";
@@ -536,8 +536,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxLiability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxLiability";
 			definition = "Information related to taxes that are due.";
@@ -583,8 +583,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxRefund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxRefund";
 			definition = "Information related to taxes that are paid back.";
@@ -625,8 +625,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmOfficialValuationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfficialValuationIndicator";
 			definition = "Indicates whether the valuation is an official valuation.";
@@ -672,8 +672,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmEstimatedPriceIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedPriceIndicator";
 			definition = "Indicates whether the price is an estimated price.";
@@ -728,8 +728,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmValuationStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationStatistics";
 			definition = "Information related to the price variations of an investment fund class.";
@@ -776,8 +776,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundPerformanceFactors = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundPerformanceFactors";
 			definition = "Factors that give indications about the performance of a fund.";
@@ -824,8 +824,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Price derived from the net asset value.";
@@ -872,8 +872,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Quantity on which the NAV is calculated.";
@@ -921,8 +921,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest that has accumulated between the most recent payment of interest and the sale of the financial instrument.";
@@ -969,8 +969,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmFundsCashFlow = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundsCashFlow";
 			definition = "Net cash flow for a valuation date, which is incorporated in the NAV.";
@@ -1010,8 +1010,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmDeclarationChannel = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclarationChannel";
 			definition = "Means of the net asset value publication, for example, a newspaper.";
@@ -1056,8 +1056,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmDeclarationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclarationDate";
 			definition = "Date/time of the net asset value publication.";
@@ -1103,8 +1103,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmFirstValuationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstValuationDate";
 			definition = "Date on which the investment fund class was first priced.";
@@ -1150,8 +1150,8 @@ public class NetAssetValueCalculation {
 	 */
 	public static final MMBusinessAttribute mmHistoricPricingIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HistoricPricingIndicator";
 			definition = "Indicates whether the price is historic or forward.";

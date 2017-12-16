@@ -36,6 +36,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -60,8 +62,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * QuantityRatio.mmwarrant}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Security Security}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class Warrant extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmSubscriptionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPrice";
 			definition = "Pre-determined price at which the holder of a warrant is entitled to buy the underlying instrument.";
@@ -162,8 +162,8 @@ public class Warrant extends Security {
 	 */
 	public static final MMBusinessAttribute mmMultiplier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Multiplier";
 			definition = "Specifies the ratio or multiply factor used to convert from contracts to shares.";
@@ -208,8 +208,8 @@ public class Warrant extends Security {
 	 */
 	public static final MMBusinessAttribute mmStyle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Style";
 			definition = "Specifies the expiration style of the warrant.";
@@ -264,8 +264,8 @@ public class Warrant extends Security {
 	 */
 	public static final MMBusinessAssociationEnd mmWarrantParity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WarrantParity";
 			definition = "Provides the ratio between the quantity of warrants and the quantity of underlying securities. ";

@@ -178,8 +178,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPrivilegeSuspensionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrivilegeSuspensionPeriod";
 			definition = "Period during which the privilege is not available, eg, this can happen whenever a meeting takes place or whenever a coupon payment is due.";
@@ -231,8 +231,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForWithdrawal = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForWithdrawal";
 			definition = "Period defining the last date on which withdrawal in street name requests on the outturn security will be accepted and the date on which the suspension will be released and withdrawal by transfer processing on the outturn security will resume.";
@@ -283,8 +283,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForBookEntryTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForBookEntryTransfer";
 			definition = "Period defining the last date for which book entry transfers will be accepted and the date on which the suspension will be released and book entry transfer processing will resume.";
@@ -335,8 +335,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForDepositAtAgent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForDepositAtAgent";
 			definition = "Period defining the last date for which deposits, into nominee name, at the agent will be accepted and the date on which the suspension will be released and deposits at agent will resume.";
@@ -386,8 +386,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForDeposit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForDeposit";
 			definition = "Period defining the last date for which deposits will be accepted and the date on which the suspension will be released and deposits will resume.";
@@ -438,8 +438,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForPledge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForPledge";
 			definition = "Period defining the last date for which pledges will be accepted and the date on which the suspension will be released and pledge processing will resume.";
@@ -490,8 +490,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForSegregation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForSegregation";
 			definition = "Period defining the last date for which intra-position balances can be segregated and the date on which the suspension will be released and the ability to segregate intra-position balances will resume.";
@@ -542,8 +542,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForWithdrawalAtAgent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForWithdrawalAtAgent";
 			definition = "Period defining the last date for which withdrawals, from nominee name at the agent will be accepted and the date on which the suspension will be released and withdrawals at agent processing will resume.";
@@ -594,8 +594,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForWithdrawalInNomineeName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForWithdrawalInNomineeName";
 			definition = "Period defining the last date for which physical withdrawals in the nominee's name will be accepted and the date on which the suspension will be released and physical withdrawals in the nominee's name will resume.";
@@ -647,8 +647,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositorySuspensionPeriodForWithdrawalInStreetName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositorySuspensionPeriodForWithdrawalInStreetName";
 			definition = "Period defining the last date on which withdrawal requests in street name's will be accepted on the event security and the date on which the suspension will be released and withdrawal in street name's processing on the event security will resume.";
@@ -698,8 +698,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCoDepositoriesSuspensionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoDepositoriesSuspensionPeriod";
 			definition = "Period during which the settlement activities at the co-depositories are suspended in order to stabilise the holdings at the CSD.";
@@ -750,8 +750,8 @@ public class SuspensionPeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate action event for which a depository suspension period is specified.";

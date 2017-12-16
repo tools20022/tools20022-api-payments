@@ -104,8 +104,8 @@ public class Household {
 	 */
 	public static final MMBusinessAssociationEnd mmMember = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Household.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Household.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Member";
 			definition = "Identifies the member of a household.";

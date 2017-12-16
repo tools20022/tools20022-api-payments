@@ -43,6 +43,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,14 +79,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ContractDocument1
- * ContractDocument1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -100,8 +94,6 @@ import java.util.List;
  * Mandate.mmAccountContract}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -109,6 +101,14 @@ import java.util.List;
  * InvestmentAccountContract}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CashAccountContract
  * CashAccountContract}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ContractDocument1
+ * ContractDocument1}</li>
  * </ul>
  * </li>
  * <li>
@@ -177,8 +177,8 @@ public class AccountContract extends Contract {
 	public static final MMBusinessAttribute mmTargetClosingDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountContract4.mmTargetClosingDate, AccountContract2.mmTargetClosingDate, AccountContract3.mmTargetClosingDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TargetClosingDate";
 			definition = "Date on which the account and related services are expected to cease to be operational for the account owner.";
@@ -241,8 +241,8 @@ public class AccountContract extends Contract {
 	public static final MMBusinessAttribute mmUrgencyFlag = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountContract4.mmUrgencyFlag, AccountContract2.mmUrgencyFlag, AccountContract3.mmUrgencyFlag);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UrgencyFlag";
 			definition = "Indicator that the change to the contract needs to be treated urgently.";
@@ -303,8 +303,8 @@ public class AccountContract extends Contract {
 	public static final MMBusinessAttribute mmRemovalIndicator = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountContract4.mmRemovalIndicator, AccountContract3.mmRemovalIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemovalIndicator";
 			definition = "Indicates removal of the account. After removal, an account will not appear anymore in reports.";
@@ -364,8 +364,8 @@ public class AccountContract extends Contract {
 	public static final MMBusinessAttribute mmTargetGoLiveDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountContract2.mmTargetGoLiveDate, AccountContract3.mmTargetGoLiveDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TargetGoLiveDate";
 			definition = "Date on which the account and related services are expected to cease/to be operational for the account owner.";
@@ -421,8 +421,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountService";
 			definition = "Operations on a bank account that are allowed as part of the services offered to the owners of a bank account,";
@@ -468,8 +468,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Specifies the account which is managed by a contract.";
@@ -514,8 +514,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Interest";
 			definition = "Interest that applies to the account.";
@@ -553,8 +553,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAttribute mmRequestDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestDate";
 			definition = "Date of the request.";
@@ -607,8 +607,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountAuthorisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountAuthorisation";
 			definition = "Specifies the services which are assigned to another party.";
@@ -650,8 +650,8 @@ public class AccountContract extends Contract {
 	 */
 	public static final MMBusinessAttribute mmTransactionChannel = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionChannel";
 			definition = "Specifies the means by which the account owner submits the open account form. ";

@@ -39,6 +39,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
+ * TreasuryTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -81,9 +84,6 @@ import java.util.List;
  * PremiumCalculation.mmOption}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
- * TreasuryTrade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -134,8 +134,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmCallAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallAmount";
 			definition = "Call amount and currency of a foreign exchange option trade.";
@@ -182,8 +182,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmPutAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PutAmount";
 			definition = "Put amount and currency of a foreign exchange option trade.";
@@ -236,8 +236,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmPremiumCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumCalculation";
 			definition = "Specifies the way the premium is calculated.";
@@ -284,8 +284,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmOptionDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionDefinition";
 			definition = "Specifies the different parameters used to define an option.";
@@ -334,8 +334,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmPremiumSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumSettlement";
 			definition = "Specifies the amount of the premium paid by the buyer of the option and its settlement place.";
@@ -383,8 +383,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmExercisedOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisedOption";
 			definition = "Specifies the trade that may take place to exercise the option.";
@@ -424,8 +424,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmOptionSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionSettlementCurrency";
 			definition = "Currency that must be used to settle the option when it is netted off.";
@@ -471,8 +471,8 @@ public class CurrencyOption extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmStrikeRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikeRate";
 			definition = "Fixed exchange rate at which the option contract can be exercised.";

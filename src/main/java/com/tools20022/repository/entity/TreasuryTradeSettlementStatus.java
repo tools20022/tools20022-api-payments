@@ -40,6 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -81,8 +83,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * TreasuryTrade.mmTreasuryTradeSettlementStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -132,8 +132,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmTradeStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeStatus";
 			definition = "Status of a treasury trade in a central matching/settlement system.";
@@ -182,8 +182,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmAllegedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllegedTrade";
 			definition = "Specifies whether a trade is alleged (notified by the counterparty) or not.";
@@ -237,8 +237,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmTreasuryTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryTrade";
 			definition = "Treasury trade for which a settlement status is provided.";
@@ -281,8 +281,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Specifies the status of a settlement eg rejected, settled or awaiting authorisation.";
@@ -329,8 +329,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmRejectedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedAmount";
 			definition = "Amount that cannot be settled for instance by a settlement system.";
@@ -376,8 +376,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSettlementSuspended = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementSuspended";
 			definition = "Cash settlement is suspended.";
@@ -423,8 +423,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmPendingSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingSettlement";
 			definition = "Cash settlement is pending.";
@@ -469,8 +469,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDate";
 			definition = "Date on which the trade is actually settled.";
@@ -515,8 +515,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmWithdrawalReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalReason";
 			definition = "Reason that an alleged trade is withdrawn.";

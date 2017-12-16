@@ -147,8 +147,8 @@ public class Agreement {
 	public static final MMBusinessAttribute mmDateSigned = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmSignOffDate, RegisteredContractAmendment1.mmStartDate, MandateRelatedInformation11.mmDateOfSignature);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateSigned";
 			definition = "Date on which the agreement was signed by all parties.";
@@ -222,8 +222,8 @@ public class Agreement {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmReference, SupportingDocumentRequestOrLetter1.mmDescription, Mandate10.mmReason, Mandate9.mmReason, MandateRelatedInformation11.mmReason, Mandate11.mmReason,
 					Mandate8.mmReason, AmendmentInformationDetails11.mmOriginalReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Full name of an agreement, annexes and amendments in place between the principals.";
@@ -276,8 +276,8 @@ public class Agreement {
 	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmVersion);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Version";
 			definition = "Version number of a contract or of a  legal agreement.";
@@ -338,8 +338,8 @@ public class Agreement {
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateOccurrences4.mmDuration);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Period during which the agreement is valid";
@@ -407,8 +407,8 @@ public class Agreement {
 	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocument1.mmEntry, RegisteredContractAmendment1.mmDocument, Mandate10.mmReferredDocument, Mandate9.mmReferredDocument, Mandate11.mmReferredDocument, Mandate8.mmReferredDocument);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document which materialises the agreement.";
@@ -458,8 +458,8 @@ public class Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Specifies the type of trade that is the subject of an agreement. The agreement contains the clauses that will govern each trade between the signing parties.";
@@ -505,8 +505,8 @@ public class Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Jurisdiction";
 			definition = "Jurisdiction where an agreement applies.";

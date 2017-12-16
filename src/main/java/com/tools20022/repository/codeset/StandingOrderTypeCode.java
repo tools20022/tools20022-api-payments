@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.StandingOrderTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of standing order.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingOrderTypeCode#mmUserDefinedStandingOrder
+ * {@linkplain com.tools20022.repository.codeset.StandingOrderTypeCode#UserDefinedStandingOrder
  * StandingOrderTypeCode.mmUserDefinedStandingOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingOrderTypeCode#mmPredefinedStandingOrder
+ * {@linkplain com.tools20022.repository.codeset.StandingOrderTypeCode#PredefinedStandingOrder
  * StandingOrderTypeCode.mmPredefinedStandingOrder}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of standing order."</li>
  * </ul>
  */
-public class StandingOrderTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class StandingOrderTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class StandingOrderTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUserDefinedStandingOrder = new MMCode() {
+	public static final StandingOrderTypeCode UserDefinedStandingOrder = new StandingOrderTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UserDefinedStandingOrder";
 			definition = "Liquidity transfer standing order type, that has been customised or defined to the specific need of the user.";
-			owner_lazy = () -> StandingOrderTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StandingOrderTypeCode.mmObject();
 			codeName = "USTO";
 		}
 	};
@@ -118,17 +124,21 @@ public class StandingOrderTypeCode {
 	 * "Liquidity transfer standing order type, as predefined in the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPredefinedStandingOrder = new MMCode() {
+	public static final StandingOrderTypeCode PredefinedStandingOrder = new StandingOrderTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PredefinedStandingOrder";
 			definition = "Liquidity transfer standing order type, as predefined in the system.";
-			owner_lazy = () -> StandingOrderTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.StandingOrderTypeCode.mmObject();
 			codeName = "PSTO";
 		}
 	};
+	final static private LinkedHashMap<String, StandingOrderTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected StandingOrderTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -136,9 +146,35 @@ public class StandingOrderTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingOrderTypeCode";
 				definition = "Specifies the type of standing order.";
-				code_lazy = () -> Arrays.asList(StandingOrderTypeCode.mmUserDefinedStandingOrder, StandingOrderTypeCode.mmPredefinedStandingOrder);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StandingOrderTypeCode.UserDefinedStandingOrder, com.tools20022.repository.codeset.StandingOrderTypeCode.PredefinedStandingOrder);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(UserDefinedStandingOrder.getCodeName().get(), UserDefinedStandingOrder);
+		codesByName.put(PredefinedStandingOrder.getCodeName().get(), PredefinedStandingOrder);
+	}
+
+	public static StandingOrderTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static StandingOrderTypeCode[] values() {
+		StandingOrderTypeCode[] values = new StandingOrderTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, StandingOrderTypeCode> {
+		@Override
+		public StandingOrderTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(StandingOrderTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

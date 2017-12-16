@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CollateralAccountTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the collateral account type.
@@ -32,19 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#mmHouse
+ * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#House
  * CollateralAccountTypeCode.mmHouse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#mmClient
+ * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#Client
  * CollateralAccountTypeCode.mmClient}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#mmLiquidityProvider
+ * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#LiquidityProvider
  * CollateralAccountTypeCode.mmLiquidityProvider}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#mmMargin
+ * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#Margin
  * CollateralAccountTypeCode.mmMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#mmDefaultFund
+ * {@linkplain com.tools20022.repository.codeset.CollateralAccountTypeCode#DefaultFund
  * CollateralAccountTypeCode.mmDefaultFund}</li>
  * </ul>
  * </li>
@@ -69,7 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the collateral account type."</li>
  * </ul>
  */
-public class CollateralAccountTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CollateralAccountTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -97,12 +103,12 @@ public class CollateralAccountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmHouse = new MMCode() {
+	public static final CollateralAccountTypeCode House = new CollateralAccountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "House";
 			definition = "Specifies that the account is used to post collateral that covers the exposure resulting from trades executed for either the clearing member or its subsidiaries.";
-			owner_lazy = () -> CollateralAccountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralAccountTypeCode.mmObject();
 			codeName = "HOUS";
 		}
 	};
@@ -131,12 +137,12 @@ public class CollateralAccountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmClient = new MMCode() {
+	public static final CollateralAccountTypeCode Client = new CollateralAccountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Client";
 			definition = "Specifies that the account is used to post collateral that covers the exposure resulting from trades executed for the clearing member's customers.";
-			owner_lazy = () -> CollateralAccountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralAccountTypeCode.mmObject();
 			codeName = "CLIE";
 		}
 	};
@@ -165,12 +171,12 @@ public class CollateralAccountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLiquidityProvider = new MMCode() {
+	public static final CollateralAccountTypeCode LiquidityProvider = new CollateralAccountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LiquidityProvider";
 			definition = "Specifies that the account is used to post collateral that covers the exposure resulting from trades executed for liquidity providers (also known as market maker) activities.";
-			owner_lazy = () -> CollateralAccountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralAccountTypeCode.mmObject();
 			codeName = "LIPR";
 		}
 	};
@@ -199,12 +205,12 @@ public class CollateralAccountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMargin = new MMCode() {
+	public static final CollateralAccountTypeCode Margin = new CollateralAccountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Margin";
 			definition = "Specifies that the account is used to post collateral that covers the exposure resulting from trades executed for either the clearing member or its subsidiaries, or for the clearing member's customers.";
-			owner_lazy = () -> CollateralAccountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralAccountTypeCode.mmObject();
 			codeName = "MGIN";
 		}
 	};
@@ -232,17 +238,21 @@ public class CollateralAccountTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDefaultFund = new MMCode() {
+	public static final CollateralAccountTypeCode DefaultFund = new CollateralAccountTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefaultFund";
 			definition = "Specifies that the account is used to post collateral that covers clearing member's default risk.";
-			owner_lazy = () -> CollateralAccountTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CollateralAccountTypeCode.mmObject();
 			codeName = "DFLT";
 		}
 	};
+	final static private LinkedHashMap<String, CollateralAccountTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CollateralAccountTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -250,10 +260,40 @@ public class CollateralAccountTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralAccountTypeCode";
 				definition = "Specifies the collateral account type.";
-				code_lazy = () -> Arrays.asList(CollateralAccountTypeCode.mmHouse, CollateralAccountTypeCode.mmClient, CollateralAccountTypeCode.mmLiquidityProvider, CollateralAccountTypeCode.mmMargin,
-						CollateralAccountTypeCode.mmDefaultFund);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CollateralAccountTypeCode.House, com.tools20022.repository.codeset.CollateralAccountTypeCode.Client,
+						com.tools20022.repository.codeset.CollateralAccountTypeCode.LiquidityProvider, com.tools20022.repository.codeset.CollateralAccountTypeCode.Margin,
+						com.tools20022.repository.codeset.CollateralAccountTypeCode.DefaultFund);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(House.getCodeName().get(), House);
+		codesByName.put(Client.getCodeName().get(), Client);
+		codesByName.put(LiquidityProvider.getCodeName().get(), LiquidityProvider);
+		codesByName.put(Margin.getCodeName().get(), Margin);
+		codesByName.put(DefaultFund.getCodeName().get(), DefaultFund);
+	}
+
+	public static CollateralAccountTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CollateralAccountTypeCode[] values() {
+		CollateralAccountTypeCode[] values = new CollateralAccountTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CollateralAccountTypeCode> {
+		@Override
+		public CollateralAccountTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CollateralAccountTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

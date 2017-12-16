@@ -40,6 +40,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesOrder
+ * SecuritiesOrder}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -128,9 +131,6 @@ import java.util.List;
  * SecuritiesOrderStatus.mmInvestmentFundOrder}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesOrder
- * SecuritiesOrder}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -185,8 +185,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmGrossAmountIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmountIndicator";
 			definition = "Indicates whether an ordered amount is a gross amount (including all charges, commissions, tax). If it is not a gross amount, the ordered amount is a net amount (amount to be invested or redeemed from the fund to which other elements will be added).";
@@ -240,8 +240,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransaction";
 			definition = "Transaction which is the source of the order.";
@@ -281,8 +281,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmOrderType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderType";
 			definition = "Specifies the category of the investment fund order.";
@@ -333,8 +333,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmount";
 			definition = "Amount of money used to derive the quantity of investment fund units sold or subscribed, before deduction of charges, commissions, and taxes, expressed in the currency requested by the investor.\r\n[Quantity * Price] + (Charges + Commissions +Taxes)]";
@@ -388,8 +388,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmUnitsNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitsNumber";
 			definition = "Quantity of investment fund units to be subscribed or redeemed.";
@@ -437,8 +437,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundOrderExecution";
 			definition = "Execution of an investment fund order.";
@@ -481,8 +481,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAmount";
 			definition = "Amount of money used to determine the quantity of investment fund units to be subscribed or to be sold.";
@@ -528,8 +528,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmOrderDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderDateTime";
 			definition = "Date and time at which the order was placed by the investor.";
@@ -574,8 +574,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmExpiryDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDateTime";
 			definition = "Date on which the order expires.";
@@ -624,8 +624,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmCancellationRight = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRight";
 			definition = "Cancellation right of an investor with respect to an investment fund order.";
@@ -670,8 +670,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmRequestedSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementCurrency";
 			definition = "Currency requested for settlement of cash proceeds.";
@@ -717,8 +717,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmRequestedExecutionDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedExecutionDateTime";
 			definition = "Date and time at which the investor requests the order to be executed.";
@@ -767,8 +767,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmFinancialAdvice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialAdvice";
 			definition = "Specifies if advice has been received from an independent financial advisor.";
@@ -814,8 +814,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmNegotiatedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NegotiatedTrade";
 			definition = "Specifies whether the trade is negotiated.";
@@ -862,8 +862,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmHoldingsRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingsRate";
 			definition = "Percentage of the financial quantity to be invested or redeemed.";
@@ -913,8 +913,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmOrderWaiverReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderWaiverReason";
 			definition = "Reason why an order has to be handled differently, probably in a manual fashion, because for example, the investment manager has agreed a waiver to the extended terms.";
@@ -961,8 +961,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmInitialOrderIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialOrderIndicator";
 			definition = "Indicates whether the subscription order is an initial order.";
@@ -1010,8 +1010,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmOrderBookingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderBookingDate";
 			definition = "Date and time an investment fund order is registered on the books of either the fund or its designated agent, eg, transfer agent.";
@@ -1064,8 +1064,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan which triggers the standing orders.";
@@ -1113,8 +1113,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAssociationEnd mmOrderStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderStatus";
 			definition = "Status of an investment fund order.";
@@ -1153,8 +1153,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 */
 	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount subscribed in the current tax year.";

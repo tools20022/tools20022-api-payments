@@ -150,8 +150,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Percent of the securities quantity that this allocation represents.";
@@ -214,8 +214,8 @@ public class Allocation {
 	public static final MMBusinessAssociationEnd mmAllocatedQuantity = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SyndicatedLoan1.mmShare);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocatedQuantity";
 			definition = "Quantity of a specific security allocated from a block trade, based upon the distribution of the trade to different accounts.";
@@ -253,8 +253,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementCurrency";
 			definition = "Currency to be used for settlement of the allocation.";
@@ -306,8 +306,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAssociationEnd mmAllocationAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocationAccount";
 			definition = "Account to or from which an allocation must be made.";
@@ -353,8 +353,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAssociationEnd mmAllocatedPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocatedPrice";
 			definition = "Executed price used in an allocation.";
@@ -394,8 +394,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmAllocationAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllocationAmount";
 			definition = "Allocated quantity of security multiplied by the allocated price.";
@@ -443,8 +443,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Method";
 			definition = "Indicates the method of pre-allocation, that is the factors that are/were applied in the pre-allocation process.";
@@ -489,8 +489,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmAveragePricePrecision = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AveragePricePrecision";
 			definition = "Number of decimal places used for average pricing.";
@@ -544,8 +544,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementExecutionParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementExecutionParameters";
 			definition = "Parameters used to execute the settlement of a securities allocation.";
@@ -591,8 +591,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Securites order which is allocated.";
@@ -638,8 +638,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Trade which is allocated.";
@@ -677,8 +677,8 @@ public class Allocation {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies the allocation.";

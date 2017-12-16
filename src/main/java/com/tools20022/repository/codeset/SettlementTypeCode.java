@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SettlementTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates how an option trade is settled.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementTypeCode#mmPrincipal
+ * {@linkplain com.tools20022.repository.codeset.SettlementTypeCode#Principal
  * SettlementTypeCode.mmPrincipal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementTypeCode#mmNettedOff
+ * {@linkplain com.tools20022.repository.codeset.SettlementTypeCode#NettedOff
  * SettlementTypeCode.mmNettedOff}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates how an option trade is settled."</li>
  * </ul>
  */
-public class SettlementTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SettlementTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class SettlementTypeCode {
 	 * definition} = "Option trade is settled as principal."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPrincipal = new MMCode() {
+	public static final SettlementTypeCode Principal = new SettlementTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Principal";
 			definition = "Option trade is settled as principal.";
-			owner_lazy = () -> SettlementTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTypeCode.mmObject();
 			codeName = "PRIN";
 		}
 	};
@@ -114,17 +120,21 @@ public class SettlementTypeCode {
 	 * definition} = "Option trade is netted off against another trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNettedOff = new MMCode() {
+	public static final SettlementTypeCode NettedOff = new SettlementTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NettedOff";
 			definition = "Option trade is netted off against another trade.";
-			owner_lazy = () -> SettlementTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTypeCode.mmObject();
 			codeName = "NETO";
 		}
 	};
+	final static private LinkedHashMap<String, SettlementTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SettlementTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +142,35 @@ public class SettlementTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTypeCode";
 				definition = "Indicates how an option trade is settled.";
-				code_lazy = () -> Arrays.asList(SettlementTypeCode.mmPrincipal, SettlementTypeCode.mmNettedOff);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementTypeCode.Principal, com.tools20022.repository.codeset.SettlementTypeCode.NettedOff);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Principal.getCodeName().get(), Principal);
+		codesByName.put(NettedOff.getCodeName().get(), NettedOff);
+	}
+
+	public static SettlementTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SettlementTypeCode[] values() {
+		SettlementTypeCode[] values = new SettlementTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SettlementTypeCode> {
+		@Override
+		public SettlementTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SettlementTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

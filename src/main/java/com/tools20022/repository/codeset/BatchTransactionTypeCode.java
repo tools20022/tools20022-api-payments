@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BatchTransactionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Type of transactions to include in a batch transfer.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#mmDebitCredit
+ * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#DebitCredit
  * BatchTransactionTypeCode.mmDebitCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#mmCancellation
+ * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#Cancellation
  * BatchTransactionTypeCode.mmCancellation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#mmFailed
+ * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#Failed
  * BatchTransactionTypeCode.mmFailed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#mmDeclined
+ * {@linkplain com.tools20022.repository.codeset.BatchTransactionTypeCode#Declined
  * BatchTransactionTypeCode.mmDeclined}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Type of transactions to include in a batch transfer."</li>
  * </ul>
  */
-public class BatchTransactionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BatchTransactionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class BatchTransactionTypeCode {
 	 * definition} = "Debit and credit transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebitCredit = new MMCode() {
+	public static final BatchTransactionTypeCode DebitCredit = new BatchTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitCredit";
 			definition = "Debit and credit transactions.";
-			owner_lazy = () -> BatchTransactionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BatchTransactionTypeCode.mmObject();
 			codeName = "DTCT";
 		}
 	};
@@ -120,12 +126,12 @@ public class BatchTransactionTypeCode {
 	 * definition} = "Cancellation of a previous transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancellation = new MMCode() {
+	public static final BatchTransactionTypeCode Cancellation = new BatchTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancellation";
 			definition = "Cancellation of a previous transaction.";
-			owner_lazy = () -> BatchTransactionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BatchTransactionTypeCode.mmObject();
 			codeName = "CNCL";
 		}
 	};
@@ -150,12 +156,12 @@ public class BatchTransactionTypeCode {
 	 * definition} = "Failed transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFailed = new MMCode() {
+	public static final BatchTransactionTypeCode Failed = new BatchTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Failed";
 			definition = "Failed transactions.";
-			owner_lazy = () -> BatchTransactionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BatchTransactionTypeCode.mmObject();
 			codeName = "FAIL";
 		}
 	};
@@ -180,17 +186,21 @@ public class BatchTransactionTypeCode {
 	 * definition} = "Declined transactions."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeclined = new MMCode() {
+	public static final BatchTransactionTypeCode Declined = new BatchTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declined";
 			definition = "Declined transactions.";
-			owner_lazy = () -> BatchTransactionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BatchTransactionTypeCode.mmObject();
 			codeName = "DCLN";
 		}
 	};
+	final static private LinkedHashMap<String, BatchTransactionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BatchTransactionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -198,9 +208,38 @@ public class BatchTransactionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BatchTransactionTypeCode";
 				definition = "Type of transactions to include in a batch transfer.";
-				code_lazy = () -> Arrays.asList(BatchTransactionTypeCode.mmDebitCredit, BatchTransactionTypeCode.mmCancellation, BatchTransactionTypeCode.mmFailed, BatchTransactionTypeCode.mmDeclined);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BatchTransactionTypeCode.DebitCredit, com.tools20022.repository.codeset.BatchTransactionTypeCode.Cancellation,
+						com.tools20022.repository.codeset.BatchTransactionTypeCode.Failed, com.tools20022.repository.codeset.BatchTransactionTypeCode.Declined);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DebitCredit.getCodeName().get(), DebitCredit);
+		codesByName.put(Cancellation.getCodeName().get(), Cancellation);
+		codesByName.put(Failed.getCodeName().get(), Failed);
+		codesByName.put(Declined.getCodeName().get(), Declined);
+	}
+
+	public static BatchTransactionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BatchTransactionTypeCode[] values() {
+		BatchTransactionTypeCode[] values = new BatchTransactionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BatchTransactionTypeCode> {
+		@Override
+		public BatchTransactionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BatchTransactionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

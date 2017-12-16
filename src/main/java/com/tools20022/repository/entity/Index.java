@@ -142,8 +142,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmIndexRateBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateBasis";
 			definition = "Specifies the reference rate.";
@@ -198,8 +198,8 @@ public class Index {
 	 */
 	public static final MMBusinessAssociationEnd mmIndexFactor = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexFactor";
 			definition = "Index rate applied to the amount paid to adjust it for instance to inflation.";
@@ -239,8 +239,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmIndexPoints = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexPoints";
 			definition = "Number of points above the index used to calculate a price.";
@@ -284,8 +284,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmIndexFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexFixingDate";
 			definition = "Date/time at which an index rate will be determined .";
@@ -338,8 +338,8 @@ public class Index {
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(FloatingInterestRate4.mmReferenceRate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies the index by a name for instance LIBOR.";
@@ -386,8 +386,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmReferenceSource = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReferenceSource";
 			definition = "Identifies the reference source. The source can be the fixing agent or a system.";
@@ -435,8 +435,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmIndexRateCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateCurrency";
 			definition = "Specifies the currency of the reference rate for fixed income instruments where the price of the instrument is indexed to the price of an underlying benchmark.";
@@ -481,8 +481,8 @@ public class Index {
 	 */
 	public static final MMBusinessAttribute mmIndexRateFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateFrequency";
 			definition = "Frequency at which the index changes.";
@@ -536,8 +536,8 @@ public class Index {
 	public static final MMBusinessAttribute mmIndexRateMultiplier = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestRateContractTerm1.mmValue);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateMultiplier";
 			definition = "Multiplier for the variable rate.";
@@ -590,8 +590,8 @@ public class Index {
 	 */
 	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Percentage to be added to or deducted from the index rate to calculate the effective rate.";
@@ -638,8 +638,8 @@ public class Index {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolioBenchmark = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PortfolioBenchmark";
 			definition = "Portfolio benchmark which uses an index for decomposition,";
@@ -684,8 +684,8 @@ public class Index {
 	 */
 	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableInterest";
 			definition = "Variable interest which uises the index.";
@@ -731,8 +731,8 @@ public class Index {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing which uses an index.";

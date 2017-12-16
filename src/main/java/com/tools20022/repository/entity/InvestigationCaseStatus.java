@@ -37,6 +37,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -49,6 +51,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.InvestigationCase#mmStatus
+ * InvestigationCase.mmStatus}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
@@ -57,16 +67,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * CancellationStatusReason2}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.InvestigationCase#mmStatus
- * InvestigationCase.mmStatus}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -122,8 +122,8 @@ public class InvestigationCaseStatus extends Status {
 	public static final MMBusinessAttribute mmCaseStatus = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CaseStatus2.mmCaseStatus);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CaseStatus";
 			definition = "Status of the case.";
@@ -176,8 +176,8 @@ public class InvestigationCaseStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestigationCase";
 			definition = "Case for which a status is reported.";

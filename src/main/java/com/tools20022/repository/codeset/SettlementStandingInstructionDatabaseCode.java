@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates what settlement standing instruction database is to be used to
@@ -33,13 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#mmInternalDatabase
+ * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#InternalDatabase
  * SettlementStandingInstructionDatabaseCode.mmInternalDatabase}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#mmBrokerDatabase
+ * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#BrokerDatabase
  * SettlementStandingInstructionDatabaseCode.mmBrokerDatabase}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#mmVendorDatabase
+ * {@linkplain com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode#VendorDatabase
  * SettlementStandingInstructionDatabaseCode.mmVendorDatabase}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class SettlementStandingInstructionDatabaseCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SettlementStandingInstructionDatabaseCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class SettlementStandingInstructionDatabaseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmInternalDatabase = new MMCode() {
+	public static final SettlementStandingInstructionDatabaseCode InternalDatabase = new SettlementStandingInstructionDatabaseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InternalDatabase";
 			definition = "The settlement standing instruction database to be used is the receiver's internal database.";
-			owner_lazy = () -> SettlementStandingInstructionDatabaseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.mmObject();
 			codeName = "INTE";
 		}
 	};
@@ -126,12 +132,12 @@ public class SettlementStandingInstructionDatabaseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBrokerDatabase = new MMCode() {
+	public static final SettlementStandingInstructionDatabaseCode BrokerDatabase = new SettlementStandingInstructionDatabaseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BrokerDatabase";
 			definition = "The settlement standing instruction database to be used is the broker's database.";
-			owner_lazy = () -> SettlementStandingInstructionDatabaseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.mmObject();
 			codeName = "BRKR";
 		}
 	};
@@ -159,17 +165,21 @@ public class SettlementStandingInstructionDatabaseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmVendorDatabase = new MMCode() {
+	public static final SettlementStandingInstructionDatabaseCode VendorDatabase = new SettlementStandingInstructionDatabaseCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VendorDatabase";
 			definition = "The settlement standing instruction database to be used is the database of the vendor.";
-			owner_lazy = () -> SettlementStandingInstructionDatabaseCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.mmObject();
 			codeName = "VEND";
 		}
 	};
+	final static private LinkedHashMap<String, SettlementStandingInstructionDatabaseCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SettlementStandingInstructionDatabaseCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -177,9 +187,37 @@ public class SettlementStandingInstructionDatabaseCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementStandingInstructionDatabaseCode";
 				definition = "Indicates what settlement standing instruction database is to be used to derive the settlement parties involved in the transaction.";
-				code_lazy = () -> Arrays.asList(SettlementStandingInstructionDatabaseCode.mmInternalDatabase, SettlementStandingInstructionDatabaseCode.mmBrokerDatabase, SettlementStandingInstructionDatabaseCode.mmVendorDatabase);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.InternalDatabase, com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.BrokerDatabase,
+						com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode.VendorDatabase);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(InternalDatabase.getCodeName().get(), InternalDatabase);
+		codesByName.put(BrokerDatabase.getCodeName().get(), BrokerDatabase);
+		codesByName.put(VendorDatabase.getCodeName().get(), VendorDatabase);
+	}
+
+	public static SettlementStandingInstructionDatabaseCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SettlementStandingInstructionDatabaseCode[] values() {
+		SettlementStandingInstructionDatabaseCode[] values = new SettlementStandingInstructionDatabaseCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SettlementStandingInstructionDatabaseCode> {
+		@Override
+		public SettlementStandingInstructionDatabaseCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SettlementStandingInstructionDatabaseCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

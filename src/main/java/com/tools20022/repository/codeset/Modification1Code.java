@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.Modification1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if an item is added, modified, deleted or unchanged.
@@ -31,20 +36,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmNoChange
+ * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#NoChange
  * Modification1Code.mmNoChange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmModification
+ * {@linkplain com.tools20022.repository.codeset.Modification1Code#Modification
  * Modification1Code.mmModification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmDeletion
+ * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#Deletion
  * Modification1Code.mmDeletion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmAddition
+ * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#Addition
  * Modification1Code.mmAddition}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ModificationCode
+ * ModificationCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies if an item is added, modified, deleted or unchanged."</li>
  * </ul>
  */
-public class Modification1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class Modification1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +92,12 @@ public class Modification1Code {
 	 * name} = "NoChange"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoChange = new MMCode() {
+	public static final Modification1Code NoChange = new Modification1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoChange";
-			owner_lazy = () -> Modification1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Modification1Code.mmObject();
+			codeName = ModificationCode.NoChange.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +116,12 @@ public class Modification1Code {
 	 * name} = "Modification"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmModification = new MMCode() {
+	public static final Modification1Code Modification = new Modification1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Modification";
-			owner_lazy = () -> Modification1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Modification1Code.mmObject();
+			codeName = ModificationCode.Modification.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,11 +140,12 @@ public class Modification1Code {
 	 * name} = "Deletion"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeletion = new MMCode() {
+	public static final Modification1Code Deletion = new Modification1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deletion";
-			owner_lazy = () -> Modification1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Modification1Code.mmObject();
+			codeName = ModificationCode.Deletion.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -155,15 +164,20 @@ public class Modification1Code {
 	 * name} = "Addition"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAddition = new MMCode() {
+	public static final Modification1Code Addition = new Modification1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Addition";
-			owner_lazy = () -> Modification1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.Modification1Code.mmObject();
+			codeName = ModificationCode.Addition.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, Modification1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected Modification1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -171,9 +185,39 @@ public class Modification1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Modification1Code";
 				definition = "Specifies if an item is added, modified, deleted or unchanged.";
-				code_lazy = () -> Arrays.asList(Modification1Code.mmNoChange, Modification1Code.mmModification, Modification1Code.mmDeletion, Modification1Code.mmAddition);
+				trace_lazy = () -> ModificationCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Modification1Code.NoChange, com.tools20022.repository.codeset.Modification1Code.Modification, com.tools20022.repository.codeset.Modification1Code.Deletion,
+						com.tools20022.repository.codeset.Modification1Code.Addition);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(NoChange.getCodeName().get(), NoChange);
+		codesByName.put(Modification.getCodeName().get(), Modification);
+		codesByName.put(Deletion.getCodeName().get(), Deletion);
+		codesByName.put(Addition.getCodeName().get(), Addition);
+	}
+
+	public static Modification1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static Modification1Code[] values() {
+		Modification1Code[] values = new Modification1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, Modification1Code> {
+		@Override
+		public Modification1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(Modification1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

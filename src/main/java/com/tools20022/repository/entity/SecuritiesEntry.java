@@ -37,6 +37,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Entry Entry}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -74,8 +76,6 @@ import java.util.List;
  * SecuritiesBalance.mmSecuritiesEntry}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Entry Entry}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -125,8 +125,8 @@ public class SecuritiesEntry extends Entry {
 	 */
 	public static final MMBusinessAttribute mmAcquisitionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcquisitionDate";
 			definition = "Date upon which the investor purchased the financial instrument.";
@@ -188,8 +188,8 @@ public class SecuritiesEntry extends Entry {
 	public static final MMBusinessAssociationEnd mmFinancialInstrumentQuantity = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmRelatedQuantities);
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrumentQuantity";
 			definition = "Quantity of financial instrument.";
@@ -239,8 +239,8 @@ public class SecuritiesEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Securities account on which the quantity of the entry is debited or credited. It is derived from the association between Entry and Account.";
@@ -289,8 +289,8 @@ public class SecuritiesEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Amount that is the result of the sum of the entries from or to an account. It is derived from the association between Entry and Balance.";
@@ -339,8 +339,8 @@ public class SecuritiesEntry extends Entry {
 	 */
 	public static final MMBusinessAssociationEnd mmTriggeringSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggeringSecuritiesTransfer";
 			definition = "Transfer which is at the origin of the entry in the securities account.";

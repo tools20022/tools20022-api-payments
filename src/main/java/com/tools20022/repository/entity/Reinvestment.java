@@ -113,8 +113,8 @@ public class Reinvestment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedinvestmentAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedinvestmentAccountService";
 			definition = "Investment account services which include reinvestment information.";
@@ -163,8 +163,8 @@ public class Reinvestment {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundClass";
 			definition = "Investment fund class which is the fund in which the income must be reinvested.";
@@ -203,8 +203,8 @@ public class Reinvestment {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Percentage on the income on the fund to be reinvested.";

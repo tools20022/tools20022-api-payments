@@ -19,9 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.datatype.BelgianIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifier for Belgian securities.
@@ -52,9 +56,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifier for Belgian securities."</li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class BelgianIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
@@ -68,5 +74,26 @@ public class BelgianIdentifier {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public BelgianIdentifier(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BelgianIdentifier> {
+		@Override
+		public BelgianIdentifier unmarshal(String value) {
+			return new BelgianIdentifier(value);
+		}
+
+		@Override
+		public String marshal(BelgianIdentifier typedData) {
+			return typedData.value;
+		}
 	}
 }

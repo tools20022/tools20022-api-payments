@@ -36,6 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
+ * IndividualPayment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -45,22 +48,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CreditTransfer#mmRelatedStandingOrder
  * CreditTransfer.mmRelatedStandingOrder}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction23
- * CreditTransferTransaction23}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
- * CreditTransferTransaction25}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction24
- * CreditTransferTransaction24}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction26
- * CreditTransferTransaction26}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction22
- * CreditTransferTransaction22}</li>
  * </ul>
  * </li>
  * <li>
@@ -87,9 +74,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * PaymentInstruction22.mmCreditTransferTransactionInformation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
- * IndividualPayment}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction23
+ * CreditTransferTransaction23}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
+ * CreditTransferTransaction25}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction24
+ * CreditTransferTransaction24}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction26
+ * CreditTransferTransaction26}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction22
+ * CreditTransferTransaction22}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -142,8 +142,8 @@ public class CreditTransfer extends IndividualPayment {
 	 */
 	public static final MMBusinessAttribute mmStandingOrder = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrder";
 			definition = "Transaction is a standing order. This information is derived from the presence of detailed standing order specification.";
@@ -196,8 +196,8 @@ public class CreditTransfer extends IndividualPayment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedStandingOrder";
 			definition = "Standing order which creates the credit transfers.";

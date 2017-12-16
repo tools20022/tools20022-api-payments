@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.ServiceTaxDesignationCode;
+import com.tools20022.repository.codeset.ServiceTaxDesignation1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the taxable status of the service.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode
- * ServiceTaxDesignationCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#mmExempt
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#Exempt
  * ServiceTaxDesignation1Code.mmExempt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#mmZeroRate
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#ZeroRate
  * ServiceTaxDesignation1Code.mmZeroRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#mmTaxable
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignation1Code#Taxable
  * ServiceTaxDesignation1Code.mmTaxable}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode
+ * ServiceTaxDesignationCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Defines the taxable status of the service."</li>
  * </ul>
  */
-public class ServiceTaxDesignation1Code extends ServiceTaxDesignationCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ServiceTaxDesignation1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +91,12 @@ public class ServiceTaxDesignation1Code extends ServiceTaxDesignationCode {
 	 * name} = "Exempt"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmExempt = new MMCode() {
+	public static final ServiceTaxDesignation1Code Exempt = new ServiceTaxDesignation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Exempt";
-			owner_lazy = () -> ServiceTaxDesignation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServiceTaxDesignation1Code.mmObject();
+			codeName = ServiceTaxDesignationCode.Exempt.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +115,12 @@ public class ServiceTaxDesignation1Code extends ServiceTaxDesignationCode {
 	 * name} = "ZeroRate"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmZeroRate = new MMCode() {
+	public static final ServiceTaxDesignation1Code ZeroRate = new ServiceTaxDesignation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ZeroRate";
-			owner_lazy = () -> ServiceTaxDesignation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServiceTaxDesignation1Code.mmObject();
+			codeName = ServiceTaxDesignationCode.ZeroRate.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,15 +139,20 @@ public class ServiceTaxDesignation1Code extends ServiceTaxDesignationCode {
 	 * name} = "Taxable"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTaxable = new MMCode() {
+	public static final ServiceTaxDesignation1Code Taxable = new ServiceTaxDesignation1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Taxable";
-			owner_lazy = () -> ServiceTaxDesignation1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ServiceTaxDesignation1Code.mmObject();
+			codeName = ServiceTaxDesignationCode.Taxable.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, ServiceTaxDesignation1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ServiceTaxDesignation1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -148,10 +160,38 @@ public class ServiceTaxDesignation1Code extends ServiceTaxDesignationCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceTaxDesignation1Code";
 				definition = "Defines the taxable status of the service.";
-				code_lazy = () -> Arrays.asList(ServiceTaxDesignation1Code.mmExempt, ServiceTaxDesignation1Code.mmZeroRate, ServiceTaxDesignation1Code.mmTaxable);
 				trace_lazy = () -> ServiceTaxDesignationCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ServiceTaxDesignation1Code.Exempt, com.tools20022.repository.codeset.ServiceTaxDesignation1Code.ZeroRate,
+						com.tools20022.repository.codeset.ServiceTaxDesignation1Code.Taxable);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Exempt.getCodeName().get(), Exempt);
+		codesByName.put(ZeroRate.getCodeName().get(), ZeroRate);
+		codesByName.put(Taxable.getCodeName().get(), Taxable);
+	}
+
+	public static ServiceTaxDesignation1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ServiceTaxDesignation1Code[] values() {
+		ServiceTaxDesignation1Code[] values = new ServiceTaxDesignation1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ServiceTaxDesignation1Code> {
+		@Override
+		public ServiceTaxDesignation1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ServiceTaxDesignation1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

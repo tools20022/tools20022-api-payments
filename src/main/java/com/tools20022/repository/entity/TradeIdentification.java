@@ -61,14 +61,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionReferences3
- * TransactionReferences3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -88,6 +80,14 @@ import java.util.List;
  * SecuritiesTradeIdentification}</li>
  * <li>{@linkplain com.tools20022.repository.entity.PaymentIdentification
  * PaymentIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionReferences3
+ * TransactionReferences3}</li>
  * </ul>
  * </li>
  * <li>
@@ -138,8 +138,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCounterpartyReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyReference";
 			definition = "Unambiguous identification of the trade allocated by the counterparty.";
@@ -243,8 +243,8 @@ public class TradeIdentification {
 					OriginalPaymentInstruction23.mmOriginalPaymentInformationIdentification, OriginalPaymentInstruction21.mmOriginalPaymentInformationIdentification, PaymentInstruction23.mmPaymentInformationIdentification,
 					OriginalPaymentInstruction24.mmOriginalPaymentInformationIdentification, PaymentInstruction22.mmPaymentInformationIdentification, OriginalPaymentInstruction22.mmOriginalPaymentInformationIdentification,
 					OriginalPaymentInstruction20.mmOriginalPaymentInformationIdentification, CorrectivePaymentInitiation2.mmPaymentInformationIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Reference assigned to the trade by the investor or the trading party. This reference will be used throughout the trade life cycle to access/update the trade details.";
@@ -292,8 +292,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmCommonIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommonIdentification";
 			definition = "Unique reference agreed upon by the two trade counterparties to identify the trade.";
@@ -339,8 +339,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmMatchingReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingReference";
 			definition = "Reference assigned by a matching system when the trade is matched.";
@@ -393,8 +393,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Trade";
 			definition = "Specifies the trade for which identifications are provided.";
@@ -439,8 +439,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAttribute mmUniqueTradeIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UniqueTradeIdentifier";
 			definition = "This field specifies the unique transaction identifier (UTI) to be created at the time a transaction is first executed, shared with all registered entities and counterparties involved in the transaction, and used to track that particular transaction over its life. This identifier can also be known as the Unique Swap Identifier (USI).";
@@ -494,8 +494,8 @@ public class TradeIdentification {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingBrokerIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingBrokerIdentification";
 			definition = "Reference number assigned by the clearing broker.";

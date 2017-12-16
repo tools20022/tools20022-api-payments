@@ -233,8 +233,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmReinvestmentFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentFrequency";
 			definition = "Frequency with which the reinvestment takes place,  This is the same or less than the dividend frequency,";
@@ -281,8 +281,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmFrontEndLoadIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FrontEndLoadIndicator";
 			definition = "Front end charge on subscription orders for this class can be applied.";
@@ -331,8 +331,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmBackEndLoadIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BackEndLoadIndicator";
 			definition = "Exit charge (eg. CDSC) on redemption orders for this class can be applied.";
@@ -381,8 +381,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmSwitchingFeeIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwitchingFeeIndicator";
 			definition = "If a separate fee for switching between sub-funds of the same umbrella can be applied.";
@@ -430,8 +430,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmLimitedSubscriptionPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitedSubscriptionPeriod";
 			definition = "Specific period, eg, for some guaranteed funds, during which the units/shares may be subscribed to.";
@@ -479,8 +479,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmLimitedRedemptionPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitedRedemptionPeriod";
 			definition = "Specific period, eg, for some guaranteed funds, during which the units/shares may be redeemed.";
@@ -527,8 +527,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmDecimalisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Decimalisation";
 			definition = "Number of decimal places to which quantities of units/shares are rounded.";
@@ -577,8 +577,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmHoldingTransferableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingTransferableIndicator";
 			definition = "Indicates whether registered investors are able to transfer some or all of their holdings to third parties.";
@@ -624,8 +624,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmApplicationForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicationForm";
 			definition = "Physical application form is required.";
@@ -675,8 +675,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmSignatureRequired = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignatureRequired";
 			definition = "Specifies which type of signature is required when completing an initial subscription, when completing a subsequent subscription, and when completing redemption.";
@@ -723,8 +723,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmAmountIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountIndicator";
 			definition = "Indicates whether subscriptions/redemption in amount are allowed.";
@@ -773,8 +773,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmUnitsIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitsIndicator";
 			definition = "Indicates whether subsciptions/redemption may be placed as a number of units.";
@@ -822,8 +822,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmOrderCutOffDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderCutOffDateTime";
 			definition = "Last date/time at which an order to subscribe or an order to redeem can be given.";
@@ -880,8 +880,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementCycle = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementCycle";
 			definition = "An agreed number of days after the Trade date (T) used to define standard timeframes e.g T+3 settlement period \r\nWhere T = the date the price is applied to a transaction.";
@@ -930,8 +930,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmFundClass = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundClass";
 			definition = "Investment fund class for which processing characteristics are specified.";
@@ -974,8 +974,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmHoldingTransferable = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingTransferable";
 			definition = "Indicates whether registered investors are able to transfer some or all of their holdings to third parties.";
@@ -1022,8 +1022,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmDealingFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealingFrequency";
 			definition = "Frequency at which the subscriptions and redemptions are done.";
@@ -1071,8 +1071,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmLimitedPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitedPeriod";
 			definition = "Specific period, eg, for some guaranteed funds, during which the units/shares may be redeemed.";
@@ -1124,8 +1124,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAccount";
 			definition = "Account used for settlement of fund transactions.";
@@ -1170,8 +1170,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country in which the processing characteristic applies.";
@@ -1221,8 +1221,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmLocalMarketAnnex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LocalMarketAnnex";
 			definition = "Context, or geographic environment, in which trading parties may meet in order to negotiate and execute trades among themselves.";
@@ -1261,8 +1261,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date/time as from which the processing characteristics are valid.";
@@ -1311,8 +1311,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmSubsequentSubscriptionApplicationForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubsequentSubscriptionApplicationForm";
 			definition = "Physical application form for subsequent investments by the same investor.";
@@ -1361,8 +1361,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmRedemptionForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionForm";
 			definition = "Physical written instruction/renunciation form for redemption of units/shares by the investor.";
@@ -1408,8 +1408,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmDealingCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealingCurrency";
 			definition = "Currency in which a subscription or redemption is accepted.";
@@ -1463,8 +1463,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAssociationEnd mmDealingCutOffTimeFrame = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealingCutOffTimeFrame";
 			definition = "Specifies the number of days for cut off before or after an activity.";
@@ -1507,8 +1507,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumHoldingAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHoldingAmount";
 			definition = "Minimum value of units that must be maintained to avoid automatic redemption.";
@@ -1557,8 +1557,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMaximumRedemptionUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumRedemptionUnits";
 			definition = "Maximum number of shares/units that may be redeemed on a single dealing day.";
@@ -1607,8 +1607,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumHoldingUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHoldingUnits";
 			definition = "Minimum number of units that must be maintained to avoid automatic redemption.";
@@ -1657,8 +1657,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumRemainingHoldingAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumRemainingHoldingAmount";
 			definition = "Minimum value of units/shares that must be retained to avoid automatic redemption.";
@@ -1707,8 +1707,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMaximumRedemptionPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumRedemptionPercentage";
 			definition = "Maximum quantity of securities, expressed as a percentage that can be sold.";
@@ -1756,8 +1756,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMaximumRedemptionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumRedemptionAmount";
 			definition = "Maximum quantity of securities, expressed as an amount that can be sold.";
@@ -1804,8 +1804,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumInitialSubscriptionUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumInitialSubscriptionUnits";
 			definition = "Minimum initial number of units/shares that must be purchased.";
@@ -1854,8 +1854,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumSubscriptionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumSubscriptionAmount";
 			definition = "Minimum quantity of securities, expressed as an amount that must be purchased.";
@@ -1904,8 +1904,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumInitialSubscriptionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumInitialSubscriptionAmount";
 			definition = "Minimum initial quantity of securities, expressed as an amount that must be purchased at subscription.";
@@ -1954,8 +1954,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumSubscriptionUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumSubscriptionUnits";
 			definition = "Minimum number of units/shares that must be purchase by existing investors.";
@@ -2004,8 +2004,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 */
 	public static final MMBusinessAttribute mmMinimumHoldingPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHoldingPeriod";
 			definition = "Description of a period, that may be a number of days, weeks or descriptive period during which the units/shares must be held following their issue before redemption will be permitted.";

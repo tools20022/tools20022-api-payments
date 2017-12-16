@@ -127,8 +127,8 @@ public class Settlement {
 	 */
 	public static final MMBusinessAttribute mmCentralCounterpartyEligibilityIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CentralCounterpartyEligibilityIndicator";
 			definition = "Specifies whether the settlement transaction is CCP (Central Counterparty) eligible.";
@@ -182,8 +182,8 @@ public class Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmStandingSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingSettlementInstruction";
 			definition = "Settlement Standing Instruction database to be used for settlement.";
@@ -230,8 +230,8 @@ public class Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementPartyRole";
 			definition = "Specifies roles played by a party in the settlement process.";
@@ -275,8 +275,8 @@ public class Settlement {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Trade for which settlement information is provided.";

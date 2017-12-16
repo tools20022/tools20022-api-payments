@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AuthenticationMethodCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Method used to authenticate a cardholder.
@@ -32,79 +37,79 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmUnknownMethod
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#UnknownMethod
  * AuthenticationMethodCode.mmUnknownMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmBypass
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Bypass
  * AuthenticationMethodCode.mmBypass}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmOnLinePIN
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#OnLinePIN
  * AuthenticationMethodCode.mmOnLinePIN}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmOfflinePIN
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#OfflinePIN
  * AuthenticationMethodCode.mmOfflinePIN}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmSignatureCapture
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SignatureCapture
  * AuthenticationMethodCode.mmSignatureCapture}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmPaperSignature
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PaperSignature
  * AuthenticationMethodCode.mmPaperSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmManualVerification
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#ManualVerification
  * AuthenticationMethodCode.mmManualVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmMerchantAuthentication
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#MerchantAuthentication
  * AuthenticationMethodCode.mmMerchantAuthentication}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmSecureCertificate
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureCertificate
  * AuthenticationMethodCode.mmSecureCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmSecureNoCertificate
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureNoCertificate
  * AuthenticationMethodCode.mmSecureNoCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmSecuredChannel
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecuredChannel
  * AuthenticationMethodCode.mmSecuredChannel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmPassword
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Password
  * AuthenticationMethodCode.mmPassword}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmBillingAddressVerification
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#BillingAddressVerification
  * AuthenticationMethodCode.mmBillingAddressVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmBiometry
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Biometry
  * AuthenticationMethodCode.mmBiometry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmCardholderIdentificationData
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CardholderIdentificationData
  * AuthenticationMethodCode.mmCardholderIdentificationData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmCryptogramVerification
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CryptogramVerification
  * AuthenticationMethodCode.mmCryptogramVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmCSCVerification
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CSCVerification
  * AuthenticationMethodCode.mmCSCVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmPassiveAuthentication
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PassiveAuthentication
  * AuthenticationMethodCode.mmPassiveAuthentication}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmSecureElectronicCommerce
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureElectronicCommerce
  * AuthenticationMethodCode.mmSecureElectronicCommerce}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmShippingAddressVerification
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#ShippingAddressVerification
  * AuthenticationMethodCode.mmShippingAddressVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmTokenAuthentication
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#TokenAuthentication
  * AuthenticationMethodCode.mmTokenAuthentication}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmPaymentToken
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PaymentToken
  * AuthenticationMethodCode.mmPaymentToken}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmAuthenticationToken
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#AuthenticationToken
  * AuthenticationMethodCode.mmAuthenticationToken}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmMobile
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Mobile
  * AuthenticationMethodCode.mmMobile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#mmOther
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Other
  * AuthenticationMethodCode.mmOther}</li>
  * </ul>
  * </li>
@@ -136,7 +141,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Method used to authenticate a cardholder."</li>
  * </ul>
  */
-public class AuthenticationMethodCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AuthenticationMethodCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -160,12 +166,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Authentication method is performed unknown."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnknownMethod = new MMCode() {
+	public static final AuthenticationMethodCode UnknownMethod = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnknownMethod";
 			definition = "Authentication method is performed unknown.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "UKNW";
 		}
 	};
@@ -190,12 +196,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Authentication bypassed by the merchant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBypass = new MMCode() {
+	public static final AuthenticationMethodCode Bypass = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bypass";
 			definition = "Authentication bypassed by the merchant.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "BYPS";
 		}
 	};
@@ -221,12 +227,12 @@ public class AuthenticationMethodCode {
 	 * "On-line PIN  authentication (Personal Identification Number)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnLinePIN = new MMCode() {
+	public static final AuthenticationMethodCode OnLinePIN = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLinePIN";
 			definition = "On-line PIN  authentication (Personal Identification Number).";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "NPIN";
 		}
 	};
@@ -252,12 +258,12 @@ public class AuthenticationMethodCode {
 	 * "Off-line PIN authentication (Personal Identification Number)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOfflinePIN = new MMCode() {
+	public static final AuthenticationMethodCode OfflinePIN = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfflinePIN";
 			definition = "Off-line PIN authentication (Personal Identification Number).";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "FPIN";
 		}
 	};
@@ -282,12 +288,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Electronic signature capture (handwritten signature)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSignatureCapture = new MMCode() {
+	public static final AuthenticationMethodCode SignatureCapture = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignatureCapture";
 			definition = "Electronic signature capture (handwritten signature).";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "CPSG";
 		}
 	};
@@ -312,12 +318,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Handwritten paper signature."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaperSignature = new MMCode() {
+	public static final AuthenticationMethodCode PaperSignature = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaperSignature";
 			definition = "Handwritten paper signature.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "PPSG";
 		}
 	};
@@ -343,12 +349,12 @@ public class AuthenticationMethodCode {
 	 * "Manual verification, for example passport or drivers license."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmManualVerification = new MMCode() {
+	public static final AuthenticationMethodCode ManualVerification = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManualVerification";
 			definition = "Manual verification, for example passport or drivers license.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "MANU";
 		}
 	};
@@ -373,12 +379,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Merchant-related authentication."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMerchantAuthentication = new MMCode() {
+	public static final AuthenticationMethodCode MerchantAuthentication = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MerchantAuthentication";
 			definition = "Merchant-related authentication.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "MERC";
 		}
 	};
@@ -406,12 +412,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecureCertificate = new MMCode() {
+	public static final AuthenticationMethodCode SecureCertificate = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecureCertificate";
 			definition = "Electronic commerce transaction secured with the X.509 certificate of a customer.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "SCRT";
 		}
 	};
@@ -437,12 +443,12 @@ public class AuthenticationMethodCode {
 	 * "Secure electronic transaction without cardholder certificate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecureNoCertificate = new MMCode() {
+	public static final AuthenticationMethodCode SecureNoCertificate = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecureNoCertificate";
 			definition = "Secure electronic transaction without cardholder certificate.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "SNCT";
 		}
 	};
@@ -467,12 +473,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Channel-encrypted transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecuredChannel = new MMCode() {
+	public static final AuthenticationMethodCode SecuredChannel = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuredChannel";
 			definition = "Channel-encrypted transaction.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "SCNL";
 		}
 	};
@@ -497,12 +503,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Authentication by a password."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPassword = new MMCode() {
+	public static final AuthenticationMethodCode Password = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Password";
 			definition = "Authentication by a password.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "PSWD";
 		}
 	};
@@ -527,12 +533,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Cardholder billing address verification."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBillingAddressVerification = new MMCode() {
+	public static final AuthenticationMethodCode BillingAddressVerification = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BillingAddressVerification";
 			definition = "Cardholder billing address verification.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "ADDB";
 		}
 	};
@@ -557,12 +563,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Biometric authentication of the cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBiometry = new MMCode() {
+	public static final AuthenticationMethodCode Biometry = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Biometry";
 			definition = "Biometric authentication of the cardholder.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "BIOM";
 		}
 	};
@@ -590,12 +596,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCardholderIdentificationData = new MMCode() {
+	public static final AuthenticationMethodCode CardholderIdentificationData = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardholderIdentificationData";
 			definition = "Cardholder data provided for verification, for instance social security number, driver license number, passport number.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "CDHI";
 		}
 	};
@@ -623,12 +629,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCryptogramVerification = new MMCode() {
+	public static final AuthenticationMethodCode CryptogramVerification = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CryptogramVerification";
 			definition = "Verification of a cryptogram generated by a chip card or another device, for instance ARQC (Authorisation Request Cryptogram).";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "CRYP";
 		}
 	};
@@ -653,12 +659,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Verification of Card Security Code."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCSCVerification = new MMCode() {
+	public static final AuthenticationMethodCode CSCVerification = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CSCVerification";
 			definition = "Verification of Card Security Code.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "CSCV";
 		}
 	};
@@ -684,12 +690,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPassiveAuthentication = new MMCode() {
+	public static final AuthenticationMethodCode PassiveAuthentication = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PassiveAuthentication";
 			definition = "Authentication based on statistical cardholder behaviour.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "PSVE";
 		}
 	};
@@ -716,12 +722,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecureElectronicCommerce = new MMCode() {
+	public static final AuthenticationMethodCode SecureElectronicCommerce = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecureElectronicCommerce";
 			definition = "Authentication performed during a secure electronic commerce transaction.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "CSEC";
 		}
 	};
@@ -746,12 +752,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Cardholder shipping address verification."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmShippingAddressVerification = new MMCode() {
+	public static final AuthenticationMethodCode ShippingAddressVerification = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ShippingAddressVerification";
 			definition = "Cardholder shipping address verification.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "ADDS";
 		}
 	};
@@ -779,12 +785,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTokenAuthentication = new MMCode() {
+	public static final AuthenticationMethodCode TokenAuthentication = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TokenAuthentication";
 			definition = "Cryptogram generated by the token requestor or a customer device to validate the authorised use of a token.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "TOKN";
 		}
 	};
@@ -812,12 +818,12 @@ public class AuthenticationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPaymentToken = new MMCode() {
+	public static final AuthenticationMethodCode PaymentToken = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentToken";
 			definition = "Verification or authentication related to the use of a payment token, for instance the validation of the authorised use of a token.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "TOKP";
 		}
 	};
@@ -843,12 +849,12 @@ public class AuthenticationMethodCode {
 	 * "A token is used to verify an already performed authentication."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuthenticationToken = new MMCode() {
+	public static final AuthenticationMethodCode AuthenticationToken = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AuthenticationToken";
 			definition = "A token is used to verify an already performed authentication.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "TOKA";
 		}
 	};
@@ -873,12 +879,12 @@ public class AuthenticationMethodCode {
 	 * definition} = "Customer mobile device."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMobile = new MMCode() {
+	public static final AuthenticationMethodCode Mobile = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Mobile";
 			definition = "Customer mobile device.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "MOBL";
 		}
 	};
@@ -903,17 +909,21 @@ public class AuthenticationMethodCode {
 	 * definition} = "Other customer authentication."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final AuthenticationMethodCode Other = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other customer authentication.";
-			owner_lazy = () -> AuthenticationMethodCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
+	final static private LinkedHashMap<String, AuthenticationMethodCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AuthenticationMethodCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -921,15 +931,70 @@ public class AuthenticationMethodCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationMethodCode";
 				definition = "Method used to authenticate a cardholder.";
-				code_lazy = () -> Arrays.asList(AuthenticationMethodCode.mmUnknownMethod, AuthenticationMethodCode.mmBypass, AuthenticationMethodCode.mmOnLinePIN, AuthenticationMethodCode.mmOfflinePIN,
-						AuthenticationMethodCode.mmSignatureCapture, AuthenticationMethodCode.mmPaperSignature, AuthenticationMethodCode.mmManualVerification, AuthenticationMethodCode.mmMerchantAuthentication,
-						AuthenticationMethodCode.mmSecureCertificate, AuthenticationMethodCode.mmSecureNoCertificate, AuthenticationMethodCode.mmSecuredChannel, AuthenticationMethodCode.mmPassword,
-						AuthenticationMethodCode.mmBillingAddressVerification, AuthenticationMethodCode.mmBiometry, AuthenticationMethodCode.mmCardholderIdentificationData, AuthenticationMethodCode.mmCryptogramVerification,
-						AuthenticationMethodCode.mmCSCVerification, AuthenticationMethodCode.mmPassiveAuthentication, AuthenticationMethodCode.mmSecureElectronicCommerce, AuthenticationMethodCode.mmShippingAddressVerification,
-						AuthenticationMethodCode.mmTokenAuthentication, AuthenticationMethodCode.mmPaymentToken, AuthenticationMethodCode.mmAuthenticationToken, AuthenticationMethodCode.mmMobile, AuthenticationMethodCode.mmOther);
 				derivation_lazy = () -> Arrays.asList(AuthenticationMethod1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AuthenticationMethodCode.UnknownMethod, com.tools20022.repository.codeset.AuthenticationMethodCode.Bypass,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.OnLinePIN, com.tools20022.repository.codeset.AuthenticationMethodCode.OfflinePIN,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.SignatureCapture, com.tools20022.repository.codeset.AuthenticationMethodCode.PaperSignature,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.ManualVerification, com.tools20022.repository.codeset.AuthenticationMethodCode.MerchantAuthentication,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.SecureCertificate, com.tools20022.repository.codeset.AuthenticationMethodCode.SecureNoCertificate,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.SecuredChannel, com.tools20022.repository.codeset.AuthenticationMethodCode.Password,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.BillingAddressVerification, com.tools20022.repository.codeset.AuthenticationMethodCode.Biometry,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.CardholderIdentificationData, com.tools20022.repository.codeset.AuthenticationMethodCode.CryptogramVerification,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.CSCVerification, com.tools20022.repository.codeset.AuthenticationMethodCode.PassiveAuthentication,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.SecureElectronicCommerce, com.tools20022.repository.codeset.AuthenticationMethodCode.ShippingAddressVerification,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.TokenAuthentication, com.tools20022.repository.codeset.AuthenticationMethodCode.PaymentToken,
+						com.tools20022.repository.codeset.AuthenticationMethodCode.AuthenticationToken, com.tools20022.repository.codeset.AuthenticationMethodCode.Mobile, com.tools20022.repository.codeset.AuthenticationMethodCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(UnknownMethod.getCodeName().get(), UnknownMethod);
+		codesByName.put(Bypass.getCodeName().get(), Bypass);
+		codesByName.put(OnLinePIN.getCodeName().get(), OnLinePIN);
+		codesByName.put(OfflinePIN.getCodeName().get(), OfflinePIN);
+		codesByName.put(SignatureCapture.getCodeName().get(), SignatureCapture);
+		codesByName.put(PaperSignature.getCodeName().get(), PaperSignature);
+		codesByName.put(ManualVerification.getCodeName().get(), ManualVerification);
+		codesByName.put(MerchantAuthentication.getCodeName().get(), MerchantAuthentication);
+		codesByName.put(SecureCertificate.getCodeName().get(), SecureCertificate);
+		codesByName.put(SecureNoCertificate.getCodeName().get(), SecureNoCertificate);
+		codesByName.put(SecuredChannel.getCodeName().get(), SecuredChannel);
+		codesByName.put(Password.getCodeName().get(), Password);
+		codesByName.put(BillingAddressVerification.getCodeName().get(), BillingAddressVerification);
+		codesByName.put(Biometry.getCodeName().get(), Biometry);
+		codesByName.put(CardholderIdentificationData.getCodeName().get(), CardholderIdentificationData);
+		codesByName.put(CryptogramVerification.getCodeName().get(), CryptogramVerification);
+		codesByName.put(CSCVerification.getCodeName().get(), CSCVerification);
+		codesByName.put(PassiveAuthentication.getCodeName().get(), PassiveAuthentication);
+		codesByName.put(SecureElectronicCommerce.getCodeName().get(), SecureElectronicCommerce);
+		codesByName.put(ShippingAddressVerification.getCodeName().get(), ShippingAddressVerification);
+		codesByName.put(TokenAuthentication.getCodeName().get(), TokenAuthentication);
+		codesByName.put(PaymentToken.getCodeName().get(), PaymentToken);
+		codesByName.put(AuthenticationToken.getCodeName().get(), AuthenticationToken);
+		codesByName.put(Mobile.getCodeName().get(), Mobile);
+		codesByName.put(Other.getCodeName().get(), Other);
+	}
+
+	public static AuthenticationMethodCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AuthenticationMethodCode[] values() {
+		AuthenticationMethodCode[] values = new AuthenticationMethodCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AuthenticationMethodCode> {
+		@Override
+		public AuthenticationMethodCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AuthenticationMethodCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

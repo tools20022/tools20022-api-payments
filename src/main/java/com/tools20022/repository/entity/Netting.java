@@ -38,6 +38,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -70,10 +74,6 @@ import java.util.List;
  * SecuritiesClearing.mmNetting}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -127,8 +127,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmAverageDealPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AverageDealPrice";
 			definition = "Average price of the netted trades.";
@@ -173,8 +173,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesClearingProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesClearingProcess";
 			definition = "Clearing process which includes the netting.";
@@ -213,8 +213,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmNetPositionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPositionAmount";
 			definition = "Calculated position.";
@@ -259,8 +259,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmAmountDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountDirection";
 			definition = "Specifies whether the amount is a debit or a credit.";
@@ -312,8 +312,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmNetQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NetQuantity";
 			definition = "Calculated net quantity of securities.";
@@ -352,8 +352,8 @@ public class Netting extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAttribute mmPositionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PositionAmount";
 			definition = "Intra-position amount.";

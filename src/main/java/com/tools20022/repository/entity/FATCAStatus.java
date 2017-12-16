@@ -111,8 +111,8 @@ public class FATCAStatus {
 	 */
 	public static final MMBusinessAttribute mmFATCAStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAStatus";
 			definition = "Foreign Account Tax Compliance Act (FATCA) status of the investor.";
@@ -158,8 +158,8 @@ public class FATCAStatus {
 	 */
 	public static final MMBusinessAttribute mmFATCASourceStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCASourceStatus";
 			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status.";
@@ -215,8 +215,8 @@ public class FATCAStatus {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccountParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountParty";
 			definition = "Foreign Account Tax Compliance Act (FATCA) status linked to an investment account and played by a party in that context.";
@@ -257,8 +257,8 @@ public class FATCAStatus {
 	 */
 	public static final MMBusinessAttribute mmFATCAReportingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAReportingDate";
 			definition = "Date provided by the account owner to inform the account servicer of the date on which the holdings must be reported before the account is subsequently closed.";

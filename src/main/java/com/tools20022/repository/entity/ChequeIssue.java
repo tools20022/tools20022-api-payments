@@ -39,6 +39,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.CreditInstrument
+ * CreditInstrument}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -51,15 +54,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * ChequeIssue.mmDeliverTo}</li>
  * <li>{@linkplain com.tools20022.repository.entity.ChequeIssue#mmPrintLocation
  * ChequeIssue.mmPrintLocation}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ChequeDeliveryMethod1Choice
- * ChequeDeliveryMethod1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Cheque7 Cheque7}</li>
  * </ul>
  * </li>
  * <li>
@@ -84,9 +78,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * CreditTransferTransaction22.mmChequeInstruction}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.CreditInstrument
- * CreditInstrument}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ChequeDeliveryMethod1Choice
+ * ChequeDeliveryMethod1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Cheque7 Cheque7}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -143,8 +143,8 @@ public class ChequeIssue extends CreditInstrument {
 	 */
 	public static final MMBusinessAssociationEnd mmCheque = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cheque";
 			definition = "Specifies the characteristics of the cheque used to pay an amount to a creditor.";
@@ -198,8 +198,8 @@ public class ChequeIssue extends CreditInstrument {
 	public static final MMBusinessAttribute mmDeliveryMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ChequeDeliveryMethod1Choice.mmCode, ChequeDeliveryMethod1Choice.mmProprietary, Cheque7.mmDeliveryMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryMethod";
 			definition = "Specifies the delivery method of the cheque by the debtor's agent.";
@@ -261,8 +261,8 @@ public class ChequeIssue extends CreditInstrument {
 	public static final MMBusinessAssociationEnd mmDeliverTo = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmDeliverTo);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliverTo";
 			definition = "Identifies the party to whom the debtor's agent should send the cheque.";
@@ -308,8 +308,8 @@ public class ChequeIssue extends CreditInstrument {
 	public static final MMBusinessAttribute mmPrintLocation = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmPrintLocation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrintLocation";
 			definition = "Specifies the print location of the cheque.";

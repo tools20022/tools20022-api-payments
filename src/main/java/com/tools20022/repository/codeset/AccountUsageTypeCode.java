@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AccountUsageTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of usage of the account
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmInvestor
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#Investor
  * AccountUsageTypeCode.mmInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmSettlementParticipant
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#SettlementParticipant
  * AccountUsageTypeCode.mmSettlementParticipant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmTradingParticipant
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#TradingParticipant
  * AccountUsageTypeCode.mmTradingParticipant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmIssuingParticipant
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#IssuingParticipant
  * AccountUsageTypeCode.mmIssuingParticipant}</li>
  * </ul>
  * </li>
@@ -66,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of usage of the account"</li>
  * </ul>
  */
-public class AccountUsageTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AccountUsageTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class AccountUsageTypeCode {
 	 * definition} = "Investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmInvestor = new MMCode() {
+	public static final AccountUsageTypeCode Investor = new AccountUsageTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Investor";
 			definition = "Investor.";
-			owner_lazy = () -> AccountUsageTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountUsageTypeCode.mmObject();
 			codeName = "INVE";
 		}
 	};
@@ -120,12 +126,12 @@ public class AccountUsageTypeCode {
 	 * definition} = "Settlement participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSettlementParticipant = new MMCode() {
+	public static final AccountUsageTypeCode SettlementParticipant = new AccountUsageTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementParticipant";
 			definition = "Settlement participant.";
-			owner_lazy = () -> AccountUsageTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountUsageTypeCode.mmObject();
 			codeName = "SETP";
 		}
 	};
@@ -150,12 +156,12 @@ public class AccountUsageTypeCode {
 	 * definition} = "Trading participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTradingParticipant = new MMCode() {
+	public static final AccountUsageTypeCode TradingParticipant = new AccountUsageTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingParticipant";
 			definition = "Trading participant.";
-			owner_lazy = () -> AccountUsageTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountUsageTypeCode.mmObject();
 			codeName = "TRDP";
 		}
 	};
@@ -180,17 +186,21 @@ public class AccountUsageTypeCode {
 	 * definition} = "Issuing participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIssuingParticipant = new MMCode() {
+	public static final AccountUsageTypeCode IssuingParticipant = new AccountUsageTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuingParticipant";
 			definition = "Issuing participant.";
-			owner_lazy = () -> AccountUsageTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AccountUsageTypeCode.mmObject();
 			codeName = "ISSP";
 		}
 	};
+	final static private LinkedHashMap<String, AccountUsageTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AccountUsageTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -198,9 +208,38 @@ public class AccountUsageTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountUsageTypeCode";
 				definition = "Specifies the type of usage of the account";
-				code_lazy = () -> Arrays.asList(AccountUsageTypeCode.mmInvestor, AccountUsageTypeCode.mmSettlementParticipant, AccountUsageTypeCode.mmTradingParticipant, AccountUsageTypeCode.mmIssuingParticipant);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountUsageTypeCode.Investor, com.tools20022.repository.codeset.AccountUsageTypeCode.SettlementParticipant,
+						com.tools20022.repository.codeset.AccountUsageTypeCode.TradingParticipant, com.tools20022.repository.codeset.AccountUsageTypeCode.IssuingParticipant);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Investor.getCodeName().get(), Investor);
+		codesByName.put(SettlementParticipant.getCodeName().get(), SettlementParticipant);
+		codesByName.put(TradingParticipant.getCodeName().get(), TradingParticipant);
+		codesByName.put(IssuingParticipant.getCodeName().get(), IssuingParticipant);
+	}
+
+	public static AccountUsageTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AccountUsageTypeCode[] values() {
+		AccountUsageTypeCode[] values = new AccountUsageTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AccountUsageTypeCode> {
+		@Override
+		public AccountUsageTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AccountUsageTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

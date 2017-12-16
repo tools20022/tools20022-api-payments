@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradeExecutionSessionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Represents a specific market trading session. It is used to identify a
@@ -39,31 +44,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmArchipelagoOpeningSession
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoOpeningSession
  * TradeExecutionSessionCode.mmArchipelagoOpeningSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmArchipelagoCoreSession
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoCoreSession
  * TradeExecutionSessionCode.mmArchipelagoCoreSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmArchipelagoLateSession
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoLateSession
  * TradeExecutionSessionCode.mmArchipelagoLateSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmChicagoBoardOptionsEarlySession
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ChicagoBoardOptionsEarlySession
  * TradeExecutionSessionCode.mmChicagoBoardOptionsEarlySession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmChicagoBoardOptionsRegularHours
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ChicagoBoardOptionsRegularHours
  * TradeExecutionSessionCode.mmChicagoBoardOptionsRegularHours}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmNagoyaExchange
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#NagoyaExchange
  * TradeExecutionSessionCode.mmNagoyaExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmOsakaExchange
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#OsakaExchange
  * TradeExecutionSessionCode.mmOsakaExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmTokyoSingleListedTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#TokyoSingleListedTrade
  * TradeExecutionSessionCode.mmTokyoSingleListedTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#mmTokyoClosingPriceTrade
+ * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#TokyoClosingPriceTrade
  * TradeExecutionSessionCode.mmTokyoClosingPriceTrade}</li>
  * </ul>
  * </li>
@@ -90,7 +95,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TradeExecutionSessionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradeExecutionSessionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -117,12 +123,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmArchipelagoOpeningSession = new MMCode() {
+	public static final TradeExecutionSessionCode ArchipelagoOpeningSession = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoOpeningSession";
 			definition = "Opening Session. 8:00 AM - 9:30 AM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHO";
 		}
 	};
@@ -150,12 +156,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmArchipelagoCoreSession = new MMCode() {
+	public static final TradeExecutionSessionCode ArchipelagoCoreSession = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoCoreSession";
 			definition = "Core Trading Session. 9:30 AM - 4:00 PM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHC";
 		}
 	};
@@ -183,12 +189,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmArchipelagoLateSession = new MMCode() {
+	public static final TradeExecutionSessionCode ArchipelagoLateSession = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoLateSession";
 			definition = "Late Trading Session. 4:00 PM - 8:00 PM Easternof the Archipelago Exchange (Pacific Stock Exchange).";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHL";
 		}
 	};
@@ -216,12 +222,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmChicagoBoardOptionsEarlySession = new MMCode() {
+	public static final TradeExecutionSessionCode ChicagoBoardOptionsEarlySession = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChicagoBoardOptionsEarlySession";
 			definition = "Early Morning Electronic Trading Session of the Chicago Board Options Exchange.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "WAM1";
 		}
 	};
@@ -248,12 +254,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmChicagoBoardOptionsRegularHours = new MMCode() {
+	public static final TradeExecutionSessionCode ChicagoBoardOptionsRegularHours = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChicagoBoardOptionsRegularHours";
 			definition = "Regular hours open outcry market of the Chicago Board Options Exchange.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "WMAI";
 		}
 	};
@@ -281,12 +287,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNagoyaExchange = new MMCode() {
+	public static final TradeExecutionSessionCode NagoyaExchange = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NagoyaExchange";
 			definition = "An electronic communication system operated by Nagoya Securities Exchange.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "NNET";
 		}
 	};
@@ -315,12 +321,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmOsakaExchange = new MMCode() {
+	public static final TradeExecutionSessionCode OsakaExchange = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OsakaExchange";
 			definition = "An electronic communication system by which the Osaka Securities Exchange (OSE), OSE members (Securities companies) and investors are directly connected with each other via a multi-layered computer network.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "JNET";
 		}
 	};
@@ -348,12 +354,12 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTokyoSingleListedTrade = new MMCode() {
+	public static final TradeExecutionSessionCode TokyoSingleListedTrade = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TokyoSingleListedTrade";
 			definition = "An off hour trade session of Tokyo Stock Exchange (TSE) for TSE listed stocks only. For Single/List trade.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "TOS1";
 		}
 	};
@@ -381,17 +387,21 @@ public class TradeExecutionSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTokyoClosingPriceTrade = new MMCode() {
+	public static final TradeExecutionSessionCode TokyoClosingPriceTrade = new TradeExecutionSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TokyoClosingPriceTrade";
 			definition = "An off hour trade session of Tokyo Stock Exchange (TSE) for TSE listed stocks only. For trade based on close price of regular trading session.";
-			owner_lazy = () -> TradeExecutionSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "TOS2";
 		}
 	};
+	final static private LinkedHashMap<String, TradeExecutionSessionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradeExecutionSessionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -399,11 +409,46 @@ public class TradeExecutionSessionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeExecutionSessionCode";
 				definition = "Represents a specific market trading session. It is used to identify a portion of the session where the execution might take place (\"after market\", \"pre-market\").\nIt is used to support order routing, quoting, and trade and market data reporting. For instance, orders can be routed to one or more Trading Sessions. Examples of Trading Session usage may be to facilitate extended hours trading, to differentiate between concurrent electronic and open-outcry trading, or to differentiate block and/or oddlot trading.\nIt is used by Exchanges, ECN's, and ATS's.";
-				code_lazy = () -> Arrays.asList(TradeExecutionSessionCode.mmArchipelagoOpeningSession, TradeExecutionSessionCode.mmArchipelagoCoreSession, TradeExecutionSessionCode.mmArchipelagoLateSession,
-						TradeExecutionSessionCode.mmChicagoBoardOptionsEarlySession, TradeExecutionSessionCode.mmChicagoBoardOptionsRegularHours, TradeExecutionSessionCode.mmNagoyaExchange, TradeExecutionSessionCode.mmOsakaExchange,
-						TradeExecutionSessionCode.mmTokyoSingleListedTrade, TradeExecutionSessionCode.mmTokyoClosingPriceTrade);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradeExecutionSessionCode.ArchipelagoOpeningSession, com.tools20022.repository.codeset.TradeExecutionSessionCode.ArchipelagoCoreSession,
+						com.tools20022.repository.codeset.TradeExecutionSessionCode.ArchipelagoLateSession, com.tools20022.repository.codeset.TradeExecutionSessionCode.ChicagoBoardOptionsEarlySession,
+						com.tools20022.repository.codeset.TradeExecutionSessionCode.ChicagoBoardOptionsRegularHours, com.tools20022.repository.codeset.TradeExecutionSessionCode.NagoyaExchange,
+						com.tools20022.repository.codeset.TradeExecutionSessionCode.OsakaExchange, com.tools20022.repository.codeset.TradeExecutionSessionCode.TokyoSingleListedTrade,
+						com.tools20022.repository.codeset.TradeExecutionSessionCode.TokyoClosingPriceTrade);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ArchipelagoOpeningSession.getCodeName().get(), ArchipelagoOpeningSession);
+		codesByName.put(ArchipelagoCoreSession.getCodeName().get(), ArchipelagoCoreSession);
+		codesByName.put(ArchipelagoLateSession.getCodeName().get(), ArchipelagoLateSession);
+		codesByName.put(ChicagoBoardOptionsEarlySession.getCodeName().get(), ChicagoBoardOptionsEarlySession);
+		codesByName.put(ChicagoBoardOptionsRegularHours.getCodeName().get(), ChicagoBoardOptionsRegularHours);
+		codesByName.put(NagoyaExchange.getCodeName().get(), NagoyaExchange);
+		codesByName.put(OsakaExchange.getCodeName().get(), OsakaExchange);
+		codesByName.put(TokyoSingleListedTrade.getCodeName().get(), TokyoSingleListedTrade);
+		codesByName.put(TokyoClosingPriceTrade.getCodeName().get(), TokyoClosingPriceTrade);
+	}
+
+	public static TradeExecutionSessionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradeExecutionSessionCode[] values() {
+		TradeExecutionSessionCode[] values = new TradeExecutionSessionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradeExecutionSessionCode> {
+		@Override
+		public TradeExecutionSessionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradeExecutionSessionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

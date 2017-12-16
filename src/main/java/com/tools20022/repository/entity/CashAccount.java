@@ -39,6 +39,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -117,34 +119,6 @@ import java.util.List;
  * CashAccount.mmPayment}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CashAccount#mmCommission
  * CashAccount.mmCommission}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.CashAccountType2Choice
- * CashAccountType2Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount24 CashAccount24}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount25 CashAccount25}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountForAction1
- * AccountForAction1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2
- * AccountForAction2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount5
- * CustomerAccount5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PurposeModification1
- * PurposeModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CustomerAccountModification1
- * CustomerAccountModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount4
- * CustomerAccount4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountAndParties1
- * AccountAndParties1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2
- * CashAccountCharacteristics2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ParentCashAccount2
- * ParentCashAccount2}</li>
  * </ul>
  * </li>
  * <li>
@@ -261,8 +235,34 @@ import java.util.List;
  * NotificationItem6.mmRelatedAccount}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Account Account}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.CashAccountType2Choice
+ * CashAccountType2Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount24 CashAccount24}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount25 CashAccount25}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountForAction1
+ * AccountForAction1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2
+ * AccountForAction2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount5
+ * CustomerAccount5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PurposeModification1
+ * PurposeModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CustomerAccountModification1
+ * CustomerAccountModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount4
+ * CustomerAccount4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountAndParties1
+ * AccountAndParties1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2
+ * CashAccountCharacteristics2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ParentCashAccount2
+ * ParentCashAccount2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -325,8 +325,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAttribute mmCashAccountType = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountType2Choice.mmCode, CashAccountType2Choice.mmProprietary, CashAccount24.mmType, CashAccount25.mmType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountType";
 			definition = "Specifies the nature, or use, of the cash account.";
@@ -378,8 +378,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentAccount";
 			definition = "Investment account for which a cash branch is specified.";
@@ -437,8 +437,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(ReportingRequest3.mmRequestedTransactionType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Record of the cash movements into or out of a cash account. It is derived from the association between Account and Entry.";
@@ -499,8 +499,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAssociationEnd mmCashBalance = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingStatement2.mmBalance, BillingStatement2.mmBalanceAdjustment);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashBalance";
 			definition = "Overall position representing the net debits and credits in an account at a specific point in time. It is derived from the association between Account and Balance.";
@@ -548,8 +548,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentPartyRole";
 			definition = "Specifies each role linked to a payment and using a specific cash account in the payment context. ";
@@ -598,8 +598,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCreditStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCreditStandingOrder";
 			definition = "Instruction given by an account holder to an account servicer to make regular transfers on given dates to the same beneficiary.";
@@ -648,8 +648,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDebitStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedDebitStandingOrder";
 			definition = "Instruction given by an account holder to an account servicer to make regular transfers on given dates to the same beneficiary.";
@@ -698,8 +698,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountContract";
 			definition = "Contract which manages the account. It is derived from the relation between AccountContract and Account.";
@@ -745,8 +745,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateActionElection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionElection";
 			definition = "Election process which uses specific cash accounts.";
@@ -792,8 +792,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCharges = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Charges";
 			definition = "Specifies the charges which are debited from the account.";
@@ -846,8 +846,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmTax);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Tax charged on a cash account.";
@@ -893,8 +893,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSettlementInstruction";
 			definition = "Settlement process which uses specific cash accounts.";
@@ -944,8 +944,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCashSettlementPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashSettlementPartyRole";
 			definition = "Specifies each role linked to a payment settlement and using a specific cash account in the payment context. ";
@@ -993,8 +993,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmUltimateObligor = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UltimateObligor";
 			definition = "Party for which different types of cash accounts are specified.";
@@ -1040,8 +1040,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentCard";
 			definition = "Payment card for which an account is specified.";
@@ -1087,8 +1087,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPartyRole";
 			definition = "Specifies the role which uses a cash account.";
@@ -1138,8 +1138,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvoiceFinancingPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvoiceFinancingPartyRole";
 			definition = "Specifies each role using a specific account in the context of invoice financing.";
@@ -1186,8 +1186,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCommercialTrade";
 			definition = "Commercial trade for which a purchase account is specified.";
@@ -1238,8 +1238,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAttribute mmLevel = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmAccountLevel, ParentCashAccount2.mmLevel);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Level";
 			definition = "Defines the level of an account within the account hierarchy.";
@@ -1295,8 +1295,8 @@ public class CashAccount extends Account {
 	public static final MMBusinessAttribute mmSettlementCurrency = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmSettlementCurrencyCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementCurrency";
 			definition = "Specifies the currency used for settlement, if different from the account currency.";
@@ -1352,8 +1352,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmReportedMovements = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportedMovements";
 			definition = "Provides statistical information on the number of movements and their value for a particular account.";
@@ -1401,8 +1401,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmClosedAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosedAccountContract";
 			definition = "Contract which specifies the cash account to/from which the balance of a closed account must be transferred.";
@@ -1449,8 +1449,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountLink";
 			definition = "Defines the link between a cash account and a securities account.";
@@ -1495,8 +1495,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCashStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashStandingOrder";
 			definition = "Standing order which applies on a specific account.";
@@ -1541,8 +1541,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCheque = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cheque";
 			definition = "Cheques drawn on a cash account.";
@@ -1591,8 +1591,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCashAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashAccountService";
 			definition = "Services linked to the cash account and specified in the cash account contract. It is derived from the association between Account and AccountService.";
@@ -1637,8 +1637,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment for which an account is specified.";
@@ -1685,8 +1685,8 @@ public class CashAccount extends Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commission";
 			definition = "Amount of money due to a party as compensation for a service.";

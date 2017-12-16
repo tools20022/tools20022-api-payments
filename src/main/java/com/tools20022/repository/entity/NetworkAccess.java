@@ -118,8 +118,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAttribute mmHostIPAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HostIPAddress";
 			definition = "IP address of the host.";
@@ -164,8 +164,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAttribute mmHostPortNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HostPortNumber";
 			definition = "Port number of the host.";
@@ -210,8 +210,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAttribute mmUserName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UserName";
 			definition = "User name identifying the party accessing the network.";
@@ -256,8 +256,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAttribute mmAccessCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccessCode";
 			definition = "Password authenticating the user";
@@ -310,8 +310,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAssociationEnd mmClientCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientCertificate";
 			definition = "Client certificate chain.";
@@ -358,8 +358,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManagementSystem";
 			definition = "Terminal Management System which uses the network.";
@@ -399,8 +399,8 @@ public class NetworkAccess {
 	 */
 	public static final MMBusinessAttribute mmNetworkAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetworkAddress";
 			definition = "Address used to reach the network on which a message will be carried.";

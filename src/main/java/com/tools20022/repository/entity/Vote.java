@@ -134,8 +134,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAssociationEnd mmVoteRequest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteRequest";
 			definition = "Request which contains the vote instructions.";
@@ -173,8 +173,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmFor = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "For";
 			definition = "Number of votes in favour of one resolution";
@@ -218,8 +218,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmAgainst = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Against";
 			definition = "Number of votes against one resolution";
@@ -263,8 +263,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmAbstain = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Abstain";
 			definition = "Number of votes declared abstained for one resolution.";
@@ -308,8 +308,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmWithhold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withhold";
 			definition = "Number of votes withheld for one resolution";
@@ -354,8 +354,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmWithManagement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithManagement";
 			definition = "Number of votes in line with the votes of the management.";
@@ -400,8 +400,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmAgainstManagement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgainstManagement";
 			definition = "Number of votes against the voting recommendation of the management.";
@@ -453,8 +453,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAssociationEnd mmResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Resolution";
 			definition = "Specifies the agenda item on which a vote is/was cast.";
@@ -491,8 +491,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmNoAction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoAction";
 			definition = "Number of votes for which no action has been taken.";
@@ -545,8 +545,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAssociationEnd mmResult = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Result";
 			definition = "Information on the vote result for a specific resolution.";
@@ -587,8 +587,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmTwoYears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TwoYears";
 			definition = "Number of votes in favour of two years for \"say on pay\" type of resolution.";
@@ -635,8 +635,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmOneYear = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OneYear";
 			definition = "Number of votes in favour for one year for \"say on pay\" type of resolution.";
@@ -681,8 +681,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmWithdrawn = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withdrawn";
 			definition = "Resolution withdrawn at the meeting.";
@@ -729,8 +729,8 @@ public class Vote {
 	 */
 	public static final MMBusinessAttribute mmThreeYears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ThreeYears";
 			definition = "Number of votes in favour of three years for \"say on pay\" type of resolution.";

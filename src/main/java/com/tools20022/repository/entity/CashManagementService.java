@@ -38,6 +38,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
+ * CashAccountService}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -76,9 +79,6 @@ import java.util.List;
  * LiquidityManagementLimit.mmRelatedCashServices}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.CashAccountService
- * CashAccountService}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -139,8 +139,8 @@ public class CashManagementService extends CashAccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmRiskManagementLimit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RiskManagementLimit";
 			definition = "Maximum amount value applied to or by a party versus a specific counterparty or a set of counterparts. The limit can be expressed as a debit limit or a credit limit.";
@@ -189,8 +189,8 @@ public class CashManagementService extends CashAccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrder";
 			definition = "Specifies standing orders that must be executed in the context of cash management. This service may be offered by a transaction administrator.";
@@ -237,8 +237,8 @@ public class CashManagementService extends CashAccountService {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransactionAdministrator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransactionAdministrator";
 			definition = "Transaction administrator of a cash management service.";
@@ -301,8 +301,8 @@ public class CashManagementService extends CashAccountService {
 	public static final MMBusinessAssociationEnd mmLiquidityManagementLimit = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionType1.mmFloorLimit);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LiquidityManagementLimit";
 			definition = "Cash management feature limiting the amount of liquidity needed to perform clearing and settlement operations. At any point in time during the process, the limit imposes the maximum amount of liquidity available for operations concerning the system or other managed elements, eg, transaction amount or counterparty.";
@@ -344,8 +344,8 @@ public class CashManagementService extends CashAccountService {
 	 */
 	public static final MMBusinessAttribute mmCallInType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallInType";
 			definition = "Type of call when additional funding from a settlement member is requested by a central settlement system.";

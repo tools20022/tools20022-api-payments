@@ -157,8 +157,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmRequestedTaxationRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedTaxationRate";
 			definition = "Requested tax rate in case of breakdown of tax rate, for example, used for adjustment of tax rate. This is the new requested applicable rate.";
@@ -203,8 +203,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmCreditRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditRate";
 			definition = "Applicable tax rate on the tax credit amount.";
@@ -259,8 +259,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecurityTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecurityTax";
 			definition = "Specifies tax elements on the security which is involved in the corporate event.";
@@ -299,8 +299,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmSundryOrOtherAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SundryOrOtherAmount";
 			definition = "Amount of money related to taxable income that cannot be categorised.";
@@ -346,8 +346,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmCreditAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditAmount";
 			definition = "Amount of money per equity allocated as the result of a tax credit.";
@@ -393,8 +393,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmCashAmountBroughtForward = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAmountBroughtForward";
 			definition = "Cash amount retained from previous dividend or interest payment.";
@@ -440,8 +440,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmCashAmountCarriedForward = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAmountCarriedForward";
 			definition = "Cash amount carried forward to next dividend or interest payment.";
@@ -489,8 +489,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmNotionalTaxAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalTaxAmount";
 			definition = "Tax on the amount of cash that would have been paid when new securities are issued in lieu of a cash dividend.";
@@ -546,8 +546,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAssociationEnd mmDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Distribution";
 			definition = "Corporate action distribution process for which tax voucher information is provided.";
@@ -586,8 +586,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for the tax voucher.";
@@ -631,8 +631,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmBargainDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BargainDate";
 			definition = "Date on which DRIP purchase completed.";
@@ -676,8 +676,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmBargainSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BargainSettlementDate";
 			definition = "Settlement date of the DRIP purchase transaction.";
@@ -721,8 +721,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmTaxVoucherRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxVoucherRate";
 			definition = "Distribution rate per share.";
@@ -774,8 +774,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAssociationEnd mmRecordDateHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RecordDateHolding";
 			definition = "Securities holding on record date.";
@@ -821,8 +821,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAssociationEnd mmScripDividendReinvestmentPricePerShare = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ScripDividendReinvestmentPricePerShare";
 			definition = "Cost per share of new shares allotted.";
@@ -861,8 +861,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAttribute mmAllotedSharesCost = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllotedSharesCost";
 			definition = "Total cash amount required to purchase shares allotted.";
@@ -916,8 +916,8 @@ public class TaxVoucher {
 	 */
 	public static final MMBusinessAssociationEnd mmForeignExchangeTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForeignExchangeTransaction";
 			definition = "Provides information about the foreign exchange transaction.";

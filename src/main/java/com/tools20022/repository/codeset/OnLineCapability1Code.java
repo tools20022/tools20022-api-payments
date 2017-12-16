@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.OnLineCapabilityCode;
+import com.tools20022.repository.codeset.OnLineCapability1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * On-line and off-line capabilities of the POI (Point Of Interaction).
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode
- * OnLineCapabilityCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#mmOffLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#OffLine
  * OnLineCapability1Code.mmOffLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#mmOnLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#OnLine
  * OnLineCapability1Code.mmOnLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#mmSemiOffLine
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapability1Code#SemiOffLine
  * OnLineCapability1Code.mmSemiOffLine}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.OnLineCapabilityCode
+ * OnLineCapabilityCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -68,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "On-line and off-line capabilities of the POI (Point Of Interaction)."</li>
  * </ul>
  */
-public class OnLineCapability1Code extends OnLineCapabilityCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OnLineCapability1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,11 +92,12 @@ public class OnLineCapability1Code extends OnLineCapabilityCode {
 	 * name} = "OffLine"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOffLine = new MMCode() {
+	public static final OnLineCapability1Code OffLine = new OnLineCapability1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OffLine";
-			owner_lazy = () -> OnLineCapability1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapability1Code.mmObject();
+			codeName = OnLineCapabilityCode.OffLine.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -110,11 +116,12 @@ public class OnLineCapability1Code extends OnLineCapabilityCode {
 	 * name} = "OnLine"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOnLine = new MMCode() {
+	public static final OnLineCapability1Code OnLine = new OnLineCapability1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnLine";
-			owner_lazy = () -> OnLineCapability1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapability1Code.mmObject();
+			codeName = OnLineCapabilityCode.OnLine.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -133,15 +140,20 @@ public class OnLineCapability1Code extends OnLineCapabilityCode {
 	 * name} = "SemiOffLine"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSemiOffLine = new MMCode() {
+	public static final OnLineCapability1Code SemiOffLine = new OnLineCapability1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiOffLine";
-			owner_lazy = () -> OnLineCapability1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OnLineCapability1Code.mmObject();
+			codeName = OnLineCapabilityCode.SemiOffLine.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, OnLineCapability1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OnLineCapability1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -149,10 +161,38 @@ public class OnLineCapability1Code extends OnLineCapabilityCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OnLineCapability1Code";
 				definition = "On-line and off-line capabilities of the POI (Point Of Interaction).";
-				code_lazy = () -> Arrays.asList(OnLineCapability1Code.mmOffLine, OnLineCapability1Code.mmOnLine, OnLineCapability1Code.mmSemiOffLine);
 				trace_lazy = () -> OnLineCapabilityCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OnLineCapability1Code.OffLine, com.tools20022.repository.codeset.OnLineCapability1Code.OnLine,
+						com.tools20022.repository.codeset.OnLineCapability1Code.SemiOffLine);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(OffLine.getCodeName().get(), OffLine);
+		codesByName.put(OnLine.getCodeName().get(), OnLine);
+		codesByName.put(SemiOffLine.getCodeName().get(), SemiOffLine);
+	}
+
+	public static OnLineCapability1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OnLineCapability1Code[] values() {
+		OnLineCapability1Code[] values = new OnLineCapability1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OnLineCapability1Code> {
+		@Override
+		public OnLineCapability1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OnLineCapability1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

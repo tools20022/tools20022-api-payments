@@ -134,8 +134,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmOffset = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Offset";
 			definition = "Amount (signed) added to the peg for a pegged order.";
@@ -180,8 +180,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmPriceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceType";
 			definition = "Defines the type of peg.";
@@ -226,8 +226,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmMoveType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MoveType";
 			definition = "Describes whether peg is static/fixed or floats.";
@@ -273,8 +273,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmOffsetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetType";
 			definition = "Type of peg offset.";
@@ -319,8 +319,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmLimitType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LimitType";
 			definition = "Specifies nature of resulting pegged price.";
@@ -369,8 +369,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmScope = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Scope";
 			definition = "The scope of \"related to\" price of the peg (for example, local, global etc).";
@@ -419,8 +419,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAttribute mmOffsetSign = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetSign";
 			definition = "Indicates whether the offset should be added to or subtracted from the peg for a pegged order.";
@@ -474,8 +474,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Order";
 			definition = "Order which is pegged.";
@@ -525,8 +525,8 @@ public class SecuritiesPegOrderInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmRoundDirection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RoundDirection";
 			definition = "If the calculated peg price is not a valid tick price, specifies how to round the price.";

@@ -40,6 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -97,47 +99,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
  * RegisteredContract.mmAttachment}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract4
- * RegisteredContract4}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ContractRegistration1
- * ContractRegistration1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract2
- * RegisteredContract2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1
- * ContractRegistrationStatement1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1
- * ContractRegistrationStatementRequest1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract1
- * RegisteredContract1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SupportingDocument1
- * SupportingDocument1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1
- * RegisteredContractAmendment1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContractJournal1
- * RegisteredContractJournal1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentAmendment1
- * DocumentAmendment1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ContractRegistration2
- * ContractRegistration2}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice
- * ContractRegistrationReference1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1
- * TransactionCertificateRecord1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract5
- * RegisteredContract5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3
- * RegisteredContract3}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1
- * RegulatoryReportingNotification1}</li>
  * </ul>
  * </li>
  * <li>
@@ -217,8 +178,47 @@ import java.util.concurrent.atomic.AtomicReference;
  * RegisteredContract5.mmAmendment}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract4
+ * RegisteredContract4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ContractRegistration1
+ * ContractRegistration1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract2
+ * RegisteredContract2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1
+ * ContractRegistrationStatement1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1
+ * ContractRegistrationStatementRequest1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract1
+ * RegisteredContract1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SupportingDocument1
+ * SupportingDocument1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1
+ * RegisteredContractAmendment1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContractJournal1
+ * RegisteredContractJournal1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentAmendment1
+ * DocumentAmendment1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ContractRegistration2
+ * ContractRegistration2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice
+ * ContractRegistrationReference1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1
+ * TransactionCertificateRecord1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract5
+ * RegisteredContract5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3
+ * RegisteredContract3}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1
+ * RegulatoryReportingNotification1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -291,8 +291,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmCertificate = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocument1.mmCertificate, RegulatoryReportingNotification1.mmTransactionCertificate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Certificate";
 			definition = "Certificate against which all transactions in the scope of the regulatory requirements are registered.";
@@ -357,8 +357,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmContractBalance = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmContractBalance, ContractRegistration2.mmContractBalance, RegisteredContract5.mmContractBalance, RegisteredContract3.mmContractBalance);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractBalance";
 			definition = "Contract balance on date of contract registration.";
@@ -443,8 +443,8 @@ public class RegisteredContract extends Contract {
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmReportingParty, ContractRegistration1.mmReportingParty, RegisteredContract2.mmReportingParty, ContractRegistrationStatement1.mmReportingParty,
 					CurrencyControlGroupStatus1.mmReportingParty, ContractRegistrationStatementRequest1.mmReportingParty, RegisteredContract1.mmReportingParty, SupportingDocument1.mmAccountOwner,
 					RegulatoryReportingNotification1.mmAccountOwner);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingParty";
 			definition = "Party which must register the contract for regulatory reporting reasons.";
@@ -548,8 +548,8 @@ public class RegisteredContract extends Contract {
 					ContractRegistration2.mmPreviousRegistrationIdentification, ContractRegistrationReference1Choice.mmRegisteredContractIdentification, RegisteredContract5.mmRegisteredContractIdentification,
 					RegisteredContract5.mmPreviousRegisteredContractIdentification, RegisteredContract3.mmRegisteredContractAmendmentIdentification, RegisteredContract3.mmOriginalRegisteredContractIdentification,
 					RegulatoryReportingNotification1.mmTransactionNotificationIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of the registered contract.";
@@ -595,8 +595,8 @@ public class RegisteredContract extends Contract {
 	 */
 	public static final MMBusinessAttribute mmDeliveryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryDate";
 			definition = "Provides the date for the delivery of the registered contract.";
@@ -695,8 +695,8 @@ public class RegisteredContract extends Contract {
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmRegistrationAgent, RegisteredContract4.mmIssuerFinancialInstitution, ContractRegistration1.mmRegistrationAgent, RegisteredContract2.mmRegistrationAgent,
 					ContractRegistrationStatement1.mmRegistrationAgent, CurrencyControlGroupStatus1.mmRegistrationAgent, ContractRegistrationStatementRequest1.mmRegistrationAgent, RegisteredContract1.mmRegistrationAgent,
 					SupportingDocument1.mmAccountServicer, RegisteredContractJournal1.mmRegistrationAgent, RegisteredContract5.mmIssuerFinancialInstitution, RegulatoryReportingNotification1.mmAccountServicer);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationAgent";
 			definition = "Agent which is in charge of the registration of the contract.";
@@ -755,8 +755,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmReceivingParty = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmReceiver);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingParty";
 			definition = "Party which receives support information about the registered contract.";
@@ -810,8 +810,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmPriority, ContractRegistration2.mmPriority, RegisteredContract3.mmPriority);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Priority requested for the registered contract.";
@@ -857,8 +857,8 @@ public class RegisteredContract extends Contract {
 	 */
 	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDate";
 			definition = "Provides the date for the registration of the registered contract.";
@@ -923,8 +923,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmClosureReason = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmClosureReason, RegisteredContractJournal1.mmClosureReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureReason";
 			definition = "Reason of closure of the contract. ";
@@ -963,8 +963,8 @@ public class RegisteredContract extends Contract {
 	 */
 	public static final MMBusinessAttribute mmClosureDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureDate";
 			definition = "Date of closure of the contract. ";
@@ -1035,8 +1035,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmPaymentScheduleType = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmPaymentScheduleType, ContractRegistration2.mmPaymentScheduleType, RegisteredContract5.mmPaymentScheduleType, RegisteredContract3.mmPaymentScheduleType);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentScheduleType";
 			definition = "Type of the payment schedule provided in the contract.";
@@ -1085,8 +1085,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAttribute mmSubmissionDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContractAmendment1.mmAmendmentDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionDate";
 			definition = "Provides the date for the submission of the registered contract.";
@@ -1150,8 +1150,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAssociationEnd mmSendingParty = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmSender);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SendingParty";
 			definition = "Party which sends support information about the registered contract.";
@@ -1206,8 +1206,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAttribute mmDeliveryMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmDelivery, RegisteredContract5.mmDelivery);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryMethod";
 			definition = "Provides the communication method for the delivery of the registered contract.";
@@ -1268,8 +1268,8 @@ public class RegisteredContract extends Contract {
 	public static final MMBusinessAttribute mmSubmissionMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmSubmission, RegisteredContract5.mmSubmission);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionMethod";
 			definition = "Provides the communication method for the submission of the registered contract.";
@@ -1321,8 +1321,8 @@ public class RegisteredContract extends Contract {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Provides the payment related of the registered contract.";
@@ -1396,8 +1396,8 @@ public class RegisteredContract extends Contract {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmAttachment, SupportingDocumentEntry1.mmAttachment, ContractRegistration2.mmAttachment, TradeContract1.mmAttachment,
 					TransactionCertificateRecord1.mmAttachment, RegisteredContract3.mmAttachment, LoanContract1.mmAttachment);
-			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Attachment";
 			definition = "Documents provided as attachments to the registered contract.";

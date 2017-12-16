@@ -159,8 +159,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Settlement process to which the settlement instruction database applies.";
@@ -201,8 +201,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAttribute mmFXStandingInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FXStandingInstruction";
 			definition = "Specifies whether the forex standing instruction in place should apply.";
@@ -251,8 +251,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAttribute mmSettlementStandingInstructionDatabase = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementStandingInstructionDatabase";
 			definition = "Specifies what settlement standing instruction database is to be used to derive the settlement parties involved in the transaction.";
@@ -297,8 +297,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the standing instruction.";
@@ -354,8 +354,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralAgreement";
 			definition = "Collateral agreement for which standing settlement instructions are specified.";
@@ -397,8 +397,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAttribute mmSSIDatabaseName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SSIDatabaseName";
 			definition = "Specifies the settlement standing instruction database to be used to derive the settlement parties involved in a transaction.";
@@ -454,8 +454,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmSSIDatabaseProvider = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SSIDatabaseProvider";
 			definition = "Party which provides information on the parties and accounts to be used to settle a transaction.";
@@ -502,8 +502,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Period during which the SSI is valid.";
@@ -542,8 +542,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Currency";
 			definition = "Currency of the payment to which the SSI applies.";
@@ -596,8 +596,8 @@ public class StandingSettlementInstruction {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Asset";
 			definition = "Inidicates the asset for the standing settlement instruction.";

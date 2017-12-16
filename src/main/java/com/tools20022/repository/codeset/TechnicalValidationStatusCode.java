@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TechnicalValidationStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the result of the technical validation carried out by the receiver
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TechnicalValidationStatusCode#mmReceptionConfirmation
+ * {@linkplain com.tools20022.repository.codeset.TechnicalValidationStatusCode#ReceptionConfirmation
  * TechnicalValidationStatusCode.mmReceptionConfirmation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TechnicalValidationStatusCode#mmReceptionError
+ * {@linkplain com.tools20022.repository.codeset.TechnicalValidationStatusCode#ReceptionError
  * TechnicalValidationStatusCode.mmReceptionError}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TechnicalValidationStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TechnicalValidationStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +96,12 @@ public class TechnicalValidationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceptionConfirmation = new MMCode() {
+	public static final TechnicalValidationStatusCode ReceptionConfirmation = new TechnicalValidationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceptionConfirmation";
 			definition = "Indicates that the request has been correctly received and that the technical validation was successful.";
-			owner_lazy = () -> TechnicalValidationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TechnicalValidationStatusCode.mmObject();
 			codeName = "RCCF";
 		}
 	};
@@ -123,17 +129,21 @@ public class TechnicalValidationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceptionError = new MMCode() {
+	public static final TechnicalValidationStatusCode ReceptionError = new TechnicalValidationStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceptionError";
 			definition = "Indicates there was an error in the reception of the request or that the technical validation was not successful.";
-			owner_lazy = () -> TechnicalValidationStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TechnicalValidationStatusCode.mmObject();
 			codeName = "RCER";
 		}
 	};
+	final static private LinkedHashMap<String, TechnicalValidationStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TechnicalValidationStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -141,9 +151,35 @@ public class TechnicalValidationStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TechnicalValidationStatusCode";
 				definition = "Specifies the result of the technical validation carried out by the receiver (forwarding or first agent).";
-				code_lazy = () -> Arrays.asList(TechnicalValidationStatusCode.mmReceptionConfirmation, TechnicalValidationStatusCode.mmReceptionError);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TechnicalValidationStatusCode.ReceptionConfirmation, com.tools20022.repository.codeset.TechnicalValidationStatusCode.ReceptionError);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ReceptionConfirmation.getCodeName().get(), ReceptionConfirmation);
+		codesByName.put(ReceptionError.getCodeName().get(), ReceptionError);
+	}
+
+	public static TechnicalValidationStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TechnicalValidationStatusCode[] values() {
+		TechnicalValidationStatusCode[] values = new TechnicalValidationStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TechnicalValidationStatusCode> {
+		@Override
+		public TechnicalValidationStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TechnicalValidationStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

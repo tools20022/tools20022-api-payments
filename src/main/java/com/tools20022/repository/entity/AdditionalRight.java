@@ -116,8 +116,8 @@ public class AdditionalRight {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which additional rights are specified.";
@@ -157,8 +157,8 @@ public class AdditionalRight {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the additional right type.";
@@ -206,8 +206,8 @@ public class AdditionalRight {
 	 */
 	public static final MMBusinessAttribute mmAdditionalRightThreshold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalRightThreshold";
 			definition = "Additional right granted to specify the minimum stake in share capital or cash value or number of security holders required to table resolutions.";
@@ -257,8 +257,8 @@ public class AdditionalRight {
 	 */
 	public static final MMBusinessAttribute mmAdditionalRightThresholdPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AdditionalRight.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalRightThresholdPercentage";
 			definition = "Additional right granted to specify the minimum stake in share capital or cash value or number of security holders required to table resolutions. This minimum is expressed as a percentage.";

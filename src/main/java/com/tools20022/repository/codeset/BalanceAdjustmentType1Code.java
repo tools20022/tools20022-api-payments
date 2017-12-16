@@ -20,32 +20,36 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.BalanceAdjustmentTypeCode;
+import com.tools20022.repository.codeset.BalanceAdjustmentType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the type of allowed balance adjustment.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode
- * BalanceAdjustmentTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#mmLedger
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#Ledger
  * BalanceAdjustmentType1Code.mmLedger}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#mmFloat
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#Float
  * BalanceAdjustmentType1Code.mmFloat}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#mmCollected
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentType1Code#Collected
  * BalanceAdjustmentType1Code.mmCollected}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode
+ * BalanceAdjustmentTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Defines the type of allowed balance adjustment."</li>
  * </ul>
  */
-public class BalanceAdjustmentType1Code extends BalanceAdjustmentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BalanceAdjustmentType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +91,12 @@ public class BalanceAdjustmentType1Code extends BalanceAdjustmentTypeCode {
 	 * name} = "Ledger"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLedger = new MMCode() {
+	public static final BalanceAdjustmentType1Code Ledger = new BalanceAdjustmentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ledger";
-			owner_lazy = () -> BalanceAdjustmentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentType1Code.mmObject();
+			codeName = BalanceAdjustmentTypeCode.Ledger.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +115,12 @@ public class BalanceAdjustmentType1Code extends BalanceAdjustmentTypeCode {
 	 * name} = "Float"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFloat = new MMCode() {
+	public static final BalanceAdjustmentType1Code Float = new BalanceAdjustmentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Float";
-			owner_lazy = () -> BalanceAdjustmentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentType1Code.mmObject();
+			codeName = BalanceAdjustmentTypeCode.Float.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,15 +139,20 @@ public class BalanceAdjustmentType1Code extends BalanceAdjustmentTypeCode {
 	 * name} = "Collected"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCollected = new MMCode() {
+	public static final BalanceAdjustmentType1Code Collected = new BalanceAdjustmentType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collected";
-			owner_lazy = () -> BalanceAdjustmentType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceAdjustmentType1Code.mmObject();
+			codeName = BalanceAdjustmentTypeCode.Collected.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, BalanceAdjustmentType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BalanceAdjustmentType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -148,10 +160,38 @@ public class BalanceAdjustmentType1Code extends BalanceAdjustmentTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceAdjustmentType1Code";
 				definition = "Defines the type of allowed balance adjustment.";
-				code_lazy = () -> Arrays.asList(BalanceAdjustmentType1Code.mmLedger, BalanceAdjustmentType1Code.mmFloat, BalanceAdjustmentType1Code.mmCollected);
 				trace_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceAdjustmentType1Code.Ledger, com.tools20022.repository.codeset.BalanceAdjustmentType1Code.Float,
+						com.tools20022.repository.codeset.BalanceAdjustmentType1Code.Collected);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Ledger.getCodeName().get(), Ledger);
+		codesByName.put(Float.getCodeName().get(), Float);
+		codesByName.put(Collected.getCodeName().get(), Collected);
+	}
+
+	public static BalanceAdjustmentType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BalanceAdjustmentType1Code[] values() {
+		BalanceAdjustmentType1Code[] values = new BalanceAdjustmentType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BalanceAdjustmentType1Code> {
+		@Override
+		public BalanceAdjustmentType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BalanceAdjustmentType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CardTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of payment card.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CardTypeCode#mmCreditCard
+ * <li>{@linkplain com.tools20022.repository.codeset.CardTypeCode#CreditCard
  * CardTypeCode.mmCreditCard}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CardTypeCode#mmDebitCard
+ * <li>{@linkplain com.tools20022.repository.codeset.CardTypeCode#DebitCard
  * CardTypeCode.mmDebitCard}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of payment card."</li>
  * </ul>
  */
-public class CardTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CardTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -85,12 +91,12 @@ public class CardTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCreditCard = new MMCode() {
+	public static final CardTypeCode CreditCard = new CardTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditCard";
 			definition = "Card where the holder has been granted a line of credit. The card enables the holder to make purchases and withdraw cash up to a pre-arranged ceiling.";
-			owner_lazy = () -> CardTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardTypeCode.mmObject();
 			codeName = "CRDT";
 		}
 	};
@@ -118,17 +124,21 @@ public class CardTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebitCard = new MMCode() {
+	public static final CardTypeCode DebitCard = new CardTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DebitCard";
 			definition = "Card enabling the holder to have its purchases directly charged to its account. The card may also combine other functions, eg, cash card or cheque guaranteed card.";
-			owner_lazy = () -> CardTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CardTypeCode.mmObject();
 			codeName = "DBIT";
 		}
 	};
+	final static private LinkedHashMap<String, CardTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CardTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -136,9 +146,35 @@ public class CardTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardTypeCode";
 				definition = "Specifies the type of payment card.";
-				code_lazy = () -> Arrays.asList(CardTypeCode.mmCreditCard, CardTypeCode.mmDebitCard);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CardTypeCode.CreditCard, com.tools20022.repository.codeset.CardTypeCode.DebitCard);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CreditCard.getCodeName().get(), CreditCard);
+		codesByName.put(DebitCard.getCodeName().get(), DebitCard);
+	}
+
+	public static CardTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CardTypeCode[] values() {
+		CardTypeCode[] values = new CardTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CardTypeCode> {
+		@Override
+		public CardTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CardTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

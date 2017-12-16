@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DividendPolicyCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the dividend policy of the financial instrument.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmDailyAccruingDividend
+ * {@linkplain com.tools20022.repository.codeset.DividendPolicyCode#DailyAccruingDividend
  * DividendPolicyCode.mmDailyAccruingDividend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmCash
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Cash
  * DividendPolicyCode.mmCash}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmUnits
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Units
  * DividendPolicyCode.mmUnits}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmBoth
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Both
  * DividendPolicyCode.mmBoth}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the dividend policy of the financial instrument."</li>
  * </ul>
  */
-public class DividendPolicyCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DividendPolicyCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid daily and can be accrued."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDailyAccruingDividend = new MMCode() {
+	public static final DividendPolicyCode DailyAccruingDividend = new DividendPolicyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DailyAccruingDividend";
 			definition = "Dividend is paid daily and can be accrued.";
-			owner_lazy = () -> DividendPolicyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendPolicyCode.mmObject();
 			codeName = "DACR";
 		}
 	};
@@ -117,12 +123,12 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in cash."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCash = new MMCode() {
+	public static final DividendPolicyCode Cash = new DividendPolicyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cash";
 			definition = "Dividend is paid in cash.";
-			owner_lazy = () -> DividendPolicyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendPolicyCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -147,12 +153,12 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in units."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnits = new MMCode() {
+	public static final DividendPolicyCode Units = new DividendPolicyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Units";
 			definition = "Dividend is paid in units.";
-			owner_lazy = () -> DividendPolicyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendPolicyCode.mmObject();
 			codeName = "UNIT";
 		}
 	};
@@ -177,17 +183,21 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in both Cash and Units."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBoth = new MMCode() {
+	public static final DividendPolicyCode Both = new DividendPolicyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Both";
 			definition = "Dividend is paid in both Cash and Units.";
-			owner_lazy = () -> DividendPolicyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendPolicyCode.mmObject();
 			codeName = "BOTH";
 		}
 	};
+	final static private LinkedHashMap<String, DividendPolicyCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DividendPolicyCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -195,9 +205,38 @@ public class DividendPolicyCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DividendPolicyCode";
 				definition = "Specifies the dividend policy of the financial instrument.";
-				code_lazy = () -> Arrays.asList(DividendPolicyCode.mmDailyAccruingDividend, DividendPolicyCode.mmCash, DividendPolicyCode.mmUnits, DividendPolicyCode.mmBoth);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DividendPolicyCode.DailyAccruingDividend, com.tools20022.repository.codeset.DividendPolicyCode.Cash,
+						com.tools20022.repository.codeset.DividendPolicyCode.Units, com.tools20022.repository.codeset.DividendPolicyCode.Both);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(DailyAccruingDividend.getCodeName().get(), DailyAccruingDividend);
+		codesByName.put(Cash.getCodeName().get(), Cash);
+		codesByName.put(Units.getCodeName().get(), Units);
+		codesByName.put(Both.getCodeName().get(), Both);
+	}
+
+	public static DividendPolicyCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DividendPolicyCode[] values() {
+		DividendPolicyCode[] values = new DividendPolicyCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DividendPolicyCode> {
+		@Override
+		public DividendPolicyCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DividendPolicyCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

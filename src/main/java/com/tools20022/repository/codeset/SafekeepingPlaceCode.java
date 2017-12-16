@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SafekeepingPlaceCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of place of safekeeping.
@@ -32,19 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#mmSharesHeldAtLocalCustodian
+ * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtLocalCustodian
  * SafekeepingPlaceCode.mmSharesHeldAtLocalCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#mmSharesHeldAtICSD
+ * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtICSD
  * SafekeepingPlaceCode.mmSharesHeldAtICSD}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#mmSharesHeldAtNCSD
+ * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtNCSD
  * SafekeepingPlaceCode.mmSharesHeldAtNCSD}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#mmSharesHeldElsewhere
+ * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldElsewhere
  * SafekeepingPlaceCode.mmSharesHeldElsewhere}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#mmAllPlaces
+ * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#AllPlaces
  * SafekeepingPlaceCode.mmAllPlaces}</li>
  * </ul>
  * </li>
@@ -69,7 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of place of safekeeping."</li>
  * </ul>
  */
-public class SafekeepingPlaceCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SafekeepingPlaceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -93,12 +99,12 @@ public class SafekeepingPlaceCode {
 	 * definition} = "Financial instruments held at a local custodian."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSharesHeldAtLocalCustodian = new MMCode() {
+	public static final SafekeepingPlaceCode SharesHeldAtLocalCustodian = new SafekeepingPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtLocalCustodian";
 			definition = "Financial instruments held at a local custodian.";
-			owner_lazy = () -> SafekeepingPlaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SafekeepingPlaceCode.mmObject();
 			codeName = "CUST";
 		}
 	};
@@ -126,12 +132,12 @@ public class SafekeepingPlaceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSharesHeldAtICSD = new MMCode() {
+	public static final SafekeepingPlaceCode SharesHeldAtICSD = new SafekeepingPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtICSD";
 			definition = "Financial instruments held at an International Central Securities Depository.";
-			owner_lazy = () -> SafekeepingPlaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SafekeepingPlaceCode.mmObject();
 			codeName = "ICSD";
 		}
 	};
@@ -158,12 +164,12 @@ public class SafekeepingPlaceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSharesHeldAtNCSD = new MMCode() {
+	public static final SafekeepingPlaceCode SharesHeldAtNCSD = new SafekeepingPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtNCSD";
 			definition = "Financial instruments held at a National Central Securities Depository.";
-			owner_lazy = () -> SafekeepingPlaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SafekeepingPlaceCode.mmObject();
 			codeName = "NCSD";
 		}
 	};
@@ -192,12 +198,12 @@ public class SafekeepingPlaceCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSharesHeldElsewhere = new MMCode() {
+	public static final SafekeepingPlaceCode SharesHeldElsewhere = new SafekeepingPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldElsewhere";
 			definition = "Used for certain financial instruments, for example, US mutual funds, where settlement is internal only, that is, there is no external movement of securities.";
-			owner_lazy = () -> SafekeepingPlaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SafekeepingPlaceCode.mmObject();
 			codeName = "SHHE";
 		}
 	};
@@ -223,17 +229,21 @@ public class SafekeepingPlaceCode {
 	 * "All places of safekeeping where the financial instrument is held."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAllPlaces = new MMCode() {
+	public static final SafekeepingPlaceCode AllPlaces = new SafekeepingPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllPlaces";
 			definition = "All places of safekeeping where the financial instrument is held.";
-			owner_lazy = () -> SafekeepingPlaceCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SafekeepingPlaceCode.mmObject();
 			codeName = "ALLP";
 		}
 	};
+	final static private LinkedHashMap<String, SafekeepingPlaceCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SafekeepingPlaceCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -241,10 +251,39 @@ public class SafekeepingPlaceCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlaceCode";
 				definition = "Specifies the type of place of safekeeping.";
-				code_lazy = () -> Arrays.asList(SafekeepingPlaceCode.mmSharesHeldAtLocalCustodian, SafekeepingPlaceCode.mmSharesHeldAtICSD, SafekeepingPlaceCode.mmSharesHeldAtNCSD, SafekeepingPlaceCode.mmSharesHeldElsewhere,
-						SafekeepingPlaceCode.mmAllPlaces);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SafekeepingPlaceCode.SharesHeldAtLocalCustodian, com.tools20022.repository.codeset.SafekeepingPlaceCode.SharesHeldAtICSD,
+						com.tools20022.repository.codeset.SafekeepingPlaceCode.SharesHeldAtNCSD, com.tools20022.repository.codeset.SafekeepingPlaceCode.SharesHeldElsewhere, com.tools20022.repository.codeset.SafekeepingPlaceCode.AllPlaces);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(SharesHeldAtLocalCustodian.getCodeName().get(), SharesHeldAtLocalCustodian);
+		codesByName.put(SharesHeldAtICSD.getCodeName().get(), SharesHeldAtICSD);
+		codesByName.put(SharesHeldAtNCSD.getCodeName().get(), SharesHeldAtNCSD);
+		codesByName.put(SharesHeldElsewhere.getCodeName().get(), SharesHeldElsewhere);
+		codesByName.put(AllPlaces.getCodeName().get(), AllPlaces);
+	}
+
+	public static SafekeepingPlaceCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SafekeepingPlaceCode[] values() {
+		SafekeepingPlaceCode[] values = new SafekeepingPlaceCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SafekeepingPlaceCode> {
+		@Override
+		public SafekeepingPlaceCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SafekeepingPlaceCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

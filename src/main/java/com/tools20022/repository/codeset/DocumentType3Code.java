@@ -20,41 +20,45 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.DocumentTypeCode;
+import com.tools20022.repository.codeset.DocumentType3Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a type of financial or commercial document.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode
- * DocumentTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmRemittanceAdviceMessage
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#RemittanceAdviceMessage
  * DocumentType3Code.mmRemittanceAdviceMessage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmRelatedPaymentInstruction
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#RelatedPaymentInstruction
  * DocumentType3Code.mmRelatedPaymentInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmForeignExchangeDealReference
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#ForeignExchangeDealReference
  * DocumentType3Code.mmForeignExchangeDealReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmDispatchAdvice
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#DispatchAdvice
  * DocumentType3Code.mmDispatchAdvice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmPurchaseOrder
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#PurchaseOrder
  * DocumentType3Code.mmPurchaseOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#mmStructuredCommunicationReference
+ * {@linkplain com.tools20022.repository.codeset.DocumentType3Code#StructuredCommunicationReference
  * DocumentType3Code.mmStructuredCommunicationReference}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode
+ * DocumentTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,7 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a type of financial or commercial document."</li>
  * </ul>
  */
-public class DocumentType3Code extends DocumentTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DocumentType3Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -95,11 +100,12 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "RemittanceAdviceMessage"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRemittanceAdviceMessage = new MMCode() {
+	public static final DocumentType3Code RemittanceAdviceMessage = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceAdviceMessage";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.RemittanceAdviceMessage.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -118,11 +124,12 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "RelatedPaymentInstruction"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRelatedPaymentInstruction = new MMCode() {
+	public static final DocumentType3Code RelatedPaymentInstruction = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedPaymentInstruction";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.RelatedPaymentInstruction.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -141,11 +148,12 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "ForeignExchangeDealReference"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmForeignExchangeDealReference = new MMCode() {
+	public static final DocumentType3Code ForeignExchangeDealReference = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForeignExchangeDealReference";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.ForeignExchangeDealReference.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -164,11 +172,12 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "DispatchAdvice"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDispatchAdvice = new MMCode() {
+	public static final DocumentType3Code DispatchAdvice = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DispatchAdvice";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.DispatchAdvice.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -187,11 +196,12 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "PurchaseOrder"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPurchaseOrder = new MMCode() {
+	public static final DocumentType3Code PurchaseOrder = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PurchaseOrder";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.PurchaseOrder.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -210,15 +220,20 @@ public class DocumentType3Code extends DocumentTypeCode {
 	 * name} = "StructuredCommunicationReference"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStructuredCommunicationReference = new MMCode() {
+	public static final DocumentType3Code StructuredCommunicationReference = new DocumentType3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StructuredCommunicationReference";
-			owner_lazy = () -> DocumentType3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DocumentType3Code.mmObject();
+			codeName = DocumentTypeCode.StructuredCommunicationReference.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, DocumentType3Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DocumentType3Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -226,11 +241,42 @@ public class DocumentType3Code extends DocumentTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentType3Code";
 				definition = "Specifies a type of financial or commercial document.";
-				code_lazy = () -> Arrays.asList(DocumentType3Code.mmRemittanceAdviceMessage, DocumentType3Code.mmRelatedPaymentInstruction, DocumentType3Code.mmForeignExchangeDealReference, DocumentType3Code.mmDispatchAdvice,
-						DocumentType3Code.mmPurchaseOrder, DocumentType3Code.mmStructuredCommunicationReference);
 				trace_lazy = () -> DocumentTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DocumentType3Code.RemittanceAdviceMessage, com.tools20022.repository.codeset.DocumentType3Code.RelatedPaymentInstruction,
+						com.tools20022.repository.codeset.DocumentType3Code.ForeignExchangeDealReference, com.tools20022.repository.codeset.DocumentType3Code.DispatchAdvice,
+						com.tools20022.repository.codeset.DocumentType3Code.PurchaseOrder, com.tools20022.repository.codeset.DocumentType3Code.StructuredCommunicationReference);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(RemittanceAdviceMessage.getCodeName().get(), RemittanceAdviceMessage);
+		codesByName.put(RelatedPaymentInstruction.getCodeName().get(), RelatedPaymentInstruction);
+		codesByName.put(ForeignExchangeDealReference.getCodeName().get(), ForeignExchangeDealReference);
+		codesByName.put(DispatchAdvice.getCodeName().get(), DispatchAdvice);
+		codesByName.put(PurchaseOrder.getCodeName().get(), PurchaseOrder);
+		codesByName.put(StructuredCommunicationReference.getCodeName().get(), StructuredCommunicationReference);
+	}
+
+	public static DocumentType3Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DocumentType3Code[] values() {
+		DocumentType3Code[] values = new DocumentType3Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DocumentType3Code> {
+		@Override
+		public DocumentType3Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DocumentType3Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

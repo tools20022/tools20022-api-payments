@@ -139,8 +139,8 @@ public class ObligationFulfilment {
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionCertificate2.mmTransactionDate, CertificateReference1.mmDate, MandateAuthentication1.mmDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date and time on which assets become available.";
@@ -196,8 +196,8 @@ public class ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmObligationOffset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ObligationOffset";
 			definition = "Specifies the obligation which has been offset for instance a payment obligation or a securities delivery.";
@@ -246,8 +246,8 @@ public class ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd mmResultingObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultingObligation";
 			definition = "Specifies the obligation which result from a settlement process, for instance the remaining obligation when the obligations are netted.";

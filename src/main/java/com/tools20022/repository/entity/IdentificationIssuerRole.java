@@ -40,6 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.InformationPartyRole
+ * InformationPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -52,14 +56,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.IdentificationIssuerRole#mmOwnerCode
  * IdentificationIssuerRole.mmOwnerCode}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.IdentificationSource3Choice
- * IdentificationSource3Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -101,10 +97,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * BillingServiceCommonIdentification1.mmIssuer}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.InformationPartyRole
- * InformationPartyRole}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.IdentificationSource3Choice
+ * IdentificationSource3Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -151,8 +151,8 @@ public class IdentificationIssuerRole extends InformationPartyRole {
 	 */
 	public static final MMBusinessAttribute mmCountry = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country of the proprietary identification scheme.";
@@ -197,8 +197,8 @@ public class IdentificationIssuerRole extends InformationPartyRole {
 	 */
 	public static final MMBusinessAttribute mmEntityName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntityName";
 			definition = "Entity that issues the proprietary identification.";
@@ -246,8 +246,8 @@ public class IdentificationIssuerRole extends InformationPartyRole {
 	 */
 	public static final MMBusinessAttribute mmOwnerCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.IdentificationIssuerRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnerCode";
 			definition = "Code representing the organisation that owns and is responsible of an enumerated code list, for example ISO.";

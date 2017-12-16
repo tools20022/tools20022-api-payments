@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ClearingFeeTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the type of fee being assessed of the customer for trade executions
@@ -33,46 +38,46 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmCBOEMember
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#CBOEMember
  * ClearingFeeTypeCode.mmCBOEMember}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmNonMemberAndCustomer
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#NonMemberAndCustomer
  * ClearingFeeTypeCode.mmNonMemberAndCustomer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmEquityClearingMember
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#EquityClearingMember
  * ClearingFeeTypeCode.mmEquityClearingMember}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmFullAssociateMember
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FullAssociateMember
  * ClearingFeeTypeCode.mmFullAssociateMember}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmJ106AndHFirms
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#J106AndHFirms
  * ClearingFeeTypeCode.mmJ106AndHFirms}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmGICInterestHolders
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#GICInterestHolders
  * ClearingFeeTypeCode.mmGICInterestHolders}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmLesseeAnd106FFirms
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#LesseeAnd106FFirms
  * ClearingFeeTypeCode.mmLesseeAnd106FFirms}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmOtherOwnershipTypes
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#OtherOwnershipTypes
  * ClearingFeeTypeCode.mmOtherOwnershipTypes}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmFirstYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FirstYearOwnAccount
  * ClearingFeeTypeCode.mmFirstYearOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmSecondYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#SecondYearOwnAccount
  * ClearingFeeTypeCode.mmSecondYearOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmThirdYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#ThirdYearOwnAccount
  * ClearingFeeTypeCode.mmThirdYearOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmFourthYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FourthYearOwnAccount
  * ClearingFeeTypeCode.mmFourthYearOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmFifthYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FifthYearOwnAccount
  * ClearingFeeTypeCode.mmFifthYearOwnAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#mmMoreThanFiveYearOwnAccount
+ * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#MoreThanFiveYearOwnAccount
  * ClearingFeeTypeCode.mmMoreThanFiveYearOwnAccount}</li>
  * </ul>
  * </li>
@@ -99,7 +104,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ClearingFeeTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ClearingFeeTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -123,12 +129,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Member of the Chicago Board Of Exchange."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCBOEMember = new MMCode() {
+	public static final ClearingFeeTypeCode CBOEMember = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CBOEMember";
 			definition = "Member of the Chicago Board Of Exchange.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "CBOE";
 		}
 	};
@@ -153,12 +159,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Non-member and customer."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonMemberAndCustomer = new MMCode() {
+	public static final ClearingFeeTypeCode NonMemberAndCustomer = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonMemberAndCustomer";
 			definition = "Non-member and customer.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "NONM";
 		}
 	};
@@ -183,12 +189,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Equity member and clearing member."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEquityClearingMember = new MMCode() {
+	public static final ClearingFeeTypeCode EquityClearingMember = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EquityClearingMember";
 			definition = "Equity member and clearing member.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "EQCL";
 		}
 	};
@@ -215,12 +221,12 @@ public class ClearingFeeTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFullAssociateMember = new MMCode() {
+	public static final ClearingFeeTypeCode FullAssociateMember = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullAssociateMember";
 			definition = "Full and associate member trading for own account and as floor brokers.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "FUAS";
 		}
 	};
@@ -245,12 +251,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "106.J and 106.H Firms."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmJ106AndHFirms = new MMCode() {
+	public static final ClearingFeeTypeCode J106AndHFirms = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "J106AndHFirms";
 			definition = "106.J and 106.H Firms.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "JANF";
 		}
 	};
@@ -275,12 +281,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "GIM, IDEM and COM Membership Interest Holders."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGICInterestHolders = new MMCode() {
+	public static final ClearingFeeTypeCode GICInterestHolders = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GICInterestHolders";
 			definition = "GIM, IDEM and COM Membership Interest Holders.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "GICI";
 		}
 	};
@@ -305,12 +311,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Lessee and 106.F Employees."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLesseeAnd106FFirms = new MMCode() {
+	public static final ClearingFeeTypeCode LesseeAnd106FFirms = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LesseeAnd106FFirms";
 			definition = "Lessee and 106.F Employees.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "LESF";
 		}
 	};
@@ -335,12 +341,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Miscellaneous type of clearing membership."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOtherOwnershipTypes = new MMCode() {
+	public static final ClearingFeeTypeCode OtherOwnershipTypes = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OtherOwnershipTypes";
 			definition = "Miscellaneous type of clearing membership.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
@@ -365,12 +371,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "First year delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFirstYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode FirstYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FirstYearOwnAccount";
 			definition = "First year delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "YTR1";
 		}
 	};
@@ -395,12 +401,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Second year delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSecondYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode SecondYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecondYearOwnAccount";
 			definition = "Second year delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "YTR2";
 		}
 	};
@@ -425,12 +431,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Third year delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmThirdYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode ThirdYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ThirdYearOwnAccount";
 			definition = "Third year delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "YTR3";
 		}
 	};
@@ -455,12 +461,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Fourth year delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFourthYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode FourthYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FourthYearOwnAccount";
 			definition = "Fourth year delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "YTR4";
 		}
 	};
@@ -485,12 +491,12 @@ public class ClearingFeeTypeCode {
 	 * definition} = "Fifth year delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFifthYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode FifthYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FifthYearOwnAccount";
 			definition = "Fifth year delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "YTR5";
 		}
 	};
@@ -516,17 +522,21 @@ public class ClearingFeeTypeCode {
 	 * "Sixth year and beyond delegate trading for his own account."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMoreThanFiveYearOwnAccount = new MMCode() {
+	public static final ClearingFeeTypeCode MoreThanFiveYearOwnAccount = new ClearingFeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MoreThanFiveYearOwnAccount";
 			definition = "Sixth year and beyond delegate trading for his own account.";
-			owner_lazy = () -> ClearingFeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingFeeTypeCode.mmObject();
 			codeName = "NYTR";
 		}
 	};
+	final static private LinkedHashMap<String, ClearingFeeTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ClearingFeeTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -534,12 +544,53 @@ public class ClearingFeeTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingFeeTypeCode";
 				definition = "Indicates the type of fee being assessed of the customer for trade executions at an exchange. Applicable for futures markets only at this time.";
-				code_lazy = () -> Arrays.asList(ClearingFeeTypeCode.mmCBOEMember, ClearingFeeTypeCode.mmNonMemberAndCustomer, ClearingFeeTypeCode.mmEquityClearingMember, ClearingFeeTypeCode.mmFullAssociateMember,
-						ClearingFeeTypeCode.mmJ106AndHFirms, ClearingFeeTypeCode.mmGICInterestHolders, ClearingFeeTypeCode.mmLesseeAnd106FFirms, ClearingFeeTypeCode.mmOtherOwnershipTypes, ClearingFeeTypeCode.mmFirstYearOwnAccount,
-						ClearingFeeTypeCode.mmSecondYearOwnAccount, ClearingFeeTypeCode.mmThirdYearOwnAccount, ClearingFeeTypeCode.mmFourthYearOwnAccount, ClearingFeeTypeCode.mmFifthYearOwnAccount,
-						ClearingFeeTypeCode.mmMoreThanFiveYearOwnAccount);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ClearingFeeTypeCode.CBOEMember, com.tools20022.repository.codeset.ClearingFeeTypeCode.NonMemberAndCustomer,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.EquityClearingMember, com.tools20022.repository.codeset.ClearingFeeTypeCode.FullAssociateMember,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.J106AndHFirms, com.tools20022.repository.codeset.ClearingFeeTypeCode.GICInterestHolders,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.LesseeAnd106FFirms, com.tools20022.repository.codeset.ClearingFeeTypeCode.OtherOwnershipTypes,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.FirstYearOwnAccount, com.tools20022.repository.codeset.ClearingFeeTypeCode.SecondYearOwnAccount,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.ThirdYearOwnAccount, com.tools20022.repository.codeset.ClearingFeeTypeCode.FourthYearOwnAccount,
+						com.tools20022.repository.codeset.ClearingFeeTypeCode.FifthYearOwnAccount, com.tools20022.repository.codeset.ClearingFeeTypeCode.MoreThanFiveYearOwnAccount);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CBOEMember.getCodeName().get(), CBOEMember);
+		codesByName.put(NonMemberAndCustomer.getCodeName().get(), NonMemberAndCustomer);
+		codesByName.put(EquityClearingMember.getCodeName().get(), EquityClearingMember);
+		codesByName.put(FullAssociateMember.getCodeName().get(), FullAssociateMember);
+		codesByName.put(J106AndHFirms.getCodeName().get(), J106AndHFirms);
+		codesByName.put(GICInterestHolders.getCodeName().get(), GICInterestHolders);
+		codesByName.put(LesseeAnd106FFirms.getCodeName().get(), LesseeAnd106FFirms);
+		codesByName.put(OtherOwnershipTypes.getCodeName().get(), OtherOwnershipTypes);
+		codesByName.put(FirstYearOwnAccount.getCodeName().get(), FirstYearOwnAccount);
+		codesByName.put(SecondYearOwnAccount.getCodeName().get(), SecondYearOwnAccount);
+		codesByName.put(ThirdYearOwnAccount.getCodeName().get(), ThirdYearOwnAccount);
+		codesByName.put(FourthYearOwnAccount.getCodeName().get(), FourthYearOwnAccount);
+		codesByName.put(FifthYearOwnAccount.getCodeName().get(), FifthYearOwnAccount);
+		codesByName.put(MoreThanFiveYearOwnAccount.getCodeName().get(), MoreThanFiveYearOwnAccount);
+	}
+
+	public static ClearingFeeTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ClearingFeeTypeCode[] values() {
+		ClearingFeeTypeCode[] values = new ClearingFeeTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ClearingFeeTypeCode> {
+		@Override
+		public ClearingFeeTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ClearingFeeTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

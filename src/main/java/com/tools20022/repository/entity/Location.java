@@ -185,8 +185,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmNativePerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NativePerson";
 			definition = "Person for which a birth place is specified.";
@@ -231,8 +231,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which a location is specified.";
@@ -277,8 +277,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmDomiciledParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomiciledParty";
 			definition = "Party which is domiciled in a specific location.";
@@ -325,8 +325,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmOperatingOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OperatingOrganisation";
 			definition = "Organisation which has its operations in a specific location.";
@@ -385,8 +385,8 @@ public class Location {
 	public static final MMBusinessAssociationEnd mmAddress = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(Organisation12.mmOperationalAddress, OrganisationModification1.mmOperationalAddress);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Address";
 			definition = "Information that locates and identifies a specific address.";
@@ -430,8 +430,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedDocument";
 			definition = "Document which was issued at a specific location.";
@@ -476,8 +476,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmIncoterms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Incoterms";
 			definition = "Incoterms associated with a location.";
@@ -522,8 +522,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmDepartureTransportParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepartureTransportParameters";
 			definition = "Transport parameters linked to a place of departure.";
@@ -569,8 +569,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmDestinationTransportParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DestinationTransportParameters";
 			definition = "Transport parameters linked to a place of destination.";
@@ -618,8 +618,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceCertificate";
 			definition = "Insurance for which the claims are payable at a specific location.";
@@ -664,8 +664,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Party";
 			definition = "Party which resides in a specific location.";
@@ -710,8 +710,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedExpiry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedExpiry";
 			definition = "Expiry information which contains an expiry location.";
@@ -757,8 +757,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedJurisdiction";
 			definition = "Jurisdiction of the location.";
@@ -809,8 +809,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies the location, for instance, the name of an airport, a county, a state, a province or a city by a code or a text. eg LHR for London Heathrow airport.";
@@ -854,8 +854,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxableParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableParty";
 			definition = "Party which is taxable at a specific location";
@@ -901,8 +901,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmRegisteredOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredOrganisation";
 			definition = "Organisation which is registered at that location.";
@@ -949,8 +949,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransport";
 			definition = "Transport process for which a transit location is specified.";
@@ -996,8 +996,8 @@ public class Location {
 	 */
 	public static final MMBusinessAssociationEnd mmTimeZone = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TimeZone";
 			definition = "Offset of the time before or after 00:00 hour UTC.";

@@ -136,8 +136,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmRedemptionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionPrice";
 			definition = "Price on which the yield is computed.";
@@ -177,8 +177,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Result of the yield calculation.";
@@ -224,8 +224,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationType";
 			definition = "Specifies the type of calculation.";
@@ -273,8 +273,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time on which the calculation is based, for example, valuation on October 1 (price date) based on price of September 19 ( value date).";
@@ -327,8 +327,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmValuePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuePeriod";
 			definition = "Period on which the calculation is based.";
@@ -370,8 +370,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAttribute mmYieldCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculationDate";
 			definition = "Clarifies the yield irregularities associated with the date to which the yield has been calculated, eg, when it falls on a non-business day.";
@@ -424,8 +424,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmYieldRange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldRange";
 			definition = "Range of allowed yield.";
@@ -472,8 +472,8 @@ public class YieldCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableInterest";
 			definition = "Variable interest used for the calculation.";

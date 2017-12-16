@@ -42,6 +42,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Limit Limit}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -74,8 +76,6 @@ import java.util.List;
  * CurrencyExchange.mmRelatedLimitManagement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Limit Limit}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -128,8 +128,8 @@ public class LiquidityManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAttribute mmVolatilityMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VolatilityMargin";
 			definition = "Margin used to decrease long positions and increase short positions for the calculation of the limit usage.";
@@ -185,8 +185,8 @@ public class LiquidityManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Exchange rate used in the calculation of the limit when different currencies are involved.";
@@ -236,8 +236,8 @@ public class LiquidityManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCashServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashServices";
 			definition = "Cash management services which provide standing liquidity management facilities.";
@@ -277,8 +277,8 @@ public class LiquidityManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAttribute mmLiquidityLimitType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LiquidityLimitType";
 			definition = "Type of liquidity management limit.";
@@ -325,8 +325,8 @@ public class LiquidityManagementLimit extends Limit {
 	 */
 	public static final MMBusinessAttribute mmRequiredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequiredAmount";
 			definition = "Amount required to cover the needs of liquidity management.";

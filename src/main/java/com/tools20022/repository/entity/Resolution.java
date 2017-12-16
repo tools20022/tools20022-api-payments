@@ -128,8 +128,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmIssuerLabel = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuerLabel";
 			definition = "Numbering of the resolution as specified by the issuer or  its agent.";
@@ -173,8 +173,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Free text description of the resolution.";
@@ -218,8 +218,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmTitle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Title";
 			definition = "Abbreviated description of the resolution.";
@@ -265,8 +265,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Indicates whether a resolution is ordinary, extraordinary or special.";
@@ -313,8 +313,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmForInformationOnly = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForInformationOnly";
 			definition = "Indicates whether the resolution is listed for information or for voting.";
@@ -362,8 +362,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmSubmittedBySecurityHolder = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmittedBySecurityHolder";
 			definition = "Indicates whether the resolution has been submitted by the security holder.";
@@ -411,8 +411,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmManagementRecommendation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManagementRecommendation";
 			definition = "Indicates how the management of the issuing company wishes the security holders to vote.";
@@ -460,8 +460,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmNotifyingPartyRecommendation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotifyingPartyRecommendation";
 			definition = "Indicates how the notifying party recommends that the security holders vote.";
@@ -515,8 +515,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAssociationEnd mmCastVotes = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CastVotes";
 			definition = "Specifies whether a resolution is accepted or not and details the number of votes and their status.";
@@ -561,8 +561,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which an agenda item is specified.";
@@ -604,8 +604,8 @@ public class Resolution {
 	 */
 	public static final MMBusinessAttribute mmVoteOptions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteOptions";
 			definition = "Vote options allowed at the resolution level. When specified, it supersedes the vote options given for the meeting.";

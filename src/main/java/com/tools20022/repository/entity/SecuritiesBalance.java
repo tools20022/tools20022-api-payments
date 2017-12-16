@@ -41,6 +41,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Balance Balance}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -178,8 +180,6 @@ import java.util.List;
  * Pledgee.mmSecuritiesBalance}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Balance Balance}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -233,8 +233,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute mmNetGainLoss = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetGainLoss";
 			definition = "Amount representing the difference between the cost and the current price of a security. In the context of securities settlement, it is the amount paid or received when the instructions are netted or paired off.";
@@ -290,8 +290,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account or sub-account for which a balance is calculated. It is derived from the association between Balance and Account.";
@@ -341,8 +341,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an eligible balance is specified.";
@@ -382,8 +382,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute mmShortLong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortLong";
 			definition = "Indication that the position is short or long.";
@@ -436,8 +436,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmAggregateQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AggregateQuantity";
 			definition = "Total quantity of financial instruments of the balance.";
@@ -486,8 +486,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEntitlement";
 			definition = "Corporate action entitlement for which a balance is specified.";
@@ -538,8 +538,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmInstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructedBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an instructed balance is specified.";
@@ -590,8 +590,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmUninstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UninstructedBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an uninstructed balance is specified.";
@@ -638,8 +638,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmMainSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MainSecuritiesBalance";
 			definition = "Balance which is divided in sub-balances.";
@@ -689,8 +689,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSubBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSubBalance";
 			definition = "Net position of a segregated holding of a single security within the overall position held in an account, eg, sub-balance per status.";
@@ -733,8 +733,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesBalanceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalanceType";
 			definition = "Reason a security is not available or additional information about the financial instrument for which the balance is given, for example, unregistered, registered in nominee name.";
@@ -791,8 +791,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSubBalanceQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubBalanceQuantity";
 			definition = "Net position of a segregated holding of a single security within the overall position held in a securities account, for instance. sub-balance per type.";
@@ -838,8 +838,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a balance is calculated.";
@@ -888,8 +888,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate used to convert the balance value in another currency.";
@@ -930,8 +930,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute mmAvailabilityIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailabilityIndicator";
 			definition = "Indicates whether the quantity of securities on the balance is available.";
@@ -986,8 +986,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmAvailableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableQuantity";
 			definition = "Total quantity of financial instruments of the balance that is available.";
@@ -1035,8 +1035,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedMeetingEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeetingEntitlement";
 			definition = "Entitlement for which an eligible posistion is specified.";
@@ -1086,8 +1086,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmUnavailableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnavailableQuantity";
 			definition = "Total quantity of financial instruments of the balance that is not available.";
@@ -1134,8 +1134,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSafekeepingPlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingPlace";
 			definition = "Safekeeping place at which the securities are held.";
@@ -1184,8 +1184,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesEntry";
 			definition = "Postings used to calculate a balance. It is derived from the association between Balance and Entry";
@@ -1235,8 +1235,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmNotEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotEligibleBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which a non eligible balance is specified.";
@@ -1284,8 +1284,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedIntraPositionTransfer";
 			definition = "Transfer between two balances or sub balances.";
@@ -1328,8 +1328,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute mmCostAdjustment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CostAdjustment";
 			definition = "Specifies the amount added or substracted to the original cost of a transaction.";
@@ -1381,8 +1381,8 @@ public class SecuritiesBalance extends Balance {
 	 */
 	public static final MMBusinessAssociationEnd mmPledgee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pledgee";
 			definition = "Pledgee at which the securities are held.";

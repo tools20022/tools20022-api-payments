@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.UndertakingStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the undertaking status.
@@ -32,31 +37,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmAcceptedTechnicalValidation
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#AcceptedTechnicalValidation
  * UndertakingStatusCode.mmAcceptedTechnicalValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Accepted
  * UndertakingStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmPending
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Pending
  * UndertakingStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Received
  * UndertakingStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Rejected
  * UndertakingStatusCode.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmNonConfirmation
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#NonConfirmation
  * UndertakingStatusCode.mmNonConfirmation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmWithdrawn
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Withdrawn
  * UndertakingStatusCode.mmWithdrawn}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmUndertakingAmountChange
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#UndertakingAmountChange
  * UndertakingStatusCode.mmUndertakingAmountChange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#mmCounterUndertakingAmountChange
+ * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#CounterUndertakingAmountChange
  * UndertakingStatusCode.mmCounterUndertakingAmountChange}</li>
  * </ul>
  * </li>
@@ -81,7 +86,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the undertaking status."</li>
  * </ul>
  */
-public class UndertakingStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class UndertakingStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -105,12 +111,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Accepted in accordance with technical validation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAcceptedTechnicalValidation = new MMCode() {
+	public static final UndertakingStatusCode AcceptedTechnicalValidation = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedTechnicalValidation";
 			definition = "Accepted in accordance with technical validation.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "ACTC";
 		}
 	};
@@ -135,12 +141,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final UndertakingStatusCode Accepted = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
 			definition = "Accepted.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "ACCP";
 		}
 	};
@@ -165,12 +171,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Pending further processing."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final UndertakingStatusCode Pending = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
 			definition = "Pending further processing.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "PEND";
 		}
 	};
@@ -195,12 +201,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Received."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final UndertakingStatusCode Received = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
 			definition = "Received.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "RCVD";
 		}
 	};
@@ -225,12 +231,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Rejected."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final UndertakingStatusCode Rejected = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
 			definition = "Rejected.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "REJT";
 		}
 	};
@@ -255,12 +261,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Undertaking not confirmed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonConfirmation = new MMCode() {
+	public static final UndertakingStatusCode NonConfirmation = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonConfirmation";
 			definition = "Undertaking not confirmed.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "NCON";
 		}
 	};
@@ -285,12 +291,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Demand has been withdrawn."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWithdrawn = new MMCode() {
+	public static final UndertakingStatusCode Withdrawn = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Withdrawn";
 			definition = "Demand has been withdrawn.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "WTHD";
 		}
 	};
@@ -315,12 +321,12 @@ public class UndertakingStatusCode {
 	 * definition} = "Change to undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUndertakingAmountChange = new MMCode() {
+	public static final UndertakingStatusCode UndertakingAmountChange = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UndertakingAmountChange";
 			definition = "Change to undertaking amount.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "AMTU";
 		}
 	};
@@ -345,17 +351,21 @@ public class UndertakingStatusCode {
 	 * definition} = "Change to counter-undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterUndertakingAmountChange = new MMCode() {
+	public static final UndertakingStatusCode CounterUndertakingAmountChange = new UndertakingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterUndertakingAmountChange";
 			definition = "Change to counter-undertaking amount.";
-			owner_lazy = () -> UndertakingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UndertakingStatusCode.mmObject();
 			codeName = "AMTC";
 		}
 	};
+	final static private LinkedHashMap<String, UndertakingStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected UndertakingStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -363,10 +373,45 @@ public class UndertakingStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingStatusCode";
 				definition = "Specifies the undertaking status.";
-				code_lazy = () -> Arrays.asList(UndertakingStatusCode.mmAcceptedTechnicalValidation, UndertakingStatusCode.mmAccepted, UndertakingStatusCode.mmPending, UndertakingStatusCode.mmReceived, UndertakingStatusCode.mmRejected,
-						UndertakingStatusCode.mmNonConfirmation, UndertakingStatusCode.mmWithdrawn, UndertakingStatusCode.mmUndertakingAmountChange, UndertakingStatusCode.mmCounterUndertakingAmountChange);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UndertakingStatusCode.AcceptedTechnicalValidation, com.tools20022.repository.codeset.UndertakingStatusCode.Accepted,
+						com.tools20022.repository.codeset.UndertakingStatusCode.Pending, com.tools20022.repository.codeset.UndertakingStatusCode.Received, com.tools20022.repository.codeset.UndertakingStatusCode.Rejected,
+						com.tools20022.repository.codeset.UndertakingStatusCode.NonConfirmation, com.tools20022.repository.codeset.UndertakingStatusCode.Withdrawn,
+						com.tools20022.repository.codeset.UndertakingStatusCode.UndertakingAmountChange, com.tools20022.repository.codeset.UndertakingStatusCode.CounterUndertakingAmountChange);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AcceptedTechnicalValidation.getCodeName().get(), AcceptedTechnicalValidation);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(NonConfirmation.getCodeName().get(), NonConfirmation);
+		codesByName.put(Withdrawn.getCodeName().get(), Withdrawn);
+		codesByName.put(UndertakingAmountChange.getCodeName().get(), UndertakingAmountChange);
+		codesByName.put(CounterUndertakingAmountChange.getCodeName().get(), CounterUndertakingAmountChange);
+	}
+
+	public static UndertakingStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static UndertakingStatusCode[] values() {
+		UndertakingStatusCode[] values = new UndertakingStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, UndertakingStatusCode> {
+		@Override
+		public UndertakingStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(UndertakingStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -110,8 +110,8 @@ public class CouponAttached {
 	 */
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date of the coupon attached to the physical security.";
@@ -157,8 +157,8 @@ public class CouponAttached {
 	 */
 	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Number of the coupon attached to the physical security.";
@@ -210,8 +210,8 @@ public class CouponAttached {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Instrument to which a coupon is specified.";
@@ -253,8 +253,8 @@ public class CouponAttached {
 	 */
 	public static final MMBusinessAttribute mmCouponClippingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CouponClippingDate";
 			definition = "Date on which the coupons are to be/were submitted for payment of interest.";
@@ -299,8 +299,8 @@ public class CouponAttached {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the coupon.";

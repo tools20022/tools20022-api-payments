@@ -75,24 +75,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice
- * ReturnReason5Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason2
- * PaymentReturnReason2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentReversalReason7
- * PaymentReversalReason7}</li>
- * <li>{@linkplain com.tools20022.repository.choice.StatusReason6Choice
- * StatusReason6Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateAmendmentReason1
- * MandateAmendmentReason1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason1
- * PaymentReturnReason1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -133,6 +115,24 @@ import java.util.List;
  * UndertakingStatusReason}</li>
  * <li>{@linkplain com.tools20022.repository.entity.MeetingStatusReason
  * MeetingStatusReason}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice
+ * ReturnReason5Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason2
+ * PaymentReturnReason2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentReversalReason7
+ * PaymentReversalReason7}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.StatusReason6Choice
+ * StatusReason6Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateAmendmentReason1
+ * MandateAmendmentReason1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason1
+ * PaymentReturnReason1}</li>
  * </ul>
  * </li>
  * <li>
@@ -187,8 +187,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status for which a reason is provided.";
@@ -259,8 +259,8 @@ public class StatusReason {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentReturnReason2.mmReason, PaymentReversalReason7.mmAdditionalInformation, StatusReason6Choice.mmCode, StatusReason6Choice.mmProprietary,
 					AcceptanceResult6.mmAdditionalRejectReasonInformation, MandateAmendmentReason1.mmReason, CaseStatus2.mmReason, CancellationStatusReason2.mmAdditionalInformation, RegisteredContractAmendment1.mmAmendmentReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Reason provided for the status.";
@@ -305,8 +305,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmNoSpecifiedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoSpecifiedReason";
 			definition = "Indicates that there is no reason available or to report.";
@@ -359,8 +359,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmDataSourceScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DataSourceScheme";
 			definition = "Proprietary identification of the reason for the status.";
@@ -398,8 +398,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmRejectedStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedStatusReason";
 			definition = "Reason for the rejected status.";
@@ -444,8 +444,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmFailingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailingReason";
 			definition = "Reason why a transaction has a failing status.";
@@ -493,8 +493,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationReason";
 			definition = "Specifies the reason why the related instruction is cancelled, or the related cancellation request is executed.";
@@ -540,8 +540,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmPendingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingReason";
 			definition = "Specifies the reason why the instruction processing is pending.";
@@ -589,8 +589,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectionReason";
 			definition = "Specifies the reason why the instruction/request has a repair or rejection status.";
@@ -636,8 +636,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAttribute mmAcknowledgedAcceptedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcknowledgedAcceptedReason";
 			definition = "Specifies additional information about the processed instruction.";
@@ -689,8 +689,8 @@ public class StatusReason {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedClosureReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedClosureReason";
 			definition = "Related reason of closure of the contract. ";

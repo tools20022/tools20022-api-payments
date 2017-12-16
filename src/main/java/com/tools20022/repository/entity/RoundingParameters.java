@@ -120,8 +120,8 @@ public class RoundingParameters {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountService";
 			definition = "Investment account services for which rounding parameters are specified.";
@@ -165,8 +165,8 @@ public class RoundingParameters {
 	 */
 	public static final MMBusinessAttribute mmRoundingModulus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundingModulus";
 			definition = "Float value specifying the value to which rounding is required, eg, 10 means round to a multiple of 10 units/shares, 0.5 means round to a multiple of 0.5 units/shares.";
@@ -213,8 +213,8 @@ public class RoundingParameters {
 	 */
 	public static final MMBusinessAttribute mmRoundingDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundingDirection";
 			definition = "Rounding direction applied to fractional numbers, eg, round up.";
@@ -268,8 +268,8 @@ public class RoundingParameters {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPegOrderInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPegOrderInstruction";
 			definition = "Peg order for which a rounding direction is provided.";

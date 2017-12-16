@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BalanceCounterpartyCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of counterparty to be taken into account for calculation
@@ -33,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#mmBilateral
+ * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#Bilateral
  * BalanceCounterpartyCode.mmBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#mmMultilateral
+ * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#Multilateral
  * BalanceCounterpartyCode.mmMultilateral}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class BalanceCounterpartyCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BalanceCounterpartyCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class BalanceCounterpartyCode {
 	 * definition} = "Balance calculated regarding one member in the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBilateral = new MMCode() {
+	public static final BalanceCounterpartyCode Bilateral = new BalanceCounterpartyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bilateral";
 			definition = "Balance calculated regarding one member in the system.";
-			owner_lazy = () -> BalanceCounterpartyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceCounterpartyCode.mmObject();
 			codeName = "BILA";
 		}
 	};
@@ -117,17 +123,21 @@ public class BalanceCounterpartyCode {
 	 * definition} = "Balance calculated regarding all members in the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMultilateral = new MMCode() {
+	public static final BalanceCounterpartyCode Multilateral = new BalanceCounterpartyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Multilateral";
 			definition = "Balance calculated regarding all members in the system.";
-			owner_lazy = () -> BalanceCounterpartyCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BalanceCounterpartyCode.mmObject();
 			codeName = "MULT";
 		}
 	};
+	final static private LinkedHashMap<String, BalanceCounterpartyCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BalanceCounterpartyCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -135,9 +145,35 @@ public class BalanceCounterpartyCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceCounterpartyCode";
 				definition = "Specifies the type of counterparty to be taken into account for calculation of the balance.";
-				code_lazy = () -> Arrays.asList(BalanceCounterpartyCode.mmBilateral, BalanceCounterpartyCode.mmMultilateral);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceCounterpartyCode.Bilateral, com.tools20022.repository.codeset.BalanceCounterpartyCode.Multilateral);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Bilateral.getCodeName().get(), Bilateral);
+		codesByName.put(Multilateral.getCodeName().get(), Multilateral);
+	}
+
+	public static BalanceCounterpartyCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BalanceCounterpartyCode[] values() {
+		BalanceCounterpartyCode[] values = new BalanceCounterpartyCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BalanceCounterpartyCode> {
+		@Override
+		public BalanceCounterpartyCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BalanceCounterpartyCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

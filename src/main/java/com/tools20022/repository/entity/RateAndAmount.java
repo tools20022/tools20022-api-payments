@@ -190,8 +190,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmFinalDividendParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinalDividendParameters";
 			definition = "Dividend information for which a final dividend rate is specified.";
@@ -240,8 +240,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmFullyFrankedRateAndAmountDividendParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullyFrankedRateAndAmountDividendParameters";
 			definition = "Dividend information for which a fully franked rate and amount is specified.";
@@ -288,8 +288,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmGrossDividendParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossDividendParameters";
 			definition = "Dividend information for which a gross dividend rate is specified.";
@@ -329,8 +329,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Value expressed as an amount.";
@@ -382,8 +382,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "Index for which a factor is specified.";
@@ -430,8 +430,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmNetDividendParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetDividendParameters";
 			definition = "Dividend information for which a net dividend rate is specified.";
@@ -479,8 +479,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmMaximumAllowedBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAllowedBiddingConditions";
 			definition = "Bidding conditions for which a maximum amount is specified.";
@@ -528,8 +528,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmProvisionalDividendParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProvisionalDividendParameters";
 			definition = "Dividend information for which a provisional dividend rate is specified.";
@@ -578,8 +578,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmSolicitationFeeCorporateActionParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SolicitationFeeCorporateActionParameters";
 			definition = "Corporate event for which a solicitation fee is specified.";
@@ -619,8 +619,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Value expressed as a rate.";
@@ -673,8 +673,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmRateBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateBiddingConditions";
 			definition = "Bidding conditions for which a rate is specified.";
@@ -722,8 +722,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTax";
 			definition = "Tax for which a percentage of the gross dividend rate is specified.";
@@ -772,8 +772,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmEarlySolicitationFeeCorporateActionParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarlySolicitationFeeCorporateActionParameters";
 			definition = "Corporate event for which an early solicitation fee is specified.";
@@ -820,8 +820,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestRelatedIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestRelatedIssuance";
 			definition = "Issuance for which an interest shortfall has been specified.";
@@ -867,8 +867,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmLossRelatedIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LossRelatedIssuance";
 			definition = "Issuance for which a realised loss has been specified.";
@@ -907,8 +907,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAttribute mmAbsoluteValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AbsoluteValue";
 			definition = "Absolute value determined with a number.";
@@ -954,8 +954,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAttribute mmOperator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Operator";
 			definition = "Provides the relationship between a variable and a fixed value.";
@@ -1008,8 +1008,8 @@ public class RateAndAmount {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedYieldCalculation";
 			definition = "Yield calculation which uses a yield range.";

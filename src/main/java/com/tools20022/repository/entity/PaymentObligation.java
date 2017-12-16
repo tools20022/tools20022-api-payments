@@ -43,6 +43,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Obligation
+ * Obligation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -131,14 +134,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Purpose2Choice
- * Purpose2Choice}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -200,14 +195,19 @@ import java.util.List;
  * InterestManagement.mmPaymentObligation}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Obligation
- * Obligation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Instalment Instalment}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Garnishment Garnishment}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.Purpose2Choice
+ * Purpose2Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -268,8 +268,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentOffset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentOffset";
 			definition = "Fulfilment of a payment obligation through a payment and its execution. It is derived from the association between Obligation and Obligation fulfillment.";
@@ -347,8 +347,8 @@ public class PaymentObligation extends Obligation {
 		{
 			derivation_lazy = () -> Arrays.asList(Purpose2Choice.mmCode, Purpose2Choice.mmProprietary, StatementResolutionEntry2.mmPurpose, CreditTransferTransaction25.mmPurpose, CreditTransferTransaction26.mmPurpose,
 					OriginalItemReference4.mmPurpose, CreditTransferTransaction22.mmPurpose, EntryTransaction8.mmPurpose, NotificationItem6.mmPurpose, RequestedModification6.mmPurpose, PaymentComplementaryInformation6.mmPurpose);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Underlying reason for the payment obligation";
@@ -408,8 +408,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAttribute mmRemittanceDeliveryMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceLocationDetails1.mmMethod);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemittanceDeliveryMethod";
 			definition = "Specifies the method to be used by the first agent (debtor agent in the case of a credit transfer, creditor agent in the case of a direct debit) to deliver the remittance advice information, which may be sent separately from the payment instruction.";
@@ -516,8 +516,8 @@ public class PaymentObligation extends Obligation {
 					CreditTransferTransaction24.mmRemittanceInformation, CreditTransferTransaction26.mmRemittanceInformation, OriginalItemReference4.mmRemittanceInformation, CreditTransferTransaction22.mmRemittanceInformation,
 					EntryTransaction8.mmRemittanceInformation, NotificationItem6.mmRemittanceInformation, DirectDebitTransactionInformation21.mmRemittanceInformation, OriginalTransactionReference24.mmRemittanceInformation,
 					OriginalTransactionReference26.mmRemittanceInformation, DirectDebitTransactionInformation22.mmRemittanceInformation, PaymentComplementaryInformation6.mmRemittanceInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssociatedDocument";
 			definition = "Specifies the referred document/transaction, eg, invoice or credit note.";
@@ -570,8 +570,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmDuePayableAmount, RemittanceAmount3.mmDuePayableAmount, TradeContract1.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount payable to the creditor.";
@@ -641,8 +641,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAssociationEnd mmRemittanceLocation = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditTransferTransaction25.mmRelatedRemittanceInformation, CreditTransferTransaction26.mmRelatedRemittanceInformation, CreditTransferTransaction22.mmRelatedRemittanceInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemittanceLocation";
 			definition = "Address to which the first agent is to send the remittance information.";
@@ -691,8 +691,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Process which calculates the interest to be paid. It may also specify the interest charged on instalment.";
@@ -738,8 +738,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialTrade";
 			definition = "Commercial trade which creates the payment obligation.";
@@ -783,8 +783,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Maximum amount that a financial institution guarantees to pay for a specific commercial trade, expressed as a percentage of the purchase order net amount.";
@@ -833,8 +833,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAmount";
 			definition = "Maximum amount that a financial institution guarantees to pay for a specific commercial trade.";
@@ -882,8 +882,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDate";
 			definition = "Date at which the obligation will expire. For instance, it is the transaction authorisation deadline to complete a payment by card.";
@@ -928,8 +928,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAttribute mmApplicableLaw = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableLaw";
 			definition = "Country of which the law governs the payment obligation.";
@@ -981,8 +981,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentSourceBuyIn = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentSourceBuyIn";
 			definition = "Buy-in process which created the payment obligation.";
@@ -1033,8 +1033,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateAction";
 			definition = "Corporate action processes which are the source of the payment obligation.";
@@ -1082,8 +1082,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralMovement";
 			definition = "Collateral movement which is the source of the obligation.";
@@ -1130,8 +1130,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentSourceUndertakingDemand = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentSourceUndertakingDemand";
 			definition = "Undertaking demand which is the source of a payment obligation.";
@@ -1182,8 +1182,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to a payment obligation and played by a party at that step in a payment flow.";
@@ -1230,8 +1230,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmExecutedSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutedSecuritiesTrade";
 			definition = "Securities trade which created a payment flow.";
@@ -1281,8 +1281,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAccountClosingTerms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountClosingTerms";
 			definition = "Contract which authorises the transfer of funds resulting in a payment obligation.";
@@ -1332,8 +1332,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentSourcePortfolioTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentSourcePortfolioTransfer";
 			definition = "The PaymentObligation that specifies the payment resulting from charges due by one party to another.";
@@ -1382,8 +1382,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentSourceCurrencyOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentSourceCurrencyOption";
 			definition = "The PaymentObligation that specifies the amount of the premium paid by the buyer of the option and its settlement place.";
@@ -1444,8 +1444,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAssociationEnd mmExchangeRateInformation = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TradeContract1.mmExchangeRateInformation, SyndicatedLoan1.mmExchangeRateInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRateInformation";
 			definition = "Foreign exchange trade which is the source of the payment.";
@@ -1491,8 +1491,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Dividend";
 			definition = "Dividend for which payment terms are specified.";
@@ -1540,8 +1540,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRepurchaseAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseAgreement";
 			definition = "Repurchase agreement which covers the delivery of cash by the buyer.";
@@ -1589,8 +1589,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAssignment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAssignment";
 			definition = "Assignment which contains one or more payment obligations.";
@@ -1640,8 +1640,8 @@ public class PaymentObligation extends Obligation {
 	 */
 	public static final MMBusinessAssociationEnd mmBankingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankingTransaction";
 			definition = "Transaction executed by the client of a financial institution from/to the account serviced by the financial institution, such as mortgage payment.";
@@ -1700,8 +1700,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAssociationEnd mmPaymentTerms = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(TradeContract1.mmPaymentSchedule, LoanContract1.mmPaymentSchedule);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentTerms";
 			definition = "Specifies the payment terms of the obligation.";
@@ -1749,8 +1749,8 @@ public class PaymentObligation extends Obligation {
 	public static final MMBusinessAttribute mmPaymentDueDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionCertificateContract1.mmExpectedAdvancePaymentReturnDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDueDate";
 			definition = "Due date for the payment.";

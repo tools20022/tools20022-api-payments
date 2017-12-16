@@ -106,20 +106,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1
- * InterestRecord1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InterestRateContractTerm1
- * InterestRateContractTerm1}</li>
- * <li>{@linkplain com.tools20022.repository.choice.InterestRate2Choice
- * InterestRate2Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1
- * InterestPaymentDateRange1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -164,6 +150,20 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.InterestManagement#mmInterest
  * InterestManagement.mmInterest}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1
+ * InterestRecord1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InterestRateContractTerm1
+ * InterestRateContractTerm1}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.InterestRate2Choice
+ * InterestRate2Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1
+ * InterestPaymentDateRange1}</li>
  * </ul>
  * </li>
  * <li>
@@ -215,8 +215,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAttribute mmAccruedInterestAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccruedInterestAmount";
 			definition = "Interest amount that has accrued in between coupon payment periods.";
@@ -293,8 +293,8 @@ public class Interest {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestRecord1.mmType, InterestRecord1.mmRate, AccountStatement6.mmInterest, AccountReport19.mmInterest, AccountNotification12.mmInterest, ReportEntry8.mmInterest,
 					EntryTransaction8.mmInterest);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestCalculation";
 			definition = "Calculation parameters used to obtain the interest amount.";
@@ -340,8 +340,8 @@ public class Interest {
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestRecord1.mmAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money representing interest payments.";
@@ -398,8 +398,8 @@ public class Interest {
 	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestRate2Choice.mmFixed);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "The actual interest rate used for the payment of the interest for the specified interest period.";
@@ -453,8 +453,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCashProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashProceedsDefinition";
 			definition = "Cash proceeds definition for which an interest is provided.";
@@ -500,8 +500,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesFinancing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesFinancing";
 			definition = "Specifies the financing trade on which this interest apply.";
@@ -554,8 +554,8 @@ public class Interest {
 	public static final MMBusinessAssociationEnd mmInterestTax = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountInterest3.mmTax, InterestRecord1.mmTax);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestTax";
 			definition = "Specifies the tax on interest.";
@@ -594,8 +594,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the interest is a debit or credit.";
@@ -647,8 +647,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Entry which contains the interest.";
@@ -698,8 +698,8 @@ public class Interest {
 	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestPaymentDateRange1.mmExpectedDate, InterestPaymentDateRange1.mmDueDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date of the next interest payment.";
@@ -754,8 +754,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterestManagement";
 			definition = "Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.";
@@ -801,8 +801,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedUndertakingAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedUndertakingAmount";
 			definition = "Undertaking amount for which an interest is specified.";
@@ -849,8 +849,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedDebitCreditFacility = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDebitCreditFacility";
 			definition = "Debit and credit facilities on which the interest applies.";
@@ -899,8 +899,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Securities settlement process for which an accrued interest is specified.";
@@ -947,8 +947,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmInterestName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestName";
 			definition = "Interest rate expressed as a rate name.";
@@ -994,8 +994,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAssetHolding";
 			definition = "Asset holding on which interest is paid.";
@@ -1040,8 +1040,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmDeposit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deposit";
 			definition = "Deposit for which an interest is specified.";
@@ -1086,8 +1086,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountBalance";
 			definition = "Balance for which an interest is calculated.";
@@ -1134,8 +1134,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountContract";
 			definition = "Account contract for which interest parameters are specified.";
@@ -1184,8 +1184,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedNetAssetValueCalculation";
 			definition = "Net asset value calculation for which an accrued interest is specified.";
@@ -1224,8 +1224,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAttribute mmTypeOfInterest = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfInterest";
 			definition = "Specifies the type of interest associated with a trade.";
@@ -1278,8 +1278,8 @@ public class Interest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedPaymentCard";
 			definition = "Payment card for which interest on due amounts is specified.";

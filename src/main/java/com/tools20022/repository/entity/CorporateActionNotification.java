@@ -123,8 +123,8 @@ public class CorporateActionNotification {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Process which groups the activities related to corporate action servicing.";
@@ -163,8 +163,8 @@ public class CorporateActionNotification {
 	 */
 	public static final MMBusinessAttribute mmCorporateActionNotificationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionNotificationIdentification";
 			definition = "Identifies the corporate action notification.";
@@ -210,8 +210,8 @@ public class CorporateActionNotification {
 	 */
 	public static final MMBusinessAttribute mmNotificationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationType";
 			definition = "Specifies the type of notification.";
@@ -257,8 +257,8 @@ public class CorporateActionNotification {
 	 */
 	public static final MMBusinessAttribute mmCreationDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreationDateTime";
 			definition = "Specifies the date and time when the notification was issued.";

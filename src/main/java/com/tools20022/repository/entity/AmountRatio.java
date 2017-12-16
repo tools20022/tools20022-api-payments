@@ -107,8 +107,8 @@ public class AmountRatio {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing which uses the ratio as format.";
@@ -147,8 +147,8 @@ public class AmountRatio {
 	 */
 	public static final MMBusinessAttribute mmAmount1 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount1";
 			definition = "Numerator of the quotient of amounts.";
@@ -193,8 +193,8 @@ public class AmountRatio {
 	 */
 	public static final MMBusinessAttribute mmAmount2 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount2";
 			definition = "Denominator of the quotient of amounts";

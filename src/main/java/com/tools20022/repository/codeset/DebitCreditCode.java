@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DebitCreditCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if an operation is an increase or a decrease.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#mmCredit
+ * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#Credit
  * DebitCreditCode.mmCredit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#mmDebit
+ * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#Debit
  * DebitCreditCode.mmDebit}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies if an operation is an increase or a decrease."</li>
  * </ul>
  */
-public class DebitCreditCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DebitCreditCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -82,12 +88,12 @@ public class DebitCreditCode {
 	 * definition} = "Operation is an increase."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final DebitCreditCode Credit = new DebitCreditCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Credit";
 			definition = "Operation is an increase.";
-			owner_lazy = () -> DebitCreditCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebitCreditCode.mmObject();
 			codeName = "CRDT";
 		}
 	};
@@ -112,17 +118,21 @@ public class DebitCreditCode {
 	 * definition} = "Operation is a decrease."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final DebitCreditCode Debit = new DebitCreditCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Debit";
 			definition = "Operation is a decrease.";
-			owner_lazy = () -> DebitCreditCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DebitCreditCode.mmObject();
 			codeName = "DBIT";
 		}
 	};
+	final static private LinkedHashMap<String, DebitCreditCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DebitCreditCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -130,9 +140,35 @@ public class DebitCreditCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitCreditCode";
 				definition = "Specifies if an operation is an increase or a decrease.";
-				code_lazy = () -> Arrays.asList(DebitCreditCode.mmCredit, DebitCreditCode.mmDebit);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DebitCreditCode.Credit, com.tools20022.repository.codeset.DebitCreditCode.Debit);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(Debit.getCodeName().get(), Debit);
+	}
+
+	public static DebitCreditCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DebitCreditCode[] values() {
+		DebitCreditCode[] values = new DebitCreditCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DebitCreditCode> {
+		@Override
+		public DebitCreditCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DebitCreditCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -19,9 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.datatype.CUSIPIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Committee on Uniform Securities and Identification Procedures (CUSIP). The
@@ -58,9 +62,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class CUSIPIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
@@ -74,5 +80,26 @@ public class CUSIPIdentifier {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CUSIPIdentifier(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CUSIPIdentifier> {
+		@Override
+		public CUSIPIdentifier unmarshal(String value) {
+			return new CUSIPIdentifier(value);
+		}
+
+		@Override
+		public String marshal(CUSIPIdentifier typedData) {
+			return typedData.value;
+		}
 	}
 }

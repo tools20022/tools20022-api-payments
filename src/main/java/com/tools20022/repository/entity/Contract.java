@@ -40,26 +40,14 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Agreement
+ * Agreement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Contract#mmMasterAgreement
  * Contract.mmMasterAgreement}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice
- * UnderlyingContract1Choice}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1
- * TransactionCertificateContract1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TradeContract1 TradeContract1}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice
- * ContractClosureReason1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -86,9 +74,6 @@ import java.util.List;
  * RegisteredContract3.mmContract}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Agreement
- * Agreement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -97,6 +82,21 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
  * <li>{@linkplain com.tools20022.repository.entity.RegisteredContract
  * RegisteredContract}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice
+ * UnderlyingContract1Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1
+ * TransactionCertificateContract1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeContract1 TradeContract1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice
+ * ContractClosureReason1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -155,8 +155,8 @@ public class Contract extends Agreement {
 	 */
 	public static final MMBusinessAssociationEnd mmMasterAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Contract.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Contract.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterAgreement";
 			definition = "Agreement that governs a contract agreed between  parties.";

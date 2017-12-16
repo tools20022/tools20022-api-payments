@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.AllegementReasonCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the reason why the instruction has an allegement status.
@@ -32,7 +37,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AllegementReasonCode#mmAllegementReceived
+ * {@linkplain com.tools20022.repository.codeset.AllegementReasonCode#AllegementReceived
  * AllegementReasonCode.mmAllegementReceived}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the reason why the instruction has an allegement status."</li>
  * </ul>
  */
-public class AllegementReasonCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class AllegementReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,17 +89,21 @@ public class AllegementReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAllegementReceived = new MMCode() {
+	public static final AllegementReasonCode AllegementReceived = new AllegementReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllegementReceived";
 			definition = "Allegement has been received and no match could be found.";
-			owner_lazy = () -> AllegementReasonCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementReasonCode.mmObject();
 			codeName = "ALG1";
 		}
 	};
+	final static private LinkedHashMap<String, AllegementReasonCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected AllegementReasonCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -101,9 +111,34 @@ public class AllegementReasonCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllegementReasonCode";
 				definition = "Specifies the reason why the instruction has an allegement status.";
-				code_lazy = () -> Arrays.asList(AllegementReasonCode.mmAllegementReceived);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AllegementReasonCode.AllegementReceived);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(AllegementReceived.getCodeName().get(), AllegementReceived);
+	}
+
+	public static AllegementReasonCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static AllegementReasonCode[] values() {
+		AllegementReasonCode[] values = new AllegementReasonCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, AllegementReasonCode> {
+		@Override
+		public AllegementReasonCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(AllegementReasonCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

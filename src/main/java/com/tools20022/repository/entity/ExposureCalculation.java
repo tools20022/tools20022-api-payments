@@ -155,8 +155,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAttribute mmTotalCollateralCurrentValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalCollateralCurrentValue";
 			definition = "Total value of the collateral derived from the sum of the current independent amounts and variation margins held, agreed and in transit.";
@@ -206,8 +206,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAttribute mmTotalExposedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalExposedAmount";
 			definition = "The sum of the exposures of all transactions which are in favour of a Party. That is, all transactions which would have an amount payable by the counterparty if they were being terminated.";
@@ -263,8 +263,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrentIndependentAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrentIndependentAmount";
 			definition = "Amount applied as an add-on to the exposure usually intended to cover a possible increase in exposure before the next valuation date.";
@@ -313,8 +313,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrentVariationMargin = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrentVariationMargin";
 			definition = "Provides details about the collateral held, in transit or that still needs to be agreed by both parties, against the variation margin.";
@@ -365,8 +365,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrentSegregatedIndependentAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrentSegregatedIndependentAmount";
 			definition = "Provides details about the collateral held, in transit or that still needs to be agreed by both parties, against the segregated independent amount only.";
@@ -417,8 +417,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginAmountRequirement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginAmountRequirement";
 			definition = "Amount of expected margin required by any of the parties of the margin calculation.";
@@ -466,8 +466,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregatedAmountRequirement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedAmountRequirement";
 			definition = "Margin requirements for the segregated independent amount.";
@@ -517,8 +517,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralManagement";
 			definition = "Specifies the collateral management actions resulting from the calculation of the risk.";
@@ -567,8 +567,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmCounterpartyRisk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyRisk";
 			definition = "Calculation of the exposure amount that one party has vis-a-vis one counterparty or a central system, based on its credit risk.";
@@ -618,8 +618,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionRisk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionRisk";
 			definition = "Calculation of the exposure amount that one party has vis-a-vis one counterparty or a central system, based on the transactions that are not yet settled.";
@@ -661,8 +661,8 @@ public class ExposureCalculation {
 	 */
 	public static final MMBusinessAttribute mmTotalCollateralAfterHaircut = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalCollateralAfterHaircut";
 			definition = "Collateral currently received (+)/delivered (-) in the base currency. This amount is after the haircut has been applied.";

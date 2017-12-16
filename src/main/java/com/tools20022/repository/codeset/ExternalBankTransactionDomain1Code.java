@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalBankTransactionDomain1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the bank transaction code domain, as published in an external bank
@@ -53,11 +59,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ExternalBankTransactionDomain1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalBankTransactionDomain1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalBankTransactionDomain1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalBankTransactionDomain1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -65,8 +76,34 @@ public class ExternalBankTransactionDomain1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBankTransactionDomain1Code";
 				definition = "Specifies the bank transaction code domain, as published in an external bank transaction code domain code list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalBankTransactionDomain1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalBankTransactionDomain1Code[] values() {
+		ExternalBankTransactionDomain1Code[] values = new ExternalBankTransactionDomain1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalBankTransactionDomain1Code> {
+		@Override
+		public ExternalBankTransactionDomain1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalBankTransactionDomain1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

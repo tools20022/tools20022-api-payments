@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PriceProtectionScopeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Defines the type of price protection the customer requires on their order.
@@ -32,16 +37,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#mmLocal
+ * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#Local
  * PriceProtectionScopeCode.mmLocal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#mmNational
+ * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#National
  * PriceProtectionScopeCode.mmNational}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#mmGlobal
+ * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#Global
  * PriceProtectionScopeCode.mmGlobal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#mmNationalExcludingLocal
+ * {@linkplain com.tools20022.repository.codeset.PriceProtectionScopeCode#NationalExcludingLocal
  * PriceProtectionScopeCode.mmNationalExcludingLocal}</li>
  * </ul>
  * </li>
@@ -67,7 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Defines the type of price protection the customer requires on their order."</li>
  * </ul>
  */
-public class PriceProtectionScopeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PriceProtectionScopeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -92,12 +98,12 @@ public class PriceProtectionScopeCode {
 	 * "Price protection is local (for example, Exchange, ECN, ATS)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLocal = new MMCode() {
+	public static final PriceProtectionScopeCode Local = new PriceProtectionScopeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Local";
 			definition = "Price protection is local (for example, Exchange, ECN, ATS).";
-			owner_lazy = () -> PriceProtectionScopeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceProtectionScopeCode.mmObject();
 			codeName = "LOCA";
 		}
 	};
@@ -123,12 +129,12 @@ public class PriceProtectionScopeCode {
 	 * "Price protection is national (across all national markets)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNational = new MMCode() {
+	public static final PriceProtectionScopeCode National = new PriceProtectionScopeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "National";
 			definition = "Price protection is national (across all national markets).";
-			owner_lazy = () -> PriceProtectionScopeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceProtectionScopeCode.mmObject();
 			codeName = "NATI";
 		}
 	};
@@ -153,12 +159,12 @@ public class PriceProtectionScopeCode {
 	 * definition} = "Price protection is global (across all markets)."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGlobal = new MMCode() {
+	public static final PriceProtectionScopeCode Global = new PriceProtectionScopeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Global";
 			definition = "Price protection is global (across all markets).";
-			owner_lazy = () -> PriceProtectionScopeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceProtectionScopeCode.mmObject();
 			codeName = "GLOB";
 		}
 	};
@@ -186,17 +192,21 @@ public class PriceProtectionScopeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmNationalExcludingLocal = new MMCode() {
+	public static final PriceProtectionScopeCode NationalExcludingLocal = new PriceProtectionScopeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NationalExcludingLocal";
 			definition = "Price protection is national (across all national markets) excluding local price protection.";
-			owner_lazy = () -> PriceProtectionScopeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PriceProtectionScopeCode.mmObject();
 			codeName = "NAEL";
 		}
 	};
+	final static private LinkedHashMap<String, PriceProtectionScopeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PriceProtectionScopeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -204,9 +214,38 @@ public class PriceProtectionScopeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceProtectionScopeCode";
 				definition = "Defines the type of price protection the customer requires on their order.";
-				code_lazy = () -> Arrays.asList(PriceProtectionScopeCode.mmLocal, PriceProtectionScopeCode.mmNational, PriceProtectionScopeCode.mmGlobal, PriceProtectionScopeCode.mmNationalExcludingLocal);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PriceProtectionScopeCode.Local, com.tools20022.repository.codeset.PriceProtectionScopeCode.National,
+						com.tools20022.repository.codeset.PriceProtectionScopeCode.Global, com.tools20022.repository.codeset.PriceProtectionScopeCode.NationalExcludingLocal);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Local.getCodeName().get(), Local);
+		codesByName.put(National.getCodeName().get(), National);
+		codesByName.put(Global.getCodeName().get(), Global);
+		codesByName.put(NationalExcludingLocal.getCodeName().get(), NationalExcludingLocal);
+	}
+
+	public static PriceProtectionScopeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PriceProtectionScopeCode[] values() {
+		PriceProtectionScopeCode[] values = new PriceProtectionScopeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PriceProtectionScopeCode> {
+		@Override
+		public PriceProtectionScopeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PriceProtectionScopeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

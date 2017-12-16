@@ -115,8 +115,8 @@ public class AmendmentOfUndertaking {
 	 */
 	public static final MMBusinessAttribute mmDateOfIssuance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateOfIssuance";
 			definition = "Date the amendment is issued.";
@@ -165,8 +165,8 @@ public class AmendmentOfUndertaking {
 	 */
 	public static final MMBusinessAttribute mmChangeOfAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChangeOfAmount";
 			definition = "Decrease (negative) or increase (positive) of the undertaking as a result of the amendment. ";
@@ -219,8 +219,8 @@ public class AmendmentOfUndertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Contents of an UndertakingAmendmentResponse message.";
@@ -263,8 +263,8 @@ public class AmendmentOfUndertaking {
 	 */
 	public static final MMBusinessAttribute mmBeneficiaryConsentRequestIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficiaryConsentRequestIndicator";
 			definition = "Indicates whether or not a request for consent is required from the beneficiary.";
@@ -309,8 +309,8 @@ public class AmendmentOfUndertaking {
 	 */
 	public static final MMBusinessAttribute mmAmendmentIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmendmentIdentification";
 			definition = "Identification of the amendment.";

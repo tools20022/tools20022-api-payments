@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.FlowDirectionTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the direction of a cash flow.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FlowDirectionTypeCode#mmIncoming
+ * {@linkplain com.tools20022.repository.codeset.FlowDirectionTypeCode#Incoming
  * FlowDirectionTypeCode.mmIncoming}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FlowDirectionTypeCode#mmOutgoing
+ * {@linkplain com.tools20022.repository.codeset.FlowDirectionTypeCode#Outgoing
  * FlowDirectionTypeCode.mmOutgoing}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the direction of a cash flow."</li>
  * </ul>
  */
-public class FlowDirectionTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class FlowDirectionTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -84,12 +90,12 @@ public class FlowDirectionTypeCode {
 	 * definition} = "Amount of money received."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIncoming = new MMCode() {
+	public static final FlowDirectionTypeCode Incoming = new FlowDirectionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Incoming";
 			definition = "Amount of money received.";
-			owner_lazy = () -> FlowDirectionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FlowDirectionTypeCode.mmObject();
 			codeName = "INCG";
 		}
 	};
@@ -114,17 +120,21 @@ public class FlowDirectionTypeCode {
 	 * definition} = "Amount of money paid out."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOutgoing = new MMCode() {
+	public static final FlowDirectionTypeCode Outgoing = new FlowDirectionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Outgoing";
 			definition = "Amount of money paid out.";
-			owner_lazy = () -> FlowDirectionTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.FlowDirectionTypeCode.mmObject();
 			codeName = "OUTG";
 		}
 	};
+	final static private LinkedHashMap<String, FlowDirectionTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected FlowDirectionTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -132,9 +142,35 @@ public class FlowDirectionTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FlowDirectionTypeCode";
 				definition = "Specifies the direction of a cash flow.";
-				code_lazy = () -> Arrays.asList(FlowDirectionTypeCode.mmIncoming, FlowDirectionTypeCode.mmOutgoing);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FlowDirectionTypeCode.Incoming, com.tools20022.repository.codeset.FlowDirectionTypeCode.Outgoing);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Incoming.getCodeName().get(), Incoming);
+		codesByName.put(Outgoing.getCodeName().get(), Outgoing);
+	}
+
+	public static FlowDirectionTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static FlowDirectionTypeCode[] values() {
+		FlowDirectionTypeCode[] values = new FlowDirectionTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, FlowDirectionTypeCode> {
+		@Override
+		public FlowDirectionTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(FlowDirectionTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

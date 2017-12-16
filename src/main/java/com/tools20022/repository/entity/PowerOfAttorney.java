@@ -35,6 +35,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -63,8 +65,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * PowerOfAttorneyRequirements.mmPowerOfAttorney}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -119,8 +119,8 @@ public class PowerOfAttorney extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmAuthorisedParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisedParty";
 			definition = "Party which is the holder of the power of attorney.";
@@ -169,8 +169,8 @@ public class PowerOfAttorney extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmPowerOfAttorneyRequirements = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PowerOfAttorneyRequirements";
 			definition = "Describes the requirements relative to the power of attorney.";
@@ -219,8 +219,8 @@ public class PowerOfAttorney extends Mandate {
 	 */
 	public static final MMBusinessAssociationEnd mmAuthorisedAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisedAccount";
 			definition = "Specifies the securities account on which the power of attorney applies.";

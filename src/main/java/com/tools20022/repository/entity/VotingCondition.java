@@ -136,8 +136,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesQuantityRequiredToVote = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantityRequiredToVote";
 			definition = "Number of holdings required for a vote.";
@@ -186,8 +186,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmPartialVoteAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialVoteAllowed";
 			definition = "Specifies whether it is allowed to only vote on a part of the entire entitled holding, leaving part of the position un-voted.";
@@ -236,8 +236,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmSplitVoteAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitVoteAllowed";
 			definition = "Indicates that the option to give a split instruction, for example, a split voting instruction on a meeting, is allowed.";
@@ -293,8 +293,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmVoteLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteLocation";
 			definition = "Electronic address, e-mail or website where a voting ballot can be obtained and/or where a security holder can vote.";
@@ -336,8 +336,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmBeneficialOwnerDisclosure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficialOwnerDisclosure";
 			definition = "Indicates whether beneficiary details (eg name and address) must be supplied in order to take part to a meeting.";
@@ -386,8 +386,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmIncentivePremium = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncentivePremium";
 			definition = "Cash premium made available if the securities holder consents or participates to an event.";
@@ -433,8 +433,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmVoteInstructionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteInstructionType";
 			definition = "Identifies the possible types of voting instructions.";
@@ -484,8 +484,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmStandingVotingInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingVotingInstruction";
 			definition = "Indicates whether standing instructions have been defined or not. In this case, the intermediary should cast the votes according to these instructions.";
@@ -534,8 +534,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmVotingPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotingPremiumAmount";
 			definition = "Amount of additional weight applied to the votes of long term shareholders.";
@@ -583,8 +583,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmVotingPremiumRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotingPremiumRate";
 			definition = "Rate of additional weight applied to the votes of long term shareholders.";
@@ -636,8 +636,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which voting conditions are specified.";
@@ -680,8 +680,8 @@ public class VotingCondition {
 	 */
 	public static final MMBusinessAttribute mmPreviousInstructionInvalidity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviousInstructionInvalidity";
 			definition = "Indicates whether the previously sent instructions becomes invalid after a market deadline extension.";

@@ -38,6 +38,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
+ * ContactPoint}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -49,9 +52,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * PhoneAddress.mmMobileNumber}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.ContactPoint
- * ContactPoint}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -113,8 +113,8 @@ public class PhoneAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmPhoneNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmPhoneNumber, ContactDetails3.mmPhoneNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhoneNumber";
 			definition = "Collection of information that identifies a phone number, as defined by telecom services.\r\nIt is recommended to use only numbers and limited punctuation +,-.(.).";
@@ -174,8 +174,8 @@ public class PhoneAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmFaxNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmFaxNumber, ContactDetails3.mmFaxNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FaxNumber";
 			definition = "Collection of information that identifies a FAX number, as defined by telecom services.\r\nIt is recommended to use only numbers and limited punctuation +,-.(.).";
@@ -235,8 +235,8 @@ public class PhoneAddress extends ContactPoint {
 	public static final MMBusinessAttribute mmMobileNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmMobileNumber, ContactDetails3.mmMobileNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MobileNumber";
 			definition = "Collection of information that identifies a mobile phone number, as defined by telecom services.\r\nIt is recommended to use only numbers and limited punctuation +,-.(.).";

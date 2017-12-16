@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CivilStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the civil status of a person.
@@ -31,22 +36,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmSingle
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Single
  * CivilStatusCode.mmSingle}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmMarried
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Married
  * CivilStatusCode.mmMarried}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmLegallyDivorced
+ * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#LegallyDivorced
  * CivilStatusCode.mmLegallyDivorced}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmDivorced
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Divorced
  * CivilStatusCode.mmDivorced}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmWidow
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Widow
  * CivilStatusCode.mmWidow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmStableUnion
+ * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#StableUnion
  * CivilStatusCode.mmStableUnion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmSeparated
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Separated
  * CivilStatusCode.mmSeparated}</li>
  * </ul>
  * </li>
@@ -65,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the civil status of a person."</li>
  * </ul>
  */
-public class CivilStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CivilStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,12 +94,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is single."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSingle = new MMCode() {
+	public static final CivilStatusCode Single = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Single";
 			definition = "Person is single.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "SING";
 		}
 	};
@@ -119,12 +124,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is married."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMarried = new MMCode() {
+	public static final CivilStatusCode Married = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Married";
 			definition = "Person is married.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "MARR";
 		}
 	};
@@ -149,12 +154,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is legally divorced."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLegallyDivorced = new MMCode() {
+	public static final CivilStatusCode LegallyDivorced = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LegallyDivorced";
 			definition = "Person is legally divorced.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "LDIV";
 		}
 	};
@@ -179,12 +184,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is divorced."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDivorced = new MMCode() {
+	public static final CivilStatusCode Divorced = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Divorced";
 			definition = "Person is divorced.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "DIVO";
 		}
 	};
@@ -209,12 +214,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is a widower."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWidow = new MMCode() {
+	public static final CivilStatusCode Widow = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Widow";
 			definition = "Person is a widower.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "WIDO";
 		}
 	};
@@ -239,12 +244,12 @@ public class CivilStatusCode {
 	 * definition} = "Person is in a stable union."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStableUnion = new MMCode() {
+	public static final CivilStatusCode StableUnion = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StableUnion";
 			definition = "Person is in a stable union.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "UNIO";
 		}
 	};
@@ -269,27 +274,63 @@ public class CivilStatusCode {
 	 * definition} = "Person is separated."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSeparated = new MMCode() {
+	public static final CivilStatusCode Separated = new CivilStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Separated";
 			definition = "Person is separated.";
-			owner_lazy = () -> CivilStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CivilStatusCode.mmObject();
 			codeName = "SEPA";
 		}
 	};
+	final static private LinkedHashMap<String, CivilStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CivilStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CivilStatusCode";
 				definition = "Specifies the civil status of a person.";
-				code_lazy = () -> Arrays.asList(CivilStatusCode.mmSingle, CivilStatusCode.mmMarried, CivilStatusCode.mmLegallyDivorced, CivilStatusCode.mmDivorced, CivilStatusCode.mmWidow, CivilStatusCode.mmStableUnion,
-						CivilStatusCode.mmSeparated);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CivilStatusCode.Single, com.tools20022.repository.codeset.CivilStatusCode.Married, com.tools20022.repository.codeset.CivilStatusCode.LegallyDivorced,
+						com.tools20022.repository.codeset.CivilStatusCode.Divorced, com.tools20022.repository.codeset.CivilStatusCode.Widow, com.tools20022.repository.codeset.CivilStatusCode.StableUnion,
+						com.tools20022.repository.codeset.CivilStatusCode.Separated);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Single.getCodeName().get(), Single);
+		codesByName.put(Married.getCodeName().get(), Married);
+		codesByName.put(LegallyDivorced.getCodeName().get(), LegallyDivorced);
+		codesByName.put(Divorced.getCodeName().get(), Divorced);
+		codesByName.put(Widow.getCodeName().get(), Widow);
+		codesByName.put(StableUnion.getCodeName().get(), StableUnion);
+		codesByName.put(Separated.getCodeName().get(), Separated);
+	}
+
+	public static CivilStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CivilStatusCode[] values() {
+		CivilStatusCode[] values = new CivilStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CivilStatusCode> {
+		@Override
+		public CivilStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CivilStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

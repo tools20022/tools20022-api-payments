@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NamePrefix1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the terms used to formally address a person.
@@ -31,13 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#mmDoctor
+ * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#Doctor
  * NamePrefix1Code.mmDoctor}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#mmMister
+ * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#Mister
  * NamePrefix1Code.mmMister}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#mmMiss
+ * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#Miss
  * NamePrefix1Code.mmMiss}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#mmMadam
+ * <li>{@linkplain com.tools20022.repository.codeset.NamePrefix1Code#Madam
  * NamePrefix1Code.mmMadam}</li>
  * </ul>
  * </li>
@@ -62,7 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the terms used to formally address a person."</li>
  * </ul>
  */
-public class NamePrefix1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NamePrefix1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,12 +92,12 @@ public class NamePrefix1Code {
 	 * definition} = "Title of the person is Doctor or Dr."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDoctor = new MMCode() {
+	public static final NamePrefix1Code Doctor = new NamePrefix1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Doctor";
 			definition = "Title of the person is Doctor or Dr.";
-			owner_lazy = () -> NamePrefix1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
 			codeName = "DOCT";
 		}
 	};
@@ -116,12 +122,12 @@ public class NamePrefix1Code {
 	 * definition} = "Title of the person is Mister or Mr."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMister = new MMCode() {
+	public static final NamePrefix1Code Mister = new NamePrefix1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mister";
 			definition = "Title of the person is Mister or Mr.";
-			owner_lazy = () -> NamePrefix1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
 			codeName = "MIST";
 		}
 	};
@@ -146,12 +152,12 @@ public class NamePrefix1Code {
 	 * definition} = "Title of the person is Miss."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMiss = new MMCode() {
+	public static final NamePrefix1Code Miss = new NamePrefix1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Miss";
 			definition = "Title of the person is Miss.";
-			owner_lazy = () -> NamePrefix1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
 			codeName = "MISS";
 		}
 	};
@@ -176,17 +182,21 @@ public class NamePrefix1Code {
 	 * definition} = "Title of the person is Madam."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMadam = new MMCode() {
+	public static final NamePrefix1Code Madam = new NamePrefix1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Madam";
 			definition = "Title of the person is Madam.";
-			owner_lazy = () -> NamePrefix1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
 			codeName = "MADM";
 		}
 	};
+	final static private LinkedHashMap<String, NamePrefix1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NamePrefix1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -194,9 +204,38 @@ public class NamePrefix1Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NamePrefix1Code";
 				definition = "Specifies the terms used to formally address a person.";
-				code_lazy = () -> Arrays.asList(NamePrefix1Code.mmDoctor, NamePrefix1Code.mmMister, NamePrefix1Code.mmMiss, NamePrefix1Code.mmMadam);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NamePrefix1Code.Doctor, com.tools20022.repository.codeset.NamePrefix1Code.Mister, com.tools20022.repository.codeset.NamePrefix1Code.Miss,
+						com.tools20022.repository.codeset.NamePrefix1Code.Madam);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Doctor.getCodeName().get(), Doctor);
+		codesByName.put(Mister.getCodeName().get(), Mister);
+		codesByName.put(Miss.getCodeName().get(), Miss);
+		codesByName.put(Madam.getCodeName().get(), Madam);
+	}
+
+	public static NamePrefix1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NamePrefix1Code[] values() {
+		NamePrefix1Code[] values = new NamePrefix1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NamePrefix1Code> {
+		@Override
+		public NamePrefix1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NamePrefix1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

@@ -177,8 +177,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDate";
 			definition = "Date on which an order, a privilege, an entitlement or an offer terminates. For an interest bearing asset, it is the date/time at which it becomes due and has to be repaid.";
@@ -244,8 +244,8 @@ public class Asset {
 	public static final MMBusinessAttribute mmMaturityDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmMaturityDate, LoanContractTranche1.mmExpectedDate, LoanContractTranche1.mmDueDate, LoanContract1.mmMaturityDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaturityDate";
 			definition = "Planned date, at the time of issuance, on which an interest bearing financial instrument becomes due and principal is repaid by the issuer to the investor.";
@@ -300,8 +300,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmDerivative = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Derivative";
 			definition = "Specifies the parameters of a derivative instrument based on a specific asset.";
@@ -346,8 +346,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetValue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetValue";
 			definition = "Specifies the different values of an asset.";
@@ -392,8 +392,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetClassification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetClassification";
 			definition = "Classification of the asset.";
@@ -431,8 +431,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmFinancialAssetCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialAssetCategory";
 			definition = "Categorization of financial asset type.";
@@ -484,8 +484,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetPartyRole";
 			definition = "Party which plays a role for a specific asset.";
@@ -530,8 +530,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Details regarding the issuance of an asset.";
@@ -576,8 +576,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Portfolio";
 			definition = "Asset which is part of a portfolio.";
@@ -616,8 +616,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmInvestmentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAmount";
 			definition = "Invested amount of the portfolio asset.";
@@ -662,8 +662,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmInvestmentRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentRate";
 			definition = "Invested percentage of the portfolio asset.";
@@ -709,8 +709,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Cut off date/time for the information of the specified portfolio asset.";
@@ -755,8 +755,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAttribute mmFinancialInstrumentSubStructure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialInstrumentSubStructure";
 			definition = "Indicates the type of deal for structured finance.";
@@ -808,8 +808,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan that invests in a specific asset.";
@@ -853,8 +853,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Trade";
 			definition = "Trade which which involves a specific asset.";
@@ -908,8 +908,8 @@ public class Asset {
 	public static final MMBusinessAssociationEnd mmTranche = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmTranche);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tranche";
 			definition = "One of a number of related assets offered as part of the same transaction.";
@@ -954,8 +954,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmLegAdditionalInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegAdditionalInformation";
 			definition = "Provides details about the leg.";
@@ -1002,8 +1002,8 @@ public class Asset {
 	 */
 	public static final MMBusinessAssociationEnd mmStandingSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StandingSettlementInstruction";
 			definition = "Standing settlement instruction for which an asset is specified.";

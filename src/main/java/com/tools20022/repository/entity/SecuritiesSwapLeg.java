@@ -139,8 +139,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Contains the currency and amount of a buy or sell leg of a swap for the spot or the forward.";
@@ -189,8 +189,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAttribute mmBenchmark = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Benchmark";
 			definition = "Contains the benchmark used for a buy or sell leg of a swap for the spot or the forward.";
@@ -235,8 +235,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAttribute mmCurvePoint = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurvePoint";
 			definition = "Identifies a point on a benchmark curve.";
@@ -285,8 +285,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAttribute mmBenchmarkYield = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkYield";
 			definition = "Contains the yield against a benchmark for a buy or sell leg of a swap for the spot or the forward.";
@@ -334,8 +334,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAttribute mmBenchmarkOffset = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkOffset";
 			definition = "Contains the offset in basis points against a benchmark for a buy or sell leg of a swap for the spot or the forward.";
@@ -389,8 +389,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAssociationEnd mmSpotSellSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpotSellSwap";
 			definition = "Swap for which a spot sell leg is specified.";
@@ -438,8 +438,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAssociationEnd mmSpotBuySwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpotBuySwap";
 			definition = "Swap for which a spot buy leg is specified.";
@@ -487,8 +487,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAssociationEnd mmForwardBuyBackSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardBuyBackSwap";
 			definition = "Swap for which a forward buy back leg is specified.";
@@ -536,8 +536,8 @@ public class SecuritiesSwapLeg {
 	 */
 	public static final MMBusinessAssociationEnd mmForwardSellBackSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForwardSellBackSwap";
 			definition = "Swap for which a forward sell back leg is specified.";

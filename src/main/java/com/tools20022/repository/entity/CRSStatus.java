@@ -111,8 +111,8 @@ public class CRSStatus {
 	 */
 	public static final MMBusinessAttribute mmCRSStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CRSStatus";
 			definition = "Common Reporting Standard (CRS) status of the investor.";
@@ -159,8 +159,8 @@ public class CRSStatus {
 	 */
 	public static final MMBusinessAttribute mmExceptionalReportingCountry = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExceptionalReportingCountry";
 			definition = "Reporting country for the CRS status when there is an exception at the country level.";
@@ -207,8 +207,8 @@ public class CRSStatus {
 	 */
 	public static final MMBusinessAttribute mmCRSSourceStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRSSourceStatus";
 			definition = "Source of the Common Reporting Standard (CRS) status expressed as a code.";
@@ -256,8 +256,8 @@ public class CRSStatus {
 	 */
 	public static final MMBusinessAttribute mmCRSReportingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CRSReportingDate";
 			definition = "Date provided by the account owner to inform the account servicer of the date on which the holdings must be reported before the account is subsequently closed.";
@@ -313,8 +313,8 @@ public class CRSStatus {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentAccountParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountParty";
 			definition = "Common Reporting Standard (CRS) status linked to an investment account and played by a party in that context.";

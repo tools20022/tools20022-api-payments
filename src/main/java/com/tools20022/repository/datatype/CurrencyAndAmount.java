@@ -20,9 +20,13 @@ package com.tools20022.repository.datatype;
 import com.tools20022.metamodel.MMAmount;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CurrencyCode;
+import com.tools20022.repository.datatype.CurrencyAndAmount.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Number of monetary units specified in a currency, where the unit of currency
@@ -59,9 +63,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
 public class CurrencyAndAmount {
 
 	final static private AtomicReference<MMAmount> mmObject_lazy = new AtomicReference<>();
+	protected BigDecimal value;
 
 	final static public MMAmount mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMAmount() {
@@ -78,5 +84,25 @@ public class CurrencyAndAmount {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount(BigDecimal value) {
+		this.value = value;
+	}
+
+	public BigDecimal toBigDecimal() {
+		return value;
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<BigDecimal, CurrencyAndAmount> {
+		@Override
+		public CurrencyAndAmount unmarshal(BigDecimal value) {
+			return new CurrencyAndAmount(value);
+		}
+
+		@Override
+		public BigDecimal marshal(CurrencyAndAmount typedData) {
+			return typedData.value;
+		}
 	}
 }

@@ -72,15 +72,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment3
- * CaseAssignment3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Case3 Case3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -112,6 +103,15 @@ import java.util.List;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.PaymentInvestigationCase
  * PaymentInvestigationCase}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment3
+ * CaseAssignment3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Case3 Case3}</li>
  * </ul>
  * </li>
  * <li>
@@ -171,8 +171,8 @@ public class InvestigationCase {
 	public static final MMBusinessAttribute mmAssignmentIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CaseAssignment3.mmIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssignmentIdentification";
 			definition = "Uniquely identifies the case assignment.";
@@ -226,8 +226,8 @@ public class InvestigationCase {
 	public static final MMBusinessAttribute mmCreationDateTime = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CaseAssignment3.mmCreationDateTime);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreationDateTime";
 			definition = "Creation date and time of the case.";
@@ -280,8 +280,8 @@ public class InvestigationCase {
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Case3.mmIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Uniquely identifies the case.";
@@ -360,8 +360,8 @@ public class InvestigationCase {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalGroupHeader5.mmCancellationStatusReasonInformation, OriginalPaymentInstruction22.mmCancellationStatusReasonInformation, PaymentTransaction78.mmCancellationStatusReasonInformation,
 					OriginalPaymentInstruction20.mmCase, PaymentTransaction79.mmCancellationStatusReasonInformation);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the status of the case together with the reason and the date and time.";
@@ -409,8 +409,8 @@ public class InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestigationPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestigationPartyRole";
 			definition = "Role played by a party in the context of an investigation process.";
@@ -459,8 +459,8 @@ public class InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmDuplicateCaseResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DuplicateCaseResolution";
 			definition = "Solution which consists in closing the case as it is a duplicate of an original one.";
@@ -518,8 +518,8 @@ public class InvestigationCase {
 	public static final MMBusinessAssociationEnd mmInvestigationResolution = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CancellationStatusReason2.mmReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestigationResolution";
 			definition = "Specifies the actions taken as a result of an investigation.";
@@ -565,8 +565,8 @@ public class InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmOriginalInvestigationCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginalInvestigationCase";
 			definition = "Original case to which another one is linked.";
@@ -615,8 +615,8 @@ public class InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmLinkedCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LinkedCase";
 			definition = "Step in the resolution process of an investigation case. The assigned case is linked to the investigation case in the previous step.";
@@ -663,8 +663,8 @@ public class InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmReassignment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reassignment";
 			definition = "Action which is taken to forward the case to another party.";

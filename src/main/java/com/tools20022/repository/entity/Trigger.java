@@ -108,8 +108,8 @@ public class Trigger {
 	 */
 	public static final MMBusinessAssociationEnd mmAutomaticVariation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutomaticVariation";
 			definition = "Variation which was triggered by the event.";
@@ -147,8 +147,8 @@ public class Trigger {
 	 */
 	public static final MMBusinessAttribute mmTriggerDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggerDate";
 			definition = "Date on which the variation comes into effect.";
@@ -192,8 +192,8 @@ public class Trigger {
 	 */
 	public static final MMBusinessAttribute mmTriggerEvent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggerEvent";
 			definition = "Event that causes the variation to come into effect.";

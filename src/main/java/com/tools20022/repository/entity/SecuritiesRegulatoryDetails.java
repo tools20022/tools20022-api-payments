@@ -109,8 +109,8 @@ public class SecuritiesRegulatoryDetails {
 	 */
 	public static final MMBusinessAttribute mmOrderRestrictions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderRestrictions";
 			definition = "Classification and restrictions linked to an order (for regulatory purpose).";
@@ -160,8 +160,8 @@ public class SecuritiesRegulatoryDetails {
 	 */
 	public static final MMBusinessAttribute mmBrokerSolicitedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BrokerSolicitedTrade";
 			definition = "Indicates whether the trading party has suggested to his client to buy/sell a financial instrument or whether the investor acts on its own without advice from its trading party.";
@@ -214,8 +214,8 @@ public class SecuritiesRegulatoryDetails {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which legal parameters are provided.";

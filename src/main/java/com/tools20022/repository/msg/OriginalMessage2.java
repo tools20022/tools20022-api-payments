@@ -81,6 +81,10 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Unique and unambiguous identification of the original message references."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3
+ * OriginalGroupInformation3}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -88,10 +92,6 @@ import javax.xml.bind.annotation.XmlType;
  * OriginalMessage3}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3
- * OriginalGroupInformation3}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
@@ -189,6 +189,11 @@ public class OriginalMessage2 {
 	 * definition} =
 	 * "Point to point reference assigned by the original instructing party to unambiguously identify the original group of individual transactions."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageIdentification
+	 * OriginalGroupInformation3.mmOriginalMessageIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -197,11 +202,6 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageIdentification
-	 * OriginalGroupInformation3.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
@@ -249,6 +249,11 @@ public class OriginalMessage2 {
 	 * definition} =
 	 * "Specifies the original message name identifier to which the message refers, such as pacs.003.001.01 or MT103."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageNameIdentification
+	 * OriginalGroupInformation3.mmOriginalMessageNameIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -257,11 +262,6 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalMessageNameIdentification}</li>
 	 * </ul>
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageNameIdentification
-	 * OriginalGroupInformation3.mmOriginalMessageNameIdentification}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
@@ -310,6 +310,11 @@ public class OriginalMessage2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original date and time at which the message was created."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalCreationDateTime
+	 * OriginalGroupInformation3.mmOriginalCreationDateTime}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -318,11 +323,6 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalCreationDateTime
-	 * OriginalGroupInformation3.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {

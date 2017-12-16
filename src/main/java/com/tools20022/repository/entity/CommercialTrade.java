@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -114,8 +116,6 @@ import java.util.List;
  * UnderlyingContract1Choice.mmTrade}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -174,8 +174,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmPurchaseAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PurchaseAccount";
 			definition = "Specific purchase account for recording debits and credits for accounting purposes.";
@@ -222,8 +222,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Obligation for the buyer to settle the value of the products bought.";
@@ -263,8 +263,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAttribute mmTotalAcceptedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalAcceptedAmount";
 			definition = "Total amount of a trade, that is the sum of the accepted items.";
@@ -318,8 +318,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of a trade.";
@@ -366,8 +366,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlement";
 			definition = "Process of settling a commercial trade.";
@@ -415,8 +415,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmProductDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductDeliveryObligation";
 			definition = "Obligation for the seller to deliver the products to the buyer.";
@@ -463,8 +463,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmPurchaseOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PurchaseOrder";
 			definition = "Specifies the purchase order related to a commercial trade.";
@@ -512,8 +512,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmDocuments = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Documents";
 			definition = "Documents related to                             a commercial trade transaction.";
@@ -561,8 +561,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedUndertaking";
 			definition = "Undertaking related to the commercial trade.";
@@ -610,8 +610,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmTransactionStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionStatus";
 			definition = "Status of a commercial trade processed in a central system.";
@@ -661,8 +661,8 @@ public class CommercialTrade extends Trade {
 	 */
 	public static final MMBusinessAssociationEnd mmAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agreement";
 			definition = "Agreement between trade parties which describes the conditions under which they agree to execute trades amongst themselves.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the state of payment of a security at a particular time.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#mmFullyPaid
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#FullyPaid
  * SecuritiesPaymentStatusCode.mmFullyPaid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#mmNillPaid
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#NillPaid
  * SecuritiesPaymentStatusCode.mmNillPaid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#mmPartiallyPaid
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesPaymentStatusCode#PartiallyPaid
  * SecuritiesPaymentStatusCode.mmPartiallyPaid}</li>
  * </ul>
  * </li>
@@ -64,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the state of payment of a security at a particular time."</li>
  * </ul>
  */
-public class SecuritiesPaymentStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class SecuritiesPaymentStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -88,12 +94,12 @@ public class SecuritiesPaymentStatusCode {
 	 * definition} = "Security is fully paid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFullyPaid = new MMCode() {
+	public static final SecuritiesPaymentStatusCode FullyPaid = new SecuritiesPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullyPaid";
 			definition = "Security is fully paid.";
-			owner_lazy = () -> SecuritiesPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.mmObject();
 			codeName = "FULL";
 		}
 	};
@@ -118,12 +124,12 @@ public class SecuritiesPaymentStatusCode {
 	 * definition} = "Security is nill paid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNillPaid = new MMCode() {
+	public static final SecuritiesPaymentStatusCode NillPaid = new SecuritiesPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NillPaid";
 			definition = "Security is nill paid.";
-			owner_lazy = () -> SecuritiesPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.mmObject();
 			codeName = "NILL";
 		}
 	};
@@ -148,17 +154,21 @@ public class SecuritiesPaymentStatusCode {
 	 * definition} = "Security is partially paid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartiallyPaid = new MMCode() {
+	public static final SecuritiesPaymentStatusCode PartiallyPaid = new SecuritiesPaymentStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartiallyPaid";
 			definition = "Security is partially paid.";
-			owner_lazy = () -> SecuritiesPaymentStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.mmObject();
 			codeName = "PART";
 		}
 	};
+	final static private LinkedHashMap<String, SecuritiesPaymentStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected SecuritiesPaymentStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -166,9 +176,37 @@ public class SecuritiesPaymentStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesPaymentStatusCode";
 				definition = "Specifies the state of payment of a security at a particular time.";
-				code_lazy = () -> Arrays.asList(SecuritiesPaymentStatusCode.mmFullyPaid, SecuritiesPaymentStatusCode.mmNillPaid, SecuritiesPaymentStatusCode.mmPartiallyPaid);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.FullyPaid, com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.NillPaid,
+						com.tools20022.repository.codeset.SecuritiesPaymentStatusCode.PartiallyPaid);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(FullyPaid.getCodeName().get(), FullyPaid);
+		codesByName.put(NillPaid.getCodeName().get(), NillPaid);
+		codesByName.put(PartiallyPaid.getCodeName().get(), PartiallyPaid);
+	}
+
+	public static SecuritiesPaymentStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static SecuritiesPaymentStatusCode[] values() {
+		SecuritiesPaymentStatusCode[] values = new SecuritiesPaymentStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, SecuritiesPaymentStatusCode> {
+		@Override
+		public SecuritiesPaymentStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(SecuritiesPaymentStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

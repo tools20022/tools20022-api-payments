@@ -127,8 +127,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which extension parameters are provided.";
@@ -170,8 +170,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmAutoExtensionPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutoExtensionPeriod";
 			definition = "Requirement for a clause covering an automatic extension of the validity expiry date.";
@@ -219,8 +219,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmAutoExtensionFinalExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutoExtensionFinalExpiryDate";
 			definition = "Date after which the undertaking will no longer be subject to automatic extension.";
@@ -268,8 +268,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmNonExtensionNoticePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonExtensionNoticePeriod";
 			definition = "Minimum number of days of advance notification that must be given to indicate the undertaking  will no longer be extended. ";
@@ -315,8 +315,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmNonExtensionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonExtensionIndicator";
 			definition = "Indicates whether the undertaking can be extended.";
@@ -364,8 +364,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmAutoExtensionNotificationPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AutoExtensionNotificationPeriod";
 			definition = "Minimum number of days of advance notification given to indicate the undertaking will no longer be automatically extended. ";
@@ -414,8 +414,8 @@ public class UndertakingExtension {
 	 */
 	public static final MMBusinessAttribute mmNotificationRecipientType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingExtension.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotificationRecipientType";
 			definition = "Type of party to whom the notice of non-extension is intended to be delivered, such as the applicant or beneficiary.";

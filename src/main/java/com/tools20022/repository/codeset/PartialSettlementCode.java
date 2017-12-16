@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PartialSettlementCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Information about partial settlement.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartialSettlementCode#mmPartialSettlement
+ * {@linkplain com.tools20022.repository.codeset.PartialSettlementCode#PartialSettlement
  * PartialSettlementCode.mmPartialSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartialSettlementCode#mmPreviouslyPartialConfirmed
+ * {@linkplain com.tools20022.repository.codeset.PartialSettlementCode#PreviouslyPartialConfirmed
  * PartialSettlementCode.mmPreviouslyPartialConfirmed}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Information about partial settlement."</li>
  * </ul>
  */
-public class PartialSettlementCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PartialSettlementCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class PartialSettlementCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartialSettlement = new MMCode() {
+	public static final PartialSettlementCode PartialSettlement = new PartialSettlementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialSettlement";
 			definition = "Confirmation is for partial settlement. Part of the transaction remains unsettled.";
-			owner_lazy = () -> PartialSettlementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartialSettlementCode.mmObject();
 			codeName = "PAIN";
 		}
 	};
@@ -120,17 +126,21 @@ public class PartialSettlementCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreviouslyPartialConfirmed = new MMCode() {
+	public static final PartialSettlementCode PreviouslyPartialConfirmed = new PartialSettlementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviouslyPartialConfirmed";
 			definition = "Confirmation is for the remaining part of an instruction that was previously partially confirmed.";
-			owner_lazy = () -> PartialSettlementCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PartialSettlementCode.mmObject();
 			codeName = "PARC";
 		}
 	};
+	final static private LinkedHashMap<String, PartialSettlementCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PartialSettlementCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -138,9 +148,35 @@ public class PartialSettlementCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartialSettlementCode";
 				definition = "Information about partial settlement.";
-				code_lazy = () -> Arrays.asList(PartialSettlementCode.mmPartialSettlement, PartialSettlementCode.mmPreviouslyPartialConfirmed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PartialSettlementCode.PartialSettlement, com.tools20022.repository.codeset.PartialSettlementCode.PreviouslyPartialConfirmed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PartialSettlement.getCodeName().get(), PartialSettlement);
+		codesByName.put(PreviouslyPartialConfirmed.getCodeName().get(), PreviouslyPartialConfirmed);
+	}
+
+	public static PartialSettlementCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PartialSettlementCode[] values() {
+		PartialSettlementCode[] values = new PartialSettlementCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PartialSettlementCode> {
+		@Override
+		public PartialSettlementCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PartialSettlementCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

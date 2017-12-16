@@ -137,8 +137,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralProposal = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralProposal";
 			definition = "Collateral proposal for which collateral movements are detailed.";
@@ -182,8 +182,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAttribute mmVariationMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMargin";
 			definition = "Amount of margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
@@ -233,8 +233,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAttribute mmSegregatedIndependentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmount";
 			definition = "Amount of margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
@@ -287,8 +287,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAssociationEnd mmMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginCall";
 			definition = "Magin call which needs to be executed.";
@@ -335,8 +335,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
@@ -382,8 +382,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAssociationEnd mmCashCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
@@ -432,8 +432,8 @@ public class CollateralMovement {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the collateral management is associated.";

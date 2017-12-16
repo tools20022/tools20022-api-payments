@@ -116,8 +116,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAttribute mmExposureType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExposureType";
 			definition = "Specifies the underlying business area/type of trade causing the collateral movement.";
@@ -166,8 +166,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAttribute mmMinimumTransferAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MinimumTransferAmount";
 			definition = "Minimum amount to pay/receive as specified in the agreement in the base currency (to avoid the need to transfer an inconveniently small amount of variation margin).";
@@ -215,8 +215,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAttribute mmRoundingAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RoundingAmount";
 			definition = "Amount specified to avoid the need to transfer uneven amounts of collateral.";
@@ -266,8 +266,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAttribute mmRoundingMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RoundingMethod";
 			definition = "Defines how the rounding amount is applied in the calculation to avoid the need to transfer uneven amounts of collateral. For example, should the amount of collateral required be rounded up, down, to the closer integral multiple specified or not rounded.";
@@ -319,8 +319,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralAgreement";
 			definition = "Agreement in which the exposure terms are specified.";
@@ -362,8 +362,8 @@ public class ExposureTerm {
 	 */
 	public static final MMBusinessAttribute mmMinimumRequirementDeposit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumRequirementDeposit";
 			definition = "Minimum requirement for a participant if their requirement falls below a specific amount set by the central counterparty.";

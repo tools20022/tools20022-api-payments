@@ -37,6 +37,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SystemPartyRole
+ * SystemPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -75,9 +78,6 @@ import java.util.List;
  * CurrencyExchange.mmCurrencyExchangeForTransactionAdministrator}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SystemPartyRole
- * SystemPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -134,8 +134,8 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmCashClearingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashClearingSystem";
 			definition = "System where the clearing takes place.";
@@ -177,8 +177,8 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency which may be processed by the system. A system may process transactions in a single currency or in multiple currencies.";
@@ -234,8 +234,8 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Static data maintained by the transaction administrator and related to currency exchange details as maintained for system operations.";
@@ -285,8 +285,8 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmCashManagementService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashManagementService";
 			definition = "Set of applications that provides services which facilitate the management of cash positions on an account.";
@@ -335,8 +335,8 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementInstruction";
 			definition = "Specifies the settlement instruction managed by the transaction administrator.";

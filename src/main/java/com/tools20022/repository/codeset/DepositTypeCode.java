@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.DepositTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the deposit is fixed term or call/notice.
@@ -31,10 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.DepositTypeCode#mmFixedTerm
+ * <li>{@linkplain com.tools20022.repository.codeset.DepositTypeCode#FixedTerm
  * DepositTypeCode.mmFixedTerm}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DepositTypeCode#mmCall
+ * <li>{@linkplain com.tools20022.repository.codeset.DepositTypeCode#Call
  * DepositTypeCode.mmCall}</li>
  * </ul>
  * </li>
@@ -66,7 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies whether the deposit is fixed term or call/notice."</li>
  * </ul>
  */
-public class DepositTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class DepositTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -90,12 +95,12 @@ public class DepositTypeCode {
 	 * definition} = "Specifies that it is a fixed term deposit."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFixedTerm = new MMCode() {
+	public static final DepositTypeCode FixedTerm = new DepositTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FixedTerm";
 			definition = "Specifies that it is a fixed term deposit.";
-			owner_lazy = () -> DepositTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DepositTypeCode.mmObject();
 			codeName = "FITE";
 		}
 	};
@@ -120,17 +125,21 @@ public class DepositTypeCode {
 	 * definition} = "Specifies that it is a call/notice deposit."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCall = new MMCode() {
+	public static final DepositTypeCode Call = new DepositTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Call";
 			definition = "Specifies that it is a call/notice deposit.";
-			owner_lazy = () -> DepositTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.DepositTypeCode.mmObject();
 			codeName = "CALL";
 		}
 	};
+	final static private LinkedHashMap<String, DepositTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected DepositTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -138,10 +147,36 @@ public class DepositTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DepositTypeCode";
 				definition = "Specifies whether the deposit is fixed term or call/notice.";
-				code_lazy = () -> Arrays.asList(DepositTypeCode.mmFixedTerm, DepositTypeCode.mmCall);
 				derivation_lazy = () -> Arrays.asList(DepositType1Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DepositTypeCode.FixedTerm, com.tools20022.repository.codeset.DepositTypeCode.Call);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(FixedTerm.getCodeName().get(), FixedTerm);
+		codesByName.put(Call.getCodeName().get(), Call);
+	}
+
+	public static DepositTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static DepositTypeCode[] values() {
+		DepositTypeCode[] values = new DepositTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, DepositTypeCode> {
+		@Override
+		public DepositTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(DepositTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

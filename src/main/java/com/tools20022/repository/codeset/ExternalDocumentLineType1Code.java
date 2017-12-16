@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ExternalDocumentLineType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the document line type as published in an external document type
@@ -56,11 +62,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * ExternalDocumentType1Code}</li>
  * </ul>
  */
-public class ExternalDocumentLineType1Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExternalDocumentLineType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	final static private LinkedHashMap<String, ExternalDocumentLineType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExternalDocumentLineType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -69,8 +80,34 @@ public class ExternalDocumentLineType1Code {
 				name = "ExternalDocumentLineType1Code";
 				definition = "Specifies the document line type as published in an external document type code list.";
 				previousVersion_lazy = () -> ExternalDocumentType1Code.mmObject();
+				minLength = 1;
+				maxLength = 4;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+	}
+
+	public static ExternalDocumentLineType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExternalDocumentLineType1Code[] values() {
+		ExternalDocumentLineType1Code[] values = new ExternalDocumentLineType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExternalDocumentLineType1Code> {
+		@Override
+		public ExternalDocumentLineType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExternalDocumentLineType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

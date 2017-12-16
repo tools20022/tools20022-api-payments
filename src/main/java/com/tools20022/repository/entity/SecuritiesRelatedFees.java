@@ -36,6 +36,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Charges Charges}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -61,8 +63,6 @@ import java.util.List;
  * Security.mmFees}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Charges Charges}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -115,8 +115,8 @@ public class SecuritiesRelatedFees extends Charges {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which fees are specified.";
@@ -155,8 +155,8 @@ public class SecuritiesRelatedFees extends Charges {
 	 */
 	public static final MMBusinessAttribute mmPostageFeeAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostageFeeAmount";
 			definition = "Amount of money paid for delivery by regular post mail.";
@@ -205,8 +205,8 @@ public class SecuritiesRelatedFees extends Charges {
 	 */
 	public static final MMBusinessAttribute mmRegulatoryFeesAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryFeesAmount";
 			definition = "Amount of money charged by a regulatory authority, eg, Securities and Exchange fees.";
@@ -253,8 +253,8 @@ public class SecuritiesRelatedFees extends Charges {
 	 */
 	public static final MMBusinessAttribute mmShippingFeesAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShippingFeesAmount";
 			definition = "Amount of money (including insurance) paid for delivery by carrier.";

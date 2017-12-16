@@ -40,6 +40,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.PaymentObligation
+ * PaymentObligation}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,9 +80,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * InvestmentPlan.mmInstalment}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.PaymentObligation
- * PaymentObligation}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -130,8 +130,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmInitialNumberOfInstalment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialNumberOfInstalment";
 			definition = "Number of pre-paid instalment periods at the time an investment plan is created.";
@@ -178,8 +178,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmTotalNumberOfInstalment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfInstalment";
 			definition = "Total number of times the amount must be invested at the predefined frequency as of the start date of the investment plan.";
@@ -226,8 +226,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmPeriodUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodUnit";
 			definition = "Period unit between consecutive payments (for example day, month, year).";
@@ -271,8 +271,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmNumberOfUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfUnits";
 			definition = "Number of period units between consecutive payments.";
@@ -316,8 +316,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmSequenceIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SequenceIdentification";
 			definition = "Specifies the progressive number of a single instalment.";
@@ -370,8 +370,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan for which instalment information is provided.";
@@ -410,8 +410,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmInstalmentPlanType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstalmentPlanType";
 			definition = "Type of instalment plan.";
@@ -456,8 +456,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmFirstPaymentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstPaymentAmount";
 			definition = "Amount of the first payment.";
@@ -501,8 +501,8 @@ public class Instalment extends PaymentObligation {
 	 */
 	public static final MMBusinessAttribute mmFirstPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstPaymentDate";
 			definition = "Date of the first payment.";

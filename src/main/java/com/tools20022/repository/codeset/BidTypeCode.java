@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BidTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Code to identify the type of bid request.
@@ -31,11 +36,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmNonDisclosed
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#NonDisclosed
  * BidTypeCode.mmNonDisclosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmDisclosed
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#Disclosed
  * BidTypeCode.mmDisclosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmNoBid
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#NoBid
  * BidTypeCode.mmNoBid}</li>
  * </ul>
  * </li>
@@ -60,7 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Code to identify the type of bid request."</li>
  * </ul>
  */
-public class BidTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BidTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -83,12 +89,12 @@ public class BidTypeCode {
 	 * definition} = "Bid type is non disclosed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNonDisclosed = new MMCode() {
+	public static final BidTypeCode NonDisclosed = new BidTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonDisclosed";
 			definition = "Bid type is non disclosed.";
-			owner_lazy = () -> BidTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BidTypeCode.mmObject();
 			codeName = "NDIS";
 		}
 	};
@@ -112,12 +118,12 @@ public class BidTypeCode {
 	 * definition} = "Bid type is disclosed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDisclosed = new MMCode() {
+	public static final BidTypeCode Disclosed = new BidTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disclosed";
 			definition = "Bid type is disclosed.";
-			owner_lazy = () -> BidTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BidTypeCode.mmObject();
 			codeName = "DISC";
 		}
 	};
@@ -141,17 +147,21 @@ public class BidTypeCode {
 	 * definition} = "List order is not related to a bid."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNoBid = new MMCode() {
+	public static final BidTypeCode NoBid = new BidTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoBid";
 			definition = "List order is not related to a bid.";
-			owner_lazy = () -> BidTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BidTypeCode.mmObject();
 			codeName = "NOBI";
 		}
 	};
+	final static private LinkedHashMap<String, BidTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BidTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -159,9 +169,36 @@ public class BidTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BidTypeCode";
 				definition = "Code to identify the type of bid request.";
-				code_lazy = () -> Arrays.asList(BidTypeCode.mmNonDisclosed, BidTypeCode.mmDisclosed, BidTypeCode.mmNoBid);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BidTypeCode.NonDisclosed, com.tools20022.repository.codeset.BidTypeCode.Disclosed, com.tools20022.repository.codeset.BidTypeCode.NoBid);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(NonDisclosed.getCodeName().get(), NonDisclosed);
+		codesByName.put(Disclosed.getCodeName().get(), Disclosed);
+		codesByName.put(NoBid.getCodeName().get(), NoBid);
+	}
+
+	public static BidTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BidTypeCode[] values() {
+		BidTypeCode[] values = new BidTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BidTypeCode> {
+		@Override
+		public BidTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BidTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

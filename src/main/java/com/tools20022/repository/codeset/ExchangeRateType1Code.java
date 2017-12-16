@@ -20,32 +20,34 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.ExchangeRateTypeCode;
+import com.tools20022.repository.codeset.ExchangeRateType1Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies a type of financial or commercial document.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode
- * ExchangeRateTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#mmSpot
+ * <li>{@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#Spot
  * ExchangeRateType1Code.mmSpot}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#mmSale
+ * <li>{@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#Sale
  * ExchangeRateType1Code.mmSale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#mmAgreed
+ * {@linkplain com.tools20022.repository.codeset.ExchangeRateType1Code#Agreed
  * ExchangeRateType1Code.mmAgreed}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExchangeRateTypeCode
+ * ExchangeRateTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,7 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a type of financial or commercial document."</li>
  * </ul>
  */
-public class ExchangeRateType1Code extends ExchangeRateTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ExchangeRateType1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -86,11 +89,12 @@ public class ExchangeRateType1Code extends ExchangeRateTypeCode {
 	 * name} = "Spot"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSpot = new MMCode() {
+	public static final ExchangeRateType1Code Spot = new ExchangeRateType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Spot";
-			owner_lazy = () -> ExchangeRateType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateType1Code.mmObject();
+			codeName = ExchangeRateTypeCode.Spot.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -109,11 +113,12 @@ public class ExchangeRateType1Code extends ExchangeRateTypeCode {
 	 * name} = "Sale"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSale = new MMCode() {
+	public static final ExchangeRateType1Code Sale = new ExchangeRateType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Sale";
-			owner_lazy = () -> ExchangeRateType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateType1Code.mmObject();
+			codeName = ExchangeRateTypeCode.Sale.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -132,15 +137,20 @@ public class ExchangeRateType1Code extends ExchangeRateTypeCode {
 	 * name} = "Agreed"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAgreed = new MMCode() {
+	public static final ExchangeRateType1Code Agreed = new ExchangeRateType1Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Agreed";
-			owner_lazy = () -> ExchangeRateType1Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ExchangeRateType1Code.mmObject();
+			codeName = ExchangeRateTypeCode.Agreed.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, ExchangeRateType1Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ExchangeRateType1Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -148,10 +158,37 @@ public class ExchangeRateType1Code extends ExchangeRateTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExchangeRateType1Code";
 				definition = "Specifies a type of financial or commercial document.";
-				code_lazy = () -> Arrays.asList(ExchangeRateType1Code.mmSpot, ExchangeRateType1Code.mmSale, ExchangeRateType1Code.mmAgreed);
 				trace_lazy = () -> ExchangeRateTypeCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ExchangeRateType1Code.Spot, com.tools20022.repository.codeset.ExchangeRateType1Code.Sale, com.tools20022.repository.codeset.ExchangeRateType1Code.Agreed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Spot.getCodeName().get(), Spot);
+		codesByName.put(Sale.getCodeName().get(), Sale);
+		codesByName.put(Agreed.getCodeName().get(), Agreed);
+	}
+
+	public static ExchangeRateType1Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ExchangeRateType1Code[] values() {
+		ExchangeRateType1Code[] values = new ExchangeRateType1Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ExchangeRateType1Code> {
+		@Override
+		public ExchangeRateType1Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ExchangeRateType1Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

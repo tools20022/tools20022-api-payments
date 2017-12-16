@@ -106,8 +106,8 @@ public class ResolutionProposal {
 	 */
 	public static final MMBusinessAttribute mmResolutionProposalThreshold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposalThreshold";
 			definition = "Specifies the minimum stake in share capital or cash value or number of security holders required to table resolutions.";
@@ -157,8 +157,8 @@ public class ResolutionProposal {
 	 */
 	public static final MMBusinessAttribute mmResolutionProposalThresholdPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposalThresholdPercentage";
 			definition = "Specifies the minimum stake in share capital or cash value or number of security holders required to table resolutions. This minimum is expressed as a percentage.";
@@ -211,8 +211,8 @@ public class ResolutionProposal {
 	 */
 	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which conditions for proposing a resolution are specified.";

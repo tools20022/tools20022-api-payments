@@ -158,8 +158,8 @@ public class PartyName {
 			derivation_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmName, BranchData2.mmName, ContactDetails2.mmName, PartyIdentification43.mmName, IdentificationSource3Choice.mmProprietary,
 					PartyIdentification40.mmName, NameAndAddress10.mmName, TaxAuthorisation1.mmName, RegulatoryAuthority2.mmName, PartyIdentification42.mmName, ContactDetails3.mmName, PartyIdentification58.mmName,
 					PartyIdentification77.mmName, LegalOrganisation2.mmName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name by which a party is known and which is usually used to identify that party. This name is derived from the concatenation of the elements that compose the name of a person or from the legal name of an organisation.";
@@ -212,8 +212,8 @@ public class PartyName {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyIdentification";
 			definition = "Party identification which contains a name.";

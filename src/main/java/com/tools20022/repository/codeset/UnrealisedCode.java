@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.UnrealisedCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies unrealised parameter.
@@ -31,9 +36,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.UnrealisedCode#mmGain
+ * <li>{@linkplain com.tools20022.repository.codeset.UnrealisedCode#Gain
  * UnrealisedCode.mmGain}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UnrealisedCode#mmLoss
+ * <li>{@linkplain com.tools20022.repository.codeset.UnrealisedCode#Loss
  * UnrealisedCode.mmLoss}</li>
  * </ul>
  * </li>
@@ -58,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies unrealised parameter."</li>
  * </ul>
  */
-public class UnrealisedCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class UnrealisedCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -82,12 +88,12 @@ public class UnrealisedCode {
 	 * definition} = "Unrealised gain."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmGain = new MMCode() {
+	public static final UnrealisedCode Gain = new UnrealisedCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Gain";
 			definition = "Unrealised gain.";
-			owner_lazy = () -> UnrealisedCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnrealisedCode.mmObject();
 			codeName = "GAIN";
 		}
 	};
@@ -112,17 +118,21 @@ public class UnrealisedCode {
 	 * definition} = "Unrealised loss."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmLoss = new MMCode() {
+	public static final UnrealisedCode Loss = new UnrealisedCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Loss";
 			definition = "Unrealised loss.";
-			owner_lazy = () -> UnrealisedCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.UnrealisedCode.mmObject();
 			codeName = "LOSS";
 		}
 	};
+	final static private LinkedHashMap<String, UnrealisedCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected UnrealisedCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -130,9 +140,35 @@ public class UnrealisedCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnrealisedCode";
 				definition = "Specifies unrealised parameter.";
-				code_lazy = () -> Arrays.asList(UnrealisedCode.mmGain, UnrealisedCode.mmLoss);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UnrealisedCode.Gain, com.tools20022.repository.codeset.UnrealisedCode.Loss);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Gain.getCodeName().get(), Gain);
+		codesByName.put(Loss.getCodeName().get(), Loss);
+	}
+
+	public static UnrealisedCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static UnrealisedCode[] values() {
+		UnrealisedCode[] values = new UnrealisedCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, UnrealisedCode> {
+		@Override
+		public UnrealisedCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(UnrealisedCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

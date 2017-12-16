@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ReportingCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies to which institution the reporting must be done.
@@ -32,13 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ReportingCode#mmStockExchange
+ * {@linkplain com.tools20022.repository.codeset.ReportingCode#StockExchange
  * ReportingCode.mmStockExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ReportingCode#mmRegulatoryOrganisation
+ * {@linkplain com.tools20022.repository.codeset.ReportingCode#RegulatoryOrganisation
  * ReportingCode.mmRegulatoryOrganisation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ReportingCode#mmDeferredReport
+ * {@linkplain com.tools20022.repository.codeset.ReportingCode#DeferredReport
  * ReportingCode.mmDeferredReport}</li>
  * </ul>
  * </li>
@@ -63,7 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies to which institution the reporting must be done."</li>
  * </ul>
  */
-public class ReportingCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ReportingCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -87,12 +93,12 @@ public class ReportingCode {
 	 * definition} = "Trade details are to be reported to a stock exchange"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStockExchange = new MMCode() {
+	public static final ReportingCode StockExchange = new ReportingCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockExchange";
 			definition = "Trade details are to be reported to a stock exchange";
-			owner_lazy = () -> ReportingCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ReportingCode.mmObject();
 			codeName = "STEX";
 		}
 	};
@@ -118,12 +124,12 @@ public class ReportingCode {
 	 * "Trade details are to be reported to a regulatory organisation."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRegulatoryOrganisation = new MMCode() {
+	public static final ReportingCode RegulatoryOrganisation = new ReportingCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryOrganisation";
 			definition = "Trade details are to be reported to a regulatory organisation.";
-			owner_lazy = () -> ReportingCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ReportingCode.mmObject();
 			codeName = "REGU";
 		}
 	};
@@ -151,17 +157,21 @@ public class ReportingCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmDeferredReport = new MMCode() {
+	public static final ReportingCode DeferredReport = new ReportingCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeferredReport";
 			definition = "Report is deferred, for example, because the order was executed in partial fills.";
-			owner_lazy = () -> ReportingCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ReportingCode.mmObject();
 			codeName = "DEFR";
 		}
 	};
+	final static private LinkedHashMap<String, ReportingCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ReportingCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -169,9 +179,37 @@ public class ReportingCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingCode";
 				definition = "Identifies to which institution the reporting must be done.";
-				code_lazy = () -> Arrays.asList(ReportingCode.mmStockExchange, ReportingCode.mmRegulatoryOrganisation, ReportingCode.mmDeferredReport);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ReportingCode.StockExchange, com.tools20022.repository.codeset.ReportingCode.RegulatoryOrganisation,
+						com.tools20022.repository.codeset.ReportingCode.DeferredReport);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(StockExchange.getCodeName().get(), StockExchange);
+		codesByName.put(RegulatoryOrganisation.getCodeName().get(), RegulatoryOrganisation);
+		codesByName.put(DeferredReport.getCodeName().get(), DeferredReport);
+	}
+
+	public static ReportingCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ReportingCode[] values() {
+		ReportingCode[] values = new ReportingCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ReportingCode> {
+		@Override
+		public ReportingCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ReportingCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

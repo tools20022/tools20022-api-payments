@@ -150,8 +150,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Portfolio";
 			definition = "Portfolio for which a strategy is specified.";
@@ -191,8 +191,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmInclusionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InclusionIndicator";
 			definition = "Indicates whether the referred strategy is included.";
@@ -239,8 +239,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmMinimumInvestmentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumInvestmentAmount";
 			definition = "Minimum amount that has to be invested in the specified strategy.";
@@ -287,8 +287,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmMinimumInvestmentRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumInvestmentRate";
 			definition = "Minimum percentage that has to be invested in the specified strategy.";
@@ -335,8 +335,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmMaximumInvestmentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumInvestmentAmount";
 			definition = "Maximum amount that may be invested in the specified strategy.";
@@ -383,8 +383,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmMaximumInvestmentRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumInvestmentRate";
 			definition = "Maximum percentage that may be invested in the specified strategy.";
@@ -430,8 +430,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the investment guideline is valid.";
@@ -480,8 +480,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmDistributionPolicy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributionPolicy";
 			definition = "Income policy relating to the fund, ie, if income is paid out or retained in the fund.";
@@ -529,8 +529,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Free text description of the investment guideline, for example, rating requirements.";
@@ -584,8 +584,8 @@ public class PortfolioStrategy {
 	 */
 	public static final MMBusinessAssociationEnd mmDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Definition";
 			definition = "Definition of the portfolio strategy.";

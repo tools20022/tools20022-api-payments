@@ -38,11 +38,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Money#mmCashAmount
  * Money.mmCashAmount}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Deposit Deposit}</li>
  * </ul>
  * </li>
  * <li>
@@ -51,14 +59,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.CashCollateral5
  * CashCollateral5}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Deposit Deposit}</li>
  * </ul>
  * </li>
  * <li>
@@ -119,8 +119,8 @@ public class Money extends Asset {
 	public static final MMBusinessAttribute mmCashAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Money.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Money.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAmount";
 			definition = "Value of the asset specified as a currency and an amount.";

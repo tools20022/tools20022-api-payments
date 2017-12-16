@@ -44,6 +44,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.InvestigationCase
+ * InvestigationCase}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -77,13 +80,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.MissingCover3 MissingCover3}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -101,9 +97,13 @@ import java.util.List;
  * PaymentStatus.mmRelatedInvestigationCase}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.InvestigationCase
- * InvestigationCase}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.MissingCover3 MissingCover3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -163,8 +163,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentStatus";
 			definition = "Status of a payment which is the reason or the result of an investigation case.";
@@ -203,8 +203,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationReason";
 			definition = "Indicates the reason for cancellation.";
@@ -259,8 +259,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingPayment";
 			definition = "Identifies the end to end payment which is the subject of the investigation";
@@ -309,8 +309,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	public static final MMBusinessAttribute mmMissingCoverIndication = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(MissingCover3.mmMissingCoverIndicator);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingCoverIndication";
 			definition = "Indicates whether or not the claim is related to a missing cover.";
@@ -363,8 +363,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingInstruction";
 			definition = "Identifies the payment instruction under investigation.";
@@ -411,8 +411,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingCashEntry";
 			definition = "Identifies the cash entry under investigation.";
@@ -451,8 +451,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAttribute mmIncorrectInformationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncorrectInformationReason";
 			definition = "Indicates, in a coded form, the incorrect information.";
@@ -498,8 +498,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAttribute mmMissingInformationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingInformationReason";
 			definition = "Indicates the missing information.";
@@ -544,8 +544,8 @@ public class PaymentInvestigationCase extends InvestigationCase {
 	 */
 	public static final MMBusinessAttribute mmCaseType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CaseType";
 			definition = "Specifies the type of investigation case.";

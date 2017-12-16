@@ -41,6 +41,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -87,21 +89,6 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.entity.Organisation#mmEstablishmentDate
  * Organisation.mmEstablishmentDate}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5
- * BranchAndFinancialInstitutionIdentification5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Organisation12 Organisation12}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Organisation14 Organisation14}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OrganisationModification1
- * OrganisationModification1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.LegalOrganisation2
- * LegalOrganisation2}</li>
  * </ul>
  * </li>
  * <li>
@@ -162,13 +149,26 @@ import java.util.List;
  * OriginalPaymentInformation7.mmCreditorAgent}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.FinancialInstitution
  * FinancialInstitution}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5
+ * BranchAndFinancialInstitutionIdentification5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Organisation12 Organisation12}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Organisation14 Organisation14}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OrganisationModification1
+ * OrganisationModification1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.LegalOrganisation2
+ * LegalOrganisation2}</li>
  * </ul>
  * </li>
  * <li>
@@ -218,8 +218,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Purpose of the organisation, eg, charity.";
@@ -279,8 +279,8 @@ public class Organisation extends Party {
 	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(Organisation12.mmRegistrationDate, OrganisationModification1.mmRegistrationDate, LegalOrganisation2.mmRegistrationDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDate";
 			definition = "Date and time at which a given organisation was officially registered.";
@@ -765,8 +765,8 @@ public class Organisation extends Party {
 					Mandate11.mmCreditorAgent, Mandate11.mmDebtorAgent, DirectDebitTransactionInformation22.mmDebtorAgent, Mandate8.mmCreditorAgent, Mandate8.mmDebtorAgent, PaymentTransaction75.mmAssigner, PaymentTransaction75.mmAssignee,
 					AmendmentInformationDetails11.mmOriginalCreditorAgent, AmendmentInformationDetails11.mmOriginalDebtorAgent, PaymentComplementaryInformation6.mmDebtorAgent, PaymentComplementaryInformation6.mmIntermediaryAgent1,
 					PaymentComplementaryInformation6.mmIntermediaryAgent2, PaymentComplementaryInformation6.mmIntermediaryAgent3, PaymentComplementaryInformation6.mmPreviousInstructingAgent);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Specific identification assigned to an organisation. It is derived from the association between Party and PartyIdentification.";
@@ -811,8 +811,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmParentOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParentOrganisation";
 			definition = "Organisation which is divided in branches.";
@@ -858,8 +858,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmBranch = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Branch";
 			definition = "Specifies an organisation which is not a head office.";
@@ -906,8 +906,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesModification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesModification";
 			definition = "Specifies the process which originates the changes to an organisation.";
@@ -955,8 +955,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfOperation";
 			definition = "Place (including country) in which the organisation has its business activity.";
@@ -1001,8 +1001,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmPlaceOfRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfRegistration";
 			definition = "Place (including country) in which the organisation is registered.";
@@ -1040,8 +1040,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Description of an organisation.";
@@ -1086,8 +1086,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAttribute mmLegalStructure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalStructure";
 			definition = "Legal standing of the organisation.";
@@ -1139,8 +1139,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Sector of business of the organisation, for example, pharmaceutical.";
@@ -1190,8 +1190,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process for which a list of organisations is specified.";
@@ -1238,8 +1238,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy related to an organisation.";
@@ -1286,8 +1286,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisationHierarchy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationHierarchy";
 			definition = "Description of the structure of a company.";
@@ -1337,8 +1337,8 @@ public class Organisation extends Party {
 	 */
 	public static final MMBusinessAssociationEnd mmRepresentativeOfficer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepresentativeOfficer";
 			definition = "Officer who has some rights to represent a given organisation. In account management, it is the person to be contacted by the account servicer.";
@@ -1385,8 +1385,8 @@ public class Organisation extends Party {
 	public static final MMBusinessAttribute mmEstablishmentDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(LegalOrganisation2.mmEstablishmentDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstablishmentDate";
 			definition = "Date when the organisation was established.";

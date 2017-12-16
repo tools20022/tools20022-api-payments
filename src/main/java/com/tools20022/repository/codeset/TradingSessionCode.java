@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.TradingSessionCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates the factors that are/were applied in the event of pre-allocation.
@@ -31,11 +36,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#mmAuction
+ * <li>{@linkplain com.tools20022.repository.codeset.TradingSessionCode#Auction
  * TradingSessionCode.mmAuction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#mmContinuous
+ * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#Continuous
  * TradingSessionCode.mmContinuous}</li>
  * </ul>
  * </li>
@@ -62,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class TradingSessionCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class TradingSessionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -89,12 +94,12 @@ public class TradingSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAuction = new MMCode() {
+	public static final TradingSessionCode Auction = new TradingSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Auction";
 			definition = "Orders that are traded in regularly occuring auctions: orders are accumulated and executed on basis of defined algorithms.";
-			owner_lazy = () -> TradingSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradingSessionCode.mmObject();
 			codeName = "AUCT";
 		}
 	};
@@ -122,17 +127,21 @@ public class TradingSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmContinuous = new MMCode() {
+	public static final TradingSessionCode Continuous = new TradingSessionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Continuous";
 			definition = "Trading process where orders are executed directly against each others as they hit the marketplace.";
-			owner_lazy = () -> TradingSessionCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.TradingSessionCode.mmObject();
 			codeName = "CONT";
 		}
 	};
+	final static private LinkedHashMap<String, TradingSessionCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected TradingSessionCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -140,9 +149,35 @@ public class TradingSessionCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingSessionCode";
 				definition = "Indicates the factors that are/were applied in the event of pre-allocation.";
-				code_lazy = () -> Arrays.asList(TradingSessionCode.mmAuction, TradingSessionCode.mmContinuous);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradingSessionCode.Auction, com.tools20022.repository.codeset.TradingSessionCode.Continuous);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Auction.getCodeName().get(), Auction);
+		codesByName.put(Continuous.getCodeName().get(), Continuous);
+	}
+
+	public static TradingSessionCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static TradingSessionCode[] values() {
+		TradingSessionCode[] values = new TradingSessionCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, TradingSessionCode> {
+		@Override
+		public TradingSessionCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(TradingSessionCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

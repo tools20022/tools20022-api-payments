@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.OrderQuantityTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies how the order is placed, eg by quantity of units or by amount of
@@ -32,44 +37,43 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmUnit
+ * <li>{@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Unit
  * OrderQuantityTypeCode.mmUnit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmAmount
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Amount
  * OrderQuantityTypeCode.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmOther
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Other
  * OrderQuantityTypeCode.mmOther}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmUnitsOfMeasurePerTimeUnit
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#UnitsOfMeasurePerTimeUnit
  * OrderQuantityTypeCode.mmUnitsOfMeasurePerTimeUnit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmCancelledQuantity
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#CancelledQuantity
  * OrderQuantityTypeCode.mmCancelledQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmConfirmed
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Confirmed
  * OrderQuantityTypeCode.mmConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmMatchIncrement
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#MatchIncrement
  * OrderQuantityTypeCode.mmMatchIncrement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmOriginalOrdered
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#OriginalOrdered
  * OrderQuantityTypeCode.mmOriginalOrdered}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmPreviouslyExecuted
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#PreviouslyExecuted
  * OrderQuantityTypeCode.mmPreviouslyExecuted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmRemainingOnOrder
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RemainingOnOrder
  * OrderQuantityTypeCode.mmRemainingOnOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmReplacedQuantity
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#ReplacedQuantity
  * OrderQuantityTypeCode.mmReplacedQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmRequestedToBeCancelledQuantity
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RequestedToBeCancelledQuantity
  * OrderQuantityTypeCode.mmRequestedToBeCancelledQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#mmRequestedToBeReplacedQuantity
+ * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RequestedToBeReplacedQuantity
  * OrderQuantityTypeCode.mmRequestedToBeReplacedQuantity}</li>
  * </ul>
  * </li>
@@ -96,7 +100,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class OrderQuantityTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class OrderQuantityTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -120,12 +125,12 @@ public class OrderQuantityTypeCode {
 	 * definition} = "Order is placed by unit."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnit = new MMCode() {
+	public static final OrderQuantityTypeCode Unit = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Order is placed by unit.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "UNIT";
 		}
 	};
@@ -150,12 +155,12 @@ public class OrderQuantityTypeCode {
 	 * definition} = "Order is placed by amount of money."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAmount = new MMCode() {
+	public static final OrderQuantityTypeCode Amount = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Order is placed by amount of money.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "CASH";
 		}
 	};
@@ -180,12 +185,12 @@ public class OrderQuantityTypeCode {
 	 * definition} = "Transaction is another type of transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOther = new MMCode() {
+	public static final OrderQuantityTypeCode Other = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Transaction is another type of transaction.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "OTHR";
 		}
 	};
@@ -213,12 +218,12 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmUnitsOfMeasurePerTimeUnit = new MMCode() {
+	public static final OrderQuantityTypeCode UnitsOfMeasurePerTimeUnit = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnitsOfMeasurePerTimeUnit";
 			definition = "For futures - units of Measure per Time Unit (if used - must specify UnitofMeasure and TimeUnit.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "UMPU";
 		}
 	};
@@ -246,12 +251,12 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelledQuantity = new MMCode() {
+	public static final OrderQuantityTypeCode CancelledQuantity = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancelledQuantity";
 			definition = "Quantity of the financial instrument effectively cancelled (for CPRC status only).";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "AFCA";
 		}
 	};
@@ -276,12 +281,12 @@ public class OrderQuantityTypeCode {
 	 * definition} = "Quantity of financial instrument confirmed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmConfirmed = new MMCode() {
+	public static final OrderQuantityTypeCode Confirmed = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Confirmed";
 			definition = "Quantity of financial instrument confirmed.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "CONF";
 		}
 	};
@@ -310,12 +315,12 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMatchIncrement = new MMCode() {
+	public static final OrderQuantityTypeCode MatchIncrement = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MatchIncrement";
 			definition = "Minimum quantity that applies to every execution. The order may still fill against smaller orders, but the cumulative quantity of the execution must be in multiples of the Match Increment. ";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "MAIN";
 		}
 	};
@@ -340,12 +345,12 @@ public class OrderQuantityTypeCode {
 	 * definition} = "Quantity of financial instrument ordered."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmOriginalOrdered = new MMCode() {
+	public static final OrderQuantityTypeCode OriginalOrdered = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalOrdered";
 			definition = "Quantity of financial instrument ordered.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "ORDR";
 		}
 	};
@@ -371,12 +376,12 @@ public class OrderQuantityTypeCode {
 	 * "Quantity of financial instrument that has been previously executed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPreviouslyExecuted = new MMCode() {
+	public static final OrderQuantityTypeCode PreviouslyExecuted = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreviouslyExecuted";
 			definition = "Quantity of financial instrument that has been previously executed.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "PREX";
 		}
 	};
@@ -402,12 +407,12 @@ public class OrderQuantityTypeCode {
 	 * "Quantity of financial instrument that is remaining on order."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRemainingOnOrder = new MMCode() {
+	public static final OrderQuantityTypeCode RemainingOnOrder = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemainingOnOrder";
 			definition = "Quantity of financial instrument that is remaining on order.";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "REMI";
 		}
 	};
@@ -435,12 +440,12 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReplacedQuantity = new MMCode() {
+	public static final OrderQuantityTypeCode ReplacedQuantity = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReplacedQuantity";
 			definition = "Quantity of the financial instrument effectively replaced (For RPRC status only).";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "REMA";
 		}
 	};
@@ -468,12 +473,12 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequestedToBeCancelledQuantity = new MMCode() {
+	public static final OrderQuantityTypeCode RequestedToBeCancelledQuantity = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestedToBeCancelledQuantity";
 			definition = "Quantity of the financial instrument requested to be cancelled (for CPRC Status only).";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "CANC";
 		}
 	};
@@ -501,17 +506,21 @@ public class OrderQuantityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRequestedToBeReplacedQuantity = new MMCode() {
+	public static final OrderQuantityTypeCode RequestedToBeReplacedQuantity = new OrderQuantityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestedToBeReplacedQuantity";
 			definition = "Quantity of the financial instrument requested to be replaced (for RPRC Status only).";
-			owner_lazy = () -> OrderQuantityTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.OrderQuantityTypeCode.mmObject();
 			codeName = "REPL";
 		}
 	};
+	final static private LinkedHashMap<String, OrderQuantityTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected OrderQuantityTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -519,11 +528,51 @@ public class OrderQuantityTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderQuantityTypeCode";
 				definition = "Specifies how the order is placed, eg by quantity of units or by amount of money.";
-				code_lazy = () -> Arrays.asList(OrderQuantityTypeCode.mmUnit, OrderQuantityTypeCode.mmAmount, OrderQuantityTypeCode.mmOther, OrderQuantityTypeCode.mmUnitsOfMeasurePerTimeUnit, OrderQuantityTypeCode.mmCancelledQuantity,
-						OrderQuantityTypeCode.mmConfirmed, OrderQuantityTypeCode.mmMatchIncrement, OrderQuantityTypeCode.mmOriginalOrdered, OrderQuantityTypeCode.mmPreviouslyExecuted, OrderQuantityTypeCode.mmRemainingOnOrder,
-						OrderQuantityTypeCode.mmReplacedQuantity, OrderQuantityTypeCode.mmRequestedToBeCancelledQuantity, OrderQuantityTypeCode.mmRequestedToBeReplacedQuantity);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OrderQuantityTypeCode.Unit, com.tools20022.repository.codeset.OrderQuantityTypeCode.Amount, com.tools20022.repository.codeset.OrderQuantityTypeCode.Other,
+						com.tools20022.repository.codeset.OrderQuantityTypeCode.UnitsOfMeasurePerTimeUnit, com.tools20022.repository.codeset.OrderQuantityTypeCode.CancelledQuantity,
+						com.tools20022.repository.codeset.OrderQuantityTypeCode.Confirmed, com.tools20022.repository.codeset.OrderQuantityTypeCode.MatchIncrement, com.tools20022.repository.codeset.OrderQuantityTypeCode.OriginalOrdered,
+						com.tools20022.repository.codeset.OrderQuantityTypeCode.PreviouslyExecuted, com.tools20022.repository.codeset.OrderQuantityTypeCode.RemainingOnOrder,
+						com.tools20022.repository.codeset.OrderQuantityTypeCode.ReplacedQuantity, com.tools20022.repository.codeset.OrderQuantityTypeCode.RequestedToBeCancelledQuantity,
+						com.tools20022.repository.codeset.OrderQuantityTypeCode.RequestedToBeReplacedQuantity);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Unit.getCodeName().get(), Unit);
+		codesByName.put(Amount.getCodeName().get(), Amount);
+		codesByName.put(Other.getCodeName().get(), Other);
+		codesByName.put(UnitsOfMeasurePerTimeUnit.getCodeName().get(), UnitsOfMeasurePerTimeUnit);
+		codesByName.put(CancelledQuantity.getCodeName().get(), CancelledQuantity);
+		codesByName.put(Confirmed.getCodeName().get(), Confirmed);
+		codesByName.put(MatchIncrement.getCodeName().get(), MatchIncrement);
+		codesByName.put(OriginalOrdered.getCodeName().get(), OriginalOrdered);
+		codesByName.put(PreviouslyExecuted.getCodeName().get(), PreviouslyExecuted);
+		codesByName.put(RemainingOnOrder.getCodeName().get(), RemainingOnOrder);
+		codesByName.put(ReplacedQuantity.getCodeName().get(), ReplacedQuantity);
+		codesByName.put(RequestedToBeCancelledQuantity.getCodeName().get(), RequestedToBeCancelledQuantity);
+		codesByName.put(RequestedToBeReplacedQuantity.getCodeName().get(), RequestedToBeReplacedQuantity);
+	}
+
+	public static OrderQuantityTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static OrderQuantityTypeCode[] values() {
+		OrderQuantityTypeCode[] values = new OrderQuantityTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, OrderQuantityTypeCode> {
+		@Override
+		public OrderQuantityTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(OrderQuantityTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

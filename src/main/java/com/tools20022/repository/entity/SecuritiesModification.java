@@ -123,8 +123,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAttribute mmChangeType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChangeType";
 			definition = "Type of changes affecting the security form.";
@@ -177,8 +177,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAssociationEnd mmNewOrganisationInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewOrganisationInformation";
 			definition = "New name of a company following a name change.";
@@ -229,8 +229,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateEvent";
 			definition = "Specifies the parameters of the event related to the modification of the securities.";
@@ -276,8 +276,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAssociationEnd mmNewSecurityReferenceData = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewSecurityReferenceData";
 			definition = "Specifies the updated information of the new security.";
@@ -317,8 +317,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAttribute mmNumberOfSharesIssued = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfSharesIssued";
 			definition = "The number of shares the issuer is creating as part of the event";
@@ -366,8 +366,8 @@ public class SecuritiesModification {
 	 */
 	public static final MMBusinessAttribute mmLastTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LastTradingDate";
 			definition = "Date/time at which the securities to be reorganised will cease to be tradeable.";

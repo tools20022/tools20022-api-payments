@@ -147,8 +147,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAttribute mmQualifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Qualifier";
 			definition = "Qualifies the use of the quote.";
@@ -197,8 +197,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Indicates the scenario in which the quote is (requested to be) used (ie, indicative, firm, restricted tradeable or counter).";
@@ -252,8 +252,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmQuoteTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteTradingSession";
 			definition = "Details of a specific trading session associated with a quote.";
@@ -296,8 +296,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAttribute mmLegSwapType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegSwapType";
 			definition = "Indicates that the sell-side is requested to calculate the quantity based on the opposite leg and is used instead of giving a quantity.";
@@ -346,8 +346,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAttribute mmPriceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceType";
 			definition = "Initiator can specify the price type the quote needs to be quoted at. If not specified, the respondent has option to specify how quote is quoted.";
@@ -402,8 +402,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmMidSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MidSide";
 			definition = "Indicates that the quote details are indicated as a mid of a security, commodity, currency (an average of the offer and the bid).";
@@ -452,8 +452,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmBidSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BidSide";
 			definition = "Indicates that the quote details are indicated as a bid of a security, commodity, currency.";
@@ -502,8 +502,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmOfferSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferSide";
 			definition = "Indicates that the quote details are indicated as an offer of a security, commodity, currency.";
@@ -549,8 +549,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedQuote";
 			definition = "Quote parameters related to a security quote.";
@@ -600,8 +600,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Preliminary information on conditions of the order, specified in the quote (request).";
@@ -648,8 +648,8 @@ public class SecuritiesQuoteVariable {
 	 */
 	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commission";
 			definition = "Commission associated with a quote.";

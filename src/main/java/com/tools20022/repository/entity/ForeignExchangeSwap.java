@@ -36,6 +36,9 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
+ * TreasuryTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -56,9 +59,6 @@ import java.util.List;
  * ForeignExchangeTrade.mmRelatedSwap}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.TreasuryTrade
- * TreasuryTrade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -110,8 +110,8 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 	 */
 	public static final MMBusinessAttribute mmLinkSwapIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LinkSwapIdentification";
 			definition = "Correlation identification for the near and far leg of a swap transaction.";
@@ -168,8 +168,8 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 	 */
 	public static final MMBusinessAssociationEnd mmSwapLeg = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwapLeg";
 			definition = "One-side of a pair of foreign exchange trades executed as part of a swap agreement.";

@@ -37,6 +37,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.InvestigationResolution
+ * InvestigationResolution}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -60,10 +64,6 @@ import java.util.List;
  * PaymentInvestigationCaseResolution.mmDuplicateCase}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.InvestigationResolution
- * InvestigationResolution}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -120,8 +120,8 @@ public class DuplicateCase extends InvestigationResolution {
 	 */
 	public static final MMBusinessAssociationEnd mmDuplicatedCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DuplicateCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DuplicateCase.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DuplicatedCase";
 			definition = "Identifies the original case.";
@@ -168,8 +168,8 @@ public class DuplicateCase extends InvestigationResolution {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCaseResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DuplicateCase.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DuplicateCase.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCaseResolution";
 			definition = "Investigation case information which is duplicate.";

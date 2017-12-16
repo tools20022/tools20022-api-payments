@@ -112,8 +112,8 @@ public class Capital {
 	 */
 	public static final MMBusinessAssociationEnd mmAssetIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetIssuance";
 			definition = "Issued asset.";
@@ -151,8 +151,8 @@ public class Capital {
 	 */
 	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date/time at which capital amount was recorded.";
@@ -197,8 +197,8 @@ public class Capital {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of capital.";
@@ -243,8 +243,8 @@ public class Capital {
 	 */
 	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Capital expressed as a currency and amount.";
@@ -289,8 +289,8 @@ public class Capital {
 	 */
 	public static final MMBusinessAttribute mmUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Capital expressed as a number of units.";

@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.NotificationToReceiveStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether or not the event as mentioned in the notification occurred.
@@ -33,13 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmReceivedButDifferent
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#ReceivedButDifferent
  * NotificationToReceiveStatusCode.mmReceivedButDifferent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmReceived
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#Received
  * NotificationToReceiveStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmNotReceived
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#NotReceived
  * NotificationToReceiveStatusCode.mmNotReceived}</li>
  * </ul>
  * </li>
@@ -73,7 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class NotificationToReceiveStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class NotificationToReceiveStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -100,12 +106,12 @@ public class NotificationToReceiveStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceivedButDifferent = new MMCode() {
+	public static final NotificationToReceiveStatusCode ReceivedButDifferent = new NotificationToReceiveStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceivedButDifferent";
 			definition = "Event(s) as described in the notification to receive occurred but details are different.";
-			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationToReceiveStatusCode.mmObject();
 			codeName = "RCBD";
 		}
 	};
@@ -131,12 +137,12 @@ public class NotificationToReceiveStatusCode {
 	 * "Event(s) as described in the notification to receive occurred."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmReceived = new MMCode() {
+	public static final NotificationToReceiveStatusCode Received = new NotificationToReceiveStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
 			definition = "Event(s) as described in the notification to receive occurred.";
-			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationToReceiveStatusCode.mmObject();
 			codeName = "RCVD";
 		}
 	};
@@ -162,17 +168,21 @@ public class NotificationToReceiveStatusCode {
 	 * "Event(s) as described in the notification to receive did not occur."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNotReceived = new MMCode() {
+	public static final NotificationToReceiveStatusCode NotReceived = new NotificationToReceiveStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotReceived";
 			definition = "Event(s) as described in the notification to receive did not occur.";
-			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.NotificationToReceiveStatusCode.mmObject();
 			codeName = "NRCD";
 		}
 	};
+	final static private LinkedHashMap<String, NotificationToReceiveStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected NotificationToReceiveStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -180,10 +190,38 @@ public class NotificationToReceiveStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationToReceiveStatusCode";
 				definition = "Specifies whether or not the event as mentioned in the notification occurred. Details of the event can be different from the details as per notification.";
-				code_lazy = () -> Arrays.asList(NotificationToReceiveStatusCode.mmReceivedButDifferent, NotificationToReceiveStatusCode.mmReceived, NotificationToReceiveStatusCode.mmNotReceived);
 				derivation_lazy = () -> Arrays.asList(NotificationStatus3Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NotificationToReceiveStatusCode.ReceivedButDifferent, com.tools20022.repository.codeset.NotificationToReceiveStatusCode.Received,
+						com.tools20022.repository.codeset.NotificationToReceiveStatusCode.NotReceived);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(ReceivedButDifferent.getCodeName().get(), ReceivedButDifferent);
+		codesByName.put(Received.getCodeName().get(), Received);
+		codesByName.put(NotReceived.getCodeName().get(), NotReceived);
+	}
+
+	public static NotificationToReceiveStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static NotificationToReceiveStatusCode[] values() {
+		NotificationToReceiveStatusCode[] values = new NotificationToReceiveStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, NotificationToReceiveStatusCode> {
+		@Override
+		public NotificationToReceiveStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(NotificationToReceiveStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

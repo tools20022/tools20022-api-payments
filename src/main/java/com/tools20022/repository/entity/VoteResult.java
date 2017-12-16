@@ -114,8 +114,8 @@ public class VoteResult {
 	 */
 	public static final MMBusinessAssociationEnd mmVote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vote";
 			definition = "Number of votes per type of vote and per resolution.";
@@ -153,8 +153,8 @@ public class VoteResult {
 	 */
 	public static final MMBusinessAttribute mmAccepted = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
 			definition = "Specifies whether a resolution is accepted or not.";
@@ -208,8 +208,8 @@ public class VoteResult {
 	 */
 	public static final MMBusinessAssociationEnd mmVoteDissemination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteDissemination";
 			definition = "Disemination process through which the results are propagated.";
@@ -247,8 +247,8 @@ public class VoteResult {
 	 */
 	public static final MMBusinessAttribute mmTotalVotesCast = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalVotesCast";
 			definition = "Total number of votes cast per resolution.";

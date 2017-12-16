@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.ResponseStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of the received collateral message (collateral claim, a
@@ -34,16 +39,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#mmPartlyAccepted
+ * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#PartlyAccepted
  * ResponseStatusCode.mmPartlyAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#Accepted
  * ResponseStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#Rejected
  * ResponseStatusCode.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#mmSubstitutionAccepted
+ * {@linkplain com.tools20022.repository.codeset.ResponseStatusCode#SubstitutionAccepted
  * ResponseStatusCode.mmSubstitutionAccepted}</li>
  * </ul>
  * </li>
@@ -70,7 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class ResponseStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class ResponseStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -94,12 +100,12 @@ public class ResponseStatusCode {
 	 * definition} = "Part of the collateral is accepted, a part rejected."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPartlyAccepted = new MMCode() {
+	public static final ResponseStatusCode PartlyAccepted = new ResponseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartlyAccepted";
 			definition = "Part of the collateral is accepted, a part rejected.";
-			owner_lazy = () -> ResponseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseStatusCode.mmObject();
 			codeName = "ACCP";
 		}
 	};
@@ -124,12 +130,12 @@ public class ResponseStatusCode {
 	 * definition} = "Claim, substitution, proposal is fully accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final ResponseStatusCode Accepted = new ResponseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
 			definition = "Claim, substitution, proposal is fully accepted.";
-			owner_lazy = () -> ResponseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseStatusCode.mmObject();
 			codeName = "ACCT";
 		}
 	};
@@ -154,12 +160,12 @@ public class ResponseStatusCode {
 	 * definition} = "Claim, substitution, proposal is fully rejected."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final ResponseStatusCode Rejected = new ResponseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
 			definition = "Claim, substitution, proposal is fully rejected.";
-			owner_lazy = () -> ResponseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseStatusCode.mmObject();
 			codeName = "REJT";
 		}
 	};
@@ -187,17 +193,21 @@ public class ResponseStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSubstitutionAccepted = new MMCode() {
+	public static final ResponseStatusCode SubstitutionAccepted = new ResponseStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubstitutionAccepted";
 			definition = "Party A agrees with the return part of the substitution and accepts to wait for the proposal of the new collateral.";
-			owner_lazy = () -> ResponseStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.ResponseStatusCode.mmObject();
 			codeName = "SUBR";
 		}
 	};
+	final static private LinkedHashMap<String, ResponseStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected ResponseStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -205,9 +215,38 @@ public class ResponseStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseStatusCode";
 				definition = "Specifies the status of the received collateral message (collateral claim, a collateral proposal or a proposal/request for collateral substitution) from a collateral management perspective.";
-				code_lazy = () -> Arrays.asList(ResponseStatusCode.mmPartlyAccepted, ResponseStatusCode.mmAccepted, ResponseStatusCode.mmRejected, ResponseStatusCode.mmSubstitutionAccepted);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ResponseStatusCode.PartlyAccepted, com.tools20022.repository.codeset.ResponseStatusCode.Accepted,
+						com.tools20022.repository.codeset.ResponseStatusCode.Rejected, com.tools20022.repository.codeset.ResponseStatusCode.SubstitutionAccepted);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(PartlyAccepted.getCodeName().get(), PartlyAccepted);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(SubstitutionAccepted.getCodeName().get(), SubstitutionAccepted);
+	}
+
+	public static ResponseStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static ResponseStatusCode[] values() {
+		ResponseStatusCode[] values = new ResponseStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, ResponseStatusCode> {
+		@Override
+		public ResponseStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(ResponseStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

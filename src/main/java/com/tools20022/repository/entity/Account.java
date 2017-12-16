@@ -126,18 +126,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.IdentificationInformation2
- * IdentificationInformation2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.IdentificationModification2
- * IdentificationModification2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.IdentificationVerification2
- * IdentificationVerification2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -234,6 +222,18 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.IdentificationInformation2
+ * IdentificationInformation2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.IdentificationModification2
+ * IdentificationModification2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.IdentificationVerification2
+ * IdentificationVerification2}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -306,8 +306,8 @@ public class Account {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccount24.mmCurrency, CashAccount25.mmCurrency, AccountForAction1.mmCurrency, AccountForAction2.mmCurrency, CustomerAccount5.mmCurrency, CustomerAccount4.mmCurrency,
 					TradeContract1.mmSettlementCurrency);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BaseCurrency";
 			definition = "Base currency of the account.";
@@ -404,8 +404,8 @@ public class Account {
 			derivation_lazy = () -> Arrays.asList(CashAccount24.mmIdentification, CashAccount25.mmIdentification, AccountForAction1.mmIdentification, AccountForAction2.mmIdentification, CustomerAccount5.mmIdentification,
 					CustomerAccountModification1.mmIdentification, CustomerAccount4.mmIdentification, IdentificationInformation2.mmAccount, SecuritiesAccount19.mmIdentification, CashCollateral5.mmCashAccountIdentification,
 					CashAccountCharacteristics2.mmDebitAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for the account between the account owner and the account servicer.";
@@ -460,8 +460,8 @@ public class Account {
 	public static final MMBusinessAssociationEnd mmParentAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmParentAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParentAccount";
 			definition = "Account for which one or more sub-accounts are specified.";
@@ -507,8 +507,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSubAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubAccount";
 			definition = "Subdivision of an account used to segregate specific holdings.";
@@ -557,8 +557,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedFundProcessingCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedFundProcessingCharacteristics";
 			definition = "Fund processing characteristics for which a settlement account is specified.";
@@ -605,8 +605,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the current state of an account, eg, enabled or deleted.";
@@ -644,8 +644,8 @@ public class Account {
 	 */
 	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language for all communication concerning the account.";
@@ -700,8 +700,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to an account and played by a party in that context.";
@@ -747,8 +747,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmTradePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePartyRole";
 			definition = "Party for which an account is specified in the context of a trade.";
@@ -801,8 +801,8 @@ public class Account {
 	public static final MMBusinessAttribute mmReportingCurrency = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccountModification1.mmCurrency, CashAccountCharacteristics2.mmAccountBalanceCurrencyCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingCurrency";
 			definition = "Currency used to calculate and report the balance and related entries of an account.";
@@ -869,8 +869,8 @@ public class Account {
 	public static final MMBusinessAssociationEnd mmAccountRestriction = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmRestriction, CustomerAccountModification1.mmRestriction, CustomerAccount4.mmRestriction);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountRestriction";
 			definition = "Restriction on capability or operations allowed.";
@@ -916,8 +916,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSettlementPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementPartyRole";
 			definition = "Specifies the role of the party which uses the account for settlement.";
@@ -973,8 +973,8 @@ public class Account {
 	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmAccountPurpose, PurposeModification1.mmPurpose, CustomerAccountModification1.mmAccountPurpose, CustomerAccount4.mmAccountPurpose);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Specifies the purpose of the account.";
@@ -1039,8 +1039,8 @@ public class Account {
 	public static final MMBusinessAttribute mmClosingDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmClosingDate, CustomerAccountModification1.mmClosingDate, CustomerAccount4.mmClosingDate, AccountContract3.mmClosingDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingDate";
 			definition = "Date on which the account and related services cease effectively to be operational for the account owner.";
@@ -1093,8 +1093,8 @@ public class Account {
 	public static final MMBusinessAttribute mmLiveDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountContract3.mmGoLiveDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LiveDate";
 			definition = "Date of the first movement on the account.";
@@ -1157,8 +1157,8 @@ public class Account {
 	public static final MMBusinessAssociationEnd mmReportedPeriod = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountNotification12.mmFromToDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportedPeriod";
 			definition = "Specifies the period for which the movements in the account are reported.";
@@ -1205,8 +1205,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFundPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundPartyRole";
 			definition = "Party role for which an account is specified.";
@@ -1253,8 +1253,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCollateralProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCollateralProcess";
 			definition = "Collateral data for which a collateral account is specified.";
@@ -1301,8 +1301,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of account.";
@@ -1350,8 +1350,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedProceedsDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProceedsDelivery";
 			definition = "Proceeds delivery instruction which contain account identification.";
@@ -1401,8 +1401,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateActionPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionPartyRole";
 			definition = "Party for which an account is specified in the context of a corporate action.";
@@ -1451,8 +1451,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmDefaultFundAccountOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultFundAccountOwner";
 			definition = "Clearing member which holds a default fund account at an ICSD or at the central bank.";
@@ -1497,8 +1497,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System where the account is held.";
@@ -1545,8 +1545,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Overall position representing the net debits and credits in an account at a specific point in time.";
@@ -1589,8 +1589,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entry";
 			definition = "Record of the movements into or out of an account.";
@@ -1638,8 +1638,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountContract";
 			definition = "Agreement which provides information on the account and on the services linked to it.";
@@ -1679,8 +1679,8 @@ public class Account {
 	 */
 	public static final MMBusinessAttribute mmOpeningDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningDate";
 			definition = "Date on which the account and related basic services are effectively operational for the account owner.";
@@ -1735,8 +1735,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Rate used to calculate the difference between amounts based on the base currency and the reporting currency.";
@@ -1785,8 +1785,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmDefaultFundContribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefaultFundContribution";
 			definition = "Default fund contribution parameters associated with a contribution account.";
@@ -1833,8 +1833,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmSystemMember = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SystemMember";
 			definition = "Member of a system which is the owner of an account with the system.";
@@ -1873,8 +1873,8 @@ public class Account {
 	 */
 	public static final MMBusinessAttribute mmCollateralAccountType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAccountType";
 			definition = "Specifies the collateral account type.";
@@ -1927,8 +1927,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountService";
 			definition = "Services linked to the account and specified in the account contract.";
@@ -1977,8 +1977,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Process which compares and matches trade information with entries in an account.";
@@ -2027,8 +2027,8 @@ public class Account {
 	 */
 	public static final MMBusinessAssociationEnd mmManagedAccountProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManagedAccountProduct";
 			definition = "Product which provides guidance to investors to manage their portfolios.";

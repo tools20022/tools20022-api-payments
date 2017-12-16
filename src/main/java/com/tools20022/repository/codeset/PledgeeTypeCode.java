@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.PledgeeTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the type of pledgee.
@@ -32,10 +37,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PledgeeTypeCode#mmRegulatoryBody
+ * {@linkplain com.tools20022.repository.codeset.PledgeeTypeCode#RegulatoryBody
  * PledgeeTypeCode.mmRegulatoryBody}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PledgeeTypeCode#mmCounterparty
+ * {@linkplain com.tools20022.repository.codeset.PledgeeTypeCode#Counterparty
  * PledgeeTypeCode.mmCounterparty}</li>
  * </ul>
  * </li>
@@ -54,7 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of pledgee."</li>
  * </ul>
  */
-public class PledgeeTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class PledgeeTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -78,12 +84,12 @@ public class PledgeeTypeCode {
 	 * definition} = "Financial instruments are pledged to a regulatory body."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmRegulatoryBody = new MMCode() {
+	public static final PledgeeTypeCode RegulatoryBody = new PledgeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegulatoryBody";
 			definition = "Financial instruments are pledged to a regulatory body.";
-			owner_lazy = () -> PledgeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PledgeeTypeCode.mmObject();
 			codeName = "REGB";
 		}
 	};
@@ -108,26 +114,56 @@ public class PledgeeTypeCode {
 	 * definition} = "Financial instruments are pledged to a counterparty."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCounterparty = new MMCode() {
+	public static final PledgeeTypeCode Counterparty = new PledgeeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Counterparty";
 			definition = "Financial instruments are pledged to a counterparty.";
-			owner_lazy = () -> PledgeeTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.PledgeeTypeCode.mmObject();
 			codeName = "CPTY";
 		}
 	};
+	final static private LinkedHashMap<String, PledgeeTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected PledgeeTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PledgeeTypeCode";
 				definition = "Specifies the type of pledgee.";
-				code_lazy = () -> Arrays.asList(PledgeeTypeCode.mmRegulatoryBody, PledgeeTypeCode.mmCounterparty);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PledgeeTypeCode.RegulatoryBody, com.tools20022.repository.codeset.PledgeeTypeCode.Counterparty);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(RegulatoryBody.getCodeName().get(), RegulatoryBody);
+		codesByName.put(Counterparty.getCodeName().get(), Counterparty);
+	}
+
+	public static PledgeeTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static PledgeeTypeCode[] values() {
+		PledgeeTypeCode[] values = new PledgeeTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, PledgeeTypeCode> {
+		@Override
+		public PledgeeTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(PledgeeTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

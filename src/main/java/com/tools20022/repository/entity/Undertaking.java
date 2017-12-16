@@ -218,8 +218,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmElectronicSignature = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicSignature";
 			definition = "Digital signature.";
@@ -265,8 +265,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingStatus";
 			definition = "Status of the undertaking.";
@@ -308,8 +308,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identifier assigned to the undertaking issued by the guarantor/issuer. This reference is used throughout the life cycle of the undertaking.";
@@ -363,8 +363,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmDemand = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Demand";
 			definition = "Document signed by the beneficiary demanding payment under a demand guarantee or standby letter of credit.";
@@ -402,8 +402,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmTerminationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationDate";
 			definition = "Date when the undertaking terminates.";
@@ -455,8 +455,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingAmount";
 			definition = "Amount of the undertaking.";
@@ -501,8 +501,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmExpiry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Expiry";
 			definition = "Expiry information about the undertaking.";
@@ -552,8 +552,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of an undertaking or in the context of the business linked to the undertaking.";
@@ -603,8 +603,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingAmendment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingAmendment";
 			definition = "Modification of an undertaking such as an guarantee or standby letter of credit.";
@@ -650,8 +650,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmSpecifiedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecifiedDocument";
 			definition = "Document related to the undertaking.";
@@ -690,8 +690,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmDateOfAdvice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateOfAdvice";
 			definition = "Date on which the undertaking or its amendment is advised.";
@@ -735,8 +735,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Description of the purpose of the undertaking.";
@@ -783,8 +783,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmUndertakingName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingName";
 			definition = "Name of undertaking such as, demand guarantee, standby letter of credit.";
@@ -832,8 +832,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of guarantee or standby letter of credit, for example, performance,  payment, etc.";
@@ -881,8 +881,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmConfirmationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConfirmationIndicator";
 			definition = "Indicates whether the advising bank (confirmer) is requested to add its confirmation to the undertaking.";
@@ -928,8 +928,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmCounterUndertakingIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterUndertakingIndicator";
 			definition = "Indicates whether the undertaking is a counter-undertaking.";
@@ -977,8 +977,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmRelatedChargesPayableBy = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedChargesPayableBy";
 			definition = "Indicates whether the applicant/obligor or beneficiary is responsible for payment of the charges.";
@@ -1026,8 +1026,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmStandardClaimDocumentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandardClaimDocumentIndicator";
 			definition = "Indication as to whether a claim is to utilise a standard claim form of the issuing institution.";
@@ -1083,8 +1083,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUnderlyingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingTransaction";
 			definition = "Reference information on a commercial obligation between the beneficiary and applicant for which an undertaking is issued.";
@@ -1133,8 +1133,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmModelForm = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ModelForm";
 			definition = "Wording template for the undertaking content made available for use with certain governance rules or made available by particular institutions. ";
@@ -1175,8 +1175,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmMultipleDemandIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultipleDemandIndicator";
 			definition = "Indicates whether multiple demands are permitted against the undertaking.";
@@ -1224,8 +1224,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmPartialDemandIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialDemandIndicator";
 			definition = "Indicates whether partial demands/drawings are permitted against the undertaking.";
@@ -1270,8 +1270,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAttribute mmTransferIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferIndicator";
 			definition = "Indicates whether the undertaking is transferrable.";
@@ -1326,8 +1326,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmPredefinedVariation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PredefinedVariation";
 			definition = "Changes that may be made to the undertaking covered by clauses in the existing undertaking and its amendments.";
@@ -1372,8 +1372,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmCharges = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Charges";
 			definition = "Amount and currency of the commissions and changes.";
@@ -1419,8 +1419,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmPresentation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Presentation";
 			definition = "Presentation information related to the undertaking.";
@@ -1468,8 +1468,8 @@ public class Undertaking {
 	 */
 	public static final MMBusinessAssociationEnd mmUndertakingExtension = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingExtension";
 			definition = "Specifies information related to the extension of an undertaking.";

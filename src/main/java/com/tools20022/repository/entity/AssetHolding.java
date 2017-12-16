@@ -178,8 +178,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmHoldingValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingValue";
 			definition = "Value of the balance of an individual securities holding.";
@@ -227,8 +227,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmBookValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookValue";
 			definition = "Value of a security, as booked/acquired in an account. Book value is often different from the current market value of the security.";
@@ -288,8 +288,8 @@ public class AssetHolding {
 	public static final MMBusinessAttribute mmFaceAmount = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalAndCurrentQuantities1.mmFaceAmount, FinancialInstrumentQuantityChoice.mmFaceAmount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FaceAmount";
 			definition = "Quantity expressed as an amount representing the face amount, ie, the principal, of a debt instrument.";
@@ -350,8 +350,8 @@ public class AssetHolding {
 	public static final MMBusinessAttribute mmAmortisedFaceValue = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalAndCurrentQuantities1.mmAmortisedValue, FinancialInstrumentQuantityChoice.mmAmortisedValue);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmortisedFaceValue";
 			definition = "Quantity expressed as an amount representing the current amortised face amount of a bond, for example, a periodic reduction/increase of a bond's principal amount.";
@@ -397,8 +397,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmMarketValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketValue";
 			definition = "Value of the asset holding based on current market prices.";
@@ -449,8 +449,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Specifies the balance of the asset holding.";
@@ -489,8 +489,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmUnrealisedGainOrLoss = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnrealisedGainOrLoss";
 			definition = "Difference between the holding value and the book value of the asset.";
@@ -541,8 +541,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Asset";
 			definition = "Specifies the asset included in the holding.";
@@ -591,8 +591,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmHaircut = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Haircut";
 			definition = "Percentage by which an asset's market value is reduced for the purpose of calculating capital requirement, margin and collateral levels.";
@@ -633,8 +633,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmEligibleCollateralValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleCollateralValue";
 			definition = "Value of the position eligible for collateral purposes. This corresponds to the sub balance with a type AvailableForCollateral.";
@@ -698,8 +698,8 @@ public class AssetHolding {
 	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmExchangeRate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate between the currency of the asset and the reporting currency.";
@@ -739,8 +739,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmCapValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapValue";
 			definition = "Maximum notional value for a financial instrument that is capped.";
@@ -797,8 +797,8 @@ public class AssetHolding {
 	public static final MMBusinessAttribute mmRiskAdjustedValue = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmCollateralValue);
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RiskAdjustedValue";
 			definition = "Value of the asset holding after deduction of a percentage (the haircut) that reflects the perceived risk associated with holding this asset.";
@@ -846,8 +846,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmRealisedGainOrLoss = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RealisedGainOrLoss";
 			definition = "Difference between the realised value caused by the actual trade/re-evaluation and the book value of the asset.";
@@ -893,8 +893,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmUnrealisedType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnrealisedType";
 			definition = "Specifies whether the unrealised amount is a gain or a loss.";
@@ -942,8 +942,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmPostHaircutValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostHaircutValue";
 			definition = "Value of the collateral after deduction of a percentage (the haircut) that reflects the perceived risk associated with holding this collateral.";
@@ -996,8 +996,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "interest relative to the asset and the parameters used to calculate it.";
@@ -1043,8 +1043,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collateral";
 			definition = "Specifies the collateral information in relation with some assets.";
@@ -1082,8 +1082,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmFinancialAssetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialAssetType";
 			definition = "Specifies the asset type.";
@@ -1138,8 +1138,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmVariationMarginCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariationMarginCollateral";
 			definition = "Specifies the collateral information in relation with the segregated independent amount asset holding.";
@@ -1188,8 +1188,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAssociationEnd mmIndependentAmountCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndependentAmountCollateral";
 			definition = "Specifies the collateral information in relation with the segregated independent amount asset holding.";
@@ -1228,8 +1228,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmHoldingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingType";
 			definition = "Specifies the type of holding.";
@@ -1274,8 +1274,8 @@ public class AssetHolding {
 	 */
 	public static final MMBusinessAttribute mmGuaranteeAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteeAmount";
 			definition = "Amount of the bank guarantee.";

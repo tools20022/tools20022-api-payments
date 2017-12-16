@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CreditDebit3Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies if an operation is an increase or a decrease.
@@ -31,12 +36,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CreditDebit3Code#mmCredit
+ * <li>{@linkplain com.tools20022.repository.codeset.CreditDebit3Code#Credit
  * CreditDebit3Code.mmCredit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CreditDebit3Code#mmDebit
+ * <li>{@linkplain com.tools20022.repository.codeset.CreditDebit3Code#Debit
  * CreditDebit3Code.mmDebit}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.AmountDirectionCode
+ * AmountDirectionCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -58,7 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies if an operation is an increase or a decrease."</li>
  * </ul>
  */
-public class CreditDebit3Code {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CreditDebit3Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -77,11 +86,12 @@ public class CreditDebit3Code {
 	 * name} = "Credit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCredit = new MMCode() {
+	public static final CreditDebit3Code Credit = new CreditDebit3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Credit";
-			owner_lazy = () -> CreditDebit3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CreditDebit3Code.mmObject();
+			codeName = AmountDirectionCode.Credit.getCodeName().orElse(name);
 		}
 	};
 	/**
@@ -100,15 +110,20 @@ public class CreditDebit3Code {
 	 * name} = "Debit"</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDebit = new MMCode() {
+	public static final CreditDebit3Code Debit = new CreditDebit3Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debit";
-			owner_lazy = () -> CreditDebit3Code.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CreditDebit3Code.mmObject();
+			codeName = AmountDirectionCode.Debit.getCodeName().orElse(name);
 		}
 	};
+	final static private LinkedHashMap<String, CreditDebit3Code> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CreditDebit3Code() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -116,9 +131,36 @@ public class CreditDebit3Code {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditDebit3Code";
 				definition = "Specifies if an operation is an increase or a decrease.";
-				code_lazy = () -> Arrays.asList(CreditDebit3Code.mmCredit, CreditDebit3Code.mmDebit);
+				trace_lazy = () -> AmountDirectionCode.mmObject();
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CreditDebit3Code.Credit, com.tools20022.repository.codeset.CreditDebit3Code.Debit);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Credit.getCodeName().get(), Credit);
+		codesByName.put(Debit.getCodeName().get(), Debit);
+	}
+
+	public static CreditDebit3Code valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CreditDebit3Code[] values() {
+		CreditDebit3Code[] values = new CreditDebit3Code[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CreditDebit3Code> {
+		@Override
+		public CreditDebit3Code unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CreditDebit3Code codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

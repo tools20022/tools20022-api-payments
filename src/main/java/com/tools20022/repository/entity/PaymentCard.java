@@ -93,17 +93,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TrackData1 TrackData1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CardSecurityInformation1
- * CardSecurityInformation1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PlainCardData1 PlainCardData1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4 PaymentCard4}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -133,6 +122,17 @@ import java.util.List;
  * PlainCardData1.mmCardSecurityCode}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#mmPlainCardData
  * PaymentCard4.mmPlainCardData}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TrackData1 TrackData1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardSecurityInformation1
+ * CardSecurityInformation1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PlainCardData1 PlainCardData1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4 PaymentCard4}</li>
  * </ul>
  * </li>
  * <li>
@@ -190,8 +190,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment for which a payment card is used.";
@@ -229,8 +229,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of card, eg, credit card.";
@@ -285,8 +285,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmPAN);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Number embossed on a card that links the card to the account owner and account servicer (sometimes called personal account number or PAN).";
@@ -340,8 +340,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmStartDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmEffectiveDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StartDate";
 			definition = "Year and month the card is available for use.";
@@ -395,8 +395,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmExpiryDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDate";
 			definition = "Year and month the card expires.";
@@ -452,8 +452,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmSecurityCode = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCValue);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityCode";
 			definition = "Security code written on the card, sometimes called card security code (CSC).";
@@ -507,8 +507,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmSequenceNumber = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmCardSequenceNumber);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SequenceNumber";
 			definition = "Identifies a card inside a set of cards with the same number (or PAN).";
@@ -562,8 +562,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmServiceCode = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmServiceCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ServiceCode";
 			definition = "Services attached to the card.";
@@ -615,8 +615,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmTrackValue = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(TrackData1.mmTrackValue);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TrackValue";
 			definition = "Card track content or equivalent.";
@@ -671,8 +671,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmSecurityCodeManagement = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCManagement);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityCodeManagement";
 			definition = "Card Security Code management associated with the transaction.";
@@ -724,8 +724,8 @@ public class PaymentCard {
 	public static final MMBusinessAttribute mmCardBrand = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentCard4.mmCardBrand);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardBrand";
 			definition = "Brand name of the card.";
@@ -789,8 +789,8 @@ public class PaymentCard {
 	public static final MMBusinessAssociationEnd mmRelatedAccount = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardTransaction2.mmPrePaidAccount, CardEntry2.mmPrePaidAccount);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccount";
 			definition = "Account linked to the card.";
@@ -831,8 +831,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmProfileNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProfileNumber";
 			definition = "Defines a category of cards related the acceptance processing rules defined by the acquirer.";
@@ -877,8 +877,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmRelatedAccountType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountType";
 			definition = "Type of cardholder account used for the transaction.";
@@ -924,8 +924,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmCreditAvailableAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditAvailableAmount";
 			definition = "Monetary value of the credit available for this financial card.";
@@ -976,8 +976,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Limit";
 			definition = "Limit specified on a payment card.";
@@ -1014,8 +1014,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmCardCurrencyCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardCurrencyCode";
 			definition = "Currency code of the card issuer.";
@@ -1067,8 +1067,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest applied on amounts due for credit card payments.";
@@ -1122,8 +1122,8 @@ public class PaymentCard {
 	public static final MMBusinessAssociationEnd mmCardCountryCode = new MMBusinessAssociationEnd() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentCard4.mmCardCountryCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardCountryCode";
 			definition = "Country code attached to the card by the card issuer.";
@@ -1164,8 +1164,8 @@ public class PaymentCard {
 	 */
 	public static final MMBusinessAttribute mmCardProgramme = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardProgramme";
 			definition = "The card programme associated by a retailer to a cardholder among a series of payment programmes offered by the retailer.";

@@ -101,8 +101,8 @@ public class Response {
 	 */
 	public static final MMBusinessAttribute mmResponseReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseReason";
 			definition = "Detailed result of the transaction.";
@@ -155,8 +155,8 @@ public class Response {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPaymentValidation";
 			definition = "Validation process to which a response is given.";
@@ -194,8 +194,8 @@ public class Response {
 	 */
 	public static final MMBusinessAttribute mmResponseToAuthorisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseToAuthorisation";
 			definition = "Response from the issuer to the authorisation.";

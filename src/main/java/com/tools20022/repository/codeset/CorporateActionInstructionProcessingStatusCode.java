@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies the status of a corporate action instruction.
@@ -32,22 +37,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmCancelled
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Cancelled
  * CorporateActionInstructionProcessingStatusCode.mmCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmDefaultAction
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#DefaultAction
  * CorporateActionInstructionProcessingStatusCode.mmDefaultAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmAccepted
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Accepted
  * CorporateActionInstructionProcessingStatusCode.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmPending
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Pending
  * CorporateActionInstructionProcessingStatusCode.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmRejected
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Rejected
  * CorporateActionInstructionProcessingStatusCode.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#mmStandingInstruction
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#StandingInstruction
  * CorporateActionInstructionProcessingStatusCode.mmStandingInstruction}</li>
  * </ul>
  * </li>
@@ -72,7 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of a corporate action instruction."</li>
  * </ul>
  */
-public class CorporateActionInstructionProcessingStatusCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class CorporateActionInstructionProcessingStatusCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -96,12 +102,12 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * definition} = "Instruction has been cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCancelled = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode Cancelled = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancelled";
 			definition = "Instruction has been cancelled.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "CAND";
 		}
 	};
@@ -126,12 +132,12 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * definition} = "Default action is taken."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDefaultAction = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode DefaultAction = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultAction";
 			definition = "Default action is taken.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "DFLA";
 		}
 	};
@@ -160,12 +166,12 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmAccepted = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode Accepted = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
 			definition = "Instruction has been acknowledged/accepted for further processing. In other words, this means that the instruction has been received, is processable and has been validated for further processing.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "PACK";
 		}
 	};
@@ -190,12 +196,12 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * definition} = "Instruction's processing is pending."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPending = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode Pending = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
 			definition = "Instruction's processing is pending.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "PEND";
 		}
 	};
@@ -223,12 +229,12 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmRejected = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode Rejected = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rejected";
 			definition = "Instruction has been rejected for further processing due to system reasons.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "REJT";
 		}
 	};
@@ -253,17 +259,21 @@ public class CorporateActionInstructionProcessingStatusCode {
 	 * definition} = "Standing instruction is applied."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmStandingInstruction = new MMCode() {
+	public static final CorporateActionInstructionProcessingStatusCode StandingInstruction = new CorporateActionInstructionProcessingStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingInstruction";
 			definition = "Standing instruction is applied.";
-			owner_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.mmObject();
 			codeName = "STIN";
 		}
 	};
+	final static private LinkedHashMap<String, CorporateActionInstructionProcessingStatusCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected CorporateActionInstructionProcessingStatusCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -271,10 +281,41 @@ public class CorporateActionInstructionProcessingStatusCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionInstructionProcessingStatusCode";
 				definition = "Specifies the status of a corporate action instruction.";
-				code_lazy = () -> Arrays.asList(CorporateActionInstructionProcessingStatusCode.mmCancelled, CorporateActionInstructionProcessingStatusCode.mmDefaultAction, CorporateActionInstructionProcessingStatusCode.mmAccepted,
-						CorporateActionInstructionProcessingStatusCode.mmPending, CorporateActionInstructionProcessingStatusCode.mmRejected, CorporateActionInstructionProcessingStatusCode.mmStandingInstruction);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.Cancelled, com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.DefaultAction,
+						com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.Accepted, com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.Pending,
+						com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.Rejected, com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode.StandingInstruction);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
+		codesByName.put(DefaultAction.getCodeName().get(), DefaultAction);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
+		codesByName.put(StandingInstruction.getCodeName().get(), StandingInstruction);
+	}
+
+	public static CorporateActionInstructionProcessingStatusCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static CorporateActionInstructionProcessingStatusCode[] values() {
+		CorporateActionInstructionProcessingStatusCode[] values = new CorporateActionInstructionProcessingStatusCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, CorporateActionInstructionProcessingStatusCode> {
+		@Override
+		public CorporateActionInstructionProcessingStatusCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(CorporateActionInstructionProcessingStatusCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

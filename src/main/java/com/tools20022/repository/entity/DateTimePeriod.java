@@ -244,23 +244,6 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails
- * DatePeriodDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DateTimePeriodDetails
- * DateTimePeriodDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Period2 Period2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails1
- * DatePeriodDetails1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportingPeriod1
- * ReportingPeriod1}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Period4Choice Period4Choice}
- * </li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -469,6 +452,23 @@ import java.util.List;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails
+ * DatePeriodDetails}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DateTimePeriodDetails
+ * DateTimePeriodDetails}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Period2 Period2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails1
+ * DatePeriodDetails1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportingPeriod1
+ * ReportingPeriod1}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Period4Choice Period4Choice}
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
@@ -552,8 +552,8 @@ public class DateTimePeriod {
 		{
 			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmFromDate, DateTimePeriodDetails.mmFromDateTime, Period2.mmFromDate, DatePeriodDetails1.mmFromDate, Restriction1.mmValidFrom, OperationMandate2.mmStartDate,
 					OperationMandate3.mmStartDate, ReportingPeriod1.mmFromToDate, ReportingPeriod1.mmFromToTime, DatePeriod1.mmFromDate, Period4Choice.mmFromDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromDateTime";
 			definition = "Date and time at which the range starts.";
@@ -627,8 +627,8 @@ public class DateTimePeriod {
 		{
 			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmToDate, DateTimePeriodDetails.mmToDateTime, Period2.mmToDate, DatePeriodDetails1.mmToDate, Restriction1.mmValidUntil, OperationMandate2.mmEndDate,
 					OperationMandate3.mmEndDate, DatePeriod1.mmToDate, Period4Choice.mmToDate);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToDateTime";
 			definition = "Date and time at which the range ends.";
@@ -681,8 +681,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedStandingOrder";
 			definition = "Standing order for which a validity period is specified.";
@@ -730,8 +730,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPaymentInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentInstruction";
 			definition = "Payment instruction for which a processing validity time is specified.";
@@ -778,8 +778,8 @@ public class DateTimePeriod {
 	public static final MMBusinessAttribute mmNumberOfDays = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BalanceAdjustment1.mmDays);
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfDays";
 			definition = "Period specified as a number of days.";
@@ -833,8 +833,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmValuationStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationStatistics";
 			definition = "Valuation statistics for which a reference period is specified.";
@@ -882,8 +882,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPerformanceFactors = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerformanceFactors";
 			definition = "Performance factors for which an accumulation period is specified.";
@@ -929,8 +929,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status for which a validity time is specified.";
@@ -978,8 +978,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceCalculationRelatedPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceCalculationRelatedPricing";
 			definition = "Securities pricing for which a price calculation period is specified.";
@@ -1028,8 +1028,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOption";
 			definition = "Corporate action option for which an action period is defined.";
@@ -1078,8 +1078,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmParallelTradingProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParallelTradingProceedsDefinition";
 			definition = "Securities proceeds for which a parallel trading period is specified.";
@@ -1128,8 +1128,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPrivilegeSuspensionCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrivilegeSuspensionCorporateAction";
 			definition = "Corporate event for which a privilege suspension period has been defined.";
@@ -1179,8 +1179,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmWithdrawalSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals is specified.";
@@ -1229,8 +1229,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterestCalculation";
 			definition = "Interest calculation process for which an interest period is specified.";
@@ -1279,8 +1279,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BiddingConditions";
 			definition = "Bidding conditions for which a compulsory purchase period is specified.";
@@ -1327,8 +1327,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmClassAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassAction";
 			definition = "Class action for which a claim period is specified.";
@@ -1378,8 +1378,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmBookEntryTransferSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntryTransferSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for book entry transfers is specified.";
@@ -1429,8 +1429,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositAtAgentSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for deposits at agent is specified.";
@@ -1479,8 +1479,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmDepositSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for deposits is specified.";
@@ -1529,8 +1529,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPledgeSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PledgeSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for pledges is specified.";
@@ -1580,8 +1580,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmSegregationPeriodRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SegregationPeriodRelatedEvent";
 			definition = "Corporate event for which a suspension period for segregation is specified.";
@@ -1631,8 +1631,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmWithdrawalAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalAtAgentSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals at agent is specified.";
@@ -1682,8 +1682,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmWithdrawalInNomineeNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalInNomineeNameSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals in nominee name is specified.";
@@ -1733,8 +1733,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmWithdrawalInStreetNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalInStreetNameSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals in street name is specified.";
@@ -1783,8 +1783,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmBookClosureCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookClosureCorporateAction";
 			definition = "Corporate action for which a book closure period has been specified.";
@@ -1834,8 +1834,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCoDepositoriesSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoDepositoriesSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for co-depositories is specified.";
@@ -1881,8 +1881,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmExtendiblePeriodDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExtendiblePeriodDebt";
 			definition = "Debt for which an extendible period is specified.";
@@ -1932,8 +1932,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesConversion";
 			definition = "Securities conversion process for which a conversion period is specified.";
@@ -1980,8 +1980,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculation";
 			definition = "Yield calculation for which a value period is specified.";
@@ -2027,8 +2027,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCustomDateDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomDateDebt";
 			definition = "Debt for which a custom date is specified.";
@@ -2075,8 +2075,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmTaxPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxPeriod";
 			definition = "Tax period for which a from/to date is specified.";
@@ -2122,8 +2122,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account for which a reported period is specified.";
@@ -2170,8 +2170,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAgreement";
 			definition = "Agreement for which a validity period is specified.";
@@ -2220,8 +2220,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmAssentedLinePeriodProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssentedLinePeriodProceedsDefinition";
 			definition = "Securities proceeds for which an assented line period is specified.";
@@ -2270,8 +2270,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmSellThruIssuerProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellThruIssuerProceedsDefinition";
 			definition = "Securities proceeds for which a sell thru issuer period is specified.";
@@ -2319,8 +2319,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProductDelivery";
 			definition = "Trade delivery process for which a delivery period is specified.";
@@ -2366,8 +2366,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvoice";
 			definition = "Invoice for which a period is specified.";
@@ -2415,8 +2415,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificate";
 			definition = "Trade certificate for which an inspection date is specified.";
@@ -2464,8 +2464,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPortfolioValuation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPortfolioValuation";
 			definition = "Portfolio valuation process for which a valuation period is specified.";
@@ -2511,8 +2511,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which a validity period is specified.";
@@ -2560,8 +2560,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmAccountRestriction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountRestriction";
 			definition = "Account restriction for which a validity period is specified.";
@@ -2609,8 +2609,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankOperation";
 			definition = "Bank operation for which an applicable period is specified.";
@@ -2659,8 +2659,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateAction";
 			definition = "Corporate action event for which a trading period is specified.";
@@ -2706,8 +2706,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedLimit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedLimit";
 			definition = "Limit for which a validity period is specified.";
@@ -2755,8 +2755,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIdentification";
 			definition = "Party identification for which a validity period is specified.";
@@ -2801,8 +2801,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmAssessmentValidityScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssessmentValidityScheme";
 			definition = "Scheme for which a validity period is specified.";
@@ -2852,8 +2852,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmExercisePeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePeriodDistribution";
 			definition = "Cash and securities distribution information for which an exercise period is specified.";
@@ -2903,8 +2903,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmOfferPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPeriodDistribution";
 			definition = "Cash and securities distribution information for which an offer period is specified.";
@@ -2954,8 +2954,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriodDistribution";
 			definition = "Cash and securities distribution information for which a trading period is specified.";
@@ -3005,8 +3005,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmBlockingPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockingPeriodDistribution";
 			definition = "Cash and securities distribution information for which a blocking period is specified.";
@@ -3053,8 +3053,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guarantee";
 			definition = "Guarantee for which an effective period is specified.";
@@ -3102,8 +3102,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPriceFactRelatedPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceFactRelatedPricing";
 			definition = "Securities pricing for which a price fact period is specified.";
@@ -3151,8 +3151,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmCashDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistribution";
 			definition = "Cash distribution for which an interest period is specified.";
@@ -3200,8 +3200,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmComponentSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentSecurity";
 			definition = "Security component for which a separation period is specified.";
@@ -3248,8 +3248,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSession";
 			definition = "Trading session for which a time bracket is specified.";
@@ -3297,8 +3297,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmFinancialInstrumentSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrumentSwap";
 			definition = "Swap for which a maturity period is specified.";
@@ -3345,8 +3345,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPostalAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPostalAddress";
 			definition = "Postal address for which a validity period is specified.";
@@ -3394,8 +3394,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionSchedule";
 			definition = "Redemption schedule for which a notice period is provided.";
@@ -3443,8 +3443,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAccountLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountLink";
 			definition = "Link between two accounts for which a validity period is specified.";
@@ -3491,8 +3491,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedAdjustment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAdjustment";
 			definition = "Adjustment for which a validity period is provided.";
@@ -3541,8 +3541,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesIdentification";
 			definition = "Securities identification for which a validity period is specified.";
@@ -3590,8 +3590,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedStandingSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedStandingSettlementInstruction";
 			definition = "SSI for which a validity period is specified.";
@@ -3639,8 +3639,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSecuritiesRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesRegistration";
 			definition = "Securities registration process for which a split period is specified.";
@@ -3687,8 +3687,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Relationship with an amount.";
@@ -3736,8 +3736,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentPlan";
 			definition = "InvestmentPlan for which an investment period is specified.";
@@ -3782,8 +3782,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which subscription information is provided.";
@@ -3830,8 +3830,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedPaymentTerms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentTerms";
 			definition = "Payment terms for which a period is specified.";
@@ -3878,8 +3878,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmPercentage = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Relationship with a percentage.";
@@ -3926,8 +3926,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedRolePlayer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRolePlayer";
 			definition = "Role player for which a validity period is specified.";
@@ -3974,8 +3974,8 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedSystemAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedSystemAvailability";
 			definition = "System availability for which the closure period is provided.";

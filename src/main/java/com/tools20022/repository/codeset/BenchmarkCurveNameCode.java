@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.BenchmarkCurveNameCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Identifies a benchmark curve name.
@@ -32,82 +37,82 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmMuniAAA
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#MuniAAA
  * BenchmarkCurveNameCode.mmMuniAAA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmFutureSWAP
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#FutureSWAP
  * BenchmarkCurveNameCode.mmFutureSWAP}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmLIBID
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#LIBID
  * BenchmarkCurveNameCode.mmLIBID}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmLIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#LIBOR
  * BenchmarkCurveNameCode.mmLIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmSWAP
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#SWAP
  * BenchmarkCurveNameCode.mmSWAP}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmTreasury
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Treasury
  * BenchmarkCurveNameCode.mmTreasury}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmEuribor
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Euribor
  * BenchmarkCurveNameCode.mmEuribor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmPfandbriefe
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Pfandbriefe
  * BenchmarkCurveNameCode.mmPfandbriefe}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmEONIA
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EONIA
  * BenchmarkCurveNameCode.mmEONIA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmEONIASwaps
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EONIASwaps
  * BenchmarkCurveNameCode.mmEONIASwaps}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmEURODOLLAR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EURODOLLAR
  * BenchmarkCurveNameCode.mmEURODOLLAR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmEuroSwiss
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EuroSwiss
  * BenchmarkCurveNameCode.mmEuroSwiss}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmTIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#TIBOR
  * BenchmarkCurveNameCode.mmTIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmISDAFIX
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#ISDAFIX
  * BenchmarkCurveNameCode.mmISDAFIX}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmGCFRepo
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#GCFRepo
  * BenchmarkCurveNameCode.mmGCFRepo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmSTIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#STIBOR
  * BenchmarkCurveNameCode.mmSTIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmBBSW
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#BBSW
  * BenchmarkCurveNameCode.mmBBSW}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmJIBAR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#JIBAR
  * BenchmarkCurveNameCode.mmJIBAR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmBUBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#BUBOR
  * BenchmarkCurveNameCode.mmBUBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmCDOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#CDOR
  * BenchmarkCurveNameCode.mmCDOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmCIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#CIBOR
  * BenchmarkCurveNameCode.mmCIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmMOSPRIM
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#MOSPRIM
  * BenchmarkCurveNameCode.mmMOSPRIM}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmNIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#NIBOR
  * BenchmarkCurveNameCode.mmNIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmPRIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#PRIBOR
  * BenchmarkCurveNameCode.mmPRIBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmTELBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#TELBOR
  * BenchmarkCurveNameCode.mmTELBOR}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#mmWIBOR
+ * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#WIBOR
  * BenchmarkCurveNameCode.mmWIBOR}</li>
  * </ul>
  * </li>
@@ -139,7 +144,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies a benchmark curve name."</li>
  * </ul>
  */
-public class BenchmarkCurveNameCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class BenchmarkCurveNameCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -166,12 +172,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmMuniAAA = new MMCode() {
+	public static final BenchmarkCurveNameCode MuniAAA = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MuniAAA";
 			definition = "Benchmark curve used for municipals based on the best credit rating for municipal market debt.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "MAAA";
 		}
 	};
@@ -201,12 +207,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmFutureSWAP = new MMCode() {
+	public static final BenchmarkCurveNameCode FutureSWAP = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FutureSWAP";
 			definition = "Portion of a synthetic curve that is composed of Eurodollar or Treasury or similar Futures and Swap rates.  The term usually begins at 3 months to 2 years for the futures strip component with the Swaps filling in the points to 10 years and beyond.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "FUSW";
 		}
 	};
@@ -237,12 +243,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLIBID = new MMCode() {
+	public static final BenchmarkCurveNameCode LIBID = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LIBID";
 			definition = "Rate at which major international banks are willing to take deposits from one another, is normally 1/8 percent below LIBOR.\r\n\r\nLondon InterBank Bid Rate, the rate bid by banks on Eurocurrency deposits; the international rate that banks lend to other banks.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "LIBI";
 		}
 	};
@@ -270,12 +276,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmLIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode LIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LIBOR";
 			definition = "London Interbank Offered Rate, the interest rate that major international banks in London charge each other for borrowing.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "LIBO";
 		}
 	};
@@ -307,12 +313,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmSWAP = new MMCode() {
+	public static final BenchmarkCurveNameCode SWAP = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SWAP";
 			definition = "In curve construction, Swap is the long portion of the curve constituting about 3 years to 30 years term.\n\nThe exchange of one security, currency or interest rate for another to change the maturity (bonds), or quality of issues (stocks or bonds), or because investment objectives have changed.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "SWAP";
 		}
 	};
@@ -341,12 +347,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmTreasury = new MMCode() {
+	public static final BenchmarkCurveNameCode Treasury = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Treasury";
 			definition = "Treasury benchmark that comes in three types: the yield curve, the par curve, and the spot curve.  All curves also have a constituent time series.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "TREA";
 		}
 	};
@@ -375,12 +381,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEuribor = new MMCode() {
+	public static final BenchmarkCurveNameCode Euribor = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Euribor";
 			definition = "Euro Interbank Offer Rate is the rate at which Euro inter-bank term deposits within the Euro zone are offered by one prime bank to another prime bank.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "EURI";
 		}
 	};
@@ -417,12 +423,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmPfandbriefe = new MMCode() {
+	public static final BenchmarkCurveNameCode Pfandbriefe = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pfandbriefe";
 			definition = "Pfandbriefe security is a collateralised bullet bond backed by either mortgage loans or loans to the public sector.  Pfandbriefe differ from traditional asset-backed securities in significant ways.  The most important difference is that Pfandbriefe carry no pre-payment risk since they remain on the balance sheet of the issuing institution.  Therefore, their spreads over sovereign bonds are attributable to liquidity and credit quality alone.  New indices have been created and existing indices have been modified in response to the growing importance of the Pfandbriefe market.  The Deutsche Borse has three synthetic indices called REX, JEX, and PEX.  The Pfandbriefe curve is used as a reference for credit as well as mortgage market.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "PFAN";
 		}
 	};
@@ -447,12 +453,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Euro OverNight Index Average rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEONIA = new MMCode() {
+	public static final BenchmarkCurveNameCode EONIA = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EONIA";
 			definition = "Euro OverNight Index Average rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "EONA";
 		}
 	};
@@ -477,12 +483,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Euro OverNight Index Average swap rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEONIASwaps = new MMCode() {
+	public static final BenchmarkCurveNameCode EONIASwaps = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EONIASwaps";
 			definition = "Euro OverNight Index Average swap rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "EONS";
 		}
 	};
@@ -511,12 +517,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmEURODOLLAR = new MMCode() {
+	public static final BenchmarkCurveNameCode EURODOLLAR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EURODOLLAR";
 			definition = "Rate for the eurodollars, time deposits denominated in U.S. dollars at banks outside the United States, and thus are not under the jurisdiction of the Federal Reserve.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "EUUS";
 		}
 	};
@@ -541,12 +547,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Swiss Franc LIBOR rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmEuroSwiss = new MMCode() {
+	public static final BenchmarkCurveNameCode EuroSwiss = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EuroSwiss";
 			definition = "Swiss Franc LIBOR rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "EUCH";
 		}
 	};
@@ -571,12 +577,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Tokyo Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode TIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TIBOR";
 			definition = "Tokyo Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "TIBO";
 		}
 	};
@@ -604,12 +610,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmISDAFIX = new MMCode() {
+	public static final BenchmarkCurveNameCode ISDAFIX = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ISDAFIX";
 			definition = "Worldwide common reference rate value for fixed interest rate swap rates, as defined by the International Swaps and Derivatives Association (ISDA).";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "ISDA";
 		}
 	};
@@ -637,12 +643,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmGCFRepo = new MMCode() {
+	public static final BenchmarkCurveNameCode GCFRepo = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GCFRepo";
 			definition = "GCF Repo Index, the Depository Trust & Clearing Corporation (DTCC) general collateral finance repurchase agreements index.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "GCFR";
 		}
 	};
@@ -667,12 +673,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Stockholm Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmSTIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode STIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "STIBOR";
 			definition = "Stockholm Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "STBO";
 		}
 	};
@@ -700,12 +706,12 @@ public class BenchmarkCurveNameCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode mmBBSW = new MMCode() {
+	public static final BenchmarkCurveNameCode BBSW = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BBSW";
 			definition = "Australian Financial Markets Association (AFMA) Bank-Bill Reference Rate (BBSW).";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "BBSW";
 		}
 	};
@@ -730,12 +736,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Johannesburg Interbank Agreed Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmJIBAR = new MMCode() {
+	public static final BenchmarkCurveNameCode JIBAR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "JIBAR";
 			definition = "Johannesburg Interbank Agreed Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "JIBA";
 		}
 	};
@@ -760,12 +766,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Budapest Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmBUBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode BUBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BUBOR";
 			definition = "Budapest Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "BUBO";
 		}
 	};
@@ -790,12 +796,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Canadian Dollar Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCDOR = new MMCode() {
+	public static final BenchmarkCurveNameCode CDOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CDOR";
 			definition = "Canadian Dollar Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "CDOR";
 		}
 	};
@@ -820,12 +826,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Copenhagen Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode CIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CIBOR";
 			definition = "Copenhagen Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "CIBO";
 		}
 	};
@@ -850,12 +856,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Moscow Prime Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmMOSPRIM = new MMCode() {
+	public static final BenchmarkCurveNameCode MOSPRIM = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MOSPRIM";
 			definition = "Moscow Prime Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "MOSP";
 		}
 	};
@@ -880,12 +886,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Norwegian Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmNIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode NIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NIBOR";
 			definition = "Norwegian Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "NIBO";
 		}
 	};
@@ -910,12 +916,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Czech Fixing of Interest Rates on Interbank Deposits."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmPRIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode PRIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PRIBOR";
 			definition = "Czech Fixing of Interest Rates on Interbank Deposits.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "PRBO";
 		}
 	};
@@ -940,12 +946,12 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Tel Aviv Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmTELBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode TELBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TELBOR";
 			definition = "Tel Aviv Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "TLBO";
 		}
 	};
@@ -970,17 +976,21 @@ public class BenchmarkCurveNameCode {
 	 * definition} = "Warsaw Interbank Offered Rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmWIBOR = new MMCode() {
+	public static final BenchmarkCurveNameCode WIBOR = new BenchmarkCurveNameCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WIBOR";
 			definition = "Warsaw Interbank Offered Rate.";
-			owner_lazy = () -> BenchmarkCurveNameCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "WIBO";
 		}
 	};
+	final static private LinkedHashMap<String, BenchmarkCurveNameCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected BenchmarkCurveNameCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -988,14 +998,68 @@ public class BenchmarkCurveNameCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BenchmarkCurveNameCode";
 				definition = "Identifies a benchmark curve name.";
-				code_lazy = () -> Arrays.asList(BenchmarkCurveNameCode.mmMuniAAA, BenchmarkCurveNameCode.mmFutureSWAP, BenchmarkCurveNameCode.mmLIBID, BenchmarkCurveNameCode.mmLIBOR, BenchmarkCurveNameCode.mmSWAP,
-						BenchmarkCurveNameCode.mmTreasury, BenchmarkCurveNameCode.mmEuribor, BenchmarkCurveNameCode.mmPfandbriefe, BenchmarkCurveNameCode.mmEONIA, BenchmarkCurveNameCode.mmEONIASwaps, BenchmarkCurveNameCode.mmEURODOLLAR,
-						BenchmarkCurveNameCode.mmEuroSwiss, BenchmarkCurveNameCode.mmTIBOR, BenchmarkCurveNameCode.mmISDAFIX, BenchmarkCurveNameCode.mmGCFRepo, BenchmarkCurveNameCode.mmSTIBOR, BenchmarkCurveNameCode.mmBBSW,
-						BenchmarkCurveNameCode.mmJIBAR, BenchmarkCurveNameCode.mmBUBOR, BenchmarkCurveNameCode.mmCDOR, BenchmarkCurveNameCode.mmCIBOR, BenchmarkCurveNameCode.mmMOSPRIM, BenchmarkCurveNameCode.mmNIBOR,
-						BenchmarkCurveNameCode.mmPRIBOR, BenchmarkCurveNameCode.mmTELBOR, BenchmarkCurveNameCode.mmWIBOR);
 				derivation_lazy = () -> Arrays.asList(BenchmarkCurveName2Code.mmObject());
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BenchmarkCurveNameCode.MuniAAA, com.tools20022.repository.codeset.BenchmarkCurveNameCode.FutureSWAP,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.LIBID, com.tools20022.repository.codeset.BenchmarkCurveNameCode.LIBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.SWAP,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.Treasury, com.tools20022.repository.codeset.BenchmarkCurveNameCode.Euribor, com.tools20022.repository.codeset.BenchmarkCurveNameCode.Pfandbriefe,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.EONIA, com.tools20022.repository.codeset.BenchmarkCurveNameCode.EONIASwaps, com.tools20022.repository.codeset.BenchmarkCurveNameCode.EURODOLLAR,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.EuroSwiss, com.tools20022.repository.codeset.BenchmarkCurveNameCode.TIBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.ISDAFIX,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.GCFRepo, com.tools20022.repository.codeset.BenchmarkCurveNameCode.STIBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.BBSW,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.JIBAR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.BUBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.CDOR,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.CIBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.MOSPRIM, com.tools20022.repository.codeset.BenchmarkCurveNameCode.NIBOR,
+						com.tools20022.repository.codeset.BenchmarkCurveNameCode.PRIBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.TELBOR, com.tools20022.repository.codeset.BenchmarkCurveNameCode.WIBOR);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(MuniAAA.getCodeName().get(), MuniAAA);
+		codesByName.put(FutureSWAP.getCodeName().get(), FutureSWAP);
+		codesByName.put(LIBID.getCodeName().get(), LIBID);
+		codesByName.put(LIBOR.getCodeName().get(), LIBOR);
+		codesByName.put(SWAP.getCodeName().get(), SWAP);
+		codesByName.put(Treasury.getCodeName().get(), Treasury);
+		codesByName.put(Euribor.getCodeName().get(), Euribor);
+		codesByName.put(Pfandbriefe.getCodeName().get(), Pfandbriefe);
+		codesByName.put(EONIA.getCodeName().get(), EONIA);
+		codesByName.put(EONIASwaps.getCodeName().get(), EONIASwaps);
+		codesByName.put(EURODOLLAR.getCodeName().get(), EURODOLLAR);
+		codesByName.put(EuroSwiss.getCodeName().get(), EuroSwiss);
+		codesByName.put(TIBOR.getCodeName().get(), TIBOR);
+		codesByName.put(ISDAFIX.getCodeName().get(), ISDAFIX);
+		codesByName.put(GCFRepo.getCodeName().get(), GCFRepo);
+		codesByName.put(STIBOR.getCodeName().get(), STIBOR);
+		codesByName.put(BBSW.getCodeName().get(), BBSW);
+		codesByName.put(JIBAR.getCodeName().get(), JIBAR);
+		codesByName.put(BUBOR.getCodeName().get(), BUBOR);
+		codesByName.put(CDOR.getCodeName().get(), CDOR);
+		codesByName.put(CIBOR.getCodeName().get(), CIBOR);
+		codesByName.put(MOSPRIM.getCodeName().get(), MOSPRIM);
+		codesByName.put(NIBOR.getCodeName().get(), NIBOR);
+		codesByName.put(PRIBOR.getCodeName().get(), PRIBOR);
+		codesByName.put(TELBOR.getCodeName().get(), TELBOR);
+		codesByName.put(WIBOR.getCodeName().get(), WIBOR);
+	}
+
+	public static BenchmarkCurveNameCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static BenchmarkCurveNameCode[] values() {
+		BenchmarkCurveNameCode[] values = new BenchmarkCurveNameCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, BenchmarkCurveNameCode> {
+		@Override
+		public BenchmarkCurveNameCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(BenchmarkCurveNameCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }

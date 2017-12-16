@@ -100,8 +100,8 @@ public class InvestmentFundFamily {
 	 */
 	public static final MMBusinessAttribute mmFundFamilyName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundFamilyName";
 			definition = "Name of the investment fund family.";
@@ -158,8 +158,8 @@ public class InvestmentFundFamily {
 	 */
 	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFund";
 			definition = "Pool of financial instruments managed by a professional asset manager and belonging to one or several investment fund families that are part of the same investment fund network.";

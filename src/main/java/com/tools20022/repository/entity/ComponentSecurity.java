@@ -130,8 +130,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAssociationEnd mmSeparationPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparationPeriod";
 			definition = "Period during which the related security can (optional) or must (mandatory) be separated.";
@@ -177,8 +177,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a component security is specified.";
@@ -218,8 +218,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAttribute mmSeparationChoice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparationChoice";
 			definition = " Defines if the separation of the security is optional or mandatory.";
@@ -264,8 +264,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAttribute mmQuantityNumerator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityNumerator";
 			definition = "Number of related securities for the exercise.";
@@ -310,8 +310,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAttribute mmQuantityDenominator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityDenominator";
 			definition = "Number of held securities for the exercise.";
@@ -359,8 +359,8 @@ public class ComponentSecurity {
 	 */
 	public static final MMBusinessAttribute mmSeparationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparationDate";
 			definition = "Date/time at which the related security can (optional) or must (mandatory) be separated.";

@@ -40,6 +40,8 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -78,8 +80,6 @@ import java.util.List;
  * InvoiceFinancingAgreement.mmInvoiceFinancingStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -129,8 +129,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmValidationStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidationStatusReason";
 			definition = "The reason for the validation status.";
@@ -179,8 +179,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmValidationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidationStatus";
 			definition = "The result of the technical validation (e.g. Accepted, Reception error) executed on the  request message.";
@@ -226,8 +226,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationStatus";
 			definition = "Information on the business status of the cancellation.";
@@ -273,8 +273,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationStatusReason";
 			definition = "The reason for the cancellation status.";
@@ -323,8 +323,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmFinancingTransactionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingTransactionStatus";
 			definition = "Specifies the status of the financing request (e.g. financed. not financed).";
@@ -372,8 +372,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmCancellationRequestReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRequestReason";
 			definition = "Further details on the cancellation request information, in an uncoded form.";
@@ -428,8 +428,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvoiceFinancingTransaction";
 			definition = "Specifies the transaction for which a status is provided.";
@@ -471,8 +471,8 @@ public class InvoiceFinancingStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmFinancingStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingStatusReason";
 			definition = "<p>Indicates the reasons that have determined the result of the single request.</p>";

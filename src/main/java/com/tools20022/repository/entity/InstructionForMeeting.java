@@ -151,8 +151,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAssociationEnd mmVoteInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteInstruction";
 			definition = "Request to cast detailed voting instructions.";
@@ -190,8 +190,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAttribute mmRequestedExecutionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedExecutionDate";
 			definition = "Date at which the instruction must be executed.";
@@ -247,8 +247,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Meeting servicing process which comprises the management of meeting instructions.";
@@ -298,8 +298,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingAttendance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingAttendance";
 			definition = "Instruction containing the information on the participation of the security holder or of its assigned representative.";
@@ -346,8 +346,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAssociationEnd mmProxyAppointment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProxyAppointment";
 			definition = "Request to assign a proxy for participation to the meeting.";
@@ -388,8 +388,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAttribute mmMeetingIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingIdentification";
 			definition = "Identification assigned to a general meeting by the party which has notified the meeting.";
@@ -435,8 +435,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAttribute mmSecuritiesRegistration = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesRegistration";
 			definition = "Request to register the securities for the meeting.";
@@ -482,8 +482,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAttribute mmBlockingSecurities = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockingSecurities";
 			definition = "Request to block the securities";
@@ -529,8 +529,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAttribute mmParticipationRegistration = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParticipationRegistration";
 			definition = "Request to register for participation to the meeting.";
@@ -584,8 +584,8 @@ public class InstructionForMeeting {
 	 */
 	public static final MMBusinessAssociationEnd mmSafekeepingAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingAccount";
 			definition = "Account and balance for which the instruction is specified.";

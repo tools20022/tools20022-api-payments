@@ -37,6 +37,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -53,14 +55,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AcceptanceResult6
- * AcceptanceResult6}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -68,8 +62,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * Mandate.mmMandateStatus}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Status Status}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AcceptanceResult6
+ * AcceptanceResult6}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -127,8 +127,8 @@ public class MandateStatus extends Status {
 	public static final MMBusinessAttribute mmAccepted = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptanceResult6.mmAccepted);
-			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
 			definition = "Indicates whether the mandate request was accepted or rejected.";
@@ -183,8 +183,8 @@ public class MandateStatus extends Status {
 	public static final MMBusinessAttribute mmRejectReason = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptanceResult6.mmRejectReason);
-			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectReason";
 			definition = "Specifies the reason for the rejection of a mandate request.";
@@ -236,8 +236,8 @@ public class MandateStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mandate";
 			definition = "Mandate for which a status applies.";
@@ -278,8 +278,8 @@ public class MandateStatus extends Status {
 	 */
 	public static final MMBusinessAttribute mmMandateReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MandateReason";
 			definition = "Specifies the reason for the request or status of a mandate.";

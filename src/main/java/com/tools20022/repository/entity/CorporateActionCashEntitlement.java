@@ -37,6 +37,10 @@ import java.util.List;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement
+ * CorporateActionEntitlement}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
@@ -69,10 +73,6 @@ import java.util.List;
  * CurrencyExchange.mmCurrencyExchangeForCorporateActionCashEntitlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement
- * CorporateActionEntitlement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -123,8 +123,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAttribute mmGrossCashAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossCashAmount";
 			definition = "Amount of money before any deductions and allowances have been made.";
@@ -173,8 +173,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAttribute mmNetCashAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetCashAmount";
 			definition = "Amount of money after deductions and allowances have been made, if any, ie, the total amount +/- charges/fees.";
@@ -221,8 +221,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAttribute mmCashInLieuOfShare = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashInLieuOfShare";
 			definition = "Cash disbursement in lieu of a fractional quantity of, eg, equity.";
@@ -269,8 +269,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAttribute mmCapitalGain = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalGain";
 			definition = "Amount of money distributed as the result of a capital gain.";
@@ -320,8 +320,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAttribute mmEntitledCashAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitledCashAmount";
 			definition = "Cash amount based on terms of corporate action event and balance of underlying securities, entitled to/from account owner (which may be positive or negative).";
@@ -377,8 +377,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 */
 	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate used to convert the cash entitlement value in another currency.";

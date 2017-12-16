@@ -101,8 +101,8 @@ public class Curve {
 	 */
 	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Identifies the currency used for the benchmark curve.";
@@ -159,8 +159,8 @@ public class Curve {
 	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(BenchmarkCurveName4Choice.mmIndex, BenchmarkCurveName4Choice.mmName);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Identifies the name of the benchmark curve.";
@@ -207,8 +207,8 @@ public class Curve {
 	 */
 	public static final MMBusinessAttribute mmPoint = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Point";
 			definition = "Identifies a point on a benchmark curve. The point can be stated via a combination of maturity month/year and coupon.";
@@ -259,8 +259,8 @@ public class Curve {
 	 */
 	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Spread for which a benchmark curve is specified.";

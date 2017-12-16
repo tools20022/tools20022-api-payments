@@ -146,8 +146,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmBenchmarkSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkSecurity";
 			definition = "Security used as a reference to express the value of another security.";
@@ -195,8 +195,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmSecuritiesFinancing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesFinancing";
 			definition = "Securities financing process for which a repurchase spread is specified.";
@@ -238,8 +238,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAttribute mmSpreadRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpreadRate";
 			definition = "Margin over or under an index which determines the interest rate of an interest bearing instrument.";
@@ -293,8 +293,8 @@ public class Spread {
 	public static final MMBusinessAttribute mmBasisPointSpread = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(FloatingInterestRate4.mmBasisPointSpread);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasisPointSpread";
 			definition = "Specifies the number of points to be added or substracted to the rate.";
@@ -344,8 +344,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "Index for which a spread is specified.";
@@ -391,8 +391,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmBenchmarkPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkPrice";
 			definition = "Identifies the price of the benchmark security.";
@@ -442,8 +442,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process for which a spread to benchmark is specified.";
@@ -490,8 +490,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicationOfInterest";
 			definition = "Indication of interest process for which a spread is specified.";
@@ -538,8 +538,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterest";
 			definition = "Interest calculation process for which a spread is provided.";
@@ -583,8 +583,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAssociationEnd mmBenchmarkCurve = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkCurve";
 			definition = "Describes a benchmark curve.";
@@ -629,8 +629,8 @@ public class Spread {
 	 */
 	public static final MMBusinessAttribute mmPriceOffset = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceOffset";
 			definition = "Either a swap spread or spread to benchmark depending upon order type.  In case of a spread to benchmark, the price offset is expressed in terms of basis points relative to a benchmark - this can be a positive or a negative spread.  In case of a swap spread, the price offset is target spread for a swap.";

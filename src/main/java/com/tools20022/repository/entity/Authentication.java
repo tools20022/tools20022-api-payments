@@ -73,16 +73,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CardholderAuthentication2
- * CardholderAuthentication2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.MandateAuthentication1
- * MandateAuthentication1}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -91,6 +81,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * CardholderRole.mmAuthentication}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Mandate#mmAuthentication
  * Mandate.mmAuthentication}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CardholderAuthentication2
+ * CardholderAuthentication2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateAuthentication1
+ * MandateAuthentication1}</li>
  * </ul>
  * </li>
  * <li>
@@ -147,8 +147,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAssociationEnd mmCardholder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cardholder";
 			definition = "Cardholder for which an authentication is provided.";
@@ -200,8 +200,8 @@ public class Authentication {
 	public static final MMBusinessAttribute mmAuthenticationMethod = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardholderAuthentication2.mmAuthenticationMethod, MandateAuthentication1.mmChannel);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticationMethod";
 			definition = "Method used to authenticate a person.";
@@ -260,8 +260,8 @@ public class Authentication {
 	public static final MMBusinessAttribute mmAuthenticationEntity = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardholderAuthentication2.mmAuthenticationEntity, MandateAuthentication1.mmMessageAuthenticationCode);
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticationEntity";
 			definition = "Entity or object in charge of verifying the person authenticity.";
@@ -307,8 +307,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmAuthenticationValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticationValue";
 			definition = "Value used to authenticate the owner of the payment card.";
@@ -354,8 +354,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmPINFormat = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PINFormat";
 			definition = "Encrypted personal identification number (PIN) format.";
@@ -401,8 +401,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmPIN = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PIN";
 			definition = "Personal Identification Number (PIN) for authentication.";
@@ -450,8 +450,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmAuthenticationSupport = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticationSupport";
 			definition = "This indicator identifies whether person authentication is supported and data is available.";
@@ -499,8 +499,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmCollectionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollectionIndicator";
 			definition = "Identifies in electronic commerce transactions whether customer authentication is supported and data is available.";
@@ -555,8 +555,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mandate";
 			definition = "Specifies the mandate related to the transport authentication detailsmandate.";
@@ -596,8 +596,8 @@ public class Authentication {
 	 */
 	public static final MMBusinessAttribute mmAuthenticationResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticationResult";
 			definition = "Specifies the result of the authentication.";

@@ -117,8 +117,8 @@ public class CommissionWaiver {
 	 */
 	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commission";
 			definition = "Commission to which the waiver applies.";
@@ -158,8 +158,8 @@ public class CommissionWaiver {
 	 */
 	public static final MMBusinessAttribute mmInstructionBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionBasis";
 			definition = "Form of the rebate, eg, cash.";
@@ -208,8 +208,8 @@ public class CommissionWaiver {
 	 */
 	public static final MMBusinessAttribute mmWaivedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaivedRate";
 			definition = "Proportion of the commission that is waived, ie, if  the commission is 5% and half is waived, 2.5% should be stated in this field.";
@@ -255,8 +255,8 @@ public class CommissionWaiver {
 	 */
 	public static final MMBusinessAttribute mmNonWaivedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			isDerived = true;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonWaivedRate";
 			definition = "New commission rate applied, after waiving.";

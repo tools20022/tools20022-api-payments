@@ -133,8 +133,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAssociationEnd mmMeetingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingInstruction";
 			definition = "Meeting instruction which contains a vote instruction.";
@@ -181,8 +181,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAssociationEnd mmVotePerResolution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotePerResolution";
 			definition = "Specifies the number of votes to be cast for a specific resolution.";
@@ -224,8 +224,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAttribute mmDiscretionary = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discretionary";
 			definition = "Number of votes for which decision is left to the party that will exercise the voting right.";
@@ -272,8 +272,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAttribute mmGlobalVoteInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GlobalVoteInstruction";
 			definition = "Vote instruction per resolution is cast for the entire entitlement.";
@@ -322,8 +322,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAttribute mmVoteForMeetingResolution = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteForMeetingResolution";
 			definition = "Specifies the vote recommendation for resolutions added during the meeting.";
@@ -370,8 +370,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAttribute mmVoteExecutionConfirmation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteExecutionConfirmation";
 			definition = "Indicates that a Vote execution confirmation is requested.";
@@ -424,8 +424,8 @@ public class VoteInstructionRequest {
 	 */
 	public static final MMBusinessAssociationEnd mmRelatedProxyAppointment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProxyAppointment";
 			definition = "Proxy appointment to which instructions are attached.";

@@ -116,15 +116,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2
- * ClearingSystemMemberIdentification2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
@@ -137,6 +128,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.ClearingMemberRole#mmClearingSystemMemberIdentification
  * ClearingMemberRole.mmClearingSystemMemberIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2
+ * ClearingSystemMemberIdentification2}</li>
  * </ul>
  * </li>
  * <li>
@@ -199,8 +199,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAssociationEnd mmOrganisationIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Identification parameters which include clearing system member identification.";
@@ -245,8 +245,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmCHIPSUniversalIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CHIPSUniversalIdentification";
 			definition = "(United States) Clearing House Interbank Payments System (CHIPS) Universal Identification (UID) - identifies entities that own accounts at CHIPS participating financial institutions, through which CHIPS payments are effected. The CHIPS UID is assigned by the New York Clearing House.";
@@ -296,8 +296,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmNewZealandNCC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewZealandNCC";
 			definition = "New Zealand Bank/Branch Code - identifies New Zealand institutions on the New Zealand national clearing system. The code is assigned by the New Zealand Bankers' Association (NZBA).";
@@ -347,8 +347,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmIrishNSC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IrishNSC";
 			definition = "Irish National Sorting Code - identifies Irish financial institutions on the Irish national clearing system. The code is assigned by the Irish Payments Services Organisation (IPSO).";
@@ -398,8 +398,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmUKSortCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UKSortCode";
 			definition = "United Kingdom (UK) Sort Code - identifies British financial institutions on the British national clearing systems. The sort code is assigned by the Association for Payments and Clearing Services (APACS).";
@@ -450,8 +450,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmCHIPSParticipantIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CHIPSParticipantIdentification";
 			definition = "(United States) Clearing House Interbank Payment System (CHIPS) Participant Identifier (ID) - identifies financial institutions participating on CHIPS. The CHIPS Participant ID is assigned by the New York Clearing House.";
@@ -500,8 +500,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmSwissBC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwissBC";
 			definition = "Swiss Bank Code - identifies Swiss institutions on the Swiss national clearing system.";
@@ -551,8 +551,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmFedwireRoutingNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FedwireRoutingNumber";
 			definition = "Fed wire Routing Number - identifies financial institutions, in the US, on the Fed wire system. The routing number is assigned by the American Bankers Association (ABA).";
@@ -601,8 +601,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmPortugueseNCC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PortugueseNCC";
 			definition = "Portuguese National Clearing Code - identifies Portuguese financial institutions on the Portuguese national clearing system.";
@@ -651,8 +651,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmRussianCentralBankIdentificationCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RussianCentralBankIdentificationCode";
 			definition = "Russian Central Bank Identification Code - identifies Russian financial institutions on the Russian national clearing system.";
@@ -702,8 +702,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmItalianDomesticIdentificationCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ItalianDomesticIdentificationCode";
 			definition = "Italian Domestic Identification Code - identifies Italian financial institutions on the Italian national clearing system. The code is assigned by the Associazione Bancaria Italiana (ABI).";
@@ -752,8 +752,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmAustrianBankleitzahl = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AustrianBankleitzahl";
 			definition = "Austrian Bankleitzahl - identifies Austrian financial institutions on the Austrian national clearing system.";
@@ -802,8 +802,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmCanadianPaymentsAssociationRoutingNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CanadianPaymentsAssociationRoutingNumber";
 			definition = "Canadian Payments Association Routing Number - identifies Canadian financial institutions on the Canadian national clearing system.";
@@ -852,8 +852,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmSwissSIC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SwissSIC";
 			definition = "Swiss Interbank Clearing (SIC) Code - identifies Swiss financial institutions domestically, on the Swiss national clearing system.";
@@ -902,8 +902,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmGermanBankleitzahl = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GermanBankleitzahl";
 			definition = "German Bankleitzahl - identifies German financial institutions on the German national clearing systems.";
@@ -953,8 +953,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmSpanishDomesticInterbankingCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpanishDomesticInterbankingCode";
 			definition = "Spanish Domestic Interbanking Code - identifies Spanish financial institutions on the Spanish national clearing system. The code is assigned by the Centro de Cooperacion Interbancaria (CCI).";
@@ -1005,8 +1005,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmSouthAfricanNCC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SouthAfricanNCC";
 			definition = "South African National Clearing Code (NCC) - identifies South African financial institutions on the South African national clearing system. The code is assigned by the South African Bankers Services Company Ltd. (BankServ).";
@@ -1055,8 +1055,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmHongKongBankCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HongKongBankCode";
 			definition = "Hong Kong Bank Code - identifies Hong Kong financial institutions on the Hong Kong local clearing system.";
@@ -1112,8 +1112,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAssociationEnd mmClearingMember = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingMember";
 			definition = "Clearing system member for which a clearing system member identification is specified.";
@@ -1156,8 +1156,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmIndianFinancialSystemCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndianFinancialSystemCode";
 			definition = "Indian Financial System Code - identifies Indian financial institutions on the Indian local clearing system.";
@@ -1206,8 +1206,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmHellenicBankIdentificationCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HellenicBankIdentificationCode";
 			definition = "Hellenic Bank Identification Code - identifies Hellenic financial institutions on the Hellenic national clearing system.";
@@ -1256,8 +1256,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAttribute mmPolishNationalClearingCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PolishNationalClearingCode";
 			definition = "Polish National Clearing Code - identifies Polish financial institutions on the Polish national clearing system.";
@@ -1315,8 +1315,8 @@ public class CashClearingSystemMember {
 	 */
 	public static final MMBusinessAssociationEnd mmAustralianBSBCode = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystemMember.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AustralianBSBCode";
 			definition = "Australian Bank State Branch (BSB) Code - identifies Australian financial institutions on the Australian national clearing system. The code is assigned by the Australian Payments Clearing Association (APCA).";

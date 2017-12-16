@@ -118,8 +118,8 @@ public class CorporateActionEventRegistration {
 	public static final MMBusinessAttribute mmCorporateActionEventIdentification = new MMBusinessAttribute() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction9.mmEventIdentification);
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEventIdentification";
 			definition = "Identification given to the event.";
@@ -167,8 +167,8 @@ public class CorporateActionEventRegistration {
 	 */
 	public static final MMBusinessAttribute mmOfficialCorporateActionEventIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfficialCorporateActionEventIdentification";
 			definition = "Identification of a corporate action assigned by an official central body/entity within a given market.";
@@ -216,8 +216,8 @@ public class CorporateActionEventRegistration {
 	 */
 	public static final MMBusinessAttribute mmOfficialAnnouncementPublicationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfficialAnnouncementPublicationDate";
 			definition = "Date/time at which the corporate action is legally announced by an official body, for example, publication by a governmental administration.";
@@ -271,8 +271,8 @@ public class CorporateActionEventRegistration {
 	 */
 	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate event for which a registration is specified.";

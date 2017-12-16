@@ -20,9 +20,14 @@ package com.tools20022.repository.codeset;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.codeset.InterestTypeCode.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
+import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.LinkedHashMap;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Indicates if the deal price is excluding or including the accrued interest.
@@ -32,26 +37,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmCumInterest
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#CumInterest
  * InterestTypeCode.mmCumInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmExInterest
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ExInterest
  * InterestTypeCode.mmExInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmZeroCoupon
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ZeroCoupon
  * InterestTypeCode.mmZeroCoupon}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmDiscounted
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#Discounted
  * InterestTypeCode.mmDiscounted}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmIndex
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Index
  * InterestTypeCode.mmIndex}</li>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmDualBasis
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#DualBasis
  * InterestTypeCode.mmDualBasis}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmFloatingRateNote
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#FloatingRateNote
  * InterestTypeCode.mmFloatingRateNote}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmFixed
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Fixed
  * InterestTypeCode.mmFixed}</li>
  * </ul>
  * </li>
@@ -78,7 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
-public class InterestTypeCode {
+@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+public class InterestTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
@@ -102,12 +107,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates deal price including accrued interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmCumInterest = new MMCode() {
+	public static final InterestTypeCode CumInterest = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CumInterest";
 			definition = "Indicates deal price including accrued interest.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "CINT";
 		}
 	};
@@ -132,12 +137,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates deal price excluding accrued interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmExInterest = new MMCode() {
+	public static final InterestTypeCode ExInterest = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExInterest";
 			definition = "Indicates deal price excluding accrued interest.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "XINT";
 		}
 	};
@@ -162,12 +167,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is a zero coupon."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmZeroCoupon = new MMCode() {
+	public static final InterestTypeCode ZeroCoupon = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ZeroCoupon";
 			definition = "Indicates that the type of interest is a zero coupon.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "ZCPN";
 		}
 	};
@@ -192,12 +197,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is discounted."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDiscounted = new MMCode() {
+	public static final InterestTypeCode Discounted = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Discounted";
 			definition = "Indicates that the type of interest is discounted.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "DSCO";
 		}
 	};
@@ -222,12 +227,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is index."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmIndex = new MMCode() {
+	public static final InterestTypeCode Index = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Index";
 			definition = "Indicates that the type of interest is index.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "INDE";
 		}
 	};
@@ -252,12 +257,12 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is a dual basis."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmDualBasis = new MMCode() {
+	public static final InterestTypeCode DualBasis = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DualBasis";
 			definition = "Indicates that the type of interest is a dual basis.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "DUAL";
 		}
 	};
@@ -283,12 +288,12 @@ public class InterestTypeCode {
 	 * "Indicates that the type of interest is a floating rate note."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFloatingRateNote = new MMCode() {
+	public static final InterestTypeCode FloatingRateNote = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FloatingRateNote";
 			definition = "Indicates that the type of interest is a floating rate note.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "FLRN";
 		}
 	};
@@ -313,17 +318,21 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMCode mmFixed = new MMCode() {
+	public static final InterestTypeCode Fixed = new InterestTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fixed";
 			definition = "Indicates that the type of interest is fixed.";
-			owner_lazy = () -> InterestTypeCode.mmObject();
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestTypeCode.mmObject();
 			codeName = "FIXD";
 		}
 	};
+	final static private LinkedHashMap<String, InterestTypeCode> codesByName = new LinkedHashMap<>();
 
-	static public MMCodeSet mmObject() {
+	protected InterestTypeCode() {
+	}
+
+	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
@@ -331,10 +340,43 @@ public class InterestTypeCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestTypeCode";
 				definition = "Indicates if the deal price is excluding or including the accrued interest.";
-				code_lazy = () -> Arrays.asList(InterestTypeCode.mmCumInterest, InterestTypeCode.mmExInterest, InterestTypeCode.mmZeroCoupon, InterestTypeCode.mmDiscounted, InterestTypeCode.mmIndex, InterestTypeCode.mmDualBasis,
-						InterestTypeCode.mmFloatingRateNote, InterestTypeCode.mmFixed);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InterestTypeCode.CumInterest, com.tools20022.repository.codeset.InterestTypeCode.ExInterest, com.tools20022.repository.codeset.InterestTypeCode.ZeroCoupon,
+						com.tools20022.repository.codeset.InterestTypeCode.Discounted, com.tools20022.repository.codeset.InterestTypeCode.Index, com.tools20022.repository.codeset.InterestTypeCode.DualBasis,
+						com.tools20022.repository.codeset.InterestTypeCode.FloatingRateNote, com.tools20022.repository.codeset.InterestTypeCode.Fixed);
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	static {
+		codesByName.put(CumInterest.getCodeName().get(), CumInterest);
+		codesByName.put(ExInterest.getCodeName().get(), ExInterest);
+		codesByName.put(ZeroCoupon.getCodeName().get(), ZeroCoupon);
+		codesByName.put(Discounted.getCodeName().get(), Discounted);
+		codesByName.put(Index.getCodeName().get(), Index);
+		codesByName.put(DualBasis.getCodeName().get(), DualBasis);
+		codesByName.put(FloatingRateNote.getCodeName().get(), FloatingRateNote);
+		codesByName.put(Fixed.getCodeName().get(), Fixed);
+	}
+
+	public static InterestTypeCode valueOf(String codeName) {
+		return codesByName.get(codeName);
+	}
+
+	public static InterestTypeCode[] values() {
+		InterestTypeCode[] values = new InterestTypeCode[codesByName.size()];
+		return codesByName.values().toArray(values);
+	}
+
+	protected static class InternalXmlAdapter extends XmlAdapter<String, InterestTypeCode> {
+		@Override
+		public InterestTypeCode unmarshal(String codeName) {
+			return valueOf(codeName);
+		}
+
+		@Override
+		public String marshal(InterestTypeCode codeObj) {
+			return codeObj.getCodeName().orElse(null);
+		}
 	}
 }
