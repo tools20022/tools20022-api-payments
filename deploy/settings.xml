@@ -11,14 +11,12 @@
 		<profile>
 			<id>travis-ossrh</id>			
 			<properties>
-				<gpg.defaultKeyring>false</gpg.defaultKeyring>
-				<gpg.publicKeyring>deploy/pubring.gpg</gpg.publicKeyring>
-				<gpg.secretKeyring>deploy/secring.gpg</gpg.secretKeyring>
-				<gpg.keyname>bukodi@tools20022.com</gpg.keyname>
-				<gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+           		<gpg.publicKeyring>deploy/pubring.gpg</gpg.publicKeyring>
+           		<gpg.secretKeyring>deploy/secring.gpg</gpg.secretKeyring>
+           		<gpg.keyname>${env.GPG_KEYNAME}</gpg.keyname>
+           		<gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
                 <org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener>warn</org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener>
 			</properties>
 		</profile>
 	</profiles>
-
 </settings>

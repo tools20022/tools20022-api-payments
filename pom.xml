@@ -22,7 +22,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<gpg.keyname>bukodi@tools20022.com</gpg.keyname>
 	</properties>
 
 	<developers>
@@ -160,7 +159,7 @@
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
-						<phase>verify</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
