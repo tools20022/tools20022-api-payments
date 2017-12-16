@@ -13,6 +13,7 @@
 			<properties>
            		<gpg.publicKeyring>deploy/pubring.gpg</gpg.publicKeyring>
            		<gpg.secretKeyring>deploy/secring.gpg</gpg.secretKeyring>
+           		<gpg.defaultKeyring>false</gpg.defaultKeyring>
            		<gpg.keyname>${env.GPG_KEYNAME}</gpg.keyname>
            		<gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
                 <org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener>warn</org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener>
