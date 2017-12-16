@@ -4,7 +4,8 @@ dist: trusty
 language: java
 jdk: openjdk8
 
-script: "mvn deploy --settings depoly/settings.xml -B -Ptravis -DskipTests=false -Dmaven.javadoc.skip=false"
+install: "/bin/true"
+script: "mvn deploy --settings depoly/settings.xml -B -P travis -DskipTests=false -Dmaven.javadoc.skip=false"
 
 cache:
   directories:
