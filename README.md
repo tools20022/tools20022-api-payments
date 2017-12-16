@@ -4,4 +4,3 @@
 
 # Tools20022 API - Payments business domain
 
-https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.tools20022%22%20AND%20a%3A%22tools20022-api-payments%22
