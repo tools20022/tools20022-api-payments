@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the tax identification related to a service to be billed."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "BillingTaxIdentification1", propOrder = {"VATRegistrationNumber", "taxRegistrationNumber", "taxContact"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "BillingTaxIdentification1", propOrder = {"vATRegistrationNumber", "taxRegistrationNumber", "taxContact"})
 public class BillingTaxIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "VATRegnNb")
 	protected Max35Text vATRegistrationNumber;
 	/**
-	 * Value added tax (VAT) registration number as provided by the region’s
-	 * local taxing authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,7 +115,7 @@ public class BillingTaxIdentification1 {
 	public static final MMMessageAttribute mmVATRegistrationNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TaxPartyRole.mmVATRegistrationNumber;
-			componentContext_lazy = () -> BillingTaxIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "VATRegnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +126,11 @@ public class BillingTaxIdentification1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxRegnNb")
 	protected Max35Text taxRegistrationNumber;
 	/**
-	 * Tax registration number (TRN) as provided by the tax region’s local
-	 * taxing authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +159,7 @@ public class BillingTaxIdentification1 {
 	 */
 	public static final MMMessageAttribute mmTaxRegistrationNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingTaxIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxRegnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,11 +170,11 @@ public class BillingTaxIdentification1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxCtct")
 	protected ContactDetails3 taxContact;
 	/**
-	 * Specifies financial institution's contact details for the tax region.
-	 * This contact works for the financial institution, not the tax region.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +209,7 @@ public class BillingTaxIdentification1 {
 	public static final MMMessageAttribute mmTaxContact = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Person.mmPersonIdentification;
-			componentContext_lazy = () -> BillingTaxIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxCtct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,9 +224,10 @@ public class BillingTaxIdentification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingTaxIdentification1.mmVATRegistrationNumber, BillingTaxIdentification1.mmTaxRegistrationNumber, BillingTaxIdentification1.mmTaxContact);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingTaxIdentification1.mmVATRegistrationNumber, com.tools20022.repository.msg.BillingTaxIdentification1.mmTaxRegistrationNumber,
+						com.tools20022.repository.msg.BillingTaxIdentification1.mmTaxContact);
 				trace_lazy = () -> TaxPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingTaxIdentification1";
 				definition = "Specifies the tax identification related to a service to be billed.";
@@ -234,30 +236,30 @@ public class BillingTaxIdentification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "VATRegnNb")
-	public Max35Text getVATRegistrationNumber() {
-		return vATRegistrationNumber;
+	public Optional<Max35Text> getVATRegistrationNumber() {
+		return vATRegistrationNumber == null ? Optional.empty() : Optional.of(vATRegistrationNumber);
 	}
 
-	public void setVATRegistrationNumber(Max35Text vATRegistrationNumber) {
+	public BillingTaxIdentification1 setVATRegistrationNumber(Max35Text vATRegistrationNumber) {
 		this.vATRegistrationNumber = vATRegistrationNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TaxRegnNb")
-	public Max35Text getTaxRegistrationNumber() {
-		return taxRegistrationNumber;
+	public Optional<Max35Text> getTaxRegistrationNumber() {
+		return taxRegistrationNumber == null ? Optional.empty() : Optional.of(taxRegistrationNumber);
 	}
 
-	public void setTaxRegistrationNumber(Max35Text taxRegistrationNumber) {
+	public BillingTaxIdentification1 setTaxRegistrationNumber(Max35Text taxRegistrationNumber) {
 		this.taxRegistrationNumber = taxRegistrationNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TaxCtct")
-	public ContactDetails3 getTaxContact() {
-		return taxContact;
+	public Optional<ContactDetails3> getTaxContact() {
+		return taxContact == null ? Optional.empty() : Optional.of(taxContact);
 	}
 
-	public void setTaxContact(com.tools20022.repository.msg.ContactDetails3 taxContact) {
+	public BillingTaxIdentification1 setTaxContact(com.tools20022.repository.msg.ContactDetails3 taxContact) {
 		this.taxContact = taxContact;
+		return this;
 	}
 }

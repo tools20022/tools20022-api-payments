@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAmountOrShareRule#forSyndicatedLoan1
+ * ConstraintAmountOrShareRule.forSyndicatedLoan1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SyndicatedLoan1", propOrder = {"borrower", "lender", "amount", "share", "exchangeRateInformation"})
 public class SyndicatedLoan1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Brrwr", required = true)
 	protected TradeParty2 borrower;
 	/**
-	 * Party which obtains the loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,7 +124,7 @@ public class SyndicatedLoan1 {
 	public static final MMMessageAssociationEnd mmBorrower = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Borrower.mmObject();
-			componentContext_lazy = () -> SyndicatedLoan1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
 			isDerived = false;
 			xmlTag = "Brrwr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,10 +136,11 @@ public class SyndicatedLoan1 {
 			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
 		}
 	};
+	@XmlElement(name = "Lndr")
 	protected TradeParty2 lender;
 	/**
-	 * Party which provides an amount of money available to others to borrow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,7 +173,7 @@ public class SyndicatedLoan1 {
 	public static final MMMessageAttribute mmLender = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> Lender.mmObject();
-			componentContext_lazy = () -> SyndicatedLoan1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
 			isDerived = false;
 			xmlTag = "Lndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,10 +184,11 @@ public class SyndicatedLoan1 {
 			complexType_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt")
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of the part in the syndicated loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +222,7 @@ public class SyndicatedLoan1 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Loan.mmPrincipalAmount;
-			componentContext_lazy = () -> SyndicatedLoan1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,10 +233,11 @@ public class SyndicatedLoan1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Shr")
 	protected Percentage share;
 	/**
-	 * Share of the part in the syndicated loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,7 +270,7 @@ public class SyndicatedLoan1 {
 	public static final MMMessageAttribute mmShare = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Allocation.mmAllocatedQuantity;
-			componentContext_lazy = () -> SyndicatedLoan1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
 			isDerived = false;
 			xmlTag = "Shr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,10 +281,11 @@ public class SyndicatedLoan1 {
 			simpleType_lazy = () -> Percentage.mmObject();
 		}
 	};
+	@XmlElement(name = "XchgRateInf")
 	protected ExchangeRate1 exchangeRateInformation;
 	/**
-	 * Provides details on the currency exchange rate and contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -303,7 +318,7 @@ public class SyndicatedLoan1 {
 	public static final MMMessageAssociationEnd mmExchangeRateInformation = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmExchangeRateInformation;
-			componentContext_lazy = () -> SyndicatedLoan1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
 			isDerived = false;
 			xmlTag = "XchgRateInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -319,9 +334,11 @@ public class SyndicatedLoan1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SyndicatedLoan1.mmBorrower, SyndicatedLoan1.mmLender, SyndicatedLoan1.mmAmount, SyndicatedLoan1.mmShare, SyndicatedLoan1.mmExchangeRateInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SyndicatedLoan1.mmBorrower, com.tools20022.repository.msg.SyndicatedLoan1.mmLender, com.tools20022.repository.msg.SyndicatedLoan1.mmAmount,
+						com.tools20022.repository.msg.SyndicatedLoan1.mmShare, com.tools20022.repository.msg.SyndicatedLoan1.mmExchangeRateInformation);
 				trace_lazy = () -> Loan.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAmountOrShareRule.forSyndicatedLoan1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SyndicatedLoan1";
 				definition = "Loan offered by a group of lenders (called a syndicate) who work together to lend an amount of money to a single borrower.";
@@ -330,48 +347,48 @@ public class SyndicatedLoan1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Brrwr", required = true)
 	public TradeParty2 getBorrower() {
 		return borrower;
 	}
 
-	public void setBorrower(com.tools20022.repository.msg.TradeParty2 borrower) {
-		this.borrower = borrower;
+	public SyndicatedLoan1 setBorrower(com.tools20022.repository.msg.TradeParty2 borrower) {
+		this.borrower = Objects.requireNonNull(borrower);
+		return this;
 	}
 
-	@XmlElement(name = "Lndr")
-	public TradeParty2 getLender() {
-		return lender;
+	public Optional<TradeParty2> getLender() {
+		return lender == null ? Optional.empty() : Optional.of(lender);
 	}
 
-	public void setLender(com.tools20022.repository.msg.TradeParty2 lender) {
+	public SyndicatedLoan1 setLender(com.tools20022.repository.msg.TradeParty2 lender) {
 		this.lender = lender;
+		return this;
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
+	public SyndicatedLoan1 setAmount(ActiveCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "Shr")
-	public Percentage getShare() {
-		return share;
+	public Optional<Percentage> getShare() {
+		return share == null ? Optional.empty() : Optional.of(share);
 	}
 
-	public void setShare(Percentage share) {
+	public SyndicatedLoan1 setShare(Percentage share) {
 		this.share = share;
+		return this;
 	}
 
-	@XmlElement(name = "XchgRateInf")
-	public ExchangeRate1 getExchangeRateInformation() {
-		return exchangeRateInformation;
+	public Optional<ExchangeRate1> getExchangeRateInformation() {
+		return exchangeRateInformation == null ? Optional.empty() : Optional.of(exchangeRateInformation);
 	}
 
-	public void setExchangeRateInformation(com.tools20022.repository.msg.ExchangeRate1 exchangeRateInformation) {
+	public SyndicatedLoan1 setExchangeRateInformation(com.tools20022.repository.msg.ExchangeRate1 exchangeRateInformation) {
 		this.exchangeRateInformation = exchangeRateInformation;
+		return this;
 	}
 }

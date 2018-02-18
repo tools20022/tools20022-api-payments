@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TransactionCertificate2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 
 /**
  * Payment which consists of one single transaction. This payment may be grouped
@@ -79,8 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +99,8 @@ public class IndividualPayment extends Payment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BulkPayment bulkPayment;
 	/**
-	 * Payment hich groups a series of individual payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +149,7 @@ public class IndividualPayment extends Payment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IndividualPayment";
 				definition = "Payment which consists of one single transaction. This payment may be grouped with other similar payments to form a bulk payment.";
@@ -167,11 +168,12 @@ public class IndividualPayment extends Payment {
 		return mmObject_lazy.get();
 	}
 
-	public BulkPayment getBulkPayment() {
-		return bulkPayment;
+	public Optional<BulkPayment> getBulkPayment() {
+		return bulkPayment == null ? Optional.empty() : Optional.of(bulkPayment);
 	}
 
-	public void setBulkPayment(com.tools20022.repository.entity.BulkPayment bulkPayment) {
+	public IndividualPayment setBulkPayment(com.tools20022.repository.entity.BulkPayment bulkPayment) {
 		this.bulkPayment = bulkPayment;
+		return this;
 	}
 }

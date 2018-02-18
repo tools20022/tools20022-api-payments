@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Account between an investor(s) and a fund manager or a fund. The account can
@@ -149,8 +149,11 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::SFRE</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -168,9 +171,8 @@ public class InvestmentAccount extends Account {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected FundCashAccountCode investmentAccountType;
 	/**
-	 * Purpose of the account/source fund type. This is typically linked to an
-	 * investment product, eg, wrapper, PEP, ISA.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,8 +220,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected AccountOwnershipTypeCode ownershipType;
 	/**
-	 * Ownership status of the account, eg, joint owners.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,12 +267,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected Max70Text designation;
 	/**
-	 * Supplementary registration information applying to a specific block of
-	 * units for dealing and reporting purposes. The supplementary registration
-	 * information may be used when all the units are registered, for example,
-	 * to a funds supermarket, but holdings for each investor have to be
-	 * reconciled individually.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,9 +315,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected CurrencyCode referenceCurrency;
 	/**
-	 * Currency chosen for reporting purposes by the account owner in agreement
-	 * with the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,8 +363,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass;
 	/**
-	 * Investment fund classes held in an investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,8 +410,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Part of the investment account to or from which cash entries are made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -461,9 +458,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
-	 * Part of the investment account to or from which securities entries are
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,8 +507,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax;
 	/**
-	 * Taxes specific to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -558,8 +554,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction;
 	/**
-	 * Investment fund transaction which uses the investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -607,8 +603,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SidePocket> sidePocket;
 	/**
-	 * Separate account containing illiquid assets of a hedge fund portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -655,9 +651,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole;
 	/**
-	 * Specifies each role linked to an investment account and played by a party
-	 * in that context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -706,8 +701,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected PortfolioTransfer debitPortfolioTransfer;
 	/**
-	 * Transfer process for which a debit investment account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -755,8 +750,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected PortfolioTransfer creditPortfolioTransfer;
 	/**
-	 * Transfer process for which a beneficiary investment account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -805,8 +800,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected FundOrderDesk accountForInvestmentFundProcessing;
 	/**
-	 * Order desk for which an account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -853,8 +848,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected InvestmentAccountContract investmentAccountContract;
 	/**
-	 * Contract defining the related account
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -902,9 +897,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected AccountUsageTypeCode accountUsageType;
 	/**
-	 * Specifies whether the account is used for investment or for settlement
-	 * purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -952,8 +946,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected InvestmentAccountCategoryCode category;
 	/**
-	 * Specifies the investment account category.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -999,8 +993,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected Portfolio portfolio;
 	/**
-	 * Portfolio held on an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1047,8 +1041,8 @@ public class InvestmentAccount extends Account {
 	};
 	protected PortfolioTransfer relatedPortfolioTransfer;
 	/**
-	 * Transfer of a portfolio held on a nominee account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1097,7 +1091,8 @@ public class InvestmentAccount extends Account {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccount";
 				definition = "Account between an investor(s) and a fund manager or a fund. The account can contain holdings in any investment fund or investment fund class managed (or distributed) by the fund manager, within the same fund family.";
@@ -1130,151 +1125,170 @@ public class InvestmentAccount extends Account {
 		return investmentAccountType;
 	}
 
-	public void setInvestmentAccountType(FundCashAccountCode investmentAccountType) {
-		this.investmentAccountType = investmentAccountType;
+	public InvestmentAccount setInvestmentAccountType(FundCashAccountCode investmentAccountType) {
+		this.investmentAccountType = Objects.requireNonNull(investmentAccountType);
+		return this;
 	}
 
 	public AccountOwnershipTypeCode getOwnershipType() {
 		return ownershipType;
 	}
 
-	public void setOwnershipType(AccountOwnershipTypeCode ownershipType) {
-		this.ownershipType = ownershipType;
+	public InvestmentAccount setOwnershipType(AccountOwnershipTypeCode ownershipType) {
+		this.ownershipType = Objects.requireNonNull(ownershipType);
+		return this;
 	}
 
 	public Max70Text getDesignation() {
 		return designation;
 	}
 
-	public void setDesignation(Max70Text designation) {
-		this.designation = designation;
+	public InvestmentAccount setDesignation(Max70Text designation) {
+		this.designation = Objects.requireNonNull(designation);
+		return this;
 	}
 
 	public CurrencyCode getReferenceCurrency() {
 		return referenceCurrency;
 	}
 
-	public void setReferenceCurrency(CurrencyCode referenceCurrency) {
-		this.referenceCurrency = referenceCurrency;
+	public InvestmentAccount setReferenceCurrency(CurrencyCode referenceCurrency) {
+		this.referenceCurrency = Objects.requireNonNull(referenceCurrency);
+		return this;
 	}
 
 	public List<InvestmentFundClass> getInvestmentFundClass() {
-		return investmentFundClass;
+		return investmentFundClass == null ? investmentFundClass = new ArrayList<>() : investmentFundClass;
 	}
 
-	public void setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
-		this.investmentFundClass = investmentFundClass;
+	public InvestmentAccount setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
+		this.investmentFundClass = Objects.requireNonNull(investmentFundClass);
+		return this;
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public InvestmentAccount setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getSecuritiesAccount() {
-		return securitiesAccount;
+		return securitiesAccount == null ? securitiesAccount = new ArrayList<>() : securitiesAccount;
 	}
 
-	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
-		this.securitiesAccount = securitiesAccount;
+	public InvestmentAccount setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = Objects.requireNonNull(securitiesAccount);
+		return this;
 	}
 
 	public List<InvestmentFundTax> getInvestmentFundTax() {
-		return investmentFundTax;
+		return investmentFundTax == null ? investmentFundTax = new ArrayList<>() : investmentFundTax;
 	}
 
-	public void setInvestmentFundTax(List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax) {
-		this.investmentFundTax = investmentFundTax;
+	public InvestmentAccount setInvestmentFundTax(List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax) {
+		this.investmentFundTax = Objects.requireNonNull(investmentFundTax);
+		return this;
 	}
 
 	public List<InvestmentFundTransaction> getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+		return investmentFundTransaction == null ? investmentFundTransaction = new ArrayList<>() : investmentFundTransaction;
 	}
 
-	public void setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
-		this.investmentFundTransaction = investmentFundTransaction;
+	public InvestmentAccount setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
+		this.investmentFundTransaction = Objects.requireNonNull(investmentFundTransaction);
+		return this;
 	}
 
 	public List<SidePocket> getSidePocket() {
-		return sidePocket;
+		return sidePocket == null ? sidePocket = new ArrayList<>() : sidePocket;
 	}
 
-	public void setSidePocket(List<com.tools20022.repository.entity.SidePocket> sidePocket) {
-		this.sidePocket = sidePocket;
+	public InvestmentAccount setSidePocket(List<com.tools20022.repository.entity.SidePocket> sidePocket) {
+		this.sidePocket = Objects.requireNonNull(sidePocket);
+		return this;
 	}
 
 	public List<InvestmentAccountPartyRole> getInvestmentAccountPartyRole() {
-		return investmentAccountPartyRole;
+		return investmentAccountPartyRole == null ? investmentAccountPartyRole = new ArrayList<>() : investmentAccountPartyRole;
 	}
 
-	public void setInvestmentAccountPartyRole(List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole) {
-		this.investmentAccountPartyRole = investmentAccountPartyRole;
+	public InvestmentAccount setInvestmentAccountPartyRole(List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole) {
+		this.investmentAccountPartyRole = Objects.requireNonNull(investmentAccountPartyRole);
+		return this;
 	}
 
-	public PortfolioTransfer getDebitPortfolioTransfer() {
-		return debitPortfolioTransfer;
+	public Optional<PortfolioTransfer> getDebitPortfolioTransfer() {
+		return debitPortfolioTransfer == null ? Optional.empty() : Optional.of(debitPortfolioTransfer);
 	}
 
-	public void setDebitPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer debitPortfolioTransfer) {
+	public InvestmentAccount setDebitPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer debitPortfolioTransfer) {
 		this.debitPortfolioTransfer = debitPortfolioTransfer;
+		return this;
 	}
 
-	public PortfolioTransfer getCreditPortfolioTransfer() {
-		return creditPortfolioTransfer;
+	public Optional<PortfolioTransfer> getCreditPortfolioTransfer() {
+		return creditPortfolioTransfer == null ? Optional.empty() : Optional.of(creditPortfolioTransfer);
 	}
 
-	public void setCreditPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer creditPortfolioTransfer) {
+	public InvestmentAccount setCreditPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer creditPortfolioTransfer) {
 		this.creditPortfolioTransfer = creditPortfolioTransfer;
+		return this;
 	}
 
-	public FundOrderDesk getAccountForInvestmentFundProcessing() {
-		return accountForInvestmentFundProcessing;
+	public Optional<FundOrderDesk> getAccountForInvestmentFundProcessing() {
+		return accountForInvestmentFundProcessing == null ? Optional.empty() : Optional.of(accountForInvestmentFundProcessing);
 	}
 
-	public void setAccountForInvestmentFundProcessing(com.tools20022.repository.entity.FundOrderDesk accountForInvestmentFundProcessing) {
+	public InvestmentAccount setAccountForInvestmentFundProcessing(com.tools20022.repository.entity.FundOrderDesk accountForInvestmentFundProcessing) {
 		this.accountForInvestmentFundProcessing = accountForInvestmentFundProcessing;
+		return this;
 	}
 
 	public InvestmentAccountContract getInvestmentAccountContract() {
 		return investmentAccountContract;
 	}
 
-	public void setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
-		this.investmentAccountContract = investmentAccountContract;
+	public InvestmentAccount setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
+		this.investmentAccountContract = Objects.requireNonNull(investmentAccountContract);
+		return this;
 	}
 
 	public AccountUsageTypeCode getAccountUsageType() {
 		return accountUsageType;
 	}
 
-	public void setAccountUsageType(AccountUsageTypeCode accountUsageType) {
-		this.accountUsageType = accountUsageType;
+	public InvestmentAccount setAccountUsageType(AccountUsageTypeCode accountUsageType) {
+		this.accountUsageType = Objects.requireNonNull(accountUsageType);
+		return this;
 	}
 
 	public InvestmentAccountCategoryCode getCategory() {
 		return category;
 	}
 
-	public void setCategory(InvestmentAccountCategoryCode category) {
-		this.category = category;
+	public InvestmentAccount setCategory(InvestmentAccountCategoryCode category) {
+		this.category = Objects.requireNonNull(category);
+		return this;
 	}
 
 	public Portfolio getPortfolio() {
 		return portfolio;
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
-		this.portfolio = portfolio;
+	public InvestmentAccount setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+		this.portfolio = Objects.requireNonNull(portfolio);
+		return this;
 	}
 
 	public PortfolioTransfer getRelatedPortfolioTransfer() {
 		return relatedPortfolioTransfer;
 	}
 
-	public void setRelatedPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer relatedPortfolioTransfer) {
-		this.relatedPortfolioTransfer = relatedPortfolioTransfer;
+	public InvestmentAccount setRelatedPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer relatedPortfolioTransfer) {
+		this.relatedPortfolioTransfer = Objects.requireNonNull(relatedPortfolioTransfer);
+		return this;
 	}
 }

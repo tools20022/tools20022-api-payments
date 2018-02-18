@@ -37,32 +37,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Deliverable
- * AppearanceCode.mmDeliverable}</li>
+ * AppearanceCode.Deliverable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AppearanceCode#NotDeliverable
- * AppearanceCode.mmNotDeliverable}</li>
+ * AppearanceCode.NotDeliverable}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Limited
- * AppearanceCode.mmLimited}</li>
+ * AppearanceCode.Limited}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#BookEntry
- * AppearanceCode.mmBookEntry}</li>
+ * AppearanceCode.BookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AppearanceCode#DeferredBookEntry
- * AppearanceCode.mmDeferredBookEntry}</li>
+ * AppearanceCode.DeferredBookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AppearanceCode#DeliverableBookEntry
- * AppearanceCode.mmDeliverableBookEntry}</li>
+ * AppearanceCode.DeliverableBookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AppearanceCode#TemporaryGlobal
- * AppearanceCode.mmTemporaryGlobal}</li>
+ * AppearanceCode.TemporaryGlobal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AppearanceCode#Global
- * AppearanceCode.mmGlobal}</li>
+ * AppearanceCode.Global}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -334,7 +334,7 @@ public class AppearanceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DELI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AppearanceCode";

@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max5NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the type of change to a number."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NumberModification1", propOrder = {"modificationCode", "number"})
 public class NumberModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModCd")
 	protected Modification1Code modificationCode;
 	/**
-	 * Specifies the type of change.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,7 +100,7 @@ public class NumberModification1 {
 	 */
 	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> NumberModification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,10 +111,11 @@ public class NumberModification1 {
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Nb", required = true)
 	protected Max5NumericText number;
 	/**
-	 * Number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,7 +143,7 @@ public class NumberModification1 {
 	 */
 	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> NumberModification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,8 +158,8 @@ public class NumberModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NumberModification1.mmModificationCode, NumberModification1.mmNumber);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NumberModification1.mmModificationCode, com.tools20022.repository.msg.NumberModification1.mmNumber);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NumberModification1";
 				definition = "Specifies the type of change to a number.";
@@ -164,21 +168,21 @@ public class NumberModification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModCd")
-	public Modification1Code getModificationCode() {
-		return modificationCode;
+	public Optional<Modification1Code> getModificationCode() {
+		return modificationCode == null ? Optional.empty() : Optional.of(modificationCode);
 	}
 
-	public void setModificationCode(Modification1Code modificationCode) {
+	public NumberModification1 setModificationCode(Modification1Code modificationCode) {
 		this.modificationCode = modificationCode;
+		return this;
 	}
 
-	@XmlElement(name = "Nb", required = true)
 	public Max5NumericText getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max5NumericText number) {
-		this.number = number;
+	public NumberModification1 setNumber(Max5NumericText number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 }

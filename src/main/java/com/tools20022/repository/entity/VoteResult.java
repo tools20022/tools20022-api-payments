@@ -22,9 +22,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies whether an agenda item of a general meeting has been accepted or
@@ -64,8 +63,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,8 +82,8 @@ public class VoteResult {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Vote> vote;
 	/**
-	 * Number of votes per type of vote and per resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,8 +126,8 @@ public class VoteResult {
 	};
 	protected YesNoIndicator accepted;
 	/**
-	 * Specifies whether a resolution is accepted or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,8 +172,8 @@ public class VoteResult {
 	};
 	protected MeetingResultDissemination voteDissemination;
 	/**
-	 * Disemination process through which the results are propagated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -222,8 +221,8 @@ public class VoteResult {
 	};
 	protected Number totalVotesCast;
 	/**
-	 * Total number of votes cast per resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,7 +268,7 @@ public class VoteResult {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteResult";
 				definition = "Specifies whether an agenda item of a general meeting has been accepted or rejected, together with the number of votes.";
@@ -287,34 +286,38 @@ public class VoteResult {
 	}
 
 	public List<Vote> getVote() {
-		return vote;
+		return vote == null ? vote = new ArrayList<>() : vote;
 	}
 
-	public void setVote(List<com.tools20022.repository.entity.Vote> vote) {
-		this.vote = vote;
+	public VoteResult setVote(List<com.tools20022.repository.entity.Vote> vote) {
+		this.vote = Objects.requireNonNull(vote);
+		return this;
 	}
 
 	public YesNoIndicator getAccepted() {
 		return accepted;
 	}
 
-	public void setAccepted(YesNoIndicator accepted) {
-		this.accepted = accepted;
+	public VoteResult setAccepted(YesNoIndicator accepted) {
+		this.accepted = Objects.requireNonNull(accepted);
+		return this;
 	}
 
-	public MeetingResultDissemination getVoteDissemination() {
-		return voteDissemination;
+	public Optional<MeetingResultDissemination> getVoteDissemination() {
+		return voteDissemination == null ? Optional.empty() : Optional.of(voteDissemination);
 	}
 
-	public void setVoteDissemination(com.tools20022.repository.entity.MeetingResultDissemination voteDissemination) {
+	public VoteResult setVoteDissemination(com.tools20022.repository.entity.MeetingResultDissemination voteDissemination) {
 		this.voteDissemination = voteDissemination;
+		return this;
 	}
 
 	public Number getTotalVotesCast() {
 		return totalVotesCast;
 	}
 
-	public void setTotalVotesCast(Number totalVotesCast) {
-		this.totalVotesCast = totalVotesCast;
+	public VoteResult setTotalVotesCast(Number totalVotesCast) {
+		this.totalVotesCast = Objects.requireNonNull(totalVotesCast);
+		return this;
 	}
 }

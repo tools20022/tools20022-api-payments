@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.EquivalentAmount2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,17 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmountType3Choice", propOrder = {"instructedAmount", "equivalentAmount"})
 public class AmountType3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstdAmt", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount instructedAmount;
 	/**
-	 * Amount of money to be moved between the debtor and creditor, before
-	 * deduction of charges, expressed in the currency as ordered by the
-	 * initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,7 +131,7 @@ public class AmountType3Choice {
 	public static final MMMessageAttribute mmInstructedAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> AmountType3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountType3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "InstdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,12 +143,11 @@ public class AmountType3Choice {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "EqvtAmt", required = true)
 	protected EquivalentAmount2 equivalentAmount;
 	/**
-	 * Amount of money to be moved between the debtor and creditor, expressed in
-	 * the currency of the debtor's account, and the currency in which the
-	 * amount is to be moved.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -190,7 +189,7 @@ public class AmountType3Choice {
 	public static final MMMessageAssociationEnd mmEquivalentAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmEquivalentAmount;
-			componentContext_lazy = () -> AmountType3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountType3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "EqvtAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,9 +206,9 @@ public class AmountType3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmountType3Choice.mmInstructedAmount, AmountType3Choice.mmEquivalentAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AmountType3Choice.mmInstructedAmount, com.tools20022.repository.choice.AmountType3Choice.mmEquivalentAmount);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountType3Choice";
 				definition = "Specifies the amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency as ordered by the initiating party.";
@@ -219,21 +218,21 @@ public class AmountType3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstdAmt", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
 		return instructedAmount;
 	}
 
-	public void setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
-		this.instructedAmount = instructedAmount;
+	public AmountType3Choice setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+		this.instructedAmount = Objects.requireNonNull(instructedAmount);
+		return this;
 	}
 
-	@XmlElement(name = "EqvtAmt", required = true)
 	public EquivalentAmount2 getEquivalentAmount() {
 		return equivalentAmount;
 	}
 
-	public void setEquivalentAmount(EquivalentAmount2 equivalentAmount) {
-		this.equivalentAmount = equivalentAmount;
+	public AmountType3Choice setEquivalentAmount(EquivalentAmount2 equivalentAmount) {
+		this.equivalentAmount = Objects.requireNonNull(equivalentAmount);
+		return this;
 	}
 }

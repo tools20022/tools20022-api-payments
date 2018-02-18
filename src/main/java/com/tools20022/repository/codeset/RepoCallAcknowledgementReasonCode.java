@@ -39,26 +39,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReasonCode#AccountServicerDeadlineMissed
- * RepoCallAcknowledgementReasonCode.mmAccountServicerDeadlineMissed}</li>
+ * RepoCallAcknowledgementReasonCode.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReasonCode#InProcess
- * RepoCallAcknowledgementReasonCode.mmInProcess}</li>
+ * RepoCallAcknowledgementReasonCode.InProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReasonCode#Issued
- * RepoCallAcknowledgementReasonCode.mmIssued}</li>
+ * RepoCallAcknowledgementReasonCode.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReasonCode#Processed
- * RepoCallAcknowledgementReasonCode.mmProcessed}</li>
+ * RepoCallAcknowledgementReasonCode.Processed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReasonCode#BeingProcessed
- * RepoCallAcknowledgementReasonCode.mmBeingProcessed}</li>
+ * RepoCallAcknowledgementReasonCode.BeingProcessed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -242,7 +242,7 @@ public class RepoCallAcknowledgementReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepoCallAcknowledgementReasonCode";

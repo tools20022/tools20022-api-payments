@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#Approved
- * CorporateActionEventStageCode.mmApproved}</li>
+ * CorporateActionEventStageCode.Approved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#Deactivated
- * CorporateActionEventStageCode.mmDeactivated}</li>
+ * CorporateActionEventStageCode.Deactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#FullReversalLotteryNotification
- * CorporateActionEventStageCode.mmFullReversalLotteryNotification}</li>
+ * CorporateActionEventStageCode.FullReversalLotteryNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#Lapsed
- * CorporateActionEventStageCode.mmLapsed}</li>
+ * CorporateActionEventStageCode.Lapsed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#PartialReversalLotteryNotification
- * CorporateActionEventStageCode.mmPartialReversalLotteryNotification}</li>
+ * CorporateActionEventStageCode.PartialReversalLotteryNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#ActionPeriod
- * CorporateActionEventStageCode.mmActionPeriod}</li>
+ * CorporateActionEventStageCode.ActionPeriod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#RescissionReversalLotteryNotification
- * CorporateActionEventStageCode.mmRescissionReversalLotteryNotification}</li>
+ * CorporateActionEventStageCode.RescissionReversalLotteryNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#SubjectToApproval
- * CorporateActionEventStageCode.mmSubjectToApproval}</li>
+ * CorporateActionEventStageCode.SubjectToApproval}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#UnconditionalAsToAcceptance
- * CorporateActionEventStageCode.mmUnconditionalAsToAcceptance}</li>
+ * CorporateActionEventStageCode.UnconditionalAsToAcceptance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageCode#WhollyUnconditional
- * CorporateActionEventStageCode.mmWhollyUnconditional}</li>
+ * CorporateActionEventStageCode.WhollyUnconditional}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -420,7 +420,7 @@ public class CorporateActionEventStageCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("APPD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventStageCode";

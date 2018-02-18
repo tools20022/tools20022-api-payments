@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#CollateralManagement
- * GeneratedReasonCode.mmCollateralManagement}</li>
+ * GeneratedReasonCode.CollateralManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#ReturnRefusedDumps
- * GeneratedReasonCode.mmReturnRefusedDumps}</li>
+ * GeneratedReasonCode.ReturnRefusedDumps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#SplitShaping
- * GeneratedReasonCode.mmSplitShaping}</li>
+ * GeneratedReasonCode.SplitShaping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#ThirdParty
- * GeneratedReasonCode.mmThirdParty}</li>
+ * GeneratedReasonCode.ThirdParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#Transformation
- * GeneratedReasonCode.mmTransformation}</li>
+ * GeneratedReasonCode.Transformation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#Other
- * GeneratedReasonCode.mmOther}</li>
+ * GeneratedReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReasonCode#MarketClaim
- * GeneratedReasonCode.mmMarketClaim}</li>
+ * GeneratedReasonCode.MarketClaim}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -314,7 +314,7 @@ public class GeneratedReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("COLL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeneratedReasonCode";

@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max1025Text;
 import com.tools20022.repository.entity.Collateral;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Further details on the contract collateral. "</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContractCollateral1", propOrder = {"totalAmount", "collateralDescription", "additionalInformation"})
 public class ContractCollateral1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TtlAmt", required = true)
 	protected ActiveCurrencyAndAmount totalAmount;
 	/**
-	 * Total amount of the collateral as defined in the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +113,7 @@ public class ContractCollateral1 {
 	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmCollateralAmount;
-			componentContext_lazy = () -> ContractCollateral1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractCollateral1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +124,11 @@ public class ContractCollateral1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "CollDesc")
 	protected List<com.tools20022.repository.msg.CashCollateral5> collateralDescription;
 	/**
-	 * Detailed description of the collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,7 +159,7 @@ public class ContractCollateral1 {
 	public static final MMMessageAssociationEnd mmCollateralDescription = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Collateral.mmObject();
-			componentContext_lazy = () -> ContractCollateral1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractCollateral1.mmObject();
 			isDerived = false;
 			xmlTag = "CollDesc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,10 +170,11 @@ public class ContractCollateral1 {
 			type_lazy = () -> com.tools20022.repository.msg.CashCollateral5.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max1025Text additionalInformation;
 	/**
-	 * Further information on the contract collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +201,7 @@ public class ContractCollateral1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ContractCollateral1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractCollateral1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -214,9 +216,10 @@ public class ContractCollateral1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContractCollateral1.mmTotalAmount, ContractCollateral1.mmCollateralDescription, ContractCollateral1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractCollateral1.mmTotalAmount, com.tools20022.repository.msg.ContractCollateral1.mmCollateralDescription,
+						com.tools20022.repository.msg.ContractCollateral1.mmAdditionalInformation);
 				trace_lazy = () -> Collateral.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractCollateral1";
 				definition = "Further details on the contract collateral. ";
@@ -225,30 +228,30 @@ public class ContractCollateral1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TtlAmt", required = true)
 	public ActiveCurrencyAndAmount getTotalAmount() {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(ActiveCurrencyAndAmount totalAmount) {
-		this.totalAmount = totalAmount;
+	public ContractCollateral1 setTotalAmount(ActiveCurrencyAndAmount totalAmount) {
+		this.totalAmount = Objects.requireNonNull(totalAmount);
+		return this;
 	}
 
-	@XmlElement(name = "CollDesc")
 	public List<CashCollateral5> getCollateralDescription() {
-		return collateralDescription;
+		return collateralDescription == null ? collateralDescription = new ArrayList<>() : collateralDescription;
 	}
 
-	public void setCollateralDescription(List<com.tools20022.repository.msg.CashCollateral5> collateralDescription) {
-		this.collateralDescription = collateralDescription;
+	public ContractCollateral1 setCollateralDescription(List<com.tools20022.repository.msg.CashCollateral5> collateralDescription) {
+		this.collateralDescription = Objects.requireNonNull(collateralDescription);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max1025Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max1025Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max1025Text additionalInformation) {
+	public ContractCollateral1 setAdditionalInformation(Max1025Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

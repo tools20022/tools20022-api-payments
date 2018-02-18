@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Address which is accessed by electronic means.
@@ -86,8 +87,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,8 +104,8 @@ public class ElectronicAddress extends ContactPoint {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max256Text emailAddress;
 	/**
-	 * Address for electronic mail (e-mail).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +162,8 @@ public class ElectronicAddress extends ContactPoint {
 	};
 	protected Max256Text uRLAddress;
 	/**
-	 * Address for the Universal Resource Locator (URL), eg, used over the www
-	 * (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,8 +219,8 @@ public class ElectronicAddress extends ContactPoint {
 	};
 	protected Max35Text telexAddress;
 	/**
-	 * Address for a telex machine.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,9 +265,8 @@ public class ElectronicAddress extends ContactPoint {
 	};
 	protected Presentation relatedPresentation;
 	/**
-	 * Presentation process for which an electronic presentation address is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -316,8 +315,8 @@ public class ElectronicAddress extends ContactPoint {
 	};
 	protected Max35Text teletextAddress;
 	/**
-	 * Address for a teletext.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -362,8 +361,8 @@ public class ElectronicAddress extends ContactPoint {
 	};
 	protected Max35Text iSDNAddress;
 	/**
-	 * Address for an Integrated Services Digital Network.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,7 +409,7 @@ public class ElectronicAddress extends ContactPoint {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ElectronicAddress";
 				definition = "Address which is accessed by electronic means.";
@@ -434,47 +433,53 @@ public class ElectronicAddress extends ContactPoint {
 		return emailAddress;
 	}
 
-	public void setEmailAddress(Max256Text emailAddress) {
-		this.emailAddress = emailAddress;
+	public ElectronicAddress setEmailAddress(Max256Text emailAddress) {
+		this.emailAddress = Objects.requireNonNull(emailAddress);
+		return this;
 	}
 
 	public Max256Text getURLAddress() {
 		return uRLAddress;
 	}
 
-	public void setURLAddress(Max256Text uRLAddress) {
-		this.uRLAddress = uRLAddress;
+	public ElectronicAddress setURLAddress(Max256Text uRLAddress) {
+		this.uRLAddress = Objects.requireNonNull(uRLAddress);
+		return this;
 	}
 
 	public Max35Text getTelexAddress() {
 		return telexAddress;
 	}
 
-	public void setTelexAddress(Max35Text telexAddress) {
-		this.telexAddress = telexAddress;
+	public ElectronicAddress setTelexAddress(Max35Text telexAddress) {
+		this.telexAddress = Objects.requireNonNull(telexAddress);
+		return this;
 	}
 
 	public Presentation getRelatedPresentation() {
 		return relatedPresentation;
 	}
 
-	public void setRelatedPresentation(com.tools20022.repository.entity.Presentation relatedPresentation) {
-		this.relatedPresentation = relatedPresentation;
+	public ElectronicAddress setRelatedPresentation(com.tools20022.repository.entity.Presentation relatedPresentation) {
+		this.relatedPresentation = Objects.requireNonNull(relatedPresentation);
+		return this;
 	}
 
 	public Max35Text getTeletextAddress() {
 		return teletextAddress;
 	}
 
-	public void setTeletextAddress(Max35Text teletextAddress) {
-		this.teletextAddress = teletextAddress;
+	public ElectronicAddress setTeletextAddress(Max35Text teletextAddress) {
+		this.teletextAddress = Objects.requireNonNull(teletextAddress);
+		return this;
 	}
 
 	public Max35Text getISDNAddress() {
 		return iSDNAddress;
 	}
 
-	public void setISDNAddress(Max35Text iSDNAddress) {
-		this.iSDNAddress = iSDNAddress;
+	public ElectronicAddress setISDNAddress(Max35Text iSDNAddress) {
+		this.iSDNAddress = Objects.requireNonNull(iSDNAddress);
+		return this;
 	}
 }

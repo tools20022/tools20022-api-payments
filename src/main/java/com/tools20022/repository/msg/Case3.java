@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -113,8 +115,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,15 +127,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides further details to identify an investigation case."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Case3", propOrder = {"identification", "creator", "reopenCaseIndication"})
 public class Case3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Uniquely identifies the case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +168,7 @@ public class Case3 {
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> InvestigationCase.mmIdentification;
-			componentContext_lazy = () -> Case3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Case3.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,10 +179,11 @@ public class Case3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Cretr", required = true)
 	protected Party12Choice creator;
 	/**
-	 * Party that created the investigation case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -210,7 +214,7 @@ public class Case3 {
 	public static final MMMessageAssociationEnd mmCreator = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Case3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Case3.mmObject();
 			isDerived = false;
 			xmlTag = "Cretr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,11 +226,11 @@ public class Case3 {
 			type_lazy = () -> Party12Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "ReopCaseIndctn")
 	protected YesNoIndicator reopenCaseIndication;
 	/**
-	 * Indicates whether or not the case was previously closed and is now
-	 * re-opened.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +259,7 @@ public class Case3 {
 	 */
 	public static final MMMessageAttribute mmReopenCaseIndication = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Case3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Case3.mmObject();
 			isDerived = false;
 			xmlTag = "ReopCaseIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,13 +274,13 @@ public class Case3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Case3.mmIdentification, Case3.mmCreator, Case3.mmReopenCaseIndication);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Case3.mmIdentification, com.tools20022.repository.msg.Case3.mmCreator, com.tools20022.repository.msg.Case3.mmReopenCaseIndication);
 				messageBuildingBlock_lazy = () -> Arrays.asList(NotificationOfCaseAssignmentV04.mmCase, RejectInvestigationV04.mmCase, CancelCaseAssignmentV03.mmCase, RequestForDuplicateV04.mmCase, DuplicateV04.mmCase,
 						ProprietaryFormatInvestigationV03.mmCase, DebitAuthorisationResponseV03.mmCase, CaseStatusReportRequestV03.mmCase, CaseStatusReportV04.mmCase, UnableToApplyV05.mmCase, CustomerPaymentCancellationRequestV06.mmCase,
 						AdditionalPaymentInformationV07.mmCase, ResolutionOfInvestigationV07.mmResolvedCase, FIToFIPaymentCancellationRequestV06.mmCase, DebitAuthorisationRequestV05.mmCase, ClaimNonReceiptV05.mmCase,
 						RequestToModifyPaymentV04.mmCase);
 				trace_lazy = () -> InvestigationCase.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Case3";
 				definition = "Provides further details to identify an investigation case.";
@@ -285,30 +289,30 @@ public class Case3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Case3 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Cretr", required = true)
 	public Party12Choice getCreator() {
 		return creator;
 	}
 
-	public void setCreator(Party12Choice creator) {
-		this.creator = creator;
+	public Case3 setCreator(Party12Choice creator) {
+		this.creator = Objects.requireNonNull(creator);
+		return this;
 	}
 
-	@XmlElement(name = "ReopCaseIndctn")
-	public YesNoIndicator getReopenCaseIndication() {
-		return reopenCaseIndication;
+	public Optional<YesNoIndicator> getReopenCaseIndication() {
+		return reopenCaseIndication == null ? Optional.empty() : Optional.of(reopenCaseIndication);
 	}
 
-	public void setReopenCaseIndication(YesNoIndicator reopenCaseIndication) {
+	public Case3 setReopenCaseIndication(YesNoIndicator reopenCaseIndication) {
 		this.reopenCaseIndication = reopenCaseIndication;
+		return this;
 	}
 }

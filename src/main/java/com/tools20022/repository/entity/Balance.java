@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.BalanceSubType1Choice;
 import com.tools20022.repository.choice.BalanceType5Choice;
@@ -30,9 +31,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Numerical representation of the net increases and decreases in an account at
@@ -110,8 +113,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,8 +132,8 @@ public class Balance {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BalanceTypeCode type;
 	/**
-	 * Specifies the nature of a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,8 +224,8 @@ public class Balance {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date and time at which the balance is or will be available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,6 +244,9 @@ public class Balance {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Balance
 	 * Balance}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::VALU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -257,6 +263,7 @@ public class Balance {
 			derivation_lazy = () -> Arrays.asList(CashBalance7.mmDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::VALU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time at which the balance is or will be available.";
@@ -275,9 +282,8 @@ public class Balance {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether the balance is a credit or a debit balance. A zero
-	 * balance is considered to be a credit balance
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,6 +310,9 @@ public class Balance {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Balance
 	 * Balance}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CRDB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -321,6 +330,7 @@ public class Balance {
 			derivation_lazy = () -> Arrays.asList(ContractBalance1.mmCreditDebitIndicator, CashBalance7.mmCreditDebitIndicator, CashAvailability1.mmCreditDebitIndicator);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CRDB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance";
@@ -339,8 +349,8 @@ public class Balance {
 	};
 	protected List<com.tools20022.repository.entity.AssetHolding> assetHolding;
 	/**
-	 * Specifies in terms of value and quantity the assets held in a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,8 +396,8 @@ public class Balance {
 	};
 	protected ISODateTime calculationDate;
 	/**
-	 * Specifies the date and time at which the balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,8 +442,8 @@ public class Balance {
 	};
 	protected List<com.tools20022.repository.entity.Adjustment> adjustment;
 	/**
-	 * Specifies the balance adjustments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,8 +497,8 @@ public class Balance {
 	};
 	protected Account account;
 	/**
-	 * Account or sub-account for which a balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -534,9 +544,8 @@ public class Balance {
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
-	 * Set of elements used to provide interest information that applies to the
-	 * balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -582,8 +591,8 @@ public class Balance {
 	};
 	protected List<com.tools20022.repository.entity.Entry> balanceEntry;
 	/**
-	 * Credit or debit postings used to calculate a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -626,9 +635,8 @@ public class Balance {
 	};
 	protected ProcessingTypeCode processingRestriction;
 	/**
-	 * Specifies the type of balance processing restrictions that must be
-	 * applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -675,8 +683,8 @@ public class Balance {
 	};
 	protected OpeningClosingCode openingClosingCode;
 	/**
-	 * Specifies whether the balance is an opening or a closing one.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -724,7 +732,7 @@ public class Balance {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Balance";
 				definition = "Numerical representation of the net increases and decreases in an account at a specific point in time.";
@@ -750,87 +758,98 @@ public class Balance {
 		return type;
 	}
 
-	public void setType(BalanceTypeCode type) {
-		this.type = type;
+	public Balance setType(BalanceTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Balance setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Balance setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public List<AssetHolding> getAssetHolding() {
-		return assetHolding;
+		return assetHolding == null ? assetHolding = new ArrayList<>() : assetHolding;
 	}
 
-	public void setAssetHolding(List<com.tools20022.repository.entity.AssetHolding> assetHolding) {
-		this.assetHolding = assetHolding;
+	public Balance setAssetHolding(List<com.tools20022.repository.entity.AssetHolding> assetHolding) {
+		this.assetHolding = Objects.requireNonNull(assetHolding);
+		return this;
 	}
 
 	public ISODateTime getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODateTime calculationDate) {
-		this.calculationDate = calculationDate;
+	public Balance setCalculationDate(ISODateTime calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public List<Adjustment> getAdjustment() {
-		return adjustment;
+		return adjustment == null ? adjustment = new ArrayList<>() : adjustment;
 	}
 
-	public void setAdjustment(List<com.tools20022.repository.entity.Adjustment> adjustment) {
-		this.adjustment = adjustment;
+	public Balance setAdjustment(List<com.tools20022.repository.entity.Adjustment> adjustment) {
+		this.adjustment = Objects.requireNonNull(adjustment);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public Balance setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public Balance setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public List<Entry> getBalanceEntry() {
-		return balanceEntry;
+		return balanceEntry == null ? balanceEntry = new ArrayList<>() : balanceEntry;
 	}
 
-	public void setBalanceEntry(List<com.tools20022.repository.entity.Entry> balanceEntry) {
-		this.balanceEntry = balanceEntry;
+	public Balance setBalanceEntry(List<com.tools20022.repository.entity.Entry> balanceEntry) {
+		this.balanceEntry = Objects.requireNonNull(balanceEntry);
+		return this;
 	}
 
 	public ProcessingTypeCode getProcessingRestriction() {
 		return processingRestriction;
 	}
 
-	public void setProcessingRestriction(ProcessingTypeCode processingRestriction) {
-		this.processingRestriction = processingRestriction;
+	public Balance setProcessingRestriction(ProcessingTypeCode processingRestriction) {
+		this.processingRestriction = Objects.requireNonNull(processingRestriction);
+		return this;
 	}
 
 	public OpeningClosingCode getOpeningClosingCode() {
 		return openingClosingCode;
 	}
 
-	public void setOpeningClosingCode(OpeningClosingCode openingClosingCode) {
-		this.openingClosingCode = openingClosingCode;
+	public Balance setOpeningClosingCode(OpeningClosingCode openingClosingCode) {
+		this.openingClosingCode = Objects.requireNonNull(openingClosingCode);
+		return this;
 	}
 }

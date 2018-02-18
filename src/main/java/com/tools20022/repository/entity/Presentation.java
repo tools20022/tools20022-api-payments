@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.RegisteredContractCommunication1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Presentation of documents.
@@ -89,8 +88,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,8 +105,8 @@ public class Presentation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExternalChannelCode communicationMethod;
 	/**
-	 * Method by which the document is to be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,9 +165,8 @@ public class Presentation {
 	};
 	protected Undertaking presentedUndertaking;
 	/**
-	 * Specifies the undertaking which is presented and its associated
-	 * documents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,9 +214,8 @@ public class Presentation {
 	};
 	protected PresentationMediumCode medium;
 	/**
-	 * Medium through which the presentation can be submitted such as paper,
-	 * electronic or both.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,8 +262,8 @@ public class Presentation {
 	};
 	protected List<com.tools20022.repository.entity.Document> presentedDocument;
 	/**
-	 * Documents which are presented.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,8 +307,8 @@ public class Presentation {
 	};
 	protected ElectronicAddress electronicPresentationAddress;
 	/**
-	 * Electronic address for the presentation of documents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,8 +354,8 @@ public class Presentation {
 	};
 	protected ISODate presentationDate;
 	/**
-	 * Date on which the presentation is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -411,8 +408,8 @@ public class Presentation {
 	};
 	protected CommunicationMethodCode applicableChannel;
 	/**
-	 * Channel used for the transmission of a document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -459,7 +456,7 @@ public class Presentation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Presentation";
 				definition = "Presentation of documents.";
@@ -483,55 +480,62 @@ public class Presentation {
 		return communicationMethod;
 	}
 
-	public void setCommunicationMethod(ExternalChannelCode communicationMethod) {
-		this.communicationMethod = communicationMethod;
+	public Presentation setCommunicationMethod(ExternalChannelCode communicationMethod) {
+		this.communicationMethod = Objects.requireNonNull(communicationMethod);
+		return this;
 	}
 
 	public Undertaking getPresentedUndertaking() {
 		return presentedUndertaking;
 	}
 
-	public void setPresentedUndertaking(com.tools20022.repository.entity.Undertaking presentedUndertaking) {
-		this.presentedUndertaking = presentedUndertaking;
+	public Presentation setPresentedUndertaking(com.tools20022.repository.entity.Undertaking presentedUndertaking) {
+		this.presentedUndertaking = Objects.requireNonNull(presentedUndertaking);
+		return this;
 	}
 
 	public PresentationMediumCode getMedium() {
 		return medium;
 	}
 
-	public void setMedium(PresentationMediumCode medium) {
-		this.medium = medium;
+	public Presentation setMedium(PresentationMediumCode medium) {
+		this.medium = Objects.requireNonNull(medium);
+		return this;
 	}
 
 	public List<Document> getPresentedDocument() {
-		return presentedDocument;
+		return presentedDocument == null ? presentedDocument = new ArrayList<>() : presentedDocument;
 	}
 
-	public void setPresentedDocument(List<com.tools20022.repository.entity.Document> presentedDocument) {
-		this.presentedDocument = presentedDocument;
+	public Presentation setPresentedDocument(List<com.tools20022.repository.entity.Document> presentedDocument) {
+		this.presentedDocument = Objects.requireNonNull(presentedDocument);
+		return this;
 	}
 
-	public ElectronicAddress getElectronicPresentationAddress() {
-		return electronicPresentationAddress;
+	public Optional<ElectronicAddress> getElectronicPresentationAddress() {
+		return electronicPresentationAddress == null ? Optional.empty() : Optional.of(electronicPresentationAddress);
 	}
 
-	public void setElectronicPresentationAddress(com.tools20022.repository.entity.ElectronicAddress electronicPresentationAddress) {
+	public Presentation setElectronicPresentationAddress(com.tools20022.repository.entity.ElectronicAddress electronicPresentationAddress) {
 		this.electronicPresentationAddress = electronicPresentationAddress;
+		return this;
 	}
 
 	public ISODate getPresentationDate() {
 		return presentationDate;
 	}
 
-	public void setPresentationDate(ISODate presentationDate) {
-		this.presentationDate = presentationDate;
+	public Presentation setPresentationDate(ISODate presentationDate) {
+		this.presentationDate = Objects.requireNonNull(presentationDate);
+		return this;
 	}
 
 	public CommunicationMethodCode getApplicableChannel() {
 		return applicableChannel;
 	}
 
-	public void setApplicableChannel(CommunicationMethodCode applicableChannel) {
-		this.applicableChannel = applicableChannel;
+	public Presentation setApplicableChannel(CommunicationMethodCode applicableChannel) {
+		this.applicableChannel = Objects.requireNonNull(applicableChannel);
+		return this;
 	}
 }

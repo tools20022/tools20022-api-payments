@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Name of the security.
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +79,8 @@ public class LocalName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max350Text fullName;
 	/**
-	 * Name of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,8 +124,8 @@ public class LocalName {
 	};
 	protected SecuritiesIdentification relatedSecurity;
 	/**
-	 * Identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,8 +172,8 @@ public class LocalName {
 	};
 	protected Max35Text shortName;
 	/**
-	 * Short name of the security
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,8 +217,8 @@ public class LocalName {
 	};
 	protected LanguageCode language;
 	/**
-	 * Language in which the security name is expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +264,7 @@ public class LocalName {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocalName";
 				definition = "Name of the security.";
@@ -283,31 +285,35 @@ public class LocalName {
 		return fullName;
 	}
 
-	public void setFullName(Max350Text fullName) {
-		this.fullName = fullName;
+	public LocalName setFullName(Max350Text fullName) {
+		this.fullName = Objects.requireNonNull(fullName);
+		return this;
 	}
 
-	public SecuritiesIdentification getRelatedSecurity() {
-		return relatedSecurity;
+	public Optional<SecuritiesIdentification> getRelatedSecurity() {
+		return relatedSecurity == null ? Optional.empty() : Optional.of(relatedSecurity);
 	}
 
-	public void setRelatedSecurity(com.tools20022.repository.entity.SecuritiesIdentification relatedSecurity) {
+	public LocalName setRelatedSecurity(com.tools20022.repository.entity.SecuritiesIdentification relatedSecurity) {
 		this.relatedSecurity = relatedSecurity;
+		return this;
 	}
 
 	public Max35Text getShortName() {
 		return shortName;
 	}
 
-	public void setShortName(Max35Text shortName) {
-		this.shortName = shortName;
+	public LocalName setShortName(Max35Text shortName) {
+		this.shortName = Objects.requireNonNull(shortName);
+		return this;
 	}
 
 	public LanguageCode getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(LanguageCode language) {
-		this.language = language;
+	public LocalName setLanguage(LanguageCode language) {
+		this.language = Objects.requireNonNull(language);
+		return this;
 	}
 }

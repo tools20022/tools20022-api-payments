@@ -24,9 +24,11 @@ import com.tools20022.repository.datatype.BaseOneRate;
 import com.tools20022.repository.entity.TreasuryTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Right to buy (call) or sell (put) an underlying amount in one currency
@@ -87,8 +89,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,8 +108,8 @@ public class CurrencyOption extends TreasuryTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveOrHistoricCurrencyAndAmount callAmount;
 	/**
-	 * Call amount and currency of a foreign exchange option trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,8 +156,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected ActiveOrHistoricCurrencyAndAmount putAmount;
 	/**
-	 * Put amount and currency of a foreign exchange option trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,8 +204,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected PremiumCalculation premiumCalculation;
 	/**
-	 * Specifies the way the premium is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,8 +252,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected List<com.tools20022.repository.entity.Option> optionDefinition;
 	/**
-	 * Specifies the different parameters used to define an option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -297,9 +299,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> premiumSettlement;
 	/**
-	 * Specifies the amount of the premium paid by the buyer of the option and
-	 * its settlement place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -347,8 +348,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected List<com.tools20022.repository.entity.ForeignExchangeTrade> exercisedOption;
 	/**
-	 * Specifies the trade that may take place to exercise the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,8 +397,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected ActiveOrHistoricCurrencyCode optionSettlementCurrency;
 	/**
-	 * Currency that must be used to settle the option when it is netted off.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,8 +445,8 @@ public class CurrencyOption extends TreasuryTrade {
 	};
 	protected BaseOneRate strikeRate;
 	/**
-	 * Fixed exchange rate at which the option contract can be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -493,7 +494,7 @@ public class CurrencyOption extends TreasuryTrade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyOption";
 				definition = "Right to buy (call) or sell (put) an underlying amount in one currency against another amount in another currency at a predetermined exchange rate, within a specified period of time or at a specified date and time.";
@@ -517,63 +518,71 @@ public class CurrencyOption extends TreasuryTrade {
 		return callAmount;
 	}
 
-	public void setCallAmount(ActiveOrHistoricCurrencyAndAmount callAmount) {
-		this.callAmount = callAmount;
+	public CurrencyOption setCallAmount(ActiveOrHistoricCurrencyAndAmount callAmount) {
+		this.callAmount = Objects.requireNonNull(callAmount);
+		return this;
 	}
 
 	public ActiveOrHistoricCurrencyAndAmount getPutAmount() {
 		return putAmount;
 	}
 
-	public void setPutAmount(ActiveOrHistoricCurrencyAndAmount putAmount) {
-		this.putAmount = putAmount;
+	public CurrencyOption setPutAmount(ActiveOrHistoricCurrencyAndAmount putAmount) {
+		this.putAmount = Objects.requireNonNull(putAmount);
+		return this;
 	}
 
 	public PremiumCalculation getPremiumCalculation() {
 		return premiumCalculation;
 	}
 
-	public void setPremiumCalculation(com.tools20022.repository.entity.PremiumCalculation premiumCalculation) {
-		this.premiumCalculation = premiumCalculation;
+	public CurrencyOption setPremiumCalculation(com.tools20022.repository.entity.PremiumCalculation premiumCalculation) {
+		this.premiumCalculation = Objects.requireNonNull(premiumCalculation);
+		return this;
 	}
 
 	public List<Option> getOptionDefinition() {
-		return optionDefinition;
+		return optionDefinition == null ? optionDefinition = new ArrayList<>() : optionDefinition;
 	}
 
-	public void setOptionDefinition(List<com.tools20022.repository.entity.Option> optionDefinition) {
-		this.optionDefinition = optionDefinition;
+	public CurrencyOption setOptionDefinition(List<com.tools20022.repository.entity.Option> optionDefinition) {
+		this.optionDefinition = Objects.requireNonNull(optionDefinition);
+		return this;
 	}
 
 	public List<PaymentObligation> getPremiumSettlement() {
-		return premiumSettlement;
+		return premiumSettlement == null ? premiumSettlement = new ArrayList<>() : premiumSettlement;
 	}
 
-	public void setPremiumSettlement(List<com.tools20022.repository.entity.PaymentObligation> premiumSettlement) {
-		this.premiumSettlement = premiumSettlement;
+	public CurrencyOption setPremiumSettlement(List<com.tools20022.repository.entity.PaymentObligation> premiumSettlement) {
+		this.premiumSettlement = Objects.requireNonNull(premiumSettlement);
+		return this;
 	}
 
 	public List<ForeignExchangeTrade> getExercisedOption() {
-		return exercisedOption;
+		return exercisedOption == null ? exercisedOption = new ArrayList<>() : exercisedOption;
 	}
 
-	public void setExercisedOption(List<com.tools20022.repository.entity.ForeignExchangeTrade> exercisedOption) {
-		this.exercisedOption = exercisedOption;
+	public CurrencyOption setExercisedOption(List<com.tools20022.repository.entity.ForeignExchangeTrade> exercisedOption) {
+		this.exercisedOption = Objects.requireNonNull(exercisedOption);
+		return this;
 	}
 
 	public ActiveOrHistoricCurrencyCode getOptionSettlementCurrency() {
 		return optionSettlementCurrency;
 	}
 
-	public void setOptionSettlementCurrency(ActiveOrHistoricCurrencyCode optionSettlementCurrency) {
-		this.optionSettlementCurrency = optionSettlementCurrency;
+	public CurrencyOption setOptionSettlementCurrency(ActiveOrHistoricCurrencyCode optionSettlementCurrency) {
+		this.optionSettlementCurrency = Objects.requireNonNull(optionSettlementCurrency);
+		return this;
 	}
 
 	public BaseOneRate getStrikeRate() {
 		return strikeRate;
 	}
 
-	public void setStrikeRate(BaseOneRate strikeRate) {
-		this.strikeRate = strikeRate;
+	public CurrencyOption setStrikeRate(BaseOneRate strikeRate) {
+		this.strikeRate = Objects.requireNonNull(strikeRate);
+		return this;
 	}
 }

@@ -28,9 +28,11 @@ import com.tools20022.repository.msg.CaseAssignment3;
 import com.tools20022.repository.msg.DebitAuthorisation2;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -105,17 +107,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "DebitAuthorisationRequestV05", propOrder = {"assignment", "case", "underlying", "detail", "supplementaryData"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "DebitAuthorisationRequestV05", propOrder = {"assignment", "case_", "underlying", "detail", "supplementaryData"})
 public class DebitAuthorisationRequestV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Assgnmt", required = true)
 	protected CaseAssignment3 assignment;
 	/**
-	 * Identifies the assignment of an investigation case from an assigner to an
-	 * assignee. Usage: The Assigner must be the sender of this confirmation and
-	 * the Assignee must be the receiver.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +157,11 @@ public class DebitAuthorisationRequestV05 {
 			}
 		}
 	};
+	@XmlElement(name = "Case", required = true)
 	protected Case3 case_;
 	/**
-	 * Identifies the investigation case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,10 +199,11 @@ public class DebitAuthorisationRequestV05 {
 			}
 		}
 	};
+	@XmlElement(name = "Undrlyg", required = true)
 	protected UnderlyingTransaction3Choice underlying;
 	/**
-	 * Identifies the underlying payment instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,10 +243,11 @@ public class DebitAuthorisationRequestV05 {
 			}
 		}
 	};
+	@XmlElement(name = "Dtl", required = true)
 	protected DebitAuthorisation2 detail;
 	/**
-	 * Detailed information about the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,11 +287,11 @@ public class DebitAuthorisationRequestV05 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,52 +363,52 @@ public class DebitAuthorisationRequestV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Assgnmt", required = true)
 	public CaseAssignment3 getAssignment() {
 		return assignment;
 	}
 
-	public void setAssignment(CaseAssignment3 assignment) {
-		this.assignment = assignment;
+	public DebitAuthorisationRequestV05 setAssignment(CaseAssignment3 assignment) {
+		this.assignment = Objects.requireNonNull(assignment);
+		return this;
 	}
 
-	@XmlElement(name = "Case", required = true)
 	public Case3 getCase() {
 		return case_;
 	}
 
-	public void setCase(Case3 case_) {
-		this.case_ = case_;
+	public DebitAuthorisationRequestV05 setCase(Case3 case_) {
+		this.case_ = Objects.requireNonNull(case_);
+		return this;
 	}
 
-	@XmlElement(name = "Undrlyg", required = true)
 	public UnderlyingTransaction3Choice getUnderlying() {
 		return underlying;
 	}
 
-	public void setUnderlying(UnderlyingTransaction3Choice underlying) {
-		this.underlying = underlying;
+	public DebitAuthorisationRequestV05 setUnderlying(UnderlyingTransaction3Choice underlying) {
+		this.underlying = Objects.requireNonNull(underlying);
+		return this;
 	}
 
-	@XmlElement(name = "Dtl", required = true)
 	public DebitAuthorisation2 getDetail() {
 		return detail;
 	}
 
-	public void setDetail(DebitAuthorisation2 detail) {
-		this.detail = detail;
+	public DebitAuthorisationRequestV05 setDetail(DebitAuthorisation2 detail) {
+		this.detail = Objects.requireNonNull(detail);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public DebitAuthorisationRequestV05 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.037.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:camt.037.001.05")
 	static public class Document {
 		@XmlElement(name = "DbtAuthstnReq", required = true)
 		public DebitAuthorisationRequestV05 messageBody;

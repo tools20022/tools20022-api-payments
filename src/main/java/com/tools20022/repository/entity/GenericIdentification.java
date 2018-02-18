@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Information related to a non-standardised identification, such as a
@@ -216,8 +215,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -235,10 +234,8 @@ public class GenericIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text identification;
 	/**
-	 * Name or number assigned by an entity to enable recognition of that
-	 * entity, for example account identifier, identification assigned by a
-	 * provider to identify its customers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,8 +416,8 @@ public class GenericIdentification {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> identificationForContactPoint;
 	/**
-	 * Contact point which uses a generic identification as identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -467,9 +464,8 @@ public class GenericIdentification {
 	};
 	protected AccountIdentification identificationForAccount;
 	/**
-	 * Account Identification which uses a generic identification as proprietary
-	 * identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -519,8 +515,8 @@ public class GenericIdentification {
 	};
 	protected PartyIdentificationInformation relatedPartyIdentification;
 	/**
-	 * Party identified with a scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -568,8 +564,8 @@ public class GenericIdentification {
 	};
 	protected ISODate issueDate;
 	/**
-	 * Date at which the identification was issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -614,8 +610,8 @@ public class GenericIdentification {
 	};
 	protected ISODate expiryDate;
 	/**
-	 * Date at which the identification expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -660,8 +656,8 @@ public class GenericIdentification {
 	};
 	protected Scheme scheme;
 	/**
-	 * Information regarding an enumerated code list and its owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -726,9 +722,8 @@ public class GenericIdentification {
 	};
 	protected SecuritiesCertificate identificationForSecuritiesCertificate;
 	/**
-	 * Securities certificate which uses a generic identification as certificate
-	 * number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -778,8 +773,8 @@ public class GenericIdentification {
 	};
 	protected LotBreakdown identificationForLot;
 	/**
-	 * Lot breakdown which uses a generic identification as lot number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -827,8 +822,8 @@ public class GenericIdentification {
 	};
 	protected List<com.tools20022.repository.entity.InformationPartyRole> partyRole;
 	/**
-	 * Entity that assigns the identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -875,9 +870,8 @@ public class GenericIdentification {
 	};
 	protected CashProceedsDefinition identificationForCashProceedsIncome;
 	/**
-	 * Cash proceeds definition which uses a generic identification as type of
-	 * income.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -927,8 +921,8 @@ public class GenericIdentification {
 	};
 	protected StatusReason relatedStatusReason;
 	/**
-	 * Specifies the status reason for which a data source scheme is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -977,9 +971,8 @@ public class GenericIdentification {
 	};
 	protected List<com.tools20022.repository.entity.BankTransaction> identificationForBankTransaction;
 	/**
-	 * Bank transaction which uses a generic identification as proprietary
-	 * identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1027,8 +1020,8 @@ public class GenericIdentification {
 	};
 	protected AccountIdentification identificationForAccountCostReferencePattern;
 	/**
-	 * Account identification for which a cost reference pattern is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1077,8 +1070,8 @@ public class GenericIdentification {
 	};
 	protected Account account;
 	/**
-	 * Account for which a type is specified
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1123,8 +1116,8 @@ public class GenericIdentification {
 	};
 	protected SystemIdentification relatedSystemIdentification;
 	/**
-	 * System identification which uses a generic identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1173,8 +1166,8 @@ public class GenericIdentification {
 	};
 	protected Interest identificationForInterestName;
 	/**
-	 * Interest which uses a generic identification as name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1220,8 +1213,8 @@ public class GenericIdentification {
 	};
 	protected CashAccountService relatedCashAccountService;
 	/**
-	 * Cash account service identified in a generic way.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1268,9 +1261,8 @@ public class GenericIdentification {
 	};
 	protected InvestmentFundClass identificationForInvestmentFundClass;
 	/**
-	 * Investment fund class which uses a generic identification as fund
-	 * classification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1319,8 +1311,8 @@ public class GenericIdentification {
 	};
 	protected Location identifiedLocation;
 	/**
-	 * Location for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1366,9 +1358,8 @@ public class GenericIdentification {
 	};
 	protected SecuritiesIdentification relatedSecuritiesIdentification;
 	/**
-	 * Securities identification for which generic identification elements and
-	 * scheme are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1418,8 +1409,8 @@ public class GenericIdentification {
 	};
 	protected Document identifiedDocument;
 	/**
-	 * Document for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1465,8 +1456,8 @@ public class GenericIdentification {
 	};
 	protected PurchaseOrder relatedPurchaseOrder;
 	/**
-	 * Purchase order for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1513,9 +1504,8 @@ public class GenericIdentification {
 	};
 	protected RegisteredContract relatedCertificate;
 	/**
-	 * Related certificate against which all transactions in the scope of the
-	 * regulatory requirements are registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1566,7 +1556,7 @@ public class GenericIdentification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenericIdentification";
 				definition = "Information related to a non-standardised identification, such as a proprietary party identification or account identification.";
@@ -1608,191 +1598,215 @@ public class GenericIdentification {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public GenericIdentification setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<ContactPoint> getIdentificationForContactPoint() {
-		return identificationForContactPoint;
+		return identificationForContactPoint == null ? identificationForContactPoint = new ArrayList<>() : identificationForContactPoint;
 	}
 
-	public void setIdentificationForContactPoint(List<com.tools20022.repository.entity.ContactPoint> identificationForContactPoint) {
-		this.identificationForContactPoint = identificationForContactPoint;
+	public GenericIdentification setIdentificationForContactPoint(List<com.tools20022.repository.entity.ContactPoint> identificationForContactPoint) {
+		this.identificationForContactPoint = Objects.requireNonNull(identificationForContactPoint);
+		return this;
 	}
 
 	public AccountIdentification getIdentificationForAccount() {
 		return identificationForAccount;
 	}
 
-	public void setIdentificationForAccount(com.tools20022.repository.entity.AccountIdentification identificationForAccount) {
-		this.identificationForAccount = identificationForAccount;
+	public GenericIdentification setIdentificationForAccount(com.tools20022.repository.entity.AccountIdentification identificationForAccount) {
+		this.identificationForAccount = Objects.requireNonNull(identificationForAccount);
+		return this;
 	}
 
-	public PartyIdentificationInformation getRelatedPartyIdentification() {
-		return relatedPartyIdentification;
+	public Optional<PartyIdentificationInformation> getRelatedPartyIdentification() {
+		return relatedPartyIdentification == null ? Optional.empty() : Optional.of(relatedPartyIdentification);
 	}
 
-	public void setRelatedPartyIdentification(com.tools20022.repository.entity.PartyIdentificationInformation relatedPartyIdentification) {
+	public GenericIdentification setRelatedPartyIdentification(com.tools20022.repository.entity.PartyIdentificationInformation relatedPartyIdentification) {
 		this.relatedPartyIdentification = relatedPartyIdentification;
+		return this;
 	}
 
 	public ISODate getIssueDate() {
 		return issueDate;
 	}
 
-	public void setIssueDate(ISODate issueDate) {
-		this.issueDate = issueDate;
+	public GenericIdentification setIssueDate(ISODate issueDate) {
+		this.issueDate = Objects.requireNonNull(issueDate);
+		return this;
 	}
 
 	public ISODate getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISODate expiryDate) {
-		this.expiryDate = expiryDate;
+	public GenericIdentification setExpiryDate(ISODate expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public Scheme getScheme() {
 		return scheme;
 	}
 
-	public void setScheme(com.tools20022.repository.entity.Scheme scheme) {
-		this.scheme = scheme;
+	public GenericIdentification setScheme(com.tools20022.repository.entity.Scheme scheme) {
+		this.scheme = Objects.requireNonNull(scheme);
+		return this;
 	}
 
 	public SecuritiesCertificate getIdentificationForSecuritiesCertificate() {
 		return identificationForSecuritiesCertificate;
 	}
 
-	public void setIdentificationForSecuritiesCertificate(com.tools20022.repository.entity.SecuritiesCertificate identificationForSecuritiesCertificate) {
-		this.identificationForSecuritiesCertificate = identificationForSecuritiesCertificate;
+	public GenericIdentification setIdentificationForSecuritiesCertificate(com.tools20022.repository.entity.SecuritiesCertificate identificationForSecuritiesCertificate) {
+		this.identificationForSecuritiesCertificate = Objects.requireNonNull(identificationForSecuritiesCertificate);
+		return this;
 	}
 
-	public LotBreakdown getIdentificationForLot() {
-		return identificationForLot;
+	public Optional<LotBreakdown> getIdentificationForLot() {
+		return identificationForLot == null ? Optional.empty() : Optional.of(identificationForLot);
 	}
 
-	public void setIdentificationForLot(com.tools20022.repository.entity.LotBreakdown identificationForLot) {
+	public GenericIdentification setIdentificationForLot(com.tools20022.repository.entity.LotBreakdown identificationForLot) {
 		this.identificationForLot = identificationForLot;
+		return this;
 	}
 
 	public List<InformationPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public GenericIdentification setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
-	public CashProceedsDefinition getIdentificationForCashProceedsIncome() {
-		return identificationForCashProceedsIncome;
+	public Optional<CashProceedsDefinition> getIdentificationForCashProceedsIncome() {
+		return identificationForCashProceedsIncome == null ? Optional.empty() : Optional.of(identificationForCashProceedsIncome);
 	}
 
-	public void setIdentificationForCashProceedsIncome(com.tools20022.repository.entity.CashProceedsDefinition identificationForCashProceedsIncome) {
+	public GenericIdentification setIdentificationForCashProceedsIncome(com.tools20022.repository.entity.CashProceedsDefinition identificationForCashProceedsIncome) {
 		this.identificationForCashProceedsIncome = identificationForCashProceedsIncome;
+		return this;
 	}
 
 	public StatusReason getRelatedStatusReason() {
 		return relatedStatusReason;
 	}
 
-	public void setRelatedStatusReason(com.tools20022.repository.entity.StatusReason relatedStatusReason) {
-		this.relatedStatusReason = relatedStatusReason;
+	public GenericIdentification setRelatedStatusReason(com.tools20022.repository.entity.StatusReason relatedStatusReason) {
+		this.relatedStatusReason = Objects.requireNonNull(relatedStatusReason);
+		return this;
 	}
 
 	public List<BankTransaction> getIdentificationForBankTransaction() {
-		return identificationForBankTransaction;
+		return identificationForBankTransaction == null ? identificationForBankTransaction = new ArrayList<>() : identificationForBankTransaction;
 	}
 
-	public void setIdentificationForBankTransaction(List<com.tools20022.repository.entity.BankTransaction> identificationForBankTransaction) {
-		this.identificationForBankTransaction = identificationForBankTransaction;
+	public GenericIdentification setIdentificationForBankTransaction(List<com.tools20022.repository.entity.BankTransaction> identificationForBankTransaction) {
+		this.identificationForBankTransaction = Objects.requireNonNull(identificationForBankTransaction);
+		return this;
 	}
 
-	public AccountIdentification getIdentificationForAccountCostReferencePattern() {
-		return identificationForAccountCostReferencePattern;
+	public Optional<AccountIdentification> getIdentificationForAccountCostReferencePattern() {
+		return identificationForAccountCostReferencePattern == null ? Optional.empty() : Optional.of(identificationForAccountCostReferencePattern);
 	}
 
-	public void setIdentificationForAccountCostReferencePattern(com.tools20022.repository.entity.AccountIdentification identificationForAccountCostReferencePattern) {
+	public GenericIdentification setIdentificationForAccountCostReferencePattern(com.tools20022.repository.entity.AccountIdentification identificationForAccountCostReferencePattern) {
 		this.identificationForAccountCostReferencePattern = identificationForAccountCostReferencePattern;
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public GenericIdentification setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public SystemIdentification getRelatedSystemIdentification() {
 		return relatedSystemIdentification;
 	}
 
-	public void setRelatedSystemIdentification(com.tools20022.repository.entity.SystemIdentification relatedSystemIdentification) {
-		this.relatedSystemIdentification = relatedSystemIdentification;
+	public GenericIdentification setRelatedSystemIdentification(com.tools20022.repository.entity.SystemIdentification relatedSystemIdentification) {
+		this.relatedSystemIdentification = Objects.requireNonNull(relatedSystemIdentification);
+		return this;
 	}
 
-	public Interest getIdentificationForInterestName() {
-		return identificationForInterestName;
+	public Optional<Interest> getIdentificationForInterestName() {
+		return identificationForInterestName == null ? Optional.empty() : Optional.of(identificationForInterestName);
 	}
 
-	public void setIdentificationForInterestName(com.tools20022.repository.entity.Interest identificationForInterestName) {
+	public GenericIdentification setIdentificationForInterestName(com.tools20022.repository.entity.Interest identificationForInterestName) {
 		this.identificationForInterestName = identificationForInterestName;
+		return this;
 	}
 
 	public CashAccountService getRelatedCashAccountService() {
 		return relatedCashAccountService;
 	}
 
-	public void setRelatedCashAccountService(com.tools20022.repository.entity.CashAccountService relatedCashAccountService) {
-		this.relatedCashAccountService = relatedCashAccountService;
+	public GenericIdentification setRelatedCashAccountService(com.tools20022.repository.entity.CashAccountService relatedCashAccountService) {
+		this.relatedCashAccountService = Objects.requireNonNull(relatedCashAccountService);
+		return this;
 	}
 
 	public InvestmentFundClass getIdentificationForInvestmentFundClass() {
 		return identificationForInvestmentFundClass;
 	}
 
-	public void setIdentificationForInvestmentFundClass(com.tools20022.repository.entity.InvestmentFundClass identificationForInvestmentFundClass) {
-		this.identificationForInvestmentFundClass = identificationForInvestmentFundClass;
+	public GenericIdentification setIdentificationForInvestmentFundClass(com.tools20022.repository.entity.InvestmentFundClass identificationForInvestmentFundClass) {
+		this.identificationForInvestmentFundClass = Objects.requireNonNull(identificationForInvestmentFundClass);
+		return this;
 	}
 
 	public Location getIdentifiedLocation() {
 		return identifiedLocation;
 	}
 
-	public void setIdentifiedLocation(com.tools20022.repository.entity.Location identifiedLocation) {
-		this.identifiedLocation = identifiedLocation;
+	public GenericIdentification setIdentifiedLocation(com.tools20022.repository.entity.Location identifiedLocation) {
+		this.identifiedLocation = Objects.requireNonNull(identifiedLocation);
+		return this;
 	}
 
 	public SecuritiesIdentification getRelatedSecuritiesIdentification() {
 		return relatedSecuritiesIdentification;
 	}
 
-	public void setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
-		this.relatedSecuritiesIdentification = relatedSecuritiesIdentification;
+	public GenericIdentification setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
+		this.relatedSecuritiesIdentification = Objects.requireNonNull(relatedSecuritiesIdentification);
+		return this;
 	}
 
 	public Document getIdentifiedDocument() {
 		return identifiedDocument;
 	}
 
-	public void setIdentifiedDocument(com.tools20022.repository.entity.Document identifiedDocument) {
-		this.identifiedDocument = identifiedDocument;
+	public GenericIdentification setIdentifiedDocument(com.tools20022.repository.entity.Document identifiedDocument) {
+		this.identifiedDocument = Objects.requireNonNull(identifiedDocument);
+		return this;
 	}
 
 	public PurchaseOrder getRelatedPurchaseOrder() {
 		return relatedPurchaseOrder;
 	}
 
-	public void setRelatedPurchaseOrder(com.tools20022.repository.entity.PurchaseOrder relatedPurchaseOrder) {
-		this.relatedPurchaseOrder = relatedPurchaseOrder;
+	public GenericIdentification setRelatedPurchaseOrder(com.tools20022.repository.entity.PurchaseOrder relatedPurchaseOrder) {
+		this.relatedPurchaseOrder = Objects.requireNonNull(relatedPurchaseOrder);
+		return this;
 	}
 
 	public RegisteredContract getRelatedCertificate() {
 		return relatedCertificate;
 	}
 
-	public void setRelatedCertificate(com.tools20022.repository.entity.RegisteredContract relatedCertificate) {
-		this.relatedCertificate = relatedCertificate;
+	public GenericIdentification setRelatedCertificate(com.tools20022.repository.entity.RegisteredContract relatedCertificate) {
+		this.relatedCertificate = Objects.requireNonNull(relatedCertificate);
+		return this;
 	}
 }

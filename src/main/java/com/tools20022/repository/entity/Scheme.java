@@ -28,9 +28,11 @@ import com.tools20022.repository.msg.GenericIdentification13;
 import com.tools20022.repository.msg.GenericIdentification30;
 import com.tools20022.repository.msg.OtherIdentification1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information regarding an enumerated code list and its owner.
@@ -118,8 +120,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -135,8 +137,8 @@ public class Scheme {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text nameShort;
 	/**
-	 * Short textual description of the scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,8 +200,8 @@ public class Scheme {
 	};
 	protected Max35Text code;
 	/**
-	 * Code that represents the enumerated list, for example, ISO 6166 for ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +285,8 @@ public class Scheme {
 	};
 	protected List<com.tools20022.repository.entity.GenericIdentification> identification;
 	/**
-	 * Identification information for which a scheme is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,8 +342,8 @@ public class Scheme {
 	};
 	protected Rating rating;
 	/**
-	 * Rating for which an identification by scheme is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,8 +389,8 @@ public class Scheme {
 	};
 	protected CreditorRole creditorRole;
 	/**
-	 * Creditor for which an identification by scheme is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,8 +437,8 @@ public class Scheme {
 	};
 	protected List<com.tools20022.repository.entity.InformationPartyRole> informationPartyRole;
 	/**
-	 * Role played by a party as source of a scheme code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -482,8 +484,8 @@ public class Scheme {
 	};
 	protected Max35Text version;
 	/**
-	 * Version number of the scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,8 +529,8 @@ public class Scheme {
 	};
 	protected DateTimePeriod assessmentValidityPeriod;
 	/**
-	 * Period during which the version of the scheme applies (see ISO-8601).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,8 +577,8 @@ public class Scheme {
 	};
 	protected Max70Text nameLong;
 	/**
-	 * Long textual description of the scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -620,8 +622,8 @@ public class Scheme {
 	};
 	protected Max350Text description;
 	/**
-	 * Textual description of the scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -665,9 +667,8 @@ public class Scheme {
 	};
 	protected Max35Text domainValueCode;
 	/**
-	 * Code for a specific instance of an entry within the enumerated list, for
-	 * example, ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -713,9 +714,8 @@ public class Scheme {
 	};
 	protected Max70Text domainValueName;
 	/**
-	 * Textual description of the DomainValueCode, for example, International
-	 * Securities Identification Number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -761,8 +761,8 @@ public class Scheme {
 	};
 	protected Sector sector;
 	/**
-	 * Specifies the sector to which the scheme applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -806,8 +806,8 @@ public class Scheme {
 	};
 	protected AssetClassification assetClassification;
 	/**
-	 * Asset for which a classification by scheme is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -855,7 +855,7 @@ public class Scheme {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Scheme";
 				definition = "Information regarding an enumerated code list and its owner.";
@@ -882,111 +882,125 @@ public class Scheme {
 		return nameShort;
 	}
 
-	public void setNameShort(Max35Text nameShort) {
-		this.nameShort = nameShort;
+	public Scheme setNameShort(Max35Text nameShort) {
+		this.nameShort = Objects.requireNonNull(nameShort);
+		return this;
 	}
 
 	public Max35Text getCode() {
 		return code;
 	}
 
-	public void setCode(Max35Text code) {
-		this.code = code;
+	public Scheme setCode(Max35Text code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public List<GenericIdentification> getIdentification() {
-		return identification;
+		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public void setIdentification(List<com.tools20022.repository.entity.GenericIdentification> identification) {
-		this.identification = identification;
+	public Scheme setIdentification(List<com.tools20022.repository.entity.GenericIdentification> identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Rating getRating() {
 		return rating;
 	}
 
-	public void setRating(com.tools20022.repository.entity.Rating rating) {
-		this.rating = rating;
+	public Scheme setRating(com.tools20022.repository.entity.Rating rating) {
+		this.rating = Objects.requireNonNull(rating);
+		return this;
 	}
 
 	public CreditorRole getCreditorRole() {
 		return creditorRole;
 	}
 
-	public void setCreditorRole(com.tools20022.repository.entity.CreditorRole creditorRole) {
-		this.creditorRole = creditorRole;
+	public Scheme setCreditorRole(com.tools20022.repository.entity.CreditorRole creditorRole) {
+		this.creditorRole = Objects.requireNonNull(creditorRole);
+		return this;
 	}
 
 	public List<InformationPartyRole> getInformationPartyRole() {
-		return informationPartyRole;
+		return informationPartyRole == null ? informationPartyRole = new ArrayList<>() : informationPartyRole;
 	}
 
-	public void setInformationPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> informationPartyRole) {
-		this.informationPartyRole = informationPartyRole;
+	public Scheme setInformationPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> informationPartyRole) {
+		this.informationPartyRole = Objects.requireNonNull(informationPartyRole);
+		return this;
 	}
 
 	public Max35Text getVersion() {
 		return version;
 	}
 
-	public void setVersion(Max35Text version) {
-		this.version = version;
+	public Scheme setVersion(Max35Text version) {
+		this.version = Objects.requireNonNull(version);
+		return this;
 	}
 
 	public DateTimePeriod getAssessmentValidityPeriod() {
 		return assessmentValidityPeriod;
 	}
 
-	public void setAssessmentValidityPeriod(com.tools20022.repository.entity.DateTimePeriod assessmentValidityPeriod) {
-		this.assessmentValidityPeriod = assessmentValidityPeriod;
+	public Scheme setAssessmentValidityPeriod(com.tools20022.repository.entity.DateTimePeriod assessmentValidityPeriod) {
+		this.assessmentValidityPeriod = Objects.requireNonNull(assessmentValidityPeriod);
+		return this;
 	}
 
 	public Max70Text getNameLong() {
 		return nameLong;
 	}
 
-	public void setNameLong(Max70Text nameLong) {
-		this.nameLong = nameLong;
+	public Scheme setNameLong(Max70Text nameLong) {
+		this.nameLong = Objects.requireNonNull(nameLong);
+		return this;
 	}
 
 	public Max350Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max350Text description) {
-		this.description = description;
+	public Scheme setDescription(Max350Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public Max35Text getDomainValueCode() {
 		return domainValueCode;
 	}
 
-	public void setDomainValueCode(Max35Text domainValueCode) {
-		this.domainValueCode = domainValueCode;
+	public Scheme setDomainValueCode(Max35Text domainValueCode) {
+		this.domainValueCode = Objects.requireNonNull(domainValueCode);
+		return this;
 	}
 
 	public Max70Text getDomainValueName() {
 		return domainValueName;
 	}
 
-	public void setDomainValueName(Max70Text domainValueName) {
-		this.domainValueName = domainValueName;
+	public Scheme setDomainValueName(Max70Text domainValueName) {
+		this.domainValueName = Objects.requireNonNull(domainValueName);
+		return this;
 	}
 
 	public Sector getSector() {
 		return sector;
 	}
 
-	public void setSector(com.tools20022.repository.entity.Sector sector) {
-		this.sector = sector;
+	public Scheme setSector(com.tools20022.repository.entity.Sector sector) {
+		this.sector = Objects.requireNonNull(sector);
+		return this;
 	}
 
 	public AssetClassification getAssetClassification() {
 		return assetClassification;
 	}
 
-	public void setAssetClassification(com.tools20022.repository.entity.AssetClassification assetClassification) {
-		this.assetClassification = assetClassification;
+	public Scheme setAssetClassification(com.tools20022.repository.entity.AssetClassification assetClassification) {
+		this.assetClassification = Objects.requireNonNull(assetClassification);
+		return this;
 	}
 }

@@ -37,126 +37,126 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#SaleSystem
- * PartyTypeCode.mmSaleSystem}</li>
+ * PartyTypeCode.SaleSystem}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POIComponent
- * PartyTypeCode.mmPOIComponent}</li>
+ * PartyTypeCode.POIComponent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Issuer
- * PartyTypeCode.mmIssuer}</li>
+ * PartyTypeCode.Issuer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Holder
- * PartyTypeCode.mmHolder}</li>
+ * PartyTypeCode.Holder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Investor
- * PartyTypeCode.mmInvestor}</li>
+ * PartyTypeCode.Investor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ExecutingFirm
- * PartyTypeCode.mmExecutingFirm}</li>
+ * PartyTypeCode.ExecutingFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#BrokerOfCredit
- * PartyTypeCode.mmBrokerOfCredit}</li>
+ * PartyTypeCode.BrokerOfCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CorrespondentClearingFirm
- * PartyTypeCode.mmCorrespondentClearingFirm}</li>
+ * PartyTypeCode.CorrespondentClearingFirm}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#ContraFirm
- * PartyTypeCode.mmContraFirm}</li>
+ * PartyTypeCode.ContraFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ContraClearingFirm
- * PartyTypeCode.mmContraClearingFirm}</li>
+ * PartyTypeCode.ContraClearingFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#UnderlyingContraFirm
- * PartyTypeCode.mmUnderlyingContraFirm}</li>
+ * PartyTypeCode.UnderlyingContraFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#GiveUpClearingFirm
- * PartyTypeCode.mmGiveUpClearingFirm}</li>
+ * PartyTypeCode.GiveUpClearingFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OrderOriginationFirm
- * PartyTypeCode.mmOrderOriginationFirm}</li>
+ * PartyTypeCode.OrderOriginationFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#SponsoringFirm
- * PartyTypeCode.mmSponsoringFirm}</li>
+ * PartyTypeCode.SponsoringFirm}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Clearingfirm
- * PartyTypeCode.mmClearingfirm}</li>
+ * PartyTypeCode.Clearingfirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#IntroducingFirm
- * PartyTypeCode.mmIntroducingFirm}</li>
+ * PartyTypeCode.IntroducingFirm}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#EnteringFirm
- * PartyTypeCode.mmEnteringFirm}</li>
+ * PartyTypeCode.EnteringFirm}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Client
- * PartyTypeCode.mmClient}</li>
+ * PartyTypeCode.Client}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#StepInBroker
- * PartyTypeCode.mmStepInBroker}</li>
+ * PartyTypeCode.StepInBroker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AffirmingParty
- * PartyTypeCode.mmAffirmingParty}</li>
+ * PartyTypeCode.AffirmingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ETCServiceProvider1
- * PartyTypeCode.mmETCServiceProvider1}</li>
+ * PartyTypeCode.ETCServiceProvider1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#ETCServiceProvider2
- * PartyTypeCode.mmETCServiceProvider2}</li>
+ * PartyTypeCode.ETCServiceProvider2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#RequestedBroker
- * PartyTypeCode.mmRequestedBroker}</li>
+ * PartyTypeCode.RequestedBroker}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#TaxAuthority
- * PartyTypeCode.mmTaxAuthority}</li>
+ * PartyTypeCode.TaxAuthority}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#DelegateIssuer
- * PartyTypeCode.mmDelegateIssuer}</li>
+ * PartyTypeCode.DelegateIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingPOI
- * PartyTypeCode.mmOriginatingPOI}</li>
+ * PartyTypeCode.OriginatingPOI}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardIssuer
- * PartyTypeCode.mmCardIssuer}</li>
+ * PartyTypeCode.CardIssuer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Acceptor
- * PartyTypeCode.mmAcceptor}</li>
+ * PartyTypeCode.Acceptor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Merchant
- * PartyTypeCode.mmMerchant}</li>
+ * PartyTypeCode.Merchant}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#Acquirer
- * PartyTypeCode.mmAcquirer}</li>
+ * PartyTypeCode.Acquirer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#IntermediaryAgent
- * PartyTypeCode.mmIntermediaryAgent}</li>
+ * PartyTypeCode.IntermediaryAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#MasterTerminalManager
- * PartyTypeCode.mmMasterTerminalManager}</li>
+ * PartyTypeCode.MasterTerminalManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#TerminalManager
- * PartyTypeCode.mmTerminalManager}</li>
+ * PartyTypeCode.TerminalManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AcquirerProcessor
- * PartyTypeCode.mmAcquirerProcessor}</li>
+ * PartyTypeCode.AcquirerProcessor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardIssuerProcessor
- * PartyTypeCode.mmCardIssuerProcessor}</li>
+ * PartyTypeCode.CardIssuerProcessor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardScheme
- * PartyTypeCode.mmCardScheme}</li>
+ * PartyTypeCode.CardScheme}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardSchemeProcessor
- * PartyTypeCode.mmCardSchemeProcessor}</li>
+ * PartyTypeCode.CardSchemeProcessor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#ATMManager
- * PartyTypeCode.mmATMManager}</li>
+ * PartyTypeCode.ATMManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#HostingEntity
- * PartyTypeCode.mmHostingEntity}</li>
+ * PartyTypeCode.HostingEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingATM
- * PartyTypeCode.mmOriginatingATM}</li>
+ * PartyTypeCode.OriginatingATM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#OriginatingTerminal
- * PartyTypeCode.mmOriginatingTerminal}</li>
+ * PartyTypeCode.OriginatingTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#CardApplication
- * PartyTypeCode.mmCardApplication}</li>
+ * PartyTypeCode.CardApplication}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POISystem
- * PartyTypeCode.mmPOISystem}</li>
+ * PartyTypeCode.POISystem}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#POIGroup
- * PartyTypeCode.mmPOIGroup}</li>
+ * PartyTypeCode.POIGroup}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyTypeCode#SinglePOI
- * PartyTypeCode.mmSinglePOI}</li>
+ * PartyTypeCode.SinglePOI}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AccountFromBank
- * PartyTypeCode.mmAccountFromBank}</li>
+ * PartyTypeCode.AccountFromBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyTypeCode#AccountToBank
- * PartyTypeCode.mmAccountToBank}</li>
+ * PartyTypeCode.AccountToBank}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -171,8 +171,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1688,7 +1688,7 @@ public class PartyTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ISUR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyTypeCode";

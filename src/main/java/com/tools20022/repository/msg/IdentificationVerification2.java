@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,17 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationVerification2", propOrder = {"identification", "partyAndAccountIdentification"})
 public class IdentificationVerification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique identification, as assigned by a sending party, to unambiguously
-	 * identify the party and account identification information group within
-	 * the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,7 +117,7 @@ public class IdentificationVerification2 {
 	 */
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> IdentificationVerification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationVerification2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +128,11 @@ public class IdentificationVerification2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "PtyAndAcctId", required = true)
 	protected IdentificationInformation2 partyAndAccountIdentification;
 	/**
-	 * Party and/or account identification information for which verification is
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -166,7 +166,7 @@ public class IdentificationVerification2 {
 	public static final MMMessageAssociationEnd mmPartyAndAccountIdentification = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Account.mmObject();
-			componentContext_lazy = () -> IdentificationVerification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationVerification2.mmObject();
 			isDerived = false;
 			xmlTag = "PtyAndAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,10 +182,10 @@ public class IdentificationVerification2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IdentificationVerification2.mmIdentification, IdentificationVerification2.mmPartyAndAccountIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IdentificationVerification2.mmIdentification, com.tools20022.repository.msg.IdentificationVerification2.mmPartyAndAccountIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(IdentificationVerificationRequestV02.mmVerification);
 				trace_lazy = () -> Account.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationVerification2";
 				definition = "Provides the details of the identification data that is requested to be verified.";
@@ -194,21 +194,21 @@ public class IdentificationVerification2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public IdentificationVerification2 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "PtyAndAcctId", required = true)
 	public IdentificationInformation2 getPartyAndAccountIdentification() {
 		return partyAndAccountIdentification;
 	}
 
-	public void setPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 partyAndAccountIdentification) {
-		this.partyAndAccountIdentification = partyAndAccountIdentification;
+	public IdentificationVerification2 setPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 partyAndAccountIdentification) {
+		this.partyAndAccountIdentification = Objects.requireNonNull(partyAndAccountIdentification);
+		return this;
 	}
 }

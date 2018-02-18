@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#Denial
- * AuthenticationResultCode.mmDenial}</li>
+ * AuthenticationResultCode.Denial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#NonParticipation
- * AuthenticationResultCode.mmNonParticipation}</li>
+ * AuthenticationResultCode.NonParticipation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#UnableToAuthenticate
- * AuthenticationResultCode.mmUnableToAuthenticate}</li>
+ * AuthenticationResultCode.UnableToAuthenticate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#MerchantNotEnroled
- * AuthenticationResultCode.mmMerchantNotEnroled}</li>
+ * AuthenticationResultCode.MerchantNotEnroled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#WithCryptogram
- * AuthenticationResultCode.mmWithCryptogram}</li>
+ * AuthenticationResultCode.WithCryptogram}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#WithoutCryptogram
- * AuthenticationResultCode.mmWithoutCryptogram}</li>
+ * AuthenticationResultCode.WithoutCryptogram}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -264,7 +264,7 @@ public class AuthenticationResultCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationResultCode";
 				definition = "Specifies the result of authentication done";

@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#CumInterest
- * InterestTypeCode.mmCumInterest}</li>
+ * InterestTypeCode.CumInterest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ExInterest
- * InterestTypeCode.mmExInterest}</li>
+ * InterestTypeCode.ExInterest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ZeroCoupon
- * InterestTypeCode.mmZeroCoupon}</li>
+ * InterestTypeCode.ZeroCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#Discounted
- * InterestTypeCode.mmDiscounted}</li>
+ * InterestTypeCode.Discounted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Index
- * InterestTypeCode.mmIndex}</li>
+ * InterestTypeCode.Index}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#DualBasis
- * InterestTypeCode.mmDualBasis}</li>
+ * InterestTypeCode.DualBasis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#FloatingRateNote
- * InterestTypeCode.mmFloatingRateNote}</li>
+ * InterestTypeCode.FloatingRateNote}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Fixed
- * InterestTypeCode.mmFixed}</li>
+ * InterestTypeCode.Fixed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -335,7 +335,7 @@ public class InterestTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CINT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestTypeCode";

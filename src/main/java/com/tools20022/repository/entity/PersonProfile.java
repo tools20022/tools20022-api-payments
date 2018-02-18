@@ -25,9 +25,11 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Garnishment1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information to support Know Your Customer (KYC) processes.
@@ -86,8 +88,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,9 +105,8 @@ public class PersonProfile {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ProvidedCode foreignStatusCertification;
 	/**
-	 * Specifies if documentary evidence has been provided for the foreign
-	 * resident.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,8 +153,8 @@ public class PersonProfile {
 	};
 	protected YesNoIndicator employeeTerminationIndicator;
 	/**
-	 * Indicates if the employment of the person has been terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,10 +210,8 @@ public class PersonProfile {
 	};
 	protected KnowYourCustomerCheckTypeCode knowYourCustomerCheckType;
 	/**
-	 * Specifies the type of due diligence checks carried out on a party. For
-	 * definitions of ordinary, simple and enhanced know your customer checks,
-	 * local market regulations should be consulted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,8 +259,8 @@ public class PersonProfile {
 	};
 	protected RiskLevelCode riskLevel;
 	/**
-	 * Specifies the customer’s money laundering risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,8 +306,8 @@ public class PersonProfile {
 	};
 	protected Person person;
 	/**
-	 * Person for which the profile parameters are described.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,12 +353,8 @@ public class PersonProfile {
 	};
 	protected PoliticalExposureTypeCode politicalExposureType;
 	/**
-	 * Specifies if due diligence checks on the political exposure of the
-	 * investor have been carried out and whether these checks are national or
-	 * foreign. (A politically exposed person is someone who has been entrusted
-	 * with a prominent public function, or an individual who is closely related
-	 * to such a person.)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,9 +402,8 @@ public class PersonProfile {
 	};
 	protected ConductClassificationCode customerConductClassification;
 	/**
-	 * Assessment of the customer’s behaviour at the time of the account opening
-	 * application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -457,8 +451,8 @@ public class PersonProfile {
 	};
 	protected YesNoIndicator familyMedicalInsuranceIndicator;
 	/**
-	 * Indicates if the person has family medical insurance coverage available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -515,8 +509,8 @@ public class PersonProfile {
 	};
 	protected List<com.tools20022.repository.entity.PrivateCertificate> profileCertification;
 	/**
-	 * Information to support the Know Your Customer processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,8 +556,8 @@ public class PersonProfile {
 	};
 	protected Max140Text sourceOfWealth;
 	/**
-	 * Indicates the main sources of the money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -608,8 +602,8 @@ public class PersonProfile {
 	};
 	protected Max35Text salaryRange;
 	/**
-	 * Specifies the level of salary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -656,7 +650,7 @@ public class PersonProfile {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonProfile";
 				definition = "Information to support Know Your Customer (KYC) processes.";
@@ -680,87 +674,98 @@ public class PersonProfile {
 		return foreignStatusCertification;
 	}
 
-	public void setForeignStatusCertification(ProvidedCode foreignStatusCertification) {
-		this.foreignStatusCertification = foreignStatusCertification;
+	public PersonProfile setForeignStatusCertification(ProvidedCode foreignStatusCertification) {
+		this.foreignStatusCertification = Objects.requireNonNull(foreignStatusCertification);
+		return this;
 	}
 
 	public YesNoIndicator getEmployeeTerminationIndicator() {
 		return employeeTerminationIndicator;
 	}
 
-	public void setEmployeeTerminationIndicator(YesNoIndicator employeeTerminationIndicator) {
-		this.employeeTerminationIndicator = employeeTerminationIndicator;
+	public PersonProfile setEmployeeTerminationIndicator(YesNoIndicator employeeTerminationIndicator) {
+		this.employeeTerminationIndicator = Objects.requireNonNull(employeeTerminationIndicator);
+		return this;
 	}
 
 	public KnowYourCustomerCheckTypeCode getKnowYourCustomerCheckType() {
 		return knowYourCustomerCheckType;
 	}
 
-	public void setKnowYourCustomerCheckType(KnowYourCustomerCheckTypeCode knowYourCustomerCheckType) {
-		this.knowYourCustomerCheckType = knowYourCustomerCheckType;
+	public PersonProfile setKnowYourCustomerCheckType(KnowYourCustomerCheckTypeCode knowYourCustomerCheckType) {
+		this.knowYourCustomerCheckType = Objects.requireNonNull(knowYourCustomerCheckType);
+		return this;
 	}
 
 	public RiskLevelCode getRiskLevel() {
 		return riskLevel;
 	}
 
-	public void setRiskLevel(RiskLevelCode riskLevel) {
-		this.riskLevel = riskLevel;
+	public PersonProfile setRiskLevel(RiskLevelCode riskLevel) {
+		this.riskLevel = Objects.requireNonNull(riskLevel);
+		return this;
 	}
 
 	public Person getPerson() {
 		return person;
 	}
 
-	public void setPerson(com.tools20022.repository.entity.Person person) {
-		this.person = person;
+	public PersonProfile setPerson(com.tools20022.repository.entity.Person person) {
+		this.person = Objects.requireNonNull(person);
+		return this;
 	}
 
 	public PoliticalExposureTypeCode getPoliticalExposureType() {
 		return politicalExposureType;
 	}
 
-	public void setPoliticalExposureType(PoliticalExposureTypeCode politicalExposureType) {
-		this.politicalExposureType = politicalExposureType;
+	public PersonProfile setPoliticalExposureType(PoliticalExposureTypeCode politicalExposureType) {
+		this.politicalExposureType = Objects.requireNonNull(politicalExposureType);
+		return this;
 	}
 
 	public ConductClassificationCode getCustomerConductClassification() {
 		return customerConductClassification;
 	}
 
-	public void setCustomerConductClassification(ConductClassificationCode customerConductClassification) {
-		this.customerConductClassification = customerConductClassification;
+	public PersonProfile setCustomerConductClassification(ConductClassificationCode customerConductClassification) {
+		this.customerConductClassification = Objects.requireNonNull(customerConductClassification);
+		return this;
 	}
 
 	public YesNoIndicator getFamilyMedicalInsuranceIndicator() {
 		return familyMedicalInsuranceIndicator;
 	}
 
-	public void setFamilyMedicalInsuranceIndicator(YesNoIndicator familyMedicalInsuranceIndicator) {
-		this.familyMedicalInsuranceIndicator = familyMedicalInsuranceIndicator;
+	public PersonProfile setFamilyMedicalInsuranceIndicator(YesNoIndicator familyMedicalInsuranceIndicator) {
+		this.familyMedicalInsuranceIndicator = Objects.requireNonNull(familyMedicalInsuranceIndicator);
+		return this;
 	}
 
 	public List<PrivateCertificate> getProfileCertification() {
-		return profileCertification;
+		return profileCertification == null ? profileCertification = new ArrayList<>() : profileCertification;
 	}
 
-	public void setProfileCertification(List<com.tools20022.repository.entity.PrivateCertificate> profileCertification) {
-		this.profileCertification = profileCertification;
+	public PersonProfile setProfileCertification(List<com.tools20022.repository.entity.PrivateCertificate> profileCertification) {
+		this.profileCertification = Objects.requireNonNull(profileCertification);
+		return this;
 	}
 
 	public Max140Text getSourceOfWealth() {
 		return sourceOfWealth;
 	}
 
-	public void setSourceOfWealth(Max140Text sourceOfWealth) {
-		this.sourceOfWealth = sourceOfWealth;
+	public PersonProfile setSourceOfWealth(Max140Text sourceOfWealth) {
+		this.sourceOfWealth = Objects.requireNonNull(sourceOfWealth);
+		return this;
 	}
 
 	public Max35Text getSalaryRange() {
 		return salaryRange;
 	}
 
-	public void setSalaryRange(Max35Text salaryRange) {
-		this.salaryRange = salaryRange;
+	public PersonProfile setSalaryRange(Max35Text salaryRange) {
+		this.salaryRange = Objects.requireNonNull(salaryRange);
+		return this;
 	}
 }

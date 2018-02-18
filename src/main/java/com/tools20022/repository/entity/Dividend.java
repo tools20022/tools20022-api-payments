@@ -25,9 +25,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Distribution of earnings to shareholders, paid for in cash, stock, scrip
@@ -142,8 +144,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -161,8 +163,8 @@ public class Dividend {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected EventFrequencyCode dividendFrequency;
 	/**
-	 * Frequency with which the income is allocated to investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,8 +210,8 @@ public class Dividend {
 	};
 	protected PercentageRate annualTotalDividendRate;
 	/**
-	 * Provides the annual total dividend rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,8 +256,8 @@ public class Dividend {
 	};
 	protected RateAndAmount finalDividend;
 	/**
-	 * Dividend is final.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,11 +303,8 @@ public class Dividend {
 	};
 	protected RateAndAmount fullyFrankedRateAndAmount;
 	/**
-	 * Rate of a fully franked dividend paid by a company, or amount resulting
-	 * from a fully franked dividend paid by a company; amount includes tax
-	 * credit for companies that have made sufficient tax payments during the
-	 * fiscal period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,9 +352,8 @@ public class Dividend {
 	};
 	protected RateAndAmount grossDividend;
 	/**
-	 * Cash dividend amount per equity before deductions or allowances have been
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,8 +401,8 @@ public class Dividend {
 	};
 	protected DividendRateTypeCode rateType;
 	/**
-	 * Specifies the type of dividend rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,9 +447,8 @@ public class Dividend {
 	};
 	protected RateAndAmount netDividend;
 	/**
-	 * Cash dividend amount per equity after deductions or allowances have been
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -499,8 +496,8 @@ public class Dividend {
 	};
 	protected RateAndAmount provisionalDividend;
 	/**
-	 * Dividend is provisional.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -546,8 +543,8 @@ public class Dividend {
 	};
 	protected ISODateTime dividendRankingDate;
 	/**
-	 * Date on which a security will be entitled to a dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -591,10 +588,8 @@ public class Dividend {
 	};
 	protected CurrencyAndAmount manufacturedDividendAmount;
 	/**
-	 * Amount of money that the borrower pays to the lender as a compensation.
-	 * It does not entitle the lender to reclaim any tax credit and is sometimes
-	 * treated differently by the local tax authorities of the lender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -641,9 +636,8 @@ public class Dividend {
 	};
 	protected CurrencyAndAmount unfrankedAmount;
 	/**
-	 * Amount resulting from an unfranked dividend paid by a company; the amount
-	 * does not include tax credit and is subject to withholding tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -690,9 +684,8 @@ public class Dividend {
 	};
 	protected CurrencyAndAmount notionalDividendPayableAmount;
 	/**
-	 * Amount of cash that would have been payable if the dividend had been
-	 * taken in the form of cash rather than shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -739,8 +732,8 @@ public class Dividend {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Planned dividend rate, for example, for preferred shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -786,9 +779,8 @@ public class Dividend {
 	};
 	protected ISODateTime exDividendDate;
 	/**
-	 * Date/time as from which trading (including exchange and OTC trading)
-	 * occurs on the underlying security without the benefit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -834,8 +826,8 @@ public class Dividend {
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Security for which a dividend is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -879,8 +871,8 @@ public class Dividend {
 	};
 	protected DividendTypeCode type;
 	/**
-	 * Nature of the dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -925,8 +917,8 @@ public class Dividend {
 	};
 	protected List<com.tools20022.repository.entity.CashProceedsDefinition> cashProceeds;
 	/**
-	 * Defines the proceeds which resulted in dividends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -972,8 +964,8 @@ public class Dividend {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> obligation;
 	/**
-	 * Specifies the payment terms of the dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1018,8 +1010,8 @@ public class Dividend {
 	};
 	protected Tax tax;
 	/**
-	 * Tax on dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1063,8 +1055,8 @@ public class Dividend {
 	};
 	protected Distribution relatedDistribution;
 	/**
-	 * Distribution for which a dividend is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1110,8 +1102,8 @@ public class Dividend {
 	};
 	protected CorporateActionFrequencyTypeCode dividendFrequenceType;
 	/**
-	 * Specifies the cycle of dividends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1156,8 +1148,8 @@ public class Dividend {
 	};
 	protected PercentageRate dividendRatio;
 	/**
-	 * Percentage of earnings paid to shareholders in dividends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1203,8 +1195,8 @@ public class Dividend {
 	};
 	protected ISODate paymentDate;
 	/**
-	 * Date upon which the dividend is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1248,8 +1240,8 @@ public class Dividend {
 	};
 	protected FrequencyCode paymentFrequency;
 	/**
-	 * Specifies the cycle of dividend payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1294,8 +1286,8 @@ public class Dividend {
 	};
 	protected ISODate reinvestmentDate;
 	/**
-	 * Date upon which the dividend is reinvested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1339,8 +1331,8 @@ public class Dividend {
 	};
 	protected CurrencyAndAmount value;
 	/**
-	 * Value of the dividend expressed as an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1387,7 +1379,7 @@ public class Dividend {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Dividend";
 				definition = "Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, for example, in company products or property. The dividend amount is decided by the board of directors.";
@@ -1418,207 +1410,233 @@ public class Dividend {
 		return dividendFrequency;
 	}
 
-	public void setDividendFrequency(EventFrequencyCode dividendFrequency) {
-		this.dividendFrequency = dividendFrequency;
+	public Dividend setDividendFrequency(EventFrequencyCode dividendFrequency) {
+		this.dividendFrequency = Objects.requireNonNull(dividendFrequency);
+		return this;
 	}
 
 	public PercentageRate getAnnualTotalDividendRate() {
 		return annualTotalDividendRate;
 	}
 
-	public void setAnnualTotalDividendRate(PercentageRate annualTotalDividendRate) {
-		this.annualTotalDividendRate = annualTotalDividendRate;
+	public Dividend setAnnualTotalDividendRate(PercentageRate annualTotalDividendRate) {
+		this.annualTotalDividendRate = Objects.requireNonNull(annualTotalDividendRate);
+		return this;
 	}
 
 	public RateAndAmount getFinalDividend() {
 		return finalDividend;
 	}
 
-	public void setFinalDividend(com.tools20022.repository.entity.RateAndAmount finalDividend) {
-		this.finalDividend = finalDividend;
+	public Dividend setFinalDividend(com.tools20022.repository.entity.RateAndAmount finalDividend) {
+		this.finalDividend = Objects.requireNonNull(finalDividend);
+		return this;
 	}
 
 	public RateAndAmount getFullyFrankedRateAndAmount() {
 		return fullyFrankedRateAndAmount;
 	}
 
-	public void setFullyFrankedRateAndAmount(com.tools20022.repository.entity.RateAndAmount fullyFrankedRateAndAmount) {
-		this.fullyFrankedRateAndAmount = fullyFrankedRateAndAmount;
+	public Dividend setFullyFrankedRateAndAmount(com.tools20022.repository.entity.RateAndAmount fullyFrankedRateAndAmount) {
+		this.fullyFrankedRateAndAmount = Objects.requireNonNull(fullyFrankedRateAndAmount);
+		return this;
 	}
 
 	public RateAndAmount getGrossDividend() {
 		return grossDividend;
 	}
 
-	public void setGrossDividend(com.tools20022.repository.entity.RateAndAmount grossDividend) {
-		this.grossDividend = grossDividend;
+	public Dividend setGrossDividend(com.tools20022.repository.entity.RateAndAmount grossDividend) {
+		this.grossDividend = Objects.requireNonNull(grossDividend);
+		return this;
 	}
 
 	public DividendRateTypeCode getRateType() {
 		return rateType;
 	}
 
-	public void setRateType(DividendRateTypeCode rateType) {
-		this.rateType = rateType;
+	public Dividend setRateType(DividendRateTypeCode rateType) {
+		this.rateType = Objects.requireNonNull(rateType);
+		return this;
 	}
 
 	public RateAndAmount getNetDividend() {
 		return netDividend;
 	}
 
-	public void setNetDividend(com.tools20022.repository.entity.RateAndAmount netDividend) {
-		this.netDividend = netDividend;
+	public Dividend setNetDividend(com.tools20022.repository.entity.RateAndAmount netDividend) {
+		this.netDividend = Objects.requireNonNull(netDividend);
+		return this;
 	}
 
 	public RateAndAmount getProvisionalDividend() {
 		return provisionalDividend;
 	}
 
-	public void setProvisionalDividend(com.tools20022.repository.entity.RateAndAmount provisionalDividend) {
-		this.provisionalDividend = provisionalDividend;
+	public Dividend setProvisionalDividend(com.tools20022.repository.entity.RateAndAmount provisionalDividend) {
+		this.provisionalDividend = Objects.requireNonNull(provisionalDividend);
+		return this;
 	}
 
 	public ISODateTime getDividendRankingDate() {
 		return dividendRankingDate;
 	}
 
-	public void setDividendRankingDate(ISODateTime dividendRankingDate) {
-		this.dividendRankingDate = dividendRankingDate;
+	public Dividend setDividendRankingDate(ISODateTime dividendRankingDate) {
+		this.dividendRankingDate = Objects.requireNonNull(dividendRankingDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getManufacturedDividendAmount() {
 		return manufacturedDividendAmount;
 	}
 
-	public void setManufacturedDividendAmount(CurrencyAndAmount manufacturedDividendAmount) {
-		this.manufacturedDividendAmount = manufacturedDividendAmount;
+	public Dividend setManufacturedDividendAmount(CurrencyAndAmount manufacturedDividendAmount) {
+		this.manufacturedDividendAmount = Objects.requireNonNull(manufacturedDividendAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getUnfrankedAmount() {
 		return unfrankedAmount;
 	}
 
-	public void setUnfrankedAmount(CurrencyAndAmount unfrankedAmount) {
-		this.unfrankedAmount = unfrankedAmount;
+	public Dividend setUnfrankedAmount(CurrencyAndAmount unfrankedAmount) {
+		this.unfrankedAmount = Objects.requireNonNull(unfrankedAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getNotionalDividendPayableAmount() {
 		return notionalDividendPayableAmount;
 	}
 
-	public void setNotionalDividendPayableAmount(CurrencyAndAmount notionalDividendPayableAmount) {
-		this.notionalDividendPayableAmount = notionalDividendPayableAmount;
+	public Dividend setNotionalDividendPayableAmount(CurrencyAndAmount notionalDividendPayableAmount) {
+		this.notionalDividendPayableAmount = Objects.requireNonNull(notionalDividendPayableAmount);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public Dividend setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public ISODateTime getExDividendDate() {
 		return exDividendDate;
 	}
 
-	public void setExDividendDate(ISODateTime exDividendDate) {
-		this.exDividendDate = exDividendDate;
+	public Dividend setExDividendDate(ISODateTime exDividendDate) {
+		this.exDividendDate = Objects.requireNonNull(exDividendDate);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public Dividend setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public DividendTypeCode getType() {
 		return type;
 	}
 
-	public void setType(DividendTypeCode type) {
-		this.type = type;
+	public Dividend setType(DividendTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public List<CashProceedsDefinition> getCashProceeds() {
-		return cashProceeds;
+		return cashProceeds == null ? cashProceeds = new ArrayList<>() : cashProceeds;
 	}
 
-	public void setCashProceeds(List<com.tools20022.repository.entity.CashProceedsDefinition> cashProceeds) {
-		this.cashProceeds = cashProceeds;
+	public Dividend setCashProceeds(List<com.tools20022.repository.entity.CashProceedsDefinition> cashProceeds) {
+		this.cashProceeds = Objects.requireNonNull(cashProceeds);
+		return this;
 	}
 
 	public List<PaymentObligation> getObligation() {
-		return obligation;
+		return obligation == null ? obligation = new ArrayList<>() : obligation;
 	}
 
-	public void setObligation(List<com.tools20022.repository.entity.PaymentObligation> obligation) {
-		this.obligation = obligation;
+	public Dividend setObligation(List<com.tools20022.repository.entity.PaymentObligation> obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
 	public Tax getTax() {
 		return tax;
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
-		this.tax = tax;
+	public Dividend setTax(com.tools20022.repository.entity.Tax tax) {
+		this.tax = Objects.requireNonNull(tax);
+		return this;
 	}
 
 	public Distribution getRelatedDistribution() {
 		return relatedDistribution;
 	}
 
-	public void setRelatedDistribution(com.tools20022.repository.entity.Distribution relatedDistribution) {
-		this.relatedDistribution = relatedDistribution;
+	public Dividend setRelatedDistribution(com.tools20022.repository.entity.Distribution relatedDistribution) {
+		this.relatedDistribution = Objects.requireNonNull(relatedDistribution);
+		return this;
 	}
 
 	public CorporateActionFrequencyTypeCode getDividendFrequenceType() {
 		return dividendFrequenceType;
 	}
 
-	public void setDividendFrequenceType(CorporateActionFrequencyTypeCode dividendFrequenceType) {
-		this.dividendFrequenceType = dividendFrequenceType;
+	public Dividend setDividendFrequenceType(CorporateActionFrequencyTypeCode dividendFrequenceType) {
+		this.dividendFrequenceType = Objects.requireNonNull(dividendFrequenceType);
+		return this;
 	}
 
 	public PercentageRate getDividendRatio() {
 		return dividendRatio;
 	}
 
-	public void setDividendRatio(PercentageRate dividendRatio) {
-		this.dividendRatio = dividendRatio;
+	public Dividend setDividendRatio(PercentageRate dividendRatio) {
+		this.dividendRatio = Objects.requireNonNull(dividendRatio);
+		return this;
 	}
 
 	public ISODate getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(ISODate paymentDate) {
-		this.paymentDate = paymentDate;
+	public Dividend setPaymentDate(ISODate paymentDate) {
+		this.paymentDate = Objects.requireNonNull(paymentDate);
+		return this;
 	}
 
 	public FrequencyCode getPaymentFrequency() {
 		return paymentFrequency;
 	}
 
-	public void setPaymentFrequency(FrequencyCode paymentFrequency) {
-		this.paymentFrequency = paymentFrequency;
+	public Dividend setPaymentFrequency(FrequencyCode paymentFrequency) {
+		this.paymentFrequency = Objects.requireNonNull(paymentFrequency);
+		return this;
 	}
 
 	public ISODate getReinvestmentDate() {
 		return reinvestmentDate;
 	}
 
-	public void setReinvestmentDate(ISODate reinvestmentDate) {
-		this.reinvestmentDate = reinvestmentDate;
+	public Dividend setReinvestmentDate(ISODate reinvestmentDate) {
+		this.reinvestmentDate = Objects.requireNonNull(reinvestmentDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getValue() {
 		return value;
 	}
 
-	public void setValue(CurrencyAndAmount value) {
-		this.value = value;
+	public Dividend setValue(CurrencyAndAmount value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

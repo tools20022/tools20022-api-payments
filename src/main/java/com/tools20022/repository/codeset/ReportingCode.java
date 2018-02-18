@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingCode#StockExchange
- * ReportingCode.mmStockExchange}</li>
+ * ReportingCode.StockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingCode#RegulatoryOrganisation
- * ReportingCode.mmRegulatoryOrganisation}</li>
+ * ReportingCode.RegulatoryOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingCode#DeferredReport
- * ReportingCode.mmDeferredReport}</li>
+ * ReportingCode.DeferredReport}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,6 +84,9 @@ public class ReportingCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STEX"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::RPOR//EXCH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -95,6 +99,7 @@ public class ReportingCode extends MMCode {
 	 */
 	public static final ReportingCode StockExchange = new ReportingCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::RPOR//EXCH"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockExchange";
 			definition = "Trade details are to be reported to a stock exchange";
@@ -113,6 +118,9 @@ public class ReportingCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REGU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::RPOR//TRRE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -126,6 +134,7 @@ public class ReportingCode extends MMCode {
 	 */
 	public static final ReportingCode RegulatoryOrganisation = new ReportingCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::RPOR//TRRE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryOrganisation";
 			definition = "Trade details are to be reported to a regulatory organisation.";
@@ -174,7 +183,7 @@ public class ReportingCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("STEX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingCode";

@@ -29,9 +29,11 @@ import com.tools20022.repository.entity.PaymentInvestigationCaseRejection;
 import com.tools20022.repository.entity.PaymentInvestigationCaseResolution;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Case3;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +78,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,15 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the status of an investigation case."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestigationStatus3Choice", propOrder = {"confirmation", "rejectedModification", "duplicateOf", "assignmentCancellationConfirmation"})
 public class InvestigationStatus3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Conf", required = true)
 	protected InvestigationExecutionConfirmation3Code confirmation;
 	/**
-	 * Specifies the status of the investigation, in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,7 +134,7 @@ public class InvestigationStatus3Choice {
 	public static final MMMessageAttribute mmConfirmation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseResolution.mmInvestigationStatus;
-			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Conf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,10 +145,11 @@ public class InvestigationStatus3Choice {
 			simpleType_lazy = () -> InvestigationExecutionConfirmation3Code.mmObject();
 		}
 	};
+	@XmlElement(name = "RjctdMod", required = true)
 	protected List<ModificationRejection2Code> rejectedModification;
 	/**
-	 * Reason for the rejection of a modification request, in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +184,7 @@ public class InvestigationStatus3Choice {
 	public static final MMMessageAttribute mmRejectedModification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmRejectedModification;
-			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RjctdMod";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,12 +194,11 @@ public class InvestigationStatus3Choice {
 			simpleType_lazy = () -> ModificationRejection2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "DplctOf", required = true)
 	protected Case3 duplicateOf;
 	/**
-	 * Indicates a duplicated case. Usage: When present, the case identified in
-	 * the message must be closed. The case identified as duplicated (in this
-	 * component) will be pursued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -228,7 +231,7 @@ public class InvestigationStatus3Choice {
 	public static final MMMessageAssociationEnd mmDuplicateOf = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseResolution.mmDuplicateCase;
-			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DplctOf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -240,13 +243,11 @@ public class InvestigationStatus3Choice {
 			type_lazy = () -> Case3.mmObject();
 		}
 	};
+	@XmlElement(name = "AssgnmtCxlConf", required = true)
 	protected YesNoIndicator assignmentCancellationConfirmation;
 	/**
-	 * Indicates whether the cancellation of the assignment is confirmed or
-	 * rejected. Usage: If yes, the cancellation of the assignment is confirmed.
-	 * If no, the cancellation of the assignment is rejected and the
-	 * investigation process will continue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,7 +283,7 @@ public class InvestigationStatus3Choice {
 	public static final MMMessageAttribute mmAssignmentCancellationConfirmation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmAssignmentCancellationConfirmation;
-			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AssgnmtCxlConf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -297,11 +298,11 @@ public class InvestigationStatus3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestigationStatus3Choice.mmConfirmation, InvestigationStatus3Choice.mmRejectedModification, InvestigationStatus3Choice.mmDuplicateOf,
-						InvestigationStatus3Choice.mmAssignmentCancellationConfirmation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InvestigationStatus3Choice.mmConfirmation, com.tools20022.repository.choice.InvestigationStatus3Choice.mmRejectedModification,
+						com.tools20022.repository.choice.InvestigationStatus3Choice.mmDuplicateOf, com.tools20022.repository.choice.InvestigationStatus3Choice.mmAssignmentCancellationConfirmation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ResolutionOfInvestigationV07.mmStatus);
 				trace_lazy = () -> PaymentInvestigationCaseResolution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationStatus3Choice";
 				definition = "Specifies the status of an investigation case.";
@@ -310,39 +311,39 @@ public class InvestigationStatus3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Conf", required = true)
 	public InvestigationExecutionConfirmation3Code getConfirmation() {
 		return confirmation;
 	}
 
-	public void setConfirmation(InvestigationExecutionConfirmation3Code confirmation) {
-		this.confirmation = confirmation;
+	public InvestigationStatus3Choice setConfirmation(InvestigationExecutionConfirmation3Code confirmation) {
+		this.confirmation = Objects.requireNonNull(confirmation);
+		return this;
 	}
 
-	@XmlElement(name = "RjctdMod", required = true)
 	public List<ModificationRejection2Code> getRejectedModification() {
-		return rejectedModification;
+		return rejectedModification == null ? rejectedModification = new ArrayList<>() : rejectedModification;
 	}
 
-	public void setRejectedModification(List<ModificationRejection2Code> rejectedModification) {
-		this.rejectedModification = rejectedModification;
+	public InvestigationStatus3Choice setRejectedModification(List<ModificationRejection2Code> rejectedModification) {
+		this.rejectedModification = Objects.requireNonNull(rejectedModification);
+		return this;
 	}
 
-	@XmlElement(name = "DplctOf", required = true)
 	public Case3 getDuplicateOf() {
 		return duplicateOf;
 	}
 
-	public void setDuplicateOf(Case3 duplicateOf) {
-		this.duplicateOf = duplicateOf;
+	public InvestigationStatus3Choice setDuplicateOf(Case3 duplicateOf) {
+		this.duplicateOf = Objects.requireNonNull(duplicateOf);
+		return this;
 	}
 
-	@XmlElement(name = "AssgnmtCxlConf", required = true)
 	public YesNoIndicator getAssignmentCancellationConfirmation() {
 		return assignmentCancellationConfirmation;
 	}
 
-	public void setAssignmentCancellationConfirmation(YesNoIndicator assignmentCancellationConfirmation) {
-		this.assignmentCancellationConfirmation = assignmentCancellationConfirmation;
+	public InvestigationStatus3Choice setAssignmentCancellationConfirmation(YesNoIndicator assignmentCancellationConfirmation) {
+		this.assignmentCancellationConfirmation = Objects.requireNonNull(assignmentCancellationConfirmation);
+		return this;
 	}
 }

@@ -22,9 +22,11 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.SecuritiesTransfer;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Transfer of securities from one sub-balance to another or from one balance
@@ -69,8 +71,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,8 +90,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Reservation> reservation;
 	/**
-	 * Quantity of securities set aside by a party for specific purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,8 +138,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	};
 	protected CurrencyAndAmount collateralAmount;
 	/**
-	 * Value of the collateral available for the delivery settlement process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,9 +186,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	};
 	protected SecuritiesBalance securitiesBalance;
 	/**
-	 * Specifies the securities balance or sub-balance from/to which the
-	 * securities are transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +238,7 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntraPositionTransfer";
 				definition = "Transfer of securities from one sub-balance to another or from one balance status to another.";
@@ -256,26 +257,29 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	}
 
 	public List<Reservation> getReservation() {
-		return reservation;
+		return reservation == null ? reservation = new ArrayList<>() : reservation;
 	}
 
-	public void setReservation(List<com.tools20022.repository.entity.Reservation> reservation) {
-		this.reservation = reservation;
+	public IntraPositionTransfer setReservation(List<com.tools20022.repository.entity.Reservation> reservation) {
+		this.reservation = Objects.requireNonNull(reservation);
+		return this;
 	}
 
 	public CurrencyAndAmount getCollateralAmount() {
 		return collateralAmount;
 	}
 
-	public void setCollateralAmount(CurrencyAndAmount collateralAmount) {
-		this.collateralAmount = collateralAmount;
+	public IntraPositionTransfer setCollateralAmount(CurrencyAndAmount collateralAmount) {
+		this.collateralAmount = Objects.requireNonNull(collateralAmount);
+		return this;
 	}
 
 	public SecuritiesBalance getSecuritiesBalance() {
 		return securitiesBalance;
 	}
 
-	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
-		this.securitiesBalance = securitiesBalance;
+	public IntraPositionTransfer setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+		this.securitiesBalance = Objects.requireNonNull(securitiesBalance);
+		return this;
 	}
 }

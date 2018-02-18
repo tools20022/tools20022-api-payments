@@ -30,9 +30,8 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.entity.Transport;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,8 +83,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,16 +96,17 @@ import javax.xml.bind.annotation.XmlType;
  * "Currency control document entry supporting the contract registration."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SupportingDocumentEntry1", propOrder = {"entryIdentification", "originalDocument", "documentType", "totalAmount", "totalAmountAfterShipment", "totalAmountInContractCurrency", "totalAmountAfterShipmentInContractCurrency",
 		"shipmentAttributes", "additionalInformation", "attachment"})
 public class SupportingDocumentEntry1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NtryId", required = true)
 	protected Max35Text entryIdentification;
 	/**
-	 * Unique and unambiguous identification of the supporting document entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,7 +141,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmEntryIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "NtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,11 +152,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDoc", required = true)
 	protected DocumentIdentification22 originalDocument;
 	/**
-	 * Identification of the original document for which the supporting
-	 * documents are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -191,7 +191,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAssociationEnd mmOriginalDocument = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDoc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -203,12 +203,11 @@ public class SupportingDocumentEntry1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification22.mmObject();
 		}
 	};
+	@XmlElement(name = "DocTp", required = true)
 	protected Exact4AlphaNumericText documentType;
 	/**
-	 * Document type in a coded form.<br>
-	 * <br>
-	 * TBC: Data must support "_".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,7 +242,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmDocumentType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmType;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "DocTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -254,10 +253,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> Exact4AlphaNumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlAmt")
 	protected ActiveCurrencyAndAmount totalAmount;
 	/**
-	 * Total amount of the supporting document entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +291,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,10 +302,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlAmtAftrShipmnt")
 	protected ActiveCurrencyAndAmount totalAmountAfterShipment;
 	/**
-	 * Total amount after shipment of the supporting document entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,7 +341,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmTotalAmountAfterShipment = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmtAftrShipmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -351,11 +352,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlAmtInCtrctCcy")
 	protected ActiveCurrencyAndAmount totalAmountInContractCurrency;
 	/**
-	 * Total amount of the supporting document entry in the currency of the
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -391,7 +392,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmTotalAmountInContractCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmtInCtrctCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -402,11 +403,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlAmtAftrShipmntInCtrctCcy")
 	protected ActiveCurrencyAndAmount totalAmountAfterShipmentInContractCurrency;
 	/**
-	 * Total amount after shipment of the supporting document entry in the
-	 * currency of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -442,7 +443,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAttribute mmTotalAmountAfterShipmentInContractCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmtAftrShipmntInCtrctCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -453,10 +454,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "ShipmntAttrbts", required = true)
 	protected ShipmentAttribute1 shipmentAttributes;
 	/**
-	 * Conditions and attributes related to the shipment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -488,7 +490,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAssociationEnd mmShipmentAttributes = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Transport.mmShipmentDates;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "ShipmntAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -500,10 +502,11 @@ public class SupportingDocumentEntry1 {
 			type_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max500Text additionalInformation;
 	/**
-	 * Further details on the supporting document entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,7 +533,7 @@ public class SupportingDocumentEntry1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -541,10 +544,11 @@ public class SupportingDocumentEntry1 {
 			simpleType_lazy = () -> Max500Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Attchmnt")
 	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
 	/**
-	 * Documents provided as attachments to the supporting document entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -578,7 +582,7 @@ public class SupportingDocumentEntry1 {
 	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
-			componentContext_lazy = () -> SupportingDocumentEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "Attchmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -593,11 +597,13 @@ public class SupportingDocumentEntry1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SupportingDocumentEntry1.mmEntryIdentification, SupportingDocumentEntry1.mmOriginalDocument, SupportingDocumentEntry1.mmDocumentType, SupportingDocumentEntry1.mmTotalAmount,
-						SupportingDocumentEntry1.mmTotalAmountAfterShipment, SupportingDocumentEntry1.mmTotalAmountInContractCurrency, SupportingDocumentEntry1.mmTotalAmountAfterShipmentInContractCurrency,
-						SupportingDocumentEntry1.mmShipmentAttributes, SupportingDocumentEntry1.mmAdditionalInformation, SupportingDocumentEntry1.mmAttachment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentEntry1.mmEntryIdentification, com.tools20022.repository.msg.SupportingDocumentEntry1.mmOriginalDocument,
+						com.tools20022.repository.msg.SupportingDocumentEntry1.mmDocumentType, com.tools20022.repository.msg.SupportingDocumentEntry1.mmTotalAmount,
+						com.tools20022.repository.msg.SupportingDocumentEntry1.mmTotalAmountAfterShipment, com.tools20022.repository.msg.SupportingDocumentEntry1.mmTotalAmountInContractCurrency,
+						com.tools20022.repository.msg.SupportingDocumentEntry1.mmTotalAmountAfterShipmentInContractCurrency, com.tools20022.repository.msg.SupportingDocumentEntry1.mmShipmentAttributes,
+						com.tools20022.repository.msg.SupportingDocumentEntry1.mmAdditionalInformation, com.tools20022.repository.msg.SupportingDocumentEntry1.mmAttachment);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupportingDocumentEntry1";
 				definition = "Currency control document entry supporting the contract registration.";
@@ -606,93 +612,93 @@ public class SupportingDocumentEntry1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NtryId", required = true)
 	public Max35Text getEntryIdentification() {
 		return entryIdentification;
 	}
 
-	public void setEntryIdentification(Max35Text entryIdentification) {
-		this.entryIdentification = entryIdentification;
+	public SupportingDocumentEntry1 setEntryIdentification(Max35Text entryIdentification) {
+		this.entryIdentification = Objects.requireNonNull(entryIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDoc", required = true)
 	public DocumentIdentification22 getOriginalDocument() {
 		return originalDocument;
 	}
 
-	public void setOriginalDocument(com.tools20022.repository.msg.DocumentIdentification22 originalDocument) {
-		this.originalDocument = originalDocument;
+	public SupportingDocumentEntry1 setOriginalDocument(com.tools20022.repository.msg.DocumentIdentification22 originalDocument) {
+		this.originalDocument = Objects.requireNonNull(originalDocument);
+		return this;
 	}
 
-	@XmlElement(name = "DocTp", required = true)
 	public Exact4AlphaNumericText getDocumentType() {
 		return documentType;
 	}
 
-	public void setDocumentType(Exact4AlphaNumericText documentType) {
-		this.documentType = documentType;
+	public SupportingDocumentEntry1 setDocumentType(Exact4AlphaNumericText documentType) {
+		this.documentType = Objects.requireNonNull(documentType);
+		return this;
 	}
 
-	@XmlElement(name = "TtlAmt")
-	public ActiveCurrencyAndAmount getTotalAmount() {
-		return totalAmount;
+	public Optional<ActiveCurrencyAndAmount> getTotalAmount() {
+		return totalAmount == null ? Optional.empty() : Optional.of(totalAmount);
 	}
 
-	public void setTotalAmount(ActiveCurrencyAndAmount totalAmount) {
+	public SupportingDocumentEntry1 setTotalAmount(ActiveCurrencyAndAmount totalAmount) {
 		this.totalAmount = totalAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TtlAmtAftrShipmnt")
-	public ActiveCurrencyAndAmount getTotalAmountAfterShipment() {
-		return totalAmountAfterShipment;
+	public Optional<ActiveCurrencyAndAmount> getTotalAmountAfterShipment() {
+		return totalAmountAfterShipment == null ? Optional.empty() : Optional.of(totalAmountAfterShipment);
 	}
 
-	public void setTotalAmountAfterShipment(ActiveCurrencyAndAmount totalAmountAfterShipment) {
+	public SupportingDocumentEntry1 setTotalAmountAfterShipment(ActiveCurrencyAndAmount totalAmountAfterShipment) {
 		this.totalAmountAfterShipment = totalAmountAfterShipment;
+		return this;
 	}
 
-	@XmlElement(name = "TtlAmtInCtrctCcy")
-	public ActiveCurrencyAndAmount getTotalAmountInContractCurrency() {
-		return totalAmountInContractCurrency;
+	public Optional<ActiveCurrencyAndAmount> getTotalAmountInContractCurrency() {
+		return totalAmountInContractCurrency == null ? Optional.empty() : Optional.of(totalAmountInContractCurrency);
 	}
 
-	public void setTotalAmountInContractCurrency(ActiveCurrencyAndAmount totalAmountInContractCurrency) {
+	public SupportingDocumentEntry1 setTotalAmountInContractCurrency(ActiveCurrencyAndAmount totalAmountInContractCurrency) {
 		this.totalAmountInContractCurrency = totalAmountInContractCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "TtlAmtAftrShipmntInCtrctCcy")
-	public ActiveCurrencyAndAmount getTotalAmountAfterShipmentInContractCurrency() {
-		return totalAmountAfterShipmentInContractCurrency;
+	public Optional<ActiveCurrencyAndAmount> getTotalAmountAfterShipmentInContractCurrency() {
+		return totalAmountAfterShipmentInContractCurrency == null ? Optional.empty() : Optional.of(totalAmountAfterShipmentInContractCurrency);
 	}
 
-	public void setTotalAmountAfterShipmentInContractCurrency(ActiveCurrencyAndAmount totalAmountAfterShipmentInContractCurrency) {
+	public SupportingDocumentEntry1 setTotalAmountAfterShipmentInContractCurrency(ActiveCurrencyAndAmount totalAmountAfterShipmentInContractCurrency) {
 		this.totalAmountAfterShipmentInContractCurrency = totalAmountAfterShipmentInContractCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "ShipmntAttrbts", required = true)
 	public ShipmentAttribute1 getShipmentAttributes() {
 		return shipmentAttributes;
 	}
 
-	public void setShipmentAttributes(com.tools20022.repository.msg.ShipmentAttribute1 shipmentAttributes) {
-		this.shipmentAttributes = shipmentAttributes;
+	public SupportingDocumentEntry1 setShipmentAttributes(com.tools20022.repository.msg.ShipmentAttribute1 shipmentAttributes) {
+		this.shipmentAttributes = Objects.requireNonNull(shipmentAttributes);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max500Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max500Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max500Text additionalInformation) {
+	public SupportingDocumentEntry1 setAdditionalInformation(Max500Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 
-	@XmlElement(name = "Attchmnt")
 	public List<DocumentGeneralInformation3> getAttachment() {
-		return attachment;
+		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public void setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
-		this.attachment = attachment;
+	public SupportingDocumentEntry1 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+		this.attachment = Objects.requireNonNull(attachment);
+		return this;
 	}
 }

@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateSuspension1;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -74,6 +76,14 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code pain.018.001.01}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateSuspensionRequestV01
+ * ConstraintSupplementaryDataRule.forMandateSuspensionRequestV01}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,16 +96,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateSuspensionRequestV01", propOrder = {"groupHeader", "underlyingSuspensionDetails", "supplementaryData"})
 public class MandateSuspensionRequestV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected GroupHeader47 groupHeader;
 	/**
-	 * Set of characteristics to identify the message and parties playing a role
-	 * in the mandate suspension request, but which are not part of the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,11 +146,11 @@ public class MandateSuspensionRequestV01 {
 			}
 		}
 	};
+	@XmlElement(name = "UndrlygSspnsnDtls", required = true)
 	protected List<MandateSuspension1> underlyingSuspensionDetails;
 	/**
-	 * Set of elements used to provide information on the suspension request of
-	 * the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,11 +191,11 @@ public class MandateSuspensionRequestV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,6 +240,7 @@ public class MandateSuspensionRequestV01 {
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateSuspensionRequestV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateSuspensionRequestV01";
 				definition = "Scope\r\nThe MandateSuspensionRequest message is sent by the initiator of the request to its agent. The initiator can either be the debtor, debtor agent, creditor or creditor agent.\r\nA MandateSuspensionRequest message is used to request the suspension of an existing mandate until the suspension is lifted. \r\nUsage\r\nThe MandateSuspensionRequest message can contain one or more suspension requests.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe MandateSuspensionRequest message can be used in domestic and cross-border scenarios.\r\n";
@@ -256,34 +267,34 @@ public class MandateSuspensionRequestV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public GroupHeader47 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(GroupHeader47 groupHeader) {
-		this.groupHeader = groupHeader;
+	public MandateSuspensionRequestV01 setGroupHeader(GroupHeader47 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "UndrlygSspnsnDtls", required = true)
 	public List<MandateSuspension1> getUnderlyingSuspensionDetails() {
-		return underlyingSuspensionDetails;
+		return underlyingSuspensionDetails == null ? underlyingSuspensionDetails = new ArrayList<>() : underlyingSuspensionDetails;
 	}
 
-	public void setUnderlyingSuspensionDetails(List<MandateSuspension1> underlyingSuspensionDetails) {
-		this.underlyingSuspensionDetails = underlyingSuspensionDetails;
+	public MandateSuspensionRequestV01 setUnderlyingSuspensionDetails(List<MandateSuspension1> underlyingSuspensionDetails) {
+		this.underlyingSuspensionDetails = Objects.requireNonNull(underlyingSuspensionDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MandateSuspensionRequestV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:pain.018.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:pain.018.001.01")
 	static public class Document {
 		@XmlElement(name = "MndtSspnsnReq", required = true)
 		public MandateSuspensionRequestV01 messageBody;

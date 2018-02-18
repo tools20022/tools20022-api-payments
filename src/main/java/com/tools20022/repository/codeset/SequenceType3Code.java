@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#First
- * SequenceType3Code.mmFirst}</li>
+ * SequenceType3Code.First}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#Recurring
- * SequenceType3Code.mmRecurring}</li>
+ * SequenceType3Code.Recurring}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#Final
- * SequenceType3Code.mmFinal}</li>
+ * SequenceType3Code.Final}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#OneOff
- * SequenceType3Code.mmOneOff}</li>
+ * SequenceType3Code.OneOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#Represented
- * SequenceType3Code.mmRepresented}</li>
+ * SequenceType3Code.Represented}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class SequenceType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FRST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SequenceType3Code";

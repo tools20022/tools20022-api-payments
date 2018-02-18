@@ -24,9 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Restriction1;
 import com.tools20022.repository.msg.RestrictionModification1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Restriction on capability or operations allowed.
@@ -88,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,8 +104,8 @@ public class AccountRestriction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Account account;
 	/**
-	 * Account on which restrictions are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,8 +151,8 @@ public class AccountRestriction {
 	};
 	protected Max35Text restrictionType;
 	/**
-	 * Type of the restriction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,8 +209,8 @@ public class AccountRestriction {
 	};
 	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
 	/**
-	 * Period during which the restriction is effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,7 +258,7 @@ public class AccountRestriction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountRestriction";
 				definition = "Restriction on capability or operations allowed.";
@@ -278,27 +277,30 @@ public class AccountRestriction {
 		return mmObject_lazy.get();
 	}
 
-	public Account getAccount() {
-		return account;
+	public Optional<Account> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
+	public AccountRestriction setAccount(com.tools20022.repository.entity.Account account) {
 		this.account = account;
+		return this;
 	}
 
 	public Max35Text getRestrictionType() {
 		return restrictionType;
 	}
 
-	public void setRestrictionType(Max35Text restrictionType) {
-		this.restrictionType = restrictionType;
+	public AccountRestriction setRestrictionType(Max35Text restrictionType) {
+		this.restrictionType = Objects.requireNonNull(restrictionType);
+		return this;
 	}
 
 	public List<DateTimePeriod> getValidityPeriod() {
-		return validityPeriod;
+		return validityPeriod == null ? validityPeriod = new ArrayList<>() : validityPeriod;
 	}
 
-	public void setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public AccountRestriction setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 }

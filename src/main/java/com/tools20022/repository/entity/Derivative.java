@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
@@ -26,9 +27,11 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the parameters of a derivative instrument based on a specific
@@ -93,8 +96,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -112,8 +115,8 @@ public class Derivative extends Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<Asset> underlyingAsset;
 	/**
-	 * Specifies the underlying asset of the derivative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +160,8 @@ public class Derivative extends Asset {
 	};
 	protected CurrencyAndAmount notionalCurrencyAndAmount;
 	/**
-	 * Amount underlying a financial derivatives contract necessary for
-	 * calculating payments or receipts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,9 +208,8 @@ public class Derivative extends Asset {
 	};
 	protected YesNoIndicator derivativeCovered;
 	/**
-	 * Indicates whether the derivative product is covered or not by an
-	 * underlying financial instrument position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,6 +221,9 @@ public class Derivative extends Asset {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Derivative Derivative}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 203</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -237,6 +241,7 @@ public class Derivative extends Asset {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "203"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DerivativeCovered";
 			definition = "Indicates whether the derivative product is covered or not by an underlying financial instrument position.";
@@ -255,8 +260,8 @@ public class Derivative extends Asset {
 	};
 	protected ISODateTime exerciseDate;
 	/**
-	 * Date on which the derivative is exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,9 +305,8 @@ public class Derivative extends Asset {
 	};
 	protected YesNoIndicator interestIncludedInPrice;
 	/**
-	 * Indicates whether the given derivative price includes a prorated accrued
-	 * interest component.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,8 +353,8 @@ public class Derivative extends Asset {
 	};
 	protected SecuritiesPricing tick;
 	/**
-	 * Minimum price increment with which the contract may be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,9 +401,8 @@ public class Derivative extends Asset {
 	};
 	protected SecuritiesPricing exercisePrice;
 	/**
-	 * Predetermined price at which the holder of a derivative will have to buy
-	 * or sell the underlying instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -447,9 +450,8 @@ public class Derivative extends Asset {
 	};
 	protected CurrencyCode notionalCurrency;
 	/**
-	 * Currency of the underlying a financial derivatives contract necessary for
-	 * calculating payments or receipts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -495,10 +497,8 @@ public class Derivative extends Asset {
 	};
 	protected Number versionNumber;
 	/**
-	 * Number allocated by options exchanges to record that an option has
-	 * undergone a change in its contract specifications (particularly
-	 * adjustment of the strike price)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -546,7 +546,7 @@ public class Derivative extends Asset {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Derivative";
 				definition = "Specifies the parameters of a derivative instrument based on a specific asset.";
@@ -568,74 +568,83 @@ public class Derivative extends Asset {
 	}
 
 	public List<Asset> getUnderlyingAsset() {
-		return underlyingAsset;
+		return underlyingAsset == null ? underlyingAsset = new ArrayList<>() : underlyingAsset;
 	}
 
-	public void setUnderlyingAsset(List<Asset> underlyingAsset) {
-		this.underlyingAsset = underlyingAsset;
+	public Derivative setUnderlyingAsset(List<Asset> underlyingAsset) {
+		this.underlyingAsset = Objects.requireNonNull(underlyingAsset);
+		return this;
 	}
 
 	public CurrencyAndAmount getNotionalCurrencyAndAmount() {
 		return notionalCurrencyAndAmount;
 	}
 
-	public void setNotionalCurrencyAndAmount(CurrencyAndAmount notionalCurrencyAndAmount) {
-		this.notionalCurrencyAndAmount = notionalCurrencyAndAmount;
+	public Derivative setNotionalCurrencyAndAmount(CurrencyAndAmount notionalCurrencyAndAmount) {
+		this.notionalCurrencyAndAmount = Objects.requireNonNull(notionalCurrencyAndAmount);
+		return this;
 	}
 
 	public YesNoIndicator getDerivativeCovered() {
 		return derivativeCovered;
 	}
 
-	public void setDerivativeCovered(YesNoIndicator derivativeCovered) {
-		this.derivativeCovered = derivativeCovered;
+	public Derivative setDerivativeCovered(YesNoIndicator derivativeCovered) {
+		this.derivativeCovered = Objects.requireNonNull(derivativeCovered);
+		return this;
 	}
 
 	public ISODateTime getExerciseDate() {
 		return exerciseDate;
 	}
 
-	public void setExerciseDate(ISODateTime exerciseDate) {
-		this.exerciseDate = exerciseDate;
+	public Derivative setExerciseDate(ISODateTime exerciseDate) {
+		this.exerciseDate = Objects.requireNonNull(exerciseDate);
+		return this;
 	}
 
 	public YesNoIndicator getInterestIncludedInPrice() {
 		return interestIncludedInPrice;
 	}
 
-	public void setInterestIncludedInPrice(YesNoIndicator interestIncludedInPrice) {
-		this.interestIncludedInPrice = interestIncludedInPrice;
+	public Derivative setInterestIncludedInPrice(YesNoIndicator interestIncludedInPrice) {
+		this.interestIncludedInPrice = Objects.requireNonNull(interestIncludedInPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getTick() {
 		return tick;
 	}
 
-	public void setTick(com.tools20022.repository.entity.SecuritiesPricing tick) {
-		this.tick = tick;
+	public Derivative setTick(com.tools20022.repository.entity.SecuritiesPricing tick) {
+		this.tick = Objects.requireNonNull(tick);
+		return this;
 	}
 
 	public SecuritiesPricing getExercisePrice() {
 		return exercisePrice;
 	}
 
-	public void setExercisePrice(com.tools20022.repository.entity.SecuritiesPricing exercisePrice) {
-		this.exercisePrice = exercisePrice;
+	public Derivative setExercisePrice(com.tools20022.repository.entity.SecuritiesPricing exercisePrice) {
+		this.exercisePrice = Objects.requireNonNull(exercisePrice);
+		return this;
 	}
 
 	public CurrencyCode getNotionalCurrency() {
 		return notionalCurrency;
 	}
 
-	public void setNotionalCurrency(CurrencyCode notionalCurrency) {
-		this.notionalCurrency = notionalCurrency;
+	public Derivative setNotionalCurrency(CurrencyCode notionalCurrency) {
+		this.notionalCurrency = Objects.requireNonNull(notionalCurrency);
+		return this;
 	}
 
 	public Number getVersionNumber() {
 		return versionNumber;
 	}
 
-	public void setVersionNumber(Number versionNumber) {
-		this.versionNumber = versionNumber;
+	public Derivative setVersionNumber(Number versionNumber) {
+		this.versionNumber = Objects.requireNonNull(versionNumber);
+		return this;
 	}
 }

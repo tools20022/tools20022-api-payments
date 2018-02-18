@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Estimate of the number of terms to maturity, taking the possibility of early
@@ -73,8 +72,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +91,8 @@ public class LifeCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Securities pricing for which a life calculation is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,8 +140,8 @@ public class LifeCalculation {
 	};
 	protected List<com.tools20022.repository.entity.VariableInterest> variableInterest;
 	/**
-	 * Variable interest used for the calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,8 +187,8 @@ public class LifeCalculation {
 	};
 	protected Number years;
 	/**
-	 * Result of the life calculation measured in number of years.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +234,8 @@ public class LifeCalculation {
 	};
 	protected CalculationTypeCode calculationType;
 	/**
-	 * Specifies the type of calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,9 +281,8 @@ public class LifeCalculation {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time on which the calculation is based, for example, valuation on
-	 * October 1 (price date) based on price of September 19 ( value date).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,8 +329,8 @@ public class LifeCalculation {
 	};
 	protected DateTimePeriod valuePeriod;
 	/**
-	 * Period on which the calculation is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +378,7 @@ public class LifeCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LifeCalculation";
 				definition = "Estimate of the number of terms to maturity, taking the possibility of early payments into account.";
@@ -398,51 +396,57 @@ public class LifeCalculation {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesPricing getSecuritiesPricing() {
-		return securitiesPricing;
+	public Optional<SecuritiesPricing> getSecuritiesPricing() {
+		return securitiesPricing == null ? Optional.empty() : Optional.of(securitiesPricing);
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+	public LifeCalculation setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
 		this.securitiesPricing = securitiesPricing;
+		return this;
 	}
 
 	public List<VariableInterest> getVariableInterest() {
-		return variableInterest;
+		return variableInterest == null ? variableInterest = new ArrayList<>() : variableInterest;
 	}
 
-	public void setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
-		this.variableInterest = variableInterest;
+	public LifeCalculation setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 
 	public Number getYears() {
 		return years;
 	}
 
-	public void setYears(Number years) {
-		this.years = years;
+	public LifeCalculation setYears(Number years) {
+		this.years = Objects.requireNonNull(years);
+		return this;
 	}
 
 	public CalculationTypeCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(CalculationTypeCode calculationType) {
-		this.calculationType = calculationType;
+	public LifeCalculation setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public LifeCalculation setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DateTimePeriod getValuePeriod() {
 		return valuePeriod;
 	}
 
-	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
-		this.valuePeriod = valuePeriod;
+	public LifeCalculation setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+		this.valuePeriod = Objects.requireNonNull(valuePeriod);
+		return this;
 	}
 }

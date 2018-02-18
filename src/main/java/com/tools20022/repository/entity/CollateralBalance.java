@@ -21,9 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the different values taken into account to calculate the current
@@ -88,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +106,8 @@ public class CollateralBalance {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Collateral> collateralDescription;
 	/**
-	 * Describes the collateral included in the collateral balance,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,8 +154,8 @@ public class CollateralBalance {
 	};
 	protected ActiveCurrencyAndAmount heldAmount;
 	/**
-	 * Specifies the collateral currently held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,9 +201,8 @@ public class CollateralBalance {
 	};
 	protected ActiveCurrencyAndAmount priorAgreed;
 	/**
-	 * Specifies the collateral which has been agreed but is not yet
-	 * transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -252,8 +250,8 @@ public class CollateralBalance {
 	};
 	protected ExposureCalculation variationMarginRelatedRiskCalculation;
 	/**
-	 * Risk coverage for which a current variation margin is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,8 +299,8 @@ public class CollateralBalance {
 	};
 	protected ActiveCurrencyAndAmount inTransit;
 	/**
-	 * Specifies the collateral which is being transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +346,8 @@ public class CollateralBalance {
 	};
 	protected ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation;
 	/**
-	 * Risk coverage for which a collateral balance is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,8 +395,8 @@ public class CollateralBalance {
 	};
 	protected CollateralInterestAdministration relatedCollateralInterestManagement;
 	/**
-	 * Collateral interest management for which an opening balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -448,8 +446,8 @@ public class CollateralBalance {
 	};
 	protected CollateralInterestAdministration collateralInterestManagement;
 	/**
-	 * Collateral interest management for which a closing balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -501,7 +499,7 @@ public class CollateralBalance {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralBalance";
 				definition = "Specifies the different values taken into account to calculate the current collateral.";
@@ -523,66 +521,74 @@ public class CollateralBalance {
 	}
 
 	public List<Collateral> getCollateralDescription() {
-		return collateralDescription;
+		return collateralDescription == null ? collateralDescription = new ArrayList<>() : collateralDescription;
 	}
 
-	public void setCollateralDescription(List<com.tools20022.repository.entity.Collateral> collateralDescription) {
-		this.collateralDescription = collateralDescription;
+	public CollateralBalance setCollateralDescription(List<com.tools20022.repository.entity.Collateral> collateralDescription) {
+		this.collateralDescription = Objects.requireNonNull(collateralDescription);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getHeldAmount() {
 		return heldAmount;
 	}
 
-	public void setHeldAmount(ActiveCurrencyAndAmount heldAmount) {
-		this.heldAmount = heldAmount;
+	public CollateralBalance setHeldAmount(ActiveCurrencyAndAmount heldAmount) {
+		this.heldAmount = Objects.requireNonNull(heldAmount);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getPriorAgreed() {
 		return priorAgreed;
 	}
 
-	public void setPriorAgreed(ActiveCurrencyAndAmount priorAgreed) {
-		this.priorAgreed = priorAgreed;
+	public CollateralBalance setPriorAgreed(ActiveCurrencyAndAmount priorAgreed) {
+		this.priorAgreed = Objects.requireNonNull(priorAgreed);
+		return this;
 	}
 
-	public ExposureCalculation getVariationMarginRelatedRiskCalculation() {
-		return variationMarginRelatedRiskCalculation;
+	public Optional<ExposureCalculation> getVariationMarginRelatedRiskCalculation() {
+		return variationMarginRelatedRiskCalculation == null ? Optional.empty() : Optional.of(variationMarginRelatedRiskCalculation);
 	}
 
-	public void setVariationMarginRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginRelatedRiskCalculation) {
+	public CollateralBalance setVariationMarginRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginRelatedRiskCalculation) {
 		this.variationMarginRelatedRiskCalculation = variationMarginRelatedRiskCalculation;
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getInTransit() {
 		return inTransit;
 	}
 
-	public void setInTransit(ActiveCurrencyAndAmount inTransit) {
-		this.inTransit = inTransit;
+	public CollateralBalance setInTransit(ActiveCurrencyAndAmount inTransit) {
+		this.inTransit = Objects.requireNonNull(inTransit);
+		return this;
 	}
 
-	public ExposureCalculation getSegregatedIndependentAmountRelatedRiskCalculation() {
-		return segregatedIndependentAmountRelatedRiskCalculation;
+	public Optional<ExposureCalculation> getSegregatedIndependentAmountRelatedRiskCalculation() {
+		return segregatedIndependentAmountRelatedRiskCalculation == null ? Optional.empty() : Optional.of(segregatedIndependentAmountRelatedRiskCalculation);
 	}
 
-	public void setSegregatedIndependentAmountRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation) {
+	public CollateralBalance setSegregatedIndependentAmountRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation) {
 		this.segregatedIndependentAmountRelatedRiskCalculation = segregatedIndependentAmountRelatedRiskCalculation;
+		return this;
 	}
 
 	public CollateralInterestAdministration getRelatedCollateralInterestManagement() {
 		return relatedCollateralInterestManagement;
 	}
 
-	public void setRelatedCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration relatedCollateralInterestManagement) {
-		this.relatedCollateralInterestManagement = relatedCollateralInterestManagement;
+	public CollateralBalance setRelatedCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration relatedCollateralInterestManagement) {
+		this.relatedCollateralInterestManagement = Objects.requireNonNull(relatedCollateralInterestManagement);
+		return this;
 	}
 
 	public CollateralInterestAdministration getCollateralInterestManagement() {
 		return collateralInterestManagement;
 	}
 
-	public void setCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration collateralInterestManagement) {
-		this.collateralInterestManagement = collateralInterestManagement;
+	public CollateralBalance setCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration collateralInterestManagement) {
+		this.collateralInterestManagement = Objects.requireNonNull(collateralInterestManagement);
+		return this;
 	}
 }

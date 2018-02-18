@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.InterestCalculation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Describes how interest rates are reported."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestRateContractTerm1", propOrder = {"unit", "value"})
 public class InterestRateContractTerm1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Unit", required = true)
 	protected RateBasis1Code unit;
 	/**
-	 * Unit for the rate basis.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +111,7 @@ public class InterestRateContractTerm1 {
 	public static final MMMessageAttribute mmUnit = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmCalculationFrequency;
-			componentContext_lazy = () -> InterestRateContractTerm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestRateContractTerm1.mmObject();
 			isDerived = false;
 			xmlTag = "Unit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,10 +122,11 @@ public class InterestRateContractTerm1 {
 			simpleType_lazy = () -> RateBasis1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected Number value;
 	/**
-	 * Value of the contract term in number of units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +159,7 @@ public class InterestRateContractTerm1 {
 	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Index.mmIndexRateMultiplier;
-			componentContext_lazy = () -> InterestRateContractTerm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestRateContractTerm1.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,9 +174,9 @@ public class InterestRateContractTerm1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestRateContractTerm1.mmUnit, InterestRateContractTerm1.mmValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestRateContractTerm1.mmUnit, com.tools20022.repository.msg.InterestRateContractTerm1.mmValue);
 				trace_lazy = () -> Interest.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestRateContractTerm1";
 				definition = "Describes how interest rates are reported.";
@@ -182,21 +185,21 @@ public class InterestRateContractTerm1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Unit", required = true)
 	public RateBasis1Code getUnit() {
 		return unit;
 	}
 
-	public void setUnit(RateBasis1Code unit) {
-		this.unit = unit;
+	public InterestRateContractTerm1 setUnit(RateBasis1Code unit) {
+		this.unit = Objects.requireNonNull(unit);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public Number getValue() {
 		return value;
 	}
 
-	public void setValue(Number value) {
-		this.value = value;
+	public InterestRateContractTerm1 setValue(Number value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

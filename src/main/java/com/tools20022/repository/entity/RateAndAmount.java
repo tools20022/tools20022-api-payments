@@ -26,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the value expressed as a rate or an amount. For example, the value
@@ -137,8 +139,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -156,8 +158,8 @@ public class RateAndAmount {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Dividend finalDividendParameters;
 	/**
-	 * Dividend information for which a final dividend rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,9 +206,8 @@ public class RateAndAmount {
 	};
 	protected Dividend fullyFrankedRateAndAmountDividendParameters;
 	/**
-	 * Dividend information for which a fully franked rate and amount is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,8 +255,8 @@ public class RateAndAmount {
 	};
 	protected Dividend grossDividendParameters;
 	/**
-	 * Dividend information for which a gross dividend rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,8 +303,8 @@ public class RateAndAmount {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Value expressed as an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,8 +350,8 @@ public class RateAndAmount {
 	};
 	protected Index index;
 	/**
-	 * Index for which a factor is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,8 +397,8 @@ public class RateAndAmount {
 	};
 	protected Dividend netDividendParameters;
 	/**
-	 * Dividend information for which a net dividend rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,8 +445,8 @@ public class RateAndAmount {
 	};
 	protected BiddingConditions maximumAllowedBiddingConditions;
 	/**
-	 * Bidding conditions for which a maximum amount is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -493,8 +494,8 @@ public class RateAndAmount {
 	};
 	protected Dividend provisionalDividendParameters;
 	/**
-	 * Dividend information for which a provisional dividend rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,8 +543,8 @@ public class RateAndAmount {
 	};
 	protected CorporateActionFeesAndCharges solicitationFeeCorporateActionParameters;
 	/**
-	 * Corporate event for which a solicitation fee is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -592,8 +593,8 @@ public class RateAndAmount {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Value expressed as a rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -639,8 +640,8 @@ public class RateAndAmount {
 	};
 	protected BiddingConditions rateBiddingConditions;
 	/**
-	 * Bidding conditions for which a rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,8 +688,8 @@ public class RateAndAmount {
 	};
 	protected SecuritiesTax securitiesTax;
 	/**
-	 * Tax for which a percentage of the gross dividend rate is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -736,8 +737,8 @@ public class RateAndAmount {
 	};
 	protected CorporateActionFeesAndCharges earlySolicitationFeeCorporateActionParameters;
 	/**
-	 * Corporate event for which an early solicitation fee is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -786,8 +787,8 @@ public class RateAndAmount {
 	};
 	protected Issuance interestRelatedIssuance;
 	/**
-	 * Issuance for which an interest shortfall has been specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -834,8 +835,8 @@ public class RateAndAmount {
 	};
 	protected Issuance lossRelatedIssuance;
 	/**
-	 * Issuance for which a realised loss has been specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -881,8 +882,8 @@ public class RateAndAmount {
 	};
 	protected Number absoluteValue;
 	/**
-	 * Absolute value determined with a number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -927,8 +928,8 @@ public class RateAndAmount {
 	};
 	protected OperatorCode operator;
 	/**
-	 * Provides the relationship between a variable and a fixed value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -974,8 +975,8 @@ public class RateAndAmount {
 	};
 	protected YieldCalculation relatedYieldCalculation;
 	/**
-	 * Yield calculation which uses a yield range.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1024,7 +1025,7 @@ public class RateAndAmount {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateAndAmount";
 				definition = "Specifies the value expressed as a rate or an amount. For example, the value of a tax or a commission.";
@@ -1056,143 +1057,161 @@ public class RateAndAmount {
 		return finalDividendParameters;
 	}
 
-	public void setFinalDividendParameters(com.tools20022.repository.entity.Dividend finalDividendParameters) {
-		this.finalDividendParameters = finalDividendParameters;
+	public RateAndAmount setFinalDividendParameters(com.tools20022.repository.entity.Dividend finalDividendParameters) {
+		this.finalDividendParameters = Objects.requireNonNull(finalDividendParameters);
+		return this;
 	}
 
-	public Dividend getFullyFrankedRateAndAmountDividendParameters() {
-		return fullyFrankedRateAndAmountDividendParameters;
+	public Optional<Dividend> getFullyFrankedRateAndAmountDividendParameters() {
+		return fullyFrankedRateAndAmountDividendParameters == null ? Optional.empty() : Optional.of(fullyFrankedRateAndAmountDividendParameters);
 	}
 
-	public void setFullyFrankedRateAndAmountDividendParameters(com.tools20022.repository.entity.Dividend fullyFrankedRateAndAmountDividendParameters) {
+	public RateAndAmount setFullyFrankedRateAndAmountDividendParameters(com.tools20022.repository.entity.Dividend fullyFrankedRateAndAmountDividendParameters) {
 		this.fullyFrankedRateAndAmountDividendParameters = fullyFrankedRateAndAmountDividendParameters;
+		return this;
 	}
 
 	public Dividend getGrossDividendParameters() {
 		return grossDividendParameters;
 	}
 
-	public void setGrossDividendParameters(com.tools20022.repository.entity.Dividend grossDividendParameters) {
-		this.grossDividendParameters = grossDividendParameters;
+	public RateAndAmount setGrossDividendParameters(com.tools20022.repository.entity.Dividend grossDividendParameters) {
+		this.grossDividendParameters = Objects.requireNonNull(grossDividendParameters);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public RateAndAmount setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public Index getIndex() {
 		return index;
 	}
 
-	public void setIndex(com.tools20022.repository.entity.Index index) {
-		this.index = index;
+	public RateAndAmount setIndex(com.tools20022.repository.entity.Index index) {
+		this.index = Objects.requireNonNull(index);
+		return this;
 	}
 
 	public Dividend getNetDividendParameters() {
 		return netDividendParameters;
 	}
 
-	public void setNetDividendParameters(com.tools20022.repository.entity.Dividend netDividendParameters) {
-		this.netDividendParameters = netDividendParameters;
+	public RateAndAmount setNetDividendParameters(com.tools20022.repository.entity.Dividend netDividendParameters) {
+		this.netDividendParameters = Objects.requireNonNull(netDividendParameters);
+		return this;
 	}
 
 	public BiddingConditions getMaximumAllowedBiddingConditions() {
 		return maximumAllowedBiddingConditions;
 	}
 
-	public void setMaximumAllowedBiddingConditions(com.tools20022.repository.entity.BiddingConditions maximumAllowedBiddingConditions) {
-		this.maximumAllowedBiddingConditions = maximumAllowedBiddingConditions;
+	public RateAndAmount setMaximumAllowedBiddingConditions(com.tools20022.repository.entity.BiddingConditions maximumAllowedBiddingConditions) {
+		this.maximumAllowedBiddingConditions = Objects.requireNonNull(maximumAllowedBiddingConditions);
+		return this;
 	}
 
 	public Dividend getProvisionalDividendParameters() {
 		return provisionalDividendParameters;
 	}
 
-	public void setProvisionalDividendParameters(com.tools20022.repository.entity.Dividend provisionalDividendParameters) {
-		this.provisionalDividendParameters = provisionalDividendParameters;
+	public RateAndAmount setProvisionalDividendParameters(com.tools20022.repository.entity.Dividend provisionalDividendParameters) {
+		this.provisionalDividendParameters = Objects.requireNonNull(provisionalDividendParameters);
+		return this;
 	}
 
 	public CorporateActionFeesAndCharges getSolicitationFeeCorporateActionParameters() {
 		return solicitationFeeCorporateActionParameters;
 	}
 
-	public void setSolicitationFeeCorporateActionParameters(com.tools20022.repository.entity.CorporateActionFeesAndCharges solicitationFeeCorporateActionParameters) {
-		this.solicitationFeeCorporateActionParameters = solicitationFeeCorporateActionParameters;
+	public RateAndAmount setSolicitationFeeCorporateActionParameters(com.tools20022.repository.entity.CorporateActionFeesAndCharges solicitationFeeCorporateActionParameters) {
+		this.solicitationFeeCorporateActionParameters = Objects.requireNonNull(solicitationFeeCorporateActionParameters);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public RateAndAmount setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public BiddingConditions getRateBiddingConditions() {
 		return rateBiddingConditions;
 	}
 
-	public void setRateBiddingConditions(com.tools20022.repository.entity.BiddingConditions rateBiddingConditions) {
-		this.rateBiddingConditions = rateBiddingConditions;
+	public RateAndAmount setRateBiddingConditions(com.tools20022.repository.entity.BiddingConditions rateBiddingConditions) {
+		this.rateBiddingConditions = Objects.requireNonNull(rateBiddingConditions);
+		return this;
 	}
 
 	public SecuritiesTax getSecuritiesTax() {
 		return securitiesTax;
 	}
 
-	public void setSecuritiesTax(com.tools20022.repository.entity.SecuritiesTax securitiesTax) {
-		this.securitiesTax = securitiesTax;
+	public RateAndAmount setSecuritiesTax(com.tools20022.repository.entity.SecuritiesTax securitiesTax) {
+		this.securitiesTax = Objects.requireNonNull(securitiesTax);
+		return this;
 	}
 
 	public CorporateActionFeesAndCharges getEarlySolicitationFeeCorporateActionParameters() {
 		return earlySolicitationFeeCorporateActionParameters;
 	}
 
-	public void setEarlySolicitationFeeCorporateActionParameters(com.tools20022.repository.entity.CorporateActionFeesAndCharges earlySolicitationFeeCorporateActionParameters) {
-		this.earlySolicitationFeeCorporateActionParameters = earlySolicitationFeeCorporateActionParameters;
+	public RateAndAmount setEarlySolicitationFeeCorporateActionParameters(com.tools20022.repository.entity.CorporateActionFeesAndCharges earlySolicitationFeeCorporateActionParameters) {
+		this.earlySolicitationFeeCorporateActionParameters = Objects.requireNonNull(earlySolicitationFeeCorporateActionParameters);
+		return this;
 	}
 
 	public Issuance getInterestRelatedIssuance() {
 		return interestRelatedIssuance;
 	}
 
-	public void setInterestRelatedIssuance(com.tools20022.repository.entity.Issuance interestRelatedIssuance) {
-		this.interestRelatedIssuance = interestRelatedIssuance;
+	public RateAndAmount setInterestRelatedIssuance(com.tools20022.repository.entity.Issuance interestRelatedIssuance) {
+		this.interestRelatedIssuance = Objects.requireNonNull(interestRelatedIssuance);
+		return this;
 	}
 
 	public Issuance getLossRelatedIssuance() {
 		return lossRelatedIssuance;
 	}
 
-	public void setLossRelatedIssuance(com.tools20022.repository.entity.Issuance lossRelatedIssuance) {
-		this.lossRelatedIssuance = lossRelatedIssuance;
+	public RateAndAmount setLossRelatedIssuance(com.tools20022.repository.entity.Issuance lossRelatedIssuance) {
+		this.lossRelatedIssuance = Objects.requireNonNull(lossRelatedIssuance);
+		return this;
 	}
 
 	public Number getAbsoluteValue() {
 		return absoluteValue;
 	}
 
-	public void setAbsoluteValue(Number absoluteValue) {
-		this.absoluteValue = absoluteValue;
+	public RateAndAmount setAbsoluteValue(Number absoluteValue) {
+		this.absoluteValue = Objects.requireNonNull(absoluteValue);
+		return this;
 	}
 
 	public OperatorCode getOperator() {
 		return operator;
 	}
 
-	public void setOperator(OperatorCode operator) {
-		this.operator = operator;
+	public RateAndAmount setOperator(OperatorCode operator) {
+		this.operator = Objects.requireNonNull(operator);
+		return this;
 	}
 
-	public YieldCalculation getRelatedYieldCalculation() {
-		return relatedYieldCalculation;
+	public Optional<YieldCalculation> getRelatedYieldCalculation() {
+		return relatedYieldCalculation == null ? Optional.empty() : Optional.of(relatedYieldCalculation);
 	}
 
-	public void setRelatedYieldCalculation(com.tools20022.repository.entity.YieldCalculation relatedYieldCalculation) {
+	public RateAndAmount setRelatedYieldCalculation(com.tools20022.repository.entity.YieldCalculation relatedYieldCalculation) {
 		this.relatedYieldCalculation = relatedYieldCalculation;
+		return this;
 	}
 }

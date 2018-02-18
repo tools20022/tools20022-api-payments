@@ -24,9 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -102,17 +101,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountOpeningAmendmentRequestV02", propOrder = {"references", "from", "contractDates", "underlyingMasterAgreement", "account", "accountServicerIdentification", "organisation", "mandate", "group", "referenceAccount",
 		"digitalSignature", "supplementaryData"})
 public class AccountOpeningAmendmentRequestV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Refs", required = true)
 	protected References4 references;
 	/**
-	 * Set of elements for the identification of the message and related
-	 * references.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,11 +152,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Fr")
 	protected OrganisationIdentification8 from;
 	/**
-	 * Identifies the business sender of the message, if it is not the account
-	 * owner or account servicing financial institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,10 +198,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "CtrctDts")
 	protected AccountContract2 contractDates;
 	/**
-	 * Specifies target dates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,12 +242,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "UndrlygMstrAgrmt")
 	protected ContractDocument1 underlyingMasterAgreement;
 	/**
-	 * Account contract established between the organisation or the group to
-	 * which the organisation belongs, and the account servicer. This contract
-	 * has to be applied for the new account to be opened and maintained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,11 +288,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Acct", required = true)
 	protected CustomerAccount4 account;
 	/**
-	 * Unique and unambiguous identification of the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,11 +334,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "AcctSvcrId", required = true)
 	protected BranchAndFinancialInstitutionIdentification5 accountServicerIdentification;
 	/**
-	 * Unique and unambiguous identifier of a financial institution, as assigned
-	 * under an internationally recognised or proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,12 +380,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Org", required = true)
 	protected Organisation12 organisation;
 	/**
-	 * Organised structure that is set up for a particular purpose, for example,
-	 * a business, government body, department, charity, or financial
-	 * institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -427,10 +425,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Mndt")
 	protected List<OperationMandate2> mandate;
 	/**
-	 * Information specifying the account mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -469,10 +468,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Grp")
 	protected List<Group1> group;
 	/**
-	 * Definition of a group of parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,11 +509,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "RefAcct")
 	protected CashAccount24 referenceAccount;
 	/**
-	 * Unique and unambiguous identification of the account used as a reference
-	 * for the opening of another account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -554,11 +554,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "DgtlSgntr")
 	protected List<PartyAndSignature2> digitalSignature;
 	/**
-	 * Contains the signature with its components, namely signed info, signature
-	 * value, key info and the object.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -599,11 +599,11 @@ public class AccountOpeningAmendmentRequestV02 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -678,115 +678,115 @@ public class AccountOpeningAmendmentRequestV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Refs", required = true)
 	public References4 getReferences() {
 		return references;
 	}
 
-	public void setReferences(References4 references) {
-		this.references = references;
+	public AccountOpeningAmendmentRequestV02 setReferences(References4 references) {
+		this.references = Objects.requireNonNull(references);
+		return this;
 	}
 
-	@XmlElement(name = "Fr")
-	public OrganisationIdentification8 getFrom() {
-		return from;
+	public Optional<OrganisationIdentification8> getFrom() {
+		return from == null ? Optional.empty() : Optional.of(from);
 	}
 
-	public void setFrom(OrganisationIdentification8 from) {
+	public AccountOpeningAmendmentRequestV02 setFrom(OrganisationIdentification8 from) {
 		this.from = from;
+		return this;
 	}
 
-	@XmlElement(name = "CtrctDts")
-	public AccountContract2 getContractDates() {
-		return contractDates;
+	public Optional<AccountContract2> getContractDates() {
+		return contractDates == null ? Optional.empty() : Optional.of(contractDates);
 	}
 
-	public void setContractDates(AccountContract2 contractDates) {
+	public AccountOpeningAmendmentRequestV02 setContractDates(AccountContract2 contractDates) {
 		this.contractDates = contractDates;
+		return this;
 	}
 
-	@XmlElement(name = "UndrlygMstrAgrmt")
-	public ContractDocument1 getUnderlyingMasterAgreement() {
-		return underlyingMasterAgreement;
+	public Optional<ContractDocument1> getUnderlyingMasterAgreement() {
+		return underlyingMasterAgreement == null ? Optional.empty() : Optional.of(underlyingMasterAgreement);
 	}
 
-	public void setUnderlyingMasterAgreement(ContractDocument1 underlyingMasterAgreement) {
+	public AccountOpeningAmendmentRequestV02 setUnderlyingMasterAgreement(ContractDocument1 underlyingMasterAgreement) {
 		this.underlyingMasterAgreement = underlyingMasterAgreement;
+		return this;
 	}
 
-	@XmlElement(name = "Acct", required = true)
 	public CustomerAccount4 getAccount() {
 		return account;
 	}
 
-	public void setAccount(CustomerAccount4 account) {
-		this.account = account;
+	public AccountOpeningAmendmentRequestV02 setAccount(CustomerAccount4 account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcrId", required = true)
 	public BranchAndFinancialInstitutionIdentification5 getAccountServicerIdentification() {
 		return accountServicerIdentification;
 	}
 
-	public void setAccountServicerIdentification(BranchAndFinancialInstitutionIdentification5 accountServicerIdentification) {
-		this.accountServicerIdentification = accountServicerIdentification;
+	public AccountOpeningAmendmentRequestV02 setAccountServicerIdentification(BranchAndFinancialInstitutionIdentification5 accountServicerIdentification) {
+		this.accountServicerIdentification = Objects.requireNonNull(accountServicerIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Org", required = true)
 	public Organisation12 getOrganisation() {
 		return organisation;
 	}
 
-	public void setOrganisation(Organisation12 organisation) {
-		this.organisation = organisation;
+	public AccountOpeningAmendmentRequestV02 setOrganisation(Organisation12 organisation) {
+		this.organisation = Objects.requireNonNull(organisation);
+		return this;
 	}
 
-	@XmlElement(name = "Mndt")
 	public List<OperationMandate2> getMandate() {
-		return mandate;
+		return mandate == null ? mandate = new ArrayList<>() : mandate;
 	}
 
-	public void setMandate(List<OperationMandate2> mandate) {
-		this.mandate = mandate;
+	public AccountOpeningAmendmentRequestV02 setMandate(List<OperationMandate2> mandate) {
+		this.mandate = Objects.requireNonNull(mandate);
+		return this;
 	}
 
-	@XmlElement(name = "Grp")
 	public List<Group1> getGroup() {
-		return group;
+		return group == null ? group = new ArrayList<>() : group;
 	}
 
-	public void setGroup(List<Group1> group) {
-		this.group = group;
+	public AccountOpeningAmendmentRequestV02 setGroup(List<Group1> group) {
+		this.group = Objects.requireNonNull(group);
+		return this;
 	}
 
-	@XmlElement(name = "RefAcct")
-	public CashAccount24 getReferenceAccount() {
-		return referenceAccount;
+	public Optional<CashAccount24> getReferenceAccount() {
+		return referenceAccount == null ? Optional.empty() : Optional.of(referenceAccount);
 	}
 
-	public void setReferenceAccount(CashAccount24 referenceAccount) {
+	public AccountOpeningAmendmentRequestV02 setReferenceAccount(CashAccount24 referenceAccount) {
 		this.referenceAccount = referenceAccount;
+		return this;
 	}
 
-	@XmlElement(name = "DgtlSgntr")
 	public List<PartyAndSignature2> getDigitalSignature() {
-		return digitalSignature;
+		return digitalSignature == null ? digitalSignature = new ArrayList<>() : digitalSignature;
 	}
 
-	public void setDigitalSignature(List<PartyAndSignature2> digitalSignature) {
-		this.digitalSignature = digitalSignature;
+	public AccountOpeningAmendmentRequestV02 setDigitalSignature(List<PartyAndSignature2> digitalSignature) {
+		this.digitalSignature = Objects.requireNonNull(digitalSignature);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public AccountOpeningAmendmentRequestV02 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.008.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.008.001.02")
 	static public class Document {
 		@XmlElement(name = "AcctOpngAmdmntReq", required = true)
 		public AccountOpeningAmendmentRequestV02 messageBody;

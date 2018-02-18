@@ -37,28 +37,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Single
- * CivilStatusCode.mmSingle}</li>
+ * CivilStatusCode.Single}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Married
- * CivilStatusCode.mmMarried}</li>
+ * CivilStatusCode.Married}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#LegallyDivorced
- * CivilStatusCode.mmLegallyDivorced}</li>
+ * CivilStatusCode.LegallyDivorced}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Divorced
- * CivilStatusCode.mmDivorced}</li>
+ * CivilStatusCode.Divorced}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Widow
- * CivilStatusCode.mmWidow}</li>
+ * CivilStatusCode.Widow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#StableUnion
- * CivilStatusCode.mmStableUnion}</li>
+ * CivilStatusCode.StableUnion}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Separated
- * CivilStatusCode.mmSeparated}</li>
+ * CivilStatusCode.Separated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -291,7 +291,7 @@ public class CivilStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CivilStatusCode";
 				definition = "Specifies the civil status of a person.";

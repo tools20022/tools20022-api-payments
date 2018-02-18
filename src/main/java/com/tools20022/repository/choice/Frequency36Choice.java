@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.FrequencyAndMoment1;
 import com.tools20022.repository.msg.FrequencyPeriod1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice of format for a frequency, for example, the frequency of payment."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Frequency36Choice", propOrder = {"type", "period", "pointInTime"})
 public class Frequency36Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Frequency6Code type;
 	/**
-	 * Specifies a frequency in terms of a specified period type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class Frequency36Choice {
 	 */
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Frequency36Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +116,11 @@ public class Frequency36Choice {
 			simpleType_lazy = () -> Frequency6Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Prd", required = true)
 	protected FrequencyPeriod1 period;
 	/**
-	 * Specifies a frequency in terms of a count per period within a specified
-	 * period type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +150,7 @@ public class Frequency36Choice {
 	 */
 	public static final MMMessageAttribute mmPeriod = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Frequency36Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,11 +161,11 @@ public class Frequency36Choice {
 			complexType_lazy = () -> FrequencyPeriod1.mmObject();
 		}
 	};
+	@XmlElement(name = "PtInTm", required = true)
 	protected FrequencyAndMoment1 pointInTime;
 	/**
-	 * Specifies a frequency in terms of an exact point in time or moment within
-	 * a specified period type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -191,7 +193,7 @@ public class Frequency36Choice {
 	 */
 	public static final MMMessageAssociationEnd mmPointInTime = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> Frequency36Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PtInTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,8 +209,9 @@ public class Frequency36Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Frequency36Choice.mmType, Frequency36Choice.mmPeriod, Frequency36Choice.mmPointInTime);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Frequency36Choice.mmType, com.tools20022.repository.choice.Frequency36Choice.mmPeriod,
+						com.tools20022.repository.choice.Frequency36Choice.mmPointInTime);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency36Choice";
 				definition = "Choice of format for a frequency, for example, the frequency of payment.";
@@ -217,30 +220,30 @@ public class Frequency36Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Frequency6Code getType() {
 		return type;
 	}
 
-	public void setType(Frequency6Code type) {
-		this.type = type;
+	public Frequency36Choice setType(Frequency6Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Prd", required = true)
 	public FrequencyPeriod1 getPeriod() {
 		return period;
 	}
 
-	public void setPeriod(FrequencyPeriod1 period) {
-		this.period = period;
+	public Frequency36Choice setPeriod(FrequencyPeriod1 period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
-	@XmlElement(name = "PtInTm", required = true)
 	public FrequencyAndMoment1 getPointInTime() {
 		return pointInTime;
 	}
 
-	public void setPointInTime(FrequencyAndMoment1 pointInTime) {
-		this.pointInTime = pointInTime;
+	public Frequency36Choice setPointInTime(FrequencyAndMoment1 pointInTime) {
+		this.pointInTime = Objects.requireNonNull(pointInTime);
+		return this;
 	}
 }

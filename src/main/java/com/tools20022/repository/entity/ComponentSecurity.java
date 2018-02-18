@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Security which forms a component of another security, for example,
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,9 +95,8 @@ public class ComponentSecurity {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod separationPeriod;
 	/**
-	 * Period during which the related security can (optional) or must
-	 * (mandatory) be separated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,8 +145,8 @@ public class ComponentSecurity {
 	};
 	protected Security security;
 	/**
-	 * Security for which a component security is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,8 +192,8 @@ public class ComponentSecurity {
 	};
 	protected ChoiceCode separationChoice;
 	/**
-	 * Defines if the separation of the security is optional or mandatory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,8 +239,8 @@ public class ComponentSecurity {
 	};
 	protected BaseOneRate quantityNumerator;
 	/**
-	 * Number of related securities for the exercise.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,8 +285,8 @@ public class ComponentSecurity {
 	};
 	protected BaseOneRate quantityDenominator;
 	/**
-	 * Number of held securities for the exercise.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,9 +331,8 @@ public class ComponentSecurity {
 	};
 	protected ISODateTime separationDate;
 	/**
-	 * Date/time at which the related security can (optional) or must
-	 * (mandatory) be separated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,7 +381,7 @@ public class ComponentSecurity {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ComponentSecurity";
 				definition = "Security which forms a component of another security, for example, underlying.";
@@ -403,47 +403,53 @@ public class ComponentSecurity {
 		return separationPeriod;
 	}
 
-	public void setSeparationPeriod(com.tools20022.repository.entity.DateTimePeriod separationPeriod) {
-		this.separationPeriod = separationPeriod;
+	public ComponentSecurity setSeparationPeriod(com.tools20022.repository.entity.DateTimePeriod separationPeriod) {
+		this.separationPeriod = Objects.requireNonNull(separationPeriod);
+		return this;
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public ComponentSecurity setSecurity(com.tools20022.repository.entity.Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public ChoiceCode getSeparationChoice() {
 		return separationChoice;
 	}
 
-	public void setSeparationChoice(ChoiceCode separationChoice) {
-		this.separationChoice = separationChoice;
+	public ComponentSecurity setSeparationChoice(ChoiceCode separationChoice) {
+		this.separationChoice = Objects.requireNonNull(separationChoice);
+		return this;
 	}
 
 	public BaseOneRate getQuantityNumerator() {
 		return quantityNumerator;
 	}
 
-	public void setQuantityNumerator(BaseOneRate quantityNumerator) {
-		this.quantityNumerator = quantityNumerator;
+	public ComponentSecurity setQuantityNumerator(BaseOneRate quantityNumerator) {
+		this.quantityNumerator = Objects.requireNonNull(quantityNumerator);
+		return this;
 	}
 
 	public BaseOneRate getQuantityDenominator() {
 		return quantityDenominator;
 	}
 
-	public void setQuantityDenominator(BaseOneRate quantityDenominator) {
-		this.quantityDenominator = quantityDenominator;
+	public ComponentSecurity setQuantityDenominator(BaseOneRate quantityDenominator) {
+		this.quantityDenominator = Objects.requireNonNull(quantityDenominator);
+		return this;
 	}
 
 	public ISODateTime getSeparationDate() {
 		return separationDate;
 	}
 
-	public void setSeparationDate(ISODateTime separationDate) {
-		this.separationDate = separationDate;
+	public ComponentSecurity setSeparationDate(ISODateTime separationDate) {
+		this.separationDate = Objects.requireNonNull(separationDate);
+		return this;
 	}
 }

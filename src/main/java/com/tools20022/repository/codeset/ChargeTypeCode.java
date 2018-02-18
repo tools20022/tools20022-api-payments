@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,133 +39,133 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#BrokerageFee
- * ChargeTypeCode.mmBrokerageFee}</li>
+ * ChargeTypeCode.BrokerageFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Commission
- * ChargeTypeCode.mmCommission}</li>
+ * ChargeTypeCode.Commission}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#BackEndLoad
- * ChargeTypeCode.mmBackEndLoad}</li>
+ * ChargeTypeCode.BackEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#FrontEndLoad
- * ChargeTypeCode.mmFrontEndLoad}</li>
+ * ChargeTypeCode.FrontEndLoad}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Switch
- * ChargeTypeCode.mmSwitch}</li>
+ * ChargeTypeCode.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#DilutionLevy
- * ChargeTypeCode.mmDilutionLevy}</li>
+ * ChargeTypeCode.DilutionLevy}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Discount
- * ChargeTypeCode.mmDiscount}</li>
+ * ChargeTypeCode.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ManagementFee
- * ChargeTypeCode.mmManagementFee}</li>
+ * ChargeTypeCode.ManagementFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#TransferFee
- * ChargeTypeCode.mmTransferFee}</li>
+ * ChargeTypeCode.TransferFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#MatchingFees
- * ChargeTypeCode.mmMatchingFees}</li>
+ * ChargeTypeCode.MatchingFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#PostageCharge
- * ChargeTypeCode.mmPostageCharge}</li>
+ * ChargeTypeCode.PostageCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#RegulatoryFee
- * ChargeTypeCode.mmRegulatoryFee}</li>
+ * ChargeTypeCode.RegulatoryFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ShippingCharge
- * ChargeTypeCode.mmShippingCharge}</li>
+ * ChargeTypeCode.ShippingCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ServiceProvisionFee
- * ChargeTypeCode.mmServiceProvisionFee}</li>
+ * ChargeTypeCode.ServiceProvisionFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#SpecialConcessions
- * ChargeTypeCode.mmSpecialConcessions}</li>
+ * ChargeTypeCode.SpecialConcessions}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#PartAcquis
- * ChargeTypeCode.mmPartAcquis}</li>
+ * ChargeTypeCode.PartAcquis}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Penalty
- * ChargeTypeCode.mmPenalty}</li>
+ * ChargeTypeCode.Penalty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ContingencyDeferredSalesCharge
- * ChargeTypeCode.mmContingencyDeferredSalesCharge}</li>
+ * ChargeTypeCode.ContingencyDeferredSalesCharge}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Other
- * ChargeTypeCode.mmOther}</li>
+ * ChargeTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Equalisation
- * ChargeTypeCode.mmEqualisation}</li>
+ * ChargeTypeCode.Equalisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#CorrespondentBankCharge
- * ChargeTypeCode.mmCorrespondentBankCharge}</li>
+ * ChargeTypeCode.CorrespondentBankCharge}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Premium
- * ChargeTypeCode.mmPremium}</li>
+ * ChargeTypeCode.Premium}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Initial
- * ChargeTypeCode.mmInitial}</li>
+ * ChargeTypeCode.Initial}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#AdvisoryFee
- * ChargeTypeCode.mmAdvisoryFee}</li>
+ * ChargeTypeCode.AdvisoryFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#CustodyFee
- * ChargeTypeCode.mmCustodyFee}</li>
+ * ChargeTypeCode.CustodyFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#PublicationFee
- * ChargeTypeCode.mmPublicationFee}</li>
+ * ChargeTypeCode.PublicationFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#AccountingFee
- * ChargeTypeCode.mmAccountingFee}</li>
+ * ChargeTypeCode.AccountingFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#SignatureService
- * ChargeTypeCode.mmSignatureService}</li>
+ * ChargeTypeCode.SignatureService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#StorageAtDestination
- * ChargeTypeCode.mmStorageAtDestination}</li>
+ * ChargeTypeCode.StorageAtDestination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#StorageAtOrigin
- * ChargeTypeCode.mmStorageAtOrigin}</li>
+ * ChargeTypeCode.StorageAtOrigin}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#Packaging
- * ChargeTypeCode.mmPackaging}</li>
+ * ChargeTypeCode.Packaging}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#PickUp
- * ChargeTypeCode.mmPickUp}</li>
+ * ChargeTypeCode.PickUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#DangerousGoodsFee
- * ChargeTypeCode.mmDangerousGoodsFee}</li>
+ * ChargeTypeCode.DangerousGoodsFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#SecurityCharge
- * ChargeTypeCode.mmSecurityCharge}</li>
+ * ChargeTypeCode.SecurityCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#InsurancePremium
- * ChargeTypeCode.mmInsurancePremium}</li>
+ * ChargeTypeCode.InsurancePremium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#CollectFreight
- * ChargeTypeCode.mmCollectFreight}</li>
+ * ChargeTypeCode.CollectFreight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ClearanceAndHandlingAtOrigin
- * ChargeTypeCode.mmClearanceAndHandlingAtOrigin}</li>
+ * ChargeTypeCode.ClearanceAndHandlingAtOrigin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ClearanceAndHandlingAtDestination
- * ChargeTypeCode.mmClearanceAndHandlingAtDestination}</li>
+ * ChargeTypeCode.ClearanceAndHandlingAtDestination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#AirWayBillFee
- * ChargeTypeCode.mmAirWayBillFee}</li>
+ * ChargeTypeCode.AirWayBillFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#TransportCharges
- * ChargeTypeCode.mmTransportCharges}</li>
+ * ChargeTypeCode.TransportCharges}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#UCITSCommission
- * ChargeTypeCode.mmUCITSCommission}</li>
+ * ChargeTypeCode.UCITSCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#SpeciallyAgreedFrontEndLoad
- * ChargeTypeCode.mmSpeciallyAgreedFrontEndLoad}</li>
+ * ChargeTypeCode.SpeciallyAgreedFrontEndLoad}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#ADRFee
- * ChargeTypeCode.mmADRFee}</li>
+ * ChargeTypeCode.ADRFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#IssuanceCancellationFee
- * ChargeTypeCode.mmIssuanceCancellationFee}</li>
+ * ChargeTypeCode.IssuanceCancellationFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeTypeCode#MiscellaneousFee
- * ChargeTypeCode.mmMiscellaneousFee}</li>
+ * ChargeTypeCode.MiscellaneousFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeTypeCode#IssuanceFee
- * ChargeTypeCode.mmIssuanceFee}</li>
+ * ChargeTypeCode.IssuanceFee}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -489,6 +490,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MACO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::MACO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -501,6 +505,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode MatchingFees = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::MACO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingFees";
 			definition = "Fee charged for matching and/or confirmation.";
@@ -519,6 +524,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "POST"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::POST</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -531,6 +539,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode PostageCharge = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::POST"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostageCharge";
 			definition = "Charge paid for the postage.";
@@ -549,6 +558,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REGF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::REGF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -563,6 +575,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode RegulatoryFee = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::REGF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryFee";
 			definition = "Fee charged by a regulatory authority, eg, Securities and Exchange fees.";
@@ -581,6 +594,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SHIP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::SHIP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -594,6 +610,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode ShippingCharge = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::SHIP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShippingCharge";
 			definition = "Charge for shipping, including the insurance of securities.";
@@ -612,6 +629,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CHAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::CHAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -624,6 +644,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode ServiceProvisionFee = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::CHAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ServiceProvisionFee";
 			definition = "Fee paid for the provision of financial services.";
@@ -643,6 +664,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPCN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::SPCN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -657,6 +681,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode SpecialConcessions = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::SPCN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecialConcessions";
 			definition = "Charges, drawdown, or other reduction from or in addition to the deal price.";
@@ -769,6 +794,9 @@ public class ChargeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OTHR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::OTHE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -781,6 +809,7 @@ public class ChargeTypeCode extends MMCode {
 	 */
 	public static final ChargeTypeCode Other = new ChargeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::OTHE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another type of charge.";
@@ -1620,7 +1649,7 @@ public class ChargeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BRKF");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeTypeCode";

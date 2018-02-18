@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Rights for securities entitled to the account owner based on the terms of the
@@ -63,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,10 +83,8 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity entitledSecuritiesQuantity;
 	/**
-	 * Quantity of securities based on the terms of the corporate action event
-	 * and balance of underlying securities entitled to the account owner. (This
-	 * quantity can be positive or negative).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,8 +133,8 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	};
 	protected RenounceableStatusCode renounceableEntitlementStatusType;
 	/**
-	 * Specifies whether terms of the event allow resale of the rights.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,7 +183,7 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionSecuritiesEntitlement";
 				definition = "Rights for securities entitled to the account owner based on the terms of the corporate action event and the balance of underlying securities.";
@@ -206,15 +205,17 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 		return entitledSecuritiesQuantity;
 	}
 
-	public void setEntitledSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity entitledSecuritiesQuantity) {
-		this.entitledSecuritiesQuantity = entitledSecuritiesQuantity;
+	public CorporateActionSecuritiesEntitlement setEntitledSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity entitledSecuritiesQuantity) {
+		this.entitledSecuritiesQuantity = Objects.requireNonNull(entitledSecuritiesQuantity);
+		return this;
 	}
 
 	public RenounceableStatusCode getRenounceableEntitlementStatusType() {
 		return renounceableEntitlementStatusType;
 	}
 
-	public void setRenounceableEntitlementStatusType(RenounceableStatusCode renounceableEntitlementStatusType) {
-		this.renounceableEntitlementStatusType = renounceableEntitlementStatusType;
+	public CorporateActionSecuritiesEntitlement setRenounceableEntitlementStatusType(RenounceableStatusCode renounceableEntitlementStatusType) {
+		this.renounceableEntitlementStatusType = Objects.requireNonNull(renounceableEntitlementStatusType);
+		return this;
 	}
 }

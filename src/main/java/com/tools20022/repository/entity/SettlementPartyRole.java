@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Role played by a party in a settlement process.
@@ -81,8 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +99,8 @@ public class SettlementPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Account settlementAccount;
 	/**
-	 * Account which is used for settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,8 +146,8 @@ public class SettlementPartyRole extends Role {
 	};
 	protected Settlement settlement;
 	/**
-	 * Specifies the settlement process for which the party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,7 +197,7 @@ public class SettlementPartyRole extends Role {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementPartyRole";
 				definition = "Role played by a party in a settlement process.";
@@ -219,15 +220,17 @@ public class SettlementPartyRole extends Role {
 		return settlementAccount;
 	}
 
-	public void setSettlementAccount(com.tools20022.repository.entity.Account settlementAccount) {
-		this.settlementAccount = settlementAccount;
+	public SettlementPartyRole setSettlementAccount(com.tools20022.repository.entity.Account settlementAccount) {
+		this.settlementAccount = Objects.requireNonNull(settlementAccount);
+		return this;
 	}
 
 	public Settlement getSettlement() {
 		return settlement;
 	}
 
-	public void setSettlement(com.tools20022.repository.entity.Settlement settlement) {
-		this.settlement = settlement;
+	public SettlementPartyRole setSettlement(com.tools20022.repository.entity.Settlement settlement) {
+		this.settlement = Objects.requireNonNull(settlement);
+		return this;
 	}
 }

@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#LegalDecision
- * PaymentCancellationRejectionCode.mmLegalDecision}</li>
+ * PaymentCancellationRejectionCode.LegalDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#AgentDecision
- * PaymentCancellationRejectionCode.mmAgentDecision}</li>
+ * PaymentCancellationRejectionCode.AgentDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#CustomerDecision
- * PaymentCancellationRejectionCode.mmCustomerDecision}</li>
+ * PaymentCancellationRejectionCode.CustomerDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#AlreadyReturned
- * PaymentCancellationRejectionCode.mmAlreadyReturned}</li>
+ * PaymentCancellationRejectionCode.AlreadyReturned}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#NoAnswerFromCustomer
- * PaymentCancellationRejectionCode.mmNoAnswerFromCustomer}</li>
+ * PaymentCancellationRejectionCode.NoAnswerFromCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#NoOriginalTransactionReceived
- * PaymentCancellationRejectionCode.mmNoOriginalTransactionReceived}</li>
+ * PaymentCancellationRejectionCode.NoOriginalTransactionReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#ClosedAccountNumber
- * PaymentCancellationRejectionCode.mmClosedAccountNumber}</li>
+ * PaymentCancellationRejectionCode.ClosedAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejectionCode#InsufficientFunds
- * PaymentCancellationRejectionCode.mmInsufficientFunds}</li>
+ * PaymentCancellationRejectionCode.InsufficientFunds}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -360,7 +360,7 @@ public class PaymentCancellationRejectionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LEGL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCancellationRejectionCode";

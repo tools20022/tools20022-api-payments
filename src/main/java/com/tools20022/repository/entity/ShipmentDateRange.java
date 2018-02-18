@@ -28,6 +28,8 @@ import com.tools20022.repository.msg.TransactionCertificateContract1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies a shipment period or a shipment date.
@@ -92,8 +94,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,8 +111,8 @@ public class ShipmentDateRange {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime latestShipmentDate;
 	/**
-	 * Latest date whereby the goods must be shipped.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,8 +172,8 @@ public class ShipmentDateRange {
 	};
 	protected Transport relatedTransport;
 	/**
-	 * Specifies the transport process to which the dates apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,8 +221,8 @@ public class ShipmentDateRange {
 	};
 	protected ISODateTime earliestShipmentDate;
 	/**
-	 * Earliest date whereby the items must be shipped.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,8 +279,8 @@ public class ShipmentDateRange {
 	};
 	protected ISODateTime shipmentDate;
 	/**
-	 * Date at which the goods are shipped.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -334,7 +336,7 @@ public class ShipmentDateRange {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ShipmentDateRange";
 				definition = "Specifies a shipment period or a shipment date.";
@@ -357,31 +359,35 @@ public class ShipmentDateRange {
 		return latestShipmentDate;
 	}
 
-	public void setLatestShipmentDate(ISODateTime latestShipmentDate) {
-		this.latestShipmentDate = latestShipmentDate;
+	public ShipmentDateRange setLatestShipmentDate(ISODateTime latestShipmentDate) {
+		this.latestShipmentDate = Objects.requireNonNull(latestShipmentDate);
+		return this;
 	}
 
-	public Transport getRelatedTransport() {
-		return relatedTransport;
+	public Optional<Transport> getRelatedTransport() {
+		return relatedTransport == null ? Optional.empty() : Optional.of(relatedTransport);
 	}
 
-	public void setRelatedTransport(com.tools20022.repository.entity.Transport relatedTransport) {
+	public ShipmentDateRange setRelatedTransport(com.tools20022.repository.entity.Transport relatedTransport) {
 		this.relatedTransport = relatedTransport;
+		return this;
 	}
 
 	public ISODateTime getEarliestShipmentDate() {
 		return earliestShipmentDate;
 	}
 
-	public void setEarliestShipmentDate(ISODateTime earliestShipmentDate) {
-		this.earliestShipmentDate = earliestShipmentDate;
+	public ShipmentDateRange setEarliestShipmentDate(ISODateTime earliestShipmentDate) {
+		this.earliestShipmentDate = Objects.requireNonNull(earliestShipmentDate);
+		return this;
 	}
 
 	public ISODateTime getShipmentDate() {
 		return shipmentDate;
 	}
 
-	public void setShipmentDate(ISODateTime shipmentDate) {
-		this.shipmentDate = shipmentDate;
+	public ShipmentDateRange setShipmentDate(ISODateTime shipmentDate) {
+		this.shipmentDate = Objects.requireNonNull(shipmentDate);
+		return this;
 	}
 }

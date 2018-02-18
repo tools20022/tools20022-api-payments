@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Processing characteristics linked to the instrument, ie, not to the market.
@@ -184,8 +183,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,9 +202,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected EventFrequencyCode reinvestmentFrequency;
 	/**
-	 * Frequency with which the reinvestment takes place, This is the same or
-	 * less than the dividend frequency,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,8 +251,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator frontEndLoadIndicator;
 	/**
-	 * Front end charge on subscription orders for this class can be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,9 +299,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator backEndLoadIndicator;
 	/**
-	 * Exit charge (eg. CDSC) on redemption orders for this class can be
-	 * applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,9 +348,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator switchingFeeIndicator;
 	/**
-	 * If a separate fee for switching between sub-funds of the same umbrella
-	 * can be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -401,9 +397,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Max350Text limitedSubscriptionPeriod;
 	/**
-	 * Specific period, eg, for some guaranteed funds, during which the
-	 * units/shares may be subscribed to.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,9 +445,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Max350Text limitedRedemptionPeriod;
 	/**
-	 * Specific period, eg, for some guaranteed funds, during which the
-	 * units/shares may be redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -499,8 +493,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Number decimalisation;
 	/**
-	 * Number of decimal places to which quantities of units/shares are rounded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -547,9 +541,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator holdingTransferableIndicator;
 	/**
-	 * Indicates whether registered investors are able to transfer some or all
-	 * of their holdings to third parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,8 +590,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator applicationForm;
 	/**
-	 * Physical application form is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -644,10 +637,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected SignatureTypeCode signatureRequired;
 	/**
-	 * Specifies which type of signature is required when completing an initial
-	 * subscription, when completing a subsequent subscription, and when
-	 * completing redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -695,8 +686,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator amountIndicator;
 	/**
-	 * Indicates whether subscriptions/redemption in amount are allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,9 +734,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator unitsIndicator;
 	/**
-	 * Indicates whether subsciptions/redemption may be placed as a number of
-	 * units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -793,9 +783,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected ISODateTime orderCutOffDateTime;
 	/**
-	 * Last date/time at which an order to subscribe or an order to redeem can
-	 * be given.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -842,10 +831,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected TimeFrame settlementCycle;
 	/**
-	 * An agreed number of days after the Trade date (T) used to define standard
-	 * timeframes e.g T+3 settlement period <br>
-	 * Where T = the date the price is applied to a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -894,8 +881,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected InvestmentFundClass fundClass;
 	/**
-	 * Investment fund class for which processing characteristics are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -944,9 +931,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected HoldingTransferableCode holdingTransferable;
 	/**
-	 * Indicates whether registered investors are able to transfer some or all
-	 * of their holdings to third parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -994,8 +980,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected FrequencyCode dealingFrequency;
 	/**
-	 * Frequency at which the subscriptions and redemptions are done.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1042,9 +1028,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Max350Text limitedPeriod;
 	/**
-	 * Specific period, eg, for some guaranteed funds, during which the
-	 * units/shares may be redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1091,8 +1076,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected List<com.tools20022.repository.entity.Account> settlementAccount;
 	/**
-	 * Account used for settlement of fund transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1137,8 +1122,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Country country;
 	/**
-	 * Country in which the processing characteristic applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1184,9 +1169,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> localMarketAnnex;
 	/**
-	 * Context, or geographic environment, in which trading parties may meet in
-	 * order to negotiate and execute trades among themselves.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1234,8 +1218,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected ISODateTime effectiveDate;
 	/**
-	 * Date/time as from which the processing characteristics are valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1281,9 +1265,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator subsequentSubscriptionApplicationForm;
 	/**
-	 * Physical application form for subsequent investments by the same
-	 * investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1331,9 +1314,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected YesNoIndicator redemptionForm;
 	/**
-	 * Physical written instruction/renunciation form for redemption of
-	 * units/shares by the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1381,8 +1363,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected CurrencyCode dealingCurrency;
 	/**
-	 * Currency in which a subscription or redemption is accepted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1428,8 +1410,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected TimeFrame dealingCutOffTimeFrame;
 	/**
-	 * Specifies the number of days for cut off before or after an activity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1477,9 +1459,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected ActiveCurrencyAndAmount minimumHoldingAmount;
 	/**
-	 * Minimum value of units that must be maintained to avoid automatic
-	 * redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1527,9 +1508,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected DecimalNumber maximumRedemptionUnits;
 	/**
-	 * Maximum number of shares/units that may be redeemed on a single dealing
-	 * day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1577,9 +1557,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected DecimalNumber minimumHoldingUnits;
 	/**
-	 * Minimum number of units that must be maintained to avoid automatic
-	 * redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1627,9 +1606,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected CurrencyAndAmount minimumRemainingHoldingAmount;
 	/**
-	 * Minimum value of units/shares that must be retained to avoid automatic
-	 * redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1677,9 +1655,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected PercentageRate maximumRedemptionPercentage;
 	/**
-	 * Maximum quantity of securities, expressed as a percentage that can be
-	 * sold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1727,8 +1704,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected CurrencyAndAmount maximumRedemptionAmount;
 	/**
-	 * Maximum quantity of securities, expressed as an amount that can be sold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1776,8 +1753,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected DecimalNumber minimumInitialSubscriptionUnits;
 	/**
-	 * Minimum initial number of units/shares that must be purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1824,9 +1801,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected CurrencyAndAmount minimumSubscriptionAmount;
 	/**
-	 * Minimum quantity of securities, expressed as an amount that must be
-	 * purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1874,9 +1850,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected CurrencyAndAmount minimumInitialSubscriptionAmount;
 	/**
-	 * Minimum initial quantity of securities, expressed as an amount that must
-	 * be purchased at subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1924,9 +1899,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected DecimalNumber minimumSubscriptionUnits;
 	/**
-	 * Minimum number of units/shares that must be purchase by existing
-	 * investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1974,10 +1948,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 	};
 	protected Max70Text minimumHoldingPeriod;
 	/**
-	 * Description of a period, that may be a number of days, weeks or
-	 * descriptive period during which the units/shares must be held following
-	 * their issue before redemption will be permitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2026,7 +1998,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundClassProcessingCharacteristics";
 				definition = "Processing characteristics linked to the instrument, ie, not to  the market.";
@@ -2068,295 +2040,332 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return reinvestmentFrequency;
 	}
 
-	public void setReinvestmentFrequency(EventFrequencyCode reinvestmentFrequency) {
-		this.reinvestmentFrequency = reinvestmentFrequency;
+	public InvestmentFundClassProcessingCharacteristics setReinvestmentFrequency(EventFrequencyCode reinvestmentFrequency) {
+		this.reinvestmentFrequency = Objects.requireNonNull(reinvestmentFrequency);
+		return this;
 	}
 
 	public YesNoIndicator getFrontEndLoadIndicator() {
 		return frontEndLoadIndicator;
 	}
 
-	public void setFrontEndLoadIndicator(YesNoIndicator frontEndLoadIndicator) {
-		this.frontEndLoadIndicator = frontEndLoadIndicator;
+	public InvestmentFundClassProcessingCharacteristics setFrontEndLoadIndicator(YesNoIndicator frontEndLoadIndicator) {
+		this.frontEndLoadIndicator = Objects.requireNonNull(frontEndLoadIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getBackEndLoadIndicator() {
 		return backEndLoadIndicator;
 	}
 
-	public void setBackEndLoadIndicator(YesNoIndicator backEndLoadIndicator) {
-		this.backEndLoadIndicator = backEndLoadIndicator;
+	public InvestmentFundClassProcessingCharacteristics setBackEndLoadIndicator(YesNoIndicator backEndLoadIndicator) {
+		this.backEndLoadIndicator = Objects.requireNonNull(backEndLoadIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getSwitchingFeeIndicator() {
 		return switchingFeeIndicator;
 	}
 
-	public void setSwitchingFeeIndicator(YesNoIndicator switchingFeeIndicator) {
-		this.switchingFeeIndicator = switchingFeeIndicator;
+	public InvestmentFundClassProcessingCharacteristics setSwitchingFeeIndicator(YesNoIndicator switchingFeeIndicator) {
+		this.switchingFeeIndicator = Objects.requireNonNull(switchingFeeIndicator);
+		return this;
 	}
 
 	public Max350Text getLimitedSubscriptionPeriod() {
 		return limitedSubscriptionPeriod;
 	}
 
-	public void setLimitedSubscriptionPeriod(Max350Text limitedSubscriptionPeriod) {
-		this.limitedSubscriptionPeriod = limitedSubscriptionPeriod;
+	public InvestmentFundClassProcessingCharacteristics setLimitedSubscriptionPeriod(Max350Text limitedSubscriptionPeriod) {
+		this.limitedSubscriptionPeriod = Objects.requireNonNull(limitedSubscriptionPeriod);
+		return this;
 	}
 
 	public Max350Text getLimitedRedemptionPeriod() {
 		return limitedRedemptionPeriod;
 	}
 
-	public void setLimitedRedemptionPeriod(Max350Text limitedRedemptionPeriod) {
-		this.limitedRedemptionPeriod = limitedRedemptionPeriod;
+	public InvestmentFundClassProcessingCharacteristics setLimitedRedemptionPeriod(Max350Text limitedRedemptionPeriod) {
+		this.limitedRedemptionPeriod = Objects.requireNonNull(limitedRedemptionPeriod);
+		return this;
 	}
 
 	public Number getDecimalisation() {
 		return decimalisation;
 	}
 
-	public void setDecimalisation(Number decimalisation) {
-		this.decimalisation = decimalisation;
+	public InvestmentFundClassProcessingCharacteristics setDecimalisation(Number decimalisation) {
+		this.decimalisation = Objects.requireNonNull(decimalisation);
+		return this;
 	}
 
 	public YesNoIndicator getHoldingTransferableIndicator() {
 		return holdingTransferableIndicator;
 	}
 
-	public void setHoldingTransferableIndicator(YesNoIndicator holdingTransferableIndicator) {
-		this.holdingTransferableIndicator = holdingTransferableIndicator;
+	public InvestmentFundClassProcessingCharacteristics setHoldingTransferableIndicator(YesNoIndicator holdingTransferableIndicator) {
+		this.holdingTransferableIndicator = Objects.requireNonNull(holdingTransferableIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getApplicationForm() {
 		return applicationForm;
 	}
 
-	public void setApplicationForm(YesNoIndicator applicationForm) {
-		this.applicationForm = applicationForm;
+	public InvestmentFundClassProcessingCharacteristics setApplicationForm(YesNoIndicator applicationForm) {
+		this.applicationForm = Objects.requireNonNull(applicationForm);
+		return this;
 	}
 
 	public SignatureTypeCode getSignatureRequired() {
 		return signatureRequired;
 	}
 
-	public void setSignatureRequired(SignatureTypeCode signatureRequired) {
-		this.signatureRequired = signatureRequired;
+	public InvestmentFundClassProcessingCharacteristics setSignatureRequired(SignatureTypeCode signatureRequired) {
+		this.signatureRequired = Objects.requireNonNull(signatureRequired);
+		return this;
 	}
 
 	public YesNoIndicator getAmountIndicator() {
 		return amountIndicator;
 	}
 
-	public void setAmountIndicator(YesNoIndicator amountIndicator) {
-		this.amountIndicator = amountIndicator;
+	public InvestmentFundClassProcessingCharacteristics setAmountIndicator(YesNoIndicator amountIndicator) {
+		this.amountIndicator = Objects.requireNonNull(amountIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getUnitsIndicator() {
 		return unitsIndicator;
 	}
 
-	public void setUnitsIndicator(YesNoIndicator unitsIndicator) {
-		this.unitsIndicator = unitsIndicator;
+	public InvestmentFundClassProcessingCharacteristics setUnitsIndicator(YesNoIndicator unitsIndicator) {
+		this.unitsIndicator = Objects.requireNonNull(unitsIndicator);
+		return this;
 	}
 
 	public ISODateTime getOrderCutOffDateTime() {
 		return orderCutOffDateTime;
 	}
 
-	public void setOrderCutOffDateTime(ISODateTime orderCutOffDateTime) {
-		this.orderCutOffDateTime = orderCutOffDateTime;
+	public InvestmentFundClassProcessingCharacteristics setOrderCutOffDateTime(ISODateTime orderCutOffDateTime) {
+		this.orderCutOffDateTime = Objects.requireNonNull(orderCutOffDateTime);
+		return this;
 	}
 
 	public TimeFrame getSettlementCycle() {
 		return settlementCycle;
 	}
 
-	public void setSettlementCycle(com.tools20022.repository.entity.TimeFrame settlementCycle) {
-		this.settlementCycle = settlementCycle;
+	public InvestmentFundClassProcessingCharacteristics setSettlementCycle(com.tools20022.repository.entity.TimeFrame settlementCycle) {
+		this.settlementCycle = Objects.requireNonNull(settlementCycle);
+		return this;
 	}
 
-	public InvestmentFundClass getFundClass() {
-		return fundClass;
+	public Optional<InvestmentFundClass> getFundClass() {
+		return fundClass == null ? Optional.empty() : Optional.of(fundClass);
 	}
 
-	public void setFundClass(com.tools20022.repository.entity.InvestmentFundClass fundClass) {
+	public InvestmentFundClassProcessingCharacteristics setFundClass(com.tools20022.repository.entity.InvestmentFundClass fundClass) {
 		this.fundClass = fundClass;
+		return this;
 	}
 
 	public HoldingTransferableCode getHoldingTransferable() {
 		return holdingTransferable;
 	}
 
-	public void setHoldingTransferable(HoldingTransferableCode holdingTransferable) {
-		this.holdingTransferable = holdingTransferable;
+	public InvestmentFundClassProcessingCharacteristics setHoldingTransferable(HoldingTransferableCode holdingTransferable) {
+		this.holdingTransferable = Objects.requireNonNull(holdingTransferable);
+		return this;
 	}
 
 	public FrequencyCode getDealingFrequency() {
 		return dealingFrequency;
 	}
 
-	public void setDealingFrequency(FrequencyCode dealingFrequency) {
-		this.dealingFrequency = dealingFrequency;
+	public InvestmentFundClassProcessingCharacteristics setDealingFrequency(FrequencyCode dealingFrequency) {
+		this.dealingFrequency = Objects.requireNonNull(dealingFrequency);
+		return this;
 	}
 
 	public Max350Text getLimitedPeriod() {
 		return limitedPeriod;
 	}
 
-	public void setLimitedPeriod(Max350Text limitedPeriod) {
-		this.limitedPeriod = limitedPeriod;
+	public InvestmentFundClassProcessingCharacteristics setLimitedPeriod(Max350Text limitedPeriod) {
+		this.limitedPeriod = Objects.requireNonNull(limitedPeriod);
+		return this;
 	}
 
 	public List<Account> getSettlementAccount() {
-		return settlementAccount;
+		return settlementAccount == null ? settlementAccount = new ArrayList<>() : settlementAccount;
 	}
 
-	public void setSettlementAccount(List<com.tools20022.repository.entity.Account> settlementAccount) {
-		this.settlementAccount = settlementAccount;
+	public InvestmentFundClassProcessingCharacteristics setSettlementAccount(List<com.tools20022.repository.entity.Account> settlementAccount) {
+		this.settlementAccount = Objects.requireNonNull(settlementAccount);
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public InvestmentFundClassProcessingCharacteristics setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
 	public List<ContactPoint> getLocalMarketAnnex() {
-		return localMarketAnnex;
+		return localMarketAnnex == null ? localMarketAnnex = new ArrayList<>() : localMarketAnnex;
 	}
 
-	public void setLocalMarketAnnex(List<com.tools20022.repository.entity.ContactPoint> localMarketAnnex) {
-		this.localMarketAnnex = localMarketAnnex;
+	public InvestmentFundClassProcessingCharacteristics setLocalMarketAnnex(List<com.tools20022.repository.entity.ContactPoint> localMarketAnnex) {
+		this.localMarketAnnex = Objects.requireNonNull(localMarketAnnex);
+		return this;
 	}
 
 	public ISODateTime getEffectiveDate() {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODateTime effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public InvestmentFundClassProcessingCharacteristics setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public YesNoIndicator getSubsequentSubscriptionApplicationForm() {
 		return subsequentSubscriptionApplicationForm;
 	}
 
-	public void setSubsequentSubscriptionApplicationForm(YesNoIndicator subsequentSubscriptionApplicationForm) {
-		this.subsequentSubscriptionApplicationForm = subsequentSubscriptionApplicationForm;
+	public InvestmentFundClassProcessingCharacteristics setSubsequentSubscriptionApplicationForm(YesNoIndicator subsequentSubscriptionApplicationForm) {
+		this.subsequentSubscriptionApplicationForm = Objects.requireNonNull(subsequentSubscriptionApplicationForm);
+		return this;
 	}
 
 	public YesNoIndicator getRedemptionForm() {
 		return redemptionForm;
 	}
 
-	public void setRedemptionForm(YesNoIndicator redemptionForm) {
-		this.redemptionForm = redemptionForm;
+	public InvestmentFundClassProcessingCharacteristics setRedemptionForm(YesNoIndicator redemptionForm) {
+		this.redemptionForm = Objects.requireNonNull(redemptionForm);
+		return this;
 	}
 
 	public CurrencyCode getDealingCurrency() {
 		return dealingCurrency;
 	}
 
-	public void setDealingCurrency(CurrencyCode dealingCurrency) {
-		this.dealingCurrency = dealingCurrency;
+	public InvestmentFundClassProcessingCharacteristics setDealingCurrency(CurrencyCode dealingCurrency) {
+		this.dealingCurrency = Objects.requireNonNull(dealingCurrency);
+		return this;
 	}
 
 	public TimeFrame getDealingCutOffTimeFrame() {
 		return dealingCutOffTimeFrame;
 	}
 
-	public void setDealingCutOffTimeFrame(com.tools20022.repository.entity.TimeFrame dealingCutOffTimeFrame) {
-		this.dealingCutOffTimeFrame = dealingCutOffTimeFrame;
+	public InvestmentFundClassProcessingCharacteristics setDealingCutOffTimeFrame(com.tools20022.repository.entity.TimeFrame dealingCutOffTimeFrame) {
+		this.dealingCutOffTimeFrame = Objects.requireNonNull(dealingCutOffTimeFrame);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMinimumHoldingAmount() {
 		return minimumHoldingAmount;
 	}
 
-	public void setMinimumHoldingAmount(ActiveCurrencyAndAmount minimumHoldingAmount) {
-		this.minimumHoldingAmount = minimumHoldingAmount;
+	public InvestmentFundClassProcessingCharacteristics setMinimumHoldingAmount(ActiveCurrencyAndAmount minimumHoldingAmount) {
+		this.minimumHoldingAmount = Objects.requireNonNull(minimumHoldingAmount);
+		return this;
 	}
 
 	public DecimalNumber getMaximumRedemptionUnits() {
 		return maximumRedemptionUnits;
 	}
 
-	public void setMaximumRedemptionUnits(DecimalNumber maximumRedemptionUnits) {
-		this.maximumRedemptionUnits = maximumRedemptionUnits;
+	public InvestmentFundClassProcessingCharacteristics setMaximumRedemptionUnits(DecimalNumber maximumRedemptionUnits) {
+		this.maximumRedemptionUnits = Objects.requireNonNull(maximumRedemptionUnits);
+		return this;
 	}
 
 	public DecimalNumber getMinimumHoldingUnits() {
 		return minimumHoldingUnits;
 	}
 
-	public void setMinimumHoldingUnits(DecimalNumber minimumHoldingUnits) {
-		this.minimumHoldingUnits = minimumHoldingUnits;
+	public InvestmentFundClassProcessingCharacteristics setMinimumHoldingUnits(DecimalNumber minimumHoldingUnits) {
+		this.minimumHoldingUnits = Objects.requireNonNull(minimumHoldingUnits);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumRemainingHoldingAmount() {
 		return minimumRemainingHoldingAmount;
 	}
 
-	public void setMinimumRemainingHoldingAmount(CurrencyAndAmount minimumRemainingHoldingAmount) {
-		this.minimumRemainingHoldingAmount = minimumRemainingHoldingAmount;
+	public InvestmentFundClassProcessingCharacteristics setMinimumRemainingHoldingAmount(CurrencyAndAmount minimumRemainingHoldingAmount) {
+		this.minimumRemainingHoldingAmount = Objects.requireNonNull(minimumRemainingHoldingAmount);
+		return this;
 	}
 
 	public PercentageRate getMaximumRedemptionPercentage() {
 		return maximumRedemptionPercentage;
 	}
 
-	public void setMaximumRedemptionPercentage(PercentageRate maximumRedemptionPercentage) {
-		this.maximumRedemptionPercentage = maximumRedemptionPercentage;
+	public InvestmentFundClassProcessingCharacteristics setMaximumRedemptionPercentage(PercentageRate maximumRedemptionPercentage) {
+		this.maximumRedemptionPercentage = Objects.requireNonNull(maximumRedemptionPercentage);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumRedemptionAmount() {
 		return maximumRedemptionAmount;
 	}
 
-	public void setMaximumRedemptionAmount(CurrencyAndAmount maximumRedemptionAmount) {
-		this.maximumRedemptionAmount = maximumRedemptionAmount;
+	public InvestmentFundClassProcessingCharacteristics setMaximumRedemptionAmount(CurrencyAndAmount maximumRedemptionAmount) {
+		this.maximumRedemptionAmount = Objects.requireNonNull(maximumRedemptionAmount);
+		return this;
 	}
 
 	public DecimalNumber getMinimumInitialSubscriptionUnits() {
 		return minimumInitialSubscriptionUnits;
 	}
 
-	public void setMinimumInitialSubscriptionUnits(DecimalNumber minimumInitialSubscriptionUnits) {
-		this.minimumInitialSubscriptionUnits = minimumInitialSubscriptionUnits;
+	public InvestmentFundClassProcessingCharacteristics setMinimumInitialSubscriptionUnits(DecimalNumber minimumInitialSubscriptionUnits) {
+		this.minimumInitialSubscriptionUnits = Objects.requireNonNull(minimumInitialSubscriptionUnits);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumSubscriptionAmount() {
 		return minimumSubscriptionAmount;
 	}
 
-	public void setMinimumSubscriptionAmount(CurrencyAndAmount minimumSubscriptionAmount) {
-		this.minimumSubscriptionAmount = minimumSubscriptionAmount;
+	public InvestmentFundClassProcessingCharacteristics setMinimumSubscriptionAmount(CurrencyAndAmount minimumSubscriptionAmount) {
+		this.minimumSubscriptionAmount = Objects.requireNonNull(minimumSubscriptionAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumInitialSubscriptionAmount() {
 		return minimumInitialSubscriptionAmount;
 	}
 
-	public void setMinimumInitialSubscriptionAmount(CurrencyAndAmount minimumInitialSubscriptionAmount) {
-		this.minimumInitialSubscriptionAmount = minimumInitialSubscriptionAmount;
+	public InvestmentFundClassProcessingCharacteristics setMinimumInitialSubscriptionAmount(CurrencyAndAmount minimumInitialSubscriptionAmount) {
+		this.minimumInitialSubscriptionAmount = Objects.requireNonNull(minimumInitialSubscriptionAmount);
+		return this;
 	}
 
 	public DecimalNumber getMinimumSubscriptionUnits() {
 		return minimumSubscriptionUnits;
 	}
 
-	public void setMinimumSubscriptionUnits(DecimalNumber minimumSubscriptionUnits) {
-		this.minimumSubscriptionUnits = minimumSubscriptionUnits;
+	public InvestmentFundClassProcessingCharacteristics setMinimumSubscriptionUnits(DecimalNumber minimumSubscriptionUnits) {
+		this.minimumSubscriptionUnits = Objects.requireNonNull(minimumSubscriptionUnits);
+		return this;
 	}
 
 	public Max70Text getMinimumHoldingPeriod() {
 		return minimumHoldingPeriod;
 	}
 
-	public void setMinimumHoldingPeriod(Max70Text minimumHoldingPeriod) {
-		this.minimumHoldingPeriod = minimumHoldingPeriod;
+	public InvestmentFundClassProcessingCharacteristics setMinimumHoldingPeriod(Max70Text minimumHoldingPeriod) {
+		this.minimumHoldingPeriod = Objects.requireNonNull(minimumHoldingPeriod);
+		return this;
 	}
 }

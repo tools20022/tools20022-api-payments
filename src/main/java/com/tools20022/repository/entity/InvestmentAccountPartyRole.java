@@ -23,9 +23,11 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.AccountPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies roles played by a party that are related to an investment account.
@@ -78,8 +80,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,10 +99,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate ownershipBeneficiaryRate;
 	/**
-	 * Percentage of ownership or of beneficial ownership of the shares/units in
-	 * the account. All subsequent subscriptions and or redemptions will be
-	 * allocated using the same percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,9 +148,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
 	/**
-	 * Specifies the account for which the party plays a role. It is derived
-	 * from the association between AccountPartyRole and Account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,9 +197,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	};
 	protected FATCAFormTypeCode fATCAFormType;
 	/**
-	 * Type of Foreign Account Tax Compliance Act (FATCA) form submitted by the
-	 * investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,8 +246,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.FATCAStatus> fATCAStatus;
 	/**
-	 * Foreign Account Tax Compliance Act (FATCA) status of the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -296,8 +294,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	};
 	protected CRSStatus cRSStatus;
 	/**
-	 * Common Reporting Standard (CRS) status of the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -346,7 +344,7 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountPartyRole";
 				definition = "Specifies roles played by a party that are related to an investment account.";
@@ -370,39 +368,44 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 		return ownershipBeneficiaryRate;
 	}
 
-	public void setOwnershipBeneficiaryRate(PercentageRate ownershipBeneficiaryRate) {
-		this.ownershipBeneficiaryRate = ownershipBeneficiaryRate;
+	public InvestmentAccountPartyRole setOwnershipBeneficiaryRate(PercentageRate ownershipBeneficiaryRate) {
+		this.ownershipBeneficiaryRate = Objects.requireNonNull(ownershipBeneficiaryRate);
+		return this;
 	}
 
 	public List<InvestmentAccount> getInvestmentAccount() {
-		return investmentAccount;
+		return investmentAccount == null ? investmentAccount = new ArrayList<>() : investmentAccount;
 	}
 
-	public void setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
-		this.investmentAccount = investmentAccount;
+	public InvestmentAccountPartyRole setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
+		this.investmentAccount = Objects.requireNonNull(investmentAccount);
+		return this;
 	}
 
 	public FATCAFormTypeCode getFATCAFormType() {
 		return fATCAFormType;
 	}
 
-	public void setFATCAFormType(FATCAFormTypeCode fATCAFormType) {
-		this.fATCAFormType = fATCAFormType;
+	public InvestmentAccountPartyRole setFATCAFormType(FATCAFormTypeCode fATCAFormType) {
+		this.fATCAFormType = Objects.requireNonNull(fATCAFormType);
+		return this;
 	}
 
 	public List<FATCAStatus> getFATCAStatus() {
-		return fATCAStatus;
+		return fATCAStatus == null ? fATCAStatus = new ArrayList<>() : fATCAStatus;
 	}
 
-	public void setFATCAStatus(List<com.tools20022.repository.entity.FATCAStatus> fATCAStatus) {
-		this.fATCAStatus = fATCAStatus;
+	public InvestmentAccountPartyRole setFATCAStatus(List<com.tools20022.repository.entity.FATCAStatus> fATCAStatus) {
+		this.fATCAStatus = Objects.requireNonNull(fATCAStatus);
+		return this;
 	}
 
 	public CRSStatus getCRSStatus() {
 		return cRSStatus;
 	}
 
-	public void setCRSStatus(com.tools20022.repository.entity.CRSStatus cRSStatus) {
-		this.cRSStatus = cRSStatus;
+	public InvestmentAccountPartyRole setCRSStatus(com.tools20022.repository.entity.CRSStatus cRSStatus) {
+		this.cRSStatus = Objects.requireNonNull(cRSStatus);
+		return this;
 	}
 }

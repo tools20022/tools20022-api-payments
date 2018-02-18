@@ -38,49 +38,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#RandomSelection
- * OnLineReasonCode.mmRandomSelection}</li>
+ * OnLineReasonCode.RandomSelection}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OnLineReasonCode#ICCForced
- * OnLineReasonCode.mmICCForced}</li>
+ * OnLineReasonCode.ICCForced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#MerchantForced
- * OnLineReasonCode.mmMerchantForced}</li>
+ * OnLineReasonCode.MerchantForced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#TerminalForced
- * OnLineReasonCode.mmTerminalForced}</li>
+ * OnLineReasonCode.TerminalForced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#IssuerForced
- * OnLineReasonCode.mmIssuerForced}</li>
+ * OnLineReasonCode.IssuerForced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#FloorLimit
- * OnLineReasonCode.mmFloorLimit}</li>
+ * OnLineReasonCode.FloorLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#ExceptionFile
- * OnLineReasonCode.mmExceptionFile}</li>
+ * OnLineReasonCode.ExceptionFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#TotalAmount
- * OnLineReasonCode.mmTotalAmount}</li>
+ * OnLineReasonCode.TotalAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#ControlledBIN
- * OnLineReasonCode.mmControlledBIN}</li>
+ * OnLineReasonCode.ControlledBIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#UnknownBIN
- * OnLineReasonCode.mmUnknownBIN}</li>
+ * OnLineReasonCode.UnknownBIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#ControlledPAN
- * OnLineReasonCode.mmControlledPAN}</li>
+ * OnLineReasonCode.ControlledPAN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#FlowControl
- * OnLineReasonCode.mmFlowControl}</li>
+ * OnLineReasonCode.FlowControl}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OnLineReasonCode#UnavailableCurrency
- * OnLineReasonCode.mmUnavailableCurrency}</li>
+ * OnLineReasonCode.UnavailableCurrency}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -504,7 +504,7 @@ public class OnLineReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RNDM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OnLineReasonCode";

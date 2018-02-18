@@ -37,66 +37,66 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Equity
- * UnderlyingTypeCode.mmEquity}</li>
+ * UnderlyingTypeCode.Equity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Index
- * UnderlyingTypeCode.mmIndex}</li>
+ * UnderlyingTypeCode.Index}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Interest
- * UnderlyingTypeCode.mmInterest}</li>
+ * UnderlyingTypeCode.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Currency
- * UnderlyingTypeCode.mmCurrency}</li>
+ * UnderlyingTypeCode.Currency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#PreciousMetal
- * UnderlyingTypeCode.mmPreciousMetal}</li>
+ * UnderlyingTypeCode.PreciousMetal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Future
- * UnderlyingTypeCode.mmFuture}</li>
+ * UnderlyingTypeCode.Future}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Option
- * UnderlyingTypeCode.mmOption}</li>
+ * UnderlyingTypeCode.Option}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Basket
- * UnderlyingTypeCode.mmBasket}</li>
+ * UnderlyingTypeCode.Basket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Swap
- * UnderlyingTypeCode.mmSwap}</li>
+ * UnderlyingTypeCode.Swap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Commodity
- * UnderlyingTypeCode.mmCommodity}</li>
+ * UnderlyingTypeCode.Commodity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#StockIndex
- * UnderlyingTypeCode.mmStockIndex}</li>
+ * UnderlyingTypeCode.StockIndex}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Share
- * UnderlyingTypeCode.mmShare}</li>
+ * UnderlyingTypeCode.Share}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#DividendIndex
- * UnderlyingTypeCode.mmDividendIndex}</li>
+ * UnderlyingTypeCode.DividendIndex}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#StockDividend
- * UnderlyingTypeCode.mmStockDividend}</li>
+ * UnderlyingTypeCode.StockDividend}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Other
- * UnderlyingTypeCode.mmOther}</li>
+ * UnderlyingTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#VolatilityIndex
- * UnderlyingTypeCode.mmVolatilityIndex}</li>
+ * UnderlyingTypeCode.VolatilityIndex}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#ExchangeTradedFund
- * UnderlyingTypeCode.mmExchangeTradedFund}</li>
+ * UnderlyingTypeCode.ExchangeTradedFund}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#Bond
- * UnderlyingTypeCode.mmBond}</li>
+ * UnderlyingTypeCode.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#FutureOnEquity
- * UnderlyingTypeCode.mmFutureOnEquity}</li>
+ * UnderlyingTypeCode.FutureOnEquity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#OptionOnEquity
- * UnderlyingTypeCode.mmOptionOnEquity}</li>
+ * UnderlyingTypeCode.OptionOnEquity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeCode#BondFuture
- * UnderlyingTypeCode.mmBondFuture}</li>
+ * UnderlyingTypeCode.BondFuture}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -755,7 +755,7 @@ public class UnderlyingTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EQUI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTypeCode";

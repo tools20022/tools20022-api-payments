@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSourceCode#Fund
- * PriceSourceCode.mmFund}</li>
+ * PriceSourceCode.Fund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceSourceCode#Theoretical
- * PriceSourceCode.mmTheoretical}</li>
+ * PriceSourceCode.Theoretical}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSourceCode#Vendor
- * PriceSourceCode.mmVendor}</li>
+ * PriceSourceCode.Vendor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceSourceCode#StockExchange
- * PriceSourceCode.mmStockExchange}</li>
+ * PriceSourceCode.StockExchange}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,6 +85,9 @@ public class PriceSourceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FUND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::PRIC//FUND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -97,6 +101,7 @@ public class PriceSourceCode extends MMCode {
 	 */
 	public static final PriceSourceCode Fund = new PriceSourceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::PRIC//FUND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fund";
 			definition = "Source of price quotation is a fund, eg, transfer agent, fund itself.";
@@ -116,6 +121,9 @@ public class PriceSourceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "THEO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::PRIC//THEO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -130,6 +138,7 @@ public class PriceSourceCode extends MMCode {
 	 */
 	public static final PriceSourceCode Theoretical = new PriceSourceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::PRIC//THEO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Theoretical";
 			definition = "Source of price quotation is a theoretical value based on the market yield.";
@@ -148,6 +157,9 @@ public class PriceSourceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VEND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::PRIC//VEND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -160,6 +172,7 @@ public class PriceSourceCode extends MMCode {
 	 */
 	public static final PriceSourceCode Vendor = new PriceSourceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::PRIC//VEND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vendor";
 			definition = "Source of price quotation is an external vendor.";
@@ -205,7 +218,7 @@ public class PriceSourceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FUND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceSourceCode";

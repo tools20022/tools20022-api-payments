@@ -38,49 +38,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#CashAccount
- * FundCashAccountCode.mmCashAccount}</li>
+ * FundCashAccountCode.CashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#PensionFundOrdinary
- * FundCashAccountCode.mmPensionFundOrdinary}</li>
+ * FundCashAccountCode.PensionFundOrdinary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#PensionFundSpecial
- * FundCashAccountCode.mmPensionFundSpecial}</li>
+ * FundCashAccountCode.PensionFundSpecial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#RetirementScheme
- * FundCashAccountCode.mmRetirementScheme}</li>
+ * FundCashAccountCode.RetirementScheme}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundCashAccountCode#Other
- * FundCashAccountCode.mmOther}</li>
+ * FundCashAccountCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#HedgeFund
- * FundCashAccountCode.mmHedgeFund}</li>
+ * FundCashAccountCode.HedgeFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#WorkplacePensionSchema
- * FundCashAccountCode.mmWorkplacePensionSchema}</li>
+ * FundCashAccountCode.WorkplacePensionSchema}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#PrivatePensionScheme
- * FundCashAccountCode.mmPrivatePensionScheme}</li>
+ * FundCashAccountCode.PrivatePensionScheme}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#CSDParticipantAccount
- * FundCashAccountCode.mmCSDParticipantAccount}</li>
+ * FundCashAccountCode.CSDParticipantAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#CSDMirrorAccount
- * FundCashAccountCode.mmCSDMirrorAccount}</li>
+ * FundCashAccountCode.CSDMirrorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#InterCSDAccount
- * FundCashAccountCode.mmInterCSDAccount}</li>
+ * FundCashAccountCode.InterCSDAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#TechnicalOffsetAccount
- * FundCashAccountCode.mmTechnicalOffsetAccount}</li>
+ * FundCashAccountCode.TechnicalOffsetAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundCashAccountCode#CSDOmnibusAccount
- * FundCashAccountCode.mmCSDOmnibusAccount}</li>
+ * FundCashAccountCode.CSDOmnibusAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -504,7 +504,7 @@ public class FundCashAccountCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CASH");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundCashAccountCode";

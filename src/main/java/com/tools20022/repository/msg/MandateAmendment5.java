@@ -27,9 +27,8 @@ import com.tools20022.repository.entity.DirectDebitMandate;
 import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identifies the mandate to be amended and gives details of the new mandate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateAmendment5", propOrder = {"originalMessageInformation", "amendmentReason", "mandate", "originalMandate", "supplementaryData"})
 public class MandateAmendment5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlMsgInf")
 	protected OriginalMessageInformation1 originalMessageInformation;
 	/**
-	 * Provides information on the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -122,7 +122,7 @@ public class MandateAmendment5 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateAmendment5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendment5.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,10 +134,11 @@ public class MandateAmendment5 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 		}
 	};
+	@XmlElement(name = "AmdmntRsn", required = true)
 	protected MandateAmendmentReason1 amendmentReason;
 	/**
-	 * Provides detailed information on the amendment reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -170,7 +171,7 @@ public class MandateAmendment5 {
 	public static final MMMessageAssociationEnd mmAmendmentReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> MandateAmendment5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendment5.mmObject();
 			isDerived = false;
 			xmlTag = "AmdmntRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,10 +183,11 @@ public class MandateAmendment5 {
 			type_lazy = () -> com.tools20022.repository.msg.MandateAmendmentReason1.mmObject();
 		}
 	};
+	@XmlElement(name = "Mndt", required = true)
 	protected Mandate8 mandate;
 	/**
-	 * Provides the amended mandate data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -216,7 +218,7 @@ public class MandateAmendment5 {
 	public static final MMMessageAssociationEnd mmMandate = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> DirectDebitMandate.mmObject();
-			componentContext_lazy = () -> MandateAmendment5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendment5.mmObject();
 			isDerived = false;
 			xmlTag = "Mndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,10 +230,11 @@ public class MandateAmendment5 {
 			type_lazy = () -> com.tools20022.repository.msg.Mandate8.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMndt", required = true)
 	protected OriginalMandate4Choice originalMandate;
 	/**
-	 * Provides the original mandate data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -263,7 +266,7 @@ public class MandateAmendment5 {
 	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Mandate.mmObject();
-			componentContext_lazy = () -> MandateAmendment5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendment5.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -275,11 +278,11 @@ public class MandateAmendment5 {
 			type_lazy = () -> OriginalMandate4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -309,7 +312,7 @@ public class MandateAmendment5 {
 	 */
 	public static final MMMessageAttribute mmSupplementaryData = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MandateAmendment5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendment5.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -323,11 +326,11 @@ public class MandateAmendment5 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateAmendment5.mmOriginalMessageInformation, MandateAmendment5.mmAmendmentReason, MandateAmendment5.mmMandate, MandateAmendment5.mmOriginalMandate,
-						MandateAmendment5.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateAmendment5.mmOriginalMessageInformation, com.tools20022.repository.msg.MandateAmendment5.mmAmendmentReason,
+						com.tools20022.repository.msg.MandateAmendment5.mmMandate, com.tools20022.repository.msg.MandateAmendment5.mmOriginalMandate, com.tools20022.repository.msg.MandateAmendment5.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MandateAmendmentRequestV05.mmUnderlyingAmendmentDetails);
 				trace_lazy = () -> Mandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAmendment5";
 				definition = "Identifies the mandate to be amended and gives details of the new mandate.";
@@ -336,48 +339,48 @@ public class MandateAmendment5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlMsgInf")
-	public OriginalMessageInformation1 getOriginalMessageInformation() {
-		return originalMessageInformation;
+	public Optional<OriginalMessageInformation1> getOriginalMessageInformation() {
+		return originalMessageInformation == null ? Optional.empty() : Optional.of(originalMessageInformation);
 	}
 
-	public void setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+	public MandateAmendment5 setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
 		this.originalMessageInformation = originalMessageInformation;
+		return this;
 	}
 
-	@XmlElement(name = "AmdmntRsn", required = true)
 	public MandateAmendmentReason1 getAmendmentReason() {
 		return amendmentReason;
 	}
 
-	public void setAmendmentReason(com.tools20022.repository.msg.MandateAmendmentReason1 amendmentReason) {
-		this.amendmentReason = amendmentReason;
+	public MandateAmendment5 setAmendmentReason(com.tools20022.repository.msg.MandateAmendmentReason1 amendmentReason) {
+		this.amendmentReason = Objects.requireNonNull(amendmentReason);
+		return this;
 	}
 
-	@XmlElement(name = "Mndt", required = true)
 	public Mandate8 getMandate() {
 		return mandate;
 	}
 
-	public void setMandate(com.tools20022.repository.msg.Mandate8 mandate) {
-		this.mandate = mandate;
+	public MandateAmendment5 setMandate(com.tools20022.repository.msg.Mandate8 mandate) {
+		this.mandate = Objects.requireNonNull(mandate);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMndt", required = true)
 	public OriginalMandate4Choice getOriginalMandate() {
 		return originalMandate;
 	}
 
-	public void setOriginalMandate(OriginalMandate4Choice originalMandate) {
-		this.originalMandate = originalMandate;
+	public MandateAmendment5 setOriginalMandate(OriginalMandate4Choice originalMandate) {
+		this.originalMandate = Objects.requireNonNull(originalMandate);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MandateAmendment5 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

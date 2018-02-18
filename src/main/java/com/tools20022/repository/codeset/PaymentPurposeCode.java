@@ -38,282 +38,282 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#SalaryPayment
- * PaymentPurposeCode.mmSalaryPayment}</li>
+ * PaymentPurposeCode.SalaryPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#TreasuryPayment
- * PaymentPurposeCode.mmTreasuryPayment}</li>
+ * PaymentPurposeCode.TreasuryPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#AdvancePayment
- * PaymentPurposeCode.mmAdvancePayment}</li>
+ * PaymentPurposeCode.AdvancePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#AgriculturalTransfer
- * PaymentPurposeCode.mmAgriculturalTransfer}</li>
+ * PaymentPurposeCode.AgriculturalTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#AlimonyPayment
- * PaymentPurposeCode.mmAlimonyPayment}</li>
+ * PaymentPurposeCode.AlimonyPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ChildBenefit
- * PaymentPurposeCode.mmChildBenefit}</li>
+ * PaymentPurposeCode.ChildBenefit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#UnemploymentDisabilityBenefit
- * PaymentPurposeCode.mmUnemploymentDisabilityBenefit}</li>
+ * PaymentPurposeCode.UnemploymentDisabilityBenefit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#BonusPayment
- * PaymentPurposeCode.mmBonusPayment}</li>
+ * PaymentPurposeCode.BonusPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CashManagementTransfer
- * PaymentPurposeCode.mmCashManagementTransfer}</li>
+ * PaymentPurposeCode.CashManagementTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CapitalBuilding
- * PaymentPurposeCode.mmCapitalBuilding}</li>
+ * PaymentPurposeCode.CapitalBuilding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CharityPayment
- * PaymentPurposeCode.mmCharityPayment}</li>
+ * PaymentPurposeCode.CharityPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CollectionPayment
- * PaymentPurposeCode.mmCollectionPayment}</li>
+ * PaymentPurposeCode.CollectionPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CommodityTransfer
- * PaymentPurposeCode.mmCommodityTransfer}</li>
+ * PaymentPurposeCode.CommodityTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CommercialPayment
- * PaymentPurposeCode.mmCommercialPayment}</li>
+ * PaymentPurposeCode.CommercialPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Commission
- * PaymentPurposeCode.mmCommission}</li>
+ * PaymentPurposeCode.Commission}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Costs
- * PaymentPurposeCode.mmCosts}</li>
+ * PaymentPurposeCode.Costs}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Copyright
- * PaymentPurposeCode.mmCopyright}</li>
+ * PaymentPurposeCode.Copyright}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Dividend
- * PaymentPurposeCode.mmDividend}</li>
+ * PaymentPurposeCode.Dividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ForeignExchange
- * PaymentPurposeCode.mmForeignExchange}</li>
+ * PaymentPurposeCode.ForeignExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PurchaseSaleOfGoods
- * PaymentPurposeCode.mmPurchaseSaleOfGoods}</li>
+ * PaymentPurposeCode.PurchaseSaleOfGoods}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#GovernmentPayment
- * PaymentPurposeCode.mmGovernmentPayment}</li>
+ * PaymentPurposeCode.GovernmentPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#InstalmentHirePurchaseAgreement
- * PaymentPurposeCode.mmInstalmentHirePurchaseAgreement}</li>
+ * PaymentPurposeCode.InstalmentHirePurchaseAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#IntraCompanyPayment
- * PaymentPurposeCode.mmIntraCompanyPayment}</li>
+ * PaymentPurposeCode.IntraCompanyPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#InsurancePremium
- * PaymentPurposeCode.mmInsurancePremium}</li>
+ * PaymentPurposeCode.InsurancePremium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Interest
- * PaymentPurposeCode.mmInterest}</li>
+ * PaymentPurposeCode.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#LicenseFee
- * PaymentPurposeCode.mmLicenseFee}</li>
+ * PaymentPurposeCode.LicenseFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Loan
- * PaymentPurposeCode.mmLoan}</li>
+ * PaymentPurposeCode.Loan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#LoanRepayment
- * PaymentPurposeCode.mmLoanRepayment}</li>
+ * PaymentPurposeCode.LoanRepayment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Netting
- * PaymentPurposeCode.mmNetting}</li>
+ * PaymentPurposeCode.Netting}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Payroll
- * PaymentPurposeCode.mmPayroll}</li>
+ * PaymentPurposeCode.Payroll}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PensionPayment
- * PaymentPurposeCode.mmPensionPayment}</li>
+ * PaymentPurposeCode.PensionPayment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Refund
- * PaymentPurposeCode.mmRefund}</li>
+ * PaymentPurposeCode.Refund}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Rent
- * PaymentPurposeCode.mmRent}</li>
+ * PaymentPurposeCode.Rent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Royalties
- * PaymentPurposeCode.mmRoyalties}</li>
+ * PaymentPurposeCode.Royalties}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PurchaseSaleOfServices
- * PaymentPurposeCode.mmPurchaseSaleOfServices}</li>
+ * PaymentPurposeCode.PurchaseSaleOfServices}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Securities
- * PaymentPurposeCode.mmSecurities}</li>
+ * PaymentPurposeCode.Securities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#SocialSecurityBenefit
- * PaymentPurposeCode.mmSocialSecurityBenefit}</li>
+ * PaymentPurposeCode.SocialSecurityBenefit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Subscription
- * PaymentPurposeCode.mmSubscription}</li>
+ * PaymentPurposeCode.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#TaxPayment
- * PaymentPurposeCode.mmTaxPayment}</li>
+ * PaymentPurposeCode.TaxPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ValueAddedTaxPayment
- * PaymentPurposeCode.mmValueAddedTaxPayment}</li>
+ * PaymentPurposeCode.ValueAddedTaxPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ConsumerThirdPartyConsolidatedPayment
- * PaymentPurposeCode.mmConsumerThirdPartyConsolidatedPayment}</li>
+ * PaymentPurposeCode.ConsumerThirdPartyConsolidatedPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#DebitCollectionPayment
- * PaymentPurposeCode.mmDebitCollectionPayment}</li>
+ * PaymentPurposeCode.DebitCollectionPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#SupplierPayment
- * PaymentPurposeCode.mmSupplierPayment}</li>
+ * PaymentPurposeCode.SupplierPayment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Hedging
- * PaymentPurposeCode.mmHedging}</li>
+ * PaymentPurposeCode.Hedging}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#MultipleServiceTypes
- * PaymentPurposeCode.mmMultipleServiceTypes}</li>
+ * PaymentPurposeCode.MultipleServiceTypes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#NotOtherwiseSpecified
- * PaymentPurposeCode.mmNotOtherwiseSpecified}</li>
+ * PaymentPurposeCode.NotOtherwiseSpecified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CardPayment
- * PaymentPurposeCode.mmCardPayment}</li>
+ * PaymentPurposeCode.CardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CreditCardBill
- * PaymentPurposeCode.mmCreditCardBill}</li>
+ * PaymentPurposeCode.CreditCardBill}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Ferry
- * PaymentPurposeCode.mmFerry}</li>
+ * PaymentPurposeCode.Ferry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Air
- * PaymentPurposeCode.mmAir}</li>
+ * PaymentPurposeCode.Air}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Bus
- * PaymentPurposeCode.mmBus}</li>
+ * PaymentPurposeCode.Bus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Railway
- * PaymentPurposeCode.mmRailway}</li>
+ * PaymentPurposeCode.Railway}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ConvalescentCareFacility
- * PaymentPurposeCode.mmConvalescentCareFacility}</li>
+ * PaymentPurposeCode.ConvalescentCareFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#DentalServices
- * PaymentPurposeCode.mmDentalServices}</li>
+ * PaymentPurposeCode.DentalServices}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#AnesthesiaServices
- * PaymentPurposeCode.mmAnesthesiaServices}</li>
+ * PaymentPurposeCode.AnesthesiaServices}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#HomeHealthCare
- * PaymentPurposeCode.mmHomeHealthCare}</li>
+ * PaymentPurposeCode.HomeHealthCare}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#HospitalCare
- * PaymentPurposeCode.mmHospitalCare}</li>
+ * PaymentPurposeCode.HospitalCare}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#IntermediateCareFacility
- * PaymentPurposeCode.mmIntermediateCareFacility}</li>
+ * PaymentPurposeCode.IntermediateCareFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#LongTermCareFacility
- * PaymentPurposeCode.mmLongTermCareFacility}</li>
+ * PaymentPurposeCode.LongTermCareFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#MedicalServices
- * PaymentPurposeCode.mmMedicalServices}</li>
+ * PaymentPurposeCode.MedicalServices}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#VisionCare
- * PaymentPurposeCode.mmVisionCare}</li>
+ * PaymentPurposeCode.VisionCare}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#DurableMedicaleEquipment
- * PaymentPurposeCode.mmDurableMedicaleEquipment}</li>
+ * PaymentPurposeCode.DurableMedicaleEquipment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CableTVBill
- * PaymentPurposeCode.mmCableTVBill}</li>
+ * PaymentPurposeCode.CableTVBill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ElectricityBill
- * PaymentPurposeCode.mmElectricityBill}</li>
+ * PaymentPurposeCode.ElectricityBill}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#GasBill
- * PaymentPurposeCode.mmGasBill}</li>
+ * PaymentPurposeCode.GasBill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#TelephoneBill
- * PaymentPurposeCode.mmTelephoneBill}</li>
+ * PaymentPurposeCode.TelephoneBill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#OtherTelecomRelatedBill
- * PaymentPurposeCode.mmOtherTelecomRelatedBill}</li>
+ * PaymentPurposeCode.OtherTelecomRelatedBill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#WaterBill
- * PaymentPurposeCode.mmWaterBill}</li>
+ * PaymentPurposeCode.WaterBill}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Study
- * PaymentPurposeCode.mmStudy}</li>
+ * PaymentPurposeCode.Study}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PricePayment
- * PaymentPurposeCode.mmPricePayment}</li>
+ * PaymentPurposeCode.PricePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Installment
- * PaymentPurposeCode.mmInstallment}</li>
+ * PaymentPurposeCode.Installment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#RecurringInstallmentPayment
- * PaymentPurposeCode.mmRecurringInstallmentPayment}</li>
+ * PaymentPurposeCode.RecurringInstallmentPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#OpeningFee
- * PaymentPurposeCode.mmOpeningFee}</li>
+ * PaymentPurposeCode.OpeningFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CancellationFee
- * PaymentPurposeCode.mmCancellationFee}</li>
+ * PaymentPurposeCode.CancellationFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#GovernmentInsurance
- * PaymentPurposeCode.mmGovernmentInsurance}</li>
+ * PaymentPurposeCode.GovernmentInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#InsurancePremiumCar
- * PaymentPurposeCode.mmInsurancePremiumCar}</li>
+ * PaymentPurposeCode.InsurancePremiumCar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#LaborInsurance
- * PaymentPurposeCode.mmLaborInsurance}</li>
+ * PaymentPurposeCode.LaborInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#LifeInsurance
- * PaymentPurposeCode.mmLifeInsurance}</li>
+ * PaymentPurposeCode.LifeInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PropertyInsurance
- * PaymentPurposeCode.mmPropertyInsurance}</li>
+ * PaymentPurposeCode.PropertyInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#HealthInsurance
- * PaymentPurposeCode.mmHealthInsurance}</li>
+ * PaymentPurposeCode.HealthInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CarLoanPrincipalRepayment
- * PaymentPurposeCode.mmCarLoanPrincipalRepayment}</li>
+ * PaymentPurposeCode.CarLoanPrincipalRepayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#HousingLoanRepayment
- * PaymentPurposeCode.mmHousingLoanRepayment}</li>
+ * PaymentPurposeCode.HousingLoanRepayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#CompanySocialLoanPaymentToBank
- * PaymentPurposeCode.mmCompanySocialLoanPaymentToBank}</li>
+ * PaymentPurposeCode.CompanySocialLoanPaymentToBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#EstateTax
- * PaymentPurposeCode.mmEstateTax}</li>
+ * PaymentPurposeCode.EstateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#HousingTax
- * PaymentPurposeCode.mmHousingTax}</li>
+ * PaymentPurposeCode.HousingTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#IncomeTax
- * PaymentPurposeCode.mmIncomeTax}</li>
+ * PaymentPurposeCode.IncomeTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#NetIncomeTax
- * PaymentPurposeCode.mmNetIncomeTax}</li>
+ * PaymentPurposeCode.NetIncomeTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#BusinessExpenses
- * PaymentPurposeCode.mmBusinessExpenses}</li>
+ * PaymentPurposeCode.BusinessExpenses}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#TrustFund
- * PaymentPurposeCode.mmTrustFund}</li>
+ * PaymentPurposeCode.TrustFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#NetworkCharge
- * PaymentPurposeCode.mmNetworkCharge}</li>
+ * PaymentPurposeCode.NetworkCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#NetworkCommunication
- * PaymentPurposeCode.mmNetworkCommunication}</li>
+ * PaymentPurposeCode.NetworkCommunication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#ReceiptPayment
- * PaymentPurposeCode.mmReceiptPayment}</li>
+ * PaymentPurposeCode.ReceiptPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#PaymentTerms
- * PaymentPurposeCode.mmPaymentTerms}</li>
+ * PaymentPurposeCode.PaymentTerms}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#Other
- * PaymentPurposeCode.mmOther}</li>
+ * PaymentPurposeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentPurposeCode#WithHolding
- * PaymentPurposeCode.mmWithHolding}</li>
+ * PaymentPurposeCode.WithHolding}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -3246,7 +3246,7 @@ public class PaymentPurposeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SALA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentPurposeCode";

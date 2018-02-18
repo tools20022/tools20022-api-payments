@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.GroupHeader59;
 import com.tools20022.repository.msg.OriginalNotification10;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -83,15 +85,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NotificationToReceiveCancellationAdviceV05", propOrder = {"groupHeader", "originalNotification", "supplementaryData"})
 public class NotificationToReceiveCancellationAdviceV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected GroupHeader59 groupHeader;
 	/**
-	 * Set of elements used to provide further details on the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,11 +134,11 @@ public class NotificationToReceiveCancellationAdviceV05 {
 			}
 		}
 	};
+	@XmlElement(name = "OrgnlNtfctn", required = true)
 	protected OriginalNotification10 originalNotification;
 	/**
-	 * Set of elements used to identify the original notification, to which the
-	 * cancellation advice refers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,11 +180,11 @@ public class NotificationToReceiveCancellationAdviceV05 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -252,34 +255,34 @@ public class NotificationToReceiveCancellationAdviceV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public GroupHeader59 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(GroupHeader59 groupHeader) {
-		this.groupHeader = groupHeader;
+	public NotificationToReceiveCancellationAdviceV05 setGroupHeader(GroupHeader59 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlNtfctn", required = true)
 	public OriginalNotification10 getOriginalNotification() {
 		return originalNotification;
 	}
 
-	public void setOriginalNotification(OriginalNotification10 originalNotification) {
-		this.originalNotification = originalNotification;
+	public NotificationToReceiveCancellationAdviceV05 setOriginalNotification(OriginalNotification10 originalNotification) {
+		this.originalNotification = Objects.requireNonNull(originalNotification);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public NotificationToReceiveCancellationAdviceV05 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.058.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:camt.058.001.05")
 	static public class Document {
 		@XmlElement(name = "NtfctnToRcvCxlAdvc", required = true)
 		public NotificationToReceiveCancellationAdviceV05 messageBody;

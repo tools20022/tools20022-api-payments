@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.SecuritiesSettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Place where settlement of securities occurs.
@@ -59,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +77,8 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradingMarket settlementMarket;
 	/**
-	 * Identifies the market for the settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,7 +127,7 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlaceOfSettlement";
 				definition = "Place where settlement of securities occurs.";
@@ -147,7 +148,8 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 		return settlementMarket;
 	}
 
-	public void setSettlementMarket(com.tools20022.repository.entity.TradingMarket settlementMarket) {
-		this.settlementMarket = settlementMarket;
+	public PlaceOfSettlement setSettlementMarket(com.tools20022.repository.entity.TradingMarket settlementMarket) {
+		this.settlementMarket = Objects.requireNonNull(settlementMarket);
+		return this;
 	}
 }

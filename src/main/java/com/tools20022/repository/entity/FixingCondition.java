@@ -27,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Set of parameters used to calculate a rate for instance the fixing rate to be
@@ -79,8 +81,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +100,8 @@ public class FixingCondition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime fixingDateTime;
 	/**
-	 * Date and time at which a rate is observed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,8 +146,8 @@ public class FixingCondition {
 	};
 	protected NonDeliverableTrade nonDeliverableTrade;
 	/**
-	 * Non Deliverable trade for which fixing conditions are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,9 +195,8 @@ public class FixingCondition {
 	};
 	protected CurrencyExchange fixingRate;
 	/**
-	 * Rate obtained at fixing time by following the fixing conditions (agreed
-	 * upon by the trading parties).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,9 +245,8 @@ public class FixingCondition {
 	};
 	protected Max35Text settlementRateOption;
 	/**
-	 * Source used for determining the fixing rate, as provided by various
-	 * financial publishing organisations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,9 +293,8 @@ public class FixingCondition {
 	};
 	protected FinancialCenterCode financialCenter;
 	/**
-	 * Financial place taken into account to adjust the date and time, as
-	 * defined within the business day convention.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,10 +342,8 @@ public class FixingCondition {
 	};
 	protected DisruptionFallbackCode disruptionFallback;
 	/**
-	 * Method that gives rise to either an alternative basis for determining the
-	 * settlement rate, or an alternative basis for settling a transaction when
-	 * a disruption event has occurred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,8 +391,8 @@ public class FixingCondition {
 	};
 	protected BusinessDayConventionCode businessDayConvention;
 	/**
-	 * Convention used for adjusting a date when it is not a business day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,7 +441,7 @@ public class FixingCondition {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FixingCondition";
 				definition = "Set of parameters used to calculate a rate for instance the fixing rate to be applied to a non-deliverable agreement.";
@@ -466,55 +463,62 @@ public class FixingCondition {
 		return fixingDateTime;
 	}
 
-	public void setFixingDateTime(ISODateTime fixingDateTime) {
-		this.fixingDateTime = fixingDateTime;
+	public FixingCondition setFixingDateTime(ISODateTime fixingDateTime) {
+		this.fixingDateTime = Objects.requireNonNull(fixingDateTime);
+		return this;
 	}
 
-	public NonDeliverableTrade getNonDeliverableTrade() {
-		return nonDeliverableTrade;
+	public Optional<NonDeliverableTrade> getNonDeliverableTrade() {
+		return nonDeliverableTrade == null ? Optional.empty() : Optional.of(nonDeliverableTrade);
 	}
 
-	public void setNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade nonDeliverableTrade) {
+	public FixingCondition setNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade nonDeliverableTrade) {
 		this.nonDeliverableTrade = nonDeliverableTrade;
+		return this;
 	}
 
-	public CurrencyExchange getFixingRate() {
-		return fixingRate;
+	public Optional<CurrencyExchange> getFixingRate() {
+		return fixingRate == null ? Optional.empty() : Optional.of(fixingRate);
 	}
 
-	public void setFixingRate(com.tools20022.repository.entity.CurrencyExchange fixingRate) {
+	public FixingCondition setFixingRate(com.tools20022.repository.entity.CurrencyExchange fixingRate) {
 		this.fixingRate = fixingRate;
+		return this;
 	}
 
 	public Max35Text getSettlementRateOption() {
 		return settlementRateOption;
 	}
 
-	public void setSettlementRateOption(Max35Text settlementRateOption) {
-		this.settlementRateOption = settlementRateOption;
+	public FixingCondition setSettlementRateOption(Max35Text settlementRateOption) {
+		this.settlementRateOption = Objects.requireNonNull(settlementRateOption);
+		return this;
 	}
 
 	public FinancialCenterCode getFinancialCenter() {
 		return financialCenter;
 	}
 
-	public void setFinancialCenter(FinancialCenterCode financialCenter) {
-		this.financialCenter = financialCenter;
+	public FixingCondition setFinancialCenter(FinancialCenterCode financialCenter) {
+		this.financialCenter = Objects.requireNonNull(financialCenter);
+		return this;
 	}
 
 	public DisruptionFallbackCode getDisruptionFallback() {
 		return disruptionFallback;
 	}
 
-	public void setDisruptionFallback(DisruptionFallbackCode disruptionFallback) {
-		this.disruptionFallback = disruptionFallback;
+	public FixingCondition setDisruptionFallback(DisruptionFallbackCode disruptionFallback) {
+		this.disruptionFallback = Objects.requireNonNull(disruptionFallback);
+		return this;
 	}
 
 	public BusinessDayConventionCode getBusinessDayConvention() {
 		return businessDayConvention;
 	}
 
-	public void setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
-		this.businessDayConvention = businessDayConvention;
+	public FixingCondition setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
+		this.businessDayConvention = Objects.requireNonNull(businessDayConvention);
+		return this;
 	}
 }

@@ -38,62 +38,62 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#MeteredServiceInvoice
- * DocumentTypeCode.mmMeteredServiceInvoice}</li>
+ * DocumentTypeCode.MeteredServiceInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#CreditNoteRelatedToFinancialAdjustment
- * DocumentTypeCode.mmCreditNoteRelatedToFinancialAdjustment}</li>
+ * DocumentTypeCode.CreditNoteRelatedToFinancialAdjustment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#DebitNoteRelatedToFinancialAdjustment
- * DocumentTypeCode.mmDebitNoteRelatedToFinancialAdjustment}</li>
+ * DocumentTypeCode.DebitNoteRelatedToFinancialAdjustment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#CommercialInvoice
- * DocumentTypeCode.mmCommercialInvoice}</li>
+ * DocumentTypeCode.CommercialInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#CreditNote
- * DocumentTypeCode.mmCreditNote}</li>
+ * DocumentTypeCode.CreditNote}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DocumentTypeCode#DebitNote
- * DocumentTypeCode.mmDebitNote}</li>
+ * DocumentTypeCode.DebitNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#HireInvoice
- * DocumentTypeCode.mmHireInvoice}</li>
+ * DocumentTypeCode.HireInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#SelfBilledInvoice
- * DocumentTypeCode.mmSelfBilledInvoice}</li>
+ * DocumentTypeCode.SelfBilledInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#RemittanceAdviceMessage
- * DocumentTypeCode.mmRemittanceAdviceMessage}</li>
+ * DocumentTypeCode.RemittanceAdviceMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#RelatedPaymentInstruction
- * DocumentTypeCode.mmRelatedPaymentInstruction}</li>
+ * DocumentTypeCode.RelatedPaymentInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#CommercialContract
- * DocumentTypeCode.mmCommercialContract}</li>
+ * DocumentTypeCode.CommercialContract}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#ForeignExchangeDealReference
- * DocumentTypeCode.mmForeignExchangeDealReference}</li>
+ * DocumentTypeCode.ForeignExchangeDealReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#StatementOfAccount
- * DocumentTypeCode.mmStatementOfAccount}</li>
+ * DocumentTypeCode.StatementOfAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#DispatchAdvice
- * DocumentTypeCode.mmDispatchAdvice}</li>
+ * DocumentTypeCode.DispatchAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#PurchaseOrder
- * DocumentTypeCode.mmPurchaseOrder}</li>
+ * DocumentTypeCode.PurchaseOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#StructuredCommunicationReference
- * DocumentTypeCode.mmStructuredCommunicationReference}</li>
+ * DocumentTypeCode.StructuredCommunicationReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#BillOfLading
- * DocumentTypeCode.mmBillOfLading}</li>
+ * DocumentTypeCode.BillOfLading}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DocumentTypeCode#Voucher
- * DocumentTypeCode.mmVoucher}</li>
+ * DocumentTypeCode.Voucher}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#AccountReceivableOpenItem
- * DocumentTypeCode.mmAccountReceivableOpenItem}</li>
+ * DocumentTypeCode.AccountReceivableOpenItem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentTypeCode#TradeServicesUtilityTransaction
- * DocumentTypeCode.mmTradeServicesUtilityTransaction}</li>
+ * DocumentTypeCode.TradeServicesUtilityTransaction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -108,8 +108,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -772,7 +772,7 @@ public class DocumentTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MSIN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentTypeCode";

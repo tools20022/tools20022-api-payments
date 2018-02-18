@@ -90,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -111,16 +111,16 @@ public class AccountManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Account Management - Latest version - master";
 				definition = "Messages that support the management of account related activities, such as the opening and maintenance of an account";
-				code = "acmt";
 				messageDefinition_lazy = () -> Arrays.asList(AccountAdditionalInformationRequestV02.mmObject(), AccountClosingAdditionalInformationRequestV02.mmObject(), AccountClosingAmendmentRequestV02.mmObject(),
 						AccountClosingRequestV02.mmObject(), AccountExcludedMandateMaintenanceAmendmentRequestV02.mmObject(), AccountExcludedMandateMaintenanceRequestV02.mmObject(), AccountMandateMaintenanceAmendmentRequestV02.mmObject(),
 						AccountMandateMaintenanceRequestV02.mmObject(), AccountOpeningAdditionalInformationRequestV02.mmObject(), AccountOpeningAmendmentRequestV02.mmObject(), AccountOpeningRequestV02.mmObject(),
 						AccountReportRequestV02.mmObject(), AccountReportV02.mmObject(), AccountRequestAcknowledgementV02.mmObject(), AccountRequestRejectionV02.mmObject(), IdentificationModificationAdviceV02.mmObject(),
 						IdentificationVerificationRequestV02.mmObject(), IdentificationVerificationReportV02.mmObject());
+				code = "acmt";
 			}
 		});
 		return mmObject_lazy.get();

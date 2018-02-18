@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Commercial details of a trade transaction between a buyer and a seller.
@@ -119,8 +118,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -137,9 +136,8 @@ public class CommercialTrade extends Trade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashAccount> purchaseAccount;
 	/**
-	 * Specific purchase account for recording debits and credits for accounting
-	 * purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,8 +185,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
-	 * Obligation for the buyer to settle the value of the products bought.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +233,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected CurrencyAndAmount totalAcceptedAmount;
 	/**
-	 * Total amount of a trade, that is the sum of the accepted items.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +281,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTradePartyRole> partyRole;
 	/**
-	 * Role played by a party in the context of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,8 +329,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement;
 	/**
-	 * Process of settling a commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,8 +377,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.ProductDeliveryObligation> productDeliveryObligation;
 	/**
-	 * Obligation for the seller to deliver the products to the buyer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,8 +426,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected PurchaseOrder purchaseOrder;
 	/**
-	 * Specifies the purchase order related to a commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -477,8 +475,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected Document documents;
 	/**
-	 * Documents related to a commercial trade transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,8 +524,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected UnderlyingTransaction relatedUndertaking;
 	/**
-	 * Undertaking related to the commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,8 +573,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected BaselineStatus transactionStatus;
 	/**
-	 * Status of a commercial trade processed in a central system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -624,9 +622,8 @@ public class CommercialTrade extends Trade {
 	};
 	protected Agreement agreement;
 	/**
-	 * Agreement between trade parties which describes the conditions under
-	 * which they agree to execute trades amongst themselves.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -677,7 +674,7 @@ public class CommercialTrade extends Trade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommercialTrade";
 				definition = "Commercial details of a trade transaction between a buyer and a seller.";
@@ -703,90 +700,101 @@ public class CommercialTrade extends Trade {
 	}
 
 	public List<CashAccount> getPurchaseAccount() {
-		return purchaseAccount;
+		return purchaseAccount == null ? purchaseAccount = new ArrayList<>() : purchaseAccount;
 	}
 
-	public void setPurchaseAccount(List<com.tools20022.repository.entity.CashAccount> purchaseAccount) {
-		this.purchaseAccount = purchaseAccount;
+	public CommercialTrade setPurchaseAccount(List<com.tools20022.repository.entity.CashAccount> purchaseAccount) {
+		this.purchaseAccount = Objects.requireNonNull(purchaseAccount);
+		return this;
 	}
 
 	public List<PaymentObligation> getPaymentObligation() {
-		return paymentObligation;
+		return paymentObligation == null ? paymentObligation = new ArrayList<>() : paymentObligation;
 	}
 
-	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
-		this.paymentObligation = paymentObligation;
+	public CommercialTrade setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = Objects.requireNonNull(paymentObligation);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalAcceptedAmount() {
 		return totalAcceptedAmount;
 	}
 
-	public void setTotalAcceptedAmount(CurrencyAndAmount totalAcceptedAmount) {
-		this.totalAcceptedAmount = totalAcceptedAmount;
+	public CommercialTrade setTotalAcceptedAmount(CurrencyAndAmount totalAcceptedAmount) {
+		this.totalAcceptedAmount = Objects.requireNonNull(totalAcceptedAmount);
+		return this;
 	}
 
 	public List<CommercialTradePartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.CommercialTradePartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public CommercialTrade setPartyRole(List<com.tools20022.repository.entity.CommercialTradePartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public List<CommercialTradeSettlement> getTradeSettlement() {
-		return tradeSettlement;
+		return tradeSettlement == null ? tradeSettlement = new ArrayList<>() : tradeSettlement;
 	}
 
-	public void setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
-		this.tradeSettlement = tradeSettlement;
+	public CommercialTrade setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
+		this.tradeSettlement = Objects.requireNonNull(tradeSettlement);
+		return this;
 	}
 
 	public List<ProductDeliveryObligation> getProductDeliveryObligation() {
-		return productDeliveryObligation;
+		return productDeliveryObligation == null ? productDeliveryObligation = new ArrayList<>() : productDeliveryObligation;
 	}
 
-	public void setProductDeliveryObligation(List<com.tools20022.repository.entity.ProductDeliveryObligation> productDeliveryObligation) {
-		this.productDeliveryObligation = productDeliveryObligation;
+	public CommercialTrade setProductDeliveryObligation(List<com.tools20022.repository.entity.ProductDeliveryObligation> productDeliveryObligation) {
+		this.productDeliveryObligation = Objects.requireNonNull(productDeliveryObligation);
+		return this;
 	}
 
-	public PurchaseOrder getPurchaseOrder() {
-		return purchaseOrder;
+	public Optional<PurchaseOrder> getPurchaseOrder() {
+		return purchaseOrder == null ? Optional.empty() : Optional.of(purchaseOrder);
 	}
 
-	public void setPurchaseOrder(com.tools20022.repository.entity.PurchaseOrder purchaseOrder) {
+	public CommercialTrade setPurchaseOrder(com.tools20022.repository.entity.PurchaseOrder purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
+		return this;
 	}
 
 	public Document getDocuments() {
 		return documents;
 	}
 
-	public void setDocuments(com.tools20022.repository.entity.Document documents) {
-		this.documents = documents;
+	public CommercialTrade setDocuments(com.tools20022.repository.entity.Document documents) {
+		this.documents = Objects.requireNonNull(documents);
+		return this;
 	}
 
 	public UnderlyingTransaction getRelatedUndertaking() {
 		return relatedUndertaking;
 	}
 
-	public void setRelatedUndertaking(com.tools20022.repository.entity.UnderlyingTransaction relatedUndertaking) {
-		this.relatedUndertaking = relatedUndertaking;
+	public CommercialTrade setRelatedUndertaking(com.tools20022.repository.entity.UnderlyingTransaction relatedUndertaking) {
+		this.relatedUndertaking = Objects.requireNonNull(relatedUndertaking);
+		return this;
 	}
 
 	public BaselineStatus getTransactionStatus() {
 		return transactionStatus;
 	}
 
-	public void setTransactionStatus(com.tools20022.repository.entity.BaselineStatus transactionStatus) {
-		this.transactionStatus = transactionStatus;
+	public CommercialTrade setTransactionStatus(com.tools20022.repository.entity.BaselineStatus transactionStatus) {
+		this.transactionStatus = Objects.requireNonNull(transactionStatus);
+		return this;
 	}
 
 	public Agreement getAgreement() {
 		return agreement;
 	}
 
-	public void setAgreement(com.tools20022.repository.entity.Agreement agreement) {
-		this.agreement = agreement;
+	public CommercialTrade setAgreement(com.tools20022.repository.entity.Agreement agreement) {
+		this.agreement = Objects.requireNonNull(agreement);
+		return this;
 	}
 }

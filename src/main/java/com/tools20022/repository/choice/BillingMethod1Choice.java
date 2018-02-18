@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.BillingMethod2;
 import com.tools20022.repository.msg.BillingMethod3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between tax calculation methods A, B or D."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingMethod1Choice", propOrder = {"methodA", "methodB", "methodD"})
 public class BillingMethod1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MtdA", required = true)
 	protected BillingMethod1 methodA;
 	/**
-	 * Tax values are based on tax calculation method A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,7 +110,7 @@ public class BillingMethod1Choice {
 	public static final MMMessageAssociationEnd mmMethodA = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> BillingMethod1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MtdA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,10 +122,11 @@ public class BillingMethod1Choice {
 			type_lazy = () -> BillingMethod1.mmObject();
 		}
 	};
+	@XmlElement(name = "MtdB", required = true)
 	protected BillingMethod2 methodB;
 	/**
-	 * Tax values are based on tax calculation method B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -154,7 +157,7 @@ public class BillingMethod1Choice {
 	public static final MMMessageAssociationEnd mmMethodB = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> BillingMethod1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MtdB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,10 +169,11 @@ public class BillingMethod1Choice {
 			type_lazy = () -> BillingMethod2.mmObject();
 		}
 	};
+	@XmlElement(name = "MtdD", required = true)
 	protected BillingMethod3 methodD;
 	/**
-	 * Tax values are based on tax calculation method D.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -200,7 +204,7 @@ public class BillingMethod1Choice {
 	public static final MMMessageAssociationEnd mmMethodD = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> BillingMethod1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MtdD";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,9 +220,10 @@ public class BillingMethod1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingMethod1Choice.mmMethodA, BillingMethod1Choice.mmMethodB, BillingMethod1Choice.mmMethodD);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.BillingMethod1Choice.mmMethodA, com.tools20022.repository.choice.BillingMethod1Choice.mmMethodB,
+						com.tools20022.repository.choice.BillingMethod1Choice.mmMethodD);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingMethod1Choice";
 				definition = "Choice between tax calculation methods A, B or D.";
@@ -227,30 +232,30 @@ public class BillingMethod1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MtdA", required = true)
 	public BillingMethod1 getMethodA() {
 		return methodA;
 	}
 
-	public void setMethodA(BillingMethod1 methodA) {
-		this.methodA = methodA;
+	public BillingMethod1Choice setMethodA(BillingMethod1 methodA) {
+		this.methodA = Objects.requireNonNull(methodA);
+		return this;
 	}
 
-	@XmlElement(name = "MtdB", required = true)
 	public BillingMethod2 getMethodB() {
 		return methodB;
 	}
 
-	public void setMethodB(BillingMethod2 methodB) {
-		this.methodB = methodB;
+	public BillingMethod1Choice setMethodB(BillingMethod2 methodB) {
+		this.methodB = Objects.requireNonNull(methodB);
+		return this;
 	}
 
-	@XmlElement(name = "MtdD", required = true)
 	public BillingMethod3 getMethodD() {
 		return methodD;
 	}
 
-	public void setMethodD(BillingMethod3 methodD) {
-		this.methodD = methodD;
+	public BillingMethod1Choice setMethodD(BillingMethod3 methodD) {
+		this.methodD = Objects.requireNonNull(methodD);
+		return this;
 	}
 }

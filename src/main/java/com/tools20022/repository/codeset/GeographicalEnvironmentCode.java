@@ -40,26 +40,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#Domestic
- * GeographicalEnvironmentCode.mmDomestic}</li>
+ * GeographicalEnvironmentCode.Domestic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#EuroDomestic
- * GeographicalEnvironmentCode.mmEuroDomestic}</li>
+ * GeographicalEnvironmentCode.EuroDomestic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#FrenchDomTom
- * GeographicalEnvironmentCode.mmFrenchDomTom}</li>
+ * GeographicalEnvironmentCode.FrenchDomTom}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#International
- * GeographicalEnvironmentCode.mmInternational}</li>
+ * GeographicalEnvironmentCode.International}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#NAFTA
- * GeographicalEnvironmentCode.mmNAFTA}</li>
+ * GeographicalEnvironmentCode.NAFTA}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -251,7 +251,7 @@ public class GeographicalEnvironmentCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeographicalEnvironmentCode";
 				definition = "Specifies the geographic environment, or zone, in which a payment is executed, from the perspective of the forwarding or first agent, eg, international.";

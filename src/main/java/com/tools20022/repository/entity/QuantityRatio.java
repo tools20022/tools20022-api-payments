@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Ratio expressed as a quotient of quantities.
@@ -86,8 +87,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,9 +104,8 @@ public class QuantityRatio {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesProceedsDefinition additionalQuantityForResultantSecuritiesProceedsDefinition;
 	/**
-	 * Securities proceeds for which an additional quantity for subscribed
-	 * resultant securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,8 +156,8 @@ public class QuantityRatio {
 	};
 	protected DecimalNumber quantity1;
 	/**
-	 * Numerator of the quotient of quantities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,8 +203,8 @@ public class QuantityRatio {
 	};
 	protected DecimalNumber quantity2;
 	/**
-	 * Denominator of the quotient of quantities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,9 +250,8 @@ public class QuantityRatio {
 	};
 	protected SecuritiesProceedsDefinition additionalQuantityForSubscribedSecuritiesProceedsDefinition;
 	/**
-	 * Securities proceeds for which an additional quantity for existing
-	 * securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,8 +301,8 @@ public class QuantityRatio {
 	};
 	protected SecuritiesProceedsDefinition newToOldProceedsDefinition;
 	/**
-	 * Securities procceds for which a nwe to old ratio is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -352,8 +351,8 @@ public class QuantityRatio {
 	};
 	protected SecuritiesProceedsDefinition newToUnderlyingProceedsDefinition;
 	/**
-	 * Securities proceeds for which a new to underlying ratio is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,9 +401,8 @@ public class QuantityRatio {
 	};
 	protected SecuritiesProceedsDefinition intermediateSecuritiesProceedsDefinition;
 	/**
-	 * Securities proceeds for which a quantity of intermediate securities is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -454,8 +452,8 @@ public class QuantityRatio {
 	};
 	protected Warrant warrant;
 	/**
-	 * Provides the warrant for the related quantity or the underlying quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -505,7 +503,7 @@ public class QuantityRatio {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuantityRatio";
 				definition = "Ratio expressed as a quotient of quantities.";
@@ -530,63 +528,71 @@ public class QuantityRatio {
 		return additionalQuantityForResultantSecuritiesProceedsDefinition;
 	}
 
-	public void setAdditionalQuantityForResultantSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForResultantSecuritiesProceedsDefinition) {
-		this.additionalQuantityForResultantSecuritiesProceedsDefinition = additionalQuantityForResultantSecuritiesProceedsDefinition;
+	public QuantityRatio setAdditionalQuantityForResultantSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForResultantSecuritiesProceedsDefinition) {
+		this.additionalQuantityForResultantSecuritiesProceedsDefinition = Objects.requireNonNull(additionalQuantityForResultantSecuritiesProceedsDefinition);
+		return this;
 	}
 
 	public DecimalNumber getQuantity1() {
 		return quantity1;
 	}
 
-	public void setQuantity1(DecimalNumber quantity1) {
-		this.quantity1 = quantity1;
+	public QuantityRatio setQuantity1(DecimalNumber quantity1) {
+		this.quantity1 = Objects.requireNonNull(quantity1);
+		return this;
 	}
 
 	public DecimalNumber getQuantity2() {
 		return quantity2;
 	}
 
-	public void setQuantity2(DecimalNumber quantity2) {
-		this.quantity2 = quantity2;
+	public QuantityRatio setQuantity2(DecimalNumber quantity2) {
+		this.quantity2 = Objects.requireNonNull(quantity2);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getAdditionalQuantityForSubscribedSecuritiesProceedsDefinition() {
 		return additionalQuantityForSubscribedSecuritiesProceedsDefinition;
 	}
 
-	public void setAdditionalQuantityForSubscribedSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForSubscribedSecuritiesProceedsDefinition) {
-		this.additionalQuantityForSubscribedSecuritiesProceedsDefinition = additionalQuantityForSubscribedSecuritiesProceedsDefinition;
+	public QuantityRatio setAdditionalQuantityForSubscribedSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForSubscribedSecuritiesProceedsDefinition) {
+		this.additionalQuantityForSubscribedSecuritiesProceedsDefinition = Objects.requireNonNull(additionalQuantityForSubscribedSecuritiesProceedsDefinition);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getNewToOldProceedsDefinition() {
 		return newToOldProceedsDefinition;
 	}
 
-	public void setNewToOldProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToOldProceedsDefinition) {
-		this.newToOldProceedsDefinition = newToOldProceedsDefinition;
+	public QuantityRatio setNewToOldProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToOldProceedsDefinition) {
+		this.newToOldProceedsDefinition = Objects.requireNonNull(newToOldProceedsDefinition);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getNewToUnderlyingProceedsDefinition() {
 		return newToUnderlyingProceedsDefinition;
 	}
 
-	public void setNewToUnderlyingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToUnderlyingProceedsDefinition) {
-		this.newToUnderlyingProceedsDefinition = newToUnderlyingProceedsDefinition;
+	public QuantityRatio setNewToUnderlyingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToUnderlyingProceedsDefinition) {
+		this.newToUnderlyingProceedsDefinition = Objects.requireNonNull(newToUnderlyingProceedsDefinition);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getIntermediateSecuritiesProceedsDefinition() {
 		return intermediateSecuritiesProceedsDefinition;
 	}
 
-	public void setIntermediateSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition intermediateSecuritiesProceedsDefinition) {
-		this.intermediateSecuritiesProceedsDefinition = intermediateSecuritiesProceedsDefinition;
+	public QuantityRatio setIntermediateSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition intermediateSecuritiesProceedsDefinition) {
+		this.intermediateSecuritiesProceedsDefinition = Objects.requireNonNull(intermediateSecuritiesProceedsDefinition);
+		return this;
 	}
 
 	public Warrant getwarrant() {
 		return warrant;
 	}
 
-	public void setwarrant(com.tools20022.repository.entity.Warrant warrant) {
-		this.warrant = warrant;
+	public QuantityRatio setwarrant(com.tools20022.repository.entity.Warrant warrant) {
+		this.warrant = Objects.requireNonNull(warrant);
+		return this;
 	}
 }

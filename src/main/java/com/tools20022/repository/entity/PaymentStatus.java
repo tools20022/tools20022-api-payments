@@ -29,6 +29,8 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the status of a payment at a specified time.
@@ -135,8 +137,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -152,8 +154,8 @@ public class PaymentStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PaymentStatusCode status;
 	/**
-	 * Specifies the status of the payment execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,8 +223,8 @@ public class PaymentStatus extends Status {
 	};
 	protected Payment payment;
 	/**
-	 * Payment for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,8 +270,8 @@ public class PaymentStatus extends Status {
 	};
 	protected UnmatchedStatusReasonCode unmatchedStatusReason;
 	/**
-	 * Reason the transaction/instruction is unmatched.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,8 +317,8 @@ public class PaymentStatus extends Status {
 	};
 	protected SuspendedStatusReasonCode suspendedStatusReason;
 	/**
-	 * Reason the transaction/instruction is suspended.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -362,10 +364,8 @@ public class PaymentStatus extends Status {
 	};
 	protected PendingSettlementStatusReasonCode pendingSettlement;
 	/**
-	 * Reason the instruction is pending settlement, ie, delivery or receipt of
-	 * the financial instrument. Settlement on the instructed settlement date is
-	 * still possible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,8 +413,8 @@ public class PaymentStatus extends Status {
 	};
 	protected PaymentInstructionStatusCode instructionStatus;
 	/**
-	 * Specifies the state of a payment instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,8 +460,8 @@ public class PaymentStatus extends Status {
 	};
 	protected TransactionReasonCode transactionRejectionReason;
 	/**
-	 * Specifies the reason to reject, return or reverse the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -520,8 +520,8 @@ public class PaymentStatus extends Status {
 	};
 	protected PaymentInvestigationCase relatedInvestigationCase;
 	/**
-	 * Specifies an investigation case in relation with the payment status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -570,9 +570,8 @@ public class PaymentStatus extends Status {
 	};
 	protected NotificationToReceiveStatusCode notificationStatus;
 	/**
-	 * Specifies the status of the payment in comparison with the notification
-	 * to receive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -632,8 +631,8 @@ public class PaymentStatus extends Status {
 	};
 	protected TransactionStatusCode transactionStatus;
 	/**
-	 * Specifies the processing status of an investment fund transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -680,8 +679,8 @@ public class PaymentStatus extends Status {
 	};
 	protected CashPaymentStatusCode cashPaymentStatus;
 	/**
-	 * Specifies a generic status of a payment at a specified time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -728,9 +727,8 @@ public class PaymentStatus extends Status {
 	};
 	protected ExternalStatusReason1Code unsuccessfulStatusReason;
 	/**
-	 * Reason provided for the status of a transaction.The reason may be in
-	 * coded or free text form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -778,8 +776,8 @@ public class PaymentStatus extends Status {
 	};
 	protected CancellationReasonCode cancellationReason;
 	/**
-	 * Reason for the cancellation of the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -853,8 +851,8 @@ public class PaymentStatus extends Status {
 	};
 	protected MandateReasonCode mandateRejectionReason;
 	/**
-	 * Reason for requesting the cancellation or the amendment of a mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -922,8 +920,8 @@ public class PaymentStatus extends Status {
 	};
 	protected PendingFailingSettlementCode pendingFailingSettlement;
 	/**
-	 * Reason the transaction/instruction is pending due to failing settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -973,7 +971,7 @@ public class PaymentStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentStatus";
 				definition = "Specifies the status of a payment at a specified time.";
@@ -1002,119 +1000,134 @@ public class PaymentStatus extends Status {
 		return status;
 	}
 
-	public void setStatus(PaymentStatusCode status) {
-		this.status = status;
+	public PaymentStatus setStatus(PaymentStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	public Payment getPayment() {
-		return payment;
+	public Optional<Payment> getPayment() {
+		return payment == null ? Optional.empty() : Optional.of(payment);
 	}
 
-	public void setPayment(com.tools20022.repository.entity.Payment payment) {
+	public PaymentStatus setPayment(com.tools20022.repository.entity.Payment payment) {
 		this.payment = payment;
+		return this;
 	}
 
 	public UnmatchedStatusReasonCode getUnmatchedStatusReason() {
 		return unmatchedStatusReason;
 	}
 
-	public void setUnmatchedStatusReason(UnmatchedStatusReasonCode unmatchedStatusReason) {
-		this.unmatchedStatusReason = unmatchedStatusReason;
+	public PaymentStatus setUnmatchedStatusReason(UnmatchedStatusReasonCode unmatchedStatusReason) {
+		this.unmatchedStatusReason = Objects.requireNonNull(unmatchedStatusReason);
+		return this;
 	}
 
 	public SuspendedStatusReasonCode getSuspendedStatusReason() {
 		return suspendedStatusReason;
 	}
 
-	public void setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
-		this.suspendedStatusReason = suspendedStatusReason;
+	public PaymentStatus setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
+		this.suspendedStatusReason = Objects.requireNonNull(suspendedStatusReason);
+		return this;
 	}
 
 	public PendingSettlementStatusReasonCode getPendingSettlement() {
 		return pendingSettlement;
 	}
 
-	public void setPendingSettlement(PendingSettlementStatusReasonCode pendingSettlement) {
-		this.pendingSettlement = pendingSettlement;
+	public PaymentStatus setPendingSettlement(PendingSettlementStatusReasonCode pendingSettlement) {
+		this.pendingSettlement = Objects.requireNonNull(pendingSettlement);
+		return this;
 	}
 
 	public PaymentInstructionStatusCode getInstructionStatus() {
 		return instructionStatus;
 	}
 
-	public void setInstructionStatus(PaymentInstructionStatusCode instructionStatus) {
-		this.instructionStatus = instructionStatus;
+	public PaymentStatus setInstructionStatus(PaymentInstructionStatusCode instructionStatus) {
+		this.instructionStatus = Objects.requireNonNull(instructionStatus);
+		return this;
 	}
 
 	public TransactionReasonCode getTransactionRejectionReason() {
 		return transactionRejectionReason;
 	}
 
-	public void setTransactionRejectionReason(TransactionReasonCode transactionRejectionReason) {
-		this.transactionRejectionReason = transactionRejectionReason;
+	public PaymentStatus setTransactionRejectionReason(TransactionReasonCode transactionRejectionReason) {
+		this.transactionRejectionReason = Objects.requireNonNull(transactionRejectionReason);
+		return this;
 	}
 
-	public PaymentInvestigationCase getRelatedInvestigationCase() {
-		return relatedInvestigationCase;
+	public Optional<PaymentInvestigationCase> getRelatedInvestigationCase() {
+		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public void setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
+	public PaymentStatus setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
+		return this;
 	}
 
 	public NotificationToReceiveStatusCode getNotificationStatus() {
 		return notificationStatus;
 	}
 
-	public void setNotificationStatus(NotificationToReceiveStatusCode notificationStatus) {
-		this.notificationStatus = notificationStatus;
+	public PaymentStatus setNotificationStatus(NotificationToReceiveStatusCode notificationStatus) {
+		this.notificationStatus = Objects.requireNonNull(notificationStatus);
+		return this;
 	}
 
 	public TransactionStatusCode getTransactionStatus() {
 		return transactionStatus;
 	}
 
-	public void setTransactionStatus(TransactionStatusCode transactionStatus) {
-		this.transactionStatus = transactionStatus;
+	public PaymentStatus setTransactionStatus(TransactionStatusCode transactionStatus) {
+		this.transactionStatus = Objects.requireNonNull(transactionStatus);
+		return this;
 	}
 
 	public CashPaymentStatusCode getCashPaymentStatus() {
 		return cashPaymentStatus;
 	}
 
-	public void setCashPaymentStatus(CashPaymentStatusCode cashPaymentStatus) {
-		this.cashPaymentStatus = cashPaymentStatus;
+	public PaymentStatus setCashPaymentStatus(CashPaymentStatusCode cashPaymentStatus) {
+		this.cashPaymentStatus = Objects.requireNonNull(cashPaymentStatus);
+		return this;
 	}
 
 	public ExternalStatusReason1Code getUnsuccessfulStatusReason() {
 		return unsuccessfulStatusReason;
 	}
 
-	public void setUnsuccessfulStatusReason(ExternalStatusReason1Code unsuccessfulStatusReason) {
-		this.unsuccessfulStatusReason = unsuccessfulStatusReason;
+	public PaymentStatus setUnsuccessfulStatusReason(ExternalStatusReason1Code unsuccessfulStatusReason) {
+		this.unsuccessfulStatusReason = Objects.requireNonNull(unsuccessfulStatusReason);
+		return this;
 	}
 
 	public CancellationReasonCode getCancellationReason() {
 		return cancellationReason;
 	}
 
-	public void setCancellationReason(CancellationReasonCode cancellationReason) {
-		this.cancellationReason = cancellationReason;
+	public PaymentStatus setCancellationReason(CancellationReasonCode cancellationReason) {
+		this.cancellationReason = Objects.requireNonNull(cancellationReason);
+		return this;
 	}
 
 	public MandateReasonCode getMandateRejectionReason() {
 		return mandateRejectionReason;
 	}
 
-	public void setMandateRejectionReason(MandateReasonCode mandateRejectionReason) {
-		this.mandateRejectionReason = mandateRejectionReason;
+	public PaymentStatus setMandateRejectionReason(MandateReasonCode mandateRejectionReason) {
+		this.mandateRejectionReason = Objects.requireNonNull(mandateRejectionReason);
+		return this;
 	}
 
 	public PendingFailingSettlementCode getPendingFailingSettlement() {
 		return pendingFailingSettlement;
 	}
 
-	public void setPendingFailingSettlement(PendingFailingSettlementCode pendingFailingSettlement) {
-		this.pendingFailingSettlement = pendingFailingSettlement;
+	public PaymentStatus setPendingFailingSettlement(PendingFailingSettlementCode pendingFailingSettlement) {
+		this.pendingFailingSettlement = Objects.requireNonNull(pendingFailingSettlement);
+		return this;
 	}
 }

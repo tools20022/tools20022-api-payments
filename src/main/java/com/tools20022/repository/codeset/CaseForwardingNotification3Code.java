@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#FurtherInvestigation
- * CaseForwardingNotification3Code.mmFurtherInvestigation}</li>
+ * CaseForwardingNotification3Code.FurtherInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#RequestToCancel
- * CaseForwardingNotification3Code.mmRequestToCancel}</li>
+ * CaseForwardingNotification3Code.RequestToCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#RequestToModify
- * CaseForwardingNotification3Code.mmRequestToModify}</li>
+ * CaseForwardingNotification3Code.RequestToModify}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#RequestDebitAuthorisation
- * CaseForwardingNotification3Code.mmRequestDebitAuthorisation}</li>
+ * CaseForwardingNotification3Code.RequestDebitAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#SentAdditionalInformation
- * CaseForwardingNotification3Code.mmSentAdditionalInformation}</li>
+ * CaseForwardingNotification3Code.SentAdditionalInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotification3Code#MineInvestigationCase
- * CaseForwardingNotification3Code.mmMineInvestigationCase}</li>
+ * CaseForwardingNotification3Code.MineInvestigationCase}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class CaseForwardingNotification3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FTHI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseForwardingNotification3Code";

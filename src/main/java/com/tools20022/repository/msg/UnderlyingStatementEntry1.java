@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnderlyingStatementEntry1", propOrder = {"originalGroupInformation", "originalStatementIdentification", "originalEntryIdentification"})
 public class UnderlyingStatementEntry1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlGrpInf")
 	protected OriginalGroupInformation3 originalGroupInformation;
 	/**
-	 * Set of elements used to provide information on the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,7 +109,7 @@ public class UnderlyingStatementEntry1 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalGroupInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> UnderlyingStatementEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingStatementEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlGrpInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,11 @@ public class UnderlyingStatementEntry1 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation3.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlStmtId")
 	protected Max35Text originalStatementIdentification;
 	/**
-	 * Unique identification, as assigned by the account servicer, to
-	 * unambiguously identify the original statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +154,7 @@ public class UnderlyingStatementEntry1 {
 	 */
 	public static final MMMessageAttribute mmOriginalStatementIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnderlyingStatementEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingStatementEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlStmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,11 +165,11 @@ public class UnderlyingStatementEntry1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlNtryId")
 	protected Max35Text originalEntryIdentification;
 	/**
-	 * Original unique identification, as assigned by the account servicer, to
-	 * unambiguously identify the original entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,7 +204,7 @@ public class UnderlyingStatementEntry1 {
 	public static final MMMessageAttribute mmOriginalEntryIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmIdentification;
-			componentContext_lazy = () -> UnderlyingStatementEntry1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingStatementEntry1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlNtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,9 +219,10 @@ public class UnderlyingStatementEntry1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnderlyingStatementEntry1.mmOriginalGroupInformation, UnderlyingStatementEntry1.mmOriginalStatementIdentification, UnderlyingStatementEntry1.mmOriginalEntryIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnderlyingStatementEntry1.mmOriginalGroupInformation, com.tools20022.repository.msg.UnderlyingStatementEntry1.mmOriginalStatementIdentification,
+						com.tools20022.repository.msg.UnderlyingStatementEntry1.mmOriginalEntryIdentification);
 				trace_lazy = () -> Entry.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingStatementEntry1";
 				definition = "Set of elements used to provide information on the underlying statement entry.";
@@ -228,30 +231,30 @@ public class UnderlyingStatementEntry1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlGrpInf")
-	public OriginalGroupInformation3 getOriginalGroupInformation() {
-		return originalGroupInformation;
+	public Optional<OriginalGroupInformation3> getOriginalGroupInformation() {
+		return originalGroupInformation == null ? Optional.empty() : Optional.of(originalGroupInformation);
 	}
 
-	public void setOriginalGroupInformation(com.tools20022.repository.msg.OriginalGroupInformation3 originalGroupInformation) {
+	public UnderlyingStatementEntry1 setOriginalGroupInformation(com.tools20022.repository.msg.OriginalGroupInformation3 originalGroupInformation) {
 		this.originalGroupInformation = originalGroupInformation;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlStmtId")
-	public Max35Text getOriginalStatementIdentification() {
-		return originalStatementIdentification;
+	public Optional<Max35Text> getOriginalStatementIdentification() {
+		return originalStatementIdentification == null ? Optional.empty() : Optional.of(originalStatementIdentification);
 	}
 
-	public void setOriginalStatementIdentification(Max35Text originalStatementIdentification) {
+	public UnderlyingStatementEntry1 setOriginalStatementIdentification(Max35Text originalStatementIdentification) {
 		this.originalStatementIdentification = originalStatementIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlNtryId")
-	public Max35Text getOriginalEntryIdentification() {
-		return originalEntryIdentification;
+	public Optional<Max35Text> getOriginalEntryIdentification() {
+		return originalEntryIdentification == null ? Optional.empty() : Optional.of(originalEntryIdentification);
 	}
 
-	public void setOriginalEntryIdentification(Max35Text originalEntryIdentification) {
+	public UnderlyingStatementEntry1 setOriginalEntryIdentification(Max35Text originalEntryIdentification) {
 		this.originalEntryIdentification = originalEntryIdentification;
+		return this;
 	}
 }

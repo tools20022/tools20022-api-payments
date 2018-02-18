@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.PaymentProcessing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateOccurrences4", propOrder = {"sequenceType", "frequency", "duration", "firstCollectionDate", "finalCollectionDate"})
 public class MandateOccurrences4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SeqTp", required = true)
 	protected SequenceType2Code sequenceType;
 	/**
-	 * Identifies the underlying transaction sequence as either recurring or
-	 * one-off.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,7 +127,7 @@ public class MandateOccurrences4 {
 	public static final MMMessageAttribute mmSequenceType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmSequenceType;
-			componentContext_lazy = () -> MandateOccurrences4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateOccurrences4.mmObject();
 			isDerived = false;
 			xmlTag = "SeqTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,10 +138,11 @@ public class MandateOccurrences4 {
 			simpleType_lazy = () -> SequenceType2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Frqcy")
 	protected Frequency36Choice frequency;
 	/**
-	 * Regularity with which instructions are to be created and processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,7 +177,7 @@ public class MandateOccurrences4 {
 	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFrequency;
-			componentContext_lazy = () -> MandateOccurrences4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateOccurrences4.mmObject();
 			isDerived = false;
 			xmlTag = "Frqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,10 +188,11 @@ public class MandateOccurrences4 {
 			complexType_lazy = () -> Frequency36Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Drtn")
 	protected DatePeriodDetails1 duration;
 	/**
-	 * Length of time for which the mandate remains valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -222,7 +226,7 @@ public class MandateOccurrences4 {
 	public static final MMMessageAttribute mmDuration = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmValidityPeriod;
-			componentContext_lazy = () -> MandateOccurrences4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateOccurrences4.mmObject();
 			isDerived = false;
 			xmlTag = "Drtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,10 +237,11 @@ public class MandateOccurrences4 {
 			complexType_lazy = () -> com.tools20022.repository.msg.DatePeriodDetails1.mmObject();
 		}
 	};
+	@XmlElement(name = "FrstColltnDt")
 	protected ISODate firstCollectionDate;
 	/**
-	 * Date of the first collection of a direct debit as per the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,7 +275,7 @@ public class MandateOccurrences4 {
 	public static final MMMessageAttribute mmFirstCollectionDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFirstCollectionDate;
-			componentContext_lazy = () -> MandateOccurrences4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateOccurrences4.mmObject();
 			isDerived = false;
 			xmlTag = "FrstColltnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,10 +286,11 @@ public class MandateOccurrences4 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "FnlColltnDt")
 	protected ISODate finalCollectionDate;
 	/**
-	 * Date of the final collection of a direct debit as per the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,7 +324,7 @@ public class MandateOccurrences4 {
 	public static final MMMessageAttribute mmFinalCollectionDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFinalCollectionDate;
-			componentContext_lazy = () -> MandateOccurrences4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateOccurrences4.mmObject();
 			isDerived = false;
 			xmlTag = "FnlColltnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,10 +339,10 @@ public class MandateOccurrences4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateOccurrences4.mmSequenceType, MandateOccurrences4.mmFrequency, MandateOccurrences4.mmDuration, MandateOccurrences4.mmFirstCollectionDate,
-						MandateOccurrences4.mmFinalCollectionDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateOccurrences4.mmSequenceType, com.tools20022.repository.msg.MandateOccurrences4.mmFrequency,
+						com.tools20022.repository.msg.MandateOccurrences4.mmDuration, com.tools20022.repository.msg.MandateOccurrences4.mmFirstCollectionDate, com.tools20022.repository.msg.MandateOccurrences4.mmFinalCollectionDate);
 				trace_lazy = () -> DirectDebitMandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateOccurrences4";
 				definition = "Provides further details related to the duration of the mandate and the occurrence of the underlying transactions.";
@@ -345,48 +351,48 @@ public class MandateOccurrences4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SeqTp", required = true)
 	public SequenceType2Code getSequenceType() {
 		return sequenceType;
 	}
 
-	public void setSequenceType(SequenceType2Code sequenceType) {
-		this.sequenceType = sequenceType;
+	public MandateOccurrences4 setSequenceType(SequenceType2Code sequenceType) {
+		this.sequenceType = Objects.requireNonNull(sequenceType);
+		return this;
 	}
 
-	@XmlElement(name = "Frqcy")
-	public Frequency36Choice getFrequency() {
-		return frequency;
+	public Optional<Frequency36Choice> getFrequency() {
+		return frequency == null ? Optional.empty() : Optional.of(frequency);
 	}
 
-	public void setFrequency(Frequency36Choice frequency) {
+	public MandateOccurrences4 setFrequency(Frequency36Choice frequency) {
 		this.frequency = frequency;
+		return this;
 	}
 
-	@XmlElement(name = "Drtn")
-	public DatePeriodDetails1 getDuration() {
-		return duration;
+	public Optional<DatePeriodDetails1> getDuration() {
+		return duration == null ? Optional.empty() : Optional.of(duration);
 	}
 
-	public void setDuration(com.tools20022.repository.msg.DatePeriodDetails1 duration) {
+	public MandateOccurrences4 setDuration(com.tools20022.repository.msg.DatePeriodDetails1 duration) {
 		this.duration = duration;
+		return this;
 	}
 
-	@XmlElement(name = "FrstColltnDt")
-	public ISODate getFirstCollectionDate() {
-		return firstCollectionDate;
+	public Optional<ISODate> getFirstCollectionDate() {
+		return firstCollectionDate == null ? Optional.empty() : Optional.of(firstCollectionDate);
 	}
 
-	public void setFirstCollectionDate(ISODate firstCollectionDate) {
+	public MandateOccurrences4 setFirstCollectionDate(ISODate firstCollectionDate) {
 		this.firstCollectionDate = firstCollectionDate;
+		return this;
 	}
 
-	@XmlElement(name = "FnlColltnDt")
-	public ISODate getFinalCollectionDate() {
-		return finalCollectionDate;
+	public Optional<ISODate> getFinalCollectionDate() {
+		return finalCollectionDate == null ? Optional.empty() : Optional.of(finalCollectionDate);
 	}
 
-	public void setFinalCollectionDate(ISODate finalCollectionDate) {
+	public MandateOccurrences4 setFinalCollectionDate(ISODate finalCollectionDate) {
 		this.finalCollectionDate = finalCollectionDate;
+		return this;
 	}
 }

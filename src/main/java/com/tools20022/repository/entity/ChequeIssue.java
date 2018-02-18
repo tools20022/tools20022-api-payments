@@ -29,6 +29,7 @@ import com.tools20022.repository.msg.CreditTransferTransaction26;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Action to issue a cheque in order to settle an amount due to a creditor.
@@ -90,8 +91,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -108,9 +109,8 @@ public class ChequeIssue extends CreditInstrument {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Cheque cheque;
 	/**
-	 * Specifies the characteristics of the cheque used to pay an amount to a
-	 * creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,8 +157,8 @@ public class ChequeIssue extends CreditInstrument {
 	};
 	protected ChequeDeliveryCode deliveryMethod;
 	/**
-	 * Specifies the delivery method of the cheque by the debtor's agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,8 +218,8 @@ public class ChequeIssue extends CreditInstrument {
 	};
 	protected PostalAddress deliverTo;
 	/**
-	 * Identifies the party to whom the debtor's agent should send the cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,8 +275,8 @@ public class ChequeIssue extends CreditInstrument {
 	};
 	protected Max35Text printLocation;
 	/**
-	 * Specifies the print location of the cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,7 +330,7 @@ public class ChequeIssue extends CreditInstrument {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequeIssue";
 				definition = "Action to issue a cheque in order to settle an amount due to a creditor.";
@@ -354,31 +354,35 @@ public class ChequeIssue extends CreditInstrument {
 		return cheque;
 	}
 
-	public void setCheque(com.tools20022.repository.entity.Cheque cheque) {
-		this.cheque = cheque;
+	public ChequeIssue setCheque(com.tools20022.repository.entity.Cheque cheque) {
+		this.cheque = Objects.requireNonNull(cheque);
+		return this;
 	}
 
 	public ChequeDeliveryCode getDeliveryMethod() {
 		return deliveryMethod;
 	}
 
-	public void setDeliveryMethod(ChequeDeliveryCode deliveryMethod) {
-		this.deliveryMethod = deliveryMethod;
+	public ChequeIssue setDeliveryMethod(ChequeDeliveryCode deliveryMethod) {
+		this.deliveryMethod = Objects.requireNonNull(deliveryMethod);
+		return this;
 	}
 
 	public PostalAddress getDeliverTo() {
 		return deliverTo;
 	}
 
-	public void setDeliverTo(com.tools20022.repository.entity.PostalAddress deliverTo) {
-		this.deliverTo = deliverTo;
+	public ChequeIssue setDeliverTo(com.tools20022.repository.entity.PostalAddress deliverTo) {
+		this.deliverTo = Objects.requireNonNull(deliverTo);
+		return this;
 	}
 
 	public Max35Text getPrintLocation() {
 		return printLocation;
 	}
 
-	public void setPrintLocation(Max35Text printLocation) {
-		this.printLocation = printLocation;
+	public ChequeIssue setPrintLocation(Max35Text printLocation) {
+		this.printLocation = Objects.requireNonNull(printLocation);
+		return this;
 	}
 }

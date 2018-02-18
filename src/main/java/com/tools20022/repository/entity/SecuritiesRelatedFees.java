@@ -22,9 +22,11 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Fees related to securities trades.
@@ -66,8 +68,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,8 +85,8 @@ public class SecuritiesRelatedFees extends Charges {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Security for which fees are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,8 +130,8 @@ public class SecuritiesRelatedFees extends Charges {
 	};
 	protected CurrencyAndAmount postageFeeAmount;
 	/**
-	 * Amount of money paid for delivery by regular post mail.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,9 +177,8 @@ public class SecuritiesRelatedFees extends Charges {
 	};
 	protected CurrencyAndAmount regulatoryFeesAmount;
 	/**
-	 * Amount of money charged by a regulatory authority, eg, Securities and
-	 * Exchange fees.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -225,8 +226,8 @@ public class SecuritiesRelatedFees extends Charges {
 	};
 	protected CurrencyAndAmount shippingFeesAmount;
 	/**
-	 * Amount of money (including insurance) paid for delivery by carrier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,7 +276,7 @@ public class SecuritiesRelatedFees extends Charges {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesRelatedFees";
 				definition = "Fees related to securities trades.";
@@ -294,34 +295,38 @@ public class SecuritiesRelatedFees extends Charges {
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public SecuritiesRelatedFees setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public CurrencyAndAmount getPostageFeeAmount() {
 		return postageFeeAmount;
 	}
 
-	public void setPostageFeeAmount(CurrencyAndAmount postageFeeAmount) {
-		this.postageFeeAmount = postageFeeAmount;
+	public SecuritiesRelatedFees setPostageFeeAmount(CurrencyAndAmount postageFeeAmount) {
+		this.postageFeeAmount = Objects.requireNonNull(postageFeeAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getRegulatoryFeesAmount() {
 		return regulatoryFeesAmount;
 	}
 
-	public void setRegulatoryFeesAmount(CurrencyAndAmount regulatoryFeesAmount) {
-		this.regulatoryFeesAmount = regulatoryFeesAmount;
+	public SecuritiesRelatedFees setRegulatoryFeesAmount(CurrencyAndAmount regulatoryFeesAmount) {
+		this.regulatoryFeesAmount = Objects.requireNonNull(regulatoryFeesAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getShippingFeesAmount() {
 		return shippingFeesAmount;
 	}
 
-	public void setShippingFeesAmount(CurrencyAndAmount shippingFeesAmount) {
-		this.shippingFeesAmount = shippingFeesAmount;
+	public SecuritiesRelatedFees setShippingFeesAmount(CurrencyAndAmount shippingFeesAmount) {
+		this.shippingFeesAmount = Objects.requireNonNull(shippingFeesAmount);
+		return this;
 	}
 }

@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,17 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the transport authentication details related to the mandate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateAuthentication1", propOrder = {"messageAuthenticationCode", "date", "channel"})
 public class MandateAuthentication1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgAuthntcnCd")
 	protected Max16Text messageAuthenticationCode;
 	/**
-	 * Specifies a piece of information used to authenticate a message, that is
-	 * to confirm that the message came from the stated sender (its
-	 * authenticity) and has not been changed in transit (its integrity).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,7 +117,7 @@ public class MandateAuthentication1 {
 	public static final MMMessageAttribute mmMessageAuthenticationCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationEntity;
-			componentContext_lazy = () -> MandateAuthentication1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAuthentication1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgAuthntcnCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,10 +128,11 @@ public class MandateAuthentication1 {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISODate date;
 	/**
-	 * Date when the authentication was conducted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,7 +165,7 @@ public class MandateAuthentication1 {
 	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ObligationFulfilment.mmDate;
-			componentContext_lazy = () -> MandateAuthentication1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAuthentication1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,10 +176,11 @@ public class MandateAuthentication1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Chanl")
 	protected AuthenticationChannel1Choice channel;
 	/**
-	 * Channel used to transmit the authentication information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -211,7 +213,7 @@ public class MandateAuthentication1 {
 	public static final MMMessageAssociationEnd mmChannel = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationMethod;
-			componentContext_lazy = () -> MandateAuthentication1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAuthentication1.mmObject();
 			isDerived = false;
 			xmlTag = "Chanl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,9 +229,10 @@ public class MandateAuthentication1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateAuthentication1.mmMessageAuthenticationCode, MandateAuthentication1.mmDate, MandateAuthentication1.mmChannel);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateAuthentication1.mmMessageAuthenticationCode, com.tools20022.repository.msg.MandateAuthentication1.mmDate,
+						com.tools20022.repository.msg.MandateAuthentication1.mmChannel);
 				trace_lazy = () -> Authentication.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAuthentication1";
 				definition = "Specifies the transport authentication details related to the mandate.";
@@ -238,30 +241,30 @@ public class MandateAuthentication1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgAuthntcnCd")
-	public Max16Text getMessageAuthenticationCode() {
-		return messageAuthenticationCode;
+	public Optional<Max16Text> getMessageAuthenticationCode() {
+		return messageAuthenticationCode == null ? Optional.empty() : Optional.of(messageAuthenticationCode);
 	}
 
-	public void setMessageAuthenticationCode(Max16Text messageAuthenticationCode) {
+	public MandateAuthentication1 setMessageAuthenticationCode(Max16Text messageAuthenticationCode) {
 		this.messageAuthenticationCode = messageAuthenticationCode;
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISODate getDate() {
-		return date;
+	public Optional<ISODate> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISODate date) {
+	public MandateAuthentication1 setDate(ISODate date) {
 		this.date = date;
+		return this;
 	}
 
-	@XmlElement(name = "Chanl")
-	public AuthenticationChannel1Choice getChannel() {
-		return channel;
+	public Optional<AuthenticationChannel1Choice> getChannel() {
+		return channel == null ? Optional.empty() : Optional.of(channel);
 	}
 
-	public void setChannel(AuthenticationChannel1Choice channel) {
+	public MandateAuthentication1 setChannel(AuthenticationChannel1Choice channel) {
 		this.channel = channel;
+		return this;
 	}
 }

@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Received
- * CorporateActionProcessedStatusCode.mmReceived}</li>
+ * CorporateActionProcessedStatusCode.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Accepted
- * CorporateActionProcessedStatusCode.mmAccepted}</li>
+ * CorporateActionProcessedStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Pending
- * CorporateActionProcessedStatusCode.mmPending}</li>
+ * CorporateActionProcessedStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#Completed
- * CorporateActionProcessedStatusCode.mmCompleted}</li>
+ * CorporateActionProcessedStatusCode.Completed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#WaitingDeactivationDate
- * CorporateActionProcessedStatusCode.mmWaitingDeactivationDate}</li>
+ * CorporateActionProcessedStatusCode.WaitingDeactivationDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#SentToMarket
- * CorporateActionProcessedStatusCode.mmSentToMarket}</li>
+ * CorporateActionProcessedStatusCode.SentToMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionProcessedStatusCode#AcceptedWithWarning
- * CorporateActionProcessedStatusCode.mmAcceptedWithWarning}</li>
+ * CorporateActionProcessedStatusCode.AcceptedWithWarning}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -306,7 +306,7 @@ public class CorporateActionProcessedStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RECE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionProcessedStatusCode";

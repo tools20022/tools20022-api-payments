@@ -38,91 +38,91 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#BedAndBreakfast
- * FundOrderTypeCode.mmBedAndBreakfast}</li>
+ * FundOrderTypeCode.BedAndBreakfast}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#InvestmentPlan
- * FundOrderTypeCode.mmInvestmentPlan}</li>
+ * FundOrderTypeCode.InvestmentPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#PreAdvice
- * FundOrderTypeCode.mmPreAdvice}</li>
+ * FundOrderTypeCode.PreAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#StaffOrder
- * FundOrderTypeCode.mmStaffOrder}</li>
+ * FundOrderTypeCode.StaffOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#RegularSavingsPlan
- * FundOrderTypeCode.mmRegularSavingsPlan}</li>
+ * FundOrderTypeCode.RegularSavingsPlan}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Other
- * FundOrderTypeCode.mmOther}</li>
+ * FundOrderTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#RegularSavingsPlanUpdate
- * FundOrderTypeCode.mmRegularSavingsPlanUpdate}</li>
+ * FundOrderTypeCode.RegularSavingsPlanUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#ReinvestmentOfDividend
- * FundOrderTypeCode.mmReinvestmentOfDividend}</li>
+ * FundOrderTypeCode.ReinvestmentOfDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#NormalStaffPortion
- * FundOrderTypeCode.mmNormalStaffPortion}</li>
+ * FundOrderTypeCode.NormalStaffPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#NormalClientPortion
- * FundOrderTypeCode.mmNormalClientPortion}</li>
+ * FundOrderTypeCode.NormalClientPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#StaffWithSavingsPlan
- * FundOrderTypeCode.mmStaffWithSavingsPlan}</li>
+ * FundOrderTypeCode.StaffWithSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#ClientWithSavingsPlan
- * FundOrderTypeCode.mmClientWithSavingsPlan}</li>
+ * FundOrderTypeCode.ClientWithSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#NonUnitized
- * FundOrderTypeCode.mmNonUnitized}</li>
+ * FundOrderTypeCode.NonUnitized}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SidePocketComponent
- * FundOrderTypeCode.mmSidePocketComponent}</li>
+ * FundOrderTypeCode.SidePocketComponent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SidePocketOrder
- * FundOrderTypeCode.mmSidePocketOrder}</li>
+ * FundOrderTypeCode.SidePocketOrder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Unitized
- * FundOrderTypeCode.mmUnitized}</li>
+ * FundOrderTypeCode.Unitized}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Subscription
- * FundOrderTypeCode.mmSubscription}</li>
+ * FundOrderTypeCode.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Redemption
- * FundOrderTypeCode.mmRedemption}</li>
+ * FundOrderTypeCode.Redemption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Switch
- * FundOrderTypeCode.mmSwitch}</li>
+ * FundOrderTypeCode.Switch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#TopUp
- * FundOrderTypeCode.mmTopUp}</li>
+ * FundOrderTypeCode.TopUp}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#HoldBack
- * FundOrderTypeCode.mmHoldBack}</li>
+ * FundOrderTypeCode.HoldBack}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#All
- * FundOrderTypeCode.mmAll}</li>
+ * FundOrderTypeCode.All}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SwitchFrom
- * FundOrderTypeCode.mmSwitchFrom}</li>
+ * FundOrderTypeCode.SwitchFrom}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SwitchTo
- * FundOrderTypeCode.mmSwitchTo}</li>
+ * FundOrderTypeCode.SwitchTo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#TransferIn
- * FundOrderTypeCode.mmTransferIn}</li>
+ * FundOrderTypeCode.TransferIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#TransferOut
- * FundOrderTypeCode.mmTransferOut}</li>
+ * FundOrderTypeCode.TransferOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SecuritiesPurchase
- * FundOrderTypeCode.mmSecuritiesPurchase}</li>
+ * FundOrderTypeCode.SecuritiesPurchase}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#SecuritiesSale
- * FundOrderTypeCode.mmSecuritiesSale}</li>
+ * FundOrderTypeCode.SecuritiesSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderTypeCode#Withdrawal
- * FundOrderTypeCode.mmWithdrawal}</li>
+ * FundOrderTypeCode.Withdrawal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1051,7 +1051,7 @@ public class FundOrderTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BEDB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundOrderTypeCode";

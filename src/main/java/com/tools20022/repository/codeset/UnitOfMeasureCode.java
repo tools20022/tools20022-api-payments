@@ -37,195 +37,195 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Kilogram
- * UnitOfMeasureCode.mmKilogram}</li>
+ * UnitOfMeasureCode.Kilogram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Piece
- * UnitOfMeasureCode.mmPiece}</li>
+ * UnitOfMeasureCode.Piece}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Ton
- * UnitOfMeasureCode.mmTon}</li>
+ * UnitOfMeasureCode.Ton}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Metre
- * UnitOfMeasureCode.mmMetre}</li>
+ * UnitOfMeasureCode.Metre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Inch
- * UnitOfMeasureCode.mmInch}</li>
+ * UnitOfMeasureCode.Inch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Yard
- * UnitOfMeasureCode.mmYard}</li>
+ * UnitOfMeasureCode.Yard}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#GBGallon
- * UnitOfMeasureCode.mmGBGallon}</li>
+ * UnitOfMeasureCode.GBGallon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Gram
- * UnitOfMeasureCode.mmGram}</li>
+ * UnitOfMeasureCode.Gram}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Centimetre
- * UnitOfMeasureCode.mmCentimetre}</li>
+ * UnitOfMeasureCode.Centimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareMetre
- * UnitOfMeasureCode.mmSquareMetre}</li>
+ * UnitOfMeasureCode.SquareMetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Foot
- * UnitOfMeasureCode.mmFoot}</li>
+ * UnitOfMeasureCode.Foot}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Mile
- * UnitOfMeasureCode.mmMile}</li>
+ * UnitOfMeasureCode.Mile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareInch
- * UnitOfMeasureCode.mmSquareInch}</li>
+ * UnitOfMeasureCode.SquareInch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareFoot
- * UnitOfMeasureCode.mmSquareFoot}</li>
+ * UnitOfMeasureCode.SquareFoot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareMile
- * UnitOfMeasureCode.mmSquareMile}</li>
+ * UnitOfMeasureCode.SquareMile}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#GBOunce
- * UnitOfMeasureCode.mmGBOunce}</li>
+ * UnitOfMeasureCode.GBOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#USOunce
- * UnitOfMeasureCode.mmUSOunce}</li>
+ * UnitOfMeasureCode.USOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#GBPint
- * UnitOfMeasureCode.mmGBPint}</li>
+ * UnitOfMeasureCode.GBPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#USPint
- * UnitOfMeasureCode.mmUSPint}</li>
+ * UnitOfMeasureCode.USPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#GBQuart
- * UnitOfMeasureCode.mmGBQuart}</li>
+ * UnitOfMeasureCode.GBQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#USQuart
- * UnitOfMeasureCode.mmUSQuart}</li>
+ * UnitOfMeasureCode.USQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#USGallon
- * UnitOfMeasureCode.mmUSGallon}</li>
+ * UnitOfMeasureCode.USGallon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Millimetre
- * UnitOfMeasureCode.mmMillimetre}</li>
+ * UnitOfMeasureCode.Millimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Kilometre
- * UnitOfMeasureCode.mmKilometre}</li>
+ * UnitOfMeasureCode.Kilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareYard
- * UnitOfMeasureCode.mmSquareYard}</li>
+ * UnitOfMeasureCode.SquareYard}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Acre
- * UnitOfMeasureCode.mmAcre}</li>
+ * UnitOfMeasureCode.Acre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Are
- * UnitOfMeasureCode.mmAre}</li>
+ * UnitOfMeasureCode.Are}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareMillimetre
- * UnitOfMeasureCode.mmSquareMillimetre}</li>
+ * UnitOfMeasureCode.SquareMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareCentimetre
- * UnitOfMeasureCode.mmSquareCentimetre}</li>
+ * UnitOfMeasureCode.SquareCentimetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Hectare
- * UnitOfMeasureCode.mmHectare}</li>
+ * UnitOfMeasureCode.Hectare}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#SquareKilometre
- * UnitOfMeasureCode.mmSquareKilometre}</li>
+ * UnitOfMeasureCode.SquareKilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MilliLitre
- * UnitOfMeasureCode.mmMilliLitre}</li>
+ * UnitOfMeasureCode.MilliLitre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Centilitre
- * UnitOfMeasureCode.mmCentilitre}</li>
+ * UnitOfMeasureCode.Centilitre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Litre
- * UnitOfMeasureCode.mmLitre}</li>
+ * UnitOfMeasureCode.Litre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Pound
- * UnitOfMeasureCode.mmPound}</li>
+ * UnitOfMeasureCode.Pound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Allowances
- * UnitOfMeasureCode.mmAllowances}</li>
+ * UnitOfMeasureCode.Allowances}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#AmountOfCurrency
- * UnitOfMeasureCode.mmAmountOfCurrency}</li>
+ * UnitOfMeasureCode.AmountOfCurrency}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Barrels
- * UnitOfMeasureCode.mmBarrels}</li>
+ * UnitOfMeasureCode.Barrels}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#BillionCubicFeet
- * UnitOfMeasureCode.mmBillionCubicFeet}</li>
+ * UnitOfMeasureCode.BillionCubicFeet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#BoardFeet
- * UnitOfMeasureCode.mmBoardFeet}</li>
+ * UnitOfMeasureCode.BoardFeet}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Bushels
- * UnitOfMeasureCode.mmBushels}</li>
+ * UnitOfMeasureCode.Bushels}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#CertifiedEmissionsReduction
- * UnitOfMeasureCode.mmCertifiedEmissionsReduction}</li>
+ * UnitOfMeasureCode.CertifiedEmissionsReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#ClimateReserveTonnes
- * UnitOfMeasureCode.mmClimateReserveTonnes}</li>
+ * UnitOfMeasureCode.ClimateReserveTonnes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#CubicMeters
- * UnitOfMeasureCode.mmCubicMeters}</li>
+ * UnitOfMeasureCode.CubicMeters}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Days
- * UnitOfMeasureCode.mmDays}</li>
+ * UnitOfMeasureCode.Days}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#DryMetricTons
- * UnitOfMeasureCode.mmDryMetricTons}</li>
+ * UnitOfMeasureCode.DryMetricTons}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#EnvironmentalCredit
- * UnitOfMeasureCode.mmEnvironmentalCredit}</li>
+ * UnitOfMeasureCode.EnvironmentalCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#EnvironmentalOffset
- * UnitOfMeasureCode.mmEnvironmentalOffset}</li>
+ * UnitOfMeasureCode.EnvironmentalOffset}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Hundredweight
- * UnitOfMeasureCode.mmHundredweight}</li>
+ * UnitOfMeasureCode.Hundredweight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattDayCapacity
- * UnitOfMeasureCode.mmKilowattDayCapacity}</li>
+ * UnitOfMeasureCode.KilowattDayCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattHours
- * UnitOfMeasureCode.mmKilowattHours}</li>
+ * UnitOfMeasureCode.KilowattHours}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattHoursCapacity
- * UnitOfMeasureCode.mmKilowattHoursCapacity}</li>
+ * UnitOfMeasureCode.KilowattHoursCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattMinuteCapacity
- * UnitOfMeasureCode.mmKilowattMinuteCapacity}</li>
+ * UnitOfMeasureCode.KilowattMinuteCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattMonthCapacity
- * UnitOfMeasureCode.mmKilowattMonthCapacity}</li>
+ * UnitOfMeasureCode.KilowattMonthCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#KilowattYearCapacity
- * UnitOfMeasureCode.mmKilowattYearCapacity}</li>
+ * UnitOfMeasureCode.KilowattYearCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattDayCapacity
- * UnitOfMeasureCode.mmMegawattDayCapacity}</li>
+ * UnitOfMeasureCode.MegawattDayCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattHours
- * UnitOfMeasureCode.mmMegawattHours}</li>
+ * UnitOfMeasureCode.MegawattHours}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattHoursCapacity
- * UnitOfMeasureCode.mmMegawattHoursCapacity}</li>
+ * UnitOfMeasureCode.MegawattHoursCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattMinuteCapacity
- * UnitOfMeasureCode.mmMegawattMinuteCapacity}</li>
+ * UnitOfMeasureCode.MegawattMinuteCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattMonthCapacity
- * UnitOfMeasureCode.mmMegawattMonthCapacity}</li>
+ * UnitOfMeasureCode.MegawattMonthCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MegawattYearCapacity
- * UnitOfMeasureCode.mmMegawattYearCapacity}</li>
+ * UnitOfMeasureCode.MegawattYearCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MetricTons
- * UnitOfMeasureCode.mmMetricTons}</li>
+ * UnitOfMeasureCode.MetricTons}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#MillionBarrels
- * UnitOfMeasureCode.mmMillionBarrels}</li>
+ * UnitOfMeasureCode.MillionBarrels}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#OneMillionBTU
- * UnitOfMeasureCode.mmOneMillionBTU}</li>
+ * UnitOfMeasureCode.OneMillionBTU}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#TroyOunces
- * UnitOfMeasureCode.mmTroyOunces}</li>
+ * UnitOfMeasureCode.TroyOunces}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#USHundredweight
- * UnitOfMeasureCode.mmUSHundredweight}</li>
+ * UnitOfMeasureCode.USHundredweight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#IndexPoint
- * UnitOfMeasureCode.mmIndexPoint}</li>
+ * UnitOfMeasureCode.IndexPoint}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#PrincipalWithRelationToDebtInstrument
- * UnitOfMeasureCode.mmPrincipalWithRelationToDebtInstrument}</li>
+ * UnitOfMeasureCode.PrincipalWithRelationToDebtInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#DieselGallonEquivalent
- * UnitOfMeasureCode.mmDieselGallonEquivalent}</li>
+ * UnitOfMeasureCode.DieselGallonEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#GasolineGallonEquivalent
- * UnitOfMeasureCode.mmGasolineGallonEquivalent}</li>
+ * UnitOfMeasureCode.GasolineGallonEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#TonsOfCarbonDioxide
- * UnitOfMeasureCode.mmTonsOfCarbonDioxide}</li>
+ * UnitOfMeasureCode.TonsOfCarbonDioxide}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasureCode#Lot
- * UnitOfMeasureCode.mmLot}</li>
+ * UnitOfMeasureCode.Lot}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -238,8 +238,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -2443,7 +2443,7 @@ public class UnitOfMeasureCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("KILO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnitOfMeasureCode";

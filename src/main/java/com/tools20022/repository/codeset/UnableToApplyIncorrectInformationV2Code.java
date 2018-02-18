@@ -38,136 +38,133 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectRelatedReference
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectRelatedReference}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectRelatedReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectPaymentServiceLevel
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectPaymentServiceLevel}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectPaymentServiceLevel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectCategoryPurpose
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectCategoryPurpose}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectCategoryPurpose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectRequestedExecutionDate
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectRequestedExecutionDate}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectRequestedExecutionDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInterbankSettlementDate
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectInterbankSettlementDate}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectInterbankSettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInterbankSettlementAmount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectInterbankSettlementAmount}
- * </li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectInterbankSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectDebtor
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectDebtor}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectDebtorAccount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectDebtorAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectDebtorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInstructedReimbursementAgent
- * UnableToApplyIncorrectInformationV2Code.
- * mmIncorrectInstructedReimbursementAgent}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectInstructedReimbursementAgent
+ * }</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectThirdReimbursementAgent
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectThirdReimbursementAgent}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectThirdReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectPaymentClearingChannel
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectPaymentClearingChannel}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectPaymentClearingChannel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectCreditorAgentAccount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectCreditorAgentAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectCreditorAgentAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectCreditor
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectCreditor}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectCreditorAccount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectCreditorAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectCreditorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectRemittanceInformation
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectRemittanceInformation}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectRemittanceInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectPaymentPurpose
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectPaymentPurpose}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectPaymentPurpose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectChargeBearer
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectChargeBearer}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectChargeBearer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInstructionForNextAgent
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectInstructionForNextAgent}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectInstructionForNextAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInstructionForCreditorAgent
- * UnableToApplyIncorrectInformationV2Code.
- * mmIncorrectInstructionForCreditorAgent}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectInstructionForCreditorAgent}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#MismatchCreditorNameAccount
- * UnableToApplyIncorrectInformationV2Code.mmMismatchCreditorNameAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.MismatchCreditorNameAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#MismatchDebtorNameAccount
- * UnableToApplyIncorrectInformationV2Code.mmMismatchDebtorNameAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.MismatchDebtorNameAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#MismatchCreditorAgentNameAccount
- * UnableToApplyIncorrectInformationV2Code.mmMismatchCreditorAgentNameAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.MismatchCreditorAgentNameAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#InsufficientDebtorDetails
- * UnableToApplyIncorrectInformationV2Code.mmInsufficientDebtorDetails}</li>
+ * UnableToApplyIncorrectInformationV2Code.InsufficientDebtorDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#InsufficientCreditorDetails
- * UnableToApplyIncorrectInformationV2Code.mmInsufficientCreditorDetails}</li>
+ * UnableToApplyIncorrectInformationV2Code.InsufficientCreditorDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PendingExecutionDebtorAccountOrIdentification
  * UnableToApplyIncorrectInformationV2Code.
- * mmPendingExecutionDebtorAccountOrIdentification}</li>
+ * PendingExecutionDebtorAccountOrIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PendingExecutionDebtorNameOrAddress
- * UnableToApplyIncorrectInformationV2Code.mmPendingExecutionDebtorNameOrAddress
- * }</li>
+ * UnableToApplyIncorrectInformationV2Code.PendingExecutionDebtorNameOrAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PaymentExecutedDebtorAccountOrIdentification
  * UnableToApplyIncorrectInformationV2Code.
- * mmPaymentExecutedDebtorAccountOrIdentification}</li>
+ * PaymentExecutedDebtorAccountOrIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PaymentExecutedDebtorNameOrAddress
- * UnableToApplyIncorrectInformationV2Code.mmPaymentExecutedDebtorNameOrAddress}
- * </li>
+ * UnableToApplyIncorrectInformationV2Code.PaymentExecutedDebtorNameOrAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PendingExecutionCreditorAccountOrIdentification
  * UnableToApplyIncorrectInformationV2Code.
- * mmPendingExecutionCreditorAccountOrIdentification}</li>
+ * PendingExecutionCreditorAccountOrIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PendingExecutionCreditorNameOrAddress
- * UnableToApplyIncorrectInformationV2Code.
- * mmPendingExecutionCreditorNameOrAddress}</li>
+ * UnableToApplyIncorrectInformationV2Code.PendingExecutionCreditorNameOrAddress
+ * }</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PaymentExecutedCreditorAccountOrIdentification
  * UnableToApplyIncorrectInformationV2Code.
- * mmPaymentExecutedCreditorAccountOrIdentification}</li>
+ * PaymentExecutedCreditorAccountOrIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#PaymentExecutedCreditorNameOrAddress
- * UnableToApplyIncorrectInformationV2Code.
- * mmPaymentExecutedCreditorNameOrAddress}</li>
+ * UnableToApplyIncorrectInformationV2Code.PaymentExecutedCreditorNameOrAddress}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectReportEntryAmount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectReportEntryAmount}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectReportEntryAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#InsufficientChargesDetails
- * UnableToApplyIncorrectInformationV2Code.mmInsufficientChargesDetails}</li>
+ * UnableToApplyIncorrectInformationV2Code.InsufficientChargesDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#InsufficientPaymentPurpose
- * UnableToApplyIncorrectInformationV2Code.mmInsufficientPaymentPurpose}</li>
+ * UnableToApplyIncorrectInformationV2Code.InsufficientPaymentPurpose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectSettlementAccount
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectSettlementAccount}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectSettlementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectInstructingReimbursementAgent
  * UnableToApplyIncorrectInformationV2Code.
- * mmIncorrectInstructingReimbursementAgent}</li>
+ * IncorrectInstructingReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectDebtorAddress
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectDebtorAddress}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectDebtorAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#IncorrectCreditorAddress
- * UnableToApplyIncorrectInformationV2Code.mmIncorrectCreditorAddress}</li>
+ * UnableToApplyIncorrectInformationV2Code.IncorrectCreditorAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyIncorrectInformationV2Code#Narrative
- * UnableToApplyIncorrectInformationV2Code.mmNarrative}</li>
+ * UnableToApplyIncorrectInformationV2Code.Narrative}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -181,8 +178,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1474,7 +1471,7 @@ public class UnableToApplyIncorrectInformationV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("IN01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyIncorrectInformationV2Code";

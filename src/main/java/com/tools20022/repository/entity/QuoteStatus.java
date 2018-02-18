@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Status of a quote and if required, the rejection reason.
@@ -60,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +78,8 @@ public class QuoteStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected QuoteStatusCode status;
 	/**
-	 * Identifies the status of a quote acknowledgement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,8 +124,8 @@ public class QuoteStatus extends Status {
 	};
 	protected RejectionReasonV2Code rejectionReason;
 	/**
-	 * Reason why the quote is rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,8 +170,8 @@ public class QuoteStatus extends Status {
 	};
 	protected Quote relatedQuote;
 	/**
-	 * Quote for wich the status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +217,7 @@ public class QuoteStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuoteStatus";
 				definition = "Status of a quote and if required, the rejection reason.";
@@ -237,23 +238,26 @@ public class QuoteStatus extends Status {
 		return status;
 	}
 
-	public void setStatus(QuoteStatusCode status) {
-		this.status = status;
+	public QuoteStatus setStatus(QuoteStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public RejectionReasonV2Code getRejectionReason() {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(RejectionReasonV2Code rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public QuoteStatus setRejectionReason(RejectionReasonV2Code rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 
 	public Quote getRelatedQuote() {
 		return relatedQuote;
 	}
 
-	public void setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
-		this.relatedQuote = relatedQuote;
+	public QuoteStatus setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
+		this.relatedQuote = Objects.requireNonNull(relatedQuote);
+		return this;
 	}
 }

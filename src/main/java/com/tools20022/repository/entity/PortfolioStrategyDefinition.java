@@ -23,6 +23,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Additional information on the definition of the strategy.
@@ -63,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,8 +82,8 @@ public class PortfolioStrategyDefinition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PortfolioStrategy strategy;
 	/**
-	 * Stategy attached to the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,8 +130,8 @@ public class PortfolioStrategyDefinition {
 	};
 	protected Max350Text name;
 	/**
-	 * Name of the defined strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,8 +176,8 @@ public class PortfolioStrategyDefinition {
 	};
 	protected Max350Text description;
 	/**
-	 * Free text description of the strategy definition.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,8 +222,8 @@ public class PortfolioStrategyDefinition {
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the defined strategy is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,7 +271,7 @@ public class PortfolioStrategyDefinition {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioStrategyDefinition";
 				definition = "Additional information on the definition of the strategy.";
@@ -286,35 +288,39 @@ public class PortfolioStrategyDefinition {
 		return mmObject_lazy.get();
 	}
 
-	public PortfolioStrategy getStrategy() {
-		return strategy;
+	public Optional<PortfolioStrategy> getStrategy() {
+		return strategy == null ? Optional.empty() : Optional.of(strategy);
 	}
 
-	public void setStrategy(com.tools20022.repository.entity.PortfolioStrategy strategy) {
+	public PortfolioStrategyDefinition setStrategy(com.tools20022.repository.entity.PortfolioStrategy strategy) {
 		this.strategy = strategy;
+		return this;
 	}
 
 	public Max350Text getName() {
 		return name;
 	}
 
-	public void setName(Max350Text name) {
-		this.name = name;
+	public PortfolioStrategyDefinition setName(Max350Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public Max350Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max350Text description) {
-		this.description = description;
+	public PortfolioStrategyDefinition setDescription(Max350Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public PortfolioStrategyDefinition setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 }

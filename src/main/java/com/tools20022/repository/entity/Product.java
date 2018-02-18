@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Item that is offered for sale. Products can be services or goods.
@@ -126,8 +125,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -144,8 +143,8 @@ public class Product {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CardPayment cardPayment;
 	/**
-	 * Card payment for which a product was specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,8 +190,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.Price> unitPrice;
 	/**
-	 * Price per unit of product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,8 +267,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.ProductCategory> productCategory;
 	/**
-	 * Category of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,8 +313,8 @@ public class Product {
 	};
 	protected LineItem lineItem;
 	/**
-	 * Specifies the line item in which the product is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,8 +360,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.ProductIdentification> productIdentification;
 	/**
-	 * Identification of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,8 +407,8 @@ public class Product {
 	};
 	protected Max35Text name;
 	/**
-	 * Name of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,8 +461,8 @@ public class Product {
 	};
 	protected Max140Text description;
 	/**
-	 * Information about the goods and/or services of a trade transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -508,8 +507,8 @@ public class Product {
 	};
 	protected Country origin;
 	/**
-	 * Country from which the product originates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -554,8 +553,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.ProductCharacteristics> characteristics;
 	/**
-	 * Characteristics of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -601,8 +600,8 @@ public class Product {
 	};
 	protected Price netPrice;
 	/**
-	 * Net price of the goods and/or service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,8 +646,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> quantity;
 	/**
-	 * Specifies the quantity of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -693,8 +692,8 @@ public class Product {
 	};
 	protected Price grossPrice;
 	/**
-	 * Gross price of the goods and/or service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -739,8 +738,8 @@ public class Product {
 	};
 	protected Max70Text quality;
 	/**
-	 * Quality of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -784,8 +783,8 @@ public class Product {
 	};
 	protected ProductDelivery delivery;
 	/**
-	 * Delivery process of a product
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -831,8 +830,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.PurchaseOrder> purchaseOrder;
 	/**
-	 * Specifies the purchase order in which a specific product is ordered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -878,10 +877,8 @@ public class Product {
 	};
 	protected List<com.tools20022.repository.entity.Tax> tax;
 	/**
-	 * Amount of money due to the government or tax authority, according to
-	 * various pre-defined parameters linked to the value of the goods and
-	 * services in a trade transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -937,7 +934,7 @@ public class Product {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Product";
 				definition = "Item that is offered for sale. Products can be services or goods.";
@@ -967,127 +964,143 @@ public class Product {
 		return cardPayment;
 	}
 
-	public void setCardPayment(com.tools20022.repository.entity.CardPayment cardPayment) {
-		this.cardPayment = cardPayment;
+	public Product setCardPayment(com.tools20022.repository.entity.CardPayment cardPayment) {
+		this.cardPayment = Objects.requireNonNull(cardPayment);
+		return this;
 	}
 
 	public List<Price> getUnitPrice() {
-		return unitPrice;
+		return unitPrice == null ? unitPrice = new ArrayList<>() : unitPrice;
 	}
 
-	public void setUnitPrice(List<com.tools20022.repository.entity.Price> unitPrice) {
-		this.unitPrice = unitPrice;
+	public Product setUnitPrice(List<com.tools20022.repository.entity.Price> unitPrice) {
+		this.unitPrice = Objects.requireNonNull(unitPrice);
+		return this;
 	}
 
 	public List<ProductCategory> getProductCategory() {
-		return productCategory;
+		return productCategory == null ? productCategory = new ArrayList<>() : productCategory;
 	}
 
-	public void setProductCategory(List<com.tools20022.repository.entity.ProductCategory> productCategory) {
-		this.productCategory = productCategory;
+	public Product setProductCategory(List<com.tools20022.repository.entity.ProductCategory> productCategory) {
+		this.productCategory = Objects.requireNonNull(productCategory);
+		return this;
 	}
 
-	public LineItem getLineItem() {
-		return lineItem;
+	public Optional<LineItem> getLineItem() {
+		return lineItem == null ? Optional.empty() : Optional.of(lineItem);
 	}
 
-	public void setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
+	public Product setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
 		this.lineItem = lineItem;
+		return this;
 	}
 
 	public List<ProductIdentification> getProductIdentification() {
-		return productIdentification;
+		return productIdentification == null ? productIdentification = new ArrayList<>() : productIdentification;
 	}
 
-	public void setProductIdentification(List<com.tools20022.repository.entity.ProductIdentification> productIdentification) {
-		this.productIdentification = productIdentification;
+	public Product setProductIdentification(List<com.tools20022.repository.entity.ProductIdentification> productIdentification) {
+		this.productIdentification = Objects.requireNonNull(productIdentification);
+		return this;
 	}
 
 	public Max35Text getName() {
 		return name;
 	}
 
-	public void setName(Max35Text name) {
-		this.name = name;
+	public Product setName(Max35Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public Max140Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max140Text description) {
-		this.description = description;
+	public Product setDescription(Max140Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public Country getOrigin() {
 		return origin;
 	}
 
-	public void setOrigin(com.tools20022.repository.entity.Country origin) {
-		this.origin = origin;
+	public Product setOrigin(com.tools20022.repository.entity.Country origin) {
+		this.origin = Objects.requireNonNull(origin);
+		return this;
 	}
 
 	public List<ProductCharacteristics> getCharacteristics() {
-		return characteristics;
+		return characteristics == null ? characteristics = new ArrayList<>() : characteristics;
 	}
 
-	public void setCharacteristics(List<com.tools20022.repository.entity.ProductCharacteristics> characteristics) {
-		this.characteristics = characteristics;
+	public Product setCharacteristics(List<com.tools20022.repository.entity.ProductCharacteristics> characteristics) {
+		this.characteristics = Objects.requireNonNull(characteristics);
+		return this;
 	}
 
-	public Price getNetPrice() {
-		return netPrice;
+	public Optional<Price> getNetPrice() {
+		return netPrice == null ? Optional.empty() : Optional.of(netPrice);
 	}
 
-	public void setNetPrice(com.tools20022.repository.entity.Price netPrice) {
+	public Product setNetPrice(com.tools20022.repository.entity.Price netPrice) {
 		this.netPrice = netPrice;
+		return this;
 	}
 
 	public List<ProductQuantity> getQuantity() {
-		return quantity;
+		return quantity == null ? quantity = new ArrayList<>() : quantity;
 	}
 
-	public void setQuantity(List<com.tools20022.repository.entity.ProductQuantity> quantity) {
-		this.quantity = quantity;
+	public Product setQuantity(List<com.tools20022.repository.entity.ProductQuantity> quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
-	public Price getGrossPrice() {
-		return grossPrice;
+	public Optional<Price> getGrossPrice() {
+		return grossPrice == null ? Optional.empty() : Optional.of(grossPrice);
 	}
 
-	public void setGrossPrice(com.tools20022.repository.entity.Price grossPrice) {
+	public Product setGrossPrice(com.tools20022.repository.entity.Price grossPrice) {
 		this.grossPrice = grossPrice;
+		return this;
 	}
 
 	public Max70Text getQuality() {
 		return quality;
 	}
 
-	public void setQuality(Max70Text quality) {
-		this.quality = quality;
+	public Product setQuality(Max70Text quality) {
+		this.quality = Objects.requireNonNull(quality);
+		return this;
 	}
 
 	public ProductDelivery getDelivery() {
 		return delivery;
 	}
 
-	public void setDelivery(com.tools20022.repository.entity.ProductDelivery delivery) {
-		this.delivery = delivery;
+	public Product setDelivery(com.tools20022.repository.entity.ProductDelivery delivery) {
+		this.delivery = Objects.requireNonNull(delivery);
+		return this;
 	}
 
 	public List<PurchaseOrder> getPurchaseOrder() {
-		return purchaseOrder;
+		return purchaseOrder == null ? purchaseOrder = new ArrayList<>() : purchaseOrder;
 	}
 
-	public void setPurchaseOrder(List<com.tools20022.repository.entity.PurchaseOrder> purchaseOrder) {
-		this.purchaseOrder = purchaseOrder;
+	public Product setPurchaseOrder(List<com.tools20022.repository.entity.PurchaseOrder> purchaseOrder) {
+		this.purchaseOrder = Objects.requireNonNull(purchaseOrder);
+		return this;
 	}
 
 	public List<Tax> getTax() {
-		return tax;
+		return tax == null ? tax = new ArrayList<>() : tax;
 	}
 
-	public void setTax(List<com.tools20022.repository.entity.Tax> tax) {
-		this.tax = tax;
+	public Product setTax(List<com.tools20022.repository.entity.Tax> tax) {
+		this.tax = Objects.requireNonNull(tax);
+		return this;
 	}
 }

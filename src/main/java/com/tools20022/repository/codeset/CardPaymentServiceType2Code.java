@@ -39,37 +39,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Aggregation
- * CardPaymentServiceType2Code.mmAggregation}</li>
+ * CardPaymentServiceType2Code.Aggregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#DCC
- * CardPaymentServiceType2Code.mmDCC}</li>
+ * CardPaymentServiceType2Code.DCC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Gratuity
- * CardPaymentServiceType2Code.mmGratuity}</li>
+ * CardPaymentServiceType2Code.Gratuity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Instalment
- * CardPaymentServiceType2Code.mmInstalment}</li>
+ * CardPaymentServiceType2Code.Instalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#Loyalty
- * CardPaymentServiceType2Code.mmLoyalty}</li>
+ * CardPaymentServiceType2Code.Loyalty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#NoShow
- * CardPaymentServiceType2Code.mmNoShow}</li>
+ * CardPaymentServiceType2Code.NoShow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#PurchaseCorporate
- * CardPaymentServiceType2Code.mmPurchaseCorporate}</li>
+ * CardPaymentServiceType2Code.PurchaseCorporate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#RecurringPayment
- * CardPaymentServiceType2Code.mmRecurringPayment}</li>
+ * CardPaymentServiceType2Code.RecurringPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#SolicitedAvailableFunds
- * CardPaymentServiceType2Code.mmSolicitedAvailableFunds}</li>
+ * CardPaymentServiceType2Code.SolicitedAvailableFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#UnsolicitedAvailableFunds
- * CardPaymentServiceType2Code.mmUnsolicitedAvailableFunds}</li>
+ * CardPaymentServiceType2Code.UnsolicitedAvailableFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType2Code#VoiceAuthorisation
- * CardPaymentServiceType2Code.mmVoiceAuthorisation}</li>
+ * CardPaymentServiceType2Code.VoiceAuthorisation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -78,8 +78,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -374,7 +374,7 @@ public class CardPaymentServiceType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AGGR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType2Code";

@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Parameters applied to a fractional number.
@@ -66,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,8 +84,8 @@ public class RoundingParameters {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InvestmentAccountService investmentAccountService;
 	/**
-	 * Investment account services for which rounding parameters are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,10 +135,8 @@ public class RoundingParameters {
 	};
 	protected DecimalNumber roundingModulus;
 	/**
-	 * Float value specifying the value to which rounding is required, eg, 10
-	 * means round to a multiple of 10 units/shares, 0.5 means round to a
-	 * multiple of 0.5 units/shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,8 +184,8 @@ public class RoundingParameters {
 	};
 	protected RoundingDirectionCode roundingDirection;
 	/**
-	 * Rounding direction applied to fractional numbers, eg, round up.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,8 +232,8 @@ public class RoundingParameters {
 	};
 	protected SecuritiesPegOrderInstruction relatedPegOrderInstruction;
 	/**
-	 * Peg order for which a rounding direction is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,7 +283,7 @@ public class RoundingParameters {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RoundingParameters";
 				definition = "Parameters applied to a fractional number.";
@@ -305,31 +304,35 @@ public class RoundingParameters {
 		return investmentAccountService;
 	}
 
-	public void setInvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService investmentAccountService) {
-		this.investmentAccountService = investmentAccountService;
+	public RoundingParameters setInvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService investmentAccountService) {
+		this.investmentAccountService = Objects.requireNonNull(investmentAccountService);
+		return this;
 	}
 
 	public DecimalNumber getRoundingModulus() {
 		return roundingModulus;
 	}
 
-	public void setRoundingModulus(DecimalNumber roundingModulus) {
-		this.roundingModulus = roundingModulus;
+	public RoundingParameters setRoundingModulus(DecimalNumber roundingModulus) {
+		this.roundingModulus = Objects.requireNonNull(roundingModulus);
+		return this;
 	}
 
 	public RoundingDirectionCode getRoundingDirection() {
 		return roundingDirection;
 	}
 
-	public void setRoundingDirection(RoundingDirectionCode roundingDirection) {
-		this.roundingDirection = roundingDirection;
+	public RoundingParameters setRoundingDirection(RoundingDirectionCode roundingDirection) {
+		this.roundingDirection = Objects.requireNonNull(roundingDirection);
+		return this;
 	}
 
 	public SecuritiesPegOrderInstruction getRelatedPegOrderInstruction() {
 		return relatedPegOrderInstruction;
 	}
 
-	public void setRelatedPegOrderInstruction(com.tools20022.repository.entity.SecuritiesPegOrderInstruction relatedPegOrderInstruction) {
-		this.relatedPegOrderInstruction = relatedPegOrderInstruction;
+	public RoundingParameters setRelatedPegOrderInstruction(com.tools20022.repository.entity.SecuritiesPegOrderInstruction relatedPegOrderInstruction) {
+		this.relatedPegOrderInstruction = Objects.requireNonNull(relatedPegOrderInstruction);
+		return this;
 	}
 }

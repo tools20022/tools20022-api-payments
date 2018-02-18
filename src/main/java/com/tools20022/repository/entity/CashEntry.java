@@ -25,9 +25,8 @@ import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Posting of an item to a cash account, in the context of a cash transaction,
@@ -166,8 +165,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -185,9 +184,8 @@ public class CashEntry extends Entry {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Cash account on which the amount of the entry is debited or credited. It
-	 * is derived from the association between Entry and Account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,8 +253,8 @@ public class CashEntry extends Entry {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money in the cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -327,8 +325,8 @@ public class CashEntry extends Entry {
 	};
 	protected BookEntry relatedBookEntry;
 	/**
-	 * Account entry for which one or more cash entries are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -375,9 +373,8 @@ public class CashEntry extends Entry {
 	};
 	protected List<com.tools20022.repository.entity.CashBalance> cashBalance;
 	/**
-	 * Cash amount that is the result of the sum of the cash entries from or to
-	 * a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,8 +421,8 @@ public class CashEntry extends Entry {
 	};
 	protected CurrencyExchange currencyExchange;
 	/**
-	 * Entry details related to currency exchange information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -483,8 +480,8 @@ public class CashEntry extends Entry {
 	};
 	protected List<com.tools20022.repository.entity.Charges> charges;
 	/**
-	 * Provides information on the charges included in the entry amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -543,10 +540,8 @@ public class CashEntry extends Entry {
 	};
 	protected CashAvailability availability;
 	/**
-	 * Availability information on the entry.<br>
-	 * Elements used to indicate when the booked amount of money will become
-	 * available, that is can be accessed and start generating interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -603,8 +598,8 @@ public class CashEntry extends Entry {
 	};
 	protected Interest interest;
 	/**
-	 * Interest amount included in the entry amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -649,8 +644,8 @@ public class CashEntry extends Entry {
 	};
 	protected BookEntry debitRelatedBookEntry;
 	/**
-	 * Book entry which is the source of the cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -696,8 +691,8 @@ public class CashEntry extends Entry {
 	};
 	protected BookEntry creditRelatedBookEntry;
 	/**
-	 * Book entry which is the source of the cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,8 +738,8 @@ public class CashEntry extends Entry {
 	};
 	protected InvoiceFinancingAgreement relatedInvoiceFinancingTransaction;
 	/**
-	 * Specifies the invoice financing transaction which originates the entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -793,8 +788,8 @@ public class CashEntry extends Entry {
 	};
 	protected PaymentInvestigationCase relatedInvestigationCase;
 	/**
-	 * Case which is investigating a cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -841,9 +836,8 @@ public class CashEntry extends Entry {
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCaseResolution;
 	/**
-	 * Payment investigation case resolution which created a correction
-	 * resulting in a cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -892,8 +886,8 @@ public class CashEntry extends Entry {
 	};
 	protected ChargeIncludedIndicator chargesIncluded;
 	/**
-	 * Indicates whether charges have already been included in the entry amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -942,7 +936,7 @@ public class CashEntry extends Entry {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashEntry";
 				definition = "Posting of an item to a cash account, in the context of a cash transaction, that results in an increase or decrease to the balance of the account.";
@@ -972,114 +966,128 @@ public class CashEntry extends Entry {
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public CashEntry setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public CashEntry setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	public BookEntry getRelatedBookEntry() {
-		return relatedBookEntry;
+	public Optional<BookEntry> getRelatedBookEntry() {
+		return relatedBookEntry == null ? Optional.empty() : Optional.of(relatedBookEntry);
 	}
 
-	public void setRelatedBookEntry(com.tools20022.repository.entity.BookEntry relatedBookEntry) {
+	public CashEntry setRelatedBookEntry(com.tools20022.repository.entity.BookEntry relatedBookEntry) {
 		this.relatedBookEntry = relatedBookEntry;
+		return this;
 	}
 
 	public List<CashBalance> getCashBalance() {
-		return cashBalance;
+		return cashBalance == null ? cashBalance = new ArrayList<>() : cashBalance;
 	}
 
-	public void setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
-		this.cashBalance = cashBalance;
+	public CashEntry setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
+		this.cashBalance = Objects.requireNonNull(cashBalance);
+		return this;
 	}
 
 	public CurrencyExchange getCurrencyExchange() {
 		return currencyExchange;
 	}
 
-	public void setCurrencyExchange(com.tools20022.repository.entity.CurrencyExchange currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public CashEntry setCurrencyExchange(com.tools20022.repository.entity.CurrencyExchange currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public List<Charges> getCharges() {
-		return charges;
+		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public void setCharges(List<com.tools20022.repository.entity.Charges> charges) {
-		this.charges = charges;
+	public CashEntry setCharges(List<com.tools20022.repository.entity.Charges> charges) {
+		this.charges = Objects.requireNonNull(charges);
+		return this;
 	}
 
 	public CashAvailability getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(com.tools20022.repository.entity.CashAvailability availability) {
-		this.availability = availability;
+	public CashEntry setAvailability(com.tools20022.repository.entity.CashAvailability availability) {
+		this.availability = Objects.requireNonNull(availability);
+		return this;
 	}
 
-	public Interest getInterest() {
-		return interest;
+	public Optional<Interest> getInterest() {
+		return interest == null ? Optional.empty() : Optional.of(interest);
 	}
 
-	public void setInterest(com.tools20022.repository.entity.Interest interest) {
+	public CashEntry setInterest(com.tools20022.repository.entity.Interest interest) {
 		this.interest = interest;
+		return this;
 	}
 
-	public BookEntry getDebitRelatedBookEntry() {
-		return debitRelatedBookEntry;
+	public Optional<BookEntry> getDebitRelatedBookEntry() {
+		return debitRelatedBookEntry == null ? Optional.empty() : Optional.of(debitRelatedBookEntry);
 	}
 
-	public void setDebitRelatedBookEntry(com.tools20022.repository.entity.BookEntry debitRelatedBookEntry) {
+	public CashEntry setDebitRelatedBookEntry(com.tools20022.repository.entity.BookEntry debitRelatedBookEntry) {
 		this.debitRelatedBookEntry = debitRelatedBookEntry;
+		return this;
 	}
 
-	public BookEntry getCreditRelatedBookEntry() {
-		return creditRelatedBookEntry;
+	public Optional<BookEntry> getCreditRelatedBookEntry() {
+		return creditRelatedBookEntry == null ? Optional.empty() : Optional.of(creditRelatedBookEntry);
 	}
 
-	public void setCreditRelatedBookEntry(com.tools20022.repository.entity.BookEntry creditRelatedBookEntry) {
+	public CashEntry setCreditRelatedBookEntry(com.tools20022.repository.entity.BookEntry creditRelatedBookEntry) {
 		this.creditRelatedBookEntry = creditRelatedBookEntry;
+		return this;
 	}
 
-	public InvoiceFinancingAgreement getRelatedInvoiceFinancingTransaction() {
-		return relatedInvoiceFinancingTransaction;
+	public Optional<InvoiceFinancingAgreement> getRelatedInvoiceFinancingTransaction() {
+		return relatedInvoiceFinancingTransaction == null ? Optional.empty() : Optional.of(relatedInvoiceFinancingTransaction);
 	}
 
-	public void setRelatedInvoiceFinancingTransaction(com.tools20022.repository.entity.InvoiceFinancingAgreement relatedInvoiceFinancingTransaction) {
+	public CashEntry setRelatedInvoiceFinancingTransaction(com.tools20022.repository.entity.InvoiceFinancingAgreement relatedInvoiceFinancingTransaction) {
 		this.relatedInvoiceFinancingTransaction = relatedInvoiceFinancingTransaction;
+		return this;
 	}
 
-	public PaymentInvestigationCase getRelatedInvestigationCase() {
-		return relatedInvestigationCase;
+	public Optional<PaymentInvestigationCase> getRelatedInvestigationCase() {
+		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public void setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
+	public CashEntry setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
+		return this;
 	}
 
-	public PaymentInvestigationCaseResolution getRelatedInvestigationCaseResolution() {
-		return relatedInvestigationCaseResolution;
+	public Optional<PaymentInvestigationCaseResolution> getRelatedInvestigationCaseResolution() {
+		return relatedInvestigationCaseResolution == null ? Optional.empty() : Optional.of(relatedInvestigationCaseResolution);
 	}
 
-	public void setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
+	public CashEntry setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
 		this.relatedInvestigationCaseResolution = relatedInvestigationCaseResolution;
+		return this;
 	}
 
 	public ChargeIncludedIndicator getChargesIncluded() {
 		return chargesIncluded;
 	}
 
-	public void setChargesIncluded(ChargeIncludedIndicator chargesIncluded) {
-		this.chargesIncluded = chargesIncluded;
+	public CashEntry setChargesIncluded(ChargeIncludedIndicator chargesIncluded) {
+		this.chargesIncluded = Objects.requireNonNull(chargesIncluded);
+		return this;
 	}
 }

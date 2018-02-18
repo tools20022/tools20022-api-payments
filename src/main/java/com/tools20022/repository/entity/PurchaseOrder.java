@@ -22,9 +22,11 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Order;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Document issued by a buyer and containing the details of a purchase,
@@ -70,8 +72,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +91,8 @@ public class PurchaseOrder extends Order {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount totalAmount;
 	/**
-	 * Line items total amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,8 +138,8 @@ public class PurchaseOrder extends Order {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTrade> resultingCommercialTrade;
 	/**
-	 * Execution of the purchase order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,9 +185,8 @@ public class PurchaseOrder extends Order {
 	};
 	protected List<com.tools20022.repository.entity.Product> product;
 	/**
-	 * Specifies the items which are sold by the seller to the buyer in a
-	 * commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,9 +233,8 @@ public class PurchaseOrder extends Order {
 	};
 	protected GenericIdentification identification;
 	/**
-	 * Identification of the purchase order that can be used for reconciliation
-	 * or to link tasks relating to the commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -286,7 +286,7 @@ public class PurchaseOrder extends Order {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PurchaseOrder";
 				definition = "Document issued by a buyer and containing the details of a purchase, including description of goods, transport information, payment terms, etc.";
@@ -309,31 +309,35 @@ public class PurchaseOrder extends Order {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(CurrencyAndAmount totalAmount) {
-		this.totalAmount = totalAmount;
+	public PurchaseOrder setTotalAmount(CurrencyAndAmount totalAmount) {
+		this.totalAmount = Objects.requireNonNull(totalAmount);
+		return this;
 	}
 
 	public List<CommercialTrade> getResultingCommercialTrade() {
-		return resultingCommercialTrade;
+		return resultingCommercialTrade == null ? resultingCommercialTrade = new ArrayList<>() : resultingCommercialTrade;
 	}
 
-	public void setResultingCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> resultingCommercialTrade) {
-		this.resultingCommercialTrade = resultingCommercialTrade;
+	public PurchaseOrder setResultingCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> resultingCommercialTrade) {
+		this.resultingCommercialTrade = Objects.requireNonNull(resultingCommercialTrade);
+		return this;
 	}
 
 	public List<Product> getProduct() {
-		return product;
+		return product == null ? product = new ArrayList<>() : product;
 	}
 
-	public void setProduct(List<com.tools20022.repository.entity.Product> product) {
-		this.product = product;
+	public PurchaseOrder setProduct(List<com.tools20022.repository.entity.Product> product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 
 	public GenericIdentification getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(com.tools20022.repository.entity.GenericIdentification identification) {
-		this.identification = identification;
+	public PurchaseOrder setIdentification(com.tools20022.repository.entity.GenericIdentification identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 }

@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Form of lawsuit in which a group of shareholders collectively bring a claim
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +95,8 @@ public class ClassAction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text classActionNumber;
 	/**
-	 * Reference assigned by a court to a class action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,8 +140,8 @@ public class ClassAction {
 	};
 	protected ISODateTime leadPlaintiffDeadline;
 	/**
-	 * Last day an investor can become a lead plaintiff.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,8 +185,8 @@ public class ClassAction {
 	};
 	protected ISODateTime courtApprovalDate;
 	/**
-	 * Date upon which the High Court provided approval.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,10 +230,8 @@ public class ClassAction {
 	};
 	protected DateTimePeriod claimPeriod;
 	/**
-	 * Period assigned by the court in a class action. It determines the
-	 * client's eligible transactions that will be included in the class action
-	 * and used to determine the resulting entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,8 +279,8 @@ public class ClassAction {
 	};
 	protected ISODateTime filingDate;
 	/**
-	 * Date on which the action was filed at the applicable court.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,9 +325,8 @@ public class ClassAction {
 	};
 	protected ISODateTime hearingDate;
 	/**
-	 * Date for the hearing between the plaintiff and defendant, as set by the
-	 * court.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -373,8 +372,8 @@ public class ClassAction {
 	};
 	protected CorporateActionEvent corporateEvent;
 	/**
-	 * Corporate event for which class action is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -423,7 +422,7 @@ public class ClassAction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClassAction";
 				definition = "Form of lawsuit in which a group of shareholders collectively bring a claim to court, mainly because it would be too expensive for each individual shareholder to launch their own lawsuit.";
@@ -445,55 +444,62 @@ public class ClassAction {
 		return classActionNumber;
 	}
 
-	public void setClassActionNumber(Max35Text classActionNumber) {
-		this.classActionNumber = classActionNumber;
+	public ClassAction setClassActionNumber(Max35Text classActionNumber) {
+		this.classActionNumber = Objects.requireNonNull(classActionNumber);
+		return this;
 	}
 
 	public ISODateTime getLeadPlaintiffDeadline() {
 		return leadPlaintiffDeadline;
 	}
 
-	public void setLeadPlaintiffDeadline(ISODateTime leadPlaintiffDeadline) {
-		this.leadPlaintiffDeadline = leadPlaintiffDeadline;
+	public ClassAction setLeadPlaintiffDeadline(ISODateTime leadPlaintiffDeadline) {
+		this.leadPlaintiffDeadline = Objects.requireNonNull(leadPlaintiffDeadline);
+		return this;
 	}
 
 	public ISODateTime getCourtApprovalDate() {
 		return courtApprovalDate;
 	}
 
-	public void setCourtApprovalDate(ISODateTime courtApprovalDate) {
-		this.courtApprovalDate = courtApprovalDate;
+	public ClassAction setCourtApprovalDate(ISODateTime courtApprovalDate) {
+		this.courtApprovalDate = Objects.requireNonNull(courtApprovalDate);
+		return this;
 	}
 
 	public DateTimePeriod getClaimPeriod() {
 		return claimPeriod;
 	}
 
-	public void setClaimPeriod(com.tools20022.repository.entity.DateTimePeriod claimPeriod) {
-		this.claimPeriod = claimPeriod;
+	public ClassAction setClaimPeriod(com.tools20022.repository.entity.DateTimePeriod claimPeriod) {
+		this.claimPeriod = Objects.requireNonNull(claimPeriod);
+		return this;
 	}
 
 	public ISODateTime getFilingDate() {
 		return filingDate;
 	}
 
-	public void setFilingDate(ISODateTime filingDate) {
-		this.filingDate = filingDate;
+	public ClassAction setFilingDate(ISODateTime filingDate) {
+		this.filingDate = Objects.requireNonNull(filingDate);
+		return this;
 	}
 
 	public ISODateTime getHearingDate() {
 		return hearingDate;
 	}
 
-	public void setHearingDate(ISODateTime hearingDate) {
-		this.hearingDate = hearingDate;
+	public ClassAction setHearingDate(ISODateTime hearingDate) {
+		this.hearingDate = Objects.requireNonNull(hearingDate);
+		return this;
 	}
 
-	public CorporateActionEvent getCorporateEvent() {
-		return corporateEvent;
+	public Optional<CorporateActionEvent> getCorporateEvent() {
+		return corporateEvent == null ? Optional.empty() : Optional.of(corporateEvent);
 	}
 
-	public void setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
+	public ClassAction setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
 		this.corporateEvent = corporateEvent;
+		return this;
 	}
 }

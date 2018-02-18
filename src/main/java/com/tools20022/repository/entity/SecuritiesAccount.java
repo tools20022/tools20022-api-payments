@@ -24,9 +24,8 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SecuritiesAccount19;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Account to or from which a securities entry is made.
@@ -175,8 +174,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -192,8 +191,8 @@ public class SecuritiesAccount extends Account {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesAccountPurposeTypeCode securitiesAccountType;
 	/**
-	 * Specifies the type of securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,9 +246,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected InvestmentAccount relatedInvestmentAccount;
 	/**
-	 * Investment account which contains a securities account to make securities
-	 * movements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,9 +296,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTransfer> relatedTransfer;
 	/**
-	 * Specifies the process which moves securities out of an account to another
-	 * one.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +345,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected SecuritiesPartyRole securitiesPartyRole;
 	/**
-	 * Specifies the role which uses a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,8 +393,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Security which is held on the securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -442,8 +439,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected RegistrarRole relatedRegistrar;
 	/**
-	 * Specifies where the financial instruments are registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -491,8 +488,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace;
 	/**
-	 * Location where the financial instruments are safekept.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -538,9 +535,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance;
 	/**
-	 * Value of financial assets held by a person or an organisation. It is
-	 * derived from the association between Account and Balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -588,9 +584,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionServicing> corporateActionServicing;
 	/**
-	 * Actions taken in relation with the securities account in the context of
-	 * the corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -639,8 +634,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected Allocation relatedAllocation;
 	/**
-	 * Allocation process for which an account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,8 +682,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry;
 	/**
-	 * Record of the movements into or out of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -734,8 +729,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected ClearingMemberRole clearingAccountOwner;
 	/**
-	 * Clearing member which holds a clearing account at a CCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -782,8 +777,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected ClearingMemberRole marginAccountOwner;
 	/**
-	 * Clearing member which holds a margin account at a CCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,8 +825,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected ClearingMemberRole deliveryAccountOwner;
 	/**
-	 * Clearing member which holds a delivery account at a CCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -878,8 +873,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected PowerOfAttorney relatedPowerOfAttorney;
 	/**
-	 * Power of attorney related to the securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -926,8 +921,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected InstructionForMeeting relatedMeetingInstruction;
 	/**
-	 * Meeting instruction which specifies an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -975,8 +970,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected ClearingAccountTypeCode clearingAccountType;
 	/**
-	 * Specifies the clearing account type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1022,8 +1017,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected SecuritiesOrder relatedOrder;
 	/**
-	 * Order process for which an ordering account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1071,8 +1066,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected DisclosedListTrading disclosedListTrading;
 	/**
-	 * Disclosed list trading process for which a trading account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1122,8 +1117,8 @@ public class SecuritiesAccount extends Account {
 	};
 	protected AccountLink accountLink;
 	/**
-	 * Defines the link between a cash account and a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1173,7 +1168,7 @@ public class SecuritiesAccount extends Account {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccount";
 				definition = "Account to or from which a securities entry is made.";
@@ -1209,159 +1204,179 @@ public class SecuritiesAccount extends Account {
 		return securitiesAccountType;
 	}
 
-	public void setSecuritiesAccountType(SecuritiesAccountPurposeTypeCode securitiesAccountType) {
-		this.securitiesAccountType = securitiesAccountType;
+	public SecuritiesAccount setSecuritiesAccountType(SecuritiesAccountPurposeTypeCode securitiesAccountType) {
+		this.securitiesAccountType = Objects.requireNonNull(securitiesAccountType);
+		return this;
 	}
 
 	public InvestmentAccount getRelatedInvestmentAccount() {
 		return relatedInvestmentAccount;
 	}
 
-	public void setRelatedInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount relatedInvestmentAccount) {
-		this.relatedInvestmentAccount = relatedInvestmentAccount;
+	public SecuritiesAccount setRelatedInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount relatedInvestmentAccount) {
+		this.relatedInvestmentAccount = Objects.requireNonNull(relatedInvestmentAccount);
+		return this;
 	}
 
 	public List<SecuritiesTransfer> getRelatedTransfer() {
-		return relatedTransfer;
+		return relatedTransfer == null ? relatedTransfer = new ArrayList<>() : relatedTransfer;
 	}
 
-	public void setRelatedTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> relatedTransfer) {
-		this.relatedTransfer = relatedTransfer;
+	public SecuritiesAccount setRelatedTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> relatedTransfer) {
+		this.relatedTransfer = Objects.requireNonNull(relatedTransfer);
+		return this;
 	}
 
 	public SecuritiesPartyRole getSecuritiesPartyRole() {
 		return securitiesPartyRole;
 	}
 
-	public void setSecuritiesPartyRole(com.tools20022.repository.entity.SecuritiesPartyRole securitiesPartyRole) {
-		this.securitiesPartyRole = securitiesPartyRole;
+	public SecuritiesAccount setSecuritiesPartyRole(com.tools20022.repository.entity.SecuritiesPartyRole securitiesPartyRole) {
+		this.securitiesPartyRole = Objects.requireNonNull(securitiesPartyRole);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public SecuritiesAccount setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
-	public RegistrarRole getRelatedRegistrar() {
-		return relatedRegistrar;
+	public Optional<RegistrarRole> getRelatedRegistrar() {
+		return relatedRegistrar == null ? Optional.empty() : Optional.of(relatedRegistrar);
 	}
 
-	public void setRelatedRegistrar(com.tools20022.repository.entity.RegistrarRole relatedRegistrar) {
+	public SecuritiesAccount setRelatedRegistrar(com.tools20022.repository.entity.RegistrarRole relatedRegistrar) {
 		this.relatedRegistrar = relatedRegistrar;
+		return this;
 	}
 
 	public List<SafekeepingPlace> getSafekeepingPlace() {
-		return safekeepingPlace;
+		return safekeepingPlace == null ? safekeepingPlace = new ArrayList<>() : safekeepingPlace;
 	}
 
-	public void setSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace) {
-		this.safekeepingPlace = safekeepingPlace;
+	public SecuritiesAccount setSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace) {
+		this.safekeepingPlace = Objects.requireNonNull(safekeepingPlace);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getSecuritiesBalance() {
-		return securitiesBalance;
+		return securitiesBalance == null ? securitiesBalance = new ArrayList<>() : securitiesBalance;
 	}
 
-	public void setSecuritiesBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance) {
-		this.securitiesBalance = securitiesBalance;
+	public SecuritiesAccount setSecuritiesBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance) {
+		this.securitiesBalance = Objects.requireNonNull(securitiesBalance);
+		return this;
 	}
 
 	public List<CorporateActionServicing> getCorporateActionServicing() {
-		return corporateActionServicing;
+		return corporateActionServicing == null ? corporateActionServicing = new ArrayList<>() : corporateActionServicing;
 	}
 
-	public void setCorporateActionServicing(List<com.tools20022.repository.entity.CorporateActionServicing> corporateActionServicing) {
-		this.corporateActionServicing = corporateActionServicing;
+	public SecuritiesAccount setCorporateActionServicing(List<com.tools20022.repository.entity.CorporateActionServicing> corporateActionServicing) {
+		this.corporateActionServicing = Objects.requireNonNull(corporateActionServicing);
+		return this;
 	}
 
-	public Allocation getRelatedAllocation() {
-		return relatedAllocation;
+	public Optional<Allocation> getRelatedAllocation() {
+		return relatedAllocation == null ? Optional.empty() : Optional.of(relatedAllocation);
 	}
 
-	public void setRelatedAllocation(com.tools20022.repository.entity.Allocation relatedAllocation) {
+	public SecuritiesAccount setRelatedAllocation(com.tools20022.repository.entity.Allocation relatedAllocation) {
 		this.relatedAllocation = relatedAllocation;
+		return this;
 	}
 
 	public List<SecuritiesEntry> getSecuritiesEntry() {
-		return securitiesEntry;
+		return securitiesEntry == null ? securitiesEntry = new ArrayList<>() : securitiesEntry;
 	}
 
-	public void setSecuritiesEntry(List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry) {
-		this.securitiesEntry = securitiesEntry;
+	public SecuritiesAccount setSecuritiesEntry(List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry) {
+		this.securitiesEntry = Objects.requireNonNull(securitiesEntry);
+		return this;
 	}
 
-	public ClearingMemberRole getClearingAccountOwner() {
-		return clearingAccountOwner;
+	public Optional<ClearingMemberRole> getClearingAccountOwner() {
+		return clearingAccountOwner == null ? Optional.empty() : Optional.of(clearingAccountOwner);
 	}
 
-	public void setClearingAccountOwner(com.tools20022.repository.entity.ClearingMemberRole clearingAccountOwner) {
+	public SecuritiesAccount setClearingAccountOwner(com.tools20022.repository.entity.ClearingMemberRole clearingAccountOwner) {
 		this.clearingAccountOwner = clearingAccountOwner;
+		return this;
 	}
 
-	public ClearingMemberRole getMarginAccountOwner() {
-		return marginAccountOwner;
+	public Optional<ClearingMemberRole> getMarginAccountOwner() {
+		return marginAccountOwner == null ? Optional.empty() : Optional.of(marginAccountOwner);
 	}
 
-	public void setMarginAccountOwner(com.tools20022.repository.entity.ClearingMemberRole marginAccountOwner) {
+	public SecuritiesAccount setMarginAccountOwner(com.tools20022.repository.entity.ClearingMemberRole marginAccountOwner) {
 		this.marginAccountOwner = marginAccountOwner;
+		return this;
 	}
 
-	public ClearingMemberRole getDeliveryAccountOwner() {
-		return deliveryAccountOwner;
+	public Optional<ClearingMemberRole> getDeliveryAccountOwner() {
+		return deliveryAccountOwner == null ? Optional.empty() : Optional.of(deliveryAccountOwner);
 	}
 
-	public void setDeliveryAccountOwner(com.tools20022.repository.entity.ClearingMemberRole deliveryAccountOwner) {
+	public SecuritiesAccount setDeliveryAccountOwner(com.tools20022.repository.entity.ClearingMemberRole deliveryAccountOwner) {
 		this.deliveryAccountOwner = deliveryAccountOwner;
+		return this;
 	}
 
-	public PowerOfAttorney getRelatedPowerOfAttorney() {
-		return relatedPowerOfAttorney;
+	public Optional<PowerOfAttorney> getRelatedPowerOfAttorney() {
+		return relatedPowerOfAttorney == null ? Optional.empty() : Optional.of(relatedPowerOfAttorney);
 	}
 
-	public void setRelatedPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney relatedPowerOfAttorney) {
+	public SecuritiesAccount setRelatedPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney relatedPowerOfAttorney) {
 		this.relatedPowerOfAttorney = relatedPowerOfAttorney;
+		return this;
 	}
 
-	public InstructionForMeeting getRelatedMeetingInstruction() {
-		return relatedMeetingInstruction;
+	public Optional<InstructionForMeeting> getRelatedMeetingInstruction() {
+		return relatedMeetingInstruction == null ? Optional.empty() : Optional.of(relatedMeetingInstruction);
 	}
 
-	public void setRelatedMeetingInstruction(com.tools20022.repository.entity.InstructionForMeeting relatedMeetingInstruction) {
+	public SecuritiesAccount setRelatedMeetingInstruction(com.tools20022.repository.entity.InstructionForMeeting relatedMeetingInstruction) {
 		this.relatedMeetingInstruction = relatedMeetingInstruction;
+		return this;
 	}
 
 	public ClearingAccountTypeCode getClearingAccountType() {
 		return clearingAccountType;
 	}
 
-	public void setClearingAccountType(ClearingAccountTypeCode clearingAccountType) {
-		this.clearingAccountType = clearingAccountType;
+	public SecuritiesAccount setClearingAccountType(ClearingAccountTypeCode clearingAccountType) {
+		this.clearingAccountType = Objects.requireNonNull(clearingAccountType);
+		return this;
 	}
 
-	public SecuritiesOrder getRelatedOrder() {
-		return relatedOrder;
+	public Optional<SecuritiesOrder> getRelatedOrder() {
+		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesAccount setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
+		return this;
 	}
 
-	public DisclosedListTrading getDisclosedListTrading() {
-		return disclosedListTrading;
+	public Optional<DisclosedListTrading> getDisclosedListTrading() {
+		return disclosedListTrading == null ? Optional.empty() : Optional.of(disclosedListTrading);
 	}
 
-	public void setDisclosedListTrading(com.tools20022.repository.entity.DisclosedListTrading disclosedListTrading) {
+	public SecuritiesAccount setDisclosedListTrading(com.tools20022.repository.entity.DisclosedListTrading disclosedListTrading) {
 		this.disclosedListTrading = disclosedListTrading;
+		return this;
 	}
 
 	public AccountLink getAccountLink() {
 		return accountLink;
 	}
 
-	public void setAccountLink(com.tools20022.repository.entity.AccountLink accountLink) {
-		this.accountLink = accountLink;
+	public SecuritiesAccount setAccountLink(com.tools20022.repository.entity.AccountLink accountLink) {
+		this.accountLink = Objects.requireNonNull(accountLink);
+		return this;
 	}
 }

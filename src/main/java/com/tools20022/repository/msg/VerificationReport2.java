@@ -28,6 +28,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,17 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "VerificationReport2", propOrder = {"originalIdentification", "verification", "reason", "originalPartyAndAccountIdentification", "updatedPartyAndAccountIdentification"})
 public class VerificationReport2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlId", required = true)
 	protected Max35Text originalIdentification;
 	/**
-	 * Unique identification, as assigned by a sending party, to unambiguously
-	 * identify the party and account identification information group within
-	 * the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +125,7 @@ public class VerificationReport2 {
 	 */
 	public static final MMMessageAttribute mmOriginalIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> VerificationReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +136,11 @@ public class VerificationReport2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Vrfctn", required = true)
 	protected IdentificationVerificationIndicator verification;
 	/**
-	 * Identifies whether the party and/or account information received is
-	 * correct.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +170,7 @@ public class VerificationReport2 {
 	 */
 	public static final MMMessageAttribute mmVerification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> VerificationReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
 			xmlTag = "Vrfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +181,11 @@ public class VerificationReport2 {
 			simpleType_lazy = () -> IdentificationVerificationIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "Rsn")
 	protected VerificationReason1Choice reason;
 	/**
-	 * Specifies the reason why the verified identification information is
-	 * incorrect.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -213,7 +214,7 @@ public class VerificationReport2 {
 	 */
 	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> VerificationReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,11 +226,11 @@ public class VerificationReport2 {
 			type_lazy = () -> VerificationReason1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlPtyAndAcctId")
 	protected IdentificationInformation2 originalPartyAndAccountIdentification;
 	/**
-	 * Provides party and/or account identification information as given in the
-	 * original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -258,7 +259,7 @@ public class VerificationReport2 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalPartyAndAccountIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> VerificationReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlPtyAndAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,10 +271,11 @@ public class VerificationReport2 {
 			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 		}
 	};
+	@XmlElement(name = "UpdtdPtyAndAcctId")
 	protected IdentificationInformation2 updatedPartyAndAccountIdentification;
 	/**
-	 * Provides party and/or account identification information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -301,7 +303,7 @@ public class VerificationReport2 {
 	 */
 	public static final MMMessageAssociationEnd mmUpdatedPartyAndAccountIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> VerificationReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
 			xmlTag = "UpdtdPtyAndAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -317,10 +319,11 @@ public class VerificationReport2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(VerificationReport2.mmOriginalIdentification, VerificationReport2.mmVerification, VerificationReport2.mmReason, VerificationReport2.mmOriginalPartyAndAccountIdentification,
-						VerificationReport2.mmUpdatedPartyAndAccountIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.VerificationReport2.mmOriginalIdentification, com.tools20022.repository.msg.VerificationReport2.mmVerification,
+						com.tools20022.repository.msg.VerificationReport2.mmReason, com.tools20022.repository.msg.VerificationReport2.mmOriginalPartyAndAccountIdentification,
+						com.tools20022.repository.msg.VerificationReport2.mmUpdatedPartyAndAccountIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(IdentificationVerificationReportV02.mmReport);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VerificationReport2";
 				definition = "Provides the details of the verification of identification data for which verification was requested.";
@@ -329,48 +332,48 @@ public class VerificationReport2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlId", required = true)
 	public Max35Text getOriginalIdentification() {
 		return originalIdentification;
 	}
 
-	public void setOriginalIdentification(Max35Text originalIdentification) {
-		this.originalIdentification = originalIdentification;
+	public VerificationReport2 setOriginalIdentification(Max35Text originalIdentification) {
+		this.originalIdentification = Objects.requireNonNull(originalIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Vrfctn", required = true)
 	public IdentificationVerificationIndicator getVerification() {
 		return verification;
 	}
 
-	public void setVerification(IdentificationVerificationIndicator verification) {
-		this.verification = verification;
+	public VerificationReport2 setVerification(IdentificationVerificationIndicator verification) {
+		this.verification = Objects.requireNonNull(verification);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn")
-	public VerificationReason1Choice getReason() {
-		return reason;
+	public Optional<VerificationReason1Choice> getReason() {
+		return reason == null ? Optional.empty() : Optional.of(reason);
 	}
 
-	public void setReason(VerificationReason1Choice reason) {
+	public VerificationReport2 setReason(VerificationReason1Choice reason) {
 		this.reason = reason;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlPtyAndAcctId")
-	public IdentificationInformation2 getOriginalPartyAndAccountIdentification() {
-		return originalPartyAndAccountIdentification;
+	public Optional<IdentificationInformation2> getOriginalPartyAndAccountIdentification() {
+		return originalPartyAndAccountIdentification == null ? Optional.empty() : Optional.of(originalPartyAndAccountIdentification);
 	}
 
-	public void setOriginalPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 originalPartyAndAccountIdentification) {
+	public VerificationReport2 setOriginalPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 originalPartyAndAccountIdentification) {
 		this.originalPartyAndAccountIdentification = originalPartyAndAccountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "UpdtdPtyAndAcctId")
-	public IdentificationInformation2 getUpdatedPartyAndAccountIdentification() {
-		return updatedPartyAndAccountIdentification;
+	public Optional<IdentificationInformation2> getUpdatedPartyAndAccountIdentification() {
+		return updatedPartyAndAccountIdentification == null ? Optional.empty() : Optional.of(updatedPartyAndAccountIdentification);
 	}
 
-	public void setUpdatedPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 updatedPartyAndAccountIdentification) {
+	public VerificationReport2 setUpdatedPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 updatedPartyAndAccountIdentification) {
 		this.updatedPartyAndAccountIdentification = updatedPartyAndAccountIdentification;
+		return this;
 	}
 }

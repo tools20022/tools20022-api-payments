@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.UnitOfMeasureCode;
@@ -26,9 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.BillingPrice1;
 import com.tools20022.repository.msg.ProprietaryPrice2;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Amount of money for which goods, services or assets are offered, sold, or
@@ -113,8 +113,11 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: PRIC</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -132,8 +135,8 @@ public class Price {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount amount;
 	/**
-	 * Price expressed as a currency and value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,8 +181,8 @@ public class Price {
 	};
 	protected Option option;
 	/**
-	 * Option for which a strike price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,8 +227,8 @@ public class Price {
 	};
 	protected Product unitPriceProduct;
 	/**
-	 * Product for which a unit price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,8 +273,8 @@ public class Price {
 	};
 	protected Product netPriceProduct;
 	/**
-	 * Product for which a net price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -316,8 +319,8 @@ public class Price {
 	};
 	protected List<com.tools20022.repository.entity.Adjustment> priceAdjustment;
 	/**
-	 * Variance on price for the goods and services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -362,8 +365,8 @@ public class Price {
 	};
 	protected Product grossPriceProduct;
 	/**
-	 * Product for which a gross price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,8 +411,8 @@ public class Price {
 	};
 	protected UnitOfMeasureCode unitOfMeasure;
 	/**
-	 * Specifies the unit of measurement. For example: kilo, tons.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,8 +458,8 @@ public class Price {
 	};
 	protected Tolerance priceTolerance;
 	/**
-	 * Variance allowed on the price of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -502,8 +505,8 @@ public class Price {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency code in which the price is expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -555,8 +558,8 @@ public class Price {
 	};
 	protected Max15NumericText factor;
 	/**
-	 * Multiplication factor of measurement values. For example: 36 pieces.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -602,8 +605,8 @@ public class Price {
 	};
 	protected Netting netting;
 	/**
-	 * Netting for which an average price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -648,8 +651,8 @@ public class Price {
 	};
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Pricing parameters for a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -697,7 +700,8 @@ public class Price {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "PRIC"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Price";
 				definition = "Amount of money for which goods, services or assets are offered, sold, or bought.";
@@ -724,95 +728,107 @@ public class Price {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Price setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public Option getOption() {
 		return option;
 	}
 
-	public void setOption(com.tools20022.repository.entity.Option option) {
-		this.option = option;
+	public Price setOption(com.tools20022.repository.entity.Option option) {
+		this.option = Objects.requireNonNull(option);
+		return this;
 	}
 
-	public Product getUnitPriceProduct() {
-		return unitPriceProduct;
+	public Optional<Product> getUnitPriceProduct() {
+		return unitPriceProduct == null ? Optional.empty() : Optional.of(unitPriceProduct);
 	}
 
-	public void setUnitPriceProduct(com.tools20022.repository.entity.Product unitPriceProduct) {
+	public Price setUnitPriceProduct(com.tools20022.repository.entity.Product unitPriceProduct) {
 		this.unitPriceProduct = unitPriceProduct;
+		return this;
 	}
 
-	public Product getNetPriceProduct() {
-		return netPriceProduct;
+	public Optional<Product> getNetPriceProduct() {
+		return netPriceProduct == null ? Optional.empty() : Optional.of(netPriceProduct);
 	}
 
-	public void setNetPriceProduct(com.tools20022.repository.entity.Product netPriceProduct) {
+	public Price setNetPriceProduct(com.tools20022.repository.entity.Product netPriceProduct) {
 		this.netPriceProduct = netPriceProduct;
+		return this;
 	}
 
 	public List<Adjustment> getPriceAdjustment() {
-		return priceAdjustment;
+		return priceAdjustment == null ? priceAdjustment = new ArrayList<>() : priceAdjustment;
 	}
 
-	public void setPriceAdjustment(List<com.tools20022.repository.entity.Adjustment> priceAdjustment) {
-		this.priceAdjustment = priceAdjustment;
+	public Price setPriceAdjustment(List<com.tools20022.repository.entity.Adjustment> priceAdjustment) {
+		this.priceAdjustment = Objects.requireNonNull(priceAdjustment);
+		return this;
 	}
 
-	public Product getGrossPriceProduct() {
-		return grossPriceProduct;
+	public Optional<Product> getGrossPriceProduct() {
+		return grossPriceProduct == null ? Optional.empty() : Optional.of(grossPriceProduct);
 	}
 
-	public void setGrossPriceProduct(com.tools20022.repository.entity.Product grossPriceProduct) {
+	public Price setGrossPriceProduct(com.tools20022.repository.entity.Product grossPriceProduct) {
 		this.grossPriceProduct = grossPriceProduct;
+		return this;
 	}
 
 	public UnitOfMeasureCode getUnitOfMeasure() {
 		return unitOfMeasure;
 	}
 
-	public void setUnitOfMeasure(UnitOfMeasureCode unitOfMeasure) {
-		this.unitOfMeasure = unitOfMeasure;
+	public Price setUnitOfMeasure(UnitOfMeasureCode unitOfMeasure) {
+		this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+		return this;
 	}
 
 	public Tolerance getPriceTolerance() {
 		return priceTolerance;
 	}
 
-	public void setPriceTolerance(com.tools20022.repository.entity.Tolerance priceTolerance) {
-		this.priceTolerance = priceTolerance;
+	public Price setPriceTolerance(com.tools20022.repository.entity.Tolerance priceTolerance) {
+		this.priceTolerance = Objects.requireNonNull(priceTolerance);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Price setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public Max15NumericText getFactor() {
 		return factor;
 	}
 
-	public void setFactor(Max15NumericText factor) {
-		this.factor = factor;
+	public Price setFactor(Max15NumericText factor) {
+		this.factor = Objects.requireNonNull(factor);
+		return this;
 	}
 
-	public Netting getNetting() {
-		return netting;
+	public Optional<Netting> getNetting() {
+		return netting == null ? Optional.empty() : Optional.of(netting);
 	}
 
-	public void setNetting(com.tools20022.repository.entity.Netting netting) {
+	public Price setNetting(com.tools20022.repository.entity.Netting netting) {
 		this.netting = netting;
+		return this;
 	}
 
 	public SecuritiesPricing getSecuritiesPricing() {
 		return securitiesPricing;
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
-		this.securitiesPricing = securitiesPricing;
+	public Price setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = Objects.requireNonNull(securitiesPricing);
+		return this;
 	}
 }

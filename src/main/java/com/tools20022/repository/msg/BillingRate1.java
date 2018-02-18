@@ -27,6 +27,8 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the billing rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingRate1", propOrder = {"identification", "value", "daysInPeriod", "daysInYear"})
 public class BillingRate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected BillingRateIdentification1Choice identification;
 	/**
-	 * Defines the type of rate or factor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -100,7 +103,7 @@ public class BillingRate1 {
 	 */
 	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> BillingRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,10 +115,11 @@ public class BillingRate1 {
 			type_lazy = () -> BillingRateIdentification1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected PercentageRate value;
 	/**
-	 * Value of the rate or factor identified in the rate identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,7 +147,7 @@ public class BillingRate1 {
 	 */
 	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,13 +158,11 @@ public class BillingRate1 {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 	};
+	@XmlElement(name = "DaysInPrd")
 	protected Number daysInPeriod;
 	/**
-	 * Number of days in the statement period.
 	 * 
-	 * Usage: Used along with DaysInYear for time dependent per annum rate
-	 * value.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +190,7 @@ public class BillingRate1 {
 	 */
 	public static final MMMessageAttribute mmDaysInPeriod = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "DaysInPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,13 +201,11 @@ public class BillingRate1 {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	@XmlElement(name = "DaysInYr")
 	protected Number daysInYear;
 	/**
-	 * Number of days in the year.
 	 * 
-	 * Usage: Used along with DaysInPeriod for time dependent per annum rate
-	 * value.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,7 +233,7 @@ public class BillingRate1 {
 	 */
 	public static final MMMessageAttribute mmDaysInYear = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "DaysInYr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -248,8 +248,9 @@ public class BillingRate1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingRate1.mmIdentification, BillingRate1.mmValue, BillingRate1.mmDaysInPeriod, BillingRate1.mmDaysInYear);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingRate1.mmIdentification, com.tools20022.repository.msg.BillingRate1.mmValue, com.tools20022.repository.msg.BillingRate1.mmDaysInPeriod,
+						com.tools20022.repository.msg.BillingRate1.mmDaysInYear);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingRate1";
 				definition = "Specifies the billing rate.";
@@ -258,39 +259,39 @@ public class BillingRate1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public BillingRateIdentification1Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(BillingRateIdentification1Choice identification) {
-		this.identification = identification;
+	public BillingRate1 setIdentification(BillingRateIdentification1Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public PercentageRate getValue() {
 		return value;
 	}
 
-	public void setValue(PercentageRate value) {
-		this.value = value;
+	public BillingRate1 setValue(PercentageRate value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
-	@XmlElement(name = "DaysInPrd")
-	public Number getDaysInPeriod() {
-		return daysInPeriod;
+	public Optional<Number> getDaysInPeriod() {
+		return daysInPeriod == null ? Optional.empty() : Optional.of(daysInPeriod);
 	}
 
-	public void setDaysInPeriod(Number daysInPeriod) {
+	public BillingRate1 setDaysInPeriod(Number daysInPeriod) {
 		this.daysInPeriod = daysInPeriod;
+		return this;
 	}
 
-	@XmlElement(name = "DaysInYr")
-	public Number getDaysInYear() {
-		return daysInYear;
+	public Optional<Number> getDaysInYear() {
+		return daysInYear == null ? Optional.empty() : Optional.of(daysInYear);
 	}
 
-	public void setDaysInYear(Number daysInYear) {
+	public BillingRate1 setDaysInYear(Number daysInYear) {
 		this.daysInYear = daysInYear;
+		return this;
 	}
 }

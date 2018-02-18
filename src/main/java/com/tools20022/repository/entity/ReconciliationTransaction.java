@@ -27,9 +27,11 @@ import com.tools20022.repository.entity.Reconciliation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CardIndividualTransaction2;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Totals performed during the reconciliation period, for a certain type of
@@ -83,8 +85,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,11 +104,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text reconciliationIdentification;
 	/**
-	 * Unique identification of the reconciliation period between the acceptor
-	 * and the acquirer. This identification might be linked to the
-	 * identification of the settlement for further verification by the
-	 * merchant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,8 +161,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency associated with thecumulative amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,8 +207,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected TypeTransactionTotalsCode transactionType;
 	/**
-	 * Identification of the type of transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,8 +254,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected Max35Text totalNumber;
 	/**
-	 * Total number of transactions during a reconciliation period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,8 +301,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected ImpliedCurrencyAndAmount cumulativeAmount;
 	/**
-	 * Total amount of a collection of transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,9 +348,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected TrueFalseIndicator closePeriod;
 	/**
-	 * Indicates if the exchange requires a closure of the reconciliation
-	 * period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,9 +397,8 @@ public class ReconciliationTransaction extends Reconciliation {
 	};
 	protected List<com.tools20022.repository.entity.CardPayment> cardPaymentTotal;
 	/**
-	 * Specifies the card payments which are part of the transaction
-	 * reconciliation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,7 +448,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReconciliationTransaction";
 				definition = "Totals performed during the reconciliation period, for a certain type of transaction.";
@@ -475,55 +472,62 @@ public class ReconciliationTransaction extends Reconciliation {
 		return reconciliationIdentification;
 	}
 
-	public void setReconciliationIdentification(Max35Text reconciliationIdentification) {
-		this.reconciliationIdentification = reconciliationIdentification;
+	public ReconciliationTransaction setReconciliationIdentification(Max35Text reconciliationIdentification) {
+		this.reconciliationIdentification = Objects.requireNonNull(reconciliationIdentification);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public ReconciliationTransaction setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public TypeTransactionTotalsCode getTransactionType() {
 		return transactionType;
 	}
 
-	public void setTransactionType(TypeTransactionTotalsCode transactionType) {
-		this.transactionType = transactionType;
+	public ReconciliationTransaction setTransactionType(TypeTransactionTotalsCode transactionType) {
+		this.transactionType = Objects.requireNonNull(transactionType);
+		return this;
 	}
 
 	public Max35Text getTotalNumber() {
 		return totalNumber;
 	}
 
-	public void setTotalNumber(Max35Text totalNumber) {
-		this.totalNumber = totalNumber;
+	public ReconciliationTransaction setTotalNumber(Max35Text totalNumber) {
+		this.totalNumber = Objects.requireNonNull(totalNumber);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getCumulativeAmount() {
 		return cumulativeAmount;
 	}
 
-	public void setCumulativeAmount(ImpliedCurrencyAndAmount cumulativeAmount) {
-		this.cumulativeAmount = cumulativeAmount;
+	public ReconciliationTransaction setCumulativeAmount(ImpliedCurrencyAndAmount cumulativeAmount) {
+		this.cumulativeAmount = Objects.requireNonNull(cumulativeAmount);
+		return this;
 	}
 
 	public TrueFalseIndicator getClosePeriod() {
 		return closePeriod;
 	}
 
-	public void setClosePeriod(TrueFalseIndicator closePeriod) {
-		this.closePeriod = closePeriod;
+	public ReconciliationTransaction setClosePeriod(TrueFalseIndicator closePeriod) {
+		this.closePeriod = Objects.requireNonNull(closePeriod);
+		return this;
 	}
 
 	public List<CardPayment> getCardPaymentTotal() {
-		return cardPaymentTotal;
+		return cardPaymentTotal == null ? cardPaymentTotal = new ArrayList<>() : cardPaymentTotal;
 	}
 
-	public void setCardPaymentTotal(List<com.tools20022.repository.entity.CardPayment> cardPaymentTotal) {
-		this.cardPaymentTotal = cardPaymentTotal;
+	public ReconciliationTransaction setCardPaymentTotal(List<com.tools20022.repository.entity.CardPayment> cardPaymentTotal) {
+		this.cardPaymentTotal = Objects.requireNonNull(cardPaymentTotal);
+		return this;
 	}
 }

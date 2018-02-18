@@ -23,6 +23,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Performance factors of the investment fund / fund class.
@@ -68,8 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,8 +87,8 @@ public class PerformanceFactors {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Calculation for which the performance factors are obtained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,9 +137,8 @@ public class PerformanceFactors {
 	};
 	protected DecimalNumber corporateActionFactor;
 	/**
-	 * Value of the NAV before all corporate events of the valuation date,
-	 * divided by the value of the NAV after the corporate event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,10 +186,8 @@ public class PerformanceFactors {
 	};
 	protected DecimalNumber cumulativeCorporateActionFactor;
 	/**
-	 * Value of the NAV before a corporate event, divided by the value of the
-	 * NAV after the corporate event, accumulated for a number of corporate
-	 * events over the defined period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,9 +235,8 @@ public class PerformanceFactors {
 	};
 	protected DateTimePeriod accumulationPeriod;
 	/**
-	 * Period of time for the calculation of the cumulative corporate action
-	 * factor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,8 +285,8 @@ public class PerformanceFactors {
 	};
 	protected DecimalNumber normalPerformance;
 	/**
-	 * Normal performance value of the NAV.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +334,7 @@ public class PerformanceFactors {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PerformanceFactors";
 				definition = "Performance factors of the investment fund / fund class.";
@@ -354,43 +352,48 @@ public class PerformanceFactors {
 		return mmObject_lazy.get();
 	}
 
-	public NetAssetValueCalculation getNetAssetValueCalculation() {
-		return netAssetValueCalculation;
+	public Optional<NetAssetValueCalculation> getNetAssetValueCalculation() {
+		return netAssetValueCalculation == null ? Optional.empty() : Optional.of(netAssetValueCalculation);
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+	public PerformanceFactors setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
 		this.netAssetValueCalculation = netAssetValueCalculation;
+		return this;
 	}
 
 	public DecimalNumber getCorporateActionFactor() {
 		return corporateActionFactor;
 	}
 
-	public void setCorporateActionFactor(DecimalNumber corporateActionFactor) {
-		this.corporateActionFactor = corporateActionFactor;
+	public PerformanceFactors setCorporateActionFactor(DecimalNumber corporateActionFactor) {
+		this.corporateActionFactor = Objects.requireNonNull(corporateActionFactor);
+		return this;
 	}
 
 	public DecimalNumber getCumulativeCorporateActionFactor() {
 		return cumulativeCorporateActionFactor;
 	}
 
-	public void setCumulativeCorporateActionFactor(DecimalNumber cumulativeCorporateActionFactor) {
-		this.cumulativeCorporateActionFactor = cumulativeCorporateActionFactor;
+	public PerformanceFactors setCumulativeCorporateActionFactor(DecimalNumber cumulativeCorporateActionFactor) {
+		this.cumulativeCorporateActionFactor = Objects.requireNonNull(cumulativeCorporateActionFactor);
+		return this;
 	}
 
 	public DateTimePeriod getAccumulationPeriod() {
 		return accumulationPeriod;
 	}
 
-	public void setAccumulationPeriod(com.tools20022.repository.entity.DateTimePeriod accumulationPeriod) {
-		this.accumulationPeriod = accumulationPeriod;
+	public PerformanceFactors setAccumulationPeriod(com.tools20022.repository.entity.DateTimePeriod accumulationPeriod) {
+		this.accumulationPeriod = Objects.requireNonNull(accumulationPeriod);
+		return this;
 	}
 
 	public DecimalNumber getNormalPerformance() {
 		return normalPerformance;
 	}
 
-	public void setNormalPerformance(DecimalNumber normalPerformance) {
-		this.normalPerformance = normalPerformance;
+	public PerformanceFactors setNormalPerformance(DecimalNumber normalPerformance) {
+		this.normalPerformance = Objects.requireNonNull(normalPerformance);
+		return this;
 	}
 }

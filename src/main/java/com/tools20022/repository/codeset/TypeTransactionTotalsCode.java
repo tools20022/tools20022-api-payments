@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Debit
- * TypeTransactionTotalsCode.mmDebit}</li>
+ * TypeTransactionTotalsCode.Debit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#DebitReverse
- * TypeTransactionTotalsCode.mmDebitReverse}</li>
+ * TypeTransactionTotalsCode.DebitReverse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Credit
- * TypeTransactionTotalsCode.mmCredit}</li>
+ * TypeTransactionTotalsCode.Credit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#CreditReverse
- * TypeTransactionTotalsCode.mmCreditReverse}</li>
+ * TypeTransactionTotalsCode.CreditReverse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Declined
- * TypeTransactionTotalsCode.mmDeclined}</li>
+ * TypeTransactionTotalsCode.Declined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotalsCode#Failed
- * TypeTransactionTotalsCode.mmFailed}</li>
+ * TypeTransactionTotalsCode.Failed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -274,7 +274,7 @@ public class TypeTransactionTotalsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DEBT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeTransactionTotalsCode";

@@ -25,9 +25,8 @@ import com.tools20022.repository.codeset.RestrictionTypeCode;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Restrictions applicable to the security.
@@ -82,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +98,8 @@ public class SecuritiesRestriction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Security security;
 	/**
-	 * Security for which restriction information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,8 +145,8 @@ public class SecuritiesRestriction {
 	};
 	protected LegalRestrictionsCode legalRestrictionType;
 	/**
-	 * Specifies the regulatory restrictions applicable to a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,9 +193,8 @@ public class SecuritiesRestriction {
 	};
 	protected List<com.tools20022.repository.entity.Jurisdiction> jurisdiction;
 	/**
-	 * Jurisdiction (country, county, state, province, city) where the
-	 * restriction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,9 +242,8 @@ public class SecuritiesRestriction {
 	};
 	protected RestrictionTypeCode restrictionType;
 	/**
-	 * Type of the restriction, for example, selling restriction, buying
-	 * restriction, placing restriction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,9 +291,8 @@ public class SecuritiesRestriction {
 	};
 	protected InvestorRestrictionTypeCode investorStatusRestrictionType;
 	/**
-	 * Specifies whether the restriction to be applied is relevant for citizen,
-	 * resident, country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,8 +340,8 @@ public class SecuritiesRestriction {
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the restriction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -391,8 +387,8 @@ public class SecuritiesRestriction {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Rate used for the calculation of the restriction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,8 +434,8 @@ public class SecuritiesRestriction {
 	};
 	protected InvestorTypeCode investorType;
 	/**
-	 * Type of investor that is allowed to hold the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,7 +483,7 @@ public class SecuritiesRestriction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesRestriction";
 				definition = "Restrictions applicable to the security.";
@@ -506,67 +502,75 @@ public class SecuritiesRestriction {
 		return mmObject_lazy.get();
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public SecuritiesRestriction setSecurity(com.tools20022.repository.entity.Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public LegalRestrictionsCode getLegalRestrictionType() {
 		return legalRestrictionType;
 	}
 
-	public void setLegalRestrictionType(LegalRestrictionsCode legalRestrictionType) {
-		this.legalRestrictionType = legalRestrictionType;
+	public SecuritiesRestriction setLegalRestrictionType(LegalRestrictionsCode legalRestrictionType) {
+		this.legalRestrictionType = Objects.requireNonNull(legalRestrictionType);
+		return this;
 	}
 
 	public List<Jurisdiction> getJurisdiction() {
-		return jurisdiction;
+		return jurisdiction == null ? jurisdiction = new ArrayList<>() : jurisdiction;
 	}
 
-	public void setJurisdiction(List<com.tools20022.repository.entity.Jurisdiction> jurisdiction) {
-		this.jurisdiction = jurisdiction;
+	public SecuritiesRestriction setJurisdiction(List<com.tools20022.repository.entity.Jurisdiction> jurisdiction) {
+		this.jurisdiction = Objects.requireNonNull(jurisdiction);
+		return this;
 	}
 
 	public RestrictionTypeCode getRestrictionType() {
 		return restrictionType;
 	}
 
-	public void setRestrictionType(RestrictionTypeCode restrictionType) {
-		this.restrictionType = restrictionType;
+	public SecuritiesRestriction setRestrictionType(RestrictionTypeCode restrictionType) {
+		this.restrictionType = Objects.requireNonNull(restrictionType);
+		return this;
 	}
 
 	public InvestorRestrictionTypeCode getInvestorStatusRestrictionType() {
 		return investorStatusRestrictionType;
 	}
 
-	public void setInvestorStatusRestrictionType(InvestorRestrictionTypeCode investorStatusRestrictionType) {
-		this.investorStatusRestrictionType = investorStatusRestrictionType;
+	public SecuritiesRestriction setInvestorStatusRestrictionType(InvestorRestrictionTypeCode investorStatusRestrictionType) {
+		this.investorStatusRestrictionType = Objects.requireNonNull(investorStatusRestrictionType);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public SecuritiesRestriction setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public SecuritiesRestriction setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public InvestorTypeCode getInvestorType() {
 		return investorType;
 	}
 
-	public void setInvestorType(InvestorTypeCode investorType) {
-		this.investorType = investorType;
+	public SecuritiesRestriction setInvestorType(InvestorTypeCode investorType) {
+		this.investorType = Objects.requireNonNull(investorType);
+		return this;
 	}
 }

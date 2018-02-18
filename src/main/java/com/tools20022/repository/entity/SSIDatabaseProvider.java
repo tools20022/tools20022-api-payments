@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Provider of a standing settlement instruction (SSI) database.
@@ -60,8 +62,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,8 +80,8 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase;
 	/**
-	 * Settlement instruction database information which is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,7 +131,7 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SSIDatabaseProvider";
 				definition = "Provider of a standing settlement instruction (SSI) database.";
@@ -147,10 +149,11 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	}
 
 	public List<StandingSettlementInstruction> getStandingSettlementDatabase() {
-		return standingSettlementDatabase;
+		return standingSettlementDatabase == null ? standingSettlementDatabase = new ArrayList<>() : standingSettlementDatabase;
 	}
 
-	public void setStandingSettlementDatabase(List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase) {
-		this.standingSettlementDatabase = standingSettlementDatabase;
+	public SSIDatabaseProvider setStandingSettlementDatabase(List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase) {
+		this.standingSettlementDatabase = Objects.requireNonNull(standingSettlementDatabase);
+		return this;
 	}
 }

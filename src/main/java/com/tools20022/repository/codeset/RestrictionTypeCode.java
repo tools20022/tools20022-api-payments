@@ -38,24 +38,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Selling
- * RestrictionTypeCode.mmSelling}</li>
+ * RestrictionTypeCode.Selling}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Buying
- * RestrictionTypeCode.mmBuying}</li>
+ * RestrictionTypeCode.Buying}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Placing
- * RestrictionTypeCode.mmPlacing}</li>
+ * RestrictionTypeCode.Placing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Holding
- * RestrictionTypeCode.mmHolding}</li>
+ * RestrictionTypeCode.Holding}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Voting
- * RestrictionTypeCode.mmVoting}</li>
+ * RestrictionTypeCode.Voting}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -234,7 +234,7 @@ public class RestrictionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SELR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RestrictionTypeCode";

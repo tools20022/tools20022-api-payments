@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CorporateAction9;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * An event determined by a corporation's board of directors, that changes the
@@ -272,8 +271,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -291,8 +290,8 @@ public class CorporateActionEvent {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionEventTypeV3Code type;
 	/**
-	 * Type of corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -347,9 +346,8 @@ public class CorporateActionEvent {
 	};
 	protected CorporateActionMandatoryVoluntaryCode mandatoryVoluntaryEventType;
 	/**
-	 * Specifies whether the event is mandatory, mandatory with options or
-	 * voluntary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,8 +395,8 @@ public class CorporateActionEvent {
 	};
 	protected Security underlyingSecurity;
 	/**
-	 * Security to which this instruction or event applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,8 +442,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionPrice> corporateActionPrice;
 	/**
-	 * Specifies prices related to a corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,9 +490,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate;
 	/**
-	 * Rate, specified by the issuer, when the paid amount is not in the same
-	 * currency as the specified amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,8 +539,8 @@ public class CorporateActionEvent {
 	};
 	protected Max350Text registrationDetails;
 	/**
-	 * Provides information required for the registration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -588,9 +585,8 @@ public class CorporateActionEvent {
 	};
 	protected Max350Text basketOrIndexInformation;
 	/**
-	 * Provides additional information on the basket or index underlying a
-	 * security, for example a warrant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,8 +633,8 @@ public class CorporateActionEvent {
 	};
 	protected Deadline deadline;
 	/**
-	 * Specifies the different deadlines related to a corporate event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,9 +681,8 @@ public class CorporateActionEvent {
 	};
 	protected AdditionalBusinessProcessCode additionalBusinessProcess;
 	/**
-	 * Specifies the type of the additional business process linked to a
-	 * corporate action event such as a claim compensation or tax refund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -735,8 +730,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime tradingDate;
 	/**
-	 * Date/time at which the deal (rights) was agreed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -781,8 +776,8 @@ public class CorporateActionEvent {
 	};
 	protected CorporateActionFeesAndCharges corporateActionCharge;
 	/**
-	 * Specifies the charges relative to a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -831,9 +826,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime pariPassuDate;
 	/**
-	 * Date on which security will assimilate, become fungible, or have the same
-	 * rights to dividends as the parent issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -880,10 +874,8 @@ public class CorporateActionEvent {
 	};
 	protected Max350Text informationConditions;
 	/**
-	 * Provides conditional information related to the event, eg, an offer is
-	 * subject to 50% acceptance, the offeror allows the securities holder to
-	 * set some conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -930,9 +922,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> fractionalQuantity;
 	/**
-	 * Fractional quantity resulting from an event which will be paid with cash
-	 * in lieu.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -980,8 +971,8 @@ public class CorporateActionEvent {
 	};
 	protected CorporateActionEventProcessingTypeCode eventProcessingType;
 	/**
-	 * Type of processing involved by a Corporate Action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1027,8 +1018,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionStatus> corporateActionStatus;
 	/**
-	 * Status of the corporate action process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1075,9 +1066,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime announcementDate;
 	/**
-	 * Date/time at which the issuer announced that a corporate action event
-	 * will occur such as the issue of securities or an official meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1124,9 +1114,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime effectiveDate;
 	/**
-	 * Date/time at which an event is officially effective from the issuer's
-	 * perspective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1173,9 +1162,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime furtherDetailsAnnouncementDate;
 	/**
-	 * Date/time at which additional information on the event will be announced,
-	 * for instance exchange ratio announcement date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1222,8 +1210,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime marginFixingDate;
 	/**
-	 * Date/time at which the margin rate will be determined .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1268,9 +1256,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODate resultPublicationDate;
 	/**
-	 * Date on which results are published, eg, results of an offer, of a
-	 * meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1317,9 +1304,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime unconditionalDate;
 	/**
-	 * Date upon which the terms of the take-over become unconditional as to
-	 * acceptances.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1366,9 +1352,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime whollyUnconditionalDate;
 	/**
-	 * Date on which all conditions, including regulatory, legal etc. pertaining
-	 * to the take-over, have been met.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1415,8 +1400,8 @@ public class CorporateActionEvent {
 	};
 	protected ISODateTime lapsedDate;
 	/**
-	 * Date/time at which an event/offer is terminated or lapsed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1462,10 +1447,8 @@ public class CorporateActionEvent {
 	};
 	protected DateTimePeriod bookClosurePeriod;
 	/**
-	 * Period defining the last date on which shareholder registration will be
-	 * accepted by the issuer and the date on which shareholder registration
-	 * will resume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1514,9 +1497,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
 	/**
-	 * Provides information about securities quantity linked to a corporate
-	 * action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1564,12 +1546,8 @@ public class CorporateActionEvent {
 	};
 	protected YesNoIndicator restrictionIndicator;
 	/**
-	 * Indicates whether there are legal or other restrictions associated with a
-	 * rights offer or other corporate event, for example, domicile,
-	 * citizenship, residency, type of investor.<br>
-	 * Yes = There are restrictions.<br>
-	 * No = There are no restrictions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1617,8 +1595,8 @@ public class CorporateActionEvent {
 	};
 	protected CorporateActionEventStageCode eventStage;
 	/**
-	 * Stage in the corporate action event life cycle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1664,10 +1642,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> documentationLocation;
 	/**
-	 * Information on where additional information published for the event, can
-	 * be received. for instance the address for the Universal Resource Locator
-	 * (URL), eg, used over the www (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1715,9 +1691,8 @@ public class CorporateActionEvent {
 	};
 	protected SecuritiesQuantity securitiesQuantitySought;
 	/**
-	 * Quantity of securities the offeror/issuer will purchase or redeem under
-	 * the terms of the event. This can be a number or the term "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1766,10 +1741,8 @@ public class CorporateActionEvent {
 	};
 	protected YesNoIndicator partialElectionIndicator;
 	/**
-	 * Specifies if the issuer will allow the agent to accept partial elections.
-	 * It is to allow split voting over options. It allows the client to elect
-	 * more than one option to be selected per designated holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1817,9 +1790,8 @@ public class CorporateActionEvent {
 	};
 	protected CorporateActionPartyRole corporateActionPartyRole;
 	/**
-	 * Specifies the role played by a party in the context of a corporate
-	 * action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1869,8 +1841,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.MarketClaim> marketClaim;
 	/**
-	 * Market claim information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1916,9 +1888,8 @@ public class CorporateActionEvent {
 	};
 	protected BiddingConditions biddingConditions;
 	/**
-	 * Specifies the conditions under which securities can be acquired as part
-	 * of a corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1967,8 +1938,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.ClassAction> relatedClassAction;
 	/**
-	 * Specifies the underlying class action related to the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2015,8 +1986,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionEventRegistration> corporateActionEventRegistration;
 	/**
-	 * Official registration of the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2063,10 +2034,8 @@ public class CorporateActionEvent {
 	};
 	protected SuspensionPeriod suspensionPeriod;
 	/**
-	 * Period defining the last date for which an action will be accepted and
-	 * the date on which the suspension will be released and normal processing
-	 * will resume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2115,10 +2084,8 @@ public class CorporateActionEvent {
 	};
 	protected Lottery lottery;
 	/**
-	 * Organisation of draws for cash prizes on bonds (instead of coupon
-	 * payments). Every issued bond (similar to a lottery ticket) has an equal
-	 * opportunity at winning payments in the draws.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2166,8 +2133,8 @@ public class CorporateActionEvent {
 	};
 	protected RemarketingMarginTypeCode marginType;
 	/**
-	 * Specifies the margin type for a remarketing procedure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2213,8 +2180,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.Meeting> relatedMeeting;
 	/**
-	 * Provides information on the meeting related to the corporate event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2260,8 +2227,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionServicing> services;
 	/**
-	 * Specifies the different services linked to a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2309,9 +2276,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.Issuance> issuance;
 	/**
-	 * Information specified when the corporate event relates to the issuance of
-	 * securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2358,9 +2324,8 @@ public class CorporateActionEvent {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesModification> securitiesModification;
 	/**
-	 * Modification of the reference data of a security or of the organisation
-	 * that issued it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2409,8 +2374,8 @@ public class CorporateActionEvent {
 	};
 	protected DateTimePeriod tradingPeriod;
 	/**
-	 * Period during which a financial instrument is available for trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2458,8 +2423,8 @@ public class CorporateActionEvent {
 	};
 	protected Tax transactionTax;
 	/**
-	 * Tax rate of financial transactions related to an event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2505,10 +2470,8 @@ public class CorporateActionEvent {
 	};
 	protected ConsentTypeCode consentType;
 	/**
-	 * Corporate actions may be approved by shareholders without a meeting or a
-	 * vote by means of execution of a consent by a majority of shareholders
-	 * entitled to vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2556,8 +2519,8 @@ public class CorporateActionEvent {
 	};
 	protected ProceedsDefinition proceedsDefinition;
 	/**
-	 * Specifies the proceeds of a corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2606,7 +2569,7 @@ public class CorporateActionEvent {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEvent";
 				definition = "An event determined by a corporation's board of directors, that changes the existing corporate capital structure or financial condition.";
@@ -2660,375 +2623,422 @@ public class CorporateActionEvent {
 		return type;
 	}
 
-	public void setType(CorporateActionEventTypeV3Code type) {
-		this.type = type;
+	public CorporateActionEvent setType(CorporateActionEventTypeV3Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CorporateActionMandatoryVoluntaryCode getMandatoryVoluntaryEventType() {
 		return mandatoryVoluntaryEventType;
 	}
 
-	public void setMandatoryVoluntaryEventType(CorporateActionMandatoryVoluntaryCode mandatoryVoluntaryEventType) {
-		this.mandatoryVoluntaryEventType = mandatoryVoluntaryEventType;
+	public CorporateActionEvent setMandatoryVoluntaryEventType(CorporateActionMandatoryVoluntaryCode mandatoryVoluntaryEventType) {
+		this.mandatoryVoluntaryEventType = Objects.requireNonNull(mandatoryVoluntaryEventType);
+		return this;
 	}
 
 	public Security getUnderlyingSecurity() {
 		return underlyingSecurity;
 	}
 
-	public void setUnderlyingSecurity(com.tools20022.repository.entity.Security underlyingSecurity) {
-		this.underlyingSecurity = underlyingSecurity;
+	public CorporateActionEvent setUnderlyingSecurity(com.tools20022.repository.entity.Security underlyingSecurity) {
+		this.underlyingSecurity = Objects.requireNonNull(underlyingSecurity);
+		return this;
 	}
 
 	public List<CorporateActionPrice> getCorporateActionPrice() {
-		return corporateActionPrice;
+		return corporateActionPrice == null ? corporateActionPrice = new ArrayList<>() : corporateActionPrice;
 	}
 
-	public void setCorporateActionPrice(List<com.tools20022.repository.entity.CorporateActionPrice> corporateActionPrice) {
-		this.corporateActionPrice = corporateActionPrice;
+	public CorporateActionEvent setCorporateActionPrice(List<com.tools20022.repository.entity.CorporateActionPrice> corporateActionPrice) {
+		this.corporateActionPrice = Objects.requireNonNull(corporateActionPrice);
+		return this;
 	}
 
 	public List<CurrencyExchange> getExchangeRate() {
-		return exchangeRate;
+		return exchangeRate == null ? exchangeRate = new ArrayList<>() : exchangeRate;
 	}
 
-	public void setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public CorporateActionEvent setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 
 	public Max350Text getRegistrationDetails() {
 		return registrationDetails;
 	}
 
-	public void setRegistrationDetails(Max350Text registrationDetails) {
-		this.registrationDetails = registrationDetails;
+	public CorporateActionEvent setRegistrationDetails(Max350Text registrationDetails) {
+		this.registrationDetails = Objects.requireNonNull(registrationDetails);
+		return this;
 	}
 
 	public Max350Text getBasketOrIndexInformation() {
 		return basketOrIndexInformation;
 	}
 
-	public void setBasketOrIndexInformation(Max350Text basketOrIndexInformation) {
-		this.basketOrIndexInformation = basketOrIndexInformation;
+	public CorporateActionEvent setBasketOrIndexInformation(Max350Text basketOrIndexInformation) {
+		this.basketOrIndexInformation = Objects.requireNonNull(basketOrIndexInformation);
+		return this;
 	}
 
-	public Deadline getDeadline() {
-		return deadline;
+	public Optional<Deadline> getDeadline() {
+		return deadline == null ? Optional.empty() : Optional.of(deadline);
 	}
 
-	public void setDeadline(com.tools20022.repository.entity.Deadline deadline) {
+	public CorporateActionEvent setDeadline(com.tools20022.repository.entity.Deadline deadline) {
 		this.deadline = deadline;
+		return this;
 	}
 
 	public AdditionalBusinessProcessCode getAdditionalBusinessProcess() {
 		return additionalBusinessProcess;
 	}
 
-	public void setAdditionalBusinessProcess(AdditionalBusinessProcessCode additionalBusinessProcess) {
-		this.additionalBusinessProcess = additionalBusinessProcess;
+	public CorporateActionEvent setAdditionalBusinessProcess(AdditionalBusinessProcessCode additionalBusinessProcess) {
+		this.additionalBusinessProcess = Objects.requireNonNull(additionalBusinessProcess);
+		return this;
 	}
 
 	public ISODateTime getTradingDate() {
 		return tradingDate;
 	}
 
-	public void setTradingDate(ISODateTime tradingDate) {
-		this.tradingDate = tradingDate;
+	public CorporateActionEvent setTradingDate(ISODateTime tradingDate) {
+		this.tradingDate = Objects.requireNonNull(tradingDate);
+		return this;
 	}
 
-	public CorporateActionFeesAndCharges getCorporateActionCharge() {
-		return corporateActionCharge;
+	public Optional<CorporateActionFeesAndCharges> getCorporateActionCharge() {
+		return corporateActionCharge == null ? Optional.empty() : Optional.of(corporateActionCharge);
 	}
 
-	public void setCorporateActionCharge(com.tools20022.repository.entity.CorporateActionFeesAndCharges corporateActionCharge) {
+	public CorporateActionEvent setCorporateActionCharge(com.tools20022.repository.entity.CorporateActionFeesAndCharges corporateActionCharge) {
 		this.corporateActionCharge = corporateActionCharge;
+		return this;
 	}
 
 	public ISODateTime getPariPassuDate() {
 		return pariPassuDate;
 	}
 
-	public void setPariPassuDate(ISODateTime pariPassuDate) {
-		this.pariPassuDate = pariPassuDate;
+	public CorporateActionEvent setPariPassuDate(ISODateTime pariPassuDate) {
+		this.pariPassuDate = Objects.requireNonNull(pariPassuDate);
+		return this;
 	}
 
 	public Max350Text getInformationConditions() {
 		return informationConditions;
 	}
 
-	public void setInformationConditions(Max350Text informationConditions) {
-		this.informationConditions = informationConditions;
+	public CorporateActionEvent setInformationConditions(Max350Text informationConditions) {
+		this.informationConditions = Objects.requireNonNull(informationConditions);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getFractionalQuantity() {
-		return fractionalQuantity;
+		return fractionalQuantity == null ? fractionalQuantity = new ArrayList<>() : fractionalQuantity;
 	}
 
-	public void setFractionalQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> fractionalQuantity) {
-		this.fractionalQuantity = fractionalQuantity;
+	public CorporateActionEvent setFractionalQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> fractionalQuantity) {
+		this.fractionalQuantity = Objects.requireNonNull(fractionalQuantity);
+		return this;
 	}
 
 	public CorporateActionEventProcessingTypeCode getEventProcessingType() {
 		return eventProcessingType;
 	}
 
-	public void setEventProcessingType(CorporateActionEventProcessingTypeCode eventProcessingType) {
-		this.eventProcessingType = eventProcessingType;
+	public CorporateActionEvent setEventProcessingType(CorporateActionEventProcessingTypeCode eventProcessingType) {
+		this.eventProcessingType = Objects.requireNonNull(eventProcessingType);
+		return this;
 	}
 
 	public List<CorporateActionStatus> getCorporateActionStatus() {
-		return corporateActionStatus;
+		return corporateActionStatus == null ? corporateActionStatus = new ArrayList<>() : corporateActionStatus;
 	}
 
-	public void setCorporateActionStatus(List<com.tools20022.repository.entity.CorporateActionStatus> corporateActionStatus) {
-		this.corporateActionStatus = corporateActionStatus;
+	public CorporateActionEvent setCorporateActionStatus(List<com.tools20022.repository.entity.CorporateActionStatus> corporateActionStatus) {
+		this.corporateActionStatus = Objects.requireNonNull(corporateActionStatus);
+		return this;
 	}
 
 	public ISODateTime getAnnouncementDate() {
 		return announcementDate;
 	}
 
-	public void setAnnouncementDate(ISODateTime announcementDate) {
-		this.announcementDate = announcementDate;
+	public CorporateActionEvent setAnnouncementDate(ISODateTime announcementDate) {
+		this.announcementDate = Objects.requireNonNull(announcementDate);
+		return this;
 	}
 
 	public ISODateTime getEffectiveDate() {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODateTime effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public CorporateActionEvent setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public ISODateTime getFurtherDetailsAnnouncementDate() {
 		return furtherDetailsAnnouncementDate;
 	}
 
-	public void setFurtherDetailsAnnouncementDate(ISODateTime furtherDetailsAnnouncementDate) {
-		this.furtherDetailsAnnouncementDate = furtherDetailsAnnouncementDate;
+	public CorporateActionEvent setFurtherDetailsAnnouncementDate(ISODateTime furtherDetailsAnnouncementDate) {
+		this.furtherDetailsAnnouncementDate = Objects.requireNonNull(furtherDetailsAnnouncementDate);
+		return this;
 	}
 
 	public ISODateTime getMarginFixingDate() {
 		return marginFixingDate;
 	}
 
-	public void setMarginFixingDate(ISODateTime marginFixingDate) {
-		this.marginFixingDate = marginFixingDate;
+	public CorporateActionEvent setMarginFixingDate(ISODateTime marginFixingDate) {
+		this.marginFixingDate = Objects.requireNonNull(marginFixingDate);
+		return this;
 	}
 
 	public ISODate getResultPublicationDate() {
 		return resultPublicationDate;
 	}
 
-	public void setResultPublicationDate(ISODate resultPublicationDate) {
-		this.resultPublicationDate = resultPublicationDate;
+	public CorporateActionEvent setResultPublicationDate(ISODate resultPublicationDate) {
+		this.resultPublicationDate = Objects.requireNonNull(resultPublicationDate);
+		return this;
 	}
 
 	public ISODateTime getUnconditionalDate() {
 		return unconditionalDate;
 	}
 
-	public void setUnconditionalDate(ISODateTime unconditionalDate) {
-		this.unconditionalDate = unconditionalDate;
+	public CorporateActionEvent setUnconditionalDate(ISODateTime unconditionalDate) {
+		this.unconditionalDate = Objects.requireNonNull(unconditionalDate);
+		return this;
 	}
 
 	public ISODateTime getWhollyUnconditionalDate() {
 		return whollyUnconditionalDate;
 	}
 
-	public void setWhollyUnconditionalDate(ISODateTime whollyUnconditionalDate) {
-		this.whollyUnconditionalDate = whollyUnconditionalDate;
+	public CorporateActionEvent setWhollyUnconditionalDate(ISODateTime whollyUnconditionalDate) {
+		this.whollyUnconditionalDate = Objects.requireNonNull(whollyUnconditionalDate);
+		return this;
 	}
 
 	public ISODateTime getLapsedDate() {
 		return lapsedDate;
 	}
 
-	public void setLapsedDate(ISODateTime lapsedDate) {
-		this.lapsedDate = lapsedDate;
+	public CorporateActionEvent setLapsedDate(ISODateTime lapsedDate) {
+		this.lapsedDate = Objects.requireNonNull(lapsedDate);
+		return this;
 	}
 
 	public DateTimePeriod getBookClosurePeriod() {
 		return bookClosurePeriod;
 	}
 
-	public void setBookClosurePeriod(com.tools20022.repository.entity.DateTimePeriod bookClosurePeriod) {
-		this.bookClosurePeriod = bookClosurePeriod;
+	public CorporateActionEvent setBookClosurePeriod(com.tools20022.repository.entity.DateTimePeriod bookClosurePeriod) {
+		this.bookClosurePeriod = Objects.requireNonNull(bookClosurePeriod);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getSecuritiesQuantity() {
-		return securitiesQuantity;
+		return securitiesQuantity == null ? securitiesQuantity = new ArrayList<>() : securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public CorporateActionEvent setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public YesNoIndicator getRestrictionIndicator() {
 		return restrictionIndicator;
 	}
 
-	public void setRestrictionIndicator(YesNoIndicator restrictionIndicator) {
-		this.restrictionIndicator = restrictionIndicator;
+	public CorporateActionEvent setRestrictionIndicator(YesNoIndicator restrictionIndicator) {
+		this.restrictionIndicator = Objects.requireNonNull(restrictionIndicator);
+		return this;
 	}
 
 	public CorporateActionEventStageCode getEventStage() {
 		return eventStage;
 	}
 
-	public void setEventStage(CorporateActionEventStageCode eventStage) {
-		this.eventStage = eventStage;
+	public CorporateActionEvent setEventStage(CorporateActionEventStageCode eventStage) {
+		this.eventStage = Objects.requireNonNull(eventStage);
+		return this;
 	}
 
 	public List<ContactPoint> getDocumentationLocation() {
-		return documentationLocation;
+		return documentationLocation == null ? documentationLocation = new ArrayList<>() : documentationLocation;
 	}
 
-	public void setDocumentationLocation(List<com.tools20022.repository.entity.ContactPoint> documentationLocation) {
-		this.documentationLocation = documentationLocation;
+	public CorporateActionEvent setDocumentationLocation(List<com.tools20022.repository.entity.ContactPoint> documentationLocation) {
+		this.documentationLocation = Objects.requireNonNull(documentationLocation);
+		return this;
 	}
 
 	public SecuritiesQuantity getSecuritiesQuantitySought() {
 		return securitiesQuantitySought;
 	}
 
-	public void setSecuritiesQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantitySought) {
-		this.securitiesQuantitySought = securitiesQuantitySought;
+	public CorporateActionEvent setSecuritiesQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantitySought) {
+		this.securitiesQuantitySought = Objects.requireNonNull(securitiesQuantitySought);
+		return this;
 	}
 
 	public YesNoIndicator getPartialElectionIndicator() {
 		return partialElectionIndicator;
 	}
 
-	public void setPartialElectionIndicator(YesNoIndicator partialElectionIndicator) {
-		this.partialElectionIndicator = partialElectionIndicator;
+	public CorporateActionEvent setPartialElectionIndicator(YesNoIndicator partialElectionIndicator) {
+		this.partialElectionIndicator = Objects.requireNonNull(partialElectionIndicator);
+		return this;
 	}
 
 	public CorporateActionPartyRole getCorporateActionPartyRole() {
 		return corporateActionPartyRole;
 	}
 
-	public void setCorporateActionPartyRole(com.tools20022.repository.entity.CorporateActionPartyRole corporateActionPartyRole) {
-		this.corporateActionPartyRole = corporateActionPartyRole;
+	public CorporateActionEvent setCorporateActionPartyRole(com.tools20022.repository.entity.CorporateActionPartyRole corporateActionPartyRole) {
+		this.corporateActionPartyRole = Objects.requireNonNull(corporateActionPartyRole);
+		return this;
 	}
 
 	public List<MarketClaim> getMarketClaim() {
-		return marketClaim;
+		return marketClaim == null ? marketClaim = new ArrayList<>() : marketClaim;
 	}
 
-	public void setMarketClaim(List<com.tools20022.repository.entity.MarketClaim> marketClaim) {
-		this.marketClaim = marketClaim;
+	public CorporateActionEvent setMarketClaim(List<com.tools20022.repository.entity.MarketClaim> marketClaim) {
+		this.marketClaim = Objects.requireNonNull(marketClaim);
+		return this;
 	}
 
-	public BiddingConditions getBiddingConditions() {
-		return biddingConditions;
+	public Optional<BiddingConditions> getBiddingConditions() {
+		return biddingConditions == null ? Optional.empty() : Optional.of(biddingConditions);
 	}
 
-	public void setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+	public CorporateActionEvent setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
 		this.biddingConditions = biddingConditions;
+		return this;
 	}
 
 	public List<ClassAction> getRelatedClassAction() {
-		return relatedClassAction;
+		return relatedClassAction == null ? relatedClassAction = new ArrayList<>() : relatedClassAction;
 	}
 
-	public void setRelatedClassAction(List<com.tools20022.repository.entity.ClassAction> relatedClassAction) {
-		this.relatedClassAction = relatedClassAction;
+	public CorporateActionEvent setRelatedClassAction(List<com.tools20022.repository.entity.ClassAction> relatedClassAction) {
+		this.relatedClassAction = Objects.requireNonNull(relatedClassAction);
+		return this;
 	}
 
 	public List<CorporateActionEventRegistration> getCorporateActionEventRegistration() {
-		return corporateActionEventRegistration;
+		return corporateActionEventRegistration == null ? corporateActionEventRegistration = new ArrayList<>() : corporateActionEventRegistration;
 	}
 
-	public void setCorporateActionEventRegistration(List<com.tools20022.repository.entity.CorporateActionEventRegistration> corporateActionEventRegistration) {
-		this.corporateActionEventRegistration = corporateActionEventRegistration;
+	public CorporateActionEvent setCorporateActionEventRegistration(List<com.tools20022.repository.entity.CorporateActionEventRegistration> corporateActionEventRegistration) {
+		this.corporateActionEventRegistration = Objects.requireNonNull(corporateActionEventRegistration);
+		return this;
 	}
 
-	public SuspensionPeriod getSuspensionPeriod() {
-		return suspensionPeriod;
+	public Optional<SuspensionPeriod> getSuspensionPeriod() {
+		return suspensionPeriod == null ? Optional.empty() : Optional.of(suspensionPeriod);
 	}
 
-	public void setSuspensionPeriod(com.tools20022.repository.entity.SuspensionPeriod suspensionPeriod) {
+	public CorporateActionEvent setSuspensionPeriod(com.tools20022.repository.entity.SuspensionPeriod suspensionPeriod) {
 		this.suspensionPeriod = suspensionPeriod;
+		return this;
 	}
 
-	public Lottery getLottery() {
-		return lottery;
+	public Optional<Lottery> getLottery() {
+		return lottery == null ? Optional.empty() : Optional.of(lottery);
 	}
 
-	public void setLottery(com.tools20022.repository.entity.Lottery lottery) {
+	public CorporateActionEvent setLottery(com.tools20022.repository.entity.Lottery lottery) {
 		this.lottery = lottery;
+		return this;
 	}
 
 	public RemarketingMarginTypeCode getMarginType() {
 		return marginType;
 	}
 
-	public void setMarginType(RemarketingMarginTypeCode marginType) {
-		this.marginType = marginType;
+	public CorporateActionEvent setMarginType(RemarketingMarginTypeCode marginType) {
+		this.marginType = Objects.requireNonNull(marginType);
+		return this;
 	}
 
 	public List<Meeting> getRelatedMeeting() {
-		return relatedMeeting;
+		return relatedMeeting == null ? relatedMeeting = new ArrayList<>() : relatedMeeting;
 	}
 
-	public void setRelatedMeeting(List<com.tools20022.repository.entity.Meeting> relatedMeeting) {
-		this.relatedMeeting = relatedMeeting;
+	public CorporateActionEvent setRelatedMeeting(List<com.tools20022.repository.entity.Meeting> relatedMeeting) {
+		this.relatedMeeting = Objects.requireNonNull(relatedMeeting);
+		return this;
 	}
 
 	public List<CorporateActionServicing> getServices() {
-		return services;
+		return services == null ? services = new ArrayList<>() : services;
 	}
 
-	public void setServices(List<com.tools20022.repository.entity.CorporateActionServicing> services) {
-		this.services = services;
+	public CorporateActionEvent setServices(List<com.tools20022.repository.entity.CorporateActionServicing> services) {
+		this.services = Objects.requireNonNull(services);
+		return this;
 	}
 
 	public List<Issuance> getIssuance() {
-		return issuance;
+		return issuance == null ? issuance = new ArrayList<>() : issuance;
 	}
 
-	public void setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
-		this.issuance = issuance;
+	public CorporateActionEvent setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
 	public List<SecuritiesModification> getSecuritiesModification() {
-		return securitiesModification;
+		return securitiesModification == null ? securitiesModification = new ArrayList<>() : securitiesModification;
 	}
 
-	public void setSecuritiesModification(List<com.tools20022.repository.entity.SecuritiesModification> securitiesModification) {
-		this.securitiesModification = securitiesModification;
+	public CorporateActionEvent setSecuritiesModification(List<com.tools20022.repository.entity.SecuritiesModification> securitiesModification) {
+		this.securitiesModification = Objects.requireNonNull(securitiesModification);
+		return this;
 	}
 
 	public DateTimePeriod getTradingPeriod() {
 		return tradingPeriod;
 	}
 
-	public void setTradingPeriod(com.tools20022.repository.entity.DateTimePeriod tradingPeriod) {
-		this.tradingPeriod = tradingPeriod;
+	public CorporateActionEvent setTradingPeriod(com.tools20022.repository.entity.DateTimePeriod tradingPeriod) {
+		this.tradingPeriod = Objects.requireNonNull(tradingPeriod);
+		return this;
 	}
 
 	public Tax getTransactionTax() {
 		return transactionTax;
 	}
 
-	public void setTransactionTax(com.tools20022.repository.entity.Tax transactionTax) {
-		this.transactionTax = transactionTax;
+	public CorporateActionEvent setTransactionTax(com.tools20022.repository.entity.Tax transactionTax) {
+		this.transactionTax = Objects.requireNonNull(transactionTax);
+		return this;
 	}
 
 	public ConsentTypeCode getConsentType() {
 		return consentType;
 	}
 
-	public void setConsentType(ConsentTypeCode consentType) {
-		this.consentType = consentType;
+	public CorporateActionEvent setConsentType(ConsentTypeCode consentType) {
+		this.consentType = Objects.requireNonNull(consentType);
+		return this;
 	}
 
 	public ProceedsDefinition getProceedsDefinition() {
 		return proceedsDefinition;
 	}
 
-	public void setProceedsDefinition(com.tools20022.repository.entity.ProceedsDefinition proceedsDefinition) {
-		this.proceedsDefinition = proceedsDefinition;
+	public CorporateActionEvent setProceedsDefinition(com.tools20022.repository.entity.ProceedsDefinition proceedsDefinition) {
+		this.proceedsDefinition = Objects.requireNonNull(proceedsDefinition);
+		return this;
 	}
 }

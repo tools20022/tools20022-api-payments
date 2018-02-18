@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCode;
@@ -25,9 +26,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Settlement instruction database information.
@@ -106,8 +109,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -123,8 +126,8 @@ public class StandingSettlementInstruction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Settlement> settlement;
 	/**
-	 * Settlement process to which the settlement instruction database applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,8 +175,8 @@ public class StandingSettlementInstruction {
 	};
 	protected YesNoIndicator fXStandingInstruction;
 	/**
-	 * Specifies whether the forex standing instruction in place should apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,9 +224,8 @@ public class StandingSettlementInstruction {
 	};
 	protected SettlementStandingInstructionDatabaseCode settlementStandingInstructionDatabase;
 	/**
-	 * Specifies what settlement standing instruction database is to be used to
-	 * derive the settlement parties involved in the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,6 +238,9 @@ public class StandingSettlementInstruction {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction
 	 * StandingSettlementInstruction}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::DBNM</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -253,6 +258,7 @@ public class StandingSettlementInstruction {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::DBNM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementStandingInstructionDatabase";
 			definition = "Specifies what settlement standing instruction database is to be used to derive the settlement parties involved in the transaction.";
@@ -271,8 +277,8 @@ public class StandingSettlementInstruction {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification of the standing instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,9 +323,8 @@ public class StandingSettlementInstruction {
 	};
 	protected CollateralAgreement relatedCollateralAgreement;
 	/**
-	 * Collateral agreement for which standing settlement instructions are
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,9 +373,8 @@ public class StandingSettlementInstruction {
 	};
 	protected Max350Text sSIDatabaseName;
 	/**
-	 * Specifies the settlement standing instruction database to be used to
-	 * derive the settlement parties involved in a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,9 +421,8 @@ public class StandingSettlementInstruction {
 	};
 	protected SSIDatabaseProvider sSIDatabaseProvider;
 	/**
-	 * Party which provides information on the parties and accounts to be used
-	 * to settle a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -468,8 +471,8 @@ public class StandingSettlementInstruction {
 	};
 	protected DateTimePeriod validityPeriod;
 	/**
-	 * Period during which the SSI is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -516,8 +519,8 @@ public class StandingSettlementInstruction {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency of the payment to which the SSI applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,8 +565,8 @@ public class StandingSettlementInstruction {
 	};
 	protected Asset asset;
 	/**
-	 * Inidicates the asset for the standing settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -612,7 +615,7 @@ public class StandingSettlementInstruction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingSettlementInstruction";
 				definition = "Settlement instruction database information.";
@@ -636,82 +639,92 @@ public class StandingSettlementInstruction {
 	}
 
 	public List<Settlement> getSettlement() {
-		return settlement;
+		return settlement == null ? settlement = new ArrayList<>() : settlement;
 	}
 
-	public void setSettlement(List<com.tools20022.repository.entity.Settlement> settlement) {
-		this.settlement = settlement;
+	public StandingSettlementInstruction setSettlement(List<com.tools20022.repository.entity.Settlement> settlement) {
+		this.settlement = Objects.requireNonNull(settlement);
+		return this;
 	}
 
 	public YesNoIndicator getFXStandingInstruction() {
 		return fXStandingInstruction;
 	}
 
-	public void setFXStandingInstruction(YesNoIndicator fXStandingInstruction) {
-		this.fXStandingInstruction = fXStandingInstruction;
+	public StandingSettlementInstruction setFXStandingInstruction(YesNoIndicator fXStandingInstruction) {
+		this.fXStandingInstruction = Objects.requireNonNull(fXStandingInstruction);
+		return this;
 	}
 
 	public SettlementStandingInstructionDatabaseCode getSettlementStandingInstructionDatabase() {
 		return settlementStandingInstructionDatabase;
 	}
 
-	public void setSettlementStandingInstructionDatabase(SettlementStandingInstructionDatabaseCode settlementStandingInstructionDatabase) {
-		this.settlementStandingInstructionDatabase = settlementStandingInstructionDatabase;
+	public StandingSettlementInstruction setSettlementStandingInstructionDatabase(SettlementStandingInstructionDatabaseCode settlementStandingInstructionDatabase) {
+		this.settlementStandingInstructionDatabase = Objects.requireNonNull(settlementStandingInstructionDatabase);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public StandingSettlementInstruction setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public CollateralAgreement getRelatedCollateralAgreement() {
 		return relatedCollateralAgreement;
 	}
 
-	public void setRelatedCollateralAgreement(com.tools20022.repository.entity.CollateralAgreement relatedCollateralAgreement) {
-		this.relatedCollateralAgreement = relatedCollateralAgreement;
+	public StandingSettlementInstruction setRelatedCollateralAgreement(com.tools20022.repository.entity.CollateralAgreement relatedCollateralAgreement) {
+		this.relatedCollateralAgreement = Objects.requireNonNull(relatedCollateralAgreement);
+		return this;
 	}
 
 	public Max350Text getSSIDatabaseName() {
 		return sSIDatabaseName;
 	}
 
-	public void setSSIDatabaseName(Max350Text sSIDatabaseName) {
-		this.sSIDatabaseName = sSIDatabaseName;
+	public StandingSettlementInstruction setSSIDatabaseName(Max350Text sSIDatabaseName) {
+		this.sSIDatabaseName = Objects.requireNonNull(sSIDatabaseName);
+		return this;
 	}
 
 	public SSIDatabaseProvider getSSIDatabaseProvider() {
 		return sSIDatabaseProvider;
 	}
 
-	public void setSSIDatabaseProvider(com.tools20022.repository.entity.SSIDatabaseProvider sSIDatabaseProvider) {
-		this.sSIDatabaseProvider = sSIDatabaseProvider;
+	public StandingSettlementInstruction setSSIDatabaseProvider(com.tools20022.repository.entity.SSIDatabaseProvider sSIDatabaseProvider) {
+		this.sSIDatabaseProvider = Objects.requireNonNull(sSIDatabaseProvider);
+		return this;
 	}
 
 	public DateTimePeriod getValidityPeriod() {
 		return validityPeriod;
 	}
 
-	public void setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public StandingSettlementInstruction setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public StandingSettlementInstruction setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public Asset getAsset() {
 		return asset;
 	}
 
-	public void setAsset(com.tools20022.repository.entity.Asset asset) {
-		this.asset = asset;
+	public StandingSettlementInstruction setAsset(com.tools20022.repository.entity.Asset asset) {
+		this.asset = Objects.requireNonNull(asset);
+		return this;
 	}
 }

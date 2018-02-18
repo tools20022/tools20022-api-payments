@@ -24,9 +24,11 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the status of an account or the status of the processing of the
@@ -73,8 +75,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +94,8 @@ public class AccountStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Account> account;
 	/**
-	 * Identifies the account for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,8 +140,8 @@ public class AccountStatus extends Status {
 	};
 	protected AccountStatusCode status;
 	/**
-	 * Specifies the status of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,8 +200,8 @@ public class AccountStatus extends Status {
 	};
 	protected YesNoIndicator blocked;
 	/**
-	 * Indicates whether the account is blocked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,9 +247,8 @@ public class AccountStatus extends Status {
 	};
 	protected AccountManagementStatusCode managementStatus;
 	/**
-	 * Specifies the status of the processing of a request linked to the
-	 * management of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,8 +296,8 @@ public class AccountStatus extends Status {
 	};
 	protected EntryStatusCode entryStatus;
 	/**
-	 * Status of an entry on the books of the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -352,8 +353,8 @@ public class AccountStatus extends Status {
 	};
 	protected BalanceStatusCode balanceStatus;
 	/**
-	 * Current status of a cash balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,8 +400,8 @@ public class AccountStatus extends Status {
 	};
 	protected ReasonBlockedCode blockedReason;
 	/**
-	 * Specifies the different reasons for which the account is blocked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,7 +450,7 @@ public class AccountStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus";
 				definition = "Specifies the status of an account or the status of the processing of the actions linked to the management of an account.";
@@ -469,58 +470,65 @@ public class AccountStatus extends Status {
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public AccountStatus setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public AccountStatusCode getStatus() {
 		return status;
 	}
 
-	public void setStatus(AccountStatusCode status) {
-		this.status = status;
+	public AccountStatus setStatus(AccountStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public YesNoIndicator getBlocked() {
 		return blocked;
 	}
 
-	public void setBlocked(YesNoIndicator blocked) {
-		this.blocked = blocked;
+	public AccountStatus setBlocked(YesNoIndicator blocked) {
+		this.blocked = Objects.requireNonNull(blocked);
+		return this;
 	}
 
 	public AccountManagementStatusCode getManagementStatus() {
 		return managementStatus;
 	}
 
-	public void setManagementStatus(AccountManagementStatusCode managementStatus) {
-		this.managementStatus = managementStatus;
+	public AccountStatus setManagementStatus(AccountManagementStatusCode managementStatus) {
+		this.managementStatus = Objects.requireNonNull(managementStatus);
+		return this;
 	}
 
 	public EntryStatusCode getEntryStatus() {
 		return entryStatus;
 	}
 
-	public void setEntryStatus(EntryStatusCode entryStatus) {
-		this.entryStatus = entryStatus;
+	public AccountStatus setEntryStatus(EntryStatusCode entryStatus) {
+		this.entryStatus = Objects.requireNonNull(entryStatus);
+		return this;
 	}
 
 	public BalanceStatusCode getBalanceStatus() {
 		return balanceStatus;
 	}
 
-	public void setBalanceStatus(BalanceStatusCode balanceStatus) {
-		this.balanceStatus = balanceStatus;
+	public AccountStatus setBalanceStatus(BalanceStatusCode balanceStatus) {
+		this.balanceStatus = Objects.requireNonNull(balanceStatus);
+		return this;
 	}
 
 	public ReasonBlockedCode getBlockedReason() {
 		return blockedReason;
 	}
 
-	public void setBlockedReason(ReasonBlockedCode blockedReason) {
-		this.blockedReason = blockedReason;
+	public AccountStatus setBlockedReason(ReasonBlockedCode blockedReason) {
+		this.blockedReason = Objects.requireNonNull(blockedReason);
+		return this;
 	}
 }

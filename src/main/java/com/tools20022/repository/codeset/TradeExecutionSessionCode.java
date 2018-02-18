@@ -45,38 +45,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoOpeningSession
- * TradeExecutionSessionCode.mmArchipelagoOpeningSession}</li>
+ * TradeExecutionSessionCode.ArchipelagoOpeningSession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoCoreSession
- * TradeExecutionSessionCode.mmArchipelagoCoreSession}</li>
+ * TradeExecutionSessionCode.ArchipelagoCoreSession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ArchipelagoLateSession
- * TradeExecutionSessionCode.mmArchipelagoLateSession}</li>
+ * TradeExecutionSessionCode.ArchipelagoLateSession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ChicagoBoardOptionsEarlySession
- * TradeExecutionSessionCode.mmChicagoBoardOptionsEarlySession}</li>
+ * TradeExecutionSessionCode.ChicagoBoardOptionsEarlySession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#ChicagoBoardOptionsRegularHours
- * TradeExecutionSessionCode.mmChicagoBoardOptionsRegularHours}</li>
+ * TradeExecutionSessionCode.ChicagoBoardOptionsRegularHours}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#NagoyaExchange
- * TradeExecutionSessionCode.mmNagoyaExchange}</li>
+ * TradeExecutionSessionCode.NagoyaExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#OsakaExchange
- * TradeExecutionSessionCode.mmOsakaExchange}</li>
+ * TradeExecutionSessionCode.OsakaExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#TokyoSingleListedTrade
- * TradeExecutionSessionCode.mmTokyoSingleListedTrade}</li>
+ * TradeExecutionSessionCode.TokyoSingleListedTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeExecutionSessionCode#TokyoClosingPriceTrade
- * TradeExecutionSessionCode.mmTokyoClosingPriceTrade}</li>
+ * TradeExecutionSessionCode.TokyoClosingPriceTrade}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -404,7 +404,7 @@ public class TradeExecutionSessionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACHO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeExecutionSessionCode";

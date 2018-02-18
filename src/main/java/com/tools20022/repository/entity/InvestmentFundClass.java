@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Security that is a sub-set of an investment fund, and is governed by the same
@@ -164,8 +163,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -183,12 +182,8 @@ public class InvestmentFundClass extends Security {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text classType;
 	/**
-	 * Features of units offered by a fund. For example, a unit may have a
-	 * specific load structure, eg, front end or back end, an income policy, eg,
-	 * pay out or accumulate, or a trailer policy, eg, with or without. Fund
-	 * classes are typically denoted by a single character, eg, 'Class A',
-	 * 'Class 2'.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,9 +230,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected DistributionPolicyCode distributionPolicy;
 	/**
-	 * Income policy relating to a class type, ie, if income is paid out or
-	 * retained in the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,8 +279,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected DividendPolicyCode dividendPolicy;
 	/**
-	 * Dividend policy of the fund, eg, cash, units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,8 +326,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator dualFundIndicator;
 	/**
-	 * Indicates whether the fund has two prices.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,10 +373,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected CurrencyCode requestedNAVCurrency;
 	/**
-	 * Currency to be used for pricing the fund. This currency must be among the
-	 * set of currencies in which the price may be expressed, as stated in the
-	 * prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,8 +421,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected CurrencyCode tradingCurrency;
 	/**
-	 * Currency of the investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,8 +467,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected InvestmentFund investmentFund;
 	/**
-	 * Investment fund which is related to the investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -524,9 +516,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator physicalBearerSecurities;
 	/**
-	 * Indicates whether or not it is possible to hold bearer units/shares in
-	 * this class in certified form
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -574,9 +565,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator dematerialisedBearerSecurities;
 	/**
-	 * Indicate whether or not it is possible to hold bearer units/shares in
-	 * paperless form
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -624,9 +614,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator physicalRegisteredSecurities;
 	/**
-	 * Indicate whether or not it is possible to hold registered units/shares in
-	 * this class in paperless form
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -674,9 +663,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator dematerialisedRegisteredSecurities;
 	/**
-	 * Indicate whether or not it is possible to hold registered units/shares in
-	 * this class in paperless form
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -724,9 +712,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics> processingCharacteristics;
 	/**
-	 * Processing characteristics linked to the investment fund class, ie, not
-	 * to the market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -775,8 +762,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected Max140Text productGroup;
 	/**
-	 * Company specific description of a group of funds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -821,8 +808,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
 	/**
-	 * Account which holds investment fund classes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -868,8 +855,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Calculation of the value of the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -917,8 +904,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction;
 	/**
-	 * Transaction which is related to the fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -965,10 +952,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected ISODate seriesIssueIdentificationDate;
 	/**
-	 * Date that identifies the issue of a fund series. Typically applicable to
-	 * a redemption or order confirmation, but may be specified in the
-	 * subscription, if known.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1015,10 +1000,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected Max35Text seriesName;
 	/**
-	 * Identifies the name of a fund series. Typically applicable to a
-	 * redemption or order confirmation, but may be specified in the
-	 * subscription, if known.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1065,9 +1048,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected YesNoIndicator newIssueIndicator;
 	/**
-	 * Indicates that the financial instrument and/or series included in the
-	 * message is a new issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1115,9 +1097,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected Equalisation equalisation;
 	/**
-	 * Part of an investor's subscription amount that is held by the fund in
-	 * order to pay incentive / performance fees at the end of the fiscal year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1166,9 +1147,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected CurrencyAndAmount topUpAmount;
 	/**
-	 * Additional amount of money (top-up amount) required to meet the minimum
-	 * subscription amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1216,8 +1196,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected CurrencyAndAmount holdBackAmount;
 	/**
-	 * Value of the redemption amount subject to hold back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1263,8 +1243,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected ISODate holdBackReleaseDate;
 	/**
-	 * Date on which the hold back amount is to be released.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1309,8 +1289,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected Max350Text lotDescription;
 	/**
-	 * Description of the lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1355,8 +1335,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected GenericIdentification fundClassification;
 	/**
-	 * Method of classifying a fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1404,8 +1384,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected FinancialInstrumentProductTypeCode underlyingAssetType;
 	/**
-	 * Specifies the type of assets in which the fund invests.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1451,8 +1431,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected InvestorTypeCode investorType;
 	/**
-	 * Type of investor that can invest in the fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1498,8 +1478,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected Reinvestment reinvestment;
 	/**
-	 * Reinvestment information which involves this investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1547,8 +1527,8 @@ public class InvestmentFundClass extends Security {
 	};
 	protected DecimalNumber outstandingUnits;
 	/**
-	 * Investment fund class currently held by shareholders.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1596,7 +1576,7 @@ public class InvestmentFundClass extends Security {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundClass";
 				definition = "Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, for example, a dividend option or valuation currency.";
@@ -1633,231 +1613,260 @@ public class InvestmentFundClass extends Security {
 		return classType;
 	}
 
-	public void setClassType(Max35Text classType) {
-		this.classType = classType;
+	public InvestmentFundClass setClassType(Max35Text classType) {
+		this.classType = Objects.requireNonNull(classType);
+		return this;
 	}
 
 	public DistributionPolicyCode getDistributionPolicy() {
 		return distributionPolicy;
 	}
 
-	public void setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
-		this.distributionPolicy = distributionPolicy;
+	public InvestmentFundClass setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
+		this.distributionPolicy = Objects.requireNonNull(distributionPolicy);
+		return this;
 	}
 
 	public DividendPolicyCode getDividendPolicy() {
 		return dividendPolicy;
 	}
 
-	public void setDividendPolicy(DividendPolicyCode dividendPolicy) {
-		this.dividendPolicy = dividendPolicy;
+	public InvestmentFundClass setDividendPolicy(DividendPolicyCode dividendPolicy) {
+		this.dividendPolicy = Objects.requireNonNull(dividendPolicy);
+		return this;
 	}
 
 	public YesNoIndicator getDualFundIndicator() {
 		return dualFundIndicator;
 	}
 
-	public void setDualFundIndicator(YesNoIndicator dualFundIndicator) {
-		this.dualFundIndicator = dualFundIndicator;
+	public InvestmentFundClass setDualFundIndicator(YesNoIndicator dualFundIndicator) {
+		this.dualFundIndicator = Objects.requireNonNull(dualFundIndicator);
+		return this;
 	}
 
 	public CurrencyCode getRequestedNAVCurrency() {
 		return requestedNAVCurrency;
 	}
 
-	public void setRequestedNAVCurrency(CurrencyCode requestedNAVCurrency) {
-		this.requestedNAVCurrency = requestedNAVCurrency;
+	public InvestmentFundClass setRequestedNAVCurrency(CurrencyCode requestedNAVCurrency) {
+		this.requestedNAVCurrency = Objects.requireNonNull(requestedNAVCurrency);
+		return this;
 	}
 
 	public CurrencyCode getTradingCurrency() {
 		return tradingCurrency;
 	}
 
-	public void setTradingCurrency(CurrencyCode tradingCurrency) {
-		this.tradingCurrency = tradingCurrency;
+	public InvestmentFundClass setTradingCurrency(CurrencyCode tradingCurrency) {
+		this.tradingCurrency = Objects.requireNonNull(tradingCurrency);
+		return this;
 	}
 
 	public InvestmentFund getInvestmentFund() {
 		return investmentFund;
 	}
 
-	public void setInvestmentFund(com.tools20022.repository.entity.InvestmentFund investmentFund) {
-		this.investmentFund = investmentFund;
+	public InvestmentFundClass setInvestmentFund(com.tools20022.repository.entity.InvestmentFund investmentFund) {
+		this.investmentFund = Objects.requireNonNull(investmentFund);
+		return this;
 	}
 
 	public YesNoIndicator getPhysicalBearerSecurities() {
 		return physicalBearerSecurities;
 	}
 
-	public void setPhysicalBearerSecurities(YesNoIndicator physicalBearerSecurities) {
-		this.physicalBearerSecurities = physicalBearerSecurities;
+	public InvestmentFundClass setPhysicalBearerSecurities(YesNoIndicator physicalBearerSecurities) {
+		this.physicalBearerSecurities = Objects.requireNonNull(physicalBearerSecurities);
+		return this;
 	}
 
 	public YesNoIndicator getDematerialisedBearerSecurities() {
 		return dematerialisedBearerSecurities;
 	}
 
-	public void setDematerialisedBearerSecurities(YesNoIndicator dematerialisedBearerSecurities) {
-		this.dematerialisedBearerSecurities = dematerialisedBearerSecurities;
+	public InvestmentFundClass setDematerialisedBearerSecurities(YesNoIndicator dematerialisedBearerSecurities) {
+		this.dematerialisedBearerSecurities = Objects.requireNonNull(dematerialisedBearerSecurities);
+		return this;
 	}
 
 	public YesNoIndicator getPhysicalRegisteredSecurities() {
 		return physicalRegisteredSecurities;
 	}
 
-	public void setPhysicalRegisteredSecurities(YesNoIndicator physicalRegisteredSecurities) {
-		this.physicalRegisteredSecurities = physicalRegisteredSecurities;
+	public InvestmentFundClass setPhysicalRegisteredSecurities(YesNoIndicator physicalRegisteredSecurities) {
+		this.physicalRegisteredSecurities = Objects.requireNonNull(physicalRegisteredSecurities);
+		return this;
 	}
 
 	public YesNoIndicator getDematerialisedRegisteredSecurities() {
 		return dematerialisedRegisteredSecurities;
 	}
 
-	public void setDematerialisedRegisteredSecurities(YesNoIndicator dematerialisedRegisteredSecurities) {
-		this.dematerialisedRegisteredSecurities = dematerialisedRegisteredSecurities;
+	public InvestmentFundClass setDematerialisedRegisteredSecurities(YesNoIndicator dematerialisedRegisteredSecurities) {
+		this.dematerialisedRegisteredSecurities = Objects.requireNonNull(dematerialisedRegisteredSecurities);
+		return this;
 	}
 
 	public List<InvestmentFundClassProcessingCharacteristics> getProcessingCharacteristics() {
-		return processingCharacteristics;
+		return processingCharacteristics == null ? processingCharacteristics = new ArrayList<>() : processingCharacteristics;
 	}
 
-	public void setProcessingCharacteristics(List<com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics> processingCharacteristics) {
-		this.processingCharacteristics = processingCharacteristics;
+	public InvestmentFundClass setProcessingCharacteristics(List<com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics> processingCharacteristics) {
+		this.processingCharacteristics = Objects.requireNonNull(processingCharacteristics);
+		return this;
 	}
 
 	public Max140Text getProductGroup() {
 		return productGroup;
 	}
 
-	public void setProductGroup(Max140Text productGroup) {
-		this.productGroup = productGroup;
+	public InvestmentFundClass setProductGroup(Max140Text productGroup) {
+		this.productGroup = Objects.requireNonNull(productGroup);
+		return this;
 	}
 
 	public List<InvestmentAccount> getInvestmentAccount() {
-		return investmentAccount;
+		return investmentAccount == null ? investmentAccount = new ArrayList<>() : investmentAccount;
 	}
 
-	public void setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
-		this.investmentAccount = investmentAccount;
+	public InvestmentFundClass setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
+		this.investmentAccount = Objects.requireNonNull(investmentAccount);
+		return this;
 	}
 
-	public NetAssetValueCalculation getNetAssetValueCalculation() {
-		return netAssetValueCalculation;
+	public Optional<NetAssetValueCalculation> getNetAssetValueCalculation() {
+		return netAssetValueCalculation == null ? Optional.empty() : Optional.of(netAssetValueCalculation);
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+	public InvestmentFundClass setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
 		this.netAssetValueCalculation = netAssetValueCalculation;
+		return this;
 	}
 
 	public List<InvestmentFundTransaction> getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+		return investmentFundTransaction == null ? investmentFundTransaction = new ArrayList<>() : investmentFundTransaction;
 	}
 
-	public void setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
-		this.investmentFundTransaction = investmentFundTransaction;
+	public InvestmentFundClass setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
+		this.investmentFundTransaction = Objects.requireNonNull(investmentFundTransaction);
+		return this;
 	}
 
 	public ISODate getSeriesIssueIdentificationDate() {
 		return seriesIssueIdentificationDate;
 	}
 
-	public void setSeriesIssueIdentificationDate(ISODate seriesIssueIdentificationDate) {
-		this.seriesIssueIdentificationDate = seriesIssueIdentificationDate;
+	public InvestmentFundClass setSeriesIssueIdentificationDate(ISODate seriesIssueIdentificationDate) {
+		this.seriesIssueIdentificationDate = Objects.requireNonNull(seriesIssueIdentificationDate);
+		return this;
 	}
 
 	public Max35Text getSeriesName() {
 		return seriesName;
 	}
 
-	public void setSeriesName(Max35Text seriesName) {
-		this.seriesName = seriesName;
+	public InvestmentFundClass setSeriesName(Max35Text seriesName) {
+		this.seriesName = Objects.requireNonNull(seriesName);
+		return this;
 	}
 
 	public YesNoIndicator getNewIssueIndicator() {
 		return newIssueIndicator;
 	}
 
-	public void setNewIssueIndicator(YesNoIndicator newIssueIndicator) {
-		this.newIssueIndicator = newIssueIndicator;
+	public InvestmentFundClass setNewIssueIndicator(YesNoIndicator newIssueIndicator) {
+		this.newIssueIndicator = Objects.requireNonNull(newIssueIndicator);
+		return this;
 	}
 
-	public Equalisation getEqualisation() {
-		return equalisation;
+	public Optional<Equalisation> getEqualisation() {
+		return equalisation == null ? Optional.empty() : Optional.of(equalisation);
 	}
 
-	public void setEqualisation(com.tools20022.repository.entity.Equalisation equalisation) {
+	public InvestmentFundClass setEqualisation(com.tools20022.repository.entity.Equalisation equalisation) {
 		this.equalisation = equalisation;
+		return this;
 	}
 
 	public CurrencyAndAmount getTopUpAmount() {
 		return topUpAmount;
 	}
 
-	public void setTopUpAmount(CurrencyAndAmount topUpAmount) {
-		this.topUpAmount = topUpAmount;
+	public InvestmentFundClass setTopUpAmount(CurrencyAndAmount topUpAmount) {
+		this.topUpAmount = Objects.requireNonNull(topUpAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getHoldBackAmount() {
 		return holdBackAmount;
 	}
 
-	public void setHoldBackAmount(CurrencyAndAmount holdBackAmount) {
-		this.holdBackAmount = holdBackAmount;
+	public InvestmentFundClass setHoldBackAmount(CurrencyAndAmount holdBackAmount) {
+		this.holdBackAmount = Objects.requireNonNull(holdBackAmount);
+		return this;
 	}
 
 	public ISODate getHoldBackReleaseDate() {
 		return holdBackReleaseDate;
 	}
 
-	public void setHoldBackReleaseDate(ISODate holdBackReleaseDate) {
-		this.holdBackReleaseDate = holdBackReleaseDate;
+	public InvestmentFundClass setHoldBackReleaseDate(ISODate holdBackReleaseDate) {
+		this.holdBackReleaseDate = Objects.requireNonNull(holdBackReleaseDate);
+		return this;
 	}
 
 	public Max350Text getLotDescription() {
 		return lotDescription;
 	}
 
-	public void setLotDescription(Max350Text lotDescription) {
-		this.lotDescription = lotDescription;
+	public InvestmentFundClass setLotDescription(Max350Text lotDescription) {
+		this.lotDescription = Objects.requireNonNull(lotDescription);
+		return this;
 	}
 
 	public GenericIdentification getFundClassification() {
 		return fundClassification;
 	}
 
-	public void setFundClassification(com.tools20022.repository.entity.GenericIdentification fundClassification) {
-		this.fundClassification = fundClassification;
+	public InvestmentFundClass setFundClassification(com.tools20022.repository.entity.GenericIdentification fundClassification) {
+		this.fundClassification = Objects.requireNonNull(fundClassification);
+		return this;
 	}
 
 	public FinancialInstrumentProductTypeCode getUnderlyingAssetType() {
 		return underlyingAssetType;
 	}
 
-	public void setUnderlyingAssetType(FinancialInstrumentProductTypeCode underlyingAssetType) {
-		this.underlyingAssetType = underlyingAssetType;
+	public InvestmentFundClass setUnderlyingAssetType(FinancialInstrumentProductTypeCode underlyingAssetType) {
+		this.underlyingAssetType = Objects.requireNonNull(underlyingAssetType);
+		return this;
 	}
 
 	public InvestorTypeCode getInvestorType() {
 		return investorType;
 	}
 
-	public void setInvestorType(InvestorTypeCode investorType) {
-		this.investorType = investorType;
+	public InvestmentFundClass setInvestorType(InvestorTypeCode investorType) {
+		this.investorType = Objects.requireNonNull(investorType);
+		return this;
 	}
 
 	public Reinvestment getReinvestment() {
 		return reinvestment;
 	}
 
-	public void setReinvestment(com.tools20022.repository.entity.Reinvestment reinvestment) {
-		this.reinvestment = reinvestment;
+	public InvestmentFundClass setReinvestment(com.tools20022.repository.entity.Reinvestment reinvestment) {
+		this.reinvestment = Objects.requireNonNull(reinvestment);
+		return this;
 	}
 
 	public DecimalNumber getOutstandingUnits() {
 		return outstandingUnits;
 	}
 
-	public void setOutstandingUnits(DecimalNumber outstandingUnits) {
-		this.outstandingUnits = outstandingUnits;
+	public InvestmentFundClass setOutstandingUnits(DecimalNumber outstandingUnits) {
+		this.outstandingUnits = Objects.requireNonNull(outstandingUnits);
+		return this;
 	}
 }

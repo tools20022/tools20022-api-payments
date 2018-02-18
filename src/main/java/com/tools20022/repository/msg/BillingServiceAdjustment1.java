@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -97,8 +99,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,16 +111,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the billing adjustments for a specific service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingServiceAdjustment1", propOrder = {"type", "description", "amount", "balanceRequiredAmount", "errorDate", "adjustmentIdentification", "subService", "priceChange", "originalPrice", "newPrice", "volumeChange",
 		"originalVolume", "newVolume", "originalChargeAmount", "newChargeAmount"})
 public class BillingServiceAdjustment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected ServiceAdjustmentType1Code type;
 	/**
-	 * Identifies the type of adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +155,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Service.mmType;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,10 +166,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> ServiceAdjustmentType1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Desc", required = true)
 	protected Max140Text description;
 	/**
-	 * Free-form description and clarification of the adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,7 +198,7 @@ public class BillingServiceAdjustment1 {
 	 */
 	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,13 +209,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected AmountAndDirection34 amount;
 	/**
-	 * Amount of the adjustment, expressed in the settlement currency.
 	 * 
-	 * Usage: If the amount would reduce charges due then the amount should be
-	 * negatively signed.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -245,7 +247,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -257,10 +259,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "BalReqrdAmt")
 	protected AmountAndDirection34 balanceRequiredAmount;
 	/**
-	 * Specifies whether the balance amount requires an adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -293,7 +296,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmBalanceRequiredAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "BalReqrdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,13 +308,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "ErrDt")
 	protected ISODate errorDate;
 	/**
-	 * Date on which the situation causing the service adjustment occurred. If
-	 * the date is not known then used the last day of the month in which the
-	 * situation occurred or the date of the billing statement which reported
-	 * the original service to which this adjustment applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,7 +341,7 @@ public class BillingServiceAdjustment1 {
 	 */
 	public static final MMMessageAttribute mmErrorDate = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "ErrDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -351,11 +352,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "AdjstmntId")
 	protected Max35Text adjustmentIdentification;
 	/**
-	 * Financial institution's own, internal service identification code, used
-	 * to uniquely identify the service within the financial institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,7 +385,7 @@ public class BillingServiceAdjustment1 {
 	 */
 	public static final MMMessageAttribute mmAdjustmentIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "AdjstmntId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -395,12 +396,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "SubSvc")
 	protected BillingSubServiceIdentification1 subService;
 	/**
-	 * Defines the financial institution sub-service identification if the
-	 * financial institution service identification code is used for more than
-	 * one service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -435,7 +435,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmSubService = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "SubSvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -447,11 +447,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "PricChng")
 	protected AmountAndDirection34 priceChange;
 	/**
-	 * Change in the service price, expressed in the pricing currency. A
-	 * negative value indicates a price reduction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -485,7 +485,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmPriceChange = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "PricChng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -497,11 +497,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlPric")
 	protected AmountAndDirection34 originalPrice;
 	/**
-	 * Price that was applied to the service, prior to the change, expressed in
-	 * the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -535,7 +535,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmOriginalPrice = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -547,10 +547,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "NewPric")
 	protected AmountAndDirection34 newPrice;
 	/**
-	 * New, adjusted service price, expressed in the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -583,7 +584,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmNewPrice = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "NewPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -595,11 +596,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "VolChng")
 	protected DecimalNumber volumeChange;
 	/**
-	 * Change in the service volume. A negative value indicates a volume
-	 * reduction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -635,7 +636,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAttribute mmVolumeChange = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "VolChng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -646,10 +647,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlVol")
 	protected DecimalNumber originalVolume;
 	/**
-	 * Original service volume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -683,7 +685,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAttribute mmOriginalVolume = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlVol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -694,10 +696,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "NewVol")
 	protected DecimalNumber newVolume;
 	/**
-	 * New, adjusted service volume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -731,7 +734,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAttribute mmNewVolume = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "NewVol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -742,11 +745,11 @@ public class BillingServiceAdjustment1 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlChrgAmt")
 	protected AmountAndDirection34 originalChargeAmount;
 	/**
-	 * Service charge that was applied to the service, prior to the change,
-	 * expressed in the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -780,7 +783,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmOriginalChargeAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlChrgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -792,10 +795,11 @@ public class BillingServiceAdjustment1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "NewChrgAmt")
 	protected AmountAndDirection34 newChargeAmount;
 	/**
-	 * New, adjusted service charge, expressed in the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -828,7 +832,7 @@ public class BillingServiceAdjustment1 {
 	public static final MMMessageAssociationEnd mmNewChargeAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingServiceAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "NewChrgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -844,12 +848,14 @@ public class BillingServiceAdjustment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingServiceAdjustment1.mmType, BillingServiceAdjustment1.mmDescription, BillingServiceAdjustment1.mmAmount, BillingServiceAdjustment1.mmBalanceRequiredAmount,
-						BillingServiceAdjustment1.mmErrorDate, BillingServiceAdjustment1.mmAdjustmentIdentification, BillingServiceAdjustment1.mmSubService, BillingServiceAdjustment1.mmPriceChange,
-						BillingServiceAdjustment1.mmOriginalPrice, BillingServiceAdjustment1.mmNewPrice, BillingServiceAdjustment1.mmVolumeChange, BillingServiceAdjustment1.mmOriginalVolume, BillingServiceAdjustment1.mmNewVolume,
-						BillingServiceAdjustment1.mmOriginalChargeAmount, BillingServiceAdjustment1.mmNewChargeAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceAdjustment1.mmType, com.tools20022.repository.msg.BillingServiceAdjustment1.mmDescription,
+						com.tools20022.repository.msg.BillingServiceAdjustment1.mmAmount, com.tools20022.repository.msg.BillingServiceAdjustment1.mmBalanceRequiredAmount, com.tools20022.repository.msg.BillingServiceAdjustment1.mmErrorDate,
+						com.tools20022.repository.msg.BillingServiceAdjustment1.mmAdjustmentIdentification, com.tools20022.repository.msg.BillingServiceAdjustment1.mmSubService,
+						com.tools20022.repository.msg.BillingServiceAdjustment1.mmPriceChange, com.tools20022.repository.msg.BillingServiceAdjustment1.mmOriginalPrice, com.tools20022.repository.msg.BillingServiceAdjustment1.mmNewPrice,
+						com.tools20022.repository.msg.BillingServiceAdjustment1.mmVolumeChange, com.tools20022.repository.msg.BillingServiceAdjustment1.mmOriginalVolume, com.tools20022.repository.msg.BillingServiceAdjustment1.mmNewVolume,
+						com.tools20022.repository.msg.BillingServiceAdjustment1.mmOriginalChargeAmount, com.tools20022.repository.msg.BillingServiceAdjustment1.mmNewChargeAmount);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServiceAdjustment1";
 				definition = "Specifies the billing adjustments for a specific service.";
@@ -858,138 +864,138 @@ public class BillingServiceAdjustment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public ServiceAdjustmentType1Code getType() {
 		return type;
 	}
 
-	public void setType(ServiceAdjustmentType1Code type) {
-		this.type = type;
+	public BillingServiceAdjustment1 setType(ServiceAdjustmentType1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Desc", required = true)
 	public Max140Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max140Text description) {
-		this.description = description;
+	public BillingServiceAdjustment1 setDescription(Max140Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public AmountAndDirection34 getAmount() {
 		return amount;
 	}
 
-	public void setAmount(com.tools20022.repository.msg.AmountAndDirection34 amount) {
-		this.amount = amount;
+	public BillingServiceAdjustment1 setAmount(com.tools20022.repository.msg.AmountAndDirection34 amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "BalReqrdAmt")
-	public AmountAndDirection34 getBalanceRequiredAmount() {
-		return balanceRequiredAmount;
+	public Optional<AmountAndDirection34> getBalanceRequiredAmount() {
+		return balanceRequiredAmount == null ? Optional.empty() : Optional.of(balanceRequiredAmount);
 	}
 
-	public void setBalanceRequiredAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceRequiredAmount) {
+	public BillingServiceAdjustment1 setBalanceRequiredAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceRequiredAmount) {
 		this.balanceRequiredAmount = balanceRequiredAmount;
+		return this;
 	}
 
-	@XmlElement(name = "ErrDt")
-	public ISODate getErrorDate() {
-		return errorDate;
+	public Optional<ISODate> getErrorDate() {
+		return errorDate == null ? Optional.empty() : Optional.of(errorDate);
 	}
 
-	public void setErrorDate(ISODate errorDate) {
+	public BillingServiceAdjustment1 setErrorDate(ISODate errorDate) {
 		this.errorDate = errorDate;
+		return this;
 	}
 
-	@XmlElement(name = "AdjstmntId")
-	public Max35Text getAdjustmentIdentification() {
-		return adjustmentIdentification;
+	public Optional<Max35Text> getAdjustmentIdentification() {
+		return adjustmentIdentification == null ? Optional.empty() : Optional.of(adjustmentIdentification);
 	}
 
-	public void setAdjustmentIdentification(Max35Text adjustmentIdentification) {
+	public BillingServiceAdjustment1 setAdjustmentIdentification(Max35Text adjustmentIdentification) {
 		this.adjustmentIdentification = adjustmentIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "SubSvc")
-	public BillingSubServiceIdentification1 getSubService() {
-		return subService;
+	public Optional<BillingSubServiceIdentification1> getSubService() {
+		return subService == null ? Optional.empty() : Optional.of(subService);
 	}
 
-	public void setSubService(com.tools20022.repository.msg.BillingSubServiceIdentification1 subService) {
+	public BillingServiceAdjustment1 setSubService(com.tools20022.repository.msg.BillingSubServiceIdentification1 subService) {
 		this.subService = subService;
+		return this;
 	}
 
-	@XmlElement(name = "PricChng")
-	public AmountAndDirection34 getPriceChange() {
-		return priceChange;
+	public Optional<AmountAndDirection34> getPriceChange() {
+		return priceChange == null ? Optional.empty() : Optional.of(priceChange);
 	}
 
-	public void setPriceChange(com.tools20022.repository.msg.AmountAndDirection34 priceChange) {
+	public BillingServiceAdjustment1 setPriceChange(com.tools20022.repository.msg.AmountAndDirection34 priceChange) {
 		this.priceChange = priceChange;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlPric")
-	public AmountAndDirection34 getOriginalPrice() {
-		return originalPrice;
+	public Optional<AmountAndDirection34> getOriginalPrice() {
+		return originalPrice == null ? Optional.empty() : Optional.of(originalPrice);
 	}
 
-	public void setOriginalPrice(com.tools20022.repository.msg.AmountAndDirection34 originalPrice) {
+	public BillingServiceAdjustment1 setOriginalPrice(com.tools20022.repository.msg.AmountAndDirection34 originalPrice) {
 		this.originalPrice = originalPrice;
+		return this;
 	}
 
-	@XmlElement(name = "NewPric")
-	public AmountAndDirection34 getNewPrice() {
-		return newPrice;
+	public Optional<AmountAndDirection34> getNewPrice() {
+		return newPrice == null ? Optional.empty() : Optional.of(newPrice);
 	}
 
-	public void setNewPrice(com.tools20022.repository.msg.AmountAndDirection34 newPrice) {
+	public BillingServiceAdjustment1 setNewPrice(com.tools20022.repository.msg.AmountAndDirection34 newPrice) {
 		this.newPrice = newPrice;
+		return this;
 	}
 
-	@XmlElement(name = "VolChng")
-	public DecimalNumber getVolumeChange() {
-		return volumeChange;
+	public Optional<DecimalNumber> getVolumeChange() {
+		return volumeChange == null ? Optional.empty() : Optional.of(volumeChange);
 	}
 
-	public void setVolumeChange(DecimalNumber volumeChange) {
+	public BillingServiceAdjustment1 setVolumeChange(DecimalNumber volumeChange) {
 		this.volumeChange = volumeChange;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlVol")
-	public DecimalNumber getOriginalVolume() {
-		return originalVolume;
+	public Optional<DecimalNumber> getOriginalVolume() {
+		return originalVolume == null ? Optional.empty() : Optional.of(originalVolume);
 	}
 
-	public void setOriginalVolume(DecimalNumber originalVolume) {
+	public BillingServiceAdjustment1 setOriginalVolume(DecimalNumber originalVolume) {
 		this.originalVolume = originalVolume;
+		return this;
 	}
 
-	@XmlElement(name = "NewVol")
-	public DecimalNumber getNewVolume() {
-		return newVolume;
+	public Optional<DecimalNumber> getNewVolume() {
+		return newVolume == null ? Optional.empty() : Optional.of(newVolume);
 	}
 
-	public void setNewVolume(DecimalNumber newVolume) {
+	public BillingServiceAdjustment1 setNewVolume(DecimalNumber newVolume) {
 		this.newVolume = newVolume;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlChrgAmt")
-	public AmountAndDirection34 getOriginalChargeAmount() {
-		return originalChargeAmount;
+	public Optional<AmountAndDirection34> getOriginalChargeAmount() {
+		return originalChargeAmount == null ? Optional.empty() : Optional.of(originalChargeAmount);
 	}
 
-	public void setOriginalChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 originalChargeAmount) {
+	public BillingServiceAdjustment1 setOriginalChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 originalChargeAmount) {
 		this.originalChargeAmount = originalChargeAmount;
+		return this;
 	}
 
-	@XmlElement(name = "NewChrgAmt")
-	public AmountAndDirection34 getNewChargeAmount() {
-		return newChargeAmount;
+	public Optional<AmountAndDirection34> getNewChargeAmount() {
+		return newChargeAmount == null ? Optional.empty() : Optional.of(newChargeAmount);
 	}
 
-	public void setNewChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 newChargeAmount) {
+	public BillingServiceAdjustment1 setNewChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 newChargeAmount) {
 		this.newChargeAmount = newChargeAmount;
+		return this;
 	}
 }

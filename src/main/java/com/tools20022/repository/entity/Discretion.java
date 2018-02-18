@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.MoveTypeCode;
 import com.tools20022.repository.codeset.OffsetTypeCode;
@@ -29,6 +30,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Indicates on an order that the trader wishes to display one price in the
@@ -77,8 +80,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: DiscretionInst</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +102,8 @@ public class Discretion {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesOrderExecutionInstruction relatedOrderExecution;
 	/**
-	 * Order instruction for which a discretion is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,8 +150,8 @@ public class Discretion {
 	};
 	protected CurrencyAndAmount offset;
 	/**
-	 * Amount added to the 'related to' price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,9 +196,8 @@ public class Discretion {
 	};
 	protected PlusOrMinusIndicator offsetSign;
 	/**
-	 * Indicates whether the offset should be added or subtracted from the
-	 * related price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,6 +209,9 @@ public class Discretion {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Discretion Discretion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 389</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -221,6 +229,7 @@ public class Discretion {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "389"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetSign";
 			definition = "Indicates whether the offset should be added or subtracted from the related price.";
@@ -239,9 +248,8 @@ public class Discretion {
 	};
 	protected TypeOfDiscretionPriceCode relatedPriceType;
 	/**
-	 * Identify the type of price an offset is related to. The offset can either
-	 * be added or subtracted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,6 +261,9 @@ public class Discretion {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Discretion Discretion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 388</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -270,6 +281,7 @@ public class Discretion {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "388"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPriceType";
 			definition = "Identify the type of price an offset is related to. The offset can either be added or subtracted.";
@@ -288,8 +300,8 @@ public class Discretion {
 	};
 	protected MoveTypeCode moveType;
 	/**
-	 * Describes whether discretion price is static/fixed or floats.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -334,9 +346,8 @@ public class Discretion {
 	};
 	protected Max35Text limitType;
 	/**
-	 * Specifies the nature of the resulting discretion price (e.g. or better
-	 * limit, strict limit etc).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,9 +393,8 @@ public class Discretion {
 	};
 	protected Max35Text roundDirection;
 	/**
-	 * If the calculated discretion price is not a valid tick price, specifies
-	 * how to round the price (e.g. to be more or less aggressive)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,9 +440,8 @@ public class Discretion {
 	};
 	protected PriceProtectionScopeCode scope;
 	/**
-	 * The scope of "related to" price of the discretion (e.g. local, global
-	 * etc)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,8 +488,8 @@ public class Discretion {
 	};
 	protected OffsetTypeCode offsetType;
 	/**
-	 * Describes the type of Discretion Offset .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,7 +536,8 @@ public class Discretion {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "DiscretionInst"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Discretion";
 				definition = "Indicates on an order that the trader wishes to display one price in the market but will accept trades at another price.";
@@ -545,75 +555,84 @@ public class Discretion {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesOrderExecutionInstruction getRelatedOrderExecution() {
-		return relatedOrderExecution;
+	public Optional<SecuritiesOrderExecutionInstruction> getRelatedOrderExecution() {
+		return relatedOrderExecution == null ? Optional.empty() : Optional.of(relatedOrderExecution);
 	}
 
-	public void setRelatedOrderExecution(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction relatedOrderExecution) {
+	public Discretion setRelatedOrderExecution(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction relatedOrderExecution) {
 		this.relatedOrderExecution = relatedOrderExecution;
+		return this;
 	}
 
 	public CurrencyAndAmount getOffset() {
 		return offset;
 	}
 
-	public void setOffset(CurrencyAndAmount offset) {
-		this.offset = offset;
+	public Discretion setOffset(CurrencyAndAmount offset) {
+		this.offset = Objects.requireNonNull(offset);
+		return this;
 	}
 
 	public PlusOrMinusIndicator getOffsetSign() {
 		return offsetSign;
 	}
 
-	public void setOffsetSign(PlusOrMinusIndicator offsetSign) {
-		this.offsetSign = offsetSign;
+	public Discretion setOffsetSign(PlusOrMinusIndicator offsetSign) {
+		this.offsetSign = Objects.requireNonNull(offsetSign);
+		return this;
 	}
 
 	public TypeOfDiscretionPriceCode getRelatedPriceType() {
 		return relatedPriceType;
 	}
 
-	public void setRelatedPriceType(TypeOfDiscretionPriceCode relatedPriceType) {
-		this.relatedPriceType = relatedPriceType;
+	public Discretion setRelatedPriceType(TypeOfDiscretionPriceCode relatedPriceType) {
+		this.relatedPriceType = Objects.requireNonNull(relatedPriceType);
+		return this;
 	}
 
 	public MoveTypeCode getMoveType() {
 		return moveType;
 	}
 
-	public void setMoveType(MoveTypeCode moveType) {
-		this.moveType = moveType;
+	public Discretion setMoveType(MoveTypeCode moveType) {
+		this.moveType = Objects.requireNonNull(moveType);
+		return this;
 	}
 
 	public Max35Text getLimitType() {
 		return limitType;
 	}
 
-	public void setLimitType(Max35Text limitType) {
-		this.limitType = limitType;
+	public Discretion setLimitType(Max35Text limitType) {
+		this.limitType = Objects.requireNonNull(limitType);
+		return this;
 	}
 
 	public Max35Text getRoundDirection() {
 		return roundDirection;
 	}
 
-	public void setRoundDirection(Max35Text roundDirection) {
-		this.roundDirection = roundDirection;
+	public Discretion setRoundDirection(Max35Text roundDirection) {
+		this.roundDirection = Objects.requireNonNull(roundDirection);
+		return this;
 	}
 
 	public PriceProtectionScopeCode getScope() {
 		return scope;
 	}
 
-	public void setScope(PriceProtectionScopeCode scope) {
-		this.scope = scope;
+	public Discretion setScope(PriceProtectionScopeCode scope) {
+		this.scope = Objects.requireNonNull(scope);
+		return this;
 	}
 
 	public OffsetTypeCode getOffsetType() {
 		return offsetType;
 	}
 
-	public void setOffsetType(OffsetTypeCode offsetType) {
-		this.offsetType = offsetType;
+	public Discretion setOffsetType(OffsetTypeCode offsetType) {
+		this.offsetType = Objects.requireNonNull(offsetType);
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Physical certificates representing rights attached to the physical
@@ -65,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +85,8 @@ public class CouponAttached {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODate date;
 	/**
-	 * Date of the coupon attached to the physical security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,8 +131,8 @@ public class CouponAttached {
 	};
 	protected Max3NumericText number;
 	/**
-	 * Number of the coupon attached to the physical security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,8 +178,8 @@ public class CouponAttached {
 	};
 	protected Security security;
 	/**
-	 * Instrument to which a coupon is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,9 +225,8 @@ public class CouponAttached {
 	};
 	protected ISODateTime couponClippingDate;
 	/**
-	 * Date on which the coupons are to be/were submitted for payment of
-	 * interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,8 +273,8 @@ public class CouponAttached {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification of the coupon.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -321,7 +321,7 @@ public class CouponAttached {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CouponAttached";
 				definition = "Physical certificates representing rights attached to the physical certificates representing a security.";
@@ -342,39 +342,44 @@ public class CouponAttached {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public CouponAttached setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public Max3NumericText getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max3NumericText number) {
-		this.number = number;
+	public CouponAttached setNumber(Max3NumericText number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
 	public Security getSecurity() {
 		return security;
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
-		this.security = security;
+	public CouponAttached setSecurity(com.tools20022.repository.entity.Security security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public ISODateTime getCouponClippingDate() {
 		return couponClippingDate;
 	}
 
-	public void setCouponClippingDate(ISODateTime couponClippingDate) {
-		this.couponClippingDate = couponClippingDate;
+	public CouponAttached setCouponClippingDate(ISODateTime couponClippingDate) {
+		this.couponClippingDate = Objects.requireNonNull(couponClippingDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public CouponAttached setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 }

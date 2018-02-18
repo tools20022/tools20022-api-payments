@@ -27,9 +27,11 @@ import com.tools20022.repository.msg.CaseAssignment3;
 import com.tools20022.repository.msg.ProprietaryData4;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -92,17 +94,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ProprietaryFormatInvestigationV03", propOrder = {"assignment", "case", "proprietaryData", "supplementaryData"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ProprietaryFormatInvestigationV03", propOrder = {"assignment", "case_", "proprietaryData", "supplementaryData"})
 public class ProprietaryFormatInvestigationV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Assgnmt", required = true)
 	protected CaseAssignment3 assignment;
 	/**
-	 * Identifies the assignment of an investigation case from an assigner to an
-	 * assignee. Usage Rule: the Assigner must be the sender of this
-	 * confirmation and the Assignee must be the receiver.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,10 +144,11 @@ public class ProprietaryFormatInvestigationV03 {
 			}
 		}
 	};
+	@XmlElement(name = "Case", required = true)
 	protected Case3 case_;
 	/**
-	 * Identifies the investigation case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,10 +186,11 @@ public class ProprietaryFormatInvestigationV03 {
 			}
 		}
 	};
+	@XmlElement(name = "PrtryData", required = true)
 	protected ProprietaryData4 proprietaryData;
 	/**
-	 * Proprietary information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,11 +230,11 @@ public class ProprietaryFormatInvestigationV03 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,43 +305,43 @@ public class ProprietaryFormatInvestigationV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Assgnmt", required = true)
 	public CaseAssignment3 getAssignment() {
 		return assignment;
 	}
 
-	public void setAssignment(CaseAssignment3 assignment) {
-		this.assignment = assignment;
+	public ProprietaryFormatInvestigationV03 setAssignment(CaseAssignment3 assignment) {
+		this.assignment = Objects.requireNonNull(assignment);
+		return this;
 	}
 
-	@XmlElement(name = "Case", required = true)
 	public Case3 getCase() {
 		return case_;
 	}
 
-	public void setCase(Case3 case_) {
-		this.case_ = case_;
+	public ProprietaryFormatInvestigationV03 setCase(Case3 case_) {
+		this.case_ = Objects.requireNonNull(case_);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryData", required = true)
 	public ProprietaryData4 getProprietaryData() {
 		return proprietaryData;
 	}
 
-	public void setProprietaryData(ProprietaryData4 proprietaryData) {
-		this.proprietaryData = proprietaryData;
+	public ProprietaryFormatInvestigationV03 setProprietaryData(ProprietaryData4 proprietaryData) {
+		this.proprietaryData = Objects.requireNonNull(proprietaryData);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public ProprietaryFormatInvestigationV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.035.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:camt.035.001.03")
 	static public class Document {
 		@XmlElement(name = "PrtryFrmtInvstgtn", required = true)
 		public ProprietaryFormatInvestigationV03 messageBody;

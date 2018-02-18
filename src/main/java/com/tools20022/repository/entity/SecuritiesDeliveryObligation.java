@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.SettlementDateCode;
@@ -25,9 +26,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Obligation for one party to deliver securities to another party.
@@ -110,8 +110,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -128,9 +128,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator cCPEligibility;
 	/**
-	 * Specifies whether the settlement transaction is CCP (Central
-	 * Counterparty) eligible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,8 +177,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected YesNoIndicator nettingEligibility;
 	/**
-	 * Specifies whether the settlement transaction is eligible for netting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,8 +225,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected ISODateTime transferInstructionDate;
 	/**
-	 * Date at which the instructing party places the transfer instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,8 +272,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected CurrencyCode transferCurrency;
 	/**
-	 * Identifies the currency to be used to transfer the holdings.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,9 +319,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected CorporateActionProceedsDeliveryInstruction relatedCorporateAction;
 	/**
-	 * Corporate action processes which are the source of the securities
-	 * delivery obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,8 +370,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected CollateralMovement relatedCollateralMovement;
 	/**
-	 * Collateral movement which is the source of the obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,8 +419,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected SecuritiesTradeExecution securitiesTradeExecution;
 	/**
-	 * Specifies the trade which originates the delivery obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -471,9 +469,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.PortfolioTransfer> relatedPortfolioTransfer;
 	/**
-	 * Portfolio transfer which is the source of the securities delivery
-	 * obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -521,10 +518,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer;
 	/**
-	 * Completion of a securities settlement instruction, wherein securities are
-	 * delivered/debited from a securities account and received/credited to the
-	 * designated securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -572,9 +567,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected YesNoIndicator settlementInstructionGeneration;
 	/**
-	 * Specifies whether the ETC provider should generate settlement
-	 * instructions or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -622,9 +616,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected SettlementDateCode settlementDateCode;
 	/**
-	 * Requested date of trade settlement, in coded form, for example, trade
-	 * date +1).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,6 +630,9 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation
 	 * SecuritiesDeliveryObligation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 63</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -654,6 +650,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "63"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDateCode";
 			definition = "Requested date of trade settlement, in coded form, for example, trade date +1).";
@@ -672,9 +669,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	};
 	protected SecuritiesLending securitiesLending;
 	/**
-	 * Securities lending process which covers the delivery of securities by the
-	 * seller.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -725,7 +721,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesDeliveryObligation";
 				definition = "Obligation for one party to deliver securities to another party.";
@@ -753,95 +749,107 @@ public class SecuritiesDeliveryObligation extends Obligation {
 		return cCPEligibility;
 	}
 
-	public void setCCPEligibility(YesNoIndicator cCPEligibility) {
-		this.cCPEligibility = cCPEligibility;
+	public SecuritiesDeliveryObligation setCCPEligibility(YesNoIndicator cCPEligibility) {
+		this.cCPEligibility = Objects.requireNonNull(cCPEligibility);
+		return this;
 	}
 
 	public YesNoIndicator getNettingEligibility() {
 		return nettingEligibility;
 	}
 
-	public void setNettingEligibility(YesNoIndicator nettingEligibility) {
-		this.nettingEligibility = nettingEligibility;
+	public SecuritiesDeliveryObligation setNettingEligibility(YesNoIndicator nettingEligibility) {
+		this.nettingEligibility = Objects.requireNonNull(nettingEligibility);
+		return this;
 	}
 
 	public ISODateTime getTransferInstructionDate() {
 		return transferInstructionDate;
 	}
 
-	public void setTransferInstructionDate(ISODateTime transferInstructionDate) {
-		this.transferInstructionDate = transferInstructionDate;
+	public SecuritiesDeliveryObligation setTransferInstructionDate(ISODateTime transferInstructionDate) {
+		this.transferInstructionDate = Objects.requireNonNull(transferInstructionDate);
+		return this;
 	}
 
 	public CurrencyCode getTransferCurrency() {
 		return transferCurrency;
 	}
 
-	public void setTransferCurrency(CurrencyCode transferCurrency) {
-		this.transferCurrency = transferCurrency;
+	public SecuritiesDeliveryObligation setTransferCurrency(CurrencyCode transferCurrency) {
+		this.transferCurrency = Objects.requireNonNull(transferCurrency);
+		return this;
 	}
 
-	public CorporateActionProceedsDeliveryInstruction getRelatedCorporateAction() {
-		return relatedCorporateAction;
+	public Optional<CorporateActionProceedsDeliveryInstruction> getRelatedCorporateAction() {
+		return relatedCorporateAction == null ? Optional.empty() : Optional.of(relatedCorporateAction);
 	}
 
-	public void setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
+	public SecuritiesDeliveryObligation setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
 		this.relatedCorporateAction = relatedCorporateAction;
+		return this;
 	}
 
 	public CollateralMovement getRelatedCollateralMovement() {
 		return relatedCollateralMovement;
 	}
 
-	public void setRelatedCollateralMovement(com.tools20022.repository.entity.CollateralMovement relatedCollateralMovement) {
-		this.relatedCollateralMovement = relatedCollateralMovement;
+	public SecuritiesDeliveryObligation setRelatedCollateralMovement(com.tools20022.repository.entity.CollateralMovement relatedCollateralMovement) {
+		this.relatedCollateralMovement = Objects.requireNonNull(relatedCollateralMovement);
+		return this;
 	}
 
 	public SecuritiesTradeExecution getSecuritiesTradeExecution() {
 		return securitiesTradeExecution;
 	}
 
-	public void setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
-		this.securitiesTradeExecution = securitiesTradeExecution;
+	public SecuritiesDeliveryObligation setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
+		this.securitiesTradeExecution = Objects.requireNonNull(securitiesTradeExecution);
+		return this;
 	}
 
 	public List<PortfolioTransfer> getRelatedPortfolioTransfer() {
-		return relatedPortfolioTransfer;
+		return relatedPortfolioTransfer == null ? relatedPortfolioTransfer = new ArrayList<>() : relatedPortfolioTransfer;
 	}
 
-	public void setRelatedPortfolioTransfer(List<com.tools20022.repository.entity.PortfolioTransfer> relatedPortfolioTransfer) {
-		this.relatedPortfolioTransfer = relatedPortfolioTransfer;
+	public SecuritiesDeliveryObligation setRelatedPortfolioTransfer(List<com.tools20022.repository.entity.PortfolioTransfer> relatedPortfolioTransfer) {
+		this.relatedPortfolioTransfer = Objects.requireNonNull(relatedPortfolioTransfer);
+		return this;
 	}
 
 	public List<SecuritiesTransfer> getSecuritiesTransfer() {
-		return securitiesTransfer;
+		return securitiesTransfer == null ? securitiesTransfer = new ArrayList<>() : securitiesTransfer;
 	}
 
-	public void setSecuritiesTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer) {
-		this.securitiesTransfer = securitiesTransfer;
+	public SecuritiesDeliveryObligation setSecuritiesTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer) {
+		this.securitiesTransfer = Objects.requireNonNull(securitiesTransfer);
+		return this;
 	}
 
 	public YesNoIndicator getSettlementInstructionGeneration() {
 		return settlementInstructionGeneration;
 	}
 
-	public void setSettlementInstructionGeneration(YesNoIndicator settlementInstructionGeneration) {
-		this.settlementInstructionGeneration = settlementInstructionGeneration;
+	public SecuritiesDeliveryObligation setSettlementInstructionGeneration(YesNoIndicator settlementInstructionGeneration) {
+		this.settlementInstructionGeneration = Objects.requireNonNull(settlementInstructionGeneration);
+		return this;
 	}
 
 	public SettlementDateCode getSettlementDateCode() {
 		return settlementDateCode;
 	}
 
-	public void setSettlementDateCode(com.tools20022.repository.codeset.SettlementDateCode settlementDateCode) {
-		this.settlementDateCode = settlementDateCode;
+	public SecuritiesDeliveryObligation setSettlementDateCode(com.tools20022.repository.codeset.SettlementDateCode settlementDateCode) {
+		this.settlementDateCode = Objects.requireNonNull(settlementDateCode);
+		return this;
 	}
 
 	public SecuritiesLending getSecuritiesLending() {
 		return securitiesLending;
 	}
 
-	public void setSecuritiesLending(com.tools20022.repository.entity.SecuritiesLending securitiesLending) {
-		this.securitiesLending = securitiesLending;
+	public SecuritiesDeliveryObligation setSecuritiesLending(com.tools20022.repository.entity.SecuritiesLending securitiesLending) {
+		this.securitiesLending = Objects.requireNonNull(securitiesLending);
+		return this;
 	}
 }

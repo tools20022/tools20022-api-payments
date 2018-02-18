@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Further qualifies the information provided in terms of its importance and its
@@ -61,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,8 +81,8 @@ public class InformationQualifier {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SystemBusinessInformation systemBusinessInformation;
 	/**
-	 * System for which a qualifier is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,8 +130,8 @@ public class InformationQualifier {
 	};
 	protected YesNoIndicator isFormatted;
 	/**
-	 * Indicates whether the information is formatted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,8 +177,8 @@ public class InformationQualifier {
 	};
 	protected PriorityCode priority;
 	/**
-	 * Priority of the information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +225,7 @@ public class InformationQualifier {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationQualifier";
 				definition = "Further qualifies the information provided in terms of its importance and its format.";
@@ -245,23 +246,26 @@ public class InformationQualifier {
 		return systemBusinessInformation;
 	}
 
-	public void setSystemBusinessInformation(com.tools20022.repository.entity.SystemBusinessInformation systemBusinessInformation) {
-		this.systemBusinessInformation = systemBusinessInformation;
+	public InformationQualifier setSystemBusinessInformation(com.tools20022.repository.entity.SystemBusinessInformation systemBusinessInformation) {
+		this.systemBusinessInformation = Objects.requireNonNull(systemBusinessInformation);
+		return this;
 	}
 
 	public YesNoIndicator getIsFormatted() {
 		return isFormatted;
 	}
 
-	public void setIsFormatted(YesNoIndicator isFormatted) {
-		this.isFormatted = isFormatted;
+	public InformationQualifier setIsFormatted(YesNoIndicator isFormatted) {
+		this.isFormatted = Objects.requireNonNull(isFormatted);
+		return this;
 	}
 
 	public PriorityCode getPriority() {
 		return priority;
 	}
 
-	public void setPriority(PriorityCode priority) {
-		this.priority = priority;
+	public InformationQualifier setPriority(PriorityCode priority) {
+		this.priority = Objects.requireNonNull(priority);
+		return this;
 	}
 }

@@ -38,53 +38,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#NoServiceOffered
- * OptionFeaturesCode.mmNoServiceOffered}</li>
+ * OptionFeaturesCode.NoServiceOffered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#OptionApplicability
- * OptionFeaturesCode.mmOptionApplicability}</li>
+ * OptionFeaturesCode.OptionApplicability}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#Conditional
- * OptionFeaturesCode.mmConditional}</li>
+ * OptionFeaturesCode.Conditional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#MaximumCash
- * OptionFeaturesCode.mmMaximumCash}</li>
+ * OptionFeaturesCode.MaximumCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#MaximumSecurities
- * OptionFeaturesCode.mmMaximumSecurities}</li>
+ * OptionFeaturesCode.MaximumSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#OddLotPreference
- * OptionFeaturesCode.mmOddLotPreference}</li>
+ * OptionFeaturesCode.OddLotPreference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#Proration
- * OptionFeaturesCode.mmProration}</li>
+ * OptionFeaturesCode.Proration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#OverAndAbove
- * OptionFeaturesCode.mmOverAndAbove}</li>
+ * OptionFeaturesCode.OverAndAbove}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#QuantityToReceive
- * OptionFeaturesCode.mmQuantityToReceive}</li>
+ * OptionFeaturesCode.QuantityToReceive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#ReducedWithholdingTax
- * OptionFeaturesCode.mmReducedWithholdingTax}</li>
+ * OptionFeaturesCode.ReducedWithholdingTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#PreviousInstructionInvalidity
- * OptionFeaturesCode.mmPreviousInstructionInvalidity}</li>
+ * OptionFeaturesCode.PreviousInstructionInvalidity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#AccountServicerOption
- * OptionFeaturesCode.mmAccountServicerOption}</li>
+ * OptionFeaturesCode.AccountServicerOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#BeneficiaryOwnerInstruction
- * OptionFeaturesCode.mmBeneficiaryOwnerInstruction}</li>
+ * OptionFeaturesCode.BeneficiaryOwnerInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeaturesCode#InstructCashAmount
- * OptionFeaturesCode.mmInstructCashAmount}</li>
+ * OptionFeaturesCode.InstructCashAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -564,7 +564,7 @@ public class OptionFeaturesCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NOSE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionFeaturesCode";

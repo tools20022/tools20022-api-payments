@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ResidenceLocation1Choice;
 import com.tools20022.repository.codeset.AddressTypeCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.entity.ContactPoint;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Information that locates and identifies a specific address.
@@ -204,8 +204,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -221,8 +221,8 @@ public class PostalAddress extends ContactPoint {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AddressTypeCode addressType;
 	/**
-	 * Specifies the type of address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +283,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text streetName;
 	/**
-	 * Name of a street or thoroughfare.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -311,6 +311,9 @@ public class PostalAddress extends ContactPoint {
 	 * {@linkplain com.tools20022.repository.entity.PostalAddress PostalAddress}
 	 * </li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, name=road, context=ebXML</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -326,6 +329,7 @@ public class PostalAddress extends ContactPoint {
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmStreetName, PostalAddress11.mmStreetName, PostalAddress19.mmStreetName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"name", "road"}, new String[]{"context", "ebXML"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StreetName";
 			definition = "Name of a street or thoroughfare.";
@@ -344,8 +348,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text streetBuildingIdentification;
 	/**
-	 * Number that identifies the position of a building on a street.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -406,9 +410,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max16Text postCodeIdentification;
 	/**
-	 * Identifier consisting of a group of letters and/or numbers that is added
-	 * to a postal address to assist the sorting of mail.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -467,8 +470,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text townName;
 	/**
-	 * Name of a built-up area, with defined boundaries, and a local government.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,8 +533,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text state;
 	/**
-	 * Organised political community or area forming a part of a federation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -592,8 +595,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text buildingName;
 	/**
-	 * Name of the building or house.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,8 +650,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max16Text floor;
 	/**
-	 * Floor or storey within a building.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,8 +704,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text districtName;
 	/**
-	 * Name of a district, ie, a part of a town or region.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -756,9 +759,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text regionIdentification;
 	/**
-	 * Identification of an administrative division of a country, state, or
-	 * territory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -814,8 +816,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text countyIdentification;
 	/**
-	 * Identifier of a county.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -869,9 +871,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max16Text postOfficeBox;
 	/**
-	 * Numbered box in a post office, assigned to a person or organisation,
-	 * where letters are kept until called for.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -926,8 +927,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text province;
 	/**
-	 * A territory governed as an administrative or political unit of a country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -983,8 +984,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max70Text department;
 	/**
-	 * Identification of a division of a large organisation or building.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1045,8 +1046,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max70Text subDepartment;
 	/**
-	 * Identification of a sub-division of a large organisation or building.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1107,8 +1108,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Location location;
 	/**
-	 * Specifies a place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1154,8 +1155,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected ChequeIssue chequeIssue;
 	/**
-	 * Cheque issue information for which a delivery address is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1203,8 +1204,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Country country;
 	/**
-	 * Country of the address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1262,8 +1263,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
 	/**
-	 * Specifies the period during which a postal address is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1310,8 +1311,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text suiteIdentification;
 	/**
-	 * Identification of a suite or apartment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1356,9 +1357,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text buildingIdentification;
 	/**
-	 * Identification of a building, within a group of buildings, that have the
-	 * same street number identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1405,8 +1405,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text mailDeliverySubLocation;
 	/**
-	 * Specific place to deliver mail within a pre-defined postal address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1452,8 +1452,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text block;
 	/**
-	 * Area of land bounded by streets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1498,8 +1498,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text lot;
 	/**
-	 * Identification of an allotment of land.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1544,8 +1544,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected Max35Text districtSubDivisionIdentification;
 	/**
-	 * Identification of a sub-division of a district.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1590,8 +1590,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected List<com.tools20022.repository.entity.MailingInstructions> mailingInstructions;
 	/**
-	 * Specifies the characteristics of an address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1637,8 +1637,8 @@ public class PostalAddress extends ContactPoint {
 	};
 	protected PhysicalDelivery physicalDelivery;
 	/**
-	 * Physical delivery information related to an address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1687,7 +1687,7 @@ public class PostalAddress extends ContactPoint {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PostalAddress";
 				definition = "Information that locates and identifies a specific address.";
@@ -1724,215 +1724,242 @@ public class PostalAddress extends ContactPoint {
 		return addressType;
 	}
 
-	public void setAddressType(AddressTypeCode addressType) {
-		this.addressType = addressType;
+	public PostalAddress setAddressType(AddressTypeCode addressType) {
+		this.addressType = Objects.requireNonNull(addressType);
+		return this;
 	}
 
 	public Max35Text getStreetName() {
 		return streetName;
 	}
 
-	public void setStreetName(Max35Text streetName) {
-		this.streetName = streetName;
+	public PostalAddress setStreetName(Max35Text streetName) {
+		this.streetName = Objects.requireNonNull(streetName);
+		return this;
 	}
 
 	public Max35Text getStreetBuildingIdentification() {
 		return streetBuildingIdentification;
 	}
 
-	public void setStreetBuildingIdentification(Max35Text streetBuildingIdentification) {
-		this.streetBuildingIdentification = streetBuildingIdentification;
+	public PostalAddress setStreetBuildingIdentification(Max35Text streetBuildingIdentification) {
+		this.streetBuildingIdentification = Objects.requireNonNull(streetBuildingIdentification);
+		return this;
 	}
 
 	public Max16Text getPostCodeIdentification() {
 		return postCodeIdentification;
 	}
 
-	public void setPostCodeIdentification(Max16Text postCodeIdentification) {
-		this.postCodeIdentification = postCodeIdentification;
+	public PostalAddress setPostCodeIdentification(Max16Text postCodeIdentification) {
+		this.postCodeIdentification = Objects.requireNonNull(postCodeIdentification);
+		return this;
 	}
 
 	public Max35Text getTownName() {
 		return townName;
 	}
 
-	public void setTownName(Max35Text townName) {
-		this.townName = townName;
+	public PostalAddress setTownName(Max35Text townName) {
+		this.townName = Objects.requireNonNull(townName);
+		return this;
 	}
 
 	public Max35Text getState() {
 		return state;
 	}
 
-	public void setState(Max35Text state) {
-		this.state = state;
+	public PostalAddress setState(Max35Text state) {
+		this.state = Objects.requireNonNull(state);
+		return this;
 	}
 
 	public Max35Text getBuildingName() {
 		return buildingName;
 	}
 
-	public void setBuildingName(Max35Text buildingName) {
-		this.buildingName = buildingName;
+	public PostalAddress setBuildingName(Max35Text buildingName) {
+		this.buildingName = Objects.requireNonNull(buildingName);
+		return this;
 	}
 
 	public Max16Text getFloor() {
 		return floor;
 	}
 
-	public void setFloor(Max16Text floor) {
-		this.floor = floor;
+	public PostalAddress setFloor(Max16Text floor) {
+		this.floor = Objects.requireNonNull(floor);
+		return this;
 	}
 
 	public Max35Text getDistrictName() {
 		return districtName;
 	}
 
-	public void setDistrictName(Max35Text districtName) {
-		this.districtName = districtName;
+	public PostalAddress setDistrictName(Max35Text districtName) {
+		this.districtName = Objects.requireNonNull(districtName);
+		return this;
 	}
 
 	public Max35Text getRegionIdentification() {
 		return regionIdentification;
 	}
 
-	public void setRegionIdentification(Max35Text regionIdentification) {
-		this.regionIdentification = regionIdentification;
+	public PostalAddress setRegionIdentification(Max35Text regionIdentification) {
+		this.regionIdentification = Objects.requireNonNull(regionIdentification);
+		return this;
 	}
 
 	public Max35Text getCountyIdentification() {
 		return countyIdentification;
 	}
 
-	public void setCountyIdentification(Max35Text countyIdentification) {
-		this.countyIdentification = countyIdentification;
+	public PostalAddress setCountyIdentification(Max35Text countyIdentification) {
+		this.countyIdentification = Objects.requireNonNull(countyIdentification);
+		return this;
 	}
 
 	public Max16Text getPostOfficeBox() {
 		return postOfficeBox;
 	}
 
-	public void setPostOfficeBox(Max16Text postOfficeBox) {
-		this.postOfficeBox = postOfficeBox;
+	public PostalAddress setPostOfficeBox(Max16Text postOfficeBox) {
+		this.postOfficeBox = Objects.requireNonNull(postOfficeBox);
+		return this;
 	}
 
 	public Max35Text getProvince() {
 		return province;
 	}
 
-	public void setProvince(Max35Text province) {
-		this.province = province;
+	public PostalAddress setProvince(Max35Text province) {
+		this.province = Objects.requireNonNull(province);
+		return this;
 	}
 
 	public Max70Text getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(Max70Text department) {
-		this.department = department;
+	public PostalAddress setDepartment(Max70Text department) {
+		this.department = Objects.requireNonNull(department);
+		return this;
 	}
 
 	public Max70Text getSubDepartment() {
 		return subDepartment;
 	}
 
-	public void setSubDepartment(Max70Text subDepartment) {
-		this.subDepartment = subDepartment;
+	public PostalAddress setSubDepartment(Max70Text subDepartment) {
+		this.subDepartment = Objects.requireNonNull(subDepartment);
+		return this;
 	}
 
 	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(com.tools20022.repository.entity.Location location) {
-		this.location = location;
+	public PostalAddress setLocation(com.tools20022.repository.entity.Location location) {
+		this.location = Objects.requireNonNull(location);
+		return this;
 	}
 
 	public ChequeIssue getChequeIssue() {
 		return chequeIssue;
 	}
 
-	public void setChequeIssue(com.tools20022.repository.entity.ChequeIssue chequeIssue) {
-		this.chequeIssue = chequeIssue;
+	public PostalAddress setChequeIssue(com.tools20022.repository.entity.ChequeIssue chequeIssue) {
+		this.chequeIssue = Objects.requireNonNull(chequeIssue);
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public PostalAddress setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
 	public List<DateTimePeriod> getValidityPeriod() {
-		return validityPeriod;
+		return validityPeriod == null ? validityPeriod = new ArrayList<>() : validityPeriod;
 	}
 
-	public void setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public PostalAddress setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
 	public Max35Text getSuiteIdentification() {
 		return suiteIdentification;
 	}
 
-	public void setSuiteIdentification(Max35Text suiteIdentification) {
-		this.suiteIdentification = suiteIdentification;
+	public PostalAddress setSuiteIdentification(Max35Text suiteIdentification) {
+		this.suiteIdentification = Objects.requireNonNull(suiteIdentification);
+		return this;
 	}
 
 	public Max35Text getBuildingIdentification() {
 		return buildingIdentification;
 	}
 
-	public void setBuildingIdentification(Max35Text buildingIdentification) {
-		this.buildingIdentification = buildingIdentification;
+	public PostalAddress setBuildingIdentification(Max35Text buildingIdentification) {
+		this.buildingIdentification = Objects.requireNonNull(buildingIdentification);
+		return this;
 	}
 
 	public Max35Text getMailDeliverySubLocation() {
 		return mailDeliverySubLocation;
 	}
 
-	public void setMailDeliverySubLocation(Max35Text mailDeliverySubLocation) {
-		this.mailDeliverySubLocation = mailDeliverySubLocation;
+	public PostalAddress setMailDeliverySubLocation(Max35Text mailDeliverySubLocation) {
+		this.mailDeliverySubLocation = Objects.requireNonNull(mailDeliverySubLocation);
+		return this;
 	}
 
 	public Max35Text getBlock() {
 		return block;
 	}
 
-	public void setBlock(Max35Text block) {
-		this.block = block;
+	public PostalAddress setBlock(Max35Text block) {
+		this.block = Objects.requireNonNull(block);
+		return this;
 	}
 
 	public Max35Text getLot() {
 		return lot;
 	}
 
-	public void setLot(Max35Text lot) {
-		this.lot = lot;
+	public PostalAddress setLot(Max35Text lot) {
+		this.lot = Objects.requireNonNull(lot);
+		return this;
 	}
 
 	public Max35Text getDistrictSubDivisionIdentification() {
 		return districtSubDivisionIdentification;
 	}
 
-	public void setDistrictSubDivisionIdentification(Max35Text districtSubDivisionIdentification) {
-		this.districtSubDivisionIdentification = districtSubDivisionIdentification;
+	public PostalAddress setDistrictSubDivisionIdentification(Max35Text districtSubDivisionIdentification) {
+		this.districtSubDivisionIdentification = Objects.requireNonNull(districtSubDivisionIdentification);
+		return this;
 	}
 
 	public List<MailingInstructions> getMailingInstructions() {
-		return mailingInstructions;
+		return mailingInstructions == null ? mailingInstructions = new ArrayList<>() : mailingInstructions;
 	}
 
-	public void setMailingInstructions(List<com.tools20022.repository.entity.MailingInstructions> mailingInstructions) {
-		this.mailingInstructions = mailingInstructions;
+	public PostalAddress setMailingInstructions(List<com.tools20022.repository.entity.MailingInstructions> mailingInstructions) {
+		this.mailingInstructions = Objects.requireNonNull(mailingInstructions);
+		return this;
 	}
 
-	public PhysicalDelivery getPhysicalDelivery() {
-		return physicalDelivery;
+	public Optional<PhysicalDelivery> getPhysicalDelivery() {
+		return physicalDelivery == null ? Optional.empty() : Optional.of(physicalDelivery);
 	}
 
-	public void setPhysicalDelivery(com.tools20022.repository.entity.PhysicalDelivery physicalDelivery) {
+	public PostalAddress setPhysicalDelivery(com.tools20022.repository.entity.PhysicalDelivery physicalDelivery) {
 		this.physicalDelivery = physicalDelivery;
+		return this;
 	}
 }

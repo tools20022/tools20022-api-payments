@@ -38,159 +38,159 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Brussels
- * FinancialCenterCode.mmBrussels}</li>
+ * FinancialCenterCode.Brussels}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#BuenosAires
- * FinancialCenterCode.mmBuenosAires}</li>
+ * FinancialCenterCode.BuenosAires}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Vienna
- * FinancialCenterCode.mmVienna}</li>
+ * FinancialCenterCode.Vienna}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Melbourne
- * FinancialCenterCode.mmMelbourne}</li>
+ * FinancialCenterCode.Melbourne}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Sydney
- * FinancialCenterCode.mmSydney}</li>
+ * FinancialCenterCode.Sydney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#SaoPaulo
- * FinancialCenterCode.mmSaoPaulo}</li>
+ * FinancialCenterCode.SaoPaulo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Montreal
- * FinancialCenterCode.mmMontreal}</li>
+ * FinancialCenterCode.Montreal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Toronto
- * FinancialCenterCode.mmToronto}</li>
+ * FinancialCenterCode.Toronto}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Geneva
- * FinancialCenterCode.mmGeneva}</li>
+ * FinancialCenterCode.Geneva}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Bratislava
- * FinancialCenterCode.mmBratislava}</li>
+ * FinancialCenterCode.Bratislava}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Santiago
- * FinancialCenterCode.mmSantiago}</li>
+ * FinancialCenterCode.Santiago}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Beijing
- * FinancialCenterCode.mmBeijing}</li>
+ * FinancialCenterCode.Beijing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Prague
- * FinancialCenterCode.mmPrague}</li>
+ * FinancialCenterCode.Prague}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Frankfurt
- * FinancialCenterCode.mmFrankfurt}</li>
+ * FinancialCenterCode.Frankfurt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Copenhagen
- * FinancialCenterCode.mmCopenhagen}</li>
+ * FinancialCenterCode.Copenhagen}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Tallinn
- * FinancialCenterCode.mmTallinn}</li>
+ * FinancialCenterCode.Tallinn}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Madrid
- * FinancialCenterCode.mmMadrid}</li>
+ * FinancialCenterCode.Madrid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Helsinki
- * FinancialCenterCode.mmHelsinki}</li>
+ * FinancialCenterCode.Helsinki}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Paris
- * FinancialCenterCode.mmParis}</li>
+ * FinancialCenterCode.Paris}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#London
- * FinancialCenterCode.mmLondon}</li>
+ * FinancialCenterCode.London}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Athens
- * FinancialCenterCode.mmAthens}</li>
+ * FinancialCenterCode.Athens}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#HongKong
- * FinancialCenterCode.mmHongKong}</li>
+ * FinancialCenterCode.HongKong}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Budapest
- * FinancialCenterCode.mmBudapest}</li>
+ * FinancialCenterCode.Budapest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Jakarta
- * FinancialCenterCode.mmJakarta}</li>
+ * FinancialCenterCode.Jakarta}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Dublin
- * FinancialCenterCode.mmDublin}</li>
+ * FinancialCenterCode.Dublin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#TelAviv
- * FinancialCenterCode.mmTelAviv}</li>
+ * FinancialCenterCode.TelAviv}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Milan
- * FinancialCenterCode.mmMilan}</li>
+ * FinancialCenterCode.Milan}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Rome
- * FinancialCenterCode.mmRome}</li>
+ * FinancialCenterCode.Rome}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Tokyo
- * FinancialCenterCode.mmTokyo}</li>
+ * FinancialCenterCode.Tokyo}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Seoul
- * FinancialCenterCode.mmSeoul}</li>
+ * FinancialCenterCode.Seoul}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Beirut
- * FinancialCenterCode.mmBeirut}</li>
+ * FinancialCenterCode.Beirut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Luxembourg
- * FinancialCenterCode.mmLuxembourg}</li>
+ * FinancialCenterCode.Luxembourg}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#KualaLumpur
- * FinancialCenterCode.mmKualaLumpur}</li>
+ * FinancialCenterCode.KualaLumpur}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#MexicoCity
- * FinancialCenterCode.mmMexicoCity}</li>
+ * FinancialCenterCode.MexicoCity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Amsterdam
- * FinancialCenterCode.mmAmsterdam}</li>
+ * FinancialCenterCode.Amsterdam}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Oslo
- * FinancialCenterCode.mmOslo}</li>
+ * FinancialCenterCode.Oslo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYorkFed
- * FinancialCenterCode.mmNewYorkFed}</li>
+ * FinancialCenterCode.NewYorkFed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYorkStockExchange
- * FinancialCenterCode.mmNewYorkStockExchange}</li>
+ * FinancialCenterCode.NewYorkStockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Auckland
- * FinancialCenterCode.mmAuckland}</li>
+ * FinancialCenterCode.Auckland}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Wellington
- * FinancialCenterCode.mmWellington}</li>
+ * FinancialCenterCode.Wellington}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#PanamaCity
- * FinancialCenterCode.mmPanamaCity}</li>
+ * FinancialCenterCode.PanamaCity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Manila
- * FinancialCenterCode.mmManila}</li>
+ * FinancialCenterCode.Manila}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Warsaw
- * FinancialCenterCode.mmWarsaw}</li>
+ * FinancialCenterCode.Warsaw}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Lisbon
- * FinancialCenterCode.mmLisbon}</li>
+ * FinancialCenterCode.Lisbon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Moscow
- * FinancialCenterCode.mmMoscow}</li>
+ * FinancialCenterCode.Moscow}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Riyadh
- * FinancialCenterCode.mmRiyadh}</li>
+ * FinancialCenterCode.Riyadh}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Stockholm
- * FinancialCenterCode.mmStockholm}</li>
+ * FinancialCenterCode.Stockholm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Singapore
- * FinancialCenterCode.mmSingapore}</li>
+ * FinancialCenterCode.Singapore}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Bangkok
- * FinancialCenterCode.mmBangkok}</li>
+ * FinancialCenterCode.Bangkok}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Taipei
- * FinancialCenterCode.mmTaipei}</li>
+ * FinancialCenterCode.Taipei}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Ankara
- * FinancialCenterCode.mmAnkara}</li>
+ * FinancialCenterCode.Ankara}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Chicago
- * FinancialCenterCode.mmChicago}</li>
+ * FinancialCenterCode.Chicago}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#LosAngeles
- * FinancialCenterCode.mmLosAngeles}</li>
+ * FinancialCenterCode.LosAngeles}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#USGovernmentSecurities
- * FinancialCenterCode.mmUSGovernmentSecurities}</li>
+ * FinancialCenterCode.USGovernmentSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYork
- * FinancialCenterCode.mmNewYork}</li>
+ * FinancialCenterCode.NewYork}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Johannesburg
- * FinancialCenterCode.mmJohannesburg}</li>
+ * FinancialCenterCode.Johannesburg}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Zurich
- * FinancialCenterCode.mmZurich}</li>
+ * FinancialCenterCode.Zurich}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1930,7 +1930,7 @@ public class FinancialCenterCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BEBR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialCenterCode";

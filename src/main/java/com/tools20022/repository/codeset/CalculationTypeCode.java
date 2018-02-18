@@ -38,256 +38,256 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Convexity
- * CalculationTypeCode.mmConvexity}</li>
+ * CalculationTypeCode.Convexity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Volatility
- * CalculationTypeCode.mmVolatility}</li>
+ * CalculationTypeCode.Volatility}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Alpha
- * CalculationTypeCode.mmAlpha}</li>
+ * CalculationTypeCode.Alpha}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Beta
- * CalculationTypeCode.mmBeta}</li>
+ * CalculationTypeCode.Beta}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Delta
- * CalculationTypeCode.mmDelta}</li>
+ * CalculationTypeCode.Delta}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Gamma
- * CalculationTypeCode.mmGamma}</li>
+ * CalculationTypeCode.Gamma}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Speed
- * CalculationTypeCode.mmSpeed}</li>
+ * CalculationTypeCode.Speed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Rho
- * CalculationTypeCode.mmRho}</li>
+ * CalculationTypeCode.Rho}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Theta
- * CalculationTypeCode.mmTheta}</li>
+ * CalculationTypeCode.Theta}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Vega
- * CalculationTypeCode.mmVega}</li>
+ * CalculationTypeCode.Vega}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#PriceEarningRatio
- * CalculationTypeCode.mmPriceEarningRatio}</li>
+ * CalculationTypeCode.PriceEarningRatio}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Lambda
- * CalculationTypeCode.mmLambda}</li>
+ * CalculationTypeCode.Lambda}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#VegaGamma
- * CalculationTypeCode.mmVegaGamma}</li>
+ * CalculationTypeCode.VegaGamma}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Vanna
- * CalculationTypeCode.mmVanna}</li>
+ * CalculationTypeCode.Vanna}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#DeltaDecay
- * CalculationTypeCode.mmDeltaDecay}</li>
+ * CalculationTypeCode.DeltaDecay}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Color
- * CalculationTypeCode.mmColor}</li>
+ * CalculationTypeCode.Color}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#PriceBookRatio
- * CalculationTypeCode.mmPriceBookRatio}</li>
+ * CalculationTypeCode.PriceBookRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#PriceSalesRatio
- * CalculationTypeCode.mmPriceSalesRatio}</li>
+ * CalculationTypeCode.PriceSalesRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#EarningPerShare
- * CalculationTypeCode.mmEarningPerShare}</li>
+ * CalculationTypeCode.EarningPerShare}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#EPSPercentChange
- * CalculationTypeCode.mmEPSPercentChange}</li>
+ * CalculationTypeCode.EPSPercentChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#NetIncomeSalesRatio
- * CalculationTypeCode.mmNetIncomeSalesRatio}</li>
+ * CalculationTypeCode.NetIncomeSalesRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#PriceEarningsGrowth
- * CalculationTypeCode.mmPriceEarningsGrowth}</li>
+ * CalculationTypeCode.PriceEarningsGrowth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#QuickRatio
- * CalculationTypeCode.mmQuickRatio}</li>
+ * CalculationTypeCode.QuickRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#CurrentRatio
- * CalculationTypeCode.mmCurrentRatio}</li>
+ * CalculationTypeCode.CurrentRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#DividendPayoutRatio
- * CalculationTypeCode.mmDividendPayoutRatio}</li>
+ * CalculationTypeCode.DividendPayoutRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#DebtEquityRatio
- * CalculationTypeCode.mmDebtEquityRatio}</li>
+ * CalculationTypeCode.DebtEquityRatio}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ReturnOnEquity
- * CalculationTypeCode.mmReturnOnEquity}</li>
+ * CalculationTypeCode.ReturnOnEquity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ReturnOnAssets
- * CalculationTypeCode.mmReturnOnAssets}</li>
+ * CalculationTypeCode.ReturnOnAssets}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ReturnOnInvestment
- * CalculationTypeCode.mmReturnOnInvestment}</li>
+ * CalculationTypeCode.ReturnOnInvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#SalesEmployee
- * CalculationTypeCode.mmSalesEmployee}</li>
+ * CalculationTypeCode.SalesEmployee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#CurrentAssets
- * CalculationTypeCode.mmCurrentAssets}</li>
+ * CalculationTypeCode.CurrentAssets}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LongTermDebt
- * CalculationTypeCode.mmLongTermDebt}</li>
+ * CalculationTypeCode.LongTermDebt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#CurrentLiabilities
- * CalculationTypeCode.mmCurrentLiabilities}</li>
+ * CalculationTypeCode.CurrentLiabilities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#SalesRevenue
- * CalculationTypeCode.mmSalesRevenue}</li>
+ * CalculationTypeCode.SalesRevenue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#SalesMargin
- * CalculationTypeCode.mmSalesMargin}</li>
+ * CalculationTypeCode.SalesMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundAnnualReturn
- * CalculationTypeCode.mmFundAnnualReturn}</li>
+ * CalculationTypeCode.FundAnnualReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundCumReturn
- * CalculationTypeCode.mmFundCumReturn}</li>
+ * CalculationTypeCode.FundCumReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundStandardDeviation
- * CalculationTypeCode.mmFundStandardDeviation}</li>
+ * CalculationTypeCode.FundStandardDeviation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundBenchExcessAnnualReturn
- * CalculationTypeCode.mmFundBenchExcessAnnualReturn}</li>
+ * CalculationTypeCode.FundBenchExcessAnnualReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundBenchExcessCumReturn
- * CalculationTypeCode.mmFundBenchExcessCumReturn}</li>
+ * CalculationTypeCode.FundBenchExcessCumReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundBenchTrackingError
- * CalculationTypeCode.mmFundBenchTrackingError}</li>
+ * CalculationTypeCode.FundBenchTrackingError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundPortfolioStandardDeviation
- * CalculationTypeCode.mmFundPortfolioStandardDeviation}</li>
+ * CalculationTypeCode.FundPortfolioStandardDeviation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundBenchAnnualReturn
- * CalculationTypeCode.mmFundBenchAnnualReturn}</li>
+ * CalculationTypeCode.FundBenchAnnualReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#FundBenchCumReturn
- * CalculationTypeCode.mmFundBenchCumReturn}</li>
+ * CalculationTypeCode.FundBenchCumReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LifeToNextProbableCall
- * CalculationTypeCode.mmLifeToNextProbableCall}</li>
+ * CalculationTypeCode.LifeToNextProbableCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#AverageLife
- * CalculationTypeCode.mmAverageLife}</li>
+ * CalculationTypeCode.AverageLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#MacaulyDuration
- * CalculationTypeCode.mmMacaulyDuration}</li>
+ * CalculationTypeCode.MacaulyDuration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ModifiedDuration
- * CalculationTypeCode.mmModifiedDuration}</li>
+ * CalculationTypeCode.ModifiedDuration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Duration
- * CalculationTypeCode.mmDuration}</li>
+ * CalculationTypeCode.Duration}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Yield
- * CalculationTypeCode.mmYield}</li>
+ * CalculationTypeCode.Yield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#YieldToMaturity
- * CalculationTypeCode.mmYieldToMaturity}</li>
+ * CalculationTypeCode.YieldToMaturity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#CurrentYield
- * CalculationTypeCode.mmCurrentYield}</li>
+ * CalculationTypeCode.CurrentYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#DiscountYield
- * CalculationTypeCode.mmDiscountYield}</li>
+ * CalculationTypeCode.DiscountYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#DirectYield
- * CalculationTypeCode.mmDirectYield}</li>
+ * CalculationTypeCode.DirectYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#YieldToNextCall
- * CalculationTypeCode.mmYieldToNextCall}</li>
+ * CalculationTypeCode.YieldToNextCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#YieldToAverageLife
- * CalculationTypeCode.mmYieldToAverageLife}</li>
+ * CalculationTypeCode.YieldToAverageLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#BondEquivalentYield
- * CalculationTypeCode.mmBondEquivalentYield}</li>
+ * CalculationTypeCode.BondEquivalentYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#AfterTax
- * CalculationTypeCode.mmAfterTax}</li>
+ * CalculationTypeCode.AfterTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Annual
- * CalculationTypeCode.mmAnnual}</li>
+ * CalculationTypeCode.Annual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#AtIssue
- * CalculationTypeCode.mmAtIssue}</li>
+ * CalculationTypeCode.AtIssue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Book
- * CalculationTypeCode.mmBook}</li>
+ * CalculationTypeCode.Book}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ToAverageMaturity
- * CalculationTypeCode.mmToAverageMaturity}</li>
+ * CalculationTypeCode.ToAverageMaturity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ChangeSinceClose
- * CalculationTypeCode.mmChangeSinceClose}</li>
+ * CalculationTypeCode.ChangeSinceClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Closing
- * CalculationTypeCode.mmClosing}</li>
+ * CalculationTypeCode.Closing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Compound
- * CalculationTypeCode.mmCompound}</li>
+ * CalculationTypeCode.Compound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#TrueGross
- * CalculationTypeCode.mmTrueGross}</li>
+ * CalculationTypeCode.TrueGross}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#GovernmentEquivalent
- * CalculationTypeCode.mmGovernmentEquivalent}</li>
+ * CalculationTypeCode.GovernmentEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#InflationAssumption
- * CalculationTypeCode.mmInflationAssumption}</li>
+ * CalculationTypeCode.InflationAssumption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#InverseFloater
- * CalculationTypeCode.mmInverseFloater}</li>
+ * CalculationTypeCode.InverseFloater}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LastClose
- * CalculationTypeCode.mmLastClose}</li>
+ * CalculationTypeCode.LastClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LastMonth
- * CalculationTypeCode.mmLastMonth}</li>
+ * CalculationTypeCode.LastMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LastQuarter
- * CalculationTypeCode.mmLastQuarter}</li>
+ * CalculationTypeCode.LastQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LastYear
- * CalculationTypeCode.mmLastYear}</li>
+ * CalculationTypeCode.LastYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#LongestAverageLife
- * CalculationTypeCode.mmLongestAverageLife}</li>
+ * CalculationTypeCode.LongestAverageLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#MarkToMarket
- * CalculationTypeCode.mmMarkToMarket}</li>
+ * CalculationTypeCode.MarkToMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ToNextRefund
- * CalculationTypeCode.mmToNextRefund}</li>
+ * CalculationTypeCode.ToNextRefund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#OpenAverage
- * CalculationTypeCode.mmOpenAverage}</li>
+ * CalculationTypeCode.OpenAverage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ToNextPut
- * CalculationTypeCode.mmToNextPut}</li>
+ * CalculationTypeCode.ToNextPut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#PreviousClose
- * CalculationTypeCode.mmPreviousClose}</li>
+ * CalculationTypeCode.PreviousClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Proceeds
- * CalculationTypeCode.mmProceeds}</li>
+ * CalculationTypeCode.Proceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#SemiAnnual
- * CalculationTypeCode.mmSemiAnnual}</li>
+ * CalculationTypeCode.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ShortestAverageLife
- * CalculationTypeCode.mmShortestAverageLife}</li>
+ * CalculationTypeCode.ShortestAverageLife}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#Simple
- * CalculationTypeCode.mmSimple}</li>
+ * CalculationTypeCode.Simple}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#TaxEquivalent
- * CalculationTypeCode.mmTaxEquivalent}</li>
+ * CalculationTypeCode.TaxEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ToTenderDate
- * CalculationTypeCode.mmToTenderDate}</li>
+ * CalculationTypeCode.ToTenderDate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationTypeCode#True
- * CalculationTypeCode.mmTrue}</li>
+ * CalculationTypeCode.True}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationTypeCode#ToWorstConvention
- * CalculationTypeCode.mmToWorstConvention}</li>
+ * CalculationTypeCode.ToWorstConvention}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -3127,7 +3127,7 @@ public class CalculationTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CNVX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CalculationTypeCode";

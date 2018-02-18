@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +78,38 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintThirdReimbursementAgentRule#forSettlementInstruction4
+ * ConstraintThirdReimbursementAgentRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSettlementMethodAgentRule#forSettlementInstruction4
+ * ConstraintSettlementMethodAgentRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSettlementMethodCoverRule#forSettlementInstruction4
+ * ConstraintSettlementMethodCoverRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSettlementMethodCoverAgentRule#forSettlementInstruction4
+ * ConstraintSettlementMethodCoverAgentRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSettlementMethodClearingRule#forSettlementInstruction4
+ * ConstraintSettlementMethodClearingRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInstructingReimbursementAgentAccountRule#forSettlementInstruction4
+ * ConstraintInstructingReimbursementAgentAccountRule.forSettlementInstruction4}
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInstructedReimbursementAgentAccountRule#forSettlementInstruction4
+ * ConstraintInstructedReimbursementAgentAccountRule.forSettlementInstruction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintThirdReimbursementAgentAccountRule#forSettlementInstruction4
+ * ConstraintThirdReimbursementAgentAccountRule.forSettlementInstruction4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,16 +121,17 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides further details on the settlement of the instruction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlementInstruction4", propOrder = {"settlementMethod", "settlementAccount", "clearingSystem", "instructingReimbursementAgent", "instructingReimbursementAgentAccount", "instructedReimbursementAgent",
 		"instructedReimbursementAgentAccount", "thirdReimbursementAgent", "thirdReimbursementAgentAccount"})
 public class SettlementInstruction4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SttlmMtd", required = true)
 	protected SettlementMethod1Code settlementMethod;
 	/**
-	 * Method used to settle the (batch of) payment instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,7 +166,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAttribute mmSettlementMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmSettlementMethod;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,11 +177,11 @@ public class SettlementInstruction4 {
 			simpleType_lazy = () -> SettlementMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "SttlmAcct")
 	protected CashAccount24 settlementAccount;
 	/**
-	 * A specific purpose account used to post debit and credit entries as a
-	 * result of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -182,7 +215,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmSettlementAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmSettlementAccount;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,11 +227,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "ClrSys")
 	protected ClearingSystemIdentification3Choice clearingSystem;
 	/**
-	 * Specification of a pre-agreed offering between clearing agents or the
-	 * channel through which the payment instruction is processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -233,7 +266,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmClearingSystem = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> SettlementInstructionSystemRole.mmObject();
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "ClrSys";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,15 +278,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> ClearingSystemIdentification3Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "InstgRmbrsmntAgt")
 	protected BranchAndFinancialInstitutionIdentification5 instructingReimbursementAgent;
 	/**
-	 * Agent through which the instructing agent will reimburse the instructed
-	 * agent.
 	 * 
-	 * Usage: If InstructingAgent and InstructedAgent have the same
-	 * reimbursement agent, then only InstructingReimbursementAgent must be
-	 * used.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -288,7 +317,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmInstructingReimbursementAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "InstgRmbrsmntAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -300,11 +329,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "InstgRmbrsmntAgtAcct")
 	protected CashAccount24 instructingReimbursementAgentAccount;
 	/**
-	 * Unambiguous identification of the account of the instructing
-	 * reimbursement agent account at its servicing agent in the payment chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -338,7 +367,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmInstructingReimbursementAgentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashSettlementInstructionPartyRole.mmCashAccount;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "InstgRmbrsmntAgtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -350,15 +379,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "InstdRmbrsmntAgt")
 	protected BranchAndFinancialInstitutionIdentification5 instructedReimbursementAgent;
 	/**
-	 * Agent at which the instructed agent will be reimbursed. Usage: If
-	 * InstructedReimbursementAgent contains a branch of the InstructedAgent,
-	 * then the party in InstructedAgent will claim reimbursement from that
-	 * branch/will be paid by that branch. Usage: If InstructingAgent and
-	 * InstructedAgent have the same reimbursement agent, then only
-	 * InstructingReimbursementAgent must be used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -393,7 +418,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmInstructedReimbursementAgent = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> InstructedReimbursementAgent.mmObject();
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "InstdRmbrsmntAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -405,11 +430,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "InstdRmbrsmntAgtAcct")
 	protected CashAccount24 instructedReimbursementAgentAccount;
 	/**
-	 * Unambiguous identification of the account of the instructed reimbursement
-	 * agent account at its servicing agent in the payment chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -443,7 +468,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmInstructedReimbursementAgentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashSettlementInstructionPartyRole.mmCashAccount;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "InstdRmbrsmntAgtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -455,13 +480,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "ThrdRmbrsmntAgt")
 	protected BranchAndFinancialInstitutionIdentification5 thirdReimbursementAgent;
 	/**
-	 * Agent at which the instructed agent will be reimbursed. Usage: If
-	 * ThirdReimbursementAgent contains a branch of the InstructedAgent, then
-	 * the party in InstructedAgent will claim reimbursement from that
-	 * branch/will be paid by that branch.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -496,7 +519,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmThirdReimbursementAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "ThrdRmbrsmntAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -508,11 +531,11 @@ public class SettlementInstruction4 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "ThrdRmbrsmntAgtAcct")
 	protected CashAccount24 thirdReimbursementAgentAccount;
 	/**
-	 * Unambiguous identification of the account of the third reimbursement
-	 * agent account at its servicing agent in the payment chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -546,7 +569,7 @@ public class SettlementInstruction4 {
 	public static final MMMessageAssociationEnd mmThirdReimbursementAgentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashSettlementInstructionPartyRole.mmCashAccount;
-			componentContext_lazy = () -> SettlementInstruction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementInstruction4.mmObject();
 			isDerived = false;
 			xmlTag = "ThrdRmbrsmntAgtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -562,11 +585,19 @@ public class SettlementInstruction4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SettlementInstruction4.mmSettlementMethod, SettlementInstruction4.mmSettlementAccount, SettlementInstruction4.mmClearingSystem,
-						SettlementInstruction4.mmInstructingReimbursementAgent, SettlementInstruction4.mmInstructingReimbursementAgentAccount, SettlementInstruction4.mmInstructedReimbursementAgent,
-						SettlementInstruction4.mmInstructedReimbursementAgentAccount, SettlementInstruction4.mmThirdReimbursementAgent, SettlementInstruction4.mmThirdReimbursementAgentAccount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SettlementInstruction4.mmSettlementMethod, com.tools20022.repository.msg.SettlementInstruction4.mmSettlementAccount,
+						com.tools20022.repository.msg.SettlementInstruction4.mmClearingSystem, com.tools20022.repository.msg.SettlementInstruction4.mmInstructingReimbursementAgent,
+						com.tools20022.repository.msg.SettlementInstruction4.mmInstructingReimbursementAgentAccount, com.tools20022.repository.msg.SettlementInstruction4.mmInstructedReimbursementAgent,
+						com.tools20022.repository.msg.SettlementInstruction4.mmInstructedReimbursementAgentAccount, com.tools20022.repository.msg.SettlementInstruction4.mmThirdReimbursementAgent,
+						com.tools20022.repository.msg.SettlementInstruction4.mmThirdReimbursementAgentAccount);
 				trace_lazy = () -> CashSettlement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintThirdReimbursementAgentRule.forSettlementInstruction4,
+						com.tools20022.repository.constraints.ConstraintSettlementMethodAgentRule.forSettlementInstruction4, com.tools20022.repository.constraints.ConstraintSettlementMethodCoverRule.forSettlementInstruction4,
+						com.tools20022.repository.constraints.ConstraintSettlementMethodCoverAgentRule.forSettlementInstruction4, com.tools20022.repository.constraints.ConstraintSettlementMethodClearingRule.forSettlementInstruction4,
+						com.tools20022.repository.constraints.ConstraintInstructingReimbursementAgentAccountRule.forSettlementInstruction4,
+						com.tools20022.repository.constraints.ConstraintInstructedReimbursementAgentAccountRule.forSettlementInstruction4,
+						com.tools20022.repository.constraints.ConstraintThirdReimbursementAgentAccountRule.forSettlementInstruction4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementInstruction4";
 				definition = "Provides further details on the settlement of the instruction.";
@@ -575,84 +606,84 @@ public class SettlementInstruction4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SttlmMtd", required = true)
 	public SettlementMethod1Code getSettlementMethod() {
 		return settlementMethod;
 	}
 
-	public void setSettlementMethod(SettlementMethod1Code settlementMethod) {
-		this.settlementMethod = settlementMethod;
+	public SettlementInstruction4 setSettlementMethod(SettlementMethod1Code settlementMethod) {
+		this.settlementMethod = Objects.requireNonNull(settlementMethod);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAcct")
-	public CashAccount24 getSettlementAccount() {
-		return settlementAccount;
+	public Optional<CashAccount24> getSettlementAccount() {
+		return settlementAccount == null ? Optional.empty() : Optional.of(settlementAccount);
 	}
 
-	public void setSettlementAccount(com.tools20022.repository.msg.CashAccount24 settlementAccount) {
+	public SettlementInstruction4 setSettlementAccount(com.tools20022.repository.msg.CashAccount24 settlementAccount) {
 		this.settlementAccount = settlementAccount;
+		return this;
 	}
 
-	@XmlElement(name = "ClrSys")
-	public ClearingSystemIdentification3Choice getClearingSystem() {
-		return clearingSystem;
+	public Optional<ClearingSystemIdentification3Choice> getClearingSystem() {
+		return clearingSystem == null ? Optional.empty() : Optional.of(clearingSystem);
 	}
 
-	public void setClearingSystem(ClearingSystemIdentification3Choice clearingSystem) {
+	public SettlementInstruction4 setClearingSystem(ClearingSystemIdentification3Choice clearingSystem) {
 		this.clearingSystem = clearingSystem;
+		return this;
 	}
 
-	@XmlElement(name = "InstgRmbrsmntAgt")
-	public BranchAndFinancialInstitutionIdentification5 getInstructingReimbursementAgent() {
-		return instructingReimbursementAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getInstructingReimbursementAgent() {
+		return instructingReimbursementAgent == null ? Optional.empty() : Optional.of(instructingReimbursementAgent);
 	}
 
-	public void setInstructingReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructingReimbursementAgent) {
+	public SettlementInstruction4 setInstructingReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructingReimbursementAgent) {
 		this.instructingReimbursementAgent = instructingReimbursementAgent;
+		return this;
 	}
 
-	@XmlElement(name = "InstgRmbrsmntAgtAcct")
-	public CashAccount24 getInstructingReimbursementAgentAccount() {
-		return instructingReimbursementAgentAccount;
+	public Optional<CashAccount24> getInstructingReimbursementAgentAccount() {
+		return instructingReimbursementAgentAccount == null ? Optional.empty() : Optional.of(instructingReimbursementAgentAccount);
 	}
 
-	public void setInstructingReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 instructingReimbursementAgentAccount) {
+	public SettlementInstruction4 setInstructingReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 instructingReimbursementAgentAccount) {
 		this.instructingReimbursementAgentAccount = instructingReimbursementAgentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "InstdRmbrsmntAgt")
-	public BranchAndFinancialInstitutionIdentification5 getInstructedReimbursementAgent() {
-		return instructedReimbursementAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getInstructedReimbursementAgent() {
+		return instructedReimbursementAgent == null ? Optional.empty() : Optional.of(instructedReimbursementAgent);
 	}
 
-	public void setInstructedReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructedReimbursementAgent) {
+	public SettlementInstruction4 setInstructedReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructedReimbursementAgent) {
 		this.instructedReimbursementAgent = instructedReimbursementAgent;
+		return this;
 	}
 
-	@XmlElement(name = "InstdRmbrsmntAgtAcct")
-	public CashAccount24 getInstructedReimbursementAgentAccount() {
-		return instructedReimbursementAgentAccount;
+	public Optional<CashAccount24> getInstructedReimbursementAgentAccount() {
+		return instructedReimbursementAgentAccount == null ? Optional.empty() : Optional.of(instructedReimbursementAgentAccount);
 	}
 
-	public void setInstructedReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 instructedReimbursementAgentAccount) {
+	public SettlementInstruction4 setInstructedReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 instructedReimbursementAgentAccount) {
 		this.instructedReimbursementAgentAccount = instructedReimbursementAgentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "ThrdRmbrsmntAgt")
-	public BranchAndFinancialInstitutionIdentification5 getThirdReimbursementAgent() {
-		return thirdReimbursementAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getThirdReimbursementAgent() {
+		return thirdReimbursementAgent == null ? Optional.empty() : Optional.of(thirdReimbursementAgent);
 	}
 
-	public void setThirdReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 thirdReimbursementAgent) {
+	public SettlementInstruction4 setThirdReimbursementAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 thirdReimbursementAgent) {
 		this.thirdReimbursementAgent = thirdReimbursementAgent;
+		return this;
 	}
 
-	@XmlElement(name = "ThrdRmbrsmntAgtAcct")
-	public CashAccount24 getThirdReimbursementAgentAccount() {
-		return thirdReimbursementAgentAccount;
+	public Optional<CashAccount24> getThirdReimbursementAgentAccount() {
+		return thirdReimbursementAgentAccount == null ? Optional.empty() : Optional.of(thirdReimbursementAgentAccount);
 	}
 
-	public void setThirdReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 thirdReimbursementAgentAccount) {
+	public SettlementInstruction4 setThirdReimbursementAgentAccount(com.tools20022.repository.msg.CashAccount24 thirdReimbursementAgentAccount) {
 		this.thirdReimbursementAgentAccount = thirdReimbursementAgentAccount;
+		return this;
 	}
 }

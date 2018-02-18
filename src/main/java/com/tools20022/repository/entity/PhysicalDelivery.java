@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Parameters of a physical delivery.
@@ -70,8 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,8 +89,8 @@ public class PhysicalDelivery {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesTransfer relatedTransfer;
 	/**
-	 * Transfer process which requires physical delivery of the securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,9 +138,8 @@ public class PhysicalDelivery {
 	};
 	protected YesNoIndicator registeredAddressIndicator;
 	/**
-	 * Indicates whether the address for the physical delivery is the registered
-	 * address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,8 +187,8 @@ public class PhysicalDelivery {
 	};
 	protected SecuritiesCertificate issuedCertificateNumber;
 	/**
-	 * Certificate representing a security that is delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +236,8 @@ public class PhysicalDelivery {
 	};
 	protected PostalAddress address;
 	/**
-	 * Address for physical delivery.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +284,8 @@ public class PhysicalDelivery {
 	};
 	protected PhysicalTransferTypeCode type;
 	/**
-	 * Specifies the type of delivery.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,7 +333,7 @@ public class PhysicalDelivery {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PhysicalDelivery";
 				definition = "Parameters of a physical delivery.";
@@ -350,43 +351,48 @@ public class PhysicalDelivery {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesTransfer getRelatedTransfer() {
-		return relatedTransfer;
+	public Optional<SecuritiesTransfer> getRelatedTransfer() {
+		return relatedTransfer == null ? Optional.empty() : Optional.of(relatedTransfer);
 	}
 
-	public void setRelatedTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedTransfer) {
+	public PhysicalDelivery setRelatedTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedTransfer) {
 		this.relatedTransfer = relatedTransfer;
+		return this;
 	}
 
 	public YesNoIndicator getRegisteredAddressIndicator() {
 		return registeredAddressIndicator;
 	}
 
-	public void setRegisteredAddressIndicator(YesNoIndicator registeredAddressIndicator) {
-		this.registeredAddressIndicator = registeredAddressIndicator;
+	public PhysicalDelivery setRegisteredAddressIndicator(YesNoIndicator registeredAddressIndicator) {
+		this.registeredAddressIndicator = Objects.requireNonNull(registeredAddressIndicator);
+		return this;
 	}
 
 	public SecuritiesCertificate getIssuedCertificateNumber() {
 		return issuedCertificateNumber;
 	}
 
-	public void setIssuedCertificateNumber(com.tools20022.repository.entity.SecuritiesCertificate issuedCertificateNumber) {
-		this.issuedCertificateNumber = issuedCertificateNumber;
+	public PhysicalDelivery setIssuedCertificateNumber(com.tools20022.repository.entity.SecuritiesCertificate issuedCertificateNumber) {
+		this.issuedCertificateNumber = Objects.requireNonNull(issuedCertificateNumber);
+		return this;
 	}
 
 	public PostalAddress getAddress() {
 		return address;
 	}
 
-	public void setAddress(com.tools20022.repository.entity.PostalAddress address) {
-		this.address = address;
+	public PhysicalDelivery setAddress(com.tools20022.repository.entity.PostalAddress address) {
+		this.address = Objects.requireNonNull(address);
+		return this;
 	}
 
 	public PhysicalTransferTypeCode getType() {
 		return type;
 	}
 
-	public void setType(PhysicalTransferTypeCode type) {
-		this.type = type;
+	public PhysicalDelivery setType(PhysicalTransferTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 }

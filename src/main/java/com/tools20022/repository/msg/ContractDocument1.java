@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -87,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,17 +103,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContractDocument1", propOrder = {"reference", "signOffDate", "version"})
 public class ContractDocument1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ref", required = true)
 	protected Max35Text reference;
 	/**
-	 * Account contract established between the organisation or the group to
-	 * which the organisation belongs, and the account servicer. This contract
-	 * has to be applied for the new account to be opened and maintained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +147,7 @@ public class ContractDocument1 {
 	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
-			componentContext_lazy = () -> ContractDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "Ref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,10 +158,11 @@ public class ContractDocument1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "SgnOffDt")
 	protected ISODate signOffDate;
 	/**
-	 * Signoff date of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,7 +195,7 @@ public class ContractDocument1 {
 	public static final MMMessageAttribute mmSignOffDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDateSigned;
-			componentContext_lazy = () -> ContractDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "SgnOffDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,10 +206,11 @@ public class ContractDocument1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Vrsn")
 	protected Max6Text version;
 	/**
-	 * Identification of the version of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,7 +243,7 @@ public class ContractDocument1 {
 	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmVersion;
-			componentContext_lazy = () -> ContractDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,12 +258,13 @@ public class ContractDocument1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContractDocument1.mmReference, ContractDocument1.mmSignOffDate, ContractDocument1.mmVersion);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.msg.ContractDocument1.mmReference, com.tools20022.repository.msg.ContractDocument1.mmSignOffDate, com.tools20022.repository.msg.ContractDocument1.mmVersion);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountExcludedMandateMaintenanceAmendmentRequestV02.mmUnderlyingMasterAgreement, AccountExcludedMandateMaintenanceRequestV02.mmUnderlyingMasterAgreement,
 						AccountMandateMaintenanceAmendmentRequestV02.mmUnderlyingMasterAgreement, AccountMandateMaintenanceRequestV02.mmUnderlyingMasterAgreement, AccountOpeningAdditionalInformationRequestV02.mmUnderlyingMasterAgreement,
 						AccountOpeningAmendmentRequestV02.mmUnderlyingMasterAgreement, AccountOpeningRequestV02.mmUnderlyingMasterAgreement);
 				trace_lazy = () -> AccountContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractDocument1";
 				definition = "Document that contains the information of the contract agreed between both parties.";
@@ -269,30 +273,30 @@ public class ContractDocument1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ref", required = true)
 	public Max35Text getReference() {
 		return reference;
 	}
 
-	public void setReference(Max35Text reference) {
-		this.reference = reference;
+	public ContractDocument1 setReference(Max35Text reference) {
+		this.reference = Objects.requireNonNull(reference);
+		return this;
 	}
 
-	@XmlElement(name = "SgnOffDt")
-	public ISODate getSignOffDate() {
-		return signOffDate;
+	public Optional<ISODate> getSignOffDate() {
+		return signOffDate == null ? Optional.empty() : Optional.of(signOffDate);
 	}
 
-	public void setSignOffDate(ISODate signOffDate) {
+	public ContractDocument1 setSignOffDate(ISODate signOffDate) {
 		this.signOffDate = signOffDate;
+		return this;
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Max6Text getVersion() {
-		return version;
+	public Optional<Max6Text> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Max6Text version) {
+	public ContractDocument1 setVersion(Max6Text version) {
 		this.version = version;
+		return this;
 	}
 }

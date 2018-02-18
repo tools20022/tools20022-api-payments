@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.ContractRegistrationStatementRequest1;
 import com.tools20022.repository.msg.CurrencyControlHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -76,15 +78,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContractRegistrationStatementRequestV01", propOrder = {"groupHeader", "statementRequest", "supplementaryData"})
 public class ContractRegistrationStatementRequestV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected CurrencyControlHeader1 groupHeader;
 	/**
-	 * Characteristics shared by all individual items included in the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,11 +129,11 @@ public class ContractRegistrationStatementRequestV01 {
 			}
 		}
 	};
+	@XmlElement(name = "StmtReq", required = true)
 	protected List<ContractRegistrationStatementRequest1> statementRequest;
 	/**
-	 * Details on the information requested for the contract registration
-	 * statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,11 +174,11 @@ public class ContractRegistrationStatementRequestV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,34 +249,34 @@ public class ContractRegistrationStatementRequestV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public CurrencyControlHeader1 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(CurrencyControlHeader1 groupHeader) {
-		this.groupHeader = groupHeader;
+	public ContractRegistrationStatementRequestV01 setGroupHeader(CurrencyControlHeader1 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "StmtReq", required = true)
 	public List<ContractRegistrationStatementRequest1> getStatementRequest() {
-		return statementRequest;
+		return statementRequest == null ? statementRequest = new ArrayList<>() : statementRequest;
 	}
 
-	public void setStatementRequest(List<ContractRegistrationStatementRequest1> statementRequest) {
-		this.statementRequest = statementRequest;
+	public ContractRegistrationStatementRequestV01 setStatementRequest(List<ContractRegistrationStatementRequest1> statementRequest) {
+		this.statementRequest = Objects.requireNonNull(statementRequest);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public ContractRegistrationStatementRequestV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.023.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.023.001.01")
 	static public class Document {
 		@XmlElement(name = "CtrctRegnStmtReq", required = true)
 		public ContractRegistrationStatementRequestV01 messageBody;

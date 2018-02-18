@@ -37,33 +37,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Retail
- * InvestorTypeCode.mmRetail}</li>
+ * InvestorTypeCode.Retail}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Professional
- * InvestorTypeCode.mmProfessional}</li>
+ * InvestorTypeCode.Professional}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Staff
- * InvestorTypeCode.mmStaff}</li>
+ * InvestorTypeCode.Staff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#PhysicalPerson
- * InvestorTypeCode.mmPhysicalPerson}</li>
+ * InvestorTypeCode.PhysicalPerson}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Institutional
- * InvestorTypeCode.mmInstitutional}</li>
+ * InvestorTypeCode.Institutional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#RetailAndInstitutional
- * InvestorTypeCode.mmRetailAndInstitutional}</li>
+ * InvestorTypeCode.RetailAndInstitutional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorTypeCode#GrossDistribution
- * InvestorTypeCode.mmGrossDistribution}</li>
+ * InvestorTypeCode.GrossDistribution}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InvestorTypeCode#Qualified
- * InvestorTypeCode.mmQualified}</li>
+ * InvestorTypeCode.Qualified}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -334,7 +334,7 @@ public class InvestorTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RETL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestorTypeCode";

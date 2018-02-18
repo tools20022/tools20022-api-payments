@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Original and current value of an asset-back instrument."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OriginalAndCurrentQuantities1", propOrder = {"faceAmount", "amortisedValue"})
 public class OriginalAndCurrentQuantities1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FaceAmt", required = true)
 	protected ImpliedCurrencyAndAmount faceAmount;
 	/**
-	 * Quantity expressed as an amount representing the face amount, ie, the
-	 * principal, of a debt instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,7 +112,7 @@ public class OriginalAndCurrentQuantities1 {
 	public static final MMMessageAttribute mmFaceAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmFaceAmount;
-			componentContext_lazy = () -> OriginalAndCurrentQuantities1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalAndCurrentQuantities1.mmObject();
 			isDerived = false;
 			xmlTag = "FaceAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,12 +123,11 @@ public class OriginalAndCurrentQuantities1 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "AmtsdVal", required = true)
 	protected ImpliedCurrencyAndAmount amortisedValue;
 	/**
-	 * Quantity expressed as an amount representing the current amortised face
-	 * amount of a bond, for example, a periodic reduction/increase of a bond's
-	 * principal amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +163,7 @@ public class OriginalAndCurrentQuantities1 {
 	public static final MMMessageAttribute mmAmortisedValue = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmAmortisedFaceValue;
-			componentContext_lazy = () -> OriginalAndCurrentQuantities1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalAndCurrentQuantities1.mmObject();
 			isDerived = false;
 			xmlTag = "AmtsdVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,9 +178,9 @@ public class OriginalAndCurrentQuantities1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OriginalAndCurrentQuantities1.mmFaceAmount, OriginalAndCurrentQuantities1.mmAmortisedValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OriginalAndCurrentQuantities1.mmFaceAmount, com.tools20022.repository.msg.OriginalAndCurrentQuantities1.mmAmortisedValue);
 				trace_lazy = () -> SecuritiesQuantity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OriginalAndCurrentQuantities1";
 				definition = "Original and current value of an asset-back instrument.";
@@ -189,21 +189,21 @@ public class OriginalAndCurrentQuantities1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FaceAmt", required = true)
 	public ImpliedCurrencyAndAmount getFaceAmount() {
 		return faceAmount;
 	}
 
-	public void setFaceAmount(ImpliedCurrencyAndAmount faceAmount) {
-		this.faceAmount = faceAmount;
+	public OriginalAndCurrentQuantities1 setFaceAmount(ImpliedCurrencyAndAmount faceAmount) {
+		this.faceAmount = Objects.requireNonNull(faceAmount);
+		return this;
 	}
 
-	@XmlElement(name = "AmtsdVal", required = true)
 	public ImpliedCurrencyAndAmount getAmortisedValue() {
 		return amortisedValue;
 	}
 
-	public void setAmortisedValue(ImpliedCurrencyAndAmount amortisedValue) {
-		this.amortisedValue = amortisedValue;
+	public OriginalAndCurrentQuantities1 setAmortisedValue(ImpliedCurrencyAndAmount amortisedValue) {
+		this.amortisedValue = Objects.requireNonNull(amortisedValue);
+		return this;
 	}
 }

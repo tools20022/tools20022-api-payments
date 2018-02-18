@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Rules governing an undertaking such as a guarantee or standby letter of
@@ -68,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,8 +88,8 @@ public class GovernanceRules {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ModelForm modelForm;
 	/**
-	 * Model form to which the governance rules apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,8 +136,8 @@ public class GovernanceRules {
 	};
 	protected GovernanceIdentificationCode identification;
 	/**
-	 * Identification of the governance rules.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,8 +183,8 @@ public class GovernanceRules {
 	};
 	protected Max35Text applicableLaw;
 	/**
-	 * Law under which the undertaking has been issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,8 +229,8 @@ public class GovernanceRules {
 	};
 	protected Jurisdiction jurisdiction;
 	/**
-	 * Jurisdiction which applies to the governance rules.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,8 +277,8 @@ public class GovernanceRules {
 	};
 	protected Max35Text publicationAgency;
 	/**
-	 * Agency that publishes the governance rules.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +325,7 @@ public class GovernanceRules {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GovernanceRules";
 				definition = "Rules governing an undertaking such as a guarantee or standby letter of credit.";
@@ -345,39 +346,44 @@ public class GovernanceRules {
 		return modelForm;
 	}
 
-	public void setModelForm(com.tools20022.repository.entity.ModelForm modelForm) {
-		this.modelForm = modelForm;
+	public GovernanceRules setModelForm(com.tools20022.repository.entity.ModelForm modelForm) {
+		this.modelForm = Objects.requireNonNull(modelForm);
+		return this;
 	}
 
 	public GovernanceIdentificationCode getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(GovernanceIdentificationCode identification) {
-		this.identification = identification;
+	public GovernanceRules setIdentification(GovernanceIdentificationCode identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getApplicableLaw() {
 		return applicableLaw;
 	}
 
-	public void setApplicableLaw(Max35Text applicableLaw) {
-		this.applicableLaw = applicableLaw;
+	public GovernanceRules setApplicableLaw(Max35Text applicableLaw) {
+		this.applicableLaw = Objects.requireNonNull(applicableLaw);
+		return this;
 	}
 
 	public Jurisdiction getJurisdiction() {
 		return jurisdiction;
 	}
 
-	public void setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
-		this.jurisdiction = jurisdiction;
+	public GovernanceRules setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
+		this.jurisdiction = Objects.requireNonNull(jurisdiction);
+		return this;
 	}
 
 	public Max35Text getPublicationAgency() {
 		return publicationAgency;
 	}
 
-	public void setPublicationAgency(Max35Text publicationAgency) {
-		this.publicationAgency = publicationAgency;
+	public GovernanceRules setPublicationAgency(Max35Text publicationAgency) {
+		this.publicationAgency = Objects.requireNonNull(publicationAgency);
+		return this;
 	}
 }

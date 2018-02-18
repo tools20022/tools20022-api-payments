@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.InvestigationResolution;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Outcome that results in closing a case as duplicate because the same issue
@@ -67,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +88,8 @@ public class DuplicateCase extends InvestigationResolution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.InvestigationCase> duplicatedCase;
 	/**
-	 * Identifies the original case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +135,8 @@ public class DuplicateCase extends InvestigationResolution {
 	};
 	protected PaymentInvestigationCaseResolution relatedCaseResolution;
 	/**
-	 * Investigation case information which is duplicate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,7 +186,7 @@ public class DuplicateCase extends InvestigationResolution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DuplicateCase";
 				definition = "Outcome that results in closing a case as duplicate because the same issue has been reported by another party.";
@@ -202,18 +204,20 @@ public class DuplicateCase extends InvestigationResolution {
 	}
 
 	public List<InvestigationCase> getDuplicatedCase() {
-		return duplicatedCase;
+		return duplicatedCase == null ? duplicatedCase = new ArrayList<>() : duplicatedCase;
 	}
 
-	public void setDuplicatedCase(List<com.tools20022.repository.entity.InvestigationCase> duplicatedCase) {
-		this.duplicatedCase = duplicatedCase;
+	public DuplicateCase setDuplicatedCase(List<com.tools20022.repository.entity.InvestigationCase> duplicatedCase) {
+		this.duplicatedCase = Objects.requireNonNull(duplicatedCase);
+		return this;
 	}
 
 	public PaymentInvestigationCaseResolution getRelatedCaseResolution() {
 		return relatedCaseResolution;
 	}
 
-	public void setRelatedCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedCaseResolution) {
-		this.relatedCaseResolution = relatedCaseResolution;
+	public DuplicateCase setRelatedCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedCaseResolution) {
+		this.relatedCaseResolution = Objects.requireNonNull(relatedCaseResolution);
+		return this;
 	}
 }

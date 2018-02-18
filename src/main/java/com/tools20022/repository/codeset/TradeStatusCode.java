@@ -37,75 +37,75 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Validated
- * TradeStatusCode.mmValidated}</li>
+ * TradeStatusCode.Validated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#RegulatoryChecked
- * TradeStatusCode.mmRegulatoryChecked}</li>
+ * TradeStatusCode.RegulatoryChecked}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Invalid
- * TradeStatusCode.mmInvalid}</li>
+ * TradeStatusCode.Invalid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#SettlementRejected
- * TradeStatusCode.mmSettlementRejected}</li>
+ * TradeStatusCode.SettlementRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#RegulatorySuspended
- * TradeStatusCode.mmRegulatorySuspended}</li>
+ * TradeStatusCode.RegulatorySuspended}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Unmatched
- * TradeStatusCode.mmUnmatched}</li>
+ * TradeStatusCode.Unmatched}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Matched
- * TradeStatusCode.mmMatched}</li>
+ * TradeStatusCode.Matched}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Rescinded
- * TradeStatusCode.mmRescinded}</li>
+ * TradeStatusCode.Rescinded}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Settled
- * TradeStatusCode.mmSettled}</li>
+ * TradeStatusCode.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#PartiallySettled
- * TradeStatusCode.mmPartiallySettled}</li>
+ * TradeStatusCode.PartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#MatchedValued
- * TradeStatusCode.mmMatchedValued}</li>
+ * TradeStatusCode.MatchedValued}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Rejected
- * TradeStatusCode.mmRejected}</li>
+ * TradeStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#OptionMature
- * TradeStatusCode.mmOptionMature}</li>
+ * TradeStatusCode.OptionMature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#SettlementMemberAuthorised
- * TradeStatusCode.mmSettlementMemberAuthorised}</li>
+ * TradeStatusCode.SettlementMemberAuthorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#SettlementMemberNotAuthorised
- * TradeStatusCode.mmSettlementMemberNotAuthorised}</li>
+ * TradeStatusCode.SettlementMemberNotAuthorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#SettlementMature
- * TradeStatusCode.mmSettlementMature}</li>
+ * TradeStatusCode.SettlementMature}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Split
- * TradeStatusCode.mmSplit}</li>
+ * TradeStatusCode.Split}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Suspended
- * TradeStatusCode.mmSuspended}</li>
+ * TradeStatusCode.Suspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#NotAuthorised
- * TradeStatusCode.mmNotAuthorised}</li>
+ * TradeStatusCode.NotAuthorised}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Amended
- * TradeStatusCode.mmAmended}</li>
+ * TradeStatusCode.Amended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#SettlementMaturePending
- * TradeStatusCode.mmSettlementMaturePending}</li>
+ * TradeStatusCode.SettlementMaturePending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#Netted
- * TradeStatusCode.mmNetted}</li>
+ * TradeStatusCode.Netted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#OpenMatched
- * TradeStatusCode.mmOpenMatched}</li>
+ * TradeStatusCode.OpenMatched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeStatusCode#FixUnmatched
- * TradeStatusCode.mmFixUnmatched}</li>
+ * TradeStatusCode.FixUnmatched}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeStatusCode#PartialFix
- * TradeStatusCode.mmPartialFix}</li>
+ * TradeStatusCode.PartialFix}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -908,7 +908,7 @@ public class TradeStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("VALI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeStatusCode";

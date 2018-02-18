@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#CardholderDisplay
- * UserInterfaceCode.mmCardholderDisplay}</li>
+ * UserInterfaceCode.CardholderDisplay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#CardholderReceipt
- * UserInterfaceCode.mmCardholderReceipt}</li>
+ * UserInterfaceCode.CardholderReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#MerchantDisplay
- * UserInterfaceCode.mmMerchantDisplay}</li>
+ * UserInterfaceCode.MerchantDisplay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#MerchantReceipt
- * UserInterfaceCode.mmMerchantReceipt}</li>
+ * UserInterfaceCode.MerchantReceipt}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Acquirer
- * UserInterfaceCode.mmAcquirer}</li>
+ * UserInterfaceCode.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Issuer
- * UserInterfaceCode.mmIssuer}</li>
+ * UserInterfaceCode.Issuer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UserInterfaceCode#Agent
- * UserInterfaceCode.mmAgent}</li>
+ * UserInterfaceCode.Agent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterfaceCode#OtherCardholderInterface
- * UserInterfaceCode.mmOtherCardholderInterface}</li>
+ * UserInterfaceCode.OtherCardholderInterface}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -69,8 +69,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -342,7 +342,7 @@ public class UserInterfaceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CDSP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UserInterfaceCode";

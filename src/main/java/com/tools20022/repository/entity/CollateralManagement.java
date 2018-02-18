@@ -22,9 +22,8 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set of operations relative to the management of collateral, variation
@@ -116,8 +115,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -135,8 +134,8 @@ public class CollateralManagement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CollateralProposal> collateralProposal;
 	/**
-	 * Specifies collateral proposed to the counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,9 +181,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.CollateralValuation> collateralValuation;
 	/**
-	 * Provides details about the valuation of each piece of collateral that is
-	 * posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,9 +230,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.Adjustment> feesAndCommissions;
 	/**
-	 * Specifies the amount of money paid for the provision of financial
-	 * services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,8 +279,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.CollateralInterestAdministration> interestManagement;
 	/**
-	 * Calculation and request of interest linked to collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,9 +328,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.DisputeManagement> disputeManagement;
 	/**
-	 * Provides the dispute details on the variation margin and/or the
-	 * segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,9 +377,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.MarginCall> marginCall;
 	/**
-	 * Calculation of the variation margin and independent amount needed to
-	 * cover the risk exposure of one party versus another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -431,9 +426,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.CollateralSubstitution> collateralSubstitution;
 	/**
-	 * Request of a substitution of collateral by specifying the collateral to
-	 * be returned and proposing the new type(s) of collateral to be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -482,8 +476,8 @@ public class CollateralManagement {
 	};
 	protected ExposureCalculation riskToCover;
 	/**
-	 * Risk which is the source of the collateral management processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -531,9 +525,8 @@ public class CollateralManagement {
 	};
 	protected List<com.tools20022.repository.entity.Collateral> collateral;
 	/**
-	 * Description of the collateral which is related to the different
-	 * management processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -581,9 +574,8 @@ public class CollateralManagement {
 	};
 	protected CollateralAgreement agreedTerms;
 	/**
-	 * Specifies the terms bilaterally agreed by the parties related to the
-	 * collateral processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -632,8 +624,8 @@ public class CollateralManagement {
 	};
 	protected ClearingSystem clearingSystem;
 	/**
-	 * Clearing system involved in the collateral management process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -683,7 +675,7 @@ public class CollateralManagement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralManagement";
 				definition = "Set of operations relative to the management of collateral, variation margins, default fund participation and independent amount.";
@@ -709,90 +701,101 @@ public class CollateralManagement {
 	}
 
 	public List<CollateralProposal> getCollateralProposal() {
-		return collateralProposal;
+		return collateralProposal == null ? collateralProposal = new ArrayList<>() : collateralProposal;
 	}
 
-	public void setCollateralProposal(List<com.tools20022.repository.entity.CollateralProposal> collateralProposal) {
-		this.collateralProposal = collateralProposal;
+	public CollateralManagement setCollateralProposal(List<com.tools20022.repository.entity.CollateralProposal> collateralProposal) {
+		this.collateralProposal = Objects.requireNonNull(collateralProposal);
+		return this;
 	}
 
 	public List<CollateralValuation> getCollateralValuation() {
-		return collateralValuation;
+		return collateralValuation == null ? collateralValuation = new ArrayList<>() : collateralValuation;
 	}
 
-	public void setCollateralValuation(List<com.tools20022.repository.entity.CollateralValuation> collateralValuation) {
-		this.collateralValuation = collateralValuation;
+	public CollateralManagement setCollateralValuation(List<com.tools20022.repository.entity.CollateralValuation> collateralValuation) {
+		this.collateralValuation = Objects.requireNonNull(collateralValuation);
+		return this;
 	}
 
 	public List<Adjustment> getFeesAndCommissions() {
-		return feesAndCommissions;
+		return feesAndCommissions == null ? feesAndCommissions = new ArrayList<>() : feesAndCommissions;
 	}
 
-	public void setFeesAndCommissions(List<com.tools20022.repository.entity.Adjustment> feesAndCommissions) {
-		this.feesAndCommissions = feesAndCommissions;
+	public CollateralManagement setFeesAndCommissions(List<com.tools20022.repository.entity.Adjustment> feesAndCommissions) {
+		this.feesAndCommissions = Objects.requireNonNull(feesAndCommissions);
+		return this;
 	}
 
 	public List<CollateralInterestAdministration> getInterestManagement() {
-		return interestManagement;
+		return interestManagement == null ? interestManagement = new ArrayList<>() : interestManagement;
 	}
 
-	public void setInterestManagement(List<com.tools20022.repository.entity.CollateralInterestAdministration> interestManagement) {
-		this.interestManagement = interestManagement;
+	public CollateralManagement setInterestManagement(List<com.tools20022.repository.entity.CollateralInterestAdministration> interestManagement) {
+		this.interestManagement = Objects.requireNonNull(interestManagement);
+		return this;
 	}
 
 	public List<DisputeManagement> getDisputeManagement() {
-		return disputeManagement;
+		return disputeManagement == null ? disputeManagement = new ArrayList<>() : disputeManagement;
 	}
 
-	public void setDisputeManagement(List<com.tools20022.repository.entity.DisputeManagement> disputeManagement) {
-		this.disputeManagement = disputeManagement;
+	public CollateralManagement setDisputeManagement(List<com.tools20022.repository.entity.DisputeManagement> disputeManagement) {
+		this.disputeManagement = Objects.requireNonNull(disputeManagement);
+		return this;
 	}
 
 	public List<MarginCall> getMarginCall() {
-		return marginCall;
+		return marginCall == null ? marginCall = new ArrayList<>() : marginCall;
 	}
 
-	public void setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
-		this.marginCall = marginCall;
+	public CollateralManagement setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
+		this.marginCall = Objects.requireNonNull(marginCall);
+		return this;
 	}
 
 	public List<CollateralSubstitution> getCollateralSubstitution() {
-		return collateralSubstitution;
+		return collateralSubstitution == null ? collateralSubstitution = new ArrayList<>() : collateralSubstitution;
 	}
 
-	public void setCollateralSubstitution(List<com.tools20022.repository.entity.CollateralSubstitution> collateralSubstitution) {
-		this.collateralSubstitution = collateralSubstitution;
+	public CollateralManagement setCollateralSubstitution(List<com.tools20022.repository.entity.CollateralSubstitution> collateralSubstitution) {
+		this.collateralSubstitution = Objects.requireNonNull(collateralSubstitution);
+		return this;
 	}
 
-	public ExposureCalculation getRiskToCover() {
-		return riskToCover;
+	public Optional<ExposureCalculation> getRiskToCover() {
+		return riskToCover == null ? Optional.empty() : Optional.of(riskToCover);
 	}
 
-	public void setRiskToCover(com.tools20022.repository.entity.ExposureCalculation riskToCover) {
+	public CollateralManagement setRiskToCover(com.tools20022.repository.entity.ExposureCalculation riskToCover) {
 		this.riskToCover = riskToCover;
+		return this;
 	}
 
 	public List<Collateral> getCollateral() {
-		return collateral;
+		return collateral == null ? collateral = new ArrayList<>() : collateral;
 	}
 
-	public void setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
-		this.collateral = collateral;
+	public CollateralManagement setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
+		this.collateral = Objects.requireNonNull(collateral);
+		return this;
 	}
 
 	public CollateralAgreement getAgreedTerms() {
 		return agreedTerms;
 	}
 
-	public void setAgreedTerms(com.tools20022.repository.entity.CollateralAgreement agreedTerms) {
-		this.agreedTerms = agreedTerms;
+	public CollateralManagement setAgreedTerms(com.tools20022.repository.entity.CollateralAgreement agreedTerms) {
+		this.agreedTerms = Objects.requireNonNull(agreedTerms);
+		return this;
 	}
 
 	public ClearingSystem getClearingSystem() {
 		return clearingSystem;
 	}
 
-	public void setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
-		this.clearingSystem = clearingSystem;
+	public CollateralManagement setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
+		this.clearingSystem = Objects.requireNonNull(clearingSystem);
+		return this;
 	}
 }

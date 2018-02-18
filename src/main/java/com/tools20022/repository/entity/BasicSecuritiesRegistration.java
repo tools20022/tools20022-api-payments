@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RegistrationCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Information related to registration of securities.
@@ -77,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,8 +94,8 @@ public class BasicSecuritiesRegistration {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Security security;
 	/**
-	 * Security for which registration information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,8 +141,8 @@ public class BasicSecuritiesRegistration {
 	};
 	protected RegistrationCode registrationInstruction;
 	/**
-	 * Specifies whether registration should occur upon receipt.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,6 +155,9 @@ public class BasicSecuritiesRegistration {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration
 	 * BasicSecuritiesRegistration}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::REGT</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -171,6 +174,7 @@ public class BasicSecuritiesRegistration {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::REGT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationInstruction";
 			definition = "Specifies whether registration should occur upon receipt.";
@@ -189,8 +193,8 @@ public class BasicSecuritiesRegistration {
 	};
 	protected Max35Text certificationIdentification;
 	/**
-	 * Identification assigned to a deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,9 +239,8 @@ public class BasicSecuritiesRegistration {
 	};
 	protected ISODateTime certificationDate;
 	/**
-	 * Date/time at which the certificates in the deposit were validated by the
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,9 +287,8 @@ public class BasicSecuritiesRegistration {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesCertificate> securitiesCertificate;
 	/**
-	 * Unique and unambiguous identification of a certificate assigned by the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,8 +337,8 @@ public class BasicSecuritiesRegistration {
 	};
 	protected DateTimePeriod splitPeriod;
 	/**
-	 * Period during which a physical certificate can be split.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -385,7 +387,7 @@ public class BasicSecuritiesRegistration {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BasicSecuritiesRegistration";
 				definition = "Information related to registration of securities.";
@@ -404,51 +406,57 @@ public class BasicSecuritiesRegistration {
 		return mmObject_lazy.get();
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public BasicSecuritiesRegistration setSecurity(com.tools20022.repository.entity.Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public RegistrationCode getRegistrationInstruction() {
 		return registrationInstruction;
 	}
 
-	public void setRegistrationInstruction(RegistrationCode registrationInstruction) {
-		this.registrationInstruction = registrationInstruction;
+	public BasicSecuritiesRegistration setRegistrationInstruction(RegistrationCode registrationInstruction) {
+		this.registrationInstruction = Objects.requireNonNull(registrationInstruction);
+		return this;
 	}
 
 	public Max35Text getCertificationIdentification() {
 		return certificationIdentification;
 	}
 
-	public void setCertificationIdentification(Max35Text certificationIdentification) {
-		this.certificationIdentification = certificationIdentification;
+	public BasicSecuritiesRegistration setCertificationIdentification(Max35Text certificationIdentification) {
+		this.certificationIdentification = Objects.requireNonNull(certificationIdentification);
+		return this;
 	}
 
 	public ISODateTime getCertificationDate() {
 		return certificationDate;
 	}
 
-	public void setCertificationDate(ISODateTime certificationDate) {
-		this.certificationDate = certificationDate;
+	public BasicSecuritiesRegistration setCertificationDate(ISODateTime certificationDate) {
+		this.certificationDate = Objects.requireNonNull(certificationDate);
+		return this;
 	}
 
 	public List<SecuritiesCertificate> getSecuritiesCertificate() {
-		return securitiesCertificate;
+		return securitiesCertificate == null ? securitiesCertificate = new ArrayList<>() : securitiesCertificate;
 	}
 
-	public void setSecuritiesCertificate(List<com.tools20022.repository.entity.SecuritiesCertificate> securitiesCertificate) {
-		this.securitiesCertificate = securitiesCertificate;
+	public BasicSecuritiesRegistration setSecuritiesCertificate(List<com.tools20022.repository.entity.SecuritiesCertificate> securitiesCertificate) {
+		this.securitiesCertificate = Objects.requireNonNull(securitiesCertificate);
+		return this;
 	}
 
 	public DateTimePeriod getSplitPeriod() {
 		return splitPeriod;
 	}
 
-	public void setSplitPeriod(com.tools20022.repository.entity.DateTimePeriod splitPeriod) {
-		this.splitPeriod = splitPeriod;
+	public BasicSecuritiesRegistration setSplitPeriod(com.tools20022.repository.entity.DateTimePeriod splitPeriod) {
+		this.splitPeriod = Objects.requireNonNull(splitPeriod);
+		return this;
 	}
 }

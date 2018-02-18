@@ -28,9 +28,8 @@ import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Payment information and processes required to transfer cash end to end from
@@ -390,8 +389,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -409,8 +408,8 @@ public class Payment extends ObligationFulfilment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
-	 * Specifies the obligation which created the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,9 +454,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected CurrencyCode currencyOfTransfer;
 	/**
-	 * Specifies the currency of the amount to be transferred which may be
-	 * different from the currency of the debtor's account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,8 +510,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.CreditInstrument> creditMethod;
 	/**
-	 * Specifies the transfer method to be used for the credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -567,8 +565,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected PaymentTypeCode type;
 	/**
-	 * Type, or nature, of the payment, eg, express payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -625,10 +623,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected CurrencyAndAmount instructedAmount;
 	/**
-	 * Amount of money to be moved between the debtor and creditor, before
-	 * deduction of charges, expressed in the currency as ordered by the
-	 * initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -760,9 +756,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected PriorityCode priority;
 	/**
-	 * Urgency or order of importance that the originator would like the
-	 * recipient of the payment to apply to its processing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -817,8 +812,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected ISODate valueDate;
 	/**
-	 * Date on which a payment must be executed
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -887,8 +882,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.PaymentStatus> paymentStatus;
 	/**
-	 * Specifies the status of a payment at a specified time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -961,9 +956,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.PaymentPartyRole> partyRole;
 	/**
-	 * Specifies each role linked to a payment and played by a party at that
-	 * step in a payment flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1022,8 +1016,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.Tax> taxOnPayment;
 	/**
-	 * Payment levy tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1094,8 +1088,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.PaymentExecution> paymentExecution;
 	/**
-	 * Describes the processes necessary to execute a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1178,9 +1172,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected ISODate poolingAdjustmentDate;
 	/**
-	 * Date used for the correction of the value date of a cash pool movement
-	 * that has been posted with a different value date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1238,10 +1231,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected ImpliedCurrencyAndAmount equivalentAmount;
 	/**
-	 * Amount of money to be transferred between debtor and creditor, before
-	 * deduction of charges, expressed in the currency of the debtor's account,
-	 * and to be transferred in a different currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1302,8 +1293,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
-	 * Information on the exchange rate and amounts used in the payment
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1364,12 +1355,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected InstructionCode instructionForCreditorAgent;
 	/**
-	 * Further information related to the processing of the payment instruction
-	 * that may need to be acted upon by the creditor agent. Usage: The
-	 * instruction can relate to a level of service, can be an instruction to be
-	 * executed by the creditor's agent, or can be information required by the
-	 * creditor's agent to process the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1458,12 +1445,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected InstructionCode instructionForDebtorAgent;
 	/**
-	 * Further information related to the processing of the payment instruction
-	 * that may need to be acted upon by the debtor's agent. Usage: The
-	 * instruction can relate to a level of service, can be an instruction to be
-	 * executed by the debtor's agent, or can be information required by the
-	 * debtor's agent to process the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1532,9 +1515,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.PaymentIdentification> paymentRelatedIdentifications;
 	/**
-	 * Identifications provided to identify a payment at different processing
-	 * levels.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1617,8 +1599,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected PaymentInvestigationCase relatedInvestigationCase;
 	/**
-	 * Investigation case assigned to the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1683,8 +1665,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected SettlementTimeRequest settlementTimeRequest;
 	/**
-	 * Information on the requested settlement time of the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1747,8 +1729,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1810,8 +1792,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement;
 	/**
-	 * Specifies the settlement operation which originates the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1858,8 +1840,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected Max140Text standardSettlementInstructions;
 	/**
-	 * Identifies the standard settlement instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1903,8 +1885,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected DebitAuthorisation relatedDebitAuthorisation;
 	/**
-	 * Payment which is the result of the debit authorisation
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1950,8 +1932,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCaseResolution;
 	/**
-	 * Case resolution related to a specific payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1998,8 +1980,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected Payment originalPayment;
 	/**
-	 * Original payment which is returned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2044,8 +2026,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.Payment> returnPayment;
 	/**
-	 * Payment which offsets an original payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2089,8 +2071,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected SecuritiesSettlement relatedSecuritiesSettlement;
 	/**
-	 * Securities settlement process which is the source of the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2138,9 +2120,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.Invoice> invoiceReconciliation;
 	/**
-	 * Reconciliation of the amounts of an invoice with the amounts included in
-	 * one or more payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2186,8 +2167,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected PaymentInstrumentCode paymentInstrument;
 	/**
-	 * Payment type at the origin of the cash entry eg, a cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2245,8 +2226,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected CashAccount account;
 	/**
-	 * Account debited for the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2292,8 +2273,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected Adjustment adjustments;
 	/**
-	 * Specifies the charges or the allowance related to a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2349,8 +2330,8 @@ public class Payment extends ObligationFulfilment {
 	};
 	protected RegisteredContract contractRegistration;
 	/**
-	 * Provides the payment of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2398,7 +2379,7 @@ public class Payment extends ObligationFulfilment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Payment";
 				definition = "Payment information and processes required to transfer cash end to end from the debtor to the creditor.";
@@ -2452,258 +2433,290 @@ public class Payment extends ObligationFulfilment {
 	}
 
 	public List<PaymentObligation> getPaymentObligation() {
-		return paymentObligation;
+		return paymentObligation == null ? paymentObligation = new ArrayList<>() : paymentObligation;
 	}
 
-	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
-		this.paymentObligation = paymentObligation;
+	public Payment setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = Objects.requireNonNull(paymentObligation);
+		return this;
 	}
 
 	public CurrencyCode getCurrencyOfTransfer() {
 		return currencyOfTransfer;
 	}
 
-	public void setCurrencyOfTransfer(CurrencyCode currencyOfTransfer) {
-		this.currencyOfTransfer = currencyOfTransfer;
+	public Payment setCurrencyOfTransfer(CurrencyCode currencyOfTransfer) {
+		this.currencyOfTransfer = Objects.requireNonNull(currencyOfTransfer);
+		return this;
 	}
 
 	public List<CreditInstrument> getCreditMethod() {
-		return creditMethod;
+		return creditMethod == null ? creditMethod = new ArrayList<>() : creditMethod;
 	}
 
-	public void setCreditMethod(List<com.tools20022.repository.entity.CreditInstrument> creditMethod) {
-		this.creditMethod = creditMethod;
+	public Payment setCreditMethod(List<com.tools20022.repository.entity.CreditInstrument> creditMethod) {
+		this.creditMethod = Objects.requireNonNull(creditMethod);
+		return this;
 	}
 
 	public PaymentTypeCode getType() {
 		return type;
 	}
 
-	public void setType(PaymentTypeCode type) {
-		this.type = type;
+	public Payment setType(PaymentTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CurrencyAndAmount getInstructedAmount() {
 		return instructedAmount;
 	}
 
-	public void setInstructedAmount(CurrencyAndAmount instructedAmount) {
-		this.instructedAmount = instructedAmount;
+	public Payment setInstructedAmount(CurrencyAndAmount instructedAmount) {
+		this.instructedAmount = Objects.requireNonNull(instructedAmount);
+		return this;
 	}
 
 	public PriorityCode getPriority() {
 		return priority;
 	}
 
-	public void setPriority(PriorityCode priority) {
-		this.priority = priority;
+	public Payment setPriority(PriorityCode priority) {
+		this.priority = Objects.requireNonNull(priority);
+		return this;
 	}
 
 	public ISODate getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODate valueDate) {
-		this.valueDate = valueDate;
+	public Payment setValueDate(ISODate valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public List<PaymentStatus> getPaymentStatus() {
-		return paymentStatus;
+		return paymentStatus == null ? paymentStatus = new ArrayList<>() : paymentStatus;
 	}
 
-	public void setPaymentStatus(List<com.tools20022.repository.entity.PaymentStatus> paymentStatus) {
-		this.paymentStatus = paymentStatus;
+	public Payment setPaymentStatus(List<com.tools20022.repository.entity.PaymentStatus> paymentStatus) {
+		this.paymentStatus = Objects.requireNonNull(paymentStatus);
+		return this;
 	}
 
 	public List<PaymentPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.PaymentPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Payment setPartyRole(List<com.tools20022.repository.entity.PaymentPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public List<Tax> getTaxOnPayment() {
-		return taxOnPayment;
+		return taxOnPayment == null ? taxOnPayment = new ArrayList<>() : taxOnPayment;
 	}
 
-	public void setTaxOnPayment(List<com.tools20022.repository.entity.Tax> taxOnPayment) {
-		this.taxOnPayment = taxOnPayment;
+	public Payment setTaxOnPayment(List<com.tools20022.repository.entity.Tax> taxOnPayment) {
+		this.taxOnPayment = Objects.requireNonNull(taxOnPayment);
+		return this;
 	}
 
 	public List<PaymentExecution> getPaymentExecution() {
-		return paymentExecution;
+		return paymentExecution == null ? paymentExecution = new ArrayList<>() : paymentExecution;
 	}
 
-	public void setPaymentExecution(List<com.tools20022.repository.entity.PaymentExecution> paymentExecution) {
-		this.paymentExecution = paymentExecution;
+	public Payment setPaymentExecution(List<com.tools20022.repository.entity.PaymentExecution> paymentExecution) {
+		this.paymentExecution = Objects.requireNonNull(paymentExecution);
+		return this;
 	}
 
 	public ISODate getPoolingAdjustmentDate() {
 		return poolingAdjustmentDate;
 	}
 
-	public void setPoolingAdjustmentDate(ISODate poolingAdjustmentDate) {
-		this.poolingAdjustmentDate = poolingAdjustmentDate;
+	public Payment setPoolingAdjustmentDate(ISODate poolingAdjustmentDate) {
+		this.poolingAdjustmentDate = Objects.requireNonNull(poolingAdjustmentDate);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getEquivalentAmount() {
 		return equivalentAmount;
 	}
 
-	public void setEquivalentAmount(ImpliedCurrencyAndAmount equivalentAmount) {
-		this.equivalentAmount = equivalentAmount;
+	public Payment setEquivalentAmount(ImpliedCurrencyAndAmount equivalentAmount) {
+		this.equivalentAmount = Objects.requireNonNull(equivalentAmount);
+		return this;
 	}
 
 	public List<CurrencyExchange> getCurrencyExchange() {
-		return currencyExchange;
+		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public Payment setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public InstructionCode getInstructionForCreditorAgent() {
 		return instructionForCreditorAgent;
 	}
 
-	public void setInstructionForCreditorAgent(InstructionCode instructionForCreditorAgent) {
-		this.instructionForCreditorAgent = instructionForCreditorAgent;
+	public Payment setInstructionForCreditorAgent(InstructionCode instructionForCreditorAgent) {
+		this.instructionForCreditorAgent = Objects.requireNonNull(instructionForCreditorAgent);
+		return this;
 	}
 
 	public InstructionCode getInstructionForDebtorAgent() {
 		return instructionForDebtorAgent;
 	}
 
-	public void setInstructionForDebtorAgent(InstructionCode instructionForDebtorAgent) {
-		this.instructionForDebtorAgent = instructionForDebtorAgent;
+	public Payment setInstructionForDebtorAgent(InstructionCode instructionForDebtorAgent) {
+		this.instructionForDebtorAgent = Objects.requireNonNull(instructionForDebtorAgent);
+		return this;
 	}
 
 	public List<PaymentIdentification> getPaymentRelatedIdentifications() {
-		return paymentRelatedIdentifications;
+		return paymentRelatedIdentifications == null ? paymentRelatedIdentifications = new ArrayList<>() : paymentRelatedIdentifications;
 	}
 
-	public void setPaymentRelatedIdentifications(List<com.tools20022.repository.entity.PaymentIdentification> paymentRelatedIdentifications) {
-		this.paymentRelatedIdentifications = paymentRelatedIdentifications;
+	public Payment setPaymentRelatedIdentifications(List<com.tools20022.repository.entity.PaymentIdentification> paymentRelatedIdentifications) {
+		this.paymentRelatedIdentifications = Objects.requireNonNull(paymentRelatedIdentifications);
+		return this;
 	}
 
-	public PaymentInvestigationCase getRelatedInvestigationCase() {
-		return relatedInvestigationCase;
+	public Optional<PaymentInvestigationCase> getRelatedInvestigationCase() {
+		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public void setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
+	public Payment setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
+		return this;
 	}
 
-	public SettlementTimeRequest getSettlementTimeRequest() {
-		return settlementTimeRequest;
+	public Optional<SettlementTimeRequest> getSettlementTimeRequest() {
+		return settlementTimeRequest == null ? Optional.empty() : Optional.of(settlementTimeRequest);
 	}
 
-	public void setSettlementTimeRequest(com.tools20022.repository.entity.SettlementTimeRequest settlementTimeRequest) {
+	public Payment setSettlementTimeRequest(com.tools20022.repository.entity.SettlementTimeRequest settlementTimeRequest) {
 		this.settlementTimeRequest = settlementTimeRequest;
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Payment setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public List<CommercialTradeSettlement> getTradeSettlement() {
-		return tradeSettlement;
+		return tradeSettlement == null ? tradeSettlement = new ArrayList<>() : tradeSettlement;
 	}
 
-	public void setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
-		this.tradeSettlement = tradeSettlement;
+	public Payment setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
+		this.tradeSettlement = Objects.requireNonNull(tradeSettlement);
+		return this;
 	}
 
 	public Max140Text getStandardSettlementInstructions() {
 		return standardSettlementInstructions;
 	}
 
-	public void setStandardSettlementInstructions(Max140Text standardSettlementInstructions) {
-		this.standardSettlementInstructions = standardSettlementInstructions;
+	public Payment setStandardSettlementInstructions(Max140Text standardSettlementInstructions) {
+		this.standardSettlementInstructions = Objects.requireNonNull(standardSettlementInstructions);
+		return this;
 	}
 
-	public DebitAuthorisation getRelatedDebitAuthorisation() {
-		return relatedDebitAuthorisation;
+	public Optional<DebitAuthorisation> getRelatedDebitAuthorisation() {
+		return relatedDebitAuthorisation == null ? Optional.empty() : Optional.of(relatedDebitAuthorisation);
 	}
 
-	public void setRelatedDebitAuthorisation(com.tools20022.repository.entity.DebitAuthorisation relatedDebitAuthorisation) {
+	public Payment setRelatedDebitAuthorisation(com.tools20022.repository.entity.DebitAuthorisation relatedDebitAuthorisation) {
 		this.relatedDebitAuthorisation = relatedDebitAuthorisation;
+		return this;
 	}
 
-	public PaymentInvestigationCaseResolution getRelatedInvestigationCaseResolution() {
-		return relatedInvestigationCaseResolution;
+	public Optional<PaymentInvestigationCaseResolution> getRelatedInvestigationCaseResolution() {
+		return relatedInvestigationCaseResolution == null ? Optional.empty() : Optional.of(relatedInvestigationCaseResolution);
 	}
 
-	public void setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
+	public Payment setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
 		this.relatedInvestigationCaseResolution = relatedInvestigationCaseResolution;
+		return this;
 	}
 
 	public Payment getOriginalPayment() {
 		return originalPayment;
 	}
 
-	public void setOriginalPayment(com.tools20022.repository.entity.Payment originalPayment) {
-		this.originalPayment = originalPayment;
+	public Payment setOriginalPayment(com.tools20022.repository.entity.Payment originalPayment) {
+		this.originalPayment = Objects.requireNonNull(originalPayment);
+		return this;
 	}
 
 	public List<Payment> getReturnPayment() {
-		return returnPayment;
+		return returnPayment == null ? returnPayment = new ArrayList<>() : returnPayment;
 	}
 
-	public void setReturnPayment(List<com.tools20022.repository.entity.Payment> returnPayment) {
-		this.returnPayment = returnPayment;
+	public Payment setReturnPayment(List<com.tools20022.repository.entity.Payment> returnPayment) {
+		this.returnPayment = Objects.requireNonNull(returnPayment);
+		return this;
 	}
 
 	public SecuritiesSettlement getRelatedSecuritiesSettlement() {
 		return relatedSecuritiesSettlement;
 	}
 
-	public void setRelatedSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSecuritiesSettlement) {
-		this.relatedSecuritiesSettlement = relatedSecuritiesSettlement;
+	public Payment setRelatedSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSecuritiesSettlement) {
+		this.relatedSecuritiesSettlement = Objects.requireNonNull(relatedSecuritiesSettlement);
+		return this;
 	}
 
 	public List<Invoice> getInvoiceReconciliation() {
-		return invoiceReconciliation;
+		return invoiceReconciliation == null ? invoiceReconciliation = new ArrayList<>() : invoiceReconciliation;
 	}
 
-	public void setInvoiceReconciliation(List<com.tools20022.repository.entity.Invoice> invoiceReconciliation) {
-		this.invoiceReconciliation = invoiceReconciliation;
+	public Payment setInvoiceReconciliation(List<com.tools20022.repository.entity.Invoice> invoiceReconciliation) {
+		this.invoiceReconciliation = Objects.requireNonNull(invoiceReconciliation);
+		return this;
 	}
 
 	public PaymentInstrumentCode getPaymentInstrument() {
 		return paymentInstrument;
 	}
 
-	public void setPaymentInstrument(PaymentInstrumentCode paymentInstrument) {
-		this.paymentInstrument = paymentInstrument;
+	public Payment setPaymentInstrument(PaymentInstrumentCode paymentInstrument) {
+		this.paymentInstrument = Objects.requireNonNull(paymentInstrument);
+		return this;
 	}
 
 	public CashAccount getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.CashAccount account) {
-		this.account = account;
+	public Payment setAccount(com.tools20022.repository.entity.CashAccount account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public Adjustment getAdjustments() {
 		return adjustments;
 	}
 
-	public void setAdjustments(com.tools20022.repository.entity.Adjustment adjustments) {
-		this.adjustments = adjustments;
+	public Payment setAdjustments(com.tools20022.repository.entity.Adjustment adjustments) {
+		this.adjustments = Objects.requireNonNull(adjustments);
+		return this;
 	}
 
 	public RegisteredContract getContractRegistration() {
 		return contractRegistration;
 	}
 
-	public void setContractRegistration(com.tools20022.repository.entity.RegisteredContract contractRegistration) {
-		this.contractRegistration = contractRegistration;
+	public Payment setContractRegistration(com.tools20022.repository.entity.RegisteredContract contractRegistration) {
+		this.contractRegistration = Objects.requireNonNull(contractRegistration);
+		return this;
 	}
 }

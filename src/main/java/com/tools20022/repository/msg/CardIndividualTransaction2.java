@@ -34,6 +34,7 @@ import com.tools20022.repository.entity.ReconciliationTransaction;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -92,8 +93,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,16 +105,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Individual card transaction entry details."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "CardIndividualTransaction2", propOrder = {"ICCRelatedData", "paymentContext", "additionalService", "transactionCategory", "saleReconciliationIdentification", "saleReferenceNumber", "rePresentmentReason", "sequenceNumber",
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "CardIndividualTransaction2", propOrder = {"iCCRelatedData", "paymentContext", "additionalService", "transactionCategory", "saleReconciliationIdentification", "saleReferenceNumber", "rePresentmentReason", "sequenceNumber",
 		"transactionIdentification", "product", "validationDate", "validationSequenceNumber"})
 public class CardIndividualTransaction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ICCRltdData")
 	protected Max1025Text iCCRelatedData;
 	/**
-	 * Data related to an integrated circuit card application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +148,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAttribute mmICCRelatedData = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmICCRelatedData;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "ICCRltdData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,10 +159,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
 	};
+	@XmlElement(name = "PmtCntxt")
 	protected PaymentContext3 paymentContext;
 	/**
-	 * Context of the card payment transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -192,7 +195,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAssociationEnd mmPaymentContext = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmCardPaymentAcquiring;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "PmtCntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,10 +207,11 @@ public class CardIndividualTransaction2 {
 			type_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlSvc")
 	protected CardPaymentServiceType2Code additionalService;
 	/**
-	 * Service in addition to the main service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,7 +245,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAttribute mmAdditionalService = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlSvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,12 +256,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> CardPaymentServiceType2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "TxCtgy")
 	protected ExternalCardTransactionCategory1Code transactionCategory;
 	/**
-	 * Category code conform to ISO 18245, related to the type of services or
-	 * goods the merchant provides for the transaction.<br>
-	 * This element is also known as the MerchantCategoryCode.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,7 +296,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAttribute mmTransactionCategory = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmType;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "TxCtgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -304,13 +307,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> ExternalCardTransactionCategory1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "SaleRcncltnId")
 	protected Max35Text saleReconciliationIdentification;
 	/**
-	 * Unique identification of the sales reconciliation period between the
-	 * acceptor and the acquirer. This identification might be linked to the
-	 * identification of the settlement for further verification by the
-	 * merchant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -345,7 +346,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAttribute mmSaleReconciliationIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReconciliationTransaction.mmReconciliationIdentification;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "SaleRcncltnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -356,10 +357,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "SaleRefNb")
 	protected Max35Text saleReferenceNumber;
 	/**
-	 * Unique reference of the sales as provided by the merchant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,7 +389,7 @@ public class CardIndividualTransaction2 {
 	 */
 	public static final MMMessageAttribute mmSaleReferenceNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "SaleRefNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -398,10 +400,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "RePresntmntRsn")
 	protected ExternalRePresentmentReason1Code rePresentmentReason;
 	/**
-	 * Reason for representment of a card transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,7 +432,7 @@ public class CardIndividualTransaction2 {
 	 */
 	public static final MMMessageAttribute mmRePresentmentReason = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "RePresntmntRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -440,12 +443,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> ExternalRePresentmentReason1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "SeqNb")
 	protected Max35Text sequenceNumber;
 	/**
-	 * Sequential number of the card transaction, as assigned by the POI (Point
-	 * of Interaction). Usage: The sequential number is increased incrementally
-	 * for each transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -474,7 +476,7 @@ public class CardIndividualTransaction2 {
 	 */
 	public static final MMMessageAttribute mmSequenceNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "SeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -485,11 +487,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TxId")
 	protected TransactionIdentifier1 transactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the POI (Point Of
-	 * Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,7 +527,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionIdentification;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -536,10 +538,11 @@ public class CardIndividualTransaction2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
 		}
 	};
+	@XmlElement(name = "Pdct")
 	protected Product2 product;
 	/**
-	 * Product purchased with the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -570,7 +573,7 @@ public class CardIndividualTransaction2 {
 	public static final MMMessageAssociationEnd mmProduct = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmProduct;
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "Pdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -582,11 +585,11 @@ public class CardIndividualTransaction2 {
 			type_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 		}
 	};
+	@XmlElement(name = "VldtnDt")
 	protected ISODate validationDate;
 	/**
-	 * Date when the deposit was validated by the financial institution that
-	 * collected the cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,7 +618,7 @@ public class CardIndividualTransaction2 {
 	 */
 	public static final MMMessageAttribute mmValidationDate = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "VldtnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -626,12 +629,11 @@ public class CardIndividualTransaction2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "VldtnSeqNb")
 	protected Max35Text validationSequenceNumber;
 	/**
-	 * Sequential number of the validation of the cash deposit.<br>
-	 * Usage: The sequential number is increased incrementally for each
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -660,7 +662,7 @@ public class CardIndividualTransaction2 {
 	 */
 	public static final MMMessageAttribute mmValidationSequenceNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardIndividualTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardIndividualTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "VldtnSeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -675,12 +677,14 @@ public class CardIndividualTransaction2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmICCRelatedData, CardIndividualTransaction2.mmPaymentContext, CardIndividualTransaction2.mmAdditionalService,
-						CardIndividualTransaction2.mmTransactionCategory, CardIndividualTransaction2.mmSaleReconciliationIdentification, CardIndividualTransaction2.mmSaleReferenceNumber, CardIndividualTransaction2.mmRePresentmentReason,
-						CardIndividualTransaction2.mmSequenceNumber, CardIndividualTransaction2.mmTransactionIdentification, CardIndividualTransaction2.mmProduct, CardIndividualTransaction2.mmValidationDate,
-						CardIndividualTransaction2.mmValidationSequenceNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardIndividualTransaction2.mmICCRelatedData, com.tools20022.repository.msg.CardIndividualTransaction2.mmPaymentContext,
+						com.tools20022.repository.msg.CardIndividualTransaction2.mmAdditionalService, com.tools20022.repository.msg.CardIndividualTransaction2.mmTransactionCategory,
+						com.tools20022.repository.msg.CardIndividualTransaction2.mmSaleReconciliationIdentification, com.tools20022.repository.msg.CardIndividualTransaction2.mmSaleReferenceNumber,
+						com.tools20022.repository.msg.CardIndividualTransaction2.mmRePresentmentReason, com.tools20022.repository.msg.CardIndividualTransaction2.mmSequenceNumber,
+						com.tools20022.repository.msg.CardIndividualTransaction2.mmTransactionIdentification, com.tools20022.repository.msg.CardIndividualTransaction2.mmProduct,
+						com.tools20022.repository.msg.CardIndividualTransaction2.mmValidationDate, com.tools20022.repository.msg.CardIndividualTransaction2.mmValidationSequenceNumber);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardIndividualTransaction2";
 				definition = "Individual card transaction entry details.";
@@ -689,111 +693,111 @@ public class CardIndividualTransaction2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ICCRltdData")
-	public Max1025Text getICCRelatedData() {
-		return iCCRelatedData;
+	public Optional<Max1025Text> getICCRelatedData() {
+		return iCCRelatedData == null ? Optional.empty() : Optional.of(iCCRelatedData);
 	}
 
-	public void setICCRelatedData(Max1025Text iCCRelatedData) {
+	public CardIndividualTransaction2 setICCRelatedData(Max1025Text iCCRelatedData) {
 		this.iCCRelatedData = iCCRelatedData;
+		return this;
 	}
 
-	@XmlElement(name = "PmtCntxt")
-	public PaymentContext3 getPaymentContext() {
-		return paymentContext;
+	public Optional<PaymentContext3> getPaymentContext() {
+		return paymentContext == null ? Optional.empty() : Optional.of(paymentContext);
 	}
 
-	public void setPaymentContext(com.tools20022.repository.msg.PaymentContext3 paymentContext) {
+	public CardIndividualTransaction2 setPaymentContext(com.tools20022.repository.msg.PaymentContext3 paymentContext) {
 		this.paymentContext = paymentContext;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlSvc")
-	public CardPaymentServiceType2Code getAdditionalService() {
-		return additionalService;
+	public Optional<CardPaymentServiceType2Code> getAdditionalService() {
+		return additionalService == null ? Optional.empty() : Optional.of(additionalService);
 	}
 
-	public void setAdditionalService(CardPaymentServiceType2Code additionalService) {
+	public CardIndividualTransaction2 setAdditionalService(CardPaymentServiceType2Code additionalService) {
 		this.additionalService = additionalService;
+		return this;
 	}
 
-	@XmlElement(name = "TxCtgy")
-	public ExternalCardTransactionCategory1Code getTransactionCategory() {
-		return transactionCategory;
+	public Optional<ExternalCardTransactionCategory1Code> getTransactionCategory() {
+		return transactionCategory == null ? Optional.empty() : Optional.of(transactionCategory);
 	}
 
-	public void setTransactionCategory(ExternalCardTransactionCategory1Code transactionCategory) {
+	public CardIndividualTransaction2 setTransactionCategory(ExternalCardTransactionCategory1Code transactionCategory) {
 		this.transactionCategory = transactionCategory;
+		return this;
 	}
 
-	@XmlElement(name = "SaleRcncltnId")
-	public Max35Text getSaleReconciliationIdentification() {
-		return saleReconciliationIdentification;
+	public Optional<Max35Text> getSaleReconciliationIdentification() {
+		return saleReconciliationIdentification == null ? Optional.empty() : Optional.of(saleReconciliationIdentification);
 	}
 
-	public void setSaleReconciliationIdentification(Max35Text saleReconciliationIdentification) {
+	public CardIndividualTransaction2 setSaleReconciliationIdentification(Max35Text saleReconciliationIdentification) {
 		this.saleReconciliationIdentification = saleReconciliationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "SaleRefNb")
-	public Max35Text getSaleReferenceNumber() {
-		return saleReferenceNumber;
+	public Optional<Max35Text> getSaleReferenceNumber() {
+		return saleReferenceNumber == null ? Optional.empty() : Optional.of(saleReferenceNumber);
 	}
 
-	public void setSaleReferenceNumber(Max35Text saleReferenceNumber) {
+	public CardIndividualTransaction2 setSaleReferenceNumber(Max35Text saleReferenceNumber) {
 		this.saleReferenceNumber = saleReferenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RePresntmntRsn")
-	public ExternalRePresentmentReason1Code getRePresentmentReason() {
-		return rePresentmentReason;
+	public Optional<ExternalRePresentmentReason1Code> getRePresentmentReason() {
+		return rePresentmentReason == null ? Optional.empty() : Optional.of(rePresentmentReason);
 	}
 
-	public void setRePresentmentReason(ExternalRePresentmentReason1Code rePresentmentReason) {
+	public CardIndividualTransaction2 setRePresentmentReason(ExternalRePresentmentReason1Code rePresentmentReason) {
 		this.rePresentmentReason = rePresentmentReason;
+		return this;
 	}
 
-	@XmlElement(name = "SeqNb")
-	public Max35Text getSequenceNumber() {
-		return sequenceNumber;
+	public Optional<Max35Text> getSequenceNumber() {
+		return sequenceNumber == null ? Optional.empty() : Optional.of(sequenceNumber);
 	}
 
-	public void setSequenceNumber(Max35Text sequenceNumber) {
+	public CardIndividualTransaction2 setSequenceNumber(Max35Text sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TxId")
-	public TransactionIdentifier1 getTransactionIdentification() {
-		return transactionIdentification;
+	public Optional<TransactionIdentifier1> getTransactionIdentification() {
+		return transactionIdentification == null ? Optional.empty() : Optional.of(transactionIdentification);
 	}
 
-	public void setTransactionIdentification(com.tools20022.repository.msg.TransactionIdentifier1 transactionIdentification) {
+	public CardIndividualTransaction2 setTransactionIdentification(com.tools20022.repository.msg.TransactionIdentifier1 transactionIdentification) {
 		this.transactionIdentification = transactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Pdct")
-	public Product2 getProduct() {
-		return product;
+	public Optional<Product2> getProduct() {
+		return product == null ? Optional.empty() : Optional.of(product);
 	}
 
-	public void setProduct(com.tools20022.repository.msg.Product2 product) {
+	public CardIndividualTransaction2 setProduct(com.tools20022.repository.msg.Product2 product) {
 		this.product = product;
+		return this;
 	}
 
-	@XmlElement(name = "VldtnDt")
-	public ISODate getValidationDate() {
-		return validationDate;
+	public Optional<ISODate> getValidationDate() {
+		return validationDate == null ? Optional.empty() : Optional.of(validationDate);
 	}
 
-	public void setValidationDate(ISODate validationDate) {
+	public CardIndividualTransaction2 setValidationDate(ISODate validationDate) {
 		this.validationDate = validationDate;
+		return this;
 	}
 
-	@XmlElement(name = "VldtnSeqNb")
-	public Max35Text getValidationSequenceNumber() {
-		return validationSequenceNumber;
+	public Optional<Max35Text> getValidationSequenceNumber() {
+		return validationSequenceNumber == null ? Optional.empty() : Optional.of(validationSequenceNumber);
 	}
 
-	public void setValidationSequenceNumber(Max35Text validationSequenceNumber) {
+	public CardIndividualTransaction2 setValidationSequenceNumber(Max35Text validationSequenceNumber) {
 		this.validationSequenceNumber = validationSequenceNumber;
+		return this;
 	}
 }

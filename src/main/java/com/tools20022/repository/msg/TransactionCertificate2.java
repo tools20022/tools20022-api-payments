@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Certificate in which all currency control transactions are registered."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionCertificate2", propOrder = {"referredDocument", "transactionDate", "transactionType", "localInstrument", "amount"})
 public class TransactionCertificate2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RfrdDoc", required = true)
 	protected CertificateReference1 referredDocument;
 	/**
-	 * Reference of the transaction, that is the underlying payment instruction
-	 * or statement entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -123,7 +124,7 @@ public class TransactionCertificate2 {
 	public static final MMMessageAssociationEnd mmReferredDocument = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> IndividualPayment.mmObject();
-			componentContext_lazy = () -> TransactionCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "RfrdDoc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,10 +136,11 @@ public class TransactionCertificate2 {
 			type_lazy = () -> com.tools20022.repository.msg.CertificateReference1.mmObject();
 		}
 	};
+	@XmlElement(name = "TxDt", required = true)
 	protected ISODate transactionDate;
 	/**
-	 * Date of the underlying transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,7 +173,7 @@ public class TransactionCertificate2 {
 	public static final MMMessageAttribute mmTransactionDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ObligationFulfilment.mmDate;
-			componentContext_lazy = () -> TransactionCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "TxDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,10 +184,11 @@ public class TransactionCertificate2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "TxTp", required = true)
 	protected Exact1NumericText transactionType;
 	/**
-	 * Type of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +222,7 @@ public class TransactionCertificate2 {
 	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPaymentInstrument;
-			componentContext_lazy = () -> TransactionCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "TxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,13 +233,11 @@ public class TransactionCertificate2 {
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "LclInstrm", required = true)
 	protected Exact5NumericText localInstrument;
 	/**
-	 * User community specific instrument.<br>
-	 * <br>
-	 * Usage: This element is used to specify a local transaction type to
-	 * further qualify the transaction type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,7 +273,7 @@ public class TransactionCertificate2 {
 	public static final MMMessageAttribute mmLocalInstrument = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPaymentInstrument;
-			componentContext_lazy = () -> TransactionCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "LclInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,10 +284,11 @@ public class TransactionCertificate2 {
 			simpleType_lazy = () -> Exact5NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount as provided in the transaction to be recorded under the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -322,7 +324,7 @@ public class TransactionCertificate2 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
-			componentContext_lazy = () -> TransactionCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,10 +339,10 @@ public class TransactionCertificate2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionCertificate2.mmReferredDocument, TransactionCertificate2.mmTransactionDate, TransactionCertificate2.mmTransactionType, TransactionCertificate2.mmLocalInstrument,
-						TransactionCertificate2.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionCertificate2.mmReferredDocument, com.tools20022.repository.msg.TransactionCertificate2.mmTransactionDate,
+						com.tools20022.repository.msg.TransactionCertificate2.mmTransactionType, com.tools20022.repository.msg.TransactionCertificate2.mmLocalInstrument, com.tools20022.repository.msg.TransactionCertificate2.mmAmount);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionCertificate2";
 				definition = "Certificate in which all currency control transactions are registered.";
@@ -349,48 +351,48 @@ public class TransactionCertificate2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RfrdDoc", required = true)
 	public CertificateReference1 getReferredDocument() {
 		return referredDocument;
 	}
 
-	public void setReferredDocument(com.tools20022.repository.msg.CertificateReference1 referredDocument) {
-		this.referredDocument = referredDocument;
+	public TransactionCertificate2 setReferredDocument(com.tools20022.repository.msg.CertificateReference1 referredDocument) {
+		this.referredDocument = Objects.requireNonNull(referredDocument);
+		return this;
 	}
 
-	@XmlElement(name = "TxDt", required = true)
 	public ISODate getTransactionDate() {
 		return transactionDate;
 	}
 
-	public void setTransactionDate(ISODate transactionDate) {
-		this.transactionDate = transactionDate;
+	public TransactionCertificate2 setTransactionDate(ISODate transactionDate) {
+		this.transactionDate = Objects.requireNonNull(transactionDate);
+		return this;
 	}
 
-	@XmlElement(name = "TxTp", required = true)
 	public Exact1NumericText getTransactionType() {
 		return transactionType;
 	}
 
-	public void setTransactionType(Exact1NumericText transactionType) {
-		this.transactionType = transactionType;
+	public TransactionCertificate2 setTransactionType(Exact1NumericText transactionType) {
+		this.transactionType = Objects.requireNonNull(transactionType);
+		return this;
 	}
 
-	@XmlElement(name = "LclInstrm", required = true)
 	public Exact5NumericText getLocalInstrument() {
 		return localInstrument;
 	}
 
-	public void setLocalInstrument(Exact5NumericText localInstrument) {
-		this.localInstrument = localInstrument;
+	public TransactionCertificate2 setLocalInstrument(Exact5NumericText localInstrument) {
+		this.localInstrument = Objects.requireNonNull(localInstrument);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public TransactionCertificate2 setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

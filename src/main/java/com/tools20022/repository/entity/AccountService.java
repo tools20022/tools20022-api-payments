@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.BillingServiceParameters2;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Services linked to an account which are available to the account owner or to
@@ -83,8 +82,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +101,8 @@ public class AccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.AccountContract> accountContract;
 	/**
-	 * Account contract which specifies the services linked to an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,8 +149,8 @@ public class AccountService {
 	};
 	protected Reservation reservation;
 	/**
-	 * Reservation information included in the services related to an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,8 +199,8 @@ public class AccountService {
 	};
 	protected Account account;
 	/**
-	 * Account for which services are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,8 +246,8 @@ public class AccountService {
 	};
 	protected Charges accountAdministrationCharge;
 	/**
-	 * Charge applied for the administration of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,7 +304,7 @@ public class AccountService {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountService";
 				definition = "Services linked to an account which are available to the account owner or to the holder of a mandate.";
@@ -325,34 +324,38 @@ public class AccountService {
 	}
 
 	public List<AccountContract> getAccountContract() {
-		return accountContract;
+		return accountContract == null ? accountContract = new ArrayList<>() : accountContract;
 	}
 
-	public void setAccountContract(List<com.tools20022.repository.entity.AccountContract> accountContract) {
-		this.accountContract = accountContract;
+	public AccountService setAccountContract(List<com.tools20022.repository.entity.AccountContract> accountContract) {
+		this.accountContract = Objects.requireNonNull(accountContract);
+		return this;
 	}
 
 	public Reservation getReservation() {
 		return reservation;
 	}
 
-	public void setReservation(com.tools20022.repository.entity.Reservation reservation) {
-		this.reservation = reservation;
+	public AccountService setReservation(com.tools20022.repository.entity.Reservation reservation) {
+		this.reservation = Objects.requireNonNull(reservation);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public AccountService setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
-	public Charges getAccountAdministrationCharge() {
-		return accountAdministrationCharge;
+	public Optional<Charges> getAccountAdministrationCharge() {
+		return accountAdministrationCharge == null ? Optional.empty() : Optional.of(accountAdministrationCharge);
 	}
 
-	public void setAccountAdministrationCharge(com.tools20022.repository.entity.Charges accountAdministrationCharge) {
+	public AccountService setAccountAdministrationCharge(com.tools20022.repository.entity.Charges accountAdministrationCharge) {
 		this.accountAdministrationCharge = accountAdministrationCharge;
+		return this;
 	}
 }

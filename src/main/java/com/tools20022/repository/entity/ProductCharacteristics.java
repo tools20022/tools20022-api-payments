@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Identifies the characteristic of a product.
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +79,8 @@ public class ProductCharacteristics {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Product product;
 	/**
-	 * Specifies the product for which characteristics are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,8 +127,8 @@ public class ProductCharacteristics {
 	};
 	protected Max35Text characteristics;
 	/**
-	 * Specifies the characteristic of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,8 +173,8 @@ public class ProductCharacteristics {
 	};
 	protected ProductCharacteristicsCode type;
 	/**
-	 * Specifies the type of product characteristic by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,7 +223,7 @@ public class ProductCharacteristics {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCharacteristics";
 				definition = "Identifies the characteristic of a product.";
@@ -238,27 +240,30 @@ public class ProductCharacteristics {
 		return mmObject_lazy.get();
 	}
 
-	public Product getProduct() {
-		return product;
+	public Optional<Product> getProduct() {
+		return product == null ? Optional.empty() : Optional.of(product);
 	}
 
-	public void setProduct(com.tools20022.repository.entity.Product product) {
+	public ProductCharacteristics setProduct(com.tools20022.repository.entity.Product product) {
 		this.product = product;
+		return this;
 	}
 
 	public Max35Text getCharacteristics() {
 		return characteristics;
 	}
 
-	public void setCharacteristics(Max35Text characteristics) {
-		this.characteristics = characteristics;
+	public ProductCharacteristics setCharacteristics(Max35Text characteristics) {
+		this.characteristics = Objects.requireNonNull(characteristics);
+		return this;
 	}
 
 	public ProductCharacteristicsCode getType() {
 		return type;
 	}
 
-	public void setType(ProductCharacteristicsCode type) {
-		this.type = type;
+	public ProductCharacteristics setType(ProductCharacteristicsCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 }

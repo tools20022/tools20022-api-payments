@@ -25,6 +25,8 @@ import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the type of change to the status of the account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountStatusModification1", propOrder = {"modificationCode", "status"})
 public class AccountStatusModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModCd")
 	protected Modification1Code modificationCode;
 	/**
-	 * Specifies the type of change.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,7 +101,7 @@ public class AccountStatusModification1 {
 	 */
 	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AccountStatusModification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,10 +112,11 @@ public class AccountStatusModification1 {
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Sts", required = true)
 	protected AccountStatus3Code status;
 	/**
-	 * Status of the account
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +144,7 @@ public class AccountStatusModification1 {
 	 */
 	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AccountStatusModification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,8 +159,8 @@ public class AccountStatusModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountStatusModification1.mmModificationCode, AccountStatusModification1.mmStatus);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountStatusModification1.mmModificationCode, com.tools20022.repository.msg.AccountStatusModification1.mmStatus);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatusModification1";
 				definition = "Specifies the type of change to the status of the account.";
@@ -165,21 +169,21 @@ public class AccountStatusModification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModCd")
-	public Modification1Code getModificationCode() {
-		return modificationCode;
+	public Optional<Modification1Code> getModificationCode() {
+		return modificationCode == null ? Optional.empty() : Optional.of(modificationCode);
 	}
 
-	public void setModificationCode(Modification1Code modificationCode) {
+	public AccountStatusModification1 setModificationCode(Modification1Code modificationCode) {
 		this.modificationCode = modificationCode;
+		return this;
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public AccountStatus3Code getStatus() {
 		return status;
 	}
 
-	public void setStatus(AccountStatus3Code status) {
-		this.status = status;
+	public AccountStatusModification1 setStatus(AccountStatus3Code status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 }

@@ -39,42 +39,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedTechnicalValidation
- * PaymentStatusCode.mmAcceptedTechnicalValidation}</li>
+ * PaymentStatusCode.AcceptedTechnicalValidation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Received
- * PaymentStatusCode.mmReceived}</li>
+ * PaymentStatusCode.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PartiallyAccepted
- * PaymentStatusCode.mmPartiallyAccepted}</li>
+ * PaymentStatusCode.PartiallyAccepted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Rejected
- * PaymentStatusCode.mmRejected}</li>
+ * PaymentStatusCode.Rejected}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Pending
- * PaymentStatusCode.mmPending}</li>
+ * PaymentStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedCustomerProfile
- * PaymentStatusCode.mmAcceptedCustomerProfile}</li>
+ * PaymentStatusCode.AcceptedCustomerProfile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedSettlementInProcess
- * PaymentStatusCode.mmAcceptedSettlementInProcess}</li>
+ * PaymentStatusCode.AcceptedSettlementInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedSettlementCompleted
- * PaymentStatusCode.mmAcceptedSettlementCompleted}</li>
+ * PaymentStatusCode.AcceptedSettlementCompleted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentStatusCode#Accepted
- * PaymentStatusCode.mmAccepted}</li>
+ * PaymentStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedCancellationRequest
- * PaymentStatusCode.mmAcceptedCancellationRequest}</li>
+ * PaymentStatusCode.AcceptedCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#RejectedCancellationRequest
- * PaymentStatusCode.mmRejectedCancellationRequest}</li>
+ * PaymentStatusCode.RejectedCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#AcceptedWithChange
- * PaymentStatusCode.mmAcceptedWithChange}</li>
+ * PaymentStatusCode.AcceptedWithChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PartiallyAcceptedCancellationRequest
- * PaymentStatusCode.mmPartiallyAcceptedCancellationRequest}</li>
+ * PaymentStatusCode.PartiallyAcceptedCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentStatusCode#PendingCancellationRequest
- * PaymentStatusCode.mmPendingCancellationRequest}</li>
+ * PaymentStatusCode.PendingCancellationRequest}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -94,8 +94,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -576,7 +576,7 @@ public class PaymentStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentStatusCode";

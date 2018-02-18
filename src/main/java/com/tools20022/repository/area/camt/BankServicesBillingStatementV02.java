@@ -25,9 +25,11 @@ import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.ReportHeader3;
 import com.tools20022.repository.msg.StatementGroup2;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -102,15 +104,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BankServicesBillingStatementV02", propOrder = {"reportHeader", "billingStatementGroup"})
 public class BankServicesBillingStatementV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected ReportHeader3 reportHeader;
 	/**
-	 * Provides header details on the billing statement report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,11 +152,11 @@ public class BankServicesBillingStatementV02 {
 			}
 		}
 	};
+	@XmlElement(name = "BllgStmtGrp", required = true)
 	protected List<StatementGroup2> billingStatementGroup;
 	/**
-	 * Group of bank services billing statements with the same sender and
-	 * receiver characteristics.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,25 +226,25 @@ public class BankServicesBillingStatementV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public ReportHeader3 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(ReportHeader3 reportHeader) {
-		this.reportHeader = reportHeader;
+	public BankServicesBillingStatementV02 setReportHeader(ReportHeader3 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "BllgStmtGrp", required = true)
 	public List<StatementGroup2> getBillingStatementGroup() {
-		return billingStatementGroup;
+		return billingStatementGroup == null ? billingStatementGroup = new ArrayList<>() : billingStatementGroup;
 	}
 
-	public void setBillingStatementGroup(List<StatementGroup2> billingStatementGroup) {
-		this.billingStatementGroup = billingStatementGroup;
+	public BankServicesBillingStatementV02 setBillingStatementGroup(List<StatementGroup2> billingStatementGroup) {
+		this.billingStatementGroup = Objects.requireNonNull(billingStatementGroup);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.086.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:camt.086.001.02")
 	static public class Document {
 		@XmlElement(name = "BkSvcsBllgStmt", required = true)
 		public BankServicesBillingStatementV02 messageBody;

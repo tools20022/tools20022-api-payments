@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the system which plays a role in the clearing process.
@@ -81,8 +80,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +98,8 @@ public class ClearingSystem extends System {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Clearing> clearing;
 	/**
-	 * Specifies the clearing process for which a clearing system is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,8 +145,8 @@ public class ClearingSystem extends System {
 	};
 	protected CentralClearingCounterpartyRole centralClearingCounterparty;
 	/**
-	 * Central counterparty which is related to a clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,10 +195,8 @@ public class ClearingSystem extends System {
 	};
 	protected List<com.tools20022.repository.entity.DefaultFund> defaultFund;
 	/**
-	 * Assets posted by participants in a clearing fund that can be used in the
-	 * event of a default by a participant to compensate non-defaulting
-	 * participants for losses they suffer due to this default.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,8 +244,8 @@ public class ClearingSystem extends System {
 	};
 	protected CollateralManagement collateralManagement;
 	/**
-	 * Collateral activities related to a clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,7 +295,7 @@ public class ClearingSystem extends System {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSystem";
 				definition = "Specifies the system which plays a role in the clearing process.";
@@ -319,34 +316,38 @@ public class ClearingSystem extends System {
 	}
 
 	public List<Clearing> getClearing() {
-		return clearing;
+		return clearing == null ? clearing = new ArrayList<>() : clearing;
 	}
 
-	public void setClearing(List<com.tools20022.repository.entity.Clearing> clearing) {
-		this.clearing = clearing;
+	public ClearingSystem setClearing(List<com.tools20022.repository.entity.Clearing> clearing) {
+		this.clearing = Objects.requireNonNull(clearing);
+		return this;
 	}
 
-	public CentralClearingCounterpartyRole getCentralClearingCounterparty() {
-		return centralClearingCounterparty;
+	public Optional<CentralClearingCounterpartyRole> getCentralClearingCounterparty() {
+		return centralClearingCounterparty == null ? Optional.empty() : Optional.of(centralClearingCounterparty);
 	}
 
-	public void setCentralClearingCounterparty(com.tools20022.repository.entity.CentralClearingCounterpartyRole centralClearingCounterparty) {
+	public ClearingSystem setCentralClearingCounterparty(com.tools20022.repository.entity.CentralClearingCounterpartyRole centralClearingCounterparty) {
 		this.centralClearingCounterparty = centralClearingCounterparty;
+		return this;
 	}
 
 	public List<DefaultFund> getDefaultFund() {
-		return defaultFund;
+		return defaultFund == null ? defaultFund = new ArrayList<>() : defaultFund;
 	}
 
-	public void setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
-		this.defaultFund = defaultFund;
+	public ClearingSystem setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
+		this.defaultFund = Objects.requireNonNull(defaultFund);
+		return this;
 	}
 
 	public CollateralManagement getCollateralManagement() {
 		return collateralManagement;
 	}
 
-	public void setCollateralManagement(com.tools20022.repository.entity.CollateralManagement collateralManagement) {
-		this.collateralManagement = collateralManagement;
+	public ClearingSystem setCollateralManagement(com.tools20022.repository.entity.CollateralManagement collateralManagement) {
+		this.collateralManagement = Objects.requireNonNull(collateralManagement);
+		return this;
 	}
 }

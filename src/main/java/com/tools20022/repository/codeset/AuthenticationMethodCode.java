@@ -38,79 +38,79 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#UnknownMethod
- * AuthenticationMethodCode.mmUnknownMethod}</li>
+ * AuthenticationMethodCode.UnknownMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Bypass
- * AuthenticationMethodCode.mmBypass}</li>
+ * AuthenticationMethodCode.Bypass}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#OnLinePIN
- * AuthenticationMethodCode.mmOnLinePIN}</li>
+ * AuthenticationMethodCode.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#OfflinePIN
- * AuthenticationMethodCode.mmOfflinePIN}</li>
+ * AuthenticationMethodCode.OfflinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SignatureCapture
- * AuthenticationMethodCode.mmSignatureCapture}</li>
+ * AuthenticationMethodCode.SignatureCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PaperSignature
- * AuthenticationMethodCode.mmPaperSignature}</li>
+ * AuthenticationMethodCode.PaperSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#ManualVerification
- * AuthenticationMethodCode.mmManualVerification}</li>
+ * AuthenticationMethodCode.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#MerchantAuthentication
- * AuthenticationMethodCode.mmMerchantAuthentication}</li>
+ * AuthenticationMethodCode.MerchantAuthentication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureCertificate
- * AuthenticationMethodCode.mmSecureCertificate}</li>
+ * AuthenticationMethodCode.SecureCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureNoCertificate
- * AuthenticationMethodCode.mmSecureNoCertificate}</li>
+ * AuthenticationMethodCode.SecureNoCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecuredChannel
- * AuthenticationMethodCode.mmSecuredChannel}</li>
+ * AuthenticationMethodCode.SecuredChannel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Password
- * AuthenticationMethodCode.mmPassword}</li>
+ * AuthenticationMethodCode.Password}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#BillingAddressVerification
- * AuthenticationMethodCode.mmBillingAddressVerification}</li>
+ * AuthenticationMethodCode.BillingAddressVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Biometry
- * AuthenticationMethodCode.mmBiometry}</li>
+ * AuthenticationMethodCode.Biometry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CardholderIdentificationData
- * AuthenticationMethodCode.mmCardholderIdentificationData}</li>
+ * AuthenticationMethodCode.CardholderIdentificationData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CryptogramVerification
- * AuthenticationMethodCode.mmCryptogramVerification}</li>
+ * AuthenticationMethodCode.CryptogramVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#CSCVerification
- * AuthenticationMethodCode.mmCSCVerification}</li>
+ * AuthenticationMethodCode.CSCVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PassiveAuthentication
- * AuthenticationMethodCode.mmPassiveAuthentication}</li>
+ * AuthenticationMethodCode.PassiveAuthentication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#SecureElectronicCommerce
- * AuthenticationMethodCode.mmSecureElectronicCommerce}</li>
+ * AuthenticationMethodCode.SecureElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#ShippingAddressVerification
- * AuthenticationMethodCode.mmShippingAddressVerification}</li>
+ * AuthenticationMethodCode.ShippingAddressVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#TokenAuthentication
- * AuthenticationMethodCode.mmTokenAuthentication}</li>
+ * AuthenticationMethodCode.TokenAuthentication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#PaymentToken
- * AuthenticationMethodCode.mmPaymentToken}</li>
+ * AuthenticationMethodCode.PaymentToken}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#AuthenticationToken
- * AuthenticationMethodCode.mmAuthenticationToken}</li>
+ * AuthenticationMethodCode.AuthenticationToken}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Mobile
- * AuthenticationMethodCode.mmMobile}</li>
+ * AuthenticationMethodCode.Mobile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethodCode#Other
- * AuthenticationMethodCode.mmOther}</li>
+ * AuthenticationMethodCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -123,8 +123,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -926,7 +926,7 @@ public class AuthenticationMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UKNW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationMethodCode";

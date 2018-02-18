@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.SignatureCondition;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * PartyAndAuthorisation1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyAndAuthorisation3", propOrder = {"modificationCode", "partyOrGroup", "signatureOrder", "authorisation"})
 public class PartyAndAuthorisation3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModCd")
 	protected Modification1Code modificationCode;
 	/**
-	 * Specifies the type of change.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +118,7 @@ public class PartyAndAuthorisation3 {
 	 */
 	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> PartyAndAuthorisation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,10 +129,11 @@ public class PartyAndAuthorisation3 {
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "PtyOrGrp", required = true)
 	protected PartyOrGroup1Choice partyOrGroup;
 	/**
-	 * Specifies a party or a group of parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,7 +164,7 @@ public class PartyAndAuthorisation3 {
 	public static final MMMessageAssociationEnd mmPartyOrGroup = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Party.mmObject();
-			componentContext_lazy = () -> PartyAndAuthorisation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 			isDerived = false;
 			xmlTag = "PtyOrGrp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,10 +176,11 @@ public class PartyAndAuthorisation3 {
 			type_lazy = () -> PartyOrGroup1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SgntrOrdr")
 	protected Max15PlusSignedNumericText signatureOrder;
 	/**
-	 * Order in which the mandate holder has to sign.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +214,7 @@ public class PartyAndAuthorisation3 {
 	public static final MMMessageAttribute mmSignatureOrder = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SignatureCondition.mmSignatureOrder;
-			componentContext_lazy = () -> PartyAndAuthorisation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 			isDerived = false;
 			xmlTag = "SgntrOrdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,10 +225,11 @@ public class PartyAndAuthorisation3 {
 			simpleType_lazy = () -> Max15PlusSignedNumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "Authstn", required = true)
 	protected Authorisation2 authorisation;
 	/**
-	 * Authorisation granted to a mandate holder.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -255,7 +261,7 @@ public class PartyAndAuthorisation3 {
 	public static final MMMessageAssociationEnd mmAuthorisation = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> BankOperation.mmOperationThreshold;
-			componentContext_lazy = () -> PartyAndAuthorisation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 			isDerived = false;
 			xmlTag = "Authstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -271,9 +277,10 @@ public class PartyAndAuthorisation3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyAndAuthorisation3.mmModificationCode, PartyAndAuthorisation3.mmPartyOrGroup, PartyAndAuthorisation3.mmSignatureOrder, PartyAndAuthorisation3.mmAuthorisation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyAndAuthorisation3.mmModificationCode, com.tools20022.repository.msg.PartyAndAuthorisation3.mmPartyOrGroup,
+						com.tools20022.repository.msg.PartyAndAuthorisation3.mmSignatureOrder, com.tools20022.repository.msg.PartyAndAuthorisation3.mmAuthorisation);
 				trace_lazy = () -> Party.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyAndAuthorisation3";
 				definition = "Party and related authorisation.";
@@ -283,39 +290,39 @@ public class PartyAndAuthorisation3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModCd")
-	public Modification1Code getModificationCode() {
-		return modificationCode;
+	public Optional<Modification1Code> getModificationCode() {
+		return modificationCode == null ? Optional.empty() : Optional.of(modificationCode);
 	}
 
-	public void setModificationCode(Modification1Code modificationCode) {
+	public PartyAndAuthorisation3 setModificationCode(Modification1Code modificationCode) {
 		this.modificationCode = modificationCode;
+		return this;
 	}
 
-	@XmlElement(name = "PtyOrGrp", required = true)
 	public PartyOrGroup1Choice getPartyOrGroup() {
 		return partyOrGroup;
 	}
 
-	public void setPartyOrGroup(PartyOrGroup1Choice partyOrGroup) {
-		this.partyOrGroup = partyOrGroup;
+	public PartyAndAuthorisation3 setPartyOrGroup(PartyOrGroup1Choice partyOrGroup) {
+		this.partyOrGroup = Objects.requireNonNull(partyOrGroup);
+		return this;
 	}
 
-	@XmlElement(name = "SgntrOrdr")
-	public Max15PlusSignedNumericText getSignatureOrder() {
-		return signatureOrder;
+	public Optional<Max15PlusSignedNumericText> getSignatureOrder() {
+		return signatureOrder == null ? Optional.empty() : Optional.of(signatureOrder);
 	}
 
-	public void setSignatureOrder(Max15PlusSignedNumericText signatureOrder) {
+	public PartyAndAuthorisation3 setSignatureOrder(Max15PlusSignedNumericText signatureOrder) {
 		this.signatureOrder = signatureOrder;
+		return this;
 	}
 
-	@XmlElement(name = "Authstn", required = true)
 	public Authorisation2 getAuthorisation() {
 		return authorisation;
 	}
 
-	public void setAuthorisation(com.tools20022.repository.msg.Authorisation2 authorisation) {
-		this.authorisation = authorisation;
+	public PartyAndAuthorisation3 setAuthorisation(com.tools20022.repository.msg.Authorisation2 authorisation) {
+		this.authorisation = Objects.requireNonNull(authorisation);
+		return this;
 	}
 }

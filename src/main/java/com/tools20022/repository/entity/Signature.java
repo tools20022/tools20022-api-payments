@@ -26,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Cheque7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Additional security provision attached to a contract. A (numeric) signature
@@ -80,8 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +101,8 @@ public class Signature extends Evidence {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SignatureCondition conditions;
 	/**
-	 * Parameters related to the signature provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,8 +148,8 @@ public class Signature extends Evidence {
 	};
 	protected CardPaymentValidation cardPaymentValidation;
 	/**
-	 * Validation of a payment by card for which a signeture is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,7 +199,7 @@ public class Signature extends Evidence {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Signature";
 				definition = "Additional security provision attached to a contract. A (numeric) signature can be used as evidence of origin and integrity, i.e., authenticity of the signed data. A judge can accept this evidence as proof.";
@@ -216,19 +218,21 @@ public class Signature extends Evidence {
 		return mmObject_lazy.get();
 	}
 
-	public SignatureCondition getConditions() {
-		return conditions;
+	public Optional<SignatureCondition> getConditions() {
+		return conditions == null ? Optional.empty() : Optional.of(conditions);
 	}
 
-	public void setConditions(com.tools20022.repository.entity.SignatureCondition conditions) {
+	public Signature setConditions(com.tools20022.repository.entity.SignatureCondition conditions) {
 		this.conditions = conditions;
+		return this;
 	}
 
 	public CardPaymentValidation getCardPaymentValidation() {
 		return cardPaymentValidation;
 	}
 
-	public void setCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation cardPaymentValidation) {
-		this.cardPaymentValidation = cardPaymentValidation;
+	public Signature setCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation cardPaymentValidation) {
+		this.cardPaymentValidation = Objects.requireNonNull(cardPaymentValidation);
+		return this;
 	}
 }

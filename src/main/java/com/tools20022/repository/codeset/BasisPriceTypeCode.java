@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,37 +39,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#MorningSessionClosePrice
- * BasisPriceTypeCode.mmMorningSessionClosePrice}</li>
+ * BasisPriceTypeCode.MorningSessionClosePrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#ClosingPrice
- * BasisPriceTypeCode.mmClosingPrice}</li>
+ * BasisPriceTypeCode.ClosingPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#CurrentPrice
- * BasisPriceTypeCode.mmCurrentPrice}</li>
+ * BasisPriceTypeCode.CurrentPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#SpecialQuotation
- * BasisPriceTypeCode.mmSpecialQuotation}</li>
+ * BasisPriceTypeCode.SpecialQuotation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPDay
- * BasisPriceTypeCode.mmVWAPDay}</li>
+ * BasisPriceTypeCode.VWAPDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPMorning
- * BasisPriceTypeCode.mmVWAPMorning}</li>
+ * BasisPriceTypeCode.VWAPMorning}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#VWAPAfternoon
- * BasisPriceTypeCode.mmVWAPAfternoon}</li>
+ * BasisPriceTypeCode.VWAPAfternoon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#StrikePrice
- * BasisPriceTypeCode.mmStrikePrice}</li>
+ * BasisPriceTypeCode.StrikePrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BasisPriceTypeCode#OpenPrice
- * BasisPriceTypeCode.mmOpenPrice}</li>
+ * BasisPriceTypeCode.OpenPrice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: 419</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,6 +104,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MSCP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -112,6 +119,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode MorningSessionClosePrice = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MorningSessionClosePrice";
 			definition = "Closing price at morning session.";
@@ -130,6 +138,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CLOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -142,6 +153,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode ClosingPrice = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingPrice";
 			definition = "Closing price.";
@@ -160,6 +172,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CURR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -172,6 +187,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode CurrentPrice = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrentPrice";
 			definition = "Current price.";
@@ -220,6 +236,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VWPD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -232,6 +251,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode VWAPDay = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPDay";
 			definition = "Value weighted average price through the day.";
@@ -250,6 +270,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VWPM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -262,6 +285,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode VWAPMorning = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPMorning";
 			definition = "Value weighted average price through a morning session.";
@@ -280,6 +304,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VWPA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -293,6 +320,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode VWAPAfternoon = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPAfternoon";
 			definition = "Value weighted average price through an afternoon session.";
@@ -311,6 +339,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STIK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -323,6 +354,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode StrikePrice = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikePrice";
 			definition = "Exercise price defined on a derivative product.";
@@ -341,6 +373,9 @@ public class BasisPriceTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OPEN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -353,6 +388,7 @@ public class BasisPriceTypeCode extends MMCode {
 	 */
 	public static final BasisPriceTypeCode OpenPrice = new BasisPriceTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpenPrice";
 			definition = "Price of a trade opening session.";
@@ -368,7 +404,8 @@ public class BasisPriceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 				example = Arrays.asList("MSCP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BasisPriceTypeCode";

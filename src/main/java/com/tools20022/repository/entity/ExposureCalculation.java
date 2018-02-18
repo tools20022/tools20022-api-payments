@@ -21,9 +21,11 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Description of the calculation of the amounts representing the risk that
@@ -106,8 +108,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,9 +127,8 @@ public class ExposureCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveCurrencyAndAmount totalCollateralCurrentValue;
 	/**
-	 * Total value of the collateral derived from the sum of the current
-	 * independent amounts and variation margins held, agreed and in transit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,10 +176,8 @@ public class ExposureCalculation {
 	};
 	protected ActiveCurrencyAndAmount totalExposedAmount;
 	/**
-	 * The sum of the exposures of all transactions which are in favour of a
-	 * Party. That is, all transactions which would have an amount payable by
-	 * the counterparty if they were being terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,9 +225,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.IndependentAmount> currentIndependentAmount;
 	/**
-	 * Amount applied as an add-on to the exposure usually intended to cover a
-	 * possible increase in exposure before the next valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,9 +274,8 @@ public class ExposureCalculation {
 	};
 	protected CollateralBalance currentVariationMargin;
 	/**
-	 * Provides details about the collateral held, in transit or that still
-	 * needs to be agreed by both parties, against the variation margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -327,10 +324,8 @@ public class ExposureCalculation {
 	};
 	protected CollateralBalance currentSegregatedIndependentAmount;
 	/**
-	 * Provides details about the collateral held, in transit or that still
-	 * needs to be agreed by both parties, against the segregated independent
-	 * amount only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,9 +374,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.MarginAmountRequirement> variationMarginAmountRequirement;
 	/**
-	 * Amount of expected margin required by any of the parties of the margin
-	 * calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,8 +424,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.MarginAmountRequirement> segregatedAmountRequirement;
 	/**
-	 * Margin requirements for the segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,9 +473,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.CollateralManagement> collateralManagement;
 	/**
-	 * Specifies the collateral management actions resulting from the
-	 * calculation of the risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,9 +523,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.CounterpartyRisk> counterpartyRisk;
 	/**
-	 * Calculation of the exposure amount that one party has vis-a-vis one
-	 * counterparty or a central system, based on its credit risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -580,10 +572,8 @@ public class ExposureCalculation {
 	};
 	protected List<com.tools20022.repository.entity.TransactionRisk> transactionRisk;
 	/**
-	 * Calculation of the exposure amount that one party has vis-a-vis one
-	 * counterparty or a central system, based on the transactions that are not
-	 * yet settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -631,9 +621,8 @@ public class ExposureCalculation {
 	};
 	protected ActiveCurrencyAndAmount totalCollateralAfterHaircut;
 	/**
-	 * Collateral currently received (+)/delivered (-) in the base currency.
-	 * This amount is after the haircut has been applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -683,7 +672,7 @@ public class ExposureCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExposureCalculation";
 				definition = "Description of the calculation of the amounts representing the risk that needs to be covered, together with the calculation of the existing coverage.";
@@ -711,87 +700,98 @@ public class ExposureCalculation {
 		return totalCollateralCurrentValue;
 	}
 
-	public void setTotalCollateralCurrentValue(ActiveCurrencyAndAmount totalCollateralCurrentValue) {
-		this.totalCollateralCurrentValue = totalCollateralCurrentValue;
+	public ExposureCalculation setTotalCollateralCurrentValue(ActiveCurrencyAndAmount totalCollateralCurrentValue) {
+		this.totalCollateralCurrentValue = Objects.requireNonNull(totalCollateralCurrentValue);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getTotalExposedAmount() {
 		return totalExposedAmount;
 	}
 
-	public void setTotalExposedAmount(ActiveCurrencyAndAmount totalExposedAmount) {
-		this.totalExposedAmount = totalExposedAmount;
+	public ExposureCalculation setTotalExposedAmount(ActiveCurrencyAndAmount totalExposedAmount) {
+		this.totalExposedAmount = Objects.requireNonNull(totalExposedAmount);
+		return this;
 	}
 
 	public List<IndependentAmount> getCurrentIndependentAmount() {
-		return currentIndependentAmount;
+		return currentIndependentAmount == null ? currentIndependentAmount = new ArrayList<>() : currentIndependentAmount;
 	}
 
-	public void setCurrentIndependentAmount(List<com.tools20022.repository.entity.IndependentAmount> currentIndependentAmount) {
-		this.currentIndependentAmount = currentIndependentAmount;
+	public ExposureCalculation setCurrentIndependentAmount(List<com.tools20022.repository.entity.IndependentAmount> currentIndependentAmount) {
+		this.currentIndependentAmount = Objects.requireNonNull(currentIndependentAmount);
+		return this;
 	}
 
 	public CollateralBalance getCurrentVariationMargin() {
 		return currentVariationMargin;
 	}
 
-	public void setCurrentVariationMargin(com.tools20022.repository.entity.CollateralBalance currentVariationMargin) {
-		this.currentVariationMargin = currentVariationMargin;
+	public ExposureCalculation setCurrentVariationMargin(com.tools20022.repository.entity.CollateralBalance currentVariationMargin) {
+		this.currentVariationMargin = Objects.requireNonNull(currentVariationMargin);
+		return this;
 	}
 
 	public CollateralBalance getCurrentSegregatedIndependentAmount() {
 		return currentSegregatedIndependentAmount;
 	}
 
-	public void setCurrentSegregatedIndependentAmount(com.tools20022.repository.entity.CollateralBalance currentSegregatedIndependentAmount) {
-		this.currentSegregatedIndependentAmount = currentSegregatedIndependentAmount;
+	public ExposureCalculation setCurrentSegregatedIndependentAmount(com.tools20022.repository.entity.CollateralBalance currentSegregatedIndependentAmount) {
+		this.currentSegregatedIndependentAmount = Objects.requireNonNull(currentSegregatedIndependentAmount);
+		return this;
 	}
 
 	public List<MarginAmountRequirement> getVariationMarginAmountRequirement() {
-		return variationMarginAmountRequirement;
+		return variationMarginAmountRequirement == null ? variationMarginAmountRequirement = new ArrayList<>() : variationMarginAmountRequirement;
 	}
 
-	public void setVariationMarginAmountRequirement(List<com.tools20022.repository.entity.MarginAmountRequirement> variationMarginAmountRequirement) {
-		this.variationMarginAmountRequirement = variationMarginAmountRequirement;
+	public ExposureCalculation setVariationMarginAmountRequirement(List<com.tools20022.repository.entity.MarginAmountRequirement> variationMarginAmountRequirement) {
+		this.variationMarginAmountRequirement = Objects.requireNonNull(variationMarginAmountRequirement);
+		return this;
 	}
 
 	public List<MarginAmountRequirement> getSegregatedAmountRequirement() {
-		return segregatedAmountRequirement;
+		return segregatedAmountRequirement == null ? segregatedAmountRequirement = new ArrayList<>() : segregatedAmountRequirement;
 	}
 
-	public void setSegregatedAmountRequirement(List<com.tools20022.repository.entity.MarginAmountRequirement> segregatedAmountRequirement) {
-		this.segregatedAmountRequirement = segregatedAmountRequirement;
+	public ExposureCalculation setSegregatedAmountRequirement(List<com.tools20022.repository.entity.MarginAmountRequirement> segregatedAmountRequirement) {
+		this.segregatedAmountRequirement = Objects.requireNonNull(segregatedAmountRequirement);
+		return this;
 	}
 
 	public List<CollateralManagement> getCollateralManagement() {
-		return collateralManagement;
+		return collateralManagement == null ? collateralManagement = new ArrayList<>() : collateralManagement;
 	}
 
-	public void setCollateralManagement(List<com.tools20022.repository.entity.CollateralManagement> collateralManagement) {
-		this.collateralManagement = collateralManagement;
+	public ExposureCalculation setCollateralManagement(List<com.tools20022.repository.entity.CollateralManagement> collateralManagement) {
+		this.collateralManagement = Objects.requireNonNull(collateralManagement);
+		return this;
 	}
 
 	public List<CounterpartyRisk> getCounterpartyRisk() {
-		return counterpartyRisk;
+		return counterpartyRisk == null ? counterpartyRisk = new ArrayList<>() : counterpartyRisk;
 	}
 
-	public void setCounterpartyRisk(List<com.tools20022.repository.entity.CounterpartyRisk> counterpartyRisk) {
-		this.counterpartyRisk = counterpartyRisk;
+	public ExposureCalculation setCounterpartyRisk(List<com.tools20022.repository.entity.CounterpartyRisk> counterpartyRisk) {
+		this.counterpartyRisk = Objects.requireNonNull(counterpartyRisk);
+		return this;
 	}
 
 	public List<TransactionRisk> getTransactionRisk() {
-		return transactionRisk;
+		return transactionRisk == null ? transactionRisk = new ArrayList<>() : transactionRisk;
 	}
 
-	public void setTransactionRisk(List<com.tools20022.repository.entity.TransactionRisk> transactionRisk) {
-		this.transactionRisk = transactionRisk;
+	public ExposureCalculation setTransactionRisk(List<com.tools20022.repository.entity.TransactionRisk> transactionRisk) {
+		this.transactionRisk = Objects.requireNonNull(transactionRisk);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getTotalCollateralAfterHaircut() {
 		return totalCollateralAfterHaircut;
 	}
 
-	public void setTotalCollateralAfterHaircut(ActiveCurrencyAndAmount totalCollateralAfterHaircut) {
-		this.totalCollateralAfterHaircut = totalCollateralAfterHaircut;
+	public ExposureCalculation setTotalCollateralAfterHaircut(ActiveCurrencyAndAmount totalCollateralAfterHaircut) {
+		this.totalCollateralAfterHaircut = Objects.requireNonNull(totalCollateralAfterHaircut);
+		return this;
 	}
 }

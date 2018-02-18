@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,88 +39,88 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#AllOrNone
- * OrderTypeCode.mmAllOrNone}</li>
+ * OrderTypeCode.AllOrNone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#BuyContraShortExempt
- * OrderTypeCode.mmBuyContraShortExempt}</li>
+ * OrderTypeCode.BuyContraShortExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#BuyContraShort
- * OrderTypeCode.mmBuyContraShort}</li>
+ * OrderTypeCode.BuyContraShort}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#BuyMinus
- * OrderTypeCode.mmBuyMinus}</li>
+ * OrderTypeCode.BuyMinus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Carefully
- * OrderTypeCode.mmCarefully}</li>
+ * OrderTypeCode.Carefully}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Combination
- * OrderTypeCode.mmCombination}</li>
+ * OrderTypeCode.Combination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#Discretionary
- * OrderTypeCode.mmDiscretionary}</li>
+ * OrderTypeCode.Discretionary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Limit
- * OrderTypeCode.mmLimit}</li>
+ * OrderTypeCode.Limit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#LimitOnClose
- * OrderTypeCode.mmLimitOnClose}</li>
+ * OrderTypeCode.LimitOnClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#LimitOrBetter
- * OrderTypeCode.mmLimitOrBetter}</li>
+ * OrderTypeCode.LimitOrBetter}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#LimitWith
- * OrderTypeCode.mmLimitWith}</li>
+ * OrderTypeCode.LimitWith}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#LimitWithout
- * OrderTypeCode.mmLimitWithout}</li>
+ * OrderTypeCode.LimitWithout}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Market
- * OrderTypeCode.mmMarket}</li>
+ * OrderTypeCode.Market}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#MarketNotHeld
- * OrderTypeCode.mmMarketNotHeld}</li>
+ * OrderTypeCode.MarketNotHeld}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#MarketTouched
- * OrderTypeCode.mmMarketTouched}</li>
+ * OrderTypeCode.MarketTouched}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#NotHeld
- * OrderTypeCode.mmNotHeld}</li>
+ * OrderTypeCode.NotHeld}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#OrderLie
- * OrderTypeCode.mmOrderLie}</li>
+ * OrderTypeCode.OrderLie}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#OnBasisPrice
- * OrderTypeCode.mmOnBasisPrice}</li>
+ * OrderTypeCode.OnBasisPrice}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Stop
- * OrderTypeCode.mmStop}</li>
+ * OrderTypeCode.Stop}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#StopLimit
- * OrderTypeCode.mmStopLimit}</li>
+ * OrderTypeCode.StopLimit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#StopLoss
- * OrderTypeCode.mmStopLoss}</li>
+ * OrderTypeCode.StopLoss}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#SellPlus
- * OrderTypeCode.mmSellPlus}</li>
+ * OrderTypeCode.SellPlus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#SellShort
- * OrderTypeCode.mmSellShort}</li>
+ * OrderTypeCode.SellShort}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#SellShortExempt
- * OrderTypeCode.mmSellShortExempt}</li>
+ * OrderTypeCode.SellShortExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#WithOrWithout
- * OrderTypeCode.mmWithOrWithout}</li>
+ * OrderTypeCode.WithOrWithout}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#PreviouslyQuoted
- * OrderTypeCode.mmPreviouslyQuoted}</li>
+ * OrderTypeCode.PreviouslyQuoted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#PreviouslyIndicated
- * OrderTypeCode.mmPreviouslyIndicated}</li>
+ * OrderTypeCode.PreviouslyIndicated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#ForexSwap
- * OrderTypeCode.mmForexSwap}</li>
+ * OrderTypeCode.ForexSwap}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Funari
- * OrderTypeCode.mmFunari}</li>
+ * OrderTypeCode.Funari}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#MarketWithLeftover
- * OrderTypeCode.mmMarketWithLeftover}</li>
+ * OrderTypeCode.MarketWithLeftover}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderTypeCode#Pegged
- * OrderTypeCode.mmPegged}</li>
+ * OrderTypeCode.Pegged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderTypeCode#CounterOrderSelection
- * OrderTypeCode.mmCounterOrderSelection}</li>
+ * OrderTypeCode.CounterOrderSelection}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,6 +157,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ALNO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//ALNO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -170,6 +174,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode AllOrNone = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//ALNO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllOrNone";
 			definition = "A round-lot market or limit price order that must be executed in its entirety or not at all; unlike fill or kill orders, all or none orders are not treated as canceled if they are not executed as soon as represented in the trading crowd.";
@@ -188,6 +193,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BCSE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//BCSE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -200,6 +208,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode BuyContraShortExempt = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//BCSE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuyContraShortExempt";
 			definition = "A buy contra short exempt.";
@@ -218,6 +227,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BCSH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//BCSH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -230,6 +242,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode BuyContraShort = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//BCSH"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuyContraShort";
 			definition = "An order to buy contra short.";
@@ -254,6 +267,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BMIN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//BMIN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -268,6 +284,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode BuyMinus = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//BMIN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuyMinus";
 			definition = "An order to buy at a price lower than the current market price. This is an order to buy a stated amount of a financial instrument provided that its price is not higher than the last sale if the last sale was a minus or zero minus tick, not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick. The price limit indicates the highest price at which the order can be executed.";
@@ -287,6 +304,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CARE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//CARE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -301,6 +321,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Carefully = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//CARE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Carefully";
 			definition = "An order which is not to be executed as a whole if the executing broker judges that it may disturb the price.";
@@ -321,6 +342,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "COMB"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//COMB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -335,6 +359,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Combination = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//COMB"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Combination";
 			definition = "An order which is linked to another order to buy or sell and must be executed as a unit, both or none, or cancelled as a unit. The linkage sequence must be completed with a reference to the linked order.";
@@ -354,6 +379,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DISC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//DISC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -368,6 +396,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Discretionary = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//DISC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Discretionary";
 			definition = "An order where the executing broker or investment manager decides on the quantity or price.";
@@ -387,6 +416,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LMTO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//LMTO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -401,6 +433,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Limit = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//LMTO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Limit";
 			definition = "An order to buy at the indicated price limit or lower or an order to sell at the indicated limit price or higher.";
@@ -483,6 +516,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIWI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//LIWI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -497,6 +533,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode LimitWith = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//LIWI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LimitWith";
 			definition = "An order to be executed at a limit price, with a round-lot (or board-lot) sales; valid only for odd lot orders.";
@@ -516,6 +553,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIWO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//LIWO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -530,6 +570,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode LimitWithout = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//LIWO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LimitWithout";
 			definition = "An order to be executed at a limit price, without a round-lot (or board-lot) sales; valid only for odd lot orders.";
@@ -549,6 +590,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MRKT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//MAKT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -563,6 +607,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Market = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//MAKT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Market";
 			definition = "An order to buy or sell a specified amount of a financial instrument at the quoted market price or better.";
@@ -582,6 +627,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MANH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//MANH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -596,6 +644,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode MarketNotHeld = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//MANH"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketNotHeld";
 			definition = "An order to buy or sell a stated amount of a financial instrument at the quoted market price or better with some discretion on the price limit.";
@@ -614,6 +663,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MATH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//MUTO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -628,6 +680,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode MarketTouched = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//MUTO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketTouched";
 			definition = "An order which becomes a market order once the market price is reached.";
@@ -647,6 +700,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NOHE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//NOHE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -661,6 +717,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode NotHeld = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//NOHE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotHeld";
 			definition = "An order which may be executed in partials or outside the hours of the exchange or other exchange rules.";
@@ -683,6 +740,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ORLI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//ORLI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -697,6 +757,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode OrderLie = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//ORLI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrderLie";
 			definition = "An order which is related to another order where the second part may be cancelled without canceling the first. In this case, the second order is identified as the second part. Normally the sell order must be executed before the buy order. The linkage sequence must be completed with a reference to the linked order.";
@@ -752,6 +813,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STOP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//STOP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -766,6 +830,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode Stop = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//STOP"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Stop";
 			definition = "An order to buy which becomes a market order when the financial instrument trades at or above the stop price after the order is submitted or an order to sell which becomes a market order when the financial instrument trades at or below the stop price after the order is submitted.";
@@ -788,6 +853,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STLI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//STLI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -802,6 +870,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode StopLimit = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//STLI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StopLimit";
 			definition = "A stop order to buy which becomes a limit order at the limit price when the financial instrument trades at or above the stop price after the order is submitted. A stop order to sell which becomes a limit order at the limit price when the financial instrument trades at or below the stop price after the order is submitted.";
@@ -820,6 +889,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SLOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//SLOS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -833,6 +905,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode StopLoss = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//SLOS"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StopLoss";
 			definition = "An order to sell that sets the sell price below the market price.";
@@ -854,6 +927,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPLU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//SPLU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -868,6 +944,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode SellPlus = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//SPLU"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SellPlus";
 			definition = "An order to sell a stated amount provided that the price is not lower than the last sale price if the last sale was a plus or zero plus tick and not lower than the last sale minus the minimum fractional change in the financial instrument if the last sale was a minus or zero minus tick.";
@@ -888,6 +965,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SSHO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//SSHO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -902,6 +982,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode SellShort = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//SSHO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SellShort";
 			definition = "An order to sell that the seller does not own; a sale effected by delivering a financial instrument borrowed by or for the account of the seller.";
@@ -920,6 +1001,9 @@ public class OrderTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SSEX"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//SSEX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -933,6 +1017,7 @@ public class OrderTypeCode extends MMCode {
 	 */
 	public static final OrderTypeCode SellShortExempt = new OrderTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//SSEX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SellShortExempt";
 			definition = "An order to sell short which is exempt from short-sale rules.";
@@ -1206,7 +1291,7 @@ public class OrderTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ALNO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderTypeCode";

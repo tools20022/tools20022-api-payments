@@ -37,46 +37,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO0
- * PINFormatCode.mmISO0}</li>
+ * PINFormatCode.ISO0}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO1
- * PINFormatCode.mmISO1}</li>
+ * PINFormatCode.ISO1}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO2
- * PINFormatCode.mmISO2}</li>
+ * PINFormatCode.ISO2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO3
- * PINFormatCode.mmISO3}</li>
+ * PINFormatCode.ISO3}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO4
- * PINFormatCode.mmISO4}</li>
+ * PINFormatCode.ISO4}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ISO5
- * PINFormatCode.mmISO5}</li>
+ * PINFormatCode.ISO5}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ANSI0
- * PINFormatCode.mmANSI0}</li>
+ * PINFormatCode.ANSI0}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#Bancomat
- * PINFormatCode.mmBancomat}</li>
+ * PINFormatCode.Bancomat}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#Banksys
- * PINFormatCode.mmBanksys}</li>
+ * PINFormatCode.Banksys}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#Diebold
- * PINFormatCode.mmDiebold}</li>
+ * PINFormatCode.Diebold}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#DieboldCO
- * PINFormatCode.mmDieboldCO}</li>
+ * PINFormatCode.DieboldCO}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ECI2
- * PINFormatCode.mmECI2}</li>
+ * PINFormatCode.ECI2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#ECI3
- * PINFormatCode.mmECI3}</li>
+ * PINFormatCode.ECI3}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#EMVRSA
- * PINFormatCode.mmEMVRSA}</li>
+ * PINFormatCode.EMVRSA}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#IBM3624
- * PINFormatCode.mmIBM3624}</li>
+ * PINFormatCode.IBM3624}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#VISA2
- * PINFormatCode.mmVISA2}</li>
+ * PINFormatCode.VISA2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormatCode#VISA3
- * PINFormatCode.mmVISA3}</li>
+ * PINFormatCode.VISA3}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -637,7 +637,7 @@ public class PINFormatCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ISO0");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PINFormatCode";

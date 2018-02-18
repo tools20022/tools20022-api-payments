@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Information about inactivity of a system.
@@ -60,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +78,8 @@ public class SystemClosureInformation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod period;
 	/**
-	 * Period of time when the system is closed/not operating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,8 +125,8 @@ public class SystemClosureInformation {
 	};
 	protected SystemAvailability systemAvailability;
 	/**
-	 * System for which closure information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,8 +173,8 @@ public class SystemClosureInformation {
 	};
 	protected SystemClosureReasonCode closureReason;
 	/**
-	 * Reason the system is closed/not operating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,7 +222,7 @@ public class SystemClosureInformation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemClosureInformation";
 				definition = "Information about inactivity of a system.";
@@ -242,23 +243,26 @@ public class SystemClosureInformation {
 		return period;
 	}
 
-	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
-		this.period = period;
+	public SystemClosureInformation setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
 	public SystemAvailability getSystemAvailability() {
 		return systemAvailability;
 	}
 
-	public void setSystemAvailability(com.tools20022.repository.entity.SystemAvailability systemAvailability) {
-		this.systemAvailability = systemAvailability;
+	public SystemClosureInformation setSystemAvailability(com.tools20022.repository.entity.SystemAvailability systemAvailability) {
+		this.systemAvailability = Objects.requireNonNull(systemAvailability);
+		return this;
 	}
 
 	public SystemClosureReasonCode getClosureReason() {
 		return closureReason;
 	}
 
-	public void setClosureReason(SystemClosureReasonCode closureReason) {
-		this.closureReason = closureReason;
+	public SystemClosureInformation setClosureReason(SystemClosureReasonCode closureReason) {
+		this.closureReason = Objects.requireNonNull(closureReason);
+		return this;
 	}
 }

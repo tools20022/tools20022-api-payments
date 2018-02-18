@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,16 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Range of sequence numbers related to card transactions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardSequenceNumberRange1", propOrder = {"firstTransaction", "lastTransaction"})
 public class CardSequenceNumberRange1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrstTx")
 	protected Max35Text firstTransaction;
 	/**
-	 * CardSequenceNumberRange1:FirstTransactionSequenceNumberMessage element to
-	 * be finalised once feedback from Card SEG has been received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,7 +100,7 @@ public class CardSequenceNumberRange1 {
 	 */
 	public static final MMMessageAttribute mmFirstTransaction = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardSequenceNumberRange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardSequenceNumberRange1.mmObject();
 			isDerived = false;
 			xmlTag = "FrstTx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -110,11 +111,11 @@ public class CardSequenceNumberRange1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "LastTx")
 	protected Max35Text lastTransaction;
 	/**
-	 * CardSequenceNumberRange1:LastTransactionSequenceNumberMessage element to
-	 * be finalised once feedback from Card SEG has been received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,7 +144,7 @@ public class CardSequenceNumberRange1 {
 	 */
 	public static final MMMessageAttribute mmLastTransaction = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CardSequenceNumberRange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardSequenceNumberRange1.mmObject();
 			isDerived = false;
 			xmlTag = "LastTx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,8 +159,8 @@ public class CardSequenceNumberRange1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardSequenceNumberRange1.mmFirstTransaction, CardSequenceNumberRange1.mmLastTransaction);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardSequenceNumberRange1.mmFirstTransaction, com.tools20022.repository.msg.CardSequenceNumberRange1.mmLastTransaction);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardSequenceNumberRange1";
 				definition = "Range of sequence numbers related to card transactions.";
@@ -168,21 +169,21 @@ public class CardSequenceNumberRange1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrstTx")
-	public Max35Text getFirstTransaction() {
-		return firstTransaction;
+	public Optional<Max35Text> getFirstTransaction() {
+		return firstTransaction == null ? Optional.empty() : Optional.of(firstTransaction);
 	}
 
-	public void setFirstTransaction(Max35Text firstTransaction) {
+	public CardSequenceNumberRange1 setFirstTransaction(Max35Text firstTransaction) {
 		this.firstTransaction = firstTransaction;
+		return this;
 	}
 
-	@XmlElement(name = "LastTx")
-	public Max35Text getLastTransaction() {
-		return lastTransaction;
+	public Optional<Max35Text> getLastTransaction() {
+		return lastTransaction == null ? Optional.empty() : Optional.of(lastTransaction);
 	}
 
-	public void setLastTransaction(Max35Text lastTransaction) {
+	public CardSequenceNumberRange1 setLastTransaction(Max35Text lastTransaction) {
 		this.lastTransaction = lastTransaction;
+		return this;
 	}
 }

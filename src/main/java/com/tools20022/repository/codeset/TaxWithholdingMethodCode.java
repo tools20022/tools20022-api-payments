@@ -40,38 +40,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdTax
- * TaxWithholdingMethodCode.mmWithholdTax}</li>
+ * TaxWithholdingMethodCode.WithholdTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#ReportTax
- * TaxWithholdingMethodCode.mmReportTax}</li>
+ * TaxWithholdingMethodCode.ReportTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#TaxCertificate
- * TaxWithholdingMethodCode.mmTaxCertificate}</li>
+ * TaxWithholdingMethodCode.TaxCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdTaxAndReport
- * TaxWithholdingMethodCode.mmWithholdTaxAndReport}</li>
+ * TaxWithholdingMethodCode.WithholdTaxAndReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdingCorporateTax
- * TaxWithholdingMethodCode.mmWithholdingCorporateTax}</li>
+ * TaxWithholdingMethodCode.WithholdingCorporateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#Exempt
- * TaxWithholdingMethodCode.mmExempt}</li>
+ * TaxWithholdingMethodCode.Exempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#Accountant
- * TaxWithholdingMethodCode.mmAccountant}</li>
+ * TaxWithholdingMethodCode.Accountant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#InvestmentCompany
- * TaxWithholdingMethodCode.mmInvestmentCompany}</li>
+ * TaxWithholdingMethodCode.InvestmentCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#MinorityInterestTax
- * TaxWithholdingMethodCode.mmMinorityInterestTax}</li>
+ * TaxWithholdingMethodCode.MinorityInterestTax}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -382,7 +382,7 @@ public class TaxWithholdingMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("WTHD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxWithholdingMethodCode";

@@ -26,6 +26,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details on the legal basis of the request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LegalMandate1", propOrder = {"paragraph", "disclaimer"})
 public class LegalMandate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prgrph", required = true)
 	protected Max35Text paragraph;
 	/**
-	 * Identifies the legal mandate paragraph in law which gives power to the
-	 * authority's request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class LegalMandate1 {
 	 */
 	public static final MMMessageAttribute mmParagraph = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> LegalMandate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalMandate1.mmObject();
 			isDerived = false;
 			xmlTag = "Prgrph";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,11 @@ public class LegalMandate1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Dsclmr")
 	protected Max350Text disclaimer;
 	/**
-	 * Specifies any additional information describing how or why the paragraph
-	 * of law should be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,7 +152,7 @@ public class LegalMandate1 {
 	 */
 	public static final MMMessageAttribute mmDisclaimer = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> LegalMandate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalMandate1.mmObject();
 			isDerived = false;
 			xmlTag = "Dsclmr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,9 +167,9 @@ public class LegalMandate1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LegalMandate1.mmParagraph, LegalMandate1.mmDisclaimer);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LegalMandate1.mmParagraph, com.tools20022.repository.msg.LegalMandate1.mmDisclaimer);
 				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestOpeningV01.mmLegalMandateBasis);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalMandate1";
 				definition = "Provides details on the legal basis of the request.";
@@ -176,21 +178,21 @@ public class LegalMandate1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prgrph", required = true)
 	public Max35Text getParagraph() {
 		return paragraph;
 	}
 
-	public void setParagraph(Max35Text paragraph) {
-		this.paragraph = paragraph;
+	public LegalMandate1 setParagraph(Max35Text paragraph) {
+		this.paragraph = Objects.requireNonNull(paragraph);
+		return this;
 	}
 
-	@XmlElement(name = "Dsclmr")
-	public Max350Text getDisclaimer() {
-		return disclaimer;
+	public Optional<Max350Text> getDisclaimer() {
+		return disclaimer == null ? Optional.empty() : Optional.of(disclaimer);
 	}
 
-	public void setDisclaimer(Max350Text disclaimer) {
+	public LegalMandate1 setDisclaimer(Max350Text disclaimer) {
 		this.disclaimer = disclaimer;
+		return this;
 	}
 }

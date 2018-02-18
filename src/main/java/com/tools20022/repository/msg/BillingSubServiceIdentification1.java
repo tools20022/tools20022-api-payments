@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the identification of a billing subservice."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingSubServiceIdentification1", propOrder = {"issuer", "identification"})
 public class BillingSubServiceIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Issr", required = true)
 	protected BillingSubServiceQualifier1Choice issuer;
 	/**
-	 * Specifies the qualifier of the sub service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class BillingSubServiceIdentification1 {
 	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> BillingSubServiceIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,12 +121,11 @@ public class BillingSubServiceIdentification1 {
 			complexType_lazy = () -> BillingSubServiceQualifier1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Further defines a financial institution service, through the provision of
-	 * the value required by the sub service qualifier, such as the actual
-	 * lockbox number or store number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,7 +160,7 @@ public class BillingSubServiceIdentification1 {
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> BillingSubServiceIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,9 +175,9 @@ public class BillingSubServiceIdentification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingSubServiceIdentification1.mmIssuer, BillingSubServiceIdentification1.mmIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingSubServiceIdentification1.mmIssuer, com.tools20022.repository.msg.BillingSubServiceIdentification1.mmIdentification);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingSubServiceIdentification1";
 				definition = "Specifies the identification of a billing subservice.";
@@ -185,21 +186,21 @@ public class BillingSubServiceIdentification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Issr", required = true)
 	public BillingSubServiceQualifier1Choice getIssuer() {
 		return issuer;
 	}
 
-	public void setIssuer(BillingSubServiceQualifier1Choice issuer) {
-		this.issuer = issuer;
+	public BillingSubServiceIdentification1 setIssuer(BillingSubServiceQualifier1Choice issuer) {
+		this.issuer = Objects.requireNonNull(issuer);
+		return this;
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public BillingSubServiceIdentification1 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 }

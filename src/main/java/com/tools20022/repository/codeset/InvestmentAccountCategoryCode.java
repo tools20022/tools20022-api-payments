@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#RetailAccount
- * InvestmentAccountCategoryCode.mmRetailAccount}</li>
+ * InvestmentAccountCategoryCode.RetailAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#MandateAccount
- * InvestmentAccountCategoryCode.mmMandateAccount}</li>
+ * InvestmentAccountCategoryCode.MandateAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,7 +138,7 @@ public class InvestmentAccountCategoryCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountCategoryCode";
 				definition = "Specifies the investment account category.";

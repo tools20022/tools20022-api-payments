@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#BankOfKoreaWire
- * CashSettlementSystemCode.mmBankOfKoreaWire}</li>
+ * CashSettlementSystemCode.BankOfKoreaWire}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#Cheque
- * CashSettlementSystemCode.mmCheque}</li>
+ * CashSettlementSystemCode.Cheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#UKDomestic
- * CashSettlementSystemCode.mmUKDomestic}</li>
+ * CashSettlementSystemCode.UKDomestic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#GrossSettlementSystem
- * CashSettlementSystemCode.mmGrossSettlementSystem}</li>
+ * CashSettlementSystemCode.GrossSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#NetSettlementSystem
- * CashSettlementSystemCode.mmNetSettlementSystem}</li>
+ * CashSettlementSystemCode.NetSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#USChips
- * CashSettlementSystemCode.mmUSChips}</li>
+ * CashSettlementSystemCode.USChips}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashSettlementSystemCode#FedWireUS
- * CashSettlementSystemCode.mmFedWireUS}</li>
+ * CashSettlementSystemCode.FedWireUS}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -302,7 +302,7 @@ public class CashSettlementSystemCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BOKW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlementSystemCode";

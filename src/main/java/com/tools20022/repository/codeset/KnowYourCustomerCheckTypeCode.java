@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Ordinary
- * KnowYourCustomerCheckTypeCode.mmOrdinary}</li>
+ * KnowYourCustomerCheckTypeCode.Ordinary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Simple
- * KnowYourCustomerCheckTypeCode.mmSimple}</li>
+ * KnowYourCustomerCheckTypeCode.Simple}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Enhanced
- * KnowYourCustomerCheckTypeCode.mmEnhanced}</li>
+ * KnowYourCustomerCheckTypeCode.Enhanced}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -175,7 +175,7 @@ public class KnowYourCustomerCheckTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KnowYourCustomerCheckTypeCode";
 				definition = "Specifies the type of Know Your Customer (KYC) or anti-money laundering due diligence to which the investor has been subjected.";

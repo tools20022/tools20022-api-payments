@@ -33,6 +33,8 @@ import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +79,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,19 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides further details on the message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GroupHeader59", propOrder = {"messageIdentification", "creationDateTime", "messageSender"})
 public class GroupHeader59 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected Max35Text messageIdentification;
 	/**
-	 * Point to point reference, as assigned by the account owner or the party
-	 * authorised to send the message, and sent to the account servicing
-	 * institution, to unambiguously identify the message. Usage: The sender has
-	 * to make sure that 'MessageIdentification' is unique per account servicing
-	 * institution for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,7 +134,7 @@ public class GroupHeader59 {
 	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
-			componentContext_lazy = () -> GroupHeader59.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader59.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -146,10 +145,11 @@ public class GroupHeader59 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,7 +181,7 @@ public class GroupHeader59 {
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
-			componentContext_lazy = () -> GroupHeader59.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader59.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,11 +192,11 @@ public class GroupHeader59 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgSndr")
 	protected Party12Choice messageSender;
 	/**
-	 * Identification of the party that is sending the message, when different
-	 * from the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -223,7 +223,7 @@ public class GroupHeader59 {
 	 */
 	public static final MMMessageAssociationEnd mmMessageSender = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> GroupHeader59.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader59.mmObject();
 			isDerived = false;
 			xmlTag = "MsgSndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,10 +239,11 @@ public class GroupHeader59 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GroupHeader59.mmMessageIdentification, GroupHeader59.mmCreationDateTime, GroupHeader59.mmMessageSender);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GroupHeader59.mmMessageIdentification, com.tools20022.repository.msg.GroupHeader59.mmCreationDateTime,
+						com.tools20022.repository.msg.GroupHeader59.mmMessageSender);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountReportingRequestV03.mmGroupHeader, NotificationToReceiveCancellationAdviceV05.mmGroupHeader, NotificationToReceiveV05.mmGroupHeader);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupHeader59";
 				definition = "Provides further details on the message.";
@@ -251,30 +252,30 @@ public class GroupHeader59 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public Max35Text getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(Max35Text messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public GroupHeader59 setMessageIdentification(Max35Text messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public GroupHeader59 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "MsgSndr")
-	public Party12Choice getMessageSender() {
-		return messageSender;
+	public Optional<Party12Choice> getMessageSender() {
+		return messageSender == null ? Optional.empty() : Optional.of(messageSender);
 	}
 
-	public void setMessageSender(Party12Choice messageSender) {
+	public GroupHeader59 setMessageSender(Party12Choice messageSender) {
 		this.messageSender = messageSender;
+		return this;
 	}
 }

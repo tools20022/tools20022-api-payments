@@ -24,9 +24,11 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.RegulatoryReporting3;
 import com.tools20022.repository.msg.StructuredRegulatoryReporting3;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information needed due to regulatory and statutory requirements.
@@ -107,8 +109,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,10 +127,8 @@ public class RegulatoryReport {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RegulatoryReportingTypeCode debitCreditReportingIndicator;
 	/**
-	 * Identifies whether the regulatory reporting information applies to the
-	 * debit side, to the credit side or to both debit and credit sides of the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,8 +185,8 @@ public class RegulatoryReport {
 	};
 	protected List<com.tools20022.repository.entity.RegulatoryAuthorityRole> authority;
 	/**
-	 * Entity requiring the regulatory reporting information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,9 +242,8 @@ public class RegulatoryReport {
 	};
 	protected Max10Text code;
 	/**
-	 * Specifies the nature, purpose, and reason for the transaction to be
-	 * reported for regulatory and statutory requirements in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,8 +299,8 @@ public class RegulatoryReport {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money to be reported for regulatory and statutory requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -358,9 +357,8 @@ public class RegulatoryReport {
 	};
 	protected Max35Text description;
 	/**
-	 * Additional details that may be necessary to cater for specific domestic
-	 * regulatory requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -416,9 +414,8 @@ public class RegulatoryReport {
 	};
 	protected Max35Text type;
 	/**
-	 * Specifies the type of the information supplied in the regulatory
-	 * reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -474,8 +471,8 @@ public class RegulatoryReport {
 	};
 	protected ISODate date;
 	/**
-	 * Date related to the specified type of regulatory reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,8 +527,8 @@ public class RegulatoryReport {
 	};
 	protected FinancialTransaction reportedTransaction;
 	/**
-	 * Trade for which a regulatory report is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -579,8 +576,8 @@ public class RegulatoryReport {
 	};
 	protected Max35Text underlyingProduct;
 	/**
-	 * Specifies the underlying product type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -625,11 +622,8 @@ public class RegulatoryReport {
 	};
 	protected YesNoIndicator nonStandardFlag;
 	/**
-	 * Specifies whether the reportable transaction has one or more additional
-	 * terms or provisions, other than those listed in the required real-time
-	 * data fields, that materially affects the price of the reportable
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -677,8 +671,8 @@ public class RegulatoryReport {
 	};
 	protected List<com.tools20022.repository.entity.ReportingPartyRole> reportingPartyRole;
 	/**
-	 * Party responsible for providing regulatory reports.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -726,7 +720,7 @@ public class RegulatoryReport {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReport";
 				definition = "Information needed due to regulatory and statutory requirements.";
@@ -752,87 +746,98 @@ public class RegulatoryReport {
 		return debitCreditReportingIndicator;
 	}
 
-	public void setDebitCreditReportingIndicator(RegulatoryReportingTypeCode debitCreditReportingIndicator) {
-		this.debitCreditReportingIndicator = debitCreditReportingIndicator;
+	public RegulatoryReport setDebitCreditReportingIndicator(RegulatoryReportingTypeCode debitCreditReportingIndicator) {
+		this.debitCreditReportingIndicator = Objects.requireNonNull(debitCreditReportingIndicator);
+		return this;
 	}
 
 	public List<RegulatoryAuthorityRole> getAuthority() {
-		return authority;
+		return authority == null ? authority = new ArrayList<>() : authority;
 	}
 
-	public void setAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> authority) {
-		this.authority = authority;
+	public RegulatoryReport setAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> authority) {
+		this.authority = Objects.requireNonNull(authority);
+		return this;
 	}
 
 	public Max10Text getCode() {
 		return code;
 	}
 
-	public void setCode(Max10Text code) {
-		this.code = code;
+	public RegulatoryReport setCode(Max10Text code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public RegulatoryReport setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public Max35Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max35Text description) {
-		this.description = description;
+	public RegulatoryReport setDescription(Max35Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public Max35Text getType() {
 		return type;
 	}
 
-	public void setType(Max35Text type) {
-		this.type = type;
+	public RegulatoryReport setType(Max35Text type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public ISODate getDate() {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public RegulatoryReport setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public FinancialTransaction getReportedTransaction() {
 		return reportedTransaction;
 	}
 
-	public void setReportedTransaction(com.tools20022.repository.entity.FinancialTransaction reportedTransaction) {
-		this.reportedTransaction = reportedTransaction;
+	public RegulatoryReport setReportedTransaction(com.tools20022.repository.entity.FinancialTransaction reportedTransaction) {
+		this.reportedTransaction = Objects.requireNonNull(reportedTransaction);
+		return this;
 	}
 
 	public Max35Text getUnderlyingProduct() {
 		return underlyingProduct;
 	}
 
-	public void setUnderlyingProduct(Max35Text underlyingProduct) {
-		this.underlyingProduct = underlyingProduct;
+	public RegulatoryReport setUnderlyingProduct(Max35Text underlyingProduct) {
+		this.underlyingProduct = Objects.requireNonNull(underlyingProduct);
+		return this;
 	}
 
 	public YesNoIndicator getNonStandardFlag() {
 		return nonStandardFlag;
 	}
 
-	public void setNonStandardFlag(YesNoIndicator nonStandardFlag) {
-		this.nonStandardFlag = nonStandardFlag;
+	public RegulatoryReport setNonStandardFlag(YesNoIndicator nonStandardFlag) {
+		this.nonStandardFlag = Objects.requireNonNull(nonStandardFlag);
+		return this;
 	}
 
 	public List<ReportingPartyRole> getReportingPartyRole() {
-		return reportingPartyRole;
+		return reportingPartyRole == null ? reportingPartyRole = new ArrayList<>() : reportingPartyRole;
 	}
 
-	public void setReportingPartyRole(List<com.tools20022.repository.entity.ReportingPartyRole> reportingPartyRole) {
-		this.reportingPartyRole = reportingPartyRole;
+	public RegulatoryReport setReportingPartyRole(List<com.tools20022.repository.entity.ReportingPartyRole> reportingPartyRole) {
+		this.reportingPartyRole = Objects.requireNonNull(reportingPartyRole);
+		return this;
 	}
 }

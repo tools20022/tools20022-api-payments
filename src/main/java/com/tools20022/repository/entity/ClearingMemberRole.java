@@ -22,9 +22,11 @@ import com.tools20022.repository.codeset.ClearingSideCode;
 import com.tools20022.repository.entity.SystemPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Member of an exchange's clearing corporation, responsible for executing
@@ -97,8 +99,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,9 +118,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashClearingSystemMember clearingSystemMemberIdentification;
 	/**
-	 * Unique and unambiguous identifier of a clearing system member, assigned
-	 * by the system or system administrator.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,8 +169,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected ClearingSideCode side;
 	/**
-	 * Specifies the side of the clearing member.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,9 +216,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> clearingAccount;
 	/**
-	 * Identifies the clearing member account at the CCP through which the trade
-	 * must be cleared (sometimes called position account).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,9 +265,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> marginAccount;
 	/**
-	 * Margin account where the negociation and liquidation risks will be
-	 * calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,10 +314,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> deliveryAccount;
 	/**
-	 * Account opened by the central counterparty in the name of the clearing
-	 * member within the account structure, for settlement purposes (gives
-	 * information about the clearing member account at central counterparty).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,9 +363,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.Account> defaultFundAccount;
 	/**
-	 * Specifies the account identification of the clearing member at the ICSD
-	 * (International Central Securities Depository) or at the Central Bank.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,9 +411,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected ClearingMemberRole clearingSegment;
 	/**
-	 * Clearing segment within a clearing organisation that allows the
-	 * segregation of flows coming from clearing counterparty's clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,8 +461,8 @@ public class ClearingMemberRole extends SystemPartyRole {
 	};
 	protected ClearingMemberRole relatedClearingMemberRole;
 	/**
-	 * Clearing member for which a clearing segment is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -517,7 +512,7 @@ public class ClearingMemberRole extends SystemPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingMemberRole";
 				definition = "Member of an exchange's clearing corporation, responsible for executing client trades and involved in the clearing of trades.";
@@ -544,63 +539,71 @@ public class ClearingMemberRole extends SystemPartyRole {
 		return clearingSystemMemberIdentification;
 	}
 
-	public void setClearingSystemMemberIdentification(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMemberIdentification) {
-		this.clearingSystemMemberIdentification = clearingSystemMemberIdentification;
+	public ClearingMemberRole setClearingSystemMemberIdentification(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMemberIdentification) {
+		this.clearingSystemMemberIdentification = Objects.requireNonNull(clearingSystemMemberIdentification);
+		return this;
 	}
 
 	public ClearingSideCode getSide() {
 		return side;
 	}
 
-	public void setSide(ClearingSideCode side) {
-		this.side = side;
+	public ClearingMemberRole setSide(ClearingSideCode side) {
+		this.side = Objects.requireNonNull(side);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getClearingAccount() {
-		return clearingAccount;
+		return clearingAccount == null ? clearingAccount = new ArrayList<>() : clearingAccount;
 	}
 
-	public void setClearingAccount(List<com.tools20022.repository.entity.SecuritiesAccount> clearingAccount) {
-		this.clearingAccount = clearingAccount;
+	public ClearingMemberRole setClearingAccount(List<com.tools20022.repository.entity.SecuritiesAccount> clearingAccount) {
+		this.clearingAccount = Objects.requireNonNull(clearingAccount);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getMarginAccount() {
-		return marginAccount;
+		return marginAccount == null ? marginAccount = new ArrayList<>() : marginAccount;
 	}
 
-	public void setMarginAccount(List<com.tools20022.repository.entity.SecuritiesAccount> marginAccount) {
-		this.marginAccount = marginAccount;
+	public ClearingMemberRole setMarginAccount(List<com.tools20022.repository.entity.SecuritiesAccount> marginAccount) {
+		this.marginAccount = Objects.requireNonNull(marginAccount);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getDeliveryAccount() {
-		return deliveryAccount;
+		return deliveryAccount == null ? deliveryAccount = new ArrayList<>() : deliveryAccount;
 	}
 
-	public void setDeliveryAccount(List<com.tools20022.repository.entity.SecuritiesAccount> deliveryAccount) {
-		this.deliveryAccount = deliveryAccount;
+	public ClearingMemberRole setDeliveryAccount(List<com.tools20022.repository.entity.SecuritiesAccount> deliveryAccount) {
+		this.deliveryAccount = Objects.requireNonNull(deliveryAccount);
+		return this;
 	}
 
 	public List<Account> getDefaultFundAccount() {
-		return defaultFundAccount;
+		return defaultFundAccount == null ? defaultFundAccount = new ArrayList<>() : defaultFundAccount;
 	}
 
-	public void setDefaultFundAccount(List<com.tools20022.repository.entity.Account> defaultFundAccount) {
-		this.defaultFundAccount = defaultFundAccount;
+	public ClearingMemberRole setDefaultFundAccount(List<com.tools20022.repository.entity.Account> defaultFundAccount) {
+		this.defaultFundAccount = Objects.requireNonNull(defaultFundAccount);
+		return this;
 	}
 
 	public ClearingMemberRole getClearingSegment() {
 		return clearingSegment;
 	}
 
-	public void setClearingSegment(com.tools20022.repository.entity.ClearingMemberRole clearingSegment) {
-		this.clearingSegment = clearingSegment;
+	public ClearingMemberRole setClearingSegment(com.tools20022.repository.entity.ClearingMemberRole clearingSegment) {
+		this.clearingSegment = Objects.requireNonNull(clearingSegment);
+		return this;
 	}
 
 	public ClearingMemberRole getRelatedClearingMemberRole() {
 		return relatedClearingMemberRole;
 	}
 
-	public void setRelatedClearingMemberRole(com.tools20022.repository.entity.ClearingMemberRole relatedClearingMemberRole) {
-		this.relatedClearingMemberRole = relatedClearingMemberRole;
+	public ClearingMemberRole setRelatedClearingMemberRole(com.tools20022.repository.entity.ClearingMemberRole relatedClearingMemberRole) {
+		this.relatedClearingMemberRole = Objects.requireNonNull(relatedClearingMemberRole);
+		return this;
 	}
 }

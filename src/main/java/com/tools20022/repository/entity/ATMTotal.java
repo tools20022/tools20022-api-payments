@@ -23,9 +23,11 @@ import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Current totals of the ATM.
@@ -65,8 +67,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,9 +84,8 @@ public class ATMTotal {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ImpliedCurrencyAndAmount aTMBalance;
 	/**
-	 * Total balance of the ATM including reject cassette, but excluding the
-	 * retract cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,8 +132,8 @@ public class ATMTotal {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency of the totals.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,8 +177,8 @@ public class ATMTotal {
 	};
 	protected Number aTMCurrentNumber;
 	/**
-	 * Total number of units for non-valued media, excluding reject cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -222,8 +223,8 @@ public class ATMTotal {
 	};
 	protected Number aTMBalanceNumber;
 	/**
-	 * Total number of units for non-valued media, including reject cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,8 +269,8 @@ public class ATMTotal {
 	};
 	protected ImpliedCurrencyAndAmount aTMCurrent;
 	/**
-	 * Available amount for dispense in the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,8 +315,8 @@ public class ATMTotal {
 	};
 	protected List<com.tools20022.repository.entity.CardPayment> relatedCardPayment;
 	/**
-	 * Related payments representing the current totals of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,7 +364,7 @@ public class ATMTotal {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTotal";
 				definition = "Current totals of the ATM.";
@@ -384,47 +385,53 @@ public class ATMTotal {
 		return aTMBalance;
 	}
 
-	public void setATMBalance(ImpliedCurrencyAndAmount aTMBalance) {
-		this.aTMBalance = aTMBalance;
+	public ATMTotal setATMBalance(ImpliedCurrencyAndAmount aTMBalance) {
+		this.aTMBalance = Objects.requireNonNull(aTMBalance);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public ATMTotal setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public Number getATMCurrentNumber() {
 		return aTMCurrentNumber;
 	}
 
-	public void setATMCurrentNumber(Number aTMCurrentNumber) {
-		this.aTMCurrentNumber = aTMCurrentNumber;
+	public ATMTotal setATMCurrentNumber(Number aTMCurrentNumber) {
+		this.aTMCurrentNumber = Objects.requireNonNull(aTMCurrentNumber);
+		return this;
 	}
 
 	public Number getATMBalanceNumber() {
 		return aTMBalanceNumber;
 	}
 
-	public void setATMBalanceNumber(Number aTMBalanceNumber) {
-		this.aTMBalanceNumber = aTMBalanceNumber;
+	public ATMTotal setATMBalanceNumber(Number aTMBalanceNumber) {
+		this.aTMBalanceNumber = Objects.requireNonNull(aTMBalanceNumber);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getATMCurrent() {
 		return aTMCurrent;
 	}
 
-	public void setATMCurrent(ImpliedCurrencyAndAmount aTMCurrent) {
-		this.aTMCurrent = aTMCurrent;
+	public ATMTotal setATMCurrent(ImpliedCurrencyAndAmount aTMCurrent) {
+		this.aTMCurrent = Objects.requireNonNull(aTMCurrent);
+		return this;
 	}
 
 	public List<CardPayment> getRelatedCardPayment() {
-		return relatedCardPayment;
+		return relatedCardPayment == null ? relatedCardPayment = new ArrayList<>() : relatedCardPayment;
 	}
 
-	public void setRelatedCardPayment(List<com.tools20022.repository.entity.CardPayment> relatedCardPayment) {
-		this.relatedCardPayment = relatedCardPayment;
+	public ATMTotal setRelatedCardPayment(List<com.tools20022.repository.entity.CardPayment> relatedCardPayment) {
+		this.relatedCardPayment = Objects.requireNonNull(relatedCardPayment);
+		return this;
 	}
 }

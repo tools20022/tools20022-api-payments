@@ -21,9 +21,11 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Defines the link between the accounts held with a market infrastructure.
@@ -79,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,8 +99,8 @@ public class AccountLink {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashAccount cashAccount;
 	/**
-	 * Cash account linked to a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,9 +146,8 @@ public class AccountLink {
 	};
 	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
 	/**
-	 * Defines the period when the securities account is linked to the cash
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,8 +194,8 @@ public class AccountLink {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
-	 * Securities account linked to a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,8 +240,8 @@ public class AccountLink {
 	};
 	protected List<com.tools20022.repository.entity.MarketInfrastructure> marketInfrastructure;
 	/**
-	 * Specifies the market infrastructure where the accounts are held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,10 +288,8 @@ public class AccountLink {
 	};
 	protected YesNoIndicator cashSettlementIndicator;
 	/**
-	 * Specifies whether market infrastructure can use the link between the
-	 * securities account and the market infrastructure dedicated cash account
-	 * for the settlement of the cash leg of a settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -337,11 +336,8 @@ public class AccountLink {
 	};
 	protected YesNoIndicator collateralisationIndicator;
 	/**
-	 * Specifies whether market infrastructure can use the securities, earmarked
-	 * as collateral and held on the securities account, for
-	 * auto-collateralisation operations on the linked market infrastructure
-	 * dedicated cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -388,8 +384,8 @@ public class AccountLink {
 	};
 	protected YesNoIndicator defaultIndicator;
 	/**
-	 * Specifies whether created account link is set as default for settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,7 +434,7 @@ public class AccountLink {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountLink";
 				definition = "Defines the link between the accounts held with a market infrastructure.";
@@ -461,55 +457,62 @@ public class AccountLink {
 		return cashAccount;
 	}
 
-	public void setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
-		this.cashAccount = cashAccount;
+	public AccountLink setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public List<DateTimePeriod> getValidityPeriod() {
-		return validityPeriod;
+		return validityPeriod == null ? validityPeriod = new ArrayList<>() : validityPeriod;
 	}
 
-	public void setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public AccountLink setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getSecuritiesAccount() {
-		return securitiesAccount;
+		return securitiesAccount == null ? securitiesAccount = new ArrayList<>() : securitiesAccount;
 	}
 
-	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
-		this.securitiesAccount = securitiesAccount;
+	public AccountLink setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = Objects.requireNonNull(securitiesAccount);
+		return this;
 	}
 
 	public List<MarketInfrastructure> getMarketInfrastructure() {
-		return marketInfrastructure;
+		return marketInfrastructure == null ? marketInfrastructure = new ArrayList<>() : marketInfrastructure;
 	}
 
-	public void setMarketInfrastructure(List<com.tools20022.repository.entity.MarketInfrastructure> marketInfrastructure) {
-		this.marketInfrastructure = marketInfrastructure;
+	public AccountLink setMarketInfrastructure(List<com.tools20022.repository.entity.MarketInfrastructure> marketInfrastructure) {
+		this.marketInfrastructure = Objects.requireNonNull(marketInfrastructure);
+		return this;
 	}
 
 	public YesNoIndicator getCashSettlementIndicator() {
 		return cashSettlementIndicator;
 	}
 
-	public void setCashSettlementIndicator(YesNoIndicator cashSettlementIndicator) {
-		this.cashSettlementIndicator = cashSettlementIndicator;
+	public AccountLink setCashSettlementIndicator(YesNoIndicator cashSettlementIndicator) {
+		this.cashSettlementIndicator = Objects.requireNonNull(cashSettlementIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getCollateralisationIndicator() {
 		return collateralisationIndicator;
 	}
 
-	public void setCollateralisationIndicator(YesNoIndicator collateralisationIndicator) {
-		this.collateralisationIndicator = collateralisationIndicator;
+	public AccountLink setCollateralisationIndicator(YesNoIndicator collateralisationIndicator) {
+		this.collateralisationIndicator = Objects.requireNonNull(collateralisationIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getDefaultIndicator() {
 		return defaultIndicator;
 	}
 
-	public void setDefaultIndicator(YesNoIndicator defaultIndicator) {
-		this.defaultIndicator = defaultIndicator;
+	public AccountLink setDefaultIndicator(YesNoIndicator defaultIndicator) {
+		this.defaultIndicator = Objects.requireNonNull(defaultIndicator);
+		return this;
 	}
 }

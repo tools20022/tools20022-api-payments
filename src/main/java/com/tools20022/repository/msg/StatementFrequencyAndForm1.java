@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.ReportingService;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies a frequency, format and delivery address for statements."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatementFrequencyAndForm1", propOrder = {"frequency", "communicationMethod", "deliveryAddress", "format"})
 public class StatementFrequencyAndForm1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Frqcy", required = true)
 	protected Frequency7Code frequency;
 	/**
-	 * Specifies the frequency for sending statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,7 +120,7 @@ public class StatementFrequencyAndForm1 {
 	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmStatementFrequency;
-			componentContext_lazy = () -> StatementFrequencyAndForm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 			isDerived = false;
 			xmlTag = "Frqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,10 +131,11 @@ public class StatementFrequencyAndForm1 {
 			simpleType_lazy = () -> Frequency7Code.mmObject();
 		}
 	};
+	@XmlElement(name = "ComMtd", required = true)
 	protected CommunicationMethod2Choice communicationMethod;
 	/**
-	 * Specifies the communication method for statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +169,7 @@ public class StatementFrequencyAndForm1 {
 	public static final MMMessageAttribute mmCommunicationMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmReportingChannel;
-			componentContext_lazy = () -> StatementFrequencyAndForm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 			isDerived = false;
 			xmlTag = "ComMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,10 +180,11 @@ public class StatementFrequencyAndForm1 {
 			complexType_lazy = () -> CommunicationMethod2Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "DlvryAdr", required = true)
 	protected Max350Text deliveryAddress;
 	/**
-	 * Specifies the delivery address for statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,7 +217,7 @@ public class StatementFrequencyAndForm1 {
 	public static final MMMessageAttribute mmDeliveryAddress = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
-			componentContext_lazy = () -> StatementFrequencyAndForm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 			isDerived = false;
 			xmlTag = "DlvryAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,10 +228,11 @@ public class StatementFrequencyAndForm1 {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Frmt", required = true)
 	protected CommunicationFormat1Choice format;
 	/**
-	 * Specifies the format for statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +260,7 @@ public class StatementFrequencyAndForm1 {
 	 */
 	public static final MMMessageAttribute mmFormat = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> StatementFrequencyAndForm1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 			isDerived = false;
 			xmlTag = "Frmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,9 +275,10 @@ public class StatementFrequencyAndForm1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatementFrequencyAndForm1.mmFrequency, StatementFrequencyAndForm1.mmCommunicationMethod, StatementFrequencyAndForm1.mmDeliveryAddress, StatementFrequencyAndForm1.mmFormat);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementFrequencyAndForm1.mmFrequency, com.tools20022.repository.msg.StatementFrequencyAndForm1.mmCommunicationMethod,
+						com.tools20022.repository.msg.StatementFrequencyAndForm1.mmDeliveryAddress, com.tools20022.repository.msg.StatementFrequencyAndForm1.mmFormat);
 				trace_lazy = () -> ReportingService.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementFrequencyAndForm1";
 				definition = "Specifies a frequency, format and delivery address for statements.";
@@ -281,39 +287,39 @@ public class StatementFrequencyAndForm1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Frqcy", required = true)
 	public Frequency7Code getFrequency() {
 		return frequency;
 	}
 
-	public void setFrequency(Frequency7Code frequency) {
-		this.frequency = frequency;
+	public StatementFrequencyAndForm1 setFrequency(Frequency7Code frequency) {
+		this.frequency = Objects.requireNonNull(frequency);
+		return this;
 	}
 
-	@XmlElement(name = "ComMtd", required = true)
 	public CommunicationMethod2Choice getCommunicationMethod() {
 		return communicationMethod;
 	}
 
-	public void setCommunicationMethod(CommunicationMethod2Choice communicationMethod) {
-		this.communicationMethod = communicationMethod;
+	public StatementFrequencyAndForm1 setCommunicationMethod(CommunicationMethod2Choice communicationMethod) {
+		this.communicationMethod = Objects.requireNonNull(communicationMethod);
+		return this;
 	}
 
-	@XmlElement(name = "DlvryAdr", required = true)
 	public Max350Text getDeliveryAddress() {
 		return deliveryAddress;
 	}
 
-	public void setDeliveryAddress(Max350Text deliveryAddress) {
-		this.deliveryAddress = deliveryAddress;
+	public StatementFrequencyAndForm1 setDeliveryAddress(Max350Text deliveryAddress) {
+		this.deliveryAddress = Objects.requireNonNull(deliveryAddress);
+		return this;
 	}
 
-	@XmlElement(name = "Frmt", required = true)
 	public CommunicationFormat1Choice getFormat() {
 		return format;
 	}
 
-	public void setFormat(CommunicationFormat1Choice format) {
-		this.format = format;
+	public StatementFrequencyAndForm1 setFormat(CommunicationFormat1Choice format) {
+		this.format = Objects.requireNonNull(format);
+		return this;
 	}
 }

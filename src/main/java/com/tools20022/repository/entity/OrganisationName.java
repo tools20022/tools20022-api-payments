@@ -26,6 +26,8 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Name by which an organisation is known and which is usually used to identify
@@ -79,8 +81,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +100,8 @@ public class OrganisationName extends PartyName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected OrganisationIdentification organisation;
 	/**
-	 * Organisation identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,8 +149,8 @@ public class OrganisationName extends PartyName {
 	};
 	protected Max35Text legalName;
 	/**
-	 * Official name under which an organisation is registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,10 +216,8 @@ public class OrganisationName extends PartyName {
 	};
 	protected Max350Text tradingName;
 	/**
-	 * Name used by a business for commercial purposes, although its registered
-	 * legal name, used for contracts and other formal situations, may be
-	 * another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,8 +279,8 @@ public class OrganisationName extends PartyName {
 	};
 	protected Max35Text shortName;
 	/**
-	 * Specifies the short name of the organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +336,7 @@ public class OrganisationName extends PartyName {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationName";
 				definition = "Name by which an organisation is known and which is usually used to identify that organisation.";
@@ -355,35 +355,39 @@ public class OrganisationName extends PartyName {
 		return mmObject_lazy.get();
 	}
 
-	public OrganisationIdentification getOrganisation() {
-		return organisation;
+	public Optional<OrganisationIdentification> getOrganisation() {
+		return organisation == null ? Optional.empty() : Optional.of(organisation);
 	}
 
-	public void setOrganisation(com.tools20022.repository.entity.OrganisationIdentification organisation) {
+	public OrganisationName setOrganisation(com.tools20022.repository.entity.OrganisationIdentification organisation) {
 		this.organisation = organisation;
+		return this;
 	}
 
 	public Max35Text getLegalName() {
 		return legalName;
 	}
 
-	public void setLegalName(Max35Text legalName) {
-		this.legalName = legalName;
+	public OrganisationName setLegalName(Max35Text legalName) {
+		this.legalName = Objects.requireNonNull(legalName);
+		return this;
 	}
 
 	public Max350Text getTradingName() {
 		return tradingName;
 	}
 
-	public void setTradingName(Max350Text tradingName) {
-		this.tradingName = tradingName;
+	public OrganisationName setTradingName(Max350Text tradingName) {
+		this.tradingName = Objects.requireNonNull(tradingName);
+		return this;
 	}
 
 	public Max35Text getShortName() {
 		return shortName;
 	}
 
-	public void setShortName(Max35Text shortName) {
-		this.shortName = shortName;
+	public OrganisationName setShortName(Max35Text shortName) {
+		this.shortName = Objects.requireNonNull(shortName);
+		return this;
 	}
 }

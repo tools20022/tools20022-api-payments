@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Response of a requested service.
@@ -59,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +78,8 @@ public class Response {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text responseReason;
 	/**
-	 * Detailed result of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,8 +123,8 @@ public class Response {
 	};
 	protected CardPaymentValidation relatedCardPaymentValidation;
 	/**
-	 * Validation process to which a response is given.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,8 +171,8 @@ public class Response {
 	};
 	protected ResponseCode responseToAuthorisation;
 	/**
-	 * Response from the issuer to the authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +218,7 @@ public class Response {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Response";
 				definition = "Response of a requested service.";
@@ -237,23 +239,26 @@ public class Response {
 		return responseReason;
 	}
 
-	public void setResponseReason(Max35Text responseReason) {
-		this.responseReason = responseReason;
+	public Response setResponseReason(Max35Text responseReason) {
+		this.responseReason = Objects.requireNonNull(responseReason);
+		return this;
 	}
 
-	public CardPaymentValidation getRelatedCardPaymentValidation() {
-		return relatedCardPaymentValidation;
+	public Optional<CardPaymentValidation> getRelatedCardPaymentValidation() {
+		return relatedCardPaymentValidation == null ? Optional.empty() : Optional.of(relatedCardPaymentValidation);
 	}
 
-	public void setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+	public Response setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
 		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
+		return this;
 	}
 
 	public ResponseCode getResponseToAuthorisation() {
 		return responseToAuthorisation;
 	}
 
-	public void setResponseToAuthorisation(ResponseCode responseToAuthorisation) {
-		this.responseToAuthorisation = responseToAuthorisation;
+	public Response setResponseToAuthorisation(ResponseCode responseToAuthorisation) {
+		this.responseToAuthorisation = Objects.requireNonNull(responseToAuthorisation);
+		return this;
 	}
 }

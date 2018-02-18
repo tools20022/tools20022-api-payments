@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,88 +39,91 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Basket
- * TradeTypeCode.mmBasket}</li>
+ * TradeTypeCode.Basket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Index
- * TradeTypeCode.mmIndex}</li>
+ * TradeTypeCode.Index}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#List
- * TradeTypeCode.mmList}</li>
+ * TradeTypeCode.List}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#PreAllocation
- * TradeTypeCode.mmPreAllocation}</li>
+ * TradeTypeCode.PreAllocation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Program
- * TradeTypeCode.mmProgram}</li>
+ * TradeTypeCode.Program}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Trade
- * TradeTypeCode.mmTrade}</li>
+ * TradeTypeCode.Trade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BrokerToBroker
- * TradeTypeCode.mmBrokerToBroker}</li>
+ * TradeTypeCode.BrokerToBroker}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#FundToFund
- * TradeTypeCode.mmFundToFund}</li>
+ * TradeTypeCode.FundToFund}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#RiskTrade
- * TradeTypeCode.mmRiskTrade}</li>
+ * TradeTypeCode.RiskTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#VWAPGuarantee
- * TradeTypeCode.mmVWAPGuarantee}</li>
+ * TradeTypeCode.VWAPGuarantee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Agency
- * TradeTypeCode.mmAgency}</li>
+ * TradeTypeCode.Agency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#GuaranteedClose
- * TradeTypeCode.mmGuaranteedClose}</li>
+ * TradeTypeCode.GuaranteedClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OnOrderBookTrade
- * TradeTypeCode.mmOnOrderBookTrade}</li>
+ * TradeTypeCode.OnOrderBookTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#LinkedTrade
- * TradeTypeCode.mmLinkedTrade}</li>
+ * TradeTypeCode.LinkedTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#TradeGiveUp
- * TradeTypeCode.mmTradeGiveUp}</li>
+ * TradeTypeCode.TradeGiveUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#CorrectiveTrade
- * TradeTypeCode.mmCorrectiveTrade}</li>
+ * TradeTypeCode.CorrectiveTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BackUpTrade
- * TradeTypeCode.mmBackUpTrade}</li>
+ * TradeTypeCode.BackUpTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OffOrderBookTrade
- * TradeTypeCode.mmOffOrderBookTrade}</li>
+ * TradeTypeCode.OffOrderBookTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#EmployeeTradeReporting
- * TradeTypeCode.mmEmployeeTradeReporting}</li>
+ * TradeTypeCode.EmployeeTradeReporting}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#IPO
- * TradeTypeCode.mmIPO}</li>
+ * TradeTypeCode.IPO}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#OfferingIssuingTrade
- * TradeTypeCode.mmOfferingIssuingTrade}</li>
+ * TradeTypeCode.OfferingIssuingTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Issuance
- * TradeTypeCode.mmIssuance}</li>
+ * TradeTypeCode.Issuance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondRepricing
- * TradeTypeCode.mmBondRepricing}</li>
+ * TradeTypeCode.BondRepricing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondSubstitution
- * TradeTypeCode.mmBondSubstitution}</li>
+ * TradeTypeCode.BondSubstitution}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondEnd
- * TradeTypeCode.mmBondEnd}</li>
+ * TradeTypeCode.BondEnd}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#BondStart
- * TradeTypeCode.mmBondStart}</li>
+ * TradeTypeCode.BondStart}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#LendingAndBorrowing
- * TradeTypeCode.mmLendingAndBorrowing}</li>
+ * TradeTypeCode.LendingAndBorrowing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Futures
- * TradeTypeCode.mmFutures}</li>
+ * TradeTypeCode.Futures}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeTypeCode#Options
- * TradeTypeCode.mmOptions}</li>
+ * TradeTypeCode.Options}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#FuturesOption
- * TradeTypeCode.mmFuturesOption}</li>
+ * TradeTypeCode.FuturesOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTypeCode#FutureBuyBackTrade
- * TradeTypeCode.mmFutureBuyBackTrade}</li>
+ * TradeTypeCode.FutureBuyBackTrade}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::TRTR</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -151,6 +156,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BSKT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//BASK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -165,6 +173,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode Basket = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//BASK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Basket";
 			definition = "A basket trade, i.e. a unit of 15 or more financial instruments used in program trading.";
@@ -183,6 +192,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "INDX"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//INDX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -195,6 +207,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode Index = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//INDX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "A trade of a predetermined set of financial instruments.";
@@ -213,6 +226,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIST"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//LIST</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -225,6 +241,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode List = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//LIST"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "List";
 			definition = "A trade of a predetermined set of financial instruments.";
@@ -243,6 +260,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PRAL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//PALL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -255,6 +275,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode PreAllocation = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//PALL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAllocation";
 			definition = "A pre-allocated trade.";
@@ -275,6 +296,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PROG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//PROG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -289,6 +313,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode Program = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//PROG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Program";
 			definition = "A program trade, i.e. a computer-driven trade of buying and selling of baskets of 15 or more financial instruments by index arbitrage specialists or institutional traders.";
@@ -307,6 +332,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TRAD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//TRAD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -319,6 +347,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode Trade = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//TRAD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "An executed order.";
@@ -337,6 +366,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BRBR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//BRKR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -349,6 +381,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode BrokerToBroker = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//BRKR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BrokerToBroker";
 			definition = "A trade from a broker to another broker.";
@@ -367,6 +400,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FDFD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRTR//FUND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -380,6 +416,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode FundToFund = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR//FUND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundToFund";
 			definition = "A trade from an investment fund to another  investment fund.";
@@ -398,6 +435,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RISK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 418</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -410,6 +450,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode RiskTrade = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "418"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RiskTrade";
 			definition = "Trade involving risk";
@@ -429,6 +470,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VWAP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 418</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -443,6 +487,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode VWAPGuarantee = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "418"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VWAPGuarantee";
 			definition = "Trade whose price is guaranteed as the weighted average of the trade prices on a specific day.";
@@ -461,6 +506,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AGEN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 418</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -474,6 +522,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode Agency = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "418"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agency";
 			definition = "Trade in which an agent intermediates between a buyer and a seller.";
@@ -492,6 +541,9 @@ public class TradeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GUAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 418</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -504,6 +556,7 @@ public class TradeTypeCode extends MMCode {
 	 */
 	public static final TradeTypeCode GuaranteedClose = new TradeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "418"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteedClose";
 			definition = "Trade which is guaranteed to be finalized";
@@ -1097,7 +1150,8 @@ public class TradeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRTR"));
 				example = Arrays.asList("BSKT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeTypeCode";

@@ -39,41 +39,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#BankDebitTransfer
- * PaymentInstrumentCode.mmBankDebitTransfer}</li>
+ * PaymentInstrumentCode.BankDebitTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#BankCreditTransfer
- * PaymentInstrumentCode.mmBankCreditTransfer}</li>
+ * PaymentInstrumentCode.BankCreditTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#CustomerDebitTransfer
- * PaymentInstrumentCode.mmCustomerDebitTransfer}</li>
+ * PaymentInstrumentCode.CustomerDebitTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#CustomerCreditTransfer
- * PaymentInstrumentCode.mmCustomerCreditTransfer}</li>
+ * PaymentInstrumentCode.CustomerCreditTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#Cheque
- * PaymentInstrumentCode.mmCheque}</li>
+ * PaymentInstrumentCode.Cheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#BookTransfer
- * PaymentInstrumentCode.mmBookTransfer}</li>
+ * PaymentInstrumentCode.BookTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#DebitCardPayment
- * PaymentInstrumentCode.mmDebitCardPayment}</li>
+ * PaymentInstrumentCode.DebitCardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#CreditCardPayment
- * PaymentInstrumentCode.mmCreditCardPayment}</li>
+ * PaymentInstrumentCode.CreditCardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#Return
- * PaymentInstrumentCode.mmReturn}</li>
+ * PaymentInstrumentCode.Return}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstrumentCode#CancellationRequest
- * PaymentInstrumentCode.mmCancellationRequest}</li>
+ * PaymentInstrumentCode.CancellationRequest}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -431,7 +431,7 @@ public class PaymentInstrumentCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BDT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentInstrumentCode";

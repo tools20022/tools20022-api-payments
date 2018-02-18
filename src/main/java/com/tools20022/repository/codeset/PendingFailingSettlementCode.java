@@ -40,147 +40,147 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingMoney
- * PendingFailingSettlementCode.mmAwaitingMoney}</li>
+ * PendingFailingSettlementCode.AwaitingMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingSecuritiesFromCounterparty
- * PendingFailingSettlementCode.mmAwaitingSecuritiesFromCounterparty}</li>
+ * PendingFailingSettlementCode.AwaitingSecuritiesFromCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingOtherTransaction
- * PendingFailingSettlementCode.mmAwaitingOtherTransaction}</li>
+ * PendingFailingSettlementCode.AwaitingOtherTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingDocumentsOrEndorsementsFromYou
- * PendingFailingSettlementCode.mmAwaitingDocumentsOrEndorsementsFromYou}</li>
+ * PendingFailingSettlementCode.AwaitingDocumentsOrEndorsementsFromYou}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CounterpartyTooLateForSettlement
- * PendingFailingSettlementCode.mmCounterpartyTooLateForSettlement}</li>
+ * PendingFailingSettlementCode.CounterpartyTooLateForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#WrongCertificateNumbers
- * PendingFailingSettlementCode.mmWrongCertificateNumbers}</li>
+ * PendingFailingSettlementCode.WrongCertificateNumbers}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#MinimumSettlementAmount
- * PendingFailingSettlementCode.mmMinimumSettlementAmount}</li>
+ * PendingFailingSettlementCode.MinimumSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#PhysicalDeliveryDelay
- * PendingFailingSettlementCode.mmPhysicalDeliveryDelay}</li>
+ * PendingFailingSettlementCode.PhysicalDeliveryDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#SecuritiesBlocked
- * PendingFailingSettlementCode.mmSecuritiesBlocked}</li>
+ * PendingFailingSettlementCode.SecuritiesBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CounterpartyReturnedSecurities
- * PendingFailingSettlementCode.mmCounterpartyReturnedSecurities}</li>
+ * PendingFailingSettlementCode.CounterpartyReturnedSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#ConfirmationDiscrepancy
- * PendingFailingSettlementCode.mmConfirmationDiscrepancy}</li>
+ * PendingFailingSettlementCode.ConfirmationDiscrepancy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#BeneficialOwnershipDisagreement
- * PendingFailingSettlementCode.mmBeneficialOwnershipDisagreement}</li>
+ * PendingFailingSettlementCode.BeneficialOwnershipDisagreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#LackOfSecurities
- * PendingFailingSettlementCode.mmLackOfSecurities}</li>
+ * PendingFailingSettlementCode.LackOfSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#TooLateForSettlement
- * PendingFailingSettlementCode.mmTooLateForSettlement}</li>
+ * PendingFailingSettlementCode.TooLateForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CancellationConfirmationRequest
- * PendingFailingSettlementCode.mmCancellationConfirmationRequest}</li>
+ * PendingFailingSettlementCode.CancellationConfirmationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#MoneyTooLateForSettlement
- * PendingFailingSettlementCode.mmMoneyTooLateForSettlement}</li>
+ * PendingFailingSettlementCode.MoneyTooLateForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#UnderObjection
- * PendingFailingSettlementCode.mmUnderObjection}</li>
+ * PendingFailingSettlementCode.UnderObjection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingDocumentsOrEndorsementsFromCounterparty
- * PendingFailingSettlementCode.
- * mmAwaitingDocumentsOrEndorsementsFromCounterparty}</li>
+ * PendingFailingSettlementCode.AwaitingDocumentsOrEndorsementsFromCounterparty}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AccountBlocked
- * PendingFailingSettlementCode.mmAccountBlocked}</li>
+ * PendingFailingSettlementCode.AccountBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#EnquirySent
- * PendingFailingSettlementCode.mmEnquirySent}</li>
+ * PendingFailingSettlementCode.EnquirySent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#NewIssues
- * PendingFailingSettlementCode.mmNewIssues}</li>
+ * PendingFailingSettlementCode.NewIssues}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CounterpartyInsufficientSecurities
- * PendingFailingSettlementCode.mmCounterpartyInsufficientSecurities}</li>
+ * PendingFailingSettlementCode.CounterpartyInsufficientSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#TradeSettlesInPartials
- * PendingFailingSettlementCode.mmTradeSettlesInPartials}</li>
+ * PendingFailingSettlementCode.TradeSettlesInPartials}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CounterpartyInsufficientMoney
- * PendingFailingSettlementCode.mmCounterpartyInsufficientMoney}</li>
+ * PendingFailingSettlementCode.CounterpartyInsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#SecuritiesPledgedAsCollateral
- * PendingFailingSettlementCode.mmSecuritiesPledgedAsCollateral}</li>
+ * PendingFailingSettlementCode.SecuritiesPledgedAsCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#RefusedDepositForIssueOfDepositaryReceipts
- * PendingFailingSettlementCode.mmRefusedDepositForIssueOfDepositaryReceipts}</li>
+ * PendingFailingSettlementCode.RefusedDepositForIssueOfDepositaryReceipts}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#MaximumForeignLimitReached
- * PendingFailingSettlementCode.mmMaximumForeignLimitReached}</li>
+ * PendingFailingSettlementCode.MaximumForeignLimitReached}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#NoForeignExchangeInstruction
- * PendingFailingSettlementCode.mmNoForeignExchangeInstruction}</li>
+ * PendingFailingSettlementCode.NoForeignExchangeInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#IncomeAdjustementRequired
- * PendingFailingSettlementCode.mmIncomeAdjustementRequired}</li>
+ * PendingFailingSettlementCode.IncomeAdjustementRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#PendingLinkedInstruction
- * PendingFailingSettlementCode.mmPendingLinkedInstruction}</li>
+ * PendingFailingSettlementCode.PendingLinkedInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#BuyInProcedure
- * PendingFailingSettlementCode.mmBuyInProcedure}</li>
+ * PendingFailingSettlementCode.BuyInProcedure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingSecurities
- * PendingFailingSettlementCode.mmAwaitingSecurities}</li>
+ * PendingFailingSettlementCode.AwaitingSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#SecuritiesLoanedOut
- * PendingFailingSettlementCode.mmSecuritiesLoanedOut}</li>
+ * PendingFailingSettlementCode.SecuritiesLoanedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#InsufficientMoney
- * PendingFailingSettlementCode.mmInsufficientMoney}</li>
+ * PendingFailingSettlementCode.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#ConfirmationNotReceived
- * PendingFailingSettlementCode.mmConfirmationNotReceived}</li>
+ * PendingFailingSettlementCode.ConfirmationNotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CollateralShortage
- * PendingFailingSettlementCode.mmCollateralShortage}</li>
+ * PendingFailingSettlementCode.CollateralShortage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#NotInGoodOrder
- * PendingFailingSettlementCode.mmNotInGoodOrder}</li>
+ * PendingFailingSettlementCode.NotInGoodOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#LackOfStampDutyInformation
- * PendingFailingSettlementCode.mmLackOfStampDutyInformation}</li>
+ * PendingFailingSettlementCode.LackOfStampDutyInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#AwaitingNextSettlementCycle
- * PendingFailingSettlementCode.mmAwaitingNextSettlementCycle}</li>
+ * PendingFailingSettlementCode.AwaitingNextSettlementCycle}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#ProcessingBatchDifference
- * PendingFailingSettlementCode.mmProcessingBatchDifference}</li>
+ * PendingFailingSettlementCode.ProcessingBatchDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#GuaranteedDeliveryIndicatorDifference
- * PendingFailingSettlementCode.mmGuaranteedDeliveryIndicatorDifference}</li>
+ * PendingFailingSettlementCode.GuaranteedDeliveryIndicatorDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#PreadviceInstructed
- * PendingFailingSettlementCode.mmPreadviceInstructed}</li>
+ * PendingFailingSettlementCode.PreadviceInstructed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#GlobalFormSecurities
- * PendingFailingSettlementCode.mmGlobalFormSecurities}</li>
+ * PendingFailingSettlementCode.GlobalFormSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#CounterpartyInReceivership
- * PendingFailingSettlementCode.mmCounterpartyInReceivership}</li>
+ * PendingFailingSettlementCode.CounterpartyInReceivership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingFailingSettlementCode#MultipleSettlementAmount
- * PendingFailingSettlementCode.mmMultipleSettlementAmount}</li>
+ * PendingFailingSettlementCode.MultipleSettlementAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1633,7 +1633,7 @@ public class PendingFailingSettlementCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AWMO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingFailingSettlementCode";

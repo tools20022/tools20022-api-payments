@@ -37,76 +37,76 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Fixed
- * RateTypeCode.mmFixed}</li>
+ * RateTypeCode.Fixed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Forfeit
- * RateTypeCode.mmForfeit}</li>
+ * RateTypeCode.Forfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Variable
- * RateTypeCode.mmVariable}</li>
+ * RateTypeCode.Variable}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Open
- * RateTypeCode.mmOpen}</li>
+ * RateTypeCode.Open}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Unknown
- * RateTypeCode.mmUnknown}</li>
+ * RateTypeCode.Unknown}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#NilPayment
- * RateTypeCode.mmNilPayment}</li>
+ * RateTypeCode.NilPayment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#AdditionalTax
- * RateTypeCode.mmAdditionalTax}</li>
+ * RateTypeCode.AdditionalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Charges
- * RateTypeCode.mmCharges}</li>
+ * RateTypeCode.Charges}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#CashInLieuOfSecurities
- * RateTypeCode.mmCashInLieuOfSecurities}</li>
+ * RateTypeCode.CashInLieuOfSecurities}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Gross
- * RateTypeCode.mmGross}</li>
+ * RateTypeCode.Gross}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#CashIncentive
- * RateTypeCode.mmCashIncentive}</li>
+ * RateTypeCode.CashIncentive}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Net
- * RateTypeCode.mmNet}</li>
+ * RateTypeCode.Net}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Sollication
- * RateTypeCode.mmSollication}</li>
+ * RateTypeCode.Sollication}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#StampDuty
- * RateTypeCode.mmStampDuty}</li>
+ * RateTypeCode.StampDuty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#StockExchangeTax
- * RateTypeCode.mmStockExchangeTax}</li>
+ * RateTypeCode.StockExchangeTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#WithholdingTax
- * RateTypeCode.mmWithholdingTax}</li>
+ * RateTypeCode.WithholdingTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#TransferTax
- * RateTypeCode.mmTransferTax}</li>
+ * RateTypeCode.TransferTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#TransactionTax
- * RateTypeCode.mmTransactionTax}</li>
+ * RateTypeCode.TransactionTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#TaxDeferred
- * RateTypeCode.mmTaxDeferred}</li>
+ * RateTypeCode.TaxDeferred}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#TaxFeeAmount
- * RateTypeCode.mmTaxFeeAmount}</li>
+ * RateTypeCode.TaxFeeAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#WithholdingOfForeignTax
- * RateTypeCode.mmWithholdingOfForeignTax}</li>
+ * RateTypeCode.WithholdingOfForeignTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RateTypeCode#WithholdingOfLocalTax
- * RateTypeCode.mmWithholdingOfLocalTax}</li>
+ * RateTypeCode.WithholdingOfLocalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Imputed
- * RateTypeCode.mmImputed}</li>
+ * RateTypeCode.Imputed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Precompte
- * RateTypeCode.mmPrecompte}</li>
+ * RateTypeCode.Precompte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#OneTierTax
- * RateTypeCode.mmOneTierTax}</li>
+ * RateTypeCode.OneTierTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#LocalTax
- * RateTypeCode.mmLocalTax}</li>
+ * RateTypeCode.LocalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Scheduled
- * RateTypeCode.mmScheduled}</li>
+ * RateTypeCode.Scheduled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#Unscheduled
- * RateTypeCode.mmUnscheduled}</li>
+ * RateTypeCode.Unscheduled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RateTypeCode#AnyAndAll
- * RateTypeCode.mmAnyAndAll}</li>
+ * RateTypeCode.AnyAndAll}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1015,7 +1015,7 @@ public class RateTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FIXE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateTypeCode";

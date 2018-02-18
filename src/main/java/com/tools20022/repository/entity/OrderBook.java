@@ -17,13 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max16Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Record of orders to buy and sell a financial instrument.
@@ -56,8 +59,12 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = type=BusinessComment, BusinessComment=A record of the
+ * orders.</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,8 +80,8 @@ public class OrderBook {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesOrder> order;
 	/**
-	 * Instruction to a broker or dealer to buy or sell a specific security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,8 +127,8 @@ public class OrderBook {
 	};
 	protected Max16Text priceTimePriority;
 	/**
-	 * Priority given to an order based on its price and/or time specification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +176,8 @@ public class OrderBook {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "BusinessComment", new String[]{"BusinessComment", "A record of the orders."}));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderBook";
 				definition = "Record of orders to buy and sell a financial instrument.";
@@ -186,18 +194,20 @@ public class OrderBook {
 	}
 
 	public List<SecuritiesOrder> getOrder() {
-		return order;
+		return order == null ? order = new ArrayList<>() : order;
 	}
 
-	public void setOrder(List<com.tools20022.repository.entity.SecuritiesOrder> order) {
-		this.order = order;
+	public OrderBook setOrder(List<com.tools20022.repository.entity.SecuritiesOrder> order) {
+		this.order = Objects.requireNonNull(order);
+		return this;
 	}
 
 	public Max16Text getPriceTimePriority() {
 		return priceTimePriority;
 	}
 
-	public void setPriceTimePriority(Max16Text priceTimePriority) {
-		this.priceTimePriority = priceTimePriority;
+	public OrderBook setPriceTimePriority(Max16Text priceTimePriority) {
+		this.priceTimePriority = Objects.requireNonNull(priceTimePriority);
+		return this;
 	}
 }

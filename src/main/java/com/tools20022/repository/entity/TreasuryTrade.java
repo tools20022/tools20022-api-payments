@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies trades linked to treasury operations such as the exchange of
@@ -88,8 +90,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +109,8 @@ public class TreasuryTrade extends Trade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.TreasuryTradeSettlementStatus> treasuryTradeSettlementStatus;
 	/**
-	 * Specifies the settlement status of a treasury trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,8 +157,8 @@ public class TreasuryTrade extends Trade {
 	};
 	protected InformationPartyRole informationPartyRole;
 	/**
-	 * Party which provides prices, interest rates or exchange rates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,9 +207,8 @@ public class TreasuryTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.TreasurySettlementPartyRole> treasurySettlementPartyRole;
 	/**
-	 * Role played by a party in the context of the settlement of a treasury
-	 * trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,8 +257,8 @@ public class TreasuryTrade extends Trade {
 	};
 	protected List<com.tools20022.repository.entity.TreasuryTradePartyRole> partyRole;
 	/**
-	 * Specifies each role played by a party in a treasury trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,7 +308,7 @@ public class TreasuryTrade extends Trade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TreasuryTrade";
 				definition = "Specifies trades linked to treasury operations such as the exchange of currencies, the lending of cash amounts and the related derivatives trades (options and non deliverable trades).";
@@ -328,34 +329,38 @@ public class TreasuryTrade extends Trade {
 	}
 
 	public List<TreasuryTradeSettlementStatus> getTreasuryTradeSettlementStatus() {
-		return treasuryTradeSettlementStatus;
+		return treasuryTradeSettlementStatus == null ? treasuryTradeSettlementStatus = new ArrayList<>() : treasuryTradeSettlementStatus;
 	}
 
-	public void setTreasuryTradeSettlementStatus(List<com.tools20022.repository.entity.TreasuryTradeSettlementStatus> treasuryTradeSettlementStatus) {
-		this.treasuryTradeSettlementStatus = treasuryTradeSettlementStatus;
+	public TreasuryTrade setTreasuryTradeSettlementStatus(List<com.tools20022.repository.entity.TreasuryTradeSettlementStatus> treasuryTradeSettlementStatus) {
+		this.treasuryTradeSettlementStatus = Objects.requireNonNull(treasuryTradeSettlementStatus);
+		return this;
 	}
 
 	public InformationPartyRole getInformationPartyRole() {
 		return informationPartyRole;
 	}
 
-	public void setInformationPartyRole(com.tools20022.repository.entity.InformationPartyRole informationPartyRole) {
-		this.informationPartyRole = informationPartyRole;
+	public TreasuryTrade setInformationPartyRole(com.tools20022.repository.entity.InformationPartyRole informationPartyRole) {
+		this.informationPartyRole = Objects.requireNonNull(informationPartyRole);
+		return this;
 	}
 
 	public List<TreasurySettlementPartyRole> getTreasurySettlementPartyRole() {
-		return treasurySettlementPartyRole;
+		return treasurySettlementPartyRole == null ? treasurySettlementPartyRole = new ArrayList<>() : treasurySettlementPartyRole;
 	}
 
-	public void setTreasurySettlementPartyRole(List<com.tools20022.repository.entity.TreasurySettlementPartyRole> treasurySettlementPartyRole) {
-		this.treasurySettlementPartyRole = treasurySettlementPartyRole;
+	public TreasuryTrade setTreasurySettlementPartyRole(List<com.tools20022.repository.entity.TreasurySettlementPartyRole> treasurySettlementPartyRole) {
+		this.treasurySettlementPartyRole = Objects.requireNonNull(treasurySettlementPartyRole);
+		return this;
 	}
 
 	public List<TreasuryTradePartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.TreasuryTradePartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public TreasuryTrade setPartyRole(List<com.tools20022.repository.entity.TreasuryTradePartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 }

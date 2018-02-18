@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Unlimited9Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between a fixed amount and an unlimited amount."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FixedAmountOrUnlimited1Choice", propOrder = {"amount", "notLimited"})
 public class FixedAmountOrUnlimited1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Fixed amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,7 +100,7 @@ public class FixedAmountOrUnlimited1Choice {
 	 */
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FixedAmountOrUnlimited1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,10 +111,11 @@ public class FixedAmountOrUnlimited1Choice {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "NotLtd", required = true)
 	protected Unlimited9Text notLimited;
 	/**
-	 * Unlimited amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +143,7 @@ public class FixedAmountOrUnlimited1Choice {
 	 */
 	public static final MMMessageAttribute mmNotLimited = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FixedAmountOrUnlimited1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NotLtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,8 +158,8 @@ public class FixedAmountOrUnlimited1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FixedAmountOrUnlimited1Choice.mmAmount, FixedAmountOrUnlimited1Choice.mmNotLimited);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmAmount, com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmNotLimited);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FixedAmountOrUnlimited1Choice";
 				definition = "Choice between a fixed amount and an unlimited amount.";
@@ -165,21 +168,21 @@ public class FixedAmountOrUnlimited1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public FixedAmountOrUnlimited1Choice setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "NotLtd", required = true)
 	public Unlimited9Text getNotLimited() {
 		return notLimited;
 	}
 
-	public void setNotLimited(Unlimited9Text notLimited) {
-		this.notLimited = notLimited;
+	public FixedAmountOrUnlimited1Choice setNotLimited(Unlimited9Text notLimited) {
+		this.notLimited = Objects.requireNonNull(notLimited);
+		return this;
 	}
 }

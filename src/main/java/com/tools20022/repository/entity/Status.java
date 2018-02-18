@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.ISODateTime;
@@ -24,9 +25,11 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The status of an instruction, advice or request.
@@ -152,8 +155,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -169,8 +172,8 @@ public class Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.StatusReason> statusReason;
 	/**
-	 * Specifies the reasons for the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,8 +285,8 @@ public class Status {
 	};
 	protected ISODateTime statusDateTime;
 	/**
-	 * Date and time at which the status was assigned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +351,8 @@ public class Status {
 	};
 	protected DateTimePeriod validityTime;
 	/**
-	 * Period of time during which the status is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,6 +372,17 @@ public class Status {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Status
 	 * Status}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -383,6 +397,13 @@ public class Status {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityTime";
 			definition = "Period of time during which the status is valid.";
@@ -395,8 +416,8 @@ public class Status {
 	};
 	protected Max350Text statusDescription;
 	/**
-	 * Specifies the state or the condition.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -465,8 +486,8 @@ public class Status {
 	};
 	protected StatusCode instructionProcessingStatus;
 	/**
-	 * Status of the processing of an instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -519,8 +540,8 @@ public class Status {
 	};
 	protected InvestigationPartyRole partyRole;
 	/**
-	 * Role played by a party in the context of assigning a status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -568,8 +589,8 @@ public class Status {
 	};
 	protected SecuritiesSettlementStatusCode settlementStatus;
 	/**
-	 * Status of settlement of a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -614,8 +635,8 @@ public class Status {
 	};
 	protected CancellationProcessingStatusCode cancellationProcessingStatus;
 	/**
-	 * Specifies the status of a cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -660,8 +681,8 @@ public class Status {
 	};
 	protected InstructionProcessingStatusCode transactionProcessingStatus;
 	/**
-	 * Status of processing of a transaction at account servicer level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -707,8 +728,8 @@ public class Status {
 	};
 	protected ModificationProcessingStatusCode modificationProcessingStatus;
 	/**
-	 * Provides the status of a modification request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -755,7 +776,7 @@ public class Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Status";
 				definition = "The status of an instruction, advice or request.";
@@ -782,82 +803,92 @@ public class Status {
 	}
 
 	public List<StatusReason> getStatusReason() {
-		return statusReason;
+		return statusReason == null ? statusReason = new ArrayList<>() : statusReason;
 	}
 
-	public void setStatusReason(List<com.tools20022.repository.entity.StatusReason> statusReason) {
-		this.statusReason = statusReason;
+	public Status setStatusReason(List<com.tools20022.repository.entity.StatusReason> statusReason) {
+		this.statusReason = Objects.requireNonNull(statusReason);
+		return this;
 	}
 
 	public ISODateTime getStatusDateTime() {
 		return statusDateTime;
 	}
 
-	public void setStatusDateTime(ISODateTime statusDateTime) {
-		this.statusDateTime = statusDateTime;
+	public Status setStatusDateTime(ISODateTime statusDateTime) {
+		this.statusDateTime = Objects.requireNonNull(statusDateTime);
+		return this;
 	}
 
 	public DateTimePeriod getValidityTime() {
 		return validityTime;
 	}
 
-	public void setValidityTime(com.tools20022.repository.entity.DateTimePeriod validityTime) {
-		this.validityTime = validityTime;
+	public Status setValidityTime(com.tools20022.repository.entity.DateTimePeriod validityTime) {
+		this.validityTime = Objects.requireNonNull(validityTime);
+		return this;
 	}
 
 	public Max350Text getStatusDescription() {
 		return statusDescription;
 	}
 
-	public void setStatusDescription(Max350Text statusDescription) {
-		this.statusDescription = statusDescription;
+	public Status setStatusDescription(Max350Text statusDescription) {
+		this.statusDescription = Objects.requireNonNull(statusDescription);
+		return this;
 	}
 
 	public StatusCode getInstructionProcessingStatus() {
 		return instructionProcessingStatus;
 	}
 
-	public void setInstructionProcessingStatus(StatusCode instructionProcessingStatus) {
-		this.instructionProcessingStatus = instructionProcessingStatus;
+	public Status setInstructionProcessingStatus(StatusCode instructionProcessingStatus) {
+		this.instructionProcessingStatus = Objects.requireNonNull(instructionProcessingStatus);
+		return this;
 	}
 
 	public InvestigationPartyRole getPartyRole() {
 		return partyRole;
 	}
 
-	public void setPartyRole(com.tools20022.repository.entity.InvestigationPartyRole partyRole) {
-		this.partyRole = partyRole;
+	public Status setPartyRole(com.tools20022.repository.entity.InvestigationPartyRole partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public SecuritiesSettlementStatusCode getSettlementStatus() {
 		return settlementStatus;
 	}
 
-	public void setSettlementStatus(SecuritiesSettlementStatusCode settlementStatus) {
-		this.settlementStatus = settlementStatus;
+	public Status setSettlementStatus(SecuritiesSettlementStatusCode settlementStatus) {
+		this.settlementStatus = Objects.requireNonNull(settlementStatus);
+		return this;
 	}
 
 	public CancellationProcessingStatusCode getCancellationProcessingStatus() {
 		return cancellationProcessingStatus;
 	}
 
-	public void setCancellationProcessingStatus(CancellationProcessingStatusCode cancellationProcessingStatus) {
-		this.cancellationProcessingStatus = cancellationProcessingStatus;
+	public Status setCancellationProcessingStatus(CancellationProcessingStatusCode cancellationProcessingStatus) {
+		this.cancellationProcessingStatus = Objects.requireNonNull(cancellationProcessingStatus);
+		return this;
 	}
 
 	public InstructionProcessingStatusCode getTransactionProcessingStatus() {
 		return transactionProcessingStatus;
 	}
 
-	public void setTransactionProcessingStatus(InstructionProcessingStatusCode transactionProcessingStatus) {
-		this.transactionProcessingStatus = transactionProcessingStatus;
+	public Status setTransactionProcessingStatus(InstructionProcessingStatusCode transactionProcessingStatus) {
+		this.transactionProcessingStatus = Objects.requireNonNull(transactionProcessingStatus);
+		return this;
 	}
 
 	public ModificationProcessingStatusCode getModificationProcessingStatus() {
 		return modificationProcessingStatus;
 	}
 
-	public void setModificationProcessingStatus(ModificationProcessingStatusCode modificationProcessingStatus) {
-		this.modificationProcessingStatus = modificationProcessingStatus;
+	public Status setModificationProcessingStatus(ModificationProcessingStatusCode modificationProcessingStatus) {
+		this.modificationProcessingStatus = Objects.requireNonNull(modificationProcessingStatus);
+		return this;
 	}
 }

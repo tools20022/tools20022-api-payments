@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.BankTransaction;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BankTransactionCodeStructure5", propOrder = {"code", "family"})
 public class BankTransactionCodeStructure5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ExternalBankTransactionDomain1Code code;
 	/**
-	 * Specifies the business area of the underlying transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +114,7 @@ public class BankTransactionCodeStructure5 {
 	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> BankTransaction.mmDomain;
-			componentContext_lazy = () -> BankTransactionCodeStructure5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure5.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +125,11 @@ public class BankTransactionCodeStructure5 {
 			simpleType_lazy = () -> ExternalBankTransactionDomain1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Fmly", required = true)
 	protected BankTransactionCodeStructure6 family;
 	/**
-	 * Specifies the family and the sub-family of the bank transaction code,
-	 * within a specific domain, in a structured and hierarchical format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,7 +164,7 @@ public class BankTransactionCodeStructure5 {
 	public static final MMMessageAssociationEnd mmFamily = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> BankTransaction.mmFamily;
-			componentContext_lazy = () -> BankTransactionCodeStructure5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure5.mmObject();
 			isDerived = false;
 			xmlTag = "Fmly";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,9 +180,9 @@ public class BankTransactionCodeStructure5 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BankTransactionCodeStructure5.mmCode, BankTransactionCodeStructure5.mmFamily);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BankTransactionCodeStructure5.mmCode, com.tools20022.repository.msg.BankTransactionCodeStructure5.mmFamily);
 				trace_lazy = () -> BankTransaction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BankTransactionCodeStructure5";
 				definition = "Set of elements used to identify the type or operations code of a transaction entry.";
@@ -189,21 +191,21 @@ public class BankTransactionCodeStructure5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ExternalBankTransactionDomain1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ExternalBankTransactionDomain1Code code) {
-		this.code = code;
+	public BankTransactionCodeStructure5 setCode(ExternalBankTransactionDomain1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Fmly", required = true)
 	public BankTransactionCodeStructure6 getFamily() {
 		return family;
 	}
 
-	public void setFamily(com.tools20022.repository.msg.BankTransactionCodeStructure6 family) {
-		this.family = family;
+	public BankTransactionCodeStructure5 setFamily(com.tools20022.repository.msg.BankTransactionCodeStructure6 family) {
+		this.family = Objects.requireNonNull(family);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,55 +39,55 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#Principal
- * TradingCapacityCode.mmPrincipal}</li>
+ * TradingCapacityCode.Principal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#CrossingPrincipal
- * TradingCapacityCode.mmCrossingPrincipal}</li>
+ * TradingCapacityCode.CrossingPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#RisklessPrincipal
- * TradingCapacityCode.mmRisklessPrincipal}</li>
+ * TradingCapacityCode.RisklessPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#Proprietary
- * TradingCapacityCode.mmProprietary}</li>
+ * TradingCapacityCode.Proprietary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradingCapacityCode#Agent
- * TradingCapacityCode.mmAgent}</li>
+ * TradingCapacityCode.Agent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#CrossingAgent
- * TradingCapacityCode.mmCrossingAgent}</li>
+ * TradingCapacityCode.CrossingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#OtherAgent
- * TradingCapacityCode.mmOtherAgent}</li>
+ * TradingCapacityCode.OtherAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#PrincipalAgent
- * TradingCapacityCode.mmPrincipalAgent}</li>
+ * TradingCapacityCode.PrincipalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#ActingAgent
- * TradingCapacityCode.mmActingAgent}</li>
+ * TradingCapacityCode.ActingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#InvestmentFirm
- * TradingCapacityCode.mmInvestmentFirm}</li>
+ * TradingCapacityCode.InvestmentFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#MarketMaker
- * TradingCapacityCode.mmMarketMaker}</li>
+ * TradingCapacityCode.MarketMaker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#MultilateralTradingFacility
- * TradingCapacityCode.mmMultilateralTradingFacility}</li>
+ * TradingCapacityCode.MultilateralTradingFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#RegulatedMarket
- * TradingCapacityCode.mmRegulatedMarket}</li>
+ * TradingCapacityCode.RegulatedMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#SystematicInternaliser
- * TradingCapacityCode.mmSystematicInternaliser}</li>
+ * TradingCapacityCode.SystematicInternaliser}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacityCode#TransferAgent
- * TradingCapacityCode.mmTransferAgent}</li>
+ * TradingCapacityCode.TransferAgent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -118,6 +119,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PRIN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//PRIN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -130,6 +134,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode Principal = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//PRIN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Principal";
 			definition = "Trading as Principal.";
@@ -148,6 +153,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CPRN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//CPRN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -160,6 +168,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode CrossingPrincipal = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//CPRN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CrossingPrincipal";
 			definition = "Crossing as a principal.";
@@ -244,6 +253,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AGEN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//AGEN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -256,6 +268,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode Agent = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//AGEN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agent";
 			definition = "Trading as Agent on behalf of a customer.";
@@ -274,6 +287,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CAGN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//CAGN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -286,6 +302,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode CrossingAgent = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//CAGN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CrossingAgent";
 			definition = "Crossing as an agent.";
@@ -304,6 +321,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OAGN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//OAGN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -316,6 +336,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode OtherAgent = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//OAGN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherAgent";
 			definition = "Acting as an agent for a party other than a customer.";
@@ -335,6 +356,9 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PRAG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA//PRAG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -349,6 +373,7 @@ public class TradingCapacityCode extends MMCode {
 	 */
 	public static final TradingCapacityCode PrincipalAgent = new TradingCapacityCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA//PRAG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrincipalAgent";
 			definition = "Acting as an agent for some executions and principal for others in the same transaction.";
@@ -605,7 +630,7 @@ public class TradingCapacityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PRIN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingCapacityCode";

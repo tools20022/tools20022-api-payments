@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the category of the product.
@@ -62,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,8 +81,8 @@ public class ProductCategory {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Product product;
 	/**
-	 * Specifies the product for which a category is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,8 +128,8 @@ public class ProductCategory {
 	};
 	protected ProductCategoryCode type;
 	/**
-	 * Specifies the type of product category by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,8 +176,8 @@ public class ProductCategory {
 	};
 	protected Max35Text category;
 	/**
-	 * Specifies the category of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,8 +222,8 @@ public class ProductCategory {
 	};
 	protected CardPaymentValidation relatedCardPaymentValidation;
 	/**
-	 * Validation process which declined a product code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,7 +273,7 @@ public class ProductCategory {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCategory";
 				definition = "Specifies the category of the product.";
@@ -288,35 +290,39 @@ public class ProductCategory {
 		return mmObject_lazy.get();
 	}
 
-	public Product getProduct() {
-		return product;
+	public Optional<Product> getProduct() {
+		return product == null ? Optional.empty() : Optional.of(product);
 	}
 
-	public void setProduct(com.tools20022.repository.entity.Product product) {
+	public ProductCategory setProduct(com.tools20022.repository.entity.Product product) {
 		this.product = product;
+		return this;
 	}
 
 	public ProductCategoryCode getType() {
 		return type;
 	}
 
-	public void setType(ProductCategoryCode type) {
-		this.type = type;
+	public ProductCategory setType(ProductCategoryCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public Max35Text getCategory() {
 		return category;
 	}
 
-	public void setCategory(Max35Text category) {
-		this.category = category;
+	public ProductCategory setCategory(Max35Text category) {
+		this.category = Objects.requireNonNull(category);
+		return this;
 	}
 
-	public CardPaymentValidation getRelatedCardPaymentValidation() {
-		return relatedCardPaymentValidation;
+	public Optional<CardPaymentValidation> getRelatedCardPaymentValidation() {
+		return relatedCardPaymentValidation == null ? Optional.empty() : Optional.of(relatedCardPaymentValidation);
 	}
 
-	public void setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+	public ProductCategory setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
 		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
+		return this;
 	}
 }

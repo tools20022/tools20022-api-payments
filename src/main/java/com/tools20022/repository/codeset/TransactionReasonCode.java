@@ -39,162 +39,161 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#IncorrectAccountNumber
- * TransactionReasonCode.mmIncorrectAccountNumber}</li>
+ * TransactionReasonCode.IncorrectAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NonNumericAccountNumber
- * TransactionReasonCode.mmNonNumericAccountNumber}</li>
+ * TransactionReasonCode.NonNumericAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidAccountNumberForClearingCode
- * TransactionReasonCode.mmInvalidAccountNumberForClearingCode}</li>
+ * TransactionReasonCode.InvalidAccountNumberForClearingCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#ClosedAccountNumber
- * TransactionReasonCode.mmClosedAccountNumber}</li>
+ * TransactionReasonCode.ClosedAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidAccountNumberWithInstitution
- * TransactionReasonCode.mmInvalidAccountNumberWithInstitution}</li>
+ * TransactionReasonCode.InvalidAccountNumberWithInstitution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#BlockedAccount
- * TransactionReasonCode.mmBlockedAccount}</li>
+ * TransactionReasonCode.BlockedAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#ZeroAmount
- * TransactionReasonCode.mmZeroAmount}</li>
+ * TransactionReasonCode.ZeroAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotAllowedAmount
- * TransactionReasonCode.mmNotAllowedAmount}</li>
+ * TransactionReasonCode.NotAllowedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotAllowedCurrency
- * TransactionReasonCode.mmNotAllowedCurrency}</li>
+ * TransactionReasonCode.NotAllowedCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InsufficientFunds
- * TransactionReasonCode.mmInsufficientFunds}</li>
+ * TransactionReasonCode.InsufficientFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#Duplication
- * TransactionReasonCode.mmDuplication}</li>
+ * TransactionReasonCode.Duplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#TooLowAmount
- * TransactionReasonCode.mmTooLowAmount}</li>
+ * TransactionReasonCode.TooLowAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#BlockedAmount
- * TransactionReasonCode.mmBlockedAmount}</li>
+ * TransactionReasonCode.BlockedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#ChargeDisagreement
- * TransactionReasonCode.mmChargeDisagreement}</li>
+ * TransactionReasonCode.ChargeDisagreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InconsistentWithEndCustomer
- * TransactionReasonCode.mmInconsistentWithEndCustomer}</li>
+ * TransactionReasonCode.InconsistentWithEndCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#UnknownCreditor
- * TransactionReasonCode.mmUnknownCreditor}</li>
+ * TransactionReasonCode.UnknownCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NoLongerValidCreditor
- * TransactionReasonCode.mmNoLongerValidCreditor}</li>
+ * TransactionReasonCode.NoLongerValidCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#MissingCreditorAddress
- * TransactionReasonCode.mmMissingCreditorAddress}</li>
+ * TransactionReasonCode.MissingCreditorAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#UnrecognisedInitiatingParty
- * TransactionReasonCode.mmUnrecognisedInitiatingParty}</li>
+ * TransactionReasonCode.UnrecognisedInitiatingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#TransactionForbidden
- * TransactionReasonCode.mmTransactionForbidden}</li>
+ * TransactionReasonCode.TransactionForbidden}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidBankOperationCode
- * TransactionReasonCode.mmInvalidBankOperationCode}</li>
+ * TransactionReasonCode.InvalidBankOperationCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidDate
- * TransactionReasonCode.mmInvalidDate}</li>
+ * TransactionReasonCode.InvalidDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotSpecifiedReason
- * TransactionReasonCode.mmNotSpecifiedReason}</li>
+ * TransactionReasonCode.NotSpecifiedReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#UnknownAccount
- * TransactionReasonCode.mmUnknownAccount}</li>
+ * TransactionReasonCode.UnknownAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotUniqueTransactionReference
- * TransactionReasonCode.mmNotUniqueTransactionReference}</li>
+ * TransactionReasonCode.NotUniqueTransactionReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#BankIdentifierIncorrect
- * TransactionReasonCode.mmBankIdentifierIncorrect}</li>
+ * TransactionReasonCode.BankIdentifierIncorrect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NonNumericRoutingCode
- * TransactionReasonCode.mmNonNumericRoutingCode}</li>
+ * TransactionReasonCode.NonNumericRoutingCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotValidRoutingCode
- * TransactionReasonCode.mmNotValidRoutingCode}</li>
+ * TransactionReasonCode.NotValidRoutingCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#ClosedBranch
- * TransactionReasonCode.mmClosedBranch}</li>
+ * TransactionReasonCode.ClosedBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#CutOffTime
- * TransactionReasonCode.mmCutOffTime}</li>
+ * TransactionReasonCode.CutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#CorrespondentBankNotPossible
- * TransactionReasonCode.mmCorrespondentBankNotPossible}</li>
+ * TransactionReasonCode.CorrespondentBankNotPossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#TransactionReasonNonReportable
- * TransactionReasonCode.mmTransactionReasonNonReportable}</li>
+ * TransactionReasonCode.TransactionReasonNonReportable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#BalanceInfoRequested
- * TransactionReasonCode.mmBalanceInfoRequested}</li>
+ * TransactionReasonCode.BalanceInfoRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#ChargeDetailsNotCorrect
- * TransactionReasonCode.mmChargeDetailsNotCorrect}</li>
+ * TransactionReasonCode.ChargeDetailsNotCorrect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotSpecifiedReasonAgentGenerated
- * TransactionReasonCode.mmNotSpecifiedReasonAgentGenerated}</li>
+ * TransactionReasonCode.NotSpecifiedReasonAgentGenerated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NotSpecifiedReasonCustomerGenerated
- * TransactionReasonCode.mmNotSpecifiedReasonCustomerGenerated}</li>
+ * TransactionReasonCode.NotSpecifiedReasonCustomerGenerated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#UnknownEndCustomer
- * TransactionReasonCode.mmUnknownEndCustomer}</li>
+ * TransactionReasonCode.UnknownEndCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#MissingDebtorAddress
- * TransactionReasonCode.mmMissingDebtorAddress}</li>
+ * TransactionReasonCode.MissingDebtorAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#WrongAmount
- * TransactionReasonCode.mmWrongAmount}</li>
+ * TransactionReasonCode.WrongAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidControlSum
- * TransactionReasonCode.mmInvalidControlSum}</li>
+ * TransactionReasonCode.InvalidControlSum}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#NoMandate
- * TransactionReasonCode.mmNoMandate}</li>
+ * TransactionReasonCode.NoMandate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#MissingMandatoryInformationInMandate
- * TransactionReasonCode.mmMissingMandatoryInformationInMandate}</li>
+ * TransactionReasonCode.MissingMandatoryInformationInMandate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidFileFormatForOtherReasonThanGroupingIndicator
- * TransactionReasonCode.mmInvalidFileFormatForOtherReasonThanGroupingIndicator}
- * </li>
+ * TransactionReasonCode.InvalidFileFormatForOtherReasonThanGroupingIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidFileFormatForGroupingIndicator
- * TransactionReasonCode.mmInvalidFileFormatForGroupingIndicator}</li>
+ * TransactionReasonCode.InvalidFileFormatForGroupingIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#RefundRequestByEndCustomer
- * TransactionReasonCode.mmRefundRequestByEndCustomer}</li>
+ * TransactionReasonCode.RefundRequestByEndCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#EndCustomerDeceased
- * TransactionReasonCode.mmEndCustomerDeceased}</li>
+ * TransactionReasonCode.EndCustomerDeceased}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#CollectionNotDue
- * TransactionReasonCode.mmCollectionNotDue}</li>
+ * TransactionReasonCode.CollectionNotDue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#InvalidName
- * TransactionReasonCode.mmInvalidName}</li>
+ * TransactionReasonCode.InvalidName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#SettlementFailed
- * TransactionReasonCode.mmSettlementFailed}</li>
+ * TransactionReasonCode.SettlementFailed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionReasonCode#Narrative
- * TransactionReasonCode.mmNarrative}</li>
+ * TransactionReasonCode.Narrative}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1781,7 +1780,7 @@ public class TransactionReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AC01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionReasonCode";

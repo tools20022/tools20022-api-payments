@@ -24,9 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.camt.BankServicesBillingStatementV02;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,15 +88,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatementGroup2", propOrder = {"groupIdentification", "sender", "senderIndividualContact", "receiver", "receiverIndividualContact", "billingStatement"})
 public class StatementGroup2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpId", required = true)
 	protected Max35Text groupIdentification;
 	/**
-	 * Identification of a group of customer billing statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +125,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "GrpId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,10 +136,11 @@ public class StatementGroup2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Sndr", required = true)
 	protected PartyIdentification58 sender;
 	/**
-	 * Originating financial institution sending the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,7 +166,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAssociationEnd mmSender = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "Sndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,11 +178,11 @@ public class StatementGroup2 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification58.mmObject();
 		}
 	};
+	@XmlElement(name = "SndrIndvCtct")
 	protected List<com.tools20022.repository.msg.ContactDetails3> senderIndividualContact;
 	/**
-	 * Specifies the individual to contact in case of technical problems at the
-	 * sender's location.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +211,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAttribute mmSenderIndividualContact = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "SndrIndvCtct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -218,10 +222,11 @@ public class StatementGroup2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 		}
 	};
+	@XmlElement(name = "Rcvr", required = true)
 	protected PartyIdentification58 receiver;
 	/**
-	 * Financial institution customer receiving the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -247,7 +252,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAssociationEnd mmReceiver = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "Rcvr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -259,11 +264,11 @@ public class StatementGroup2 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification58.mmObject();
 		}
 	};
+	@XmlElement(name = "RcvrIndvCtct")
 	protected List<com.tools20022.repository.msg.ContactDetails3> receiverIndividualContact;
 	/**
-	 * Specifies the individual to contact in case of technical problems at the
-	 * receiver's location.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,7 +297,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAttribute mmReceiverIndividualContact = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "RcvrIndvCtct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -303,12 +308,11 @@ public class StatementGroup2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 		}
 	};
+	@XmlElement(name = "BllgStmt", required = true)
 	protected List<com.tools20022.repository.msg.BillingStatement2> billingStatement;
 	/**
-	 * Provides the bank services billing statement recounting of all service
-	 * chargeable events that occurred during a reporting cycle, such as the end
-	 * of the month reporting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -336,7 +340,7 @@ public class StatementGroup2 {
 	 */
 	public static final MMMessageAssociationEnd mmBillingStatement = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> StatementGroup2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementGroup2.mmObject();
 			isDerived = false;
 			xmlTag = "BllgStmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -351,10 +355,11 @@ public class StatementGroup2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatementGroup2.mmGroupIdentification, StatementGroup2.mmSender, StatementGroup2.mmSenderIndividualContact, StatementGroup2.mmReceiver, StatementGroup2.mmReceiverIndividualContact,
-						StatementGroup2.mmBillingStatement);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementGroup2.mmGroupIdentification, com.tools20022.repository.msg.StatementGroup2.mmSender,
+						com.tools20022.repository.msg.StatementGroup2.mmSenderIndividualContact, com.tools20022.repository.msg.StatementGroup2.mmReceiver, com.tools20022.repository.msg.StatementGroup2.mmReceiverIndividualContact,
+						com.tools20022.repository.msg.StatementGroup2.mmBillingStatement);
 				messageBuildingBlock_lazy = () -> Arrays.asList(BankServicesBillingStatementV02.mmBillingStatementGroup);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementGroup2";
 				definition = "Group of the statement header reporting the bank services billing and the billing statement.";
@@ -363,57 +368,57 @@ public class StatementGroup2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpId", required = true)
 	public Max35Text getGroupIdentification() {
 		return groupIdentification;
 	}
 
-	public void setGroupIdentification(Max35Text groupIdentification) {
-		this.groupIdentification = groupIdentification;
+	public StatementGroup2 setGroupIdentification(Max35Text groupIdentification) {
+		this.groupIdentification = Objects.requireNonNull(groupIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Sndr", required = true)
 	public PartyIdentification58 getSender() {
 		return sender;
 	}
 
-	public void setSender(com.tools20022.repository.msg.PartyIdentification58 sender) {
-		this.sender = sender;
+	public StatementGroup2 setSender(com.tools20022.repository.msg.PartyIdentification58 sender) {
+		this.sender = Objects.requireNonNull(sender);
+		return this;
 	}
 
-	@XmlElement(name = "SndrIndvCtct")
 	public List<ContactDetails3> getSenderIndividualContact() {
-		return senderIndividualContact;
+		return senderIndividualContact == null ? senderIndividualContact = new ArrayList<>() : senderIndividualContact;
 	}
 
-	public void setSenderIndividualContact(List<com.tools20022.repository.msg.ContactDetails3> senderIndividualContact) {
-		this.senderIndividualContact = senderIndividualContact;
+	public StatementGroup2 setSenderIndividualContact(List<com.tools20022.repository.msg.ContactDetails3> senderIndividualContact) {
+		this.senderIndividualContact = Objects.requireNonNull(senderIndividualContact);
+		return this;
 	}
 
-	@XmlElement(name = "Rcvr", required = true)
 	public PartyIdentification58 getReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(com.tools20022.repository.msg.PartyIdentification58 receiver) {
-		this.receiver = receiver;
+	public StatementGroup2 setReceiver(com.tools20022.repository.msg.PartyIdentification58 receiver) {
+		this.receiver = Objects.requireNonNull(receiver);
+		return this;
 	}
 
-	@XmlElement(name = "RcvrIndvCtct")
 	public List<ContactDetails3> getReceiverIndividualContact() {
-		return receiverIndividualContact;
+		return receiverIndividualContact == null ? receiverIndividualContact = new ArrayList<>() : receiverIndividualContact;
 	}
 
-	public void setReceiverIndividualContact(List<com.tools20022.repository.msg.ContactDetails3> receiverIndividualContact) {
-		this.receiverIndividualContact = receiverIndividualContact;
+	public StatementGroup2 setReceiverIndividualContact(List<com.tools20022.repository.msg.ContactDetails3> receiverIndividualContact) {
+		this.receiverIndividualContact = Objects.requireNonNull(receiverIndividualContact);
+		return this;
 	}
 
-	@XmlElement(name = "BllgStmt", required = true)
 	public List<BillingStatement2> getBillingStatement() {
-		return billingStatement;
+		return billingStatement == null ? billingStatement = new ArrayList<>() : billingStatement;
 	}
 
-	public void setBillingStatement(List<com.tools20022.repository.msg.BillingStatement2> billingStatement) {
-		this.billingStatement = billingStatement;
+	public StatementGroup2 setBillingStatement(List<com.tools20022.repository.msg.BillingStatement2> billingStatement) {
+		this.billingStatement = Objects.requireNonNull(billingStatement);
+		return this;
 	}
 }

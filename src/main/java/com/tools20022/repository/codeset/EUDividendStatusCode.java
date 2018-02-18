@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendInScope
- * EUDividendStatusCode.mmDividendInScope}</li>
+ * EUDividendStatusCode.DividendInScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendOutScope
- * EUDividendStatusCode.mmDividendOutScope}</li>
+ * EUDividendStatusCode.DividendOutScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendUnknown
- * EUDividendStatusCode.mmDividendUnknown}</li>
+ * EUDividendStatusCode.DividendUnknown}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -175,7 +175,7 @@ public class EUDividendStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DIVI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUDividendStatusCode";

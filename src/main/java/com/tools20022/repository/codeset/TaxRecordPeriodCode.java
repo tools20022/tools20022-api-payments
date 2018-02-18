@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FirstMonth
- * TaxRecordPeriodCode.mmFirstMonth}</li>
+ * TaxRecordPeriodCode.FirstMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#SecondMonth
- * TaxRecordPeriodCode.mmSecondMonth}</li>
+ * TaxRecordPeriodCode.SecondMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#ThirdMonth
- * TaxRecordPeriodCode.mmThirdMonth}</li>
+ * TaxRecordPeriodCode.ThirdMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FourthMonth
- * TaxRecordPeriodCode.mmFourthMonth}</li>
+ * TaxRecordPeriodCode.FourthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FifthMonth
- * TaxRecordPeriodCode.mmFifthMonth}</li>
+ * TaxRecordPeriodCode.FifthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#SixthMonth
- * TaxRecordPeriodCode.mmSixthMonth}</li>
+ * TaxRecordPeriodCode.SixthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#SeventhMonth
- * TaxRecordPeriodCode.mmSeventhMonth}</li>
+ * TaxRecordPeriodCode.SeventhMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#EighthMonth
- * TaxRecordPeriodCode.mmEighthMonth}</li>
+ * TaxRecordPeriodCode.EighthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#NinthMonth
- * TaxRecordPeriodCode.mmNinthMonth}</li>
+ * TaxRecordPeriodCode.NinthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#TenthMonth
- * TaxRecordPeriodCode.mmTenthMonth}</li>
+ * TaxRecordPeriodCode.TenthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#EleventhMonth
- * TaxRecordPeriodCode.mmEleventhMonth}</li>
+ * TaxRecordPeriodCode.EleventhMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#TwelfthMonth
- * TaxRecordPeriodCode.mmTwelfthMonth}</li>
+ * TaxRecordPeriodCode.TwelfthMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FirstQuarter
- * TaxRecordPeriodCode.mmFirstQuarter}</li>
+ * TaxRecordPeriodCode.FirstQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#SecondQuarter
- * TaxRecordPeriodCode.mmSecondQuarter}</li>
+ * TaxRecordPeriodCode.SecondQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#ThirdQuarter
- * TaxRecordPeriodCode.mmThirdQuarter}</li>
+ * TaxRecordPeriodCode.ThirdQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FourthQuarter
- * TaxRecordPeriodCode.mmFourthQuarter}</li>
+ * TaxRecordPeriodCode.FourthQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#FirstHalf
- * TaxRecordPeriodCode.mmFirstHalf}</li>
+ * TaxRecordPeriodCode.FirstHalf}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxRecordPeriodCode#SecondHalf
- * TaxRecordPeriodCode.mmSecondHalf}</li>
+ * TaxRecordPeriodCode.SecondHalf}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -102,8 +102,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -672,7 +672,7 @@ public class TaxRecordPeriodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MM01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxRecordPeriodCode";

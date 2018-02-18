@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Financial instrument that gives the holder the right to purchase shares or
@@ -65,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,9 +85,8 @@ public class Warrant extends Security {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing subscriptionPrice;
 	/**
-	 * Pre-determined price at which the holder of a warrant is entitled to buy
-	 * the underlying instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,9 +134,8 @@ public class Warrant extends Security {
 	};
 	protected BaseOneRate multiplier;
 	/**
-	 * Specifies the ratio or multiply factor used to convert from contracts to
-	 * shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,8 +181,8 @@ public class Warrant extends Security {
 	};
 	protected WarrantStyleCode style;
 	/**
-	 * Specifies the expiration style of the warrant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,9 +227,8 @@ public class Warrant extends Security {
 	};
 	protected QuantityRatio warrantParity;
 	/**
-	 * Provides the ratio between the quantity of warrants and the quantity of
-	 * underlying securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +278,7 @@ public class Warrant extends Security {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Warrant";
 				definition = "Financial instrument that gives the holder the right to purchase shares or bonds at a given price within a specified time.";
@@ -302,31 +300,35 @@ public class Warrant extends Security {
 		return subscriptionPrice;
 	}
 
-	public void setSubscriptionPrice(com.tools20022.repository.entity.SecuritiesPricing subscriptionPrice) {
-		this.subscriptionPrice = subscriptionPrice;
+	public Warrant setSubscriptionPrice(com.tools20022.repository.entity.SecuritiesPricing subscriptionPrice) {
+		this.subscriptionPrice = Objects.requireNonNull(subscriptionPrice);
+		return this;
 	}
 
 	public BaseOneRate getMultiplier() {
 		return multiplier;
 	}
 
-	public void setMultiplier(BaseOneRate multiplier) {
-		this.multiplier = multiplier;
+	public Warrant setMultiplier(BaseOneRate multiplier) {
+		this.multiplier = Objects.requireNonNull(multiplier);
+		return this;
 	}
 
 	public WarrantStyleCode getStyle() {
 		return style;
 	}
 
-	public void setStyle(WarrantStyleCode style) {
-		this.style = style;
+	public Warrant setStyle(WarrantStyleCode style) {
+		this.style = Objects.requireNonNull(style);
+		return this;
 	}
 
 	public QuantityRatio getWarrantParity() {
 		return warrantParity;
 	}
 
-	public void setWarrantParity(com.tools20022.repository.entity.QuantityRatio warrantParity) {
-		this.warrantParity = warrantParity;
+	public Warrant setWarrantParity(com.tools20022.repository.entity.QuantityRatio warrantParity) {
+		this.warrantParity = Objects.requireNonNull(warrantParity);
+		return this;
 	}
 }

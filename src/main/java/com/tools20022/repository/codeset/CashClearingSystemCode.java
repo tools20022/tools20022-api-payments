@@ -39,243 +39,243 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#EBAEuro1Step1
- * CashClearingSystemCode.mmEBAEuro1Step1}</li>
+ * CashClearingSystemCode.EBAEuro1Step1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Austrian
- * CashClearingSystemCode.mmAustrian}</li>
+ * CashClearingSystemCode.Austrian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#NewZealand
- * CashClearingSystemCode.mmNewZealand}</li>
+ * CashClearingSystemCode.NewZealand}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Azerbaijan
- * CashClearingSystemCode.mmAzerbaijan}</li>
+ * CashClearingSystemCode.Azerbaijan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#BosniaHerzegovina
- * CashClearingSystemCode.mmBosniaHerzegovina}</li>
+ * CashClearingSystemCode.BosniaHerzegovina}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Belgium
- * CashClearingSystemCode.mmBelgium}</li>
+ * CashClearingSystemCode.Belgium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Finland
- * CashClearingSystemCode.mmFinland}</li>
+ * CashClearingSystemCode.Finland}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Italy
- * CashClearingSystemCode.mmItaly}</li>
+ * CashClearingSystemCode.Italy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Canada
- * CashClearingSystemCode.mmCanada}</li>
+ * CashClearingSystemCode.Canada}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SpainCAM
- * CashClearingSystemCode.mmSpainCAM}</li>
+ * CashClearingSystemCode.SpainCAM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Ireland
- * CashClearingSystemCode.mmIreland}</li>
+ * CashClearingSystemCode.Ireland}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#UnitedKingdom
- * CashClearingSystemCode.mmUnitedKingdom}</li>
+ * CashClearingSystemCode.UnitedKingdom}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Denmark
- * CashClearingSystemCode.mmDenmark}</li>
+ * CashClearingSystemCode.Denmark}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#GermanyRTGSPlus
- * CashClearingSystemCode.mmGermanyRTGSPlus}</li>
+ * CashClearingSystemCode.GermanyRTGSPlus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#EBAEuro1
- * CashClearingSystemCode.mmEBAEuro1}</li>
+ * CashClearingSystemCode.EBAEuro1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#GermanyELS
- * CashClearingSystemCode.mmGermanyELS}</li>
+ * CashClearingSystemCode.GermanyELS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#EBAStep1
- * CashClearingSystemCode.mmEBAStep1}</li>
+ * CashClearingSystemCode.EBAStep1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#EBAStep2
- * CashClearingSystemCode.mmEBAStep2}</li>
+ * CashClearingSystemCode.EBAStep2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Croatia
- * CashClearingSystemCode.mmCroatia}</li>
+ * CashClearingSystemCode.Croatia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Greece
- * CashClearingSystemCode.mmGreece}</li>
+ * CashClearingSystemCode.Greece}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Hungary
- * CashClearingSystemCode.mmHungary}</li>
+ * CashClearingSystemCode.Hungary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Luxemburg
- * CashClearingSystemCode.mmLuxemburg}</li>
+ * CashClearingSystemCode.Luxemburg}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Latvia
- * CashClearingSystemCode.mmLatvia}</li>
+ * CashClearingSystemCode.Latvia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SouthAfrica
- * CashClearingSystemCode.mmSouthAfrica}</li>
+ * CashClearingSystemCode.SouthAfrica}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Mauritius
- * CashClearingSystemCode.mmMauritius}</li>
+ * CashClearingSystemCode.Mauritius}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Norway
- * CashClearingSystemCode.mmNorway}</li>
+ * CashClearingSystemCode.Norway}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Switzerland
- * CashClearingSystemCode.mmSwitzerland}</li>
+ * CashClearingSystemCode.Switzerland}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Australia
- * CashClearingSystemCode.mmAustralia}</li>
+ * CashClearingSystemCode.Australia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Egypt
- * CashClearingSystemCode.mmEgypt}</li>
+ * CashClearingSystemCode.Egypt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#FrancePNS
- * CashClearingSystemCode.mmFrancePNS}</li>
+ * CashClearingSystemCode.FrancePNS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Venezuela
- * CashClearingSystemCode.mmVenezuela}</li>
+ * CashClearingSystemCode.Venezuela}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SwedenSEC
- * CashClearingSystemCode.mmSwedenSEC}</li>
+ * CashClearingSystemCode.SwedenSEC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Slovania
- * CashClearingSystemCode.mmSlovania}</li>
+ * CashClearingSystemCode.Slovania}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SpainES
- * CashClearingSystemCode.mmSpainES}</li>
+ * CashClearingSystemCode.SpainES}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Portugal
- * CashClearingSystemCode.mmPortugal}</li>
+ * CashClearingSystemCode.Portugal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SwedenSSK
- * CashClearingSystemCode.mmSwedenSSK}</li>
+ * CashClearingSystemCode.SwedenSSK}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#FranceFR
- * CashClearingSystemCode.mmFranceFR}</li>
+ * CashClearingSystemCode.FranceFR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Target
- * CashClearingSystemCode.mmTarget}</li>
+ * CashClearingSystemCode.Target}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Netherlands
- * CashClearingSystemCode.mmNetherlands}</li>
+ * CashClearingSystemCode.Netherlands}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Fedwire
- * CashClearingSystemCode.mmFedwire}</li>
+ * CashClearingSystemCode.Fedwire}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#BankOfJapanNet
- * CashClearingSystemCode.mmBankOfJapanNet}</li>
+ * CashClearingSystemCode.BankOfJapanNet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#ForeignExchangeYenClearing
- * CashClearingSystemCode.mmForeignExchangeYenClearing}</li>
+ * CashClearingSystemCode.ForeignExchangeYenClearing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Zengin
- * CashClearingSystemCode.mmZengin}</li>
+ * CashClearingSystemCode.Zengin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#RTGS
- * CashClearingSystemCode.mmRTGS}</li>
+ * CashClearingSystemCode.RTGS}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#ACH
- * CashClearingSystemCode.mmACH}</li>
+ * CashClearingSystemCode.ACH}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#USChips
- * CashClearingSystemCode.mmUSChips}</li>
+ * CashClearingSystemCode.USChips}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#FedNet
- * CashClearingSystemCode.mmFedNet}</li>
+ * CashClearingSystemCode.FedNet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#DenmarkDDK
- * CashClearingSystemCode.mmDenmarkDDK}</li>
+ * CashClearingSystemCode.DenmarkDDK}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Albania
- * CashClearingSystemCode.mmAlbania}</li>
+ * CashClearingSystemCode.Albania}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SwedenBGC
- * CashClearingSystemCode.mmSwedenBGC}</li>
+ * CashClearingSystemCode.SwedenBGC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Barbados
- * CashClearingSystemCode.mmBarbados}</li>
+ * CashClearingSystemCode.Barbados}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Bulgaria
- * CashClearingSystemCode.mmBulgaria}</li>
+ * CashClearingSystemCode.Bulgaria}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Bahamas
- * CashClearingSystemCode.mmBahamas}</li>
+ * CashClearingSystemCode.Bahamas}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Botswana
- * CashClearingSystemCode.mmBotswana}</li>
+ * CashClearingSystemCode.Botswana}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Philippines
- * CashClearingSystemCode.mmPhilippines}</li>
+ * CashClearingSystemCode.Philippines}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#ECB
- * CashClearingSystemCode.mmECB}</li>
+ * CashClearingSystemCode.ECB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#USChipsACH
- * CashClearingSystemCode.mmUSChipsACH}</li>
+ * CashClearingSystemCode.USChipsACH}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#USFedACH
- * CashClearingSystemCode.mmUSFedACH}</li>
+ * CashClearingSystemCode.USFedACH}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Ghana
- * CashClearingSystemCode.mmGhana}</li>
+ * CashClearingSystemCode.Ghana}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#NetherlandsIP
- * CashClearingSystemCode.mmNetherlandsIP}</li>
+ * CashClearingSystemCode.NetherlandsIP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Jordan
- * CashClearingSystemCode.mmJordan}</li>
+ * CashClearingSystemCode.Jordan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Kenya
- * CashClearingSystemCode.mmKenya}</li>
+ * CashClearingSystemCode.Kenya}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#SriLanka
- * CashClearingSystemCode.mmSriLanka}</li>
+ * CashClearingSystemCode.SriLanka}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Singapore
- * CashClearingSystemCode.mmSingapore}</li>
+ * CashClearingSystemCode.Singapore}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Malta
- * CashClearingSystemCode.mmMalta}</li>
+ * CashClearingSystemCode.Malta}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Namibia
- * CashClearingSystemCode.mmNamibia}</li>
+ * CashClearingSystemCode.Namibia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Angola
- * CashClearingSystemCode.mmAngola}</li>
+ * CashClearingSystemCode.Angola}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#RomaniaEPO
- * CashClearingSystemCode.mmRomaniaEPO}</li>
+ * CashClearingSystemCode.RomaniaEPO}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#RomaniaGSRS
- * CashClearingSystemCode.mmRomaniaGSRS}</li>
+ * CashClearingSystemCode.RomaniaGSRS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Chili
- * CashClearingSystemCode.mmChili}</li>
+ * CashClearingSystemCode.Chili}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#UnitedKingdomGBP
- * CashClearingSystemCode.mmUnitedKingdomGBP}</li>
+ * CashClearingSystemCode.UnitedKingdomGBP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Thailand
- * CashClearingSystemCode.mmThailand}</li>
+ * CashClearingSystemCode.Thailand}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Tanzania
- * CashClearingSystemCode.mmTanzania}</li>
+ * CashClearingSystemCode.Tanzania}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#TrinidadAndTobago
- * CashClearingSystemCode.mmTrinidadAndTobago}</li>
+ * CashClearingSystemCode.TrinidadAndTobago}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Uganda
- * CashClearingSystemCode.mmUganda}</li>
+ * CashClearingSystemCode.Uganda}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Zimbabwe
- * CashClearingSystemCode.mmZimbabwe}</li>
+ * CashClearingSystemCode.Zimbabwe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Zambia
- * CashClearingSystemCode.mmZambia}</li>
+ * CashClearingSystemCode.Zambia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashClearingSystemCode#Columbia
- * CashClearingSystemCode.mmColumbia}</li>
+ * CashClearingSystemCode.Columbia}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -2714,7 +2714,7 @@ public class CashClearingSystemCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ABE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashClearingSystemCode";

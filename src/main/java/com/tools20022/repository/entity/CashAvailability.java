@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.CashAvailability1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Indicates when the amount of money will become available, ie can be accessed
@@ -83,8 +84,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +103,8 @@ public class CashAvailability {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashBalance cashBalance;
 	/**
-	 * Cash balance for which the availability is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,8 +151,8 @@ public class CashAvailability {
 	};
 	protected ISODate date;
 	/**
-	 * Identifies the availability date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,8 +208,8 @@ public class CashAvailability {
 	};
 	protected Max15NumericText numberOfDays;
 	/**
-	 * Indicates the number of float days attached to the balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,8 +265,8 @@ public class CashAvailability {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Available amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,9 +320,8 @@ public class CashAvailability {
 	};
 	protected CashEntry cashEntry;
 	/**
-	 * Specifies the cash entry for which the availability information is
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,9 +370,8 @@ public class CashAvailability {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether the availability balance is a credit or a debit
-	 * balance. A zero balance is considered to be a credit balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,7 +421,7 @@ public class CashAvailability {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAvailability";
 				definition = "Indicates when the amount of money will become available, ie can be accessed and start generating interest.";
@@ -444,47 +443,53 @@ public class CashAvailability {
 		return cashBalance;
 	}
 
-	public void setCashBalance(com.tools20022.repository.entity.CashBalance cashBalance) {
-		this.cashBalance = cashBalance;
+	public CashAvailability setCashBalance(com.tools20022.repository.entity.CashBalance cashBalance) {
+		this.cashBalance = Objects.requireNonNull(cashBalance);
+		return this;
 	}
 
 	public ISODate getDate() {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public CashAvailability setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public Max15NumericText getNumberOfDays() {
 		return numberOfDays;
 	}
 
-	public void setNumberOfDays(Max15NumericText numberOfDays) {
-		this.numberOfDays = numberOfDays;
+	public CashAvailability setNumberOfDays(Max15NumericText numberOfDays) {
+		this.numberOfDays = Objects.requireNonNull(numberOfDays);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public CashAvailability setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public CashEntry getCashEntry() {
 		return cashEntry;
 	}
 
-	public void setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
-		this.cashEntry = cashEntry;
+	public CashAvailability setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public CashAvailability setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 }

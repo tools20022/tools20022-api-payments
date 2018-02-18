@@ -25,9 +25,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the instrument to be used for the credit of a payment.
@@ -75,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +95,8 @@ public class CreditInstrument {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Payment> relatedPayment;
 	/**
-	 * Payment which uses the credit instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,8 +141,8 @@ public class CreditInstrument {
 	};
 	protected PaymentMethodCode method;
 	/**
-	 * Transfer method to be used for the transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,8 +206,8 @@ public class CreditInstrument {
 	};
 	protected Max35Text creditInstrumentIdentification;
 	/**
-	 * Identifies the credit instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,9 +260,8 @@ public class CreditInstrument {
 	};
 	protected CurrencyAndAmount netAmount;
 	/**
-	 * Amount less fees and charges, that will be exchanged on settlement date
-	 * of the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -308,8 +309,8 @@ public class CreditInstrument {
 	};
 	protected ISODateTime deadline;
 	/**
-	 * Time by which the amount must be paid in.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -356,7 +357,7 @@ public class CreditInstrument {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditInstrument";
 				definition = "Specifies the instrument to be used for the credit of a payment.";
@@ -375,42 +376,47 @@ public class CreditInstrument {
 	}
 
 	public List<Payment> getRelatedPayment() {
-		return relatedPayment;
+		return relatedPayment == null ? relatedPayment = new ArrayList<>() : relatedPayment;
 	}
 
-	public void setRelatedPayment(List<com.tools20022.repository.entity.Payment> relatedPayment) {
-		this.relatedPayment = relatedPayment;
+	public CreditInstrument setRelatedPayment(List<com.tools20022.repository.entity.Payment> relatedPayment) {
+		this.relatedPayment = Objects.requireNonNull(relatedPayment);
+		return this;
 	}
 
 	public PaymentMethodCode getMethod() {
 		return method;
 	}
 
-	public void setMethod(PaymentMethodCode method) {
-		this.method = method;
+	public CreditInstrument setMethod(PaymentMethodCode method) {
+		this.method = Objects.requireNonNull(method);
+		return this;
 	}
 
 	public Max35Text getCreditInstrumentIdentification() {
 		return creditInstrumentIdentification;
 	}
 
-	public void setCreditInstrumentIdentification(Max35Text creditInstrumentIdentification) {
-		this.creditInstrumentIdentification = creditInstrumentIdentification;
+	public CreditInstrument setCreditInstrumentIdentification(Max35Text creditInstrumentIdentification) {
+		this.creditInstrumentIdentification = Objects.requireNonNull(creditInstrumentIdentification);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(CurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public CreditInstrument setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
 	public ISODateTime getDeadline() {
 		return deadline;
 	}
 
-	public void setDeadline(ISODateTime deadline) {
-		this.deadline = deadline;
+	public CreditInstrument setDeadline(ISODateTime deadline) {
+		this.deadline = Objects.requireNonNull(deadline);
+		return this;
 	}
 }

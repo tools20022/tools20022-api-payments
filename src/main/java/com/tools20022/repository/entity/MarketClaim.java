@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Processes that reallocate corporate action proceeds to the entitled party and
@@ -62,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +83,8 @@ public class MarketClaim {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount marketClaimAmount;
 	/**
-	 * Amount of money resulting from a market claim.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,9 +129,8 @@ public class MarketClaim {
 	};
 	protected ISODateTime marketClaimTrackingEndDate;
 	/**
-	 * Date by which the depository stops monitoring activities of the event,
-	 * for instance, accounting and tracking activities for due bills end.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,8 +176,8 @@ public class MarketClaim {
 	};
 	protected CorporateActionEvent relatedCorporateEvent;
 	/**
-	 * Corporate event for which market claim information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,7 +227,7 @@ public class MarketClaim {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketClaim";
 				definition = "Processes that reallocate corporate action proceeds to the entitled party and that compensate financial penalties or indirect costs due to late delivery or payment.";
@@ -247,23 +248,26 @@ public class MarketClaim {
 		return marketClaimAmount;
 	}
 
-	public void setMarketClaimAmount(CurrencyAndAmount marketClaimAmount) {
-		this.marketClaimAmount = marketClaimAmount;
+	public MarketClaim setMarketClaimAmount(CurrencyAndAmount marketClaimAmount) {
+		this.marketClaimAmount = Objects.requireNonNull(marketClaimAmount);
+		return this;
 	}
 
 	public ISODateTime getMarketClaimTrackingEndDate() {
 		return marketClaimTrackingEndDate;
 	}
 
-	public void setMarketClaimTrackingEndDate(ISODateTime marketClaimTrackingEndDate) {
-		this.marketClaimTrackingEndDate = marketClaimTrackingEndDate;
+	public MarketClaim setMarketClaimTrackingEndDate(ISODateTime marketClaimTrackingEndDate) {
+		this.marketClaimTrackingEndDate = Objects.requireNonNull(marketClaimTrackingEndDate);
+		return this;
 	}
 
-	public CorporateActionEvent getRelatedCorporateEvent() {
-		return relatedCorporateEvent;
+	public Optional<CorporateActionEvent> getRelatedCorporateEvent() {
+		return relatedCorporateEvent == null ? Optional.empty() : Optional.of(relatedCorporateEvent);
 	}
 
-	public void setRelatedCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateEvent) {
+	public MarketClaim setRelatedCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateEvent) {
 		this.relatedCorporateEvent = relatedCorporateEvent;
+		return this;
 	}
 }

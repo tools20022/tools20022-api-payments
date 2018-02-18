@@ -24,6 +24,7 @@ import com.tools20022.repository.msg.PointOfInteraction1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Name of a system.
@@ -56,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,9 +74,8 @@ public class SystemName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max70Text name;
 	/**
-	 * Name of a system for instance the common name assigned by the acquirer to
-	 * the POI system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,8 +130,8 @@ public class SystemName {
 	};
 	protected SystemIdentification systemIdentification;
 	/**
-	 * System identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +180,7 @@ public class SystemName {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemName";
 				definition = "Name of a system.";
@@ -200,15 +200,17 @@ public class SystemName {
 		return name;
 	}
 
-	public void setName(Max70Text name) {
-		this.name = name;
+	public SystemName setName(Max70Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public SystemIdentification getSystemIdentification() {
 		return systemIdentification;
 	}
 
-	public void setSystemIdentification(com.tools20022.repository.entity.SystemIdentification systemIdentification) {
-		this.systemIdentification = systemIdentification;
+	public SystemName setSystemIdentification(com.tools20022.repository.entity.SystemIdentification systemIdentification) {
+		this.systemIdentification = Objects.requireNonNull(systemIdentification);
+		return this;
 	}
 }

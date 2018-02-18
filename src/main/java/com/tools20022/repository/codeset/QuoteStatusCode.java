@@ -37,53 +37,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Accepted
- * QuoteStatusCode.mmAccepted}</li>
+ * QuoteStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CancelSymbol
- * QuoteStatusCode.mmCancelSymbol}</li>
+ * QuoteStatusCode.CancelSymbol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CancelSecurity
- * QuoteStatusCode.mmCancelSecurity}</li>
+ * QuoteStatusCode.CancelSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CancelUnderlying
- * QuoteStatusCode.mmCancelUnderlying}</li>
+ * QuoteStatusCode.CancelUnderlying}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CancelAll
- * QuoteStatusCode.mmCancelAll}</li>
+ * QuoteStatusCode.CancelAll}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Rejected
- * QuoteStatusCode.mmRejected}</li>
+ * QuoteStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#RemovedFromMarket
- * QuoteStatusCode.mmRemovedFromMarket}</li>
+ * QuoteStatusCode.RemovedFromMarket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Expired
- * QuoteStatusCode.mmExpired}</li>
+ * QuoteStatusCode.Expired}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Query
- * QuoteStatusCode.mmQuery}</li>
+ * QuoteStatusCode.Query}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#QuoteNotFound
- * QuoteStatusCode.mmQuoteNotFound}</li>
+ * QuoteStatusCode.QuoteNotFound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Pending
- * QuoteStatusCode.mmPending}</li>
+ * QuoteStatusCode.Pending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QuoteStatusCode#Pass
- * QuoteStatusCode.mmPass}</li>
+ * QuoteStatusCode.Pass}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#LockedMarketWarning
- * QuoteStatusCode.mmLockedMarketWarning}</li>
+ * QuoteStatusCode.LockedMarketWarning}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CrossMarketWarning
- * QuoteStatusCode.mmCrossMarketWarning}</li>
+ * QuoteStatusCode.CrossMarketWarning}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CanceledDueToLockMarket
- * QuoteStatusCode.mmCanceledDueToLockMarket}</li>
+ * QuoteStatusCode.CanceledDueToLockMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QuoteStatusCode#CanceledDueToCrossMarket
- * QuoteStatusCode.mmCanceledDueToCrossMarket}</li>
+ * QuoteStatusCode.CanceledDueToCrossMarket}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -605,7 +605,7 @@ public class QuoteStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACPT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuoteStatusCode";

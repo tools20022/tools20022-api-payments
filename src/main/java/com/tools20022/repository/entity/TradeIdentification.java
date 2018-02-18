@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the different identifications associated with a trade.
@@ -93,8 +94,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -111,8 +112,8 @@ public class TradeIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text counterpartyReference;
 	/**
-	 * Unambiguous identification of the trade allocated by the counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +159,8 @@ public class TradeIdentification {
 	};
 	protected Max35Text identification;
 	/**
-	 * Reference assigned to the trade by the investor or the trading party.
-	 * This reference will be used throughout the trade life cycle to
-	 * access/update the trade details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,6 +223,11 @@ public class TradeIdentification {
 	 * {@linkplain com.tools20022.repository.entity.TradeIdentification
 	 * TradeIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=BusinessComment, BusinessComment=Reference to the
+	 * trade given by the IMI and Broker/Dealer each oin their side,
+	 * ISO15022Synonym: :20C::TRRF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -245,6 +249,8 @@ public class TradeIdentification {
 					OriginalPaymentInstruction20.mmOriginalPaymentInformationIdentification, CorrectivePaymentInitiation2.mmPaymentInformationIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "BusinessComment", new String[]{"BusinessComment", "Reference to the trade given by the IMI and Broker/Dealer each oin their side"}), new ISO15022Synonym(
+					this, ":20C::TRRF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Reference assigned to the trade by the investor or the trading party. This reference will be used throughout the trade life cycle to access/update the trade details.";
@@ -263,9 +269,8 @@ public class TradeIdentification {
 	};
 	protected Max35Text commonIdentification;
 	/**
-	 * Unique reference agreed upon by the two trade counterparties to identify
-	 * the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,6 +282,10 @@ public class TradeIdentification {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.TradeIdentification
 	 * TradeIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=BusinessComment, BusinessComment=Commmon reference
+	 * given by IMI and BD commonly, ISO15022Synonym: :20C::COMM</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -294,6 +303,7 @@ public class TradeIdentification {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradeIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "BusinessComment", new String[]{"BusinessComment", "Commmon reference given by IMI and BD commonly"}), new ISO15022Synonym(this, ":20C::COMM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommonIdentification";
 			definition = "Unique reference agreed upon by the two trade counterparties to identify the trade.";
@@ -312,8 +322,8 @@ public class TradeIdentification {
 	};
 	protected Max35Text matchingReference;
 	/**
-	 * Reference assigned by a matching system when the trade is matched.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,8 +369,8 @@ public class TradeIdentification {
 	};
 	protected Trade trade;
 	/**
-	 * Specifies the trade for which identifications are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,12 +417,8 @@ public class TradeIdentification {
 	};
 	protected Max35Text uniqueTradeIdentifier;
 	/**
-	 * This field specifies the unique transaction identifier (UTI) to be
-	 * created at the time a transaction is first executed, shared with all
-	 * registered entities and counterparties involved in the transaction, and
-	 * used to track that particular transaction over its life. This identifier
-	 * can also be known as the Unique Swap Identifier (USI).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -459,8 +465,8 @@ public class TradeIdentification {
 	};
 	protected List<com.tools20022.repository.entity.ClearingBrokerIdentification> clearingBrokerIdentification;
 	/**
-	 * Reference number assigned by the clearing broker.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,7 +515,7 @@ public class TradeIdentification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeIdentification";
 				definition = "Specifies the different identifications associated with a trade.";
@@ -533,55 +539,62 @@ public class TradeIdentification {
 		return counterpartyReference;
 	}
 
-	public void setCounterpartyReference(Max35Text counterpartyReference) {
-		this.counterpartyReference = counterpartyReference;
+	public TradeIdentification setCounterpartyReference(Max35Text counterpartyReference) {
+		this.counterpartyReference = Objects.requireNonNull(counterpartyReference);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public TradeIdentification setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getCommonIdentification() {
 		return commonIdentification;
 	}
 
-	public void setCommonIdentification(Max35Text commonIdentification) {
-		this.commonIdentification = commonIdentification;
+	public TradeIdentification setCommonIdentification(Max35Text commonIdentification) {
+		this.commonIdentification = Objects.requireNonNull(commonIdentification);
+		return this;
 	}
 
 	public Max35Text getMatchingReference() {
 		return matchingReference;
 	}
 
-	public void setMatchingReference(Max35Text matchingReference) {
-		this.matchingReference = matchingReference;
+	public TradeIdentification setMatchingReference(Max35Text matchingReference) {
+		this.matchingReference = Objects.requireNonNull(matchingReference);
+		return this;
 	}
 
-	public Trade getTrade() {
-		return trade;
+	public Optional<Trade> getTrade() {
+		return trade == null ? Optional.empty() : Optional.of(trade);
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
+	public TradeIdentification setTrade(com.tools20022.repository.entity.Trade trade) {
 		this.trade = trade;
+		return this;
 	}
 
 	public Max35Text getUniqueTradeIdentifier() {
 		return uniqueTradeIdentifier;
 	}
 
-	public void setUniqueTradeIdentifier(Max35Text uniqueTradeIdentifier) {
-		this.uniqueTradeIdentifier = uniqueTradeIdentifier;
+	public TradeIdentification setUniqueTradeIdentifier(Max35Text uniqueTradeIdentifier) {
+		this.uniqueTradeIdentifier = Objects.requireNonNull(uniqueTradeIdentifier);
+		return this;
 	}
 
 	public List<ClearingBrokerIdentification> getClearingBrokerIdentification() {
-		return clearingBrokerIdentification;
+		return clearingBrokerIdentification == null ? clearingBrokerIdentification = new ArrayList<>() : clearingBrokerIdentification;
 	}
 
-	public void setClearingBrokerIdentification(List<com.tools20022.repository.entity.ClearingBrokerIdentification> clearingBrokerIdentification) {
-		this.clearingBrokerIdentification = clearingBrokerIdentification;
+	public TradeIdentification setClearingBrokerIdentification(List<com.tools20022.repository.entity.ClearingBrokerIdentification> clearingBrokerIdentification) {
+		this.clearingBrokerIdentification = Objects.requireNonNull(clearingBrokerIdentification);
+		return this;
 	}
 }

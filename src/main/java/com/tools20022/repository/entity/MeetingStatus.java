@@ -24,9 +24,8 @@ import com.tools20022.repository.codeset.ResolutionStatusCode;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Status of the instructions related to a meeting.
@@ -71,8 +70,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,8 +87,8 @@ public class MeetingStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ResolutionStatusCode meetingResolutionStatus;
 	/**
-	 * Indicates whether the resolution is active or withdrawn.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,8 +134,8 @@ public class MeetingStatus extends Status {
 	};
 	protected CancellationStatusCode instructionCancellationStatus;
 	/**
-	 * Status of the request for cancellation of an instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,9 +182,8 @@ public class MeetingStatus extends Status {
 	};
 	protected List<com.tools20022.repository.entity.MeetingStatusReason> reason;
 	/**
-	 * Specifies the underlying reason for a status of a meeting or related
-	 * instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,8 +231,8 @@ public class MeetingStatus extends Status {
 	};
 	protected NotificationStatusCode notificationStatus;
 	/**
-	 * Specifies the status of the related notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,8 +278,8 @@ public class MeetingStatus extends Status {
 	};
 	protected Meeting meeting;
 	/**
-	 * Meeting for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,7 +327,7 @@ public class MeetingStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingStatus";
 				definition = "Status of the instructions related to a meeting.";
@@ -351,39 +349,44 @@ public class MeetingStatus extends Status {
 		return meetingResolutionStatus;
 	}
 
-	public void setMeetingResolutionStatus(ResolutionStatusCode meetingResolutionStatus) {
-		this.meetingResolutionStatus = meetingResolutionStatus;
+	public MeetingStatus setMeetingResolutionStatus(ResolutionStatusCode meetingResolutionStatus) {
+		this.meetingResolutionStatus = Objects.requireNonNull(meetingResolutionStatus);
+		return this;
 	}
 
 	public CancellationStatusCode getInstructionCancellationStatus() {
 		return instructionCancellationStatus;
 	}
 
-	public void setInstructionCancellationStatus(CancellationStatusCode instructionCancellationStatus) {
-		this.instructionCancellationStatus = instructionCancellationStatus;
+	public MeetingStatus setInstructionCancellationStatus(CancellationStatusCode instructionCancellationStatus) {
+		this.instructionCancellationStatus = Objects.requireNonNull(instructionCancellationStatus);
+		return this;
 	}
 
 	public List<MeetingStatusReason> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<com.tools20022.repository.entity.MeetingStatusReason> reason) {
-		this.reason = reason;
+	public MeetingStatus setReason(List<com.tools20022.repository.entity.MeetingStatusReason> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
 	public NotificationStatusCode getNotificationStatus() {
 		return notificationStatus;
 	}
 
-	public void setNotificationStatus(NotificationStatusCode notificationStatus) {
-		this.notificationStatus = notificationStatus;
+	public MeetingStatus setNotificationStatus(NotificationStatusCode notificationStatus) {
+		this.notificationStatus = Objects.requireNonNull(notificationStatus);
+		return this;
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public MeetingStatus setMeeting(com.tools20022.repository.entity.Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 }

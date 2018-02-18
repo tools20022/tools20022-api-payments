@@ -30,9 +30,8 @@ import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Obligation for the debtor to pay the creditor an amount of cash.
@@ -213,8 +212,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -231,10 +230,8 @@ public class PaymentObligation extends Obligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Payment> paymentOffset;
 	/**
-	 * Fulfilment of a payment obligation through a payment and its execution.
-	 * It is derived from the association between Obligation and Obligation
-	 * fulfillment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -281,8 +278,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected PaymentPurposeCode purpose;
 	/**
-	 * Underlying reason for the payment obligation
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,11 +364,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected RemittanceLocationMethodCode remittanceDeliveryMethod;
 	/**
-	 * Specifies the method to be used by the first agent (debtor agent in the
-	 * case of a credit transfer, creditor agent in the case of a direct debit)
-	 * to deliver the remittance advice information, which may be sent
-	 * separately from the payment instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,8 +422,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.Document> associatedDocument;
 	/**
-	 * Specifies the referred document/transaction, eg, invoice or credit note.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -529,8 +523,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount payable to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,8 +584,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> remittanceLocation;
 	/**
-	 * Address to which the first agent is to send the remittance information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -654,9 +648,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.InterestManagement> interest;
 	/**
-	 * Process which calculates the interest to be paid. It may also specify the
-	 * interest charged on instalment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -704,8 +697,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Commercial trade which creates the payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -752,10 +745,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected PercentageRate percentage;
 	/**
-	 * Maximum amount that a financial institution guarantees to pay for a
-	 * specific commercial trade, expressed as a percentage of the purchase
-	 * order net amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -803,9 +794,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount that a financial institution guarantees to pay for a
-	 * specific commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -853,9 +843,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected ISODateTime expiryDate;
 	/**
-	 * Date at which the obligation will expire. For instance, it is the
-	 * transaction authorisation deadline to complete a payment by card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -902,8 +891,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CountryCode applicableLaw;
 	/**
-	 * Country of which the law governs the payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -948,8 +937,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected BuyIn paymentSourceBuyIn;
 	/**
-	 * Buy-in process which created the payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -995,9 +984,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CorporateActionProceedsDeliveryInstruction relatedCorporateAction;
 	/**
-	 * Corporate action processes which are the source of the payment
-	 * obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1047,8 +1035,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CollateralMovement relatedCollateralMovement;
 	/**
-	 * Collateral movement which is the source of the obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1096,8 +1084,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected Demand paymentSourceUndertakingDemand;
 	/**
-	 * Undertaking demand which is the source of a payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1144,9 +1132,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligationPartyRole> partyRole;
 	/**
-	 * Specifies each role linked to a payment obligation and played by a party
-	 * at that step in a payment flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1195,8 +1182,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected SecuritiesTradeExecution executedSecuritiesTrade;
 	/**
-	 * Securities trade which created a payment flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1244,9 +1231,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CashAccountContract relatedAccountClosingTerms;
 	/**
-	 * Contract which authorises the transfer of funds resulting in a payment
-	 * obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1295,9 +1281,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected List<com.tools20022.repository.entity.PortfolioTransfer> paymentSourcePortfolioTransfer;
 	/**
-	 * The PaymentObligation that specifies the payment resulting from charges
-	 * due by one party to another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1345,9 +1330,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected CurrencyOption paymentSourceCurrencyOption;
 	/**
-	 * The PaymentObligation that specifies the amount of the premium paid by
-	 * the buyer of the option and its settlement place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1396,8 +1380,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected ForeignExchangeTrade exchangeRateInformation;
 	/**
-	 * Foreign exchange trade which is the source of the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1458,8 +1442,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected Dividend dividend;
 	/**
-	 * Dividend for which payment terms are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1505,8 +1489,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected RepurchaseAgreement repurchaseAgreement;
 	/**
-	 * Repurchase agreement which covers the delivery of cash by the buyer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1554,8 +1538,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected Assignment relatedAssignment;
 	/**
-	 * Assignment which contains one or more payment obligations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1603,9 +1587,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected BankingTransaction bankingTransaction;
 	/**
-	 * Transaction executed by the client of a financial institution from/to the
-	 * account serviced by the financial institution, such as mortgage payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1654,8 +1637,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected PaymentTerms paymentTerms;
 	/**
-	 * Specifies the payment terms of the obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1714,8 +1697,8 @@ public class PaymentObligation extends Obligation {
 	};
 	protected ISODate paymentDueDate;
 	/**
-	 * Due date for the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1771,7 +1754,7 @@ public class PaymentObligation extends Obligation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentObligation";
 				definition = "Obligation for the debtor to pay the creditor an amount of cash.";
@@ -1809,226 +1792,254 @@ public class PaymentObligation extends Obligation {
 	}
 
 	public List<Payment> getPaymentOffset() {
-		return paymentOffset;
+		return paymentOffset == null ? paymentOffset = new ArrayList<>() : paymentOffset;
 	}
 
-	public void setPaymentOffset(List<com.tools20022.repository.entity.Payment> paymentOffset) {
-		this.paymentOffset = paymentOffset;
+	public PaymentObligation setPaymentOffset(List<com.tools20022.repository.entity.Payment> paymentOffset) {
+		this.paymentOffset = Objects.requireNonNull(paymentOffset);
+		return this;
 	}
 
 	public PaymentPurposeCode getPurpose() {
 		return purpose;
 	}
 
-	public void setPurpose(PaymentPurposeCode purpose) {
-		this.purpose = purpose;
+	public PaymentObligation setPurpose(PaymentPurposeCode purpose) {
+		this.purpose = Objects.requireNonNull(purpose);
+		return this;
 	}
 
 	public RemittanceLocationMethodCode getRemittanceDeliveryMethod() {
 		return remittanceDeliveryMethod;
 	}
 
-	public void setRemittanceDeliveryMethod(RemittanceLocationMethodCode remittanceDeliveryMethod) {
-		this.remittanceDeliveryMethod = remittanceDeliveryMethod;
+	public PaymentObligation setRemittanceDeliveryMethod(RemittanceLocationMethodCode remittanceDeliveryMethod) {
+		this.remittanceDeliveryMethod = Objects.requireNonNull(remittanceDeliveryMethod);
+		return this;
 	}
 
 	public List<Document> getAssociatedDocument() {
-		return associatedDocument;
+		return associatedDocument == null ? associatedDocument = new ArrayList<>() : associatedDocument;
 	}
 
-	public void setAssociatedDocument(List<com.tools20022.repository.entity.Document> associatedDocument) {
-		this.associatedDocument = associatedDocument;
+	public PaymentObligation setAssociatedDocument(List<com.tools20022.repository.entity.Document> associatedDocument) {
+		this.associatedDocument = Objects.requireNonNull(associatedDocument);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public PaymentObligation setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public List<ContactPoint> getRemittanceLocation() {
-		return remittanceLocation;
+		return remittanceLocation == null ? remittanceLocation = new ArrayList<>() : remittanceLocation;
 	}
 
-	public void setRemittanceLocation(List<com.tools20022.repository.entity.ContactPoint> remittanceLocation) {
-		this.remittanceLocation = remittanceLocation;
+	public PaymentObligation setRemittanceLocation(List<com.tools20022.repository.entity.ContactPoint> remittanceLocation) {
+		this.remittanceLocation = Objects.requireNonNull(remittanceLocation);
+		return this;
 	}
 
 	public List<InterestManagement> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.InterestManagement> interest) {
-		this.interest = interest;
+	public PaymentObligation setInterest(List<com.tools20022.repository.entity.InterestManagement> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public CommercialTrade getCommercialTrade() {
 		return commercialTrade;
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
-		this.commercialTrade = commercialTrade;
+	public PaymentObligation setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+		this.commercialTrade = Objects.requireNonNull(commercialTrade);
+		return this;
 	}
 
 	public PercentageRate getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(PercentageRate percentage) {
-		this.percentage = percentage;
+	public PaymentObligation setPercentage(PercentageRate percentage) {
+		this.percentage = Objects.requireNonNull(percentage);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(CurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public PaymentObligation setMaximumAmount(CurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
 	public ISODateTime getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISODateTime expiryDate) {
-		this.expiryDate = expiryDate;
+	public PaymentObligation setExpiryDate(ISODateTime expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public CountryCode getApplicableLaw() {
 		return applicableLaw;
 	}
 
-	public void setApplicableLaw(CountryCode applicableLaw) {
-		this.applicableLaw = applicableLaw;
+	public PaymentObligation setApplicableLaw(CountryCode applicableLaw) {
+		this.applicableLaw = Objects.requireNonNull(applicableLaw);
+		return this;
 	}
 
-	public BuyIn getPaymentSourceBuyIn() {
-		return paymentSourceBuyIn;
+	public Optional<BuyIn> getPaymentSourceBuyIn() {
+		return paymentSourceBuyIn == null ? Optional.empty() : Optional.of(paymentSourceBuyIn);
 	}
 
-	public void setPaymentSourceBuyIn(com.tools20022.repository.entity.BuyIn paymentSourceBuyIn) {
+	public PaymentObligation setPaymentSourceBuyIn(com.tools20022.repository.entity.BuyIn paymentSourceBuyIn) {
 		this.paymentSourceBuyIn = paymentSourceBuyIn;
+		return this;
 	}
 
 	public CorporateActionProceedsDeliveryInstruction getRelatedCorporateAction() {
 		return relatedCorporateAction;
 	}
 
-	public void setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
-		this.relatedCorporateAction = relatedCorporateAction;
+	public PaymentObligation setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
+		this.relatedCorporateAction = Objects.requireNonNull(relatedCorporateAction);
+		return this;
 	}
 
 	public CollateralMovement getRelatedCollateralMovement() {
 		return relatedCollateralMovement;
 	}
 
-	public void setRelatedCollateralMovement(com.tools20022.repository.entity.CollateralMovement relatedCollateralMovement) {
-		this.relatedCollateralMovement = relatedCollateralMovement;
+	public PaymentObligation setRelatedCollateralMovement(com.tools20022.repository.entity.CollateralMovement relatedCollateralMovement) {
+		this.relatedCollateralMovement = Objects.requireNonNull(relatedCollateralMovement);
+		return this;
 	}
 
 	public Demand getPaymentSourceUndertakingDemand() {
 		return paymentSourceUndertakingDemand;
 	}
 
-	public void setPaymentSourceUndertakingDemand(com.tools20022.repository.entity.Demand paymentSourceUndertakingDemand) {
-		this.paymentSourceUndertakingDemand = paymentSourceUndertakingDemand;
+	public PaymentObligation setPaymentSourceUndertakingDemand(com.tools20022.repository.entity.Demand paymentSourceUndertakingDemand) {
+		this.paymentSourceUndertakingDemand = Objects.requireNonNull(paymentSourceUndertakingDemand);
+		return this;
 	}
 
 	public List<PaymentObligationPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.PaymentObligationPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public PaymentObligation setPartyRole(List<com.tools20022.repository.entity.PaymentObligationPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public SecuritiesTradeExecution getExecutedSecuritiesTrade() {
 		return executedSecuritiesTrade;
 	}
 
-	public void setExecutedSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTradeExecution executedSecuritiesTrade) {
-		this.executedSecuritiesTrade = executedSecuritiesTrade;
+	public PaymentObligation setExecutedSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTradeExecution executedSecuritiesTrade) {
+		this.executedSecuritiesTrade = Objects.requireNonNull(executedSecuritiesTrade);
+		return this;
 	}
 
-	public CashAccountContract getRelatedAccountClosingTerms() {
-		return relatedAccountClosingTerms;
+	public Optional<CashAccountContract> getRelatedAccountClosingTerms() {
+		return relatedAccountClosingTerms == null ? Optional.empty() : Optional.of(relatedAccountClosingTerms);
 	}
 
-	public void setRelatedAccountClosingTerms(com.tools20022.repository.entity.CashAccountContract relatedAccountClosingTerms) {
+	public PaymentObligation setRelatedAccountClosingTerms(com.tools20022.repository.entity.CashAccountContract relatedAccountClosingTerms) {
 		this.relatedAccountClosingTerms = relatedAccountClosingTerms;
+		return this;
 	}
 
 	public List<PortfolioTransfer> getPaymentSourcePortfolioTransfer() {
-		return paymentSourcePortfolioTransfer;
+		return paymentSourcePortfolioTransfer == null ? paymentSourcePortfolioTransfer = new ArrayList<>() : paymentSourcePortfolioTransfer;
 	}
 
-	public void setPaymentSourcePortfolioTransfer(List<com.tools20022.repository.entity.PortfolioTransfer> paymentSourcePortfolioTransfer) {
-		this.paymentSourcePortfolioTransfer = paymentSourcePortfolioTransfer;
+	public PaymentObligation setPaymentSourcePortfolioTransfer(List<com.tools20022.repository.entity.PortfolioTransfer> paymentSourcePortfolioTransfer) {
+		this.paymentSourcePortfolioTransfer = Objects.requireNonNull(paymentSourcePortfolioTransfer);
+		return this;
 	}
 
-	public CurrencyOption getPaymentSourceCurrencyOption() {
-		return paymentSourceCurrencyOption;
+	public Optional<CurrencyOption> getPaymentSourceCurrencyOption() {
+		return paymentSourceCurrencyOption == null ? Optional.empty() : Optional.of(paymentSourceCurrencyOption);
 	}
 
-	public void setPaymentSourceCurrencyOption(com.tools20022.repository.entity.CurrencyOption paymentSourceCurrencyOption) {
+	public PaymentObligation setPaymentSourceCurrencyOption(com.tools20022.repository.entity.CurrencyOption paymentSourceCurrencyOption) {
 		this.paymentSourceCurrencyOption = paymentSourceCurrencyOption;
+		return this;
 	}
 
-	public ForeignExchangeTrade getExchangeRateInformation() {
-		return exchangeRateInformation;
+	public Optional<ForeignExchangeTrade> getExchangeRateInformation() {
+		return exchangeRateInformation == null ? Optional.empty() : Optional.of(exchangeRateInformation);
 	}
 
-	public void setExchangeRateInformation(com.tools20022.repository.entity.ForeignExchangeTrade exchangeRateInformation) {
+	public PaymentObligation setExchangeRateInformation(com.tools20022.repository.entity.ForeignExchangeTrade exchangeRateInformation) {
 		this.exchangeRateInformation = exchangeRateInformation;
+		return this;
 	}
 
 	public Dividend getDividend() {
 		return dividend;
 	}
 
-	public void setDividend(com.tools20022.repository.entity.Dividend dividend) {
-		this.dividend = dividend;
+	public PaymentObligation setDividend(com.tools20022.repository.entity.Dividend dividend) {
+		this.dividend = Objects.requireNonNull(dividend);
+		return this;
 	}
 
 	public RepurchaseAgreement getRepurchaseAgreement() {
 		return repurchaseAgreement;
 	}
 
-	public void setRepurchaseAgreement(com.tools20022.repository.entity.RepurchaseAgreement repurchaseAgreement) {
-		this.repurchaseAgreement = repurchaseAgreement;
+	public PaymentObligation setRepurchaseAgreement(com.tools20022.repository.entity.RepurchaseAgreement repurchaseAgreement) {
+		this.repurchaseAgreement = Objects.requireNonNull(repurchaseAgreement);
+		return this;
 	}
 
 	public Assignment getRelatedAssignment() {
 		return relatedAssignment;
 	}
 
-	public void setRelatedAssignment(com.tools20022.repository.entity.Assignment relatedAssignment) {
-		this.relatedAssignment = relatedAssignment;
+	public PaymentObligation setRelatedAssignment(com.tools20022.repository.entity.Assignment relatedAssignment) {
+		this.relatedAssignment = Objects.requireNonNull(relatedAssignment);
+		return this;
 	}
 
 	public BankingTransaction getBankingTransaction() {
 		return bankingTransaction;
 	}
 
-	public void setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
-		this.bankingTransaction = bankingTransaction;
+	public PaymentObligation setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
+		this.bankingTransaction = Objects.requireNonNull(bankingTransaction);
+		return this;
 	}
 
 	public PaymentTerms getPaymentTerms() {
 		return paymentTerms;
 	}
 
-	public void setPaymentTerms(com.tools20022.repository.entity.PaymentTerms paymentTerms) {
-		this.paymentTerms = paymentTerms;
+	public PaymentObligation setPaymentTerms(com.tools20022.repository.entity.PaymentTerms paymentTerms) {
+		this.paymentTerms = Objects.requireNonNull(paymentTerms);
+		return this;
 	}
 
 	public ISODate getPaymentDueDate() {
 		return paymentDueDate;
 	}
 
-	public void setPaymentDueDate(ISODate paymentDueDate) {
-		this.paymentDueDate = paymentDueDate;
+	public PaymentObligation setPaymentDueDate(ISODate paymentDueDate) {
+		this.paymentDueDate = Objects.requireNonNull(paymentDueDate);
+		return this;
 	}
 }

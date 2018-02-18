@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Details of the authorised tax paying party."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TaxAuthorisation1", propOrder = {"title", "name"})
 public class TaxAuthorisation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Titl")
 	protected Max35Text title;
 	/**
-	 * Title or position of debtor or the debtor's authorised representative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class TaxAuthorisation1 {
 	public static final MMMessageAttribute mmTitle = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Person.mmBusinessFunctionTitle;
-			componentContext_lazy = () -> TaxAuthorisation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAuthorisation1.mmObject();
 			isDerived = false;
 			xmlTag = "Titl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +121,11 @@ public class TaxAuthorisation1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max140Text name;
 	/**
-	 * Name of the debtor or the debtor's authorised representative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +159,7 @@ public class TaxAuthorisation1 {
 	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> TaxAuthorisation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAuthorisation1.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,9 +174,9 @@ public class TaxAuthorisation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TaxAuthorisation1.mmTitle, TaxAuthorisation1.mmName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxAuthorisation1.mmTitle, com.tools20022.repository.msg.TaxAuthorisation1.mmName);
 				trace_lazy = () -> TaxPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxAuthorisation1";
 				definition = "Details of the authorised tax paying party.";
@@ -182,21 +185,21 @@ public class TaxAuthorisation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Titl")
-	public Max35Text getTitle() {
-		return title;
+	public Optional<Max35Text> getTitle() {
+		return title == null ? Optional.empty() : Optional.of(title);
 	}
 
-	public void setTitle(Max35Text title) {
+	public TaxAuthorisation1 setTitle(Max35Text title) {
 		this.title = title;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max140Text getName() {
-		return name;
+	public Optional<Max140Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max140Text name) {
+	public TaxAuthorisation1 setName(Max140Text name) {
 		this.name = name;
+		return this;
 	}
 }

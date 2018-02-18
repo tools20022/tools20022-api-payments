@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.OrganisationName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOrganisationIdentificationRule#forOrganisation14
+ * ConstraintOrganisationIdentificationRule.forOrganisation14}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +93,16 @@ import javax.xml.bind.annotation.XmlType;
  * Organisation12}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Organisation14", propOrder = {"fullLegalName", "organisationIdentification"})
 public class Organisation14 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FullLglNm")
 	protected Max350Text fullLegalName;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,7 +136,7 @@ public class Organisation14 {
 	public static final MMMessageAttribute mmFullLegalName = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> OrganisationName.mmLegalName;
-			componentContext_lazy = () -> Organisation14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Organisation14.mmObject();
 			isDerived = false;
 			xmlTag = "FullLglNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,10 +147,11 @@ public class Organisation14 {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgId", required = true)
 	protected OrganisationIdentification8 organisationIdentification;
 	/**
-	 * Unique and unambiguous way of identifying an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,7 +184,7 @@ public class Organisation14 {
 	public static final MMMessageAssociationEnd mmOrganisationIdentification = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> Organisation14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Organisation14.mmObject();
 			isDerived = false;
 			xmlTag = "OrgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,10 +200,11 @@ public class Organisation14 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Organisation14.mmFullLegalName, Organisation14.mmOrganisationIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Organisation14.mmFullLegalName, com.tools20022.repository.msg.Organisation14.mmOrganisationIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountClosingRequestV02.mmOrganisationIdentification, AccountMandateMaintenanceRequestV02.mmOrganisationIdentification);
 				trace_lazy = () -> Organisation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintOrganisationIdentificationRule.forOrganisation14);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Organisation14";
 				definition = "Information which describes the organisation.";
@@ -202,21 +214,21 @@ public class Organisation14 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FullLglNm")
-	public Max350Text getFullLegalName() {
-		return fullLegalName;
+	public Optional<Max350Text> getFullLegalName() {
+		return fullLegalName == null ? Optional.empty() : Optional.of(fullLegalName);
 	}
 
-	public void setFullLegalName(Max350Text fullLegalName) {
+	public Organisation14 setFullLegalName(Max350Text fullLegalName) {
 		this.fullLegalName = fullLegalName;
+		return this;
 	}
 
-	@XmlElement(name = "OrgId", required = true)
 	public OrganisationIdentification8 getOrganisationIdentification() {
 		return organisationIdentification;
 	}
 
-	public void setOrganisationIdentification(com.tools20022.repository.msg.OrganisationIdentification8 organisationIdentification) {
-		this.organisationIdentification = organisationIdentification;
+	public Organisation14 setOrganisationIdentification(com.tools20022.repository.msg.OrganisationIdentification8 organisationIdentification) {
+		this.organisationIdentification = Objects.requireNonNull(organisationIdentification);
+		return this;
 	}
 }

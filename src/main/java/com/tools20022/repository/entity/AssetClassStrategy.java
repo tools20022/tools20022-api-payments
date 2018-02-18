@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PortfolioStrategy;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Strategy is asset class based.
@@ -59,8 +61,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +78,8 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.AssetClassification> assetClass;
 	/**
-	 * Strategy based on asset classes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,7 +127,7 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassStrategy";
 				definition = "Strategy is asset class based.";
@@ -143,10 +145,11 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	}
 
 	public List<AssetClassification> getAssetClass() {
-		return assetClass;
+		return assetClass == null ? assetClass = new ArrayList<>() : assetClass;
 	}
 
-	public void setAssetClass(List<com.tools20022.repository.entity.AssetClassification> assetClass) {
-		this.assetClass = assetClass;
+	public AssetClassStrategy setAssetClass(List<com.tools20022.repository.entity.AssetClassification> assetClass) {
+		this.assetClass = Objects.requireNonNull(assetClass);
+		return this;
 	}
 }

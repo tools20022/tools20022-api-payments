@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.ShipmentDateRange;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Further details on the shipment conditions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ShipmentAttribute1", propOrder = {"conditions", "expectedDate", "countryOfCounterParty"})
 public class ShipmentAttribute1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Conds")
 	protected ExternalShipmentCondition1Code conditions;
 	/**
-	 * Shipment conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +116,7 @@ public class ShipmentAttribute1 {
 	public static final MMMessageAttribute mmConditions = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> Incoterms.mmObject();
-			componentContext_lazy = () -> ShipmentAttribute1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
 			isDerived = false;
 			xmlTag = "Conds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +127,11 @@ public class ShipmentAttribute1 {
 			simpleType_lazy = () -> ExternalShipmentCondition1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "XpctdDt")
 	protected ISODate expectedDate;
 	/**
-	 * Expected shipment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +164,7 @@ public class ShipmentAttribute1 {
 	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmLatestShipmentDate;
-			componentContext_lazy = () -> ShipmentAttribute1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,10 +175,11 @@ public class ShipmentAttribute1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "CtryOfCntrPty", required = true)
 	protected CountryCode countryOfCounterParty;
 	/**
-	 * Country in which the counter party is located.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +212,7 @@ public class ShipmentAttribute1 {
 	public static final MMMessageAttribute mmCountryOfCounterParty = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmCountry;
-			componentContext_lazy = () -> ShipmentAttribute1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
 			isDerived = false;
 			xmlTag = "CtryOfCntrPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,9 +227,10 @@ public class ShipmentAttribute1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ShipmentAttribute1.mmConditions, ShipmentAttribute1.mmExpectedDate, ShipmentAttribute1.mmCountryOfCounterParty);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ShipmentAttribute1.mmConditions, com.tools20022.repository.msg.ShipmentAttribute1.mmExpectedDate,
+						com.tools20022.repository.msg.ShipmentAttribute1.mmCountryOfCounterParty);
 				trace_lazy = () -> ShipmentDateRange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ShipmentAttribute1";
 				definition = "Further details on the shipment conditions.";
@@ -233,30 +239,30 @@ public class ShipmentAttribute1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Conds")
-	public ExternalShipmentCondition1Code getConditions() {
-		return conditions;
+	public Optional<ExternalShipmentCondition1Code> getConditions() {
+		return conditions == null ? Optional.empty() : Optional.of(conditions);
 	}
 
-	public void setConditions(ExternalShipmentCondition1Code conditions) {
+	public ShipmentAttribute1 setConditions(ExternalShipmentCondition1Code conditions) {
 		this.conditions = conditions;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdDt")
-	public ISODate getExpectedDate() {
-		return expectedDate;
+	public Optional<ISODate> getExpectedDate() {
+		return expectedDate == null ? Optional.empty() : Optional.of(expectedDate);
 	}
 
-	public void setExpectedDate(ISODate expectedDate) {
+	public ShipmentAttribute1 setExpectedDate(ISODate expectedDate) {
 		this.expectedDate = expectedDate;
+		return this;
 	}
 
-	@XmlElement(name = "CtryOfCntrPty", required = true)
 	public CountryCode getCountryOfCounterParty() {
 		return countryOfCounterParty;
 	}
 
-	public void setCountryOfCounterParty(CountryCode countryOfCounterParty) {
-		this.countryOfCounterParty = countryOfCounterParty;
+	public ShipmentAttribute1 setCountryOfCounterParty(CountryCode countryOfCounterParty) {
+		this.countryOfCounterParty = Objects.requireNonNull(countryOfCounterParty);
+		return this;
 	}
 }

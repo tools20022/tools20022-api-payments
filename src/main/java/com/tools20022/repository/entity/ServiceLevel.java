@@ -26,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Agreement under which or rules under which the transaction should be
@@ -80,8 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +101,8 @@ public class ServiceLevel {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PaymentProcessing paymentProcessing;
 	/**
-	 * Payment process for which a service level is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,9 +148,8 @@ public class ServiceLevel {
 	};
 	protected ServiceLevelCode code;
 	/**
-	 * Identification of a pre-agreed level of service between the parties in a
-	 * coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,8 +205,8 @@ public class ServiceLevel {
 	};
 	protected SWIFTServiceLevelCode other;
 	/**
-	 * SWIFT defined service level applies to the payment instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +252,8 @@ public class ServiceLevel {
 	};
 	protected Max35Text bilateral;
 	/**
-	 * Unambiguous identification of a pre-agreed level of service between the
-	 * parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,7 +301,7 @@ public class ServiceLevel {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceLevel";
 				definition = "Agreement under which or rules under which the transaction should be processed.";
@@ -320,35 +320,39 @@ public class ServiceLevel {
 		return mmObject_lazy.get();
 	}
 
-	public PaymentProcessing getPaymentProcessing() {
-		return paymentProcessing;
+	public Optional<PaymentProcessing> getPaymentProcessing() {
+		return paymentProcessing == null ? Optional.empty() : Optional.of(paymentProcessing);
 	}
 
-	public void setPaymentProcessing(com.tools20022.repository.entity.PaymentProcessing paymentProcessing) {
+	public ServiceLevel setPaymentProcessing(com.tools20022.repository.entity.PaymentProcessing paymentProcessing) {
 		this.paymentProcessing = paymentProcessing;
+		return this;
 	}
 
 	public ServiceLevelCode getCode() {
 		return code;
 	}
 
-	public void setCode(ServiceLevelCode code) {
-		this.code = code;
+	public ServiceLevel setCode(ServiceLevelCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public SWIFTServiceLevelCode getOther() {
 		return other;
 	}
 
-	public void setOther(SWIFTServiceLevelCode other) {
-		this.other = other;
+	public ServiceLevel setOther(SWIFTServiceLevelCode other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 
 	public Max35Text getBilateral() {
 		return bilateral;
 	}
 
-	public void setBilateral(Max35Text bilateral) {
-		this.bilateral = bilateral;
+	public ServiceLevel setBilateral(Max35Text bilateral) {
+		this.bilateral = Objects.requireNonNull(bilateral);
+		return this;
 	}
 }

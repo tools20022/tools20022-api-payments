@@ -38,155 +38,155 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ClosingTransactionAmount
- * RepairReasonV2Code.mmClosingTransactionAmount}</li>
+ * RepairReasonV2Code.ClosingTransactionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#NarrativeReason
- * RepairReasonV2Code.mmNarrativeReason}</li>
+ * RepairReasonV2Code.NarrativeReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ProcessingBatch
- * RepairReasonV2Code.mmProcessingBatch}</li>
+ * RepairReasonV2Code.ProcessingBatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#TransactionCallDelay
- * RepairReasonV2Code.mmTransactionCallDelay}</li>
+ * RepairReasonV2Code.TransactionCallDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#CorporateAction
- * RepairReasonV2Code.mmCorporateAction}</li>
+ * RepairReasonV2Code.CorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#CashAccount
- * RepairReasonV2Code.mmCashAccount}</li>
+ * RepairReasonV2Code.CashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ImpossibleCashSettlementSystem
- * RepairReasonV2Code.mmImpossibleCashSettlementSystem}</li>
+ * RepairReasonV2Code.ImpossibleCashSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SettlementDate
- * RepairReasonV2Code.mmSettlementDate}</li>
+ * RepairReasonV2Code.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#DealPrice
- * RepairReasonV2Code.mmDealPrice}</li>
+ * RepairReasonV2Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SettlementAmount
- * RepairReasonV2Code.mmSettlementAmount}</li>
+ * RepairReasonV2Code.SettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#Quantity
- * RepairReasonV2Code.mmQuantity}</li>
+ * RepairReasonV2Code.Quantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#Security
- * RepairReasonV2Code.mmSecurity}</li>
+ * RepairReasonV2Code.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#TradeDate
- * RepairReasonV2Code.mmTradeDate}</li>
+ * RepairReasonV2Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ForfeitAmount
- * RepairReasonV2Code.mmForfeitAmount}</li>
+ * RepairReasonV2Code.ForfeitAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#CommonReference
- * RepairReasonV2Code.mmCommonReference}</li>
+ * RepairReasonV2Code.CommonReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#LetterOfGuaranteeIndicator
- * RepairReasonV2Code.mmLetterOfGuaranteeIndicator}</li>
+ * RepairReasonV2Code.LetterOfGuaranteeIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#MinimumSettlementQuantity
- * RepairReasonV2Code.mmMinimumSettlementQuantity}</li>
+ * RepairReasonV2Code.MinimumSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#MultipleSettlementQuantity
- * RepairReasonV2Code.mmMultipleSettlementQuantity}</li>
+ * RepairReasonV2Code.MultipleSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SettlementAmountCurrency
- * RepairReasonV2Code.mmSettlementAmountCurrency}</li>
+ * RepairReasonV2Code.SettlementAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#PhysicalSettlementImpossible
- * RepairReasonV2Code.mmPhysicalSettlementImpossible}</li>
+ * RepairReasonV2Code.PhysicalSettlementImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#PlaceOfTrade
- * RepairReasonV2Code.mmPlaceOfTrade}</li>
+ * RepairReasonV2Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#Reference
- * RepairReasonV2Code.mmReference}</li>
+ * RepairReasonV2Code.Reference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#TerminationTransactionAmount
- * RepairReasonV2Code.mmTerminationTransactionAmount}</li>
+ * RepairReasonV2Code.TerminationTransactionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#RepurchaseRate
- * RepairReasonV2Code.mmRepurchaseRate}</li>
+ * RepairReasonV2Code.RepurchaseRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#PremiumAmount
- * RepairReasonV2Code.mmPremiumAmount}</li>
+ * RepairReasonV2Code.PremiumAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#RepurchaseRateType
- * RepairReasonV2Code.mmRepurchaseRateType}</li>
+ * RepairReasonV2Code.RepurchaseRateType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SpreadRate
- * RepairReasonV2Code.mmSpreadRate}</li>
+ * RepairReasonV2Code.SpreadRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ImpossibleToUseTheRTGSSystemInstructed
- * RepairReasonV2Code.mmImpossibleToUseTheRTGSSystemInstructed}</li>
+ * RepairReasonV2Code.ImpossibleToUseTheRTGSSystemInstructed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SafekeepingAccount
- * RepairReasonV2Code.mmSafekeepingAccount}</li>
+ * RepairReasonV2Code.SafekeepingAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SettlementTransaction
- * RepairReasonV2Code.mmSettlementTransaction}</li>
+ * RepairReasonV2Code.SettlementTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#SettlementSystemMethod
- * RepairReasonV2Code.mmSettlementSystemMethod}</li>
+ * RepairReasonV2Code.SettlementSystemMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ClosingDateTime
- * RepairReasonV2Code.mmClosingDateTime}</li>
+ * RepairReasonV2Code.ClosingDateTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#TaxStatus
- * RepairReasonV2Code.mmTaxStatus}</li>
+ * RepairReasonV2Code.TaxStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#VariableRateSupport
- * RepairReasonV2Code.mmVariableRateSupport}</li>
+ * RepairReasonV2Code.VariableRateSupport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#AccountServicerDeadlineMissed
- * RepairReasonV2Code.mmAccountServicerDeadlineMissed}</li>
+ * RepairReasonV2Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#TypeOfOrderRepair
- * RepairReasonV2Code.mmTypeOfOrderRepair}</li>
+ * RepairReasonV2Code.TypeOfOrderRepair}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#CommercializationContractRepair
- * RepairReasonV2Code.mmCommercializationContractRepair}</li>
+ * RepairReasonV2Code.CommercializationContractRepair}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#FeeCommissionRepair
- * RepairReasonV2Code.mmFeeCommissionRepair}</li>
+ * RepairReasonV2Code.FeeCommissionRepair}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#NarrativeInformationRepair
- * RepairReasonV2Code.mmNarrativeInformationRepair}</li>
+ * RepairReasonV2Code.NarrativeInformationRepair}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#NoMatch
- * RepairReasonV2Code.mmNoMatch}</li>
+ * RepairReasonV2Code.NoMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#NotFound
- * RepairReasonV2Code.mmNotFound}</li>
+ * RepairReasonV2Code.NotFound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#Unknown
- * RepairReasonV2Code.mmUnknown}</li>
+ * RepairReasonV2Code.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#PlaceOfSafekeeping
- * RepairReasonV2Code.mmPlaceOfSafekeeping}</li>
+ * RepairReasonV2Code.PlaceOfSafekeeping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#StampDuty
- * RepairReasonV2Code.mmStampDuty}</li>
+ * RepairReasonV2Code.StampDuty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#Other
- * RepairReasonV2Code.mmOther}</li>
+ * RepairReasonV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ReceivingDeliveringDepository
- * RepairReasonV2Code.mmReceivingDeliveringDepository}</li>
+ * RepairReasonV2Code.ReceivingDeliveringDepository}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ReceivingDeliveringParty3
- * RepairReasonV2Code.mmReceivingDeliveringParty3}</li>
+ * RepairReasonV2Code.ReceivingDeliveringParty3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ReceivingDeliveringParty2
- * RepairReasonV2Code.mmReceivingDeliveringParty2}</li>
+ * RepairReasonV2Code.ReceivingDeliveringParty2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepairReasonV2Code#ReceivingDeliveringParty1
- * RepairReasonV2Code.mmReceivingDeliveringParty1}</li>
+ * RepairReasonV2Code.ReceivingDeliveringParty1}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1724,7 +1724,7 @@ public class RepairReasonV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CTRA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepairReasonV2Code";

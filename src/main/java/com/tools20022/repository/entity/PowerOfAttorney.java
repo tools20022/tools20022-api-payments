@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Document that transfers specific rights from a party to another party.
@@ -68,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +87,8 @@ public class PowerOfAttorney extends Mandate {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Party authorisedParty;
 	/**
-	 * Party which is the holder of the power of attorney.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +134,8 @@ public class PowerOfAttorney extends Mandate {
 	};
 	protected PowerOfAttorneyRequirements powerOfAttorneyRequirements;
 	/**
-	 * Describes the requirements relative to the power of attorney.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,8 +184,8 @@ public class PowerOfAttorney extends Mandate {
 	};
 	protected SecuritiesAccount authorisedAccount;
 	/**
-	 * Specifies the securities account on which the power of attorney applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,7 +236,7 @@ public class PowerOfAttorney extends Mandate {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PowerOfAttorney";
 				definition = "Document that transfers specific rights from a party to another party.";
@@ -258,23 +259,26 @@ public class PowerOfAttorney extends Mandate {
 		return authorisedParty;
 	}
 
-	public void setAuthorisedParty(com.tools20022.repository.entity.Party authorisedParty) {
-		this.authorisedParty = authorisedParty;
+	public PowerOfAttorney setAuthorisedParty(com.tools20022.repository.entity.Party authorisedParty) {
+		this.authorisedParty = Objects.requireNonNull(authorisedParty);
+		return this;
 	}
 
 	public PowerOfAttorneyRequirements getPowerOfAttorneyRequirements() {
 		return powerOfAttorneyRequirements;
 	}
 
-	public void setPowerOfAttorneyRequirements(com.tools20022.repository.entity.PowerOfAttorneyRequirements powerOfAttorneyRequirements) {
-		this.powerOfAttorneyRequirements = powerOfAttorneyRequirements;
+	public PowerOfAttorney setPowerOfAttorneyRequirements(com.tools20022.repository.entity.PowerOfAttorneyRequirements powerOfAttorneyRequirements) {
+		this.powerOfAttorneyRequirements = Objects.requireNonNull(powerOfAttorneyRequirements);
+		return this;
 	}
 
 	public SecuritiesAccount getAuthorisedAccount() {
 		return authorisedAccount;
 	}
 
-	public void setAuthorisedAccount(com.tools20022.repository.entity.SecuritiesAccount authorisedAccount) {
-		this.authorisedAccount = authorisedAccount;
+	public PowerOfAttorney setAuthorisedAccount(com.tools20022.repository.entity.SecuritiesAccount authorisedAccount) {
+		this.authorisedAccount = Objects.requireNonNull(authorisedAccount);
+		return this;
 	}
 }

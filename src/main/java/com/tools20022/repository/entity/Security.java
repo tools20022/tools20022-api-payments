@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
@@ -26,9 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.EntryTransaction8;
 import com.tools20022.repository.msg.LoanContract1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Financial instruments representing a sum of rights of the investor vis-a-vis
@@ -298,8 +298,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -317,8 +317,8 @@ public class Security extends Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesIdentification> identification;
 	/**
-	 * Way(s) of identifying the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -376,8 +376,8 @@ public class Security extends Asset {
 	};
 	protected CountryCode registeredDistributionCountry;
 	/**
-	 * Country in which the processing characteristic applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,8 +421,8 @@ public class Security extends Asset {
 	};
 	protected CurrencyCode denominationCurrency;
 	/**
-	 * Currency in which a security is issued or redenominated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,8 +466,8 @@ public class Security extends Asset {
 	};
 	protected FormOfSecurityCode registrationForm;
 	/**
-	 * Specifies the form, ie, ownership, of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,9 +512,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator dematerialisedIndicator;
 	/**
-	 * Indicates whether a security exists only as an electronic record, ie,
-	 * there is no physical document representing the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -561,9 +560,8 @@ public class Security extends Asset {
 	};
 	protected EUSavingsDirectiveCode eUSavingsDirective;
 	/**
-	 * Indicates whether the investment fund class is subject to the European
-	 * Union Saving Directive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -610,8 +608,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
 	/**
-	 * Specifies the quantity associated with a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -656,8 +654,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesRelatedFees> fees;
 	/**
-	 * Fees related to securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -703,8 +701,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesPricing> pricing;
 	/**
-	 * Information on the price of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -749,8 +747,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesAccount securitiesAccount;
 	/**
-	 * Account on which the security is held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -796,8 +794,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.TradingMarket> tradingMarket;
 	/**
-	 * Market(s) on which the security is traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -842,8 +840,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.TradingMarket> placeOfListing;
 	/**
-	 * Market(s) on which the security is listed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -888,8 +886,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.BasicSecuritiesRegistration> registration;
 	/**
-	 * Information related to registration of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -935,8 +933,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesRestriction> restriction;
 	/**
-	 * Regulatory restriction(s) linked to the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -982,8 +980,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionEvent> corporateEvent;
 	/**
-	 * Corporate event linked to the security
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1038,8 +1036,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator temporaryFinancialInstrumentIndicator;
 	/**
-	 * Specifies that the security is a temporary security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1084,8 +1082,8 @@ public class Security extends Asset {
 	};
 	protected ISODateTime availableDate;
 	/**
-	 * Date on which securities become available for sale.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1129,9 +1127,8 @@ public class Security extends Asset {
 	};
 	protected Max350Text declarationDetails;
 	/**
-	 * Provides declaration details narrative relative to the financial
-	 * instrument, eg, beneficial ownership.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1177,8 +1174,8 @@ public class Security extends Asset {
 	};
 	protected Spread spread;
 	/**
-	 * Spread that uses the security as benchmark reference.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1223,8 +1220,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.Dividend> dividend;
 	/**
-	 * Dividend per financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1268,8 +1265,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesBalance balance;
 	/**
-	 * Balance of the account which holds a specific security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1315,9 +1312,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator fungibleIndicator;
 	/**
-	 * Indicates whether a security is interchangeable, ie, the security is
-	 * allowed to be replaced by another security, without loss of value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1364,8 +1360,8 @@ public class Security extends Asset {
 	};
 	protected AppearanceCode appearance;
 	/**
-	 * Specifies the deliverability of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1410,9 +1406,8 @@ public class Security extends Asset {
 	};
 	protected Number nearTermPositionLimit;
 	/**
-	 * Position limit in the near-term contract for a given exchange-traded
-	 * product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1458,8 +1453,8 @@ public class Security extends Asset {
 	};
 	protected ISOYearMonth contractSettlementMonth;
 	/**
-	 * Specifies when the contract (i.e. MBS/TBA) will settle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1471,6 +1466,9 @@ public class Security extends Asset {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Security
 	 * Security}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 667</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -1486,6 +1484,7 @@ public class Security extends Asset {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "667"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractSettlementMonth";
 			definition = "Specifies when the contract (i.e. MBS/TBA) will settle.";
@@ -1504,8 +1503,8 @@ public class Security extends Asset {
 	};
 	protected Number minimumTradingPricingIncrement;
 	/**
-	 * Minimum price increase for a given exchange-traded Instrument
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1550,8 +1549,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.Rating> rating;
 	/**
-	 * Rating(s) of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1595,8 +1594,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.CouponAttached> couponAttached;
 	/**
-	 * Coupon information of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1641,9 +1640,8 @@ public class Security extends Asset {
 	};
 	protected Sector sector;
 	/**
-	 * Indicates the market sector the security is classified as
-	 * pharmaceuticals, automobile, housing, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1690,9 +1688,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator warrantAttachedOnDelivery;
 	/**
-	 * Indicates whether the warrants on a financial instrument (which has been
-	 * traded cum warrants) will be attached on delivery.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1739,8 +1736,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator strippableIndicator;
 	/**
-	 * Indicates whether the interest is separable from the principal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1786,8 +1783,8 @@ public class Security extends Asset {
 	};
 	protected ISODateTime firstDealingDate;
 	/**
-	 * Date on which new securities begin trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1831,8 +1828,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTax> taxDetails;
 	/**
-	 * Tax details of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1877,8 +1874,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesTrade securitiesTrade;
 	/**
-	 * Trade in which the security is involved.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1924,9 +1921,8 @@ public class Security extends Asset {
 	};
 	protected Jurisdiction registrationJurisdiction;
 	/**
-	 * Jurisdiction (country, county, state, province, city) in which the
-	 * security is legally recorded for regulatory and/or tax purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1974,9 +1970,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesPartyRole> partyRole;
 	/**
-	 * Specifies roles played by a party that are linked to the handling of
-	 * securities but not related to a specific process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2023,8 +2018,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesStatus> securityStatus;
 	/**
-	 * Specifies the status of the security within its lifecycle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2070,8 +2065,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesModification modification;
 	/**
-	 * Modification process which applies to a specific security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2119,8 +2114,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.RedemptionSchedule> redemptionSchedule;
 	/**
-	 * RedemptionSchedule(s) linked to the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2165,8 +2160,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement;
 	/**
-	 * Settlement of a specific security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2212,8 +2207,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesTransfer securitiesTransfer;
 	/**
-	 * Transfer process in which that security is transferred..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2259,9 +2254,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.AgentCorporateActionStandingInstruction> corporateActionStandingInstructions;
 	/**
-	 * Standing instructions related to the security in the context of corporate
-	 * action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2309,8 +2303,8 @@ public class Security extends Asset {
 	};
 	protected Quote quote;
 	/**
-	 * Quote of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2355,8 +2349,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesOrder securitiesOrder;
 	/**
-	 * Order for which a specific security is indicated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2402,9 +2396,8 @@ public class Security extends Asset {
 	};
 	protected VariableInterest relatedVariableInterest;
 	/**
-	 * Variable interest parameters specified for interest related to a
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2452,10 +2445,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesConversion> conversion;
 	/**
-	 * Information on the conversion exchange of an entitlement or of preferred
-	 * equities or of convertible bonds, into another form of securities,
-	 * usually common equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2503,8 +2494,8 @@ public class Security extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.ComponentSecurity> componentSecurity;
 	/**
-	 * The security is part of the component security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2549,9 +2540,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator recompositionIndicator;
 	/**
-	 * Indicates whether the interest and the principal can be recomposed. This
-	 * is the reverse operation of stripping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2598,8 +2588,8 @@ public class Security extends Asset {
 	};
 	protected Max35Text series;
 	/**
-	 * Identifier that links multiple security classes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2643,9 +2633,8 @@ public class Security extends Asset {
 	};
 	protected PercentageRate percentageOfDebtClaim;
 	/**
-	 * Percentage of the underlying assets of a fund that represents a debt and
-	 * is in the scope of the EU Savings directive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2692,9 +2681,8 @@ public class Security extends Asset {
 	};
 	protected PercentageRate coverRate;
 	/**
-	 * Amount of dividends the issuer intends to pay out the following year
-	 * based on their normalised earnings.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2741,8 +2729,8 @@ public class Security extends Asset {
 	};
 	protected MaturityRedemptionTypeCode maturityRedemption;
 	/**
-	 * Return of an investor's principal in a security at maturity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2788,8 +2776,8 @@ public class Security extends Asset {
 	};
 	protected MarginCall relatedMarginCall;
 	/**
-	 * Margin call for which the associated securities are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2836,10 +2824,8 @@ public class Security extends Asset {
 	};
 	protected Party closeLink;
 	/**
-	 * Situation in which two entities are linked because one of these entities
-	 * owns some of the capital of the other one, or has a control relationship
-	 * with it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2886,9 +2872,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator potentialEuroSystemEligibility;
 	/**
-	 * Indicates that the security is intended to be held in a manner that could
-	 * allow the Eurosystem eligibility.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2935,8 +2920,8 @@ public class Security extends Asset {
 	};
 	protected SecuritiesQuantity minimumQuantity;
 	/**
-	 * Indicates the minimum tradable quantity of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2982,10 +2967,8 @@ public class Security extends Asset {
 	};
 	protected YesNoIndicator restrictedIndicator;
 	/**
-	 * Identifies if the securities is restricted or not (as per Rule 144 of the
-	 * Securities and Exchange Commission,that sets the conditions under which
-	 * restricted, unregistered and control securities can be sold).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3034,7 +3017,7 @@ public class Security extends Asset {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Security";
 				definition = "Financial instruments representing a sum of rights of the investor vis-a-vis the issuer.";
@@ -3083,458 +3066,515 @@ public class Security extends Asset {
 	}
 
 	public List<SecuritiesIdentification> getIdentification() {
-		return identification;
+		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public void setIdentification(List<com.tools20022.repository.entity.SecuritiesIdentification> identification) {
-		this.identification = identification;
+	public Security setIdentification(List<com.tools20022.repository.entity.SecuritiesIdentification> identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public CountryCode getRegisteredDistributionCountry() {
 		return registeredDistributionCountry;
 	}
 
-	public void setRegisteredDistributionCountry(CountryCode registeredDistributionCountry) {
-		this.registeredDistributionCountry = registeredDistributionCountry;
+	public Security setRegisteredDistributionCountry(CountryCode registeredDistributionCountry) {
+		this.registeredDistributionCountry = Objects.requireNonNull(registeredDistributionCountry);
+		return this;
 	}
 
 	public CurrencyCode getDenominationCurrency() {
 		return denominationCurrency;
 	}
 
-	public void setDenominationCurrency(CurrencyCode denominationCurrency) {
-		this.denominationCurrency = denominationCurrency;
+	public Security setDenominationCurrency(CurrencyCode denominationCurrency) {
+		this.denominationCurrency = Objects.requireNonNull(denominationCurrency);
+		return this;
 	}
 
 	public FormOfSecurityCode getRegistrationForm() {
 		return registrationForm;
 	}
 
-	public void setRegistrationForm(FormOfSecurityCode registrationForm) {
-		this.registrationForm = registrationForm;
+	public Security setRegistrationForm(FormOfSecurityCode registrationForm) {
+		this.registrationForm = Objects.requireNonNull(registrationForm);
+		return this;
 	}
 
 	public YesNoIndicator getDematerialisedIndicator() {
 		return dematerialisedIndicator;
 	}
 
-	public void setDematerialisedIndicator(YesNoIndicator dematerialisedIndicator) {
-		this.dematerialisedIndicator = dematerialisedIndicator;
+	public Security setDematerialisedIndicator(YesNoIndicator dematerialisedIndicator) {
+		this.dematerialisedIndicator = Objects.requireNonNull(dematerialisedIndicator);
+		return this;
 	}
 
 	public EUSavingsDirectiveCode getEUSavingsDirective() {
 		return eUSavingsDirective;
 	}
 
-	public void setEUSavingsDirective(EUSavingsDirectiveCode eUSavingsDirective) {
-		this.eUSavingsDirective = eUSavingsDirective;
+	public Security setEUSavingsDirective(EUSavingsDirectiveCode eUSavingsDirective) {
+		this.eUSavingsDirective = Objects.requireNonNull(eUSavingsDirective);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getSecuritiesQuantity() {
-		return securitiesQuantity;
+		return securitiesQuantity == null ? securitiesQuantity = new ArrayList<>() : securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public Security setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public List<SecuritiesRelatedFees> getFees() {
-		return fees;
+		return fees == null ? fees = new ArrayList<>() : fees;
 	}
 
-	public void setFees(List<com.tools20022.repository.entity.SecuritiesRelatedFees> fees) {
-		this.fees = fees;
+	public Security setFees(List<com.tools20022.repository.entity.SecuritiesRelatedFees> fees) {
+		this.fees = Objects.requireNonNull(fees);
+		return this;
 	}
 
 	public List<SecuritiesPricing> getPricing() {
-		return pricing;
+		return pricing == null ? pricing = new ArrayList<>() : pricing;
 	}
 
-	public void setPricing(List<com.tools20022.repository.entity.SecuritiesPricing> pricing) {
-		this.pricing = pricing;
+	public Security setPricing(List<com.tools20022.repository.entity.SecuritiesPricing> pricing) {
+		this.pricing = Objects.requireNonNull(pricing);
+		return this;
 	}
 
 	public SecuritiesAccount getSecuritiesAccount() {
 		return securitiesAccount;
 	}
 
-	public void setSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount securitiesAccount) {
-		this.securitiesAccount = securitiesAccount;
+	public Security setSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount securitiesAccount) {
+		this.securitiesAccount = Objects.requireNonNull(securitiesAccount);
+		return this;
 	}
 
 	public List<TradingMarket> getTradingMarket() {
-		return tradingMarket;
+		return tradingMarket == null ? tradingMarket = new ArrayList<>() : tradingMarket;
 	}
 
-	public void setTradingMarket(List<com.tools20022.repository.entity.TradingMarket> tradingMarket) {
-		this.tradingMarket = tradingMarket;
+	public Security setTradingMarket(List<com.tools20022.repository.entity.TradingMarket> tradingMarket) {
+		this.tradingMarket = Objects.requireNonNull(tradingMarket);
+		return this;
 	}
 
 	public List<TradingMarket> getPlaceOfListing() {
-		return placeOfListing;
+		return placeOfListing == null ? placeOfListing = new ArrayList<>() : placeOfListing;
 	}
 
-	public void setPlaceOfListing(List<com.tools20022.repository.entity.TradingMarket> placeOfListing) {
-		this.placeOfListing = placeOfListing;
+	public Security setPlaceOfListing(List<com.tools20022.repository.entity.TradingMarket> placeOfListing) {
+		this.placeOfListing = Objects.requireNonNull(placeOfListing);
+		return this;
 	}
 
 	public List<BasicSecuritiesRegistration> getRegistration() {
-		return registration;
+		return registration == null ? registration = new ArrayList<>() : registration;
 	}
 
-	public void setRegistration(List<com.tools20022.repository.entity.BasicSecuritiesRegistration> registration) {
-		this.registration = registration;
+	public Security setRegistration(List<com.tools20022.repository.entity.BasicSecuritiesRegistration> registration) {
+		this.registration = Objects.requireNonNull(registration);
+		return this;
 	}
 
 	public List<SecuritiesRestriction> getRestriction() {
-		return restriction;
+		return restriction == null ? restriction = new ArrayList<>() : restriction;
 	}
 
-	public void setRestriction(List<com.tools20022.repository.entity.SecuritiesRestriction> restriction) {
-		this.restriction = restriction;
+	public Security setRestriction(List<com.tools20022.repository.entity.SecuritiesRestriction> restriction) {
+		this.restriction = Objects.requireNonNull(restriction);
+		return this;
 	}
 
 	public List<CorporateActionEvent> getCorporateEvent() {
-		return corporateEvent;
+		return corporateEvent == null ? corporateEvent = new ArrayList<>() : corporateEvent;
 	}
 
-	public void setCorporateEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateEvent) {
-		this.corporateEvent = corporateEvent;
+	public Security setCorporateEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateEvent) {
+		this.corporateEvent = Objects.requireNonNull(corporateEvent);
+		return this;
 	}
 
 	public YesNoIndicator getTemporaryFinancialInstrumentIndicator() {
 		return temporaryFinancialInstrumentIndicator;
 	}
 
-	public void setTemporaryFinancialInstrumentIndicator(YesNoIndicator temporaryFinancialInstrumentIndicator) {
-		this.temporaryFinancialInstrumentIndicator = temporaryFinancialInstrumentIndicator;
+	public Security setTemporaryFinancialInstrumentIndicator(YesNoIndicator temporaryFinancialInstrumentIndicator) {
+		this.temporaryFinancialInstrumentIndicator = Objects.requireNonNull(temporaryFinancialInstrumentIndicator);
+		return this;
 	}
 
 	public ISODateTime getAvailableDate() {
 		return availableDate;
 	}
 
-	public void setAvailableDate(ISODateTime availableDate) {
-		this.availableDate = availableDate;
+	public Security setAvailableDate(ISODateTime availableDate) {
+		this.availableDate = Objects.requireNonNull(availableDate);
+		return this;
 	}
 
 	public Max350Text getDeclarationDetails() {
 		return declarationDetails;
 	}
 
-	public void setDeclarationDetails(Max350Text declarationDetails) {
-		this.declarationDetails = declarationDetails;
+	public Security setDeclarationDetails(Max350Text declarationDetails) {
+		this.declarationDetails = Objects.requireNonNull(declarationDetails);
+		return this;
 	}
 
-	public Spread getSpread() {
-		return spread;
+	public Optional<Spread> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Security setSpread(com.tools20022.repository.entity.Spread spread) {
 		this.spread = spread;
+		return this;
 	}
 
 	public List<Dividend> getDividend() {
-		return dividend;
+		return dividend == null ? dividend = new ArrayList<>() : dividend;
 	}
 
-	public void setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
-		this.dividend = dividend;
+	public Security setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
+		this.dividend = Objects.requireNonNull(dividend);
+		return this;
 	}
 
 	public SecuritiesBalance getBalance() {
 		return balance;
 	}
 
-	public void setBalance(com.tools20022.repository.entity.SecuritiesBalance balance) {
-		this.balance = balance;
+	public Security setBalance(com.tools20022.repository.entity.SecuritiesBalance balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
 	public YesNoIndicator getFungibleIndicator() {
 		return fungibleIndicator;
 	}
 
-	public void setFungibleIndicator(YesNoIndicator fungibleIndicator) {
-		this.fungibleIndicator = fungibleIndicator;
+	public Security setFungibleIndicator(YesNoIndicator fungibleIndicator) {
+		this.fungibleIndicator = Objects.requireNonNull(fungibleIndicator);
+		return this;
 	}
 
 	public AppearanceCode getAppearance() {
 		return appearance;
 	}
 
-	public void setAppearance(AppearanceCode appearance) {
-		this.appearance = appearance;
+	public Security setAppearance(AppearanceCode appearance) {
+		this.appearance = Objects.requireNonNull(appearance);
+		return this;
 	}
 
 	public Number getNearTermPositionLimit() {
 		return nearTermPositionLimit;
 	}
 
-	public void setNearTermPositionLimit(Number nearTermPositionLimit) {
-		this.nearTermPositionLimit = nearTermPositionLimit;
+	public Security setNearTermPositionLimit(Number nearTermPositionLimit) {
+		this.nearTermPositionLimit = Objects.requireNonNull(nearTermPositionLimit);
+		return this;
 	}
 
 	public ISOYearMonth getContractSettlementMonth() {
 		return contractSettlementMonth;
 	}
 
-	public void setContractSettlementMonth(ISOYearMonth contractSettlementMonth) {
-		this.contractSettlementMonth = contractSettlementMonth;
+	public Security setContractSettlementMonth(ISOYearMonth contractSettlementMonth) {
+		this.contractSettlementMonth = Objects.requireNonNull(contractSettlementMonth);
+		return this;
 	}
 
 	public Number getMinimumTradingPricingIncrement() {
 		return minimumTradingPricingIncrement;
 	}
 
-	public void setMinimumTradingPricingIncrement(Number minimumTradingPricingIncrement) {
-		this.minimumTradingPricingIncrement = minimumTradingPricingIncrement;
+	public Security setMinimumTradingPricingIncrement(Number minimumTradingPricingIncrement) {
+		this.minimumTradingPricingIncrement = Objects.requireNonNull(minimumTradingPricingIncrement);
+		return this;
 	}
 
 	public List<Rating> getRating() {
-		return rating;
+		return rating == null ? rating = new ArrayList<>() : rating;
 	}
 
-	public void setRating(List<com.tools20022.repository.entity.Rating> rating) {
-		this.rating = rating;
+	public Security setRating(List<com.tools20022.repository.entity.Rating> rating) {
+		this.rating = Objects.requireNonNull(rating);
+		return this;
 	}
 
 	public List<CouponAttached> getCouponAttached() {
-		return couponAttached;
+		return couponAttached == null ? couponAttached = new ArrayList<>() : couponAttached;
 	}
 
-	public void setCouponAttached(List<com.tools20022.repository.entity.CouponAttached> couponAttached) {
-		this.couponAttached = couponAttached;
+	public Security setCouponAttached(List<com.tools20022.repository.entity.CouponAttached> couponAttached) {
+		this.couponAttached = Objects.requireNonNull(couponAttached);
+		return this;
 	}
 
 	public Sector getSector() {
 		return sector;
 	}
 
-	public void setSector(com.tools20022.repository.entity.Sector sector) {
-		this.sector = sector;
+	public Security setSector(com.tools20022.repository.entity.Sector sector) {
+		this.sector = Objects.requireNonNull(sector);
+		return this;
 	}
 
 	public YesNoIndicator getWarrantAttachedOnDelivery() {
 		return warrantAttachedOnDelivery;
 	}
 
-	public void setWarrantAttachedOnDelivery(YesNoIndicator warrantAttachedOnDelivery) {
-		this.warrantAttachedOnDelivery = warrantAttachedOnDelivery;
+	public Security setWarrantAttachedOnDelivery(YesNoIndicator warrantAttachedOnDelivery) {
+		this.warrantAttachedOnDelivery = Objects.requireNonNull(warrantAttachedOnDelivery);
+		return this;
 	}
 
 	public YesNoIndicator getStrippableIndicator() {
 		return strippableIndicator;
 	}
 
-	public void setStrippableIndicator(YesNoIndicator strippableIndicator) {
-		this.strippableIndicator = strippableIndicator;
+	public Security setStrippableIndicator(YesNoIndicator strippableIndicator) {
+		this.strippableIndicator = Objects.requireNonNull(strippableIndicator);
+		return this;
 	}
 
 	public ISODateTime getFirstDealingDate() {
 		return firstDealingDate;
 	}
 
-	public void setFirstDealingDate(ISODateTime firstDealingDate) {
-		this.firstDealingDate = firstDealingDate;
+	public Security setFirstDealingDate(ISODateTime firstDealingDate) {
+		this.firstDealingDate = Objects.requireNonNull(firstDealingDate);
+		return this;
 	}
 
 	public List<SecuritiesTax> getTaxDetails() {
-		return taxDetails;
+		return taxDetails == null ? taxDetails = new ArrayList<>() : taxDetails;
 	}
 
-	public void setTaxDetails(List<com.tools20022.repository.entity.SecuritiesTax> taxDetails) {
-		this.taxDetails = taxDetails;
+	public Security setTaxDetails(List<com.tools20022.repository.entity.SecuritiesTax> taxDetails) {
+		this.taxDetails = Objects.requireNonNull(taxDetails);
+		return this;
 	}
 
 	public SecuritiesTrade getSecuritiesTrade() {
 		return securitiesTrade;
 	}
 
-	public void setSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTrade securitiesTrade) {
-		this.securitiesTrade = securitiesTrade;
+	public Security setSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTrade securitiesTrade) {
+		this.securitiesTrade = Objects.requireNonNull(securitiesTrade);
+		return this;
 	}
 
 	public Jurisdiction getRegistrationJurisdiction() {
 		return registrationJurisdiction;
 	}
 
-	public void setRegistrationJurisdiction(com.tools20022.repository.entity.Jurisdiction registrationJurisdiction) {
-		this.registrationJurisdiction = registrationJurisdiction;
+	public Security setRegistrationJurisdiction(com.tools20022.repository.entity.Jurisdiction registrationJurisdiction) {
+		this.registrationJurisdiction = Objects.requireNonNull(registrationJurisdiction);
+		return this;
 	}
 
 	public List<SecuritiesPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.SecuritiesPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Security setPartyRole(List<com.tools20022.repository.entity.SecuritiesPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public List<SecuritiesStatus> getSecurityStatus() {
-		return securityStatus;
+		return securityStatus == null ? securityStatus = new ArrayList<>() : securityStatus;
 	}
 
-	public void setSecurityStatus(List<com.tools20022.repository.entity.SecuritiesStatus> securityStatus) {
-		this.securityStatus = securityStatus;
+	public Security setSecurityStatus(List<com.tools20022.repository.entity.SecuritiesStatus> securityStatus) {
+		this.securityStatus = Objects.requireNonNull(securityStatus);
+		return this;
 	}
 
-	public SecuritiesModification getModification() {
-		return modification;
+	public Optional<SecuritiesModification> getModification() {
+		return modification == null ? Optional.empty() : Optional.of(modification);
 	}
 
-	public void setModification(com.tools20022.repository.entity.SecuritiesModification modification) {
+	public Security setModification(com.tools20022.repository.entity.SecuritiesModification modification) {
 		this.modification = modification;
+		return this;
 	}
 
 	public List<RedemptionSchedule> getRedemptionSchedule() {
-		return redemptionSchedule;
+		return redemptionSchedule == null ? redemptionSchedule = new ArrayList<>() : redemptionSchedule;
 	}
 
-	public void setRedemptionSchedule(List<com.tools20022.repository.entity.RedemptionSchedule> redemptionSchedule) {
-		this.redemptionSchedule = redemptionSchedule;
+	public Security setRedemptionSchedule(List<com.tools20022.repository.entity.RedemptionSchedule> redemptionSchedule) {
+		this.redemptionSchedule = Objects.requireNonNull(redemptionSchedule);
+		return this;
 	}
 
 	public List<SecuritiesSettlement> getSecuritiesSettlement() {
-		return securitiesSettlement;
+		return securitiesSettlement == null ? securitiesSettlement = new ArrayList<>() : securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public Security setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 
 	public SecuritiesTransfer getSecuritiesTransfer() {
 		return securitiesTransfer;
 	}
 
-	public void setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
-		this.securitiesTransfer = securitiesTransfer;
+	public Security setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
+		this.securitiesTransfer = Objects.requireNonNull(securitiesTransfer);
+		return this;
 	}
 
 	public List<AgentCorporateActionStandingInstruction> getCorporateActionStandingInstructions() {
-		return corporateActionStandingInstructions;
+		return corporateActionStandingInstructions == null ? corporateActionStandingInstructions = new ArrayList<>() : corporateActionStandingInstructions;
 	}
 
-	public void setCorporateActionStandingInstructions(List<com.tools20022.repository.entity.AgentCorporateActionStandingInstruction> corporateActionStandingInstructions) {
-		this.corporateActionStandingInstructions = corporateActionStandingInstructions;
+	public Security setCorporateActionStandingInstructions(List<com.tools20022.repository.entity.AgentCorporateActionStandingInstruction> corporateActionStandingInstructions) {
+		this.corporateActionStandingInstructions = Objects.requireNonNull(corporateActionStandingInstructions);
+		return this;
 	}
 
-	public Quote getQuote() {
-		return quote;
+	public Optional<Quote> getQuote() {
+		return quote == null ? Optional.empty() : Optional.of(quote);
 	}
 
-	public void setQuote(com.tools20022.repository.entity.Quote quote) {
+	public Security setQuote(com.tools20022.repository.entity.Quote quote) {
 		this.quote = quote;
+		return this;
 	}
 
 	public SecuritiesOrder getSecuritiesOrder() {
 		return securitiesOrder;
 	}
 
-	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
-		this.securitiesOrder = securitiesOrder;
+	public Security setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
+		return this;
 	}
 
-	public VariableInterest getRelatedVariableInterest() {
-		return relatedVariableInterest;
+	public Optional<VariableInterest> getRelatedVariableInterest() {
+		return relatedVariableInterest == null ? Optional.empty() : Optional.of(relatedVariableInterest);
 	}
 
-	public void setRelatedVariableInterest(com.tools20022.repository.entity.VariableInterest relatedVariableInterest) {
+	public Security setRelatedVariableInterest(com.tools20022.repository.entity.VariableInterest relatedVariableInterest) {
 		this.relatedVariableInterest = relatedVariableInterest;
+		return this;
 	}
 
 	public List<SecuritiesConversion> getConversion() {
-		return conversion;
+		return conversion == null ? conversion = new ArrayList<>() : conversion;
 	}
 
-	public void setConversion(List<com.tools20022.repository.entity.SecuritiesConversion> conversion) {
-		this.conversion = conversion;
+	public Security setConversion(List<com.tools20022.repository.entity.SecuritiesConversion> conversion) {
+		this.conversion = Objects.requireNonNull(conversion);
+		return this;
 	}
 
 	public List<ComponentSecurity> getComponentSecurity() {
-		return componentSecurity;
+		return componentSecurity == null ? componentSecurity = new ArrayList<>() : componentSecurity;
 	}
 
-	public void setComponentSecurity(List<com.tools20022.repository.entity.ComponentSecurity> componentSecurity) {
-		this.componentSecurity = componentSecurity;
+	public Security setComponentSecurity(List<com.tools20022.repository.entity.ComponentSecurity> componentSecurity) {
+		this.componentSecurity = Objects.requireNonNull(componentSecurity);
+		return this;
 	}
 
 	public YesNoIndicator getRecompositionIndicator() {
 		return recompositionIndicator;
 	}
 
-	public void setRecompositionIndicator(YesNoIndicator recompositionIndicator) {
-		this.recompositionIndicator = recompositionIndicator;
+	public Security setRecompositionIndicator(YesNoIndicator recompositionIndicator) {
+		this.recompositionIndicator = Objects.requireNonNull(recompositionIndicator);
+		return this;
 	}
 
 	public Max35Text getSeries() {
 		return series;
 	}
 
-	public void setSeries(Max35Text series) {
-		this.series = series;
+	public Security setSeries(Max35Text series) {
+		this.series = Objects.requireNonNull(series);
+		return this;
 	}
 
 	public PercentageRate getPercentageOfDebtClaim() {
 		return percentageOfDebtClaim;
 	}
 
-	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
-		this.percentageOfDebtClaim = percentageOfDebtClaim;
+	public Security setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+		this.percentageOfDebtClaim = Objects.requireNonNull(percentageOfDebtClaim);
+		return this;
 	}
 
 	public PercentageRate getCoverRate() {
 		return coverRate;
 	}
 
-	public void setCoverRate(PercentageRate coverRate) {
-		this.coverRate = coverRate;
+	public Security setCoverRate(PercentageRate coverRate) {
+		this.coverRate = Objects.requireNonNull(coverRate);
+		return this;
 	}
 
 	public MaturityRedemptionTypeCode getMaturityRedemption() {
 		return maturityRedemption;
 	}
 
-	public void setMaturityRedemption(MaturityRedemptionTypeCode maturityRedemption) {
-		this.maturityRedemption = maturityRedemption;
+	public Security setMaturityRedemption(MaturityRedemptionTypeCode maturityRedemption) {
+		this.maturityRedemption = Objects.requireNonNull(maturityRedemption);
+		return this;
 	}
 
 	public MarginCall getRelatedMarginCall() {
 		return relatedMarginCall;
 	}
 
-	public void setRelatedMarginCall(com.tools20022.repository.entity.MarginCall relatedMarginCall) {
-		this.relatedMarginCall = relatedMarginCall;
+	public Security setRelatedMarginCall(com.tools20022.repository.entity.MarginCall relatedMarginCall) {
+		this.relatedMarginCall = Objects.requireNonNull(relatedMarginCall);
+		return this;
 	}
 
 	public Party getCloseLink() {
 		return closeLink;
 	}
 
-	public void setCloseLink(com.tools20022.repository.entity.Party closeLink) {
-		this.closeLink = closeLink;
+	public Security setCloseLink(com.tools20022.repository.entity.Party closeLink) {
+		this.closeLink = Objects.requireNonNull(closeLink);
+		return this;
 	}
 
 	public YesNoIndicator getPotentialEuroSystemEligibility() {
 		return potentialEuroSystemEligibility;
 	}
 
-	public void setPotentialEuroSystemEligibility(YesNoIndicator potentialEuroSystemEligibility) {
-		this.potentialEuroSystemEligibility = potentialEuroSystemEligibility;
+	public Security setPotentialEuroSystemEligibility(YesNoIndicator potentialEuroSystemEligibility) {
+		this.potentialEuroSystemEligibility = Objects.requireNonNull(potentialEuroSystemEligibility);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumQuantity() {
 		return minimumQuantity;
 	}
 
-	public void setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
-		this.minimumQuantity = minimumQuantity;
+	public Security setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
+		this.minimumQuantity = Objects.requireNonNull(minimumQuantity);
+		return this;
 	}
 
 	public YesNoIndicator getRestrictedIndicator() {
 		return restrictedIndicator;
 	}
 
-	public void setRestrictedIndicator(YesNoIndicator restrictedIndicator) {
-		this.restrictedIndicator = restrictedIndicator;
+	public Security setRestrictedIndicator(YesNoIndicator restrictedIndicator) {
+		this.restrictedIndicator = Objects.requireNonNull(restrictedIndicator);
+		return this;
 	}
 }

@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * Charges3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Charges4", propOrder = {"totalChargesAndTaxAmount", "record"})
 public class Charges4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TtlChrgsAndTaxAmt")
 	protected ActiveOrHistoricCurrencyAndAmount totalChargesAndTaxAmount;
 	/**
-	 * Total of all charges and taxes applied to the entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +112,7 @@ public class Charges4 {
 	public static final MMMessageAttribute mmTotalChargesAndTaxAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> Charges4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Charges4.mmObject();
 			isDerived = false;
 			xmlTag = "TtlChrgsAndTaxAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +123,11 @@ public class Charges4 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Rcrd")
 	protected List<com.tools20022.repository.msg.ChargesRecord2> record;
 	/**
-	 * Provides details of the individual charges record.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -156,7 +157,7 @@ public class Charges4 {
 	public static final MMMessageAssociationEnd mmRecord = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Charges.mmObject();
-			componentContext_lazy = () -> Charges4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Charges4.mmObject();
 			isDerived = false;
 			xmlTag = "Rcrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,9 +172,9 @@ public class Charges4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Charges4.mmTotalChargesAndTaxAmount, Charges4.mmRecord);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Charges4.mmTotalChargesAndTaxAmount, com.tools20022.repository.msg.Charges4.mmRecord);
 				trace_lazy = () -> Charges.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Charges4";
 				definition = "Provides further details on the charges related to the payment transaction.";
@@ -183,21 +184,21 @@ public class Charges4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TtlChrgsAndTaxAmt")
-	public ActiveOrHistoricCurrencyAndAmount getTotalChargesAndTaxAmount() {
-		return totalChargesAndTaxAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getTotalChargesAndTaxAmount() {
+		return totalChargesAndTaxAmount == null ? Optional.empty() : Optional.of(totalChargesAndTaxAmount);
 	}
 
-	public void setTotalChargesAndTaxAmount(ActiveOrHistoricCurrencyAndAmount totalChargesAndTaxAmount) {
+	public Charges4 setTotalChargesAndTaxAmount(ActiveOrHistoricCurrencyAndAmount totalChargesAndTaxAmount) {
 		this.totalChargesAndTaxAmount = totalChargesAndTaxAmount;
+		return this;
 	}
 
-	@XmlElement(name = "Rcrd")
 	public List<ChargesRecord2> getRecord() {
-		return record;
+		return record == null ? record = new ArrayList<>() : record;
 	}
 
-	public void setRecord(List<com.tools20022.repository.msg.ChargesRecord2> record) {
-		this.record = record;
+	public Charges4 setRecord(List<com.tools20022.repository.msg.ChargesRecord2> record) {
+		this.record = Objects.requireNonNull(record);
+		return this;
 	}
 }

@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Australian Bank State Branch (BSB) Code - identifies Australian financial
@@ -66,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,11 +87,8 @@ public class AustralianBSBIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExtensiveBranchNetworkIdentifier extensiveBranchNetworkIdentification;
 	/**
-	 * Extensive branch network list of the Australian Bank State Branch (BSB)
-	 * Code. The codes are used for identifying Australian financial
-	 * institutions, as assigned by the Australian Payments Clearing Association
-	 * (APCA).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,10 +136,8 @@ public class AustralianBSBIdentification {
 	};
 	protected SmallNetworkIdentifier smallNetworkIdentification;
 	/**
-	 * Small network list of the Australian Bank State Branch (BSB) Code. The
-	 * codes are used for identifying Australian financial institutions , as
-	 * assigned by the Australian Payments Clearing Association (APCA).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,9 +185,8 @@ public class AustralianBSBIdentification {
 	};
 	protected CashClearingSystemMember clearingSystemMemberIdentificationType;
 	/**
-	 * Clearing system member identification for which an Australian BSB
-	 * identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,8 +236,8 @@ public class AustralianBSBIdentification {
 	};
 	protected CashClearingSystemMember clearingSystemMember;
 	/**
-	 * Clearing system for which an Australian code is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,7 +286,7 @@ public class AustralianBSBIdentification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AustralianBSBIdentification";
 				definition = "Australian Bank State Branch (BSB) Code - identifies Australian financial institutions on the Australian national clearing system. The code is assigned by the Australian Payments Clearing Association (APCA).";
@@ -312,31 +308,35 @@ public class AustralianBSBIdentification {
 		return extensiveBranchNetworkIdentification;
 	}
 
-	public void setExtensiveBranchNetworkIdentification(ExtensiveBranchNetworkIdentifier extensiveBranchNetworkIdentification) {
-		this.extensiveBranchNetworkIdentification = extensiveBranchNetworkIdentification;
+	public AustralianBSBIdentification setExtensiveBranchNetworkIdentification(ExtensiveBranchNetworkIdentifier extensiveBranchNetworkIdentification) {
+		this.extensiveBranchNetworkIdentification = Objects.requireNonNull(extensiveBranchNetworkIdentification);
+		return this;
 	}
 
 	public SmallNetworkIdentifier getSmallNetworkIdentification() {
 		return smallNetworkIdentification;
 	}
 
-	public void setSmallNetworkIdentification(SmallNetworkIdentifier smallNetworkIdentification) {
-		this.smallNetworkIdentification = smallNetworkIdentification;
+	public AustralianBSBIdentification setSmallNetworkIdentification(SmallNetworkIdentifier smallNetworkIdentification) {
+		this.smallNetworkIdentification = Objects.requireNonNull(smallNetworkIdentification);
+		return this;
 	}
 
 	public CashClearingSystemMember getClearingSystemMemberIdentificationType() {
 		return clearingSystemMemberIdentificationType;
 	}
 
-	public void setClearingSystemMemberIdentificationType(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMemberIdentificationType) {
-		this.clearingSystemMemberIdentificationType = clearingSystemMemberIdentificationType;
+	public AustralianBSBIdentification setClearingSystemMemberIdentificationType(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMemberIdentificationType) {
+		this.clearingSystemMemberIdentificationType = Objects.requireNonNull(clearingSystemMemberIdentificationType);
+		return this;
 	}
 
-	public CashClearingSystemMember getClearingSystemMember() {
-		return clearingSystemMember;
+	public Optional<CashClearingSystemMember> getClearingSystemMember() {
+		return clearingSystemMember == null ? Optional.empty() : Optional.of(clearingSystemMember);
 	}
 
-	public void setClearingSystemMember(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMember) {
+	public AustralianBSBIdentification setClearingSystemMember(com.tools20022.repository.entity.CashClearingSystemMember clearingSystemMember) {
 		this.clearingSystemMember = clearingSystemMember;
+		return this;
 	}
 }

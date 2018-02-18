@@ -38,128 +38,128 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#AvailableWithNoAdditionalStatus
- * SecuritiesBalanceTypeV2Code.mmAvailableWithNoAdditionalStatus}</li>
+ * SecuritiesBalanceTypeV2Code.AvailableWithNoAdditionalStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Blocked
- * SecuritiesBalanceTypeV2Code.mmBlocked}</li>
+ * SecuritiesBalanceTypeV2Code.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Available
- * SecuritiesBalanceTypeV2Code.mmAvailable}</li>
+ * SecuritiesBalanceTypeV2Code.Available}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#BlockedCorporateAction
- * SecuritiesBalanceTypeV2Code.mmBlockedCorporateAction}</li>
+ * SecuritiesBalanceTypeV2Code.BlockedCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#BlockedTrading
- * SecuritiesBalanceTypeV2Code.mmBlockedTrading}</li>
+ * SecuritiesBalanceTypeV2Code.BlockedTrading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#BlockedAuthenticity
- * SecuritiesBalanceTypeV2Code.mmBlockedAuthenticity}</li>
+ * SecuritiesBalanceTypeV2Code.BlockedAuthenticity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Borrowed
- * SecuritiesBalanceTypeV2Code.mmBorrowed}</li>
+ * SecuritiesBalanceTypeV2Code.Borrowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingBorrowedDelivery
- * SecuritiesBalanceTypeV2Code.mmPendingBorrowedDelivery}</li>
+ * SecuritiesBalanceTypeV2Code.PendingBorrowedDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingBorrowedReceipt
- * SecuritiesBalanceTypeV2Code.mmPendingBorrowedReceipt}</li>
+ * SecuritiesBalanceTypeV2Code.PendingBorrowedReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#CollateralIn
- * SecuritiesBalanceTypeV2Code.mmCollateralIn}</li>
+ * SecuritiesBalanceTypeV2Code.CollateralIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#CollateralOut
- * SecuritiesBalanceTypeV2Code.mmCollateralOut}</li>
+ * SecuritiesBalanceTypeV2Code.CollateralOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#EligibleForCollateralPurposes
- * SecuritiesBalanceTypeV2Code.mmEligibleForCollateralPurposes}</li>
+ * SecuritiesBalanceTypeV2Code.EligibleForCollateralPurposes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#OnLoan
- * SecuritiesBalanceTypeV2Code.mmOnLoan}</li>
+ * SecuritiesBalanceTypeV2Code.OnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingOnLoanDelivery
- * SecuritiesBalanceTypeV2Code.mmPendingOnLoanDelivery}</li>
+ * SecuritiesBalanceTypeV2Code.PendingOnLoanDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingOnLoanReceipt
- * SecuritiesBalanceTypeV2Code.mmPendingOnLoanReceipt}</li>
+ * SecuritiesBalanceTypeV2Code.PendingOnLoanReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#DerivativesMargin
- * SecuritiesBalanceTypeV2Code.mmDerivativesMargin}</li>
+ * SecuritiesBalanceTypeV2Code.DerivativesMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingDeliveryMatchedBalance
- * SecuritiesBalanceTypeV2Code.mmPendingDeliveryMatchedBalance}</li>
+ * SecuritiesBalanceTypeV2Code.PendingDeliveryMatchedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingDeliveryUnmatchedBalance
- * SecuritiesBalanceTypeV2Code.mmPendingDeliveryUnmatchedBalance}</li>
+ * SecuritiesBalanceTypeV2Code.PendingDeliveryUnmatchedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingReceiptMatchedBalance
- * SecuritiesBalanceTypeV2Code.mmPendingReceiptMatchedBalance}</li>
+ * SecuritiesBalanceTypeV2Code.PendingReceiptMatchedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingReceiptUnmatchedBalance
- * SecuritiesBalanceTypeV2Code.mmPendingReceiptUnmatchedBalance}</li>
+ * SecuritiesBalanceTypeV2Code.PendingReceiptUnmatchedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingCorporateActionReceipt
- * SecuritiesBalanceTypeV2Code.mmPendingCorporateActionReceipt}</li>
+ * SecuritiesBalanceTypeV2Code.PendingCorporateActionReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingCorporateActionDelivery
- * SecuritiesBalanceTypeV2Code.mmPendingCorporateActionDelivery}</li>
+ * SecuritiesBalanceTypeV2Code.PendingCorporateActionDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingDelivery
- * SecuritiesBalanceTypeV2Code.mmPendingDelivery}</li>
+ * SecuritiesBalanceTypeV2Code.PendingDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#PendingReceipt
- * SecuritiesBalanceTypeV2Code.mmPendingReceipt}</li>
+ * SecuritiesBalanceTypeV2Code.PendingReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Pledged
- * SecuritiesBalanceTypeV2Code.mmPledged}</li>
+ * SecuritiesBalanceTypeV2Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#OutForRegistration
- * SecuritiesBalanceTypeV2Code.mmOutForRegistration}</li>
+ * SecuritiesBalanceTypeV2Code.OutForRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Restricted
- * SecuritiesBalanceTypeV2Code.mmRestricted}</li>
+ * SecuritiesBalanceTypeV2Code.Restricted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Unclassified
- * SecuritiesBalanceTypeV2Code.mmUnclassified}</li>
+ * SecuritiesBalanceTypeV2Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#InTransshipment
- * SecuritiesBalanceTypeV2Code.mmInTransshipment}</li>
+ * SecuritiesBalanceTypeV2Code.InTransshipment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Drawn
- * SecuritiesBalanceTypeV2Code.mmDrawn}</li>
+ * SecuritiesBalanceTypeV2Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#TaxExempt
- * SecuritiesBalanceTypeV2Code.mmTaxExempt}</li>
+ * SecuritiesBalanceTypeV2Code.TaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#NonTaxExempt
- * SecuritiesBalanceTypeV2Code.mmNonTaxExempt}</li>
+ * SecuritiesBalanceTypeV2Code.NonTaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Registered
- * SecuritiesBalanceTypeV2Code.mmRegistered}</li>
+ * SecuritiesBalanceTypeV2Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#StreetPosition
- * SecuritiesBalanceTypeV2Code.mmStreetPosition}</li>
+ * SecuritiesBalanceTypeV2Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Unregistered
- * SecuritiesBalanceTypeV2Code.mmUnregistered}</li>
+ * SecuritiesBalanceTypeV2Code.Unregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#WaitingDocumentation
- * SecuritiesBalanceTypeV2Code.mmWaitingDocumentation}</li>
+ * SecuritiesBalanceTypeV2Code.WaitingDocumentation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#BeingTransferred
- * SecuritiesBalanceTypeV2Code.mmBeingTransferred}</li>
+ * SecuritiesBalanceTypeV2Code.BeingTransferred}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#Issued
- * SecuritiesBalanceTypeV2Code.mmIssued}</li>
+ * SecuritiesBalanceTypeV2Code.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code#QuasiIssued
- * SecuritiesBalanceTypeV2Code.mmQuasiIssued}</li>
+ * SecuritiesBalanceTypeV2Code.QuasiIssued}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1445,7 +1445,7 @@ public class SecuritiesBalanceTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AWAS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceTypeV2Code";

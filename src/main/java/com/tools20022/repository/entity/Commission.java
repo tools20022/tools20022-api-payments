@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CommissionTypeV2Code;
 import com.tools20022.repository.codeset.CurrencyCode;
@@ -28,9 +29,8 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Amount of money due to a party as compensation for a service.
@@ -112,8 +112,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,8 +130,8 @@ public class Commission extends Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CommissionWaiver commissionWaiving;
 	/**
-	 * Voluntary non-enforcement of the right to all or part of a commission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,8 +178,8 @@ public class Commission extends Adjustment {
 	};
 	protected Trade trade;
 	/**
-	 * Trade for which commission parameters are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,8 +224,8 @@ public class Commission extends Adjustment {
 	};
 	protected CommissionTypeV2Code commissionType;
 	/**
-	 * Service for which the commission is asked or paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,6 +237,9 @@ public class Commission extends Adjustment {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Commission Commission}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::COST</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -252,6 +255,7 @@ public class Commission extends Adjustment {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::COST"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommissionType";
 			definition = "Service for which the commission is asked or paid.";
@@ -270,8 +274,8 @@ public class Commission extends Adjustment {
 	};
 	protected TaxationBasisCode basis;
 	/**
-	 * Basis upon which a commission is charged, eg, flat fee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -316,10 +320,8 @@ public class Commission extends Adjustment {
 	};
 	protected Max35Text commercialAgreementReference;
 	/**
-	 * Reference to the agreement established between the fund and another
-	 * party. This element, amongst others, defines the conditions of the
-	 * commissions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -365,8 +367,8 @@ public class Commission extends Adjustment {
 	};
 	protected ISODateTime calculationDate;
 	/**
-	 * Date/time at which the commission is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,8 +412,8 @@ public class Commission extends Adjustment {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Commission expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -456,8 +458,8 @@ public class Commission extends Adjustment {
 	};
 	protected CurrencyAndAmount commissionAmount;
 	/**
-	 * Commission expressed as an amount of money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -502,8 +504,8 @@ public class Commission extends Adjustment {
 	};
 	protected List<com.tools20022.repository.entity.Broker> broker;
 	/**
-	 * Broker to which a commission is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -547,8 +549,8 @@ public class Commission extends Adjustment {
 	};
 	protected List<com.tools20022.repository.entity.CommissionPartyRole> commissionPartyRole;
 	/**
-	 * Role played by a party in the context of commissions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -593,8 +595,8 @@ public class Commission extends Adjustment {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> account;
 	/**
-	 * Account used for the commission fees.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -639,8 +641,8 @@ public class Commission extends Adjustment {
 	};
 	protected SecuritiesQuoteVariable relatedQuote;
 	/**
-	 * Quote which includes a commission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,8 +689,8 @@ public class Commission extends Adjustment {
 	};
 	protected PercentageRate splitRate;
 	/**
-	 * Percentage of the total commission received by an intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -734,8 +736,8 @@ public class Commission extends Adjustment {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency in which the commission has to be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -779,8 +781,8 @@ public class Commission extends Adjustment {
 	};
 	protected CorporateActionFeesAndCharges corporateActionFeesAndCharges;
 	/**
-	 * Corporate action fees to which commission fees are added.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,7 +832,7 @@ public class Commission extends Adjustment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Commission";
 				definition = "Amount of money due to a party as compensation for a service.";
@@ -857,119 +859,134 @@ public class Commission extends Adjustment {
 		return commissionWaiving;
 	}
 
-	public void setCommissionWaiving(com.tools20022.repository.entity.CommissionWaiver commissionWaiving) {
-		this.commissionWaiving = commissionWaiving;
+	public Commission setCommissionWaiving(com.tools20022.repository.entity.CommissionWaiver commissionWaiving) {
+		this.commissionWaiving = Objects.requireNonNull(commissionWaiving);
+		return this;
 	}
 
-	public Trade getTrade() {
-		return trade;
+	public Optional<Trade> getTrade() {
+		return trade == null ? Optional.empty() : Optional.of(trade);
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
+	public Commission setTrade(com.tools20022.repository.entity.Trade trade) {
 		this.trade = trade;
+		return this;
 	}
 
 	public CommissionTypeV2Code getCommissionType() {
 		return commissionType;
 	}
 
-	public void setCommissionType(CommissionTypeV2Code commissionType) {
-		this.commissionType = commissionType;
+	public Commission setCommissionType(CommissionTypeV2Code commissionType) {
+		this.commissionType = Objects.requireNonNull(commissionType);
+		return this;
 	}
 
 	public TaxationBasisCode getBasis() {
 		return basis;
 	}
 
-	public void setBasis(TaxationBasisCode basis) {
-		this.basis = basis;
+	public Commission setBasis(TaxationBasisCode basis) {
+		this.basis = Objects.requireNonNull(basis);
+		return this;
 	}
 
 	public Max35Text getCommercialAgreementReference() {
 		return commercialAgreementReference;
 	}
 
-	public void setCommercialAgreementReference(Max35Text commercialAgreementReference) {
-		this.commercialAgreementReference = commercialAgreementReference;
+	public Commission setCommercialAgreementReference(Max35Text commercialAgreementReference) {
+		this.commercialAgreementReference = Objects.requireNonNull(commercialAgreementReference);
+		return this;
 	}
 
 	public ISODateTime getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODateTime calculationDate) {
-		this.calculationDate = calculationDate;
+	public Commission setCalculationDate(ISODateTime calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public Commission setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public CurrencyAndAmount getCommissionAmount() {
 		return commissionAmount;
 	}
 
-	public void setCommissionAmount(CurrencyAndAmount commissionAmount) {
-		this.commissionAmount = commissionAmount;
+	public Commission setCommissionAmount(CurrencyAndAmount commissionAmount) {
+		this.commissionAmount = Objects.requireNonNull(commissionAmount);
+		return this;
 	}
 
 	public List<Broker> getBroker() {
-		return broker;
+		return broker == null ? broker = new ArrayList<>() : broker;
 	}
 
-	public void setBroker(List<com.tools20022.repository.entity.Broker> broker) {
-		this.broker = broker;
+	public Commission setBroker(List<com.tools20022.repository.entity.Broker> broker) {
+		this.broker = Objects.requireNonNull(broker);
+		return this;
 	}
 
 	public List<CommissionPartyRole> getCommissionPartyRole() {
-		return commissionPartyRole;
+		return commissionPartyRole == null ? commissionPartyRole = new ArrayList<>() : commissionPartyRole;
 	}
 
-	public void setCommissionPartyRole(List<com.tools20022.repository.entity.CommissionPartyRole> commissionPartyRole) {
-		this.commissionPartyRole = commissionPartyRole;
+	public Commission setCommissionPartyRole(List<com.tools20022.repository.entity.CommissionPartyRole> commissionPartyRole) {
+		this.commissionPartyRole = Objects.requireNonNull(commissionPartyRole);
+		return this;
 	}
 
 	public List<CashAccount> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.CashAccount> account) {
-		this.account = account;
+	public Commission setAccount(List<com.tools20022.repository.entity.CashAccount> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public SecuritiesQuoteVariable getRelatedQuote() {
 		return relatedQuote;
 	}
 
-	public void setRelatedQuote(com.tools20022.repository.entity.SecuritiesQuoteVariable relatedQuote) {
-		this.relatedQuote = relatedQuote;
+	public Commission setRelatedQuote(com.tools20022.repository.entity.SecuritiesQuoteVariable relatedQuote) {
+		this.relatedQuote = Objects.requireNonNull(relatedQuote);
+		return this;
 	}
 
 	public PercentageRate getSplitRate() {
 		return splitRate;
 	}
 
-	public void setSplitRate(PercentageRate splitRate) {
-		this.splitRate = splitRate;
+	public Commission setSplitRate(PercentageRate splitRate) {
+		this.splitRate = Objects.requireNonNull(splitRate);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Commission setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public CorporateActionFeesAndCharges getCorporateActionFeesAndCharges() {
 		return corporateActionFeesAndCharges;
 	}
 
-	public void setCorporateActionFeesAndCharges(com.tools20022.repository.entity.CorporateActionFeesAndCharges corporateActionFeesAndCharges) {
-		this.corporateActionFeesAndCharges = corporateActionFeesAndCharges;
+	public Commission setCorporateActionFeesAndCharges(com.tools20022.repository.entity.CorporateActionFeesAndCharges corporateActionFeesAndCharges) {
+		this.corporateActionFeesAndCharges = Objects.requireNonNull(corporateActionFeesAndCharges);
+		return this;
 	}
 }

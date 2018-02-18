@@ -39,16 +39,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeGrossSettlementSystem
- * ClearingChannel2Code.mmRealTimeGrossSettlementSystem}</li>
+ * ClearingChannel2Code.RealTimeGrossSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeNetSettlementSystem
- * ClearingChannel2Code.mmRealTimeNetSettlementSystem}</li>
+ * ClearingChannel2Code.RealTimeNetSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#MassPaymentNetSystem
- * ClearingChannel2Code.mmMassPaymentNetSystem}</li>
+ * ClearingChannel2Code.MassPaymentNetSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#BookTransfer
- * ClearingChannel2Code.mmBookTransfer}</li>
+ * ClearingChannel2Code.BookTransfer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -185,7 +185,7 @@ public class ClearingChannel2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RTGS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingChannel2Code";

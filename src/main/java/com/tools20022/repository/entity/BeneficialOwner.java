@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Characteristics of an individual or entity that is ultimately entitled to the
@@ -81,8 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,8 +101,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BeneficiaryCertificationTypeCode certificationType;
 	/**
-	 * Type of certification which is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,9 +148,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected Country nonDomicileCountry;
 	/**
-	 * The holder of the security has to certify, in line with the terms of the
-	 * corporate action, that it is not domiciled in the country indicated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,12 +197,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected YesNoIndicator certificationIndicator;
 	/**
-	 * Indicates whether or not certification is required from the account
-	 * owner, for instance a certification is required to participate to a
-	 * corporate action event.<br>
-	 * Y: certification required <br>
-	 * N: no certification required
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,9 +246,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected CertificationFormatTypeCode certificationFormat;
 	/**
-	 * Specifies the certification format required, that is, physical or
-	 * electronic format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,8 +295,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected ERISAEligibilityCode eRISAEligibility;
 	/**
-	 * Eligibility to federal Employee Retirement Income Security Act.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +343,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected PercentageRate eRISARate;
 	/**
-	 * Federal Employee Retirement Income Security Act (ERISA) rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,8 +391,8 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	};
 	protected YesNoIndicator benefitPlanDeclarationIndicator;
 	/**
-	 * Indicates whether the investor is a benefit plan investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -446,7 +441,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficialOwner";
 				definition = "Characteristics of an individual or entity that is ultimately entitled to the benefit of income and rights in a security, as opposed to a nominal or legal owner.";
@@ -469,55 +464,62 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 		return certificationType;
 	}
 
-	public void setCertificationType(BeneficiaryCertificationTypeCode certificationType) {
-		this.certificationType = certificationType;
+	public BeneficialOwner setCertificationType(BeneficiaryCertificationTypeCode certificationType) {
+		this.certificationType = Objects.requireNonNull(certificationType);
+		return this;
 	}
 
 	public Country getNonDomicileCountry() {
 		return nonDomicileCountry;
 	}
 
-	public void setNonDomicileCountry(com.tools20022.repository.entity.Country nonDomicileCountry) {
-		this.nonDomicileCountry = nonDomicileCountry;
+	public BeneficialOwner setNonDomicileCountry(com.tools20022.repository.entity.Country nonDomicileCountry) {
+		this.nonDomicileCountry = Objects.requireNonNull(nonDomicileCountry);
+		return this;
 	}
 
 	public YesNoIndicator getCertificationIndicator() {
 		return certificationIndicator;
 	}
 
-	public void setCertificationIndicator(YesNoIndicator certificationIndicator) {
-		this.certificationIndicator = certificationIndicator;
+	public BeneficialOwner setCertificationIndicator(YesNoIndicator certificationIndicator) {
+		this.certificationIndicator = Objects.requireNonNull(certificationIndicator);
+		return this;
 	}
 
 	public CertificationFormatTypeCode getCertificationFormat() {
 		return certificationFormat;
 	}
 
-	public void setCertificationFormat(CertificationFormatTypeCode certificationFormat) {
-		this.certificationFormat = certificationFormat;
+	public BeneficialOwner setCertificationFormat(CertificationFormatTypeCode certificationFormat) {
+		this.certificationFormat = Objects.requireNonNull(certificationFormat);
+		return this;
 	}
 
 	public ERISAEligibilityCode getERISAEligibility() {
 		return eRISAEligibility;
 	}
 
-	public void setERISAEligibility(ERISAEligibilityCode eRISAEligibility) {
-		this.eRISAEligibility = eRISAEligibility;
+	public BeneficialOwner setERISAEligibility(ERISAEligibilityCode eRISAEligibility) {
+		this.eRISAEligibility = Objects.requireNonNull(eRISAEligibility);
+		return this;
 	}
 
 	public PercentageRate getERISARate() {
 		return eRISARate;
 	}
 
-	public void setERISARate(PercentageRate eRISARate) {
-		this.eRISARate = eRISARate;
+	public BeneficialOwner setERISARate(PercentageRate eRISARate) {
+		this.eRISARate = Objects.requireNonNull(eRISARate);
+		return this;
 	}
 
 	public YesNoIndicator getBenefitPlanDeclarationIndicator() {
 		return benefitPlanDeclarationIndicator;
 	}
 
-	public void setBenefitPlanDeclarationIndicator(YesNoIndicator benefitPlanDeclarationIndicator) {
-		this.benefitPlanDeclarationIndicator = benefitPlanDeclarationIndicator;
+	public BeneficialOwner setBenefitPlanDeclarationIndicator(YesNoIndicator benefitPlanDeclarationIndicator) {
+		this.benefitPlanDeclarationIndicator = Objects.requireNonNull(benefitPlanDeclarationIndicator);
+		return this;
 	}
 }

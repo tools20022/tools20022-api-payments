@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Act of either replacing an obligation to perform with a new obligation, or
@@ -61,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,8 +82,8 @@ public class Novation extends ObligationFulfilment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesClearing securitiesClearing;
 	/**
-	 * Clearing process to which the novation is related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,8 +129,8 @@ public class Novation extends ObligationFulfilment {
 	};
 	protected NovationStatusCode novationStatus;
 	/**
-	 * Provides the novation status for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +177,7 @@ public class Novation extends ObligationFulfilment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Novation";
 				definition = "Act of either replacing an obligation to perform with a new obligation, or replacing a party to an agreement with a new party.";
@@ -192,19 +194,21 @@ public class Novation extends ObligationFulfilment {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesClearing getSecuritiesClearing() {
-		return securitiesClearing;
+	public Optional<SecuritiesClearing> getSecuritiesClearing() {
+		return securitiesClearing == null ? Optional.empty() : Optional.of(securitiesClearing);
 	}
 
-	public void setSecuritiesClearing(com.tools20022.repository.entity.SecuritiesClearing securitiesClearing) {
+	public Novation setSecuritiesClearing(com.tools20022.repository.entity.SecuritiesClearing securitiesClearing) {
 		this.securitiesClearing = securitiesClearing;
+		return this;
 	}
 
 	public NovationStatusCode getNovationStatus() {
 		return novationStatus;
 	}
 
-	public void setNovationStatus(NovationStatusCode novationStatus) {
-		this.novationStatus = novationStatus;
+	public Novation setNovationStatus(NovationStatusCode novationStatus) {
+		this.novationStatus = Objects.requireNonNull(novationStatus);
+		return this;
 	}
 }

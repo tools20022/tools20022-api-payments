@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process which includes the order, the execution, the settlement of trades in
@@ -87,8 +89,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,8 +108,8 @@ public class FinancialTransaction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionDistribution corporateActionDistribution;
 	/**
-	 * Distribution of the proceeds of a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,9 +157,8 @@ public class FinancialTransaction {
 	};
 	protected InterestManagement interestManagement;
 	/**
-	 * Management of interest which consists into calculating the interest,
-	 * requesting its payment or distributing the interest proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,8 +207,8 @@ public class FinancialTransaction {
 	};
 	protected Trade trade;
 	/**
-	 * Agreement between two parties to buy and sell assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,8 +254,8 @@ public class FinancialTransaction {
 	};
 	protected CollateralMovement collateralMovement;
 	/**
-	 * Collateral in or out as a result of collateral management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,9 +303,8 @@ public class FinancialTransaction {
 	};
 	protected BankingTransaction bankingTransaction;
 	/**
-	 * Transaction executed by the client of a financial institution from/to the
-	 * account serviced by the financial institution, such as mortgage payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,9 +353,8 @@ public class FinancialTransaction {
 	};
 	protected List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport;
 	/**
-	 * Information related to a trade and that has to be reported to a
-	 * regulatory authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -427,7 +426,7 @@ public class FinancialTransaction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialTransaction";
 				definition = "Process which includes the order, the execution, the settlement of trades in the financial domain.";
@@ -451,47 +450,53 @@ public class FinancialTransaction {
 		return corporateActionDistribution;
 	}
 
-	public void setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
-		this.corporateActionDistribution = corporateActionDistribution;
+	public FinancialTransaction setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
+		this.corporateActionDistribution = Objects.requireNonNull(corporateActionDistribution);
+		return this;
 	}
 
 	public InterestManagement getInterestManagement() {
 		return interestManagement;
 	}
 
-	public void setInterestManagement(com.tools20022.repository.entity.InterestManagement interestManagement) {
-		this.interestManagement = interestManagement;
+	public FinancialTransaction setInterestManagement(com.tools20022.repository.entity.InterestManagement interestManagement) {
+		this.interestManagement = Objects.requireNonNull(interestManagement);
+		return this;
 	}
 
 	public Trade getTrade() {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public FinancialTransaction setTrade(com.tools20022.repository.entity.Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public CollateralMovement getCollateralMovement() {
 		return collateralMovement;
 	}
 
-	public void setCollateralMovement(com.tools20022.repository.entity.CollateralMovement collateralMovement) {
-		this.collateralMovement = collateralMovement;
+	public FinancialTransaction setCollateralMovement(com.tools20022.repository.entity.CollateralMovement collateralMovement) {
+		this.collateralMovement = Objects.requireNonNull(collateralMovement);
+		return this;
 	}
 
 	public BankingTransaction getBankingTransaction() {
 		return bankingTransaction;
 	}
 
-	public void setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
-		this.bankingTransaction = bankingTransaction;
+	public FinancialTransaction setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
+		this.bankingTransaction = Objects.requireNonNull(bankingTransaction);
+		return this;
 	}
 
 	public List<RegulatoryReport> getRegulatoryReport() {
-		return regulatoryReport;
+		return regulatoryReport == null ? regulatoryReport = new ArrayList<>() : regulatoryReport;
 	}
 
-	public void setRegulatoryReport(List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport) {
-		this.regulatoryReport = regulatoryReport;
+	public FinancialTransaction setRegulatoryReport(List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport) {
+		this.regulatoryReport = Objects.requireNonNull(regulatoryReport);
+		return this;
 	}
 }

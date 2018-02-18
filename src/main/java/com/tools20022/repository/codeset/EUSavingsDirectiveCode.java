@@ -40,23 +40,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirectiveCode#EUSavingsInScope
- * EUSavingsDirectiveCode.mmEUSavingsInScope}</li>
+ * EUSavingsDirectiveCode.EUSavingsInScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirectiveCode#EUSavingsOutScope
- * EUSavingsDirectiveCode.mmEUSavingsOutScope}</li>
+ * EUSavingsDirectiveCode.EUSavingsOutScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirectiveCode#EUSavingsUnknown
- * EUSavingsDirectiveCode.mmEUSavingsUnknown}</li>
+ * EUSavingsDirectiveCode.EUSavingsUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirectiveCode#EUSavingsVariable
- * EUSavingsDirectiveCode.mmEUSavingsVariable}</li>
+ * EUSavingsDirectiveCode.EUSavingsVariable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -210,7 +210,7 @@ public class EUSavingsDirectiveCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EUSI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUSavingsDirectiveCode";

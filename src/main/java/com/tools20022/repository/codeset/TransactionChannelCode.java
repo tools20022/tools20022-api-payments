@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MailOrder
- * TransactionChannelCode.mmMailOrder}</li>
+ * TransactionChannelCode.MailOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#TelephoneOrder
- * TransactionChannelCode.mmTelephoneOrder}</li>
+ * TransactionChannelCode.TelephoneOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#ElectronicCommerce
- * TransactionChannelCode.mmElectronicCommerce}</li>
+ * TransactionChannelCode.ElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#TelevisionPayment
- * TransactionChannelCode.mmTelevisionPayment}</li>
+ * TransactionChannelCode.TelevisionPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#OfficeOrBranch
- * TransactionChannelCode.mmOfficeOrBranch}</li>
+ * TransactionChannelCode.OfficeOrBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#HomeBanking
- * TransactionChannelCode.mmHomeBanking}</li>
+ * TransactionChannelCode.HomeBanking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#FinancialAdvisor
- * TransactionChannelCode.mmFinancialAdvisor}</li>
+ * TransactionChannelCode.FinancialAdvisor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MobilePayment
- * TransactionChannelCode.mmMobilePayment}</li>
+ * TransactionChannelCode.MobilePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#SecuredElectronicCommerce
- * TransactionChannelCode.mmSecuredElectronicCommerce}</li>
+ * TransactionChannelCode.SecuredElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MobilePOS
- * TransactionChannelCode.mmMobilePOS}</li>
+ * TransactionChannelCode.MobilePOS}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -78,8 +78,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -408,7 +408,7 @@ public class TransactionChannelCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MAIL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionChannelCode";

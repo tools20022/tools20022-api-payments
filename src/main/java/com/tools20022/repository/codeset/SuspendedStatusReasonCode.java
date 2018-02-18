@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SuspendedStatusReasonCode#PriceSuspension
- * SuspendedStatusReasonCode.mmPriceSuspension}</li>
+ * SuspendedStatusReasonCode.PriceSuspension}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SuspendedStatusReasonCode#Overflow
- * SuspendedStatusReasonCode.mmOverflow}</li>
+ * SuspendedStatusReasonCode.Overflow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SuspendedStatusReasonCode#SuspendedByYourself
- * SuspendedStatusReasonCode.mmSuspendedByYourself}</li>
+ * SuspendedStatusReasonCode.SuspendedByYourself}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SuspendedStatusReasonCode#SuspendedBySystem
- * SuspendedStatusReasonCode.mmSuspendedBySystem}</li>
+ * SuspendedStatusReasonCode.SuspendedBySystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SuspendedStatusReasonCode#Other
- * SuspendedStatusReasonCode.mmOther}</li>
+ * SuspendedStatusReasonCode.Other}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -245,7 +245,7 @@ public class SuspendedStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PRIC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SuspendedStatusReasonCode";

@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.SecurityCertificatePartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyAndCertificate2", propOrder = {"party", "certificate"})
 public class PartyAndCertificate2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Pty", required = true)
 	protected PartyIdentification43 party;
 	/**
-	 * Entity involved in an activity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,7 +113,7 @@ public class PartyAndCertificate2 {
 	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> PartyAndCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,10 +125,11 @@ public class PartyAndCertificate2 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "Cert")
 	protected Max10KBinary certificate;
 	/**
-	 * Security certificate used to sign electronically.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,7 +163,7 @@ public class PartyAndCertificate2 {
 	public static final MMMessageAttribute mmCertificate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SecurityCertificatePartyRole.mmSecurityCertificate;
-			componentContext_lazy = () -> PartyAndCertificate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
 			isDerived = false;
 			xmlTag = "Cert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,8 +178,8 @@ public class PartyAndCertificate2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyAndCertificate2.mmParty, PartyAndCertificate2.mmCertificate);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyAndCertificate2.mmParty, com.tools20022.repository.msg.PartyAndCertificate2.mmCertificate);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyAndCertificate2";
 				definition = "Party and related security certificate.";
@@ -185,21 +189,21 @@ public class PartyAndCertificate2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Pty", required = true)
 	public PartyIdentification43 getParty() {
 		return party;
 	}
 
-	public void setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
-		this.party = party;
+	public PartyAndCertificate2 setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+		this.party = Objects.requireNonNull(party);
+		return this;
 	}
 
-	@XmlElement(name = "Cert")
-	public Max10KBinary getCertificate() {
-		return certificate;
+	public Optional<Max10KBinary> getCertificate() {
+		return certificate == null ? Optional.empty() : Optional.of(certificate);
 	}
 
-	public void setCertificate(Max10KBinary certificate) {
+	public PartyAndCertificate2 setCertificate(Max10KBinary certificate) {
 		this.certificate = certificate;
+		return this;
 	}
 }

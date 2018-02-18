@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Obligation for the seller to deliver goods or services to the buyer.
@@ -66,8 +65,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,10 +83,8 @@ public class ProductDeliveryObligation extends Obligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.ProductDelivery> productDeliveryOffset;
 	/**
-	 * Fulfilment of a product delivery obligation through the delivery of goods
-	 * and services. It is derived from the association between Obligation and
-	 * Obligation fulfillment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,9 +132,8 @@ public class ProductDeliveryObligation extends Obligation {
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Specifies the trade which originates the obligation to deliver a specific
-	 * product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +184,7 @@ public class ProductDeliveryObligation extends Obligation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductDeliveryObligation";
 				definition = "Obligation for the seller  to deliver goods or services to the buyer.";
@@ -206,18 +202,20 @@ public class ProductDeliveryObligation extends Obligation {
 	}
 
 	public List<ProductDelivery> getProductDeliveryOffset() {
-		return productDeliveryOffset;
+		return productDeliveryOffset == null ? productDeliveryOffset = new ArrayList<>() : productDeliveryOffset;
 	}
 
-	public void setProductDeliveryOffset(List<com.tools20022.repository.entity.ProductDelivery> productDeliveryOffset) {
-		this.productDeliveryOffset = productDeliveryOffset;
+	public ProductDeliveryObligation setProductDeliveryOffset(List<com.tools20022.repository.entity.ProductDelivery> productDeliveryOffset) {
+		this.productDeliveryOffset = Objects.requireNonNull(productDeliveryOffset);
+		return this;
 	}
 
-	public CommercialTrade getCommercialTrade() {
-		return commercialTrade;
+	public Optional<CommercialTrade> getCommercialTrade() {
+		return commercialTrade == null ? Optional.empty() : Optional.of(commercialTrade);
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+	public ProductDeliveryObligation setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
 		this.commercialTrade = commercialTrade;
+		return this;
 	}
 }

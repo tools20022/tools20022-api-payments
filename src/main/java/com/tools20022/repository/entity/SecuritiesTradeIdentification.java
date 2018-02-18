@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.TransactionReferences3;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Specifies the different identifications associated with a securities
@@ -115,8 +116,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -134,8 +135,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesTrade identifiedTrade;
 	/**
-	 * Trade for which one or more identifications are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,9 +184,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text marketInfrastructureTransactionIdentification;
 	/**
-	 * Identification of a transaction assigned by a market infrastructure other
-	 * than a central securities depository, for example, Target2-Securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,10 +241,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text processorTransactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the processor of the
-	 * instruction other than the account owner the account servicer and the
-	 * market infrastructure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,8 +289,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text poolIdentification;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -337,8 +335,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text collateralTransactionIdentification;
 	/**
-	 * Unambiguous identification of a collateral transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -383,9 +381,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text clientTripartyCollateralTransactionIdentification;
 	/**
-	 * Unique reference identifying the triparty collateral management
-	 * transaction from the client's point of view.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,9 +429,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text tripartyAgentCollateralTransactionIdentification;
 	/**
-	 * Unique reference identifying the triparty collateral management
-	 * transaction from the triparty agent's point of view.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -481,8 +477,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text basketIdentification;
 	/**
-	 * Identification of a basket trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,8 +523,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text programIdentification;
 	/**
-	 * Program reference which identifies a program trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -573,9 +569,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text blockIdentification;
 	/**
-	 * Reference of the linked message at the trade/block level which identifies
-	 * a centrally matched transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -622,8 +617,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text allocationIdentification;
 	/**
-	 * Identification at the allocation level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -668,8 +663,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text complianceIdentification;
 	/**
-	 * Identification which represents this transaction for compliance purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -716,9 +711,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text cSDTransactionIdentification;
 	/**
-	 * Identification given by the central securities depository to the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -765,8 +759,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text centralCounterpartyTransactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the central counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -813,9 +807,8 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	};
 	protected Max35Text cancellationRequestIdentification;
 	/**
-	 * Unambiguous identification of the cancellation request as known by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -864,7 +857,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeIdentification";
 				definition = "Specifies the different identifications associated with a securities transaction.";
@@ -894,119 +887,134 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 		return identifiedTrade;
 	}
 
-	public void setIdentifiedTrade(com.tools20022.repository.entity.SecuritiesTrade identifiedTrade) {
-		this.identifiedTrade = identifiedTrade;
+	public SecuritiesTradeIdentification setIdentifiedTrade(com.tools20022.repository.entity.SecuritiesTrade identifiedTrade) {
+		this.identifiedTrade = Objects.requireNonNull(identifiedTrade);
+		return this;
 	}
 
 	public Max35Text getMarketInfrastructureTransactionIdentification() {
 		return marketInfrastructureTransactionIdentification;
 	}
 
-	public void setMarketInfrastructureTransactionIdentification(Max35Text marketInfrastructureTransactionIdentification) {
-		this.marketInfrastructureTransactionIdentification = marketInfrastructureTransactionIdentification;
+	public SecuritiesTradeIdentification setMarketInfrastructureTransactionIdentification(Max35Text marketInfrastructureTransactionIdentification) {
+		this.marketInfrastructureTransactionIdentification = Objects.requireNonNull(marketInfrastructureTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getProcessorTransactionIdentification() {
 		return processorTransactionIdentification;
 	}
 
-	public void setProcessorTransactionIdentification(Max35Text processorTransactionIdentification) {
-		this.processorTransactionIdentification = processorTransactionIdentification;
+	public SecuritiesTradeIdentification setProcessorTransactionIdentification(Max35Text processorTransactionIdentification) {
+		this.processorTransactionIdentification = Objects.requireNonNull(processorTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getPoolIdentification() {
 		return poolIdentification;
 	}
 
-	public void setPoolIdentification(Max35Text poolIdentification) {
-		this.poolIdentification = poolIdentification;
+	public SecuritiesTradeIdentification setPoolIdentification(Max35Text poolIdentification) {
+		this.poolIdentification = Objects.requireNonNull(poolIdentification);
+		return this;
 	}
 
 	public Max35Text getCollateralTransactionIdentification() {
 		return collateralTransactionIdentification;
 	}
 
-	public void setCollateralTransactionIdentification(Max35Text collateralTransactionIdentification) {
-		this.collateralTransactionIdentification = collateralTransactionIdentification;
+	public SecuritiesTradeIdentification setCollateralTransactionIdentification(Max35Text collateralTransactionIdentification) {
+		this.collateralTransactionIdentification = Objects.requireNonNull(collateralTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getClientTripartyCollateralTransactionIdentification() {
 		return clientTripartyCollateralTransactionIdentification;
 	}
 
-	public void setClientTripartyCollateralTransactionIdentification(Max35Text clientTripartyCollateralTransactionIdentification) {
-		this.clientTripartyCollateralTransactionIdentification = clientTripartyCollateralTransactionIdentification;
+	public SecuritiesTradeIdentification setClientTripartyCollateralTransactionIdentification(Max35Text clientTripartyCollateralTransactionIdentification) {
+		this.clientTripartyCollateralTransactionIdentification = Objects.requireNonNull(clientTripartyCollateralTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getTripartyAgentCollateralTransactionIdentification() {
 		return tripartyAgentCollateralTransactionIdentification;
 	}
 
-	public void setTripartyAgentCollateralTransactionIdentification(Max35Text tripartyAgentCollateralTransactionIdentification) {
-		this.tripartyAgentCollateralTransactionIdentification = tripartyAgentCollateralTransactionIdentification;
+	public SecuritiesTradeIdentification setTripartyAgentCollateralTransactionIdentification(Max35Text tripartyAgentCollateralTransactionIdentification) {
+		this.tripartyAgentCollateralTransactionIdentification = Objects.requireNonNull(tripartyAgentCollateralTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getBasketIdentification() {
 		return basketIdentification;
 	}
 
-	public void setBasketIdentification(Max35Text basketIdentification) {
-		this.basketIdentification = basketIdentification;
+	public SecuritiesTradeIdentification setBasketIdentification(Max35Text basketIdentification) {
+		this.basketIdentification = Objects.requireNonNull(basketIdentification);
+		return this;
 	}
 
 	public Max35Text getProgramIdentification() {
 		return programIdentification;
 	}
 
-	public void setProgramIdentification(Max35Text programIdentification) {
-		this.programIdentification = programIdentification;
+	public SecuritiesTradeIdentification setProgramIdentification(Max35Text programIdentification) {
+		this.programIdentification = Objects.requireNonNull(programIdentification);
+		return this;
 	}
 
 	public Max35Text getBlockIdentification() {
 		return blockIdentification;
 	}
 
-	public void setBlockIdentification(Max35Text blockIdentification) {
-		this.blockIdentification = blockIdentification;
+	public SecuritiesTradeIdentification setBlockIdentification(Max35Text blockIdentification) {
+		this.blockIdentification = Objects.requireNonNull(blockIdentification);
+		return this;
 	}
 
 	public Max35Text getAllocationIdentification() {
 		return allocationIdentification;
 	}
 
-	public void setAllocationIdentification(Max35Text allocationIdentification) {
-		this.allocationIdentification = allocationIdentification;
+	public SecuritiesTradeIdentification setAllocationIdentification(Max35Text allocationIdentification) {
+		this.allocationIdentification = Objects.requireNonNull(allocationIdentification);
+		return this;
 	}
 
 	public Max35Text getComplianceIdentification() {
 		return complianceIdentification;
 	}
 
-	public void setComplianceIdentification(Max35Text complianceIdentification) {
-		this.complianceIdentification = complianceIdentification;
+	public SecuritiesTradeIdentification setComplianceIdentification(Max35Text complianceIdentification) {
+		this.complianceIdentification = Objects.requireNonNull(complianceIdentification);
+		return this;
 	}
 
 	public Max35Text getCSDTransactionIdentification() {
 		return cSDTransactionIdentification;
 	}
 
-	public void setCSDTransactionIdentification(Max35Text cSDTransactionIdentification) {
-		this.cSDTransactionIdentification = cSDTransactionIdentification;
+	public SecuritiesTradeIdentification setCSDTransactionIdentification(Max35Text cSDTransactionIdentification) {
+		this.cSDTransactionIdentification = Objects.requireNonNull(cSDTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getCentralCounterpartyTransactionIdentification() {
 		return centralCounterpartyTransactionIdentification;
 	}
 
-	public void setCentralCounterpartyTransactionIdentification(Max35Text centralCounterpartyTransactionIdentification) {
-		this.centralCounterpartyTransactionIdentification = centralCounterpartyTransactionIdentification;
+	public SecuritiesTradeIdentification setCentralCounterpartyTransactionIdentification(Max35Text centralCounterpartyTransactionIdentification) {
+		this.centralCounterpartyTransactionIdentification = Objects.requireNonNull(centralCounterpartyTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getCancellationRequestIdentification() {
 		return cancellationRequestIdentification;
 	}
 
-	public void setCancellationRequestIdentification(Max35Text cancellationRequestIdentification) {
-		this.cancellationRequestIdentification = cancellationRequestIdentification;
+	public SecuritiesTradeIdentification setCancellationRequestIdentification(Max35Text cancellationRequestIdentification) {
+		this.cancellationRequestIdentification = Objects.requireNonNull(cancellationRequestIdentification);
+		return this;
 	}
 }

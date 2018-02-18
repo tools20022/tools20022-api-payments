@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#OnDemand
- * ExchangePolicyCode.mmOnDemand}</li>
+ * ExchangePolicyCode.OnDemand}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#Immediately
- * ExchangePolicyCode.mmImmediately}</li>
+ * ExchangePolicyCode.Immediately}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#AsSoonAsPossible
- * ExchangePolicyCode.mmAsSoonAsPossible}</li>
+ * ExchangePolicyCode.AsSoonAsPossible}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#AsGroup
- * ExchangePolicyCode.mmAsGroup}</li>
+ * ExchangePolicyCode.AsGroup}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#NumberLimit
- * ExchangePolicyCode.mmNumberLimit}</li>
+ * ExchangePolicyCode.NumberLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#TotalLimit
- * ExchangePolicyCode.mmTotalLimit}</li>
+ * ExchangePolicyCode.TotalLimit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#Cyclic
- * ExchangePolicyCode.mmCyclic}</li>
+ * ExchangePolicyCode.Cyclic}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExchangePolicyCode#None
- * ExchangePolicyCode.mmNone}</li>
+ * ExchangePolicyCode.None}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -348,7 +348,7 @@ public class ExchangePolicyCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ONDM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExchangePolicyCode";

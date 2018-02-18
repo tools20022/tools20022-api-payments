@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,17 +39,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#SeparateSettlement
- * DeliveryReceiptTypeCode.mmSeparateSettlement}</li>
+ * DeliveryReceiptTypeCode.SeparateSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#AgainstPaymentSettlement
- * DeliveryReceiptTypeCode.mmAgainstPaymentSettlement}</li>
+ * DeliveryReceiptTypeCode.AgainstPaymentSettlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,6 +81,9 @@ public class DeliveryReceiptTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FREE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22::PAYM//FREE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -93,6 +97,7 @@ public class DeliveryReceiptTypeCode extends MMCode {
 	 */
 	public static final DeliveryReceiptTypeCode SeparateSettlement = new DeliveryReceiptTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22::PAYM//FREE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparateSettlement";
 			definition = "Settlement of the financial instrument and cash is separate.";
@@ -113,6 +118,9 @@ public class DeliveryReceiptTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "APMT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22::PAYM//APMT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -127,6 +135,7 @@ public class DeliveryReceiptTypeCode extends MMCode {
 	 */
 	public static final DeliveryReceiptTypeCode AgainstPaymentSettlement = new DeliveryReceiptTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22::PAYM//APMT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgainstPaymentSettlement";
 			definition = "Settlement of the financial instrument and cash takes place in a delivery versus payment (DVP) environment, ie, through an International Central Securities Depository (ICSD) or Central Securities Depository (CSD).";
@@ -142,7 +151,7 @@ public class DeliveryReceiptTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FREE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryReceiptTypeCode";

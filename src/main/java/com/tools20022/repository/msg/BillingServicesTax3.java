@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.TaxRecord;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,16 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides for regional taxes on the service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingServicesTax3", propOrder = {"number", "description", "rate", "totalTaxAmount"})
 public class BillingServicesTax3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nb", required = true)
 	protected Max35Text number;
 	/**
-	 * Identification number of the specific region tax used to calculate the
-	 * tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +112,7 @@ public class BillingServicesTax3 {
 	 */
 	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServicesTax3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,10 +123,11 @@ public class BillingServicesTax3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max40Text description;
 	/**
-	 * Name used to describe the tax (such as the national value added tax).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +155,7 @@ public class BillingServicesTax3 {
 	 */
 	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServicesTax3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,10 +166,11 @@ public class BillingServicesTax3 {
 			simpleType_lazy = () -> Max40Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Rate", required = true)
 	protected DecimalNumber rate;
 	/**
-	 * Rate used to calculate the tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +203,7 @@ public class BillingServicesTax3 {
 	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> BillingServicesTax3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,12 +214,11 @@ public class BillingServicesTax3 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlTaxAmt", required = true)
 	protected AmountAndDirection34 totalTaxAmount;
 	/**
-	 * Specifies the tax obligation for taxable services within a tax region for
-	 * a specific tax identifier (such as national value added tax equals
-	 * 34,00), and expressed in the tax region’s host currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -248,7 +251,7 @@ public class BillingServicesTax3 {
 	public static final MMMessageAssociationEnd mmTotalTaxAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
-			componentContext_lazy = () -> BillingServicesTax3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
 			xmlTag = "TtlTaxAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -264,9 +267,10 @@ public class BillingServicesTax3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingServicesTax3.mmNumber, BillingServicesTax3.mmDescription, BillingServicesTax3.mmRate, BillingServicesTax3.mmTotalTaxAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServicesTax3.mmNumber, com.tools20022.repository.msg.BillingServicesTax3.mmDescription,
+						com.tools20022.repository.msg.BillingServicesTax3.mmRate, com.tools20022.repository.msg.BillingServicesTax3.mmTotalTaxAmount);
 				trace_lazy = () -> TaxRecord.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServicesTax3";
 				definition = "Provides for regional taxes on the service.";
@@ -275,39 +279,39 @@ public class BillingServicesTax3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nb", required = true)
 	public Max35Text getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max35Text number) {
-		this.number = number;
+	public BillingServicesTax3 setNumber(Max35Text number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max40Text getDescription() {
-		return description;
+	public Optional<Max40Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max40Text description) {
+	public BillingServicesTax3 setDescription(Max40Text description) {
 		this.description = description;
+		return this;
 	}
 
-	@XmlElement(name = "Rate", required = true)
 	public DecimalNumber getRate() {
 		return rate;
 	}
 
-	public void setRate(DecimalNumber rate) {
-		this.rate = rate;
+	public BillingServicesTax3 setRate(DecimalNumber rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
-	@XmlElement(name = "TtlTaxAmt", required = true)
 	public AmountAndDirection34 getTotalTaxAmount() {
 		return totalTaxAmount;
 	}
 
-	public void setTotalTaxAmount(com.tools20022.repository.msg.AmountAndDirection34 totalTaxAmount) {
-		this.totalTaxAmount = totalTaxAmount;
+	public BillingServicesTax3 setTotalTaxAmount(com.tools20022.repository.msg.AmountAndDirection34 totalTaxAmount) {
+		this.totalTaxAmount = Objects.requireNonNull(totalTaxAmount);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,24 +38,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#American
- * OptionStyleCode.mmAmerican}</li>
+ * OptionStyleCode.American}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#European
- * OptionStyleCode.mmEuropean}</li>
+ * OptionStyleCode.European}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#Bermudan
- * OptionStyleCode.mmBermudan}</li>
+ * OptionStyleCode.Bermudan}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#Asian
- * OptionStyleCode.mmAsian}</li>
+ * OptionStyleCode.Asian}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#Canary
- * OptionStyleCode.mmCanary}</li>
+ * OptionStyleCode.Canary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyleCode#Other
- * OptionStyleCode.mmOther}</li>
+ * OptionStyleCode.Other}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,6 +87,9 @@ public class OptionStyleCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AMER"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :12a::OPST//AMER</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -98,6 +102,7 @@ public class OptionStyleCode extends MMCode {
 	 */
 	public static final OptionStyleCode American = new OptionStyleCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":12a::OPST//AMER"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "American";
 			definition = "Option can be exercised before or on expiry date.";
@@ -116,6 +121,9 @@ public class OptionStyleCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EURO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :12a::OPST//EURO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -128,6 +136,7 @@ public class OptionStyleCode extends MMCode {
 	 */
 	public static final OptionStyleCode European = new OptionStyleCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":12a::OPST//EURO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "European";
 			definition = "Option that can be exercised on expiry date only.";
@@ -274,7 +283,7 @@ public class OptionStyleCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AMER");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionStyleCode";

@@ -27,9 +27,11 @@ import com.tools20022.repository.msg.OriginalGroupHeader7;
 import com.tools20022.repository.msg.PaymentTransaction80;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -87,6 +89,38 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code pacs.002.001.08}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupStatusAcceptedRule#forFIToFIPaymentStatusReportV08
+ * ConstraintGroupStatusAcceptedRule.forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupStatusPendingRule#forFIToFIPaymentStatusReportV08
+ * ConstraintGroupStatusPendingRule.forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupStatusRejectedRule#forFIToFIPaymentStatusReportV08
+ * ConstraintGroupStatusRejectedRule.forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupStatusReceivedRule#forFIToFIPaymentStatusReportV08
+ * ConstraintGroupStatusReceivedRule.forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forFIToFIPaymentStatusReportV08
+ * ConstraintSupplementaryDataRule.forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOriginalGroupInformationAbsenceRule#forFIToFIPaymentStatusReportV08
+ * ConstraintOriginalGroupInformationAbsenceRule.forFIToFIPaymentStatusReportV08
+ * }</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOriginalGroupInformationSinglePresenceRule#forFIToFIPaymentStatusReportV08
+ * ConstraintOriginalGroupInformationSinglePresenceRule.
+ * forFIToFIPaymentStatusReportV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOriginalGroupInformationMultiplePresenceRule#forFIToFIPaymentStatusReportV08
+ * ConstraintOriginalGroupInformationMultiplePresenceRule.
+ * forFIToFIPaymentStatusReportV08}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,16 +133,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FIToFIPaymentStatusReportV08", propOrder = {"groupHeader", "originalGroupInformationAndStatus", "transactionInformationAndStatus", "supplementaryData"})
 public class FIToFIPaymentStatusReportV08 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected GroupHeader53 groupHeader;
 	/**
-	 * Set of characteristics shared by all individual transactions included in
-	 * the status report message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,11 +183,11 @@ public class FIToFIPaymentStatusReportV08 {
 			}
 		}
 	};
+	@XmlElement(name = "OrgnlGrpInfAndSts")
 	protected List<OriginalGroupHeader7> originalGroupInformationAndStatus;
 	/**
-	 * Original group information concerning the group of transactions, to which
-	 * the status report message refers to.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,11 +228,11 @@ public class FIToFIPaymentStatusReportV08 {
 			}
 		}
 	};
+	@XmlElement(name = "TxInfAndSts")
 	protected List<PaymentTransaction80> transactionInformationAndStatus;
 	/**
-	 * Information concerning the original transactions, to which the status
-	 * report message refers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,11 +273,11 @@ public class FIToFIPaymentStatusReportV08 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,6 +322,12 @@ public class FIToFIPaymentStatusReportV08 {
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintGroupStatusAcceptedRule.forFIToFIPaymentStatusReportV08,
+						com.tools20022.repository.constraints.ConstraintGroupStatusPendingRule.forFIToFIPaymentStatusReportV08, com.tools20022.repository.constraints.ConstraintGroupStatusRejectedRule.forFIToFIPaymentStatusReportV08,
+						com.tools20022.repository.constraints.ConstraintGroupStatusReceivedRule.forFIToFIPaymentStatusReportV08, com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forFIToFIPaymentStatusReportV08,
+						com.tools20022.repository.constraints.ConstraintOriginalGroupInformationAbsenceRule.forFIToFIPaymentStatusReportV08,
+						com.tools20022.repository.constraints.ConstraintOriginalGroupInformationSinglePresenceRule.forFIToFIPaymentStatusReportV08,
+						com.tools20022.repository.constraints.ConstraintOriginalGroupInformationMultiplePresenceRule.forFIToFIPaymentStatusReportV08);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FIToFIPaymentStatusReportV08";
 				definition = "Scope\r\nThe FIToFIPaymentStatusReport message is sent by an instructed agent to the previous party in the payment chain. It is used to inform this party about the positive or negative status of an instruction (either single or file). It is also used to report on a pending instruction.\r\nUsage\r\nThe FIToFIPaymentStatusReport message is exchanged between agents to provide status information about instructions previously sent. Its usage will always be governed by a bilateral agreement between the agents.\r\nThe FIToFIPaymentStatusReport message can be used to provide information about the status (e.g. rejection, acceptance) of a credit transfer instruction, a direct debit instruction, as well as other intra-agent instructions (for example FIToFIPaymentCancellationRequest).\r\nThe FIToFIPaymentStatusReport message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.\r\nThe FIToFIPaymentStatusReport message can be used in domestic and cross-border scenarios.\r\nThe FIToFIPaymentStatusReport may also be sent to the receiver of the payment in a real time payment scenario, as both sides of the transactions must be informed of the status of the transaction (e.g. either the beneficiary is credited, or the transaction is rejected). ";
@@ -315,43 +355,43 @@ public class FIToFIPaymentStatusReportV08 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public GroupHeader53 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(GroupHeader53 groupHeader) {
-		this.groupHeader = groupHeader;
+	public FIToFIPaymentStatusReportV08 setGroupHeader(GroupHeader53 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlGrpInfAndSts")
 	public List<OriginalGroupHeader7> getOriginalGroupInformationAndStatus() {
-		return originalGroupInformationAndStatus;
+		return originalGroupInformationAndStatus == null ? originalGroupInformationAndStatus = new ArrayList<>() : originalGroupInformationAndStatus;
 	}
 
-	public void setOriginalGroupInformationAndStatus(List<OriginalGroupHeader7> originalGroupInformationAndStatus) {
-		this.originalGroupInformationAndStatus = originalGroupInformationAndStatus;
+	public FIToFIPaymentStatusReportV08 setOriginalGroupInformationAndStatus(List<OriginalGroupHeader7> originalGroupInformationAndStatus) {
+		this.originalGroupInformationAndStatus = Objects.requireNonNull(originalGroupInformationAndStatus);
+		return this;
 	}
 
-	@XmlElement(name = "TxInfAndSts")
 	public List<PaymentTransaction80> getTransactionInformationAndStatus() {
-		return transactionInformationAndStatus;
+		return transactionInformationAndStatus == null ? transactionInformationAndStatus = new ArrayList<>() : transactionInformationAndStatus;
 	}
 
-	public void setTransactionInformationAndStatus(List<PaymentTransaction80> transactionInformationAndStatus) {
-		this.transactionInformationAndStatus = transactionInformationAndStatus;
+	public FIToFIPaymentStatusReportV08 setTransactionInformationAndStatus(List<PaymentTransaction80> transactionInformationAndStatus) {
+		this.transactionInformationAndStatus = Objects.requireNonNull(transactionInformationAndStatus);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FIToFIPaymentStatusReportV08 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:pacs.002.08.08")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.08")
 	static public class Document {
 		@XmlElement(name = "FIToFIPmtStsRpt", required = true)
 		public FIToFIPaymentStatusReportV08 messageBody;

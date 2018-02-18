@@ -38,20 +38,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#PoliticalExposureDomestic
- * PoliticalExposureTypeCode.mmPoliticalExposureDomestic}</li>
+ * PoliticalExposureTypeCode.PoliticalExposureDomestic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#PoliticalExposureForeign
- * PoliticalExposureTypeCode.mmPoliticalExposureForeign}</li>
+ * PoliticalExposureTypeCode.PoliticalExposureForeign}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PoliticalExposureTypeCode#NoPoliticalExposure
- * PoliticalExposureTypeCode.mmNoPoliticalExposure}</li>
+ * PoliticalExposureTypeCode.NoPoliticalExposure}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -164,7 +164,7 @@ public class PoliticalExposureTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PoliticalExposureTypeCode";
 				definition = "Specifies the political exposure type.";

@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#Fixed
- * PegTypeCode.mmFixed}</li>
+ * PegTypeCode.Fixed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#Last
- * PegTypeCode.mmLast}</li>
+ * PegTypeCode.Last}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#Market
- * PegTypeCode.mmMarket}</li>
+ * PegTypeCode.Market}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#MidPrice
- * PegTypeCode.mmMidPrice}</li>
+ * PegTypeCode.MidPrice}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#Opening
- * PegTypeCode.mmOpening}</li>
+ * PegTypeCode.Opening}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#Primary
- * PegTypeCode.mmPrimary}</li>
+ * PegTypeCode.Primary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PegTypeCode#VolumeWeightAveragePrice
- * PegTypeCode.mmVolumeWeightAveragePrice}</li>
+ * PegTypeCode.VolumeWeightAveragePrice}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#TrailingStop
- * PegTypeCode.mmTrailingStop}</li>
+ * PegTypeCode.TrailingStop}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PegTypeCode#LimitPrice
- * PegTypeCode.mmLimitPrice}</li>
+ * PegTypeCode.LimitPrice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -373,7 +373,7 @@ public class PegTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FIXE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PegTypeCode";

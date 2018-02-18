@@ -38,52 +38,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#RetirementPolicy
- * SourceOfCashCode.mmRetirementPolicy}</li>
+ * SourceOfCashCode.RetirementPolicy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#SelfEmploymentIncome
- * SourceOfCashCode.mmSelfEmploymentIncome}</li>
+ * SourceOfCashCode.SelfEmploymentIncome}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#EmployeeIncome
- * SourceOfCashCode.mmEmployeeIncome}</li>
+ * SourceOfCashCode.EmployeeIncome}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Savings
- * SourceOfCashCode.mmSavings}</li>
+ * SourceOfCashCode.Savings}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Gift
- * SourceOfCashCode.mmGift}</li>
+ * SourceOfCashCode.Gift}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Inheritance
- * SourceOfCashCode.mmInheritance}</li>
+ * SourceOfCashCode.Inheritance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Redemption
- * SourceOfCashCode.mmRedemption}</li>
+ * SourceOfCashCode.Redemption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Winnings
- * SourceOfCashCode.mmWinnings}</li>
+ * SourceOfCashCode.Winnings}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#InsurancePremiumLiquidation
- * SourceOfCashCode.mmInsurancePremiumLiquidation}</li>
+ * SourceOfCashCode.InsurancePremiumLiquidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#SaleOfGoods
- * SourceOfCashCode.mmSaleOfGoods}</li>
+ * SourceOfCashCode.SaleOfGoods}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#RealEstateSale
- * SourceOfCashCode.mmRealEstateSale}</li>
+ * SourceOfCashCode.RealEstateSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#SaleAquisitionCorporation
- * SourceOfCashCode.mmSaleAquisitionCorporation}</li>
+ * SourceOfCashCode.SaleAquisitionCorporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#CashProceeds
- * SourceOfCashCode.mmCashProceeds}</li>
+ * SourceOfCashCode.CashProceeds}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Alimony
- * SourceOfCashCode.mmAlimony}</li>
+ * SourceOfCashCode.Alimony}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCashCode#Compensation
- * SourceOfCashCode.mmCompensation}</li>
+ * SourceOfCashCode.Compensation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -556,7 +556,7 @@ public class SourceOfCashCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SourceOfCashCode";
 				definition = "Specifies the origin of cash.";

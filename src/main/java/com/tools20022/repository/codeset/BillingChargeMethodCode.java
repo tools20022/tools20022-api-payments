@@ -38,64 +38,64 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#UnitPriced
- * BillingChargeMethodCode.mmUnitPriced}</li>
+ * BillingChargeMethodCode.UnitPriced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#StampDuty
- * BillingChargeMethodCode.mmStampDuty}</li>
+ * BillingChargeMethodCode.StampDuty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#BaseCharge
- * BillingChargeMethodCode.mmBaseCharge}</li>
+ * BillingChargeMethodCode.BaseCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#DiscountPrice
- * BillingChargeMethodCode.mmDiscountPrice}</li>
+ * BillingChargeMethodCode.DiscountPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#FlatCharge
- * BillingChargeMethodCode.mmFlatCharge}</li>
+ * BillingChargeMethodCode.FlatCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#ListPrice
- * BillingChargeMethodCode.mmListPrice}</li>
+ * BillingChargeMethodCode.ListPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#MinimumCharge
- * BillingChargeMethodCode.mmMinimumCharge}</li>
+ * BillingChargeMethodCode.MinimumCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#MaximumReduction
- * BillingChargeMethodCode.mmMaximumReduction}</li>
+ * BillingChargeMethodCode.MaximumReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier1
- * BillingChargeMethodCode.mmTier1}</li>
+ * BillingChargeMethodCode.Tier1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier2
- * BillingChargeMethodCode.mmTier2}</li>
+ * BillingChargeMethodCode.Tier2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier3
- * BillingChargeMethodCode.mmTier3}</li>
+ * BillingChargeMethodCode.Tier3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier4
- * BillingChargeMethodCode.mmTier4}</li>
+ * BillingChargeMethodCode.Tier4}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier5
- * BillingChargeMethodCode.mmTier5}</li>
+ * BillingChargeMethodCode.Tier5}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier6
- * BillingChargeMethodCode.mmTier6}</li>
+ * BillingChargeMethodCode.Tier6}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier7
- * BillingChargeMethodCode.mmTier7}</li>
+ * BillingChargeMethodCode.Tier7}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier8
- * BillingChargeMethodCode.mmTier8}</li>
+ * BillingChargeMethodCode.Tier8}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#Tier9
- * BillingChargeMethodCode.mmTier9}</li>
+ * BillingChargeMethodCode.Tier9}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#ThresholdPrice
- * BillingChargeMethodCode.mmThresholdPrice}</li>
+ * BillingChargeMethodCode.ThresholdPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#ZonePrice
- * BillingChargeMethodCode.mmZonePrice}</li>
+ * BillingChargeMethodCode.ZonePrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingChargeMethodCode#BalanceBased
- * BillingChargeMethodCode.mmBalanceBased}</li>
+ * BillingChargeMethodCode.BalanceBased}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -108,8 +108,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -803,7 +803,7 @@ public class BillingChargeMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UPRC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingChargeMethodCode";

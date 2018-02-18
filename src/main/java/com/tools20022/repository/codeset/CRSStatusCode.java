@@ -37,40 +37,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS101
- * CRSStatusCode.mmCRS101}</li>
+ * CRSStatusCode.CRS101}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS102
- * CRSStatusCode.mmCRS102}</li>
+ * CRSStatusCode.CRS102}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS103
- * CRSStatusCode.mmCRS103}</li>
+ * CRSStatusCode.CRS103}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS104
- * CRSStatusCode.mmCRS104}</li>
+ * CRSStatusCode.CRS104}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS105
- * CRSStatusCode.mmCRS105}</li>
+ * CRSStatusCode.CRS105}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS106
- * CRSStatusCode.mmCRS106}</li>
+ * CRSStatusCode.CRS106}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS107
- * CRSStatusCode.mmCRS107}</li>
+ * CRSStatusCode.CRS107}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS108
- * CRSStatusCode.mmCRS108}</li>
+ * CRSStatusCode.CRS108}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS109
- * CRSStatusCode.mmCRS109}</li>
+ * CRSStatusCode.CRS109}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS110
- * CRSStatusCode.mmCRS110}</li>
+ * CRSStatusCode.CRS110}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS111
- * CRSStatusCode.mmCRS111}</li>
+ * CRSStatusCode.CRS111}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS112
- * CRSStatusCode.mmCRS112}</li>
+ * CRSStatusCode.CRS112}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS113
- * CRSStatusCode.mmCRS113}</li>
+ * CRSStatusCode.CRS113}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CRSStatusCode#CRS114
- * CRSStatusCode.mmCRS114}</li>
+ * CRSStatusCode.CRS114}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -556,7 +556,7 @@ public class CRSStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CRSStatusCode";
 				definition = "Specifies the Common Reporting Status (CRS) status.";

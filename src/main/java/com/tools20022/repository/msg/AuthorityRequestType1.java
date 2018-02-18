@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the authority request type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AuthorityRequestType1", propOrder = {"messageNameIdentification", "messageName"})
 public class AuthorityRequestType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgNmId", required = true)
 	protected Max35Text messageNameIdentification;
 	/**
-	 * Specifies the requested message name identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,7 +100,7 @@ public class AuthorityRequestType1 {
 	 */
 	public static final MMMessageAttribute mmMessageNameIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AuthorityRequestType1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,10 +111,11 @@ public class AuthorityRequestType1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgNm")
 	protected Max140Text messageName;
 	/**
-	 * Specifies the message name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +142,7 @@ public class AuthorityRequestType1 {
 	 */
 	public static final MMMessageAttribute mmMessageName = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AuthorityRequestType1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,8 +157,8 @@ public class AuthorityRequestType1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AuthorityRequestType1.mmMessageNameIdentification, AuthorityRequestType1.mmMessageName);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AuthorityRequestType1.mmMessageNameIdentification, com.tools20022.repository.msg.AuthorityRequestType1.mmMessageName);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorityRequestType1";
 				definition = "Specifies the authority request type.";
@@ -163,21 +167,21 @@ public class AuthorityRequestType1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgNmId", required = true)
 	public Max35Text getMessageNameIdentification() {
 		return messageNameIdentification;
 	}
 
-	public void setMessageNameIdentification(Max35Text messageNameIdentification) {
-		this.messageNameIdentification = messageNameIdentification;
+	public AuthorityRequestType1 setMessageNameIdentification(Max35Text messageNameIdentification) {
+		this.messageNameIdentification = Objects.requireNonNull(messageNameIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MsgNm")
-	public Max140Text getMessageName() {
-		return messageName;
+	public Optional<Max140Text> getMessageName() {
+		return messageName == null ? Optional.empty() : Optional.of(messageName);
 	}
 
-	public void setMessageName(Max140Text messageName) {
+	public AuthorityRequestType1 setMessageName(Max140Text messageName) {
 		this.messageName = messageName;
+		return this;
 	}
 }

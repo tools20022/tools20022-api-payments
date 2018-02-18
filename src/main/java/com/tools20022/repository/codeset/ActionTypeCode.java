@@ -38,65 +38,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#DisplayMessage
- * ActionTypeCode.mmDisplayMessage}</li>
+ * ActionTypeCode.DisplayMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#PrintMessage
- * ActionTypeCode.mmPrintMessage}</li>
+ * ActionTypeCode.PrintMessage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Referral
- * ActionTypeCode.mmReferral}</li>
+ * ActionTypeCode.Referral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#CaptureCard
- * ActionTypeCode.mmCaptureCard}</li>
+ * ActionTypeCode.CaptureCard}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#PINRetry
- * ActionTypeCode.mmPINRetry}</li>
+ * ActionTypeCode.PINRetry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#PINLastTry
- * ActionTypeCode.mmPINLastTry}</li>
+ * ActionTypeCode.PINLastTry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#RequestData
- * ActionTypeCode.mmRequestData}</li>
+ * ActionTypeCode.RequestData}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Busy
- * ActionTypeCode.mmBusy}</li>
+ * ActionTypeCode.Busy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#IdentificationRequired
- * ActionTypeCode.mmIdentificationRequired}</li>
+ * ActionTypeCode.IdentificationRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#ForbidOverride
- * ActionTypeCode.mmForbidOverride}</li>
+ * ActionTypeCode.ForbidOverride}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptCurrencyConversion
- * ActionTypeCode.mmAcceptCurrencyConversion}</li>
+ * ActionTypeCode.AcceptCurrencyConversion}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Decline
- * ActionTypeCode.mmDecline}</li>
+ * ActionTypeCode.Decline}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#UpdateTrack
- * ActionTypeCode.mmUpdateTrack}</li>
+ * ActionTypeCode.UpdateTrack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptHigherAmount
- * ActionTypeCode.mmAcceptHigherAmount}</li>
+ * ActionTypeCode.AcceptHigherAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptLowerAmount
- * ActionTypeCode.mmAcceptLowerAmount}</li>
+ * ActionTypeCode.AcceptLowerAmount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptFees
- * ActionTypeCode.mmAcceptFees}</li>
+ * ActionTypeCode.AcceptFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#DistributeCoupon
- * ActionTypeCode.mmDistributeCoupon}</li>
+ * ActionTypeCode.DistributeCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#PerformRequest
- * ActionTypeCode.mmPerformRequest}</li>
+ * ActionTypeCode.PerformRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#NoReasonForDecline
- * ActionTypeCode.mmNoReasonForDecline}</li>
+ * ActionTypeCode.NoReasonForDecline}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#BlockCard
- * ActionTypeCode.mmBlockCard}</li>
+ * ActionTypeCode.BlockCard}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Approve
- * ActionTypeCode.mmApprove}</li>
+ * ActionTypeCode.Approve}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#FallForward
- * ActionTypeCode.mmFallForward}</li>
+ * ActionTypeCode.FallForward}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -797,7 +797,7 @@ public class ActionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DISP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionTypeCode";

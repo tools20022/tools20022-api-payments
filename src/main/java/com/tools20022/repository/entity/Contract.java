@@ -26,9 +26,11 @@ import com.tools20022.repository.choice.UnderlyingContract1Choice;
 import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Document that contains the information of the contract agreed between both
@@ -102,8 +104,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -121,8 +123,8 @@ public class Contract extends Agreement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.MasterAgreement> masterAgreement;
 	/**
-	 * Agreement that governs a contract agreed between parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,7 +172,7 @@ public class Contract extends Agreement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Contract";
 				definition = "Document that contains the information of the contract agreed between both parties.";
@@ -191,10 +193,11 @@ public class Contract extends Agreement {
 	}
 
 	public List<MasterAgreement> getMasterAgreement() {
-		return masterAgreement;
+		return masterAgreement == null ? masterAgreement = new ArrayList<>() : masterAgreement;
 	}
 
-	public void setMasterAgreement(List<com.tools20022.repository.entity.MasterAgreement> masterAgreement) {
-		this.masterAgreement = masterAgreement;
+	public Contract setMasterAgreement(List<com.tools20022.repository.entity.MasterAgreement> masterAgreement) {
+		this.masterAgreement = Objects.requireNonNull(masterAgreement);
+		return this;
 	}
 }

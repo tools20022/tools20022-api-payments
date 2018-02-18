@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.CurrencyControlHeader3;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.SupportingDocument1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CurrencyControlSupportingDocumentDeliveryV01", propOrder = {"groupHeader", "supportingDocument", "supplementaryData"})
 public class CurrencyControlSupportingDocumentDeliveryV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected CurrencyControlHeader3 groupHeader;
 	/**
-	 * Characteristics shared by all individual items included in the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,10 +130,11 @@ public class CurrencyControlSupportingDocumentDeliveryV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SpprtgDoc", required = true)
 	protected List<SupportingDocument1> supportingDocument;
 	/**
-	 * Details of the supporting document provided for the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,11 +175,11 @@ public class CurrencyControlSupportingDocumentDeliveryV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,34 +250,34 @@ public class CurrencyControlSupportingDocumentDeliveryV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public CurrencyControlHeader3 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(CurrencyControlHeader3 groupHeader) {
-		this.groupHeader = groupHeader;
+	public CurrencyControlSupportingDocumentDeliveryV01 setGroupHeader(CurrencyControlHeader3 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "SpprtgDoc", required = true)
 	public List<SupportingDocument1> getSupportingDocument() {
-		return supportingDocument;
+		return supportingDocument == null ? supportingDocument = new ArrayList<>() : supportingDocument;
 	}
 
-	public void setSupportingDocument(List<SupportingDocument1> supportingDocument) {
-		this.supportingDocument = supportingDocument;
+	public CurrencyControlSupportingDocumentDeliveryV01 setSupportingDocument(List<SupportingDocument1> supportingDocument) {
+		this.supportingDocument = Objects.requireNonNull(supportingDocument);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public CurrencyControlSupportingDocumentDeliveryV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.025.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.025.001.01")
 	static public class Document {
 		@XmlElement(name = "CcyCtrlSpprtgDocDlvry", required = true)
 		public CurrencyControlSupportingDocumentDeliveryV01 messageBody;

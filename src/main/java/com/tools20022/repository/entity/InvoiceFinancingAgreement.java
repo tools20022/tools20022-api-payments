@@ -22,9 +22,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set of characteristics that unambiguously identify an invoice financing
@@ -107,8 +106,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,13 +125,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max128Text authorisation;
 	/**
-	 * User identification or any user key that allows to check if the financing
-	 * requestor is allowed to ask for invoice financing.<br>
-	 * Usage: the content is not of a technical nature, but reflects the
-	 * organisational structure at the requesting side. The authorisation
-	 * element can typically be used in case the financing requestor acts on
-	 * behalf of one or more suppliers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,9 +173,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected Max350Text financingMethod;
 	/**
-	 * Specifies the financing method related to invoice financing (eg
-	 * collection mandate).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,9 +221,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected CurrencyAndAmount requestedAmount;
 	/**
-	 * Amount requested by the requestor party, related to a single invoice to
-	 * be financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -278,9 +270,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected PercentageRate requestedPercentage;
 	/**
-	 * Percentage of the amount requested by the requestor party, related to a
-	 * single invoice, to be financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,8 +319,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected PercentageRate appliedPercentage;
 	/**
-	 * The percentage rate applied to calculate the amount financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -376,9 +367,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected CurrencyAndAmount financedAmount;
 	/**
-	 * Specifies the amount financed which is derived from the applied
-	 * percentage and the invoice amount..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -426,8 +416,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identifies unambiguously the financing transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -472,8 +462,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole;
 	/**
-	 * Role played by a party in the context of financing an invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -521,9 +511,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected InvoiceFinancingStatus invoiceFinancingStatus;
 	/**
-	 * Status of the invoice financing transaction and of the different requests
-	 * linked to it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -573,8 +562,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected List<com.tools20022.repository.entity.Invoice> invoice;
 	/**
-	 * Invoice to which is referred financing request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -619,9 +608,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected CashEntry resultingCashEntry;
 	/**
-	 * Information related to the crediting of the amount financed, such as
-	 * dates, amount, charges...
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -670,8 +658,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	};
 	protected List<com.tools20022.repository.entity.Assignment> assignment;
 	/**
-	 * Assignments resulting from an invoice financing agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -720,7 +708,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceFinancingAgreement";
 				definition = "Set of characteristics that unambiguously identify an invoice financing agreement. An invoice financing agreement between a factor and its client allows to transfer a payment obligation that exists between the client and a third party from the client to the factor.";
@@ -748,95 +736,107 @@ public class InvoiceFinancingAgreement extends Agreement {
 		return authorisation;
 	}
 
-	public void setAuthorisation(Max128Text authorisation) {
-		this.authorisation = authorisation;
+	public InvoiceFinancingAgreement setAuthorisation(Max128Text authorisation) {
+		this.authorisation = Objects.requireNonNull(authorisation);
+		return this;
 	}
 
 	public Max350Text getFinancingMethod() {
 		return financingMethod;
 	}
 
-	public void setFinancingMethod(Max350Text financingMethod) {
-		this.financingMethod = financingMethod;
+	public InvoiceFinancingAgreement setFinancingMethod(Max350Text financingMethod) {
+		this.financingMethod = Objects.requireNonNull(financingMethod);
+		return this;
 	}
 
 	public CurrencyAndAmount getRequestedAmount() {
 		return requestedAmount;
 	}
 
-	public void setRequestedAmount(CurrencyAndAmount requestedAmount) {
-		this.requestedAmount = requestedAmount;
+	public InvoiceFinancingAgreement setRequestedAmount(CurrencyAndAmount requestedAmount) {
+		this.requestedAmount = Objects.requireNonNull(requestedAmount);
+		return this;
 	}
 
 	public PercentageRate getRequestedPercentage() {
 		return requestedPercentage;
 	}
 
-	public void setRequestedPercentage(PercentageRate requestedPercentage) {
-		this.requestedPercentage = requestedPercentage;
+	public InvoiceFinancingAgreement setRequestedPercentage(PercentageRate requestedPercentage) {
+		this.requestedPercentage = Objects.requireNonNull(requestedPercentage);
+		return this;
 	}
 
 	public PercentageRate getAppliedPercentage() {
 		return appliedPercentage;
 	}
 
-	public void setAppliedPercentage(PercentageRate appliedPercentage) {
-		this.appliedPercentage = appliedPercentage;
+	public InvoiceFinancingAgreement setAppliedPercentage(PercentageRate appliedPercentage) {
+		this.appliedPercentage = Objects.requireNonNull(appliedPercentage);
+		return this;
 	}
 
 	public CurrencyAndAmount getFinancedAmount() {
 		return financedAmount;
 	}
 
-	public void setFinancedAmount(CurrencyAndAmount financedAmount) {
-		this.financedAmount = financedAmount;
+	public InvoiceFinancingAgreement setFinancedAmount(CurrencyAndAmount financedAmount) {
+		this.financedAmount = Objects.requireNonNull(financedAmount);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public InvoiceFinancingAgreement setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<InvoiceFinancingPartyRole> getInvoiceFinancingPartyRole() {
-		return invoiceFinancingPartyRole;
+		return invoiceFinancingPartyRole == null ? invoiceFinancingPartyRole = new ArrayList<>() : invoiceFinancingPartyRole;
 	}
 
-	public void setInvoiceFinancingPartyRole(List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole) {
-		this.invoiceFinancingPartyRole = invoiceFinancingPartyRole;
+	public InvoiceFinancingAgreement setInvoiceFinancingPartyRole(List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole) {
+		this.invoiceFinancingPartyRole = Objects.requireNonNull(invoiceFinancingPartyRole);
+		return this;
 	}
 
 	public InvoiceFinancingStatus getInvoiceFinancingStatus() {
 		return invoiceFinancingStatus;
 	}
 
-	public void setInvoiceFinancingStatus(com.tools20022.repository.entity.InvoiceFinancingStatus invoiceFinancingStatus) {
-		this.invoiceFinancingStatus = invoiceFinancingStatus;
+	public InvoiceFinancingAgreement setInvoiceFinancingStatus(com.tools20022.repository.entity.InvoiceFinancingStatus invoiceFinancingStatus) {
+		this.invoiceFinancingStatus = Objects.requireNonNull(invoiceFinancingStatus);
+		return this;
 	}
 
 	public List<Invoice> getInvoice() {
-		return invoice;
+		return invoice == null ? invoice = new ArrayList<>() : invoice;
 	}
 
-	public void setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
-		this.invoice = invoice;
+	public InvoiceFinancingAgreement setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
+		this.invoice = Objects.requireNonNull(invoice);
+		return this;
 	}
 
-	public CashEntry getResultingCashEntry() {
-		return resultingCashEntry;
+	public Optional<CashEntry> getResultingCashEntry() {
+		return resultingCashEntry == null ? Optional.empty() : Optional.of(resultingCashEntry);
 	}
 
-	public void setResultingCashEntry(com.tools20022.repository.entity.CashEntry resultingCashEntry) {
+	public InvoiceFinancingAgreement setResultingCashEntry(com.tools20022.repository.entity.CashEntry resultingCashEntry) {
 		this.resultingCashEntry = resultingCashEntry;
+		return this;
 	}
 
 	public List<Assignment> getAssignment() {
-		return assignment;
+		return assignment == null ? assignment = new ArrayList<>() : assignment;
 	}
 
-	public void setAssignment(List<com.tools20022.repository.entity.Assignment> assignment) {
-		this.assignment = assignment;
+	public InvoiceFinancingAgreement setAssignment(List<com.tools20022.repository.entity.Assignment> assignment) {
+		this.assignment = Objects.requireNonNull(assignment);
+		return this;
 	}
 }

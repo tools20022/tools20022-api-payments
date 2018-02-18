@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.InterestRate2Choice;
 import com.tools20022.repository.codeset.DebitCreditCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Consideration, such as amount of money, paid or received in exchange for an
@@ -169,8 +169,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -188,8 +188,8 @@ public class Interest {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount accruedInterestAmount;
 	/**
-	 * Interest amount that has accrued in between coupon payment periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,6 +201,9 @@ public class Interest {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Interest
 	 * Interest}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::ACRU</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -217,6 +220,7 @@ public class Interest {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::ACRU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccruedInterestAmount";
 			definition = "Interest amount that has accrued in between coupon payment periods.";
@@ -235,8 +239,8 @@ public class Interest {
 	};
 	protected List<com.tools20022.repository.entity.InterestCalculation> interestCalculation;
 	/**
-	 * Calculation parameters used to obtain the interest amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -306,8 +310,8 @@ public class Interest {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money representing interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,9 +364,8 @@ public class Interest {
 	};
 	protected PercentageRate rate;
 	/**
-	 * The actual interest rate used for the payment of the interest for the
-	 * specified interest period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,8 +421,8 @@ public class Interest {
 	};
 	protected List<com.tools20022.repository.entity.CashProceedsDefinition> relatedCashProceedsDefinition;
 	/**
-	 * Cash proceeds definition for which an interest is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,8 +469,8 @@ public class Interest {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesFinancing> securitiesFinancing;
 	/**
-	 * Specifies the financing trade on which this interest apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -513,8 +516,8 @@ public class Interest {
 	};
 	protected Tax interestTax;
 	/**
-	 * Specifies the tax on interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -568,8 +571,8 @@ public class Interest {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether the interest is a debit or credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -614,8 +617,8 @@ public class Interest {
 	};
 	protected CashEntry cashEntry;
 	/**
-	 * Entry which contains the interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -661,8 +664,8 @@ public class Interest {
 	};
 	protected ISODate paymentDate;
 	/**
-	 * Date of the next interest payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -718,9 +721,8 @@ public class Interest {
 	};
 	protected InterestManagement relatedInterestManagement;
 	/**
-	 * Management of interest which consists into calculating the interest,
-	 * requesting its payment or distributing the interest proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -768,8 +770,8 @@ public class Interest {
 	};
 	protected UndertakingAmount relatedUndertakingAmount;
 	/**
-	 * Undertaking amount for which an interest is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -815,8 +817,8 @@ public class Interest {
 	};
 	protected DebitCreditFacility relatedDebitCreditFacility;
 	/**
-	 * Debit and credit facilities on which the interest applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -863,8 +865,8 @@ public class Interest {
 	};
 	protected SecuritiesSettlement securitiesSettlement;
 	/**
-	 * Securities settlement process for which an accrued interest is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -913,8 +915,8 @@ public class Interest {
 	};
 	protected GenericIdentification interestName;
 	/**
-	 * Interest rate expressed as a rate name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -961,8 +963,8 @@ public class Interest {
 	};
 	protected AssetHolding relatedAssetHolding;
 	/**
-	 * Asset holding on which interest is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1008,8 +1010,8 @@ public class Interest {
 	};
 	protected Deposit deposit;
 	/**
-	 * Deposit for which an interest is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1054,8 +1056,8 @@ public class Interest {
 	};
 	protected Balance accountBalance;
 	/**
-	 * Balance for which an interest is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1100,8 +1102,8 @@ public class Interest {
 	};
 	protected AccountContract relatedAccountContract;
 	/**
-	 * Account contract for which interest parameters are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1148,8 +1150,8 @@ public class Interest {
 	};
 	protected NetAssetValueCalculation relatedNetAssetValueCalculation;
 	/**
-	 * Net asset value calculation for which an accrued interest is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1198,8 +1200,8 @@ public class Interest {
 	};
 	protected InterestTypeCode typeOfInterest;
 	/**
-	 * Specifies the type of interest associated with a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1244,8 +1246,8 @@ public class Interest {
 	};
 	protected PaymentCard relatedPaymentCard;
 	/**
-	 * Payment card for which interest on due amounts is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1294,7 +1296,7 @@ public class Interest {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Interest";
 				definition = "Consideration, such as amount of money,  paid or received in exchange for an asset that has been invested, loaned or borrowed for a certain period. The interest is expressed as a fixed amount or percentage of the amount upon which the interest is applied.";
@@ -1327,175 +1329,197 @@ public class Interest {
 		return accruedInterestAmount;
 	}
 
-	public void setAccruedInterestAmount(CurrencyAndAmount accruedInterestAmount) {
-		this.accruedInterestAmount = accruedInterestAmount;
+	public Interest setAccruedInterestAmount(CurrencyAndAmount accruedInterestAmount) {
+		this.accruedInterestAmount = Objects.requireNonNull(accruedInterestAmount);
+		return this;
 	}
 
 	public List<InterestCalculation> getInterestCalculation() {
-		return interestCalculation;
+		return interestCalculation == null ? interestCalculation = new ArrayList<>() : interestCalculation;
 	}
 
-	public void setInterestCalculation(List<com.tools20022.repository.entity.InterestCalculation> interestCalculation) {
-		this.interestCalculation = interestCalculation;
+	public Interest setInterestCalculation(List<com.tools20022.repository.entity.InterestCalculation> interestCalculation) {
+		this.interestCalculation = Objects.requireNonNull(interestCalculation);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Interest setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public Interest setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public List<CashProceedsDefinition> getRelatedCashProceedsDefinition() {
-		return relatedCashProceedsDefinition;
+		return relatedCashProceedsDefinition == null ? relatedCashProceedsDefinition = new ArrayList<>() : relatedCashProceedsDefinition;
 	}
 
-	public void setRelatedCashProceedsDefinition(List<com.tools20022.repository.entity.CashProceedsDefinition> relatedCashProceedsDefinition) {
-		this.relatedCashProceedsDefinition = relatedCashProceedsDefinition;
+	public Interest setRelatedCashProceedsDefinition(List<com.tools20022.repository.entity.CashProceedsDefinition> relatedCashProceedsDefinition) {
+		this.relatedCashProceedsDefinition = Objects.requireNonNull(relatedCashProceedsDefinition);
+		return this;
 	}
 
 	public List<SecuritiesFinancing> getSecuritiesFinancing() {
-		return securitiesFinancing;
+		return securitiesFinancing == null ? securitiesFinancing = new ArrayList<>() : securitiesFinancing;
 	}
 
-	public void setSecuritiesFinancing(List<com.tools20022.repository.entity.SecuritiesFinancing> securitiesFinancing) {
-		this.securitiesFinancing = securitiesFinancing;
+	public Interest setSecuritiesFinancing(List<com.tools20022.repository.entity.SecuritiesFinancing> securitiesFinancing) {
+		this.securitiesFinancing = Objects.requireNonNull(securitiesFinancing);
+		return this;
 	}
 
-	public Tax getInterestTax() {
-		return interestTax;
+	public Optional<Tax> getInterestTax() {
+		return interestTax == null ? Optional.empty() : Optional.of(interestTax);
 	}
 
-	public void setInterestTax(com.tools20022.repository.entity.Tax interestTax) {
+	public Interest setInterestTax(com.tools20022.repository.entity.Tax interestTax) {
 		this.interestTax = interestTax;
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Interest setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public CashEntry getCashEntry() {
 		return cashEntry;
 	}
 
-	public void setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
-		this.cashEntry = cashEntry;
+	public Interest setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public ISODate getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(ISODate paymentDate) {
-		this.paymentDate = paymentDate;
+	public Interest setPaymentDate(ISODate paymentDate) {
+		this.paymentDate = Objects.requireNonNull(paymentDate);
+		return this;
 	}
 
 	public InterestManagement getRelatedInterestManagement() {
 		return relatedInterestManagement;
 	}
 
-	public void setRelatedInterestManagement(com.tools20022.repository.entity.InterestManagement relatedInterestManagement) {
-		this.relatedInterestManagement = relatedInterestManagement;
+	public Interest setRelatedInterestManagement(com.tools20022.repository.entity.InterestManagement relatedInterestManagement) {
+		this.relatedInterestManagement = Objects.requireNonNull(relatedInterestManagement);
+		return this;
 	}
 
 	public UndertakingAmount getRelatedUndertakingAmount() {
 		return relatedUndertakingAmount;
 	}
 
-	public void setRelatedUndertakingAmount(com.tools20022.repository.entity.UndertakingAmount relatedUndertakingAmount) {
-		this.relatedUndertakingAmount = relatedUndertakingAmount;
+	public Interest setRelatedUndertakingAmount(com.tools20022.repository.entity.UndertakingAmount relatedUndertakingAmount) {
+		this.relatedUndertakingAmount = Objects.requireNonNull(relatedUndertakingAmount);
+		return this;
 	}
 
-	public DebitCreditFacility getRelatedDebitCreditFacility() {
-		return relatedDebitCreditFacility;
+	public Optional<DebitCreditFacility> getRelatedDebitCreditFacility() {
+		return relatedDebitCreditFacility == null ? Optional.empty() : Optional.of(relatedDebitCreditFacility);
 	}
 
-	public void setRelatedDebitCreditFacility(com.tools20022.repository.entity.DebitCreditFacility relatedDebitCreditFacility) {
+	public Interest setRelatedDebitCreditFacility(com.tools20022.repository.entity.DebitCreditFacility relatedDebitCreditFacility) {
 		this.relatedDebitCreditFacility = relatedDebitCreditFacility;
+		return this;
 	}
 
-	public SecuritiesSettlement getSecuritiesSettlement() {
-		return securitiesSettlement;
+	public Optional<SecuritiesSettlement> getSecuritiesSettlement() {
+		return securitiesSettlement == null ? Optional.empty() : Optional.of(securitiesSettlement);
 	}
 
-	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+	public Interest setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
 		this.securitiesSettlement = securitiesSettlement;
+		return this;
 	}
 
 	public GenericIdentification getInterestName() {
 		return interestName;
 	}
 
-	public void setInterestName(com.tools20022.repository.entity.GenericIdentification interestName) {
-		this.interestName = interestName;
+	public Interest setInterestName(com.tools20022.repository.entity.GenericIdentification interestName) {
+		this.interestName = Objects.requireNonNull(interestName);
+		return this;
 	}
 
 	public AssetHolding getRelatedAssetHolding() {
 		return relatedAssetHolding;
 	}
 
-	public void setRelatedAssetHolding(com.tools20022.repository.entity.AssetHolding relatedAssetHolding) {
-		this.relatedAssetHolding = relatedAssetHolding;
+	public Interest setRelatedAssetHolding(com.tools20022.repository.entity.AssetHolding relatedAssetHolding) {
+		this.relatedAssetHolding = Objects.requireNonNull(relatedAssetHolding);
+		return this;
 	}
 
 	public Deposit getDeposit() {
 		return deposit;
 	}
 
-	public void setDeposit(com.tools20022.repository.entity.Deposit deposit) {
-		this.deposit = deposit;
+	public Interest setDeposit(com.tools20022.repository.entity.Deposit deposit) {
+		this.deposit = Objects.requireNonNull(deposit);
+		return this;
 	}
 
-	public Balance getAccountBalance() {
-		return accountBalance;
+	public Optional<Balance> getAccountBalance() {
+		return accountBalance == null ? Optional.empty() : Optional.of(accountBalance);
 	}
 
-	public void setAccountBalance(com.tools20022.repository.entity.Balance accountBalance) {
+	public Interest setAccountBalance(com.tools20022.repository.entity.Balance accountBalance) {
 		this.accountBalance = accountBalance;
+		return this;
 	}
 
 	public AccountContract getRelatedAccountContract() {
 		return relatedAccountContract;
 	}
 
-	public void setRelatedAccountContract(com.tools20022.repository.entity.AccountContract relatedAccountContract) {
-		this.relatedAccountContract = relatedAccountContract;
+	public Interest setRelatedAccountContract(com.tools20022.repository.entity.AccountContract relatedAccountContract) {
+		this.relatedAccountContract = Objects.requireNonNull(relatedAccountContract);
+		return this;
 	}
 
 	public NetAssetValueCalculation getRelatedNetAssetValueCalculation() {
 		return relatedNetAssetValueCalculation;
 	}
 
-	public void setRelatedNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation relatedNetAssetValueCalculation) {
-		this.relatedNetAssetValueCalculation = relatedNetAssetValueCalculation;
+	public Interest setRelatedNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation relatedNetAssetValueCalculation) {
+		this.relatedNetAssetValueCalculation = Objects.requireNonNull(relatedNetAssetValueCalculation);
+		return this;
 	}
 
 	public InterestTypeCode getTypeOfInterest() {
 		return typeOfInterest;
 	}
 
-	public void setTypeOfInterest(InterestTypeCode typeOfInterest) {
-		this.typeOfInterest = typeOfInterest;
+	public Interest setTypeOfInterest(InterestTypeCode typeOfInterest) {
+		this.typeOfInterest = Objects.requireNonNull(typeOfInterest);
+		return this;
 	}
 
 	public PaymentCard getRelatedPaymentCard() {
 		return relatedPaymentCard;
 	}
 
-	public void setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
-		this.relatedPaymentCard = relatedPaymentCard;
+	public Interest setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
+		this.relatedPaymentCard = Objects.requireNonNull(relatedPaymentCard);
+		return this;
 	}
 }

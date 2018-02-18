@@ -39,53 +39,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#CBOEMember
- * ClearingFeeTypeCode.mmCBOEMember}</li>
+ * ClearingFeeTypeCode.CBOEMember}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#NonMemberAndCustomer
- * ClearingFeeTypeCode.mmNonMemberAndCustomer}</li>
+ * ClearingFeeTypeCode.NonMemberAndCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#EquityClearingMember
- * ClearingFeeTypeCode.mmEquityClearingMember}</li>
+ * ClearingFeeTypeCode.EquityClearingMember}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FullAssociateMember
- * ClearingFeeTypeCode.mmFullAssociateMember}</li>
+ * ClearingFeeTypeCode.FullAssociateMember}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#J106AndHFirms
- * ClearingFeeTypeCode.mmJ106AndHFirms}</li>
+ * ClearingFeeTypeCode.J106AndHFirms}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#GICInterestHolders
- * ClearingFeeTypeCode.mmGICInterestHolders}</li>
+ * ClearingFeeTypeCode.GICInterestHolders}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#LesseeAnd106FFirms
- * ClearingFeeTypeCode.mmLesseeAnd106FFirms}</li>
+ * ClearingFeeTypeCode.LesseeAnd106FFirms}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#OtherOwnershipTypes
- * ClearingFeeTypeCode.mmOtherOwnershipTypes}</li>
+ * ClearingFeeTypeCode.OtherOwnershipTypes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FirstYearOwnAccount
- * ClearingFeeTypeCode.mmFirstYearOwnAccount}</li>
+ * ClearingFeeTypeCode.FirstYearOwnAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#SecondYearOwnAccount
- * ClearingFeeTypeCode.mmSecondYearOwnAccount}</li>
+ * ClearingFeeTypeCode.SecondYearOwnAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#ThirdYearOwnAccount
- * ClearingFeeTypeCode.mmThirdYearOwnAccount}</li>
+ * ClearingFeeTypeCode.ThirdYearOwnAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FourthYearOwnAccount
- * ClearingFeeTypeCode.mmFourthYearOwnAccount}</li>
+ * ClearingFeeTypeCode.FourthYearOwnAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#FifthYearOwnAccount
- * ClearingFeeTypeCode.mmFifthYearOwnAccount}</li>
+ * ClearingFeeTypeCode.FifthYearOwnAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingFeeTypeCode#MoreThanFiveYearOwnAccount
- * ClearingFeeTypeCode.mmMoreThanFiveYearOwnAccount}</li>
+ * ClearingFeeTypeCode.MoreThanFiveYearOwnAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -539,7 +539,7 @@ public class ClearingFeeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CBOE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingFeeTypeCode";

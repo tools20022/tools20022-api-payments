@@ -39,38 +39,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#DayCountBasisDifference
- * CorporateActionReversalReasonCode.mmDayCountBasisDifference}</li>
+ * CorporateActionReversalReasonCode.DayCountBasisDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#IncorrectValueDate
- * CorporateActionReversalReasonCode.mmIncorrectValueDate}</li>
+ * CorporateActionReversalReasonCode.IncorrectValueDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#IncorrectRecordDate
- * CorporateActionReversalReasonCode.mmIncorrectRecordDate}</li>
+ * CorporateActionReversalReasonCode.IncorrectRecordDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#IncorrectPrice
- * CorporateActionReversalReasonCode.mmIncorrectPrice}</li>
+ * CorporateActionReversalReasonCode.IncorrectPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#UnduePayment
- * CorporateActionReversalReasonCode.mmUnduePayment}</li>
+ * CorporateActionReversalReasonCode.UnduePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#IncorrectEventLevelTaxRate
- * CorporateActionReversalReasonCode.mmIncorrectEventLevelTaxRate}</li>
+ * CorporateActionReversalReasonCode.IncorrectEventLevelTaxRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#FundsNotReceived
- * CorporateActionReversalReasonCode.mmFundsNotReceived}</li>
+ * CorporateActionReversalReasonCode.FundsNotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#PaymentOutsideClearingSystem
- * CorporateActionReversalReasonCode.mmPaymentOutsideClearingSystem}</li>
+ * CorporateActionReversalReasonCode.PaymentOutsideClearingSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionReversalReasonCode#IncorrectPaymentCurrency
- * CorporateActionReversalReasonCode.mmIncorrectPaymentCurrency}</li>
+ * CorporateActionReversalReasonCode.IncorrectPaymentCurrency}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -371,7 +371,7 @@ public class CorporateActionReversalReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DCBD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionReversalReasonCode";

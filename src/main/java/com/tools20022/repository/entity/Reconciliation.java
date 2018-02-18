@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TransactionCertificate1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process of matching different documents submitted by parties to a trade.
@@ -74,8 +76,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +94,8 @@ public class Reconciliation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.System> system;
 	/**
-	 * System which provides the reconciliation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,8 +140,8 @@ public class Reconciliation {
 	};
 	protected Document document;
 	/**
-	 * Document submitted in a reconciliation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,8 +187,8 @@ public class Reconciliation {
 	};
 	protected Trade reconciledTrades;
 	/**
-	 * Trades which are reconciled with entries in an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,8 +234,8 @@ public class Reconciliation {
 	};
 	protected Account account;
 	/**
-	 * Account for which a reconciliation process is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,7 +292,7 @@ public class Reconciliation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reconciliation";
 				definition = "Process of matching different documents submitted by parties to a trade.";
@@ -310,34 +312,38 @@ public class Reconciliation {
 	}
 
 	public List<System> getSystem() {
-		return system;
+		return system == null ? system = new ArrayList<>() : system;
 	}
 
-	public void setSystem(List<com.tools20022.repository.entity.System> system) {
-		this.system = system;
+	public Reconciliation setSystem(List<com.tools20022.repository.entity.System> system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 
 	public Document getDocument() {
 		return document;
 	}
 
-	public void setDocument(com.tools20022.repository.entity.Document document) {
-		this.document = document;
+	public Reconciliation setDocument(com.tools20022.repository.entity.Document document) {
+		this.document = Objects.requireNonNull(document);
+		return this;
 	}
 
 	public Trade getReconciledTrades() {
 		return reconciledTrades;
 	}
 
-	public void setReconciledTrades(com.tools20022.repository.entity.Trade reconciledTrades) {
-		this.reconciledTrades = reconciledTrades;
+	public Reconciliation setReconciledTrades(com.tools20022.repository.entity.Trade reconciledTrades) {
+		this.reconciledTrades = Objects.requireNonNull(reconciledTrades);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public Reconciliation setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

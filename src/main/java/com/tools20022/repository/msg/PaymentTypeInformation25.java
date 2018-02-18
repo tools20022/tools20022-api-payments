@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.PaymentProcessing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,17 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Set of elements used to provide further details of the type of payment."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentTypeInformation25", propOrder = {"instructionPriority", "clearingChannel", "serviceLevel", "localInstrument", "sequenceType", "categoryPurpose"})
 public class PaymentTypeInformation25 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstrPrty")
 	protected Priority2Code instructionPriority;
 	/**
-	 * Indicator of the urgency or order of importance that the instructing
-	 * party would like the instructed party to apply to the processing of the
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,7 +130,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAttribute mmInstructionPriority = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmPriority;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "InstrPrty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,11 +141,11 @@ public class PaymentTypeInformation25 {
 			simpleType_lazy = () -> Priority2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "ClrChanl")
 	protected ClearingChannel2Code clearingChannel;
 	/**
-	 * Specifies the clearing channel to be used to process the payment
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,7 +181,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAttribute mmClearingChannel = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmClearingChannel;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "ClrChanl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,11 +192,11 @@ public class PaymentTypeInformation25 {
 			simpleType_lazy = () -> ClearingChannel2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "SvcLvl")
 	protected ServiceLevel8Choice serviceLevel;
 	/**
-	 * Agreement under which or rules under which the transaction should be
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -230,7 +230,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAssociationEnd mmServiceLevel = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmServiceLevel;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "SvcLvl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,13 +242,11 @@ public class PaymentTypeInformation25 {
 			type_lazy = () -> ServiceLevel8Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "LclInstrm")
 	protected LocalInstrument2Choice localInstrument;
 	/**
-	 * User community specific instrument.
 	 * 
-	 * Usage: This element is used to specify a local instrument, local clearing
-	 * option and/or further qualify the service or service level.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -283,7 +281,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAssociationEnd mmLocalInstrument = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmLocalInstrument;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "LclInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -295,11 +293,11 @@ public class PaymentTypeInformation25 {
 			type_lazy = () -> LocalInstrument2Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SeqTp")
 	protected SequenceType3Code sequenceType;
 	/**
-	 * Identifies the direct debit sequence, such as first, recurrent, final or
-	 * one-off.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,7 +333,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAttribute mmSequenceType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmSequenceType;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "SeqTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -346,14 +344,11 @@ public class PaymentTypeInformation25 {
 			simpleType_lazy = () -> SequenceType3Code.mmObject();
 		}
 	};
+	@XmlElement(name = "CtgyPurp")
 	protected CategoryPurpose1Choice categoryPurpose;
 	/**
-	 * Specifies the high level purpose of the instruction based on a set of
-	 * pre-defined categories. Usage: This is used by the initiating party to
-	 * provide information concerning the processing of the payment. It is
-	 * likely to trigger special processing by any of the agents involved in the
-	 * payment chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -388,7 +383,7 @@ public class PaymentTypeInformation25 {
 	public static final MMMessageAssociationEnd mmCategoryPurpose = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmCategoryPurpose;
-			componentContext_lazy = () -> PaymentTypeInformation25.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTypeInformation25.mmObject();
 			isDerived = false;
 			xmlTag = "CtgyPurp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -404,10 +399,11 @@ public class PaymentTypeInformation25 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentTypeInformation25.mmInstructionPriority, PaymentTypeInformation25.mmClearingChannel, PaymentTypeInformation25.mmServiceLevel, PaymentTypeInformation25.mmLocalInstrument,
-						PaymentTypeInformation25.mmSequenceType, PaymentTypeInformation25.mmCategoryPurpose);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentTypeInformation25.mmInstructionPriority, com.tools20022.repository.msg.PaymentTypeInformation25.mmClearingChannel,
+						com.tools20022.repository.msg.PaymentTypeInformation25.mmServiceLevel, com.tools20022.repository.msg.PaymentTypeInformation25.mmLocalInstrument, com.tools20022.repository.msg.PaymentTypeInformation25.mmSequenceType,
+						com.tools20022.repository.msg.PaymentTypeInformation25.mmCategoryPurpose);
 				trace_lazy = () -> PaymentProcessing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentTypeInformation25";
 				definition = "Set of elements used to provide further details of the type of payment.";
@@ -416,57 +412,57 @@ public class PaymentTypeInformation25 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstrPrty")
-	public Priority2Code getInstructionPriority() {
-		return instructionPriority;
+	public Optional<Priority2Code> getInstructionPriority() {
+		return instructionPriority == null ? Optional.empty() : Optional.of(instructionPriority);
 	}
 
-	public void setInstructionPriority(Priority2Code instructionPriority) {
+	public PaymentTypeInformation25 setInstructionPriority(Priority2Code instructionPriority) {
 		this.instructionPriority = instructionPriority;
+		return this;
 	}
 
-	@XmlElement(name = "ClrChanl")
-	public ClearingChannel2Code getClearingChannel() {
-		return clearingChannel;
+	public Optional<ClearingChannel2Code> getClearingChannel() {
+		return clearingChannel == null ? Optional.empty() : Optional.of(clearingChannel);
 	}
 
-	public void setClearingChannel(ClearingChannel2Code clearingChannel) {
+	public PaymentTypeInformation25 setClearingChannel(ClearingChannel2Code clearingChannel) {
 		this.clearingChannel = clearingChannel;
+		return this;
 	}
 
-	@XmlElement(name = "SvcLvl")
-	public ServiceLevel8Choice getServiceLevel() {
-		return serviceLevel;
+	public Optional<ServiceLevel8Choice> getServiceLevel() {
+		return serviceLevel == null ? Optional.empty() : Optional.of(serviceLevel);
 	}
 
-	public void setServiceLevel(ServiceLevel8Choice serviceLevel) {
+	public PaymentTypeInformation25 setServiceLevel(ServiceLevel8Choice serviceLevel) {
 		this.serviceLevel = serviceLevel;
+		return this;
 	}
 
-	@XmlElement(name = "LclInstrm")
-	public LocalInstrument2Choice getLocalInstrument() {
-		return localInstrument;
+	public Optional<LocalInstrument2Choice> getLocalInstrument() {
+		return localInstrument == null ? Optional.empty() : Optional.of(localInstrument);
 	}
 
-	public void setLocalInstrument(LocalInstrument2Choice localInstrument) {
+	public PaymentTypeInformation25 setLocalInstrument(LocalInstrument2Choice localInstrument) {
 		this.localInstrument = localInstrument;
+		return this;
 	}
 
-	@XmlElement(name = "SeqTp")
-	public SequenceType3Code getSequenceType() {
-		return sequenceType;
+	public Optional<SequenceType3Code> getSequenceType() {
+		return sequenceType == null ? Optional.empty() : Optional.of(sequenceType);
 	}
 
-	public void setSequenceType(SequenceType3Code sequenceType) {
+	public PaymentTypeInformation25 setSequenceType(SequenceType3Code sequenceType) {
 		this.sequenceType = sequenceType;
+		return this;
 	}
 
-	@XmlElement(name = "CtgyPurp")
-	public CategoryPurpose1Choice getCategoryPurpose() {
-		return categoryPurpose;
+	public Optional<CategoryPurpose1Choice> getCategoryPurpose() {
+		return categoryPurpose == null ? Optional.empty() : Optional.of(categoryPurpose);
 	}
 
-	public void setCategoryPurpose(CategoryPurpose1Choice categoryPurpose) {
+	public PaymentTypeInformation25 setCategoryPurpose(CategoryPurpose1Choice categoryPurpose) {
 		this.categoryPurpose = categoryPurpose;
+		return this;
 	}
 }

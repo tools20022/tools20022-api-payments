@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.InterestType1Choice;
 import com.tools20022.repository.choice.RateType4Choice;
@@ -27,9 +28,11 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Set of parameters used to calculate an interest amount.
@@ -146,8 +149,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -163,9 +166,8 @@ public class InterestCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InterestComputationMethodCode dayCountBasis;
 	/**
-	 * Identifies the computation method of accrued interest of the related
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,11 +215,8 @@ public class InterestCalculation {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Percentage charged for the use of an amount of money, usually expressed
-	 * at an annual rate. The interest rate is the ratio of the amount of
-	 * interest paid during a certain period of time compared to the principal
-	 * amount of the interest bearing financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,8 +275,8 @@ public class InterestCalculation {
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
-	 * Interest resulting from the interest calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,8 +331,8 @@ public class InterestCalculation {
 	};
 	protected InterestRateTypeCode rateType;
 	/**
-	 * Specifies the type of rate used to calculate the interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,6 +353,9 @@ public class InterestCalculation {
 	 * {@linkplain com.tools20022.repository.entity.InterestCalculation
 	 * InterestCalculation}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::REPT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -370,6 +372,7 @@ public class InterestCalculation {
 			derivation_lazy = () -> Arrays.asList(RateType4Choice.mmOther);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::REPT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateType";
 			definition = "Specifies the type of rate used to calculate the interest.";
@@ -388,8 +391,8 @@ public class InterestCalculation {
 	};
 	protected DateTimePeriod interestPeriod;
 	/**
-	 * Period during which the interest rate has been applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -448,9 +451,8 @@ public class InterestCalculation {
 	};
 	protected PercentageRate relatedIndex;
 	/**
-	 * Index rate related to the interest rate of the forthcoming interest
-	 * payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -498,10 +500,8 @@ public class InterestCalculation {
 	};
 	protected ISODateTime interestAccrualDate;
 	/**
-	 * Start date used for calculating accrued interest on debt instruments
-	 * which are being sold between interest payment dates. Often but not always
-	 * the same as the issue date and the dated date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -548,8 +548,8 @@ public class InterestCalculation {
 	};
 	protected CalculationMethodCode calculationMethod;
 	/**
-	 * Specifies whether the interest is simple or compounded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -595,8 +595,8 @@ public class InterestCalculation {
 	};
 	protected List<com.tools20022.repository.entity.VariableInterest> variableInterest;
 	/**
-	 * Specifies the parameters to be used for variable interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -643,8 +643,8 @@ public class InterestCalculation {
 	};
 	protected InterestCode interestType;
 	/**
-	 * Specifies the type of interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -703,8 +703,8 @@ public class InterestCalculation {
 	};
 	protected AmountRange rateValidityRange;
 	/**
-	 * Specifies the amount range for which the interest rate is applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -760,9 +760,8 @@ public class InterestCalculation {
 	};
 	protected InterestMethodCode interestMethod;
 	/**
-	 * Indicates whether the interest will be settled in cash or rolled in the
-	 * existing collateral balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -810,8 +809,8 @@ public class InterestCalculation {
 	};
 	protected FrequencyCode calculationFrequency;
 	/**
-	 * Specifies the periodicity of the calculation of the interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -867,8 +866,8 @@ public class InterestCalculation {
 	};
 	protected ISODate calculationDate;
 	/**
-	 * Indicates the calculation date of the interest amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -913,8 +912,8 @@ public class InterestCalculation {
 	};
 	protected List<com.tools20022.repository.entity.Charges> charges;
 	/**
-	 * Specifies the charges on interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -959,8 +958,8 @@ public class InterestCalculation {
 	};
 	protected Debt debtInstrument;
 	/**
-	 * Debt for which a next interest is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1006,8 +1005,8 @@ public class InterestCalculation {
 	};
 	protected List<com.tools20022.repository.entity.Spread> spread;
 	/**
-	 * Specifies the difference between two interests.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1052,8 +1051,8 @@ public class InterestCalculation {
 	};
 	protected FrequencyCode paymentFrequency;
 	/**
-	 * Specifies the frequency of an interest payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1099,8 +1098,8 @@ public class InterestCalculation {
 	};
 	protected InterestManagement relatedInterestManagement;
 	/**
-	 * Interest management process which requires interest calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1151,7 +1150,7 @@ public class InterestCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestCalculation";
 				definition = "Set of parameters used to calculate an interest amount.";
@@ -1181,151 +1180,170 @@ public class InterestCalculation {
 		return dayCountBasis;
 	}
 
-	public void setDayCountBasis(InterestComputationMethodCode dayCountBasis) {
-		this.dayCountBasis = dayCountBasis;
+	public InterestCalculation setDayCountBasis(InterestComputationMethodCode dayCountBasis) {
+		this.dayCountBasis = Objects.requireNonNull(dayCountBasis);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public InterestCalculation setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public InterestCalculation setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public InterestRateTypeCode getRateType() {
 		return rateType;
 	}
 
-	public void setRateType(InterestRateTypeCode rateType) {
-		this.rateType = rateType;
+	public InterestCalculation setRateType(InterestRateTypeCode rateType) {
+		this.rateType = Objects.requireNonNull(rateType);
+		return this;
 	}
 
 	public DateTimePeriod getInterestPeriod() {
 		return interestPeriod;
 	}
 
-	public void setInterestPeriod(com.tools20022.repository.entity.DateTimePeriod interestPeriod) {
-		this.interestPeriod = interestPeriod;
+	public InterestCalculation setInterestPeriod(com.tools20022.repository.entity.DateTimePeriod interestPeriod) {
+		this.interestPeriod = Objects.requireNonNull(interestPeriod);
+		return this;
 	}
 
 	public PercentageRate getRelatedIndex() {
 		return relatedIndex;
 	}
 
-	public void setRelatedIndex(PercentageRate relatedIndex) {
-		this.relatedIndex = relatedIndex;
+	public InterestCalculation setRelatedIndex(PercentageRate relatedIndex) {
+		this.relatedIndex = Objects.requireNonNull(relatedIndex);
+		return this;
 	}
 
 	public ISODateTime getInterestAccrualDate() {
 		return interestAccrualDate;
 	}
 
-	public void setInterestAccrualDate(ISODateTime interestAccrualDate) {
-		this.interestAccrualDate = interestAccrualDate;
+	public InterestCalculation setInterestAccrualDate(ISODateTime interestAccrualDate) {
+		this.interestAccrualDate = Objects.requireNonNull(interestAccrualDate);
+		return this;
 	}
 
 	public CalculationMethodCode getCalculationMethod() {
 		return calculationMethod;
 	}
 
-	public void setCalculationMethod(CalculationMethodCode calculationMethod) {
-		this.calculationMethod = calculationMethod;
+	public InterestCalculation setCalculationMethod(CalculationMethodCode calculationMethod) {
+		this.calculationMethod = Objects.requireNonNull(calculationMethod);
+		return this;
 	}
 
 	public List<VariableInterest> getVariableInterest() {
-		return variableInterest;
+		return variableInterest == null ? variableInterest = new ArrayList<>() : variableInterest;
 	}
 
-	public void setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
-		this.variableInterest = variableInterest;
+	public InterestCalculation setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 
 	public InterestCode getInterestType() {
 		return interestType;
 	}
 
-	public void setInterestType(InterestCode interestType) {
-		this.interestType = interestType;
+	public InterestCalculation setInterestType(InterestCode interestType) {
+		this.interestType = Objects.requireNonNull(interestType);
+		return this;
 	}
 
 	public AmountRange getRateValidityRange() {
 		return rateValidityRange;
 	}
 
-	public void setRateValidityRange(com.tools20022.repository.entity.AmountRange rateValidityRange) {
-		this.rateValidityRange = rateValidityRange;
+	public InterestCalculation setRateValidityRange(com.tools20022.repository.entity.AmountRange rateValidityRange) {
+		this.rateValidityRange = Objects.requireNonNull(rateValidityRange);
+		return this;
 	}
 
 	public InterestMethodCode getInterestMethod() {
 		return interestMethod;
 	}
 
-	public void setInterestMethod(InterestMethodCode interestMethod) {
-		this.interestMethod = interestMethod;
+	public InterestCalculation setInterestMethod(InterestMethodCode interestMethod) {
+		this.interestMethod = Objects.requireNonNull(interestMethod);
+		return this;
 	}
 
 	public FrequencyCode getCalculationFrequency() {
 		return calculationFrequency;
 	}
 
-	public void setCalculationFrequency(FrequencyCode calculationFrequency) {
-		this.calculationFrequency = calculationFrequency;
+	public InterestCalculation setCalculationFrequency(FrequencyCode calculationFrequency) {
+		this.calculationFrequency = Objects.requireNonNull(calculationFrequency);
+		return this;
 	}
 
 	public ISODate getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODate calculationDate) {
-		this.calculationDate = calculationDate;
+	public InterestCalculation setCalculationDate(ISODate calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public List<Charges> getCharges() {
-		return charges;
+		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public void setCharges(List<com.tools20022.repository.entity.Charges> charges) {
-		this.charges = charges;
+	public InterestCalculation setCharges(List<com.tools20022.repository.entity.Charges> charges) {
+		this.charges = Objects.requireNonNull(charges);
+		return this;
 	}
 
 	public Debt getDebtInstrument() {
 		return debtInstrument;
 	}
 
-	public void setDebtInstrument(com.tools20022.repository.entity.Debt debtInstrument) {
-		this.debtInstrument = debtInstrument;
+	public InterestCalculation setDebtInstrument(com.tools20022.repository.entity.Debt debtInstrument) {
+		this.debtInstrument = Objects.requireNonNull(debtInstrument);
+		return this;
 	}
 
 	public List<Spread> getSpread() {
-		return spread;
+		return spread == null ? spread = new ArrayList<>() : spread;
 	}
 
-	public void setSpread(List<com.tools20022.repository.entity.Spread> spread) {
-		this.spread = spread;
+	public InterestCalculation setSpread(List<com.tools20022.repository.entity.Spread> spread) {
+		this.spread = Objects.requireNonNull(spread);
+		return this;
 	}
 
 	public FrequencyCode getPaymentFrequency() {
 		return paymentFrequency;
 	}
 
-	public void setPaymentFrequency(FrequencyCode paymentFrequency) {
-		this.paymentFrequency = paymentFrequency;
+	public InterestCalculation setPaymentFrequency(FrequencyCode paymentFrequency) {
+		this.paymentFrequency = Objects.requireNonNull(paymentFrequency);
+		return this;
 	}
 
 	public InterestManagement getRelatedInterestManagement() {
 		return relatedInterestManagement;
 	}
 
-	public void setRelatedInterestManagement(com.tools20022.repository.entity.InterestManagement relatedInterestManagement) {
-		this.relatedInterestManagement = relatedInterestManagement;
+	public InterestCalculation setRelatedInterestManagement(com.tools20022.repository.entity.InterestManagement relatedInterestManagement) {
+		this.relatedInterestManagement = Objects.requireNonNull(relatedInterestManagement);
+		return this;
 	}
 }

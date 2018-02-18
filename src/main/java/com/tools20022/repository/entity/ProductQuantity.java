@@ -27,9 +27,8 @@ import com.tools20022.repository.msg.BillingServiceParameters2;
 import com.tools20022.repository.msg.BillingServiceParameters3;
 import com.tools20022.repository.msg.Product2;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the ordered quantity of a product.
@@ -141,8 +140,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,8 +157,8 @@ public class ProductQuantity {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected UnitOfMeasureCode unitOfMeasure;
 	/**
-	 * Specifies the unit of measurement. For example, kilo, tons.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,9 +213,8 @@ public class ProductQuantity {
 	};
 	protected DecimalNumber value;
 	/**
-	 * Quantity of a product on a line specified by a number. For example, 100
-	 * (kgs), 50 (pieces).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,8 +286,8 @@ public class ProductQuantity {
 	};
 	protected List<com.tools20022.repository.entity.Product> product;
 	/**
-	 * Specifies the type of goods and services linked to the quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,9 +333,8 @@ public class ProductQuantity {
 	};
 	protected Max15NumericText factor;
 	/**
-	 * Multiplication factor of measurement values. For example: goods that can
-	 * be ordered by 36 pieces.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -385,8 +382,8 @@ public class ProductQuantity {
 	};
 	protected LineItem netWeightRelatedLineItem;
 	/**
-	 * Line item for which a net weight is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,8 +429,8 @@ public class ProductQuantity {
 	};
 	protected LineItem billedQuantityRelatedLineItem;
 	/**
-	 * Line item which contains this quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,8 +476,8 @@ public class ProductQuantity {
 	};
 	protected Packaging relatedPackaging;
 	/**
-	 * Packaging for which a quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,8 +524,8 @@ public class ProductQuantity {
 	};
 	protected Packaging packagingForUnitQuantity;
 	/**
-	 * Packaging for which a unit quantity per package is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -576,8 +573,8 @@ public class ProductQuantity {
 	};
 	protected LineItem chargeFreeQuantityRelatedLineItem;
 	/**
-	 * Line item for which a charge free quantity of product is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -624,10 +621,8 @@ public class ProductQuantity {
 	};
 	protected LineItem measureQuantityStart;
 	/**
-	 * Quantity value on which the quantity measurement started for a line item.
-	 * For instance the start amount of a meter reading for an electricity
-	 * supplier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -675,10 +670,8 @@ public class ProductQuantity {
 	};
 	protected LineItem measureQuantityEnd;
 	/**
-	 * Quantity value on which the quantity measurement ended for a line item.
-	 * For instance the end amount of a meter reading for an electricity
-	 * supplier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -726,8 +719,8 @@ public class ProductQuantity {
 	};
 	protected Tolerance quantityTolerance;
 	/**
-	 * Variance allowed in the quantity of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -774,8 +767,8 @@ public class ProductQuantity {
 	};
 	protected Packaging packagingForConsignmentlQuantity;
 	/**
-	 * Packaging for which a total consignment quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -823,8 +816,8 @@ public class ProductQuantity {
 	};
 	protected Packaging packagingForVolume;
 	/**
-	 * Packaging for which a volume is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -871,8 +864,8 @@ public class ProductQuantity {
 	};
 	protected Packaging packagingForWeight;
 	/**
-	 * Packaging for which a weight is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -919,8 +912,8 @@ public class ProductQuantity {
 	};
 	protected LineItem grossPriceQuantityRelatedLineItem;
 	/**
-	 * Line item for which gross price quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -966,8 +959,8 @@ public class ProductQuantity {
 	};
 	protected LineItem netPriceQuantityRelatedLineItem;
 	/**
-	 * Line item for which a net price quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1013,8 +1006,8 @@ public class ProductQuantity {
 	};
 	protected LineItem grossWeightRelatedLineItem;
 	/**
-	 * Line item for which a gross weight is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1062,7 +1055,7 @@ public class ProductQuantity {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductQuantity";
 				definition = "Specifies the ordered quantity of a product.";
@@ -1093,143 +1086,161 @@ public class ProductQuantity {
 		return unitOfMeasure;
 	}
 
-	public void setUnitOfMeasure(UnitOfMeasureCode unitOfMeasure) {
-		this.unitOfMeasure = unitOfMeasure;
+	public ProductQuantity setUnitOfMeasure(UnitOfMeasureCode unitOfMeasure) {
+		this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+		return this;
 	}
 
 	public DecimalNumber getValue() {
 		return value;
 	}
 
-	public void setValue(DecimalNumber value) {
-		this.value = value;
+	public ProductQuantity setValue(DecimalNumber value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
 	public List<Product> getProduct() {
-		return product;
+		return product == null ? product = new ArrayList<>() : product;
 	}
 
-	public void setProduct(List<com.tools20022.repository.entity.Product> product) {
-		this.product = product;
+	public ProductQuantity setProduct(List<com.tools20022.repository.entity.Product> product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 
 	public Max15NumericText getFactor() {
 		return factor;
 	}
 
-	public void setFactor(Max15NumericText factor) {
-		this.factor = factor;
+	public ProductQuantity setFactor(Max15NumericText factor) {
+		this.factor = Objects.requireNonNull(factor);
+		return this;
 	}
 
-	public LineItem getNetWeightRelatedLineItem() {
-		return netWeightRelatedLineItem;
+	public Optional<LineItem> getNetWeightRelatedLineItem() {
+		return netWeightRelatedLineItem == null ? Optional.empty() : Optional.of(netWeightRelatedLineItem);
 	}
 
-	public void setNetWeightRelatedLineItem(com.tools20022.repository.entity.LineItem netWeightRelatedLineItem) {
+	public ProductQuantity setNetWeightRelatedLineItem(com.tools20022.repository.entity.LineItem netWeightRelatedLineItem) {
 		this.netWeightRelatedLineItem = netWeightRelatedLineItem;
+		return this;
 	}
 
-	public LineItem getBilledQuantityRelatedLineItem() {
-		return billedQuantityRelatedLineItem;
+	public Optional<LineItem> getBilledQuantityRelatedLineItem() {
+		return billedQuantityRelatedLineItem == null ? Optional.empty() : Optional.of(billedQuantityRelatedLineItem);
 	}
 
-	public void setBilledQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem billedQuantityRelatedLineItem) {
+	public ProductQuantity setBilledQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem billedQuantityRelatedLineItem) {
 		this.billedQuantityRelatedLineItem = billedQuantityRelatedLineItem;
+		return this;
 	}
 
-	public Packaging getRelatedPackaging() {
-		return relatedPackaging;
+	public Optional<Packaging> getRelatedPackaging() {
+		return relatedPackaging == null ? Optional.empty() : Optional.of(relatedPackaging);
 	}
 
-	public void setRelatedPackaging(com.tools20022.repository.entity.Packaging relatedPackaging) {
+	public ProductQuantity setRelatedPackaging(com.tools20022.repository.entity.Packaging relatedPackaging) {
 		this.relatedPackaging = relatedPackaging;
+		return this;
 	}
 
-	public Packaging getPackagingForUnitQuantity() {
-		return packagingForUnitQuantity;
+	public Optional<Packaging> getPackagingForUnitQuantity() {
+		return packagingForUnitQuantity == null ? Optional.empty() : Optional.of(packagingForUnitQuantity);
 	}
 
-	public void setPackagingForUnitQuantity(com.tools20022.repository.entity.Packaging packagingForUnitQuantity) {
+	public ProductQuantity setPackagingForUnitQuantity(com.tools20022.repository.entity.Packaging packagingForUnitQuantity) {
 		this.packagingForUnitQuantity = packagingForUnitQuantity;
+		return this;
 	}
 
-	public LineItem getChargeFreeQuantityRelatedLineItem() {
-		return chargeFreeQuantityRelatedLineItem;
+	public Optional<LineItem> getChargeFreeQuantityRelatedLineItem() {
+		return chargeFreeQuantityRelatedLineItem == null ? Optional.empty() : Optional.of(chargeFreeQuantityRelatedLineItem);
 	}
 
-	public void setChargeFreeQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem chargeFreeQuantityRelatedLineItem) {
+	public ProductQuantity setChargeFreeQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem chargeFreeQuantityRelatedLineItem) {
 		this.chargeFreeQuantityRelatedLineItem = chargeFreeQuantityRelatedLineItem;
+		return this;
 	}
 
 	public LineItem getMeasureQuantityStart() {
 		return measureQuantityStart;
 	}
 
-	public void setMeasureQuantityStart(com.tools20022.repository.entity.LineItem measureQuantityStart) {
-		this.measureQuantityStart = measureQuantityStart;
+	public ProductQuantity setMeasureQuantityStart(com.tools20022.repository.entity.LineItem measureQuantityStart) {
+		this.measureQuantityStart = Objects.requireNonNull(measureQuantityStart);
+		return this;
 	}
 
 	public LineItem getMeasureQuantityEnd() {
 		return measureQuantityEnd;
 	}
 
-	public void setMeasureQuantityEnd(com.tools20022.repository.entity.LineItem measureQuantityEnd) {
-		this.measureQuantityEnd = measureQuantityEnd;
+	public ProductQuantity setMeasureQuantityEnd(com.tools20022.repository.entity.LineItem measureQuantityEnd) {
+		this.measureQuantityEnd = Objects.requireNonNull(measureQuantityEnd);
+		return this;
 	}
 
 	public Tolerance getQuantityTolerance() {
 		return quantityTolerance;
 	}
 
-	public void setQuantityTolerance(com.tools20022.repository.entity.Tolerance quantityTolerance) {
-		this.quantityTolerance = quantityTolerance;
+	public ProductQuantity setQuantityTolerance(com.tools20022.repository.entity.Tolerance quantityTolerance) {
+		this.quantityTolerance = Objects.requireNonNull(quantityTolerance);
+		return this;
 	}
 
-	public Packaging getPackagingForConsignmentlQuantity() {
-		return packagingForConsignmentlQuantity;
+	public Optional<Packaging> getPackagingForConsignmentlQuantity() {
+		return packagingForConsignmentlQuantity == null ? Optional.empty() : Optional.of(packagingForConsignmentlQuantity);
 	}
 
-	public void setPackagingForConsignmentlQuantity(com.tools20022.repository.entity.Packaging packagingForConsignmentlQuantity) {
+	public ProductQuantity setPackagingForConsignmentlQuantity(com.tools20022.repository.entity.Packaging packagingForConsignmentlQuantity) {
 		this.packagingForConsignmentlQuantity = packagingForConsignmentlQuantity;
+		return this;
 	}
 
-	public Packaging getPackagingForVolume() {
-		return packagingForVolume;
+	public Optional<Packaging> getPackagingForVolume() {
+		return packagingForVolume == null ? Optional.empty() : Optional.of(packagingForVolume);
 	}
 
-	public void setPackagingForVolume(com.tools20022.repository.entity.Packaging packagingForVolume) {
+	public ProductQuantity setPackagingForVolume(com.tools20022.repository.entity.Packaging packagingForVolume) {
 		this.packagingForVolume = packagingForVolume;
+		return this;
 	}
 
-	public Packaging getPackagingForWeight() {
-		return packagingForWeight;
+	public Optional<Packaging> getPackagingForWeight() {
+		return packagingForWeight == null ? Optional.empty() : Optional.of(packagingForWeight);
 	}
 
-	public void setPackagingForWeight(com.tools20022.repository.entity.Packaging packagingForWeight) {
+	public ProductQuantity setPackagingForWeight(com.tools20022.repository.entity.Packaging packagingForWeight) {
 		this.packagingForWeight = packagingForWeight;
+		return this;
 	}
 
-	public LineItem getGrossPriceQuantityRelatedLineItem() {
-		return grossPriceQuantityRelatedLineItem;
+	public Optional<LineItem> getGrossPriceQuantityRelatedLineItem() {
+		return grossPriceQuantityRelatedLineItem == null ? Optional.empty() : Optional.of(grossPriceQuantityRelatedLineItem);
 	}
 
-	public void setGrossPriceQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem grossPriceQuantityRelatedLineItem) {
+	public ProductQuantity setGrossPriceQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem grossPriceQuantityRelatedLineItem) {
 		this.grossPriceQuantityRelatedLineItem = grossPriceQuantityRelatedLineItem;
+		return this;
 	}
 
-	public LineItem getNetPriceQuantityRelatedLineItem() {
-		return netPriceQuantityRelatedLineItem;
+	public Optional<LineItem> getNetPriceQuantityRelatedLineItem() {
+		return netPriceQuantityRelatedLineItem == null ? Optional.empty() : Optional.of(netPriceQuantityRelatedLineItem);
 	}
 
-	public void setNetPriceQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem netPriceQuantityRelatedLineItem) {
+	public ProductQuantity setNetPriceQuantityRelatedLineItem(com.tools20022.repository.entity.LineItem netPriceQuantityRelatedLineItem) {
 		this.netPriceQuantityRelatedLineItem = netPriceQuantityRelatedLineItem;
+		return this;
 	}
 
-	public LineItem getGrossWeightRelatedLineItem() {
-		return grossWeightRelatedLineItem;
+	public Optional<LineItem> getGrossWeightRelatedLineItem() {
+		return grossWeightRelatedLineItem == null ? Optional.empty() : Optional.of(grossWeightRelatedLineItem);
 	}
 
-	public void setGrossWeightRelatedLineItem(com.tools20022.repository.entity.LineItem grossWeightRelatedLineItem) {
+	public ProductQuantity setGrossWeightRelatedLineItem(com.tools20022.repository.entity.LineItem grossWeightRelatedLineItem) {
 		this.grossWeightRelatedLineItem = grossWeightRelatedLineItem;
+		return this;
 	}
 }

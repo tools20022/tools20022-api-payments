@@ -29,9 +29,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AmountAndCurrencyExchange3;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Distribution of the proceeds of a CA event.
@@ -125,8 +124,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -142,9 +141,8 @@ public class CorporateActionDistribution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity postingQuantity;
 	/**
-	 * Quantity of securities that have been posted (credit or debit) to the
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,8 +191,8 @@ public class CorporateActionDistribution {
 	};
 	protected ISODateTime postingDateTime;
 	/**
-	 * Date of the posting (credit or debit) to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,9 +237,8 @@ public class CorporateActionDistribution {
 	};
 	protected ISODate movementDate;
 	/**
-	 * Date/time at which the movement is due to take place (cash and/or
-	 * securities).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,8 +285,8 @@ public class CorporateActionDistribution {
 	};
 	protected CurrencyAndAmount postingAmount;
 	/**
-	 * Amount of money that is to be/was posted to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,8 +341,8 @@ public class CorporateActionDistribution {
 	};
 	protected TaxVoucher taxVoucher;
 	/**
-	 * Specifies tax vouchers in the framework of a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -393,9 +390,8 @@ public class CorporateActionDistribution {
 	};
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -445,8 +441,8 @@ public class CorporateActionDistribution {
 	};
 	protected DistributionTypeCode orderType;
 	/**
-	 * Type of movement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,8 +488,8 @@ public class CorporateActionDistribution {
 	};
 	protected DistributionInstructionTypeCode movementType;
 	/**
-	 * Type of movement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -539,10 +535,8 @@ public class CorporateActionDistribution {
 	};
 	protected YesNoIndicator highPriorityIndicator;
 	/**
-	 * Indicates whether the movement is a high priority or not.<br>
-	 * Meaning when true: High priority<br>
-	 * Meaning when false: Standard
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,8 +584,8 @@ public class CorporateActionDistribution {
 	};
 	protected ISODate requestedExecutionDate;
 	/**
-	 * Date at which the distribution movement must be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,8 +631,8 @@ public class CorporateActionDistribution {
 	};
 	protected RoundingDirectionCode fractionTreatment;
 	/**
-	 * Specifies the rounding direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -684,8 +678,8 @@ public class CorporateActionDistribution {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Specifies whether the posting amount is a debit or credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -732,8 +726,8 @@ public class CorporateActionDistribution {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionOption> option;
 	/**
-	 * Option on which the distribution is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -780,8 +774,8 @@ public class CorporateActionDistribution {
 	};
 	protected CurrencyAndAmount netAmount;
 	/**
-	 * Cash amount after any deductions and allowances have been made
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -828,8 +822,8 @@ public class CorporateActionDistribution {
 	};
 	protected CurrencyAndAmount grossAmount;
 	/**
-	 * Cash amount before any deductions and allowances have been made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -876,8 +870,8 @@ public class CorporateActionDistribution {
 	};
 	protected FinancialTransaction financialTransaction;
 	/**
-	 * Financial transaction to which the CA distribution belongs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -926,9 +920,8 @@ public class CorporateActionDistribution {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction;
 	/**
-	 * Specifies the delivery instructions for the securities and cash proceeds
-	 * at any stage of the Corporate Action process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -979,7 +972,7 @@ public class CorporateActionDistribution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionDistribution";
 				definition = "Distribution of the proceeds of a CA event.";
@@ -1009,135 +1002,152 @@ public class CorporateActionDistribution {
 		return postingQuantity;
 	}
 
-	public void setPostingQuantity(com.tools20022.repository.entity.SecuritiesQuantity postingQuantity) {
-		this.postingQuantity = postingQuantity;
+	public CorporateActionDistribution setPostingQuantity(com.tools20022.repository.entity.SecuritiesQuantity postingQuantity) {
+		this.postingQuantity = Objects.requireNonNull(postingQuantity);
+		return this;
 	}
 
 	public ISODateTime getPostingDateTime() {
 		return postingDateTime;
 	}
 
-	public void setPostingDateTime(ISODateTime postingDateTime) {
-		this.postingDateTime = postingDateTime;
+	public CorporateActionDistribution setPostingDateTime(ISODateTime postingDateTime) {
+		this.postingDateTime = Objects.requireNonNull(postingDateTime);
+		return this;
 	}
 
 	public ISODate getMovementDate() {
 		return movementDate;
 	}
 
-	public void setMovementDate(ISODate movementDate) {
-		this.movementDate = movementDate;
+	public CorporateActionDistribution setMovementDate(ISODate movementDate) {
+		this.movementDate = Objects.requireNonNull(movementDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getPostingAmount() {
 		return postingAmount;
 	}
 
-	public void setPostingAmount(CurrencyAndAmount postingAmount) {
-		this.postingAmount = postingAmount;
+	public CorporateActionDistribution setPostingAmount(CurrencyAndAmount postingAmount) {
+		this.postingAmount = Objects.requireNonNull(postingAmount);
+		return this;
 	}
 
 	public TaxVoucher getTaxVoucher() {
 		return taxVoucher;
 	}
 
-	public void setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
-		this.taxVoucher = taxVoucher;
+	public CorporateActionDistribution setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
+		this.taxVoucher = Objects.requireNonNull(taxVoucher);
+		return this;
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionDistribution setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public DistributionTypeCode getOrderType() {
 		return orderType;
 	}
 
-	public void setOrderType(DistributionTypeCode orderType) {
-		this.orderType = orderType;
+	public CorporateActionDistribution setOrderType(DistributionTypeCode orderType) {
+		this.orderType = Objects.requireNonNull(orderType);
+		return this;
 	}
 
 	public DistributionInstructionTypeCode getMovementType() {
 		return movementType;
 	}
 
-	public void setMovementType(DistributionInstructionTypeCode movementType) {
-		this.movementType = movementType;
+	public CorporateActionDistribution setMovementType(DistributionInstructionTypeCode movementType) {
+		this.movementType = Objects.requireNonNull(movementType);
+		return this;
 	}
 
 	public YesNoIndicator getHighPriorityIndicator() {
 		return highPriorityIndicator;
 	}
 
-	public void setHighPriorityIndicator(YesNoIndicator highPriorityIndicator) {
-		this.highPriorityIndicator = highPriorityIndicator;
+	public CorporateActionDistribution setHighPriorityIndicator(YesNoIndicator highPriorityIndicator) {
+		this.highPriorityIndicator = Objects.requireNonNull(highPriorityIndicator);
+		return this;
 	}
 
 	public ISODate getRequestedExecutionDate() {
 		return requestedExecutionDate;
 	}
 
-	public void setRequestedExecutionDate(ISODate requestedExecutionDate) {
-		this.requestedExecutionDate = requestedExecutionDate;
+	public CorporateActionDistribution setRequestedExecutionDate(ISODate requestedExecutionDate) {
+		this.requestedExecutionDate = Objects.requireNonNull(requestedExecutionDate);
+		return this;
 	}
 
 	public RoundingDirectionCode getFractionTreatment() {
 		return fractionTreatment;
 	}
 
-	public void setFractionTreatment(RoundingDirectionCode fractionTreatment) {
-		this.fractionTreatment = fractionTreatment;
+	public CorporateActionDistribution setFractionTreatment(RoundingDirectionCode fractionTreatment) {
+		this.fractionTreatment = Objects.requireNonNull(fractionTreatment);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public CorporateActionDistribution setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public List<CorporateActionOption> getOption() {
-		return option;
+		return option == null ? option = new ArrayList<>() : option;
 	}
 
-	public void setOption(List<com.tools20022.repository.entity.CorporateActionOption> option) {
-		this.option = option;
+	public CorporateActionDistribution setOption(List<com.tools20022.repository.entity.CorporateActionOption> option) {
+		this.option = Objects.requireNonNull(option);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(CurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public CorporateActionDistribution setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getGrossAmount() {
 		return grossAmount;
 	}
 
-	public void setGrossAmount(CurrencyAndAmount grossAmount) {
-		this.grossAmount = grossAmount;
+	public CorporateActionDistribution setGrossAmount(CurrencyAndAmount grossAmount) {
+		this.grossAmount = Objects.requireNonNull(grossAmount);
+		return this;
 	}
 
 	public FinancialTransaction getFinancialTransaction() {
 		return financialTransaction;
 	}
 
-	public void setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
-		this.financialTransaction = financialTransaction;
+	public CorporateActionDistribution setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
+		this.financialTransaction = Objects.requireNonNull(financialTransaction);
+		return this;
 	}
 
 	public List<CorporateActionProceedsDeliveryInstruction> getCorporateActionProceedsDeliveryInstruction() {
-		return corporateActionProceedsDeliveryInstruction;
+		return corporateActionProceedsDeliveryInstruction == null ? corporateActionProceedsDeliveryInstruction = new ArrayList<>() : corporateActionProceedsDeliveryInstruction;
 	}
 
-	public void setCorporateActionProceedsDeliveryInstruction(List<com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction) {
-		this.corporateActionProceedsDeliveryInstruction = corporateActionProceedsDeliveryInstruction;
+	public CorporateActionDistribution setCorporateActionProceedsDeliveryInstruction(List<com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction) {
+		this.corporateActionProceedsDeliveryInstruction = Objects.requireNonNull(corporateActionProceedsDeliveryInstruction);
+		return this;
 	}
 }

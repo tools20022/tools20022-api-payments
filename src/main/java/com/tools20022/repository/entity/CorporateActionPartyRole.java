@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of a corporate action.
@@ -72,8 +74,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +91,8 @@ public class CorporateActionPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CorporateActionEvent> corporateActionEvent;
 	/**
-	 * Specifies the event for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,9 +139,8 @@ public class CorporateActionPartyRole extends Role {
 	};
 	protected List<com.tools20022.repository.entity.Account> account;
 	/**
-	 * Unambiguous identification of the account used in the context of the
-	 * corporate action party role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +189,7 @@ public class CorporateActionPartyRole extends Role {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionPartyRole";
 				definition = "Role played by a party in the context of a corporate action.";
@@ -207,18 +208,20 @@ public class CorporateActionPartyRole extends Role {
 	}
 
 	public List<CorporateActionEvent> getCorporateActionEvent() {
-		return corporateActionEvent;
+		return corporateActionEvent == null ? corporateActionEvent = new ArrayList<>() : corporateActionEvent;
 	}
 
-	public void setCorporateActionEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateActionEvent) {
-		this.corporateActionEvent = corporateActionEvent;
+	public CorporateActionPartyRole setCorporateActionEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateActionEvent) {
+		this.corporateActionEvent = Objects.requireNonNull(corporateActionEvent);
+		return this;
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public CorporateActionPartyRole setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

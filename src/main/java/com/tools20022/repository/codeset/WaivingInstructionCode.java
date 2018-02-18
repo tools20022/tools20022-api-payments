@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#WaiveInCash
- * WaivingInstructionCode.mmWaiveInCash}</li>
+ * WaivingInstructionCode.WaiveInCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#WaiveInUnits
- * WaivingInstructionCode.mmWaiveInUnits}</li>
+ * WaivingInstructionCode.WaiveInUnits}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.WaivingInstructionCode#Other
- * WaivingInstructionCode.mmOther}</li>
+ * WaivingInstructionCode.Other}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,6 +84,9 @@ public class WaivingInstructionCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "WICA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::COST//PWCD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -95,6 +99,7 @@ public class WaivingInstructionCode extends MMCode {
 	 */
 	public static final WaivingInstructionCode WaiveInCash = new WaivingInstructionCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::COST//PWCD "));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaiveInCash";
 			definition = "Form of commission waived is cash.";
@@ -113,6 +118,9 @@ public class WaivingInstructionCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "WIUN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::COST//PWEU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -127,6 +135,7 @@ public class WaivingInstructionCode extends MMCode {
 	 */
 	public static final WaivingInstructionCode WaiveInUnits = new WaivingInstructionCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::COST//PWEU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaiveInUnits";
 			definition = "Form of commission waived is additional units of a financial instrument.";
@@ -172,7 +181,7 @@ public class WaivingInstructionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("WICA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "WaivingInstructionCode";

@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.OperationThreshold;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Maximum amount allowed over a specific period of time."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MaximumAmountByPeriod1", propOrder = {"maximumAmount", "numberOfDays"})
 public class MaximumAmountByPeriod1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MaxAmt", required = true)
 	protected ActiveCurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount allowed over a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +111,7 @@ public class MaximumAmountByPeriod1 {
 	public static final MMMessageAttribute mmMaximumAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> OperationThreshold.mmMaximumAmount;
-			componentContext_lazy = () -> MaximumAmountByPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaximumAmountByPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,10 +122,11 @@ public class MaximumAmountByPeriod1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "NbOfDays", required = true)
 	protected Max3NumericText numberOfDays;
 	/**
-	 * Period specified as a number of days.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +160,7 @@ public class MaximumAmountByPeriod1 {
 	public static final MMMessageAttribute mmNumberOfDays = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> BankOperation.mmApplicablePeriod;
-			componentContext_lazy = () -> MaximumAmountByPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaximumAmountByPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfDays";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,9 +175,9 @@ public class MaximumAmountByPeriod1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MaximumAmountByPeriod1.mmMaximumAmount, MaximumAmountByPeriod1.mmNumberOfDays);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MaximumAmountByPeriod1.mmMaximumAmount, com.tools20022.repository.msg.MaximumAmountByPeriod1.mmNumberOfDays);
 				trace_lazy = () -> OperationThreshold.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MaximumAmountByPeriod1";
 				definition = "Maximum amount allowed over a specific period of time.";
@@ -183,21 +186,21 @@ public class MaximumAmountByPeriod1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MaxAmt", required = true)
 	public ActiveCurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(ActiveCurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public MaximumAmountByPeriod1 setMaximumAmount(ActiveCurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
-	@XmlElement(name = "NbOfDays", required = true)
 	public Max3NumericText getNumberOfDays() {
 		return numberOfDays;
 	}
 
-	public void setNumberOfDays(Max3NumericText numberOfDays) {
-		this.numberOfDays = numberOfDays;
+	public MaximumAmountByPeriod1 setNumberOfDays(Max3NumericText numberOfDays) {
+		this.numberOfDays = Objects.requireNonNull(numberOfDays);
+		return this;
 	}
 }

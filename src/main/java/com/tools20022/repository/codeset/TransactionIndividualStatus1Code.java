@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedTechnicalValidation
- * TransactionIndividualStatus1Code.mmAcceptedTechnicalValidation}</li>
+ * TransactionIndividualStatus1Code.AcceptedTechnicalValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Rejected
- * TransactionIndividualStatus1Code.mmRejected}</li>
+ * TransactionIndividualStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Pending
- * TransactionIndividualStatus1Code.mmPending}</li>
+ * TransactionIndividualStatus1Code.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCustomerProfile
- * TransactionIndividualStatus1Code.mmAcceptedCustomerProfile}</li>
+ * TransactionIndividualStatus1Code.AcceptedCustomerProfile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementInProcess
- * TransactionIndividualStatus1Code.mmAcceptedSettlementInProcess}</li>
+ * TransactionIndividualStatus1Code.AcceptedSettlementInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementCompleted
- * TransactionIndividualStatus1Code.mmAcceptedSettlementCompleted}</li>
+ * TransactionIndividualStatus1Code.AcceptedSettlementCompleted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCancellationRequest
- * TransactionIndividualStatus1Code.mmAcceptedCancellationRequest}</li>
+ * TransactionIndividualStatus1Code.AcceptedCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedWithChange
- * TransactionIndividualStatus1Code.mmAcceptedWithChange}</li>
+ * TransactionIndividualStatus1Code.AcceptedWithChange}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -290,7 +290,7 @@ public class TransactionIndividualStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionIndividualStatus1Code";

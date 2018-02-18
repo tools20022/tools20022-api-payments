@@ -38,38 +38,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#AcceptedTechnicalValidation
- * UndertakingStatusCode.mmAcceptedTechnicalValidation}</li>
+ * UndertakingStatusCode.AcceptedTechnicalValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Accepted
- * UndertakingStatusCode.mmAccepted}</li>
+ * UndertakingStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Pending
- * UndertakingStatusCode.mmPending}</li>
+ * UndertakingStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Received
- * UndertakingStatusCode.mmReceived}</li>
+ * UndertakingStatusCode.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Rejected
- * UndertakingStatusCode.mmRejected}</li>
+ * UndertakingStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#NonConfirmation
- * UndertakingStatusCode.mmNonConfirmation}</li>
+ * UndertakingStatusCode.NonConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#Withdrawn
- * UndertakingStatusCode.mmWithdrawn}</li>
+ * UndertakingStatusCode.Withdrawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#UndertakingAmountChange
- * UndertakingStatusCode.mmUndertakingAmountChange}</li>
+ * UndertakingStatusCode.UndertakingAmountChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UndertakingStatusCode#CounterUndertakingAmountChange
- * UndertakingStatusCode.mmCounterUndertakingAmountChange}</li>
+ * UndertakingStatusCode.CounterUndertakingAmountChange}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -368,7 +368,7 @@ public class UndertakingStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingStatusCode";

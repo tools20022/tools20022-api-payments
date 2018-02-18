@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegisteredContractJournal1", propOrder = {"registrationAgent", "uniqueIdentification", "closureDate", "closureReason"})
 public class RegisteredContractJournal1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RegnAgt", required = true)
 	protected BranchAndFinancialInstitutionIdentification5 registrationAgent;
 	/**
-	 * Agent which registers the currency control contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -118,7 +121,7 @@ public class RegisteredContractJournal1 {
 	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
-			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
 			isDerived = false;
 			xmlTag = "RegnAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,10 +133,11 @@ public class RegisteredContractJournal1 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "UnqId")
 	protected DocumentIdentification28 uniqueIdentification;
 	/**
-	 * Unique registered contract identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -166,7 +170,7 @@ public class RegisteredContractJournal1 {
 	public static final MMMessageAssociationEnd mmUniqueIdentification = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
-			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
 			isDerived = false;
 			xmlTag = "UnqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,10 +182,11 @@ public class RegisteredContractJournal1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
 		}
 	};
+	@XmlElement(name = "ClsrDt", required = true)
 	protected ISODate closureDate;
 	/**
-	 * Date of closure of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +219,7 @@ public class RegisteredContractJournal1 {
 	public static final MMMessageAttribute mmClosureDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
-			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
 			isDerived = false;
 			xmlTag = "ClsrDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,12 +230,11 @@ public class RegisteredContractJournal1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "ClsrRsn", required = true)
 	protected ContractClosureReason1Choice closureReason;
 	/**
-	 * Reason of closure <br>
-	 * <br>
-	 * TBD - codes to be defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -263,7 +267,7 @@ public class RegisteredContractJournal1 {
 	public static final MMMessageAssociationEnd mmClosureReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmClosureReason;
-			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
 			isDerived = false;
 			xmlTag = "ClsrRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,10 +283,10 @@ public class RegisteredContractJournal1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegisteredContractJournal1.mmRegistrationAgent, RegisteredContractJournal1.mmUniqueIdentification, RegisteredContractJournal1.mmClosureDate,
-						RegisteredContractJournal1.mmClosureReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractJournal1.mmRegistrationAgent, com.tools20022.repository.msg.RegisteredContractJournal1.mmUniqueIdentification,
+						com.tools20022.repository.msg.RegisteredContractJournal1.mmClosureDate, com.tools20022.repository.msg.RegisteredContractJournal1.mmClosureReason);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContractJournal1";
 				definition = "Document that a user must file with an authorised servicer for each contract that involves foreign currency transactions with non residents.";
@@ -291,39 +295,39 @@ public class RegisteredContractJournal1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RegnAgt", required = true)
 	public BranchAndFinancialInstitutionIdentification5 getRegistrationAgent() {
 		return registrationAgent;
 	}
 
-	public void setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
-		this.registrationAgent = registrationAgent;
+	public RegisteredContractJournal1 setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+		this.registrationAgent = Objects.requireNonNull(registrationAgent);
+		return this;
 	}
 
-	@XmlElement(name = "UnqId")
-	public DocumentIdentification28 getUniqueIdentification() {
-		return uniqueIdentification;
+	public Optional<DocumentIdentification28> getUniqueIdentification() {
+		return uniqueIdentification == null ? Optional.empty() : Optional.of(uniqueIdentification);
 	}
 
-	public void setUniqueIdentification(com.tools20022.repository.msg.DocumentIdentification28 uniqueIdentification) {
+	public RegisteredContractJournal1 setUniqueIdentification(com.tools20022.repository.msg.DocumentIdentification28 uniqueIdentification) {
 		this.uniqueIdentification = uniqueIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClsrDt", required = true)
 	public ISODate getClosureDate() {
 		return closureDate;
 	}
 
-	public void setClosureDate(ISODate closureDate) {
-		this.closureDate = closureDate;
+	public RegisteredContractJournal1 setClosureDate(ISODate closureDate) {
+		this.closureDate = Objects.requireNonNull(closureDate);
+		return this;
 	}
 
-	@XmlElement(name = "ClsrRsn", required = true)
 	public ContractClosureReason1Choice getClosureReason() {
 		return closureReason;
 	}
 
-	public void setClosureReason(ContractClosureReason1Choice closureReason) {
-		this.closureReason = closureReason;
+	public RegisteredContractJournal1 setClosureReason(ContractClosureReason1Choice closureReason) {
+		this.closureReason = Objects.requireNonNull(closureReason);
+		return this;
 	}
 }

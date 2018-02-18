@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.ContactPoint;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Communication device number or electronic address used for communication."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OtherContact1", propOrder = {"channelType", "identification"})
 public class OtherContact1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ChanlTp", required = true)
 	protected Max4Text channelType;
 	/**
-	 * Method used to contact the financial institution’s contact for the
-	 * specific tax region.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,7 +104,7 @@ public class OtherContact1 {
 	 */
 	public static final MMMessageAttribute mmChannelType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OtherContact1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OtherContact1.mmObject();
 			isDerived = false;
 			xmlTag = "ChanlTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,10 +115,11 @@ public class OtherContact1 {
 			simpleType_lazy = () -> Max4Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Id")
 	protected Max128Text identification;
 	/**
-	 * Communication value such as phone number or email address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +152,7 @@ public class OtherContact1 {
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ContactPoint.mmIdentification;
-			componentContext_lazy = () -> OtherContact1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OtherContact1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,9 +167,9 @@ public class OtherContact1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OtherContact1.mmChannelType, OtherContact1.mmIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OtherContact1.mmChannelType, com.tools20022.repository.msg.OtherContact1.mmIdentification);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OtherContact1";
 				definition = "Communication device number or electronic address used for communication.";
@@ -175,21 +178,21 @@ public class OtherContact1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ChanlTp", required = true)
 	public Max4Text getChannelType() {
 		return channelType;
 	}
 
-	public void setChannelType(Max4Text channelType) {
-		this.channelType = channelType;
+	public OtherContact1 setChannelType(Max4Text channelType) {
+		this.channelType = Objects.requireNonNull(channelType);
+		return this;
 	}
 
-	@XmlElement(name = "Id")
-	public Max128Text getIdentification() {
-		return identification;
+	public Optional<Max128Text> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(Max128Text identification) {
+	public OtherContact1 setIdentification(Max128Text identification) {
 		this.identification = identification;
+		return this;
 	}
 }

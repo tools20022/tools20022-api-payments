@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,56 +40,56 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#BuyUp
- * FractionDispositionTypeCode.mmBuyUp}</li>
+ * FractionDispositionTypeCode.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#CashInLieuOfFraction
- * FractionDispositionTypeCode.mmCashInLieuOfFraction}</li>
+ * FractionDispositionTypeCode.CashInLieuOfFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Full
- * FractionDispositionTypeCode.mmFull}</li>
+ * FractionDispositionTypeCode.Full}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#NoFraction
- * FractionDispositionTypeCode.mmNoFraction}</li>
+ * FractionDispositionTypeCode.NoFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#ProRate
- * FractionDispositionTypeCode.mmProRate}</li>
+ * FractionDispositionTypeCode.ProRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#RoundUp
- * FractionDispositionTypeCode.mmRoundUp}</li>
+ * FractionDispositionTypeCode.RoundUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#RoundDown
- * FractionDispositionTypeCode.mmRoundDown}</li>
+ * FractionDispositionTypeCode.RoundDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#RoundToNearest
- * FractionDispositionTypeCode.mmRoundToNearest}</li>
+ * FractionDispositionTypeCode.RoundToNearest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#IssueFraction
- * FractionDispositionTypeCode.mmIssueFraction}</li>
+ * FractionDispositionTypeCode.IssueFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#DiscussFirst
- * FractionDispositionTypeCode.mmDiscussFirst}</li>
+ * FractionDispositionTypeCode.DiscussFirst}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Specific
- * FractionDispositionTypeCode.mmSpecific}</li>
+ * FractionDispositionTypeCode.Specific}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Standard
- * FractionDispositionTypeCode.mmStandard}</li>
+ * FractionDispositionTypeCode.Standard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Retain
- * FractionDispositionTypeCode.mmRetain}</li>
+ * FractionDispositionTypeCode.Retain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Expire
- * FractionDispositionTypeCode.mmExpire}</li>
+ * FractionDispositionTypeCode.Expire}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeCode#Unknown
- * FractionDispositionTypeCode.mmUnknown}</li>
+ * FractionDispositionTypeCode.Unknown}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -180,6 +182,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FULL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//FULL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -192,6 +197,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode Full = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//FULL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Full";
 			definition = "Pre-allocate shares only if fully dealt.";
@@ -210,6 +216,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NOFR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//NOFR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -222,6 +231,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode NoFraction = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//NOFR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoFraction";
 			definition = "No fractional shares are allowed.";
@@ -240,6 +250,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PROR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//PROR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -252,6 +265,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode ProRate = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//PROR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProRate";
 			definition = "In case of a partial fill, pro-rate the allocations.";
@@ -270,6 +284,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RDUP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//RDUP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -282,6 +299,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode RoundUp = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//RDUP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundUp";
 			definition = "Round up to the nearest whole number.";
@@ -300,6 +318,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RDDN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//RDWN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -312,6 +333,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode RoundDown = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//RDWN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundDown";
 			definition = "Round down to the nearest whole number.";
@@ -394,6 +416,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TALK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 591 value 1</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -406,6 +431,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode DiscussFirst = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "591 value 1"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DiscussFirst";
 			definition = "Do not pro-rate; discuss first.";
@@ -425,6 +451,9 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPEC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRCO//SPEC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -439,6 +468,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	 */
 	public static final FractionDispositionTypeCode Specific = new FractionDispositionTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRCO//SPEC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Specific";
 			definition = "Pre-allocate according to the amounts shown in a linked allocation instruction.";
@@ -579,7 +609,7 @@ public class FractionDispositionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionTypeCode";

@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Status of a securities order or of the processing of a securities order.
@@ -98,8 +100,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,8 +118,8 @@ public class SecuritiesOrderStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason;
 	/**
-	 * Specifies the reason for a confirmation rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,8 +165,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected OrderConfirmationStatusCode confirmationStatus;
 	/**
-	 * Status of the confirmation of a status order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,8 +212,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected OrderCancellationStatusCode cancellationStatus;
 	/**
-	 * Status of the cancellation of a securities order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,8 +259,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected PartiallySettledStatusReasonCode partiallySettledStatusReason;
 	/**
-	 * Reason for the partially settled status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,8 +306,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected SuspendedStatusReasonCode suspendedStatusReason;
 	/**
-	 * Reason for the suspended status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,8 +353,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected ListStatusTypeCode listOrderStatus;
 	/**
-	 * Specifies the status of a list order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -398,8 +400,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected SecuritiesOrder securitiesOrder;
 	/**
-	 * Order for which a status is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -446,8 +448,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected InvestmentFundOrder investmentFundOrder;
 	/**
-	 * Investment fund order for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -494,8 +496,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected SecuritiesQuantity cumulativeQuantity;
 	/**
-	 * Total quantity (for instance number of shares) filled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,8 +544,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected SecuritiesQuantity remainingQuantity;
 	/**
-	 * Quantity opened for further execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,8 +592,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus;
 	/**
-	 * Reason for the conditionally accepted status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,8 +639,8 @@ public class SecuritiesOrderStatus extends Status {
 	};
 	protected OrderStatusCode orderStatus;
 	/**
-	 * Indicates the status of an order at a specific point in time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,7 +689,7 @@ public class SecuritiesOrderStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesOrderStatus";
 				definition = "Status of a securities order or of the processing of a securities order.";
@@ -714,95 +716,107 @@ public class SecuritiesOrderStatus extends Status {
 		return confirmationRejectedStatusReason;
 	}
 
-	public void setConfirmationRejectedStatusReason(RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason) {
-		this.confirmationRejectedStatusReason = confirmationRejectedStatusReason;
+	public SecuritiesOrderStatus setConfirmationRejectedStatusReason(RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason) {
+		this.confirmationRejectedStatusReason = Objects.requireNonNull(confirmationRejectedStatusReason);
+		return this;
 	}
 
 	public OrderConfirmationStatusCode getConfirmationStatus() {
 		return confirmationStatus;
 	}
 
-	public void setConfirmationStatus(OrderConfirmationStatusCode confirmationStatus) {
-		this.confirmationStatus = confirmationStatus;
+	public SecuritiesOrderStatus setConfirmationStatus(OrderConfirmationStatusCode confirmationStatus) {
+		this.confirmationStatus = Objects.requireNonNull(confirmationStatus);
+		return this;
 	}
 
 	public OrderCancellationStatusCode getCancellationStatus() {
 		return cancellationStatus;
 	}
 
-	public void setCancellationStatus(OrderCancellationStatusCode cancellationStatus) {
-		this.cancellationStatus = cancellationStatus;
+	public SecuritiesOrderStatus setCancellationStatus(OrderCancellationStatusCode cancellationStatus) {
+		this.cancellationStatus = Objects.requireNonNull(cancellationStatus);
+		return this;
 	}
 
 	public PartiallySettledStatusReasonCode getPartiallySettledStatusReason() {
 		return partiallySettledStatusReason;
 	}
 
-	public void setPartiallySettledStatusReason(PartiallySettledStatusReasonCode partiallySettledStatusReason) {
-		this.partiallySettledStatusReason = partiallySettledStatusReason;
+	public SecuritiesOrderStatus setPartiallySettledStatusReason(PartiallySettledStatusReasonCode partiallySettledStatusReason) {
+		this.partiallySettledStatusReason = Objects.requireNonNull(partiallySettledStatusReason);
+		return this;
 	}
 
 	public SuspendedStatusReasonCode getSuspendedStatusReason() {
 		return suspendedStatusReason;
 	}
 
-	public void setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
-		this.suspendedStatusReason = suspendedStatusReason;
+	public SecuritiesOrderStatus setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
+		this.suspendedStatusReason = Objects.requireNonNull(suspendedStatusReason);
+		return this;
 	}
 
 	public ListStatusTypeCode getListOrderStatus() {
 		return listOrderStatus;
 	}
 
-	public void setListOrderStatus(ListStatusTypeCode listOrderStatus) {
-		this.listOrderStatus = listOrderStatus;
+	public SecuritiesOrderStatus setListOrderStatus(ListStatusTypeCode listOrderStatus) {
+		this.listOrderStatus = Objects.requireNonNull(listOrderStatus);
+		return this;
 	}
 
-	public SecuritiesOrder getSecuritiesOrder() {
-		return securitiesOrder;
+	public Optional<SecuritiesOrder> getSecuritiesOrder() {
+		return securitiesOrder == null ? Optional.empty() : Optional.of(securitiesOrder);
 	}
 
-	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+	public SecuritiesOrderStatus setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
 		this.securitiesOrder = securitiesOrder;
+		return this;
 	}
 
-	public InvestmentFundOrder getInvestmentFundOrder() {
-		return investmentFundOrder;
+	public Optional<InvestmentFundOrder> getInvestmentFundOrder() {
+		return investmentFundOrder == null ? Optional.empty() : Optional.of(investmentFundOrder);
 	}
 
-	public void setInvestmentFundOrder(com.tools20022.repository.entity.InvestmentFundOrder investmentFundOrder) {
+	public SecuritiesOrderStatus setInvestmentFundOrder(com.tools20022.repository.entity.InvestmentFundOrder investmentFundOrder) {
 		this.investmentFundOrder = investmentFundOrder;
+		return this;
 	}
 
 	public SecuritiesQuantity getCumulativeQuantity() {
 		return cumulativeQuantity;
 	}
 
-	public void setCumulativeQuantity(com.tools20022.repository.entity.SecuritiesQuantity cumulativeQuantity) {
-		this.cumulativeQuantity = cumulativeQuantity;
+	public SecuritiesOrderStatus setCumulativeQuantity(com.tools20022.repository.entity.SecuritiesQuantity cumulativeQuantity) {
+		this.cumulativeQuantity = Objects.requireNonNull(cumulativeQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getRemainingQuantity() {
 		return remainingQuantity;
 	}
 
-	public void setRemainingQuantity(com.tools20022.repository.entity.SecuritiesQuantity remainingQuantity) {
-		this.remainingQuantity = remainingQuantity;
+	public SecuritiesOrderStatus setRemainingQuantity(com.tools20022.repository.entity.SecuritiesQuantity remainingQuantity) {
+		this.remainingQuantity = Objects.requireNonNull(remainingQuantity);
+		return this;
 	}
 
 	public ConditionallyAcceptedStatusReasonCode getConditionallyAcceptedStatus() {
 		return conditionallyAcceptedStatus;
 	}
 
-	public void setConditionallyAcceptedStatus(ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus) {
-		this.conditionallyAcceptedStatus = conditionallyAcceptedStatus;
+	public SecuritiesOrderStatus setConditionallyAcceptedStatus(ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus) {
+		this.conditionallyAcceptedStatus = Objects.requireNonNull(conditionallyAcceptedStatus);
+		return this;
 	}
 
 	public OrderStatusCode getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(OrderStatusCode orderStatus) {
-		this.orderStatus = orderStatus;
+	public SecuritiesOrderStatus setOrderStatus(OrderStatusCode orderStatus) {
+		this.orderStatus = Objects.requireNonNull(orderStatus);
+		return this;
 	}
 }

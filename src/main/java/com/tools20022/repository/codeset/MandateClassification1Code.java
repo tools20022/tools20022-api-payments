@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#Fixed
- * MandateClassification1Code.mmFixed}</li>
+ * MandateClassification1Code.Fixed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#UsageBased
- * MandateClassification1Code.mmUsageBased}</li>
+ * MandateClassification1Code.UsageBased}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#Variable
- * MandateClassification1Code.mmVariable}</li>
+ * MandateClassification1Code.Variable}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -150,7 +150,7 @@ public class MandateClassification1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateClassification1Code";
 				definition = "Specifies the type of direct debit amount, such as fixed or variable.";

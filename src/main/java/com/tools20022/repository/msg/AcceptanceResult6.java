@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.MandateStatus;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptanceResult6", propOrder = {"accepted", "rejectReason", "additionalRejectReasonInformation"})
 public class AcceptanceResult6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Accptd", required = true)
 	protected YesNoIndicator accepted;
 	/**
-	 * Indicates whether the mandate request was accepted or rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,7 +118,7 @@ public class AcceptanceResult6 {
 	public static final MMMessageAttribute mmAccepted = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> MandateStatus.mmAccepted;
-			componentContext_lazy = () -> AcceptanceResult6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
 			isDerived = false;
 			xmlTag = "Accptd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,10 +129,11 @@ public class AcceptanceResult6 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "RjctRsn")
 	protected MandateReason1Choice rejectReason;
 	/**
-	 * Specifies the reason for the rejection of a mandate request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -166,7 +167,7 @@ public class AcceptanceResult6 {
 	public static final MMMessageAssociationEnd mmRejectReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> MandateStatus.mmRejectReason;
-			componentContext_lazy = () -> AcceptanceResult6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
 			isDerived = false;
 			xmlTag = "RjctRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,10 +179,11 @@ public class AcceptanceResult6 {
 			type_lazy = () -> MandateReason1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlRjctRsnInf")
 	protected List<Max105Text> additionalRejectReasonInformation;
 	/**
-	 * Further details on the reject reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +216,7 @@ public class AcceptanceResult6 {
 	public static final MMMessageAttribute mmAdditionalRejectReasonInformation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> AcceptanceResult6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlRjctRsnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,9 +230,10 @@ public class AcceptanceResult6 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcceptanceResult6.mmAccepted, AcceptanceResult6.mmRejectReason, AcceptanceResult6.mmAdditionalRejectReasonInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcceptanceResult6.mmAccepted, com.tools20022.repository.msg.AcceptanceResult6.mmRejectReason,
+						com.tools20022.repository.msg.AcceptanceResult6.mmAdditionalRejectReasonInformation);
 				trace_lazy = () -> MandateStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptanceResult6";
 				definition = "Set of elements used to provide detailed information on the acceptance result.";
@@ -239,30 +242,30 @@ public class AcceptanceResult6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Accptd", required = true)
 	public YesNoIndicator getAccepted() {
 		return accepted;
 	}
 
-	public void setAccepted(YesNoIndicator accepted) {
-		this.accepted = accepted;
+	public AcceptanceResult6 setAccepted(YesNoIndicator accepted) {
+		this.accepted = Objects.requireNonNull(accepted);
+		return this;
 	}
 
-	@XmlElement(name = "RjctRsn")
-	public MandateReason1Choice getRejectReason() {
-		return rejectReason;
+	public Optional<MandateReason1Choice> getRejectReason() {
+		return rejectReason == null ? Optional.empty() : Optional.of(rejectReason);
 	}
 
-	public void setRejectReason(MandateReason1Choice rejectReason) {
+	public AcceptanceResult6 setRejectReason(MandateReason1Choice rejectReason) {
 		this.rejectReason = rejectReason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlRjctRsnInf")
 	public List<Max105Text> getAdditionalRejectReasonInformation() {
-		return additionalRejectReasonInformation;
+		return additionalRejectReasonInformation == null ? additionalRejectReasonInformation = new ArrayList<>() : additionalRejectReasonInformation;
 	}
 
-	public void setAdditionalRejectReasonInformation(List<Max105Text> additionalRejectReasonInformation) {
-		this.additionalRejectReasonInformation = additionalRejectReasonInformation;
+	public AcceptanceResult6 setAdditionalRejectReasonInformation(List<Max105Text> additionalRejectReasonInformation) {
+		this.additionalRejectReasonInformation = Objects.requireNonNull(additionalRejectReasonInformation);
+		return this;
 	}
 }

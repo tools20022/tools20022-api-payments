@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PartyAndCertificate2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies a choice between one party or a group of parties."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyOrGroup1Choice", propOrder = {"groupIdentification", "party"})
 public class PartyOrGroup1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpId", required = true)
 	protected Max4AlphaNumericText groupIdentification;
 	/**
-	 * Specifies the identification of a group of parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,7 +99,7 @@ public class PartyOrGroup1Choice {
 	 */
 	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> PartyOrGroup1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyOrGroup1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "GrpId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,10 +110,11 @@ public class PartyOrGroup1Choice {
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "Pty", required = true)
 	protected PartyAndCertificate2 party;
 	/**
-	 * Specifies a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,7 +142,7 @@ public class PartyOrGroup1Choice {
 	 */
 	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> PartyOrGroup1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyOrGroup1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,8 +157,8 @@ public class PartyOrGroup1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyOrGroup1Choice.mmGroupIdentification, PartyOrGroup1Choice.mmParty);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PartyOrGroup1Choice.mmGroupIdentification, com.tools20022.repository.choice.PartyOrGroup1Choice.mmParty);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyOrGroup1Choice";
 				definition = "Specifies a choice between one party or a group of parties.";
@@ -164,21 +167,21 @@ public class PartyOrGroup1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpId", required = true)
 	public Max4AlphaNumericText getGroupIdentification() {
 		return groupIdentification;
 	}
 
-	public void setGroupIdentification(Max4AlphaNumericText groupIdentification) {
-		this.groupIdentification = groupIdentification;
+	public PartyOrGroup1Choice setGroupIdentification(Max4AlphaNumericText groupIdentification) {
+		this.groupIdentification = Objects.requireNonNull(groupIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Pty", required = true)
 	public PartyAndCertificate2 getParty() {
 		return party;
 	}
 
-	public void setParty(PartyAndCertificate2 party) {
-		this.party = party;
+	public PartyOrGroup1Choice setParty(PartyAndCertificate2 party) {
+		this.party = Objects.requireNonNull(party);
+		return this;
 	}
 }

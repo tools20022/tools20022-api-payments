@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#LegalDecision
- * PaymentCancellationRejection2Code.mmLegalDecision}</li>
+ * PaymentCancellationRejection2Code.LegalDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#AgentDecision
- * PaymentCancellationRejection2Code.mmAgentDecision}</li>
+ * PaymentCancellationRejection2Code.AgentDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#CustomerDecision
- * PaymentCancellationRejection2Code.mmCustomerDecision}</li>
+ * PaymentCancellationRejection2Code.CustomerDecision}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#AlreadyReturned
- * PaymentCancellationRejection2Code.mmAlreadyReturned}</li>
+ * PaymentCancellationRejection2Code.AlreadyReturned}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#NoAnswerFromCustomer
- * PaymentCancellationRejection2Code.mmNoAnswerFromCustomer}</li>
+ * PaymentCancellationRejection2Code.NoAnswerFromCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#NoOriginalTransactionReceived
- * PaymentCancellationRejection2Code.mmNoOriginalTransactionReceived}</li>
+ * PaymentCancellationRejection2Code.NoOriginalTransactionReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#ClosedAccountNumber
- * PaymentCancellationRejection2Code.mmClosedAccountNumber}</li>
+ * PaymentCancellationRejection2Code.ClosedAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code#InsufficientFunds
- * PaymentCancellationRejection2Code.mmInsufficientFunds}</li>
+ * PaymentCancellationRejection2Code.InsufficientFunds}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -290,7 +290,7 @@ public class PaymentCancellationRejection2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LEGL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCancellationRejection2Code";

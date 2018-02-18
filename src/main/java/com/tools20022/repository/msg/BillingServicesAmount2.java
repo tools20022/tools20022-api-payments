@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,17 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Taxable service charge amount conversions to host currency."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingServicesAmount2", propOrder = {"hostAmount", "settlementAmount", "pricingAmount"})
 public class BillingServicesAmount2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "HstAmt", required = true)
 	protected AmountAndDirection34 hostAmount;
 	/**
-	 * Sum of the original charge host amount and the service tax host amount
-	 * values. It represents the total charge for a service (including taxes)
-	 * expressed in the host currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,7 +114,7 @@ public class BillingServicesAmount2 {
 	public static final MMMessageAssociationEnd mmHostAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingServicesAmount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
 			isDerived = false;
 			xmlTag = "HstAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +126,11 @@ public class BillingServicesAmount2 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "SttlmAmt")
 	protected AmountAndDirection34 settlementAmount;
 	/**
-	 * Sum of the original charge host amount and the service tax host amount
-	 * values but expressed in the settlement currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -163,7 +164,7 @@ public class BillingServicesAmount2 {
 	public static final MMMessageAssociationEnd mmSettlementAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingServicesAmount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,11 +176,11 @@ public class BillingServicesAmount2 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "PricgAmt")
 	protected AmountAndDirection34 pricingAmount;
 	/**
-	 * Sum of the original charge host amount and the service tax host amount
-	 * values but expressed in the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -213,7 +214,7 @@ public class BillingServicesAmount2 {
 	public static final MMMessageAssociationEnd mmPricingAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingServicesAmount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
 			isDerived = false;
 			xmlTag = "PricgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,9 +230,10 @@ public class BillingServicesAmount2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingServicesAmount2.mmHostAmount, BillingServicesAmount2.mmSettlementAmount, BillingServicesAmount2.mmPricingAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServicesAmount2.mmHostAmount, com.tools20022.repository.msg.BillingServicesAmount2.mmSettlementAmount,
+						com.tools20022.repository.msg.BillingServicesAmount2.mmPricingAmount);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServicesAmount2";
 				definition = "Taxable service charge amount conversions to host currency.";
@@ -240,30 +242,30 @@ public class BillingServicesAmount2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "HstAmt", required = true)
 	public AmountAndDirection34 getHostAmount() {
 		return hostAmount;
 	}
 
-	public void setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
-		this.hostAmount = hostAmount;
+	public BillingServicesAmount2 setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
+		this.hostAmount = Objects.requireNonNull(hostAmount);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAmt")
-	public AmountAndDirection34 getSettlementAmount() {
-		return settlementAmount;
+	public Optional<AmountAndDirection34> getSettlementAmount() {
+		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public void setSettlementAmount(com.tools20022.repository.msg.AmountAndDirection34 settlementAmount) {
+	public BillingServicesAmount2 setSettlementAmount(com.tools20022.repository.msg.AmountAndDirection34 settlementAmount) {
 		this.settlementAmount = settlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "PricgAmt")
-	public AmountAndDirection34 getPricingAmount() {
-		return pricingAmount;
+	public Optional<AmountAndDirection34> getPricingAmount() {
+		return pricingAmount == null ? Optional.empty() : Optional.of(pricingAmount);
 	}
 
-	public void setPricingAmount(com.tools20022.repository.msg.AmountAndDirection34 pricingAmount) {
+	public BillingServicesAmount2 setPricingAmount(com.tools20022.repository.msg.AmountAndDirection34 pricingAmount) {
 		this.pricingAmount = pricingAmount;
+		return this;
 	}
 }

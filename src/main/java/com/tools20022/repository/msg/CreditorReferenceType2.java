@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.DocumentIssuer;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the type of creditor reference."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CreditorReferenceType2", propOrder = {"codeOrProprietary", "issuer"})
 public class CreditorReferenceType2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CdOrPrtry", required = true)
 	protected CreditorReferenceType1Choice codeOrProprietary;
 	/**
-	 * Coded or proprietary format creditor reference type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,7 +110,7 @@ public class CreditorReferenceType2 {
 	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
-			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CreditorReferenceType2.mmObject();
 			isDerived = false;
 			xmlTag = "CdOrPrtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +122,11 @@ public class CreditorReferenceType2 {
 			type_lazy = () -> CreditorReferenceType1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Issr")
 	protected Max35Text issuer;
 	/**
-	 * Entity that assigns the credit reference type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +159,7 @@ public class CreditorReferenceType2 {
 	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
-			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CreditorReferenceType2.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,9 +174,9 @@ public class CreditorReferenceType2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CreditorReferenceType2.mmCodeOrProprietary, CreditorReferenceType2.mmIssuer);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditorReferenceType2.mmCodeOrProprietary, com.tools20022.repository.msg.CreditorReferenceType2.mmIssuer);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditorReferenceType2";
 				definition = "Specifies the type of creditor reference.";
@@ -181,21 +185,21 @@ public class CreditorReferenceType2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CdOrPrtry", required = true)
 	public CreditorReferenceType1Choice getCodeOrProprietary() {
 		return codeOrProprietary;
 	}
 
-	public void setCodeOrProprietary(CreditorReferenceType1Choice codeOrProprietary) {
-		this.codeOrProprietary = codeOrProprietary;
+	public CreditorReferenceType2 setCodeOrProprietary(CreditorReferenceType1Choice codeOrProprietary) {
+		this.codeOrProprietary = Objects.requireNonNull(codeOrProprietary);
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public Max35Text getIssuer() {
-		return issuer;
+	public Optional<Max35Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max35Text issuer) {
+	public CreditorReferenceType2 setIssuer(Max35Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 }

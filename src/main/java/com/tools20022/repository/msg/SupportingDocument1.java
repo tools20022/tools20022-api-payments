@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -87,8 +86,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,15 +99,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Currency control document supporting the contract registration."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SupportingDocument1", propOrder = {"supportingDocumentIdentification", "originalRequestIdentification", "certificate", "accountOwner", "accountServicer", "amendment", "contractReference", "entry", "supplementaryData"})
 public class SupportingDocument1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SpprtgDocId", required = true)
 	protected Max35Text supportingDocumentIdentification;
 	/**
-	 * Unique and unambiguous identification of the supporting document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,7 +136,7 @@ public class SupportingDocument1 {
 	 */
 	public static final MMMessageAttribute mmSupportingDocumentIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "SpprtgDocId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -147,10 +147,11 @@ public class SupportingDocument1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlReqId")
 	protected Max35Text originalRequestIdentification;
 	/**
-	 * Unique identification of the original query message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,7 +178,7 @@ public class SupportingDocument1 {
 	 */
 	public static final MMMessageAttribute mmOriginalRequestIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -188,11 +189,11 @@ public class SupportingDocument1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Cert", required = true)
 	protected DocumentIdentification28 certificate;
 	/**
-	 * Unique identification of the certificate for which the supporting
-	 * document is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -227,7 +228,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmCertificate = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmCertificate;
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "Cert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,10 +240,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctOwnr", required = true)
 	protected PartyIdentification77 accountOwner;
 	/**
-	 * Party that legally owns the cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -274,7 +276,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmAccountOwner = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -286,13 +288,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctSvcr", required = true)
 	protected BranchAndFinancialInstitutionIdentification5 accountServicer;
 	/**
-	 * Party that manages the account on behalf of the account owner, that is
-	 * manages the registration and booking of entries on the account,
-	 * calculates balances on the account and provides information about the
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -327,7 +327,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmAccountServicer = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -339,10 +339,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "Amdmnt")
 	protected DocumentAmendment1 amendment;
 	/**
-	 * Amendment indicator details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -374,7 +375,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmAmendment = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> RegisteredContract.mmObject();
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "Amdmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -386,11 +387,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
 		}
 	};
+	@XmlElement(name = "CtrctRef", required = true)
 	protected ContractRegistrationReference1Choice contractReference;
 	/**
-	 * Reference of the registered contract or the underlying contract for the
-	 * supporting documents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -425,7 +426,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmContractReference = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "CtrctRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -437,10 +438,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> ContractRegistrationReference1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Ntry", required = true)
 	protected List<com.tools20022.repository.msg.SupportingDocumentEntry1> entry;
 	/**
-	 * Individual entry of the supporting document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -473,7 +475,7 @@ public class SupportingDocument1 {
 	public static final MMMessageAssociationEnd mmEntry = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDocument;
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "Ntry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -484,11 +486,11 @@ public class SupportingDocument1 {
 			type_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -516,7 +518,7 @@ public class SupportingDocument1 {
 	 */
 	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> SupportingDocument1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -531,11 +533,13 @@ public class SupportingDocument1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SupportingDocument1.mmSupportingDocumentIdentification, SupportingDocument1.mmOriginalRequestIdentification, SupportingDocument1.mmCertificate, SupportingDocument1.mmAccountOwner,
-						SupportingDocument1.mmAccountServicer, SupportingDocument1.mmAmendment, SupportingDocument1.mmContractReference, SupportingDocument1.mmEntry, SupportingDocument1.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocument1.mmSupportingDocumentIdentification, com.tools20022.repository.msg.SupportingDocument1.mmOriginalRequestIdentification,
+						com.tools20022.repository.msg.SupportingDocument1.mmCertificate, com.tools20022.repository.msg.SupportingDocument1.mmAccountOwner, com.tools20022.repository.msg.SupportingDocument1.mmAccountServicer,
+						com.tools20022.repository.msg.SupportingDocument1.mmAmendment, com.tools20022.repository.msg.SupportingDocument1.mmContractReference, com.tools20022.repository.msg.SupportingDocument1.mmEntry,
+						com.tools20022.repository.msg.SupportingDocument1.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(CurrencyControlSupportingDocumentDeliveryV01.mmSupportingDocument);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupportingDocument1";
 				definition = "Currency control document supporting the contract registration.";
@@ -544,84 +548,84 @@ public class SupportingDocument1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SpprtgDocId", required = true)
 	public Max35Text getSupportingDocumentIdentification() {
 		return supportingDocumentIdentification;
 	}
 
-	public void setSupportingDocumentIdentification(Max35Text supportingDocumentIdentification) {
-		this.supportingDocumentIdentification = supportingDocumentIdentification;
+	public SupportingDocument1 setSupportingDocumentIdentification(Max35Text supportingDocumentIdentification) {
+		this.supportingDocumentIdentification = Objects.requireNonNull(supportingDocumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlReqId")
-	public Max35Text getOriginalRequestIdentification() {
-		return originalRequestIdentification;
+	public Optional<Max35Text> getOriginalRequestIdentification() {
+		return originalRequestIdentification == null ? Optional.empty() : Optional.of(originalRequestIdentification);
 	}
 
-	public void setOriginalRequestIdentification(Max35Text originalRequestIdentification) {
+	public SupportingDocument1 setOriginalRequestIdentification(Max35Text originalRequestIdentification) {
 		this.originalRequestIdentification = originalRequestIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Cert", required = true)
 	public DocumentIdentification28 getCertificate() {
 		return certificate;
 	}
 
-	public void setCertificate(com.tools20022.repository.msg.DocumentIdentification28 certificate) {
-		this.certificate = certificate;
+	public SupportingDocument1 setCertificate(com.tools20022.repository.msg.DocumentIdentification28 certificate) {
+		this.certificate = Objects.requireNonNull(certificate);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnr", required = true)
 	public PartyIdentification77 getAccountOwner() {
 		return accountOwner;
 	}
 
-	public void setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
-		this.accountOwner = accountOwner;
+	public SupportingDocument1 setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
+		this.accountOwner = Objects.requireNonNull(accountOwner);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcr", required = true)
 	public BranchAndFinancialInstitutionIdentification5 getAccountServicer() {
 		return accountServicer;
 	}
 
-	public void setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
-		this.accountServicer = accountServicer;
+	public SupportingDocument1 setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
+		this.accountServicer = Objects.requireNonNull(accountServicer);
+		return this;
 	}
 
-	@XmlElement(name = "Amdmnt")
-	public DocumentAmendment1 getAmendment() {
-		return amendment;
+	public Optional<DocumentAmendment1> getAmendment() {
+		return amendment == null ? Optional.empty() : Optional.of(amendment);
 	}
 
-	public void setAmendment(com.tools20022.repository.msg.DocumentAmendment1 amendment) {
+	public SupportingDocument1 setAmendment(com.tools20022.repository.msg.DocumentAmendment1 amendment) {
 		this.amendment = amendment;
+		return this;
 	}
 
-	@XmlElement(name = "CtrctRef", required = true)
 	public ContractRegistrationReference1Choice getContractReference() {
 		return contractReference;
 	}
 
-	public void setContractReference(ContractRegistrationReference1Choice contractReference) {
-		this.contractReference = contractReference;
+	public SupportingDocument1 setContractReference(ContractRegistrationReference1Choice contractReference) {
+		this.contractReference = Objects.requireNonNull(contractReference);
+		return this;
 	}
 
-	@XmlElement(name = "Ntry", required = true)
 	public List<SupportingDocumentEntry1> getEntry() {
-		return entry;
+		return entry == null ? entry = new ArrayList<>() : entry;
 	}
 
-	public void setEntry(List<com.tools20022.repository.msg.SupportingDocumentEntry1> entry) {
-		this.entry = entry;
+	public SupportingDocument1 setEntry(List<com.tools20022.repository.msg.SupportingDocumentEntry1> entry) {
+		this.entry = Objects.requireNonNull(entry);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public SupportingDocument1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

@@ -39,32 +39,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#AlienRegistrationNumber
- * TypeOfIdentificationCode.mmAlienRegistrationNumber}</li>
+ * TypeOfIdentificationCode.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#PassportNumber
- * TypeOfIdentificationCode.mmPassportNumber}</li>
+ * TypeOfIdentificationCode.PassportNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#TaxExemptIdentificationNumber
- * TypeOfIdentificationCode.mmTaxExemptIdentificationNumber}</li>
+ * TypeOfIdentificationCode.TaxExemptIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#CorporateIdentification
- * TypeOfIdentificationCode.mmCorporateIdentification}</li>
+ * TypeOfIdentificationCode.CorporateIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#DriverLicenseNumber
- * TypeOfIdentificationCode.mmDriverLicenseNumber}</li>
+ * TypeOfIdentificationCode.DriverLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#ForeignInvestmentIdentityNumber
- * TypeOfIdentificationCode.mmForeignInvestmentIdentityNumber}</li>
+ * TypeOfIdentificationCode.ForeignInvestmentIdentityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentificationCode#TaxIdentificationNumber
- * TypeOfIdentificationCode.mmTaxIdentificationNumber}</li>
+ * TypeOfIdentificationCode.TaxIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -307,7 +307,7 @@ public class TypeOfIdentificationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ARNU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfIdentificationCode";

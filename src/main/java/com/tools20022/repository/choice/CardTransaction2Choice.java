@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.CardAggregated1;
 import com.tools20022.repository.msg.CardIndividualTransaction2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardTransaction2Choice", propOrder = {"aggregated", "individual"})
 public class CardTransaction2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Aggtd", required = true)
 	protected CardAggregated1 aggregated;
 	/**
-	 * Card transaction details, based on card transaction aggregated data
-	 * performed by the card acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,7 +112,7 @@ public class CardTransaction2Choice {
 	public static final MMMessageAssociationEnd mmAggregated = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> CardTransaction2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CardTransaction2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Aggtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +124,11 @@ public class CardTransaction2Choice {
 			type_lazy = () -> CardAggregated1.mmObject();
 		}
 	};
+	@XmlElement(name = "Indv", required = true)
 	protected CardIndividualTransaction2 individual;
 	/**
-	 * Card transaction details for the individual transaction, as recorded at
-	 * the POI (point of interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,7 +162,7 @@ public class CardTransaction2Choice {
 	public static final MMMessageAssociationEnd mmIndividual = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> CardTransaction2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CardTransaction2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Indv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,9 +178,9 @@ public class CardTransaction2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardTransaction2Choice.mmAggregated, CardTransaction2Choice.mmIndividual);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CardTransaction2Choice.mmAggregated, com.tools20022.repository.choice.CardTransaction2Choice.mmIndividual);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardTransaction2Choice";
 				definition = "Choice between a acquirer globalised card transaction or an individual card transaction.";
@@ -188,21 +189,21 @@ public class CardTransaction2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Aggtd", required = true)
 	public CardAggregated1 getAggregated() {
 		return aggregated;
 	}
 
-	public void setAggregated(CardAggregated1 aggregated) {
-		this.aggregated = aggregated;
+	public CardTransaction2Choice setAggregated(CardAggregated1 aggregated) {
+		this.aggregated = Objects.requireNonNull(aggregated);
+		return this;
 	}
 
-	@XmlElement(name = "Indv", required = true)
 	public CardIndividualTransaction2 getIndividual() {
 		return individual;
 	}
 
-	public void setIndividual(CardIndividualTransaction2 individual) {
-		this.individual = individual;
+	public CardTransaction2Choice setIndividual(CardIndividualTransaction2 individual) {
+		this.individual = Objects.requireNonNull(individual);
+		return this;
 	}
 }

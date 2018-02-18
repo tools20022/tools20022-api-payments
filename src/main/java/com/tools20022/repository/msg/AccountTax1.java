@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Describes account taxing parameters."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountTax1", propOrder = {"calculationMethod", "region", "nonResidenceCountry"})
 public class AccountTax1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ClctnMtd", required = true)
 	protected BillingTaxCalculationMethod1Code calculationMethod;
 	/**
-	 * Defines the calculation method on how the taxes are applied on the
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class AccountTax1 {
 	 */
 	public static final MMMessageAttribute mmCalculationMethod = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AccountTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
 			isDerived = false;
 			xmlTag = "ClctnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,10 +120,11 @@ public class AccountTax1 {
 			simpleType_lazy = () -> BillingTaxCalculationMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Rgn")
 	protected Max40Text region;
 	/**
-	 * Identifies the tax region in which the account resides.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +156,7 @@ public class AccountTax1 {
 	public static final MMMessageAttribute mmRegion = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
-			componentContext_lazy = () -> AccountTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
 			isDerived = false;
 			xmlTag = "Rgn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,14 +167,11 @@ public class AccountTax1 {
 			simpleType_lazy = () -> Max40Text.mmObject();
 		}
 	};
+	@XmlElement(name = "NonResCtry")
 	protected ResidenceLocation1Choice nonResidenceCountry;
 	/**
-	 * Specifies the country of residence, when the account owner does not
-	 * reside in the account's tax region.
 	 * 
-	 * Usage: If present, the account owner does not reside in the account's tax
-	 * region.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +206,7 @@ public class AccountTax1 {
 	public static final MMMessageAttribute mmNonResidenceCountry = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Party.mmContactPoint;
-			componentContext_lazy = () -> AccountTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
 			isDerived = false;
 			xmlTag = "NonResCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,9 +221,9 @@ public class AccountTax1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountTax1.mmCalculationMethod, AccountTax1.mmRegion, AccountTax1.mmNonResidenceCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountTax1.mmCalculationMethod, com.tools20022.repository.msg.AccountTax1.mmRegion, com.tools20022.repository.msg.AccountTax1.mmNonResidenceCountry);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountTax1";
 				definition = "Describes account taxing parameters.";
@@ -232,30 +232,30 @@ public class AccountTax1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ClctnMtd", required = true)
 	public BillingTaxCalculationMethod1Code getCalculationMethod() {
 		return calculationMethod;
 	}
 
-	public void setCalculationMethod(BillingTaxCalculationMethod1Code calculationMethod) {
-		this.calculationMethod = calculationMethod;
+	public AccountTax1 setCalculationMethod(BillingTaxCalculationMethod1Code calculationMethod) {
+		this.calculationMethod = Objects.requireNonNull(calculationMethod);
+		return this;
 	}
 
-	@XmlElement(name = "Rgn")
-	public Max40Text getRegion() {
-		return region;
+	public Optional<Max40Text> getRegion() {
+		return region == null ? Optional.empty() : Optional.of(region);
 	}
 
-	public void setRegion(Max40Text region) {
+	public AccountTax1 setRegion(Max40Text region) {
 		this.region = region;
+		return this;
 	}
 
-	@XmlElement(name = "NonResCtry")
-	public ResidenceLocation1Choice getNonResidenceCountry() {
-		return nonResidenceCountry;
+	public Optional<ResidenceLocation1Choice> getNonResidenceCountry() {
+		return nonResidenceCountry == null ? Optional.empty() : Optional.of(nonResidenceCountry);
 	}
 
-	public void setNonResidenceCountry(ResidenceLocation1Choice nonResidenceCountry) {
+	public AccountTax1 setNonResidenceCountry(ResidenceLocation1Choice nonResidenceCountry) {
 		this.nonResidenceCountry = nonResidenceCountry;
+		return this;
 	}
 }

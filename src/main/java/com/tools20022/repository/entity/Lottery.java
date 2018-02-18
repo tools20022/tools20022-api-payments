@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The parameters required to manage the organisation of a lottery.
@@ -64,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,9 +84,8 @@ public class Lottery {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime lotteryDate;
 	/**
-	 * Date on which the lottery is run and applied to the holder's positions.
-	 * This is also applicable to partial calls.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,9 +131,8 @@ public class Lottery {
 	};
 	protected SecuritiesQuantity incrementalDenomination;
 	/**
-	 * Amount used when the called amount is not met by running the lottery with
-	 * the base denomination.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +180,8 @@ public class Lottery {
 	};
 	protected LotteryTypeCode lotteryType;
 	/**
-	 * Specifies the type of lottery announced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,8 +226,8 @@ public class Lottery {
 	};
 	protected CorporateActionEvent relatedCorporateEvent;
 	/**
-	 * Corporate event for which lottery information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,7 +277,7 @@ public class Lottery {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Lottery";
 				definition = "The parameters required to manage the organisation of a lottery.";
@@ -298,31 +298,35 @@ public class Lottery {
 		return lotteryDate;
 	}
 
-	public void setLotteryDate(ISODateTime lotteryDate) {
-		this.lotteryDate = lotteryDate;
+	public Lottery setLotteryDate(ISODateTime lotteryDate) {
+		this.lotteryDate = Objects.requireNonNull(lotteryDate);
+		return this;
 	}
 
 	public SecuritiesQuantity getIncrementalDenomination() {
 		return incrementalDenomination;
 	}
 
-	public void setIncrementalDenomination(com.tools20022.repository.entity.SecuritiesQuantity incrementalDenomination) {
-		this.incrementalDenomination = incrementalDenomination;
+	public Lottery setIncrementalDenomination(com.tools20022.repository.entity.SecuritiesQuantity incrementalDenomination) {
+		this.incrementalDenomination = Objects.requireNonNull(incrementalDenomination);
+		return this;
 	}
 
 	public LotteryTypeCode getLotteryType() {
 		return lotteryType;
 	}
 
-	public void setLotteryType(LotteryTypeCode lotteryType) {
-		this.lotteryType = lotteryType;
+	public Lottery setLotteryType(LotteryTypeCode lotteryType) {
+		this.lotteryType = Objects.requireNonNull(lotteryType);
+		return this;
 	}
 
-	public CorporateActionEvent getRelatedCorporateEvent() {
-		return relatedCorporateEvent;
+	public Optional<CorporateActionEvent> getRelatedCorporateEvent() {
+		return relatedCorporateEvent == null ? Optional.empty() : Optional.of(relatedCorporateEvent);
 	}
 
-	public void setRelatedCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateEvent) {
+	public Lottery setRelatedCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateEvent) {
 		this.relatedCorporateEvent = relatedCorporateEvent;
+		return this;
 	}
 }

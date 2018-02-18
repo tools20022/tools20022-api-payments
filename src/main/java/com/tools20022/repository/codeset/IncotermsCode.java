@@ -39,47 +39,47 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.IncotermsCode#ExWorks
- * IncotermsCode.mmExWorks}</li>
+ * IncotermsCode.ExWorks}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.IncotermsCode#FreeCarrier
- * IncotermsCode.mmFreeCarrier}</li>
+ * IncotermsCode.FreeCarrier}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#FreeAlongsideShip
- * IncotermsCode.mmFreeAlongsideShip}</li>
+ * IncotermsCode.FreeAlongsideShip}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.IncotermsCode#FreeOnBoard
- * IncotermsCode.mmFreeOnBoard}</li>
+ * IncotermsCode.FreeOnBoard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#CostAndFreight
- * IncotermsCode.mmCostAndFreight}</li>
+ * IncotermsCode.CostAndFreight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#CostInsuranceAndFreight
- * IncotermsCode.mmCostInsuranceAndFreight}</li>
+ * IncotermsCode.CostInsuranceAndFreight}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.IncotermsCode#CarriagePaid
- * IncotermsCode.mmCarriagePaid}</li>
+ * IncotermsCode.CarriagePaid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#CarriageAndInsurancePaid
- * IncotermsCode.mmCarriageAndInsurancePaid}</li>
+ * IncotermsCode.CarriageAndInsurancePaid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#DeliveredAtFrontier
- * IncotermsCode.mmDeliveredAtFrontier}</li>
+ * IncotermsCode.DeliveredAtFrontier}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#DeliveredExShip
- * IncotermsCode.mmDeliveredExShip}</li>
+ * IncotermsCode.DeliveredExShip}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#DeliveredExQuay
- * IncotermsCode.mmDeliveredExQuay}</li>
+ * IncotermsCode.DeliveredExQuay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#DeliveredDutyUnpaid
- * IncotermsCode.mmDeliveredDutyUnpaid}</li>
+ * IncotermsCode.DeliveredDutyUnpaid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IncotermsCode#DeliveredDutyPaid
- * IncotermsCode.mmDeliveredDutyPaid}</li>
+ * IncotermsCode.DeliveredDutyPaid}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -509,7 +509,7 @@ public class IncotermsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EXW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IncotermsCode";

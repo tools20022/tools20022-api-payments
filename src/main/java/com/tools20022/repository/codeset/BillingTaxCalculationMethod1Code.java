@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#NoTaxes
- * BillingTaxCalculationMethod1Code.mmNoTaxes}</li>
+ * BillingTaxCalculationMethod1Code.NoTaxes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#MethodA
- * BillingTaxCalculationMethod1Code.mmMethodA}</li>
+ * BillingTaxCalculationMethod1Code.MethodA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#MethodB
- * BillingTaxCalculationMethod1Code.mmMethodB}</li>
+ * BillingTaxCalculationMethod1Code.MethodB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#MethodC
- * BillingTaxCalculationMethod1Code.mmMethodC}</li>
+ * BillingTaxCalculationMethod1Code.MethodC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#MethodD
- * BillingTaxCalculationMethod1Code.mmMethodD}</li>
+ * BillingTaxCalculationMethod1Code.MethodD}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code#Undefined
- * BillingTaxCalculationMethod1Code.mmUndefined}</li>
+ * BillingTaxCalculationMethod1Code.Undefined}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class BillingTaxCalculationMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NTAX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingTaxCalculationMethod1Code";

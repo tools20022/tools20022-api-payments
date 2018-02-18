@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * The definition of the securities proceeds for a corporate action in generic
@@ -165,8 +166,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -184,8 +185,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity securitiesQuantity;
 	/**
-	 * The quantity of financial instruments that is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,10 +233,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity conditionalQuantity;
 	/**
-	 * Minimum quantity of securities to be accepted (used in the framework of
-	 * conditional privilege on election). In case of proration, if this minimum
-	 * quantity is not reached then the instruction is void.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,9 +283,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity;
 	/**
-	 * Quantity instructed to be received over and above normal ensured
-	 * entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,9 +333,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity quantityToReceive;
 	/**
-	 * Quantity of the benefits that the account owner wants to receive, for
-	 * example, as a result of dividend reinvestment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,8 +383,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity statusQuantity;
 	/**
-	 * Quantity of securities that has been assigned the status indicated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,9 +432,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected DateTimePeriod parallelTradingPeriod;
 	/**
-	 * Period during which both old and new equity may be traded simultaneously,
-	 * eg, consolidation of equity or splitting of equity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -486,9 +482,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected QuantityRatio additionalQuantityForSubscribedResultantSecurities;
 	/**
-	 * Quantity of additional intermediate securities/new equities awarded for a
-	 * given quantity of securities derived from subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -538,11 +533,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected QuantityRatio additionalQuantityForExistingSecurities;
 	/**
-	 * Quantity of additional securities for a given quantity of underlying
-	 * securities where underlying securities are not exchanged or debited, eg,
-	 * 1 for 1: 1 new equity credited for every 1 underlying equity = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -592,11 +584,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected QuantityRatio newToOld;
 	/**
-	 * Quantity of new securities for a given quantity of underlying securities,
-	 * where the underlying securities will be exchanged or debited, eg, 2 for
-	 * 1: 2 new equities credited for every 1 underlying equity debited = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -645,9 +634,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected QuantityRatio newSecuritiesToUnderlyingSecurities;
 	/**
-	 * Quantity of new equities that will be derived by the exercise of a given
-	 * quantity of intermediate securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -696,8 +684,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected CurrencyAndAmount reinvestmentAmount;
 	/**
-	 * Amount of money reinvested in additional securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,9 +731,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType;
 	/**
-	 * Type of intermediate securities distribution, eg, stock dividend, reverse
-	 * right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -793,8 +780,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity boardLotSecuritiesQuantity;
 	/**
-	 * Quantity of equity that makes up a board lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -841,9 +828,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected SecuritiesQuantity newDenominationSecuritiesQuantity;
 	/**
-	 * New denomination of the financial instrument following, eg, an increase
-	 * or decrease in nominal value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -892,9 +878,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected QuantityRatio intermediateSecuritiesToUnderlyingRatio;
 	/**
-	 * Quantity of intermediate securities awarded for a given quantity of
-	 * underlying security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -943,9 +928,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected PercentageRate reinvestmentDiscountToMarket;
 	/**
-	 * Rate of discount for securities purchased through a reinvestment scheme
-	 * as compared to the current market price of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -993,9 +977,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected ISODateTime redemptionDate;
 	/**
-	 * Date on which the securities will be redeemed (early) for payment of
-	 * principal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1042,8 +1025,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected DateTimePeriod assentedLinePeriod;
 	/**
-	 * Period during which the assented line is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1090,9 +1073,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected DateTimePeriod sellThruIssuerPeriod;
 	/**
-	 * Period (last day included) during which an account owner can surrender or
-	 * sell securities to the issuer and receive the sale proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1141,8 +1123,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	};
 	protected ShareRankingCode shareRanking;
 	/**
-	 * Specifies whether the shares are ranking for dividend or pari passu.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1191,7 +1173,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesProceedsDefinition";
 				definition = "The definition of the securities proceeds for a corporate action in generic terms; that is, before applying it to specific securities holding. An example would be the definition of a  bonus rights issue where all the information will be given in general on a per share basis.";
@@ -1229,159 +1211,179 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 		return securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public SecuritiesProceedsDefinition setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getConditionalQuantity() {
 		return conditionalQuantity;
 	}
 
-	public void setConditionalQuantity(com.tools20022.repository.entity.SecuritiesQuantity conditionalQuantity) {
-		this.conditionalQuantity = conditionalQuantity;
+	public SecuritiesProceedsDefinition setConditionalQuantity(com.tools20022.repository.entity.SecuritiesQuantity conditionalQuantity) {
+		this.conditionalQuantity = Objects.requireNonNull(conditionalQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getOverAndAboveNormalEnsuredEntitlementQuantity() {
 		return overAndAboveNormalEnsuredEntitlementQuantity;
 	}
 
-	public void setOverAndAboveNormalEnsuredEntitlementQuantity(com.tools20022.repository.entity.SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity) {
-		this.overAndAboveNormalEnsuredEntitlementQuantity = overAndAboveNormalEnsuredEntitlementQuantity;
+	public SecuritiesProceedsDefinition setOverAndAboveNormalEnsuredEntitlementQuantity(com.tools20022.repository.entity.SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity) {
+		this.overAndAboveNormalEnsuredEntitlementQuantity = Objects.requireNonNull(overAndAboveNormalEnsuredEntitlementQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getQuantityToReceive() {
 		return quantityToReceive;
 	}
 
-	public void setQuantityToReceive(com.tools20022.repository.entity.SecuritiesQuantity quantityToReceive) {
-		this.quantityToReceive = quantityToReceive;
+	public SecuritiesProceedsDefinition setQuantityToReceive(com.tools20022.repository.entity.SecuritiesQuantity quantityToReceive) {
+		this.quantityToReceive = Objects.requireNonNull(quantityToReceive);
+		return this;
 	}
 
 	public SecuritiesQuantity getStatusQuantity() {
 		return statusQuantity;
 	}
 
-	public void setStatusQuantity(com.tools20022.repository.entity.SecuritiesQuantity statusQuantity) {
-		this.statusQuantity = statusQuantity;
+	public SecuritiesProceedsDefinition setStatusQuantity(com.tools20022.repository.entity.SecuritiesQuantity statusQuantity) {
+		this.statusQuantity = Objects.requireNonNull(statusQuantity);
+		return this;
 	}
 
 	public DateTimePeriod getParallelTradingPeriod() {
 		return parallelTradingPeriod;
 	}
 
-	public void setParallelTradingPeriod(com.tools20022.repository.entity.DateTimePeriod parallelTradingPeriod) {
-		this.parallelTradingPeriod = parallelTradingPeriod;
+	public SecuritiesProceedsDefinition setParallelTradingPeriod(com.tools20022.repository.entity.DateTimePeriod parallelTradingPeriod) {
+		this.parallelTradingPeriod = Objects.requireNonNull(parallelTradingPeriod);
+		return this;
 	}
 
 	public QuantityRatio getAdditionalQuantityForSubscribedResultantSecurities() {
 		return additionalQuantityForSubscribedResultantSecurities;
 	}
 
-	public void setAdditionalQuantityForSubscribedResultantSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForSubscribedResultantSecurities) {
-		this.additionalQuantityForSubscribedResultantSecurities = additionalQuantityForSubscribedResultantSecurities;
+	public SecuritiesProceedsDefinition setAdditionalQuantityForSubscribedResultantSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForSubscribedResultantSecurities) {
+		this.additionalQuantityForSubscribedResultantSecurities = Objects.requireNonNull(additionalQuantityForSubscribedResultantSecurities);
+		return this;
 	}
 
 	public QuantityRatio getAdditionalQuantityForExistingSecurities() {
 		return additionalQuantityForExistingSecurities;
 	}
 
-	public void setAdditionalQuantityForExistingSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForExistingSecurities) {
-		this.additionalQuantityForExistingSecurities = additionalQuantityForExistingSecurities;
+	public SecuritiesProceedsDefinition setAdditionalQuantityForExistingSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForExistingSecurities) {
+		this.additionalQuantityForExistingSecurities = Objects.requireNonNull(additionalQuantityForExistingSecurities);
+		return this;
 	}
 
 	public QuantityRatio getNewToOld() {
 		return newToOld;
 	}
 
-	public void setNewToOld(com.tools20022.repository.entity.QuantityRatio newToOld) {
-		this.newToOld = newToOld;
+	public SecuritiesProceedsDefinition setNewToOld(com.tools20022.repository.entity.QuantityRatio newToOld) {
+		this.newToOld = Objects.requireNonNull(newToOld);
+		return this;
 	}
 
 	public QuantityRatio getNewSecuritiesToUnderlyingSecurities() {
 		return newSecuritiesToUnderlyingSecurities;
 	}
 
-	public void setNewSecuritiesToUnderlyingSecurities(com.tools20022.repository.entity.QuantityRatio newSecuritiesToUnderlyingSecurities) {
-		this.newSecuritiesToUnderlyingSecurities = newSecuritiesToUnderlyingSecurities;
+	public SecuritiesProceedsDefinition setNewSecuritiesToUnderlyingSecurities(com.tools20022.repository.entity.QuantityRatio newSecuritiesToUnderlyingSecurities) {
+		this.newSecuritiesToUnderlyingSecurities = Objects.requireNonNull(newSecuritiesToUnderlyingSecurities);
+		return this;
 	}
 
 	public CurrencyAndAmount getReinvestmentAmount() {
 		return reinvestmentAmount;
 	}
 
-	public void setReinvestmentAmount(CurrencyAndAmount reinvestmentAmount) {
-		this.reinvestmentAmount = reinvestmentAmount;
+	public SecuritiesProceedsDefinition setReinvestmentAmount(CurrencyAndAmount reinvestmentAmount) {
+		this.reinvestmentAmount = Objects.requireNonNull(reinvestmentAmount);
+		return this;
 	}
 
 	public IntermediateSecurityDistributionTypeCode getIntermediateSecuritiesDistributionType() {
 		return intermediateSecuritiesDistributionType;
 	}
 
-	public void setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType) {
-		this.intermediateSecuritiesDistributionType = intermediateSecuritiesDistributionType;
+	public SecuritiesProceedsDefinition setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType) {
+		this.intermediateSecuritiesDistributionType = Objects.requireNonNull(intermediateSecuritiesDistributionType);
+		return this;
 	}
 
 	public SecuritiesQuantity getBoardLotSecuritiesQuantity() {
 		return boardLotSecuritiesQuantity;
 	}
 
-	public void setBoardLotSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity boardLotSecuritiesQuantity) {
-		this.boardLotSecuritiesQuantity = boardLotSecuritiesQuantity;
+	public SecuritiesProceedsDefinition setBoardLotSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity boardLotSecuritiesQuantity) {
+		this.boardLotSecuritiesQuantity = Objects.requireNonNull(boardLotSecuritiesQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getNewDenominationSecuritiesQuantity() {
 		return newDenominationSecuritiesQuantity;
 	}
 
-	public void setNewDenominationSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity newDenominationSecuritiesQuantity) {
-		this.newDenominationSecuritiesQuantity = newDenominationSecuritiesQuantity;
+	public SecuritiesProceedsDefinition setNewDenominationSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity newDenominationSecuritiesQuantity) {
+		this.newDenominationSecuritiesQuantity = Objects.requireNonNull(newDenominationSecuritiesQuantity);
+		return this;
 	}
 
 	public QuantityRatio getIntermediateSecuritiesToUnderlyingRatio() {
 		return intermediateSecuritiesToUnderlyingRatio;
 	}
 
-	public void setIntermediateSecuritiesToUnderlyingRatio(com.tools20022.repository.entity.QuantityRatio intermediateSecuritiesToUnderlyingRatio) {
-		this.intermediateSecuritiesToUnderlyingRatio = intermediateSecuritiesToUnderlyingRatio;
+	public SecuritiesProceedsDefinition setIntermediateSecuritiesToUnderlyingRatio(com.tools20022.repository.entity.QuantityRatio intermediateSecuritiesToUnderlyingRatio) {
+		this.intermediateSecuritiesToUnderlyingRatio = Objects.requireNonNull(intermediateSecuritiesToUnderlyingRatio);
+		return this;
 	}
 
 	public PercentageRate getReinvestmentDiscountToMarket() {
 		return reinvestmentDiscountToMarket;
 	}
 
-	public void setReinvestmentDiscountToMarket(PercentageRate reinvestmentDiscountToMarket) {
-		this.reinvestmentDiscountToMarket = reinvestmentDiscountToMarket;
+	public SecuritiesProceedsDefinition setReinvestmentDiscountToMarket(PercentageRate reinvestmentDiscountToMarket) {
+		this.reinvestmentDiscountToMarket = Objects.requireNonNull(reinvestmentDiscountToMarket);
+		return this;
 	}
 
 	public ISODateTime getRedemptionDate() {
 		return redemptionDate;
 	}
 
-	public void setRedemptionDate(ISODateTime redemptionDate) {
-		this.redemptionDate = redemptionDate;
+	public SecuritiesProceedsDefinition setRedemptionDate(ISODateTime redemptionDate) {
+		this.redemptionDate = Objects.requireNonNull(redemptionDate);
+		return this;
 	}
 
 	public DateTimePeriod getAssentedLinePeriod() {
 		return assentedLinePeriod;
 	}
 
-	public void setAssentedLinePeriod(com.tools20022.repository.entity.DateTimePeriod assentedLinePeriod) {
-		this.assentedLinePeriod = assentedLinePeriod;
+	public SecuritiesProceedsDefinition setAssentedLinePeriod(com.tools20022.repository.entity.DateTimePeriod assentedLinePeriod) {
+		this.assentedLinePeriod = Objects.requireNonNull(assentedLinePeriod);
+		return this;
 	}
 
 	public DateTimePeriod getSellThruIssuerPeriod() {
 		return sellThruIssuerPeriod;
 	}
 
-	public void setSellThruIssuerPeriod(com.tools20022.repository.entity.DateTimePeriod sellThruIssuerPeriod) {
-		this.sellThruIssuerPeriod = sellThruIssuerPeriod;
+	public SecuritiesProceedsDefinition setSellThruIssuerPeriod(com.tools20022.repository.entity.DateTimePeriod sellThruIssuerPeriod) {
+		this.sellThruIssuerPeriod = Objects.requireNonNull(sellThruIssuerPeriod);
+		return this;
 	}
 
 	public ShareRankingCode getShareRanking() {
 		return shareRanking;
 	}
 
-	public void setShareRanking(ShareRankingCode shareRanking) {
-		this.shareRanking = shareRanking;
+	public SecuritiesProceedsDefinition setShareRanking(ShareRankingCode shareRanking) {
+		this.shareRanking = Objects.requireNonNull(shareRanking);
+		return this;
 	}
 }

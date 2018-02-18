@@ -38,65 +38,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByYourself
- * CancelledStatusReasonV2Code.mmCancelledByYourself}</li>
+ * CancelledStatusReasonV2Code.CancelledByYourself}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledBySystem
- * CancelledStatusReasonV2Code.mmCancelledBySystem}</li>
+ * CancelledStatusReasonV2Code.CancelledBySystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByAgent
- * CancelledStatusReasonV2Code.mmCancelledByAgent}</li>
+ * CancelledStatusReasonV2Code.CancelledByAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByHub
- * CancelledStatusReasonV2Code.mmCancelledByHub}</li>
+ * CancelledStatusReasonV2Code.CancelledByHub}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByInstructingParty
- * CancelledStatusReasonV2Code.mmCancelledByInstructingParty}</li>
+ * CancelledStatusReasonV2Code.CancelledByInstructingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#EndOfLife
- * CancelledStatusReasonV2Code.mmEndOfLife}</li>
+ * CancelledStatusReasonV2Code.EndOfLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByOther
- * CancelledStatusReasonV2Code.mmCancelledByOther}</li>
+ * CancelledStatusReasonV2Code.CancelledByOther}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByTransferAgent
- * CancelledStatusReasonV2Code.mmCancelledByTransferAgent}</li>
+ * CancelledStatusReasonV2Code.CancelledByTransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByClient
- * CancelledStatusReasonV2Code.mmCancelledByClient}</li>
+ * CancelledStatusReasonV2Code.CancelledByClient}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByIntermediary
- * CancelledStatusReasonV2Code.mmCancelledByIntermediary}</li>
+ * CancelledStatusReasonV2Code.CancelledByIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledDueToTransformation
- * CancelledStatusReasonV2Code.mmCancelledDueToTransformation}</li>
+ * CancelledStatusReasonV2Code.CancelledDueToTransformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledSplitPartialSettlement
- * CancelledStatusReasonV2Code.mmCancelledSplitPartialSettlement}</li>
+ * CancelledStatusReasonV2Code.CancelledSplitPartialSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledDueToCorporateAction
- * CancelledStatusReasonV2Code.mmCancelledDueToCorporateAction}</li>
+ * CancelledStatusReasonV2Code.CancelledDueToCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByIssuerRegistrar
- * CancelledStatusReasonV2Code.mmCancelledByIssuerRegistrar}</li>
+ * CancelledStatusReasonV2Code.CancelledByIssuerRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#SecuritiesNoLongerEligible
- * CancelledStatusReasonV2Code.mmSecuritiesNoLongerEligible}</li>
+ * CancelledStatusReasonV2Code.SecuritiesNoLongerEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#NarrativeReason
- * CancelledStatusReasonV2Code.mmNarrativeReason}</li>
+ * CancelledStatusReasonV2Code.NarrativeReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#Other
- * CancelledStatusReasonV2Code.mmOther}</li>
+ * CancelledStatusReasonV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonV2Code#CancelledByThirdParty
- * CancelledStatusReasonV2Code.mmCancelledByThirdParty}</li>
+ * CancelledStatusReasonV2Code.CancelledByThirdParty}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -685,7 +685,7 @@ public class CancelledStatusReasonV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CANI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancelledStatusReasonV2Code";

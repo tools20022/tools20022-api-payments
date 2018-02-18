@@ -25,9 +25,8 @@ import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionCertificate1", propOrder = {"transactionIdentification", "certificate", "account", "bankAccountDomiciliationCountry", "amendment", "certificateRecord", "supplementaryData"})
 public class TransactionCertificate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unique and unambiguous identification of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +121,7 @@ public class TransactionCertificate1 {
 	 */
 	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,10 +132,11 @@ public class TransactionCertificate1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Cert", required = true)
 	protected DocumentIdentification28 certificate;
 	/**
-	 * Reference of the transaction certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -168,7 +169,7 @@ public class TransactionCertificate1 {
 	public static final MMMessageAssociationEnd mmCertificate = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "Cert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +181,11 @@ public class TransactionCertificate1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
 		}
 	};
+	@XmlElement(name = "Acct")
 	protected CashAccount24 account;
 	/**
-	 * Cash account, linked to the registered contract, on which the cash entry
-	 * is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -218,7 +219,7 @@ public class TransactionCertificate1 {
 	public static final MMMessageAssociationEnd mmAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Reconciliation.mmAccount;
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,11 +231,11 @@ public class TransactionCertificate1 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "BkAcctDmcltnCtry")
 	protected CountryCode bankAccountDomiciliationCountry;
 	/**
-	 * Country in which the bank account is located, when the bank which
-	 * services the account is located in another country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,7 +270,7 @@ public class TransactionCertificate1 {
 	public static final MMMessageAttribute mmBankAccountDomiciliationCountry = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmCountry;
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "BkAcctDmcltnCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -280,10 +281,11 @@ public class TransactionCertificate1 {
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
+	@XmlElement(name = "Amdmnt")
 	protected DocumentAmendment1 amendment;
 	/**
-	 * Amendment indicator details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -315,7 +317,7 @@ public class TransactionCertificate1 {
 	public static final MMMessageAssociationEnd mmAmendment = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> RegisteredContract.mmObject();
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "Amdmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -327,10 +329,11 @@ public class TransactionCertificate1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
 		}
 	};
+	@XmlElement(name = "CertRcrd", required = true)
 	protected List<com.tools20022.repository.msg.TransactionCertificateRecord1> certificateRecord;
 	/**
-	 * Record of the transaction certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -363,7 +366,7 @@ public class TransactionCertificate1 {
 	public static final MMMessageAssociationEnd mmCertificateRecord = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> RegisteredContract.mmObject();
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "CertRcrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -374,11 +377,11 @@ public class TransactionCertificate1 {
 			type_lazy = () -> com.tools20022.repository.msg.TransactionCertificateRecord1.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -406,7 +409,7 @@ public class TransactionCertificate1 {
 	 */
 	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> TransactionCertificate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -421,10 +424,13 @@ public class TransactionCertificate1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionCertificate1.mmTransactionIdentification, TransactionCertificate1.mmCertificate, TransactionCertificate1.mmAccount,
-						TransactionCertificate1.mmBankAccountDomiciliationCountry, TransactionCertificate1.mmAmendment, TransactionCertificate1.mmCertificateRecord, TransactionCertificate1.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.msg.TransactionCertificate1.mmTransactionIdentification, com.tools20022.repository.msg.TransactionCertificate1.mmCertificate,
+								com.tools20022.repository.msg.TransactionCertificate1.mmAccount, com.tools20022.repository.msg.TransactionCertificate1.mmBankAccountDomiciliationCountry,
+								com.tools20022.repository.msg.TransactionCertificate1.mmAmendment, com.tools20022.repository.msg.TransactionCertificate1.mmCertificateRecord,
+								com.tools20022.repository.msg.TransactionCertificate1.mmSupplementaryData);
 				trace_lazy = () -> TradeCertificate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionCertificate1";
 				definition = "Certificate against which all currency control transactions are registered.";
@@ -433,66 +439,66 @@ public class TransactionCertificate1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public TransactionCertificate1 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Cert", required = true)
 	public DocumentIdentification28 getCertificate() {
 		return certificate;
 	}
 
-	public void setCertificate(com.tools20022.repository.msg.DocumentIdentification28 certificate) {
-		this.certificate = certificate;
+	public TransactionCertificate1 setCertificate(com.tools20022.repository.msg.DocumentIdentification28 certificate) {
+		this.certificate = Objects.requireNonNull(certificate);
+		return this;
 	}
 
-	@XmlElement(name = "Acct")
-	public CashAccount24 getAccount() {
-		return account;
+	public Optional<CashAccount24> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(com.tools20022.repository.msg.CashAccount24 account) {
+	public TransactionCertificate1 setAccount(com.tools20022.repository.msg.CashAccount24 account) {
 		this.account = account;
+		return this;
 	}
 
-	@XmlElement(name = "BkAcctDmcltnCtry")
-	public CountryCode getBankAccountDomiciliationCountry() {
-		return bankAccountDomiciliationCountry;
+	public Optional<CountryCode> getBankAccountDomiciliationCountry() {
+		return bankAccountDomiciliationCountry == null ? Optional.empty() : Optional.of(bankAccountDomiciliationCountry);
 	}
 
-	public void setBankAccountDomiciliationCountry(CountryCode bankAccountDomiciliationCountry) {
+	public TransactionCertificate1 setBankAccountDomiciliationCountry(CountryCode bankAccountDomiciliationCountry) {
 		this.bankAccountDomiciliationCountry = bankAccountDomiciliationCountry;
+		return this;
 	}
 
-	@XmlElement(name = "Amdmnt")
-	public DocumentAmendment1 getAmendment() {
-		return amendment;
+	public Optional<DocumentAmendment1> getAmendment() {
+		return amendment == null ? Optional.empty() : Optional.of(amendment);
 	}
 
-	public void setAmendment(com.tools20022.repository.msg.DocumentAmendment1 amendment) {
+	public TransactionCertificate1 setAmendment(com.tools20022.repository.msg.DocumentAmendment1 amendment) {
 		this.amendment = amendment;
+		return this;
 	}
 
-	@XmlElement(name = "CertRcrd", required = true)
 	public List<TransactionCertificateRecord1> getCertificateRecord() {
-		return certificateRecord;
+		return certificateRecord == null ? certificateRecord = new ArrayList<>() : certificateRecord;
 	}
 
-	public void setCertificateRecord(List<com.tools20022.repository.msg.TransactionCertificateRecord1> certificateRecord) {
-		this.certificateRecord = certificateRecord;
+	public TransactionCertificate1 setCertificateRecord(List<com.tools20022.repository.msg.TransactionCertificateRecord1> certificateRecord) {
+		this.certificateRecord = Objects.requireNonNull(certificateRecord);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public TransactionCertificate1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

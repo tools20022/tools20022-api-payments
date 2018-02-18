@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.BenchmarkCurveName4Choice;
 import com.tools20022.repository.codeset.BenchmarkCurveNameCode;
@@ -26,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Describes a benchmark curve.
@@ -59,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +79,8 @@ public class Curve {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyCode currency;
 	/**
-	 * Identifies the currency used for the benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -88,6 +91,9 @@ public class Curve {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 220</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -103,6 +109,7 @@ public class Curve {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "220"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Identifies the currency used for the benchmark curve.";
@@ -121,8 +128,8 @@ public class Curve {
 	};
 	protected BenchmarkCurveNameCode name;
 	/**
-	 * Identifies the name of the benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,6 +153,9 @@ public class Curve {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 221</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -161,6 +171,7 @@ public class Curve {
 			derivation_lazy = () -> Arrays.asList(BenchmarkCurveName4Choice.mmIndex, BenchmarkCurveName4Choice.mmName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "221"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Identifies the name of the benchmark curve.";
@@ -179,9 +190,8 @@ public class Curve {
 	};
 	protected Max256Text point;
 	/**
-	 * Identifies a point on a benchmark curve. The point can be stated via a
-	 * combination of maturity month/year and coupon.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,6 +202,9 @@ public class Curve {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 222</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -209,6 +222,7 @@ public class Curve {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "222"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Point";
 			definition = "Identifies a point on a benchmark curve. The point can be stated via a combination of maturity month/year and coupon.";
@@ -227,8 +241,8 @@ public class Curve {
 	};
 	protected Spread spread;
 	/**
-	 * Spread for which a benchmark curve is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,7 +289,7 @@ public class Curve {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Curve";
 				definition = "Describes a benchmark curve.";
@@ -296,31 +310,35 @@ public class Curve {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Curve setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public BenchmarkCurveNameCode getName() {
 		return name;
 	}
 
-	public void setName(BenchmarkCurveNameCode name) {
-		this.name = name;
+	public Curve setName(BenchmarkCurveNameCode name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public Max256Text getPoint() {
 		return point;
 	}
 
-	public void setPoint(Max256Text point) {
-		this.point = point;
+	public Curve setPoint(Max256Text point) {
+		this.point = Objects.requireNonNull(point);
+		return this;
 	}
 
-	public Spread getSpread() {
-		return spread;
+	public Optional<Spread> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Curve setSpread(com.tools20022.repository.entity.Spread spread) {
 		this.spread = spread;
+		return this;
 	}
 }

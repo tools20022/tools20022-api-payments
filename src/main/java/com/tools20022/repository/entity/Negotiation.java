@@ -22,9 +22,8 @@ import com.tools20022.repository.codeset.TradingMethodCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Decision making on the transfer of a financial instrument.
@@ -79,8 +78,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +95,8 @@ public class Negotiation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradingMethodCode tradingMethod;
 	/**
-	 * Method used by the trading parties to negotiate and/or execute a deal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,9 +142,8 @@ public class Negotiation {
 	};
 	protected Trade tradeExecution;
 	/**
-	 * Execution of a trade as a result of a successful negotiation between two
-	 * trading parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,8 +190,8 @@ public class Negotiation {
 	};
 	protected System tradingSystem;
 	/**
-	 * Electronic system through which parties are able to negotiate trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,8 +237,8 @@ public class Negotiation {
 	};
 	protected Max35Text negotiationIdentification;
 	/**
-	 * Reference of a negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,8 +282,8 @@ public class Negotiation {
 	};
 	protected Quote quote;
 	/**
-	 * Quote details shown in a negotiation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,8 +328,8 @@ public class Negotiation {
 	};
 	protected BuyOrSellIndicationOfInterest indicationOfInterest;
 	/**
-	 * Indication of interest process which is the start of the negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,8 +377,8 @@ public class Negotiation {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesOrder> securitiesOrder;
 	/**
-	 * Result of a successful negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -427,7 +425,7 @@ public class Negotiation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Negotiation";
 				definition = "Decision making on the transfer of a financial instrument.";
@@ -451,55 +449,62 @@ public class Negotiation {
 		return tradingMethod;
 	}
 
-	public void setTradingMethod(TradingMethodCode tradingMethod) {
-		this.tradingMethod = tradingMethod;
+	public Negotiation setTradingMethod(TradingMethodCode tradingMethod) {
+		this.tradingMethod = Objects.requireNonNull(tradingMethod);
+		return this;
 	}
 
 	public Trade getTradeExecution() {
 		return tradeExecution;
 	}
 
-	public void setTradeExecution(com.tools20022.repository.entity.Trade tradeExecution) {
-		this.tradeExecution = tradeExecution;
+	public Negotiation setTradeExecution(com.tools20022.repository.entity.Trade tradeExecution) {
+		this.tradeExecution = Objects.requireNonNull(tradeExecution);
+		return this;
 	}
 
-	public System getTradingSystem() {
-		return tradingSystem;
+	public Optional<System> getTradingSystem() {
+		return tradingSystem == null ? Optional.empty() : Optional.of(tradingSystem);
 	}
 
-	public void setTradingSystem(com.tools20022.repository.entity.System tradingSystem) {
+	public Negotiation setTradingSystem(com.tools20022.repository.entity.System tradingSystem) {
 		this.tradingSystem = tradingSystem;
+		return this;
 	}
 
 	public Max35Text getNegotiationIdentification() {
 		return negotiationIdentification;
 	}
 
-	public void setNegotiationIdentification(Max35Text negotiationIdentification) {
-		this.negotiationIdentification = negotiationIdentification;
+	public Negotiation setNegotiationIdentification(Max35Text negotiationIdentification) {
+		this.negotiationIdentification = Objects.requireNonNull(negotiationIdentification);
+		return this;
 	}
 
 	public Quote getQuote() {
 		return quote;
 	}
 
-	public void setQuote(com.tools20022.repository.entity.Quote quote) {
-		this.quote = quote;
+	public Negotiation setQuote(com.tools20022.repository.entity.Quote quote) {
+		this.quote = Objects.requireNonNull(quote);
+		return this;
 	}
 
-	public BuyOrSellIndicationOfInterest getIndicationOfInterest() {
-		return indicationOfInterest;
+	public Optional<BuyOrSellIndicationOfInterest> getIndicationOfInterest() {
+		return indicationOfInterest == null ? Optional.empty() : Optional.of(indicationOfInterest);
 	}
 
-	public void setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
+	public Negotiation setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
 		this.indicationOfInterest = indicationOfInterest;
+		return this;
 	}
 
 	public List<SecuritiesOrder> getSecuritiesOrder() {
-		return securitiesOrder;
+		return securitiesOrder == null ? securitiesOrder = new ArrayList<>() : securitiesOrder;
 	}
 
-	public void setSecuritiesOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesOrder) {
-		this.securitiesOrder = securitiesOrder;
+	public Negotiation setSecuritiesOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesOrder) {
+		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
+		return this;
 	}
 }

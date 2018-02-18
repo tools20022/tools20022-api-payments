@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Calculation of the price sensitivity of a fixed-income security to a change
@@ -73,8 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +94,8 @@ public class DurationCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing relatedSecuritiesPricing;
 	/**
-	 * Securities pricing for which a duration calculation is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,8 +143,8 @@ public class DurationCalculation {
 	};
 	protected VariableInterest variableInterest;
 	/**
-	 * Variable interest used for the calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,8 +191,8 @@ public class DurationCalculation {
 	};
 	protected Number years;
 	/**
-	 * Result of the duration calculation measured in number of years.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,8 +238,8 @@ public class DurationCalculation {
 	};
 	protected CalculationTypeCode calculationType;
 	/**
-	 * Specifies the type of calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,9 +285,8 @@ public class DurationCalculation {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time on which the calculation is based, eg, valuation on October 1
-	 * (price date) based on price of September 19 ( value date).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,8 +333,8 @@ public class DurationCalculation {
 	};
 	protected DateTimePeriod valuePeriod;
 	/**
-	 * Period on which the calculation is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,7 +382,7 @@ public class DurationCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DurationCalculation";
 				definition = "Calculation of the price sensitivity of a fixed-income security to a change in interest rates.";
@@ -399,51 +400,57 @@ public class DurationCalculation {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesPricing getRelatedSecuritiesPricing() {
-		return relatedSecuritiesPricing;
+	public Optional<SecuritiesPricing> getRelatedSecuritiesPricing() {
+		return relatedSecuritiesPricing == null ? Optional.empty() : Optional.of(relatedSecuritiesPricing);
 	}
 
-	public void setRelatedSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing relatedSecuritiesPricing) {
+	public DurationCalculation setRelatedSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing relatedSecuritiesPricing) {
 		this.relatedSecuritiesPricing = relatedSecuritiesPricing;
+		return this;
 	}
 
 	public VariableInterest getVariableInterest() {
 		return variableInterest;
 	}
 
-	public void setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
-		this.variableInterest = variableInterest;
+	public DurationCalculation setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 
 	public Number getYears() {
 		return years;
 	}
 
-	public void setYears(Number years) {
-		this.years = years;
+	public DurationCalculation setYears(Number years) {
+		this.years = Objects.requireNonNull(years);
+		return this;
 	}
 
 	public CalculationTypeCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(CalculationTypeCode calculationType) {
-		this.calculationType = calculationType;
+	public DurationCalculation setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public DurationCalculation setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DateTimePeriod getValuePeriod() {
 		return valuePeriod;
 	}
 
-	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
-		this.valuePeriod = valuePeriod;
+	public DurationCalculation setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+		this.valuePeriod = Objects.requireNonNull(valuePeriod);
+		return this;
 	}
 }

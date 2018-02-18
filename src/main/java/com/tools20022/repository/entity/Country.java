@@ -24,9 +24,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Nation with its own government.
@@ -116,8 +118,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -133,8 +135,8 @@ public class Country {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.InvestmentFund> domiciledFunds;
 	/**
-	 * Investment funds which are domiciled in a specific country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +182,8 @@ public class Country {
 	};
 	protected CountryCode code;
 	/**
-	 * Identifies a nation with its own government (ISO 3166).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,8 +274,8 @@ public class Country {
 	};
 	protected Person citizen;
 	/**
-	 * Specifies a person which is a citizen of a country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,8 +320,8 @@ public class Country {
 	};
 	protected Tax tax;
 	/**
-	 * Tax parameters applicable in a country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,8 +365,8 @@ public class Country {
 	};
 	protected List<com.tools20022.repository.entity.SafekeepingPlace> countryForSafekeepingPlace;
 	/**
-	 * Specifies the safekeeping places located in a specific country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,9 +412,8 @@ public class Country {
 	};
 	protected BeneficialOwner countryForBeneficialOwner;
 	/**
-	 * Specifies the beneficial owner which has certified that it is not
-	 * domiciled in the country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,8 +461,8 @@ public class Country {
 	};
 	protected List<com.tools20022.repository.entity.Product> producedProducts;
 	/**
-	 * Specifies the product for which an origin is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -505,8 +506,8 @@ public class Country {
 	};
 	protected List<com.tools20022.repository.entity.RegulatoryAuthorityRole> nationalRegulatoryAuthority;
 	/**
-	 * Regulatory authority of the country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,8 +553,8 @@ public class Country {
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentAcquiring> relatedCardPayment;
 	/**
-	 * Card payment which took place in the specified country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -599,9 +600,8 @@ public class Country {
 	};
 	protected Max35Text name;
 	/**
-	 * Name by which a country is known. It is normally the name attached to the
-	 * ISO country code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,8 +647,8 @@ public class Country {
 	};
 	protected List<com.tools20022.repository.entity.PostalAddress> postalAddressSpecification;
 	/**
-	 * Specifies the representation of a postal address per country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -694,9 +694,8 @@ public class Country {
 	};
 	protected InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing;
 	/**
-	 * Specifies the other parameters of the investment fund class which apply
-	 * in that country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -745,8 +744,8 @@ public class Country {
 	};
 	protected Market market;
 	/**
-	 * Market for which a country is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -791,8 +790,8 @@ public class Country {
 	};
 	protected PaymentCard relatedPaymentCard;
 	/**
-	 * Payment card for which a country code is attached.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -840,7 +839,7 @@ public class Country {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Country";
 				definition = "Nation with its own government.";
@@ -864,114 +863,128 @@ public class Country {
 	}
 
 	public List<InvestmentFund> getDomiciledFunds() {
-		return domiciledFunds;
+		return domiciledFunds == null ? domiciledFunds = new ArrayList<>() : domiciledFunds;
 	}
 
-	public void setDomiciledFunds(List<com.tools20022.repository.entity.InvestmentFund> domiciledFunds) {
-		this.domiciledFunds = domiciledFunds;
+	public Country setDomiciledFunds(List<com.tools20022.repository.entity.InvestmentFund> domiciledFunds) {
+		this.domiciledFunds = Objects.requireNonNull(domiciledFunds);
+		return this;
 	}
 
 	public CountryCode getCode() {
 		return code;
 	}
 
-	public void setCode(CountryCode code) {
-		this.code = code;
+	public Country setCode(CountryCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public Person getCitizen() {
 		return citizen;
 	}
 
-	public void setCitizen(com.tools20022.repository.entity.Person citizen) {
-		this.citizen = citizen;
+	public Country setCitizen(com.tools20022.repository.entity.Person citizen) {
+		this.citizen = Objects.requireNonNull(citizen);
+		return this;
 	}
 
 	public Tax getTax() {
 		return tax;
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
-		this.tax = tax;
+	public Country setTax(com.tools20022.repository.entity.Tax tax) {
+		this.tax = Objects.requireNonNull(tax);
+		return this;
 	}
 
 	public List<SafekeepingPlace> getCountryForSafekeepingPlace() {
-		return countryForSafekeepingPlace;
+		return countryForSafekeepingPlace == null ? countryForSafekeepingPlace = new ArrayList<>() : countryForSafekeepingPlace;
 	}
 
-	public void setCountryForSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> countryForSafekeepingPlace) {
-		this.countryForSafekeepingPlace = countryForSafekeepingPlace;
+	public Country setCountryForSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> countryForSafekeepingPlace) {
+		this.countryForSafekeepingPlace = Objects.requireNonNull(countryForSafekeepingPlace);
+		return this;
 	}
 
 	public BeneficialOwner getCountryForBeneficialOwner() {
 		return countryForBeneficialOwner;
 	}
 
-	public void setCountryForBeneficialOwner(com.tools20022.repository.entity.BeneficialOwner countryForBeneficialOwner) {
-		this.countryForBeneficialOwner = countryForBeneficialOwner;
+	public Country setCountryForBeneficialOwner(com.tools20022.repository.entity.BeneficialOwner countryForBeneficialOwner) {
+		this.countryForBeneficialOwner = Objects.requireNonNull(countryForBeneficialOwner);
+		return this;
 	}
 
 	public List<Product> getProducedProducts() {
-		return producedProducts;
+		return producedProducts == null ? producedProducts = new ArrayList<>() : producedProducts;
 	}
 
-	public void setProducedProducts(List<com.tools20022.repository.entity.Product> producedProducts) {
-		this.producedProducts = producedProducts;
+	public Country setProducedProducts(List<com.tools20022.repository.entity.Product> producedProducts) {
+		this.producedProducts = Objects.requireNonNull(producedProducts);
+		return this;
 	}
 
 	public List<RegulatoryAuthorityRole> getNationalRegulatoryAuthority() {
-		return nationalRegulatoryAuthority;
+		return nationalRegulatoryAuthority == null ? nationalRegulatoryAuthority = new ArrayList<>() : nationalRegulatoryAuthority;
 	}
 
-	public void setNationalRegulatoryAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> nationalRegulatoryAuthority) {
-		this.nationalRegulatoryAuthority = nationalRegulatoryAuthority;
+	public Country setNationalRegulatoryAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> nationalRegulatoryAuthority) {
+		this.nationalRegulatoryAuthority = Objects.requireNonNull(nationalRegulatoryAuthority);
+		return this;
 	}
 
 	public List<CardPaymentAcquiring> getRelatedCardPayment() {
-		return relatedCardPayment;
+		return relatedCardPayment == null ? relatedCardPayment = new ArrayList<>() : relatedCardPayment;
 	}
 
-	public void setRelatedCardPayment(List<com.tools20022.repository.entity.CardPaymentAcquiring> relatedCardPayment) {
-		this.relatedCardPayment = relatedCardPayment;
+	public Country setRelatedCardPayment(List<com.tools20022.repository.entity.CardPaymentAcquiring> relatedCardPayment) {
+		this.relatedCardPayment = Objects.requireNonNull(relatedCardPayment);
+		return this;
 	}
 
 	public Max35Text getName() {
 		return name;
 	}
 
-	public void setName(Max35Text name) {
-		this.name = name;
+	public Country setName(Max35Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public List<PostalAddress> getPostalAddressSpecification() {
-		return postalAddressSpecification;
+		return postalAddressSpecification == null ? postalAddressSpecification = new ArrayList<>() : postalAddressSpecification;
 	}
 
-	public void setPostalAddressSpecification(List<com.tools20022.repository.entity.PostalAddress> postalAddressSpecification) {
-		this.postalAddressSpecification = postalAddressSpecification;
+	public Country setPostalAddressSpecification(List<com.tools20022.repository.entity.PostalAddress> postalAddressSpecification) {
+		this.postalAddressSpecification = Objects.requireNonNull(postalAddressSpecification);
+		return this;
 	}
 
 	public InvestmentFundClassProcessingCharacteristics getCountryRelatedInvestmentFundProcessing() {
 		return countryRelatedInvestmentFundProcessing;
 	}
 
-	public void setCountryRelatedInvestmentFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing) {
-		this.countryRelatedInvestmentFundProcessing = countryRelatedInvestmentFundProcessing;
+	public Country setCountryRelatedInvestmentFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing) {
+		this.countryRelatedInvestmentFundProcessing = Objects.requireNonNull(countryRelatedInvestmentFundProcessing);
+		return this;
 	}
 
 	public Market getMarket() {
 		return market;
 	}
 
-	public void setMarket(com.tools20022.repository.entity.Market market) {
-		this.market = market;
+	public Country setMarket(com.tools20022.repository.entity.Market market) {
+		this.market = Objects.requireNonNull(market);
+		return this;
 	}
 
 	public PaymentCard getRelatedPaymentCard() {
 		return relatedPaymentCard;
 	}
 
-	public void setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
-		this.relatedPaymentCard = relatedPaymentCard;
+	public Country setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
+		this.relatedPaymentCard = Objects.requireNonNull(relatedPaymentCard);
+		return this;
 	}
 }

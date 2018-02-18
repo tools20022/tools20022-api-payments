@@ -37,23 +37,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Rebate
- * AdjustmentTypeCode.mmRebate}</li>
+ * AdjustmentTypeCode.Rebate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Discount
- * AdjustmentTypeCode.mmDiscount}</li>
+ * AdjustmentTypeCode.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#CreditNote
- * AdjustmentTypeCode.mmCreditNote}</li>
+ * AdjustmentTypeCode.CreditNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdjustmentTypeCode#Surcharge
- * AdjustmentTypeCode.mmSurcharge}</li>
+ * AdjustmentTypeCode.Surcharge}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -202,7 +202,7 @@ public class AdjustmentTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REBA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdjustmentTypeCode";

@@ -2,6 +2,7 @@ package com.tools20022.core.metamodel;
 
 import java.lang.reflect.Method;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -13,23 +14,13 @@ import java.util.stream.Stream;
  */
 public interface Metamodel {
 
-	Stream<? extends MetamodelType<? extends GeneratedMetamodelBean>> listTypes();
-	
-	default Set<? extends MetamodelType<? extends GeneratedMetamodelBean>> getAllTypes() {
-		return listTypes().collect(Collectors.toCollection(LinkedHashSet::new));
-	}
+	List<? extends MetamodelType<? extends GeneratedMetamodelBean>> getAllTypes();
 
 	MetamodelType<? extends GeneratedMetamodelBean> getTypeByName( String name );
 
 	<B extends GeneratedMetamodelBean> MetamodelType<B> getTypeByClass( Class<B> beanClass );
-	
-	<B extends GeneratedMetamodelBean> Class<B> getClassByType(MetamodelType<B> mmType);
-	
-	Stream<? extends MetamodelEnum<?>> listEnums();
-
-	default Set<? extends MetamodelEnum<?>> getAllEnums() {
-		return listEnums().collect(Collectors.toCollection(LinkedHashSet::new));
-	}
+		
+	List<? extends MetamodelEnum<?>> getAllEnums();
 
 	MetamodelEnum<?> getEnumByName( String name );
 	

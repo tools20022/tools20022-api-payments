@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#UnrecognisedDelivery
- * DeliveryReturnCode.mmUnrecognisedDelivery}</li>
+ * DeliveryReturnCode.UnrecognisedDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#WrongQuantity
- * DeliveryReturnCode.mmWrongQuantity}</li>
+ * DeliveryReturnCode.WrongQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#WrongSettlementAmount
- * DeliveryReturnCode.mmWrongSettlementAmount}</li>
+ * DeliveryReturnCode.WrongSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#PartialDelivery
- * DeliveryReturnCode.mmPartialDelivery}</li>
+ * DeliveryReturnCode.PartialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#AccountMissing
- * DeliveryReturnCode.mmAccountMissing}</li>
+ * DeliveryReturnCode.AccountMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#DueBiillMissing
- * DeliveryReturnCode.mmDueBiillMissing}</li>
+ * DeliveryReturnCode.DueBiillMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturnCode#PartialReturn
- * DeliveryReturnCode.mmPartialReturn}</li>
+ * DeliveryReturnCode.PartialReturn}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -309,7 +309,7 @@ public class DeliveryReturnCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNRE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryReturnCode";

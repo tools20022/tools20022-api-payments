@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Lending of securities by one party to another. The terms of the loan are
@@ -102,8 +103,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -121,9 +122,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount borrowingFee;
 	/**
-	 * Amount to be paid by the borrower to the lender for the securities
-	 * borrowed calculated based on the bond loan rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,8 +171,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected YesNoIndicator callableTradeIndicator;
 	/**
-	 * Indicates whether the trade is callable or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,8 +218,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected LendingTransactionMethodCode lendingTransactionMethod;
 	/**
-	 * Method applied to a lending transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,9 +265,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected BorrowingReasonCode borrowingReason;
 	/**
-	 * Underlying reason for the borrowing, for instance, sale on my behalf or
-	 * on behalf of a third party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,9 +314,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected ReversibleCode reversible;
 	/**
-	 * Indicates the possibility to terminate the securitiesc lending contract
-	 * either by the borrower or lender before the expiration date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -365,8 +363,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected SecuritiesLendingTypeCode securitiesLendingType;
 	/**
-	 * Type of securities lending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -412,8 +410,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected YesNoIndicator lendingWithCollateral;
 	/**
-	 * Indicates if the contract is with or without an exchange of collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -461,9 +459,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected ISODate minimumDateForCallBack;
 	/**
-	 * Minimum date at which the borrower is allowed to give back the
-	 * securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -510,9 +507,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected Max4NumericText numberOfDaysLendingBorrowing;
 	/**
-	 * Number of days the securities are lent or borrowed for a contract which
-	 * has an agreed closing date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,9 +556,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected YesNoIndicator periodicPayment;
 	/**
-	 * Indicates whether the securities lending fees can be paid periodically or
-	 * at the end of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -610,8 +605,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected YesNoIndicator rollover;
 	/**
-	 * Indicates that the contract can be rolled over.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -657,8 +652,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected PercentageRate borrowingRate;
 	/**
-	 * Rate paid by the borrower to the lender for the securities borrowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -705,8 +700,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	};
 	protected SecuritiesDeliveryObligation securitiesDeliveryObligation;
 	/**
-	 * Obligation covered by the lending of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -756,7 +751,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesLending";
 				definition = "Lending of securities by one party to another. The terms of the loan are governed by an agreement that requires the borrower to provide the lender with collateral of value equal to or greater than the loaned securities. As payment for the loan, the parties negotiate a fee, quoted as an annualised percentage of the value of the loaned securities.";
@@ -782,103 +777,116 @@ public class SecuritiesLending extends SecuritiesFinancing {
 		return borrowingFee;
 	}
 
-	public void setBorrowingFee(CurrencyAndAmount borrowingFee) {
-		this.borrowingFee = borrowingFee;
+	public SecuritiesLending setBorrowingFee(CurrencyAndAmount borrowingFee) {
+		this.borrowingFee = Objects.requireNonNull(borrowingFee);
+		return this;
 	}
 
 	public YesNoIndicator getCallableTradeIndicator() {
 		return callableTradeIndicator;
 	}
 
-	public void setCallableTradeIndicator(YesNoIndicator callableTradeIndicator) {
-		this.callableTradeIndicator = callableTradeIndicator;
+	public SecuritiesLending setCallableTradeIndicator(YesNoIndicator callableTradeIndicator) {
+		this.callableTradeIndicator = Objects.requireNonNull(callableTradeIndicator);
+		return this;
 	}
 
 	public LendingTransactionMethodCode getLendingTransactionMethod() {
 		return lendingTransactionMethod;
 	}
 
-	public void setLendingTransactionMethod(LendingTransactionMethodCode lendingTransactionMethod) {
-		this.lendingTransactionMethod = lendingTransactionMethod;
+	public SecuritiesLending setLendingTransactionMethod(LendingTransactionMethodCode lendingTransactionMethod) {
+		this.lendingTransactionMethod = Objects.requireNonNull(lendingTransactionMethod);
+		return this;
 	}
 
 	public BorrowingReasonCode getBorrowingReason() {
 		return borrowingReason;
 	}
 
-	public void setBorrowingReason(BorrowingReasonCode borrowingReason) {
-		this.borrowingReason = borrowingReason;
+	public SecuritiesLending setBorrowingReason(BorrowingReasonCode borrowingReason) {
+		this.borrowingReason = Objects.requireNonNull(borrowingReason);
+		return this;
 	}
 
 	public ReversibleCode getReversible() {
 		return reversible;
 	}
 
-	public void setReversible(ReversibleCode reversible) {
-		this.reversible = reversible;
+	public SecuritiesLending setReversible(ReversibleCode reversible) {
+		this.reversible = Objects.requireNonNull(reversible);
+		return this;
 	}
 
 	public SecuritiesLendingTypeCode getSecuritiesLendingType() {
 		return securitiesLendingType;
 	}
 
-	public void setSecuritiesLendingType(SecuritiesLendingTypeCode securitiesLendingType) {
-		this.securitiesLendingType = securitiesLendingType;
+	public SecuritiesLending setSecuritiesLendingType(SecuritiesLendingTypeCode securitiesLendingType) {
+		this.securitiesLendingType = Objects.requireNonNull(securitiesLendingType);
+		return this;
 	}
 
 	public YesNoIndicator getLendingWithCollateral() {
 		return lendingWithCollateral;
 	}
 
-	public void setLendingWithCollateral(YesNoIndicator lendingWithCollateral) {
-		this.lendingWithCollateral = lendingWithCollateral;
+	public SecuritiesLending setLendingWithCollateral(YesNoIndicator lendingWithCollateral) {
+		this.lendingWithCollateral = Objects.requireNonNull(lendingWithCollateral);
+		return this;
 	}
 
 	public ISODate getMinimumDateForCallBack() {
 		return minimumDateForCallBack;
 	}
 
-	public void setMinimumDateForCallBack(ISODate minimumDateForCallBack) {
-		this.minimumDateForCallBack = minimumDateForCallBack;
+	public SecuritiesLending setMinimumDateForCallBack(ISODate minimumDateForCallBack) {
+		this.minimumDateForCallBack = Objects.requireNonNull(minimumDateForCallBack);
+		return this;
 	}
 
 	public Max4NumericText getNumberOfDaysLendingBorrowing() {
 		return numberOfDaysLendingBorrowing;
 	}
 
-	public void setNumberOfDaysLendingBorrowing(Max4NumericText numberOfDaysLendingBorrowing) {
-		this.numberOfDaysLendingBorrowing = numberOfDaysLendingBorrowing;
+	public SecuritiesLending setNumberOfDaysLendingBorrowing(Max4NumericText numberOfDaysLendingBorrowing) {
+		this.numberOfDaysLendingBorrowing = Objects.requireNonNull(numberOfDaysLendingBorrowing);
+		return this;
 	}
 
 	public YesNoIndicator getPeriodicPayment() {
 		return periodicPayment;
 	}
 
-	public void setPeriodicPayment(YesNoIndicator periodicPayment) {
-		this.periodicPayment = periodicPayment;
+	public SecuritiesLending setPeriodicPayment(YesNoIndicator periodicPayment) {
+		this.periodicPayment = Objects.requireNonNull(periodicPayment);
+		return this;
 	}
 
 	public YesNoIndicator getRollover() {
 		return rollover;
 	}
 
-	public void setRollover(YesNoIndicator rollover) {
-		this.rollover = rollover;
+	public SecuritiesLending setRollover(YesNoIndicator rollover) {
+		this.rollover = Objects.requireNonNull(rollover);
+		return this;
 	}
 
 	public PercentageRate getBorrowingRate() {
 		return borrowingRate;
 	}
 
-	public void setBorrowingRate(PercentageRate borrowingRate) {
-		this.borrowingRate = borrowingRate;
+	public SecuritiesLending setBorrowingRate(PercentageRate borrowingRate) {
+		this.borrowingRate = Objects.requireNonNull(borrowingRate);
+		return this;
 	}
 
 	public SecuritiesDeliveryObligation getSecuritiesDeliveryObligation() {
 		return securitiesDeliveryObligation;
 	}
 
-	public void setSecuritiesDeliveryObligation(com.tools20022.repository.entity.SecuritiesDeliveryObligation securitiesDeliveryObligation) {
-		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	public SecuritiesLending setSecuritiesDeliveryObligation(com.tools20022.repository.entity.SecuritiesDeliveryObligation securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = Objects.requireNonNull(securitiesDeliveryObligation);
+		return this;
 	}
 }

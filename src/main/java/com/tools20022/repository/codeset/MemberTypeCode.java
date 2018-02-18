@@ -39,22 +39,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.MemberTypeCode#Direct
- * MemberTypeCode.mmDirect}</li>
+ * MemberTypeCode.Direct}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemberTypeCode#Indirect
- * MemberTypeCode.mmIndirect}</li>
+ * MemberTypeCode.Indirect}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemberTypeCode#Remote
- * MemberTypeCode.mmRemote}</li>
+ * MemberTypeCode.Remote}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemberTypeCode#EURO1
- * MemberTypeCode.mmEURO1}</li>
+ * MemberTypeCode.EURO1}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemberTypeCode#STEP1
- * MemberTypeCode.mmSTEP1}</li>
+ * MemberTypeCode.STEP1}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -252,7 +252,7 @@ public class MemberTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DRCT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MemberTypeCode";

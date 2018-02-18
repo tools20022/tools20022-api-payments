@@ -26,6 +26,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,19 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MessageIdentification5", propOrder = {"messageIdentification", "creationDateTime", "firstAgent"})
 public class MessageIdentification5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId")
 	protected Max35Text messageIdentification;
 	/**
-	 * Point to point reference, as assigned by the assigner, and sent to the
-	 * next party in the chain to unambiguously identify the message.<br>
-	 * <br>
-	 * Usage: The assigner has to make sure that MessageIdentification is unique
-	 * per assignee for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,7 +117,7 @@ public class MessageIdentification5 {
 	 */
 	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MessageIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,10 +128,11 @@ public class MessageIdentification5 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm")
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +159,7 @@ public class MessageIdentification5 {
 	 */
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MessageIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,11 +170,11 @@ public class MessageIdentification5 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "FrstAgt")
 	protected BranchAndFinancialInstitutionIdentification5 firstAgent;
 	/**
-	 * Identifies the first agent in the identification chain, following the
-	 * payment initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,7 +204,7 @@ public class MessageIdentification5 {
 	 */
 	public static final MMMessageAttribute mmFirstAgent = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MessageIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "FrstAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,9 +219,10 @@ public class MessageIdentification5 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MessageIdentification5.mmMessageIdentification, MessageIdentification5.mmCreationDateTime, MessageIdentification5.mmFirstAgent);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MessageIdentification5.mmMessageIdentification, com.tools20022.repository.msg.MessageIdentification5.mmCreationDateTime,
+						com.tools20022.repository.msg.MessageIdentification5.mmFirstAgent);
 				messageBuildingBlock_lazy = () -> Arrays.asList(IdentificationVerificationReportV02.mmOriginalAssignment);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageIdentification5";
 				definition = "Identifies a message by a unique identifier and the date and time when the message was created by the sender.";
@@ -231,30 +231,30 @@ public class MessageIdentification5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId")
-	public Max35Text getMessageIdentification() {
-		return messageIdentification;
+	public Optional<Max35Text> getMessageIdentification() {
+		return messageIdentification == null ? Optional.empty() : Optional.of(messageIdentification);
 	}
 
-	public void setMessageIdentification(Max35Text messageIdentification) {
+	public MessageIdentification5 setMessageIdentification(Max35Text messageIdentification) {
 		this.messageIdentification = messageIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm")
-	public ISODateTime getCreationDateTime() {
-		return creationDateTime;
+	public Optional<ISODateTime> getCreationDateTime() {
+		return creationDateTime == null ? Optional.empty() : Optional.of(creationDateTime);
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
+	public MessageIdentification5 setCreationDateTime(ISODateTime creationDateTime) {
 		this.creationDateTime = creationDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "FrstAgt")
-	public BranchAndFinancialInstitutionIdentification5 getFirstAgent() {
-		return firstAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getFirstAgent() {
+		return firstAgent == null ? Optional.empty() : Optional.of(firstAgent);
 	}
 
-	public void setFirstAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 firstAgent) {
+	public MessageIdentification5 setFirstAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 firstAgent) {
 		this.firstAgent = firstAgent;
+		return this;
 	}
 }

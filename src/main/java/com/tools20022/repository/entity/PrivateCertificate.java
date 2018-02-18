@@ -27,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the parameters associated with the production of a certificate to
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +95,8 @@ public class PrivateCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CertificateTypeCode certificateType;
 	/**
-	 * Identifies the type of certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,8 +142,8 @@ public class PrivateCertificate extends Document {
 	};
 	protected YesNoIndicator certificationIndicator;
 	/**
-	 * Indicates whether the certificate type has been obtained and verified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,8 +190,8 @@ public class PrivateCertificate extends Document {
 	};
 	protected ISODate checkingDate;
 	/**
-	 * Date at which the certification check has been performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +237,8 @@ public class PrivateCertificate extends Document {
 	};
 	protected EventFrequencyCode checkingFrequency;
 	/**
-	 * Specifies how frequently the check is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,9 +284,8 @@ public class PrivateCertificate extends Document {
 	};
 	protected ISODate nextRevisionDate;
 	/**
-	 * Specifies the date at which the next certification check will be
-	 * performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,8 +332,8 @@ public class PrivateCertificate extends Document {
 	};
 	protected PersonProfile person;
 	/**
-	 * Profile of a person for which a private certificate is described.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,7 +383,7 @@ public class PrivateCertificate extends Document {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PrivateCertificate";
 				definition = "Specifies the parameters associated with the production of a certificate to identify the profile of a customer.";
@@ -405,47 +406,53 @@ public class PrivateCertificate extends Document {
 		return certificateType;
 	}
 
-	public void setCertificateType(CertificateTypeCode certificateType) {
-		this.certificateType = certificateType;
+	public PrivateCertificate setCertificateType(CertificateTypeCode certificateType) {
+		this.certificateType = Objects.requireNonNull(certificateType);
+		return this;
 	}
 
 	public YesNoIndicator getCertificationIndicator() {
 		return certificationIndicator;
 	}
 
-	public void setCertificationIndicator(YesNoIndicator certificationIndicator) {
-		this.certificationIndicator = certificationIndicator;
+	public PrivateCertificate setCertificationIndicator(YesNoIndicator certificationIndicator) {
+		this.certificationIndicator = Objects.requireNonNull(certificationIndicator);
+		return this;
 	}
 
 	public ISODate getCheckingDate() {
 		return checkingDate;
 	}
 
-	public void setCheckingDate(ISODate checkingDate) {
-		this.checkingDate = checkingDate;
+	public PrivateCertificate setCheckingDate(ISODate checkingDate) {
+		this.checkingDate = Objects.requireNonNull(checkingDate);
+		return this;
 	}
 
 	public EventFrequencyCode getCheckingFrequency() {
 		return checkingFrequency;
 	}
 
-	public void setCheckingFrequency(EventFrequencyCode checkingFrequency) {
-		this.checkingFrequency = checkingFrequency;
+	public PrivateCertificate setCheckingFrequency(EventFrequencyCode checkingFrequency) {
+		this.checkingFrequency = Objects.requireNonNull(checkingFrequency);
+		return this;
 	}
 
 	public ISODate getNextRevisionDate() {
 		return nextRevisionDate;
 	}
 
-	public void setNextRevisionDate(ISODate nextRevisionDate) {
-		this.nextRevisionDate = nextRevisionDate;
+	public PrivateCertificate setNextRevisionDate(ISODate nextRevisionDate) {
+		this.nextRevisionDate = Objects.requireNonNull(nextRevisionDate);
+		return this;
 	}
 
-	public PersonProfile getPerson() {
-		return person;
+	public Optional<PersonProfile> getPerson() {
+		return person == null ? Optional.empty() : Optional.of(person);
 	}
 
-	public void setPerson(com.tools20022.repository.entity.PersonProfile person) {
+	public PrivateCertificate setPerson(com.tools20022.repository.entity.PersonProfile person) {
 		this.person = person;
+		return this;
 	}
 }

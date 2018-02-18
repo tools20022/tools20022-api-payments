@@ -25,6 +25,8 @@ import com.tools20022.repository.msg.CaseForwardingNotification3;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Action that consists in forwarding an investigation case assignment to
@@ -71,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +92,8 @@ public class Reassignment extends InvestigationResolution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CaseForwardingNotificationCode justification;
 	/**
-	 * Justification for the forward action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,8 +147,8 @@ public class Reassignment extends InvestigationResolution {
 	};
 	protected InvestigationCase reassignedCase;
 	/**
-	 * Specifies the investigation case that is assigned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,7 +196,7 @@ public class Reassignment extends InvestigationResolution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reassignment";
 				definition = "Action that consists in forwarding an investigation case assignment to another party which becomes the new assignee.";
@@ -216,15 +218,17 @@ public class Reassignment extends InvestigationResolution {
 		return justification;
 	}
 
-	public void setJustification(CaseForwardingNotificationCode justification) {
-		this.justification = justification;
+	public Reassignment setJustification(CaseForwardingNotificationCode justification) {
+		this.justification = Objects.requireNonNull(justification);
+		return this;
 	}
 
-	public InvestigationCase getReassignedCase() {
-		return reassignedCase;
+	public Optional<InvestigationCase> getReassignedCase() {
+		return reassignedCase == null ? Optional.empty() : Optional.of(reassignedCase);
 	}
 
-	public void setReassignedCase(com.tools20022.repository.entity.InvestigationCase reassignedCase) {
+	public Reassignment setReassignedCase(com.tools20022.repository.entity.InvestigationCase reassignedCase) {
 		this.reassignedCase = reassignedCase;
+		return this;
 	}
 }

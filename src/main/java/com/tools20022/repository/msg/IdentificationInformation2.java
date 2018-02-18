@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the details of the identification information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationInformation2", propOrder = {"party", "account", "agent"})
 public class IdentificationInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Pty")
 	protected PartyIdentification43 party;
 	/**
-	 * Account owner that owes an amount of money or to whom an amount of money
-	 * is due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -112,7 +113,7 @@ public class IdentificationInformation2 {
 	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> IdentificationInformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +125,11 @@ public class IdentificationInformation2 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "Acct")
 	protected AccountIdentification4Choice account;
 	/**
-	 * Unambiguous identification of the account of a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,7 +162,7 @@ public class IdentificationInformation2 {
 	public static final MMMessageAssociationEnd mmAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> IdentificationInformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,10 +174,11 @@ public class IdentificationInformation2 {
 			type_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Agt")
 	protected BranchAndFinancialInstitutionIdentification5 agent;
 	/**
-	 * Financial institution servicing an account for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -208,7 +211,7 @@ public class IdentificationInformation2 {
 	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> IdentificationInformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "Agt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,9 +227,10 @@ public class IdentificationInformation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IdentificationInformation2.mmParty, IdentificationInformation2.mmAccount, IdentificationInformation2.mmAgent);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IdentificationInformation2.mmParty, com.tools20022.repository.msg.IdentificationInformation2.mmAccount,
+						com.tools20022.repository.msg.IdentificationInformation2.mmAgent);
 				trace_lazy = () -> Account.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationInformation2";
 				definition = "Provides the details of the identification information.";
@@ -235,30 +239,30 @@ public class IdentificationInformation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Pty")
-	public PartyIdentification43 getParty() {
-		return party;
+	public Optional<PartyIdentification43> getParty() {
+		return party == null ? Optional.empty() : Optional.of(party);
 	}
 
-	public void setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+	public IdentificationInformation2 setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
 		this.party = party;
+		return this;
 	}
 
-	@XmlElement(name = "Acct")
-	public AccountIdentification4Choice getAccount() {
-		return account;
+	public Optional<AccountIdentification4Choice> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(AccountIdentification4Choice account) {
+	public IdentificationInformation2 setAccount(AccountIdentification4Choice account) {
 		this.account = account;
+		return this;
 	}
 
-	@XmlElement(name = "Agt")
-	public BranchAndFinancialInstitutionIdentification5 getAgent() {
-		return agent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getAgent() {
+		return agent == null ? Optional.empty() : Optional.of(agent);
 	}
 
-	public void setAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 agent) {
+	public IdentificationInformation2 setAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 agent) {
 		this.agent = agent;
+		return this;
 	}
 }

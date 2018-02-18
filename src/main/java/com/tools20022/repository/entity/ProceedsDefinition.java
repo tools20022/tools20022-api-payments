@@ -28,6 +28,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Definition of exchanges of cash and/or securities available in the processing
@@ -98,8 +100,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -117,9 +119,8 @@ public class ProceedsDefinition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount specialConcessionAmount;
 	/**
-	 * Amount of drawdown or other reduction from or in addition to the deal
-	 * price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,8 +168,8 @@ public class ProceedsDefinition {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Specifies whether the value is a debit or credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,9 +215,8 @@ public class ProceedsDefinition {
 	};
 	protected ISODateTime earliestPaymentDate;
 	/**
-	 * Date on which a payment can be made, eg, if payment date is a
-	 * non-business day or to indicate the first payment date of an offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,10 +263,8 @@ public class ProceedsDefinition {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time at which assets become available to the account owner (in a
-	 * credit entry), or cease to be available to the account owner (in a debit
-	 * entry).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,10 +311,8 @@ public class ProceedsDefinition {
 	};
 	protected NonEligibleProceedsIndicatorCode nonEligibleProceedsIndicator;
 	/**
-	 * Specifies information regarding outturn resources that cannot be
-	 * processed by the CSD. Special delivery instruction is required from the
-	 * account owner for the CA outcome to be credited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -364,9 +360,8 @@ public class ProceedsDefinition {
 	};
 	protected Max35Text issuerOfferorTaxabilityIndicator;
 	/**
-	 * Proceeds are taxable according to the information provided by the issuer
-	 * / offeror.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,9 +408,8 @@ public class ProceedsDefinition {
 	};
 	protected ISODateTime offerPriceFixingDate;
 	/**
-	 * Date/time at which an offer price is determined (as compared to its reset
-	 * date if applicable).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,8 +456,8 @@ public class ProceedsDefinition {
 	};
 	protected CorporateActionOption option;
 	/**
-	 * Option for which proceeds are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,8 +505,8 @@ public class ProceedsDefinition {
 	};
 	protected CorporateActionEvent corporateAction;
 	/**
-	 * Corporate action for which the proceeds are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,8 +554,8 @@ public class ProceedsDefinition {
 	};
 	protected CountryCode countryOfIncomeSource;
 	/**
-	 * Indicates the country from which the income originates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -608,7 +602,7 @@ public class ProceedsDefinition {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProceedsDefinition";
 				definition = "Definition of exchanges of cash and/or securities available in the processing of corporate actions.";
@@ -633,79 +627,89 @@ public class ProceedsDefinition {
 		return specialConcessionAmount;
 	}
 
-	public void setSpecialConcessionAmount(CurrencyAndAmount specialConcessionAmount) {
-		this.specialConcessionAmount = specialConcessionAmount;
+	public ProceedsDefinition setSpecialConcessionAmount(CurrencyAndAmount specialConcessionAmount) {
+		this.specialConcessionAmount = Objects.requireNonNull(specialConcessionAmount);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public ProceedsDefinition setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public ISODateTime getEarliestPaymentDate() {
 		return earliestPaymentDate;
 	}
 
-	public void setEarliestPaymentDate(ISODateTime earliestPaymentDate) {
-		this.earliestPaymentDate = earliestPaymentDate;
+	public ProceedsDefinition setEarliestPaymentDate(ISODateTime earliestPaymentDate) {
+		this.earliestPaymentDate = Objects.requireNonNull(earliestPaymentDate);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public ProceedsDefinition setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public NonEligibleProceedsIndicatorCode getNonEligibleProceedsIndicator() {
 		return nonEligibleProceedsIndicator;
 	}
 
-	public void setNonEligibleProceedsIndicator(NonEligibleProceedsIndicatorCode nonEligibleProceedsIndicator) {
-		this.nonEligibleProceedsIndicator = nonEligibleProceedsIndicator;
+	public ProceedsDefinition setNonEligibleProceedsIndicator(NonEligibleProceedsIndicatorCode nonEligibleProceedsIndicator) {
+		this.nonEligibleProceedsIndicator = Objects.requireNonNull(nonEligibleProceedsIndicator);
+		return this;
 	}
 
 	public Max35Text getIssuerOfferorTaxabilityIndicator() {
 		return issuerOfferorTaxabilityIndicator;
 	}
 
-	public void setIssuerOfferorTaxabilityIndicator(Max35Text issuerOfferorTaxabilityIndicator) {
-		this.issuerOfferorTaxabilityIndicator = issuerOfferorTaxabilityIndicator;
+	public ProceedsDefinition setIssuerOfferorTaxabilityIndicator(Max35Text issuerOfferorTaxabilityIndicator) {
+		this.issuerOfferorTaxabilityIndicator = Objects.requireNonNull(issuerOfferorTaxabilityIndicator);
+		return this;
 	}
 
 	public ISODateTime getOfferPriceFixingDate() {
 		return offerPriceFixingDate;
 	}
 
-	public void setOfferPriceFixingDate(ISODateTime offerPriceFixingDate) {
-		this.offerPriceFixingDate = offerPriceFixingDate;
+	public ProceedsDefinition setOfferPriceFixingDate(ISODateTime offerPriceFixingDate) {
+		this.offerPriceFixingDate = Objects.requireNonNull(offerPriceFixingDate);
+		return this;
 	}
 
-	public CorporateActionOption getOption() {
-		return option;
+	public Optional<CorporateActionOption> getOption() {
+		return option == null ? Optional.empty() : Optional.of(option);
 	}
 
-	public void setOption(com.tools20022.repository.entity.CorporateActionOption option) {
+	public ProceedsDefinition setOption(com.tools20022.repository.entity.CorporateActionOption option) {
 		this.option = option;
+		return this;
 	}
 
 	public CorporateActionEvent getCorporateAction() {
 		return corporateAction;
 	}
 
-	public void setCorporateAction(com.tools20022.repository.entity.CorporateActionEvent corporateAction) {
-		this.corporateAction = corporateAction;
+	public ProceedsDefinition setCorporateAction(com.tools20022.repository.entity.CorporateActionEvent corporateAction) {
+		this.corporateAction = Objects.requireNonNull(corporateAction);
+		return this;
 	}
 
 	public CountryCode getCountryOfIncomeSource() {
 		return countryOfIncomeSource;
 	}
 
-	public void setCountryOfIncomeSource(CountryCode countryOfIncomeSource) {
-		this.countryOfIncomeSource = countryOfIncomeSource;
+	public ProceedsDefinition setCountryOfIncomeSource(CountryCode countryOfIncomeSource) {
+		this.countryOfIncomeSource = Objects.requireNonNull(countryOfIncomeSource);
+		return this;
 	}
 }

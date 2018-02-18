@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BenchmarkCurveNameCode;
 import com.tools20022.repository.datatype.BaseOneRate;
@@ -27,6 +28,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Contains the details of one of the legs of a swap, both in time (spot versus
@@ -90,8 +93,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,9 +112,8 @@ public class SecuritiesSwapLeg {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount amount;
 	/**
-	 * Contains the currency and amount of a buy or sell leg of a swap for the
-	 * spot or the forward.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,9 +161,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected BenchmarkCurveNameCode benchmark;
 	/**
-	 * Contains the benchmark used for a buy or sell leg of a swap for the spot
-	 * or the forward.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,8 +210,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected Max256Text curvePoint;
 	/**
-	 * Identifies a point on a benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -222,6 +223,9 @@ public class SecuritiesSwapLeg {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesSwapLeg
 	 * SecuritiesSwapLeg}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 222</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -237,6 +241,7 @@ public class SecuritiesSwapLeg {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "222"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurvePoint";
 			definition = "Identifies a point on a benchmark curve.";
@@ -255,9 +260,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected PercentageRate benchmarkYield;
 	/**
-	 * Contains the yield against a benchmark for a buy or sell leg of a swap
-	 * for the spot or the forward.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,9 +309,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected BaseOneRate benchmarkOffset;
 	/**
-	 * Contains the offset in basis points against a benchmark for a buy or sell
-	 * leg of a swap for the spot or the forward.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,8 +357,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected FinancialInstrumentSwap spotSellSwap;
 	/**
-	 * Swap for which a spot sell leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,8 +406,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected FinancialInstrumentSwap spotBuySwap;
 	/**
-	 * Swap for which a spot buy leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -452,8 +455,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected FinancialInstrumentSwap forwardBuyBackSwap;
 	/**
-	 * Swap for which a forward buy back leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -501,8 +504,8 @@ public class SecuritiesSwapLeg {
 	};
 	protected FinancialInstrumentSwap forwardSellBackSwap;
 	/**
-	 * Swap for which a forward sell back leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,7 +555,7 @@ public class SecuritiesSwapLeg {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesSwapLeg";
 				definition = "Contains the details of one of the legs of a swap, both in time (spot versus [partial] forward details) and the side (sell versus buy).";
@@ -576,71 +579,80 @@ public class SecuritiesSwapLeg {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public SecuritiesSwapLeg setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public BenchmarkCurveNameCode getBenchmark() {
 		return benchmark;
 	}
 
-	public void setBenchmark(BenchmarkCurveNameCode benchmark) {
-		this.benchmark = benchmark;
+	public SecuritiesSwapLeg setBenchmark(BenchmarkCurveNameCode benchmark) {
+		this.benchmark = Objects.requireNonNull(benchmark);
+		return this;
 	}
 
 	public Max256Text getCurvePoint() {
 		return curvePoint;
 	}
 
-	public void setCurvePoint(Max256Text curvePoint) {
-		this.curvePoint = curvePoint;
+	public SecuritiesSwapLeg setCurvePoint(Max256Text curvePoint) {
+		this.curvePoint = Objects.requireNonNull(curvePoint);
+		return this;
 	}
 
 	public PercentageRate getBenchmarkYield() {
 		return benchmarkYield;
 	}
 
-	public void setBenchmarkYield(PercentageRate benchmarkYield) {
-		this.benchmarkYield = benchmarkYield;
+	public SecuritiesSwapLeg setBenchmarkYield(PercentageRate benchmarkYield) {
+		this.benchmarkYield = Objects.requireNonNull(benchmarkYield);
+		return this;
 	}
 
 	public BaseOneRate getBenchmarkOffset() {
 		return benchmarkOffset;
 	}
 
-	public void setBenchmarkOffset(BaseOneRate benchmarkOffset) {
-		this.benchmarkOffset = benchmarkOffset;
+	public SecuritiesSwapLeg setBenchmarkOffset(BaseOneRate benchmarkOffset) {
+		this.benchmarkOffset = Objects.requireNonNull(benchmarkOffset);
+		return this;
 	}
 
-	public FinancialInstrumentSwap getSpotSellSwap() {
-		return spotSellSwap;
+	public Optional<FinancialInstrumentSwap> getSpotSellSwap() {
+		return spotSellSwap == null ? Optional.empty() : Optional.of(spotSellSwap);
 	}
 
-	public void setSpotSellSwap(com.tools20022.repository.entity.FinancialInstrumentSwap spotSellSwap) {
+	public SecuritiesSwapLeg setSpotSellSwap(com.tools20022.repository.entity.FinancialInstrumentSwap spotSellSwap) {
 		this.spotSellSwap = spotSellSwap;
+		return this;
 	}
 
-	public FinancialInstrumentSwap getSpotBuySwap() {
-		return spotBuySwap;
+	public Optional<FinancialInstrumentSwap> getSpotBuySwap() {
+		return spotBuySwap == null ? Optional.empty() : Optional.of(spotBuySwap);
 	}
 
-	public void setSpotBuySwap(com.tools20022.repository.entity.FinancialInstrumentSwap spotBuySwap) {
+	public SecuritiesSwapLeg setSpotBuySwap(com.tools20022.repository.entity.FinancialInstrumentSwap spotBuySwap) {
 		this.spotBuySwap = spotBuySwap;
+		return this;
 	}
 
-	public FinancialInstrumentSwap getForwardBuyBackSwap() {
-		return forwardBuyBackSwap;
+	public Optional<FinancialInstrumentSwap> getForwardBuyBackSwap() {
+		return forwardBuyBackSwap == null ? Optional.empty() : Optional.of(forwardBuyBackSwap);
 	}
 
-	public void setForwardBuyBackSwap(com.tools20022.repository.entity.FinancialInstrumentSwap forwardBuyBackSwap) {
+	public SecuritiesSwapLeg setForwardBuyBackSwap(com.tools20022.repository.entity.FinancialInstrumentSwap forwardBuyBackSwap) {
 		this.forwardBuyBackSwap = forwardBuyBackSwap;
+		return this;
 	}
 
-	public FinancialInstrumentSwap getForwardSellBackSwap() {
-		return forwardSellBackSwap;
+	public Optional<FinancialInstrumentSwap> getForwardSellBackSwap() {
+		return forwardSellBackSwap == null ? Optional.empty() : Optional.of(forwardSellBackSwap);
 	}
 
-	public void setForwardSellBackSwap(com.tools20022.repository.entity.FinancialInstrumentSwap forwardSellBackSwap) {
+	public SecuritiesSwapLeg setForwardSellBackSwap(com.tools20022.repository.entity.FinancialInstrumentSwap forwardSellBackSwap) {
 		this.forwardSellBackSwap = forwardSellBackSwap;
+		return this;
 	}
 }

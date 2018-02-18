@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.FinancialInstrumentQuantityChoice;
 import com.tools20022.repository.choice.TransactionQuantities2Choice;
@@ -29,9 +30,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.OriginalAndCurrentQuantities1;
 import com.tools20022.repository.msg.ProprietaryQuantity1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Quantity of a security.
@@ -575,8 +575,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -592,8 +592,8 @@ public class SecuritiesQuantity {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DecimalNumber unit;
 	/**
-	 * Quantity of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,6 +615,9 @@ public class SecuritiesQuantity {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity
 	 * SecuritiesQuantity}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: UNIT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -630,6 +633,7 @@ public class SecuritiesQuantity {
 			derivation_lazy = () -> Arrays.asList(FinancialInstrumentQuantityChoice.mmUnit);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "UNIT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Quantity of a security.";
@@ -648,8 +652,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesTransfer securitiesTransfer;
 	/**
-	 * Transfer of a specific quantity of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -696,8 +700,8 @@ public class SecuritiesQuantity {
 	};
 	protected Security securityIdentification;
 	/**
-	 * Identifies the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,8 +747,8 @@ public class SecuritiesQuantity {
 	};
 	protected InvestmentFundOrder order;
 	/**
-	 * Order for which a number of units is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -791,8 +795,8 @@ public class SecuritiesQuantity {
 	};
 	protected UKTaxGroupUnitCode group1Or2Units;
 	/**
-	 * Tax group to which the purchased units belong.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -838,8 +842,8 @@ public class SecuritiesQuantity {
 	};
 	protected InvestmentFundOrderExecution relatedOrderExecution;
 	/**
-	 * Order execution process for which a number of units is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -888,8 +892,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesSettlement securitiesSettlement;
 	/**
-	 * Settlement of a specific amount of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -937,8 +941,8 @@ public class SecuritiesQuantity {
 	};
 	protected Security minimumQuantityDebt;
 	/**
-	 * Security for which a minimum quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -984,10 +988,8 @@ public class SecuritiesQuantity {
 	};
 	protected List<com.tools20022.repository.entity.LotBreakdown> lotBreakdown;
 	/**
-	 * Number of securities purchased or sold in one transaction. In terms of
-	 * options, a lot represents the number of contracts contained in one
-	 * derivative security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1035,9 +1037,8 @@ public class SecuritiesQuantity {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesConversion> minimumExercisableQuantitySecuritiesConversion;
 	/**
-	 * Securities conversion process for which a minimum exercisable quantity is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1086,9 +1087,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesConversion minimumExercisableMultipleQuantitySecuritiesConversion;
 	/**
-	 * Securities conversion process for which a minimum exercisable multiple
-	 * quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1138,8 +1138,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesBalance aggregateQuantityBalance;
 	/**
-	 * Securities balance which contains the aggregate quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1187,8 +1187,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition securitiesProceedsDefinition;
 	/**
-	 * Securities proceeds for which an amount of securities is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1237,8 +1237,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition conditionalQuantitySecuritiesProceeds;
 	/**
-	 * Securities proceeds for which a conditional quantity has been defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1287,9 +1287,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition overAndAboveQuantitySecuritiesProceeds;
 	/**
-	 * Securities proceeds for which an over and above normal endured quantity
-	 * has been provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1340,8 +1339,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesEntry entry;
 	/**
-	 * Entry in a securities account of a specific quantity of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1389,8 +1388,8 @@ public class SecuritiesQuantity {
 	};
 	protected QuantityCode code;
 	/**
-	 * Quantity expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1435,9 +1434,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition expectedQuantitySecuritiesProceeds;
 	/**
-	 * Securities proceeds for which a quantity of securities to receive has
-	 * been specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1487,8 +1485,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition statusRelatedSecuritiesProceeds;
 	/**
-	 * Securities proceeds related to securities with a specific status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1537,9 +1535,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionDistribution corporateActionDistribution;
 	/**
-	 * Corporate action distribution process for which a quantity of securities
-	 * has been posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1589,9 +1586,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionEvent relatedEventForFractionalQuantity;
 	/**
-	 * Event for which the resulting fractional quantity will be paid with cash
-	 * in lieu.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1641,9 +1637,8 @@ public class SecuritiesQuantity {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesConversion> maximumExercisableQuantitySecuritiesConversion;
 	/**
-	 * Securities conversion process for which a maximum exercisable quantity is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1692,8 +1687,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition boardLotSecuritiesProceeds;
 	/**
-	 * Securities proceeds related to a board lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1741,8 +1736,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesProceedsDefinition newDenominationSecuritiesProceeds;
 	/**
-	 * Securities proceeds related to a quantity of redenominated securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1791,8 +1786,8 @@ public class SecuritiesQuantity {
 	};
 	protected BiddingConditions backEndOddLotBiddingConditions;
 	/**
-	 * BiddingConditions for which a back end odd lot is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1840,9 +1835,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionSecuritiesEntitlement securitiesEntitlement;
 	/**
-	 * Specifies the entitlement parameters relative to the securities
-	 * entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1892,8 +1886,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionEvent corporateActionEvent;
 	/**
-	 * Corporate action for which a quantity of securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1942,8 +1936,8 @@ public class SecuritiesQuantity {
 	};
 	protected BiddingConditions biddingConditions;
 	/**
-	 * Bidding conditions related to the base denomination quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1991,8 +1985,8 @@ public class SecuritiesQuantity {
 	};
 	protected Lottery lottery;
 	/**
-	 * Lottery for which an incremental denomination is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2039,8 +2033,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesBalance relatedSubBalance;
 	/**
-	 * Sub balance which contains a quantity of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2087,8 +2081,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesBalance availableQuantityBalance;
 	/**
-	 * Securities balance which contains the securities quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2136,8 +2130,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesTrade trade;
 	/**
-	 * Trade for which a quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2184,9 +2178,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesConversion ratioDenominatorSecuritiesConversion;
 	/**
-	 * Securities conversion process for which a conversion ratio denominator
-	 * quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2236,9 +2229,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesConversion ratioNumeratorSecuritiesConversion;
 	/**
-	 * Securities conversion process for which a conversion ratio denominator
-	 * quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2288,8 +2280,8 @@ public class SecuritiesQuantity {
 	};
 	protected TradingMarket minimumTradedQuantityMarket;
 	/**
-	 * Market for which a minimum traded quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2336,8 +2328,8 @@ public class SecuritiesQuantity {
 	};
 	protected Debt minimumDenominationDebt;
 	/**
-	 * Debt for which a minimum denomination is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2383,8 +2375,8 @@ public class SecuritiesQuantity {
 	};
 	protected Debt minimumIncrementDebt;
 	/**
-	 * Debt for which a minimum increment is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2430,8 +2422,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesOrder relatedOrder;
 	/**
-	 * Order for which a specific quantity is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2478,8 +2470,8 @@ public class SecuritiesQuantity {
 	};
 	protected Allocation allocation;
 	/**
-	 * Allocation process for which a quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2526,10 +2518,8 @@ public class SecuritiesQuantity {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Quantity expressed as an amount, eg, in the investment fund business, a
-	 * quantity of a financial instrument may be expressed as an amount of
-	 * money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2577,8 +2567,8 @@ public class SecuritiesQuantity {
 	};
 	protected UnderlyingRatio denominatorRatio;
 	/**
-	 * Ratio for which a denominator is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2625,8 +2615,8 @@ public class SecuritiesQuantity {
 	};
 	protected UnderlyingRatio numeratorRatio;
 	/**
-	 * Ratio for which a numerator is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2673,8 +2663,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesTradeExecution securitiesTradeExecution;
 	/**
-	 * Trade for which settlement takes place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2722,9 +2712,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionEvent relatedCorporateActionEvent;
 	/**
-	 * Corporate action for which the offeror/issuer has specified a quantity of
-	 * securities to purchase or redeem under the terms of the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2774,8 +2763,8 @@ public class SecuritiesQuantity {
 	};
 	protected CorporateActionElection corporateActionElection;
 	/**
-	 * Election process which selected a quantity of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2824,9 +2813,8 @@ public class SecuritiesQuantity {
 	};
 	protected TaxVoucher taxVoucher;
 	/**
-	 * Tax voucher for which the calculation of holdings at record date took
-	 * place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2875,9 +2863,8 @@ public class SecuritiesQuantity {
 	};
 	protected BuyIn relatedBuyIn;
 	/**
-	 * Buy-in process for which a compensation amount of securities is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2925,8 +2912,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesOrder previousDayOrder;
 	/**
-	 * Securities order which uses information on a day order quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2974,8 +2961,8 @@ public class SecuritiesQuantity {
 	};
 	protected List<com.tools20022.repository.entity.Liquidity> liquidity;
 	/**
-	 * Liquidity information related to a quantity of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3022,10 +3009,8 @@ public class SecuritiesQuantity {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Quantity expressed as a percentage rate, eg, in the investment fund
-	 * business, a quantity of a financial instrument may be expressed as
-	 * percentage of the investor's total holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3073,8 +3058,8 @@ public class SecuritiesQuantity {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesOrderParameters> minimumQuantityOrderParameters;
 	/**
-	 * Securities order for which a minimum quantity to execute is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3122,8 +3107,8 @@ public class SecuritiesQuantity {
 	};
 	protected Quote maximumQuantityRelatedQuote;
 	/**
-	 * Quote process for which a maximum quantity of securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3170,8 +3155,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesBalance unavailableQuantityBalance;
 	/**
-	 * Securities balance which contains the unavailable quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3219,9 +3204,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesOrderParameters matchIncrementOrderParameters;
 	/**
-	 * Securities order parameters for which a match increment quantity is
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3271,9 +3255,8 @@ public class SecuritiesQuantity {
 	};
 	protected Issuance relatedIssuance;
 	/**
-	 * Issuance for which a minimum subscription quantity of securities is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3321,8 +3304,8 @@ public class SecuritiesQuantity {
 	};
 	protected PairOff pairoff;
 	/**
-	 * Pair off process for which a quantity has been specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3369,8 +3352,8 @@ public class SecuritiesQuantity {
 	};
 	protected Issuance issuance;
 	/**
-	 * Issuance for which the nominal amount is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3416,9 +3399,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution intermediateToUnderlyingDenominatorDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which an intermediate to
-	 * underlying denominator quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3468,9 +3450,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution maximumHoldingDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a maximum holding
-	 * quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3520,9 +3501,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution maximumExercisableQuantityDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a maximum
-	 * exercisable quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3572,9 +3552,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution minimumExercisableQuantityDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a minimum
-	 * exercisable quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3624,9 +3603,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution distributedToUnderlyingDenominatorDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a distributed to
-	 * underlying denominator quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3676,9 +3654,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution intermediateToUnderlyingNumeratorDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which an intermediate to
-	 * underlying numerator quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3728,9 +3705,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution minimumHoldingDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a minimum holding
-	 * quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3780,9 +3756,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesAndCashDistribution distributedToUnderlyingNumeratorDistributionInformation;
 	/**
-	 * Cash and securities distribution information for which a distributed to
-	 * underlying numerator quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3832,8 +3807,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution maximumHoldingRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which a maximum holding quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3883,9 +3858,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which an intermediate to underlying numerator
-	 * quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3935,9 +3909,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which an intermediate to underlying
-	 * denominator quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3988,9 +3961,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution distributedToUnderlyingDenominatorRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which a distributed to underlying denominator
-	 * quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4041,9 +4013,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution distributedToUnderlyingNumeratorRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which a distributed to underlying numerator
-	 * quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4093,8 +4064,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesDistribution minimumHoldingRelatedSecuritiesDistribution;
 	/**
-	 * Securities distribution for which a minimum holding quantity is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4144,8 +4115,8 @@ public class SecuritiesQuantity {
 	};
 	protected TradingMarket maximumTradedQuantityMarket;
 	/**
-	 * Market for which a maximum traded quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4192,8 +4163,8 @@ public class SecuritiesQuantity {
 	};
 	protected Quote quantityRelatedQuote;
 	/**
-	 * Quote process for which a quantity of securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4240,8 +4211,8 @@ public class SecuritiesQuantity {
 	};
 	protected Quote minimumQuantityRelatedQuote;
 	/**
-	 * Quote process for which a minimum quantity of securities is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4288,8 +4259,8 @@ public class SecuritiesQuantity {
 	};
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Net asset value calculation parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4337,8 +4308,8 @@ public class SecuritiesQuantity {
 	};
 	protected SidePocket sidePocket;
 	/**
-	 * Side pocket for which a quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4385,9 +4356,8 @@ public class SecuritiesQuantity {
 	};
 	protected Netting netting;
 	/**
-	 * Netting process for which a net quantity of securities has been
-	 * calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4435,8 +4405,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesOrderStatus relatedOrderStatus;
 	/**
-	 * Order status for which a remaining quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4485,8 +4455,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesOrderStatus securitiesOrderStatus;
 	/**
-	 * Order status for which a cumulative quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4535,8 +4505,8 @@ public class SecuritiesQuantity {
 	};
 	protected SecuritiesSettlement relatedTurnaroundSettlement;
 	/**
-	 * Securities settlement process for which a turned quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4586,8 +4556,8 @@ public class SecuritiesQuantity {
 	};
 	protected FundsCashFlow relatedCashFlow;
 	/**
-	 * Cash flow for which quantities are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4634,8 +4604,8 @@ public class SecuritiesQuantity {
 	};
 	protected Position position;
 	/**
-	 * Position which contains the net quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4681,8 +4651,8 @@ public class SecuritiesQuantity {
 	};
 	protected BiddingConditions maximumQuantityBiddingConditions;
 	/**
-	 * Bidding conditions for which a maximum quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4730,8 +4700,8 @@ public class SecuritiesQuantity {
 	};
 	protected BiddingConditions frontEndOddLotBiddingConditions;
 	/**
-	 * Bidding conditions for which a front end odd lot is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4779,8 +4749,8 @@ public class SecuritiesQuantity {
 	};
 	protected BiddingConditions minimumQuantityBiddingConditions;
 	/**
-	 * Bidding conditions for which a minimum quantity is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -4830,7 +4800,7 @@ public class SecuritiesQuantity {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesQuantity";
 				definition = "Quantity of a security.";
@@ -4926,679 +4896,764 @@ public class SecuritiesQuantity {
 		return unit;
 	}
 
-	public void setUnit(DecimalNumber unit) {
-		this.unit = unit;
+	public SecuritiesQuantity setUnit(DecimalNumber unit) {
+		this.unit = Objects.requireNonNull(unit);
+		return this;
 	}
 
-	public SecuritiesTransfer getSecuritiesTransfer() {
-		return securitiesTransfer;
+	public Optional<SecuritiesTransfer> getSecuritiesTransfer() {
+		return securitiesTransfer == null ? Optional.empty() : Optional.of(securitiesTransfer);
 	}
 
-	public void setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
+	public SecuritiesQuantity setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
 		this.securitiesTransfer = securitiesTransfer;
+		return this;
 	}
 
 	public Security getSecurityIdentification() {
 		return securityIdentification;
 	}
 
-	public void setSecurityIdentification(com.tools20022.repository.entity.Security securityIdentification) {
-		this.securityIdentification = securityIdentification;
+	public SecuritiesQuantity setSecurityIdentification(com.tools20022.repository.entity.Security securityIdentification) {
+		this.securityIdentification = Objects.requireNonNull(securityIdentification);
+		return this;
 	}
 
 	public InvestmentFundOrder getOrder() {
 		return order;
 	}
 
-	public void setOrder(com.tools20022.repository.entity.InvestmentFundOrder order) {
-		this.order = order;
+	public SecuritiesQuantity setOrder(com.tools20022.repository.entity.InvestmentFundOrder order) {
+		this.order = Objects.requireNonNull(order);
+		return this;
 	}
 
 	public UKTaxGroupUnitCode getGroup1Or2Units() {
 		return group1Or2Units;
 	}
 
-	public void setGroup1Or2Units(UKTaxGroupUnitCode group1Or2Units) {
-		this.group1Or2Units = group1Or2Units;
+	public SecuritiesQuantity setGroup1Or2Units(UKTaxGroupUnitCode group1Or2Units) {
+		this.group1Or2Units = Objects.requireNonNull(group1Or2Units);
+		return this;
 	}
 
 	public InvestmentFundOrderExecution getRelatedOrderExecution() {
 		return relatedOrderExecution;
 	}
 
-	public void setRelatedOrderExecution(com.tools20022.repository.entity.InvestmentFundOrderExecution relatedOrderExecution) {
-		this.relatedOrderExecution = relatedOrderExecution;
+	public SecuritiesQuantity setRelatedOrderExecution(com.tools20022.repository.entity.InvestmentFundOrderExecution relatedOrderExecution) {
+		this.relatedOrderExecution = Objects.requireNonNull(relatedOrderExecution);
+		return this;
 	}
 
-	public SecuritiesSettlement getSecuritiesSettlement() {
-		return securitiesSettlement;
+	public Optional<SecuritiesSettlement> getSecuritiesSettlement() {
+		return securitiesSettlement == null ? Optional.empty() : Optional.of(securitiesSettlement);
 	}
 
-	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+	public SecuritiesQuantity setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
 		this.securitiesSettlement = securitiesSettlement;
+		return this;
 	}
 
 	public Security getMinimumQuantityDebt() {
 		return minimumQuantityDebt;
 	}
 
-	public void setMinimumQuantityDebt(com.tools20022.repository.entity.Security minimumQuantityDebt) {
-		this.minimumQuantityDebt = minimumQuantityDebt;
+	public SecuritiesQuantity setMinimumQuantityDebt(com.tools20022.repository.entity.Security minimumQuantityDebt) {
+		this.minimumQuantityDebt = Objects.requireNonNull(minimumQuantityDebt);
+		return this;
 	}
 
 	public List<LotBreakdown> getLotBreakdown() {
-		return lotBreakdown;
+		return lotBreakdown == null ? lotBreakdown = new ArrayList<>() : lotBreakdown;
 	}
 
-	public void setLotBreakdown(List<com.tools20022.repository.entity.LotBreakdown> lotBreakdown) {
-		this.lotBreakdown = lotBreakdown;
+	public SecuritiesQuantity setLotBreakdown(List<com.tools20022.repository.entity.LotBreakdown> lotBreakdown) {
+		this.lotBreakdown = Objects.requireNonNull(lotBreakdown);
+		return this;
 	}
 
 	public List<SecuritiesConversion> getMinimumExercisableQuantitySecuritiesConversion() {
-		return minimumExercisableQuantitySecuritiesConversion;
+		return minimumExercisableQuantitySecuritiesConversion == null ? minimumExercisableQuantitySecuritiesConversion = new ArrayList<>() : minimumExercisableQuantitySecuritiesConversion;
 	}
 
-	public void setMinimumExercisableQuantitySecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> minimumExercisableQuantitySecuritiesConversion) {
-		this.minimumExercisableQuantitySecuritiesConversion = minimumExercisableQuantitySecuritiesConversion;
+	public SecuritiesQuantity setMinimumExercisableQuantitySecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> minimumExercisableQuantitySecuritiesConversion) {
+		this.minimumExercisableQuantitySecuritiesConversion = Objects.requireNonNull(minimumExercisableQuantitySecuritiesConversion);
+		return this;
 	}
 
-	public SecuritiesConversion getMinimumExercisableMultipleQuantitySecuritiesConversion() {
-		return minimumExercisableMultipleQuantitySecuritiesConversion;
+	public Optional<SecuritiesConversion> getMinimumExercisableMultipleQuantitySecuritiesConversion() {
+		return minimumExercisableMultipleQuantitySecuritiesConversion == null ? Optional.empty() : Optional.of(minimumExercisableMultipleQuantitySecuritiesConversion);
 	}
 
-	public void setMinimumExercisableMultipleQuantitySecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion minimumExercisableMultipleQuantitySecuritiesConversion) {
+	public SecuritiesQuantity setMinimumExercisableMultipleQuantitySecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion minimumExercisableMultipleQuantitySecuritiesConversion) {
 		this.minimumExercisableMultipleQuantitySecuritiesConversion = minimumExercisableMultipleQuantitySecuritiesConversion;
+		return this;
 	}
 
-	public SecuritiesBalance getAggregateQuantityBalance() {
-		return aggregateQuantityBalance;
+	public Optional<SecuritiesBalance> getAggregateQuantityBalance() {
+		return aggregateQuantityBalance == null ? Optional.empty() : Optional.of(aggregateQuantityBalance);
 	}
 
-	public void setAggregateQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance aggregateQuantityBalance) {
+	public SecuritiesQuantity setAggregateQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance aggregateQuantityBalance) {
 		this.aggregateQuantityBalance = aggregateQuantityBalance;
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getSecuritiesProceedsDefinition() {
 		return securitiesProceedsDefinition;
 	}
 
-	public void setSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition securitiesProceedsDefinition) {
-		this.securitiesProceedsDefinition = securitiesProceedsDefinition;
+	public SecuritiesQuantity setSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition securitiesProceedsDefinition) {
+		this.securitiesProceedsDefinition = Objects.requireNonNull(securitiesProceedsDefinition);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getConditionalQuantitySecuritiesProceeds() {
 		return conditionalQuantitySecuritiesProceeds;
 	}
 
-	public void setConditionalQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition conditionalQuantitySecuritiesProceeds) {
-		this.conditionalQuantitySecuritiesProceeds = conditionalQuantitySecuritiesProceeds;
+	public SecuritiesQuantity setConditionalQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition conditionalQuantitySecuritiesProceeds) {
+		this.conditionalQuantitySecuritiesProceeds = Objects.requireNonNull(conditionalQuantitySecuritiesProceeds);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getOverAndAboveQuantitySecuritiesProceeds() {
 		return overAndAboveQuantitySecuritiesProceeds;
 	}
 
-	public void setOverAndAboveQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition overAndAboveQuantitySecuritiesProceeds) {
-		this.overAndAboveQuantitySecuritiesProceeds = overAndAboveQuantitySecuritiesProceeds;
+	public SecuritiesQuantity setOverAndAboveQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition overAndAboveQuantitySecuritiesProceeds) {
+		this.overAndAboveQuantitySecuritiesProceeds = Objects.requireNonNull(overAndAboveQuantitySecuritiesProceeds);
+		return this;
 	}
 
-	public SecuritiesEntry getEntry() {
-		return entry;
+	public Optional<SecuritiesEntry> getEntry() {
+		return entry == null ? Optional.empty() : Optional.of(entry);
 	}
 
-	public void setEntry(com.tools20022.repository.entity.SecuritiesEntry entry) {
+	public SecuritiesQuantity setEntry(com.tools20022.repository.entity.SecuritiesEntry entry) {
 		this.entry = entry;
+		return this;
 	}
 
 	public QuantityCode getCode() {
 		return code;
 	}
 
-	public void setCode(QuantityCode code) {
-		this.code = code;
+	public SecuritiesQuantity setCode(QuantityCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getExpectedQuantitySecuritiesProceeds() {
 		return expectedQuantitySecuritiesProceeds;
 	}
 
-	public void setExpectedQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition expectedQuantitySecuritiesProceeds) {
-		this.expectedQuantitySecuritiesProceeds = expectedQuantitySecuritiesProceeds;
+	public SecuritiesQuantity setExpectedQuantitySecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition expectedQuantitySecuritiesProceeds) {
+		this.expectedQuantitySecuritiesProceeds = Objects.requireNonNull(expectedQuantitySecuritiesProceeds);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getStatusRelatedSecuritiesProceeds() {
 		return statusRelatedSecuritiesProceeds;
 	}
 
-	public void setStatusRelatedSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition statusRelatedSecuritiesProceeds) {
-		this.statusRelatedSecuritiesProceeds = statusRelatedSecuritiesProceeds;
+	public SecuritiesQuantity setStatusRelatedSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition statusRelatedSecuritiesProceeds) {
+		this.statusRelatedSecuritiesProceeds = Objects.requireNonNull(statusRelatedSecuritiesProceeds);
+		return this;
 	}
 
 	public CorporateActionDistribution getCorporateActionDistribution() {
 		return corporateActionDistribution;
 	}
 
-	public void setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
-		this.corporateActionDistribution = corporateActionDistribution;
+	public SecuritiesQuantity setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
+		this.corporateActionDistribution = Objects.requireNonNull(corporateActionDistribution);
+		return this;
 	}
 
 	public CorporateActionEvent getRelatedEventForFractionalQuantity() {
 		return relatedEventForFractionalQuantity;
 	}
 
-	public void setRelatedEventForFractionalQuantity(com.tools20022.repository.entity.CorporateActionEvent relatedEventForFractionalQuantity) {
-		this.relatedEventForFractionalQuantity = relatedEventForFractionalQuantity;
+	public SecuritiesQuantity setRelatedEventForFractionalQuantity(com.tools20022.repository.entity.CorporateActionEvent relatedEventForFractionalQuantity) {
+		this.relatedEventForFractionalQuantity = Objects.requireNonNull(relatedEventForFractionalQuantity);
+		return this;
 	}
 
 	public List<SecuritiesConversion> getMaximumExercisableQuantitySecuritiesConversion() {
-		return maximumExercisableQuantitySecuritiesConversion;
+		return maximumExercisableQuantitySecuritiesConversion == null ? maximumExercisableQuantitySecuritiesConversion = new ArrayList<>() : maximumExercisableQuantitySecuritiesConversion;
 	}
 
-	public void setMaximumExercisableQuantitySecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> maximumExercisableQuantitySecuritiesConversion) {
-		this.maximumExercisableQuantitySecuritiesConversion = maximumExercisableQuantitySecuritiesConversion;
+	public SecuritiesQuantity setMaximumExercisableQuantitySecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> maximumExercisableQuantitySecuritiesConversion) {
+		this.maximumExercisableQuantitySecuritiesConversion = Objects.requireNonNull(maximumExercisableQuantitySecuritiesConversion);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getBoardLotSecuritiesProceeds() {
 		return boardLotSecuritiesProceeds;
 	}
 
-	public void setBoardLotSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition boardLotSecuritiesProceeds) {
-		this.boardLotSecuritiesProceeds = boardLotSecuritiesProceeds;
+	public SecuritiesQuantity setBoardLotSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition boardLotSecuritiesProceeds) {
+		this.boardLotSecuritiesProceeds = Objects.requireNonNull(boardLotSecuritiesProceeds);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getNewDenominationSecuritiesProceeds() {
 		return newDenominationSecuritiesProceeds;
 	}
 
-	public void setNewDenominationSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition newDenominationSecuritiesProceeds) {
-		this.newDenominationSecuritiesProceeds = newDenominationSecuritiesProceeds;
+	public SecuritiesQuantity setNewDenominationSecuritiesProceeds(com.tools20022.repository.entity.SecuritiesProceedsDefinition newDenominationSecuritiesProceeds) {
+		this.newDenominationSecuritiesProceeds = Objects.requireNonNull(newDenominationSecuritiesProceeds);
+		return this;
 	}
 
 	public BiddingConditions getBackEndOddLotBiddingConditions() {
 		return backEndOddLotBiddingConditions;
 	}
 
-	public void setBackEndOddLotBiddingConditions(com.tools20022.repository.entity.BiddingConditions backEndOddLotBiddingConditions) {
-		this.backEndOddLotBiddingConditions = backEndOddLotBiddingConditions;
+	public SecuritiesQuantity setBackEndOddLotBiddingConditions(com.tools20022.repository.entity.BiddingConditions backEndOddLotBiddingConditions) {
+		this.backEndOddLotBiddingConditions = Objects.requireNonNull(backEndOddLotBiddingConditions);
+		return this;
 	}
 
 	public CorporateActionSecuritiesEntitlement getSecuritiesEntitlement() {
 		return securitiesEntitlement;
 	}
 
-	public void setSecuritiesEntitlement(com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement securitiesEntitlement) {
-		this.securitiesEntitlement = securitiesEntitlement;
+	public SecuritiesQuantity setSecuritiesEntitlement(com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement securitiesEntitlement) {
+		this.securitiesEntitlement = Objects.requireNonNull(securitiesEntitlement);
+		return this;
 	}
 
 	public CorporateActionEvent getCorporateActionEvent() {
 		return corporateActionEvent;
 	}
 
-	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
-		this.corporateActionEvent = corporateActionEvent;
+	public SecuritiesQuantity setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+		this.corporateActionEvent = Objects.requireNonNull(corporateActionEvent);
+		return this;
 	}
 
 	public BiddingConditions getBiddingConditions() {
 		return biddingConditions;
 	}
 
-	public void setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
-		this.biddingConditions = biddingConditions;
+	public SecuritiesQuantity setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+		this.biddingConditions = Objects.requireNonNull(biddingConditions);
+		return this;
 	}
 
 	public Lottery getLottery() {
 		return lottery;
 	}
 
-	public void setLottery(com.tools20022.repository.entity.Lottery lottery) {
-		this.lottery = lottery;
+	public SecuritiesQuantity setLottery(com.tools20022.repository.entity.Lottery lottery) {
+		this.lottery = Objects.requireNonNull(lottery);
+		return this;
 	}
 
-	public SecuritiesBalance getRelatedSubBalance() {
-		return relatedSubBalance;
+	public Optional<SecuritiesBalance> getRelatedSubBalance() {
+		return relatedSubBalance == null ? Optional.empty() : Optional.of(relatedSubBalance);
 	}
 
-	public void setRelatedSubBalance(com.tools20022.repository.entity.SecuritiesBalance relatedSubBalance) {
+	public SecuritiesQuantity setRelatedSubBalance(com.tools20022.repository.entity.SecuritiesBalance relatedSubBalance) {
 		this.relatedSubBalance = relatedSubBalance;
+		return this;
 	}
 
-	public SecuritiesBalance getAvailableQuantityBalance() {
-		return availableQuantityBalance;
+	public Optional<SecuritiesBalance> getAvailableQuantityBalance() {
+		return availableQuantityBalance == null ? Optional.empty() : Optional.of(availableQuantityBalance);
 	}
 
-	public void setAvailableQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance availableQuantityBalance) {
+	public SecuritiesQuantity setAvailableQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance availableQuantityBalance) {
 		this.availableQuantityBalance = availableQuantityBalance;
+		return this;
 	}
 
-	public SecuritiesTrade getTrade() {
-		return trade;
+	public Optional<SecuritiesTrade> getTrade() {
+		return trade == null ? Optional.empty() : Optional.of(trade);
 	}
 
-	public void setTrade(com.tools20022.repository.entity.SecuritiesTrade trade) {
+	public SecuritiesQuantity setTrade(com.tools20022.repository.entity.SecuritiesTrade trade) {
 		this.trade = trade;
+		return this;
 	}
 
 	public SecuritiesConversion getRatioDenominatorSecuritiesConversion() {
 		return ratioDenominatorSecuritiesConversion;
 	}
 
-	public void setRatioDenominatorSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion ratioDenominatorSecuritiesConversion) {
-		this.ratioDenominatorSecuritiesConversion = ratioDenominatorSecuritiesConversion;
+	public SecuritiesQuantity setRatioDenominatorSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion ratioDenominatorSecuritiesConversion) {
+		this.ratioDenominatorSecuritiesConversion = Objects.requireNonNull(ratioDenominatorSecuritiesConversion);
+		return this;
 	}
 
 	public SecuritiesConversion getRatioNumeratorSecuritiesConversion() {
 		return ratioNumeratorSecuritiesConversion;
 	}
 
-	public void setRatioNumeratorSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion ratioNumeratorSecuritiesConversion) {
-		this.ratioNumeratorSecuritiesConversion = ratioNumeratorSecuritiesConversion;
+	public SecuritiesQuantity setRatioNumeratorSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion ratioNumeratorSecuritiesConversion) {
+		this.ratioNumeratorSecuritiesConversion = Objects.requireNonNull(ratioNumeratorSecuritiesConversion);
+		return this;
 	}
 
 	public TradingMarket getMinimumTradedQuantityMarket() {
 		return minimumTradedQuantityMarket;
 	}
 
-	public void setMinimumTradedQuantityMarket(com.tools20022.repository.entity.TradingMarket minimumTradedQuantityMarket) {
-		this.minimumTradedQuantityMarket = minimumTradedQuantityMarket;
+	public SecuritiesQuantity setMinimumTradedQuantityMarket(com.tools20022.repository.entity.TradingMarket minimumTradedQuantityMarket) {
+		this.minimumTradedQuantityMarket = Objects.requireNonNull(minimumTradedQuantityMarket);
+		return this;
 	}
 
 	public Debt getMinimumDenominationDebt() {
 		return minimumDenominationDebt;
 	}
 
-	public void setMinimumDenominationDebt(com.tools20022.repository.entity.Debt minimumDenominationDebt) {
-		this.minimumDenominationDebt = minimumDenominationDebt;
+	public SecuritiesQuantity setMinimumDenominationDebt(com.tools20022.repository.entity.Debt minimumDenominationDebt) {
+		this.minimumDenominationDebt = Objects.requireNonNull(minimumDenominationDebt);
+		return this;
 	}
 
 	public Debt getMinimumIncrementDebt() {
 		return minimumIncrementDebt;
 	}
 
-	public void setMinimumIncrementDebt(com.tools20022.repository.entity.Debt minimumIncrementDebt) {
-		this.minimumIncrementDebt = minimumIncrementDebt;
+	public SecuritiesQuantity setMinimumIncrementDebt(com.tools20022.repository.entity.Debt minimumIncrementDebt) {
+		this.minimumIncrementDebt = Objects.requireNonNull(minimumIncrementDebt);
+		return this;
 	}
 
-	public SecuritiesOrder getRelatedOrder() {
-		return relatedOrder;
+	public Optional<SecuritiesOrder> getRelatedOrder() {
+		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesQuantity setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
+		return this;
 	}
 
-	public Allocation getAllocation() {
-		return allocation;
+	public Optional<Allocation> getAllocation() {
+		return allocation == null ? Optional.empty() : Optional.of(allocation);
 	}
 
-	public void setAllocation(com.tools20022.repository.entity.Allocation allocation) {
+	public SecuritiesQuantity setAllocation(com.tools20022.repository.entity.Allocation allocation) {
 		this.allocation = allocation;
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public SecuritiesQuantity setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public UnderlyingRatio getDenominatorRatio() {
 		return denominatorRatio;
 	}
 
-	public void setDenominatorRatio(com.tools20022.repository.entity.UnderlyingRatio denominatorRatio) {
-		this.denominatorRatio = denominatorRatio;
+	public SecuritiesQuantity setDenominatorRatio(com.tools20022.repository.entity.UnderlyingRatio denominatorRatio) {
+		this.denominatorRatio = Objects.requireNonNull(denominatorRatio);
+		return this;
 	}
 
 	public UnderlyingRatio getNumeratorRatio() {
 		return numeratorRatio;
 	}
 
-	public void setNumeratorRatio(com.tools20022.repository.entity.UnderlyingRatio numeratorRatio) {
-		this.numeratorRatio = numeratorRatio;
+	public SecuritiesQuantity setNumeratorRatio(com.tools20022.repository.entity.UnderlyingRatio numeratorRatio) {
+		this.numeratorRatio = Objects.requireNonNull(numeratorRatio);
+		return this;
 	}
 
-	public SecuritiesTradeExecution getSecuritiesTradeExecution() {
-		return securitiesTradeExecution;
+	public Optional<SecuritiesTradeExecution> getSecuritiesTradeExecution() {
+		return securitiesTradeExecution == null ? Optional.empty() : Optional.of(securitiesTradeExecution);
 	}
 
-	public void setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
+	public SecuritiesQuantity setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
 		this.securitiesTradeExecution = securitiesTradeExecution;
+		return this;
 	}
 
 	public CorporateActionEvent getRelatedCorporateActionEvent() {
 		return relatedCorporateActionEvent;
 	}
 
-	public void setRelatedCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateActionEvent) {
-		this.relatedCorporateActionEvent = relatedCorporateActionEvent;
+	public SecuritiesQuantity setRelatedCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateActionEvent) {
+		this.relatedCorporateActionEvent = Objects.requireNonNull(relatedCorporateActionEvent);
+		return this;
 	}
 
 	public CorporateActionElection getCorporateActionElection() {
 		return corporateActionElection;
 	}
 
-	public void setCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection corporateActionElection) {
-		this.corporateActionElection = corporateActionElection;
+	public SecuritiesQuantity setCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection corporateActionElection) {
+		this.corporateActionElection = Objects.requireNonNull(corporateActionElection);
+		return this;
 	}
 
 	public TaxVoucher getTaxVoucher() {
 		return taxVoucher;
 	}
 
-	public void setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
-		this.taxVoucher = taxVoucher;
+	public SecuritiesQuantity setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
+		this.taxVoucher = Objects.requireNonNull(taxVoucher);
+		return this;
 	}
 
-	public BuyIn getRelatedBuyIn() {
-		return relatedBuyIn;
+	public Optional<BuyIn> getRelatedBuyIn() {
+		return relatedBuyIn == null ? Optional.empty() : Optional.of(relatedBuyIn);
 	}
 
-	public void setRelatedBuyIn(com.tools20022.repository.entity.BuyIn relatedBuyIn) {
+	public SecuritiesQuantity setRelatedBuyIn(com.tools20022.repository.entity.BuyIn relatedBuyIn) {
 		this.relatedBuyIn = relatedBuyIn;
+		return this;
 	}
 
-	public SecuritiesOrder getPreviousDayOrder() {
-		return previousDayOrder;
+	public Optional<SecuritiesOrder> getPreviousDayOrder() {
+		return previousDayOrder == null ? Optional.empty() : Optional.of(previousDayOrder);
 	}
 
-	public void setPreviousDayOrder(com.tools20022.repository.entity.SecuritiesOrder previousDayOrder) {
+	public SecuritiesQuantity setPreviousDayOrder(com.tools20022.repository.entity.SecuritiesOrder previousDayOrder) {
 		this.previousDayOrder = previousDayOrder;
+		return this;
 	}
 
 	public List<Liquidity> getLiquidity() {
-		return liquidity;
+		return liquidity == null ? liquidity = new ArrayList<>() : liquidity;
 	}
 
-	public void setLiquidity(List<com.tools20022.repository.entity.Liquidity> liquidity) {
-		this.liquidity = liquidity;
+	public SecuritiesQuantity setLiquidity(List<com.tools20022.repository.entity.Liquidity> liquidity) {
+		this.liquidity = Objects.requireNonNull(liquidity);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public SecuritiesQuantity setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public List<SecuritiesOrderParameters> getMinimumQuantityOrderParameters() {
-		return minimumQuantityOrderParameters;
+		return minimumQuantityOrderParameters == null ? minimumQuantityOrderParameters = new ArrayList<>() : minimumQuantityOrderParameters;
 	}
 
-	public void setMinimumQuantityOrderParameters(List<com.tools20022.repository.entity.SecuritiesOrderParameters> minimumQuantityOrderParameters) {
-		this.minimumQuantityOrderParameters = minimumQuantityOrderParameters;
+	public SecuritiesQuantity setMinimumQuantityOrderParameters(List<com.tools20022.repository.entity.SecuritiesOrderParameters> minimumQuantityOrderParameters) {
+		this.minimumQuantityOrderParameters = Objects.requireNonNull(minimumQuantityOrderParameters);
+		return this;
 	}
 
-	public Quote getMaximumQuantityRelatedQuote() {
-		return maximumQuantityRelatedQuote;
+	public Optional<Quote> getMaximumQuantityRelatedQuote() {
+		return maximumQuantityRelatedQuote == null ? Optional.empty() : Optional.of(maximumQuantityRelatedQuote);
 	}
 
-	public void setMaximumQuantityRelatedQuote(com.tools20022.repository.entity.Quote maximumQuantityRelatedQuote) {
+	public SecuritiesQuantity setMaximumQuantityRelatedQuote(com.tools20022.repository.entity.Quote maximumQuantityRelatedQuote) {
 		this.maximumQuantityRelatedQuote = maximumQuantityRelatedQuote;
+		return this;
 	}
 
-	public SecuritiesBalance getUnavailableQuantityBalance() {
-		return unavailableQuantityBalance;
+	public Optional<SecuritiesBalance> getUnavailableQuantityBalance() {
+		return unavailableQuantityBalance == null ? Optional.empty() : Optional.of(unavailableQuantityBalance);
 	}
 
-	public void setUnavailableQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance unavailableQuantityBalance) {
+	public SecuritiesQuantity setUnavailableQuantityBalance(com.tools20022.repository.entity.SecuritiesBalance unavailableQuantityBalance) {
 		this.unavailableQuantityBalance = unavailableQuantityBalance;
+		return this;
 	}
 
-	public SecuritiesOrderParameters getMatchIncrementOrderParameters() {
-		return matchIncrementOrderParameters;
+	public Optional<SecuritiesOrderParameters> getMatchIncrementOrderParameters() {
+		return matchIncrementOrderParameters == null ? Optional.empty() : Optional.of(matchIncrementOrderParameters);
 	}
 
-	public void setMatchIncrementOrderParameters(com.tools20022.repository.entity.SecuritiesOrderParameters matchIncrementOrderParameters) {
+	public SecuritiesQuantity setMatchIncrementOrderParameters(com.tools20022.repository.entity.SecuritiesOrderParameters matchIncrementOrderParameters) {
 		this.matchIncrementOrderParameters = matchIncrementOrderParameters;
+		return this;
 	}
 
 	public Issuance getRelatedIssuance() {
 		return relatedIssuance;
 	}
 
-	public void setRelatedIssuance(com.tools20022.repository.entity.Issuance relatedIssuance) {
-		this.relatedIssuance = relatedIssuance;
+	public SecuritiesQuantity setRelatedIssuance(com.tools20022.repository.entity.Issuance relatedIssuance) {
+		this.relatedIssuance = Objects.requireNonNull(relatedIssuance);
+		return this;
 	}
 
 	public PairOff getPairoff() {
 		return pairoff;
 	}
 
-	public void setPairoff(com.tools20022.repository.entity.PairOff pairoff) {
-		this.pairoff = pairoff;
+	public SecuritiesQuantity setPairoff(com.tools20022.repository.entity.PairOff pairoff) {
+		this.pairoff = Objects.requireNonNull(pairoff);
+		return this;
 	}
 
 	public Issuance getIssuance() {
 		return issuance;
 	}
 
-	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
-		this.issuance = issuance;
+	public SecuritiesQuantity setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getIntermediateToUnderlyingDenominatorDistributionInformation() {
 		return intermediateToUnderlyingDenominatorDistributionInformation;
 	}
 
-	public void setIntermediateToUnderlyingDenominatorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution intermediateToUnderlyingDenominatorDistributionInformation) {
-		this.intermediateToUnderlyingDenominatorDistributionInformation = intermediateToUnderlyingDenominatorDistributionInformation;
+	public SecuritiesQuantity setIntermediateToUnderlyingDenominatorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution intermediateToUnderlyingDenominatorDistributionInformation) {
+		this.intermediateToUnderlyingDenominatorDistributionInformation = Objects.requireNonNull(intermediateToUnderlyingDenominatorDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getMaximumHoldingDistributionInformation() {
 		return maximumHoldingDistributionInformation;
 	}
 
-	public void setMaximumHoldingDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution maximumHoldingDistributionInformation) {
-		this.maximumHoldingDistributionInformation = maximumHoldingDistributionInformation;
+	public SecuritiesQuantity setMaximumHoldingDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution maximumHoldingDistributionInformation) {
+		this.maximumHoldingDistributionInformation = Objects.requireNonNull(maximumHoldingDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getMaximumExercisableQuantityDistributionInformation() {
 		return maximumExercisableQuantityDistributionInformation;
 	}
 
-	public void setMaximumExercisableQuantityDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution maximumExercisableQuantityDistributionInformation) {
-		this.maximumExercisableQuantityDistributionInformation = maximumExercisableQuantityDistributionInformation;
+	public SecuritiesQuantity setMaximumExercisableQuantityDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution maximumExercisableQuantityDistributionInformation) {
+		this.maximumExercisableQuantityDistributionInformation = Objects.requireNonNull(maximumExercisableQuantityDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getMinimumExercisableQuantityDistributionInformation() {
 		return minimumExercisableQuantityDistributionInformation;
 	}
 
-	public void setMinimumExercisableQuantityDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution minimumExercisableQuantityDistributionInformation) {
-		this.minimumExercisableQuantityDistributionInformation = minimumExercisableQuantityDistributionInformation;
+	public SecuritiesQuantity setMinimumExercisableQuantityDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution minimumExercisableQuantityDistributionInformation) {
+		this.minimumExercisableQuantityDistributionInformation = Objects.requireNonNull(minimumExercisableQuantityDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getDistributedToUnderlyingDenominatorDistributionInformation() {
 		return distributedToUnderlyingDenominatorDistributionInformation;
 	}
 
-	public void setDistributedToUnderlyingDenominatorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution distributedToUnderlyingDenominatorDistributionInformation) {
-		this.distributedToUnderlyingDenominatorDistributionInformation = distributedToUnderlyingDenominatorDistributionInformation;
+	public SecuritiesQuantity setDistributedToUnderlyingDenominatorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution distributedToUnderlyingDenominatorDistributionInformation) {
+		this.distributedToUnderlyingDenominatorDistributionInformation = Objects.requireNonNull(distributedToUnderlyingDenominatorDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getIntermediateToUnderlyingNumeratorDistributionInformation() {
 		return intermediateToUnderlyingNumeratorDistributionInformation;
 	}
 
-	public void setIntermediateToUnderlyingNumeratorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution intermediateToUnderlyingNumeratorDistributionInformation) {
-		this.intermediateToUnderlyingNumeratorDistributionInformation = intermediateToUnderlyingNumeratorDistributionInformation;
+	public SecuritiesQuantity setIntermediateToUnderlyingNumeratorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution intermediateToUnderlyingNumeratorDistributionInformation) {
+		this.intermediateToUnderlyingNumeratorDistributionInformation = Objects.requireNonNull(intermediateToUnderlyingNumeratorDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getMinimumHoldingDistributionInformation() {
 		return minimumHoldingDistributionInformation;
 	}
 
-	public void setMinimumHoldingDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution minimumHoldingDistributionInformation) {
-		this.minimumHoldingDistributionInformation = minimumHoldingDistributionInformation;
+	public SecuritiesQuantity setMinimumHoldingDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution minimumHoldingDistributionInformation) {
+		this.minimumHoldingDistributionInformation = Objects.requireNonNull(minimumHoldingDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getDistributedToUnderlyingNumeratorDistributionInformation() {
 		return distributedToUnderlyingNumeratorDistributionInformation;
 	}
 
-	public void setDistributedToUnderlyingNumeratorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution distributedToUnderlyingNumeratorDistributionInformation) {
-		this.distributedToUnderlyingNumeratorDistributionInformation = distributedToUnderlyingNumeratorDistributionInformation;
+	public SecuritiesQuantity setDistributedToUnderlyingNumeratorDistributionInformation(com.tools20022.repository.entity.SecuritiesAndCashDistribution distributedToUnderlyingNumeratorDistributionInformation) {
+		this.distributedToUnderlyingNumeratorDistributionInformation = Objects.requireNonNull(distributedToUnderlyingNumeratorDistributionInformation);
+		return this;
 	}
 
 	public SecuritiesDistribution getMaximumHoldingRelatedSecuritiesDistribution() {
 		return maximumHoldingRelatedSecuritiesDistribution;
 	}
 
-	public void setMaximumHoldingRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution maximumHoldingRelatedSecuritiesDistribution) {
-		this.maximumHoldingRelatedSecuritiesDistribution = maximumHoldingRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setMaximumHoldingRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution maximumHoldingRelatedSecuritiesDistribution) {
+		this.maximumHoldingRelatedSecuritiesDistribution = Objects.requireNonNull(maximumHoldingRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public SecuritiesDistribution getIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution() {
 		return intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution;
 	}
 
-	public void setIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution) {
-		this.intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution = intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution) {
+		this.intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution = Objects.requireNonNull(intermediateToUnderlyingNumeratorRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public SecuritiesDistribution getIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution() {
 		return intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution;
 	}
 
-	public void setIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution) {
-		this.intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution = intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution) {
+		this.intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution = Objects.requireNonNull(intermediateToUnderlyingDenominatorRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public SecuritiesDistribution getDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution() {
 		return distributedToUnderlyingDenominatorRelatedSecuritiesDistribution;
 	}
 
-	public void setDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution distributedToUnderlyingDenominatorRelatedSecuritiesDistribution) {
-		this.distributedToUnderlyingDenominatorRelatedSecuritiesDistribution = distributedToUnderlyingDenominatorRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution distributedToUnderlyingDenominatorRelatedSecuritiesDistribution) {
+		this.distributedToUnderlyingDenominatorRelatedSecuritiesDistribution = Objects.requireNonNull(distributedToUnderlyingDenominatorRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public SecuritiesDistribution getDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution() {
 		return distributedToUnderlyingNumeratorRelatedSecuritiesDistribution;
 	}
 
-	public void setDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution distributedToUnderlyingNumeratorRelatedSecuritiesDistribution) {
-		this.distributedToUnderlyingNumeratorRelatedSecuritiesDistribution = distributedToUnderlyingNumeratorRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution distributedToUnderlyingNumeratorRelatedSecuritiesDistribution) {
+		this.distributedToUnderlyingNumeratorRelatedSecuritiesDistribution = Objects.requireNonNull(distributedToUnderlyingNumeratorRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public SecuritiesDistribution getMinimumHoldingRelatedSecuritiesDistribution() {
 		return minimumHoldingRelatedSecuritiesDistribution;
 	}
 
-	public void setMinimumHoldingRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution minimumHoldingRelatedSecuritiesDistribution) {
-		this.minimumHoldingRelatedSecuritiesDistribution = minimumHoldingRelatedSecuritiesDistribution;
+	public SecuritiesQuantity setMinimumHoldingRelatedSecuritiesDistribution(com.tools20022.repository.entity.SecuritiesDistribution minimumHoldingRelatedSecuritiesDistribution) {
+		this.minimumHoldingRelatedSecuritiesDistribution = Objects.requireNonNull(minimumHoldingRelatedSecuritiesDistribution);
+		return this;
 	}
 
 	public TradingMarket getMaximumTradedQuantityMarket() {
 		return maximumTradedQuantityMarket;
 	}
 
-	public void setMaximumTradedQuantityMarket(com.tools20022.repository.entity.TradingMarket maximumTradedQuantityMarket) {
-		this.maximumTradedQuantityMarket = maximumTradedQuantityMarket;
+	public SecuritiesQuantity setMaximumTradedQuantityMarket(com.tools20022.repository.entity.TradingMarket maximumTradedQuantityMarket) {
+		this.maximumTradedQuantityMarket = Objects.requireNonNull(maximumTradedQuantityMarket);
+		return this;
 	}
 
 	public Quote getQuantityRelatedQuote() {
 		return quantityRelatedQuote;
 	}
 
-	public void setQuantityRelatedQuote(com.tools20022.repository.entity.Quote quantityRelatedQuote) {
-		this.quantityRelatedQuote = quantityRelatedQuote;
+	public SecuritiesQuantity setQuantityRelatedQuote(com.tools20022.repository.entity.Quote quantityRelatedQuote) {
+		this.quantityRelatedQuote = Objects.requireNonNull(quantityRelatedQuote);
+		return this;
 	}
 
 	public Quote getMinimumQuantityRelatedQuote() {
 		return minimumQuantityRelatedQuote;
 	}
 
-	public void setMinimumQuantityRelatedQuote(com.tools20022.repository.entity.Quote minimumQuantityRelatedQuote) {
-		this.minimumQuantityRelatedQuote = minimumQuantityRelatedQuote;
+	public SecuritiesQuantity setMinimumQuantityRelatedQuote(com.tools20022.repository.entity.Quote minimumQuantityRelatedQuote) {
+		this.minimumQuantityRelatedQuote = Objects.requireNonNull(minimumQuantityRelatedQuote);
+		return this;
 	}
 
 	public NetAssetValueCalculation getNetAssetValueCalculation() {
 		return netAssetValueCalculation;
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
-		this.netAssetValueCalculation = netAssetValueCalculation;
+	public SecuritiesQuantity setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+		this.netAssetValueCalculation = Objects.requireNonNull(netAssetValueCalculation);
+		return this;
 	}
 
 	public SidePocket getSidePocket() {
 		return sidePocket;
 	}
 
-	public void setSidePocket(com.tools20022.repository.entity.SidePocket sidePocket) {
-		this.sidePocket = sidePocket;
+	public SecuritiesQuantity setSidePocket(com.tools20022.repository.entity.SidePocket sidePocket) {
+		this.sidePocket = Objects.requireNonNull(sidePocket);
+		return this;
 	}
 
 	public Netting getNetting() {
 		return netting;
 	}
 
-	public void setNetting(com.tools20022.repository.entity.Netting netting) {
-		this.netting = netting;
+	public SecuritiesQuantity setNetting(com.tools20022.repository.entity.Netting netting) {
+		this.netting = Objects.requireNonNull(netting);
+		return this;
 	}
 
 	public SecuritiesOrderStatus getRelatedOrderStatus() {
 		return relatedOrderStatus;
 	}
 
-	public void setRelatedOrderStatus(com.tools20022.repository.entity.SecuritiesOrderStatus relatedOrderStatus) {
-		this.relatedOrderStatus = relatedOrderStatus;
+	public SecuritiesQuantity setRelatedOrderStatus(com.tools20022.repository.entity.SecuritiesOrderStatus relatedOrderStatus) {
+		this.relatedOrderStatus = Objects.requireNonNull(relatedOrderStatus);
+		return this;
 	}
 
 	public SecuritiesOrderStatus getSecuritiesOrderStatus() {
 		return securitiesOrderStatus;
 	}
 
-	public void setSecuritiesOrderStatus(com.tools20022.repository.entity.SecuritiesOrderStatus securitiesOrderStatus) {
-		this.securitiesOrderStatus = securitiesOrderStatus;
+	public SecuritiesQuantity setSecuritiesOrderStatus(com.tools20022.repository.entity.SecuritiesOrderStatus securitiesOrderStatus) {
+		this.securitiesOrderStatus = Objects.requireNonNull(securitiesOrderStatus);
+		return this;
 	}
 
 	public SecuritiesSettlement getRelatedTurnaroundSettlement() {
 		return relatedTurnaroundSettlement;
 	}
 
-	public void setRelatedTurnaroundSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedTurnaroundSettlement) {
-		this.relatedTurnaroundSettlement = relatedTurnaroundSettlement;
+	public SecuritiesQuantity setRelatedTurnaroundSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedTurnaroundSettlement) {
+		this.relatedTurnaroundSettlement = Objects.requireNonNull(relatedTurnaroundSettlement);
+		return this;
 	}
 
 	public FundsCashFlow getRelatedCashFlow() {
 		return relatedCashFlow;
 	}
 
-	public void setRelatedCashFlow(com.tools20022.repository.entity.FundsCashFlow relatedCashFlow) {
-		this.relatedCashFlow = relatedCashFlow;
+	public SecuritiesQuantity setRelatedCashFlow(com.tools20022.repository.entity.FundsCashFlow relatedCashFlow) {
+		this.relatedCashFlow = Objects.requireNonNull(relatedCashFlow);
+		return this;
 	}
 
 	public Position getPosition() {
 		return position;
 	}
 
-	public void setPosition(com.tools20022.repository.entity.Position position) {
-		this.position = position;
+	public SecuritiesQuantity setPosition(com.tools20022.repository.entity.Position position) {
+		this.position = Objects.requireNonNull(position);
+		return this;
 	}
 
 	public BiddingConditions getMaximumQuantityBiddingConditions() {
 		return maximumQuantityBiddingConditions;
 	}
 
-	public void setMaximumQuantityBiddingConditions(com.tools20022.repository.entity.BiddingConditions maximumQuantityBiddingConditions) {
-		this.maximumQuantityBiddingConditions = maximumQuantityBiddingConditions;
+	public SecuritiesQuantity setMaximumQuantityBiddingConditions(com.tools20022.repository.entity.BiddingConditions maximumQuantityBiddingConditions) {
+		this.maximumQuantityBiddingConditions = Objects.requireNonNull(maximumQuantityBiddingConditions);
+		return this;
 	}
 
 	public BiddingConditions getFrontEndOddLotBiddingConditions() {
 		return frontEndOddLotBiddingConditions;
 	}
 
-	public void setFrontEndOddLotBiddingConditions(com.tools20022.repository.entity.BiddingConditions frontEndOddLotBiddingConditions) {
-		this.frontEndOddLotBiddingConditions = frontEndOddLotBiddingConditions;
+	public SecuritiesQuantity setFrontEndOddLotBiddingConditions(com.tools20022.repository.entity.BiddingConditions frontEndOddLotBiddingConditions) {
+		this.frontEndOddLotBiddingConditions = Objects.requireNonNull(frontEndOddLotBiddingConditions);
+		return this;
 	}
 
 	public BiddingConditions getMinimumQuantityBiddingConditions() {
 		return minimumQuantityBiddingConditions;
 	}
 
-	public void setMinimumQuantityBiddingConditions(com.tools20022.repository.entity.BiddingConditions minimumQuantityBiddingConditions) {
-		this.minimumQuantityBiddingConditions = minimumQuantityBiddingConditions;
+	public SecuritiesQuantity setMinimumQuantityBiddingConditions(com.tools20022.repository.entity.BiddingConditions minimumQuantityBiddingConditions) {
+		this.minimumQuantityBiddingConditions = Objects.requireNonNull(minimumQuantityBiddingConditions);
+		return this;
 	}
 }

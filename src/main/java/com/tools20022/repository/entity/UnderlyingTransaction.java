@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Reference information on a commercial obligation between the beneficiary and
@@ -83,8 +84,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +103,8 @@ public class UnderlyingTransaction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Undertaking undertaking;
 	/**
-	 * Undertaking issued to support a contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,8 +151,8 @@ public class UnderlyingTransaction {
 	};
 	protected ExternalUnderlyingTradeTransactionTypeCode type;
 	/**
-	 * Type of commercial obligation such as a tender, order, contract, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,8 +199,8 @@ public class UnderlyingTransaction {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification of the commercial obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,8 +245,8 @@ public class UnderlyingTransaction {
 	};
 	protected ISODate issueDate;
 	/**
-	 * Date the commercial obligation was issued or awarded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,8 +291,8 @@ public class UnderlyingTransaction {
 	};
 	protected ISODate tenderClosingDate;
 	/**
-	 * Date the tender closes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,8 +337,8 @@ public class UnderlyingTransaction {
 	};
 	protected CurrencyAndAmount totalAmount;
 	/**
-	 * Amount of the commercial obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -383,8 +384,8 @@ public class UnderlyingTransaction {
 	};
 	protected PercentageRate contractAmountPercentage;
 	/**
-	 * Percentage of the underlying contract covered by the undertaking.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -431,8 +432,8 @@ public class UnderlyingTransaction {
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Commercial trade for which an undertaking is issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -481,7 +482,7 @@ public class UnderlyingTransaction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTransaction";
 				definition = "Reference information on a commercial obligation between the beneficiary and applicant for which an undertaking is issued.";
@@ -504,63 +505,71 @@ public class UnderlyingTransaction {
 		return undertaking;
 	}
 
-	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
-		this.undertaking = undertaking;
+	public UnderlyingTransaction setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = Objects.requireNonNull(undertaking);
+		return this;
 	}
 
 	public ExternalUnderlyingTradeTransactionTypeCode getType() {
 		return type;
 	}
 
-	public void setType(ExternalUnderlyingTradeTransactionTypeCode type) {
-		this.type = type;
+	public UnderlyingTransaction setType(ExternalUnderlyingTradeTransactionTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public UnderlyingTransaction setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public ISODate getIssueDate() {
 		return issueDate;
 	}
 
-	public void setIssueDate(ISODate issueDate) {
-		this.issueDate = issueDate;
+	public UnderlyingTransaction setIssueDate(ISODate issueDate) {
+		this.issueDate = Objects.requireNonNull(issueDate);
+		return this;
 	}
 
 	public ISODate getTenderClosingDate() {
 		return tenderClosingDate;
 	}
 
-	public void setTenderClosingDate(ISODate tenderClosingDate) {
-		this.tenderClosingDate = tenderClosingDate;
+	public UnderlyingTransaction setTenderClosingDate(ISODate tenderClosingDate) {
+		this.tenderClosingDate = Objects.requireNonNull(tenderClosingDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalAmount() {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(CurrencyAndAmount totalAmount) {
-		this.totalAmount = totalAmount;
+	public UnderlyingTransaction setTotalAmount(CurrencyAndAmount totalAmount) {
+		this.totalAmount = Objects.requireNonNull(totalAmount);
+		return this;
 	}
 
 	public PercentageRate getContractAmountPercentage() {
 		return contractAmountPercentage;
 	}
 
-	public void setContractAmountPercentage(PercentageRate contractAmountPercentage) {
-		this.contractAmountPercentage = contractAmountPercentage;
+	public UnderlyingTransaction setContractAmountPercentage(PercentageRate contractAmountPercentage) {
+		this.contractAmountPercentage = Objects.requireNonNull(contractAmountPercentage);
+		return this;
 	}
 
 	public CommercialTrade getCommercialTrade() {
 		return commercialTrade;
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
-		this.commercialTrade = commercialTrade;
+	public UnderlyingTransaction setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+		this.commercialTrade = Objects.requireNonNull(commercialTrade);
+		return this;
 	}
 }

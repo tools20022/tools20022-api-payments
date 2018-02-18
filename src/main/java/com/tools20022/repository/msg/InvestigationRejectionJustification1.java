@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.PaymentInvestigationCaseRejection;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the reason for rejecting the case assignment."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestigationRejectionJustification1", propOrder = "rejectionReason")
 public class InvestigationRejectionJustification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RjctnRsn", required = true)
 	protected InvestigationRejection1Code rejectionReason;
 	/**
-	 * Reason for the rejection of a case assignment, in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +118,7 @@ public class InvestigationRejectionJustification1 {
 	public static final MMMessageAttribute mmRejectionReason = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmInvestigationRejection;
-			componentContext_lazy = () -> InvestigationRejectionJustification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestigationRejectionJustification1.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,10 +133,10 @@ public class InvestigationRejectionJustification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestigationRejectionJustification1.mmRejectionReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestigationRejectionJustification1.mmRejectionReason);
 				messageBuildingBlock_lazy = () -> Arrays.asList(RejectInvestigationV04.mmJustification);
 				trace_lazy = () -> PaymentInvestigationCaseRejection.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationRejectionJustification1";
 				definition = "Provides the reason for rejecting the case assignment.";
@@ -143,12 +145,12 @@ public class InvestigationRejectionJustification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RjctnRsn", required = true)
 	public InvestigationRejection1Code getRejectionReason() {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(InvestigationRejection1Code rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public InvestigationRejectionJustification1 setRejectionReason(InvestigationRejection1Code rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.codeset.EntryCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Posting to an account that results in an increase or decrease to a balance.
@@ -109,8 +109,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -128,8 +128,8 @@ public class Entry {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether an entry is a credit or a debit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,9 +192,8 @@ public class Entry {
 	};
 	protected ISODateTime entryDate;
 	/**
-	 * Date and time at which an entry is posted to an account on the account
-	 * servicer's books.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +250,8 @@ public class Entry {
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identifier for an entry, as assigned by the
-	 * account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,9 +315,8 @@ public class Entry {
 	};
 	protected Max35Text accountOwnerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * owner (or the instructing party managing the account).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,9 +371,8 @@ public class Entry {
 	};
 	protected Max35Text accountServicerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,8 +446,8 @@ public class Entry {
 	};
 	protected TrueFalseIndicator reversalIndicator;
 	/**
-	 * Indicates whether or not the entry is the result of a reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -506,9 +502,8 @@ public class Entry {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date and time assets become available to the account owner (in a credit
-	 * entry), or cease to be available to the account owner (in a debit entry).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,6 +525,9 @@ public class Entry {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Entry
 	 * Entry}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::VALU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -547,6 +545,7 @@ public class Entry {
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmDelayedDebitDate, ReportEntry8.mmValueDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::VALU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time assets become available to the account owner (in a credit entry), or cease to be available to the account owner (in a debit entry).";
@@ -565,8 +564,8 @@ public class Entry {
 	};
 	protected BankTransaction bankTransactionCode;
 	/**
-	 * Type of underlying transaction resulting in the entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -627,8 +626,8 @@ public class Entry {
 	};
 	protected YesNoIndicator commissionWaiverIndicator;
 	/**
-	 * Indicates whether the transaction is exempt from commission or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -683,9 +682,8 @@ public class Entry {
 	};
 	protected List<com.tools20022.repository.entity.Role> role;
 	/**
-	 * Specifies the role played by a party or a system in the context of an
-	 * entry in an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -730,9 +728,8 @@ public class Entry {
 	};
 	protected List<com.tools20022.repository.entity.Account> account;
 	/**
-	 * Posting of an item to an account, that results in an increase or a
-	 * decrease to the balance of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -777,9 +774,8 @@ public class Entry {
 	};
 	protected List<com.tools20022.repository.entity.Balance> balance;
 	/**
-	 * Amount that is the result of the sum of the entries from or to an
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -825,8 +821,8 @@ public class Entry {
 	};
 	protected EntryCode entryType;
 	/**
-	 * Specifies the type of an entry in a report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -872,7 +868,7 @@ public class Entry {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Entry";
 				definition = "Posting to an account that results in an increase or decrease to a balance.";
@@ -899,103 +895,116 @@ public class Entry {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Entry setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public ISODateTime getEntryDate() {
 		return entryDate;
 	}
 
-	public void setEntryDate(ISODateTime entryDate) {
-		this.entryDate = entryDate;
+	public Entry setEntryDate(ISODateTime entryDate) {
+		this.entryDate = Objects.requireNonNull(entryDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Entry setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getAccountOwnerTransactionIdentification() {
 		return accountOwnerTransactionIdentification;
 	}
 
-	public void setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
-		this.accountOwnerTransactionIdentification = accountOwnerTransactionIdentification;
+	public Entry setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
+		this.accountOwnerTransactionIdentification = Objects.requireNonNull(accountOwnerTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getAccountServicerTransactionIdentification() {
 		return accountServicerTransactionIdentification;
 	}
 
-	public void setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
-		this.accountServicerTransactionIdentification = accountServicerTransactionIdentification;
+	public Entry setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
+		this.accountServicerTransactionIdentification = Objects.requireNonNull(accountServicerTransactionIdentification);
+		return this;
 	}
 
 	public TrueFalseIndicator getReversalIndicator() {
 		return reversalIndicator;
 	}
 
-	public void setReversalIndicator(TrueFalseIndicator reversalIndicator) {
-		this.reversalIndicator = reversalIndicator;
+	public Entry setReversalIndicator(TrueFalseIndicator reversalIndicator) {
+		this.reversalIndicator = Objects.requireNonNull(reversalIndicator);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Entry setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
-	public BankTransaction getBankTransactionCode() {
-		return bankTransactionCode;
+	public Optional<BankTransaction> getBankTransactionCode() {
+		return bankTransactionCode == null ? Optional.empty() : Optional.of(bankTransactionCode);
 	}
 
-	public void setBankTransactionCode(com.tools20022.repository.entity.BankTransaction bankTransactionCode) {
+	public Entry setBankTransactionCode(com.tools20022.repository.entity.BankTransaction bankTransactionCode) {
 		this.bankTransactionCode = bankTransactionCode;
+		return this;
 	}
 
 	public YesNoIndicator getCommissionWaiverIndicator() {
 		return commissionWaiverIndicator;
 	}
 
-	public void setCommissionWaiverIndicator(YesNoIndicator commissionWaiverIndicator) {
-		this.commissionWaiverIndicator = commissionWaiverIndicator;
+	public Entry setCommissionWaiverIndicator(YesNoIndicator commissionWaiverIndicator) {
+		this.commissionWaiverIndicator = Objects.requireNonNull(commissionWaiverIndicator);
+		return this;
 	}
 
 	public List<Role> getRole() {
-		return role;
+		return role == null ? role = new ArrayList<>() : role;
 	}
 
-	public void setRole(List<com.tools20022.repository.entity.Role> role) {
-		this.role = role;
+	public Entry setRole(List<com.tools20022.repository.entity.Role> role) {
+		this.role = Objects.requireNonNull(role);
+		return this;
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public Entry setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public List<Balance> getBalance() {
-		return balance;
+		return balance == null ? balance = new ArrayList<>() : balance;
 	}
 
-	public void setBalance(List<com.tools20022.repository.entity.Balance> balance) {
-		this.balance = balance;
+	public Entry setBalance(List<com.tools20022.repository.entity.Balance> balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
 	public EntryCode getEntryType() {
 		return entryType;
 	}
 
-	public void setEntryType(EntryCode entryType) {
-		this.entryType = entryType;
+	public Entry setEntryType(EntryCode entryType) {
+		this.entryType = Objects.requireNonNull(entryType);
+		return this;
 	}
 }

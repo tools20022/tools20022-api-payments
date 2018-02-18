@@ -25,6 +25,7 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Specifies the different identifications associated with a payment
@@ -97,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,9 +117,8 @@ public class PaymentIdentification extends TradeIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text executionIdentification;
 	/**
-	 * Unique and unambiguous identifier for a payment execution, as assigned by
-	 * the clearing agent or the initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,10 +279,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Max35Text endToEndIdentification;
 	/**
-	 * Unique and unambiguous identifier for a payment as assigned by the
-	 * originator. The payment transaction reference is used for reconciliation
-	 * or to link tasks relating to the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -423,9 +421,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Max35Text instructionIdentification;
 	/**
-	 * Unique identification assigned by an instructing party for an instructed
-	 * party to unambiguously identify the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -554,10 +551,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unique identification assigned by the first instructing agent to
-	 * unambiguously identify the transaction and passed on, unchanged,
-	 * throughout the entire interbank chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -653,9 +648,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Max35Text clearingSystemReference;
 	/**
-	 * Unique and unambiguous identifier for a payment instruction, as assigned
-	 * by the clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,9 +737,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Max35Text creditorReference;
 	/**
-	 * Unique and unambiguous reference assigned by the creditor to refer to the
-	 * payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -804,8 +797,8 @@ public class PaymentIdentification extends TradeIdentification {
 	};
 	protected Payment payment;
 	/**
-	 * Payment for which identifications are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -853,7 +846,7 @@ public class PaymentIdentification extends TradeIdentification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentIdentification";
 				definition = "Specifies the different identifications associated with a payment transaction.";
@@ -879,55 +872,62 @@ public class PaymentIdentification extends TradeIdentification {
 		return executionIdentification;
 	}
 
-	public void setExecutionIdentification(Max35Text executionIdentification) {
-		this.executionIdentification = executionIdentification;
+	public PaymentIdentification setExecutionIdentification(Max35Text executionIdentification) {
+		this.executionIdentification = Objects.requireNonNull(executionIdentification);
+		return this;
 	}
 
 	public Max35Text getEndToEndIdentification() {
 		return endToEndIdentification;
 	}
 
-	public void setEndToEndIdentification(Max35Text endToEndIdentification) {
-		this.endToEndIdentification = endToEndIdentification;
+	public PaymentIdentification setEndToEndIdentification(Max35Text endToEndIdentification) {
+		this.endToEndIdentification = Objects.requireNonNull(endToEndIdentification);
+		return this;
 	}
 
 	public Max35Text getInstructionIdentification() {
 		return instructionIdentification;
 	}
 
-	public void setInstructionIdentification(Max35Text instructionIdentification) {
-		this.instructionIdentification = instructionIdentification;
+	public PaymentIdentification setInstructionIdentification(Max35Text instructionIdentification) {
+		this.instructionIdentification = Objects.requireNonNull(instructionIdentification);
+		return this;
 	}
 
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public PaymentIdentification setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
 	public Max35Text getClearingSystemReference() {
 		return clearingSystemReference;
 	}
 
-	public void setClearingSystemReference(Max35Text clearingSystemReference) {
-		this.clearingSystemReference = clearingSystemReference;
+	public PaymentIdentification setClearingSystemReference(Max35Text clearingSystemReference) {
+		this.clearingSystemReference = Objects.requireNonNull(clearingSystemReference);
+		return this;
 	}
 
 	public Max35Text getCreditorReference() {
 		return creditorReference;
 	}
 
-	public void setCreditorReference(Max35Text creditorReference) {
-		this.creditorReference = creditorReference;
+	public PaymentIdentification setCreditorReference(Max35Text creditorReference) {
+		this.creditorReference = Objects.requireNonNull(creditorReference);
+		return this;
 	}
 
 	public Payment getPayment() {
 		return payment;
 	}
 
-	public void setPayment(com.tools20022.repository.entity.Payment payment) {
-		this.payment = payment;
+	public PaymentIdentification setPayment(com.tools20022.repository.entity.Payment payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 }

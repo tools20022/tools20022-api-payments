@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,125 +40,125 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#NoMatch
- * UnmatchedStatusReasonCode.mmNoMatch}</li>
+ * UnmatchedStatusReasonCode.NoMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#SettlementDate
- * UnmatchedStatusReasonCode.mmSettlementDate}</li>
+ * UnmatchedStatusReasonCode.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#TransactionDirection
- * UnmatchedStatusReasonCode.mmTransactionDirection}</li>
+ * UnmatchedStatusReasonCode.TransactionDirection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#SettlementPlace
- * UnmatchedStatusReasonCode.mmSettlementPlace}</li>
+ * UnmatchedStatusReasonCode.SettlementPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#SettlementAmount
- * UnmatchedStatusReasonCode.mmSettlementAmount}</li>
+ * UnmatchedStatusReasonCode.SettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#DealPrice
- * UnmatchedStatusReasonCode.mmDealPrice}</li>
+ * UnmatchedStatusReasonCode.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#FinancialInstrumentQuantity
- * UnmatchedStatusReasonCode.mmFinancialInstrumentQuantity}</li>
+ * UnmatchedStatusReasonCode.FinancialInstrumentQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchaseCallDelay
- * UnmatchedStatusReasonCode.mmRepurchaseCallDelay}</li>
+ * UnmatchedStatusReasonCode.RepurchaseCallDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#SettlementTransaction
- * UnmatchedStatusReasonCode.mmSettlementTransaction}</li>
+ * UnmatchedStatusReasonCode.SettlementTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#FinancialInstrument
- * UnmatchedStatusReasonCode.mmFinancialInstrument}</li>
+ * UnmatchedStatusReasonCode.FinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#VariableRateSupport
- * UnmatchedStatusReasonCode.mmVariableRateSupport}</li>
+ * UnmatchedStatusReasonCode.VariableRateSupport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#NotRecognised
- * UnmatchedStatusReasonCode.mmNotRecognised}</li>
+ * UnmatchedStatusReasonCode.NotRecognised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchaseSpreadRate
- * UnmatchedStatusReasonCode.mmRepurchaseSpreadRate}</li>
+ * UnmatchedStatusReasonCode.RepurchaseSpreadRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchaseRate
- * UnmatchedStatusReasonCode.mmRepurchaseRate}</li>
+ * UnmatchedStatusReasonCode.RepurchaseRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#CounterpartyTooLateForMatching
- * UnmatchedStatusReasonCode.mmCounterpartyTooLateForMatching}</li>
+ * UnmatchedStatusReasonCode.CounterpartyTooLateForMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchaseRateType
- * UnmatchedStatusReasonCode.mmRepurchaseRateType}</li>
+ * UnmatchedStatusReasonCode.RepurchaseRateType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchaseAmount
- * UnmatchedStatusReasonCode.mmRepurchaseAmount}</li>
+ * UnmatchedStatusReasonCode.RepurchaseAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RepurchasePremiumAmount
- * UnmatchedStatusReasonCode.mmRepurchasePremiumAmount}</li>
+ * UnmatchedStatusReasonCode.RepurchasePremiumAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#PhysicalSettlement
- * UnmatchedStatusReasonCode.mmPhysicalSettlement}</li>
+ * UnmatchedStatusReasonCode.PhysicalSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#CommonReference
- * UnmatchedStatusReasonCode.mmCommonReference}</li>
+ * UnmatchedStatusReasonCode.CommonReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#PaymentCode
- * UnmatchedStatusReasonCode.mmPaymentCode}</li>
+ * UnmatchedStatusReasonCode.PaymentCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#PlaceOfTrade
- * UnmatchedStatusReasonCode.mmPlaceOfTrade}</li>
+ * UnmatchedStatusReasonCode.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#Duplicate
- * UnmatchedStatusReasonCode.mmDuplicate}</li>
+ * UnmatchedStatusReasonCode.Duplicate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#ForfeitRepurchaseAmount
- * UnmatchedStatusReasonCode.mmForfeitRepurchaseAmount}</li>
+ * UnmatchedStatusReasonCode.ForfeitRepurchaseAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RegistrationDetails
- * UnmatchedStatusReasonCode.mmRegistrationDetails}</li>
+ * UnmatchedStatusReasonCode.RegistrationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#RTGSSystem
- * UnmatchedStatusReasonCode.mmRTGSSystem}</li>
+ * UnmatchedStatusReasonCode.RTGSSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#IncorrectAgent
- * UnmatchedStatusReasonCode.mmIncorrectAgent}</li>
+ * UnmatchedStatusReasonCode.IncorrectAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#CounterpartyCancelled
- * UnmatchedStatusReasonCode.mmCounterpartyCancelled}</li>
+ * UnmatchedStatusReasonCode.CounterpartyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#ChargesAmount
- * UnmatchedStatusReasonCode.mmChargesAmount}</li>
+ * UnmatchedStatusReasonCode.ChargesAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#BuyerOrSeller
- * UnmatchedStatusReasonCode.mmBuyerOrSeller}</li>
+ * UnmatchedStatusReasonCode.BuyerOrSeller}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#CurrencySettlementAmount
- * UnmatchedStatusReasonCode.mmCurrencySettlementAmount}</li>
+ * UnmatchedStatusReasonCode.CurrencySettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#NoMatchingStarted
- * UnmatchedStatusReasonCode.mmNoMatchingStarted}</li>
+ * UnmatchedStatusReasonCode.NoMatchingStarted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#SafekeepingAccount
- * UnmatchedStatusReasonCode.mmSafekeepingAccount}</li>
+ * UnmatchedStatusReasonCode.SafekeepingAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#TradeDate
- * UnmatchedStatusReasonCode.mmTradeDate}</li>
+ * UnmatchedStatusReasonCode.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#TooLateForMatching
- * UnmatchedStatusReasonCode.mmTooLateForMatching}</li>
+ * UnmatchedStatusReasonCode.TooLateForMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#ClosingDateTime
- * UnmatchedStatusReasonCode.mmClosingDateTime}</li>
+ * UnmatchedStatusReasonCode.ClosingDateTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#ReceivingOrDeliveringCustodian
- * UnmatchedStatusReasonCode.mmReceivingOrDeliveringCustodian}</li>
+ * UnmatchedStatusReasonCode.ReceivingOrDeliveringCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode#Other
- * UnmatchedStatusReasonCode.mmOther}</li>
+ * UnmatchedStatusReasonCode.Other}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -191,6 +192,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CMIS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//CMIS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -203,6 +207,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode NoMatch = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//CMIS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoMatch";
 			definition = "No potential match has been found.";
@@ -221,6 +226,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DDAT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DDAT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -233,6 +241,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode SettlementDate = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DDAT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDate";
 			definition = "Settlement date or transfer date does not match.";
@@ -252,6 +261,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DELN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DELN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -266,6 +278,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode TransactionDirection = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DELN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionDirection";
 			definition = "Direction of transaction does not match: delivery instead of receipt or vice versa.";
@@ -284,6 +297,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DEPT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DEPT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -296,6 +312,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode SettlementPlace = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DEPT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementPlace";
 			definition = "Place of settlement does not match.";
@@ -314,6 +331,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DMON"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DMON</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -326,6 +346,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode SettlementAmount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DMON"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAmount";
 			definition = "Settlement amount does not match.";
@@ -344,6 +365,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DDEA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DDEA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -356,6 +380,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode DealPrice = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DDEA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealPrice";
 			definition = "Deal price does not match.";
@@ -374,6 +399,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DQUA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DQUA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -386,6 +414,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode FinancialInstrumentQuantity = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DQUA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrumentQuantity";
 			definition = "Financial instrument quantity does not match.";
@@ -404,6 +433,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CADE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//CADE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -416,6 +448,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RepurchaseCallDelay = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//CADE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseCallDelay";
 			definition = "Repurchase call delay does not match.";
@@ -434,6 +467,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SETR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//SETR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -446,6 +482,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode SettlementTransaction = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//SETR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementTransaction";
 			definition = "Settlement transaction type does not match.";
@@ -465,6 +502,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DSEC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DSEC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -479,6 +519,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode FinancialInstrument = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DSEC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrument";
 			definition = "Financial instrument identification does not match or a financial instrument attribute differs.";
@@ -497,6 +538,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "VASU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//VASU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -509,6 +553,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode VariableRateSupport = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//VASU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateSupport";
 			definition = "Variable rate support does not match.";
@@ -527,6 +572,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DTRA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DTRA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -539,6 +587,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode NotRecognised = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DTRA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotRecognised";
 			definition = "Counterparty does not recognise the transaction.";
@@ -557,6 +606,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RSPR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//RSPR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -569,6 +621,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RepurchaseSpreadRate = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//RSPR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseSpreadRate";
 			definition = "Repurchase spread rate does not match.";
@@ -587,6 +640,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REPO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//REPO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -599,6 +655,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RepurchaseRate = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//REPO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRate";
 			definition = "Repurchase rate does not match.";
@@ -617,6 +674,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CLAT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//CLAT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -629,6 +689,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode CounterpartyTooLateForMatching = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//CLAT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyTooLateForMatching";
 			definition = "Counterparty's instruction was too late for matching.";
@@ -647,6 +708,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RERT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//RERT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -659,6 +723,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RepurchaseRateType = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//RERT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRateType";
 			definition = "Repurchase rate type does not match.";
@@ -677,6 +742,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REPA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//REPA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -689,6 +757,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RepurchaseAmount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//REPA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseAmount";
 			definition = "Repurchase amount does not match.";
@@ -738,6 +807,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PHYS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//PHYS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -752,6 +824,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode PhysicalSettlement = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//PHYS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalSettlement";
 			definition = "Settlement does not match: counterparty's instruction is for physical settlement, your instruction is not, or vice versa.";
@@ -770,6 +843,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "IIND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//IIND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -782,6 +858,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode CommonReference = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//IIND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommonReference";
 			definition = "Common reference does not match.";
@@ -801,6 +878,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FRAP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//FRAP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -815,6 +895,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode PaymentCode = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//FRAP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentCode";
 			definition = "Payment code does not match. The counterparty's instruction is for free settlement, and yours is for settlement against payment, or vice versa.";
@@ -833,6 +914,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PLCE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//PLCE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -845,6 +929,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode PlaceOfTrade = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//PLCE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfTrade";
 			definition = "Place of trade does not match.";
@@ -863,6 +948,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PODU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//PODU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -877,6 +965,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode Duplicate = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//PODU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Duplicate";
 			definition = "Instruction has not been matched: it is a possible duplicate instruction.";
@@ -895,6 +984,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FORF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//FORF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -907,6 +999,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode ForfeitRepurchaseAmount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//FORF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForfeitRepurchaseAmount";
 			definition = "Repurchase forfeit amount does not match.";
@@ -926,6 +1019,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REGD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//REGD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -940,6 +1036,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RegistrationDetails = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//REGD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDetails";
 			definition = "Registration details do not match. A discrepancy exists in the registration details linked to the transaction.";
@@ -959,6 +1056,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RTGS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//RTGS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -973,6 +1073,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode RTGSSystem = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//RTGS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RTGSSystem";
 			definition = "RTGS system does not match. Counterparty indicates a settlement via RTGS system and you indicate non-RTGS settlement, or vice versa.";
@@ -991,6 +1092,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ICAG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//ICAG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1003,6 +1107,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode IncorrectAgent = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//ICAG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncorrectAgent";
 			definition = "Delivery or receiving agent does not match.";
@@ -1021,6 +1126,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CPCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//CPCA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1033,6 +1141,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode CounterpartyCancelled = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//CPCA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyCancelled";
 			definition = "Counterparty has cancelled the transaction/instruction.";
@@ -1051,6 +1160,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CHAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//CHAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1063,6 +1175,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode ChargesAmount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//CHAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChargesAmount";
 			definition = "Charges amount does not match.";
@@ -1081,6 +1194,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "IEXE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//IEXE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1093,6 +1209,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode BuyerOrSeller = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//IEXE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyerOrSeller";
 			definition = "Buyer (receiver) or seller (deliverer) does not match.";
@@ -1111,6 +1228,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NCRR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//NCRR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1123,6 +1243,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode CurrencySettlementAmount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//NCRR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencySettlementAmount";
 			definition = "Currency of settlement amount does not match.";
@@ -1141,6 +1262,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NMAS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//NMAS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1153,6 +1277,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode NoMatchingStarted = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//NMAS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoMatchingStarted";
 			definition = "Matching process has not yet started.";
@@ -1172,6 +1297,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SAFE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//SAFE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1186,6 +1314,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode SafekeepingAccount = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//SAFE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingAccount";
 			definition = "Safekeeping account used as a matching criteria on the market concerned does not match.";
@@ -1204,6 +1333,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DTRD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//DTRD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1216,6 +1348,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode TradeDate = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//DTRD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeDate";
 			definition = "Trade date does not match.";
@@ -1234,6 +1367,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LATE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//LATE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1246,6 +1382,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode TooLateForMatching = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//LATE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TooLateForMatching";
 			definition = "Instruction received too late for matching.";
@@ -1264,6 +1401,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TERM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//TERM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1276,6 +1416,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode ClosingDateTime = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//TERM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingDateTime";
 			definition = "Closing date/time does not match.";
@@ -1294,6 +1435,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ICUS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//ICUS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1306,6 +1450,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode ReceivingOrDeliveringCustodian = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//ICUS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingOrDeliveringCustodian";
 			definition = "Delivering or receiving custodian does not match.";
@@ -1324,6 +1469,9 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OTHR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::NMAT//NARR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1336,6 +1484,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	 */
 	public static final UnmatchedStatusReasonCode Other = new UnmatchedStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::NMAT//NARR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another unmatched reason.";
@@ -1351,7 +1500,7 @@ public class UnmatchedStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CMIS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnmatchedStatusReasonCode";

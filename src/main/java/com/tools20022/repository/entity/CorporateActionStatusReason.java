@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the underlying reason for a status of a corporate action.
@@ -73,8 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,8 +93,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionCancellationReasonCode corporateActionCancellationReason;
 	/**
-	 * Specifies reasons for cancellation of a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,8 +141,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	};
 	protected CorporateActionStatus corporateActionStatus;
 	/**
-	 * Corporate actions status for which a reason is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,8 +190,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	};
 	protected AcknowledgementReasonCode acceptedReason;
 	/**
-	 * Specifies additional information about the processed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,8 +238,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	};
 	protected CorporateActionReversalReasonCode reversalReason;
 	/**
-	 * Reason for the reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +285,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	};
 	protected FailedSettlementReasonCode movementFailureReason;
 	/**
-	 * The reason for the failure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,8 +332,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	};
 	protected RejectionReasonCode movementRejectionReason;
 	/**
-	 * Provides information about the rejection status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,7 +381,7 @@ public class CorporateActionStatusReason extends StatusReason {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStatusReason";
 				definition = "Specifies the underlying reason for a status of a corporate action.";
@@ -402,47 +404,53 @@ public class CorporateActionStatusReason extends StatusReason {
 		return corporateActionCancellationReason;
 	}
 
-	public void setCorporateActionCancellationReason(CorporateActionCancellationReasonCode corporateActionCancellationReason) {
-		this.corporateActionCancellationReason = corporateActionCancellationReason;
+	public CorporateActionStatusReason setCorporateActionCancellationReason(CorporateActionCancellationReasonCode corporateActionCancellationReason) {
+		this.corporateActionCancellationReason = Objects.requireNonNull(corporateActionCancellationReason);
+		return this;
 	}
 
-	public CorporateActionStatus getCorporateActionStatus() {
-		return corporateActionStatus;
+	public Optional<CorporateActionStatus> getCorporateActionStatus() {
+		return corporateActionStatus == null ? Optional.empty() : Optional.of(corporateActionStatus);
 	}
 
-	public void setCorporateActionStatus(com.tools20022.repository.entity.CorporateActionStatus corporateActionStatus) {
+	public CorporateActionStatusReason setCorporateActionStatus(com.tools20022.repository.entity.CorporateActionStatus corporateActionStatus) {
 		this.corporateActionStatus = corporateActionStatus;
+		return this;
 	}
 
 	public AcknowledgementReasonCode getAcceptedReason() {
 		return acceptedReason;
 	}
 
-	public void setAcceptedReason(AcknowledgementReasonCode acceptedReason) {
-		this.acceptedReason = acceptedReason;
+	public CorporateActionStatusReason setAcceptedReason(AcknowledgementReasonCode acceptedReason) {
+		this.acceptedReason = Objects.requireNonNull(acceptedReason);
+		return this;
 	}
 
 	public CorporateActionReversalReasonCode getReversalReason() {
 		return reversalReason;
 	}
 
-	public void setReversalReason(CorporateActionReversalReasonCode reversalReason) {
-		this.reversalReason = reversalReason;
+	public CorporateActionStatusReason setReversalReason(CorporateActionReversalReasonCode reversalReason) {
+		this.reversalReason = Objects.requireNonNull(reversalReason);
+		return this;
 	}
 
 	public FailedSettlementReasonCode getMovementFailureReason() {
 		return movementFailureReason;
 	}
 
-	public void setMovementFailureReason(FailedSettlementReasonCode movementFailureReason) {
-		this.movementFailureReason = movementFailureReason;
+	public CorporateActionStatusReason setMovementFailureReason(FailedSettlementReasonCode movementFailureReason) {
+		this.movementFailureReason = Objects.requireNonNull(movementFailureReason);
+		return this;
 	}
 
 	public RejectionReasonCode getMovementRejectionReason() {
 		return movementRejectionReason;
 	}
 
-	public void setMovementRejectionReason(RejectionReasonCode movementRejectionReason) {
-		this.movementRejectionReason = movementRejectionReason;
+	public CorporateActionStatusReason setMovementRejectionReason(RejectionReasonCode movementRejectionReason) {
+		this.movementRejectionReason = Objects.requireNonNull(movementRejectionReason);
+		return this;
 	}
 }

@@ -25,6 +25,8 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Payment made by transferring an amount of money from a debtor to a creditor.
@@ -93,8 +95,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -112,9 +114,8 @@ public class CreditTransfer extends IndividualPayment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator standingOrder;
 	/**
-	 * Transaction is a standing order. This information is derived from the
-	 * presence of detailed standing order specification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,8 +163,8 @@ public class CreditTransfer extends IndividualPayment {
 	};
 	protected CashStandingOrder relatedStandingOrder;
 	/**
-	 * Standing order which creates the credit transfers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,7 +213,7 @@ public class CreditTransfer extends IndividualPayment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditTransfer";
 				definition = "Payment made by transferring an amount of money from a debtor to a creditor. The payment flows through one or more financial institutions or systems.";
@@ -236,15 +237,17 @@ public class CreditTransfer extends IndividualPayment {
 		return standingOrder;
 	}
 
-	public void setStandingOrder(YesNoIndicator standingOrder) {
-		this.standingOrder = standingOrder;
+	public CreditTransfer setStandingOrder(YesNoIndicator standingOrder) {
+		this.standingOrder = Objects.requireNonNull(standingOrder);
+		return this;
 	}
 
-	public CashStandingOrder getRelatedStandingOrder() {
-		return relatedStandingOrder;
+	public Optional<CashStandingOrder> getRelatedStandingOrder() {
+		return relatedStandingOrder == null ? Optional.empty() : Optional.of(relatedStandingOrder);
 	}
 
-	public void setRelatedStandingOrder(com.tools20022.repository.entity.CashStandingOrder relatedStandingOrder) {
+	public CreditTransfer setRelatedStandingOrder(com.tools20022.repository.entity.CashStandingOrder relatedStandingOrder) {
 		this.relatedStandingOrder = relatedStandingOrder;
+		return this;
 	}
 }

@@ -38,20 +38,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#House
- * ClearingAccountTypeCode.mmHouse}</li>
+ * ClearingAccountTypeCode.House}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#Client
- * ClearingAccountTypeCode.mmClient}</li>
+ * ClearingAccountTypeCode.Client}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#LiquidityProvider
- * ClearingAccountTypeCode.mmLiquidityProvider}</li>
+ * ClearingAccountTypeCode.LiquidityProvider}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -179,7 +179,7 @@ public class ClearingAccountTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("HOUS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingAccountTypeCode";

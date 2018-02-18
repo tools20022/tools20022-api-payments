@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintIdentificationRule#forCorrectiveInterbankTransaction1
+ * ConstraintIdentificationRule.forCorrectiveInterbankTransaction1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,16 +94,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorrectiveInterbankTransaction1", propOrder = {"groupHeader", "instructionIdentification", "endToEndIdentification", "transactionIdentification", "interbankSettlementAmount", "interbankSettlementDate"})
 public class CorrectiveInterbankTransaction1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr")
 	protected CorrectiveGroupInformation1 groupHeader;
 	/**
-	 * Set of elements used to provide corrective information for the group
-	 * header of the message under investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -122,7 +132,7 @@ public class CorrectiveInterbankTransaction1 {
 	 */
 	public static final MMMessageAssociationEnd mmGroupHeader = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,16 +144,11 @@ public class CorrectiveInterbankTransaction1 {
 			type_lazy = () -> com.tools20022.repository.msg.CorrectiveGroupInformation1.mmObject();
 		}
 	};
+	@XmlElement(name = "InstrId")
 	protected Max35Text instructionIdentification;
 	/**
-	 * Unique identification, as assigned by an instructing party for an
-	 * instructed party, to unambiguously identify the instruction.
 	 * 
-	 * Usage: The instruction identification is a point to point reference that
-	 * can be used between the instructing party and the instructed party to
-	 * refer to the individual instruction. It can be included in several
-	 * messages related to the instruction.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,7 +183,7 @@ public class CorrectiveInterbankTransaction1 {
 	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "InstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,20 +194,11 @@ public class CorrectiveInterbankTransaction1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "EndToEndId")
 	protected Max35Text endToEndIdentification;
 	/**
-	 * Unique identification, as assigned by the initiating party, to
-	 * unambiguously identify the transaction. This identification is passed on,
-	 * unchanged, throughout the entire end-to-end chain.
 	 * 
-	 * Usage: The end-to-end identification can be used for reconciliation or to
-	 * link tasks relating to the transaction. It can be included in several
-	 * messages related to the transaction.
-	 * 
-	 * Usage: In case there are technical limitations to pass on multiple
-	 * references, the end-to-end identification must be passed on throughout
-	 * the entire end-to-end chain.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +233,7 @@ public class CorrectiveInterbankTransaction1 {
 	public static final MMMessageAttribute mmEndToEndIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "EndToEndId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -248,16 +244,11 @@ public class CorrectiveInterbankTransaction1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TxId")
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unique identification, as assigned by the first instructing agent, to
-	 * unambiguously identify the transaction that is passed on, unchanged,
-	 * throughout the entire interbank chain. Usage: The transaction
-	 * identification can be used for reconciliation, tracking or to link tasks
-	 * relating to the transaction on the interbank level. Usage: The
-	 * instructing agent has to make sure that the transaction identification is
-	 * unique for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,7 +283,7 @@ public class CorrectiveInterbankTransaction1 {
 	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -303,11 +294,11 @@ public class CorrectiveInterbankTransaction1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "IntrBkSttlmAmt", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount interbankSettlementAmount;
 	/**
-	 * Amount of money moved between the instructing agent and the instructed
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +334,7 @@ public class CorrectiveInterbankTransaction1 {
 	public static final MMMessageAttribute mmInterbankSettlementAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementAmount;
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "IntrBkSttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,12 +345,11 @@ public class CorrectiveInterbankTransaction1 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "IntrBkSttlmDt", required = true)
 	protected ISODate interbankSettlementDate;
 	/**
-	 * Date on which the amount of money ceases to be available to the agent
-	 * that owes it and when the amount of money becomes available to the agent
-	 * to which it is due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,7 +384,7 @@ public class CorrectiveInterbankTransaction1 {
 	public static final MMMessageAttribute mmInterbankSettlementDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementDate;
-			componentContext_lazy = () -> CorrectiveInterbankTransaction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
 			xmlTag = "IntrBkSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -409,10 +399,12 @@ public class CorrectiveInterbankTransaction1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorrectiveInterbankTransaction1.mmGroupHeader, CorrectiveInterbankTransaction1.mmInstructionIdentification, CorrectiveInterbankTransaction1.mmEndToEndIdentification,
-						CorrectiveInterbankTransaction1.mmTransactionIdentification, CorrectiveInterbankTransaction1.mmInterbankSettlementAmount, CorrectiveInterbankTransaction1.mmInterbankSettlementDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmGroupHeader, com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmInstructionIdentification,
+						com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmEndToEndIdentification, com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmTransactionIdentification,
+						com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmInterbankSettlementAmount, com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmInterbankSettlementDate);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintIdentificationRule.forCorrectiveInterbankTransaction1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorrectiveInterbankTransaction1";
 				definition = "Set of elements used to provide information on the corrective interbank transaction, to which the resolution message refers.";
@@ -421,57 +413,57 @@ public class CorrectiveInterbankTransaction1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr")
-	public CorrectiveGroupInformation1 getGroupHeader() {
-		return groupHeader;
+	public Optional<CorrectiveGroupInformation1> getGroupHeader() {
+		return groupHeader == null ? Optional.empty() : Optional.of(groupHeader);
 	}
 
-	public void setGroupHeader(com.tools20022.repository.msg.CorrectiveGroupInformation1 groupHeader) {
+	public CorrectiveInterbankTransaction1 setGroupHeader(com.tools20022.repository.msg.CorrectiveGroupInformation1 groupHeader) {
 		this.groupHeader = groupHeader;
+		return this;
 	}
 
-	@XmlElement(name = "InstrId")
-	public Max35Text getInstructionIdentification() {
-		return instructionIdentification;
+	public Optional<Max35Text> getInstructionIdentification() {
+		return instructionIdentification == null ? Optional.empty() : Optional.of(instructionIdentification);
 	}
 
-	public void setInstructionIdentification(Max35Text instructionIdentification) {
+	public CorrectiveInterbankTransaction1 setInstructionIdentification(Max35Text instructionIdentification) {
 		this.instructionIdentification = instructionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "EndToEndId")
-	public Max35Text getEndToEndIdentification() {
-		return endToEndIdentification;
+	public Optional<Max35Text> getEndToEndIdentification() {
+		return endToEndIdentification == null ? Optional.empty() : Optional.of(endToEndIdentification);
 	}
 
-	public void setEndToEndIdentification(Max35Text endToEndIdentification) {
+	public CorrectiveInterbankTransaction1 setEndToEndIdentification(Max35Text endToEndIdentification) {
 		this.endToEndIdentification = endToEndIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TxId")
-	public Max35Text getTransactionIdentification() {
-		return transactionIdentification;
+	public Optional<Max35Text> getTransactionIdentification() {
+		return transactionIdentification == null ? Optional.empty() : Optional.of(transactionIdentification);
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
+	public CorrectiveInterbankTransaction1 setTransactionIdentification(Max35Text transactionIdentification) {
 		this.transactionIdentification = transactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "IntrBkSttlmAmt", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getInterbankSettlementAmount() {
 		return interbankSettlementAmount;
 	}
 
-	public void setInterbankSettlementAmount(ActiveOrHistoricCurrencyAndAmount interbankSettlementAmount) {
-		this.interbankSettlementAmount = interbankSettlementAmount;
+	public CorrectiveInterbankTransaction1 setInterbankSettlementAmount(ActiveOrHistoricCurrencyAndAmount interbankSettlementAmount) {
+		this.interbankSettlementAmount = Objects.requireNonNull(interbankSettlementAmount);
+		return this;
 	}
 
-	@XmlElement(name = "IntrBkSttlmDt", required = true)
 	public ISODate getInterbankSettlementDate() {
 		return interbankSettlementDate;
 	}
 
-	public void setInterbankSettlementDate(ISODate interbankSettlementDate) {
-		this.interbankSettlementDate = interbankSettlementDate;
+	public CorrectiveInterbankTransaction1 setInterbankSettlementDate(ISODate interbankSettlementDate) {
+		this.interbankSettlementDate = Objects.requireNonNull(interbankSettlementDate);
+		return this;
 	}
 }

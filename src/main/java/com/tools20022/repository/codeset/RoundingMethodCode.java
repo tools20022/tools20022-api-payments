@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Down
- * RoundingMethodCode.mmDown}</li>
+ * RoundingMethodCode.Down}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Up
- * RoundingMethodCode.mmUp}</li>
+ * RoundingMethodCode.Up}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#None
- * RoundingMethodCode.mmNone}</li>
+ * RoundingMethodCode.None}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RoundingMethodCode#Closer
- * RoundingMethodCode.mmCloser}</li>
+ * RoundingMethodCode.Closer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -204,7 +204,7 @@ public class RoundingMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DRDW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RoundingMethodCode";

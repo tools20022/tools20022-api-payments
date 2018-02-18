@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.AmountRangeBoundary;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Limit for an amount range."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmountRangeBoundary1", propOrder = {"boundaryAmount", "included"})
 public class AmountRangeBoundary1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BdryAmt", required = true)
 	protected ImpliedCurrencyAndAmount boundaryAmount;
 	/**
-	 * Amount value of the range limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class AmountRangeBoundary1 {
 	public static final MMMessageAttribute mmBoundaryAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRangeBoundary.mmBoundaryAmount;
-			componentContext_lazy = () -> AmountRangeBoundary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
 			isDerived = false;
 			xmlTag = "BdryAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,11 @@ public class AmountRangeBoundary1 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Incl", required = true)
 	protected YesNoIndicator included;
 	/**
-	 * Indicates whether the boundary amount is included in the range of amount
-	 * values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,7 +161,7 @@ public class AmountRangeBoundary1 {
 	public static final MMMessageAttribute mmIncluded = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRangeBoundary.mmIncluded;
-			componentContext_lazy = () -> AmountRangeBoundary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
 			isDerived = false;
 			xmlTag = "Incl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,9 +176,9 @@ public class AmountRangeBoundary1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmBoundaryAmount, AmountRangeBoundary1.mmIncluded);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmountRangeBoundary1.mmBoundaryAmount, com.tools20022.repository.msg.AmountRangeBoundary1.mmIncluded);
 				trace_lazy = () -> AmountRangeBoundary.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRangeBoundary1";
 				definition = "Limit for an amount range.";
@@ -185,21 +187,21 @@ public class AmountRangeBoundary1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BdryAmt", required = true)
 	public ImpliedCurrencyAndAmount getBoundaryAmount() {
 		return boundaryAmount;
 	}
 
-	public void setBoundaryAmount(ImpliedCurrencyAndAmount boundaryAmount) {
-		this.boundaryAmount = boundaryAmount;
+	public AmountRangeBoundary1 setBoundaryAmount(ImpliedCurrencyAndAmount boundaryAmount) {
+		this.boundaryAmount = Objects.requireNonNull(boundaryAmount);
+		return this;
 	}
 
-	@XmlElement(name = "Incl", required = true)
 	public YesNoIndicator getIncluded() {
 		return included;
 	}
 
-	public void setIncluded(YesNoIndicator included) {
-		this.included = included;
+	public AmountRangeBoundary1 setIncluded(YesNoIndicator included) {
+		this.included = Objects.requireNonNull(included);
+		return this;
 	}
 }

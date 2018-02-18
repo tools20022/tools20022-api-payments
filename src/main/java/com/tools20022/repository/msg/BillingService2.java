@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the values used for every line item service in the statement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingService2", propOrder = {"serviceDetail", "price", "paymentMethod", "originalChargePrice", "originalChargeSettlementAmount", "balanceRequiredAccountAmount", "taxDesignation", "taxCalculation"})
 public class BillingService2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SvcDtl", required = true)
 	protected BillingServiceParameters3 serviceDetail;
 	/**
-	 * Specifies further detailed values for this service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +130,7 @@ public class BillingService2 {
 	public static final MMMessageAttribute mmServiceDetail = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "SvcDtl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,10 +141,11 @@ public class BillingService2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters3.mmObject();
 		}
 	};
+	@XmlElement(name = "Pric")
 	protected BillingPrice1 price;
 	/**
-	 * Price applied to the service, expressed in the pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -174,7 +178,7 @@ public class BillingService2 {
 	public static final MMMessageAssociationEnd mmPrice = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "Pric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,10 +190,11 @@ public class BillingService2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 		}
 	};
+	@XmlElement(name = "PmtMtd", required = true)
 	protected ServicePaymentMethod1Code paymentMethod;
 	/**
-	 * Code identifying the disposition of the calculated charge.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +229,7 @@ public class BillingService2 {
 	public static final MMMessageAttribute mmPaymentMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmPaymentMethod;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "PmtMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,11 +240,11 @@ public class BillingService2 {
 			simpleType_lazy = () -> ServicePaymentMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlChrgPric", required = true)
 	protected AmountAndDirection34 originalChargePrice;
 	/**
-	 * Amount of the calculated charge, expressed in the pricing currency. This
-	 * value does not include any tax on the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -273,7 +278,7 @@ public class BillingService2 {
 	public static final MMMessageAssociationEnd mmOriginalChargePrice = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlChrgPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,10 +290,11 @@ public class BillingService2 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlChrgSttlmAmt")
 	protected AmountAndDirection34 originalChargeSettlementAmount;
 	/**
-	 * Amount of the calculated charge, expressed in the settlement currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -321,7 +327,7 @@ public class BillingService2 {
 	public static final MMMessageAssociationEnd mmOriginalChargeSettlementAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlChrgSttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,11 +339,11 @@ public class BillingService2 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "BalReqrdAcctAmt")
 	protected AmountAndDirection34 balanceRequiredAccountAmount;
 	/**
-	 * Average daily collected balance required to offset a balance compensable
-	 * service charge, exclusive of taxes, expressed in the account currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -371,7 +377,7 @@ public class BillingService2 {
 	public static final MMMessageAssociationEnd mmBalanceRequiredAccountAmount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "BalReqrdAcctAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,10 +389,11 @@ public class BillingService2 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxDsgnt", required = true)
 	protected ServiceTaxDesignation1 taxDesignation;
 	/**
-	 * Provides the details of the taxable status of a service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,7 +426,7 @@ public class BillingService2 {
 	public static final MMMessageAttribute mmTaxDesignation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRecord;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxDsgnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -430,10 +437,11 @@ public class BillingService2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxClctn")
 	protected BillingMethod1Choice taxCalculation;
 	/**
-	 * Provides tax related values for tax calculation methods A, B or D.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -468,7 +476,7 @@ public class BillingService2 {
 	public static final MMMessageAttribute mmTaxCalculation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Product.mmTax;
-			componentContext_lazy = () -> BillingService2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxClctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -483,10 +491,11 @@ public class BillingService2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingService2.mmServiceDetail, BillingService2.mmPrice, BillingService2.mmPaymentMethod, BillingService2.mmOriginalChargePrice, BillingService2.mmOriginalChargeSettlementAmount,
-						BillingService2.mmBalanceRequiredAccountAmount, BillingService2.mmTaxDesignation, BillingService2.mmTaxCalculation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingService2.mmServiceDetail, com.tools20022.repository.msg.BillingService2.mmPrice, com.tools20022.repository.msg.BillingService2.mmPaymentMethod,
+						com.tools20022.repository.msg.BillingService2.mmOriginalChargePrice, com.tools20022.repository.msg.BillingService2.mmOriginalChargeSettlementAmount,
+						com.tools20022.repository.msg.BillingService2.mmBalanceRequiredAccountAmount, com.tools20022.repository.msg.BillingService2.mmTaxDesignation, com.tools20022.repository.msg.BillingService2.mmTaxCalculation);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingService2";
 				definition = "Specifies the values used for every line item service in the statement.";
@@ -495,75 +504,75 @@ public class BillingService2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SvcDtl", required = true)
 	public BillingServiceParameters3 getServiceDetail() {
 		return serviceDetail;
 	}
 
-	public void setServiceDetail(com.tools20022.repository.msg.BillingServiceParameters3 serviceDetail) {
-		this.serviceDetail = serviceDetail;
+	public BillingService2 setServiceDetail(com.tools20022.repository.msg.BillingServiceParameters3 serviceDetail) {
+		this.serviceDetail = Objects.requireNonNull(serviceDetail);
+		return this;
 	}
 
-	@XmlElement(name = "Pric")
-	public BillingPrice1 getPrice() {
-		return price;
+	public Optional<BillingPrice1> getPrice() {
+		return price == null ? Optional.empty() : Optional.of(price);
 	}
 
-	public void setPrice(com.tools20022.repository.msg.BillingPrice1 price) {
+	public BillingService2 setPrice(com.tools20022.repository.msg.BillingPrice1 price) {
 		this.price = price;
+		return this;
 	}
 
-	@XmlElement(name = "PmtMtd", required = true)
 	public ServicePaymentMethod1Code getPaymentMethod() {
 		return paymentMethod;
 	}
 
-	public void setPaymentMethod(ServicePaymentMethod1Code paymentMethod) {
-		this.paymentMethod = paymentMethod;
+	public BillingService2 setPaymentMethod(ServicePaymentMethod1Code paymentMethod) {
+		this.paymentMethod = Objects.requireNonNull(paymentMethod);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlChrgPric", required = true)
 	public AmountAndDirection34 getOriginalChargePrice() {
 		return originalChargePrice;
 	}
 
-	public void setOriginalChargePrice(com.tools20022.repository.msg.AmountAndDirection34 originalChargePrice) {
-		this.originalChargePrice = originalChargePrice;
+	public BillingService2 setOriginalChargePrice(com.tools20022.repository.msg.AmountAndDirection34 originalChargePrice) {
+		this.originalChargePrice = Objects.requireNonNull(originalChargePrice);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlChrgSttlmAmt")
-	public AmountAndDirection34 getOriginalChargeSettlementAmount() {
-		return originalChargeSettlementAmount;
+	public Optional<AmountAndDirection34> getOriginalChargeSettlementAmount() {
+		return originalChargeSettlementAmount == null ? Optional.empty() : Optional.of(originalChargeSettlementAmount);
 	}
 
-	public void setOriginalChargeSettlementAmount(com.tools20022.repository.msg.AmountAndDirection34 originalChargeSettlementAmount) {
+	public BillingService2 setOriginalChargeSettlementAmount(com.tools20022.repository.msg.AmountAndDirection34 originalChargeSettlementAmount) {
 		this.originalChargeSettlementAmount = originalChargeSettlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "BalReqrdAcctAmt")
-	public AmountAndDirection34 getBalanceRequiredAccountAmount() {
-		return balanceRequiredAccountAmount;
+	public Optional<AmountAndDirection34> getBalanceRequiredAccountAmount() {
+		return balanceRequiredAccountAmount == null ? Optional.empty() : Optional.of(balanceRequiredAccountAmount);
 	}
 
-	public void setBalanceRequiredAccountAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceRequiredAccountAmount) {
+	public BillingService2 setBalanceRequiredAccountAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceRequiredAccountAmount) {
 		this.balanceRequiredAccountAmount = balanceRequiredAccountAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TaxDsgnt", required = true)
 	public ServiceTaxDesignation1 getTaxDesignation() {
 		return taxDesignation;
 	}
 
-	public void setTaxDesignation(com.tools20022.repository.msg.ServiceTaxDesignation1 taxDesignation) {
-		this.taxDesignation = taxDesignation;
+	public BillingService2 setTaxDesignation(com.tools20022.repository.msg.ServiceTaxDesignation1 taxDesignation) {
+		this.taxDesignation = Objects.requireNonNull(taxDesignation);
+		return this;
 	}
 
-	@XmlElement(name = "TaxClctn")
-	public BillingMethod1Choice getTaxCalculation() {
-		return taxCalculation;
+	public Optional<BillingMethod1Choice> getTaxCalculation() {
+		return taxCalculation == null ? Optional.empty() : Optional.of(taxCalculation);
 	}
 
-	public void setTaxCalculation(BillingMethod1Choice taxCalculation) {
+	public BillingService2 setTaxCalculation(BillingMethod1Choice taxCalculation) {
 		this.taxCalculation = taxCalculation;
+		return this;
 	}
 }

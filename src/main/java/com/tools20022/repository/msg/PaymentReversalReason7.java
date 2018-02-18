@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides further details on the reason of the reversal of the transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentReversalReason7", propOrder = {"originator", "reason", "additionalInformation"})
 public class PaymentReversalReason7 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Orgtr")
 	protected PartyIdentification43 originator;
 	/**
-	 * Party that issues the reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,7 +113,7 @@ public class PaymentReversalReason7 {
 	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> PaymentReversalReason7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReversalReason7.mmObject();
 			isDerived = false;
 			xmlTag = "Orgtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,10 +125,11 @@ public class PaymentReversalReason7 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "Rsn")
 	protected ReversalReason4Choice reason;
 	/**
-	 * Specifies the reason for the reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,7 +161,7 @@ public class PaymentReversalReason7 {
 	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> StatusReason.mmObject();
-			componentContext_lazy = () -> PaymentReversalReason7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReversalReason7.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,10 +173,11 @@ public class PaymentReversalReason7 {
 			type_lazy = () -> ReversalReason4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected List<Max105Text> additionalInformation;
 	/**
-	 * Further details on the reversal reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +210,7 @@ public class PaymentReversalReason7 {
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> PaymentReversalReason7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReversalReason7.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,9 +224,10 @@ public class PaymentReversalReason7 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentReversalReason7.mmOriginator, PaymentReversalReason7.mmReason, PaymentReversalReason7.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentReversalReason7.mmOriginator, com.tools20022.repository.msg.PaymentReversalReason7.mmReason,
+						com.tools20022.repository.msg.PaymentReversalReason7.mmAdditionalInformation);
 				trace_lazy = () -> StatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentReversalReason7";
 				definition = "Provides further details on the reason of the reversal of the transaction.";
@@ -233,30 +236,30 @@ public class PaymentReversalReason7 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Orgtr")
-	public PartyIdentification43 getOriginator() {
-		return originator;
+	public Optional<PartyIdentification43> getOriginator() {
+		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public void setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
+	public PaymentReversalReason7 setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
 		this.originator = originator;
+		return this;
 	}
 
-	@XmlElement(name = "Rsn")
-	public ReversalReason4Choice getReason() {
-		return reason;
+	public Optional<ReversalReason4Choice> getReason() {
+		return reason == null ? Optional.empty() : Optional.of(reason);
 	}
 
-	public void setReason(ReversalReason4Choice reason) {
+	public PaymentReversalReason7 setReason(ReversalReason4Choice reason) {
 		this.reason = reason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
 	public List<Max105Text> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<Max105Text> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public PaymentReversalReason7 setAdditionalInformation(List<Max105Text> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 }

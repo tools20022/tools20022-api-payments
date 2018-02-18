@@ -38,82 +38,82 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#WIBOR
- * BenchmarkCurveName2Code.mmWIBOR}</li>
+ * BenchmarkCurveName2Code.WIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#Treasury
- * BenchmarkCurveName2Code.mmTreasury}</li>
+ * BenchmarkCurveName2Code.Treasury}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#TIBOR
- * BenchmarkCurveName2Code.mmTIBOR}</li>
+ * BenchmarkCurveName2Code.TIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#TELBOR
- * BenchmarkCurveName2Code.mmTELBOR}</li>
+ * BenchmarkCurveName2Code.TELBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#SWAP
- * BenchmarkCurveName2Code.mmSWAP}</li>
+ * BenchmarkCurveName2Code.SWAP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#STIBOR
- * BenchmarkCurveName2Code.mmSTIBOR}</li>
+ * BenchmarkCurveName2Code.STIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#PRIBOR
- * BenchmarkCurveName2Code.mmPRIBOR}</li>
+ * BenchmarkCurveName2Code.PRIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#Pfandbriefe
- * BenchmarkCurveName2Code.mmPfandbriefe}</li>
+ * BenchmarkCurveName2Code.Pfandbriefe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#NIBOR
- * BenchmarkCurveName2Code.mmNIBOR}</li>
+ * BenchmarkCurveName2Code.NIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#MuniAAA
- * BenchmarkCurveName2Code.mmMuniAAA}</li>
+ * BenchmarkCurveName2Code.MuniAAA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#MOSPRIM
- * BenchmarkCurveName2Code.mmMOSPRIM}</li>
+ * BenchmarkCurveName2Code.MOSPRIM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#LIBOR
- * BenchmarkCurveName2Code.mmLIBOR}</li>
+ * BenchmarkCurveName2Code.LIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#LIBID
- * BenchmarkCurveName2Code.mmLIBID}</li>
+ * BenchmarkCurveName2Code.LIBID}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#JIBAR
- * BenchmarkCurveName2Code.mmJIBAR}</li>
+ * BenchmarkCurveName2Code.JIBAR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#ISDAFIX
- * BenchmarkCurveName2Code.mmISDAFIX}</li>
+ * BenchmarkCurveName2Code.ISDAFIX}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#GCFRepo
- * BenchmarkCurveName2Code.mmGCFRepo}</li>
+ * BenchmarkCurveName2Code.GCFRepo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#FutureSWAP
- * BenchmarkCurveName2Code.mmFutureSWAP}</li>
+ * BenchmarkCurveName2Code.FutureSWAP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#EuroSwiss
- * BenchmarkCurveName2Code.mmEuroSwiss}</li>
+ * BenchmarkCurveName2Code.EuroSwiss}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#EURODOLLAR
- * BenchmarkCurveName2Code.mmEURODOLLAR}</li>
+ * BenchmarkCurveName2Code.EURODOLLAR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#Euribor
- * BenchmarkCurveName2Code.mmEuribor}</li>
+ * BenchmarkCurveName2Code.Euribor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#EONIASwaps
- * BenchmarkCurveName2Code.mmEONIASwaps}</li>
+ * BenchmarkCurveName2Code.EONIASwaps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#EONIA
- * BenchmarkCurveName2Code.mmEONIA}</li>
+ * BenchmarkCurveName2Code.EONIA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#CIBOR
- * BenchmarkCurveName2Code.mmCIBOR}</li>
+ * BenchmarkCurveName2Code.CIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#CDOR
- * BenchmarkCurveName2Code.mmCDOR}</li>
+ * BenchmarkCurveName2Code.CDOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#BUBOR
- * BenchmarkCurveName2Code.mmBUBOR}</li>
+ * BenchmarkCurveName2Code.BUBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveName2Code#BBSW
- * BenchmarkCurveName2Code.mmBBSW}</li>
+ * BenchmarkCurveName2Code.BBSW}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -122,8 +122,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -770,7 +770,7 @@ public class BenchmarkCurveName2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BenchmarkCurveName2Code";
 				definition = "Specifies a benchmark curve name.";

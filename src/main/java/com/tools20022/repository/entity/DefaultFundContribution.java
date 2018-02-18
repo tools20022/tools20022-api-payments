@@ -22,9 +22,8 @@ import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Portion of the participation to the default fund that clearing member must
@@ -74,8 +73,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +92,8 @@ public class DefaultFundContribution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected MarginCall relatedMarginCall;
 	/**
-	 * Margin call for which a contribution to a default fund is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,10 +141,8 @@ public class DefaultFundContribution {
 	};
 	protected List<com.tools20022.repository.entity.DefaultFund> defaultFund;
 	/**
-	 * Management of the assets posted by participants in a clearing fund that
-	 * can be used in the event of a default by a participant to compensate
-	 * non-defaulting participants for losses they suffer due to this default.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,9 +190,8 @@ public class DefaultFundContribution {
 	};
 	protected ActiveCurrencyAndAmount excessOrDeficitAmount;
 	/**
-	 * Excess amount that the CCP will restitute to the Clearing member OR
-	 * deficit to be provided by the member for the guarantee fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,9 +239,8 @@ public class DefaultFundContribution {
 	};
 	protected List<com.tools20022.repository.entity.Account> contributionAccount;
 	/**
-	 * Sub account segregated by the central counterparty on the basis of
-	 * trading venues/products or other attributes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,8 +287,8 @@ public class DefaultFundContribution {
 	};
 	protected DebitCreditCode amountDirection;
 	/**
-	 * Specifies whether the amount is a deficit (debit) or an excess (credit).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +338,7 @@ public class DefaultFundContribution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "DefaultFundContribution";
 				definition = "Portion of the participation to the default fund that clearing member must provide. It is the sum of the individual contributions.";
@@ -362,43 +357,48 @@ public class DefaultFundContribution {
 		return mmObject_lazy.get();
 	}
 
-	public MarginCall getRelatedMarginCall() {
-		return relatedMarginCall;
+	public Optional<MarginCall> getRelatedMarginCall() {
+		return relatedMarginCall == null ? Optional.empty() : Optional.of(relatedMarginCall);
 	}
 
-	public void setRelatedMarginCall(com.tools20022.repository.entity.MarginCall relatedMarginCall) {
+	public DefaultFundContribution setRelatedMarginCall(com.tools20022.repository.entity.MarginCall relatedMarginCall) {
 		this.relatedMarginCall = relatedMarginCall;
+		return this;
 	}
 
 	public List<DefaultFund> getDefaultFund() {
-		return defaultFund;
+		return defaultFund == null ? defaultFund = new ArrayList<>() : defaultFund;
 	}
 
-	public void setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
-		this.defaultFund = defaultFund;
+	public DefaultFundContribution setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
+		this.defaultFund = Objects.requireNonNull(defaultFund);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getExcessOrDeficitAmount() {
 		return excessOrDeficitAmount;
 	}
 
-	public void setExcessOrDeficitAmount(ActiveCurrencyAndAmount excessOrDeficitAmount) {
-		this.excessOrDeficitAmount = excessOrDeficitAmount;
+	public DefaultFundContribution setExcessOrDeficitAmount(ActiveCurrencyAndAmount excessOrDeficitAmount) {
+		this.excessOrDeficitAmount = Objects.requireNonNull(excessOrDeficitAmount);
+		return this;
 	}
 
 	public List<Account> getContributionAccount() {
-		return contributionAccount;
+		return contributionAccount == null ? contributionAccount = new ArrayList<>() : contributionAccount;
 	}
 
-	public void setContributionAccount(List<com.tools20022.repository.entity.Account> contributionAccount) {
-		this.contributionAccount = contributionAccount;
+	public DefaultFundContribution setContributionAccount(List<com.tools20022.repository.entity.Account> contributionAccount) {
+		this.contributionAccount = Objects.requireNonNull(contributionAccount);
+		return this;
 	}
 
 	public DebitCreditCode getAmountDirection() {
 		return amountDirection;
 	}
 
-	public void setAmountDirection(DebitCreditCode amountDirection) {
-		this.amountDirection = amountDirection;
+	public DefaultFundContribution setAmountDirection(DebitCreditCode amountDirection) {
+		this.amountDirection = Objects.requireNonNull(amountDirection);
+		return this;
 	}
 }

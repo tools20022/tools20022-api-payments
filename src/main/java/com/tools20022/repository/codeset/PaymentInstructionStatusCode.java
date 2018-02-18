@@ -38,77 +38,77 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Accepted
- * PaymentInstructionStatusCode.mmAccepted}</li>
+ * PaymentInstructionStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Validated
- * PaymentInstructionStatusCode.mmValidated}</li>
+ * PaymentInstructionStatusCode.Validated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Authorised
- * PaymentInstructionStatusCode.mmAuthorised}</li>
+ * PaymentInstructionStatusCode.Authorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Invalid
- * PaymentInstructionStatusCode.mmInvalid}</li>
+ * PaymentInstructionStatusCode.Invalid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Matched
- * PaymentInstructionStatusCode.mmMatched}</li>
+ * PaymentInstructionStatusCode.Matched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Unmatched
- * PaymentInstructionStatusCode.mmUnmatched}</li>
+ * PaymentInstructionStatusCode.Unmatched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Mismatched
- * PaymentInstructionStatusCode.mmMismatched}</li>
+ * PaymentInstructionStatusCode.Mismatched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#SettlementEligible
- * PaymentInstructionStatusCode.mmSettlementEligible}</li>
+ * PaymentInstructionStatusCode.SettlementEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#SettlementMature
- * PaymentInstructionStatusCode.mmSettlementMature}</li>
+ * PaymentInstructionStatusCode.SettlementMature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Suspended
- * PaymentInstructionStatusCode.mmSuspended}</li>
+ * PaymentInstructionStatusCode.Suspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#PendingCancellation
- * PaymentInstructionStatusCode.mmPendingCancellation}</li>
+ * PaymentInstructionStatusCode.PendingCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#PendingSettlement
- * PaymentInstructionStatusCode.mmPendingSettlement}</li>
+ * PaymentInstructionStatusCode.PendingSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#PendingFailingSettlement
- * PaymentInstructionStatusCode.mmPendingFailingSettlement}</li>
+ * PaymentInstructionStatusCode.PendingFailingSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#SenderMultilateralLimitRelated
- * PaymentInstructionStatusCode.mmSenderMultilateralLimitRelated}</li>
+ * PaymentInstructionStatusCode.SenderMultilateralLimitRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#ReceiverMultilateralLimitRelated
- * PaymentInstructionStatusCode.mmReceiverMultilateralLimitRelated}</li>
+ * PaymentInstructionStatusCode.ReceiverMultilateralLimitRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#SenderReceiverBilateralLimitRelated
- * PaymentInstructionStatusCode.mmSenderReceiverBilateralLimitRelated}</li>
+ * PaymentInstructionStatusCode.SenderReceiverBilateralLimitRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Settled
- * PaymentInstructionStatusCode.mmSettled}</li>
+ * PaymentInstructionStatusCode.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Rejected
- * PaymentInstructionStatusCode.mmRejected}</li>
+ * PaymentInstructionStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Cancelled
- * PaymentInstructionStatusCode.mmCancelled}</li>
+ * PaymentInstructionStatusCode.Cancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#Finalised
- * PaymentInstructionStatusCode.mmFinalised}</li>
+ * PaymentInstructionStatusCode.Finalised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#HeldForServiceAvailability
- * PaymentInstructionStatusCode.mmHeldForServiceAvailability}</li>
+ * PaymentInstructionStatusCode.HeldForServiceAvailability}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentInstructionStatusCode#SenderReceiverMultilateralLimitRelated
- * PaymentInstructionStatusCode.mmSenderReceiverMultilateralLimitRelated}</li>
+ * PaymentInstructionStatusCode.SenderReceiverMultilateralLimitRelated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -836,7 +836,7 @@ public class PaymentInstructionStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACPD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentInstructionStatusCode";

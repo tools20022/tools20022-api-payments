@@ -39,41 +39,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#ProgramTrade
- * OrderClassificationCode.mmProgramTrade}</li>
+ * OrderClassificationCode.ProgramTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#IndexArbitrage
- * OrderClassificationCode.mmIndexArbitrage}</li>
+ * OrderClassificationCode.IndexArbitrage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#NonIndexArbitrage
- * OrderClassificationCode.mmNonIndexArbitrage}</li>
+ * OrderClassificationCode.NonIndexArbitrage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#CompetingMarketMaker
- * OrderClassificationCode.mmCompetingMarketMaker}</li>
+ * OrderClassificationCode.CompetingMarketMaker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#SpecialistInSecurity
- * OrderClassificationCode.mmSpecialistInSecurity}</li>
+ * OrderClassificationCode.SpecialistInSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#SpecialistInUnderlyingSecurity
- * OrderClassificationCode.mmSpecialistInUnderlyingSecurity}</li>
+ * OrderClassificationCode.SpecialistInUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#ForeignEntity
- * OrderClassificationCode.mmForeignEntity}</li>
+ * OrderClassificationCode.ForeignEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#ExternalMarketParticipant
- * OrderClassificationCode.mmExternalMarketParticipant}</li>
+ * OrderClassificationCode.ExternalMarketParticipant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#ExternalInterConnectedMarketLinkage
- * OrderClassificationCode.mmExternalInterConnectedMarketLinkage}</li>
+ * OrderClassificationCode.ExternalInterConnectedMarketLinkage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderClassificationCode#RisklessArbitrage
- * OrderClassificationCode.mmRisklessArbitrage}</li>
+ * OrderClassificationCode.RisklessArbitrage}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -438,7 +438,7 @@ public class OrderClassificationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PROG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderClassificationCode";

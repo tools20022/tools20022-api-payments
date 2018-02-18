@@ -24,9 +24,11 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Cash management feature limiting the amount of liquidity needed to perform
@@ -79,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,9 +100,8 @@ public class LiquidityManagementLimit extends Limit {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate volatilityMargin;
 	/**
-	 * Margin used to decrease long positions and increase short positions for
-	 * the calculation of the limit usage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,9 +149,8 @@ public class LiquidityManagementLimit extends Limit {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
-	 * Exchange rate used in the calculation of the limit when different
-	 * currencies are involved.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,9 +198,8 @@ public class LiquidityManagementLimit extends Limit {
 	};
 	protected CashManagementService relatedCashServices;
 	/**
-	 * Cash management services which provide standing liquidity management
-	 * facilities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,8 +249,8 @@ public class LiquidityManagementLimit extends Limit {
 	};
 	protected LiquidityLimitTypeCode liquidityLimitType;
 	/**
-	 * Type of liquidity management limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -297,8 +296,8 @@ public class LiquidityManagementLimit extends Limit {
 	};
 	protected CurrencyAndAmount requiredAmount;
 	/**
-	 * Amount required to cover the needs of liquidity management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -347,7 +346,7 @@ public class LiquidityManagementLimit extends Limit {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LiquidityManagementLimit";
 				definition = "Cash management feature limiting the amount of liquidity needed to perform clearing and settlement operations. At any point in time during the process, the limit imposes the maximum amount of liquidity available for operations concerning the system or other managed elements, for example, transaction amount or counterparty.";
@@ -370,39 +369,44 @@ public class LiquidityManagementLimit extends Limit {
 		return volatilityMargin;
 	}
 
-	public void setVolatilityMargin(PercentageRate volatilityMargin) {
-		this.volatilityMargin = volatilityMargin;
+	public LiquidityManagementLimit setVolatilityMargin(PercentageRate volatilityMargin) {
+		this.volatilityMargin = Objects.requireNonNull(volatilityMargin);
+		return this;
 	}
 
 	public List<CurrencyExchange> getCurrencyExchange() {
-		return currencyExchange;
+		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public LiquidityManagementLimit setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public CashManagementService getRelatedCashServices() {
 		return relatedCashServices;
 	}
 
-	public void setRelatedCashServices(com.tools20022.repository.entity.CashManagementService relatedCashServices) {
-		this.relatedCashServices = relatedCashServices;
+	public LiquidityManagementLimit setRelatedCashServices(com.tools20022.repository.entity.CashManagementService relatedCashServices) {
+		this.relatedCashServices = Objects.requireNonNull(relatedCashServices);
+		return this;
 	}
 
 	public LiquidityLimitTypeCode getLiquidityLimitType() {
 		return liquidityLimitType;
 	}
 
-	public void setLiquidityLimitType(LiquidityLimitTypeCode liquidityLimitType) {
-		this.liquidityLimitType = liquidityLimitType;
+	public LiquidityManagementLimit setLiquidityLimitType(LiquidityLimitTypeCode liquidityLimitType) {
+		this.liquidityLimitType = Objects.requireNonNull(liquidityLimitType);
+		return this;
 	}
 
 	public CurrencyAndAmount getRequiredAmount() {
 		return requiredAmount;
 	}
 
-	public void setRequiredAmount(CurrencyAndAmount requiredAmount) {
-		this.requiredAmount = requiredAmount;
+	public LiquidityManagementLimit setRequiredAmount(CurrencyAndAmount requiredAmount) {
+		this.requiredAmount = Objects.requireNonNull(requiredAmount);
+		return this;
 	}
 }

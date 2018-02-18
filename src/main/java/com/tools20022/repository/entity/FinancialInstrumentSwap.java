@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Characteristics and conditions by which a borrower can exchange one type of
@@ -94,8 +96,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +115,8 @@ public class FinancialInstrumentSwap {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod maturity;
 	/**
-	 * Range of time during which a swap is in effect.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,8 +163,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected SecuritiesSwapLeg spotSell;
 	/**
-	 * Details of the spot leg of the sell-side of a swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,8 +211,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected SecuritiesSwapLeg spotBuy;
 	/**
-	 * Details of the spot leg of the buy-side of a swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,9 +259,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected SecuritiesSwapLeg forwardBuyBack;
 	/**
-	 * Details of the forward leg of a swap that has been sold and is being
-	 * returned, ie, bought back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -308,9 +309,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected SecuritiesSwapLeg forwardSellBack;
 	/**
-	 * Details of the forward leg of a swap that has been bought and is being
-	 * returned, ie, sold back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,8 +359,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected Quote relatedQuote;
 	/**
-	 * Quote related to a swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -406,8 +406,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected FrequencyCode forwardSellBackFrequency;
 	/**
-	 * Frequency at which the sold financial instrument is being returned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -454,8 +454,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected FrequencyCode forwardBuyBackFrequency;
 	/**
-	 * Frequency at which the bought financial instrument is being returned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -502,8 +502,8 @@ public class FinancialInstrumentSwap {
 	};
 	protected InterestComputationMethodCode interestComputation;
 	/**
-	 * Method used to compute the accrued interest of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,7 +552,7 @@ public class FinancialInstrumentSwap {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentSwap";
 				definition = "Characteristics and conditions by which a borrower can exchange one type of financial instrument for another.";
@@ -578,71 +578,80 @@ public class FinancialInstrumentSwap {
 		return maturity;
 	}
 
-	public void setMaturity(com.tools20022.repository.entity.DateTimePeriod maturity) {
-		this.maturity = maturity;
+	public FinancialInstrumentSwap setMaturity(com.tools20022.repository.entity.DateTimePeriod maturity) {
+		this.maturity = Objects.requireNonNull(maturity);
+		return this;
 	}
 
 	public SecuritiesSwapLeg getSpotSell() {
 		return spotSell;
 	}
 
-	public void setSpotSell(com.tools20022.repository.entity.SecuritiesSwapLeg spotSell) {
-		this.spotSell = spotSell;
+	public FinancialInstrumentSwap setSpotSell(com.tools20022.repository.entity.SecuritiesSwapLeg spotSell) {
+		this.spotSell = Objects.requireNonNull(spotSell);
+		return this;
 	}
 
 	public SecuritiesSwapLeg getSpotBuy() {
 		return spotBuy;
 	}
 
-	public void setSpotBuy(com.tools20022.repository.entity.SecuritiesSwapLeg spotBuy) {
-		this.spotBuy = spotBuy;
+	public FinancialInstrumentSwap setSpotBuy(com.tools20022.repository.entity.SecuritiesSwapLeg spotBuy) {
+		this.spotBuy = Objects.requireNonNull(spotBuy);
+		return this;
 	}
 
 	public SecuritiesSwapLeg getForwardBuyBack() {
 		return forwardBuyBack;
 	}
 
-	public void setForwardBuyBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardBuyBack) {
-		this.forwardBuyBack = forwardBuyBack;
+	public FinancialInstrumentSwap setForwardBuyBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardBuyBack) {
+		this.forwardBuyBack = Objects.requireNonNull(forwardBuyBack);
+		return this;
 	}
 
 	public SecuritiesSwapLeg getForwardSellBack() {
 		return forwardSellBack;
 	}
 
-	public void setForwardSellBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardSellBack) {
-		this.forwardSellBack = forwardSellBack;
+	public FinancialInstrumentSwap setForwardSellBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardSellBack) {
+		this.forwardSellBack = Objects.requireNonNull(forwardSellBack);
+		return this;
 	}
 
-	public Quote getRelatedQuote() {
-		return relatedQuote;
+	public Optional<Quote> getRelatedQuote() {
+		return relatedQuote == null ? Optional.empty() : Optional.of(relatedQuote);
 	}
 
-	public void setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
+	public FinancialInstrumentSwap setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
 		this.relatedQuote = relatedQuote;
+		return this;
 	}
 
 	public FrequencyCode getForwardSellBackFrequency() {
 		return forwardSellBackFrequency;
 	}
 
-	public void setForwardSellBackFrequency(FrequencyCode forwardSellBackFrequency) {
-		this.forwardSellBackFrequency = forwardSellBackFrequency;
+	public FinancialInstrumentSwap setForwardSellBackFrequency(FrequencyCode forwardSellBackFrequency) {
+		this.forwardSellBackFrequency = Objects.requireNonNull(forwardSellBackFrequency);
+		return this;
 	}
 
 	public FrequencyCode getForwardBuyBackFrequency() {
 		return forwardBuyBackFrequency;
 	}
 
-	public void setForwardBuyBackFrequency(FrequencyCode forwardBuyBackFrequency) {
-		this.forwardBuyBackFrequency = forwardBuyBackFrequency;
+	public FinancialInstrumentSwap setForwardBuyBackFrequency(FrequencyCode forwardBuyBackFrequency) {
+		this.forwardBuyBackFrequency = Objects.requireNonNull(forwardBuyBackFrequency);
+		return this;
 	}
 
 	public InterestComputationMethodCode getInterestComputation() {
 		return interestComputation;
 	}
 
-	public void setInterestComputation(InterestComputationMethodCode interestComputation) {
-		this.interestComputation = interestComputation;
+	public FinancialInstrumentSwap setInterestComputation(InterestComputationMethodCode interestComputation) {
+		this.interestComputation = Objects.requireNonNull(interestComputation);
+		return this;
 	}
 }

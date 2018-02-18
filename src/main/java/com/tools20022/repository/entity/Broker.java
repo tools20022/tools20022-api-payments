@@ -22,9 +22,11 @@ import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.TradePartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Party that identifies a broker when required (for example, authorised broker,
@@ -59,8 +61,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,9 +80,8 @@ public class Broker extends TradePartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveCurrencyAndAmount remunerationAmount;
 	/**
-	 * Amount of any remuneration other than commission received or to be
-	 * received by the broker in connection with a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,8 +128,8 @@ public class Broker extends TradePartyRole {
 	};
 	protected List<com.tools20022.repository.entity.Commission> commission;
 	/**
-	 * Amount of money paid to a broker as a commission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +176,7 @@ public class Broker extends TradePartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Broker";
 				definition = "Party that identifies a broker when required (for example, authorised broker, prime broker, etc).";
@@ -196,15 +197,17 @@ public class Broker extends TradePartyRole {
 		return remunerationAmount;
 	}
 
-	public void setRemunerationAmount(ActiveCurrencyAndAmount remunerationAmount) {
-		this.remunerationAmount = remunerationAmount;
+	public Broker setRemunerationAmount(ActiveCurrencyAndAmount remunerationAmount) {
+		this.remunerationAmount = Objects.requireNonNull(remunerationAmount);
+		return this;
 	}
 
 	public List<Commission> getCommission() {
-		return commission;
+		return commission == null ? commission = new ArrayList<>() : commission;
 	}
 
-	public void setCommission(List<com.tools20022.repository.entity.Commission> commission) {
-		this.commission = commission;
+	public Broker setCommission(List<com.tools20022.repository.entity.Commission> commission) {
+		this.commission = Objects.requireNonNull(commission);
+		return this;
 	}
 }

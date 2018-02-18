@@ -39,37 +39,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#UnableToProcess
- * RejectReasonCode.mmUnableToProcess}</li>
+ * RejectReasonCode.UnableToProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#InvalidMessage
- * RejectReasonCode.mmInvalidMessage}</li>
+ * RejectReasonCode.InvalidMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#ParsingError
- * RejectReasonCode.mmParsingError}</li>
+ * RejectReasonCode.ParsingError}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RejectReasonCode#Security
- * RejectReasonCode.mmSecurity}</li>
+ * RejectReasonCode.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#InitiatingParty
- * RejectReasonCode.mmInitiatingParty}</li>
+ * RejectReasonCode.InitiatingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#RecipientParty
- * RejectReasonCode.mmRecipientParty}</li>
+ * RejectReasonCode.RecipientParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#DuplicateMessage
- * RejectReasonCode.mmDuplicateMessage}</li>
+ * RejectReasonCode.DuplicateMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#ProtocolVersion
- * RejectReasonCode.mmProtocolVersion}</li>
+ * RejectReasonCode.ProtocolVersion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReasonCode#MessageType
- * RejectReasonCode.mmMessageType}</li>
+ * RejectReasonCode.MessageType}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -384,7 +384,7 @@ public class RejectReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNPR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectReasonCode";

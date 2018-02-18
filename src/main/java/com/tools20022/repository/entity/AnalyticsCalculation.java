@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Characteristics related to the analytics.
@@ -76,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +95,8 @@ public class AnalyticsCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Pricing for which an analytics calculation is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,8 +143,8 @@ public class AnalyticsCalculation {
 	};
 	protected AnalyticsValue value;
 	/**
-	 * Result of the defined analytics calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,8 +191,8 @@ public class AnalyticsCalculation {
 	};
 	protected CalculationTypeCode calculationType;
 	/**
-	 * Specifies the type of calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,9 +238,8 @@ public class AnalyticsCalculation {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time on which the calculation is based. For example: valuation on
-	 * October 1 (price date) based on price of September 19 ( value date).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,8 +286,8 @@ public class AnalyticsCalculation {
 	};
 	protected DateTimePeriod valuePeriod;
 	/**
-	 * Period on which the calculation is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,9 +333,8 @@ public class AnalyticsCalculation {
 	};
 	protected PercentageRate estimatedInterestRate;
 	/**
-	 * Estimated per annum ratio of interest paid to the principal amount of the
-	 * financial instrument for a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,8 +382,8 @@ public class AnalyticsCalculation {
 	};
 	protected ISODateTime variableRateValueDate;
 	/**
-	 * Date/time as of which the variable rate is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,7 +430,7 @@ public class AnalyticsCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AnalyticsCalculation";
 				definition = "Characteristics related to the analytics.";
@@ -448,59 +448,66 @@ public class AnalyticsCalculation {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesPricing getSecuritiesPricing() {
-		return securitiesPricing;
+	public Optional<SecuritiesPricing> getSecuritiesPricing() {
+		return securitiesPricing == null ? Optional.empty() : Optional.of(securitiesPricing);
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+	public AnalyticsCalculation setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
 		this.securitiesPricing = securitiesPricing;
+		return this;
 	}
 
 	public AnalyticsValue getValue() {
 		return value;
 	}
 
-	public void setValue(com.tools20022.repository.entity.AnalyticsValue value) {
-		this.value = value;
+	public AnalyticsCalculation setValue(com.tools20022.repository.entity.AnalyticsValue value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
 	public CalculationTypeCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(CalculationTypeCode calculationType) {
-		this.calculationType = calculationType;
+	public AnalyticsCalculation setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public AnalyticsCalculation setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DateTimePeriod getValuePeriod() {
 		return valuePeriod;
 	}
 
-	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
-		this.valuePeriod = valuePeriod;
+	public AnalyticsCalculation setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+		this.valuePeriod = Objects.requireNonNull(valuePeriod);
+		return this;
 	}
 
 	public PercentageRate getEstimatedInterestRate() {
 		return estimatedInterestRate;
 	}
 
-	public void setEstimatedInterestRate(PercentageRate estimatedInterestRate) {
-		this.estimatedInterestRate = estimatedInterestRate;
+	public AnalyticsCalculation setEstimatedInterestRate(PercentageRate estimatedInterestRate) {
+		this.estimatedInterestRate = Objects.requireNonNull(estimatedInterestRate);
+		return this;
 	}
 
 	public ISODateTime getVariableRateValueDate() {
 		return variableRateValueDate;
 	}
 
-	public void setVariableRateValueDate(ISODateTime variableRateValueDate) {
-		this.variableRateValueDate = variableRateValueDate;
+	public AnalyticsCalculation setVariableRateValueDate(ISODateTime variableRateValueDate) {
+		this.variableRateValueDate = Objects.requireNonNull(variableRateValueDate);
+		return this;
 	}
 }

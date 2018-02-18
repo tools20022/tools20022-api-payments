@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides reference information to the original message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OriginalTransactionReference18", propOrder = {"messageIdentification", "messageNameIdentification", "creationDateTime", "originalTransaction"})
 public class OriginalTransactionReference18 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId")
 	protected Max35Text messageIdentification;
 	/**
-	 * Point to point reference, as assigned by the original instructing party,
-	 * to unambiguously identify the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,7 +119,7 @@ public class OriginalTransactionReference18 {
 	 */
 	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalTransactionReference18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalTransactionReference18.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,11 +130,11 @@ public class OriginalTransactionReference18 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgNmId")
 	protected Max35Text messageNameIdentification;
 	/**
-	 * Specifies the original message name identifier to which the message
-	 * refers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,7 +163,7 @@ public class OriginalTransactionReference18 {
 	 */
 	public static final MMMessageAttribute mmMessageNameIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalTransactionReference18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalTransactionReference18.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,10 +174,11 @@ public class OriginalTransactionReference18 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm")
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the original message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,7 +205,7 @@ public class OriginalTransactionReference18 {
 	 */
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalTransactionReference18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalTransactionReference18.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,10 +216,11 @@ public class OriginalTransactionReference18 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlTx")
 	protected List<com.tools20022.repository.msg.PaymentIdentification4> originalTransaction;
 	/**
-	 * Provides reference information to the original transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +254,7 @@ public class OriginalTransactionReference18 {
 	public static final MMMessageAttribute mmOriginalTransaction = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> OriginalTransactionReference18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalTransactionReference18.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlTx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,11 +268,11 @@ public class OriginalTransactionReference18 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OriginalTransactionReference18.mmMessageIdentification, OriginalTransactionReference18.mmMessageNameIdentification, OriginalTransactionReference18.mmCreationDateTime,
-						OriginalTransactionReference18.mmOriginalTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OriginalTransactionReference18.mmMessageIdentification, com.tools20022.repository.msg.OriginalTransactionReference18.mmMessageNameIdentification,
+						com.tools20022.repository.msg.OriginalTransactionReference18.mmCreationDateTime, com.tools20022.repository.msg.OriginalTransactionReference18.mmOriginalTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(IdentificationModificationAdviceV02.mmOriginalTransactionReference);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OriginalTransactionReference18";
 				definition = "Provides reference information to the original message.";
@@ -280,39 +281,39 @@ public class OriginalTransactionReference18 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId")
-	public Max35Text getMessageIdentification() {
-		return messageIdentification;
+	public Optional<Max35Text> getMessageIdentification() {
+		return messageIdentification == null ? Optional.empty() : Optional.of(messageIdentification);
 	}
 
-	public void setMessageIdentification(Max35Text messageIdentification) {
+	public OriginalTransactionReference18 setMessageIdentification(Max35Text messageIdentification) {
 		this.messageIdentification = messageIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "MsgNmId")
-	public Max35Text getMessageNameIdentification() {
-		return messageNameIdentification;
+	public Optional<Max35Text> getMessageNameIdentification() {
+		return messageNameIdentification == null ? Optional.empty() : Optional.of(messageNameIdentification);
 	}
 
-	public void setMessageNameIdentification(Max35Text messageNameIdentification) {
+	public OriginalTransactionReference18 setMessageNameIdentification(Max35Text messageNameIdentification) {
 		this.messageNameIdentification = messageNameIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm")
-	public ISODateTime getCreationDateTime() {
-		return creationDateTime;
+	public Optional<ISODateTime> getCreationDateTime() {
+		return creationDateTime == null ? Optional.empty() : Optional.of(creationDateTime);
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
+	public OriginalTransactionReference18 setCreationDateTime(ISODateTime creationDateTime) {
 		this.creationDateTime = creationDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlTx")
 	public List<PaymentIdentification4> getOriginalTransaction() {
-		return originalTransaction;
+		return originalTransaction == null ? originalTransaction = new ArrayList<>() : originalTransaction;
 	}
 
-	public void setOriginalTransaction(List<com.tools20022.repository.msg.PaymentIdentification4> originalTransaction) {
-		this.originalTransaction = originalTransaction;
+	public OriginalTransactionReference18 setOriginalTransaction(List<com.tools20022.repository.msg.PaymentIdentification4> originalTransaction) {
+		this.originalTransaction = Objects.requireNonNull(originalTransaction);
+		return this;
 	}
 }

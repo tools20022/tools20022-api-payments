@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the compensation data of an incorrect billing."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingCompensation1", propOrder = {"type", "value", "currencyType"})
 public class BillingCompensation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected BillingCompensationType1Choice type;
 	/**
-	 * Defines the type of billing compensation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,7 +114,7 @@ public class BillingCompensation1 {
 	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmBillingCompensationType;
-			componentContext_lazy = () -> BillingCompensation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +126,11 @@ public class BillingCompensation1 {
 			type_lazy = () -> BillingCompensationType1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected AmountAndDirection34 value;
 	/**
-	 * Defines the value of compensation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,7 +162,7 @@ public class BillingCompensation1 {
 	public static final MMMessageAssociationEnd mmValue = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
-			componentContext_lazy = () -> BillingCompensation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +174,11 @@ public class BillingCompensation1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "CcyTp")
 	protected BillingCurrencyType2Code currencyType;
 	/**
-	 * Identifies the currency type used to report the value or total, in a
-	 * coded form, such as Settlement (STLM).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +214,7 @@ public class BillingCompensation1 {
 	public static final MMMessageAttribute mmCurrencyType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmBillingCurrency;
-			componentContext_lazy = () -> BillingCompensation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
 			isDerived = false;
 			xmlTag = "CcyTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,9 +229,10 @@ public class BillingCompensation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingCompensation1.mmType, BillingCompensation1.mmValue, BillingCompensation1.mmCurrencyType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingCompensation1.mmType, com.tools20022.repository.msg.BillingCompensation1.mmValue,
+						com.tools20022.repository.msg.BillingCompensation1.mmCurrencyType);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingCompensation1";
 				definition = "Specifies the compensation data of an incorrect billing.";
@@ -236,30 +241,30 @@ public class BillingCompensation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public BillingCompensationType1Choice getType() {
 		return type;
 	}
 
-	public void setType(BillingCompensationType1Choice type) {
-		this.type = type;
+	public BillingCompensation1 setType(BillingCompensationType1Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public AmountAndDirection34 getValue() {
 		return value;
 	}
 
-	public void setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
-		this.value = value;
+	public BillingCompensation1 setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
-	@XmlElement(name = "CcyTp")
-	public BillingCurrencyType2Code getCurrencyType() {
-		return currencyType;
+	public Optional<BillingCurrencyType2Code> getCurrencyType() {
+		return currencyType == null ? Optional.empty() : Optional.of(currencyType);
 	}
 
-	public void setCurrencyType(BillingCurrencyType2Code currencyType) {
+	public BillingCompensation1 setCurrencyType(BillingCurrencyType2Code currencyType) {
 		this.currencyType = currencyType;
+		return this;
 	}
 }

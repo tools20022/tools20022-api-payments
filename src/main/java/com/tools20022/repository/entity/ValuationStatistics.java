@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Statistical data related to the price change of a security.
@@ -90,8 +91,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +108,8 @@ public class ValuationStatistics {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyCode currency;
 	/**
-	 * Currency of the net asset value calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,9 +154,8 @@ public class ValuationStatistics {
 	};
 	protected TypeOfPriceCode priceTypeChangeBasis;
 	/**
-	 * Type of price from which the change is calculated, eg, bid, offer, or
-	 * single.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,8 +203,8 @@ public class ValuationStatistics {
 	};
 	protected SecuritiesPricing priceChange;
 	/**
-	 * Change in price since the last valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,10 +251,8 @@ public class ValuationStatistics {
 	};
 	protected PercentageRate yield;
 	/**
-	 * Rate of income from the financial instrument, usually calculated as total
-	 * dividends or coupon interest available to investors in the last
-	 * year,divided by the current price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,8 +300,8 @@ public class ValuationStatistics {
 	};
 	protected SecuritiesPricing highestPriceValue;
 	/**
-	 * Highest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,8 +348,8 @@ public class ValuationStatistics {
 	};
 	protected SecuritiesPricing lowestPriceValue;
 	/**
-	 * Lowest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -398,8 +396,8 @@ public class ValuationStatistics {
 	};
 	protected DateTimePeriod period;
 	/**
-	 * Reference period for the valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -446,8 +444,8 @@ public class ValuationStatistics {
 	};
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Information related to the price valuation of an investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -497,8 +495,8 @@ public class ValuationStatistics {
 	};
 	protected PercentageRate netAssetValueChangeRate;
 	/**
-	 * Rate of change of the net asset value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -546,7 +544,7 @@ public class ValuationStatistics {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ValuationStatistics";
 				definition = "Statistical data related to the price change of a security.";
@@ -571,71 +569,80 @@ public class ValuationStatistics {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public ValuationStatistics setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public TypeOfPriceCode getPriceTypeChangeBasis() {
 		return priceTypeChangeBasis;
 	}
 
-	public void setPriceTypeChangeBasis(TypeOfPriceCode priceTypeChangeBasis) {
-		this.priceTypeChangeBasis = priceTypeChangeBasis;
+	public ValuationStatistics setPriceTypeChangeBasis(TypeOfPriceCode priceTypeChangeBasis) {
+		this.priceTypeChangeBasis = Objects.requireNonNull(priceTypeChangeBasis);
+		return this;
 	}
 
 	public SecuritiesPricing getPriceChange() {
 		return priceChange;
 	}
 
-	public void setPriceChange(com.tools20022.repository.entity.SecuritiesPricing priceChange) {
-		this.priceChange = priceChange;
+	public ValuationStatistics setPriceChange(com.tools20022.repository.entity.SecuritiesPricing priceChange) {
+		this.priceChange = Objects.requireNonNull(priceChange);
+		return this;
 	}
 
 	public PercentageRate getYield() {
 		return yield;
 	}
 
-	public void setYield(PercentageRate yield) {
-		this.yield = yield;
+	public ValuationStatistics setYield(PercentageRate yield) {
+		this.yield = Objects.requireNonNull(yield);
+		return this;
 	}
 
 	public SecuritiesPricing getHighestPriceValue() {
 		return highestPriceValue;
 	}
 
-	public void setHighestPriceValue(com.tools20022.repository.entity.SecuritiesPricing highestPriceValue) {
-		this.highestPriceValue = highestPriceValue;
+	public ValuationStatistics setHighestPriceValue(com.tools20022.repository.entity.SecuritiesPricing highestPriceValue) {
+		this.highestPriceValue = Objects.requireNonNull(highestPriceValue);
+		return this;
 	}
 
 	public SecuritiesPricing getLowestPriceValue() {
 		return lowestPriceValue;
 	}
 
-	public void setLowestPriceValue(com.tools20022.repository.entity.SecuritiesPricing lowestPriceValue) {
-		this.lowestPriceValue = lowestPriceValue;
+	public ValuationStatistics setLowestPriceValue(com.tools20022.repository.entity.SecuritiesPricing lowestPriceValue) {
+		this.lowestPriceValue = Objects.requireNonNull(lowestPriceValue);
+		return this;
 	}
 
 	public DateTimePeriod getPeriod() {
 		return period;
 	}
 
-	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
-		this.period = period;
+	public ValuationStatistics setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
 	public NetAssetValueCalculation getNetAssetValueCalculation() {
 		return netAssetValueCalculation;
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
-		this.netAssetValueCalculation = netAssetValueCalculation;
+	public ValuationStatistics setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+		this.netAssetValueCalculation = Objects.requireNonNull(netAssetValueCalculation);
+		return this;
 	}
 
 	public PercentageRate getNetAssetValueChangeRate() {
 		return netAssetValueChangeRate;
 	}
 
-	public void setNetAssetValueChangeRate(PercentageRate netAssetValueChangeRate) {
-		this.netAssetValueChangeRate = netAssetValueChangeRate;
+	public ValuationStatistics setNetAssetValueChangeRate(PercentageRate netAssetValueChangeRate) {
+		this.netAssetValueChangeRate = Objects.requireNonNull(netAssetValueChangeRate);
+		return this;
 	}
 }

@@ -23,9 +23,8 @@ import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TransactionCertificate1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Formal document used to record a fact and used as proof of the fact, in the
@@ -82,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,8 +100,8 @@ public class TradeCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradeCertificateTypeCode certificateType;
 	/**
-	 * Specifies the type of the certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,8 +147,8 @@ public class TradeCertificate extends Document {
 	};
 	protected DateTimePeriod inspectionDate;
 	/**
-	 * Date(s) at which inspection of the goods took place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,8 +195,8 @@ public class TradeCertificate extends Document {
 	};
 	protected List<com.tools20022.repository.entity.TradeCertificatePartyRole> tradeCertificatePartyRole;
 	/**
-	 * Role played by a party in the context of issuing a trade certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,8 +244,8 @@ public class TradeCertificate extends Document {
 	};
 	protected ProductDelivery productDelivery;
 	/**
-	 * Delivery parameters of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,7 +294,7 @@ public class TradeCertificate extends Document {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeCertificate";
 				definition = "Formal document used to record a fact and used as proof of the fact, in the context of a commercial trade transaction.";
@@ -319,31 +318,35 @@ public class TradeCertificate extends Document {
 		return certificateType;
 	}
 
-	public void setCertificateType(TradeCertificateTypeCode certificateType) {
-		this.certificateType = certificateType;
+	public TradeCertificate setCertificateType(TradeCertificateTypeCode certificateType) {
+		this.certificateType = Objects.requireNonNull(certificateType);
+		return this;
 	}
 
 	public DateTimePeriod getInspectionDate() {
 		return inspectionDate;
 	}
 
-	public void setInspectionDate(com.tools20022.repository.entity.DateTimePeriod inspectionDate) {
-		this.inspectionDate = inspectionDate;
+	public TradeCertificate setInspectionDate(com.tools20022.repository.entity.DateTimePeriod inspectionDate) {
+		this.inspectionDate = Objects.requireNonNull(inspectionDate);
+		return this;
 	}
 
 	public List<TradeCertificatePartyRole> getTradeCertificatePartyRole() {
-		return tradeCertificatePartyRole;
+		return tradeCertificatePartyRole == null ? tradeCertificatePartyRole = new ArrayList<>() : tradeCertificatePartyRole;
 	}
 
-	public void setTradeCertificatePartyRole(List<com.tools20022.repository.entity.TradeCertificatePartyRole> tradeCertificatePartyRole) {
-		this.tradeCertificatePartyRole = tradeCertificatePartyRole;
+	public TradeCertificate setTradeCertificatePartyRole(List<com.tools20022.repository.entity.TradeCertificatePartyRole> tradeCertificatePartyRole) {
+		this.tradeCertificatePartyRole = Objects.requireNonNull(tradeCertificatePartyRole);
+		return this;
 	}
 
-	public ProductDelivery getProductDelivery() {
-		return productDelivery;
+	public Optional<ProductDelivery> getProductDelivery() {
+		return productDelivery == null ? Optional.empty() : Optional.of(productDelivery);
 	}
 
-	public void setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
+	public TradeCertificate setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
 		this.productDelivery = productDelivery;
+		return this;
 	}
 }

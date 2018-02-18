@@ -37,25 +37,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Pending
- * BalanceStatusCode.mmPending}</li>
+ * BalanceStatusCode.Pending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Settled
- * BalanceStatusCode.mmSettled}</li>
+ * BalanceStatusCode.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#Suspended
- * BalanceStatusCode.mmSuspended}</li>
+ * BalanceStatusCode.Suspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#SettledUnregistered
- * BalanceStatusCode.mmSettledUnregistered}</li>
+ * BalanceStatusCode.SettledUnregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceStatusCode#SettledRegistered
- * BalanceStatusCode.mmSettledRegistered}</li>
+ * BalanceStatusCode.SettledRegistered}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -246,7 +246,7 @@ public class BalanceStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PDNG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceStatusCode";

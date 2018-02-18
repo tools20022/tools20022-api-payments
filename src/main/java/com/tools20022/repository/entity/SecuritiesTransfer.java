@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PartialSettlementCode;
 import com.tools20022.repository.codeset.TransferReasonCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Completion of a securities settlement instruction, wherein securities are
@@ -140,8 +140,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -159,9 +159,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification of a transfer, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,8 +207,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected SecuritiesQuantity transferredQuantity;
 	/**
-	 * Total quantity of securities settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,6 +229,9 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer
 	 * SecuritiesTransfer}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :36B::ESTT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -244,6 +246,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":36B::ESTT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredQuantity";
 			definition = "Total quantity of securities settled.";
@@ -256,8 +259,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> account;
 	/**
-	 * Specifies the account from/to which the securities are transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,9 +307,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected TransferTypeCode transferType;
 	/**
-	 * Specifies whether the financial instrument is transferred as an asset or
-	 * as cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,8 +356,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected SecuritiesSettlement relatedSettlement;
 	/**
-	 * Settlement process which is the source of the transfer operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -404,8 +406,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected YesNoIndicator ownAccountTransferIndicator;
 	/**
-	 * Indicates whether the transfer results in a change of beneficial owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -453,8 +455,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected PhysicalDelivery physicalDelivery;
 	/**
-	 * Information related to physical delivery of the securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -502,9 +504,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected ISODateTime lateDeliveryDate;
 	/**
-	 * Date and time after the settlement date specified in the trade, used for
-	 * pool trades resulting from the original To Be Assigned (TBA) securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -516,6 +517,9 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer
 	 * SecuritiesTransfer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::ADEL</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -533,6 +537,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::ADEL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LateDeliveryDate";
 			definition = "Date and time after the settlement date specified in the trade, used for pool trades resulting from the original To Be Assigned (TBA) securities.";
@@ -551,8 +556,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected Tax transferTax;
 	/**
-	 * Tax related to the transfer of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -598,8 +603,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected TransferReasonCode transferReason;
 	/**
-	 * Identifies the transfer reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -645,8 +650,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected PartialSettlementCode partialSettlementType;
 	/**
-	 * Information about partial settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -659,6 +664,9 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer
 	 * SecuritiesTransfer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PARS</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -674,6 +682,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PARS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialSettlementType";
 			definition = "Information about partial settlement.";
@@ -692,8 +701,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
 	/**
-	 * Obligation for one party to deliver securities to another party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -741,8 +750,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry;
 	/**
-	 * Record in a securities account resulting from the transfer of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -790,8 +799,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of a securities transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -836,8 +845,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Security which is transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -882,8 +891,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	};
 	protected SecuritiesTradeStatus status;
 	/**
-	 * Status of a securities transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -933,7 +942,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTransfer";
 				definition = "Completion of a securities settlement instruction, wherein securities are delivered/debited from a securities account and received/credited to the designated securities account.";
@@ -964,127 +973,143 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public SecuritiesTransfer setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public SecuritiesQuantity getTransferredQuantity() {
 		return transferredQuantity;
 	}
 
-	public void setTransferredQuantity(com.tools20022.repository.entity.SecuritiesQuantity transferredQuantity) {
-		this.transferredQuantity = transferredQuantity;
+	public SecuritiesTransfer setTransferredQuantity(com.tools20022.repository.entity.SecuritiesQuantity transferredQuantity) {
+		this.transferredQuantity = Objects.requireNonNull(transferredQuantity);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.SecuritiesAccount> account) {
-		this.account = account;
+	public SecuritiesTransfer setAccount(List<com.tools20022.repository.entity.SecuritiesAccount> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public TransferTypeCode getTransferType() {
 		return transferType;
 	}
 
-	public void setTransferType(TransferTypeCode transferType) {
-		this.transferType = transferType;
+	public SecuritiesTransfer setTransferType(TransferTypeCode transferType) {
+		this.transferType = Objects.requireNonNull(transferType);
+		return this;
 	}
 
-	public SecuritiesSettlement getRelatedSettlement() {
-		return relatedSettlement;
+	public Optional<SecuritiesSettlement> getRelatedSettlement() {
+		return relatedSettlement == null ? Optional.empty() : Optional.of(relatedSettlement);
 	}
 
-	public void setRelatedSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSettlement) {
+	public SecuritiesTransfer setRelatedSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSettlement) {
 		this.relatedSettlement = relatedSettlement;
+		return this;
 	}
 
 	public YesNoIndicator getOwnAccountTransferIndicator() {
 		return ownAccountTransferIndicator;
 	}
 
-	public void setOwnAccountTransferIndicator(YesNoIndicator ownAccountTransferIndicator) {
-		this.ownAccountTransferIndicator = ownAccountTransferIndicator;
+	public SecuritiesTransfer setOwnAccountTransferIndicator(YesNoIndicator ownAccountTransferIndicator) {
+		this.ownAccountTransferIndicator = Objects.requireNonNull(ownAccountTransferIndicator);
+		return this;
 	}
 
 	public PhysicalDelivery getPhysicalDelivery() {
 		return physicalDelivery;
 	}
 
-	public void setPhysicalDelivery(com.tools20022.repository.entity.PhysicalDelivery physicalDelivery) {
-		this.physicalDelivery = physicalDelivery;
+	public SecuritiesTransfer setPhysicalDelivery(com.tools20022.repository.entity.PhysicalDelivery physicalDelivery) {
+		this.physicalDelivery = Objects.requireNonNull(physicalDelivery);
+		return this;
 	}
 
 	public ISODateTime getLateDeliveryDate() {
 		return lateDeliveryDate;
 	}
 
-	public void setLateDeliveryDate(ISODateTime lateDeliveryDate) {
-		this.lateDeliveryDate = lateDeliveryDate;
+	public SecuritiesTransfer setLateDeliveryDate(ISODateTime lateDeliveryDate) {
+		this.lateDeliveryDate = Objects.requireNonNull(lateDeliveryDate);
+		return this;
 	}
 
 	public Tax getTransferTax() {
 		return transferTax;
 	}
 
-	public void setTransferTax(com.tools20022.repository.entity.Tax transferTax) {
-		this.transferTax = transferTax;
+	public SecuritiesTransfer setTransferTax(com.tools20022.repository.entity.Tax transferTax) {
+		this.transferTax = Objects.requireNonNull(transferTax);
+		return this;
 	}
 
 	public TransferReasonCode getTransferReason() {
 		return transferReason;
 	}
 
-	public void setTransferReason(TransferReasonCode transferReason) {
-		this.transferReason = transferReason;
+	public SecuritiesTransfer setTransferReason(TransferReasonCode transferReason) {
+		this.transferReason = Objects.requireNonNull(transferReason);
+		return this;
 	}
 
 	public PartialSettlementCode getPartialSettlementType() {
 		return partialSettlementType;
 	}
 
-	public void setPartialSettlementType(PartialSettlementCode partialSettlementType) {
-		this.partialSettlementType = partialSettlementType;
+	public SecuritiesTransfer setPartialSettlementType(PartialSettlementCode partialSettlementType) {
+		this.partialSettlementType = Objects.requireNonNull(partialSettlementType);
+		return this;
 	}
 
 	public List<SecuritiesDeliveryObligation> getSecuritiesDeliveryObligation() {
-		return securitiesDeliveryObligation;
+		return securitiesDeliveryObligation == null ? securitiesDeliveryObligation = new ArrayList<>() : securitiesDeliveryObligation;
 	}
 
-	public void setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
-		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	public SecuritiesTransfer setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = Objects.requireNonNull(securitiesDeliveryObligation);
+		return this;
 	}
 
 	public List<SecuritiesEntry> getBookEntry() {
-		return bookEntry;
+		return bookEntry == null ? bookEntry = new ArrayList<>() : bookEntry;
 	}
 
-	public void setBookEntry(List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry) {
-		this.bookEntry = bookEntry;
+	public SecuritiesTransfer setBookEntry(List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry) {
+		this.bookEntry = Objects.requireNonNull(bookEntry);
+		return this;
 	}
 
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public SecuritiesTransfer setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public SecuritiesTransfer setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public SecuritiesTradeStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(com.tools20022.repository.entity.SecuritiesTradeStatus status) {
-		this.status = status;
+	public SecuritiesTransfer setStatus(com.tools20022.repository.entity.SecuritiesTradeStatus status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 }

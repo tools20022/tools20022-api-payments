@@ -38,40 +38,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#Redemption
- * TransactionType1Code.mmRedemption}</li>
+ * TransactionType1Code.Redemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#Subscription
- * TransactionType1Code.mmSubscription}</li>
+ * TransactionType1Code.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#SubscriptionSavingsPlan
- * TransactionType1Code.mmSubscriptionSavingsPlan}</li>
+ * TransactionType1Code.SubscriptionSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#RedemptionWithdrawingPlan
- * TransactionType1Code.mmRedemptionWithdrawingPlan}</li>
+ * TransactionType1Code.RedemptionWithdrawingPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#Switch
- * TransactionType1Code.mmSwitch}</li>
+ * TransactionType1Code.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#CorporationActionEvent
- * TransactionType1Code.mmCorporationActionEvent}</li>
+ * TransactionType1Code.CorporationActionEvent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#TransferIn
- * TransactionType1Code.mmTransferIn}</li>
+ * TransactionType1Code.TransferIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#TransferOut
- * TransactionType1Code.mmTransferOut}</li>
+ * TransactionType1Code.TransferOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#SwitchIn
- * TransactionType1Code.mmSwitchIn}</li>
+ * TransactionType1Code.SwitchIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#SwitchOut
- * TransactionType1Code.mmSwitchOut}</li>
+ * TransactionType1Code.SwitchOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#SubscriptionAssetAllocation
- * TransactionType1Code.mmSubscriptionAssetAllocation}</li>
+ * TransactionType1Code.SubscriptionAssetAllocation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType1Code#RedemptionAssetAllocation
- * TransactionType1Code.mmRedemptionAssetAllocation}</li>
+ * TransactionType1Code.RedemptionAssetAllocation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -398,7 +398,7 @@ public class TransactionType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REDM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionType1Code";

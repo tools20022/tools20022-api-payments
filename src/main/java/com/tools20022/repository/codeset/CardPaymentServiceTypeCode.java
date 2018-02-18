@@ -38,190 +38,190 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardsFundTransfer
- * CardPaymentServiceTypeCode.mmCardsFundTransfer}</li>
+ * CardPaymentServiceTypeCode.CardsFundTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#OriginalCredit
- * CardPaymentServiceTypeCode.mmOriginalCredit}</li>
+ * CardPaymentServiceTypeCode.OriginalCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardPayment
- * CardPaymentServiceTypeCode.mmCardPayment}</li>
+ * CardPaymentServiceTypeCode.CardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CashBack
- * CardPaymentServiceTypeCode.mmCashBack}</li>
+ * CardPaymentServiceTypeCode.CashBack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CashAdvance
- * CardPaymentServiceTypeCode.mmCashAdvance}</li>
+ * CardPaymentServiceTypeCode.CashAdvance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CashDeposit
- * CardPaymentServiceTypeCode.mmCashDeposit}</li>
+ * CardPaymentServiceTypeCode.CashDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#DeferredPayment
- * CardPaymentServiceTypeCode.mmDeferredPayment}</li>
+ * CardPaymentServiceTypeCode.DeferredPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Reservation
- * CardPaymentServiceTypeCode.mmReservation}</li>
+ * CardPaymentServiceTypeCode.Reservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Loading
- * CardPaymentServiceTypeCode.mmLoading}</li>
+ * CardPaymentServiceTypeCode.Loading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Refund
- * CardPaymentServiceTypeCode.mmRefund}</li>
+ * CardPaymentServiceTypeCode.Refund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#QuasiCash
- * CardPaymentServiceTypeCode.mmQuasiCash}</li>
+ * CardPaymentServiceTypeCode.QuasiCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Balance
- * CardPaymentServiceTypeCode.mmBalance}</li>
+ * CardPaymentServiceTypeCode.Balance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardActivation
- * CardPaymentServiceTypeCode.mmCardActivation}</li>
+ * CardPaymentServiceTypeCode.CardActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardVerification
- * CardPaymentServiceTypeCode.mmCardVerification}</li>
+ * CardPaymentServiceTypeCode.CardVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PINChange
- * CardPaymentServiceTypeCode.mmPINChange}</li>
+ * CardPaymentServiceTypeCode.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#ValidityCheck
- * CardPaymentServiceTypeCode.mmValidityCheck}</li>
+ * CardPaymentServiceTypeCode.ValidityCheck}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Aggregation
- * CardPaymentServiceTypeCode.mmAggregation}</li>
+ * CardPaymentServiceTypeCode.Aggregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#DCC
- * CardPaymentServiceTypeCode.mmDCC}</li>
+ * CardPaymentServiceTypeCode.DCC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Gratuity
- * CardPaymentServiceTypeCode.mmGratuity}</li>
+ * CardPaymentServiceTypeCode.Gratuity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Instalment
- * CardPaymentServiceTypeCode.mmInstalment}</li>
+ * CardPaymentServiceTypeCode.Instalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Loyalty
- * CardPaymentServiceTypeCode.mmLoyalty}</li>
+ * CardPaymentServiceTypeCode.Loyalty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#NoShow
- * CardPaymentServiceTypeCode.mmNoShow}</li>
+ * CardPaymentServiceTypeCode.NoShow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PurchaseCorporate
- * CardPaymentServiceTypeCode.mmPurchaseCorporate}</li>
+ * CardPaymentServiceTypeCode.PurchaseCorporate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#RecurringPayment
- * CardPaymentServiceTypeCode.mmRecurringPayment}</li>
+ * CardPaymentServiceTypeCode.RecurringPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#SolicitedAvailableFunds
- * CardPaymentServiceTypeCode.mmSolicitedAvailableFunds}</li>
+ * CardPaymentServiceTypeCode.SolicitedAvailableFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#UnsolicitedAvailableFunds
- * CardPaymentServiceTypeCode.mmUnsolicitedAvailableFunds}</li>
+ * CardPaymentServiceTypeCode.UnsolicitedAvailableFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#VoiceAuthorisation
- * CardPaymentServiceTypeCode.mmVoiceAuthorisation}</li>
+ * CardPaymentServiceTypeCode.VoiceAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#InitialReservation
- * CardPaymentServiceTypeCode.mmInitialReservation}</li>
+ * CardPaymentServiceTypeCode.InitialReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#UpdateReservation
- * CardPaymentServiceTypeCode.mmUpdateReservation}</li>
+ * CardPaymentServiceTypeCode.UpdateReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PaymentReservation
- * CardPaymentServiceTypeCode.mmPaymentReservation}</li>
+ * CardPaymentServiceTypeCode.PaymentReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#AdditionalPayment
- * CardPaymentServiceTypeCode.mmAdditionalPayment}</li>
+ * CardPaymentServiceTypeCode.AdditionalPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#FirstRecurring
- * CardPaymentServiceTypeCode.mmFirstRecurring}</li>
+ * CardPaymentServiceTypeCode.FirstRecurring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#FollowingRecurring
- * CardPaymentServiceTypeCode.mmFollowingRecurring}</li>
+ * CardPaymentServiceTypeCode.FollowingRecurring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PersonToBusiness
- * CardPaymentServiceTypeCode.mmPersonToBusiness}</li>
+ * CardPaymentServiceTypeCode.PersonToBusiness}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PersonToPerson
- * CardPaymentServiceTypeCode.mmPersonToPerson}</li>
+ * CardPaymentServiceTypeCode.PersonToPerson}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#AcceptorInstalment
- * CardPaymentServiceTypeCode.mmAcceptorInstalment}</li>
+ * CardPaymentServiceTypeCode.AcceptorInstalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#IssuerInstalment
- * CardPaymentServiceTypeCode.mmIssuerInstalment}</li>
+ * CardPaymentServiceTypeCode.IssuerInstalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Unloading
- * CardPaymentServiceTypeCode.mmUnloading}</li>
+ * CardPaymentServiceTypeCode.Unloading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardsFundTransferPush
- * CardPaymentServiceTypeCode.mmCardsFundTransferPush}</li>
+ * CardPaymentServiceTypeCode.CardsFundTransferPush}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CardsFundTransferPull
- * CardPaymentServiceTypeCode.mmCardsFundTransferPull}</li>
+ * CardPaymentServiceTypeCode.CardsFundTransferPull}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CashWithdrawal
- * CardPaymentServiceTypeCode.mmCashWithdrawal}</li>
+ * CardPaymentServiceTypeCode.CashWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PINUnblock
- * CardPaymentServiceTypeCode.mmPINUnblock}</li>
+ * CardPaymentServiceTypeCode.PINUnblock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#ChosenWithdrawal
- * CardPaymentServiceTypeCode.mmChosenWithdrawal}</li>
+ * CardPaymentServiceTypeCode.ChosenWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#PreAuthorisedWithdrawal
- * CardPaymentServiceTypeCode.mmPreAuthorisedWithdrawal}</li>
+ * CardPaymentServiceTypeCode.PreAuthorisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#ProfileWithdrawal
- * CardPaymentServiceTypeCode.mmProfileWithdrawal}</li>
+ * CardPaymentServiceTypeCode.ProfileWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#StandardWithdrawal
- * CardPaymentServiceTypeCode.mmStandardWithdrawal}</li>
+ * CardPaymentServiceTypeCode.StandardWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferCardBillPayment
- * CardPaymentServiceTypeCode.mmTransferCardBillPayment}</li>
+ * CardPaymentServiceTypeCode.TransferCardBillPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferFromCash
- * CardPaymentServiceTypeCode.mmTransferFromCash}</li>
+ * CardPaymentServiceTypeCode.TransferFromCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferFromCheque
- * CardPaymentServiceTypeCode.mmTransferFromCheque}</li>
+ * CardPaymentServiceTypeCode.TransferFromCheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferFundsDisbursementGeneral
- * CardPaymentServiceTypeCode.mmTransferFundsDisbursementGeneral}</li>
+ * CardPaymentServiceTypeCode.TransferFundsDisbursementGeneral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferGovernmentDisbursement
- * CardPaymentServiceTypeCode.mmTransferGovernmentDisbursement}</li>
+ * CardPaymentServiceTypeCode.TransferGovernmentDisbursement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferMerchantDisbursement
- * CardPaymentServiceTypeCode.mmTransferMerchantDisbursement}</li>
+ * CardPaymentServiceTypeCode.TransferMerchantDisbursement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#TransferPayrollPensionDisbursement
- * CardPaymentServiceTypeCode.mmTransferPayrollPensionDisbursement}</li>
+ * CardPaymentServiceTypeCode.TransferPayrollPensionDisbursement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#NonRefundable
- * CardPaymentServiceTypeCode.mmNonRefundable}</li>
+ * CardPaymentServiceTypeCode.NonRefundable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#Instant
- * CardPaymentServiceTypeCode.mmInstant}</li>
+ * CardPaymentServiceTypeCode.Instant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CreditAdjustement
- * CardPaymentServiceTypeCode.mmCreditAdjustement}</li>
+ * CardPaymentServiceTypeCode.CreditAdjustement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#DebitAdjustement
- * CardPaymentServiceTypeCode.mmDebitAdjustement}</li>
+ * CardPaymentServiceTypeCode.DebitAdjustement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#CreateCertificate
- * CardPaymentServiceTypeCode.mmCreateCertificate}</li>
+ * CardPaymentServiceTypeCode.CreateCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#RenewCerificate
- * CardPaymentServiceTypeCode.mmRenewCerificate}</li>
+ * CardPaymentServiceTypeCode.RenewCerificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#RevokeCertificate
- * CardPaymentServiceTypeCode.mmRevokeCertificate}</li>
+ * CardPaymentServiceTypeCode.RevokeCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#AddWhiteList
- * CardPaymentServiceTypeCode.mmAddWhiteList}</li>
+ * CardPaymentServiceTypeCode.AddWhiteList}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceTypeCode#RemoveWhiteList
- * CardPaymentServiceTypeCode.mmRemoveWhiteList}</li>
+ * CardPaymentServiceTypeCode.RemoveWhiteList}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -235,8 +235,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -2148,7 +2148,7 @@ public class CardPaymentServiceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAFT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceTypeCode";

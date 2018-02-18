@@ -28,9 +28,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * General information that unambiguously identifies a document, such as
@@ -259,8 +258,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -278,8 +277,8 @@ public class Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime issueDate;
 	/**
-	 * Issue date of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,9 +360,8 @@ public class Document {
 	};
 	protected CopyDuplicateCode copyDuplicate;
 	/**
-	 * Specifies if this document is a copy, a duplicate, or a duplicate of a
-	 * copy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,8 +408,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> placeOfStorage;
 	/**
-	 * Specifies where the document is stored.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -478,8 +476,8 @@ public class Document {
 	};
 	protected PaymentObligation paymentObligation;
 	/**
-	 * Document which is referred to in a payment obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,8 +523,8 @@ public class Document {
 	};
 	protected DocumentTypeCode type;
 	/**
-	 * Specifies the type of the document, for example commercial invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -622,11 +620,8 @@ public class Document {
 	};
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of money and currency of a document. <br>
-	 * The amount can be either the original amount due and payable for instance
-	 * the ordered amount, or the amount actually remitted for the referred
-	 * document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,8 +696,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.Agreement> agreement;
 	/**
-	 * Agreement which is materialised by a document
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -747,8 +742,8 @@ public class Document {
 	};
 	protected Location placeOfIssue;
 	/**
-	 * Place where the document was issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -793,8 +788,8 @@ public class Document {
 	};
 	protected Number documentVersion;
 	/**
-	 * Unambiguous identification of the version of a document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -838,8 +833,8 @@ public class Document {
 	};
 	protected Max140Text status;
 	/**
-	 * Status of the document (eg delivered, paid, etc.)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -894,8 +889,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.Reconciliation> reconciliation;
 	/**
-	 * Reconciliation process for which a document is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -941,8 +936,8 @@ public class Document {
 	};
 	protected LetterOfCredit letterOfCredit;
 	/**
-	 * Written undertaking by a bank to honour a demand for payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -989,9 +984,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.DocumentPartyRole> partyRole;
 	/**
-	 * Role played by a party in the context of a document or in the context of
-	 * the business linked to the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1038,8 +1032,8 @@ public class Document {
 	};
 	protected DataSetTypeCode dataSetType;
 	/**
-	 * Specifies the type of data set in which the document is included.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1085,8 +1079,8 @@ public class Document {
 	};
 	protected Transport transport;
 	/**
-	 * Transport process for which related documents are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1133,8 +1127,8 @@ public class Document {
 	};
 	protected YesNoIndicator signedIndicator;
 	/**
-	 * Indication whether the document must be signed or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1179,8 +1173,8 @@ public class Document {
 	};
 	protected CurrencyAndAmount remittedAmount;
 	/**
-	 * Amount of money remitted for the referred document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1237,8 +1231,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.Guarantee> guarantee;
 	/**
-	 * Guarantee that is described in a document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1283,8 +1277,8 @@ public class Document {
 	};
 	protected LanguageCode language;
 	/**
-	 * Language used for textual information in the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1328,8 +1322,8 @@ public class Document {
 	};
 	protected Max35Text purpose;
 	/**
-	 * Specifies the function of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1382,9 +1376,8 @@ public class Document {
 	};
 	protected GenericIdentification documentIdentification;
 	/**
-	 * Identification of a document for instance unique identification of the
-	 * purchase order, assigned by the buyer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1480,8 +1473,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.Evidence> evidence;
 	/**
-	 * Proof of evidence which uses a document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1525,8 +1518,8 @@ public class Document {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTrade> commercialTrade;
 	/**
-	 * Trade for which a certificare is issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1571,8 +1564,8 @@ public class Document {
 	};
 	protected Presentation presentation;
 	/**
-	 * Presentation of documents and statements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1618,8 +1611,8 @@ public class Document {
 	};
 	protected RegisteredContract relatedContract;
 	/**
-	 * Related document which materialises the agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1667,7 +1660,7 @@ public class Document {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Document";
 				definition = "General information that unambiguously identifies a document, such as identification number and issue date time.";
@@ -1709,199 +1702,224 @@ public class Document {
 		return issueDate;
 	}
 
-	public void setIssueDate(ISODateTime issueDate) {
-		this.issueDate = issueDate;
+	public Document setIssueDate(ISODateTime issueDate) {
+		this.issueDate = Objects.requireNonNull(issueDate);
+		return this;
 	}
 
 	public CopyDuplicateCode getCopyDuplicate() {
 		return copyDuplicate;
 	}
 
-	public void setCopyDuplicate(CopyDuplicateCode copyDuplicate) {
-		this.copyDuplicate = copyDuplicate;
+	public Document setCopyDuplicate(CopyDuplicateCode copyDuplicate) {
+		this.copyDuplicate = Objects.requireNonNull(copyDuplicate);
+		return this;
 	}
 
 	public List<ContactPoint> getPlaceOfStorage() {
-		return placeOfStorage;
+		return placeOfStorage == null ? placeOfStorage = new ArrayList<>() : placeOfStorage;
 	}
 
-	public void setPlaceOfStorage(List<com.tools20022.repository.entity.ContactPoint> placeOfStorage) {
-		this.placeOfStorage = placeOfStorage;
+	public Document setPlaceOfStorage(List<com.tools20022.repository.entity.ContactPoint> placeOfStorage) {
+		this.placeOfStorage = Objects.requireNonNull(placeOfStorage);
+		return this;
 	}
 
-	public PaymentObligation getPaymentObligation() {
-		return paymentObligation;
+	public Optional<PaymentObligation> getPaymentObligation() {
+		return paymentObligation == null ? Optional.empty() : Optional.of(paymentObligation);
 	}
 
-	public void setPaymentObligation(com.tools20022.repository.entity.PaymentObligation paymentObligation) {
+	public Document setPaymentObligation(com.tools20022.repository.entity.PaymentObligation paymentObligation) {
 		this.paymentObligation = paymentObligation;
+		return this;
 	}
 
 	public DocumentTypeCode getType() {
 		return type;
 	}
 
-	public void setType(DocumentTypeCode type) {
-		this.type = type;
+	public Document setType(DocumentTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public Document setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public List<Agreement> getAgreement() {
-		return agreement;
+		return agreement == null ? agreement = new ArrayList<>() : agreement;
 	}
 
-	public void setAgreement(List<com.tools20022.repository.entity.Agreement> agreement) {
-		this.agreement = agreement;
+	public Document setAgreement(List<com.tools20022.repository.entity.Agreement> agreement) {
+		this.agreement = Objects.requireNonNull(agreement);
+		return this;
 	}
 
-	public Location getPlaceOfIssue() {
-		return placeOfIssue;
+	public Optional<Location> getPlaceOfIssue() {
+		return placeOfIssue == null ? Optional.empty() : Optional.of(placeOfIssue);
 	}
 
-	public void setPlaceOfIssue(com.tools20022.repository.entity.Location placeOfIssue) {
+	public Document setPlaceOfIssue(com.tools20022.repository.entity.Location placeOfIssue) {
 		this.placeOfIssue = placeOfIssue;
+		return this;
 	}
 
 	public Number getDocumentVersion() {
 		return documentVersion;
 	}
 
-	public void setDocumentVersion(Number documentVersion) {
-		this.documentVersion = documentVersion;
+	public Document setDocumentVersion(Number documentVersion) {
+		this.documentVersion = Objects.requireNonNull(documentVersion);
+		return this;
 	}
 
 	public Max140Text getStatus() {
 		return status;
 	}
 
-	public void setStatus(Max140Text status) {
-		this.status = status;
+	public Document setStatus(Max140Text status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public List<Reconciliation> getReconciliation() {
-		return reconciliation;
+		return reconciliation == null ? reconciliation = new ArrayList<>() : reconciliation;
 	}
 
-	public void setReconciliation(List<com.tools20022.repository.entity.Reconciliation> reconciliation) {
-		this.reconciliation = reconciliation;
+	public Document setReconciliation(List<com.tools20022.repository.entity.Reconciliation> reconciliation) {
+		this.reconciliation = Objects.requireNonNull(reconciliation);
+		return this;
 	}
 
 	public LetterOfCredit getLetterOfCredit() {
 		return letterOfCredit;
 	}
 
-	public void setLetterOfCredit(com.tools20022.repository.entity.LetterOfCredit letterOfCredit) {
-		this.letterOfCredit = letterOfCredit;
+	public Document setLetterOfCredit(com.tools20022.repository.entity.LetterOfCredit letterOfCredit) {
+		this.letterOfCredit = Objects.requireNonNull(letterOfCredit);
+		return this;
 	}
 
 	public List<DocumentPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.DocumentPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Document setPartyRole(List<com.tools20022.repository.entity.DocumentPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public DataSetTypeCode getDataSetType() {
 		return dataSetType;
 	}
 
-	public void setDataSetType(DataSetTypeCode dataSetType) {
-		this.dataSetType = dataSetType;
+	public Document setDataSetType(DataSetTypeCode dataSetType) {
+		this.dataSetType = Objects.requireNonNull(dataSetType);
+		return this;
 	}
 
 	public Transport getTransport() {
 		return transport;
 	}
 
-	public void setTransport(com.tools20022.repository.entity.Transport transport) {
-		this.transport = transport;
+	public Document setTransport(com.tools20022.repository.entity.Transport transport) {
+		this.transport = Objects.requireNonNull(transport);
+		return this;
 	}
 
 	public YesNoIndicator getSignedIndicator() {
 		return signedIndicator;
 	}
 
-	public void setSignedIndicator(YesNoIndicator signedIndicator) {
-		this.signedIndicator = signedIndicator;
+	public Document setSignedIndicator(YesNoIndicator signedIndicator) {
+		this.signedIndicator = Objects.requireNonNull(signedIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getRemittedAmount() {
 		return remittedAmount;
 	}
 
-	public void setRemittedAmount(CurrencyAndAmount remittedAmount) {
-		this.remittedAmount = remittedAmount;
+	public Document setRemittedAmount(CurrencyAndAmount remittedAmount) {
+		this.remittedAmount = Objects.requireNonNull(remittedAmount);
+		return this;
 	}
 
 	public List<Guarantee> getGuarantee() {
-		return guarantee;
+		return guarantee == null ? guarantee = new ArrayList<>() : guarantee;
 	}
 
-	public void setGuarantee(List<com.tools20022.repository.entity.Guarantee> guarantee) {
-		this.guarantee = guarantee;
+	public Document setGuarantee(List<com.tools20022.repository.entity.Guarantee> guarantee) {
+		this.guarantee = Objects.requireNonNull(guarantee);
+		return this;
 	}
 
 	public LanguageCode getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(LanguageCode language) {
-		this.language = language;
+	public Document setLanguage(LanguageCode language) {
+		this.language = Objects.requireNonNull(language);
+		return this;
 	}
 
 	public Max35Text getPurpose() {
 		return purpose;
 	}
 
-	public void setPurpose(Max35Text purpose) {
-		this.purpose = purpose;
+	public Document setPurpose(Max35Text purpose) {
+		this.purpose = Objects.requireNonNull(purpose);
+		return this;
 	}
 
 	public GenericIdentification getDocumentIdentification() {
 		return documentIdentification;
 	}
 
-	public void setDocumentIdentification(com.tools20022.repository.entity.GenericIdentification documentIdentification) {
-		this.documentIdentification = documentIdentification;
+	public Document setDocumentIdentification(com.tools20022.repository.entity.GenericIdentification documentIdentification) {
+		this.documentIdentification = Objects.requireNonNull(documentIdentification);
+		return this;
 	}
 
 	public List<Evidence> getEvidence() {
-		return evidence;
+		return evidence == null ? evidence = new ArrayList<>() : evidence;
 	}
 
-	public void setEvidence(List<com.tools20022.repository.entity.Evidence> evidence) {
-		this.evidence = evidence;
+	public Document setEvidence(List<com.tools20022.repository.entity.Evidence> evidence) {
+		this.evidence = Objects.requireNonNull(evidence);
+		return this;
 	}
 
 	public List<CommercialTrade> getCommercialTrade() {
-		return commercialTrade;
+		return commercialTrade == null ? commercialTrade = new ArrayList<>() : commercialTrade;
 	}
 
-	public void setCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> commercialTrade) {
-		this.commercialTrade = commercialTrade;
+	public Document setCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> commercialTrade) {
+		this.commercialTrade = Objects.requireNonNull(commercialTrade);
+		return this;
 	}
 
-	public Presentation getPresentation() {
-		return presentation;
+	public Optional<Presentation> getPresentation() {
+		return presentation == null ? Optional.empty() : Optional.of(presentation);
 	}
 
-	public void setPresentation(com.tools20022.repository.entity.Presentation presentation) {
+	public Document setPresentation(com.tools20022.repository.entity.Presentation presentation) {
 		this.presentation = presentation;
+		return this;
 	}
 
 	public RegisteredContract getRelatedContract() {
 		return relatedContract;
 	}
 
-	public void setRelatedContract(com.tools20022.repository.entity.RegisteredContract relatedContract) {
-		this.relatedContract = relatedContract;
+	public Document setRelatedContract(com.tools20022.repository.entity.RegisteredContract relatedContract) {
+		this.relatedContract = Objects.requireNonNull(relatedContract);
+		return this;
 	}
 }

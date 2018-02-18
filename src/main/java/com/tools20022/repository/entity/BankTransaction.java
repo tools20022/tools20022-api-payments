@@ -23,9 +23,8 @@ import com.tools20022.repository.codeset.ExternalBankTransactionFamilyCode;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Code of the underlying bank transaction.
@@ -106,8 +105,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -123,8 +122,8 @@ public class BankTransaction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExternalBankTransactionDomainCode domain;
 	/**
-	 * Specifies the business area of the underlying transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +179,8 @@ public class BankTransaction {
 	};
 	protected ExternalBankTransactionFamilyCode family;
 	/**
-	 * Specifies the family within a domain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,8 +238,8 @@ public class BankTransaction {
 	};
 	protected ExternalBankTransactionFamilyCode subFamily;
 	/**
-	 * Specifies the sub-product family within a specific family.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -296,8 +295,8 @@ public class BankTransaction {
 	};
 	protected List<com.tools20022.repository.entity.GenericIdentification> proprietaryIdentification;
 	/**
-	 * Bank transaction code in a proprietary form, as defined by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,8 +353,8 @@ public class BankTransaction {
 	};
 	protected BankOperation bankOperation;
 	/**
-	 * Bank operation for which a type is detailed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,8 +401,8 @@ public class BankTransaction {
 	};
 	protected Entry relatedEntry;
 	/**
-	 * Entry for which a bank transaction code is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,8 +448,8 @@ public class BankTransaction {
 	};
 	protected PaymentProcessing relatedPayment;
 	/**
-	 * Payment for which bank transaction information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,7 +499,7 @@ public class BankTransaction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BankTransaction";
 				definition = "Code of the underlying bank transaction.";
@@ -525,55 +524,62 @@ public class BankTransaction {
 		return domain;
 	}
 
-	public void setDomain(ExternalBankTransactionDomainCode domain) {
-		this.domain = domain;
+	public BankTransaction setDomain(ExternalBankTransactionDomainCode domain) {
+		this.domain = Objects.requireNonNull(domain);
+		return this;
 	}
 
 	public ExternalBankTransactionFamilyCode getFamily() {
 		return family;
 	}
 
-	public void setFamily(ExternalBankTransactionFamilyCode family) {
-		this.family = family;
+	public BankTransaction setFamily(ExternalBankTransactionFamilyCode family) {
+		this.family = Objects.requireNonNull(family);
+		return this;
 	}
 
 	public ExternalBankTransactionFamilyCode getSubFamily() {
 		return subFamily;
 	}
 
-	public void setSubFamily(ExternalBankTransactionFamilyCode subFamily) {
-		this.subFamily = subFamily;
+	public BankTransaction setSubFamily(ExternalBankTransactionFamilyCode subFamily) {
+		this.subFamily = Objects.requireNonNull(subFamily);
+		return this;
 	}
 
 	public List<GenericIdentification> getProprietaryIdentification() {
-		return proprietaryIdentification;
+		return proprietaryIdentification == null ? proprietaryIdentification = new ArrayList<>() : proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(List<com.tools20022.repository.entity.GenericIdentification> proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public BankTransaction setProprietaryIdentification(List<com.tools20022.repository.entity.GenericIdentification> proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 
-	public BankOperation getBankOperation() {
-		return bankOperation;
+	public Optional<BankOperation> getBankOperation() {
+		return bankOperation == null ? Optional.empty() : Optional.of(bankOperation);
 	}
 
-	public void setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
+	public BankTransaction setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
 		this.bankOperation = bankOperation;
+		return this;
 	}
 
-	public Entry getRelatedEntry() {
-		return relatedEntry;
+	public Optional<Entry> getRelatedEntry() {
+		return relatedEntry == null ? Optional.empty() : Optional.of(relatedEntry);
 	}
 
-	public void setRelatedEntry(com.tools20022.repository.entity.Entry relatedEntry) {
+	public BankTransaction setRelatedEntry(com.tools20022.repository.entity.Entry relatedEntry) {
 		this.relatedEntry = relatedEntry;
+		return this;
 	}
 
 	public PaymentProcessing getRelatedPayment() {
 		return relatedPayment;
 	}
 
-	public void setRelatedPayment(com.tools20022.repository.entity.PaymentProcessing relatedPayment) {
-		this.relatedPayment = relatedPayment;
+	public BankTransaction setRelatedPayment(com.tools20022.repository.entity.PaymentProcessing relatedPayment) {
+		this.relatedPayment = Objects.requireNonNull(relatedPayment);
+		return this;
 	}
 }

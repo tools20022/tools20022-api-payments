@@ -22,9 +22,8 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the jurisdiction (country, county, state, province, city).
@@ -95,8 +94,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +112,8 @@ public class Jurisdiction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected GovernanceRules governanceRules;
 	/**
-	 * Rules for which an applicable law and a jurisdiction are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,8 +160,8 @@ public class Jurisdiction {
 	};
 	protected Location identification;
 	/**
-	 * Specifies the jurisdiction (country, county, state, province, city).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,8 +207,8 @@ public class Jurisdiction {
 	};
 	protected Security registeredSecurities;
 	/**
-	 * Securities which are registered under a specific jurisdiction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,8 +254,8 @@ public class Jurisdiction {
 	};
 	protected List<com.tools20022.repository.entity.JurisdictionStrategy> associatedStrategy;
 	/**
-	 * Strategy which is based on a specific jurisdiction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,8 +301,8 @@ public class Jurisdiction {
 	};
 	protected SecuritiesRestriction securitiesRestriction;
 	/**
-	 * Securities restrictions which apply in a specific jurisdiction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,8 +350,8 @@ public class Jurisdiction {
 	};
 	protected SecuritiesTax relatedSecuritiesTax;
 	/**
-	 * Securities tax for which a jurisdiction is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -398,8 +397,8 @@ public class Jurisdiction {
 	};
 	protected Market relatedMarket;
 	/**
-	 * Market to which the jurisdiction is related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,8 +443,8 @@ public class Jurisdiction {
 	};
 	protected List<com.tools20022.repository.entity.Agreement> relatedAgreement;
 	/**
-	 * Agreement which is subject to a specific jurisdiction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,7 +491,7 @@ public class Jurisdiction {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Jurisdiction";
 				definition = "Specifies the jurisdiction (country, county, state, province, city).";
@@ -516,63 +515,71 @@ public class Jurisdiction {
 		return governanceRules;
 	}
 
-	public void setGovernanceRules(com.tools20022.repository.entity.GovernanceRules governanceRules) {
-		this.governanceRules = governanceRules;
+	public Jurisdiction setGovernanceRules(com.tools20022.repository.entity.GovernanceRules governanceRules) {
+		this.governanceRules = Objects.requireNonNull(governanceRules);
+		return this;
 	}
 
 	public Location getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(com.tools20022.repository.entity.Location identification) {
-		this.identification = identification;
+	public Jurisdiction setIdentification(com.tools20022.repository.entity.Location identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	public Security getRegisteredSecurities() {
-		return registeredSecurities;
+	public Optional<Security> getRegisteredSecurities() {
+		return registeredSecurities == null ? Optional.empty() : Optional.of(registeredSecurities);
 	}
 
-	public void setRegisteredSecurities(com.tools20022.repository.entity.Security registeredSecurities) {
+	public Jurisdiction setRegisteredSecurities(com.tools20022.repository.entity.Security registeredSecurities) {
 		this.registeredSecurities = registeredSecurities;
+		return this;
 	}
 
 	public List<JurisdictionStrategy> getAssociatedStrategy() {
-		return associatedStrategy;
+		return associatedStrategy == null ? associatedStrategy = new ArrayList<>() : associatedStrategy;
 	}
 
-	public void setAssociatedStrategy(List<com.tools20022.repository.entity.JurisdictionStrategy> associatedStrategy) {
-		this.associatedStrategy = associatedStrategy;
+	public Jurisdiction setAssociatedStrategy(List<com.tools20022.repository.entity.JurisdictionStrategy> associatedStrategy) {
+		this.associatedStrategy = Objects.requireNonNull(associatedStrategy);
+		return this;
 	}
 
 	public SecuritiesRestriction getSecuritiesRestriction() {
 		return securitiesRestriction;
 	}
 
-	public void setSecuritiesRestriction(com.tools20022.repository.entity.SecuritiesRestriction securitiesRestriction) {
-		this.securitiesRestriction = securitiesRestriction;
+	public Jurisdiction setSecuritiesRestriction(com.tools20022.repository.entity.SecuritiesRestriction securitiesRestriction) {
+		this.securitiesRestriction = Objects.requireNonNull(securitiesRestriction);
+		return this;
 	}
 
 	public SecuritiesTax getRelatedSecuritiesTax() {
 		return relatedSecuritiesTax;
 	}
 
-	public void setRelatedSecuritiesTax(com.tools20022.repository.entity.SecuritiesTax relatedSecuritiesTax) {
-		this.relatedSecuritiesTax = relatedSecuritiesTax;
+	public Jurisdiction setRelatedSecuritiesTax(com.tools20022.repository.entity.SecuritiesTax relatedSecuritiesTax) {
+		this.relatedSecuritiesTax = Objects.requireNonNull(relatedSecuritiesTax);
+		return this;
 	}
 
 	public Market getRelatedMarket() {
 		return relatedMarket;
 	}
 
-	public void setRelatedMarket(com.tools20022.repository.entity.Market relatedMarket) {
-		this.relatedMarket = relatedMarket;
+	public Jurisdiction setRelatedMarket(com.tools20022.repository.entity.Market relatedMarket) {
+		this.relatedMarket = Objects.requireNonNull(relatedMarket);
+		return this;
 	}
 
 	public List<Agreement> getRelatedAgreement() {
-		return relatedAgreement;
+		return relatedAgreement == null ? relatedAgreement = new ArrayList<>() : relatedAgreement;
 	}
 
-	public void setRelatedAgreement(List<com.tools20022.repository.entity.Agreement> relatedAgreement) {
-		this.relatedAgreement = relatedAgreement;
+	public Jurisdiction setRelatedAgreement(List<com.tools20022.repository.entity.Agreement> relatedAgreement) {
+		this.relatedAgreement = Objects.requireNonNull(relatedAgreement);
+		return this;
 	}
 }

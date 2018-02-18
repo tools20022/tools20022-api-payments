@@ -38,77 +38,77 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Default
- * CardAccountTypeCode.mmDefault}</li>
+ * CardAccountTypeCode.Default}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Savings
- * CardAccountTypeCode.mmSavings}</li>
+ * CardAccountTypeCode.Savings}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Checking
- * CardAccountTypeCode.mmChecking}</li>
+ * CardAccountTypeCode.Checking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#CreditCard
- * CardAccountTypeCode.mmCreditCard}</li>
+ * CardAccountTypeCode.CreditCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Universal
- * CardAccountTypeCode.mmUniversal}</li>
+ * CardAccountTypeCode.Universal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Investment
- * CardAccountTypeCode.mmInvestment}</li>
+ * CardAccountTypeCode.Investment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#EpurseCard
- * CardAccountTypeCode.mmEpurseCard}</li>
+ * CardAccountTypeCode.EpurseCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#CertificateOfDeposit
- * CardAccountTypeCode.mmCertificateOfDeposit}</li>
+ * CardAccountTypeCode.CertificateOfDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#Current
- * CardAccountTypeCode.mmCurrent}</li>
+ * CardAccountTypeCode.Current}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#DebitCard
- * CardAccountTypeCode.mmDebitCard}</li>
+ * CardAccountTypeCode.DebitCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#HomeEquityLoan
- * CardAccountTypeCode.mmHomeEquityLoan}</li>
+ * CardAccountTypeCode.HomeEquityLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#InstalmentLoan
- * CardAccountTypeCode.mmInstalmentLoan}</li>
+ * CardAccountTypeCode.InstalmentLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#LineOfCredit
- * CardAccountTypeCode.mmLineOfCredit}</li>
+ * CardAccountTypeCode.LineOfCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#MobilePhoneAccount
- * CardAccountTypeCode.mmMobilePhoneAccount}</li>
+ * CardAccountTypeCode.MobilePhoneAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#MoneyMarket
- * CardAccountTypeCode.mmMoneyMarket}</li>
+ * CardAccountTypeCode.MoneyMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#MoneyMarketChecking
- * CardAccountTypeCode.mmMoneyMarketChecking}</li>
+ * CardAccountTypeCode.MoneyMarketChecking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#MortgageLoan
- * CardAccountTypeCode.mmMortgageLoan}</li>
+ * CardAccountTypeCode.MortgageLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#RetirementAccount
- * CardAccountTypeCode.mmRetirementAccount}</li>
+ * CardAccountTypeCode.RetirementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#RevolvingLoanAccount
- * CardAccountTypeCode.mmRevolvingLoanAccount}</li>
+ * CardAccountTypeCode.RevolvingLoanAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#StockOrBond
- * CardAccountTypeCode.mmStockOrBond}</li>
+ * CardAccountTypeCode.StockOrBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#PrePaid
- * CardAccountTypeCode.mmPrePaid}</li>
+ * CardAccountTypeCode.PrePaid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountTypeCode#FleetCard
- * CardAccountTypeCode.mmFleetCard}</li>
+ * CardAccountTypeCode.FleetCard}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -798,7 +798,7 @@ public class CardAccountTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DFLT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardAccountTypeCode";

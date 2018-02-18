@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Place from which the price was obtained.
@@ -60,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +78,8 @@ public class SourceOfPrice extends InformationPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradingMarket marketIdentification;
 	/**
-	 * Market on which this price is valid (MIC - ISO 3166).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,8 +126,8 @@ public class SourceOfPrice extends InformationPartyRole {
 	};
 	protected PriceSourceCode type;
 	/**
-	 * Specifies the type of the source of the price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,7 +175,7 @@ public class SourceOfPrice extends InformationPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SourceOfPrice";
 				definition = "Place from which the price was obtained.";
@@ -195,15 +196,17 @@ public class SourceOfPrice extends InformationPartyRole {
 		return marketIdentification;
 	}
 
-	public void setMarketIdentification(com.tools20022.repository.entity.TradingMarket marketIdentification) {
-		this.marketIdentification = marketIdentification;
+	public SourceOfPrice setMarketIdentification(com.tools20022.repository.entity.TradingMarket marketIdentification) {
+		this.marketIdentification = Objects.requireNonNull(marketIdentification);
+		return this;
 	}
 
 	public PriceSourceCode getType() {
 		return type;
 	}
 
-	public void setType(PriceSourceCode type) {
-		this.type = type;
+	public SourceOfPrice setType(PriceSourceCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 }

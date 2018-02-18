@@ -26,7 +26,7 @@ import com.tools20022.metamodel.MMBusinessElementType;
  * Calculate derived attribute
  * {@link MMBusinessAttribute#getBusinessElementType()}
  * 
- * @see MMBusinessAttribute_#checkBusinessAttributeHasExactlyOneType
+ * @see MMBusinessAttribute#checkBusinessAttributeHasExactlyOneType
  */
 public class DeriveMMBusinessAttribute_businessElementType implements Function<MMBusinessAttribute, MMBusinessElementType> {
 

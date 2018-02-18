@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingRemittanceInformation
- * UnableToApplyMissingInformation3Code.mmMissingRemittanceInformation}</li>
+ * UnableToApplyMissingInformation3Code.MissingRemittanceInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstructionForNextAgent
- * UnableToApplyMissingInformation3Code.mmMissingInstructionForNextAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstructionForNextAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingDebtor
- * UnableToApplyMissingInformation3Code.mmMissingDebtor}</li>
+ * UnableToApplyMissingInformation3Code.MissingDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingDebtorAccount
- * UnableToApplyMissingInformation3Code.mmMissingDebtorAccount}</li>
+ * UnableToApplyMissingInformation3Code.MissingDebtorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingDebtorAgent
- * UnableToApplyMissingInformation3Code.mmMissingDebtorAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingDebtorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingAmount
- * UnableToApplyMissingInformation3Code.mmMissingAmount}</li>
+ * UnableToApplyMissingInformation3Code.MissingAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingSettlementAccount
- * UnableToApplyMissingInformation3Code.mmMissingSettlementAccount}</li>
+ * UnableToApplyMissingInformation3Code.MissingSettlementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingIntermediary
- * UnableToApplyMissingInformation3Code.mmMissingIntermediary}</li>
+ * UnableToApplyMissingInformation3Code.MissingIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstructingReimbursementAgent
- * UnableToApplyMissingInformation3Code.mmMissingInstructingReimbursementAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstructingReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstructedReimbursementAgent
- * UnableToApplyMissingInformation3Code.mmMissingInstructedReimbursementAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstructedReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingThirdReimbursementAgent
- * UnableToApplyMissingInformation3Code.mmMissingThirdReimbursementAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingThirdReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingCreditor
- * UnableToApplyMissingInformation3Code.mmMissingCreditor}</li>
+ * UnableToApplyMissingInformation3Code.MissingCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingCreditorAccount
- * UnableToApplyMissingInformation3Code.mmMissingCreditorAccount}</li>
+ * UnableToApplyMissingInformation3Code.MissingCreditorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstruction
- * UnableToApplyMissingInformation3Code.mmMissingInstruction}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingCreditorAgent
- * UnableToApplyMissingInformation3Code.mmMissingCreditorAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingCreditorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstructionForCreditorAgent
- * UnableToApplyMissingInformation3Code.mmMissingInstructionForCreditorAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstructionForCreditorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#MissingInstructionForDebtorAgent
- * UnableToApplyMissingInformation3Code.mmMissingInstructionForDebtorAgent}</li>
+ * UnableToApplyMissingInformation3Code.MissingInstructionForDebtorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformation3Code#Narrative
- * UnableToApplyMissingInformation3Code.mmNarrative}</li>
+ * UnableToApplyMissingInformation3Code.Narrative}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -98,8 +98,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -561,7 +561,7 @@ public class UnableToApplyMissingInformation3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MS01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyMissingInformation3Code";

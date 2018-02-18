@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of value type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "YieldedOrValueType1Choice", propOrder = {"yielded", "valueType"})
 public class YieldedOrValueType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Yldd", required = true)
 	protected YesNoIndicator yielded;
 	/**
-	 * Indicates whether the price is expressed as a yield.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class YieldedOrValueType1Choice {
 	public static final MMMessageAttribute mmYielded = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmYielded;
-			componentContext_lazy = () -> YieldedOrValueType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.YieldedOrValueType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Yldd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +121,11 @@ public class YieldedOrValueType1Choice {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "ValTp", required = true)
 	protected PriceValueType1Code valueType;
 	/**
-	 * Type of value in which the price is expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +159,7 @@ public class YieldedOrValueType1Choice {
 	public static final MMMessageAttribute mmValueType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmTypeOfRate;
-			componentContext_lazy = () -> YieldedOrValueType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.YieldedOrValueType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ValTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,9 +174,9 @@ public class YieldedOrValueType1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(YieldedOrValueType1Choice.mmYielded, YieldedOrValueType1Choice.mmValueType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.YieldedOrValueType1Choice.mmYielded, com.tools20022.repository.choice.YieldedOrValueType1Choice.mmValueType);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "YieldedOrValueType1Choice";
 				definition = "Choice of value type.";
@@ -182,21 +185,21 @@ public class YieldedOrValueType1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Yldd", required = true)
 	public YesNoIndicator getYielded() {
 		return yielded;
 	}
 
-	public void setYielded(YesNoIndicator yielded) {
-		this.yielded = yielded;
+	public YieldedOrValueType1Choice setYielded(YesNoIndicator yielded) {
+		this.yielded = Objects.requireNonNull(yielded);
+		return this;
 	}
 
-	@XmlElement(name = "ValTp", required = true)
 	public PriceValueType1Code getValueType() {
 		return valueType;
 	}
 
-	public void setValueType(PriceValueType1Code valueType) {
-		this.valueType = valueType;
+	public YieldedOrValueType1Choice setValueType(PriceValueType1Code valueType) {
+		this.valueType = Objects.requireNonNull(valueType);
+		return this;
 	}
 }

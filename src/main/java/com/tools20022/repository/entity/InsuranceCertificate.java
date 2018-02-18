@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Formal document used to record a fact and used as proof of the fact that
@@ -98,8 +97,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -117,8 +116,8 @@ public class InsuranceCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODate effectiveDate;
 	/**
-	 * Date upon which cover under an insurance policy becomes effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,8 +163,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected CurrencyAndAmount insuredAmount;
 	/**
-	 * Value of the goods as insured under the insurance policy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,9 +211,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected Max350Text insuranceConditions;
 	/**
-	 * Description of the conditions and exclusion clauses under which insurance
-	 * is granted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,9 +259,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected InsuranceClausesCode insuranceClauses;
 	/**
-	 * Standard insurance clauses defined by the Institute of London
-	 * Underwriters (or the American Institute of marine Underwriters).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -311,8 +308,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected Location claimsPayableAt;
 	/**
-	 * Place where claims under the insurance policy will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,8 +356,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected CurrencyCode claimsPayableIn;
 	/**
-	 * Currency in which claims, if valid, will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,8 +402,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole;
 	/**
-	 * Role played by a party in the context of insurance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -452,8 +449,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected ProductDelivery productDelivery;
 	/**
-	 * Delivery parameters of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,8 +497,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected InsuranceCode insuranceType;
 	/**
-	 * Specifies the type of insurance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -547,8 +544,8 @@ public class InsuranceCertificate extends Document {
 	};
 	protected InvestmentPlan relatedInvestmentPlan;
 	/**
-	 * Investment plan covered by an insurance contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,7 +594,7 @@ public class InsuranceCertificate extends Document {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsuranceCertificate";
 				definition = "Formal document used to record a fact and used as proof of the fact that goods have been insured under an insurance policy.";
@@ -623,79 +620,89 @@ public class InsuranceCertificate extends Document {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODate effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public InsuranceCertificate setEffectiveDate(ISODate effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getInsuredAmount() {
 		return insuredAmount;
 	}
 
-	public void setInsuredAmount(CurrencyAndAmount insuredAmount) {
-		this.insuredAmount = insuredAmount;
+	public InsuranceCertificate setInsuredAmount(CurrencyAndAmount insuredAmount) {
+		this.insuredAmount = Objects.requireNonNull(insuredAmount);
+		return this;
 	}
 
 	public Max350Text getInsuranceConditions() {
 		return insuranceConditions;
 	}
 
-	public void setInsuranceConditions(Max350Text insuranceConditions) {
-		this.insuranceConditions = insuranceConditions;
+	public InsuranceCertificate setInsuranceConditions(Max350Text insuranceConditions) {
+		this.insuranceConditions = Objects.requireNonNull(insuranceConditions);
+		return this;
 	}
 
 	public InsuranceClausesCode getInsuranceClauses() {
 		return insuranceClauses;
 	}
 
-	public void setInsuranceClauses(InsuranceClausesCode insuranceClauses) {
-		this.insuranceClauses = insuranceClauses;
+	public InsuranceCertificate setInsuranceClauses(InsuranceClausesCode insuranceClauses) {
+		this.insuranceClauses = Objects.requireNonNull(insuranceClauses);
+		return this;
 	}
 
 	public Location getClaimsPayableAt() {
 		return claimsPayableAt;
 	}
 
-	public void setClaimsPayableAt(com.tools20022.repository.entity.Location claimsPayableAt) {
-		this.claimsPayableAt = claimsPayableAt;
+	public InsuranceCertificate setClaimsPayableAt(com.tools20022.repository.entity.Location claimsPayableAt) {
+		this.claimsPayableAt = Objects.requireNonNull(claimsPayableAt);
+		return this;
 	}
 
 	public CurrencyCode getClaimsPayableIn() {
 		return claimsPayableIn;
 	}
 
-	public void setClaimsPayableIn(CurrencyCode claimsPayableIn) {
-		this.claimsPayableIn = claimsPayableIn;
+	public InsuranceCertificate setClaimsPayableIn(CurrencyCode claimsPayableIn) {
+		this.claimsPayableIn = Objects.requireNonNull(claimsPayableIn);
+		return this;
 	}
 
 	public List<InsurancePartyRole> getInsurancePartyRole() {
-		return insurancePartyRole;
+		return insurancePartyRole == null ? insurancePartyRole = new ArrayList<>() : insurancePartyRole;
 	}
 
-	public void setInsurancePartyRole(List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole) {
-		this.insurancePartyRole = insurancePartyRole;
+	public InsuranceCertificate setInsurancePartyRole(List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole) {
+		this.insurancePartyRole = Objects.requireNonNull(insurancePartyRole);
+		return this;
 	}
 
-	public ProductDelivery getProductDelivery() {
-		return productDelivery;
+	public Optional<ProductDelivery> getProductDelivery() {
+		return productDelivery == null ? Optional.empty() : Optional.of(productDelivery);
 	}
 
-	public void setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
+	public InsuranceCertificate setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
 		this.productDelivery = productDelivery;
+		return this;
 	}
 
 	public InsuranceCode getInsuranceType() {
 		return insuranceType;
 	}
 
-	public void setInsuranceType(InsuranceCode insuranceType) {
-		this.insuranceType = insuranceType;
+	public InsuranceCertificate setInsuranceType(InsuranceCode insuranceType) {
+		this.insuranceType = Objects.requireNonNull(insuranceType);
+		return this;
 	}
 
 	public InvestmentPlan getRelatedInvestmentPlan() {
 		return relatedInvestmentPlan;
 	}
 
-	public void setRelatedInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan relatedInvestmentPlan) {
-		this.relatedInvestmentPlan = relatedInvestmentPlan;
+	public InsuranceCertificate setRelatedInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan relatedInvestmentPlan) {
+		this.relatedInvestmentPlan = Objects.requireNonNull(relatedInvestmentPlan);
+		return this;
 	}
 }

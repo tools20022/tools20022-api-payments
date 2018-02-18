@@ -25,7 +25,7 @@ import java.util.function.Function;
 /**
  * Calculate derived attribute {@link MMMessageBuildingBlock#getXmlMemberType()}
  * 
- * @see MMMessageBuildingBlock_#checkMessageBuildingBlockHasExactlyOneType
+ * @see MMMessageBuildingBlock#checkMessageBuildingBlockHasExactlyOneType
  */
 public class DeriveMMMessageBuildingBlock_xmlMemberType implements Function<MMMessageBuildingBlock, MMLogicalType> {
 

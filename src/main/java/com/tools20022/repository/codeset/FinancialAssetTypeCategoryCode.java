@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Equities
- * FinancialAssetTypeCategoryCode.mmEquities}</li>
+ * FinancialAssetTypeCategoryCode.Equities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#DebtInstruments
- * FinancialAssetTypeCategoryCode.mmDebtInstruments}</li>
+ * FinancialAssetTypeCategoryCode.DebtInstruments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Entitlements
- * FinancialAssetTypeCategoryCode.mmEntitlements}</li>
+ * FinancialAssetTypeCategoryCode.Entitlements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Derivatives
- * FinancialAssetTypeCategoryCode.mmDerivatives}</li>
+ * FinancialAssetTypeCategoryCode.Derivatives}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#MoneyMarket
- * FinancialAssetTypeCategoryCode.mmMoneyMarket}</li>
+ * FinancialAssetTypeCategoryCode.MoneyMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Others
- * FinancialAssetTypeCategoryCode.mmOthers}</li>
+ * FinancialAssetTypeCategoryCode.Others}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -272,7 +272,7 @@ public class FinancialAssetTypeCategoryCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EQTY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialAssetTypeCategoryCode";

@@ -27,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Rough allocation of the portfolio.
@@ -99,8 +101,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,8 +118,8 @@ public class PortfolioStrategy {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Portfolio portfolio;
 	/**
-	 * Portfolio for which a strategy is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,8 +166,8 @@ public class PortfolioStrategy {
 	};
 	protected YesNoIndicator inclusionIndicator;
 	/**
-	 * Indicates whether the referred strategy is included.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,8 +213,8 @@ public class PortfolioStrategy {
 	};
 	protected CurrencyAndAmount minimumInvestmentAmount;
 	/**
-	 * Minimum amount that has to be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,8 +261,8 @@ public class PortfolioStrategy {
 	};
 	protected PercentageRate minimumInvestmentRate;
 	/**
-	 * Minimum percentage that has to be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,8 +309,8 @@ public class PortfolioStrategy {
 	};
 	protected CurrencyAndAmount maximumInvestmentAmount;
 	/**
-	 * Maximum amount that may be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -355,8 +357,8 @@ public class PortfolioStrategy {
 	};
 	protected PercentageRate maximumInvestmentRate;
 	/**
-	 * Maximum percentage that may be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,8 +405,8 @@ public class PortfolioStrategy {
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the investment guideline is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,9 +452,8 @@ public class PortfolioStrategy {
 	};
 	protected DistributionPolicyCode distributionPolicy;
 	/**
-	 * Income policy relating to the fund, ie, if income is paid out or retained
-	 * in the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,9 +501,8 @@ public class PortfolioStrategy {
 	};
 	protected Max2000Text description;
 	/**
-	 * Free text description of the investment guideline, for example, rating
-	 * requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -549,8 +549,8 @@ public class PortfolioStrategy {
 	};
 	protected PortfolioStrategyDefinition definition;
 	/**
-	 * Definition of the portfolio strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -600,7 +600,7 @@ public class PortfolioStrategy {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioStrategy";
 				definition = "Rough allocation of the portfolio.";
@@ -621,83 +621,93 @@ public class PortfolioStrategy {
 		return mmObject_lazy.get();
 	}
 
-	public Portfolio getPortfolio() {
-		return portfolio;
+	public Optional<Portfolio> getPortfolio() {
+		return portfolio == null ? Optional.empty() : Optional.of(portfolio);
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+	public PortfolioStrategy setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
 		this.portfolio = portfolio;
+		return this;
 	}
 
 	public YesNoIndicator getInclusionIndicator() {
 		return inclusionIndicator;
 	}
 
-	public void setInclusionIndicator(YesNoIndicator inclusionIndicator) {
-		this.inclusionIndicator = inclusionIndicator;
+	public PortfolioStrategy setInclusionIndicator(YesNoIndicator inclusionIndicator) {
+		this.inclusionIndicator = Objects.requireNonNull(inclusionIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumInvestmentAmount() {
 		return minimumInvestmentAmount;
 	}
 
-	public void setMinimumInvestmentAmount(CurrencyAndAmount minimumInvestmentAmount) {
-		this.minimumInvestmentAmount = minimumInvestmentAmount;
+	public PortfolioStrategy setMinimumInvestmentAmount(CurrencyAndAmount minimumInvestmentAmount) {
+		this.minimumInvestmentAmount = Objects.requireNonNull(minimumInvestmentAmount);
+		return this;
 	}
 
 	public PercentageRate getMinimumInvestmentRate() {
 		return minimumInvestmentRate;
 	}
 
-	public void setMinimumInvestmentRate(PercentageRate minimumInvestmentRate) {
-		this.minimumInvestmentRate = minimumInvestmentRate;
+	public PortfolioStrategy setMinimumInvestmentRate(PercentageRate minimumInvestmentRate) {
+		this.minimumInvestmentRate = Objects.requireNonNull(minimumInvestmentRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumInvestmentAmount() {
 		return maximumInvestmentAmount;
 	}
 
-	public void setMaximumInvestmentAmount(CurrencyAndAmount maximumInvestmentAmount) {
-		this.maximumInvestmentAmount = maximumInvestmentAmount;
+	public PortfolioStrategy setMaximumInvestmentAmount(CurrencyAndAmount maximumInvestmentAmount) {
+		this.maximumInvestmentAmount = Objects.requireNonNull(maximumInvestmentAmount);
+		return this;
 	}
 
 	public PercentageRate getMaximumInvestmentRate() {
 		return maximumInvestmentRate;
 	}
 
-	public void setMaximumInvestmentRate(PercentageRate maximumInvestmentRate) {
-		this.maximumInvestmentRate = maximumInvestmentRate;
+	public PortfolioStrategy setMaximumInvestmentRate(PercentageRate maximumInvestmentRate) {
+		this.maximumInvestmentRate = Objects.requireNonNull(maximumInvestmentRate);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public PortfolioStrategy setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public DistributionPolicyCode getDistributionPolicy() {
 		return distributionPolicy;
 	}
 
-	public void setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
-		this.distributionPolicy = distributionPolicy;
+	public PortfolioStrategy setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
+		this.distributionPolicy = Objects.requireNonNull(distributionPolicy);
+		return this;
 	}
 
 	public Max2000Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max2000Text description) {
-		this.description = description;
+	public PortfolioStrategy setDescription(Max2000Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public PortfolioStrategyDefinition getDefinition() {
 		return definition;
 	}
 
-	public void setDefinition(com.tools20022.repository.entity.PortfolioStrategyDefinition definition) {
-		this.definition = definition;
+	public PortfolioStrategy setDefinition(com.tools20022.repository.entity.PortfolioStrategyDefinition definition) {
+		this.definition = Objects.requireNonNull(definition);
+		return this;
 	}
 }

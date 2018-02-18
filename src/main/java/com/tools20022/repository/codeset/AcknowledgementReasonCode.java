@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#AccountServicerDeadlineMissed
- * AcknowledgementReasonCode.mmAccountServicerDeadlineMissed}</li>
+ * AcknowledgementReasonCode.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#MarketPracticeRuleDiscrepency
- * AcknowledgementReasonCode.mmMarketPracticeRuleDiscrepency}</li>
+ * AcknowledgementReasonCode.MarketPracticeRuleDiscrepency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#MarketDeadlineMissed
- * AcknowledgementReasonCode.mmMarketDeadlineMissed}</li>
+ * AcknowledgementReasonCode.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#NotStraightThroughProcessing
- * AcknowledgementReasonCode.mmNotStraightThroughProcessing}</li>
+ * AcknowledgementReasonCode.NotStraightThroughProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#AcceptedWithoutVotingRights
- * AcknowledgementReasonCode.mmAcceptedWithoutVotingRights}</li>
+ * AcknowledgementReasonCode.AcceptedWithoutVotingRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#Other
- * AcknowledgementReasonCode.mmOther}</li>
+ * AcknowledgementReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#ConditionalCurrency
- * AcknowledgementReasonCode.mmConditionalCurrency}</li>
+ * AcknowledgementReasonCode.ConditionalCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#ConditionalRegistrar
- * AcknowledgementReasonCode.mmConditionalRegistrar}</li>
+ * AcknowledgementReasonCode.ConditionalRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#ConditionalRealignement
- * AcknowledgementReasonCode.mmConditionalRealignement}</li>
+ * AcknowledgementReasonCode.ConditionalRealignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReasonCode#NarrativeReason
- * AcknowledgementReasonCode.mmNarrativeReason}</li>
+ * AcknowledgementReasonCode.NarrativeReason}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -422,7 +422,7 @@ public class AcknowledgementReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcknowledgementReasonCode";

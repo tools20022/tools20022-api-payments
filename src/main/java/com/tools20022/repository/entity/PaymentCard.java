@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Electronic money product that provides the cardholder with a portable and
@@ -138,8 +137,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -157,8 +156,8 @@ public class PaymentCard {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CardPayment payment;
 	/**
-	 * Payment for which a payment card is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,8 +203,8 @@ public class PaymentCard {
 	};
 	protected CardTypeCode type;
 	/**
-	 * Type of card, eg, credit card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,9 +248,8 @@ public class PaymentCard {
 	};
 	protected Max35Text number;
 	/**
-	 * Number embossed on a card that links the card to the account owner and
-	 * account servicer (sometimes called personal account number or PAN).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,8 +303,8 @@ public class PaymentCard {
 	};
 	protected ISOYearMonth startDate;
 	/**
-	 * Year and month the card is available for use.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,8 +358,8 @@ public class PaymentCard {
 	};
 	protected ISOYearMonth expiryDate;
 	/**
-	 * Year and month the card expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,9 +413,8 @@ public class PaymentCard {
 	};
 	protected Max35Text securityCode;
 	/**
-	 * Security code written on the card, sometimes called card security code
-	 * (CSC).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -472,8 +469,8 @@ public class PaymentCard {
 	};
 	protected Max35Text sequenceNumber;
 	/**
-	 * Identifies a card inside a set of cards with the same number (or PAN).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,8 +524,8 @@ public class PaymentCard {
 	};
 	protected Exact3NumericText serviceCode;
 	/**
-	 * Services attached to the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -582,8 +579,8 @@ public class PaymentCard {
 	};
 	protected Max140Text trackValue;
 	/**
-	 * Card track content or equivalent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -635,8 +632,8 @@ public class PaymentCard {
 	};
 	protected CSCManagementCode securityCodeManagement;
 	/**
-	 * Card Security Code management associated with the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -691,8 +688,8 @@ public class PaymentCard {
 	};
 	protected Max35Text cardBrand;
 	/**
-	 * Brand name of the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -744,8 +741,8 @@ public class PaymentCard {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> relatedAccount;
 	/**
-	 * Account linked to the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -802,9 +799,8 @@ public class PaymentCard {
 	};
 	protected Max5NumericText profileNumber;
 	/**
-	 * Defines a category of cards related the acceptance processing rules
-	 * defined by the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -851,8 +847,8 @@ public class PaymentCard {
 	};
 	protected CardAccountTypeCode relatedAccountType;
 	/**
-	 * Type of cardholder account used for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -897,8 +893,8 @@ public class PaymentCard {
 	};
 	protected CurrencyAndAmount creditAvailableAmount;
 	/**
-	 * Monetary value of the credit available for this financial card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -944,8 +940,8 @@ public class PaymentCard {
 	};
 	protected List<com.tools20022.repository.entity.Limit> limit;
 	/**
-	 * Limit specified on a payment card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -989,8 +985,8 @@ public class PaymentCard {
 	};
 	protected CurrencyCode cardCurrencyCode;
 	/**
-	 * Currency code of the card issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1034,8 +1030,8 @@ public class PaymentCard {
 	};
 	protected Interest interest;
 	/**
-	 * Interest applied on amounts due for credit card payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1081,8 +1077,8 @@ public class PaymentCard {
 	};
 	protected Country cardCountryCode;
 	/**
-	 * Country code attached to the card by the card issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1136,9 +1132,8 @@ public class PaymentCard {
 	};
 	protected Max35Text cardProgramme;
 	/**
-	 * The card programme associated by a retailer to a cardholder among a
-	 * series of payment programmes offered by the retailer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1186,7 +1181,7 @@ public class PaymentCard {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCard";
 				definition = "Electronic money product that provides the cardholder with a portable and specialised computer device that typically contains a microprocessor.";
@@ -1211,163 +1206,183 @@ public class PaymentCard {
 		return mmObject_lazy.get();
 	}
 
-	public CardPayment getPayment() {
-		return payment;
+	public Optional<CardPayment> getPayment() {
+		return payment == null ? Optional.empty() : Optional.of(payment);
 	}
 
-	public void setPayment(com.tools20022.repository.entity.CardPayment payment) {
+	public PaymentCard setPayment(com.tools20022.repository.entity.CardPayment payment) {
 		this.payment = payment;
+		return this;
 	}
 
 	public CardTypeCode getType() {
 		return type;
 	}
 
-	public void setType(CardTypeCode type) {
-		this.type = type;
+	public PaymentCard setType(CardTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public Max35Text getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max35Text number) {
-		this.number = number;
+	public PaymentCard setNumber(Max35Text number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
 	public ISOYearMonth getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(ISOYearMonth startDate) {
-		this.startDate = startDate;
+	public PaymentCard setStartDate(ISOYearMonth startDate) {
+		this.startDate = Objects.requireNonNull(startDate);
+		return this;
 	}
 
 	public ISOYearMonth getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISOYearMonth expiryDate) {
-		this.expiryDate = expiryDate;
+	public PaymentCard setExpiryDate(ISOYearMonth expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public Max35Text getSecurityCode() {
 		return securityCode;
 	}
 
-	public void setSecurityCode(Max35Text securityCode) {
-		this.securityCode = securityCode;
+	public PaymentCard setSecurityCode(Max35Text securityCode) {
+		this.securityCode = Objects.requireNonNull(securityCode);
+		return this;
 	}
 
 	public Max35Text getSequenceNumber() {
 		return sequenceNumber;
 	}
 
-	public void setSequenceNumber(Max35Text sequenceNumber) {
-		this.sequenceNumber = sequenceNumber;
+	public PaymentCard setSequenceNumber(Max35Text sequenceNumber) {
+		this.sequenceNumber = Objects.requireNonNull(sequenceNumber);
+		return this;
 	}
 
 	public Exact3NumericText getServiceCode() {
 		return serviceCode;
 	}
 
-	public void setServiceCode(Exact3NumericText serviceCode) {
-		this.serviceCode = serviceCode;
+	public PaymentCard setServiceCode(Exact3NumericText serviceCode) {
+		this.serviceCode = Objects.requireNonNull(serviceCode);
+		return this;
 	}
 
 	public Max140Text getTrackValue() {
 		return trackValue;
 	}
 
-	public void setTrackValue(Max140Text trackValue) {
-		this.trackValue = trackValue;
+	public PaymentCard setTrackValue(Max140Text trackValue) {
+		this.trackValue = Objects.requireNonNull(trackValue);
+		return this;
 	}
 
 	public CSCManagementCode getSecurityCodeManagement() {
 		return securityCodeManagement;
 	}
 
-	public void setSecurityCodeManagement(CSCManagementCode securityCodeManagement) {
-		this.securityCodeManagement = securityCodeManagement;
+	public PaymentCard setSecurityCodeManagement(CSCManagementCode securityCodeManagement) {
+		this.securityCodeManagement = Objects.requireNonNull(securityCodeManagement);
+		return this;
 	}
 
 	public Max35Text getCardBrand() {
 		return cardBrand;
 	}
 
-	public void setCardBrand(Max35Text cardBrand) {
-		this.cardBrand = cardBrand;
+	public PaymentCard setCardBrand(Max35Text cardBrand) {
+		this.cardBrand = Objects.requireNonNull(cardBrand);
+		return this;
 	}
 
 	public List<CashAccount> getRelatedAccount() {
-		return relatedAccount;
+		return relatedAccount == null ? relatedAccount = new ArrayList<>() : relatedAccount;
 	}
 
-	public void setRelatedAccount(List<com.tools20022.repository.entity.CashAccount> relatedAccount) {
-		this.relatedAccount = relatedAccount;
+	public PaymentCard setRelatedAccount(List<com.tools20022.repository.entity.CashAccount> relatedAccount) {
+		this.relatedAccount = Objects.requireNonNull(relatedAccount);
+		return this;
 	}
 
 	public Max5NumericText getProfileNumber() {
 		return profileNumber;
 	}
 
-	public void setProfileNumber(Max5NumericText profileNumber) {
-		this.profileNumber = profileNumber;
+	public PaymentCard setProfileNumber(Max5NumericText profileNumber) {
+		this.profileNumber = Objects.requireNonNull(profileNumber);
+		return this;
 	}
 
 	public CardAccountTypeCode getRelatedAccountType() {
 		return relatedAccountType;
 	}
 
-	public void setRelatedAccountType(CardAccountTypeCode relatedAccountType) {
-		this.relatedAccountType = relatedAccountType;
+	public PaymentCard setRelatedAccountType(CardAccountTypeCode relatedAccountType) {
+		this.relatedAccountType = Objects.requireNonNull(relatedAccountType);
+		return this;
 	}
 
 	public CurrencyAndAmount getCreditAvailableAmount() {
 		return creditAvailableAmount;
 	}
 
-	public void setCreditAvailableAmount(CurrencyAndAmount creditAvailableAmount) {
-		this.creditAvailableAmount = creditAvailableAmount;
+	public PaymentCard setCreditAvailableAmount(CurrencyAndAmount creditAvailableAmount) {
+		this.creditAvailableAmount = Objects.requireNonNull(creditAvailableAmount);
+		return this;
 	}
 
 	public List<Limit> getLimit() {
-		return limit;
+		return limit == null ? limit = new ArrayList<>() : limit;
 	}
 
-	public void setLimit(List<com.tools20022.repository.entity.Limit> limit) {
-		this.limit = limit;
+	public PaymentCard setLimit(List<com.tools20022.repository.entity.Limit> limit) {
+		this.limit = Objects.requireNonNull(limit);
+		return this;
 	}
 
 	public CurrencyCode getCardCurrencyCode() {
 		return cardCurrencyCode;
 	}
 
-	public void setCardCurrencyCode(CurrencyCode cardCurrencyCode) {
-		this.cardCurrencyCode = cardCurrencyCode;
+	public PaymentCard setCardCurrencyCode(CurrencyCode cardCurrencyCode) {
+		this.cardCurrencyCode = Objects.requireNonNull(cardCurrencyCode);
+		return this;
 	}
 
 	public Interest getInterest() {
 		return interest;
 	}
 
-	public void setInterest(com.tools20022.repository.entity.Interest interest) {
-		this.interest = interest;
+	public PaymentCard setInterest(com.tools20022.repository.entity.Interest interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public Country getCardCountryCode() {
 		return cardCountryCode;
 	}
 
-	public void setCardCountryCode(com.tools20022.repository.entity.Country cardCountryCode) {
-		this.cardCountryCode = cardCountryCode;
+	public PaymentCard setCardCountryCode(com.tools20022.repository.entity.Country cardCountryCode) {
+		this.cardCountryCode = Objects.requireNonNull(cardCountryCode);
+		return this;
 	}
 
 	public Max35Text getCardProgramme() {
 		return cardProgramme;
 	}
 
-	public void setCardProgramme(Max35Text cardProgramme) {
-		this.cardProgramme = cardProgramme;
+	public PaymentCard setCardProgramme(Max35Text cardProgramme) {
+		this.cardProgramme = Objects.requireNonNull(cardProgramme);
+		return this;
 	}
 }

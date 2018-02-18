@@ -29,6 +29,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the details of each successive payment in settlement of a debt or
@@ -83,8 +85,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,9 +104,8 @@ public class Instalment extends PaymentObligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Number initialNumberOfInstalment;
 	/**
-	 * Number of pre-paid instalment periods at the time an investment plan is
-	 * created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,9 +151,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected Number totalNumberOfInstalment;
 	/**
-	 * Total number of times the amount must be invested at the predefined
-	 * frequency as of the start date of the investment plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,8 +198,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected FrequencyCode periodUnit;
 	/**
-	 * Period unit between consecutive payments (for example day, month, year).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,8 +246,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected Number numberOfUnits;
 	/**
-	 * Number of period units between consecutive payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,8 +291,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected Max70Text sequenceIdentification;
 	/**
-	 * Specifies the progressive number of a single instalment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,8 +336,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected InvestmentPlan investmentPlan;
 	/**
-	 * Investment plan for which instalment information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,8 +384,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected InstalmentPlanCode instalmentPlanType;
 	/**
-	 * Type of instalment plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,8 +430,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected CurrencyAndAmount firstPaymentAmount;
 	/**
-	 * Amount of the first payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -476,8 +476,8 @@ public class Instalment extends PaymentObligation {
 	};
 	protected ISODateTime firstPaymentDate;
 	/**
-	 * Date of the first payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -523,7 +523,7 @@ public class Instalment extends PaymentObligation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instalment";
 				definition = "Specifies the details of each successive payment in settlement of a debt or in an investment plan.";
@@ -547,71 +547,80 @@ public class Instalment extends PaymentObligation {
 		return initialNumberOfInstalment;
 	}
 
-	public void setInitialNumberOfInstalment(Number initialNumberOfInstalment) {
-		this.initialNumberOfInstalment = initialNumberOfInstalment;
+	public Instalment setInitialNumberOfInstalment(Number initialNumberOfInstalment) {
+		this.initialNumberOfInstalment = Objects.requireNonNull(initialNumberOfInstalment);
+		return this;
 	}
 
 	public Number getTotalNumberOfInstalment() {
 		return totalNumberOfInstalment;
 	}
 
-	public void setTotalNumberOfInstalment(Number totalNumberOfInstalment) {
-		this.totalNumberOfInstalment = totalNumberOfInstalment;
+	public Instalment setTotalNumberOfInstalment(Number totalNumberOfInstalment) {
+		this.totalNumberOfInstalment = Objects.requireNonNull(totalNumberOfInstalment);
+		return this;
 	}
 
 	public FrequencyCode getPeriodUnit() {
 		return periodUnit;
 	}
 
-	public void setPeriodUnit(FrequencyCode periodUnit) {
-		this.periodUnit = periodUnit;
+	public Instalment setPeriodUnit(FrequencyCode periodUnit) {
+		this.periodUnit = Objects.requireNonNull(periodUnit);
+		return this;
 	}
 
 	public Number getNumberOfUnits() {
 		return numberOfUnits;
 	}
 
-	public void setNumberOfUnits(Number numberOfUnits) {
-		this.numberOfUnits = numberOfUnits;
+	public Instalment setNumberOfUnits(Number numberOfUnits) {
+		this.numberOfUnits = Objects.requireNonNull(numberOfUnits);
+		return this;
 	}
 
 	public Max70Text getSequenceIdentification() {
 		return sequenceIdentification;
 	}
 
-	public void setSequenceIdentification(Max70Text sequenceIdentification) {
-		this.sequenceIdentification = sequenceIdentification;
+	public Instalment setSequenceIdentification(Max70Text sequenceIdentification) {
+		this.sequenceIdentification = Objects.requireNonNull(sequenceIdentification);
+		return this;
 	}
 
-	public InvestmentPlan getInvestmentPlan() {
-		return investmentPlan;
+	public Optional<InvestmentPlan> getInvestmentPlan() {
+		return investmentPlan == null ? Optional.empty() : Optional.of(investmentPlan);
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+	public Instalment setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
 		this.investmentPlan = investmentPlan;
+		return this;
 	}
 
 	public InstalmentPlanCode getInstalmentPlanType() {
 		return instalmentPlanType;
 	}
 
-	public void setInstalmentPlanType(InstalmentPlanCode instalmentPlanType) {
-		this.instalmentPlanType = instalmentPlanType;
+	public Instalment setInstalmentPlanType(InstalmentPlanCode instalmentPlanType) {
+		this.instalmentPlanType = Objects.requireNonNull(instalmentPlanType);
+		return this;
 	}
 
 	public CurrencyAndAmount getFirstPaymentAmount() {
 		return firstPaymentAmount;
 	}
 
-	public void setFirstPaymentAmount(CurrencyAndAmount firstPaymentAmount) {
-		this.firstPaymentAmount = firstPaymentAmount;
+	public Instalment setFirstPaymentAmount(CurrencyAndAmount firstPaymentAmount) {
+		this.firstPaymentAmount = Objects.requireNonNull(firstPaymentAmount);
+		return this;
 	}
 
 	public ISODateTime getFirstPaymentDate() {
 		return firstPaymentDate;
 	}
 
-	public void setFirstPaymentDate(ISODateTime firstPaymentDate) {
-		this.firstPaymentDate = firstPaymentDate;
+	public Instalment setFirstPaymentDate(ISODateTime firstPaymentDate) {
+		this.firstPaymentDate = Objects.requireNonNull(firstPaymentDate);
+		return this;
 	}
 }

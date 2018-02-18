@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Arrangements for delivery of invoiced products and/or services.
@@ -92,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,8 +109,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod deliveryPeriod;
 	/**
-	 * Actual delivery period of the products and/or services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,8 +157,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.Transport> routing;
 	/**
-	 * Information related to the conveyance of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,9 +204,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected CommercialTradeSettlement tradeSettlement;
 	/**
-	 * Specifies the settlement operation which originates the delivery of a
-	 * product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,8 +255,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected ProductDeliveryObligation obligation;
 	/**
-	 * Specifies the obligation which is offset by the delivery of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,9 +305,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate;
 	/**
-	 * Formal document used to record a fact and used as proof of the fact, in
-	 * the context of a commercial trade transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,9 +354,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate;
 	/**
-	 * Formal document used to record a fact and used as proof of the fact that
-	 * goods have been insured under an insurance policy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,8 +404,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	};
 	protected Product product;
 	/**
-	 * Specifies the type of goods and services linked to the quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -458,7 +454,7 @@ public class ProductDelivery extends ObligationFulfilment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductDelivery";
 				definition = "Arrangements for delivery of invoiced products and/or services.";
@@ -483,55 +479,62 @@ public class ProductDelivery extends ObligationFulfilment {
 		return deliveryPeriod;
 	}
 
-	public void setDeliveryPeriod(com.tools20022.repository.entity.DateTimePeriod deliveryPeriod) {
-		this.deliveryPeriod = deliveryPeriod;
+	public ProductDelivery setDeliveryPeriod(com.tools20022.repository.entity.DateTimePeriod deliveryPeriod) {
+		this.deliveryPeriod = Objects.requireNonNull(deliveryPeriod);
+		return this;
 	}
 
 	public List<Transport> getRouting() {
-		return routing;
+		return routing == null ? routing = new ArrayList<>() : routing;
 	}
 
-	public void setRouting(List<com.tools20022.repository.entity.Transport> routing) {
-		this.routing = routing;
+	public ProductDelivery setRouting(List<com.tools20022.repository.entity.Transport> routing) {
+		this.routing = Objects.requireNonNull(routing);
+		return this;
 	}
 
-	public CommercialTradeSettlement getTradeSettlement() {
-		return tradeSettlement;
+	public Optional<CommercialTradeSettlement> getTradeSettlement() {
+		return tradeSettlement == null ? Optional.empty() : Optional.of(tradeSettlement);
 	}
 
-	public void setTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement tradeSettlement) {
+	public ProductDelivery setTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement tradeSettlement) {
 		this.tradeSettlement = tradeSettlement;
+		return this;
 	}
 
-	public ProductDeliveryObligation getObligation() {
-		return obligation;
+	public Optional<ProductDeliveryObligation> getObligation() {
+		return obligation == null ? Optional.empty() : Optional.of(obligation);
 	}
 
-	public void setObligation(com.tools20022.repository.entity.ProductDeliveryObligation obligation) {
+	public ProductDelivery setObligation(com.tools20022.repository.entity.ProductDeliveryObligation obligation) {
 		this.obligation = obligation;
+		return this;
 	}
 
 	public List<TradeCertificate> getTradeCertificate() {
-		return tradeCertificate;
+		return tradeCertificate == null ? tradeCertificate = new ArrayList<>() : tradeCertificate;
 	}
 
-	public void setTradeCertificate(List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate) {
-		this.tradeCertificate = tradeCertificate;
+	public ProductDelivery setTradeCertificate(List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate) {
+		this.tradeCertificate = Objects.requireNonNull(tradeCertificate);
+		return this;
 	}
 
 	public List<InsuranceCertificate> getInsuranceCertificate() {
-		return insuranceCertificate;
+		return insuranceCertificate == null ? insuranceCertificate = new ArrayList<>() : insuranceCertificate;
 	}
 
-	public void setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
-		this.insuranceCertificate = insuranceCertificate;
+	public ProductDelivery setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
+		this.insuranceCertificate = Objects.requireNonNull(insuranceCertificate);
+		return this;
 	}
 
 	public Product getProduct() {
 		return product;
 	}
 
-	public void setProduct(com.tools20022.repository.entity.Product product) {
-		this.product = product;
+	public ProductDelivery setProduct(com.tools20022.repository.entity.Product product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 }

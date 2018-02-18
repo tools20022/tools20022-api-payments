@@ -30,6 +30,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -89,8 +90,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,17 +104,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmendmentInformationDetails11", propOrder = {"originalMandateIdentification", "originalCreditorSchemeIdentification", "originalCreditorAgent", "originalCreditorAgentAccount", "originalDebtor", "originalDebtorAccount",
 		"originalDebtorAgent", "originalDebtorAgentAccount", "originalFinalCollectionDate", "originalFrequency", "originalReason", "originalTrackingDays"})
 public class AmendmentInformationDetails11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlMndtId")
 	protected Max35Text originalMandateIdentification;
 	/**
-	 * Unique identification, as assigned by the creditor, to unambiguously
-	 * identify the original mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +149,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAttribute mmOriginalMandateIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmMandateIdentification;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,10 +160,11 @@ public class AmendmentInformationDetails11 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlCdtrSchmeId")
 	protected PartyIdentification43 originalCreditorSchemeIdentification;
 	/**
-	 * Original creditor scheme identification that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -195,7 +197,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalCreditorSchemeIdentification = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCdtrSchmeId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,10 +209,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlCdtrAgt")
 	protected BranchAndFinancialInstitutionIdentification5 originalCreditorAgent;
 	/**
-	 * Original creditor agent that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -243,7 +246,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalCreditorAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCdtrAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,10 +258,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlCdtrAgtAcct")
 	protected CashAccount24 originalCreditorAgentAccount;
 	/**
-	 * Original creditor agent account that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -290,7 +294,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalCreditorAgentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCdtrAgtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,10 +306,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDbtr")
 	protected PartyIdentification43 originalDebtor;
 	/**
-	 * Original debtor that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -337,7 +342,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalDebtor = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDbtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -349,10 +354,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDbtrAcct")
 	protected CashAccount24 originalDebtorAccount;
 	/**
-	 * Original debtor account that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -384,7 +390,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalDebtorAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDbtrAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -396,10 +402,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDbtrAgt")
 	protected BranchAndFinancialInstitutionIdentification5 originalDebtorAgent;
 	/**
-	 * Original debtor agent that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -432,7 +439,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalDebtorAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDbtrAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -444,10 +451,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDbtrAgtAcct")
 	protected CashAccount24 originalDebtorAgentAccount;
 	/**
-	 * Original debtor agent account that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -479,7 +487,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalDebtorAgentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDbtrAgtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -491,10 +499,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlFnlColltnDt")
 	protected ISODate originalFinalCollectionDate;
 	/**
-	 * Original final collection date that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,7 +536,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAttribute mmOriginalFinalCollectionDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFinalCollectionDate;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlFnlColltnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -538,10 +547,11 @@ public class AmendmentInformationDetails11 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlFrqcy")
 	protected Frequency36Choice originalFrequency;
 	/**
-	 * Original frequency that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,7 +585,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAttribute mmOriginalFrequency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFrequency;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlFrqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -586,11 +596,11 @@ public class AmendmentInformationDetails11 {
 			complexType_lazy = () -> Frequency36Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlRsn")
 	protected MandateSetupReason1Choice originalReason;
 	/**
-	 * Original reason for the mandate to allow the user to distinguish between
-	 * different mandates for the same creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -625,7 +635,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAssociationEnd mmOriginalReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -637,10 +647,11 @@ public class AmendmentInformationDetails11 {
 			type_lazy = () -> MandateSetupReason1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlTrckgDays")
 	protected Exact2NumericText originalTrackingDays;
 	/**
-	 * Original number of tracking days that has been modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -674,7 +685,7 @@ public class AmendmentInformationDetails11 {
 	public static final MMMessageAttribute mmOriginalTrackingDays = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmTrackingDays;
-			componentContext_lazy = () -> AmendmentInformationDetails11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlTrckgDays";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -689,12 +700,15 @@ public class AmendmentInformationDetails11 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmendmentInformationDetails11.mmOriginalMandateIdentification, AmendmentInformationDetails11.mmOriginalCreditorSchemeIdentification,
-						AmendmentInformationDetails11.mmOriginalCreditorAgent, AmendmentInformationDetails11.mmOriginalCreditorAgentAccount, AmendmentInformationDetails11.mmOriginalDebtor,
-						AmendmentInformationDetails11.mmOriginalDebtorAccount, AmendmentInformationDetails11.mmOriginalDebtorAgent, AmendmentInformationDetails11.mmOriginalDebtorAgentAccount,
-						AmendmentInformationDetails11.mmOriginalFinalCollectionDate, AmendmentInformationDetails11.mmOriginalFrequency, AmendmentInformationDetails11.mmOriginalReason, AmendmentInformationDetails11.mmOriginalTrackingDays);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalMandateIdentification,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalCreditorSchemeIdentification, com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalCreditorAgent,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalCreditorAgentAccount, com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalDebtor,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalDebtorAccount, com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalDebtorAgent,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalDebtorAgentAccount, com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalFinalCollectionDate,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalFrequency, com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalReason,
+						com.tools20022.repository.msg.AmendmentInformationDetails11.mmOriginalTrackingDays);
 				trace_lazy = () -> DirectDebitMandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmendmentInformationDetails11";
 				definition = "Provides further details on the list of direct debit mandate elements that have been modified when the amendment indicator has been set.";
@@ -703,111 +717,111 @@ public class AmendmentInformationDetails11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlMndtId")
-	public Max35Text getOriginalMandateIdentification() {
-		return originalMandateIdentification;
+	public Optional<Max35Text> getOriginalMandateIdentification() {
+		return originalMandateIdentification == null ? Optional.empty() : Optional.of(originalMandateIdentification);
 	}
 
-	public void setOriginalMandateIdentification(Max35Text originalMandateIdentification) {
+	public AmendmentInformationDetails11 setOriginalMandateIdentification(Max35Text originalMandateIdentification) {
 		this.originalMandateIdentification = originalMandateIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlCdtrSchmeId")
-	public PartyIdentification43 getOriginalCreditorSchemeIdentification() {
-		return originalCreditorSchemeIdentification;
+	public Optional<PartyIdentification43> getOriginalCreditorSchemeIdentification() {
+		return originalCreditorSchemeIdentification == null ? Optional.empty() : Optional.of(originalCreditorSchemeIdentification);
 	}
 
-	public void setOriginalCreditorSchemeIdentification(com.tools20022.repository.msg.PartyIdentification43 originalCreditorSchemeIdentification) {
+	public AmendmentInformationDetails11 setOriginalCreditorSchemeIdentification(com.tools20022.repository.msg.PartyIdentification43 originalCreditorSchemeIdentification) {
 		this.originalCreditorSchemeIdentification = originalCreditorSchemeIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlCdtrAgt")
-	public BranchAndFinancialInstitutionIdentification5 getOriginalCreditorAgent() {
-		return originalCreditorAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getOriginalCreditorAgent() {
+		return originalCreditorAgent == null ? Optional.empty() : Optional.of(originalCreditorAgent);
 	}
 
-	public void setOriginalCreditorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalCreditorAgent) {
+	public AmendmentInformationDetails11 setOriginalCreditorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalCreditorAgent) {
 		this.originalCreditorAgent = originalCreditorAgent;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlCdtrAgtAcct")
-	public CashAccount24 getOriginalCreditorAgentAccount() {
-		return originalCreditorAgentAccount;
+	public Optional<CashAccount24> getOriginalCreditorAgentAccount() {
+		return originalCreditorAgentAccount == null ? Optional.empty() : Optional.of(originalCreditorAgentAccount);
 	}
 
-	public void setOriginalCreditorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalCreditorAgentAccount) {
+	public AmendmentInformationDetails11 setOriginalCreditorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalCreditorAgentAccount) {
 		this.originalCreditorAgentAccount = originalCreditorAgentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDbtr")
-	public PartyIdentification43 getOriginalDebtor() {
-		return originalDebtor;
+	public Optional<PartyIdentification43> getOriginalDebtor() {
+		return originalDebtor == null ? Optional.empty() : Optional.of(originalDebtor);
 	}
 
-	public void setOriginalDebtor(com.tools20022.repository.msg.PartyIdentification43 originalDebtor) {
+	public AmendmentInformationDetails11 setOriginalDebtor(com.tools20022.repository.msg.PartyIdentification43 originalDebtor) {
 		this.originalDebtor = originalDebtor;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDbtrAcct")
-	public CashAccount24 getOriginalDebtorAccount() {
-		return originalDebtorAccount;
+	public Optional<CashAccount24> getOriginalDebtorAccount() {
+		return originalDebtorAccount == null ? Optional.empty() : Optional.of(originalDebtorAccount);
 	}
 
-	public void setOriginalDebtorAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAccount) {
+	public AmendmentInformationDetails11 setOriginalDebtorAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAccount) {
 		this.originalDebtorAccount = originalDebtorAccount;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDbtrAgt")
-	public BranchAndFinancialInstitutionIdentification5 getOriginalDebtorAgent() {
-		return originalDebtorAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getOriginalDebtorAgent() {
+		return originalDebtorAgent == null ? Optional.empty() : Optional.of(originalDebtorAgent);
 	}
 
-	public void setOriginalDebtorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalDebtorAgent) {
+	public AmendmentInformationDetails11 setOriginalDebtorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalDebtorAgent) {
 		this.originalDebtorAgent = originalDebtorAgent;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDbtrAgtAcct")
-	public CashAccount24 getOriginalDebtorAgentAccount() {
-		return originalDebtorAgentAccount;
+	public Optional<CashAccount24> getOriginalDebtorAgentAccount() {
+		return originalDebtorAgentAccount == null ? Optional.empty() : Optional.of(originalDebtorAgentAccount);
 	}
 
-	public void setOriginalDebtorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAgentAccount) {
+	public AmendmentInformationDetails11 setOriginalDebtorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAgentAccount) {
 		this.originalDebtorAgentAccount = originalDebtorAgentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlFnlColltnDt")
-	public ISODate getOriginalFinalCollectionDate() {
-		return originalFinalCollectionDate;
+	public Optional<ISODate> getOriginalFinalCollectionDate() {
+		return originalFinalCollectionDate == null ? Optional.empty() : Optional.of(originalFinalCollectionDate);
 	}
 
-	public void setOriginalFinalCollectionDate(ISODate originalFinalCollectionDate) {
+	public AmendmentInformationDetails11 setOriginalFinalCollectionDate(ISODate originalFinalCollectionDate) {
 		this.originalFinalCollectionDate = originalFinalCollectionDate;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlFrqcy")
-	public Frequency36Choice getOriginalFrequency() {
-		return originalFrequency;
+	public Optional<Frequency36Choice> getOriginalFrequency() {
+		return originalFrequency == null ? Optional.empty() : Optional.of(originalFrequency);
 	}
 
-	public void setOriginalFrequency(Frequency36Choice originalFrequency) {
+	public AmendmentInformationDetails11 setOriginalFrequency(Frequency36Choice originalFrequency) {
 		this.originalFrequency = originalFrequency;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlRsn")
-	public MandateSetupReason1Choice getOriginalReason() {
-		return originalReason;
+	public Optional<MandateSetupReason1Choice> getOriginalReason() {
+		return originalReason == null ? Optional.empty() : Optional.of(originalReason);
 	}
 
-	public void setOriginalReason(MandateSetupReason1Choice originalReason) {
+	public AmendmentInformationDetails11 setOriginalReason(MandateSetupReason1Choice originalReason) {
 		this.originalReason = originalReason;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlTrckgDays")
-	public Exact2NumericText getOriginalTrackingDays() {
-		return originalTrackingDays;
+	public Optional<Exact2NumericText> getOriginalTrackingDays() {
+		return originalTrackingDays == null ? Optional.empty() : Optional.of(originalTrackingDays);
 	}
 
-	public void setOriginalTrackingDays(Exact2NumericText originalTrackingDays) {
+	public AmendmentInformationDetails11 setOriginalTrackingDays(Exact2NumericText originalTrackingDays) {
 		this.originalTrackingDays = originalTrackingDays;
+		return this;
 	}
 }

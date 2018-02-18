@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType4Code#Merchant
- * PartyType4Code.mmMerchant}</li>
+ * PartyType4Code.Merchant}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType4Code#Acceptor
- * PartyType4Code.mmAcceptor}</li>
+ * PartyType4Code.Acceptor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType4Code#IntermediaryAgent
- * PartyType4Code.mmIntermediaryAgent}</li>
+ * PartyType4Code.IntermediaryAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType4Code#Acquirer
- * PartyType4Code.mmAcquirer}</li>
+ * PartyType4Code.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType4Code#CardIssuer
- * PartyType4Code.mmCardIssuer}</li>
+ * PartyType4Code.CardIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType4Code#TaxAuthority
- * PartyType4Code.mmTaxAuthority}</li>
+ * PartyType4Code.TaxAuthority}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -234,7 +234,7 @@ public class PartyType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MERC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType4Code";

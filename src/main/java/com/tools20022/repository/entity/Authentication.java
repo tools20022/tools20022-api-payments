@@ -31,6 +31,8 @@ import com.tools20022.repository.msg.MandateAuthentication1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Data related to the authentication of the cardholder.
@@ -96,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +115,8 @@ public class Authentication {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CardholderRole cardholder;
 	/**
-	 * Cardholder for which an authentication is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,8 +163,8 @@ public class Authentication {
 	};
 	protected AuthenticationMethodCode authenticationMethod;
 	/**
-	 * Method used to authenticate a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,8 +222,8 @@ public class Authentication {
 	};
 	protected AuthenticationEntityCode authenticationEntity;
 	/**
-	 * Entity or object in charge of verifying the person authenticity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,8 +282,8 @@ public class Authentication {
 	};
 	protected Max70Text authenticationValue;
 	/**
-	 * Value used to authenticate the owner of the payment card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -327,8 +329,8 @@ public class Authentication {
 	};
 	protected PINFormatCode pINFormat;
 	/**
-	 * Encrypted personal identification number (PIN) format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,8 +376,8 @@ public class Authentication {
 	};
 	protected Max140Binary pIN;
 	/**
-	 * Personal Identification Number (PIN) for authentication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,9 +423,8 @@ public class Authentication {
 	};
 	protected Max35Text authenticationSupport;
 	/**
-	 * This indicator identifies whether person authentication is supported and
-	 * data is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -470,9 +471,8 @@ public class Authentication {
 	};
 	protected Max35Text collectionIndicator;
 	/**
-	 * Identifies in electronic commerce transactions whether customer
-	 * authentication is supported and data is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -519,9 +519,8 @@ public class Authentication {
 	};
 	protected Mandate mandate;
 	/**
-	 * Specifies the mandate related to the transport authentication
-	 * detailsmandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -569,8 +568,8 @@ public class Authentication {
 	};
 	protected AuthenticationResultCode authenticationResult;
 	/**
-	 * Specifies the result of the authentication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -618,7 +617,7 @@ public class Authentication {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Authentication";
 				definition = "Data related to the authentication of the cardholder.";
@@ -638,83 +637,93 @@ public class Authentication {
 		return mmObject_lazy.get();
 	}
 
-	public CardholderRole getCardholder() {
-		return cardholder;
+	public Optional<CardholderRole> getCardholder() {
+		return cardholder == null ? Optional.empty() : Optional.of(cardholder);
 	}
 
-	public void setCardholder(com.tools20022.repository.entity.CardholderRole cardholder) {
+	public Authentication setCardholder(com.tools20022.repository.entity.CardholderRole cardholder) {
 		this.cardholder = cardholder;
+		return this;
 	}
 
 	public AuthenticationMethodCode getAuthenticationMethod() {
 		return authenticationMethod;
 	}
 
-	public void setAuthenticationMethod(AuthenticationMethodCode authenticationMethod) {
-		this.authenticationMethod = authenticationMethod;
+	public Authentication setAuthenticationMethod(AuthenticationMethodCode authenticationMethod) {
+		this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+		return this;
 	}
 
 	public AuthenticationEntityCode getAuthenticationEntity() {
 		return authenticationEntity;
 	}
 
-	public void setAuthenticationEntity(AuthenticationEntityCode authenticationEntity) {
-		this.authenticationEntity = authenticationEntity;
+	public Authentication setAuthenticationEntity(AuthenticationEntityCode authenticationEntity) {
+		this.authenticationEntity = Objects.requireNonNull(authenticationEntity);
+		return this;
 	}
 
 	public Max70Text getAuthenticationValue() {
 		return authenticationValue;
 	}
 
-	public void setAuthenticationValue(Max70Text authenticationValue) {
-		this.authenticationValue = authenticationValue;
+	public Authentication setAuthenticationValue(Max70Text authenticationValue) {
+		this.authenticationValue = Objects.requireNonNull(authenticationValue);
+		return this;
 	}
 
 	public PINFormatCode getPINFormat() {
 		return pINFormat;
 	}
 
-	public void setPINFormat(PINFormatCode pINFormat) {
-		this.pINFormat = pINFormat;
+	public Authentication setPINFormat(PINFormatCode pINFormat) {
+		this.pINFormat = Objects.requireNonNull(pINFormat);
+		return this;
 	}
 
 	public Max140Binary getPIN() {
 		return pIN;
 	}
 
-	public void setPIN(Max140Binary pIN) {
-		this.pIN = pIN;
+	public Authentication setPIN(Max140Binary pIN) {
+		this.pIN = Objects.requireNonNull(pIN);
+		return this;
 	}
 
 	public Max35Text getAuthenticationSupport() {
 		return authenticationSupport;
 	}
 
-	public void setAuthenticationSupport(Max35Text authenticationSupport) {
-		this.authenticationSupport = authenticationSupport;
+	public Authentication setAuthenticationSupport(Max35Text authenticationSupport) {
+		this.authenticationSupport = Objects.requireNonNull(authenticationSupport);
+		return this;
 	}
 
 	public Max35Text getCollectionIndicator() {
 		return collectionIndicator;
 	}
 
-	public void setCollectionIndicator(Max35Text collectionIndicator) {
-		this.collectionIndicator = collectionIndicator;
+	public Authentication setCollectionIndicator(Max35Text collectionIndicator) {
+		this.collectionIndicator = Objects.requireNonNull(collectionIndicator);
+		return this;
 	}
 
 	public Mandate getMandate() {
 		return mandate;
 	}
 
-	public void setMandate(com.tools20022.repository.entity.Mandate mandate) {
-		this.mandate = mandate;
+	public Authentication setMandate(com.tools20022.repository.entity.Mandate mandate) {
+		this.mandate = Objects.requireNonNull(mandate);
+		return this;
 	}
 
 	public AuthenticationResultCode getAuthenticationResult() {
 		return authenticationResult;
 	}
 
-	public void setAuthenticationResult(AuthenticationResultCode authenticationResult) {
-		this.authenticationResult = authenticationResult;
+	public Authentication setAuthenticationResult(AuthenticationResultCode authenticationResult) {
+		this.authenticationResult = Objects.requireNonNull(authenticationResult);
+		return this;
 	}
 }

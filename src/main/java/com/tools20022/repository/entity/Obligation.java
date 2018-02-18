@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ExposureTypeV2Code;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
@@ -25,9 +26,8 @@ import com.tools20022.repository.datatype.Max4AlphaNumericText;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the assets (quantity of securities, goods, services, and cash
@@ -106,8 +106,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,13 +125,8 @@ public class Obligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime requestedSettlementDate;
 	/**
-	 * Date and time at which a trade must be executed. For a direct debit, it
-	 * is the date and time at which the creditor requests that the amount of
-	 * money is to be collected from the debtor. For a credit transfer, it is
-	 * the date and time at which the debtor requests the clearing agent to
-	 * process the payment. For a securities trade, it is the date and time at
-	 * which the securities are to be delivered or received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,6 +188,9 @@ public class Obligation {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Obligation Obligation}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::RSET</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -214,6 +212,7 @@ public class Obligation {
 					CorrectivePaymentInitiation2.mmRequestedCollectionDate, UnderlyingPaymentInstruction3.mmRequestedCollectionDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::RSET"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementDate";
 			definition = "Date and time at which a trade must be executed. For a direct debit, it is the date and time at which the creditor requests that the amount of money is to be collected from the debtor. For a credit transfer, it is the date and time at which the debtor requests the clearing agent to process the payment. For a securities trade, it is the date and time at which the securities are to be delivered or received.";
@@ -232,8 +231,8 @@ public class Obligation {
 	};
 	protected CurrencyAndAmount requestedSettlementAmount;
 	/**
-	 * Total amount of money to be paid or received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,6 +244,9 @@ public class Obligation {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Obligation Obligation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::SETT</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -260,6 +262,7 @@ public class Obligation {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::SETT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementAmount";
 			definition = "Total amount of money to be paid or received.";
@@ -278,8 +281,8 @@ public class Obligation {
 	};
 	protected Max4AlphaNumericText priority;
 	/**
-	 * Specifies whether the transaction is to be executed with a high priority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,6 +294,9 @@ public class Obligation {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Obligation Obligation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIR</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -308,6 +314,7 @@ public class Obligation {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Specifies whether the transaction is to be executed with a high priority.";
@@ -326,9 +333,8 @@ public class Obligation {
 	};
 	protected Trade trade;
 	/**
-	 * Specifies the trade which originates the obligation to deliver a product,
-	 * cash or securities..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -375,8 +381,8 @@ public class Obligation {
 	};
 	protected TransactionRisk transactionRisk;
 	/**
-	 * Transaction risk calculated per obligation type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,8 +428,8 @@ public class Obligation {
 	};
 	protected Obligation parentObligation;
 	/**
-	 * Obligation which is divided into several sub-obligations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -470,10 +476,8 @@ public class Obligation {
 	};
 	protected List<com.tools20022.repository.entity.Obligation> subObligation;
 	/**
-	 * Specifies an obligation resulting from another existing obligation, for
-	 * instance each leg of a financing agreement is a sub-obligation of the
-	 * global financing obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -520,8 +524,8 @@ public class Obligation {
 	};
 	protected ObligationFulfilment offset;
 	/**
-	 * Specifies the method used to settle a specific obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -569,9 +573,8 @@ public class Obligation {
 	};
 	protected ObligationFulfilment originalObligationProcess;
 	/**
-	 * Obligation fulfilment process which did not extinguish the obligation but
-	 * replaced it by a new one, for instance in case of netting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -620,8 +623,8 @@ public class Obligation {
 	};
 	protected ExposureTypeV2Code exposureType;
 	/**
-	 * Type of exposure related to this obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -668,7 +671,7 @@ public class Obligation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Obligation";
 				definition = "Specifies the assets (quantity of securities, goods, services, and cash amounts) that have to be delivered.";
@@ -693,79 +696,89 @@ public class Obligation {
 		return requestedSettlementDate;
 	}
 
-	public void setRequestedSettlementDate(ISODateTime requestedSettlementDate) {
-		this.requestedSettlementDate = requestedSettlementDate;
+	public Obligation setRequestedSettlementDate(ISODateTime requestedSettlementDate) {
+		this.requestedSettlementDate = Objects.requireNonNull(requestedSettlementDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getRequestedSettlementAmount() {
 		return requestedSettlementAmount;
 	}
 
-	public void setRequestedSettlementAmount(CurrencyAndAmount requestedSettlementAmount) {
-		this.requestedSettlementAmount = requestedSettlementAmount;
+	public Obligation setRequestedSettlementAmount(CurrencyAndAmount requestedSettlementAmount) {
+		this.requestedSettlementAmount = Objects.requireNonNull(requestedSettlementAmount);
+		return this;
 	}
 
 	public Max4AlphaNumericText getPriority() {
 		return priority;
 	}
 
-	public void setPriority(Max4AlphaNumericText priority) {
-		this.priority = priority;
+	public Obligation setPriority(Max4AlphaNumericText priority) {
+		this.priority = Objects.requireNonNull(priority);
+		return this;
 	}
 
 	public Trade getTrade() {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public Obligation setTrade(com.tools20022.repository.entity.Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public TransactionRisk getTransactionRisk() {
 		return transactionRisk;
 	}
 
-	public void setTransactionRisk(com.tools20022.repository.entity.TransactionRisk transactionRisk) {
-		this.transactionRisk = transactionRisk;
+	public Obligation setTransactionRisk(com.tools20022.repository.entity.TransactionRisk transactionRisk) {
+		this.transactionRisk = Objects.requireNonNull(transactionRisk);
+		return this;
 	}
 
 	public Obligation getParentObligation() {
 		return parentObligation;
 	}
 
-	public void setParentObligation(com.tools20022.repository.entity.Obligation parentObligation) {
-		this.parentObligation = parentObligation;
+	public Obligation setParentObligation(com.tools20022.repository.entity.Obligation parentObligation) {
+		this.parentObligation = Objects.requireNonNull(parentObligation);
+		return this;
 	}
 
 	public List<Obligation> getSubObligation() {
-		return subObligation;
+		return subObligation == null ? subObligation = new ArrayList<>() : subObligation;
 	}
 
-	public void setSubObligation(List<com.tools20022.repository.entity.Obligation> subObligation) {
-		this.subObligation = subObligation;
+	public Obligation setSubObligation(List<com.tools20022.repository.entity.Obligation> subObligation) {
+		this.subObligation = Objects.requireNonNull(subObligation);
+		return this;
 	}
 
-	public ObligationFulfilment getOffset() {
-		return offset;
+	public Optional<ObligationFulfilment> getOffset() {
+		return offset == null ? Optional.empty() : Optional.of(offset);
 	}
 
-	public void setOffset(com.tools20022.repository.entity.ObligationFulfilment offset) {
+	public Obligation setOffset(com.tools20022.repository.entity.ObligationFulfilment offset) {
 		this.offset = offset;
+		return this;
 	}
 
 	public ObligationFulfilment getOriginalObligationProcess() {
 		return originalObligationProcess;
 	}
 
-	public void setOriginalObligationProcess(com.tools20022.repository.entity.ObligationFulfilment originalObligationProcess) {
-		this.originalObligationProcess = originalObligationProcess;
+	public Obligation setOriginalObligationProcess(com.tools20022.repository.entity.ObligationFulfilment originalObligationProcess) {
+		this.originalObligationProcess = Objects.requireNonNull(originalObligationProcess);
+		return this;
 	}
 
 	public ExposureTypeV2Code getExposureType() {
 		return exposureType;
 	}
 
-	public void setExposureType(ExposureTypeV2Code exposureType) {
-		this.exposureType = exposureType;
+	public Obligation setExposureType(ExposureTypeV2Code exposureType) {
+		this.exposureType = Objects.requireNonNull(exposureType);
+		return this;
 	}
 }

@@ -22,9 +22,11 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Status of a securities trade.
@@ -105,8 +107,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -122,8 +124,8 @@ public class SecuritiesTradeStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected MatchingStatusCode matchingStatus;
 	/**
-	 * Status of matching of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,8 +171,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected AffirmationStatusCode affirmationStatus;
 	/**
-	 * Status of affirmation of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,9 +218,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTradeStatusReason> reason;
 	/**
-	 * Specifies the reasons for the status. It is derived from the relationship
-	 * between Status and Status Reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -267,8 +268,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTrade> securitiesTrade;
 	/**
-	 * Specifies the trade which has a specific status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,8 +315,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected TransactionStatusCode transactionStatus;
 	/**
-	 * Status of an investment fund transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,8 +362,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected ReplacementProcessingStatusCode replacementProcessingStatus;
 	/**
-	 * Provides the processing status of the replacement request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,8 +410,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected CancellationStatusCode cancellationStatus;
 	/**
-	 * Status of the cancellation of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -456,8 +457,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected CancellationRightCode cancellationRight;
 	/**
-	 * Cancellation right of an investor with respect to an order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -504,9 +505,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected TransferStatusCode transferStatus;
 	/**
-	 * Status of the transfer is accepted, sent to next party, matched, already
-	 * executed, or settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -554,8 +554,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected AllegementStatusCode allegedStatus;
 	/**
-	 * Provides the status of an allegement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -601,8 +601,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected AllocationStatusCode collateralAllocationStatus;
 	/**
-	 * Provides the status of allocation of collateral to cover the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -650,9 +650,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected RepoCallRequestStatusCode repoCallRequestStatus;
 	/**
-	 * Specifies additional information about the status of the repurchase
-	 * agreement call processed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -700,9 +699,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected SettlementConditionModificationStatusStatusCode settlementConditionModificationStatus;
 	/**
-	 * Provides the status of the securities settlement condition modification
-	 * request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -750,8 +748,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected MatchingProcessCode matchingProcess;
 	/**
-	 * Specifies the matching status of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -797,8 +795,8 @@ public class SecuritiesTradeStatus extends Status {
 	};
 	protected SecuritiesTransfer relatedSecuritiesTransfer;
 	/**
-	 * Transfer operation for which a status is provided
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -847,7 +845,7 @@ public class SecuritiesTradeStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeStatus";
 				definition = "Status of a securities trade.";
@@ -875,119 +873,134 @@ public class SecuritiesTradeStatus extends Status {
 		return matchingStatus;
 	}
 
-	public void setMatchingStatus(MatchingStatusCode matchingStatus) {
-		this.matchingStatus = matchingStatus;
+	public SecuritiesTradeStatus setMatchingStatus(MatchingStatusCode matchingStatus) {
+		this.matchingStatus = Objects.requireNonNull(matchingStatus);
+		return this;
 	}
 
 	public AffirmationStatusCode getAffirmationStatus() {
 		return affirmationStatus;
 	}
 
-	public void setAffirmationStatus(AffirmationStatusCode affirmationStatus) {
-		this.affirmationStatus = affirmationStatus;
+	public SecuritiesTradeStatus setAffirmationStatus(AffirmationStatusCode affirmationStatus) {
+		this.affirmationStatus = Objects.requireNonNull(affirmationStatus);
+		return this;
 	}
 
 	public List<SecuritiesTradeStatusReason> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<com.tools20022.repository.entity.SecuritiesTradeStatusReason> reason) {
-		this.reason = reason;
+	public SecuritiesTradeStatus setReason(List<com.tools20022.repository.entity.SecuritiesTradeStatusReason> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
 	public List<SecuritiesTrade> getSecuritiesTrade() {
-		return securitiesTrade;
+		return securitiesTrade == null ? securitiesTrade = new ArrayList<>() : securitiesTrade;
 	}
 
-	public void setSecuritiesTrade(List<com.tools20022.repository.entity.SecuritiesTrade> securitiesTrade) {
-		this.securitiesTrade = securitiesTrade;
+	public SecuritiesTradeStatus setSecuritiesTrade(List<com.tools20022.repository.entity.SecuritiesTrade> securitiesTrade) {
+		this.securitiesTrade = Objects.requireNonNull(securitiesTrade);
+		return this;
 	}
 
 	public TransactionStatusCode getTransactionStatus() {
 		return transactionStatus;
 	}
 
-	public void setTransactionStatus(TransactionStatusCode transactionStatus) {
-		this.transactionStatus = transactionStatus;
+	public SecuritiesTradeStatus setTransactionStatus(TransactionStatusCode transactionStatus) {
+		this.transactionStatus = Objects.requireNonNull(transactionStatus);
+		return this;
 	}
 
 	public ReplacementProcessingStatusCode getReplacementProcessingStatus() {
 		return replacementProcessingStatus;
 	}
 
-	public void setReplacementProcessingStatus(ReplacementProcessingStatusCode replacementProcessingStatus) {
-		this.replacementProcessingStatus = replacementProcessingStatus;
+	public SecuritiesTradeStatus setReplacementProcessingStatus(ReplacementProcessingStatusCode replacementProcessingStatus) {
+		this.replacementProcessingStatus = Objects.requireNonNull(replacementProcessingStatus);
+		return this;
 	}
 
 	public CancellationStatusCode getCancellationStatus() {
 		return cancellationStatus;
 	}
 
-	public void setCancellationStatus(CancellationStatusCode cancellationStatus) {
-		this.cancellationStatus = cancellationStatus;
+	public SecuritiesTradeStatus setCancellationStatus(CancellationStatusCode cancellationStatus) {
+		this.cancellationStatus = Objects.requireNonNull(cancellationStatus);
+		return this;
 	}
 
 	public CancellationRightCode getCancellationRight() {
 		return cancellationRight;
 	}
 
-	public void setCancellationRight(CancellationRightCode cancellationRight) {
-		this.cancellationRight = cancellationRight;
+	public SecuritiesTradeStatus setCancellationRight(CancellationRightCode cancellationRight) {
+		this.cancellationRight = Objects.requireNonNull(cancellationRight);
+		return this;
 	}
 
 	public TransferStatusCode getTransferStatus() {
 		return transferStatus;
 	}
 
-	public void setTransferStatus(TransferStatusCode transferStatus) {
-		this.transferStatus = transferStatus;
+	public SecuritiesTradeStatus setTransferStatus(TransferStatusCode transferStatus) {
+		this.transferStatus = Objects.requireNonNull(transferStatus);
+		return this;
 	}
 
 	public AllegementStatusCode getAllegedStatus() {
 		return allegedStatus;
 	}
 
-	public void setAllegedStatus(AllegementStatusCode allegedStatus) {
-		this.allegedStatus = allegedStatus;
+	public SecuritiesTradeStatus setAllegedStatus(AllegementStatusCode allegedStatus) {
+		this.allegedStatus = Objects.requireNonNull(allegedStatus);
+		return this;
 	}
 
 	public AllocationStatusCode getCollateralAllocationStatus() {
 		return collateralAllocationStatus;
 	}
 
-	public void setCollateralAllocationStatus(AllocationStatusCode collateralAllocationStatus) {
-		this.collateralAllocationStatus = collateralAllocationStatus;
+	public SecuritiesTradeStatus setCollateralAllocationStatus(AllocationStatusCode collateralAllocationStatus) {
+		this.collateralAllocationStatus = Objects.requireNonNull(collateralAllocationStatus);
+		return this;
 	}
 
 	public RepoCallRequestStatusCode getRepoCallRequestStatus() {
 		return repoCallRequestStatus;
 	}
 
-	public void setRepoCallRequestStatus(RepoCallRequestStatusCode repoCallRequestStatus) {
-		this.repoCallRequestStatus = repoCallRequestStatus;
+	public SecuritiesTradeStatus setRepoCallRequestStatus(RepoCallRequestStatusCode repoCallRequestStatus) {
+		this.repoCallRequestStatus = Objects.requireNonNull(repoCallRequestStatus);
+		return this;
 	}
 
 	public SettlementConditionModificationStatusStatusCode getSettlementConditionModificationStatus() {
 		return settlementConditionModificationStatus;
 	}
 
-	public void setSettlementConditionModificationStatus(SettlementConditionModificationStatusStatusCode settlementConditionModificationStatus) {
-		this.settlementConditionModificationStatus = settlementConditionModificationStatus;
+	public SecuritiesTradeStatus setSettlementConditionModificationStatus(SettlementConditionModificationStatusStatusCode settlementConditionModificationStatus) {
+		this.settlementConditionModificationStatus = Objects.requireNonNull(settlementConditionModificationStatus);
+		return this;
 	}
 
 	public MatchingProcessCode getMatchingProcess() {
 		return matchingProcess;
 	}
 
-	public void setMatchingProcess(MatchingProcessCode matchingProcess) {
-		this.matchingProcess = matchingProcess;
+	public SecuritiesTradeStatus setMatchingProcess(MatchingProcessCode matchingProcess) {
+		this.matchingProcess = Objects.requireNonNull(matchingProcess);
+		return this;
 	}
 
 	public SecuritiesTransfer getRelatedSecuritiesTransfer() {
 		return relatedSecuritiesTransfer;
 	}
 
-	public void setRelatedSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedSecuritiesTransfer) {
-		this.relatedSecuritiesTransfer = relatedSecuritiesTransfer;
+	public SecuritiesTradeStatus setRelatedSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedSecuritiesTransfer) {
+		this.relatedSecuritiesTransfer = Objects.requireNonNull(relatedSecuritiesTransfer);
+		return this;
 	}
 }

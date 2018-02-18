@@ -38,45 +38,45 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#Proposed
- * BaselineStatusCode.mmProposed}</li>
+ * BaselineStatusCode.Proposed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BaselineStatusCode#Closed
- * BaselineStatusCode.mmClosed}</li>
+ * BaselineStatusCode.Closed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#PartiallyMatched
- * BaselineStatusCode.mmPartiallyMatched}</li>
+ * BaselineStatusCode.PartiallyMatched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#Established
- * BaselineStatusCode.mmEstablished}</li>
+ * BaselineStatusCode.Established}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BaselineStatusCode#Active
- * BaselineStatusCode.mmActive}</li>
+ * BaselineStatusCode.Active}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#Complete
- * BaselineStatusCode.mmComplete}</li>
+ * BaselineStatusCode.Complete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#AmendmentRequested
- * BaselineStatusCode.mmAmendmentRequested}</li>
+ * BaselineStatusCode.AmendmentRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#ReActivateRequested
- * BaselineStatusCode.mmReActivateRequested}</li>
+ * BaselineStatusCode.ReActivateRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#CloseRequested
- * BaselineStatusCode.mmCloseRequested}</li>
+ * BaselineStatusCode.CloseRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#CompleteRequested
- * BaselineStatusCode.mmCompleteRequested}</li>
+ * BaselineStatusCode.CompleteRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#StatusExtensionRequested
- * BaselineStatusCode.mmStatusExtensionRequested}</li>
+ * BaselineStatusCode.StatusExtensionRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BaselineStatusCode#DataSetAcceptanceRequested
- * BaselineStatusCode.mmDataSetAcceptanceRequested}</li>
+ * BaselineStatusCode.DataSetAcceptanceRequested}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -499,7 +499,7 @@ public class BaselineStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PROP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BaselineStatusCode";

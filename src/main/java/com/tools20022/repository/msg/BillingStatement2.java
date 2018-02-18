@@ -26,9 +26,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -83,8 +85,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,16 +98,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingStatement2", propOrder = {"statementIdentification", "fromToDate", "creationDateTime", "status", "accountCharacteristics", "rateData", "currencyExchange", "balance", "compensation", "service", "taxRegion",
 		"balanceAdjustment", "serviceAdjustment"})
 public class BillingStatement2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StmtId", required = true)
 	protected Max35Text statementIdentification;
 	/**
-	 * Identification of the customer billing statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +141,7 @@ public class BillingStatement2 {
 	public static final MMMessageAttribute mmStatementIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "StmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,11 +152,11 @@ public class BillingStatement2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "FrToDt", required = true)
 	protected DatePeriod1 fromToDate;
 	/**
-	 * Date range between the start date and the end date for which the
-	 * statement is issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +191,7 @@ public class BillingStatement2 {
 	public static final MMMessageAttribute mmFromToDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmPeriodCovered;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "FrToDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,10 +202,11 @@ public class BillingStatement2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.DatePeriod1.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date the statement message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,7 +239,7 @@ public class BillingStatement2 {
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,10 +250,11 @@ public class BillingStatement2 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "Sts", required = true)
 	protected BillingStatementStatus1Code status;
 	/**
-	 * Defines the status of the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,7 +288,7 @@ public class BillingStatement2 {
 	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmStatus;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -294,10 +299,11 @@ public class BillingStatement2 {
 			simpleType_lazy = () -> BillingStatementStatus1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctChrtcs", required = true)
 	protected CashAccountCharacteristics2 accountCharacteristics;
 	/**
-	 * Specifies the details of the account characteristics.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -330,7 +336,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmAccountCharacteristics = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashAccountContract.mmCashAccount;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -342,11 +348,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 		}
 	};
+	@XmlElement(name = "RateData")
 	protected List<com.tools20022.repository.msg.BillingRate1> rateData;
 	/**
-	 * Identifies the non tax per annum rate and factor values used within the
-	 * statement along with any time dependent charge basis.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -374,7 +380,7 @@ public class BillingStatement2 {
 	 */
 	public static final MMMessageAssociationEnd mmRateData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "RateData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -385,10 +391,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 		}
 	};
+	@XmlElement(name = "CcyXchg")
 	protected List<com.tools20022.repository.msg.CurrencyExchange6> currencyExchange;
 	/**
-	 * Specifies details related to currency exchange data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -420,7 +427,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmCurrencyExchange = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmCurrencyExchange;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "CcyXchg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -431,11 +438,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 		}
 	};
+	@XmlElement(name = "Bal")
 	protected List<com.tools20022.repository.msg.BillingBalance1> balance;
 	/**
-	 * Identifies the average value of balances held within the statement
-	 * period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -469,7 +476,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmBalance = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmCashBalance;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "Bal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -480,11 +487,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingBalance1.mmObject();
 		}
 	};
+	@XmlElement(name = "Compstn")
 	protected List<com.tools20022.repository.msg.BillingCompensation1> compensation;
 	/**
-	 * Identifies the set of values and totals that are used to provide
-	 * compensation information, service and tax totals.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -518,7 +525,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmCompensation = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "Compstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -529,10 +536,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
 		}
 	};
+	@XmlElement(name = "Svc")
 	protected List<com.tools20022.repository.msg.BillingService2> service;
 	/**
-	 * Specifies the values used for every line item service in the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -566,7 +574,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmService = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "Svc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -577,10 +585,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingService2.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxRgn")
 	protected List<com.tools20022.repository.msg.BillingTaxRegion1> taxRegion;
 	/**
-	 * Tax region(s) that levy a tax on the services within this statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -613,7 +622,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmTaxRegion = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxRgn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -624,12 +633,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BillingTaxRegion1.mmObject();
 		}
 	};
+	@XmlElement(name = "BalAdjstmnt")
 	protected List<com.tools20022.repository.msg.BalanceAdjustment1> balanceAdjustment;
 	/**
-	 * One or more sections that identify balance or float adjustments to the
-	 * account. They can reflect either adjustments to the current statement or
-	 * adjustments to statements from prior reporting periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -663,7 +671,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmBalanceAdjustment = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmCashBalance;
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "BalAdjstmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -674,12 +682,11 @@ public class BillingStatement2 {
 			type_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
 		}
 	};
+	@XmlElement(name = "SvcAdjstmnt")
 	protected List<com.tools20022.repository.msg.BillingServiceAdjustment1> serviceAdjustment;
 	/**
-	 * One or more sections that identify line item service adjustments to the
-	 * account. They reflect adjustments to statements from prior reporting
-	 * periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -714,7 +721,7 @@ public class BillingStatement2 {
 	public static final MMMessageAssociationEnd mmServiceAdjustment = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
-			componentContext_lazy = () -> BillingStatement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingStatement2.mmObject();
 			isDerived = false;
 			xmlTag = "SvcAdjstmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -729,11 +736,13 @@ public class BillingStatement2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingStatement2.mmStatementIdentification, BillingStatement2.mmFromToDate, BillingStatement2.mmCreationDateTime, BillingStatement2.mmStatus,
-						BillingStatement2.mmAccountCharacteristics, BillingStatement2.mmRateData, BillingStatement2.mmCurrencyExchange, BillingStatement2.mmBalance, BillingStatement2.mmCompensation, BillingStatement2.mmService,
-						BillingStatement2.mmTaxRegion, BillingStatement2.mmBalanceAdjustment, BillingStatement2.mmServiceAdjustment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingStatement2.mmStatementIdentification, com.tools20022.repository.msg.BillingStatement2.mmFromToDate,
+						com.tools20022.repository.msg.BillingStatement2.mmCreationDateTime, com.tools20022.repository.msg.BillingStatement2.mmStatus, com.tools20022.repository.msg.BillingStatement2.mmAccountCharacteristics,
+						com.tools20022.repository.msg.BillingStatement2.mmRateData, com.tools20022.repository.msg.BillingStatement2.mmCurrencyExchange, com.tools20022.repository.msg.BillingStatement2.mmBalance,
+						com.tools20022.repository.msg.BillingStatement2.mmCompensation, com.tools20022.repository.msg.BillingStatement2.mmService, com.tools20022.repository.msg.BillingStatement2.mmTaxRegion,
+						com.tools20022.repository.msg.BillingStatement2.mmBalanceAdjustment, com.tools20022.repository.msg.BillingStatement2.mmServiceAdjustment);
 				trace_lazy = () -> Invoice.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingStatement2";
 				definition = "Details of the statement reporting the bank services billing.";
@@ -742,120 +751,120 @@ public class BillingStatement2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StmtId", required = true)
 	public Max35Text getStatementIdentification() {
 		return statementIdentification;
 	}
 
-	public void setStatementIdentification(Max35Text statementIdentification) {
-		this.statementIdentification = statementIdentification;
+	public BillingStatement2 setStatementIdentification(Max35Text statementIdentification) {
+		this.statementIdentification = Objects.requireNonNull(statementIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FrToDt", required = true)
 	public DatePeriod1 getFromToDate() {
 		return fromToDate;
 	}
 
-	public void setFromToDate(com.tools20022.repository.msg.DatePeriod1 fromToDate) {
-		this.fromToDate = fromToDate;
+	public BillingStatement2 setFromToDate(com.tools20022.repository.msg.DatePeriod1 fromToDate) {
+		this.fromToDate = Objects.requireNonNull(fromToDate);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public BillingStatement2 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public BillingStatementStatus1Code getStatus() {
 		return status;
 	}
 
-	public void setStatus(BillingStatementStatus1Code status) {
-		this.status = status;
+	public BillingStatement2 setStatus(BillingStatementStatus1Code status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	@XmlElement(name = "AcctChrtcs", required = true)
 	public CashAccountCharacteristics2 getAccountCharacteristics() {
 		return accountCharacteristics;
 	}
 
-	public void setAccountCharacteristics(com.tools20022.repository.msg.CashAccountCharacteristics2 accountCharacteristics) {
-		this.accountCharacteristics = accountCharacteristics;
+	public BillingStatement2 setAccountCharacteristics(com.tools20022.repository.msg.CashAccountCharacteristics2 accountCharacteristics) {
+		this.accountCharacteristics = Objects.requireNonNull(accountCharacteristics);
+		return this;
 	}
 
-	@XmlElement(name = "RateData")
 	public List<BillingRate1> getRateData() {
-		return rateData;
+		return rateData == null ? rateData = new ArrayList<>() : rateData;
 	}
 
-	public void setRateData(List<com.tools20022.repository.msg.BillingRate1> rateData) {
-		this.rateData = rateData;
+	public BillingStatement2 setRateData(List<com.tools20022.repository.msg.BillingRate1> rateData) {
+		this.rateData = Objects.requireNonNull(rateData);
+		return this;
 	}
 
-	@XmlElement(name = "CcyXchg")
 	public List<CurrencyExchange6> getCurrencyExchange() {
-		return currencyExchange;
+		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public void setCurrencyExchange(List<com.tools20022.repository.msg.CurrencyExchange6> currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public BillingStatement2 setCurrencyExchange(List<com.tools20022.repository.msg.CurrencyExchange6> currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
-	@XmlElement(name = "Bal")
 	public List<BillingBalance1> getBalance() {
-		return balance;
+		return balance == null ? balance = new ArrayList<>() : balance;
 	}
 
-	public void setBalance(List<com.tools20022.repository.msg.BillingBalance1> balance) {
-		this.balance = balance;
+	public BillingStatement2 setBalance(List<com.tools20022.repository.msg.BillingBalance1> balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
-	@XmlElement(name = "Compstn")
 	public List<BillingCompensation1> getCompensation() {
-		return compensation;
+		return compensation == null ? compensation = new ArrayList<>() : compensation;
 	}
 
-	public void setCompensation(List<com.tools20022.repository.msg.BillingCompensation1> compensation) {
-		this.compensation = compensation;
+	public BillingStatement2 setCompensation(List<com.tools20022.repository.msg.BillingCompensation1> compensation) {
+		this.compensation = Objects.requireNonNull(compensation);
+		return this;
 	}
 
-	@XmlElement(name = "Svc")
 	public List<BillingService2> getService() {
-		return service;
+		return service == null ? service = new ArrayList<>() : service;
 	}
 
-	public void setService(List<com.tools20022.repository.msg.BillingService2> service) {
-		this.service = service;
+	public BillingStatement2 setService(List<com.tools20022.repository.msg.BillingService2> service) {
+		this.service = Objects.requireNonNull(service);
+		return this;
 	}
 
-	@XmlElement(name = "TaxRgn")
 	public List<BillingTaxRegion1> getTaxRegion() {
-		return taxRegion;
+		return taxRegion == null ? taxRegion = new ArrayList<>() : taxRegion;
 	}
 
-	public void setTaxRegion(List<com.tools20022.repository.msg.BillingTaxRegion1> taxRegion) {
-		this.taxRegion = taxRegion;
+	public BillingStatement2 setTaxRegion(List<com.tools20022.repository.msg.BillingTaxRegion1> taxRegion) {
+		this.taxRegion = Objects.requireNonNull(taxRegion);
+		return this;
 	}
 
-	@XmlElement(name = "BalAdjstmnt")
 	public List<BalanceAdjustment1> getBalanceAdjustment() {
-		return balanceAdjustment;
+		return balanceAdjustment == null ? balanceAdjustment = new ArrayList<>() : balanceAdjustment;
 	}
 
-	public void setBalanceAdjustment(List<com.tools20022.repository.msg.BalanceAdjustment1> balanceAdjustment) {
-		this.balanceAdjustment = balanceAdjustment;
+	public BillingStatement2 setBalanceAdjustment(List<com.tools20022.repository.msg.BalanceAdjustment1> balanceAdjustment) {
+		this.balanceAdjustment = Objects.requireNonNull(balanceAdjustment);
+		return this;
 	}
 
-	@XmlElement(name = "SvcAdjstmnt")
 	public List<BillingServiceAdjustment1> getServiceAdjustment() {
-		return serviceAdjustment;
+		return serviceAdjustment == null ? serviceAdjustment = new ArrayList<>() : serviceAdjustment;
 	}
 
-	public void setServiceAdjustment(List<com.tools20022.repository.msg.BillingServiceAdjustment1> serviceAdjustment) {
-		this.serviceAdjustment = serviceAdjustment;
+	public BillingStatement2 setServiceAdjustment(List<com.tools20022.repository.msg.BillingServiceAdjustment1> serviceAdjustment) {
+		this.serviceAdjustment = Objects.requireNonNull(serviceAdjustment);
+		return this;
 	}
 }

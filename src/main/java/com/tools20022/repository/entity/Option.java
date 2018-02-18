@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
@@ -24,9 +25,11 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.Derivative;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Contracts which grant to the holder either the privilege to purchase or the
@@ -119,8 +122,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,8 +141,8 @@ public class Option extends Derivative {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AssignmentMethodCode instrumentAssignmentMethod;
 	/**
-	 * Method under which assignment was conducted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,9 +187,8 @@ public class Option extends Derivative {
 	};
 	protected SettleStyleCode settleStyle;
 	/**
-	 * Specifies whether the option contract settles at the open or close of the
-	 * market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,10 +235,8 @@ public class Option extends Derivative {
 	};
 	protected StandardisationCode standardisation;
 	/**
-	 * Specifies whether the terms of the security (underlying instruments,
-	 * expiration date, contract size) are defined according to the exchange
-	 * specifications or whether they can be user defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,10 +283,8 @@ public class Option extends Derivative {
 	};
 	protected Number positionLimit;
 	/**
-	 * Indicates the maximum number of listed option contracts on a single
-	 * security which can be held by an investor or group of investors acting
-	 * jointly.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,8 +330,8 @@ public class Option extends Derivative {
 	};
 	protected UnderlyingTypeCode underlyingType;
 	/**
-	 * Specifies the type of underlying to which the option relates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,9 +377,8 @@ public class Option extends Derivative {
 	};
 	protected YesNoIndicator coverIndicator;
 	/**
-	 * Indicates whether the underlying financial instrument of an option is
-	 * owned by the writer of the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -393,6 +390,9 @@ public class Option extends Derivative {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Option
 	 * Option}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :17B::COVE</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -410,6 +410,7 @@ public class Option extends Derivative {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":17B::COVE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverIndicator";
 			definition = "Indicates whether the underlying financial instrument of an option is owned by the writer of the option.";
@@ -428,9 +429,8 @@ public class Option extends Derivative {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesConversion> optionConversionInformation;
 	/**
-	 * Information on the conversion exchange of an option into another form of
-	 * securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -478,10 +478,8 @@ public class Option extends Derivative {
 	};
 	protected PercentageRate optionRatio;
 	/**
-	 * Expresses the risk of an option leg. Value must be between -1 and 1. A
-	 * Call Option will require a ratio value between 0 and 1. A Put Option will
-	 * require a ratio value between -1 and 0.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -528,8 +526,8 @@ public class Option extends Derivative {
 	};
 	protected SecuritiesOptionTrade securitiesOptionTrade;
 	/**
-	 * Specifies the trade elements for the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -576,9 +574,8 @@ public class Option extends Derivative {
 	};
 	protected SettlementTypeCode settlementType;
 	/**
-	 * Indicates whether the trade is to be settled as principal or netted off
-	 * against another trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -625,9 +622,8 @@ public class Option extends Derivative {
 	};
 	protected Number strikeMultiplier;
 	/**
-	 * Multiplier applied to the strike price for the purpose of calculating the
-	 * settlement value (Used for derivatives).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -673,8 +669,8 @@ public class Option extends Derivative {
 	};
 	protected Max4AlphaNumericText expiryLocation;
 	/**
-	 * Financial center where option expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -719,8 +715,8 @@ public class Option extends Derivative {
 	};
 	protected ISODate finalSettlementDate;
 	/**
-	 * Date on which the trade is settled. i.e., the amounts are due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -765,8 +761,8 @@ public class Option extends Derivative {
 	};
 	protected OptionStyleCode optionStyle;
 	/**
-	 * Specifies how an option can be exercised (American, European, Bermudan)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -813,8 +809,8 @@ public class Option extends Derivative {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyOption> currencyOption;
 	/**
-	 * Information specific to a currency option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -859,8 +855,8 @@ public class Option extends Derivative {
 	};
 	protected ISODateTime earliestExerciseDate;
 	/**
-	 * First date on which an american option can be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -904,9 +900,8 @@ public class Option extends Derivative {
 	};
 	protected Number settlementDays;
 	/**
-	 * Number of business days between the hit date and the payment date in case
-	 * of settlement at hit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -952,9 +947,8 @@ public class Option extends Derivative {
 	};
 	protected Price strikePrice;
 	/**
-	 * Predetermined price at which the holder will have to buy or sell the
-	 * underlying instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1000,8 +994,8 @@ public class Option extends Derivative {
 	};
 	protected ISODateTime optionStartDate;
 	/**
-	 * First date on which an option becomes effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1045,10 +1039,8 @@ public class Option extends Derivative {
 	};
 	protected ISODateTime expiryDateAndTime;
 	/**
-	 * For European options, date on which the option holder can only exercise
-	 * the right or let it lapse. For American options, the option holder can
-	 * exercise the right up to the expiry date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1094,10 +1086,8 @@ public class Option extends Derivative {
 	};
 	protected OptionDefinitionTypeCode optionType;
 	/**
-	 * Specifies whether it is a Call option (right to purchase a specific
-	 * underlying asset) or a Put option (right to sell a specific underlying
-	 * asset).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1144,9 +1134,8 @@ public class Option extends Derivative {
 	};
 	protected Number strikeValue;
 	/**
-	 * Number of shares/units for the financial instrument involved in the
-	 * option trade (Used for derivatives).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1192,9 +1181,8 @@ public class Option extends Derivative {
 	};
 	protected Max35Text settlementPeriodType;
 	/**
-	 * Specifies how settlement will take place for instance at expiration or at
-	 * hit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1242,7 +1230,7 @@ public class Option extends Derivative {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Option";
 				definition = "Contracts which grant to the holder either the privilege to purchase or the privilege to sell the assets specified at a predetermined price or formula at or within a time in the future.";
@@ -1271,183 +1259,206 @@ public class Option extends Derivative {
 		return instrumentAssignmentMethod;
 	}
 
-	public void setInstrumentAssignmentMethod(AssignmentMethodCode instrumentAssignmentMethod) {
-		this.instrumentAssignmentMethod = instrumentAssignmentMethod;
+	public Option setInstrumentAssignmentMethod(AssignmentMethodCode instrumentAssignmentMethod) {
+		this.instrumentAssignmentMethod = Objects.requireNonNull(instrumentAssignmentMethod);
+		return this;
 	}
 
 	public SettleStyleCode getSettleStyle() {
 		return settleStyle;
 	}
 
-	public void setSettleStyle(SettleStyleCode settleStyle) {
-		this.settleStyle = settleStyle;
+	public Option setSettleStyle(SettleStyleCode settleStyle) {
+		this.settleStyle = Objects.requireNonNull(settleStyle);
+		return this;
 	}
 
 	public StandardisationCode getStandardisation() {
 		return standardisation;
 	}
 
-	public void setStandardisation(StandardisationCode standardisation) {
-		this.standardisation = standardisation;
+	public Option setStandardisation(StandardisationCode standardisation) {
+		this.standardisation = Objects.requireNonNull(standardisation);
+		return this;
 	}
 
 	public Number getPositionLimit() {
 		return positionLimit;
 	}
 
-	public void setPositionLimit(Number positionLimit) {
-		this.positionLimit = positionLimit;
+	public Option setPositionLimit(Number positionLimit) {
+		this.positionLimit = Objects.requireNonNull(positionLimit);
+		return this;
 	}
 
 	public UnderlyingTypeCode getUnderlyingType() {
 		return underlyingType;
 	}
 
-	public void setUnderlyingType(UnderlyingTypeCode underlyingType) {
-		this.underlyingType = underlyingType;
+	public Option setUnderlyingType(UnderlyingTypeCode underlyingType) {
+		this.underlyingType = Objects.requireNonNull(underlyingType);
+		return this;
 	}
 
 	public YesNoIndicator getCoverIndicator() {
 		return coverIndicator;
 	}
 
-	public void setCoverIndicator(YesNoIndicator coverIndicator) {
-		this.coverIndicator = coverIndicator;
+	public Option setCoverIndicator(YesNoIndicator coverIndicator) {
+		this.coverIndicator = Objects.requireNonNull(coverIndicator);
+		return this;
 	}
 
 	public List<SecuritiesConversion> getOptionConversionInformation() {
-		return optionConversionInformation;
+		return optionConversionInformation == null ? optionConversionInformation = new ArrayList<>() : optionConversionInformation;
 	}
 
-	public void setOptionConversionInformation(List<com.tools20022.repository.entity.SecuritiesConversion> optionConversionInformation) {
-		this.optionConversionInformation = optionConversionInformation;
+	public Option setOptionConversionInformation(List<com.tools20022.repository.entity.SecuritiesConversion> optionConversionInformation) {
+		this.optionConversionInformation = Objects.requireNonNull(optionConversionInformation);
+		return this;
 	}
 
 	public PercentageRate getOptionRatio() {
 		return optionRatio;
 	}
 
-	public void setOptionRatio(PercentageRate optionRatio) {
-		this.optionRatio = optionRatio;
+	public Option setOptionRatio(PercentageRate optionRatio) {
+		this.optionRatio = Objects.requireNonNull(optionRatio);
+		return this;
 	}
 
 	public SecuritiesOptionTrade getSecuritiesOptionTrade() {
 		return securitiesOptionTrade;
 	}
 
-	public void setSecuritiesOptionTrade(com.tools20022.repository.entity.SecuritiesOptionTrade securitiesOptionTrade) {
-		this.securitiesOptionTrade = securitiesOptionTrade;
+	public Option setSecuritiesOptionTrade(com.tools20022.repository.entity.SecuritiesOptionTrade securitiesOptionTrade) {
+		this.securitiesOptionTrade = Objects.requireNonNull(securitiesOptionTrade);
+		return this;
 	}
 
 	public SettlementTypeCode getSettlementType() {
 		return settlementType;
 	}
 
-	public void setSettlementType(SettlementTypeCode settlementType) {
-		this.settlementType = settlementType;
+	public Option setSettlementType(SettlementTypeCode settlementType) {
+		this.settlementType = Objects.requireNonNull(settlementType);
+		return this;
 	}
 
 	public Number getStrikeMultiplier() {
 		return strikeMultiplier;
 	}
 
-	public void setStrikeMultiplier(Number strikeMultiplier) {
-		this.strikeMultiplier = strikeMultiplier;
+	public Option setStrikeMultiplier(Number strikeMultiplier) {
+		this.strikeMultiplier = Objects.requireNonNull(strikeMultiplier);
+		return this;
 	}
 
 	public Max4AlphaNumericText getExpiryLocation() {
 		return expiryLocation;
 	}
 
-	public void setExpiryLocation(Max4AlphaNumericText expiryLocation) {
-		this.expiryLocation = expiryLocation;
+	public Option setExpiryLocation(Max4AlphaNumericText expiryLocation) {
+		this.expiryLocation = Objects.requireNonNull(expiryLocation);
+		return this;
 	}
 
 	public ISODate getFinalSettlementDate() {
 		return finalSettlementDate;
 	}
 
-	public void setFinalSettlementDate(ISODate finalSettlementDate) {
-		this.finalSettlementDate = finalSettlementDate;
+	public Option setFinalSettlementDate(ISODate finalSettlementDate) {
+		this.finalSettlementDate = Objects.requireNonNull(finalSettlementDate);
+		return this;
 	}
 
 	public OptionStyleCode getOptionStyle() {
 		return optionStyle;
 	}
 
-	public void setOptionStyle(OptionStyleCode optionStyle) {
-		this.optionStyle = optionStyle;
+	public Option setOptionStyle(OptionStyleCode optionStyle) {
+		this.optionStyle = Objects.requireNonNull(optionStyle);
+		return this;
 	}
 
 	public List<CurrencyOption> getCurrencyOption() {
-		return currencyOption;
+		return currencyOption == null ? currencyOption = new ArrayList<>() : currencyOption;
 	}
 
-	public void setCurrencyOption(List<com.tools20022.repository.entity.CurrencyOption> currencyOption) {
-		this.currencyOption = currencyOption;
+	public Option setCurrencyOption(List<com.tools20022.repository.entity.CurrencyOption> currencyOption) {
+		this.currencyOption = Objects.requireNonNull(currencyOption);
+		return this;
 	}
 
 	public ISODateTime getEarliestExerciseDate() {
 		return earliestExerciseDate;
 	}
 
-	public void setEarliestExerciseDate(ISODateTime earliestExerciseDate) {
-		this.earliestExerciseDate = earliestExerciseDate;
+	public Option setEarliestExerciseDate(ISODateTime earliestExerciseDate) {
+		this.earliestExerciseDate = Objects.requireNonNull(earliestExerciseDate);
+		return this;
 	}
 
 	public Number getSettlementDays() {
 		return settlementDays;
 	}
 
-	public void setSettlementDays(Number settlementDays) {
-		this.settlementDays = settlementDays;
+	public Option setSettlementDays(Number settlementDays) {
+		this.settlementDays = Objects.requireNonNull(settlementDays);
+		return this;
 	}
 
 	public Price getStrikePrice() {
 		return strikePrice;
 	}
 
-	public void setStrikePrice(com.tools20022.repository.entity.Price strikePrice) {
-		this.strikePrice = strikePrice;
+	public Option setStrikePrice(com.tools20022.repository.entity.Price strikePrice) {
+		this.strikePrice = Objects.requireNonNull(strikePrice);
+		return this;
 	}
 
 	public ISODateTime getOptionStartDate() {
 		return optionStartDate;
 	}
 
-	public void setOptionStartDate(ISODateTime optionStartDate) {
-		this.optionStartDate = optionStartDate;
+	public Option setOptionStartDate(ISODateTime optionStartDate) {
+		this.optionStartDate = Objects.requireNonNull(optionStartDate);
+		return this;
 	}
 
 	public ISODateTime getExpiryDateAndTime() {
 		return expiryDateAndTime;
 	}
 
-	public void setExpiryDateAndTime(ISODateTime expiryDateAndTime) {
-		this.expiryDateAndTime = expiryDateAndTime;
+	public Option setExpiryDateAndTime(ISODateTime expiryDateAndTime) {
+		this.expiryDateAndTime = Objects.requireNonNull(expiryDateAndTime);
+		return this;
 	}
 
 	public OptionDefinitionTypeCode getOptionType() {
 		return optionType;
 	}
 
-	public void setOptionType(OptionDefinitionTypeCode optionType) {
-		this.optionType = optionType;
+	public Option setOptionType(OptionDefinitionTypeCode optionType) {
+		this.optionType = Objects.requireNonNull(optionType);
+		return this;
 	}
 
 	public Number getStrikeValue() {
 		return strikeValue;
 	}
 
-	public void setStrikeValue(Number strikeValue) {
-		this.strikeValue = strikeValue;
+	public Option setStrikeValue(Number strikeValue) {
+		this.strikeValue = Objects.requireNonNull(strikeValue);
+		return this;
 	}
 
 	public Max35Text getSettlementPeriodType() {
 		return settlementPeriodType;
 	}
 
-	public void setSettlementPeriodType(Max35Text settlementPeriodType) {
-		this.settlementPeriodType = settlementPeriodType;
+	public Option setSettlementPeriodType(Max35Text settlementPeriodType) {
+		this.settlementPeriodType = Objects.requireNonNull(settlementPeriodType);
+		return this;
 	}
 }

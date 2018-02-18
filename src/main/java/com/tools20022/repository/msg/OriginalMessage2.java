@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,10 +83,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Unique and unambiguous identification of the original message references."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3
- * OriginalGroupInformation3}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -92,17 +90,22 @@ import javax.xml.bind.annotation.XmlType;
  * OriginalMessage3}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3
+ * OriginalGroupInformation3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OriginalMessage2", propOrder = {"originalSender", "originalMessageIdentification", "originalMessageNameIdentification", "originalCreationDateTime", "originalPackageIdentification", "originalRecordIdentification"})
 public class OriginalMessage2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlSndr")
 	protected Party28Choice originalSender;
 	/**
-	 * Original message sender used to identify the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -142,7 +145,7 @@ public class OriginalMessage2 {
 	public static final MMMessageAssociationEnd mmOriginalSender = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> InitiatingPartyRole.mmObject();
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlSndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,11 +158,11 @@ public class OriginalMessage2 {
 			type_lazy = () -> Party28Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMsgId", required = true)
 	protected Max35Text originalMessageIdentification;
 	/**
-	 * Point to point reference assigned by the original instructing party to
-	 * unambiguously identify the original group of individual transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,11 +192,6 @@ public class OriginalMessage2 {
 	 * definition} =
 	 * "Point to point reference assigned by the original instructing party to unambiguously identify the original group of individual transactions."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageIdentification
-	 * OriginalGroupInformation3.mmOriginalMessageIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -202,12 +200,17 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageIdentification
+	 * OriginalGroupInformation3.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,11 +223,11 @@ public class OriginalMessage2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMsgNmId", required = true)
 	protected Max35Text originalMessageNameIdentification;
 	/**
-	 * Specifies the original message name identifier to which the message
-	 * refers, such as pacs.003.001.01 or MT103.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,11 +252,6 @@ public class OriginalMessage2 {
 	 * definition} =
 	 * "Specifies the original message name identifier to which the message refers, such as pacs.003.001.01 or MT103."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageNameIdentification
-	 * OriginalGroupInformation3.mmOriginalMessageNameIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -262,11 +260,16 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalMessageNameIdentification}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageNameIdentification
+	 * OriginalGroupInformation3.mmOriginalMessageNameIdentification}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgNmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,10 +282,11 @@ public class OriginalMessage2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlCreDtTm")
 	protected ISODateTime originalCreationDateTime;
 	/**
-	 * Original date and time at which the message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,11 +314,6 @@ public class OriginalMessage2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original date and time at which the message was created."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalCreationDateTime
-	 * OriginalGroupInformation3.mmOriginalCreationDateTime}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -323,12 +322,17 @@ public class OriginalMessage2 {
 	 * OriginalMessage3.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalCreationDateTime
+	 * OriginalGroupInformation3.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -341,11 +345,11 @@ public class OriginalMessage2 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlPackgId")
 	protected Max35Text originalPackageIdentification;
 	/**
-	 * Specifies the identification of original package of instructions, entries
-	 * or records.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,7 +378,7 @@ public class OriginalMessage2 {
 	 */
 	public static final MMMessageAttribute mmOriginalPackageIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlPackgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -385,11 +389,11 @@ public class OriginalMessage2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlRcrdId", required = true)
 	protected Max35Text originalRecordIdentification;
 	/**
-	 * Specifies the identification of original entry, instruction or record
-	 * within the package.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,7 +422,7 @@ public class OriginalMessage2 {
 	 */
 	public static final MMMessageAttribute mmOriginalRecordIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OriginalMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,10 +437,11 @@ public class OriginalMessage2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OriginalMessage2.mmOriginalSender, OriginalMessage2.mmOriginalMessageIdentification, OriginalMessage2.mmOriginalMessageNameIdentification,
-						OriginalMessage2.mmOriginalCreationDateTime, OriginalMessage2.mmOriginalPackageIdentification, OriginalMessage2.mmOriginalRecordIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OriginalMessage2.mmOriginalSender, com.tools20022.repository.msg.OriginalMessage2.mmOriginalMessageIdentification,
+						com.tools20022.repository.msg.OriginalMessage2.mmOriginalMessageNameIdentification, com.tools20022.repository.msg.OriginalMessage2.mmOriginalCreationDateTime,
+						com.tools20022.repository.msg.OriginalMessage2.mmOriginalPackageIdentification, com.tools20022.repository.msg.OriginalMessage2.mmOriginalRecordIdentification);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OriginalMessage2";
 				definition = "Unique and unambiguous identification of the original message references.";
@@ -447,57 +452,57 @@ public class OriginalMessage2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlSndr")
-	public Party28Choice getOriginalSender() {
-		return originalSender;
+	public Optional<Party28Choice> getOriginalSender() {
+		return originalSender == null ? Optional.empty() : Optional.of(originalSender);
 	}
 
-	public void setOriginalSender(Party28Choice originalSender) {
+	public OriginalMessage2 setOriginalSender(Party28Choice originalSender) {
 		this.originalSender = originalSender;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMsgId", required = true)
 	public Max35Text getOriginalMessageIdentification() {
 		return originalMessageIdentification;
 	}
 
-	public void setOriginalMessageIdentification(Max35Text originalMessageIdentification) {
-		this.originalMessageIdentification = originalMessageIdentification;
+	public OriginalMessage2 setOriginalMessageIdentification(Max35Text originalMessageIdentification) {
+		this.originalMessageIdentification = Objects.requireNonNull(originalMessageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMsgNmId", required = true)
 	public Max35Text getOriginalMessageNameIdentification() {
 		return originalMessageNameIdentification;
 	}
 
-	public void setOriginalMessageNameIdentification(Max35Text originalMessageNameIdentification) {
-		this.originalMessageNameIdentification = originalMessageNameIdentification;
+	public OriginalMessage2 setOriginalMessageNameIdentification(Max35Text originalMessageNameIdentification) {
+		this.originalMessageNameIdentification = Objects.requireNonNull(originalMessageNameIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlCreDtTm")
-	public ISODateTime getOriginalCreationDateTime() {
-		return originalCreationDateTime;
+	public Optional<ISODateTime> getOriginalCreationDateTime() {
+		return originalCreationDateTime == null ? Optional.empty() : Optional.of(originalCreationDateTime);
 	}
 
-	public void setOriginalCreationDateTime(ISODateTime originalCreationDateTime) {
+	public OriginalMessage2 setOriginalCreationDateTime(ISODateTime originalCreationDateTime) {
 		this.originalCreationDateTime = originalCreationDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlPackgId")
-	public Max35Text getOriginalPackageIdentification() {
-		return originalPackageIdentification;
+	public Optional<Max35Text> getOriginalPackageIdentification() {
+		return originalPackageIdentification == null ? Optional.empty() : Optional.of(originalPackageIdentification);
 	}
 
-	public void setOriginalPackageIdentification(Max35Text originalPackageIdentification) {
+	public OriginalMessage2 setOriginalPackageIdentification(Max35Text originalPackageIdentification) {
 		this.originalPackageIdentification = originalPackageIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlRcrdId", required = true)
 	public Max35Text getOriginalRecordIdentification() {
 		return originalRecordIdentification;
 	}
 
-	public void setOriginalRecordIdentification(Max35Text originalRecordIdentification) {
-		this.originalRecordIdentification = originalRecordIdentification;
+	public OriginalMessage2 setOriginalRecordIdentification(Max35Text originalRecordIdentification) {
+		this.originalRecordIdentification = Objects.requireNonNull(originalRecordIdentification);
+		return this;
 	}
 }

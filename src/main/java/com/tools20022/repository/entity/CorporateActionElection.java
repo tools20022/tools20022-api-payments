@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Decision taken by the account holder regarding the corporate action event.
@@ -84,8 +83,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,9 +101,8 @@ public class CorporateActionElection {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime executionRequestedDateTime;
 	/**
-	 * Date/time at which the instructing party requests the instruction to be
-	 * executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,8 +149,8 @@ public class CorporateActionElection {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionOption> option;
 	/**
-	 * Option on which the investor makes its decision.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,8 +197,8 @@ public class CorporateActionElection {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Specifies the account(s) used in relation with the election of an option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,10 +246,8 @@ public class CorporateActionElection {
 	};
 	protected ElectionMovementTypeCode electionType;
 	/**
-	 * Specifies whether the election results in a change of balance type that
-	 * transfers control of the underlying securities or the transfer of
-	 * underlying securities themselves.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,8 +295,8 @@ public class CorporateActionElection {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> quantity;
 	/**
-	 * Specifies the quantity of securities elected for the associated option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +344,8 @@ public class CorporateActionElection {
 	};
 	protected Max350Text amendmentReason;
 	/**
-	 * Reason explaining the amendment of the election.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,9 +390,8 @@ public class CorporateActionElection {
 	};
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -448,7 +443,7 @@ public class CorporateActionElection {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionElection";
 				definition = "Decision taken by the account holder regarding the corporate action event.";
@@ -471,55 +466,62 @@ public class CorporateActionElection {
 		return executionRequestedDateTime;
 	}
 
-	public void setExecutionRequestedDateTime(ISODateTime executionRequestedDateTime) {
-		this.executionRequestedDateTime = executionRequestedDateTime;
+	public CorporateActionElection setExecutionRequestedDateTime(ISODateTime executionRequestedDateTime) {
+		this.executionRequestedDateTime = Objects.requireNonNull(executionRequestedDateTime);
+		return this;
 	}
 
 	public List<CorporateActionOption> getOption() {
-		return option;
+		return option == null ? option = new ArrayList<>() : option;
 	}
 
-	public void setOption(List<com.tools20022.repository.entity.CorporateActionOption> option) {
-		this.option = option;
+	public CorporateActionElection setOption(List<com.tools20022.repository.entity.CorporateActionOption> option) {
+		this.option = Objects.requireNonNull(option);
+		return this;
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public CorporateActionElection setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public ElectionMovementTypeCode getElectionType() {
 		return electionType;
 	}
 
-	public void setElectionType(ElectionMovementTypeCode electionType) {
-		this.electionType = electionType;
+	public CorporateActionElection setElectionType(ElectionMovementTypeCode electionType) {
+		this.electionType = Objects.requireNonNull(electionType);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getQuantity() {
-		return quantity;
+		return quantity == null ? quantity = new ArrayList<>() : quantity;
 	}
 
-	public void setQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> quantity) {
-		this.quantity = quantity;
+	public CorporateActionElection setQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
 	public Max350Text getAmendmentReason() {
 		return amendmentReason;
 	}
 
-	public void setAmendmentReason(Max350Text amendmentReason) {
-		this.amendmentReason = amendmentReason;
+	public CorporateActionElection setAmendmentReason(Max350Text amendmentReason) {
+		this.amendmentReason = Objects.requireNonNull(amendmentReason);
+		return this;
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionElection setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 }

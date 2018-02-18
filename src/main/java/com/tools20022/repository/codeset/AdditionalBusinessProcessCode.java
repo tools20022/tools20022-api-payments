@@ -39,53 +39,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#AutomaticMarketClaim
- * AdditionalBusinessProcessCode.mmAutomaticMarketClaim}</li>
+ * AdditionalBusinessProcessCode.AutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SubjectToTransformation
- * AdditionalBusinessProcessCode.mmSubjectToTransformation}</li>
+ * AdditionalBusinessProcessCode.SubjectToTransformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#CancelUnderlyingTrades
- * AdditionalBusinessProcessCode.mmCancelUnderlyingTrades}</li>
+ * AdditionalBusinessProcessCode.CancelUnderlyingTrades}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoAutomaticMarketClaimsAndTransformations
- * AdditionalBusinessProcessCode.mmNoAutomaticMarketClaimsAndTransformations}</li>
+ * AdditionalBusinessProcessCode.NoAutomaticMarketClaimsAndTransformations}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoSplitElection
- * AdditionalBusinessProcessCode.mmNoSplitElection}</li>
+ * AdditionalBusinessProcessCode.NoSplitElection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SchemeOrPlanOfArrangement
- * AdditionalBusinessProcessCode.mmSchemeOrPlanOfArrangement}</li>
+ * AdditionalBusinessProcessCode.SchemeOrPlanOfArrangement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#ClaimOrCompensation
- * AdditionalBusinessProcessCode.mmClaimOrCompensation}</li>
+ * AdditionalBusinessProcessCode.ClaimOrCompensation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#TaxRefund
- * AdditionalBusinessProcessCode.mmTaxRefund}</li>
+ * AdditionalBusinessProcessCode.TaxRefund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NotificationOfReversal
- * AdditionalBusinessProcessCode.mmNotificationOfReversal}</li>
+ * AdditionalBusinessProcessCode.NotificationOfReversal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#Consent
- * AdditionalBusinessProcessCode.mmConsent}</li>
+ * AdditionalBusinessProcessCode.Consent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialMandatoryPutRedemption
- * AdditionalBusinessProcessCode.mmPartialMandatoryPutRedemption}</li>
+ * AdditionalBusinessProcessCode.PartialMandatoryPutRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#FullPrefunding
- * AdditionalBusinessProcessCode.mmFullPrefunding}</li>
+ * AdditionalBusinessProcessCode.FullPrefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialPreFunding
- * AdditionalBusinessProcessCode.mmPartialPreFunding}</li>
+ * AdditionalBusinessProcessCode.PartialPreFunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#RequiredAction
- * AdditionalBusinessProcessCode.mmRequiredAction}</li>
+ * AdditionalBusinessProcessCode.RequiredAction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -581,7 +581,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACLA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalBusinessProcessCode";

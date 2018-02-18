@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Calculation of the exposure amount that one party has vis-a-vis one
@@ -61,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +81,8 @@ public class CounterpartyRisk {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Role party;
 	/**
-	 * Specifies which role played by a party was taken into consideration for
-	 * the risk calculation, for instance clearing member role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,8 +130,8 @@ public class CounterpartyRisk {
 	};
 	protected ActiveCurrencyAndAmount exposedAmount;
 	/**
-	 * The amount which needs to be covered for the counterparty risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,9 +178,8 @@ public class CounterpartyRisk {
 	};
 	protected ExposureCalculation exposureCalculation;
 	/**
-	 * Specifies the exposure for which the risk is calculated on a counterparty
-	 * basis.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,7 +230,7 @@ public class CounterpartyRisk {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CounterpartyRisk";
 				definition = "Calculation of the exposure amount that one party has vis-a-vis one counterparty or a central system, based on its credit risk.";
@@ -252,23 +251,26 @@ public class CounterpartyRisk {
 		return party;
 	}
 
-	public void setParty(com.tools20022.repository.entity.Role party) {
-		this.party = party;
+	public CounterpartyRisk setParty(com.tools20022.repository.entity.Role party) {
+		this.party = Objects.requireNonNull(party);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getExposedAmount() {
 		return exposedAmount;
 	}
 
-	public void setExposedAmount(ActiveCurrencyAndAmount exposedAmount) {
-		this.exposedAmount = exposedAmount;
+	public CounterpartyRisk setExposedAmount(ActiveCurrencyAndAmount exposedAmount) {
+		this.exposedAmount = Objects.requireNonNull(exposedAmount);
+		return this;
 	}
 
 	public ExposureCalculation getExposureCalculation() {
 		return exposureCalculation;
 	}
 
-	public void setExposureCalculation(com.tools20022.repository.entity.ExposureCalculation exposureCalculation) {
-		this.exposureCalculation = exposureCalculation;
+	public CounterpartyRisk setExposureCalculation(com.tools20022.repository.entity.ExposureCalculation exposureCalculation) {
+		this.exposureCalculation = Objects.requireNonNull(exposureCalculation);
+		return this;
 	}
 }

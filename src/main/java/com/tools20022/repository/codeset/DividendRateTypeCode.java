@@ -38,53 +38,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#CapitalPortion
- * DividendRateTypeCode.mmCapitalPortion}</li>
+ * DividendRateTypeCode.CapitalPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#FullyFranked
- * DividendRateTypeCode.mmFullyFranked}</li>
+ * DividendRateTypeCode.FullyFranked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#IncomePortion
- * DividendRateTypeCode.mmIncomePortion}</li>
+ * DividendRateTypeCode.IncomePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#Interest
- * DividendRateTypeCode.mmInterest}</li>
+ * DividendRateTypeCode.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#SundryOrOtherIncome
- * DividendRateTypeCode.mmSundryOrOtherIncome}</li>
+ * DividendRateTypeCode.SundryOrOtherIncome}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#TaxablePortion
- * DividendRateTypeCode.mmTaxablePortion}</li>
+ * DividendRateTypeCode.TaxablePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#TaxDeferred
- * DividendRateTypeCode.mmTaxDeferred}</li>
+ * DividendRateTypeCode.TaxDeferred}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#TaxFree
- * DividendRateTypeCode.mmTaxFree}</li>
+ * DividendRateTypeCode.TaxFree}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#Unfranked
- * DividendRateTypeCode.mmUnfranked}</li>
+ * DividendRateTypeCode.Unfranked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#LongTermCapitalGain
- * DividendRateTypeCode.mmLongTermCapitalGain}</li>
+ * DividendRateTypeCode.LongTermCapitalGain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#ShortTermCapitalGain
- * DividendRateTypeCode.mmShortTermCapitalGain}</li>
+ * DividendRateTypeCode.ShortTermCapitalGain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#FullPeriodUnitsIncomePortion
- * DividendRateTypeCode.mmFullPeriodUnitsIncomePortion}</li>
+ * DividendRateTypeCode.FullPeriodUnitsIncomePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#PartWayPeriodUnitsIncomePortion
- * DividendRateTypeCode.mmPartWayPeriodUnitsIncomePortion}</li>
+ * DividendRateTypeCode.PartWayPeriodUnitsIncomePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#RealEstatePropertyIncomePortion
- * DividendRateTypeCode.mmRealEstatePropertyIncomePortion}</li>
+ * DividendRateTypeCode.RealEstatePropertyIncomePortion}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -558,7 +558,7 @@ public class DividendRateTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAPO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DividendRateTypeCode";

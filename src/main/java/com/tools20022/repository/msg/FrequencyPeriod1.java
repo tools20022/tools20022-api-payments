@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,16 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FrequencyPeriod1", propOrder = {"type", "countPerPeriod"})
 public class FrequencyPeriod1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Frequency6Code type;
 	/**
-	 * Period for which the number of instructions are to be created and
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,7 +103,7 @@ public class FrequencyPeriod1 {
 	 */
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FrequencyPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,11 +114,11 @@ public class FrequencyPeriod1 {
 			simpleType_lazy = () -> Frequency6Code.mmObject();
 		}
 	};
+	@XmlElement(name = "CntPerPrd", required = true)
 	protected DecimalNumber countPerPeriod;
 	/**
-	 * Number of instructions to be created and processed during the specified
-	 * period
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +148,7 @@ public class FrequencyPeriod1 {
 	 */
 	public static final MMMessageAttribute mmCountPerPeriod = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FrequencyPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "CntPerPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,8 +163,8 @@ public class FrequencyPeriod1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FrequencyPeriod1.mmType, FrequencyPeriod1.mmCountPerPeriod);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FrequencyPeriod1.mmType, com.tools20022.repository.msg.FrequencyPeriod1.mmCountPerPeriod);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyPeriod1";
 				definition = "Defines a frequency in terms on counts per period for a specific period type.";
@@ -172,21 +173,21 @@ public class FrequencyPeriod1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Frequency6Code getType() {
 		return type;
 	}
 
-	public void setType(Frequency6Code type) {
-		this.type = type;
+	public FrequencyPeriod1 setType(Frequency6Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "CntPerPrd", required = true)
 	public DecimalNumber getCountPerPeriod() {
 		return countPerPeriod;
 	}
 
-	public void setCountPerPeriod(DecimalNumber countPerPeriod) {
-		this.countPerPeriod = countPerPeriod;
+	public FrequencyPeriod1 setCountPerPeriod(DecimalNumber countPerPeriod) {
+		this.countPerPeriod = Objects.requireNonNull(countPerPeriod);
+		return this;
 	}
 }

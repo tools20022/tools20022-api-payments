@@ -38,51 +38,51 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#MeteredServiceInvoice
- * DocumentType6Code.mmMeteredServiceInvoice}</li>
+ * DocumentType6Code.MeteredServiceInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#CreditNoteRelatedToFinancialAdjustment
- * DocumentType6Code.mmCreditNoteRelatedToFinancialAdjustment}</li>
+ * DocumentType6Code.CreditNoteRelatedToFinancialAdjustment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#DebitNoteRelatedToFinancialAdjustment
- * DocumentType6Code.mmDebitNoteRelatedToFinancialAdjustment}</li>
+ * DocumentType6Code.DebitNoteRelatedToFinancialAdjustment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#CommercialInvoice
- * DocumentType6Code.mmCommercialInvoice}</li>
+ * DocumentType6Code.CommercialInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#CreditNote
- * DocumentType6Code.mmCreditNote}</li>
+ * DocumentType6Code.CreditNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#DebitNote
- * DocumentType6Code.mmDebitNote}</li>
+ * DocumentType6Code.DebitNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#HireInvoice
- * DocumentType6Code.mmHireInvoice}</li>
+ * DocumentType6Code.HireInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#SelfBilledInvoice
- * DocumentType6Code.mmSelfBilledInvoice}</li>
+ * DocumentType6Code.SelfBilledInvoice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#CommercialContract
- * DocumentType6Code.mmCommercialContract}</li>
+ * DocumentType6Code.CommercialContract}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#StatementOfAccount
- * DocumentType6Code.mmStatementOfAccount}</li>
+ * DocumentType6Code.StatementOfAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#DispatchAdvice
- * DocumentType6Code.mmDispatchAdvice}</li>
+ * DocumentType6Code.DispatchAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#BillOfLading
- * DocumentType6Code.mmBillOfLading}</li>
+ * DocumentType6Code.BillOfLading}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DocumentType6Code#Voucher
- * DocumentType6Code.mmVoucher}</li>
+ * DocumentType6Code.Voucher}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#AccountReceivableOpenItem
- * DocumentType6Code.mmAccountReceivableOpenItem}</li>
+ * DocumentType6Code.AccountReceivableOpenItem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#TradeServicesUtilityTransaction
- * DocumentType6Code.mmTradeServicesUtilityTransaction}</li>
+ * DocumentType6Code.TradeServicesUtilityTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DocumentType6Code#PurchaseOrder
- * DocumentType6Code.mmPurchaseOrder}</li>
+ * DocumentType6Code.PurchaseOrder}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -91,8 +91,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -505,7 +505,7 @@ public class DocumentType6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MSIN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentType6Code";

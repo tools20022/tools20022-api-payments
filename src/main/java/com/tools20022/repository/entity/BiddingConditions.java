@@ -27,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the conditions under which securities can be acquired as part of a
@@ -150,8 +152,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -169,8 +171,8 @@ public class BiddingConditions {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate proposedRate;
 	/**
-	 * Rate proposed in a remarketing of variable rate notes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,8 +218,8 @@ public class BiddingConditions {
 	};
 	protected PercentageRate oversubscriptionRate;
 	/**
-	 * Rate of allowed over-subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,10 +265,8 @@ public class BiddingConditions {
 	};
 	protected Max350Text informationToComplyWith;
 	/**
-	 * Provides information conditions to the account owner that are to be
-	 * complied with, eg, not open to US/Canadian residents, QIB or SIL to be
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,8 +313,8 @@ public class BiddingConditions {
 	};
 	protected ISODateTime subscriptionCostDebitDate;
 	/**
-	 * Date by which cash must be in place in order to take part in the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,11 +361,8 @@ public class BiddingConditions {
 	};
 	protected RateAndAmount maximumAllowedOverSubscription;
 	/**
-	 * A maximum percentage of shares available through the over subscription
-	 * privilege, usually a percentage of the basic subscription shares, eg, an
-	 * account owner subscribing to 100 shares may over subscribe to a maximum
-	 * of 50 additional shares when the over subscription maximum is 50%.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -414,8 +411,8 @@ public class BiddingConditions {
 	};
 	protected PercentageRate prorationRate;
 	/**
-	 * Proportionate allocation used for the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -461,9 +458,8 @@ public class BiddingConditions {
 	};
 	protected RateAndAmount applicableRate;
 	/**
-	 * Rate applicable to the event announced, eg, redemption rate for a
-	 * redemption event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,10 +508,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesQuantity frontEndOddLotQuantity;
 	/**
-	 * Specifies that if an order is prorated holders of odd lots who tender
-	 * their full position will not have tendered position prorated but rather
-	 * accepted in full.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -564,9 +558,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesQuantity backEndOddLotQuantity;
 	/**
-	 * Represents the presence of a back end odd lot provision and the quantity
-	 * of equity required after proration to be eligible for this privilege.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,10 +608,8 @@ public class BiddingConditions {
 	};
 	protected PercentageRate transformationRate;
 	/**
-	 * Rate used to determine the cash consideration split across outturn
-	 * settlement transactions that are the result of a transformation of the
-	 * parent transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -666,9 +657,8 @@ public class BiddingConditions {
 	};
 	protected ISODateTime prorationDate;
 	/**
-	 * Date (and time) at which an issuer will determine the proration
-	 * amount/quantity of an offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -715,9 +705,8 @@ public class BiddingConditions {
 	};
 	protected DateTimePeriod compulsoryPurchasePeriod;
 	/**
-	 * Period during a take-over where any outstanding equity must be purchased
-	 * by the take-over company.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -766,9 +755,8 @@ public class BiddingConditions {
 	};
 	protected PercentageRate percentageSought;
 	/**
-	 * Percentage of securities the offeror/issuer will purchase or redeem under
-	 * the terms of the event. This can be a number or the term "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -816,8 +804,8 @@ public class BiddingConditions {
 	};
 	protected CurrencyAndAmount bidInterval;
 	/**
-	 * Acceptable price increment used for submitting a bid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -863,9 +851,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesPricing maximumPrice;
 	/**
-	 * Maximum or cap price at which a holder can bid, e.g. on a Dutch auction
-	 * offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -914,9 +901,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesPricing minimumPrice;
 	/**
-	 * Minimum or floor price at which a holder can bid, e.g. on a Dutch auction
-	 * offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -965,9 +951,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesQuantity maximumQuantity;
 	/**
-	 * Maximum number of securities the offeror is requesting to complete the
-	 * event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1016,10 +1001,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesQuantity minimumQuantitySought;
 	/**
-	 * Minimum quantity of securities the offeror/issuer will purchase or redeem
-	 * under the terms of the event. This can be a number or the term
-	 * "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1068,9 +1051,8 @@ public class BiddingConditions {
 	};
 	protected SecuritiesQuantity baseDenomination;
 	/**
-	 * The minimum integral amount of securities that each account owner must
-	 * have remaining after the called amounts are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1119,8 +1101,8 @@ public class BiddingConditions {
 	};
 	protected CorporateActionCalculationMethodCode calculationMethod;
 	/**
-	 * The method of calculation of drawings and partial redemptions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1167,9 +1149,8 @@ public class BiddingConditions {
 	};
 	protected CurrencyAndAmount additionalSubscriptionCost;
 	/**
-	 * Additional costs - coming on top of the subscription costs - which the
-	 * subscriber should pay as per the subscription process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1217,8 +1198,8 @@ public class BiddingConditions {
 	};
 	protected CorporateActionEvent event;
 	/**
-	 * Event to which the bidding conditions apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1268,7 +1249,7 @@ public class BiddingConditions {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BiddingConditions";
 				definition = "Specifies the conditions under which securities can be acquired as part of a corporate action.";
@@ -1302,175 +1283,197 @@ public class BiddingConditions {
 		return proposedRate;
 	}
 
-	public void setProposedRate(PercentageRate proposedRate) {
-		this.proposedRate = proposedRate;
+	public BiddingConditions setProposedRate(PercentageRate proposedRate) {
+		this.proposedRate = Objects.requireNonNull(proposedRate);
+		return this;
 	}
 
 	public PercentageRate getOversubscriptionRate() {
 		return oversubscriptionRate;
 	}
 
-	public void setOversubscriptionRate(PercentageRate oversubscriptionRate) {
-		this.oversubscriptionRate = oversubscriptionRate;
+	public BiddingConditions setOversubscriptionRate(PercentageRate oversubscriptionRate) {
+		this.oversubscriptionRate = Objects.requireNonNull(oversubscriptionRate);
+		return this;
 	}
 
 	public Max350Text getInformationToComplyWith() {
 		return informationToComplyWith;
 	}
 
-	public void setInformationToComplyWith(Max350Text informationToComplyWith) {
-		this.informationToComplyWith = informationToComplyWith;
+	public BiddingConditions setInformationToComplyWith(Max350Text informationToComplyWith) {
+		this.informationToComplyWith = Objects.requireNonNull(informationToComplyWith);
+		return this;
 	}
 
 	public ISODateTime getSubscriptionCostDebitDate() {
 		return subscriptionCostDebitDate;
 	}
 
-	public void setSubscriptionCostDebitDate(ISODateTime subscriptionCostDebitDate) {
-		this.subscriptionCostDebitDate = subscriptionCostDebitDate;
+	public BiddingConditions setSubscriptionCostDebitDate(ISODateTime subscriptionCostDebitDate) {
+		this.subscriptionCostDebitDate = Objects.requireNonNull(subscriptionCostDebitDate);
+		return this;
 	}
 
 	public RateAndAmount getMaximumAllowedOverSubscription() {
 		return maximumAllowedOverSubscription;
 	}
 
-	public void setMaximumAllowedOverSubscription(com.tools20022.repository.entity.RateAndAmount maximumAllowedOverSubscription) {
-		this.maximumAllowedOverSubscription = maximumAllowedOverSubscription;
+	public BiddingConditions setMaximumAllowedOverSubscription(com.tools20022.repository.entity.RateAndAmount maximumAllowedOverSubscription) {
+		this.maximumAllowedOverSubscription = Objects.requireNonNull(maximumAllowedOverSubscription);
+		return this;
 	}
 
 	public PercentageRate getProrationRate() {
 		return prorationRate;
 	}
 
-	public void setProrationRate(PercentageRate prorationRate) {
-		this.prorationRate = prorationRate;
+	public BiddingConditions setProrationRate(PercentageRate prorationRate) {
+		this.prorationRate = Objects.requireNonNull(prorationRate);
+		return this;
 	}
 
 	public RateAndAmount getApplicableRate() {
 		return applicableRate;
 	}
 
-	public void setApplicableRate(com.tools20022.repository.entity.RateAndAmount applicableRate) {
-		this.applicableRate = applicableRate;
+	public BiddingConditions setApplicableRate(com.tools20022.repository.entity.RateAndAmount applicableRate) {
+		this.applicableRate = Objects.requireNonNull(applicableRate);
+		return this;
 	}
 
 	public SecuritiesQuantity getFrontEndOddLotQuantity() {
 		return frontEndOddLotQuantity;
 	}
 
-	public void setFrontEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity frontEndOddLotQuantity) {
-		this.frontEndOddLotQuantity = frontEndOddLotQuantity;
+	public BiddingConditions setFrontEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity frontEndOddLotQuantity) {
+		this.frontEndOddLotQuantity = Objects.requireNonNull(frontEndOddLotQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getBackEndOddLotQuantity() {
 		return backEndOddLotQuantity;
 	}
 
-	public void setBackEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity backEndOddLotQuantity) {
-		this.backEndOddLotQuantity = backEndOddLotQuantity;
+	public BiddingConditions setBackEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity backEndOddLotQuantity) {
+		this.backEndOddLotQuantity = Objects.requireNonNull(backEndOddLotQuantity);
+		return this;
 	}
 
 	public PercentageRate getTransformationRate() {
 		return transformationRate;
 	}
 
-	public void setTransformationRate(PercentageRate transformationRate) {
-		this.transformationRate = transformationRate;
+	public BiddingConditions setTransformationRate(PercentageRate transformationRate) {
+		this.transformationRate = Objects.requireNonNull(transformationRate);
+		return this;
 	}
 
 	public ISODateTime getProrationDate() {
 		return prorationDate;
 	}
 
-	public void setProrationDate(ISODateTime prorationDate) {
-		this.prorationDate = prorationDate;
+	public BiddingConditions setProrationDate(ISODateTime prorationDate) {
+		this.prorationDate = Objects.requireNonNull(prorationDate);
+		return this;
 	}
 
 	public DateTimePeriod getCompulsoryPurchasePeriod() {
 		return compulsoryPurchasePeriod;
 	}
 
-	public void setCompulsoryPurchasePeriod(com.tools20022.repository.entity.DateTimePeriod compulsoryPurchasePeriod) {
-		this.compulsoryPurchasePeriod = compulsoryPurchasePeriod;
+	public BiddingConditions setCompulsoryPurchasePeriod(com.tools20022.repository.entity.DateTimePeriod compulsoryPurchasePeriod) {
+		this.compulsoryPurchasePeriod = Objects.requireNonNull(compulsoryPurchasePeriod);
+		return this;
 	}
 
 	public PercentageRate getPercentageSought() {
 		return percentageSought;
 	}
 
-	public void setPercentageSought(PercentageRate percentageSought) {
-		this.percentageSought = percentageSought;
+	public BiddingConditions setPercentageSought(PercentageRate percentageSought) {
+		this.percentageSought = Objects.requireNonNull(percentageSought);
+		return this;
 	}
 
 	public CurrencyAndAmount getBidInterval() {
 		return bidInterval;
 	}
 
-	public void setBidInterval(CurrencyAndAmount bidInterval) {
-		this.bidInterval = bidInterval;
+	public BiddingConditions setBidInterval(CurrencyAndAmount bidInterval) {
+		this.bidInterval = Objects.requireNonNull(bidInterval);
+		return this;
 	}
 
 	public SecuritiesPricing getMaximumPrice() {
 		return maximumPrice;
 	}
 
-	public void setMaximumPrice(com.tools20022.repository.entity.SecuritiesPricing maximumPrice) {
-		this.maximumPrice = maximumPrice;
+	public BiddingConditions setMaximumPrice(com.tools20022.repository.entity.SecuritiesPricing maximumPrice) {
+		this.maximumPrice = Objects.requireNonNull(maximumPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getMinimumPrice() {
 		return minimumPrice;
 	}
 
-	public void setMinimumPrice(com.tools20022.repository.entity.SecuritiesPricing minimumPrice) {
-		this.minimumPrice = minimumPrice;
+	public BiddingConditions setMinimumPrice(com.tools20022.repository.entity.SecuritiesPricing minimumPrice) {
+		this.minimumPrice = Objects.requireNonNull(minimumPrice);
+		return this;
 	}
 
 	public SecuritiesQuantity getMaximumQuantity() {
 		return maximumQuantity;
 	}
 
-	public void setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
-		this.maximumQuantity = maximumQuantity;
+	public BiddingConditions setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
+		this.maximumQuantity = Objects.requireNonNull(maximumQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumQuantitySought() {
 		return minimumQuantitySought;
 	}
 
-	public void setMinimumQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantitySought) {
-		this.minimumQuantitySought = minimumQuantitySought;
+	public BiddingConditions setMinimumQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantitySought) {
+		this.minimumQuantitySought = Objects.requireNonNull(minimumQuantitySought);
+		return this;
 	}
 
 	public SecuritiesQuantity getBaseDenomination() {
 		return baseDenomination;
 	}
 
-	public void setBaseDenomination(com.tools20022.repository.entity.SecuritiesQuantity baseDenomination) {
-		this.baseDenomination = baseDenomination;
+	public BiddingConditions setBaseDenomination(com.tools20022.repository.entity.SecuritiesQuantity baseDenomination) {
+		this.baseDenomination = Objects.requireNonNull(baseDenomination);
+		return this;
 	}
 
 	public CorporateActionCalculationMethodCode getCalculationMethod() {
 		return calculationMethod;
 	}
 
-	public void setCalculationMethod(CorporateActionCalculationMethodCode calculationMethod) {
-		this.calculationMethod = calculationMethod;
+	public BiddingConditions setCalculationMethod(CorporateActionCalculationMethodCode calculationMethod) {
+		this.calculationMethod = Objects.requireNonNull(calculationMethod);
+		return this;
 	}
 
 	public CurrencyAndAmount getAdditionalSubscriptionCost() {
 		return additionalSubscriptionCost;
 	}
 
-	public void setAdditionalSubscriptionCost(CurrencyAndAmount additionalSubscriptionCost) {
-		this.additionalSubscriptionCost = additionalSubscriptionCost;
+	public BiddingConditions setAdditionalSubscriptionCost(CurrencyAndAmount additionalSubscriptionCost) {
+		this.additionalSubscriptionCost = Objects.requireNonNull(additionalSubscriptionCost);
+		return this;
 	}
 
-	public CorporateActionEvent getEvent() {
-		return event;
+	public Optional<CorporateActionEvent> getEvent() {
+		return event == null ? Optional.empty() : Optional.of(event);
 	}
 
-	public void setEvent(com.tools20022.repository.entity.CorporateActionEvent event) {
+	public BiddingConditions setEvent(com.tools20022.repository.entity.CorporateActionEvent event) {
 		this.event = event;
+		return this;
 	}
 }

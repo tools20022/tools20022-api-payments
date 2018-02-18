@@ -39,40 +39,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#ManualSignature
- * CardholderVerificationCapability1Code.mmManualSignature}</li>
+ * CardholderVerificationCapability1Code.ManualSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OnLinePIN
- * CardholderVerificationCapability1Code.mmOnLinePIN}</li>
+ * CardholderVerificationCapability1Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OfflinePINClear
- * CardholderVerificationCapability1Code.mmOfflinePINClear}</li>
+ * CardholderVerificationCapability1Code.OfflinePINClear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OfflinePINEncrypted
- * CardholderVerificationCapability1Code.mmOfflinePINEncrypted}</li>
+ * CardholderVerificationCapability1Code.OfflinePINEncrypted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OfflineDigitalSignature
- * CardholderVerificationCapability1Code.mmOfflineDigitalSignature}</li>
+ * CardholderVerificationCapability1Code.OfflineDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OfflineBiometrics
- * CardholderVerificationCapability1Code.mmOfflineBiometrics}</li>
+ * CardholderVerificationCapability1Code.OfflineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#ManualVerification
- * CardholderVerificationCapability1Code.mmManualVerification}</li>
+ * CardholderVerificationCapability1Code.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#OfflineBiographics
- * CardholderVerificationCapability1Code.mmOfflineBiographics}</li>
+ * CardholderVerificationCapability1Code.OfflineBiographics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#AccountDigitalSignature
- * CardholderVerificationCapability1Code.mmAccountDigitalSignature}</li>
+ * CardholderVerificationCapability1Code.AccountDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#PKISignature
- * CardholderVerificationCapability1Code.mmPKISignature}</li>
+ * CardholderVerificationCapability1Code.PKISignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#CardholderData
- * CardholderVerificationCapability1Code.mmCardholderData}</li>
+ * CardholderVerificationCapability1Code.CardholderData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability1Code#SecureElectronicCommerce
- * CardholderVerificationCapability1Code.mmSecureElectronicCommerce}</li>
+ * CardholderVerificationCapability1Code.SecureElectronicCommerce}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -81,8 +81,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -401,7 +401,7 @@ public class CardholderVerificationCapability1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MNSG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderVerificationCapability1Code";

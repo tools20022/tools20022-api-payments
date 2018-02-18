@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#ICC
- * AuthenticationEntityCode.mmICC}</li>
+ * AuthenticationEntityCode.ICC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#AuthorisedAgent
- * AuthenticationEntityCode.mmAuthorisedAgent}</li>
+ * AuthenticationEntityCode.AuthorisedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#Merchant
- * AuthenticationEntityCode.mmMerchant}</li>
+ * AuthenticationEntityCode.Merchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#Acquirer
- * AuthenticationEntityCode.mmAcquirer}</li>
+ * AuthenticationEntityCode.Acquirer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#Issuer
- * AuthenticationEntityCode.mmIssuer}</li>
+ * AuthenticationEntityCode.Issuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntityCode#Terminal
- * AuthenticationEntityCode.mmTerminal}</li>
+ * AuthenticationEntityCode.Terminal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -281,7 +281,7 @@ public class AuthenticationEntityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ICCD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationEntityCode";

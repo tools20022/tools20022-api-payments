@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the physical parameters of a general meeting. Several dates and
@@ -146,8 +145,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -165,8 +164,8 @@ public class Meeting {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime dateAndTime;
 	/**
-	 * Date and time at which the meeting will take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,8 +209,8 @@ public class Meeting {
 	};
 	protected MeetingDateStatusCode dateStatus;
 	/**
-	 * Indicates the status of a meeting date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,8 +255,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> meetingLocation;
 	/**
-	 * Place of the company meeting for the scheduled meeting date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,9 +302,8 @@ public class Meeting {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification assigned to a general meeting by the party notifying the
-	 * meeting. It must be unique for the party notifying the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,9 +349,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.Deadline> deadline;
 	/**
-	 * Specifies the different deadlines available for the different processes
-	 * related to meeting attendance, proxy voting and entitlement assessment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,8 +396,8 @@ public class Meeting {
 	};
 	protected MeetingServicing meetingServicing;
 	/**
-	 * Servicing processes related to the organisation of a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -447,8 +444,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.ContactPersonRole> person;
 	/**
-	 * Specifies the person who is the contact for a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -493,8 +490,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.MeetingPartyRole> partyRole;
 	/**
-	 * Specifies the role played by a party in the context of a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -540,8 +537,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.MeetingStatus> status;
 	/**
-	 * Status of the imeeting and of the related nstructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -586,8 +583,8 @@ public class Meeting {
 	};
 	protected CorporateActionEvent corporateEvent;
 	/**
-	 * Corporate event for which a meeting is organised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -634,9 +631,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.Quorum> quorum;
 	/**
-	 * Specifies whether a quorum is required or not together with the quorum
-	 * parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -682,8 +678,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.VotingCondition> votingCondition;
 	/**
-	 * Specifies the different voting types, channels and premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -729,9 +725,8 @@ public class Meeting {
 	};
 	protected YesNoIndicator attendanceRequired;
 	/**
-	 * Indicates whether physical participation to a meeting is required in
-	 * order to be allowed to vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -778,9 +773,8 @@ public class Meeting {
 	};
 	protected Max350Text attendanceConfirmation;
 	/**
-	 * Indicates how to order the attendance card or to give notice of
-	 * attendance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -826,9 +820,8 @@ public class Meeting {
 	};
 	protected IncentivePremium incentivePremium;
 	/**
-	 * Cash premium made available to encourage participation by a certain
-	 * deadline (avoids to have a second call).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -876,8 +869,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.MeetingParticipation> participation;
 	/**
-	 * Potential participation to the voting process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -923,9 +916,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.ResolutionProposal> resolutionProposalConditions;
 	/**
-	 * Specifies the conditions to fulfill in order to be able to propose a
-	 * resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -972,8 +964,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.Resolution> agendaItem;
 	/**
-	 * Item proposed for the vote or presented for information only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1019,8 +1011,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.ProxyAppointmentCondition> proxyAppointmentConditions;
 	/**
-	 * Information on how to appoint proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1066,11 +1058,8 @@ public class Meeting {
 	};
 	protected List<com.tools20022.repository.entity.AdditionalRight> additionalRight;
 	/**
-	 * Specifies how the additional rights can be granted to the shareholder.
-	 * These rights can be exercised at shareholders meetings (for example, the
-	 * right to ask questions, the right to add items to the agenda or table
-	 * draft resolutions).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1117,8 +1106,8 @@ public class Meeting {
 	};
 	protected MeetingTypeCode type;
 	/**
-	 * Specifies the type of meeting for which an invitation is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1164,9 +1153,8 @@ public class Meeting {
 	};
 	protected PowerOfAttorneyRequirements powerOfAttorneyRequirements;
 	/**
-	 * Specifies the conditions to be filled in to obtain a valid power of
-	 * attorney.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1215,8 +1203,8 @@ public class Meeting {
 	};
 	protected MeetingTypeClassificationCode meetingEventClassification;
 	/**
-	 * Classifies the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1263,7 +1251,7 @@ public class Meeting {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Meeting";
 				definition = "Specifies the physical parameters of a general meeting. Several dates and places can be defined for a  meeting.";
@@ -1295,183 +1283,206 @@ public class Meeting {
 		return dateAndTime;
 	}
 
-	public void setDateAndTime(ISODateTime dateAndTime) {
-		this.dateAndTime = dateAndTime;
+	public Meeting setDateAndTime(ISODateTime dateAndTime) {
+		this.dateAndTime = Objects.requireNonNull(dateAndTime);
+		return this;
 	}
 
 	public MeetingDateStatusCode getDateStatus() {
 		return dateStatus;
 	}
 
-	public void setDateStatus(MeetingDateStatusCode dateStatus) {
-		this.dateStatus = dateStatus;
+	public Meeting setDateStatus(MeetingDateStatusCode dateStatus) {
+		this.dateStatus = Objects.requireNonNull(dateStatus);
+		return this;
 	}
 
 	public List<ContactPoint> getMeetingLocation() {
-		return meetingLocation;
+		return meetingLocation == null ? meetingLocation = new ArrayList<>() : meetingLocation;
 	}
 
-	public void setMeetingLocation(List<com.tools20022.repository.entity.ContactPoint> meetingLocation) {
-		this.meetingLocation = meetingLocation;
+	public Meeting setMeetingLocation(List<com.tools20022.repository.entity.ContactPoint> meetingLocation) {
+		this.meetingLocation = Objects.requireNonNull(meetingLocation);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Meeting setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<Deadline> getDeadline() {
-		return deadline;
+		return deadline == null ? deadline = new ArrayList<>() : deadline;
 	}
 
-	public void setDeadline(List<com.tools20022.repository.entity.Deadline> deadline) {
-		this.deadline = deadline;
+	public Meeting setDeadline(List<com.tools20022.repository.entity.Deadline> deadline) {
+		this.deadline = Objects.requireNonNull(deadline);
+		return this;
 	}
 
-	public MeetingServicing getMeetingServicing() {
-		return meetingServicing;
+	public Optional<MeetingServicing> getMeetingServicing() {
+		return meetingServicing == null ? Optional.empty() : Optional.of(meetingServicing);
 	}
 
-	public void setMeetingServicing(com.tools20022.repository.entity.MeetingServicing meetingServicing) {
+	public Meeting setMeetingServicing(com.tools20022.repository.entity.MeetingServicing meetingServicing) {
 		this.meetingServicing = meetingServicing;
+		return this;
 	}
 
 	public List<ContactPersonRole> getPerson() {
-		return person;
+		return person == null ? person = new ArrayList<>() : person;
 	}
 
-	public void setPerson(List<com.tools20022.repository.entity.ContactPersonRole> person) {
-		this.person = person;
+	public Meeting setPerson(List<com.tools20022.repository.entity.ContactPersonRole> person) {
+		this.person = Objects.requireNonNull(person);
+		return this;
 	}
 
 	public List<MeetingPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.MeetingPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Meeting setPartyRole(List<com.tools20022.repository.entity.MeetingPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public List<MeetingStatus> getStatus() {
-		return status;
+		return status == null ? status = new ArrayList<>() : status;
 	}
 
-	public void setStatus(List<com.tools20022.repository.entity.MeetingStatus> status) {
-		this.status = status;
+	public Meeting setStatus(List<com.tools20022.repository.entity.MeetingStatus> status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	public CorporateActionEvent getCorporateEvent() {
-		return corporateEvent;
+	public Optional<CorporateActionEvent> getCorporateEvent() {
+		return corporateEvent == null ? Optional.empty() : Optional.of(corporateEvent);
 	}
 
-	public void setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
+	public Meeting setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
 		this.corporateEvent = corporateEvent;
+		return this;
 	}
 
 	public List<Quorum> getQuorum() {
-		return quorum;
+		return quorum == null ? quorum = new ArrayList<>() : quorum;
 	}
 
-	public void setQuorum(List<com.tools20022.repository.entity.Quorum> quorum) {
-		this.quorum = quorum;
+	public Meeting setQuorum(List<com.tools20022.repository.entity.Quorum> quorum) {
+		this.quorum = Objects.requireNonNull(quorum);
+		return this;
 	}
 
 	public List<VotingCondition> getVotingCondition() {
-		return votingCondition;
+		return votingCondition == null ? votingCondition = new ArrayList<>() : votingCondition;
 	}
 
-	public void setVotingCondition(List<com.tools20022.repository.entity.VotingCondition> votingCondition) {
-		this.votingCondition = votingCondition;
+	public Meeting setVotingCondition(List<com.tools20022.repository.entity.VotingCondition> votingCondition) {
+		this.votingCondition = Objects.requireNonNull(votingCondition);
+		return this;
 	}
 
 	public YesNoIndicator getAttendanceRequired() {
 		return attendanceRequired;
 	}
 
-	public void setAttendanceRequired(YesNoIndicator attendanceRequired) {
-		this.attendanceRequired = attendanceRequired;
+	public Meeting setAttendanceRequired(YesNoIndicator attendanceRequired) {
+		this.attendanceRequired = Objects.requireNonNull(attendanceRequired);
+		return this;
 	}
 
 	public Max350Text getAttendanceConfirmation() {
 		return attendanceConfirmation;
 	}
 
-	public void setAttendanceConfirmation(Max350Text attendanceConfirmation) {
-		this.attendanceConfirmation = attendanceConfirmation;
+	public Meeting setAttendanceConfirmation(Max350Text attendanceConfirmation) {
+		this.attendanceConfirmation = Objects.requireNonNull(attendanceConfirmation);
+		return this;
 	}
 
-	public IncentivePremium getIncentivePremium() {
-		return incentivePremium;
+	public Optional<IncentivePremium> getIncentivePremium() {
+		return incentivePremium == null ? Optional.empty() : Optional.of(incentivePremium);
 	}
 
-	public void setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
+	public Meeting setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
 		this.incentivePremium = incentivePremium;
+		return this;
 	}
 
 	public List<MeetingParticipation> getParticipation() {
-		return participation;
+		return participation == null ? participation = new ArrayList<>() : participation;
 	}
 
-	public void setParticipation(List<com.tools20022.repository.entity.MeetingParticipation> participation) {
-		this.participation = participation;
+	public Meeting setParticipation(List<com.tools20022.repository.entity.MeetingParticipation> participation) {
+		this.participation = Objects.requireNonNull(participation);
+		return this;
 	}
 
 	public List<ResolutionProposal> getResolutionProposalConditions() {
-		return resolutionProposalConditions;
+		return resolutionProposalConditions == null ? resolutionProposalConditions = new ArrayList<>() : resolutionProposalConditions;
 	}
 
-	public void setResolutionProposalConditions(List<com.tools20022.repository.entity.ResolutionProposal> resolutionProposalConditions) {
-		this.resolutionProposalConditions = resolutionProposalConditions;
+	public Meeting setResolutionProposalConditions(List<com.tools20022.repository.entity.ResolutionProposal> resolutionProposalConditions) {
+		this.resolutionProposalConditions = Objects.requireNonNull(resolutionProposalConditions);
+		return this;
 	}
 
 	public List<Resolution> getAgendaItem() {
-		return agendaItem;
+		return agendaItem == null ? agendaItem = new ArrayList<>() : agendaItem;
 	}
 
-	public void setAgendaItem(List<com.tools20022.repository.entity.Resolution> agendaItem) {
-		this.agendaItem = agendaItem;
+	public Meeting setAgendaItem(List<com.tools20022.repository.entity.Resolution> agendaItem) {
+		this.agendaItem = Objects.requireNonNull(agendaItem);
+		return this;
 	}
 
 	public List<ProxyAppointmentCondition> getProxyAppointmentConditions() {
-		return proxyAppointmentConditions;
+		return proxyAppointmentConditions == null ? proxyAppointmentConditions = new ArrayList<>() : proxyAppointmentConditions;
 	}
 
-	public void setProxyAppointmentConditions(List<com.tools20022.repository.entity.ProxyAppointmentCondition> proxyAppointmentConditions) {
-		this.proxyAppointmentConditions = proxyAppointmentConditions;
+	public Meeting setProxyAppointmentConditions(List<com.tools20022.repository.entity.ProxyAppointmentCondition> proxyAppointmentConditions) {
+		this.proxyAppointmentConditions = Objects.requireNonNull(proxyAppointmentConditions);
+		return this;
 	}
 
 	public List<AdditionalRight> getAdditionalRight() {
-		return additionalRight;
+		return additionalRight == null ? additionalRight = new ArrayList<>() : additionalRight;
 	}
 
-	public void setAdditionalRight(List<com.tools20022.repository.entity.AdditionalRight> additionalRight) {
-		this.additionalRight = additionalRight;
+	public Meeting setAdditionalRight(List<com.tools20022.repository.entity.AdditionalRight> additionalRight) {
+		this.additionalRight = Objects.requireNonNull(additionalRight);
+		return this;
 	}
 
 	public MeetingTypeCode getType() {
 		return type;
 	}
 
-	public void setType(MeetingTypeCode type) {
-		this.type = type;
+	public Meeting setType(MeetingTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public PowerOfAttorneyRequirements getPowerOfAttorneyRequirements() {
 		return powerOfAttorneyRequirements;
 	}
 
-	public void setPowerOfAttorneyRequirements(com.tools20022.repository.entity.PowerOfAttorneyRequirements powerOfAttorneyRequirements) {
-		this.powerOfAttorneyRequirements = powerOfAttorneyRequirements;
+	public Meeting setPowerOfAttorneyRequirements(com.tools20022.repository.entity.PowerOfAttorneyRequirements powerOfAttorneyRequirements) {
+		this.powerOfAttorneyRequirements = Objects.requireNonNull(powerOfAttorneyRequirements);
+		return this;
 	}
 
 	public MeetingTypeClassificationCode getMeetingEventClassification() {
 		return meetingEventClassification;
 	}
 
-	public void setMeetingEventClassification(MeetingTypeClassificationCode meetingEventClassification) {
-		this.meetingEventClassification = meetingEventClassification;
+	public Meeting setMeetingEventClassification(MeetingTypeClassificationCode meetingEventClassification) {
+		this.meetingEventClassification = Objects.requireNonNull(meetingEventClassification);
+		return this;
 	}
 }

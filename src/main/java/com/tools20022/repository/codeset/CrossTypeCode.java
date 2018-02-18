@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#AllOrNone
- * CrossTypeCode.mmAllOrNone}</li>
+ * CrossTypeCode.AllOrNone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CrossTypeCode#ImmediateOrCancel
- * CrossTypeCode.mmImmediateOrCancel}</li>
+ * CrossTypeCode.ImmediateOrCancel}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#OneSide
- * CrossTypeCode.mmOneSide}</li>
+ * CrossTypeCode.OneSide}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CrossTypeCode#SamePrice
- * CrossTypeCode.mmSamePrice}</li>
+ * CrossTypeCode.SamePrice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -221,7 +221,7 @@ public class CrossTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ALON");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTypeCode";

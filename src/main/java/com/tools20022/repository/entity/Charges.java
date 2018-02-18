@@ -26,9 +26,8 @@ import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Amount of money associated with a service.
@@ -184,8 +183,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -201,8 +200,8 @@ public class Charges extends Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ChargeTypeCode chargeType;
 	/**
-	 * Type of service for which a charge is asked or paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,8 +262,8 @@ public class Charges extends Adjustment {
 	};
 	protected CalculationBasisCode calculationBasis;
 	/**
-	 * Calculation basis for the charge or fee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -309,9 +308,8 @@ public class Charges extends Adjustment {
 	};
 	protected ChargeBearerTypeCode bearerType;
 	/**
-	 * Specifies which party/parties will bear the charges associated with the
-	 * processing of the payment transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,8 +407,8 @@ public class Charges extends Adjustment {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> chargesDebitAccount;
 	/**
-	 * Account from which a charge is debited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -467,8 +465,8 @@ public class Charges extends Adjustment {
 	};
 	protected CashEntry cashEntry;
 	/**
-	 * Entry which contains the charges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -514,8 +512,8 @@ public class Charges extends Adjustment {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether a charge is a credit or a debit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -572,9 +570,8 @@ public class Charges extends Adjustment {
 	};
 	protected CurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount of money asked or paid for the charge for example
-	 * depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -621,8 +618,8 @@ public class Charges extends Adjustment {
 	};
 	protected InvestmentFundTransaction investmentFundTransaction;
 	/**
-	 * Investment fund transaction for which charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -670,8 +667,8 @@ public class Charges extends Adjustment {
 	};
 	protected LineItem logisticsChargeLineItem;
 	/**
-	 * Specifies the line item to which the logistics charge applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -717,8 +714,8 @@ public class Charges extends Adjustment {
 	};
 	protected Transport transport;
 	/**
-	 * Specifies the transport process to which the charges apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -765,8 +762,8 @@ public class Charges extends Adjustment {
 	};
 	protected AccountService services;
 	/**
-	 * Account services for which account administration charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -814,8 +811,8 @@ public class Charges extends Adjustment {
 	};
 	protected Undertaking relatedUndertaking;
 	/**
-	 * Undertaking for which charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -861,8 +858,8 @@ public class Charges extends Adjustment {
 	};
 	protected LineItem lineItem;
 	/**
-	 * Line item for which charges are specified
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -907,8 +904,8 @@ public class Charges extends Adjustment {
 	};
 	protected LineItem netPriceChargeLineItem;
 	/**
-	 * Specifies the line item to which the net price charge applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -954,8 +951,8 @@ public class Charges extends Adjustment {
 	};
 	protected CurrencyAndAmount baseAmount;
 	/**
-	 * Amount on which the charges are calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1000,9 +997,8 @@ public class Charges extends Adjustment {
 	};
 	protected PercentageRate maximumRate;
 	/**
-	 * Maximum rate used to calculate the amount of the charge or fee for
-	 * example depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1049,9 +1045,8 @@ public class Charges extends Adjustment {
 	};
 	protected PercentageRate minimumRate;
 	/**
-	 * Minimum rate used to calculate the amount of the charge or fee for
-	 * example depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1098,9 +1093,8 @@ public class Charges extends Adjustment {
 	};
 	protected CurrencyAndAmount minimumAmount;
 	/**
-	 * Minimum amount of money asked or paid for the charge for example
-	 * depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1147,8 +1141,8 @@ public class Charges extends Adjustment {
 	};
 	protected List<com.tools20022.repository.entity.InterestCalculation> relatedInterest;
 	/**
-	 * Interest on which charges are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1193,8 +1187,8 @@ public class Charges extends Adjustment {
 	};
 	protected ChargePaymentMethodCode chargePaymentMethod;
 	/**
-	 * Specifies how charges are paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1241,7 +1235,7 @@ public class Charges extends Adjustment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Charges";
 				definition = "Amount of money associated with a service.";
@@ -1276,159 +1270,179 @@ public class Charges extends Adjustment {
 		return chargeType;
 	}
 
-	public void setChargeType(ChargeTypeCode chargeType) {
-		this.chargeType = chargeType;
+	public Charges setChargeType(ChargeTypeCode chargeType) {
+		this.chargeType = Objects.requireNonNull(chargeType);
+		return this;
 	}
 
 	public CalculationBasisCode getCalculationBasis() {
 		return calculationBasis;
 	}
 
-	public void setCalculationBasis(CalculationBasisCode calculationBasis) {
-		this.calculationBasis = calculationBasis;
+	public Charges setCalculationBasis(CalculationBasisCode calculationBasis) {
+		this.calculationBasis = Objects.requireNonNull(calculationBasis);
+		return this;
 	}
 
 	public ChargeBearerTypeCode getBearerType() {
 		return bearerType;
 	}
 
-	public void setBearerType(ChargeBearerTypeCode bearerType) {
-		this.bearerType = bearerType;
+	public Charges setBearerType(ChargeBearerTypeCode bearerType) {
+		this.bearerType = Objects.requireNonNull(bearerType);
+		return this;
 	}
 
 	public List<CashAccount> getChargesDebitAccount() {
-		return chargesDebitAccount;
+		return chargesDebitAccount == null ? chargesDebitAccount = new ArrayList<>() : chargesDebitAccount;
 	}
 
-	public void setChargesDebitAccount(List<com.tools20022.repository.entity.CashAccount> chargesDebitAccount) {
-		this.chargesDebitAccount = chargesDebitAccount;
+	public Charges setChargesDebitAccount(List<com.tools20022.repository.entity.CashAccount> chargesDebitAccount) {
+		this.chargesDebitAccount = Objects.requireNonNull(chargesDebitAccount);
+		return this;
 	}
 
 	public CashEntry getCashEntry() {
 		return cashEntry;
 	}
 
-	public void setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
-		this.cashEntry = cashEntry;
+	public Charges setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Charges setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(CurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public Charges setMaximumAmount(CurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
-	public InvestmentFundTransaction getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+	public Optional<InvestmentFundTransaction> getInvestmentFundTransaction() {
+		return investmentFundTransaction == null ? Optional.empty() : Optional.of(investmentFundTransaction);
 	}
 
-	public void setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
+	public Charges setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
 		this.investmentFundTransaction = investmentFundTransaction;
+		return this;
 	}
 
-	public LineItem getLogisticsChargeLineItem() {
-		return logisticsChargeLineItem;
+	public Optional<LineItem> getLogisticsChargeLineItem() {
+		return logisticsChargeLineItem == null ? Optional.empty() : Optional.of(logisticsChargeLineItem);
 	}
 
-	public void setLogisticsChargeLineItem(com.tools20022.repository.entity.LineItem logisticsChargeLineItem) {
+	public Charges setLogisticsChargeLineItem(com.tools20022.repository.entity.LineItem logisticsChargeLineItem) {
 		this.logisticsChargeLineItem = logisticsChargeLineItem;
+		return this;
 	}
 
-	public Transport getTransport() {
-		return transport;
+	public Optional<Transport> getTransport() {
+		return transport == null ? Optional.empty() : Optional.of(transport);
 	}
 
-	public void setTransport(com.tools20022.repository.entity.Transport transport) {
+	public Charges setTransport(com.tools20022.repository.entity.Transport transport) {
 		this.transport = transport;
+		return this;
 	}
 
-	public AccountService getServices() {
-		return services;
+	public Optional<AccountService> getServices() {
+		return services == null ? Optional.empty() : Optional.of(services);
 	}
 
-	public void setServices(com.tools20022.repository.entity.AccountService services) {
+	public Charges setServices(com.tools20022.repository.entity.AccountService services) {
 		this.services = services;
+		return this;
 	}
 
 	public Undertaking getRelatedUndertaking() {
 		return relatedUndertaking;
 	}
 
-	public void setRelatedUndertaking(com.tools20022.repository.entity.Undertaking relatedUndertaking) {
-		this.relatedUndertaking = relatedUndertaking;
+	public Charges setRelatedUndertaking(com.tools20022.repository.entity.Undertaking relatedUndertaking) {
+		this.relatedUndertaking = Objects.requireNonNull(relatedUndertaking);
+		return this;
 	}
 
 	public LineItem getLineItem() {
 		return lineItem;
 	}
 
-	public void setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
-		this.lineItem = lineItem;
+	public Charges setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
+		this.lineItem = Objects.requireNonNull(lineItem);
+		return this;
 	}
 
-	public LineItem getNetPriceChargeLineItem() {
-		return netPriceChargeLineItem;
+	public Optional<LineItem> getNetPriceChargeLineItem() {
+		return netPriceChargeLineItem == null ? Optional.empty() : Optional.of(netPriceChargeLineItem);
 	}
 
-	public void setNetPriceChargeLineItem(com.tools20022.repository.entity.LineItem netPriceChargeLineItem) {
+	public Charges setNetPriceChargeLineItem(com.tools20022.repository.entity.LineItem netPriceChargeLineItem) {
 		this.netPriceChargeLineItem = netPriceChargeLineItem;
+		return this;
 	}
 
 	public CurrencyAndAmount getBaseAmount() {
 		return baseAmount;
 	}
 
-	public void setBaseAmount(CurrencyAndAmount baseAmount) {
-		this.baseAmount = baseAmount;
+	public Charges setBaseAmount(CurrencyAndAmount baseAmount) {
+		this.baseAmount = Objects.requireNonNull(baseAmount);
+		return this;
 	}
 
 	public PercentageRate getMaximumRate() {
 		return maximumRate;
 	}
 
-	public void setMaximumRate(PercentageRate maximumRate) {
-		this.maximumRate = maximumRate;
+	public Charges setMaximumRate(PercentageRate maximumRate) {
+		this.maximumRate = Objects.requireNonNull(maximumRate);
+		return this;
 	}
 
 	public PercentageRate getMinimumRate() {
 		return minimumRate;
 	}
 
-	public void setMinimumRate(PercentageRate minimumRate) {
-		this.minimumRate = minimumRate;
+	public Charges setMinimumRate(PercentageRate minimumRate) {
+		this.minimumRate = Objects.requireNonNull(minimumRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumAmount() {
 		return minimumAmount;
 	}
 
-	public void setMinimumAmount(CurrencyAndAmount minimumAmount) {
-		this.minimumAmount = minimumAmount;
+	public Charges setMinimumAmount(CurrencyAndAmount minimumAmount) {
+		this.minimumAmount = Objects.requireNonNull(minimumAmount);
+		return this;
 	}
 
 	public List<InterestCalculation> getRelatedInterest() {
-		return relatedInterest;
+		return relatedInterest == null ? relatedInterest = new ArrayList<>() : relatedInterest;
 	}
 
-	public void setRelatedInterest(List<com.tools20022.repository.entity.InterestCalculation> relatedInterest) {
-		this.relatedInterest = relatedInterest;
+	public Charges setRelatedInterest(List<com.tools20022.repository.entity.InterestCalculation> relatedInterest) {
+		this.relatedInterest = Objects.requireNonNull(relatedInterest);
+		return this;
 	}
 
 	public ChargePaymentMethodCode getChargePaymentMethod() {
 		return chargePaymentMethod;
 	}
 
-	public void setChargePaymentMethod(ChargePaymentMethodCode chargePaymentMethod) {
-		this.chargePaymentMethod = chargePaymentMethod;
+	public Charges setChargePaymentMethod(ChargePaymentMethodCode chargePaymentMethod) {
+		this.chargePaymentMethod = Objects.requireNonNull(chargePaymentMethod);
+		return this;
 	}
 }

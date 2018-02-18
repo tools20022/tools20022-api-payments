@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Cash movements from or to a fund as a result of investment funds
@@ -88,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,9 +109,8 @@ public class FundsCashFlow {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator exceptionalCashFlowIndicator;
 	/**
-	 * Indicates whether the cash flow is exceptional , eg, extraordinary cash
-	 * amounts in or out.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +158,8 @@ public class FundsCashFlow {
 	};
 	protected FlowDirectionTypeCode flowDirection;
 	/**
-	 * Specifies the direction of the cash flow from the perspective of the
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,8 +207,8 @@ public class FundsCashFlow {
 	};
 	protected BookEntry fundSubscriptionAccountEntry;
 	/**
-	 * Account entry which is linked to a fund subscription process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,8 +256,8 @@ public class FundsCashFlow {
 	};
 	protected BookEntry fundRedemptionAccountEntry;
 	/**
-	 * Account entry which is linked to a fund redemption process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,8 +305,8 @@ public class FundsCashFlow {
 	};
 	protected InvestmentFundOrderExecution relatedOrder;
 	/**
-	 * Trade which is the source for the calculation of the cash flow movements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -356,8 +356,8 @@ public class FundsCashFlow {
 	};
 	protected YesNoIndicator netIndicator;
 	/**
-	 * Indicates whether the cash flow is the result of netting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -404,8 +404,8 @@ public class FundsCashFlow {
 	};
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Net asset value incorporating the net cash flow for a valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -454,8 +454,8 @@ public class FundsCashFlow {
 	};
 	protected SecuritiesQuantity cashFlowQuantity;
 	/**
-	 * Value and quantity of the cash flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -504,7 +504,7 @@ public class FundsCashFlow {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundsCashFlow";
 				definition = "Cash movements from or to a fund as a result of investment funds transactions, for example, subscriptions or redemptions.";
@@ -529,63 +529,71 @@ public class FundsCashFlow {
 		return exceptionalCashFlowIndicator;
 	}
 
-	public void setExceptionalCashFlowIndicator(YesNoIndicator exceptionalCashFlowIndicator) {
-		this.exceptionalCashFlowIndicator = exceptionalCashFlowIndicator;
+	public FundsCashFlow setExceptionalCashFlowIndicator(YesNoIndicator exceptionalCashFlowIndicator) {
+		this.exceptionalCashFlowIndicator = Objects.requireNonNull(exceptionalCashFlowIndicator);
+		return this;
 	}
 
 	public FlowDirectionTypeCode getFlowDirection() {
 		return flowDirection;
 	}
 
-	public void setFlowDirection(FlowDirectionTypeCode flowDirection) {
-		this.flowDirection = flowDirection;
+	public FundsCashFlow setFlowDirection(FlowDirectionTypeCode flowDirection) {
+		this.flowDirection = Objects.requireNonNull(flowDirection);
+		return this;
 	}
 
-	public BookEntry getFundSubscriptionAccountEntry() {
-		return fundSubscriptionAccountEntry;
+	public Optional<BookEntry> getFundSubscriptionAccountEntry() {
+		return fundSubscriptionAccountEntry == null ? Optional.empty() : Optional.of(fundSubscriptionAccountEntry);
 	}
 
-	public void setFundSubscriptionAccountEntry(com.tools20022.repository.entity.BookEntry fundSubscriptionAccountEntry) {
+	public FundsCashFlow setFundSubscriptionAccountEntry(com.tools20022.repository.entity.BookEntry fundSubscriptionAccountEntry) {
 		this.fundSubscriptionAccountEntry = fundSubscriptionAccountEntry;
+		return this;
 	}
 
-	public BookEntry getFundRedemptionAccountEntry() {
-		return fundRedemptionAccountEntry;
+	public Optional<BookEntry> getFundRedemptionAccountEntry() {
+		return fundRedemptionAccountEntry == null ? Optional.empty() : Optional.of(fundRedemptionAccountEntry);
 	}
 
-	public void setFundRedemptionAccountEntry(com.tools20022.repository.entity.BookEntry fundRedemptionAccountEntry) {
+	public FundsCashFlow setFundRedemptionAccountEntry(com.tools20022.repository.entity.BookEntry fundRedemptionAccountEntry) {
 		this.fundRedemptionAccountEntry = fundRedemptionAccountEntry;
+		return this;
 	}
 
 	public InvestmentFundOrderExecution getRelatedOrder() {
 		return relatedOrder;
 	}
 
-	public void setRelatedOrder(com.tools20022.repository.entity.InvestmentFundOrderExecution relatedOrder) {
-		this.relatedOrder = relatedOrder;
+	public FundsCashFlow setRelatedOrder(com.tools20022.repository.entity.InvestmentFundOrderExecution relatedOrder) {
+		this.relatedOrder = Objects.requireNonNull(relatedOrder);
+		return this;
 	}
 
 	public YesNoIndicator getNetIndicator() {
 		return netIndicator;
 	}
 
-	public void setNetIndicator(YesNoIndicator netIndicator) {
-		this.netIndicator = netIndicator;
+	public FundsCashFlow setNetIndicator(YesNoIndicator netIndicator) {
+		this.netIndicator = Objects.requireNonNull(netIndicator);
+		return this;
 	}
 
 	public NetAssetValueCalculation getNetAssetValueCalculation() {
 		return netAssetValueCalculation;
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
-		this.netAssetValueCalculation = netAssetValueCalculation;
+	public FundsCashFlow setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+		this.netAssetValueCalculation = Objects.requireNonNull(netAssetValueCalculation);
+		return this;
 	}
 
 	public SecuritiesQuantity getCashFlowQuantity() {
 		return cashFlowQuantity;
 	}
 
-	public void setCashFlowQuantity(com.tools20022.repository.entity.SecuritiesQuantity cashFlowQuantity) {
-		this.cashFlowQuantity = cashFlowQuantity;
+	public FundsCashFlow setCashFlowQuantity(com.tools20022.repository.entity.SecuritiesQuantity cashFlowQuantity) {
+		this.cashFlowQuantity = Objects.requireNonNull(cashFlowQuantity);
+		return this;
 	}
 }

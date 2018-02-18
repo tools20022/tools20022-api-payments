@@ -38,44 +38,44 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#BearToRegistered
- * CorporateActionChangeTypeCode.mmBearToRegistered}</li>
+ * CorporateActionChangeTypeCode.BearToRegistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#Certificates
- * CorporateActionChangeTypeCode.mmCertificates}</li>
+ * CorporateActionChangeTypeCode.Certificates}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#DematerialisedToPhysical
- * CorporateActionChangeTypeCode.mmDematerialisedToPhysical}</li>
+ * CorporateActionChangeTypeCode.DematerialisedToPhysical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#GlobalPermanentToPhysical
- * CorporateActionChangeTypeCode.mmGlobalPermanentToPhysical}</li>
+ * CorporateActionChangeTypeCode.GlobalPermanentToPhysical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#GlobalTemporaryToGlobalPermanent
- * CorporateActionChangeTypeCode.mmGlobalTemporaryToGlobalPermanent}</li>
+ * CorporateActionChangeTypeCode.GlobalTemporaryToGlobalPermanent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#GlobalTemporaryToPhysical
- * CorporateActionChangeTypeCode.mmGlobalTemporaryToPhysical}</li>
+ * CorporateActionChangeTypeCode.GlobalTemporaryToPhysical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#Name
- * CorporateActionChangeTypeCode.mmName}</li>
+ * CorporateActionChangeTypeCode.Name}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#PhysicalToDematerialised
- * CorporateActionChangeTypeCode.mmPhysicalToDematerialised}</li>
+ * CorporateActionChangeTypeCode.PhysicalToDematerialised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#RegisteredToBearer
- * CorporateActionChangeTypeCode.mmRegisteredToBearer}</li>
+ * CorporateActionChangeTypeCode.RegisteredToBearer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#Terms
- * CorporateActionChangeTypeCode.mmTerms}</li>
+ * CorporateActionChangeTypeCode.Terms}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionChangeTypeCode#Decimalisation
- * CorporateActionChangeTypeCode.mmDecimalisation}</li>
+ * CorporateActionChangeTypeCode.Decimalisation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -441,7 +441,7 @@ public class CorporateActionChangeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BERE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionChangeTypeCode";

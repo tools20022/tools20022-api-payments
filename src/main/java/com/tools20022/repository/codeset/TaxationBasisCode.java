@@ -37,39 +37,39 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxationBasisCode#Flat
- * TaxationBasisCode.mmFlat}</li>
+ * TaxationBasisCode.Flat}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxationBasisCode#PerUnit
- * TaxationBasisCode.mmPerUnit}</li>
+ * TaxationBasisCode.PerUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#Percentage
- * TaxationBasisCode.mmPercentage}</li>
+ * TaxationBasisCode.Percentage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#RatePerBrackets
- * TaxationBasisCode.mmRatePerBrackets}</li>
+ * TaxationBasisCode.RatePerBrackets}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#RateWithMinimumAmount
- * TaxationBasisCode.mmRateWithMinimumAmount}</li>
+ * TaxationBasisCode.RateWithMinimumAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#RateWithMaximumAmount
- * TaxationBasisCode.mmRateWithMaximumAmount}</li>
+ * TaxationBasisCode.RateWithMaximumAmount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxationBasisCode#Other
- * TaxationBasisCode.mmOther}</li>
+ * TaxationBasisCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#GrossAmount
- * TaxationBasisCode.mmGrossAmount}</li>
+ * TaxationBasisCode.GrossAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#NetAmount
- * TaxationBasisCode.mmNetAmount}</li>
+ * TaxationBasisCode.NetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxationBasisCode#NetAssetValuePrice
- * TaxationBasisCode.mmNetAssetValuePrice}</li>
+ * TaxationBasisCode.NetAssetValuePrice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -400,7 +400,7 @@ public class TaxationBasisCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FLAT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxationBasisCode";

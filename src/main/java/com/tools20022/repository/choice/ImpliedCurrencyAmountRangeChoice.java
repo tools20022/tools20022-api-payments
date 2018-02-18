@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.AmountRangeBoundary1;
 import com.tools20022.repository.msg.FromToAmountRange;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ImpliedCurrencyAmountRangeChoice", propOrder = {"fromAmount", "toAmount", "fromToAmount", "equalAmount", "notEqualAmount"})
 public class ImpliedCurrencyAmountRangeChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrAmt", required = true)
 	protected AmountRangeBoundary1 fromAmount;
 	/**
-	 * Lower boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +123,7 @@ public class ImpliedCurrencyAmountRangeChoice {
 	public static final MMMessageAttribute mmFromAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmFromAmount;
-			componentContext_lazy = () -> ImpliedCurrencyAmountRangeChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "FrAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,10 +134,11 @@ public class ImpliedCurrencyAmountRangeChoice {
 			complexType_lazy = () -> AmountRangeBoundary1.mmObject();
 		}
 	};
+	@XmlElement(name = "ToAmt", required = true)
 	protected AmountRangeBoundary1 toAmount;
 	/**
-	 * Upper boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +172,7 @@ public class ImpliedCurrencyAmountRangeChoice {
 	public static final MMMessageAttribute mmToAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmToAmount;
-			componentContext_lazy = () -> ImpliedCurrencyAmountRangeChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "ToAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,10 +183,11 @@ public class ImpliedCurrencyAmountRangeChoice {
 			complexType_lazy = () -> AmountRangeBoundary1.mmObject();
 		}
 	};
+	@XmlElement(name = "FrToAmt", required = true)
 	protected FromToAmountRange fromToAmount;
 	/**
-	 * Range of valid amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +220,7 @@ public class ImpliedCurrencyAmountRangeChoice {
 	public static final MMMessageAttribute mmFromToAmount = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> AmountRange.mmObject();
-			componentContext_lazy = () -> ImpliedCurrencyAmountRangeChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "FrToAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,10 +231,11 @@ public class ImpliedCurrencyAmountRangeChoice {
 			complexType_lazy = () -> FromToAmountRange.mmObject();
 		}
 	};
+	@XmlElement(name = "EQAmt", required = true)
 	protected ImpliedCurrencyAndAmount equalAmount;
 	/**
-	 * Exact value an amount must match to be considered valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,7 +269,7 @@ public class ImpliedCurrencyAmountRangeChoice {
 	public static final MMMessageAttribute mmEqualAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmEqualAmount;
-			componentContext_lazy = () -> ImpliedCurrencyAmountRangeChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "EQAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -275,10 +280,11 @@ public class ImpliedCurrencyAmountRangeChoice {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "NEQAmt", required = true)
 	protected ImpliedCurrencyAndAmount notEqualAmount;
 	/**
-	 * Value that an amount must not match to be considered valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,7 +319,7 @@ public class ImpliedCurrencyAmountRangeChoice {
 	public static final MMMessageAttribute mmNotEqualAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmNotEqualAmount;
-			componentContext_lazy = () -> ImpliedCurrencyAmountRangeChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "NEQAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -328,10 +334,11 @@ public class ImpliedCurrencyAmountRangeChoice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ImpliedCurrencyAmountRangeChoice.mmFromAmount, ImpliedCurrencyAmountRangeChoice.mmToAmount, ImpliedCurrencyAmountRangeChoice.mmFromToAmount,
-						ImpliedCurrencyAmountRangeChoice.mmEqualAmount, ImpliedCurrencyAmountRangeChoice.mmNotEqualAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmFromAmount, com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmToAmount,
+						com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmFromToAmount, com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmEqualAmount,
+						com.tools20022.repository.choice.ImpliedCurrencyAmountRangeChoice.mmNotEqualAmount);
 				trace_lazy = () -> AmountRange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ImpliedCurrencyAmountRangeChoice";
 				definition = "Choice between ranges of values in which an amount is considered valid or a specified amount value which has to be matched or unmatched to be valid.";
@@ -340,48 +347,48 @@ public class ImpliedCurrencyAmountRangeChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrAmt", required = true)
 	public AmountRangeBoundary1 getFromAmount() {
 		return fromAmount;
 	}
 
-	public void setFromAmount(AmountRangeBoundary1 fromAmount) {
-		this.fromAmount = fromAmount;
+	public ImpliedCurrencyAmountRangeChoice setFromAmount(AmountRangeBoundary1 fromAmount) {
+		this.fromAmount = Objects.requireNonNull(fromAmount);
+		return this;
 	}
 
-	@XmlElement(name = "ToAmt", required = true)
 	public AmountRangeBoundary1 getToAmount() {
 		return toAmount;
 	}
 
-	public void setToAmount(AmountRangeBoundary1 toAmount) {
-		this.toAmount = toAmount;
+	public ImpliedCurrencyAmountRangeChoice setToAmount(AmountRangeBoundary1 toAmount) {
+		this.toAmount = Objects.requireNonNull(toAmount);
+		return this;
 	}
 
-	@XmlElement(name = "FrToAmt", required = true)
 	public FromToAmountRange getFromToAmount() {
 		return fromToAmount;
 	}
 
-	public void setFromToAmount(FromToAmountRange fromToAmount) {
-		this.fromToAmount = fromToAmount;
+	public ImpliedCurrencyAmountRangeChoice setFromToAmount(FromToAmountRange fromToAmount) {
+		this.fromToAmount = Objects.requireNonNull(fromToAmount);
+		return this;
 	}
 
-	@XmlElement(name = "EQAmt", required = true)
 	public ImpliedCurrencyAndAmount getEqualAmount() {
 		return equalAmount;
 	}
 
-	public void setEqualAmount(ImpliedCurrencyAndAmount equalAmount) {
-		this.equalAmount = equalAmount;
+	public ImpliedCurrencyAmountRangeChoice setEqualAmount(ImpliedCurrencyAndAmount equalAmount) {
+		this.equalAmount = Objects.requireNonNull(equalAmount);
+		return this;
 	}
 
-	@XmlElement(name = "NEQAmt", required = true)
 	public ImpliedCurrencyAndAmount getNotEqualAmount() {
 		return notEqualAmount;
 	}
 
-	public void setNotEqualAmount(ImpliedCurrencyAndAmount notEqualAmount) {
-		this.notEqualAmount = notEqualAmount;
+	public ImpliedCurrencyAmountRangeChoice setNotEqualAmount(ImpliedCurrencyAndAmount notEqualAmount) {
+		this.notEqualAmount = Objects.requireNonNull(notEqualAmount);
+		return this;
 	}
 }

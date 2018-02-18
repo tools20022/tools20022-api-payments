@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Interest;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies an expected date and a due date for the interest payment."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestPaymentDateRange1", propOrder = {"interestScheduleIdentification", "expectedDate", "dueDate"})
 public class InterestPaymentDateRange1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "IntrstSchdlId")
 	protected Max35Text interestScheduleIdentification;
 	/**
-	 * Unique and unambiguous identification of the interest payment schedule.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +115,7 @@ public class InterestPaymentDateRange1 {
 	public static final MMMessageAttribute mmInterestScheduleIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> InterestPaymentDateRange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange1.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstSchdlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +126,11 @@ public class InterestPaymentDateRange1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "XpctdDt")
 	protected ISODate expectedDate;
 	/**
-	 * Expected interest payment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +163,7 @@ public class InterestPaymentDateRange1 {
 	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmPaymentDate;
-			componentContext_lazy = () -> InterestPaymentDateRange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,10 +174,11 @@ public class InterestPaymentDateRange1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "DueDt")
 	protected ISODate dueDate;
 	/**
-	 * Latest date whereby the interest must be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +211,7 @@ public class InterestPaymentDateRange1 {
 	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmPaymentDate;
-			componentContext_lazy = () -> InterestPaymentDateRange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange1.mmObject();
 			isDerived = false;
 			xmlTag = "DueDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,9 +226,10 @@ public class InterestPaymentDateRange1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestPaymentDateRange1.mmInterestScheduleIdentification, InterestPaymentDateRange1.mmExpectedDate, InterestPaymentDateRange1.mmDueDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestPaymentDateRange1.mmInterestScheduleIdentification, com.tools20022.repository.msg.InterestPaymentDateRange1.mmExpectedDate,
+						com.tools20022.repository.msg.InterestPaymentDateRange1.mmDueDate);
 				trace_lazy = () -> Interest.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestPaymentDateRange1";
 				definition = "Specifies an expected date and a due date for the interest payment.";
@@ -233,30 +238,30 @@ public class InterestPaymentDateRange1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "IntrstSchdlId")
-	public Max35Text getInterestScheduleIdentification() {
-		return interestScheduleIdentification;
+	public Optional<Max35Text> getInterestScheduleIdentification() {
+		return interestScheduleIdentification == null ? Optional.empty() : Optional.of(interestScheduleIdentification);
 	}
 
-	public void setInterestScheduleIdentification(Max35Text interestScheduleIdentification) {
+	public InterestPaymentDateRange1 setInterestScheduleIdentification(Max35Text interestScheduleIdentification) {
 		this.interestScheduleIdentification = interestScheduleIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdDt")
-	public ISODate getExpectedDate() {
-		return expectedDate;
+	public Optional<ISODate> getExpectedDate() {
+		return expectedDate == null ? Optional.empty() : Optional.of(expectedDate);
 	}
 
-	public void setExpectedDate(ISODate expectedDate) {
+	public InterestPaymentDateRange1 setExpectedDate(ISODate expectedDate) {
 		this.expectedDate = expectedDate;
+		return this;
 	}
 
-	@XmlElement(name = "DueDt")
-	public ISODate getDueDate() {
-		return dueDate;
+	public Optional<ISODate> getDueDate() {
+		return dueDate == null ? Optional.empty() : Optional.of(dueDate);
 	}
 
-	public void setDueDate(ISODate dueDate) {
+	public InterestPaymentDateRange1 setDueDate(ISODate dueDate) {
 		this.dueDate = dueDate;
+		return this;
 	}
 }

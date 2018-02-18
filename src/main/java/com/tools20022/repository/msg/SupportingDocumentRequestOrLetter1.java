@@ -29,9 +29,8 @@ import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -99,8 +98,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,17 +112,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SupportingDocumentRequestOrLetter1", propOrder = {"requestOrLetterIdentification", "date", "sender", "receiver", "originalReferences", "subject", "type", "description", "responseRequired", "dueDate", "attachment",
 		"supplementaryData"})
 public class SupportingDocumentRequestOrLetter1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ReqOrLttrId", required = true)
 	protected Max35Text requestOrLetterIdentification;
 	/**
-	 * Unique and unambiguous identification of the supporting document request
-	 * or the letter.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +157,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmRequestOrLetterIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "ReqOrLttrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,10 +168,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISODate date;
 	/**
-	 * Date of the supporting document request or the letter.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,7 +205,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,10 +216,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Sndr")
 	protected Party28Choice sender;
 	/**
-	 * Sender of the request or letter.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -251,7 +252,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAssociationEnd mmSender = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmSendingParty;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Sndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -263,10 +264,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			type_lazy = () -> Party28Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Rcvr")
 	protected Party28Choice receiver;
 	/**
-	 * Receiver of the request or letter.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -298,7 +300,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAssociationEnd mmReceiver = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmReceivingParty;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Rcvr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -310,11 +312,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			type_lazy = () -> Party28Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlRefs")
 	protected List<com.tools20022.repository.msg.OriginalMessage2> originalReferences;
 	/**
-	 * Provides the references of the original underlying message(s) for which
-	 * supporting documents are requested or for which the letter is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -348,7 +350,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAssociationEnd mmOriginalReferences = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlRefs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -359,10 +361,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 		}
 	};
+	@XmlElement(name = "Sbjt", required = true)
 	protected Max140Text subject;
 	/**
-	 * Subject of the letter or supporting document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -395,7 +398,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmSubject = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmPurpose;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Sbjt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -406,10 +409,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Tp", required = true)
 	protected SupportDocumentType1Code type;
 	/**
-	 * Provides the type of supporting document requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -443,7 +447,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmType;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -454,10 +458,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> SupportDocumentType1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max1025Text description;
 	/**
-	 * Further free format description of the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -490,7 +495,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -501,13 +506,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
 	};
+	@XmlElement(name = "RspnReqrd", required = true)
 	protected TrueFalseIndicator responseRequired;
 	/**
-	 * Flag to indicate whether a response is required or not.<br>
-	 * <br>
-	 * Usage: when the request is used to send a letter, there is no response
-	 * required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -537,7 +540,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	 */
 	public static final MMMessageAttribute mmResponseRequired = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "RspnReqrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -548,10 +551,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "DueDt")
 	protected ISODate dueDate;
 	/**
-	 * Date by which the response to the request is expected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -584,7 +588,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "DueDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -595,11 +599,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Attchmnt")
 	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
 	/**
-	 * Documents provided as attachments to the supporting document request or
-	 * letter.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -634,7 +638,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "Attchmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -645,11 +649,11 @@ public class SupportingDocumentRequestOrLetter1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -677,7 +681,7 @@ public class SupportingDocumentRequestOrLetter1 {
 	 */
 	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -692,13 +696,15 @@ public class SupportingDocumentRequestOrLetter1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification, SupportingDocumentRequestOrLetter1.mmDate, SupportingDocumentRequestOrLetter1.mmSender,
-						SupportingDocumentRequestOrLetter1.mmReceiver, SupportingDocumentRequestOrLetter1.mmOriginalReferences, SupportingDocumentRequestOrLetter1.mmSubject, SupportingDocumentRequestOrLetter1.mmType,
-						SupportingDocumentRequestOrLetter1.mmDescription, SupportingDocumentRequestOrLetter1.mmResponseRequired, SupportingDocumentRequestOrLetter1.mmDueDate, SupportingDocumentRequestOrLetter1.mmAttachment,
-						SupportingDocumentRequestOrLetter1.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmDate,
+						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmSender, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmReceiver,
+						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmOriginalReferences, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmSubject,
+						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmType, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmDescription,
+						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmResponseRequired, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmDueDate,
+						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmAttachment, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(CurrencyControlRequestOrLetterV01.mmRequestOrLetter);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupportingDocumentRequestOrLetter1";
 				definition = "Currency control related document or letter supporting the contract registration.";
@@ -707,111 +713,111 @@ public class SupportingDocumentRequestOrLetter1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ReqOrLttrId", required = true)
 	public Max35Text getRequestOrLetterIdentification() {
 		return requestOrLetterIdentification;
 	}
 
-	public void setRequestOrLetterIdentification(Max35Text requestOrLetterIdentification) {
-		this.requestOrLetterIdentification = requestOrLetterIdentification;
+	public SupportingDocumentRequestOrLetter1 setRequestOrLetterIdentification(Max35Text requestOrLetterIdentification) {
+		this.requestOrLetterIdentification = Objects.requireNonNull(requestOrLetterIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISODate getDate() {
-		return date;
+	public Optional<ISODate> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISODate date) {
+	public SupportingDocumentRequestOrLetter1 setDate(ISODate date) {
 		this.date = date;
+		return this;
 	}
 
-	@XmlElement(name = "Sndr")
-	public Party28Choice getSender() {
-		return sender;
+	public Optional<Party28Choice> getSender() {
+		return sender == null ? Optional.empty() : Optional.of(sender);
 	}
 
-	public void setSender(Party28Choice sender) {
+	public SupportingDocumentRequestOrLetter1 setSender(Party28Choice sender) {
 		this.sender = sender;
+		return this;
 	}
 
-	@XmlElement(name = "Rcvr")
-	public Party28Choice getReceiver() {
-		return receiver;
+	public Optional<Party28Choice> getReceiver() {
+		return receiver == null ? Optional.empty() : Optional.of(receiver);
 	}
 
-	public void setReceiver(Party28Choice receiver) {
+	public SupportingDocumentRequestOrLetter1 setReceiver(Party28Choice receiver) {
 		this.receiver = receiver;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlRefs")
 	public List<OriginalMessage2> getOriginalReferences() {
-		return originalReferences;
+		return originalReferences == null ? originalReferences = new ArrayList<>() : originalReferences;
 	}
 
-	public void setOriginalReferences(List<com.tools20022.repository.msg.OriginalMessage2> originalReferences) {
-		this.originalReferences = originalReferences;
+	public SupportingDocumentRequestOrLetter1 setOriginalReferences(List<com.tools20022.repository.msg.OriginalMessage2> originalReferences) {
+		this.originalReferences = Objects.requireNonNull(originalReferences);
+		return this;
 	}
 
-	@XmlElement(name = "Sbjt", required = true)
 	public Max140Text getSubject() {
 		return subject;
 	}
 
-	public void setSubject(Max140Text subject) {
-		this.subject = subject;
+	public SupportingDocumentRequestOrLetter1 setSubject(Max140Text subject) {
+		this.subject = Objects.requireNonNull(subject);
+		return this;
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public SupportDocumentType1Code getType() {
 		return type;
 	}
 
-	public void setType(SupportDocumentType1Code type) {
-		this.type = type;
+	public SupportingDocumentRequestOrLetter1 setType(SupportDocumentType1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max1025Text getDescription() {
-		return description;
+	public Optional<Max1025Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max1025Text description) {
+	public SupportingDocumentRequestOrLetter1 setDescription(Max1025Text description) {
 		this.description = description;
+		return this;
 	}
 
-	@XmlElement(name = "RspnReqrd", required = true)
 	public TrueFalseIndicator getResponseRequired() {
 		return responseRequired;
 	}
 
-	public void setResponseRequired(TrueFalseIndicator responseRequired) {
-		this.responseRequired = responseRequired;
+	public SupportingDocumentRequestOrLetter1 setResponseRequired(TrueFalseIndicator responseRequired) {
+		this.responseRequired = Objects.requireNonNull(responseRequired);
+		return this;
 	}
 
-	@XmlElement(name = "DueDt")
-	public ISODate getDueDate() {
-		return dueDate;
+	public Optional<ISODate> getDueDate() {
+		return dueDate == null ? Optional.empty() : Optional.of(dueDate);
 	}
 
-	public void setDueDate(ISODate dueDate) {
+	public SupportingDocumentRequestOrLetter1 setDueDate(ISODate dueDate) {
 		this.dueDate = dueDate;
+		return this;
 	}
 
-	@XmlElement(name = "Attchmnt")
 	public List<DocumentGeneralInformation3> getAttachment() {
-		return attachment;
+		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public void setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
-		this.attachment = attachment;
+	public SupportingDocumentRequestOrLetter1 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+		this.attachment = Objects.requireNonNull(attachment);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public SupportingDocumentRequestOrLetter1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

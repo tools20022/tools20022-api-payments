@@ -27,9 +27,8 @@ import com.tools20022.repository.msg.MessageIdentification5;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.VerificationReport2;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -90,15 +89,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationVerificationReportV02", propOrder = {"assignment", "originalAssignment", "report", "supplementaryData"})
 public class IdentificationVerificationReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Assgnmt", required = true)
 	protected IdentificationAssignment2 assignment;
 	/**
-	 * Identifies the identification assignment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,10 +138,11 @@ public class IdentificationVerificationReportV02 {
 			}
 		}
 	};
+	@XmlElement(name = "OrgnlAssgnmt")
 	protected MessageIdentification5 originalAssignment;
 	/**
-	 * Provides for the reference to the original identification assignment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,11 +183,11 @@ public class IdentificationVerificationReportV02 {
 			}
 		}
 	};
+	@XmlElement(name = "Rpt", required = true)
 	protected List<VerificationReport2> report;
 	/**
-	 * Information concerning the verification of the identification data for
-	 * which verification was requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,11 +228,11 @@ public class IdentificationVerificationReportV02 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,43 +304,43 @@ public class IdentificationVerificationReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Assgnmt", required = true)
 	public IdentificationAssignment2 getAssignment() {
 		return assignment;
 	}
 
-	public void setAssignment(IdentificationAssignment2 assignment) {
-		this.assignment = assignment;
+	public IdentificationVerificationReportV02 setAssignment(IdentificationAssignment2 assignment) {
+		this.assignment = Objects.requireNonNull(assignment);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlAssgnmt")
-	public MessageIdentification5 getOriginalAssignment() {
-		return originalAssignment;
+	public Optional<MessageIdentification5> getOriginalAssignment() {
+		return originalAssignment == null ? Optional.empty() : Optional.of(originalAssignment);
 	}
 
-	public void setOriginalAssignment(MessageIdentification5 originalAssignment) {
+	public IdentificationVerificationReportV02 setOriginalAssignment(MessageIdentification5 originalAssignment) {
 		this.originalAssignment = originalAssignment;
+		return this;
 	}
 
-	@XmlElement(name = "Rpt", required = true)
 	public List<VerificationReport2> getReport() {
-		return report;
+		return report == null ? report = new ArrayList<>() : report;
 	}
 
-	public void setReport(List<VerificationReport2> report) {
-		this.report = report;
+	public IdentificationVerificationReportV02 setReport(List<VerificationReport2> report) {
+		this.report = Objects.requireNonNull(report);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public IdentificationVerificationReportV02 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.024.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.024.001.02")
 	static public class Document {
 		@XmlElement(name = "IdVrfctnRpt", required = true)
 		public IdentificationVerificationReportV02 messageBody;

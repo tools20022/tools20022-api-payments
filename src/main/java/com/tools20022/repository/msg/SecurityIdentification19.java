@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.ISINOct2015Identifier;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +59,28 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintDescriptionPresenceRule#forSecurityIdentification19
+ * ConstraintDescriptionPresenceRule.forSecurityIdentification19}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOtherIdentificationPresenceRule#forSecurityIdentification19
+ * ConstraintOtherIdentificationPresenceRule.forSecurityIdentification19}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintISINPresenceRule#forSecurityIdentification19
+ * ConstraintISINPresenceRule.forSecurityIdentification19}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintDescriptionUsageRule#forSecurityIdentification19
+ * ConstraintDescriptionUsageRule.forSecurityIdentification19}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintISINGuideline#forSecurityIdentification19
+ * ConstraintISINGuideline.forSecurityIdentification19}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,21 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identification of a security."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "SecurityIdentification19", propOrder = {"ISIN", "otherIdentification", "description"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "SecurityIdentification19", propOrder = {"iSIN", "otherIdentification", "description"})
 public class SecurityIdentification19 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ISIN")
 	protected ISINOct2015Identifier iSIN;
 	/**
-	 * International Securities Identification Number (ISIN). A numbering system
-	 * designed by the United Nation's International Organisation for
-	 * Standardisation (ISO). The ISIN is composed of a 2-character prefix
-	 * representing the country of issue, followed by the national security
-	 * number (if one exists), and a check digit. Each country has a national
-	 * numbering agency that assigns ISIN numbers for securities in that
-	 * country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +136,7 @@ public class SecurityIdentification19 {
 	public static final MMMessageAttribute mmISIN = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> SecurityIdentification19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification19.mmObject();
 			isDerived = false;
 			xmlTag = "ISIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +147,11 @@ public class SecurityIdentification19 {
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
 	};
+	@XmlElement(name = "OthrId")
 	protected List<com.tools20022.repository.msg.OtherIdentification1> otherIdentification;
 	/**
-	 * Identification of a security by proprietary or domestic identification
-	 * scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -171,7 +185,7 @@ public class SecurityIdentification19 {
 	public static final MMMessageAssociationEnd mmOtherIdentification = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesIdentification.mmObject();
-			componentContext_lazy = () -> SecurityIdentification19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification19.mmObject();
 			isDerived = false;
 			xmlTag = "OthrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,10 +196,11 @@ public class SecurityIdentification19 {
 			type_lazy = () -> com.tools20022.repository.msg.OtherIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max140Text description;
 	/**
-	 * Textual description of a security instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,7 +233,7 @@ public class SecurityIdentification19 {
 	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesIdentification.mmObject();
-			componentContext_lazy = () -> SecurityIdentification19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification19.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,9 +248,13 @@ public class SecurityIdentification19 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityIdentification19.mmISIN, SecurityIdentification19.mmOtherIdentification, SecurityIdentification19.mmDescription);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityIdentification19.mmISIN, com.tools20022.repository.msg.SecurityIdentification19.mmOtherIdentification,
+						com.tools20022.repository.msg.SecurityIdentification19.mmDescription);
 				trace_lazy = () -> SecuritiesIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintDescriptionPresenceRule.forSecurityIdentification19,
+						com.tools20022.repository.constraints.ConstraintOtherIdentificationPresenceRule.forSecurityIdentification19, com.tools20022.repository.constraints.ConstraintISINPresenceRule.forSecurityIdentification19,
+						com.tools20022.repository.constraints.ConstraintDescriptionUsageRule.forSecurityIdentification19, com.tools20022.repository.constraints.ConstraintISINGuideline.forSecurityIdentification19);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityIdentification19";
 				definition = "Identification of a security.";
@@ -244,30 +263,30 @@ public class SecurityIdentification19 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ISIN")
-	public ISINOct2015Identifier getISIN() {
-		return iSIN;
+	public Optional<ISINOct2015Identifier> getISIN() {
+		return iSIN == null ? Optional.empty() : Optional.of(iSIN);
 	}
 
-	public void setISIN(ISINOct2015Identifier iSIN) {
+	public SecurityIdentification19 setISIN(ISINOct2015Identifier iSIN) {
 		this.iSIN = iSIN;
+		return this;
 	}
 
-	@XmlElement(name = "OthrId")
 	public List<OtherIdentification1> getOtherIdentification() {
-		return otherIdentification;
+		return otherIdentification == null ? otherIdentification = new ArrayList<>() : otherIdentification;
 	}
 
-	public void setOtherIdentification(List<com.tools20022.repository.msg.OtherIdentification1> otherIdentification) {
-		this.otherIdentification = otherIdentification;
+	public SecurityIdentification19 setOtherIdentification(List<com.tools20022.repository.msg.OtherIdentification1> otherIdentification) {
+		this.otherIdentification = Objects.requireNonNull(otherIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max140Text getDescription() {
-		return description;
+	public Optional<Max140Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max140Text description) {
+	public SecurityIdentification19 setDescription(Max140Text description) {
 		this.description = description;
+		return this;
 	}
 }

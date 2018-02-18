@@ -22,9 +22,8 @@ import com.tools20022.repository.codeset.DeliveryPlaceCode;
 import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Information about the attendance card which is issued for the requestor, for
@@ -71,8 +70,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +89,8 @@ public class AttendanceCard {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max105Text attendanceCardLabelling;
 	/**
-	 * Information to be indicated on the attendance card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,8 +135,8 @@ public class AttendanceCard {
 	};
 	protected MeetingAttendance meetingAttendance;
 	/**
-	 * Attendance card which is required to attend the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,8 +183,8 @@ public class AttendanceCard {
 	};
 	protected DeliveryPlaceCode deliveryMethod;
 	/**
-	 * Specifies where the attendance card must be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,8 +230,8 @@ public class AttendanceCard {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> deliveryPlace;
 	/**
-	 * Address where the attendance card should be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +279,7 @@ public class AttendanceCard {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AttendanceCard";
 				definition = "Information about the attendance card which is issued for the requestor, for its underlying client or for the appointed proxy person or meeting attendee when an attendance request is included in the meeting instruction. \r\nThe instructing party can specify which information must be indicated on the attendance card and to which location the attendance card must be delivered.";
@@ -301,31 +300,35 @@ public class AttendanceCard {
 		return attendanceCardLabelling;
 	}
 
-	public void setAttendanceCardLabelling(Max105Text attendanceCardLabelling) {
-		this.attendanceCardLabelling = attendanceCardLabelling;
+	public AttendanceCard setAttendanceCardLabelling(Max105Text attendanceCardLabelling) {
+		this.attendanceCardLabelling = Objects.requireNonNull(attendanceCardLabelling);
+		return this;
 	}
 
-	public MeetingAttendance getMeetingAttendance() {
-		return meetingAttendance;
+	public Optional<MeetingAttendance> getMeetingAttendance() {
+		return meetingAttendance == null ? Optional.empty() : Optional.of(meetingAttendance);
 	}
 
-	public void setMeetingAttendance(com.tools20022.repository.entity.MeetingAttendance meetingAttendance) {
+	public AttendanceCard setMeetingAttendance(com.tools20022.repository.entity.MeetingAttendance meetingAttendance) {
 		this.meetingAttendance = meetingAttendance;
+		return this;
 	}
 
 	public DeliveryPlaceCode getDeliveryMethod() {
 		return deliveryMethod;
 	}
 
-	public void setDeliveryMethod(DeliveryPlaceCode deliveryMethod) {
-		this.deliveryMethod = deliveryMethod;
+	public AttendanceCard setDeliveryMethod(DeliveryPlaceCode deliveryMethod) {
+		this.deliveryMethod = Objects.requireNonNull(deliveryMethod);
+		return this;
 	}
 
 	public List<ContactPoint> getDeliveryPlace() {
-		return deliveryPlace;
+		return deliveryPlace == null ? deliveryPlace = new ArrayList<>() : deliveryPlace;
 	}
 
-	public void setDeliveryPlace(List<com.tools20022.repository.entity.ContactPoint> deliveryPlace) {
-		this.deliveryPlace = deliveryPlace;
+	public AttendanceCard setDeliveryPlace(List<com.tools20022.repository.entity.ContactPoint> deliveryPlace) {
+		this.deliveryPlace = Objects.requireNonNull(deliveryPlace);
+		return this;
 	}
 }

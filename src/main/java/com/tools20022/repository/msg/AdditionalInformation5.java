@@ -25,9 +25,11 @@ import com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02;
 import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.entity.SecuritiesSettlement;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Contains additional information related to the message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AdditionalInformation5", propOrder = "information")
 public class AdditionalInformation5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Inf", required = true)
 	protected List<Max256Text> information;
 	/**
-	 * Contains additional information related to the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +115,7 @@ public class AdditionalInformation5 {
 	 */
 	public static final MMMessageAttribute mmInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AdditionalInformation5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalInformation5.mmObject();
 			isDerived = false;
 			xmlTag = "Inf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,10 +129,10 @@ public class AdditionalInformation5 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AdditionalInformation5.mmInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AdditionalInformation5.mmInformation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountExcludedMandateMaintenanceRequestV02.mmAdditionalMessageInformation, AccountMandateMaintenanceRequestV02.mmAdditionalMessageInformation);
 				trace_lazy = () -> SecuritiesSettlement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalInformation5";
 				definition = "Contains additional information related to the message.";
@@ -138,12 +141,12 @@ public class AdditionalInformation5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Inf", required = true)
 	public List<Max256Text> getInformation() {
-		return information;
+		return information == null ? information = new ArrayList<>() : information;
 	}
 
-	public void setInformation(List<Max256Text> information) {
-		this.information = information;
+	public AdditionalInformation5 setInformation(List<Max256Text> information) {
+		this.information = Objects.requireNonNull(information);
+		return this;
 	}
 }

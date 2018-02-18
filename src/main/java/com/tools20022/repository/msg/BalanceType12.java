@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BalanceType12", propOrder = {"codeOrProprietary", "subType"})
 public class BalanceType12 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CdOrPrtry", required = true)
 	protected BalanceType5Choice codeOrProprietary;
 	/**
-	 * Coded or proprietary format balance type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,7 +109,7 @@ public class BalanceType12 {
 	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BalanceType12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceType12.mmObject();
 			isDerived = false;
 			xmlTag = "CdOrPrtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,10 +121,11 @@ public class BalanceType12 {
 			type_lazy = () -> BalanceType5Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SubTp")
 	protected BalanceSubType1Choice subType;
 	/**
-	 * Specifies the balance sub-type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,7 +157,7 @@ public class BalanceType12 {
 	public static final MMMessageAssociationEnd mmSubType = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BalanceType12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceType12.mmObject();
 			isDerived = false;
 			xmlTag = "SubTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,9 +173,9 @@ public class BalanceType12 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BalanceType12.mmCodeOrProprietary, BalanceType12.mmSubType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BalanceType12.mmCodeOrProprietary, com.tools20022.repository.msg.BalanceType12.mmSubType);
 				trace_lazy = () -> CashBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceType12";
 				definition = "Set of elements used to define the balance type and sub-type.";
@@ -180,21 +184,21 @@ public class BalanceType12 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CdOrPrtry", required = true)
 	public BalanceType5Choice getCodeOrProprietary() {
 		return codeOrProprietary;
 	}
 
-	public void setCodeOrProprietary(BalanceType5Choice codeOrProprietary) {
-		this.codeOrProprietary = codeOrProprietary;
+	public BalanceType12 setCodeOrProprietary(BalanceType5Choice codeOrProprietary) {
+		this.codeOrProprietary = Objects.requireNonNull(codeOrProprietary);
+		return this;
 	}
 
-	@XmlElement(name = "SubTp")
-	public BalanceSubType1Choice getSubType() {
-		return subType;
+	public Optional<BalanceSubType1Choice> getSubType() {
+		return subType == null ? Optional.empty() : Optional.of(subType);
 	}
 
-	public void setSubType(BalanceSubType1Choice subType) {
+	public BalanceType12 setSubType(BalanceSubType1Choice subType) {
 		this.subType = subType;
+		return this;
 	}
 }

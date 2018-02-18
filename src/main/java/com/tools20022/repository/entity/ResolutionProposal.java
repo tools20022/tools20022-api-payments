@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Conditions that must be met to propose a resolution.
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,9 +79,8 @@ public class ResolutionProposal {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max350Text resolutionProposalThreshold;
 	/**
-	 * Specifies the minimum stake in share capital or cash value or number of
-	 * security holders required to table resolutions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +127,8 @@ public class ResolutionProposal {
 	};
 	protected PercentageRate resolutionProposalThresholdPercentage;
 	/**
-	 * Specifies the minimum stake in share capital or cash value or number of
-	 * security holders required to table resolutions. This minimum is expressed
-	 * as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,8 +176,8 @@ public class ResolutionProposal {
 	};
 	protected Meeting meeting;
 	/**
-	 * Meeting for which conditions for proposing a resolution are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,7 +226,7 @@ public class ResolutionProposal {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResolutionProposal";
 				definition = "Conditions that must be met to propose a resolution.";
@@ -248,23 +247,26 @@ public class ResolutionProposal {
 		return resolutionProposalThreshold;
 	}
 
-	public void setResolutionProposalThreshold(Max350Text resolutionProposalThreshold) {
-		this.resolutionProposalThreshold = resolutionProposalThreshold;
+	public ResolutionProposal setResolutionProposalThreshold(Max350Text resolutionProposalThreshold) {
+		this.resolutionProposalThreshold = Objects.requireNonNull(resolutionProposalThreshold);
+		return this;
 	}
 
 	public PercentageRate getResolutionProposalThresholdPercentage() {
 		return resolutionProposalThresholdPercentage;
 	}
 
-	public void setResolutionProposalThresholdPercentage(PercentageRate resolutionProposalThresholdPercentage) {
-		this.resolutionProposalThresholdPercentage = resolutionProposalThresholdPercentage;
+	public ResolutionProposal setResolutionProposalThresholdPercentage(PercentageRate resolutionProposalThresholdPercentage) {
+		this.resolutionProposalThresholdPercentage = Objects.requireNonNull(resolutionProposalThresholdPercentage);
+		return this;
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public ResolutionProposal setMeeting(com.tools20022.repository.entity.Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 }

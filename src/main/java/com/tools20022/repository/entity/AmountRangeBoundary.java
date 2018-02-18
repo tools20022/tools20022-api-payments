@@ -25,6 +25,7 @@ import com.tools20022.repository.msg.AmountRangeBoundary1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Limit for an amount range.
@@ -73,8 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +91,8 @@ public class AmountRangeBoundary {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AmountRange fromAmountRange;
 	/**
-	 * Amount range for which a lower boundary is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,8 +139,8 @@ public class AmountRangeBoundary {
 	};
 	protected ImpliedCurrencyAndAmount boundaryAmount;
 	/**
-	 * Amount value of the range limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,9 +195,8 @@ public class AmountRangeBoundary {
 	};
 	protected YesNoIndicator included;
 	/**
-	 * Indicates whether the boundary amount is included in the range of amount
-	 * values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,8 +253,8 @@ public class AmountRangeBoundary {
 	};
 	protected AmountRange toAmountRange;
 	/**
-	 * Amount range for which an upper boundary is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,7 +303,7 @@ public class AmountRangeBoundary {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRangeBoundary";
 				definition = "Limit for an amount range.";
@@ -325,31 +325,35 @@ public class AmountRangeBoundary {
 		return fromAmountRange;
 	}
 
-	public void setFromAmountRange(com.tools20022.repository.entity.AmountRange fromAmountRange) {
-		this.fromAmountRange = fromAmountRange;
+	public AmountRangeBoundary setFromAmountRange(com.tools20022.repository.entity.AmountRange fromAmountRange) {
+		this.fromAmountRange = Objects.requireNonNull(fromAmountRange);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getBoundaryAmount() {
 		return boundaryAmount;
 	}
 
-	public void setBoundaryAmount(ImpliedCurrencyAndAmount boundaryAmount) {
-		this.boundaryAmount = boundaryAmount;
+	public AmountRangeBoundary setBoundaryAmount(ImpliedCurrencyAndAmount boundaryAmount) {
+		this.boundaryAmount = Objects.requireNonNull(boundaryAmount);
+		return this;
 	}
 
 	public YesNoIndicator getIncluded() {
 		return included;
 	}
 
-	public void setIncluded(YesNoIndicator included) {
-		this.included = included;
+	public AmountRangeBoundary setIncluded(YesNoIndicator included) {
+		this.included = Objects.requireNonNull(included);
+		return this;
 	}
 
 	public AmountRange getToAmountRange() {
 		return toAmountRange;
 	}
 
-	public void setToAmountRange(com.tools20022.repository.entity.AmountRange toAmountRange) {
-		this.toAmountRange = toAmountRange;
+	public AmountRangeBoundary setToAmountRange(com.tools20022.repository.entity.AmountRange toAmountRange) {
+		this.toAmountRange = Objects.requireNonNull(toAmountRange);
+		return this;
 	}
 }

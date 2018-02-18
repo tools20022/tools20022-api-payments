@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.TaxPeriod;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Period of time details related to the tax payment."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TaxPeriod1", propOrder = {"year", "type", "fromToDate"})
 public class TaxPeriod1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Yr")
 	protected ISODate year;
 	/**
-	 * Year related to the tax payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class TaxPeriod1 {
 	public static final MMMessageAttribute mmYear = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TaxPeriod.mmYear;
-			componentContext_lazy = () -> TaxPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "Yr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,10 +118,11 @@ public class TaxPeriod1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Tp")
 	protected TaxRecordPeriod1Code type;
 	/**
-	 * Identification of the period related to the tax payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +155,7 @@ public class TaxPeriod1 {
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TaxPeriod.mmType;
-			componentContext_lazy = () -> TaxPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,11 +166,11 @@ public class TaxPeriod1 {
 			simpleType_lazy = () -> TaxRecordPeriod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "FrToDt")
 	protected DatePeriodDetails fromToDate;
 	/**
-	 * Range of time between a start date and an end date for which the tax
-	 * report is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,7 +205,7 @@ public class TaxPeriod1 {
 	public static final MMMessageAttribute mmFromToDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TaxPeriod.mmFromToDate;
-			componentContext_lazy = () -> TaxPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "FrToDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,9 +220,9 @@ public class TaxPeriod1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TaxPeriod1.mmYear, TaxPeriod1.mmType, TaxPeriod1.mmFromToDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxPeriod1.mmYear, com.tools20022.repository.msg.TaxPeriod1.mmType, com.tools20022.repository.msg.TaxPeriod1.mmFromToDate);
 				trace_lazy = () -> TaxPeriod.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxPeriod1";
 				definition = "Period of time details related to the tax payment.";
@@ -228,30 +231,30 @@ public class TaxPeriod1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Yr")
-	public ISODate getYear() {
-		return year;
+	public Optional<ISODate> getYear() {
+		return year == null ? Optional.empty() : Optional.of(year);
 	}
 
-	public void setYear(ISODate year) {
+	public TaxPeriod1 setYear(ISODate year) {
 		this.year = year;
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public TaxRecordPeriod1Code getType() {
-		return type;
+	public Optional<TaxRecordPeriod1Code> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(TaxRecordPeriod1Code type) {
+	public TaxPeriod1 setType(TaxRecordPeriod1Code type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "FrToDt")
-	public DatePeriodDetails getFromToDate() {
-		return fromToDate;
+	public Optional<DatePeriodDetails> getFromToDate() {
+		return fromToDate == null ? Optional.empty() : Optional.of(fromToDate);
 	}
 
-	public void setFromToDate(com.tools20022.repository.msg.DatePeriodDetails fromToDate) {
+	public TaxPeriod1 setFromToDate(com.tools20022.repository.msg.DatePeriodDetails fromToDate) {
 		this.fromToDate = fromToDate;
+		return this;
 	}
 }

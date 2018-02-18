@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Payment processes initiated by a payment card.
@@ -162,8 +161,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -179,9 +178,8 @@ public class CardPaymentAcquiring {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PointOfInteraction pointOfInteraction;
 	/**
-	 * Describes the Point of Interaction through which the payment by card was
-	 * initiated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,8 +238,8 @@ public class CardPaymentAcquiring {
 	};
 	protected CardPaymentServiceTypeCode cardPaymentService;
 	/**
-	 * Type of service provided by the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,9 +297,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max35Text transactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the POI (Point Of
-	 * Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,9 +357,8 @@ public class CardPaymentAcquiring {
 	};
 	protected ISODateTime transactionDateTime;
 	/**
-	 * Local date and time of the transaction assigned by the POI (Point Of
-	 * Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,8 +414,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max10000Binary iCCRelatedData;
 	/**
-	 * Data related to the interface of an integrated circuit card application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -476,8 +472,8 @@ public class CardPaymentAcquiring {
 	};
 	protected CardPayment relatedCardPayment;
 	/**
-	 * Card payment which is at the origin of the acquiring process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,9 +521,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator cardPresent;
 	/**
-	 * Indicates whether the transaction has been initiated by a card physically
-	 * present or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -584,9 +579,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator cardholderPresent;
 	/**
-	 * Indicates whether the transaction has been initiated in presence of the
-	 * cardholder or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -643,8 +637,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator onLineContext;
 	/**
-	 * On-line or off-line context of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -699,8 +693,8 @@ public class CardPaymentAcquiring {
 	};
 	protected AttendanceContextCode attendanceContext;
 	/**
-	 * Human attendance at the POI location during the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -756,8 +750,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TransactionEnvironmentCode transactionEnvironment;
 	/**
-	 * Indicates the environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -812,9 +806,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TransactionChannelCode transactionChannel;
 	/**
-	 * Identifies the type of the communication channels used by the cardholder
-	 * to the acceptor system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -871,9 +864,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator attendantMessageCapable;
 	/**
-	 * Indicates whether a message can be sent or not on an attendant display
-	 * (attendant display present or not).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -930,8 +922,8 @@ public class CardPaymentAcquiring {
 	};
 	protected ISO2ALanguageCode attendantLanguage;
 	/**
-	 * Language used to display messages to the attendant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -986,8 +978,8 @@ public class CardPaymentAcquiring {
 	};
 	protected CardDataReadingCode cardDataEntryMode;
 	/**
-	 * Entry mode of the card data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1042,8 +1034,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator fallbackIndicator;
 	/**
-	 * Indicator of a transaction fallback.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1098,10 +1090,8 @@ public class CardPaymentAcquiring {
 	};
 	protected List<com.tools20022.repository.entity.TerminalManagementSystem> tMSTrigger;
 	/**
-	 * Instructs the POI (Point Of Interaction) how to contact the host of the
-	 * terminal management system (TMS), to initiate the maintenance of the
-	 * terminal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1150,9 +1140,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max35Text initiatorTransactionIdentifier;
 	/**
-	 * Identification of the transaction assigned by the initiating party for
-	 * the recipient party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1199,9 +1188,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator reversal;
 	/**
-	 * Notify that a previous transaction has to be reversed if this original
-	 * transaction has been approved by the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1249,8 +1237,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max35Text interchangeData;
 	/**
-	 * Interchange information related to the card scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1295,8 +1283,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max35NumericText unattendedLevelCategory;
 	/**
-	 * Transaction category level on an unattended POI (Point Of Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1344,8 +1332,8 @@ public class CardPaymentAcquiring {
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentValidation> validation;
 	/**
-	 * Results and parameters of the card payment verification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1392,9 +1380,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator completionRequired;
 	/**
-	 * Indicates whether the acquirer requires a further exchange after the
-	 * completion of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1442,8 +1429,8 @@ public class CardPaymentAcquiring {
 	};
 	protected ActionTypeCode actionType;
 	/**
-	 * Type of action to be performed by the POI (Point Of Interaction) system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1491,8 +1478,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max256Text actionMessage;
 	/**
-	 * Message to be displayed or printed to the cardholder or the cashier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1538,8 +1525,8 @@ public class CardPaymentAcquiring {
 	};
 	protected TrueFalseIndicator captureIndicator;
 	/**
-	 * Indicates whether the transaction is captured or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1585,9 +1572,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Max35Text recipientTransactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the recipient party for the
-	 * initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1634,9 +1620,8 @@ public class CardPaymentAcquiring {
 	};
 	protected LocationCategoryCode location;
 	/**
-	 * Location category of the place where the merchant actually performed the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1684,8 +1669,8 @@ public class CardPaymentAcquiring {
 	};
 	protected Country country;
 	/**
-	 * Country of the merchant where the transaction took place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1734,7 +1719,7 @@ public class CardPaymentAcquiring {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentAcquiring";
 				definition = "Payment processes initiated by a payment card.";
@@ -1766,235 +1751,264 @@ public class CardPaymentAcquiring {
 		return mmObject_lazy.get();
 	}
 
-	public PointOfInteraction getPointOfInteraction() {
-		return pointOfInteraction;
+	public Optional<PointOfInteraction> getPointOfInteraction() {
+		return pointOfInteraction == null ? Optional.empty() : Optional.of(pointOfInteraction);
 	}
 
-	public void setPointOfInteraction(com.tools20022.repository.entity.PointOfInteraction pointOfInteraction) {
+	public CardPaymentAcquiring setPointOfInteraction(com.tools20022.repository.entity.PointOfInteraction pointOfInteraction) {
 		this.pointOfInteraction = pointOfInteraction;
+		return this;
 	}
 
 	public CardPaymentServiceTypeCode getCardPaymentService() {
 		return cardPaymentService;
 	}
 
-	public void setCardPaymentService(CardPaymentServiceTypeCode cardPaymentService) {
-		this.cardPaymentService = cardPaymentService;
+	public CardPaymentAcquiring setCardPaymentService(CardPaymentServiceTypeCode cardPaymentService) {
+		this.cardPaymentService = Objects.requireNonNull(cardPaymentService);
+		return this;
 	}
 
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public CardPaymentAcquiring setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
 	public ISODateTime getTransactionDateTime() {
 		return transactionDateTime;
 	}
 
-	public void setTransactionDateTime(ISODateTime transactionDateTime) {
-		this.transactionDateTime = transactionDateTime;
+	public CardPaymentAcquiring setTransactionDateTime(ISODateTime transactionDateTime) {
+		this.transactionDateTime = Objects.requireNonNull(transactionDateTime);
+		return this;
 	}
 
 	public Max10000Binary getICCRelatedData() {
 		return iCCRelatedData;
 	}
 
-	public void setICCRelatedData(Max10000Binary iCCRelatedData) {
-		this.iCCRelatedData = iCCRelatedData;
+	public CardPaymentAcquiring setICCRelatedData(Max10000Binary iCCRelatedData) {
+		this.iCCRelatedData = Objects.requireNonNull(iCCRelatedData);
+		return this;
 	}
 
-	public CardPayment getRelatedCardPayment() {
-		return relatedCardPayment;
+	public Optional<CardPayment> getRelatedCardPayment() {
+		return relatedCardPayment == null ? Optional.empty() : Optional.of(relatedCardPayment);
 	}
 
-	public void setRelatedCardPayment(com.tools20022.repository.entity.CardPayment relatedCardPayment) {
+	public CardPaymentAcquiring setRelatedCardPayment(com.tools20022.repository.entity.CardPayment relatedCardPayment) {
 		this.relatedCardPayment = relatedCardPayment;
+		return this;
 	}
 
 	public TrueFalseIndicator getCardPresent() {
 		return cardPresent;
 	}
 
-	public void setCardPresent(TrueFalseIndicator cardPresent) {
-		this.cardPresent = cardPresent;
+	public CardPaymentAcquiring setCardPresent(TrueFalseIndicator cardPresent) {
+		this.cardPresent = Objects.requireNonNull(cardPresent);
+		return this;
 	}
 
 	public TrueFalseIndicator getCardholderPresent() {
 		return cardholderPresent;
 	}
 
-	public void setCardholderPresent(TrueFalseIndicator cardholderPresent) {
-		this.cardholderPresent = cardholderPresent;
+	public CardPaymentAcquiring setCardholderPresent(TrueFalseIndicator cardholderPresent) {
+		this.cardholderPresent = Objects.requireNonNull(cardholderPresent);
+		return this;
 	}
 
 	public TrueFalseIndicator getOnLineContext() {
 		return onLineContext;
 	}
 
-	public void setOnLineContext(TrueFalseIndicator onLineContext) {
-		this.onLineContext = onLineContext;
+	public CardPaymentAcquiring setOnLineContext(TrueFalseIndicator onLineContext) {
+		this.onLineContext = Objects.requireNonNull(onLineContext);
+		return this;
 	}
 
 	public AttendanceContextCode getAttendanceContext() {
 		return attendanceContext;
 	}
 
-	public void setAttendanceContext(AttendanceContextCode attendanceContext) {
-		this.attendanceContext = attendanceContext;
+	public CardPaymentAcquiring setAttendanceContext(AttendanceContextCode attendanceContext) {
+		this.attendanceContext = Objects.requireNonNull(attendanceContext);
+		return this;
 	}
 
 	public TransactionEnvironmentCode getTransactionEnvironment() {
 		return transactionEnvironment;
 	}
 
-	public void setTransactionEnvironment(TransactionEnvironmentCode transactionEnvironment) {
-		this.transactionEnvironment = transactionEnvironment;
+	public CardPaymentAcquiring setTransactionEnvironment(TransactionEnvironmentCode transactionEnvironment) {
+		this.transactionEnvironment = Objects.requireNonNull(transactionEnvironment);
+		return this;
 	}
 
 	public TransactionChannelCode getTransactionChannel() {
 		return transactionChannel;
 	}
 
-	public void setTransactionChannel(TransactionChannelCode transactionChannel) {
-		this.transactionChannel = transactionChannel;
+	public CardPaymentAcquiring setTransactionChannel(TransactionChannelCode transactionChannel) {
+		this.transactionChannel = Objects.requireNonNull(transactionChannel);
+		return this;
 	}
 
 	public TrueFalseIndicator getAttendantMessageCapable() {
 		return attendantMessageCapable;
 	}
 
-	public void setAttendantMessageCapable(TrueFalseIndicator attendantMessageCapable) {
-		this.attendantMessageCapable = attendantMessageCapable;
+	public CardPaymentAcquiring setAttendantMessageCapable(TrueFalseIndicator attendantMessageCapable) {
+		this.attendantMessageCapable = Objects.requireNonNull(attendantMessageCapable);
+		return this;
 	}
 
 	public ISO2ALanguageCode getAttendantLanguage() {
 		return attendantLanguage;
 	}
 
-	public void setAttendantLanguage(ISO2ALanguageCode attendantLanguage) {
-		this.attendantLanguage = attendantLanguage;
+	public CardPaymentAcquiring setAttendantLanguage(ISO2ALanguageCode attendantLanguage) {
+		this.attendantLanguage = Objects.requireNonNull(attendantLanguage);
+		return this;
 	}
 
 	public CardDataReadingCode getCardDataEntryMode() {
 		return cardDataEntryMode;
 	}
 
-	public void setCardDataEntryMode(CardDataReadingCode cardDataEntryMode) {
-		this.cardDataEntryMode = cardDataEntryMode;
+	public CardPaymentAcquiring setCardDataEntryMode(CardDataReadingCode cardDataEntryMode) {
+		this.cardDataEntryMode = Objects.requireNonNull(cardDataEntryMode);
+		return this;
 	}
 
 	public TrueFalseIndicator getFallbackIndicator() {
 		return fallbackIndicator;
 	}
 
-	public void setFallbackIndicator(TrueFalseIndicator fallbackIndicator) {
-		this.fallbackIndicator = fallbackIndicator;
+	public CardPaymentAcquiring setFallbackIndicator(TrueFalseIndicator fallbackIndicator) {
+		this.fallbackIndicator = Objects.requireNonNull(fallbackIndicator);
+		return this;
 	}
 
 	public List<TerminalManagementSystem> getTMSTrigger() {
-		return tMSTrigger;
+		return tMSTrigger == null ? tMSTrigger = new ArrayList<>() : tMSTrigger;
 	}
 
-	public void setTMSTrigger(List<com.tools20022.repository.entity.TerminalManagementSystem> tMSTrigger) {
-		this.tMSTrigger = tMSTrigger;
+	public CardPaymentAcquiring setTMSTrigger(List<com.tools20022.repository.entity.TerminalManagementSystem> tMSTrigger) {
+		this.tMSTrigger = Objects.requireNonNull(tMSTrigger);
+		return this;
 	}
 
 	public Max35Text getInitiatorTransactionIdentifier() {
 		return initiatorTransactionIdentifier;
 	}
 
-	public void setInitiatorTransactionIdentifier(Max35Text initiatorTransactionIdentifier) {
-		this.initiatorTransactionIdentifier = initiatorTransactionIdentifier;
+	public CardPaymentAcquiring setInitiatorTransactionIdentifier(Max35Text initiatorTransactionIdentifier) {
+		this.initiatorTransactionIdentifier = Objects.requireNonNull(initiatorTransactionIdentifier);
+		return this;
 	}
 
 	public TrueFalseIndicator getReversal() {
 		return reversal;
 	}
 
-	public void setReversal(TrueFalseIndicator reversal) {
-		this.reversal = reversal;
+	public CardPaymentAcquiring setReversal(TrueFalseIndicator reversal) {
+		this.reversal = Objects.requireNonNull(reversal);
+		return this;
 	}
 
 	public Max35Text getInterchangeData() {
 		return interchangeData;
 	}
 
-	public void setInterchangeData(Max35Text interchangeData) {
-		this.interchangeData = interchangeData;
+	public CardPaymentAcquiring setInterchangeData(Max35Text interchangeData) {
+		this.interchangeData = Objects.requireNonNull(interchangeData);
+		return this;
 	}
 
 	public Max35NumericText getUnattendedLevelCategory() {
 		return unattendedLevelCategory;
 	}
 
-	public void setUnattendedLevelCategory(Max35NumericText unattendedLevelCategory) {
-		this.unattendedLevelCategory = unattendedLevelCategory;
+	public CardPaymentAcquiring setUnattendedLevelCategory(Max35NumericText unattendedLevelCategory) {
+		this.unattendedLevelCategory = Objects.requireNonNull(unattendedLevelCategory);
+		return this;
 	}
 
 	public List<CardPaymentValidation> getValidation() {
-		return validation;
+		return validation == null ? validation = new ArrayList<>() : validation;
 	}
 
-	public void setValidation(List<com.tools20022.repository.entity.CardPaymentValidation> validation) {
-		this.validation = validation;
+	public CardPaymentAcquiring setValidation(List<com.tools20022.repository.entity.CardPaymentValidation> validation) {
+		this.validation = Objects.requireNonNull(validation);
+		return this;
 	}
 
 	public TrueFalseIndicator getCompletionRequired() {
 		return completionRequired;
 	}
 
-	public void setCompletionRequired(TrueFalseIndicator completionRequired) {
-		this.completionRequired = completionRequired;
+	public CardPaymentAcquiring setCompletionRequired(TrueFalseIndicator completionRequired) {
+		this.completionRequired = Objects.requireNonNull(completionRequired);
+		return this;
 	}
 
 	public ActionTypeCode getActionType() {
 		return actionType;
 	}
 
-	public void setActionType(ActionTypeCode actionType) {
-		this.actionType = actionType;
+	public CardPaymentAcquiring setActionType(ActionTypeCode actionType) {
+		this.actionType = Objects.requireNonNull(actionType);
+		return this;
 	}
 
 	public Max256Text getActionMessage() {
 		return actionMessage;
 	}
 
-	public void setActionMessage(Max256Text actionMessage) {
-		this.actionMessage = actionMessage;
+	public CardPaymentAcquiring setActionMessage(Max256Text actionMessage) {
+		this.actionMessage = Objects.requireNonNull(actionMessage);
+		return this;
 	}
 
 	public TrueFalseIndicator getCaptureIndicator() {
 		return captureIndicator;
 	}
 
-	public void setCaptureIndicator(TrueFalseIndicator captureIndicator) {
-		this.captureIndicator = captureIndicator;
+	public CardPaymentAcquiring setCaptureIndicator(TrueFalseIndicator captureIndicator) {
+		this.captureIndicator = Objects.requireNonNull(captureIndicator);
+		return this;
 	}
 
 	public Max35Text getRecipientTransactionIdentification() {
 		return recipientTransactionIdentification;
 	}
 
-	public void setRecipientTransactionIdentification(Max35Text recipientTransactionIdentification) {
-		this.recipientTransactionIdentification = recipientTransactionIdentification;
+	public CardPaymentAcquiring setRecipientTransactionIdentification(Max35Text recipientTransactionIdentification) {
+		this.recipientTransactionIdentification = Objects.requireNonNull(recipientTransactionIdentification);
+		return this;
 	}
 
 	public LocationCategoryCode getLocation() {
 		return location;
 	}
 
-	public void setLocation(LocationCategoryCode location) {
-		this.location = location;
+	public CardPaymentAcquiring setLocation(LocationCategoryCode location) {
+		this.location = Objects.requireNonNull(location);
+		return this;
 	}
 
-	public Country getCountry() {
-		return country;
+	public Optional<Country> getCountry() {
+		return country == null ? Optional.empty() : Optional.of(country);
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
+	public CardPaymentAcquiring setCountry(com.tools20022.repository.entity.Country country) {
 		this.country = country;
+		return this;
 	}
 }

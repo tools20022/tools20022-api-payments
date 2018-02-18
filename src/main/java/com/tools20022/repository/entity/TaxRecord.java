@@ -25,6 +25,8 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Record of tax details.
@@ -84,8 +86,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,8 +103,8 @@ public class TaxRecord {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Tax tax;
 	/**
-	 * Tax for which tax record information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,8 +156,8 @@ public class TaxRecord {
 	};
 	protected Max35Text taxRecordType;
 	/**
-	 * High level code to identify the type of tax details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,9 +209,8 @@ public class TaxRecord {
 	};
 	protected Max35Text category;
 	/**
-	 * Description of the tax that is being paid, including specific
-	 * representation (code) required by the tax authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,9 +264,8 @@ public class TaxRecord {
 	};
 	protected Max35Text status;
 	/**
-	 * Code provided by local authority to identify the status of the party that
-	 * has drawn up the settlement document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,8 +319,8 @@ public class TaxRecord {
 	};
 	protected Max35Text formsCode;
 	/**
-	 * Code to identify on which template the tax report is to be provided
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -373,8 +373,8 @@ public class TaxRecord {
 	};
 	protected TaxPeriod period;
 	/**
-	 * Period of time details related to the tax payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,8 +428,8 @@ public class TaxRecord {
 	};
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of the tax record.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,9 +492,8 @@ public class TaxRecord {
 	};
 	protected Max35Text categoryDescription;
 	/**
-	 * Description of the tax that is being paid, including specific
-	 * representation required by taxing authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,7 +541,7 @@ public class TaxRecord {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxRecord";
 				definition = "Record of tax details.";
@@ -561,67 +560,75 @@ public class TaxRecord {
 		return mmObject_lazy.get();
 	}
 
-	public Tax getTax() {
-		return tax;
+	public Optional<Tax> getTax() {
+		return tax == null ? Optional.empty() : Optional.of(tax);
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
+	public TaxRecord setTax(com.tools20022.repository.entity.Tax tax) {
 		this.tax = tax;
+		return this;
 	}
 
 	public Max35Text getTaxRecordType() {
 		return taxRecordType;
 	}
 
-	public void setTaxRecordType(Max35Text taxRecordType) {
-		this.taxRecordType = taxRecordType;
+	public TaxRecord setTaxRecordType(Max35Text taxRecordType) {
+		this.taxRecordType = Objects.requireNonNull(taxRecordType);
+		return this;
 	}
 
 	public Max35Text getCategory() {
 		return category;
 	}
 
-	public void setCategory(Max35Text category) {
-		this.category = category;
+	public TaxRecord setCategory(Max35Text category) {
+		this.category = Objects.requireNonNull(category);
+		return this;
 	}
 
 	public Max35Text getStatus() {
 		return status;
 	}
 
-	public void setStatus(Max35Text status) {
-		this.status = status;
+	public TaxRecord setStatus(Max35Text status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public Max35Text getFormsCode() {
 		return formsCode;
 	}
 
-	public void setFormsCode(Max35Text formsCode) {
-		this.formsCode = formsCode;
+	public TaxRecord setFormsCode(Max35Text formsCode) {
+		this.formsCode = Objects.requireNonNull(formsCode);
+		return this;
 	}
 
 	public TaxPeriod getPeriod() {
 		return period;
 	}
 
-	public void setPeriod(com.tools20022.repository.entity.TaxPeriod period) {
-		this.period = period;
+	public TaxRecord setPeriod(com.tools20022.repository.entity.TaxPeriod period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public TaxRecord setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public Max35Text getCategoryDescription() {
 		return categoryDescription;
 	}
 
-	public void setCategoryDescription(Max35Text categoryDescription) {
-		this.categoryDescription = categoryDescription;
+	public TaxRecord setCategoryDescription(Max35Text categoryDescription) {
+		this.categoryDescription = Objects.requireNonNull(categoryDescription);
+		return this;
 	}
 }

@@ -37,20 +37,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Enabled
- * LimitStatusCode.mmEnabled}</li>
+ * LimitStatusCode.Enabled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Disabled
- * LimitStatusCode.mmDisabled}</li>
+ * LimitStatusCode.Disabled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Deleted
- * LimitStatusCode.mmDeleted}</li>
+ * LimitStatusCode.Deleted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Requested
- * LimitStatusCode.mmRequested}</li>
+ * LimitStatusCode.Requested}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -199,7 +199,7 @@ public class LimitStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ENAB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitStatusCode";

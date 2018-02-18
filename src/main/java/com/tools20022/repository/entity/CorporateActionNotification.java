@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The process of notifying of an upcoming corporate action. It provides
@@ -66,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,9 +87,8 @@ public class CorporateActionNotification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,8 +138,8 @@ public class CorporateActionNotification {
 	};
 	protected Max35Text corporateActionNotificationIdentification;
 	/**
-	 * Identifies the corporate action notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,8 +184,8 @@ public class CorporateActionNotification {
 	};
 	protected CorporateActionNotificationTypeCode notificationType;
 	/**
-	 * Specifies the type of notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,8 +231,8 @@ public class CorporateActionNotification {
 	};
 	protected ISODateTime creationDateTime;
 	/**
-	 * Specifies the date and time when the notification was issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +280,7 @@ public class CorporateActionNotification {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNotification";
 				definition = "The process of notifying of an upcoming corporate action. It provides corporate action details including the different options.";
@@ -296,35 +297,39 @@ public class CorporateActionNotification {
 		return mmObject_lazy.get();
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionNotification setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public Max35Text getCorporateActionNotificationIdentification() {
 		return corporateActionNotificationIdentification;
 	}
 
-	public void setCorporateActionNotificationIdentification(Max35Text corporateActionNotificationIdentification) {
-		this.corporateActionNotificationIdentification = corporateActionNotificationIdentification;
+	public CorporateActionNotification setCorporateActionNotificationIdentification(Max35Text corporateActionNotificationIdentification) {
+		this.corporateActionNotificationIdentification = Objects.requireNonNull(corporateActionNotificationIdentification);
+		return this;
 	}
 
 	public CorporateActionNotificationTypeCode getNotificationType() {
 		return notificationType;
 	}
 
-	public void setNotificationType(CorporateActionNotificationTypeCode notificationType) {
-		this.notificationType = notificationType;
+	public CorporateActionNotification setNotificationType(CorporateActionNotificationTypeCode notificationType) {
+		this.notificationType = Objects.requireNonNull(notificationType);
+		return this;
 	}
 
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public CorporateActionNotification setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 }

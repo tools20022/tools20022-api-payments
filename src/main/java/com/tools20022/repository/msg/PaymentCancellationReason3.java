@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.PaymentStatus;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides further details on the reason of the cancellation request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentCancellationReason3", propOrder = {"originator", "reason", "additionalInformation"})
 public class PaymentCancellationReason3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Orgtr")
 	protected PartyIdentification43 originator;
 	/**
-	 * Party that issues the cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,7 +113,7 @@ public class PaymentCancellationReason3 {
 	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> PaymentCancellationReason3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCancellationReason3.mmObject();
 			isDerived = false;
 			xmlTag = "Orgtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,10 +125,11 @@ public class PaymentCancellationReason3 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "Rsn")
 	protected CancellationReason33Choice reason;
 	/**
-	 * Specifies the reason for the cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,7 +162,7 @@ public class PaymentCancellationReason3 {
 	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentStatus.mmCancellationReason;
-			componentContext_lazy = () -> PaymentCancellationReason3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCancellationReason3.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,10 +174,11 @@ public class PaymentCancellationReason3 {
 			type_lazy = () -> CancellationReason33Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected List<Max105Text> additionalInformation;
 	/**
-	 * Further details on the cancellation request reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,7 +205,7 @@ public class PaymentCancellationReason3 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> PaymentCancellationReason3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCancellationReason3.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,9 +219,10 @@ public class PaymentCancellationReason3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentCancellationReason3.mmOriginator, PaymentCancellationReason3.mmReason, PaymentCancellationReason3.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentCancellationReason3.mmOriginator, com.tools20022.repository.msg.PaymentCancellationReason3.mmReason,
+						com.tools20022.repository.msg.PaymentCancellationReason3.mmAdditionalInformation);
 				trace_lazy = () -> PaymentStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCancellationReason3";
 				definition = "Provides further details on the reason of the cancellation request.";
@@ -228,30 +231,30 @@ public class PaymentCancellationReason3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Orgtr")
-	public PartyIdentification43 getOriginator() {
-		return originator;
+	public Optional<PartyIdentification43> getOriginator() {
+		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public void setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
+	public PaymentCancellationReason3 setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
 		this.originator = originator;
+		return this;
 	}
 
-	@XmlElement(name = "Rsn")
-	public CancellationReason33Choice getReason() {
-		return reason;
+	public Optional<CancellationReason33Choice> getReason() {
+		return reason == null ? Optional.empty() : Optional.of(reason);
 	}
 
-	public void setReason(CancellationReason33Choice reason) {
+	public PaymentCancellationReason3 setReason(CancellationReason33Choice reason) {
 		this.reason = reason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
 	public List<Max105Text> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<Max105Text> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public PaymentCancellationReason3 setAdditionalInformation(List<Max105Text> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 }

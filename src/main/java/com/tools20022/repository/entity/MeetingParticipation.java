@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the number of voting rights and of outstanding securities.
@@ -66,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,9 +86,8 @@ public class MeetingParticipation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount totalNumberOfSecuritiesOutstanding;
 	/**
-	 * Number of securities admitted to the vote, expressed as an amount and a
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,8 +135,8 @@ public class MeetingParticipation {
 	};
 	protected Number totalNumberOfVotingRights;
 	/**
-	 * Number of rights admitted to the vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +181,8 @@ public class MeetingParticipation {
 	};
 	protected ISODate calculationDate;
 	/**
-	 * Date of calculation of the total number of oustanding securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,9 +228,8 @@ public class MeetingParticipation {
 	};
 	protected Number totalNumberOfSecurities;
 	/**
-	 * Number of securities admitted to the vote, expressed as a number of
-	 * securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,8 +276,8 @@ public class MeetingParticipation {
 	};
 	protected Meeting meeting;
 	/**
-	 * Meeting for which participation conditions are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -326,7 +326,7 @@ public class MeetingParticipation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingParticipation";
 				definition = "Specifies the number of voting rights and of outstanding securities.";
@@ -348,39 +348,44 @@ public class MeetingParticipation {
 		return totalNumberOfSecuritiesOutstanding;
 	}
 
-	public void setTotalNumberOfSecuritiesOutstanding(CurrencyAndAmount totalNumberOfSecuritiesOutstanding) {
-		this.totalNumberOfSecuritiesOutstanding = totalNumberOfSecuritiesOutstanding;
+	public MeetingParticipation setTotalNumberOfSecuritiesOutstanding(CurrencyAndAmount totalNumberOfSecuritiesOutstanding) {
+		this.totalNumberOfSecuritiesOutstanding = Objects.requireNonNull(totalNumberOfSecuritiesOutstanding);
+		return this;
 	}
 
 	public Number getTotalNumberOfVotingRights() {
 		return totalNumberOfVotingRights;
 	}
 
-	public void setTotalNumberOfVotingRights(Number totalNumberOfVotingRights) {
-		this.totalNumberOfVotingRights = totalNumberOfVotingRights;
+	public MeetingParticipation setTotalNumberOfVotingRights(Number totalNumberOfVotingRights) {
+		this.totalNumberOfVotingRights = Objects.requireNonNull(totalNumberOfVotingRights);
+		return this;
 	}
 
 	public ISODate getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODate calculationDate) {
-		this.calculationDate = calculationDate;
+	public MeetingParticipation setCalculationDate(ISODate calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public Number getTotalNumberOfSecurities() {
 		return totalNumberOfSecurities;
 	}
 
-	public void setTotalNumberOfSecurities(Number totalNumberOfSecurities) {
-		this.totalNumberOfSecurities = totalNumberOfSecurities;
+	public MeetingParticipation setTotalNumberOfSecurities(Number totalNumberOfSecurities) {
+		this.totalNumberOfSecurities = Objects.requireNonNull(totalNumberOfSecurities);
+		return this;
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public MeetingParticipation setMeeting(com.tools20022.repository.entity.Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 }

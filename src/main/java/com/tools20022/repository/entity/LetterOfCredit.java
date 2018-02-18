@@ -22,9 +22,11 @@ import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Instrument issued by a bank substituting its name and credit standing for
@@ -67,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +88,8 @@ public class LetterOfCredit extends Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of the letter/documentary credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +135,8 @@ public class LetterOfCredit extends Asset {
 	};
 	protected List<com.tools20022.repository.entity.Document> document;
 	/**
-	 * Document which materialises the letter of credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,8 +181,8 @@ public class LetterOfCredit extends Asset {
 	};
 	protected CommercialTradeSettlement commercialTradeSettlement;
 	/**
-	 * Settlement process related to a letter of credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,7 +232,7 @@ public class LetterOfCredit extends Asset {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LetterOfCredit";
 				definition = "Instrument issued by a bank substituting its name and credit standing for that of its customer. A letter of credit is a written undertaking of the bank, issued for the account of a customer (the applicant), to honour a demand for payment, upon the beneficiary's compliance with the terms and conditions set forth in the undertaking.";
@@ -252,23 +254,26 @@ public class LetterOfCredit extends Asset {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public LetterOfCredit setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public List<Document> getDocument() {
-		return document;
+		return document == null ? document = new ArrayList<>() : document;
 	}
 
-	public void setDocument(List<com.tools20022.repository.entity.Document> document) {
-		this.document = document;
+	public LetterOfCredit setDocument(List<com.tools20022.repository.entity.Document> document) {
+		this.document = Objects.requireNonNull(document);
+		return this;
 	}
 
 	public CommercialTradeSettlement getCommercialTradeSettlement() {
 		return commercialTradeSettlement;
 	}
 
-	public void setCommercialTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement commercialTradeSettlement) {
-		this.commercialTradeSettlement = commercialTradeSettlement;
+	public LetterOfCredit setCommercialTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement commercialTradeSettlement) {
+		this.commercialTradeSettlement = Objects.requireNonNull(commercialTradeSettlement);
+		return this;
 	}
 }

@@ -26,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Mechanism allowing financial institutions that are members of a clearing
@@ -79,8 +81,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,10 +100,8 @@ public class Clearing extends ObligationFulfilment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator clearingThresholdIndicator;
 	/**
-	 * Specifies whether the contract is above or below the clearing threshold.
-	 * Where N indicates the contract is below the clearing threshold and Y
-	 * indicates the contract is above the clearing threshold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,8 +148,8 @@ public class Clearing extends ObligationFulfilment {
 	};
 	protected Max35Text clearedIdentification;
 	/**
-	 * Reference number assigned by the Central Counterparty (CCP).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,9 +194,8 @@ public class Clearing extends ObligationFulfilment {
 	};
 	protected YesNoIndicator guaranteedTrade;
 	/**
-	 * Indicates if the central counterparty has to novate and guarantee the
-	 * trade or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,8 +242,8 @@ public class Clearing extends ObligationFulfilment {
 	};
 	protected TradePostingCode tradePostingType;
 	/**
-	 * Indicates how a trade is maintained in the clearing account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,9 +289,8 @@ public class Clearing extends ObligationFulfilment {
 	};
 	protected ClearingSystem clearingSystem;
 	/**
-	 * Specifies the system which plays a role in the clearing of securities or
-	 * cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -342,7 +340,7 @@ public class Clearing extends ObligationFulfilment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Clearing";
 				definition = "Mechanism allowing financial institutions that are members of a clearing house to pay and to receive the amounts linked to the transactions that they have executed on the market. The addition of all the positions per product results in one net position (due or to receive) with the clearing house or the central clearing counterparty.";
@@ -365,39 +363,44 @@ public class Clearing extends ObligationFulfilment {
 		return clearingThresholdIndicator;
 	}
 
-	public void setClearingThresholdIndicator(YesNoIndicator clearingThresholdIndicator) {
-		this.clearingThresholdIndicator = clearingThresholdIndicator;
+	public Clearing setClearingThresholdIndicator(YesNoIndicator clearingThresholdIndicator) {
+		this.clearingThresholdIndicator = Objects.requireNonNull(clearingThresholdIndicator);
+		return this;
 	}
 
 	public Max35Text getClearedIdentification() {
 		return clearedIdentification;
 	}
 
-	public void setClearedIdentification(Max35Text clearedIdentification) {
-		this.clearedIdentification = clearedIdentification;
+	public Clearing setClearedIdentification(Max35Text clearedIdentification) {
+		this.clearedIdentification = Objects.requireNonNull(clearedIdentification);
+		return this;
 	}
 
 	public YesNoIndicator getGuaranteedTrade() {
 		return guaranteedTrade;
 	}
 
-	public void setGuaranteedTrade(YesNoIndicator guaranteedTrade) {
-		this.guaranteedTrade = guaranteedTrade;
+	public Clearing setGuaranteedTrade(YesNoIndicator guaranteedTrade) {
+		this.guaranteedTrade = Objects.requireNonNull(guaranteedTrade);
+		return this;
 	}
 
 	public TradePostingCode getTradePostingType() {
 		return tradePostingType;
 	}
 
-	public void setTradePostingType(TradePostingCode tradePostingType) {
-		this.tradePostingType = tradePostingType;
+	public Clearing setTradePostingType(TradePostingCode tradePostingType) {
+		this.tradePostingType = Objects.requireNonNull(tradePostingType);
+		return this;
 	}
 
-	public ClearingSystem getClearingSystem() {
-		return clearingSystem;
+	public Optional<ClearingSystem> getClearingSystem() {
+		return clearingSystem == null ? Optional.empty() : Optional.of(clearingSystem);
 	}
 
-	public void setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
+	public Clearing setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
 		this.clearingSystem = clearingSystem;
+		return this;
 	}
 }

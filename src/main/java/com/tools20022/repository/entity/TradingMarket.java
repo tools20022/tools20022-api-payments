@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.Market;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Context or geographic environment in which trading parties may meet in order
@@ -147,8 +146,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -166,8 +165,8 @@ public class TradingMarket extends Market {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Security> tradedSecurity;
 	/**
-	 * Security which is traded on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,8 +211,8 @@ public class TradingMarket extends Market {
 	};
 	protected MarketTypeCode type;
 	/**
-	 * Nature of a market in which transactions take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,8 +258,8 @@ public class TradingMarket extends Market {
 	};
 	protected List<com.tools20022.repository.entity.Security> listedSecurity;
 	/**
-	 * Security whch is listed on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,8 +304,8 @@ public class TradingMarket extends Market {
 	};
 	protected SourceOfPrice sourceOfPrice;
 	/**
-	 * Party which provides a price on a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,8 +352,8 @@ public class TradingMarket extends Market {
 	};
 	protected LotBreakdown tradeLotSize;
 	/**
-	 * Specifies the number of securities that have to be traded in one lot .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,8 +401,8 @@ public class TradingMarket extends Market {
 	};
 	protected SecuritiesQuantity minimumTradedNominalQuantity;
 	/**
-	 * Minimum number of securities that can be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,8 +449,8 @@ public class TradingMarket extends Market {
 	};
 	protected ISODateTime listingDate;
 	/**
-	 * Date/time at which the security is listed at the specific exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -497,8 +496,8 @@ public class TradingMarket extends Market {
 	};
 	protected SecuritiesOrder relatedOrder;
 	/**
-	 * Order for which a place of trade is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -545,8 +544,8 @@ public class TradingMarket extends Market {
 	};
 	protected CurrencyCode tradingCurrency;
 	/**
-	 * Currency of the trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -591,8 +590,8 @@ public class TradingMarket extends Market {
 	};
 	protected SecuritiesQuantity maximumTradedNominalQuantity;
 	/**
-	 * Miaximum number of securities that can be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -639,8 +638,8 @@ public class TradingMarket extends Market {
 	};
 	protected StockExchange stockExchange;
 	/**
-	 * Stock exchange which operates on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,11 +686,8 @@ public class TradingMarket extends Market {
 	};
 	protected LotBreakdown quoteLot;
 	/**
-	 * Lot size associated with the price. Most exchanges require that pricing
-	 * be quoted in round lot size. However, some exchanges have pricing quoted
-	 * in many different lot sizes, for example, Latin America, some Asian
-	 * markets, Turkey.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -740,11 +736,8 @@ public class TradingMarket extends Market {
 	};
 	protected LotBreakdown roundLot;
 	/**
-	 * Minimum quantity of securities that can be purchased without incurring a
-	 * larger fee. For example, if the round lot size is 100 and the trade is
-	 * for 125 shares, then 100 will be processed without a fee and the
-	 * remaining 25 will incur a service fee for being an odd lot size.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -793,8 +786,8 @@ public class TradingMarket extends Market {
 	};
 	protected List<com.tools20022.repository.entity.TradingSession> tradingSession;
 	/**
-	 * Trading session associated with a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -840,8 +833,8 @@ public class TradingMarket extends Market {
 	};
 	protected SecuritiesIdentification listedSecurityTradingIdentification;
 	/**
-	 * Trading identification used on this trading market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -889,8 +882,8 @@ public class TradingMarket extends Market {
 	};
 	protected CurrencyCode defaultCurrency;
 	/**
-	 * Default currency for the securities trading on this market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -936,8 +929,8 @@ public class TradingMarket extends Market {
 	};
 	protected ISODateTime firstTradingDate;
 	/**
-	 * First date/time at which the security is eligible for trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -983,8 +976,8 @@ public class TradingMarket extends Market {
 	};
 	protected ISODateTime lastTradingDate;
 	/**
-	 * Last date/time at which the security is eligible for trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1030,8 +1023,8 @@ public class TradingMarket extends Market {
 	};
 	protected Issuance issuance;
 	/**
-	 * Issuance for which the place has been defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1077,8 +1070,8 @@ public class TradingMarket extends Market {
 	};
 	protected PlaceOfSettlement relatedPlaceOfSettlement;
 	/**
-	 * Place of settlement for which a settlement market is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1128,7 +1121,7 @@ public class TradingMarket extends Market {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingMarket";
 				definition = "Context or geographic environment in which trading parties may meet in order to negotiate and execute trades among themselves. It also identifies the primary market where an asset is issued.";
@@ -1157,162 +1150,182 @@ public class TradingMarket extends Market {
 	}
 
 	public List<Security> getTradedSecurity() {
-		return tradedSecurity;
+		return tradedSecurity == null ? tradedSecurity = new ArrayList<>() : tradedSecurity;
 	}
 
-	public void setTradedSecurity(List<com.tools20022.repository.entity.Security> tradedSecurity) {
-		this.tradedSecurity = tradedSecurity;
+	public TradingMarket setTradedSecurity(List<com.tools20022.repository.entity.Security> tradedSecurity) {
+		this.tradedSecurity = Objects.requireNonNull(tradedSecurity);
+		return this;
 	}
 
 	public MarketTypeCode getType() {
 		return type;
 	}
 
-	public void setType(MarketTypeCode type) {
-		this.type = type;
+	public TradingMarket setType(MarketTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public List<Security> getListedSecurity() {
-		return listedSecurity;
+		return listedSecurity == null ? listedSecurity = new ArrayList<>() : listedSecurity;
 	}
 
-	public void setListedSecurity(List<com.tools20022.repository.entity.Security> listedSecurity) {
-		this.listedSecurity = listedSecurity;
+	public TradingMarket setListedSecurity(List<com.tools20022.repository.entity.Security> listedSecurity) {
+		this.listedSecurity = Objects.requireNonNull(listedSecurity);
+		return this;
 	}
 
-	public SourceOfPrice getSourceOfPrice() {
-		return sourceOfPrice;
+	public Optional<SourceOfPrice> getSourceOfPrice() {
+		return sourceOfPrice == null ? Optional.empty() : Optional.of(sourceOfPrice);
 	}
 
-	public void setSourceOfPrice(com.tools20022.repository.entity.SourceOfPrice sourceOfPrice) {
+	public TradingMarket setSourceOfPrice(com.tools20022.repository.entity.SourceOfPrice sourceOfPrice) {
 		this.sourceOfPrice = sourceOfPrice;
+		return this;
 	}
 
 	public LotBreakdown getTradeLotSize() {
 		return tradeLotSize;
 	}
 
-	public void setTradeLotSize(com.tools20022.repository.entity.LotBreakdown tradeLotSize) {
-		this.tradeLotSize = tradeLotSize;
+	public TradingMarket setTradeLotSize(com.tools20022.repository.entity.LotBreakdown tradeLotSize) {
+		this.tradeLotSize = Objects.requireNonNull(tradeLotSize);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumTradedNominalQuantity() {
 		return minimumTradedNominalQuantity;
 	}
 
-	public void setMinimumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumTradedNominalQuantity) {
-		this.minimumTradedNominalQuantity = minimumTradedNominalQuantity;
+	public TradingMarket setMinimumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumTradedNominalQuantity) {
+		this.minimumTradedNominalQuantity = Objects.requireNonNull(minimumTradedNominalQuantity);
+		return this;
 	}
 
 	public ISODateTime getListingDate() {
 		return listingDate;
 	}
 
-	public void setListingDate(ISODateTime listingDate) {
-		this.listingDate = listingDate;
+	public TradingMarket setListingDate(ISODateTime listingDate) {
+		this.listingDate = Objects.requireNonNull(listingDate);
+		return this;
 	}
 
-	public SecuritiesOrder getRelatedOrder() {
-		return relatedOrder;
+	public Optional<SecuritiesOrder> getRelatedOrder() {
+		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public TradingMarket setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
+		return this;
 	}
 
 	public CurrencyCode getTradingCurrency() {
 		return tradingCurrency;
 	}
 
-	public void setTradingCurrency(CurrencyCode tradingCurrency) {
-		this.tradingCurrency = tradingCurrency;
+	public TradingMarket setTradingCurrency(CurrencyCode tradingCurrency) {
+		this.tradingCurrency = Objects.requireNonNull(tradingCurrency);
+		return this;
 	}
 
 	public SecuritiesQuantity getMaximumTradedNominalQuantity() {
 		return maximumTradedNominalQuantity;
 	}
 
-	public void setMaximumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumTradedNominalQuantity) {
-		this.maximumTradedNominalQuantity = maximumTradedNominalQuantity;
+	public TradingMarket setMaximumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumTradedNominalQuantity) {
+		this.maximumTradedNominalQuantity = Objects.requireNonNull(maximumTradedNominalQuantity);
+		return this;
 	}
 
-	public StockExchange getStockExchange() {
-		return stockExchange;
+	public Optional<StockExchange> getStockExchange() {
+		return stockExchange == null ? Optional.empty() : Optional.of(stockExchange);
 	}
 
-	public void setStockExchange(com.tools20022.repository.entity.StockExchange stockExchange) {
+	public TradingMarket setStockExchange(com.tools20022.repository.entity.StockExchange stockExchange) {
 		this.stockExchange = stockExchange;
+		return this;
 	}
 
 	public LotBreakdown getQuoteLot() {
 		return quoteLot;
 	}
 
-	public void setQuoteLot(com.tools20022.repository.entity.LotBreakdown quoteLot) {
-		this.quoteLot = quoteLot;
+	public TradingMarket setQuoteLot(com.tools20022.repository.entity.LotBreakdown quoteLot) {
+		this.quoteLot = Objects.requireNonNull(quoteLot);
+		return this;
 	}
 
 	public LotBreakdown getRoundLot() {
 		return roundLot;
 	}
 
-	public void setRoundLot(com.tools20022.repository.entity.LotBreakdown roundLot) {
-		this.roundLot = roundLot;
+	public TradingMarket setRoundLot(com.tools20022.repository.entity.LotBreakdown roundLot) {
+		this.roundLot = Objects.requireNonNull(roundLot);
+		return this;
 	}
 
 	public List<TradingSession> getTradingSession() {
-		return tradingSession;
+		return tradingSession == null ? tradingSession = new ArrayList<>() : tradingSession;
 	}
 
-	public void setTradingSession(List<com.tools20022.repository.entity.TradingSession> tradingSession) {
-		this.tradingSession = tradingSession;
+	public TradingMarket setTradingSession(List<com.tools20022.repository.entity.TradingSession> tradingSession) {
+		this.tradingSession = Objects.requireNonNull(tradingSession);
+		return this;
 	}
 
 	public SecuritiesIdentification getListedSecurityTradingIdentification() {
 		return listedSecurityTradingIdentification;
 	}
 
-	public void setListedSecurityTradingIdentification(com.tools20022.repository.entity.SecuritiesIdentification listedSecurityTradingIdentification) {
-		this.listedSecurityTradingIdentification = listedSecurityTradingIdentification;
+	public TradingMarket setListedSecurityTradingIdentification(com.tools20022.repository.entity.SecuritiesIdentification listedSecurityTradingIdentification) {
+		this.listedSecurityTradingIdentification = Objects.requireNonNull(listedSecurityTradingIdentification);
+		return this;
 	}
 
 	public CurrencyCode getDefaultCurrency() {
 		return defaultCurrency;
 	}
 
-	public void setDefaultCurrency(CurrencyCode defaultCurrency) {
-		this.defaultCurrency = defaultCurrency;
+	public TradingMarket setDefaultCurrency(CurrencyCode defaultCurrency) {
+		this.defaultCurrency = Objects.requireNonNull(defaultCurrency);
+		return this;
 	}
 
 	public ISODateTime getFirstTradingDate() {
 		return firstTradingDate;
 	}
 
-	public void setFirstTradingDate(ISODateTime firstTradingDate) {
-		this.firstTradingDate = firstTradingDate;
+	public TradingMarket setFirstTradingDate(ISODateTime firstTradingDate) {
+		this.firstTradingDate = Objects.requireNonNull(firstTradingDate);
+		return this;
 	}
 
 	public ISODateTime getLastTradingDate() {
 		return lastTradingDate;
 	}
 
-	public void setLastTradingDate(ISODateTime lastTradingDate) {
-		this.lastTradingDate = lastTradingDate;
+	public TradingMarket setLastTradingDate(ISODateTime lastTradingDate) {
+		this.lastTradingDate = Objects.requireNonNull(lastTradingDate);
+		return this;
 	}
 
 	public Issuance getIssuance() {
 		return issuance;
 	}
 
-	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
-		this.issuance = issuance;
+	public TradingMarket setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
 	public PlaceOfSettlement getRelatedPlaceOfSettlement() {
 		return relatedPlaceOfSettlement;
 	}
 
-	public void setRelatedPlaceOfSettlement(com.tools20022.repository.entity.PlaceOfSettlement relatedPlaceOfSettlement) {
-		this.relatedPlaceOfSettlement = relatedPlaceOfSettlement;
+	public TradingMarket setRelatedPlaceOfSettlement(com.tools20022.repository.entity.PlaceOfSettlement relatedPlaceOfSettlement) {
+		this.relatedPlaceOfSettlement = Objects.requireNonNull(relatedPlaceOfSettlement);
+		return this;
 	}
 }

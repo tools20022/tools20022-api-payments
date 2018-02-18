@@ -37,41 +37,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Agency
- * ProductTypeCode.mmAgency}</li>
+ * ProductTypeCode.Agency}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Commodity
- * ProductTypeCode.mmCommodity}</li>
+ * ProductTypeCode.Commodity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Corporate
- * ProductTypeCode.mmCorporate}</li>
+ * ProductTypeCode.Corporate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Currency
- * ProductTypeCode.mmCurrency}</li>
+ * ProductTypeCode.Currency}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Equity
- * ProductTypeCode.mmEquity}</li>
+ * ProductTypeCode.Equity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Government
- * ProductTypeCode.mmGovernment}</li>
+ * ProductTypeCode.Government}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Loan
- * ProductTypeCode.mmLoan}</li>
+ * ProductTypeCode.Loan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeCode#MoneyMarket
- * ProductTypeCode.mmMoneyMarket}</li>
+ * ProductTypeCode.MoneyMarket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Mortgage
- * ProductTypeCode.mmMortgage}</li>
+ * ProductTypeCode.Mortgage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Municipal
- * ProductTypeCode.mmMunicipal}</li>
+ * ProductTypeCode.Municipal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Financing
- * ProductTypeCode.mmFinancing}</li>
+ * ProductTypeCode.Financing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Property
- * ProductTypeCode.mmProperty}</li>
+ * ProductTypeCode.Property}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Swap
- * ProductTypeCode.mmSwap}</li>
+ * ProductTypeCode.Swap}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeCode#Other
- * ProductTypeCode.mmOther}</li>
+ * ProductTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -530,7 +530,7 @@ public class ProductTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AGEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductTypeCode";

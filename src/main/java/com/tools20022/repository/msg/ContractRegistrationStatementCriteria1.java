@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContractRegistrationStatementCriteria1", propOrder = {"transactionJournal", "supportingDocumentJournal", "additionalSupportingDocumentJournal", "regulatoryRuleValidation"})
 public class ContractRegistrationStatementCriteria1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxJrnl")
 	protected TrueFalseIndicator transactionJournal;
 	/**
-	 * Indicates whether the journal of the transactions recorded under the
-	 * registered currency control contract must be returned or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +111,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 */
 	public static final MMMessageAttribute mmTransactionJournal = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ContractRegistrationStatementCriteria1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
 			xmlTag = "TxJrnl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +122,11 @@ public class ContractRegistrationStatementCriteria1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "SpprtgDocJrnl")
 	protected TrueFalseIndicator supportingDocumentJournal;
 	/**
-	 * Indicates whether the journal of the supporting documents recorded under
-	 * the registered currency control contract must be returned or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +156,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 */
 	public static final MMMessageAttribute mmSupportingDocumentJournal = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ContractRegistrationStatementCriteria1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
 			xmlTag = "SpprtgDocJrnl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,11 +167,11 @@ public class ContractRegistrationStatementCriteria1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlSpprtgDocJrnl")
 	protected TrueFalseIndicator additionalSupportingDocumentJournal;
 	/**
-	 * Indicates whether the journal of additional supporting documents recorded
-	 * under the registered currency control contract must be returned or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,7 +201,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalSupportingDocumentJournal = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ContractRegistrationStatementCriteria1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlSpprtgDocJrnl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,11 +212,11 @@ public class ContractRegistrationStatementCriteria1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "RgltryRuleVldtn")
 	protected TrueFalseIndicator regulatoryRuleValidation;
 	/**
-	 * Indicates whether the details on the currency control rule against which
-	 * has been violated must be returned or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,7 +246,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 */
 	public static final MMMessageAttribute mmRegulatoryRuleValidation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ContractRegistrationStatementCriteria1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
 			xmlTag = "RgltryRuleVldtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -260,9 +261,10 @@ public class ContractRegistrationStatementCriteria1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContractRegistrationStatementCriteria1.mmTransactionJournal, ContractRegistrationStatementCriteria1.mmSupportingDocumentJournal,
-						ContractRegistrationStatementCriteria1.mmAdditionalSupportingDocumentJournal, ContractRegistrationStatementCriteria1.mmRegulatoryRuleValidation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmTransactionJournal,
+						com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmSupportingDocumentJournal, com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmAdditionalSupportingDocumentJournal,
+						com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmRegulatoryRuleValidation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractRegistrationStatementCriteria1";
 				definition = "Provides the list of criteria to be returned in the contract registration statement.";
@@ -271,39 +273,39 @@ public class ContractRegistrationStatementCriteria1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxJrnl")
-	public TrueFalseIndicator getTransactionJournal() {
-		return transactionJournal;
+	public Optional<TrueFalseIndicator> getTransactionJournal() {
+		return transactionJournal == null ? Optional.empty() : Optional.of(transactionJournal);
 	}
 
-	public void setTransactionJournal(TrueFalseIndicator transactionJournal) {
+	public ContractRegistrationStatementCriteria1 setTransactionJournal(TrueFalseIndicator transactionJournal) {
 		this.transactionJournal = transactionJournal;
+		return this;
 	}
 
-	@XmlElement(name = "SpprtgDocJrnl")
-	public TrueFalseIndicator getSupportingDocumentJournal() {
-		return supportingDocumentJournal;
+	public Optional<TrueFalseIndicator> getSupportingDocumentJournal() {
+		return supportingDocumentJournal == null ? Optional.empty() : Optional.of(supportingDocumentJournal);
 	}
 
-	public void setSupportingDocumentJournal(TrueFalseIndicator supportingDocumentJournal) {
+	public ContractRegistrationStatementCriteria1 setSupportingDocumentJournal(TrueFalseIndicator supportingDocumentJournal) {
 		this.supportingDocumentJournal = supportingDocumentJournal;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlSpprtgDocJrnl")
-	public TrueFalseIndicator getAdditionalSupportingDocumentJournal() {
-		return additionalSupportingDocumentJournal;
+	public Optional<TrueFalseIndicator> getAdditionalSupportingDocumentJournal() {
+		return additionalSupportingDocumentJournal == null ? Optional.empty() : Optional.of(additionalSupportingDocumentJournal);
 	}
 
-	public void setAdditionalSupportingDocumentJournal(TrueFalseIndicator additionalSupportingDocumentJournal) {
+	public ContractRegistrationStatementCriteria1 setAdditionalSupportingDocumentJournal(TrueFalseIndicator additionalSupportingDocumentJournal) {
 		this.additionalSupportingDocumentJournal = additionalSupportingDocumentJournal;
+		return this;
 	}
 
-	@XmlElement(name = "RgltryRuleVldtn")
-	public TrueFalseIndicator getRegulatoryRuleValidation() {
-		return regulatoryRuleValidation;
+	public Optional<TrueFalseIndicator> getRegulatoryRuleValidation() {
+		return regulatoryRuleValidation == null ? Optional.empty() : Optional.of(regulatoryRuleValidation);
 	}
 
-	public void setRegulatoryRuleValidation(TrueFalseIndicator regulatoryRuleValidation) {
+	public ContractRegistrationStatementCriteria1 setRegulatoryRuleValidation(TrueFalseIndicator regulatoryRuleValidation) {
 		this.regulatoryRuleValidation = regulatoryRuleValidation;
+		return this;
 	}
 }

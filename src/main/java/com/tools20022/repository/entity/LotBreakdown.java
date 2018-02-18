@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Number of securities purchased or sold in one transaction. In terms of
@@ -91,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,8 +110,8 @@ public class LotBreakdown {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DecimalNumber lotUnit;
 	/**
-	 * Quantity of securities included in the lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,6 +123,9 @@ public class LotBreakdown {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.LotBreakdown LotBreakdown}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: UNIT</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -138,6 +141,7 @@ public class LotBreakdown {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "UNIT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotUnit";
 			definition = "Quantity of securities included in the lot.";
@@ -156,8 +160,8 @@ public class LotBreakdown {
 	};
 	protected SecuritiesQuantity securitiesQuantity;
 	/**
-	 * Number of securities included in a lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,8 +207,8 @@ public class LotBreakdown {
 	};
 	protected List<com.tools20022.repository.entity.GenericIdentification> lotNumber;
 	/**
-	 * Specifies the number of the lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,8 +254,8 @@ public class LotBreakdown {
 	};
 	protected ISODateTime lotDateTime;
 	/**
-	 * Date and time at which the lot was purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,8 +299,8 @@ public class LotBreakdown {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice;
 	/**
-	 * Specifies the price of the lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -341,9 +345,8 @@ public class LotBreakdown {
 	};
 	protected Max35Text lotIdentifier;
 	/**
-	 * Identifies the lot constituting an asset backed or mortgage backed
-	 * security issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -389,8 +392,8 @@ public class LotBreakdown {
 	};
 	protected TradingMarket tradeLotMarket;
 	/**
-	 * Market for which a trade lot is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -436,8 +439,8 @@ public class LotBreakdown {
 	};
 	protected TradingMarket quoteLotMarket;
 	/**
-	 * Market for which a quote lot is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -483,8 +486,8 @@ public class LotBreakdown {
 	};
 	protected TradingMarket roundLotMarket;
 	/**
-	 * Market for which a round lot size is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -532,7 +535,7 @@ public class LotBreakdown {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LotBreakdown";
 				definition = "Number of securities purchased or sold in one transaction. In terms of options, a lot represents the number of contracts contained in one derivative security.";
@@ -556,71 +559,80 @@ public class LotBreakdown {
 		return lotUnit;
 	}
 
-	public void setLotUnit(DecimalNumber lotUnit) {
-		this.lotUnit = lotUnit;
+	public LotBreakdown setLotUnit(DecimalNumber lotUnit) {
+		this.lotUnit = Objects.requireNonNull(lotUnit);
+		return this;
 	}
 
 	public SecuritiesQuantity getSecuritiesQuantity() {
 		return securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public LotBreakdown setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public List<GenericIdentification> getLotNumber() {
-		return lotNumber;
+		return lotNumber == null ? lotNumber = new ArrayList<>() : lotNumber;
 	}
 
-	public void setLotNumber(List<com.tools20022.repository.entity.GenericIdentification> lotNumber) {
-		this.lotNumber = lotNumber;
+	public LotBreakdown setLotNumber(List<com.tools20022.repository.entity.GenericIdentification> lotNumber) {
+		this.lotNumber = Objects.requireNonNull(lotNumber);
+		return this;
 	}
 
 	public ISODateTime getLotDateTime() {
 		return lotDateTime;
 	}
 
-	public void setLotDateTime(ISODateTime lotDateTime) {
-		this.lotDateTime = lotDateTime;
+	public LotBreakdown setLotDateTime(ISODateTime lotDateTime) {
+		this.lotDateTime = Objects.requireNonNull(lotDateTime);
+		return this;
 	}
 
 	public List<SecuritiesPricing> getLotPrice() {
-		return lotPrice;
+		return lotPrice == null ? lotPrice = new ArrayList<>() : lotPrice;
 	}
 
-	public void setLotPrice(List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice) {
-		this.lotPrice = lotPrice;
+	public LotBreakdown setLotPrice(List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice) {
+		this.lotPrice = Objects.requireNonNull(lotPrice);
+		return this;
 	}
 
 	public Max35Text getLotIdentifier() {
 		return lotIdentifier;
 	}
 
-	public void setLotIdentifier(Max35Text lotIdentifier) {
-		this.lotIdentifier = lotIdentifier;
+	public LotBreakdown setLotIdentifier(Max35Text lotIdentifier) {
+		this.lotIdentifier = Objects.requireNonNull(lotIdentifier);
+		return this;
 	}
 
 	public TradingMarket getTradeLotMarket() {
 		return tradeLotMarket;
 	}
 
-	public void setTradeLotMarket(com.tools20022.repository.entity.TradingMarket tradeLotMarket) {
-		this.tradeLotMarket = tradeLotMarket;
+	public LotBreakdown setTradeLotMarket(com.tools20022.repository.entity.TradingMarket tradeLotMarket) {
+		this.tradeLotMarket = Objects.requireNonNull(tradeLotMarket);
+		return this;
 	}
 
-	public TradingMarket getQuoteLotMarket() {
-		return quoteLotMarket;
+	public Optional<TradingMarket> getQuoteLotMarket() {
+		return quoteLotMarket == null ? Optional.empty() : Optional.of(quoteLotMarket);
 	}
 
-	public void setQuoteLotMarket(com.tools20022.repository.entity.TradingMarket quoteLotMarket) {
+	public LotBreakdown setQuoteLotMarket(com.tools20022.repository.entity.TradingMarket quoteLotMarket) {
 		this.quoteLotMarket = quoteLotMarket;
+		return this;
 	}
 
-	public TradingMarket getRoundLotMarket() {
-		return roundLotMarket;
+	public Optional<TradingMarket> getRoundLotMarket() {
+		return roundLotMarket == null ? Optional.empty() : Optional.of(roundLotMarket);
 	}
 
-	public void setRoundLotMarket(com.tools20022.repository.entity.TradingMarket roundLotMarket) {
+	public LotBreakdown setRoundLotMarket(com.tools20022.repository.entity.TradingMarket roundLotMarket) {
 		this.roundLotMarket = roundLotMarket;
+		return this;
 	}
 }

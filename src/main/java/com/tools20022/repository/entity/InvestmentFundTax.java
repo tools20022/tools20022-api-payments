@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Tax related to an investment fund order.
@@ -76,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,10 +95,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator fiscalExemption;
 	/**
-	 * Indicates whether an owner of an investment account may benefit from a
-	 * fiscal exemption or amnesty for instance for declaring overseas
-	 * investments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,8 +144,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	};
 	protected InvestmentAccount investmentAccount;
 	/**
-	 * Investment account for which taxes are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,11 +192,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	};
 	protected PercentageRate percentageOfDebtClaim;
 	/**
-	 * Percentage of the underlying assets of the funds that represents a debt
-	 * and is in the scope of the European directive on taxation of savings
-	 * income in the form of interest payments (Council Directive 2003/48/EC 3
-	 * June).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,8 +241,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	};
 	protected PercentageRate percentageGrandfatheredDebt;
 	/**
-	 * Percentage of grandfathered debt claim.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,8 +288,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	};
 	protected YesNoIndicator exemptionIndicator;
 	/**
-	 * Indicates whether a tax exemption applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -338,8 +335,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	};
 	protected InvestmentFundTransaction transaction;
 	/**
-	 * Transaction for which the tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -389,7 +386,7 @@ public class InvestmentFundTax extends SecuritiesTax {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundTax";
 				definition = "Tax related to an investment fund order.";
@@ -412,47 +409,53 @@ public class InvestmentFundTax extends SecuritiesTax {
 		return fiscalExemption;
 	}
 
-	public void setFiscalExemption(YesNoIndicator fiscalExemption) {
-		this.fiscalExemption = fiscalExemption;
+	public InvestmentFundTax setFiscalExemption(YesNoIndicator fiscalExemption) {
+		this.fiscalExemption = Objects.requireNonNull(fiscalExemption);
+		return this;
 	}
 
-	public InvestmentAccount getInvestmentAccount() {
-		return investmentAccount;
+	public Optional<InvestmentAccount> getInvestmentAccount() {
+		return investmentAccount == null ? Optional.empty() : Optional.of(investmentAccount);
 	}
 
-	public void setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
+	public InvestmentFundTax setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
 		this.investmentAccount = investmentAccount;
+		return this;
 	}
 
 	public PercentageRate getPercentageOfDebtClaim() {
 		return percentageOfDebtClaim;
 	}
 
-	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
-		this.percentageOfDebtClaim = percentageOfDebtClaim;
+	public InvestmentFundTax setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+		this.percentageOfDebtClaim = Objects.requireNonNull(percentageOfDebtClaim);
+		return this;
 	}
 
 	public PercentageRate getPercentageGrandfatheredDebt() {
 		return percentageGrandfatheredDebt;
 	}
 
-	public void setPercentageGrandfatheredDebt(PercentageRate percentageGrandfatheredDebt) {
-		this.percentageGrandfatheredDebt = percentageGrandfatheredDebt;
+	public InvestmentFundTax setPercentageGrandfatheredDebt(PercentageRate percentageGrandfatheredDebt) {
+		this.percentageGrandfatheredDebt = Objects.requireNonNull(percentageGrandfatheredDebt);
+		return this;
 	}
 
 	public YesNoIndicator getExemptionIndicator() {
 		return exemptionIndicator;
 	}
 
-	public void setExemptionIndicator(YesNoIndicator exemptionIndicator) {
-		this.exemptionIndicator = exemptionIndicator;
+	public InvestmentFundTax setExemptionIndicator(YesNoIndicator exemptionIndicator) {
+		this.exemptionIndicator = Objects.requireNonNull(exemptionIndicator);
+		return this;
 	}
 
-	public InvestmentFundTransaction getTransaction() {
-		return transaction;
+	public Optional<InvestmentFundTransaction> getTransaction() {
+		return transaction == null ? Optional.empty() : Optional.of(transaction);
 	}
 
-	public void setTransaction(com.tools20022.repository.entity.InvestmentFundTransaction transaction) {
+	public InvestmentFundTax setTransaction(com.tools20022.repository.entity.InvestmentFundTransaction transaction) {
 		this.transaction = transaction;
+		return this;
 	}
 }

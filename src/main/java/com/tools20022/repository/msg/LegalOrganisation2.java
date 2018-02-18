@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,16 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Legally constituted organization specified for this party."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LegalOrganisation2", propOrder = {"identification", "name", "establishmentDate", "registrationDate"})
 public class LegalOrganisation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identifier for an organisation that is allocated
-	 * by an institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,7 +119,7 @@ public class LegalOrganisation2 {
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> LegalOrganisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,10 +130,11 @@ public class LegalOrganisation2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max140Text name;
 	/**
-	 * Specifies the short name of the organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +167,7 @@ public class LegalOrganisation2 {
 	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> LegalOrganisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,10 +178,11 @@ public class LegalOrganisation2 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "EstblishmtDt")
 	protected ISODate establishmentDate;
 	/**
-	 * Date when the organisation was established.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,7 +215,7 @@ public class LegalOrganisation2 {
 	public static final MMMessageAttribute mmEstablishmentDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmEstablishmentDate;
-			componentContext_lazy = () -> LegalOrganisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
 			isDerived = false;
 			xmlTag = "EstblishmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,10 +226,11 @@ public class LegalOrganisation2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "RegnDt")
 	protected ISODate registrationDate;
 	/**
-	 * Date when the organisation was registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,7 +263,7 @@ public class LegalOrganisation2 {
 	public static final MMMessageAttribute mmRegistrationDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmRegistrationDate;
-			componentContext_lazy = () -> LegalOrganisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
 			isDerived = false;
 			xmlTag = "RegnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,9 +278,10 @@ public class LegalOrganisation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LegalOrganisation2.mmIdentification, LegalOrganisation2.mmName, LegalOrganisation2.mmEstablishmentDate, LegalOrganisation2.mmRegistrationDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LegalOrganisation2.mmIdentification, com.tools20022.repository.msg.LegalOrganisation2.mmName,
+						com.tools20022.repository.msg.LegalOrganisation2.mmEstablishmentDate, com.tools20022.repository.msg.LegalOrganisation2.mmRegistrationDate);
 				trace_lazy = () -> Organisation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalOrganisation2";
 				definition = "Legally constituted organization specified for this party.";
@@ -285,39 +290,39 @@ public class LegalOrganisation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
-	public Max35Text getIdentification() {
-		return identification;
+	public Optional<Max35Text> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(Max35Text identification) {
+	public LegalOrganisation2 setIdentification(Max35Text identification) {
 		this.identification = identification;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max140Text getName() {
-		return name;
+	public Optional<Max140Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max140Text name) {
+	public LegalOrganisation2 setName(Max140Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "EstblishmtDt")
-	public ISODate getEstablishmentDate() {
-		return establishmentDate;
+	public Optional<ISODate> getEstablishmentDate() {
+		return establishmentDate == null ? Optional.empty() : Optional.of(establishmentDate);
 	}
 
-	public void setEstablishmentDate(ISODate establishmentDate) {
+	public LegalOrganisation2 setEstablishmentDate(ISODate establishmentDate) {
 		this.establishmentDate = establishmentDate;
+		return this;
 	}
 
-	@XmlElement(name = "RegnDt")
-	public ISODate getRegistrationDate() {
-		return registrationDate;
+	public Optional<ISODate> getRegistrationDate() {
+		return registrationDate == null ? Optional.empty() : Optional.of(registrationDate);
 	}
 
-	public void setRegistrationDate(ISODate registrationDate) {
+	public LegalOrganisation2 setRegistrationDate(ISODate registrationDate) {
 		this.registrationDate = registrationDate;
+		return this;
 	}
 }

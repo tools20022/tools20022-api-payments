@@ -38,35 +38,35 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#UndertakingIssuance
- * SettlementAdviceTypeCode.mmUndertakingIssuance}</li>
+ * SettlementAdviceTypeCode.UndertakingIssuance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#PaymentClaim
- * SettlementAdviceTypeCode.mmPaymentClaim}</li>
+ * SettlementAdviceTypeCode.PaymentClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#UndertakingAmendment
- * SettlementAdviceTypeCode.mmUndertakingAmendment}</li>
+ * SettlementAdviceTypeCode.UndertakingAmendment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#Termination
- * SettlementAdviceTypeCode.mmTermination}</li>
+ * SettlementAdviceTypeCode.Termination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#ManualChargesBooking
- * SettlementAdviceTypeCode.mmManualChargesBooking}</li>
+ * SettlementAdviceTypeCode.ManualChargesBooking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#AutomaticChargesBooking
- * SettlementAdviceTypeCode.mmAutomaticChargesBooking}</li>
+ * SettlementAdviceTypeCode.AutomaticChargesBooking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#Refund
- * SettlementAdviceTypeCode.mmRefund}</li>
+ * SettlementAdviceTypeCode.Refund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementAdviceTypeCode#CorrespondentBankCharges
- * SettlementAdviceTypeCode.mmCorrespondentBankCharges}</li>
+ * SettlementAdviceTypeCode.CorrespondentBankCharges}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -338,7 +338,7 @@ public class SettlementAdviceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ISSU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementAdviceTypeCode";

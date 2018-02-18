@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Settlement;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Settlement of a commercial trade, that is, the instruction to deliver goods
@@ -83,8 +82,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +101,8 @@ public class CommercialTradeSettlement extends Settlement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Payment> payment;
 	/**
-	 * Settlement of the payment side of a commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,8 +147,8 @@ public class CommercialTradeSettlement extends Settlement {
 	};
 	protected List<com.tools20022.repository.entity.Invoice> invoice;
 	/**
-	 * Specifies for which invoice the settlement takes place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,8 +193,8 @@ public class CommercialTradeSettlement extends Settlement {
 	};
 	protected List<com.tools20022.repository.entity.LetterOfCredit> letterOfCredit;
 	/**
-	 * Written undertaking by a bank to honour a demand for payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,8 +241,8 @@ public class CommercialTradeSettlement extends Settlement {
 	};
 	protected List<com.tools20022.repository.entity.ProductDelivery> productDelivery;
 	/**
-	 * Delivery of the goods or services to the buyer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,8 +288,8 @@ public class CommercialTradeSettlement extends Settlement {
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Specifies the commercial trade which is settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -339,7 +338,7 @@ public class CommercialTradeSettlement extends Settlement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommercialTradeSettlement";
 				definition = "Settlement of a commercial trade, that is, the instruction to deliver goods or services against the payment of an amount of money.";
@@ -360,42 +359,47 @@ public class CommercialTradeSettlement extends Settlement {
 	}
 
 	public List<Payment> getPayment() {
-		return payment;
+		return payment == null ? payment = new ArrayList<>() : payment;
 	}
 
-	public void setPayment(List<com.tools20022.repository.entity.Payment> payment) {
-		this.payment = payment;
+	public CommercialTradeSettlement setPayment(List<com.tools20022.repository.entity.Payment> payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 
 	public List<Invoice> getInvoice() {
-		return invoice;
+		return invoice == null ? invoice = new ArrayList<>() : invoice;
 	}
 
-	public void setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
-		this.invoice = invoice;
+	public CommercialTradeSettlement setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
+		this.invoice = Objects.requireNonNull(invoice);
+		return this;
 	}
 
 	public List<LetterOfCredit> getLetterOfCredit() {
-		return letterOfCredit;
+		return letterOfCredit == null ? letterOfCredit = new ArrayList<>() : letterOfCredit;
 	}
 
-	public void setLetterOfCredit(List<com.tools20022.repository.entity.LetterOfCredit> letterOfCredit) {
-		this.letterOfCredit = letterOfCredit;
+	public CommercialTradeSettlement setLetterOfCredit(List<com.tools20022.repository.entity.LetterOfCredit> letterOfCredit) {
+		this.letterOfCredit = Objects.requireNonNull(letterOfCredit);
+		return this;
 	}
 
 	public List<ProductDelivery> getProductDelivery() {
-		return productDelivery;
+		return productDelivery == null ? productDelivery = new ArrayList<>() : productDelivery;
 	}
 
-	public void setProductDelivery(List<com.tools20022.repository.entity.ProductDelivery> productDelivery) {
-		this.productDelivery = productDelivery;
+	public CommercialTradeSettlement setProductDelivery(List<com.tools20022.repository.entity.ProductDelivery> productDelivery) {
+		this.productDelivery = Objects.requireNonNull(productDelivery);
+		return this;
 	}
 
-	public CommercialTrade getCommercialTrade() {
-		return commercialTrade;
+	public Optional<CommercialTrade> getCommercialTrade() {
+		return commercialTrade == null ? Optional.empty() : Optional.of(commercialTrade);
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+	public CommercialTradeSettlement setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
 		this.commercialTrade = commercialTrade;
+		return this;
 	}
 }

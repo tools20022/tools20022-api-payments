@@ -39,38 +39,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Activate
- * TerminalManagementActionCode.mmActivate}</li>
+ * TerminalManagementActionCode.Activate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Deactivate
- * TerminalManagementActionCode.mmDeactivate}</li>
+ * TerminalManagementActionCode.Deactivate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Delete
- * TerminalManagementActionCode.mmDelete}</li>
+ * TerminalManagementActionCode.Delete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Download
- * TerminalManagementActionCode.mmDownload}</li>
+ * TerminalManagementActionCode.Download}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Install
- * TerminalManagementActionCode.mmInstall}</li>
+ * TerminalManagementActionCode.Install}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Restart
- * TerminalManagementActionCode.mmRestart}</li>
+ * TerminalManagementActionCode.Restart}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Upload
- * TerminalManagementActionCode.mmUpload}</li>
+ * TerminalManagementActionCode.Upload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Update
- * TerminalManagementActionCode.mmUpdate}</li>
+ * TerminalManagementActionCode.Update}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Create
- * TerminalManagementActionCode.mmCreate}</li>
+ * TerminalManagementActionCode.Create}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -371,7 +371,7 @@ public class TerminalManagementActionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTV");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionCode";

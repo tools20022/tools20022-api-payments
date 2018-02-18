@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
@@ -26,9 +27,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * An investor's instruction to either subscribe or redeem an amount of money or
@@ -134,8 +134,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -153,11 +153,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator grossAmountIndicator;
 	/**
-	 * Indicates whether an ordered amount is a gross amount (including all
-	 * charges, commissions, tax). If it is not a gross amount, the ordered
-	 * amount is a net amount (amount to be invested or redeemed from the fund
-	 * to which other elements will be added).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,8 +202,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected InvestmentFundTransaction relatedTransaction;
 	/**
-	 * Transaction which is the source of the order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,8 +251,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected FundOrderTypeCode orderType;
 	/**
-	 * Specifies the category of the investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,11 +298,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected CurrencyAndAmount grossAmount;
 	/**
-	 * Amount of money used to derive the quantity of investment fund units sold
-	 * or subscribed, before deduction of charges, commissions, and taxes,
-	 * expressed in the currency requested by the investor.<br>
-	 * [Quantity * Price] + (Charges + Commissions +Taxes)]
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,8 +347,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected SecuritiesQuantity unitsNumber;
 	/**
-	 * Quantity of investment fund units to be subscribed or redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,8 +396,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected InvestmentFundOrderExecution investmentFundOrderExecution;
 	/**
-	 * Execution of an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,9 +445,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected CurrencyAndAmount netAmount;
 	/**
-	 * Amount of money used to determine the quantity of investment fund units
-	 * to be subscribed or to be sold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -501,8 +494,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected ISODateTime orderDateTime;
 	/**
-	 * Date and time at which the order was placed by the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -548,8 +541,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected ISODateTime expiryDateTime;
 	/**
-	 * Date on which the order expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -594,9 +587,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected CancellationRightCode cancellationRight;
 	/**
-	 * Cancellation right of an investor with respect to an investment fund
-	 * order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -644,8 +636,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected CurrencyCode requestedSettlementCurrency;
 	/**
-	 * Currency requested for settlement of cash proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -690,8 +682,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected ISODateTime requestedExecutionDateTime;
 	/**
-	 * Date and time at which the investor requests the order to be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -737,9 +729,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected FinancialAdviceCode financialAdvice;
 	/**
-	 * Specifies if advice has been received from an independent financial
-	 * advisor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -787,8 +778,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected NegotiatedTradeCode negotiatedTrade;
 	/**
-	 * Specifies whether the trade is negotiated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -834,8 +825,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected PercentageRate holdingsRate;
 	/**
-	 * Percentage of the financial quantity to be invested or redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -882,10 +873,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected OrderWaiverReasonCode orderWaiverReason;
 	/**
-	 * Reason why an order has to be handled differently, probably in a manual
-	 * fashion, because for example, the investment manager has agreed a waiver
-	 * to the extended terms.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -933,8 +922,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected YesNoIndicator initialOrderIndicator;
 	/**
-	 * Indicates whether the subscription order is an initial order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -981,9 +970,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected ISODateTime orderBookingDate;
 	/**
-	 * Date and time an investment fund order is registered on the books of
-	 * either the fund or its designated agent, eg, transfer agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -995,6 +983,9 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder
 	 * InvestmentFundOrder}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 483</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -1012,6 +1003,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "483"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderBookingDate";
 			definition = "Date and time an investment fund order is registered on the books of either the fund or its designated agent, eg, transfer agent.";
@@ -1030,8 +1022,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected InvestmentPlan investmentPlan;
 	/**
-	 * Investment plan which triggers the standing orders.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1078,8 +1070,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus;
 	/**
-	 * Status of an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1126,8 +1118,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	};
 	protected CurrencyAndAmount totalAmount;
 	/**
-	 * Total amount subscribed in the current tax year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1175,7 +1167,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundOrder";
 				definition = "An investor's instruction to either subscribe or redeem an amount of money or its equivalent, for example other assets, into or out of an investment fund.";
@@ -1206,167 +1198,188 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 		return grossAmountIndicator;
 	}
 
-	public void setGrossAmountIndicator(YesNoIndicator grossAmountIndicator) {
-		this.grossAmountIndicator = grossAmountIndicator;
+	public InvestmentFundOrder setGrossAmountIndicator(YesNoIndicator grossAmountIndicator) {
+		this.grossAmountIndicator = Objects.requireNonNull(grossAmountIndicator);
+		return this;
 	}
 
-	public InvestmentFundTransaction getRelatedTransaction() {
-		return relatedTransaction;
+	public Optional<InvestmentFundTransaction> getRelatedTransaction() {
+		return relatedTransaction == null ? Optional.empty() : Optional.of(relatedTransaction);
 	}
 
-	public void setRelatedTransaction(com.tools20022.repository.entity.InvestmentFundTransaction relatedTransaction) {
+	public InvestmentFundOrder setRelatedTransaction(com.tools20022.repository.entity.InvestmentFundTransaction relatedTransaction) {
 		this.relatedTransaction = relatedTransaction;
+		return this;
 	}
 
 	public FundOrderTypeCode getOrderType() {
 		return orderType;
 	}
 
-	public void setOrderType(FundOrderTypeCode orderType) {
-		this.orderType = orderType;
+	public InvestmentFundOrder setOrderType(FundOrderTypeCode orderType) {
+		this.orderType = Objects.requireNonNull(orderType);
+		return this;
 	}
 
 	public CurrencyAndAmount getGrossAmount() {
 		return grossAmount;
 	}
 
-	public void setGrossAmount(CurrencyAndAmount grossAmount) {
-		this.grossAmount = grossAmount;
+	public InvestmentFundOrder setGrossAmount(CurrencyAndAmount grossAmount) {
+		this.grossAmount = Objects.requireNonNull(grossAmount);
+		return this;
 	}
 
 	public SecuritiesQuantity getUnitsNumber() {
 		return unitsNumber;
 	}
 
-	public void setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
-		this.unitsNumber = unitsNumber;
+	public InvestmentFundOrder setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
+		this.unitsNumber = Objects.requireNonNull(unitsNumber);
+		return this;
 	}
 
-	public InvestmentFundOrderExecution getInvestmentFundOrderExecution() {
-		return investmentFundOrderExecution;
+	public Optional<InvestmentFundOrderExecution> getInvestmentFundOrderExecution() {
+		return investmentFundOrderExecution == null ? Optional.empty() : Optional.of(investmentFundOrderExecution);
 	}
 
-	public void setInvestmentFundOrderExecution(com.tools20022.repository.entity.InvestmentFundOrderExecution investmentFundOrderExecution) {
+	public InvestmentFundOrder setInvestmentFundOrderExecution(com.tools20022.repository.entity.InvestmentFundOrderExecution investmentFundOrderExecution) {
 		this.investmentFundOrderExecution = investmentFundOrderExecution;
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(CurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public InvestmentFundOrder setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
 	public ISODateTime getOrderDateTime() {
 		return orderDateTime;
 	}
 
-	public void setOrderDateTime(ISODateTime orderDateTime) {
-		this.orderDateTime = orderDateTime;
+	public InvestmentFundOrder setOrderDateTime(ISODateTime orderDateTime) {
+		this.orderDateTime = Objects.requireNonNull(orderDateTime);
+		return this;
 	}
 
 	public ISODateTime getExpiryDateTime() {
 		return expiryDateTime;
 	}
 
-	public void setExpiryDateTime(ISODateTime expiryDateTime) {
-		this.expiryDateTime = expiryDateTime;
+	public InvestmentFundOrder setExpiryDateTime(ISODateTime expiryDateTime) {
+		this.expiryDateTime = Objects.requireNonNull(expiryDateTime);
+		return this;
 	}
 
 	public CancellationRightCode getCancellationRight() {
 		return cancellationRight;
 	}
 
-	public void setCancellationRight(CancellationRightCode cancellationRight) {
-		this.cancellationRight = cancellationRight;
+	public InvestmentFundOrder setCancellationRight(CancellationRightCode cancellationRight) {
+		this.cancellationRight = Objects.requireNonNull(cancellationRight);
+		return this;
 	}
 
 	public CurrencyCode getRequestedSettlementCurrency() {
 		return requestedSettlementCurrency;
 	}
 
-	public void setRequestedSettlementCurrency(CurrencyCode requestedSettlementCurrency) {
-		this.requestedSettlementCurrency = requestedSettlementCurrency;
+	public InvestmentFundOrder setRequestedSettlementCurrency(CurrencyCode requestedSettlementCurrency) {
+		this.requestedSettlementCurrency = Objects.requireNonNull(requestedSettlementCurrency);
+		return this;
 	}
 
 	public ISODateTime getRequestedExecutionDateTime() {
 		return requestedExecutionDateTime;
 	}
 
-	public void setRequestedExecutionDateTime(ISODateTime requestedExecutionDateTime) {
-		this.requestedExecutionDateTime = requestedExecutionDateTime;
+	public InvestmentFundOrder setRequestedExecutionDateTime(ISODateTime requestedExecutionDateTime) {
+		this.requestedExecutionDateTime = Objects.requireNonNull(requestedExecutionDateTime);
+		return this;
 	}
 
 	public FinancialAdviceCode getFinancialAdvice() {
 		return financialAdvice;
 	}
 
-	public void setFinancialAdvice(FinancialAdviceCode financialAdvice) {
-		this.financialAdvice = financialAdvice;
+	public InvestmentFundOrder setFinancialAdvice(FinancialAdviceCode financialAdvice) {
+		this.financialAdvice = Objects.requireNonNull(financialAdvice);
+		return this;
 	}
 
 	public NegotiatedTradeCode getNegotiatedTrade() {
 		return negotiatedTrade;
 	}
 
-	public void setNegotiatedTrade(NegotiatedTradeCode negotiatedTrade) {
-		this.negotiatedTrade = negotiatedTrade;
+	public InvestmentFundOrder setNegotiatedTrade(NegotiatedTradeCode negotiatedTrade) {
+		this.negotiatedTrade = Objects.requireNonNull(negotiatedTrade);
+		return this;
 	}
 
 	public PercentageRate getHoldingsRate() {
 		return holdingsRate;
 	}
 
-	public void setHoldingsRate(PercentageRate holdingsRate) {
-		this.holdingsRate = holdingsRate;
+	public InvestmentFundOrder setHoldingsRate(PercentageRate holdingsRate) {
+		this.holdingsRate = Objects.requireNonNull(holdingsRate);
+		return this;
 	}
 
 	public OrderWaiverReasonCode getOrderWaiverReason() {
 		return orderWaiverReason;
 	}
 
-	public void setOrderWaiverReason(OrderWaiverReasonCode orderWaiverReason) {
-		this.orderWaiverReason = orderWaiverReason;
+	public InvestmentFundOrder setOrderWaiverReason(OrderWaiverReasonCode orderWaiverReason) {
+		this.orderWaiverReason = Objects.requireNonNull(orderWaiverReason);
+		return this;
 	}
 
 	public YesNoIndicator getInitialOrderIndicator() {
 		return initialOrderIndicator;
 	}
 
-	public void setInitialOrderIndicator(YesNoIndicator initialOrderIndicator) {
-		this.initialOrderIndicator = initialOrderIndicator;
+	public InvestmentFundOrder setInitialOrderIndicator(YesNoIndicator initialOrderIndicator) {
+		this.initialOrderIndicator = Objects.requireNonNull(initialOrderIndicator);
+		return this;
 	}
 
 	public ISODateTime getOrderBookingDate() {
 		return orderBookingDate;
 	}
 
-	public void setOrderBookingDate(ISODateTime orderBookingDate) {
-		this.orderBookingDate = orderBookingDate;
+	public InvestmentFundOrder setOrderBookingDate(ISODateTime orderBookingDate) {
+		this.orderBookingDate = Objects.requireNonNull(orderBookingDate);
+		return this;
 	}
 
-	public InvestmentPlan getInvestmentPlan() {
-		return investmentPlan;
+	public Optional<InvestmentPlan> getInvestmentPlan() {
+		return investmentPlan == null ? Optional.empty() : Optional.of(investmentPlan);
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+	public InvestmentFundOrder setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
 		this.investmentPlan = investmentPlan;
+		return this;
 	}
 
 	public List<SecuritiesOrderStatus> getOrderStatus() {
-		return orderStatus;
+		return orderStatus == null ? orderStatus = new ArrayList<>() : orderStatus;
 	}
 
-	public void setOrderStatus(List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus) {
-		this.orderStatus = orderStatus;
+	public InvestmentFundOrder setOrderStatus(List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus) {
+		this.orderStatus = Objects.requireNonNull(orderStatus);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalAmount() {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(CurrencyAndAmount totalAmount) {
-		this.totalAmount = totalAmount;
+	public InvestmentFundOrder setTotalAmount(CurrencyAndAmount totalAmount) {
+		this.totalAmount = Objects.requireNonNull(totalAmount);
+		return this;
 	}
 }

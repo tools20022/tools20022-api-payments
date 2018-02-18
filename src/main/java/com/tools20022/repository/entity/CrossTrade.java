@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CrossTradeExecutionCode;
 import com.tools20022.repository.codeset.CrossTypeCode;
@@ -24,9 +25,11 @@ import com.tools20022.repository.codeset.PrioritisationCode;
 import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Transaction where either the buy-broker and the sell-broker are the same, or
@@ -71,8 +74,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +93,8 @@ public class CrossTrade extends SecuritiesOrder {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<SecuritiesOrder> buySideOrder;
 	/**
-	 * Buyside order details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,8 +139,8 @@ public class CrossTrade extends SecuritiesOrder {
 	};
 	protected List<SecuritiesOrder> sellSideOrder;
 	/**
-	 * Sell side order details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,8 +185,8 @@ public class CrossTrade extends SecuritiesOrder {
 	};
 	protected CrossTradeExecutionCode executionType;
 	/**
-	 * Identifies the type of execution of a cross trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -195,6 +198,9 @@ public class CrossTrade extends SecuritiesOrder {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.CrossTrade CrossTrade}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 549</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -210,6 +216,7 @@ public class CrossTrade extends SecuritiesOrder {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "549"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutionType";
 			definition = "Identifies the type of execution of a cross trade.";
@@ -228,8 +235,8 @@ public class CrossTrade extends SecuritiesOrder {
 	};
 	protected CrossTypeCode crossType;
 	/**
-	 * Type of cross being submitted to a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,14 +281,8 @@ public class CrossTrade extends SecuritiesOrder {
 	};
 	protected PrioritisationCode prioritisation;
 	/**
-	 * Indicates whether one side or the other of a cross order should be
-	 * prioritized.<br>
-	 * The definition of prioritization depends on the market. In some markets
-	 * prioritization means which side of the cross order is applied to the
-	 * market first. In other markets, prioritization may mean that the
-	 * prioritized side is fully executed (sometimes referred to as the side
-	 * being protected).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,7 +331,7 @@ public class CrossTrade extends SecuritiesOrder {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTrade";
 				definition = "Transaction where either the buy-broker and the sell-broker are the same, or the buy-broker and the sell-broker belong to the same firm.";
@@ -349,42 +350,47 @@ public class CrossTrade extends SecuritiesOrder {
 	}
 
 	public List<SecuritiesOrder> getBuySideOrder() {
-		return buySideOrder;
+		return buySideOrder == null ? buySideOrder = new ArrayList<>() : buySideOrder;
 	}
 
-	public void setBuySideOrder(List<SecuritiesOrder> buySideOrder) {
-		this.buySideOrder = buySideOrder;
+	public CrossTrade setBuySideOrder(List<SecuritiesOrder> buySideOrder) {
+		this.buySideOrder = Objects.requireNonNull(buySideOrder);
+		return this;
 	}
 
 	public List<SecuritiesOrder> getSellSideOrder() {
-		return sellSideOrder;
+		return sellSideOrder == null ? sellSideOrder = new ArrayList<>() : sellSideOrder;
 	}
 
-	public void setSellSideOrder(List<SecuritiesOrder> sellSideOrder) {
-		this.sellSideOrder = sellSideOrder;
+	public CrossTrade setSellSideOrder(List<SecuritiesOrder> sellSideOrder) {
+		this.sellSideOrder = Objects.requireNonNull(sellSideOrder);
+		return this;
 	}
 
 	public CrossTradeExecutionCode getExecutionType() {
 		return executionType;
 	}
 
-	public void setExecutionType(CrossTradeExecutionCode executionType) {
-		this.executionType = executionType;
+	public CrossTrade setExecutionType(CrossTradeExecutionCode executionType) {
+		this.executionType = Objects.requireNonNull(executionType);
+		return this;
 	}
 
 	public CrossTypeCode getCrossType() {
 		return crossType;
 	}
 
-	public void setCrossType(CrossTypeCode crossType) {
-		this.crossType = crossType;
+	public CrossTrade setCrossType(CrossTypeCode crossType) {
+		this.crossType = Objects.requireNonNull(crossType);
+		return this;
 	}
 
 	public PrioritisationCode getPrioritisation() {
 		return prioritisation;
 	}
 
-	public void setPrioritisation(PrioritisationCode prioritisation) {
-		this.prioritisation = prioritisation;
+	public CrossTrade setPrioritisation(PrioritisationCode prioritisation) {
+		this.prioritisation = Objects.requireNonNull(prioritisation);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BasisPriceTypeCode;
 import com.tools20022.repository.codeset.BidTypeCode;
@@ -26,9 +27,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Provides the details for negotiating and trading a large number of securities
@@ -103,8 +106,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -122,9 +125,8 @@ public class ListTrading {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text listIdentification;
 	/**
-	 * Unique identifier for a list, as assigned by the trading party. The
-	 * identifier must be unique within a single trading day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,9 +172,8 @@ public class ListTrading {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesOrder> securitiesListOrder;
 	/**
-	 * Order list containing the details of the individual orders within the
-	 * program.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,8 +220,8 @@ public class ListTrading {
 	};
 	protected TradingSession listTradingSession;
 	/**
-	 * Details of a specific trading session for a list trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -267,8 +268,8 @@ public class ListTrading {
 	};
 	protected Max140Text listName;
 	/**
-	 * Provides the name of the order list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,6 +280,9 @@ public class ListTrading {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.ListTrading ListTrading}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 392</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -294,6 +298,7 @@ public class ListTrading {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "392"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListName";
 			definition = "Provides the name of the order list.";
@@ -312,8 +317,8 @@ public class ListTrading {
 	};
 	protected BasisPriceTypeCode basisPriceType;
 	/**
-	 * Represents the basis price type in a bid order (list trading).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,6 +330,9 @@ public class ListTrading {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.ListTrading ListTrading}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 419</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -341,6 +349,7 @@ public class ListTrading {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "419"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasisPriceType";
 			definition = "Represents the basis price type in a bid order (list trading).";
@@ -359,9 +368,8 @@ public class ListTrading {
 	};
 	protected ISODateTime strikeTime;
 	/**
-	 * Time at which current market prices are used to determine the value of a
-	 * basket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,6 +380,9 @@ public class ListTrading {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.ListTrading ListTrading}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 443</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -389,6 +400,7 @@ public class ListTrading {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "443"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrikeTime";
 			definition = "Time at which current market prices are used to determine the value of a basket.";
@@ -407,9 +419,8 @@ public class ListTrading {
 	};
 	protected YesNoIndicator grossAmountIndicator;
 	/**
-	 * Indicates whether an amount is a gross amount (including all charges,
-	 * commissions and tax), or a net amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,6 +432,9 @@ public class ListTrading {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.ListTrading ListTrading}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 416</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -438,6 +452,7 @@ public class ListTrading {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "416"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmountIndicator";
 			definition = "Indicates whether an amount is a gross amount (including all charges, commissions and tax), or a net amount.";
@@ -456,10 +471,8 @@ public class ListTrading {
 	};
 	protected Max35Text sellSideIdentification;
 	/**
-	 * Unique identifier for a bid, as assigned by the the sell-side (broker,
-	 * exchange, electronic communication network (ECN)). The identifier must be
-	 * unique within a single trading day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -505,9 +518,8 @@ public class ListTrading {
 	};
 	protected Max35Text buySideIdentification;
 	/**
-	 * Unique identifier for a bid, as assigned by the buy-side institution. The
-	 * identifier must be unique within a single trading day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -553,8 +565,8 @@ public class ListTrading {
 	};
 	protected List<com.tools20022.repository.entity.Liquidity> liquidity;
 	/**
-	 * Information on the liquidity of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -599,8 +611,8 @@ public class ListTrading {
 	};
 	protected BidTypeCode bidType;
 	/**
-	 * Indicates the type of bid for a list order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -646,7 +658,7 @@ public class ListTrading {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ListTrading";
 				definition = "Provides the details for negotiating and trading a large number of securities contained in or comprising a portfolio. One example is index arbitrage, which consists in the purchase or sale of a basket of stocks in conjunction with the sale or purchase of a derivative product (for example index futures) to profit from price differences between the basket and the derivative product. Other examples include liquidation of EFP (Exchange for Physical) stock positions, portfolio realignment and portfolio liquidation.";
@@ -671,87 +683,98 @@ public class ListTrading {
 		return listIdentification;
 	}
 
-	public void setListIdentification(Max35Text listIdentification) {
-		this.listIdentification = listIdentification;
+	public ListTrading setListIdentification(Max35Text listIdentification) {
+		this.listIdentification = Objects.requireNonNull(listIdentification);
+		return this;
 	}
 
 	public List<SecuritiesOrder> getSecuritiesListOrder() {
-		return securitiesListOrder;
+		return securitiesListOrder == null ? securitiesListOrder = new ArrayList<>() : securitiesListOrder;
 	}
 
-	public void setSecuritiesListOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesListOrder) {
-		this.securitiesListOrder = securitiesListOrder;
+	public ListTrading setSecuritiesListOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesListOrder) {
+		this.securitiesListOrder = Objects.requireNonNull(securitiesListOrder);
+		return this;
 	}
 
 	public TradingSession getListTradingSession() {
 		return listTradingSession;
 	}
 
-	public void setListTradingSession(com.tools20022.repository.entity.TradingSession listTradingSession) {
-		this.listTradingSession = listTradingSession;
+	public ListTrading setListTradingSession(com.tools20022.repository.entity.TradingSession listTradingSession) {
+		this.listTradingSession = Objects.requireNonNull(listTradingSession);
+		return this;
 	}
 
 	public Max140Text getListName() {
 		return listName;
 	}
 
-	public void setListName(Max140Text listName) {
-		this.listName = listName;
+	public ListTrading setListName(Max140Text listName) {
+		this.listName = Objects.requireNonNull(listName);
+		return this;
 	}
 
 	public BasisPriceTypeCode getBasisPriceType() {
 		return basisPriceType;
 	}
 
-	public void setBasisPriceType(BasisPriceTypeCode basisPriceType) {
-		this.basisPriceType = basisPriceType;
+	public ListTrading setBasisPriceType(BasisPriceTypeCode basisPriceType) {
+		this.basisPriceType = Objects.requireNonNull(basisPriceType);
+		return this;
 	}
 
 	public ISODateTime getStrikeTime() {
 		return strikeTime;
 	}
 
-	public void setStrikeTime(ISODateTime strikeTime) {
-		this.strikeTime = strikeTime;
+	public ListTrading setStrikeTime(ISODateTime strikeTime) {
+		this.strikeTime = Objects.requireNonNull(strikeTime);
+		return this;
 	}
 
 	public YesNoIndicator getGrossAmountIndicator() {
 		return grossAmountIndicator;
 	}
 
-	public void setGrossAmountIndicator(YesNoIndicator grossAmountIndicator) {
-		this.grossAmountIndicator = grossAmountIndicator;
+	public ListTrading setGrossAmountIndicator(YesNoIndicator grossAmountIndicator) {
+		this.grossAmountIndicator = Objects.requireNonNull(grossAmountIndicator);
+		return this;
 	}
 
 	public Max35Text getSellSideIdentification() {
 		return sellSideIdentification;
 	}
 
-	public void setSellSideIdentification(Max35Text sellSideIdentification) {
-		this.sellSideIdentification = sellSideIdentification;
+	public ListTrading setSellSideIdentification(Max35Text sellSideIdentification) {
+		this.sellSideIdentification = Objects.requireNonNull(sellSideIdentification);
+		return this;
 	}
 
 	public Max35Text getBuySideIdentification() {
 		return buySideIdentification;
 	}
 
-	public void setBuySideIdentification(Max35Text buySideIdentification) {
-		this.buySideIdentification = buySideIdentification;
+	public ListTrading setBuySideIdentification(Max35Text buySideIdentification) {
+		this.buySideIdentification = Objects.requireNonNull(buySideIdentification);
+		return this;
 	}
 
 	public List<Liquidity> getLiquidity() {
-		return liquidity;
+		return liquidity == null ? liquidity = new ArrayList<>() : liquidity;
 	}
 
-	public void setLiquidity(List<com.tools20022.repository.entity.Liquidity> liquidity) {
-		this.liquidity = liquidity;
+	public ListTrading setLiquidity(List<com.tools20022.repository.entity.Liquidity> liquidity) {
+		this.liquidity = Objects.requireNonNull(liquidity);
+		return this;
 	}
 
 	public BidTypeCode getBidType() {
 		return bidType;
 	}
 
-	public void setBidType(BidTypeCode bidType) {
-		this.bidType = bidType;
+	public ListTrading setBidType(BidTypeCode bidType) {
+		this.bidType = Objects.requireNonNull(bidType);
+		return this;
 	}
 }

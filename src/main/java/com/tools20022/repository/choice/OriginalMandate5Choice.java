@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Mandate11;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,17 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * OriginalMandate4Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OriginalMandate5Choice", propOrder = {"originalMandateIdentification", "originalMandate"})
 public class OriginalMandate5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlMndtId", required = true)
 	protected Max35Text originalMandateIdentification;
 	/**
-	 * Unique identification, as assigned by the responsible party (such as the
-	 * creditor) or agent (such as the debtor agent), to unambiguously identify
-	 * the original mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +121,7 @@ public class OriginalMandate5Choice {
 	public static final MMMessageAttribute mmOriginalMandateIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmMandateIdentification;
-			componentContext_lazy = () -> OriginalMandate5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.OriginalMandate5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,10 +133,11 @@ public class OriginalMandate5Choice {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMndt", required = true)
 	protected Mandate11 originalMandate;
 	/**
-	 * Provides the original mandate data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -172,7 +173,7 @@ public class OriginalMandate5Choice {
 	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> DirectDebitMandate.mmObject();
-			componentContext_lazy = () -> OriginalMandate5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.OriginalMandate5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,9 +190,9 @@ public class OriginalMandate5Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OriginalMandate5Choice.mmOriginalMandateIdentification, OriginalMandate5Choice.mmOriginalMandate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.OriginalMandate5Choice.mmOriginalMandateIdentification, com.tools20022.repository.choice.OriginalMandate5Choice.mmOriginalMandate);
 				trace_lazy = () -> Mandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OriginalMandate5Choice";
 				definition = "Specifies the mandate that is being accepted.";
@@ -201,21 +202,21 @@ public class OriginalMandate5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlMndtId", required = true)
 	public Max35Text getOriginalMandateIdentification() {
 		return originalMandateIdentification;
 	}
 
-	public void setOriginalMandateIdentification(Max35Text originalMandateIdentification) {
-		this.originalMandateIdentification = originalMandateIdentification;
+	public OriginalMandate5Choice setOriginalMandateIdentification(Max35Text originalMandateIdentification) {
+		this.originalMandateIdentification = Objects.requireNonNull(originalMandateIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMndt", required = true)
 	public Mandate11 getOriginalMandate() {
 		return originalMandate;
 	}
 
-	public void setOriginalMandate(Mandate11 originalMandate) {
-		this.originalMandate = originalMandate;
+	public OriginalMandate5Choice setOriginalMandate(Mandate11 originalMandate) {
+		this.originalMandate = Objects.requireNonNull(originalMandate);
+		return this;
 	}
 }

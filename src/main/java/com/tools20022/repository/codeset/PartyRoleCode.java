@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,91 +39,94 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#LiquidityManager
- * PartyRoleCode.mmLiquidityManager}</li>
+ * PartyRoleCode.LiquidityManager}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#LimitManager
- * PartyRoleCode.mmLimitManager}</li>
+ * PartyRoleCode.LimitManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#PaymentManager
- * PartyRoleCode.mmPaymentManager}</li>
+ * PartyRoleCode.PaymentManager}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Reader
- * PartyRoleCode.mmReader}</li>
+ * PartyRoleCode.Reader}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#BackupManager
- * PartyRoleCode.mmBackupManager}</li>
+ * PartyRoleCode.BackupManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#SettlementManager
- * PartyRoleCode.mmSettlementManager}</li>
+ * PartyRoleCode.SettlementManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#FundManagementCompany
- * PartyRoleCode.mmFundManagementCompany}</li>
+ * PartyRoleCode.FundManagementCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#TransferAgent
- * PartyRoleCode.mmTransferAgent}</li>
+ * PartyRoleCode.TransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#FundAccountant
- * PartyRoleCode.mmFundAccountant}</li>
+ * PartyRoleCode.FundAccountant}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Registrar
- * PartyRoleCode.mmRegistrar}</li>
+ * PartyRoleCode.Registrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#InvestmentManager
- * PartyRoleCode.mmInvestmentManager}</li>
+ * PartyRoleCode.InvestmentManager}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Custodian
- * PartyRoleCode.mmCustodian}</li>
+ * PartyRoleCode.Custodian}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Auditor
- * PartyRoleCode.mmAuditor}</li>
+ * PartyRoleCode.Auditor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#PayingAgent
- * PartyRoleCode.mmPayingAgent}</li>
+ * PartyRoleCode.PayingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#CashCorrespondent
- * PartyRoleCode.mmCashCorrespondent}</li>
+ * PartyRoleCode.CashCorrespondent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#DataProvider
- * PartyRoleCode.mmDataProvider}</li>
+ * PartyRoleCode.DataProvider}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#FinalAgent
- * PartyRoleCode.mmFinalAgent}</li>
+ * PartyRoleCode.FinalAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Investor
- * PartyRoleCode.mmInvestor}</li>
+ * PartyRoleCode.Investor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#FirstAgent
- * PartyRoleCode.mmFirstAgent}</li>
+ * PartyRoleCode.FirstAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Intermediary
- * PartyRoleCode.mmIntermediary}</li>
+ * PartyRoleCode.Intermediary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Distributor
- * PartyRoleCode.mmDistributor}</li>
+ * PartyRoleCode.Distributor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Concentrator
- * PartyRoleCode.mmConcentrator}</li>
+ * PartyRoleCode.Concentrator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#UnderlyingClient1
- * PartyRoleCode.mmUnderlyingClient1}</li>
+ * PartyRoleCode.UnderlyingClient1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#UnderlyingClient2
- * PartyRoleCode.mmUnderlyingClient2}</li>
+ * PartyRoleCode.UnderlyingClient2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#TransmittingAgent
- * PartyRoleCode.mmTransmittingAgent}</li>
+ * PartyRoleCode.TransmittingAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#FundBroker
- * PartyRoleCode.mmFundBroker}</li>
+ * PartyRoleCode.FundBroker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#FinancialAdvisor
- * PartyRoleCode.mmFinancialAdvisor}</li>
+ * PartyRoleCode.FinancialAdvisor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#ContactPersonAtInstructingPartyInstitution
- * PartyRoleCode.mmContactPersonAtInstructingPartyInstitution}</li>
+ * PartyRoleCode.ContactPersonAtInstructingPartyInstitution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#ContactPersonAtExecutingPartyInstitution
- * PartyRoleCode.mmContactPersonAtExecutingPartyInstitution}</li>
+ * PartyRoleCode.ContactPersonAtExecutingPartyInstitution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyRoleCode#NameOfAgentToOrder
- * PartyRoleCode.mmNameOfAgentToOrder}</li>
+ * PartyRoleCode.NameOfAgentToOrder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#PrimeBroker
- * PartyRoleCode.mmPrimeBroker}</li>
+ * PartyRoleCode.PrimeBroker}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyRoleCode#Internal
- * PartyRoleCode.mmInternal}</li>
+ * PartyRoleCode.Internal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::TRCA</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1214,7 +1218,8 @@ public class PartyRoleCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA"));
 				example = Arrays.asList("LQMG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyRoleCode";

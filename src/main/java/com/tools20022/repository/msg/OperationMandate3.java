@@ -31,9 +31,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -93,8 +92,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,15 +108,16 @@ import javax.xml.bind.annotation.XmlType;
  * OperationMandate2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OperationMandate3", propOrder = {"modificationCode", "identification", "applicableChannel", "requiredSignatureNumber", "signatureOrderIndicator", "mandateHolder", "bankOperation", "startDate", "endDate"})
 public class OperationMandate3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModCd")
 	protected Modification1Code modificationCode;
 	/**
-	 * Specifies the type of change.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +145,7 @@ public class OperationMandate3 {
 	 */
 	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,10 +156,11 @@ public class OperationMandate3 {
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification of the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,7 +187,7 @@ public class OperationMandate3 {
 	 */
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -197,12 +198,11 @@ public class OperationMandate3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AplblChanl", required = true)
 	protected List<Channel2Choice> applicableChannel;
 	/**
-	 * Channel for which the operation mandate is valid. If ApplicableChannel
-	 * equals Fax, this means that a bank operation instruction sent by fax will
-	 * be processed according to the mandates exchanged in this message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +232,7 @@ public class OperationMandate3 {
 	 */
 	public static final MMMessageAttribute mmApplicableChannel = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "AplblChanl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,10 +242,11 @@ public class OperationMandate3 {
 			complexType_lazy = () -> Channel2Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "ReqrdSgntrNb", required = true)
 	protected Max15PlusSignedNumericText requiredSignatureNumber;
 	/**
-	 * Number of required and necessary signatures by the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +275,7 @@ public class OperationMandate3 {
 	 */
 	public static final MMMessageAttribute mmRequiredSignatureNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "ReqrdSgntrNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,11 +286,11 @@ public class OperationMandate3 {
 			simpleType_lazy = () -> Max15PlusSignedNumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "SgntrOrdrInd", required = true)
 	protected YesNoIndicator signatureOrderIndicator;
 	/**
-	 * Indicator whether a certain order of signatures has to be respected or
-	 * not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,7 +326,7 @@ public class OperationMandate3 {
 	public static final MMMessageAttribute mmSignatureOrderIndicator = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> SignatureCondition.mmSignatureOrderIndicator;
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "SgntrOrdrInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -336,10 +337,11 @@ public class OperationMandate3 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "MndtHldr")
 	protected List<com.tools20022.repository.msg.PartyAndAuthorisation3> mandateHolder;
 	/**
-	 * Holder of the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -371,7 +373,7 @@ public class OperationMandate3 {
 	public static final MMMessageAssociationEnd mmMandateHolder = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> MandateHolder.mmObject();
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "MndtHldr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -382,10 +384,11 @@ public class OperationMandate3 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 		}
 	};
+	@XmlElement(name = "BkOpr", required = true)
 	protected List<com.tools20022.repository.msg.BankTransactionCodeStructure4> bankOperation;
 	/**
-	 * Bank operation allowed by a mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -418,7 +421,7 @@ public class OperationMandate3 {
 	public static final MMMessageAssociationEnd mmBankOperation = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> BankOperation.mmOperationType;
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "BkOpr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -429,10 +432,11 @@ public class OperationMandate3 {
 			type_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure4.mmObject();
 		}
 	};
+	@XmlElement(name = "StartDt")
 	protected ISODate startDate;
 	/**
-	 * Is the date when the mandate becomes valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -465,7 +469,7 @@ public class OperationMandate3 {
 	public static final MMMessageAttribute mmStartDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "StartDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -476,10 +480,11 @@ public class OperationMandate3 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "EndDt")
 	protected ISODate endDate;
 	/**
-	 * Is the date when the mandate stops to be valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,7 +517,7 @@ public class OperationMandate3 {
 	public static final MMMessageAttribute mmEndDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmToDateTime;
-			componentContext_lazy = () -> OperationMandate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OperationMandate3.mmObject();
 			isDerived = false;
 			xmlTag = "EndDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -527,11 +532,13 @@ public class OperationMandate3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OperationMandate3.mmModificationCode, OperationMandate3.mmIdentification, OperationMandate3.mmApplicableChannel, OperationMandate3.mmRequiredSignatureNumber,
-						OperationMandate3.mmSignatureOrderIndicator, OperationMandate3.mmMandateHolder, OperationMandate3.mmBankOperation, OperationMandate3.mmStartDate, OperationMandate3.mmEndDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OperationMandate3.mmModificationCode, com.tools20022.repository.msg.OperationMandate3.mmIdentification,
+						com.tools20022.repository.msg.OperationMandate3.mmApplicableChannel, com.tools20022.repository.msg.OperationMandate3.mmRequiredSignatureNumber,
+						com.tools20022.repository.msg.OperationMandate3.mmSignatureOrderIndicator, com.tools20022.repository.msg.OperationMandate3.mmMandateHolder, com.tools20022.repository.msg.OperationMandate3.mmBankOperation,
+						com.tools20022.repository.msg.OperationMandate3.mmStartDate, com.tools20022.repository.msg.OperationMandate3.mmEndDate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountMandateMaintenanceAmendmentRequestV02.mmMandate, AccountMandateMaintenanceRequestV02.mmMandate);
 				trace_lazy = () -> CashAccountMandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OperationMandate3";
 				definition = "Information specifying the Mandate.";
@@ -541,84 +548,84 @@ public class OperationMandate3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModCd")
-	public Modification1Code getModificationCode() {
-		return modificationCode;
+	public Optional<Modification1Code> getModificationCode() {
+		return modificationCode == null ? Optional.empty() : Optional.of(modificationCode);
 	}
 
-	public void setModificationCode(Modification1Code modificationCode) {
+	public OperationMandate3 setModificationCode(Modification1Code modificationCode) {
 		this.modificationCode = modificationCode;
+		return this;
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public OperationMandate3 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AplblChanl", required = true)
 	public List<Channel2Choice> getApplicableChannel() {
-		return applicableChannel;
+		return applicableChannel == null ? applicableChannel = new ArrayList<>() : applicableChannel;
 	}
 
-	public void setApplicableChannel(List<Channel2Choice> applicableChannel) {
-		this.applicableChannel = applicableChannel;
+	public OperationMandate3 setApplicableChannel(List<Channel2Choice> applicableChannel) {
+		this.applicableChannel = Objects.requireNonNull(applicableChannel);
+		return this;
 	}
 
-	@XmlElement(name = "ReqrdSgntrNb", required = true)
 	public Max15PlusSignedNumericText getRequiredSignatureNumber() {
 		return requiredSignatureNumber;
 	}
 
-	public void setRequiredSignatureNumber(Max15PlusSignedNumericText requiredSignatureNumber) {
-		this.requiredSignatureNumber = requiredSignatureNumber;
+	public OperationMandate3 setRequiredSignatureNumber(Max15PlusSignedNumericText requiredSignatureNumber) {
+		this.requiredSignatureNumber = Objects.requireNonNull(requiredSignatureNumber);
+		return this;
 	}
 
-	@XmlElement(name = "SgntrOrdrInd", required = true)
 	public YesNoIndicator getSignatureOrderIndicator() {
 		return signatureOrderIndicator;
 	}
 
-	public void setSignatureOrderIndicator(YesNoIndicator signatureOrderIndicator) {
-		this.signatureOrderIndicator = signatureOrderIndicator;
+	public OperationMandate3 setSignatureOrderIndicator(YesNoIndicator signatureOrderIndicator) {
+		this.signatureOrderIndicator = Objects.requireNonNull(signatureOrderIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "MndtHldr")
 	public List<PartyAndAuthorisation3> getMandateHolder() {
-		return mandateHolder;
+		return mandateHolder == null ? mandateHolder = new ArrayList<>() : mandateHolder;
 	}
 
-	public void setMandateHolder(List<com.tools20022.repository.msg.PartyAndAuthorisation3> mandateHolder) {
-		this.mandateHolder = mandateHolder;
+	public OperationMandate3 setMandateHolder(List<com.tools20022.repository.msg.PartyAndAuthorisation3> mandateHolder) {
+		this.mandateHolder = Objects.requireNonNull(mandateHolder);
+		return this;
 	}
 
-	@XmlElement(name = "BkOpr", required = true)
 	public List<BankTransactionCodeStructure4> getBankOperation() {
-		return bankOperation;
+		return bankOperation == null ? bankOperation = new ArrayList<>() : bankOperation;
 	}
 
-	public void setBankOperation(List<com.tools20022.repository.msg.BankTransactionCodeStructure4> bankOperation) {
-		this.bankOperation = bankOperation;
+	public OperationMandate3 setBankOperation(List<com.tools20022.repository.msg.BankTransactionCodeStructure4> bankOperation) {
+		this.bankOperation = Objects.requireNonNull(bankOperation);
+		return this;
 	}
 
-	@XmlElement(name = "StartDt")
-	public ISODate getStartDate() {
-		return startDate;
+	public Optional<ISODate> getStartDate() {
+		return startDate == null ? Optional.empty() : Optional.of(startDate);
 	}
 
-	public void setStartDate(ISODate startDate) {
+	public OperationMandate3 setStartDate(ISODate startDate) {
 		this.startDate = startDate;
+		return this;
 	}
 
-	@XmlElement(name = "EndDt")
-	public ISODate getEndDate() {
-		return endDate;
+	public Optional<ISODate> getEndDate() {
+		return endDate == null ? Optional.empty() : Optional.of(endDate);
 	}
 
-	public void setEndDate(ISODate endDate) {
+	public OperationMandate3 setEndDate(ISODate endDate) {
 		this.endDate = endDate;
+		return this;
 	}
 }

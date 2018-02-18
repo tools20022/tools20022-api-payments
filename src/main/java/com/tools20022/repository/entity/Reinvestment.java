@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Parameters of the reinvestment of the income on the fund.
@@ -61,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,8 +79,8 @@ public class Reinvestment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InvestmentAccountService relatedinvestmentAccountService;
 	/**
-	 * Investment account services which include reinvestment information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,9 +128,8 @@ public class Reinvestment {
 	};
 	protected InvestmentFundClass investmentFundClass;
 	/**
-	 * Investment fund class which is the fund in which the income must be
-	 * reinvested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,8 +177,8 @@ public class Reinvestment {
 	};
 	protected PercentageRate percentage;
 	/**
-	 * Percentage on the income on the fund to be reinvested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -225,7 +225,7 @@ public class Reinvestment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reinvestment";
 				definition = "Parameters of the reinvestment of the income on the fund.";
@@ -246,23 +246,26 @@ public class Reinvestment {
 		return relatedinvestmentAccountService;
 	}
 
-	public void setRelatedinvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService relatedinvestmentAccountService) {
-		this.relatedinvestmentAccountService = relatedinvestmentAccountService;
+	public Reinvestment setRelatedinvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService relatedinvestmentAccountService) {
+		this.relatedinvestmentAccountService = Objects.requireNonNull(relatedinvestmentAccountService);
+		return this;
 	}
 
 	public InvestmentFundClass getInvestmentFundClass() {
 		return investmentFundClass;
 	}
 
-	public void setInvestmentFundClass(com.tools20022.repository.entity.InvestmentFundClass investmentFundClass) {
-		this.investmentFundClass = investmentFundClass;
+	public Reinvestment setInvestmentFundClass(com.tools20022.repository.entity.InvestmentFundClass investmentFundClass) {
+		this.investmentFundClass = Objects.requireNonNull(investmentFundClass);
+		return this;
 	}
 
 	public PercentageRate getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(PercentageRate percentage) {
-		this.percentage = percentage;
+	public Reinvestment setPercentage(PercentageRate percentage) {
+		this.percentage = Objects.requireNonNull(percentage);
+		return this;
 	}
 }

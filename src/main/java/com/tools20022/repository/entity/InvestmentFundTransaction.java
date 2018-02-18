@@ -24,9 +24,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process of buying, selling, switching or transferring fund units.
@@ -100,8 +102,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -118,10 +120,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.InvestmentFundOrder> investmentFundOrder;
 	/**
-	 * An investor's instruction to either subscribe or redeem an amount of
-	 * money or its equivalent, eg, other assets, into or out of an investment
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,9 +169,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of an order assigned by
-	 * a client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,8 +217,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected InvestmentFundTransactionTypeCode type;
 	/**
-	 * Type of investment fund transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,8 +264,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected Charges transactionCharge;
 	/**
-	 * Charge for the placement of an order and/or for its execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,8 +312,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
 	/**
-	 * Account related to an investment fund transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,9 +359,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass;
 	/**
-	 * Investment fund class to which an investment fund order and its execution
-	 * are related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,8 +408,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected InvestmentFundTax transactionTax;
 	/**
-	 * Tax applicable to an investment fund order and/or to its execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -459,9 +457,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Direction of the transaction, ie, securities are received (credited) or
-	 * delivered (debited).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,9 +506,8 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundOrderExecution> investmentFundOrderExecution;
 	/**
-	 * Creation/cancellation of investment units on the books of the fund or its
-	 * designated agent, as a result of executing an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,7 +558,7 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundTransaction";
 				definition = "Process of buying, selling, switching or transferring fund units.";
@@ -586,74 +582,83 @@ public class InvestmentFundTransaction extends SecuritiesTrade {
 	}
 
 	public List<InvestmentFundOrder> getInvestmentFundOrder() {
-		return investmentFundOrder;
+		return investmentFundOrder == null ? investmentFundOrder = new ArrayList<>() : investmentFundOrder;
 	}
 
-	public void setInvestmentFundOrder(List<com.tools20022.repository.entity.InvestmentFundOrder> investmentFundOrder) {
-		this.investmentFundOrder = investmentFundOrder;
+	public InvestmentFundTransaction setInvestmentFundOrder(List<com.tools20022.repository.entity.InvestmentFundOrder> investmentFundOrder) {
+		this.investmentFundOrder = Objects.requireNonNull(investmentFundOrder);
+		return this;
 	}
 
 	public Max35Text getClientReference() {
 		return clientReference;
 	}
 
-	public void setClientReference(Max35Text clientReference) {
-		this.clientReference = clientReference;
+	public InvestmentFundTransaction setClientReference(Max35Text clientReference) {
+		this.clientReference = Objects.requireNonNull(clientReference);
+		return this;
 	}
 
 	public InvestmentFundTransactionTypeCode getType() {
 		return type;
 	}
 
-	public void setType(InvestmentFundTransactionTypeCode type) {
-		this.type = type;
+	public InvestmentFundTransaction setType(InvestmentFundTransactionTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public Charges getTransactionCharge() {
 		return transactionCharge;
 	}
 
-	public void setTransactionCharge(com.tools20022.repository.entity.Charges transactionCharge) {
-		this.transactionCharge = transactionCharge;
+	public InvestmentFundTransaction setTransactionCharge(com.tools20022.repository.entity.Charges transactionCharge) {
+		this.transactionCharge = Objects.requireNonNull(transactionCharge);
+		return this;
 	}
 
 	public List<InvestmentAccount> getInvestmentAccount() {
-		return investmentAccount;
+		return investmentAccount == null ? investmentAccount = new ArrayList<>() : investmentAccount;
 	}
 
-	public void setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
-		this.investmentAccount = investmentAccount;
+	public InvestmentFundTransaction setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
+		this.investmentAccount = Objects.requireNonNull(investmentAccount);
+		return this;
 	}
 
 	public List<InvestmentFundClass> getInvestmentFundClass() {
-		return investmentFundClass;
+		return investmentFundClass == null ? investmentFundClass = new ArrayList<>() : investmentFundClass;
 	}
 
-	public void setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
-		this.investmentFundClass = investmentFundClass;
+	public InvestmentFundTransaction setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
+		this.investmentFundClass = Objects.requireNonNull(investmentFundClass);
+		return this;
 	}
 
 	public InvestmentFundTax getTransactionTax() {
 		return transactionTax;
 	}
 
-	public void setTransactionTax(com.tools20022.repository.entity.InvestmentFundTax transactionTax) {
-		this.transactionTax = transactionTax;
+	public InvestmentFundTransaction setTransactionTax(com.tools20022.repository.entity.InvestmentFundTax transactionTax) {
+		this.transactionTax = Objects.requireNonNull(transactionTax);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public InvestmentFundTransaction setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public List<InvestmentFundOrderExecution> getInvestmentFundOrderExecution() {
-		return investmentFundOrderExecution;
+		return investmentFundOrderExecution == null ? investmentFundOrderExecution = new ArrayList<>() : investmentFundOrderExecution;
 	}
 
-	public void setInvestmentFundOrderExecution(List<com.tools20022.repository.entity.InvestmentFundOrderExecution> investmentFundOrderExecution) {
-		this.investmentFundOrderExecution = investmentFundOrderExecution;
+	public InvestmentFundTransaction setInvestmentFundOrderExecution(List<com.tools20022.repository.entity.InvestmentFundOrderExecution> investmentFundOrderExecution) {
+		this.investmentFundOrderExecution = Objects.requireNonNull(investmentFundOrderExecution);
+		return this;
 	}
 }

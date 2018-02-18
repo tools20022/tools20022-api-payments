@@ -39,44 +39,44 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#DuplicatePayment
- * CancellationReasonCode.mmDuplicatePayment}</li>
+ * CancellationReasonCode.DuplicatePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#IncorrectAgent
- * CancellationReasonCode.mmIncorrectAgent}</li>
+ * CancellationReasonCode.IncorrectAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#IncorrectCurrency
- * CancellationReasonCode.mmIncorrectCurrency}</li>
+ * CancellationReasonCode.IncorrectCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#RequestedByCustomer
- * CancellationReasonCode.mmRequestedByCustomer}</li>
+ * CancellationReasonCode.RequestedByCustomer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#UnduePayment
- * CancellationReasonCode.mmUnduePayment}</li>
+ * CancellationReasonCode.UnduePayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#SuspiciousPayment
- * CancellationReasonCode.mmSuspiciousPayment}</li>
+ * CancellationReasonCode.SuspiciousPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#InsufficientDebtorDetails
- * CancellationReasonCode.mmInsufficientDebtorDetails}</li>
+ * CancellationReasonCode.InsufficientDebtorDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#InsufficientCreditorDetails
- * CancellationReasonCode.mmInsufficientCreditorDetails}</li>
+ * CancellationReasonCode.InsufficientCreditorDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#CancelUponUnableToApply
- * CancellationReasonCode.mmCancelUponUnableToApply}</li>
+ * CancellationReasonCode.CancelUponUnableToApply}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#TechnicalProblem
- * CancellationReasonCode.mmTechnicalProblem}</li>
+ * CancellationReasonCode.TechnicalProblem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationReasonCode#FraudulentOrigin
- * CancellationReasonCode.mmFraudulentOrigin}</li>
+ * CancellationReasonCode.FraudulentOrigin}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -453,7 +453,7 @@ public class CancellationReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DUPL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationReasonCode";

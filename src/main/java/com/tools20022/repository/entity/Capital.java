@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CapitalTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
@@ -26,6 +27,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Amount of money targeted to be raised through the issuance of a security.
@@ -62,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,8 +83,8 @@ public class Capital {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Issuance assetIssuance;
 	/**
-	 * Issued asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,8 +129,8 @@ public class Capital {
 	};
 	protected ISODateTime date;
 	/**
-	 * Date/time at which capital amount was recorded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,8 +174,8 @@ public class Capital {
 	};
 	protected CapitalTypeCode type;
 	/**
-	 * Specifies the type of capital.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,8 +220,8 @@ public class Capital {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Capital expressed as a currency and amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,8 +266,8 @@ public class Capital {
 	};
 	protected DecimalNumber unit;
 	/**
-	 * Capital expressed as a number of units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,6 +279,9 @@ public class Capital {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Capital
 	 * Capital}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: UNIT</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -291,6 +297,7 @@ public class Capital {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "UNIT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Capital expressed as a number of units.";
@@ -311,7 +318,7 @@ public class Capital {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Capital";
 				definition = "Amount of money targeted to be raised through the issuance of a security.";
@@ -328,43 +335,48 @@ public class Capital {
 		return mmObject_lazy.get();
 	}
 
-	public Issuance getAssetIssuance() {
-		return assetIssuance;
+	public Optional<Issuance> getAssetIssuance() {
+		return assetIssuance == null ? Optional.empty() : Optional.of(assetIssuance);
 	}
 
-	public void setAssetIssuance(com.tools20022.repository.entity.Issuance assetIssuance) {
+	public Capital setAssetIssuance(com.tools20022.repository.entity.Issuance assetIssuance) {
 		this.assetIssuance = assetIssuance;
+		return this;
 	}
 
 	public ISODateTime getDate() {
 		return date;
 	}
 
-	public void setDate(ISODateTime date) {
-		this.date = date;
+	public Capital setDate(ISODateTime date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public CapitalTypeCode getType() {
 		return type;
 	}
 
-	public void setType(CapitalTypeCode type) {
-		this.type = type;
+	public Capital setType(CapitalTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Capital setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public DecimalNumber getUnit() {
 		return unit;
 	}
 
-	public void setUnit(DecimalNumber unit) {
-		this.unit = unit;
+	public Capital setUnit(DecimalNumber unit) {
+		this.unit = Objects.requireNonNull(unit);
+		return this;
 	}
 }

@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Cash management feature limiting the maximum risk that a party accepts to
@@ -70,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +88,8 @@ public class RiskManagementLimit extends Limit {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashManagementService cashManagementService;
 	/**
-	 * Cash management service which offers limit management services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,8 +138,8 @@ public class RiskManagementLimit extends Limit {
 	};
 	protected List<com.tools20022.repository.entity.SystemMemberRole> counterparty;
 	/**
-	 * Identification of the system member for which the limit is established.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +189,7 @@ public class RiskManagementLimit extends Limit {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RiskManagementLimit";
 				definition = "Cash management feature limiting the maximum risk that a party accepts to take with respect to a counterparty or a set of counterparties. A risk management limit is either bilateral, for a counterparty, or multilateral, for a set of counterparties or all other members in a system.The limit may also apply to sponsored or indirect members. In principle, a risk management limit is calculated on the net position between two members and is expressed as a credit or debit limit, from the point of view of the party setting the limit.";
@@ -207,19 +206,21 @@ public class RiskManagementLimit extends Limit {
 		return mmObject_lazy.get();
 	}
 
-	public CashManagementService getCashManagementService() {
-		return cashManagementService;
+	public Optional<CashManagementService> getCashManagementService() {
+		return cashManagementService == null ? Optional.empty() : Optional.of(cashManagementService);
 	}
 
-	public void setCashManagementService(com.tools20022.repository.entity.CashManagementService cashManagementService) {
+	public RiskManagementLimit setCashManagementService(com.tools20022.repository.entity.CashManagementService cashManagementService) {
 		this.cashManagementService = cashManagementService;
+		return this;
 	}
 
 	public List<SystemMemberRole> getCounterparty() {
-		return counterparty;
+		return counterparty == null ? counterparty = new ArrayList<>() : counterparty;
 	}
 
-	public void setCounterparty(List<com.tools20022.repository.entity.SystemMemberRole> counterparty) {
-		this.counterparty = counterparty;
+	public RiskManagementLimit setCounterparty(List<com.tools20022.repository.entity.SystemMemberRole> counterparty) {
+		this.counterparty = Objects.requireNonNull(counterparty);
+		return this;
 	}
 }

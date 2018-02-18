@@ -23,6 +23,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Amount of expected margin required by any of the parties of the margin
@@ -67,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +88,8 @@ public class MarginAmountRequirement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExposureCalculation variationMarginAmountRequirementCalculation;
 	/**
-	 * Exposure valuation which takes into account amount requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,10 +137,8 @@ public class MarginAmountRequirement {
 	};
 	protected ActiveCurrencyAndAmount deliverMarginAmount;
 	/**
-	 * Amount of new Variation Margin that will be delivered to one party by the
-	 * other party after rounding, threshold and minimum transfer amount are
-	 * taken into account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,10 +186,8 @@ public class MarginAmountRequirement {
 	};
 	protected ActiveCurrencyAndAmount returnMarginAmount;
 	/**
-	 * Amount of new Variation Margin that will be recalled to one party from
-	 * the other party after rounding, threshold and minimum transfer amount are
-	 * taken into account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,8 +235,8 @@ public class MarginAmountRequirement {
 	};
 	protected ExposureCalculation segregatedAmountRequirementCalculation;
 	/**
-	 * Exposure valuation which takes into account amount requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,7 +286,7 @@ public class MarginAmountRequirement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "MarginAmountRequirement";
 				definition = "Amount of expected margin required by any of the parties of the margin calculation.";
@@ -305,35 +303,39 @@ public class MarginAmountRequirement {
 		return mmObject_lazy.get();
 	}
 
-	public ExposureCalculation getVariationMarginAmountRequirementCalculation() {
-		return variationMarginAmountRequirementCalculation;
+	public Optional<ExposureCalculation> getVariationMarginAmountRequirementCalculation() {
+		return variationMarginAmountRequirementCalculation == null ? Optional.empty() : Optional.of(variationMarginAmountRequirementCalculation);
 	}
 
-	public void setVariationMarginAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginAmountRequirementCalculation) {
+	public MarginAmountRequirement setVariationMarginAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginAmountRequirementCalculation) {
 		this.variationMarginAmountRequirementCalculation = variationMarginAmountRequirementCalculation;
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getDeliverMarginAmount() {
 		return deliverMarginAmount;
 	}
 
-	public void setDeliverMarginAmount(ActiveCurrencyAndAmount deliverMarginAmount) {
-		this.deliverMarginAmount = deliverMarginAmount;
+	public MarginAmountRequirement setDeliverMarginAmount(ActiveCurrencyAndAmount deliverMarginAmount) {
+		this.deliverMarginAmount = Objects.requireNonNull(deliverMarginAmount);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getReturnMarginAmount() {
 		return returnMarginAmount;
 	}
 
-	public void setReturnMarginAmount(ActiveCurrencyAndAmount returnMarginAmount) {
-		this.returnMarginAmount = returnMarginAmount;
+	public MarginAmountRequirement setReturnMarginAmount(ActiveCurrencyAndAmount returnMarginAmount) {
+		this.returnMarginAmount = Objects.requireNonNull(returnMarginAmount);
+		return this;
 	}
 
-	public ExposureCalculation getSegregatedAmountRequirementCalculation() {
-		return segregatedAmountRequirementCalculation;
+	public Optional<ExposureCalculation> getSegregatedAmountRequirementCalculation() {
+		return segregatedAmountRequirementCalculation == null ? Optional.empty() : Optional.of(segregatedAmountRequirementCalculation);
 	}
 
-	public void setSegregatedAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedAmountRequirementCalculation) {
+	public MarginAmountRequirement setSegregatedAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedAmountRequirementCalculation) {
 		this.segregatedAmountRequirementCalculation = segregatedAmountRequirementCalculation;
+		return this;
 	}
 }

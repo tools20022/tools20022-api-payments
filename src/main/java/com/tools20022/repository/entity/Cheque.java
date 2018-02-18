@@ -25,9 +25,11 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Cheque7;
 import com.tools20022.repository.msg.TransactionReferences3;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Negotiable instrument instructing a financial institution to pay a specific
@@ -83,8 +85,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +104,8 @@ public class Cheque {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ChequeIssue chequeDelivery;
 	/**
-	 * Specifies the parameters related to the delivery of the cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,9 +152,8 @@ public class Cheque {
 	};
 	protected Max35Text number;
 	/**
-	 * Unique and unambiguous identifier for a cheque as assigned by the
-	 * financial institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,8 +208,8 @@ public class Cheque {
 	};
 	protected ChequeTypeCode chequeType;
 	/**
-	 * Specifies the type of cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,8 +262,8 @@ public class Cheque {
 	};
 	protected ISODate maturityDate;
 	/**
-	 * Date when the draft becomes payable and the debtor's account is debited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,10 +318,8 @@ public class Cheque {
 	};
 	protected Max35Text formsCode;
 	/**
-	 * Code agreed between the initiating party and the debtor's agent, that
-	 * specifies the cheque layout, company logo and digitised signature to be
-	 * used to print the cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,9 +373,8 @@ public class Cheque {
 	};
 	protected Max35Text memoField;
 	/**
-	 * Information that needs to be printed on a cheque, used by the payer to
-	 * add miscellaneous information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,9 +428,8 @@ public class Cheque {
 	};
 	protected Max35Text regionalClearingZone;
 	/**
-	 * Regional area in which the cheque can be cleared, when a country has no
-	 * nation-wide cheque clearing organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,8 +484,8 @@ public class Cheque {
 	};
 	protected List<com.tools20022.repository.entity.ChequePayment> relatedPayment;
 	/**
-	 * Payment which uses a cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -533,8 +530,8 @@ public class Cheque {
 	};
 	protected List<com.tools20022.repository.entity.ChequePartyRole> chequePartyRole;
 	/**
-	 * Specifies each role played by a party in the process of paying by cheque.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -581,8 +578,8 @@ public class Cheque {
 	};
 	protected CashAccount cashAccount;
 	/**
-	 * Cash account on which a cheque is drawn.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -630,7 +627,7 @@ public class Cheque {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Cheque";
 				definition = "Negotiable instrument instructing a financial institution to pay a specific amount of a specific currency from the account of the drawer with that institution.";
@@ -654,79 +651,89 @@ public class Cheque {
 		return chequeDelivery;
 	}
 
-	public void setChequeDelivery(com.tools20022.repository.entity.ChequeIssue chequeDelivery) {
-		this.chequeDelivery = chequeDelivery;
+	public Cheque setChequeDelivery(com.tools20022.repository.entity.ChequeIssue chequeDelivery) {
+		this.chequeDelivery = Objects.requireNonNull(chequeDelivery);
+		return this;
 	}
 
 	public Max35Text getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max35Text number) {
-		this.number = number;
+	public Cheque setNumber(Max35Text number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
 	public ChequeTypeCode getChequeType() {
 		return chequeType;
 	}
 
-	public void setChequeType(ChequeTypeCode chequeType) {
-		this.chequeType = chequeType;
+	public Cheque setChequeType(ChequeTypeCode chequeType) {
+		this.chequeType = Objects.requireNonNull(chequeType);
+		return this;
 	}
 
 	public ISODate getMaturityDate() {
 		return maturityDate;
 	}
 
-	public void setMaturityDate(ISODate maturityDate) {
-		this.maturityDate = maturityDate;
+	public Cheque setMaturityDate(ISODate maturityDate) {
+		this.maturityDate = Objects.requireNonNull(maturityDate);
+		return this;
 	}
 
 	public Max35Text getFormsCode() {
 		return formsCode;
 	}
 
-	public void setFormsCode(Max35Text formsCode) {
-		this.formsCode = formsCode;
+	public Cheque setFormsCode(Max35Text formsCode) {
+		this.formsCode = Objects.requireNonNull(formsCode);
+		return this;
 	}
 
 	public Max35Text getMemoField() {
 		return memoField;
 	}
 
-	public void setMemoField(Max35Text memoField) {
-		this.memoField = memoField;
+	public Cheque setMemoField(Max35Text memoField) {
+		this.memoField = Objects.requireNonNull(memoField);
+		return this;
 	}
 
 	public Max35Text getRegionalClearingZone() {
 		return regionalClearingZone;
 	}
 
-	public void setRegionalClearingZone(Max35Text regionalClearingZone) {
-		this.regionalClearingZone = regionalClearingZone;
+	public Cheque setRegionalClearingZone(Max35Text regionalClearingZone) {
+		this.regionalClearingZone = Objects.requireNonNull(regionalClearingZone);
+		return this;
 	}
 
 	public List<ChequePayment> getRelatedPayment() {
-		return relatedPayment;
+		return relatedPayment == null ? relatedPayment = new ArrayList<>() : relatedPayment;
 	}
 
-	public void setRelatedPayment(List<com.tools20022.repository.entity.ChequePayment> relatedPayment) {
-		this.relatedPayment = relatedPayment;
+	public Cheque setRelatedPayment(List<com.tools20022.repository.entity.ChequePayment> relatedPayment) {
+		this.relatedPayment = Objects.requireNonNull(relatedPayment);
+		return this;
 	}
 
 	public List<ChequePartyRole> getChequePartyRole() {
-		return chequePartyRole;
+		return chequePartyRole == null ? chequePartyRole = new ArrayList<>() : chequePartyRole;
 	}
 
-	public void setChequePartyRole(List<com.tools20022.repository.entity.ChequePartyRole> chequePartyRole) {
-		this.chequePartyRole = chequePartyRole;
+	public Cheque setChequePartyRole(List<com.tools20022.repository.entity.ChequePartyRole> chequePartyRole) {
+		this.chequePartyRole = Objects.requireNonNull(chequePartyRole);
+		return this;
 	}
 
 	public CashAccount getCashAccount() {
 		return cashAccount;
 	}
 
-	public void setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
-		this.cashAccount = cashAccount;
+	public Cheque setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 }

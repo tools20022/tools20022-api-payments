@@ -23,9 +23,8 @@ import com.tools20022.repository.codeset.StandingInstructionTypeCode;
 import com.tools20022.repository.entity.StandingSettlementInstruction;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set-up at the issuer (agent) of a standing instruction originating from the
@@ -79,8 +78,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +97,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected StandingInstructionTypeCode standingInstructionType;
 	/**
-	 * Type of standing instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,8 +144,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	};
 	protected StandingInstructionGrossNetCode grossOrNetIndicator;
 	/**
-	 * Indicates whether the payments must always be gross or net.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,9 +192,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	};
 	protected CorporateActionProceedsDeliveryInstruction relatedDeliveryInstructions;
 	/**
-	 * Corporate action delivery instructions which contain settlement standing
-	 * instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,8 +244,8 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Financial instrument to which the standing instruction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,7 +293,7 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AgentCorporateActionStandingInstruction";
 				definition = "Set-up at the issuer (agent) of a standing instruction originating from the CSD Participants. These standing instructions allow the participant to indicate details for the distribution of the outturn resources of a CA event outside of the CSD. A standing instruction can be accepted or rejected by the issuer (agent) and a CSD participant can amend or cancel a standing instruction.";
@@ -319,31 +317,35 @@ public class AgentCorporateActionStandingInstruction extends StandingSettlementI
 		return standingInstructionType;
 	}
 
-	public void setStandingInstructionType(StandingInstructionTypeCode standingInstructionType) {
-		this.standingInstructionType = standingInstructionType;
+	public AgentCorporateActionStandingInstruction setStandingInstructionType(StandingInstructionTypeCode standingInstructionType) {
+		this.standingInstructionType = Objects.requireNonNull(standingInstructionType);
+		return this;
 	}
 
 	public StandingInstructionGrossNetCode getGrossOrNetIndicator() {
 		return grossOrNetIndicator;
 	}
 
-	public void setGrossOrNetIndicator(StandingInstructionGrossNetCode grossOrNetIndicator) {
-		this.grossOrNetIndicator = grossOrNetIndicator;
+	public AgentCorporateActionStandingInstruction setGrossOrNetIndicator(StandingInstructionGrossNetCode grossOrNetIndicator) {
+		this.grossOrNetIndicator = Objects.requireNonNull(grossOrNetIndicator);
+		return this;
 	}
 
-	public CorporateActionProceedsDeliveryInstruction getRelatedDeliveryInstructions() {
-		return relatedDeliveryInstructions;
+	public Optional<CorporateActionProceedsDeliveryInstruction> getRelatedDeliveryInstructions() {
+		return relatedDeliveryInstructions == null ? Optional.empty() : Optional.of(relatedDeliveryInstructions);
 	}
 
-	public void setRelatedDeliveryInstructions(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedDeliveryInstructions) {
+	public AgentCorporateActionStandingInstruction setRelatedDeliveryInstructions(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedDeliveryInstructions) {
 		this.relatedDeliveryInstructions = relatedDeliveryInstructions;
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public AgentCorporateActionStandingInstruction setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 }

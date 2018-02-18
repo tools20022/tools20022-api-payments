@@ -38,44 +38,44 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Analysis
- * TradeCertificateTypeCode.mmAnalysis}</li>
+ * TradeCertificateTypeCode.Analysis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Quality
- * TradeCertificateTypeCode.mmQuality}</li>
+ * TradeCertificateTypeCode.Quality}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Quantity
- * TradeCertificateTypeCode.mmQuantity}</li>
+ * TradeCertificateTypeCode.Quantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Weight
- * TradeCertificateTypeCode.mmWeight}</li>
+ * TradeCertificateTypeCode.Weight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Origin
- * TradeCertificateTypeCode.mmOrigin}</li>
+ * TradeCertificateTypeCode.Origin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Health
- * TradeCertificateTypeCode.mmHealth}</li>
+ * TradeCertificateTypeCode.Health}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Phytosanitary
- * TradeCertificateTypeCode.mmPhytosanitary}</li>
+ * TradeCertificateTypeCode.Phytosanitary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Beneficiary
- * TradeCertificateTypeCode.mmBeneficiary}</li>
+ * TradeCertificateTypeCode.Beneficiary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#ShippingLine
- * TradeCertificateTypeCode.mmShippingLine}</li>
+ * TradeCertificateTypeCode.ShippingLine}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Undefined1
- * TradeCertificateTypeCode.mmUndefined1}</li>
+ * TradeCertificateTypeCode.Undefined1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeCertificateTypeCode#Undefined2
- * TradeCertificateTypeCode.mmUndefined2}</li>
+ * TradeCertificateTypeCode.Undefined2}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -434,7 +434,7 @@ public class TradeCertificateTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ANLY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeCertificateTypeCode";

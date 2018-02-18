@@ -38,87 +38,87 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CustomerCancel
- * FailureReasonCode.mmCustomerCancel}</li>
+ * FailureReasonCode.CustomerCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#Malfunction
- * FailureReasonCode.mmMalfunction}</li>
+ * FailureReasonCode.Malfunction}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReasonCode#Partial
- * FailureReasonCode.mmPartial}</li>
+ * FailureReasonCode.Partial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#TooLateResponse
- * FailureReasonCode.mmTooLateResponse}</li>
+ * FailureReasonCode.TooLateResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#UnableToComplete
- * FailureReasonCode.mmUnableToComplete}</li>
+ * FailureReasonCode.UnableToComplete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#UnableToSend
- * FailureReasonCode.mmUnableToSend}</li>
+ * FailureReasonCode.UnableToSend}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReasonCode#TimeOut
- * FailureReasonCode.mmTimeOut}</li>
+ * FailureReasonCode.TimeOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CardDeclined
- * FailureReasonCode.mmCardDeclined}</li>
+ * FailureReasonCode.CardDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#OnLineDeclined
- * FailureReasonCode.mmOnLineDeclined}</li>
+ * FailureReasonCode.OnLineDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#OfflineDeclined
- * FailureReasonCode.mmOfflineDeclined}</li>
+ * FailureReasonCode.OfflineDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#SuspectedFraud
- * FailureReasonCode.mmSuspectedFraud}</li>
+ * FailureReasonCode.SuspectedFraud}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#SecurityError
- * FailureReasonCode.mmSecurityError}</li>
+ * FailureReasonCode.SecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CardCaptured
- * FailureReasonCode.mmCardCaptured}</li>
+ * FailureReasonCode.CardCaptured}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CardError
- * FailureReasonCode.mmCardError}</li>
+ * FailureReasonCode.CardError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CustomerDecline
- * FailureReasonCode.mmCustomerDecline}</li>
+ * FailureReasonCode.CustomerDecline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#ForgottenCard
- * FailureReasonCode.mmForgottenCard}</li>
+ * FailureReasonCode.ForgottenCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#FullfilmentError
- * FailureReasonCode.mmFullfilmentError}</li>
+ * FailureReasonCode.FullfilmentError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#OutOfCustomerService
- * FailureReasonCode.mmOutOfCustomerService}</li>
+ * FailureReasonCode.OutOfCustomerService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#UnableToCapture
- * FailureReasonCode.mmUnableToCapture}</li>
+ * FailureReasonCode.UnableToCapture}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReasonCode#Security
- * FailureReasonCode.mmSecurity}</li>
+ * FailureReasonCode.Security}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReasonCode#Hardware
- * FailureReasonCode.mmHardware}</li>
+ * FailureReasonCode.Hardware}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#Compromised
- * FailureReasonCode.mmCompromised}</li>
+ * FailureReasonCode.Compromised}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReasonCode#Expired
- * FailureReasonCode.mmExpired}</li>
+ * FailureReasonCode.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#InvalidKCV
- * FailureReasonCode.mmInvalidKCV}</li>
+ * FailureReasonCode.InvalidKCV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#KeyLoadError
- * FailureReasonCode.mmKeyLoadError}</li>
+ * FailureReasonCode.KeyLoadError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CardRetained
- * FailureReasonCode.mmCardRetained}</li>
+ * FailureReasonCode.CardRetained}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReasonCode#CustomerTimeOut
- * FailureReasonCode.mmCustomerTimeOut}</li>
+ * FailureReasonCode.CustomerTimeOut}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -978,7 +978,7 @@ public class FailureReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CUCL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailureReasonCode";

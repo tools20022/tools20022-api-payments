@@ -38,85 +38,85 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRelatedReference
- * ModificationRejection2Code.mmUnableToModifyRelatedReference}</li>
+ * ModificationRejection2Code.UnableToModifyRelatedReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentServiceLevel
- * ModificationRejection2Code.mmUnableToModifyPaymentServiceLevel}</li>
+ * ModificationRejection2Code.UnableToModifyPaymentServiceLevel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCategoryPurpose
- * ModificationRejection2Code.mmUnableToModifyCategoryPurpose}</li>
+ * ModificationRejection2Code.UnableToModifyCategoryPurpose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRequestedExecutionDate
- * ModificationRejection2Code.mmUnableToModifyRequestedExecutionDate}</li>
+ * ModificationRejection2Code.UnableToModifyRequestedExecutionDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementDate
- * ModificationRejection2Code.mmUnableToModifyInterbankSettlementDate}</li>
+ * ModificationRejection2Code.UnableToModifyInterbankSettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementAccount
- * ModificationRejection2Code.mmUnableToModifyInterbankSettlementAccount}</li>
+ * ModificationRejection2Code.UnableToModifyInterbankSettlementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtor
- * ModificationRejection2Code.mmUnableToModifyDebtor}</li>
+ * ModificationRejection2Code.UnableToModifyDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtorAccount
- * ModificationRejection2Code.mmUnableToModifyDebtorAccount}</li>
+ * ModificationRejection2Code.UnableToModifyDebtorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructedReimbursementAgent
- * ModificationRejection2Code.mmUnableToModifyInstructedReimbursementAgent}</li>
+ * ModificationRejection2Code.UnableToModifyInstructedReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyThirdReimbursementAgent
- * ModificationRejection2Code.mmUnableToModifyThirdReimbursementAgent}</li>
+ * ModificationRejection2Code.UnableToModifyThirdReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentClearingChannel
- * ModificationRejection2Code.mmUnableToModifyPaymentClearingChannel}</li>
+ * ModificationRejection2Code.UnableToModifyPaymentClearingChannel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditorAgentAccount
- * ModificationRejection2Code.mmUnableToModifyCreditorAgentAccount}</li>
+ * ModificationRejection2Code.UnableToModifyCreditorAgentAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditor
- * ModificationRejection2Code.mmUnableToModifyCreditor}</li>
+ * ModificationRejection2Code.UnableToModifyCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditorAccount
- * ModificationRejection2Code.mmUnableToModifyCreditorAccount}</li>
+ * ModificationRejection2Code.UnableToModifyCreditorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRemittanceInformation
- * ModificationRejection2Code.mmUnableToModifyRemittanceInformation}</li>
+ * ModificationRejection2Code.UnableToModifyRemittanceInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentPurpose
- * ModificationRejection2Code.mmUnableToModifyPaymentPurpose}</li>
+ * ModificationRejection2Code.UnableToModifyPaymentPurpose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyChargeBearer
- * ModificationRejection2Code.mmUnableToModifyChargeBearer}</li>
+ * ModificationRejection2Code.UnableToModifyChargeBearer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForNextAgent
- * ModificationRejection2Code.mmUnableToModifyInstructionForNextAgent}</li>
+ * ModificationRejection2Code.UnableToModifyInstructionForNextAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForCreditorAgent
- * ModificationRejection2Code.mmUnableToModifyInstructionForCreditorAgent}</li>
+ * ModificationRejection2Code.UnableToModifyInstructionForCreditorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#InstructionCancelledSubmitNewInstruction
- * ModificationRejection2Code.mmInstructionCancelledSubmitNewInstruction}</li>
+ * ModificationRejection2Code.InstructionCancelledSubmitNewInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifySubmitCancellation
- * ModificationRejection2Code.mmUnableToModifySubmitCancellation}</li>
+ * ModificationRejection2Code.UnableToModifySubmitCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtorAgentAccount
- * ModificationRejection2Code.mmUnableToModifyDebtorAgentAccount}</li>
+ * ModificationRejection2Code.UnableToModifyDebtorAgentAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementAmount
- * ModificationRejection2Code.mmUnableToModifyInterbankSettlementAmount}</li>
+ * ModificationRejection2Code.UnableToModifyInterbankSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForDebtorAgent
- * ModificationRejection2Code.mmUnableToModifyInstructionForDebtorAgent}</li>
+ * ModificationRejection2Code.UnableToModifyInstructionForDebtorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRequestedCollectionDate
- * ModificationRejection2Code.mmUnableToModifyRequestedCollectionDate}</li>
+ * ModificationRejection2Code.UnableToModifyRequestedCollectionDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentType
- * ModificationRejection2Code.mmUnableToModifyPaymentType}</li>
+ * ModificationRejection2Code.UnableToModifyPaymentType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructedAmount
- * ModificationRejection2Code.mmUnableToModifyInstructedAmount}</li>
+ * ModificationRejection2Code.UnableToModifyInstructedAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -125,8 +125,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -803,7 +803,7 @@ public class ModificationRejection2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UM01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationRejection2Code";

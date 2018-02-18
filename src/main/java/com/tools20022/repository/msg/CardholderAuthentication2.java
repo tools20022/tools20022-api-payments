@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Authentication;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Data related to the authentication of the cardholder."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardholderAuthentication2", propOrder = {"authenticationMethod", "authenticationEntity"})
 public class CardholderAuthentication2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AuthntcnMtd", required = true)
 	protected AuthenticationMethod1Code authenticationMethod;
 	/**
-	 * Method used to authenticate the cardholder.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class CardholderAuthentication2 {
 	public static final MMMessageAttribute mmAuthenticationMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationMethod;
-			componentContext_lazy = () -> CardholderAuthentication2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication2.mmObject();
 			isDerived = false;
 			xmlTag = "AuthntcnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +121,11 @@ public class CardholderAuthentication2 {
 			simpleType_lazy = () -> AuthenticationMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "AuthntcnNtty", required = true)
 	protected AuthenticationEntity1Code authenticationEntity;
 	/**
-	 * Entity or object in charge of verifying the cardholder authenticity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +160,7 @@ public class CardholderAuthentication2 {
 	public static final MMMessageAttribute mmAuthenticationEntity = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationEntity;
-			componentContext_lazy = () -> CardholderAuthentication2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication2.mmObject();
 			isDerived = false;
 			xmlTag = "AuthntcnNtty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,9 +175,9 @@ public class CardholderAuthentication2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardholderAuthentication2.mmAuthenticationMethod, CardholderAuthentication2.mmAuthenticationEntity);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardholderAuthentication2.mmAuthenticationMethod, com.tools20022.repository.msg.CardholderAuthentication2.mmAuthenticationEntity);
 				trace_lazy = () -> Authentication.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderAuthentication2";
 				definition = "Data related to the authentication of the cardholder.";
@@ -183,21 +186,21 @@ public class CardholderAuthentication2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AuthntcnMtd", required = true)
 	public AuthenticationMethod1Code getAuthenticationMethod() {
 		return authenticationMethod;
 	}
 
-	public void setAuthenticationMethod(AuthenticationMethod1Code authenticationMethod) {
-		this.authenticationMethod = authenticationMethod;
+	public CardholderAuthentication2 setAuthenticationMethod(AuthenticationMethod1Code authenticationMethod) {
+		this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+		return this;
 	}
 
-	@XmlElement(name = "AuthntcnNtty", required = true)
 	public AuthenticationEntity1Code getAuthenticationEntity() {
 		return authenticationEntity;
 	}
 
-	public void setAuthenticationEntity(AuthenticationEntity1Code authenticationEntity) {
-		this.authenticationEntity = authenticationEntity;
+	public CardholderAuthentication2 setAuthenticationEntity(AuthenticationEntity1Code authenticationEntity) {
+		this.authenticationEntity = Objects.requireNonNull(authenticationEntity);
+		return this;
 	}
 }

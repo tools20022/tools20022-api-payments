@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Presentation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Communication details related to the registered currency control contract."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegisteredContractCommunication1", propOrder = {"method", "date"})
 public class RegisteredContractCommunication1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Mtd", required = true)
 	protected CommunicationMethod4Code method;
 	/**
-	 * Method by which the registered contract document is exchanged.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +112,7 @@ public class RegisteredContractCommunication1 {
 	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
-			componentContext_lazy = () -> RegisteredContractCommunication1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractCommunication1.mmObject();
 			isDerived = false;
 			xmlTag = "Mtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,10 +123,11 @@ public class RegisteredContractCommunication1 {
 			simpleType_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Dt", required = true)
 	protected ISODate date;
 	/**
-	 * Date of the exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +160,7 @@ public class RegisteredContractCommunication1 {
 	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmPresentationDate;
-			componentContext_lazy = () -> RegisteredContractCommunication1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractCommunication1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,9 +175,9 @@ public class RegisteredContractCommunication1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegisteredContractCommunication1.mmMethod, RegisteredContractCommunication1.mmDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractCommunication1.mmMethod, com.tools20022.repository.msg.RegisteredContractCommunication1.mmDate);
 				trace_lazy = () -> Presentation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContractCommunication1";
 				definition = "Communication details related to the registered currency control contract.";
@@ -183,21 +186,21 @@ public class RegisteredContractCommunication1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Mtd", required = true)
 	public CommunicationMethod4Code getMethod() {
 		return method;
 	}
 
-	public void setMethod(CommunicationMethod4Code method) {
-		this.method = method;
+	public RegisteredContractCommunication1 setMethod(CommunicationMethod4Code method) {
+		this.method = Objects.requireNonNull(method);
+		return this;
 	}
 
-	@XmlElement(name = "Dt", required = true)
 	public ISODate getDate() {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public RegisteredContractCommunication1 setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 }

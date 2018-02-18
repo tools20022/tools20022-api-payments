@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#UnderlyingPaymentNotFound
- * CaseAssignmentRejectionCode.mmUnderlyingPaymentNotFound}</li>
+ * CaseAssignmentRejectionCode.UnderlyingPaymentNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#NotAuthorisedToInvestigate
- * CaseAssignmentRejectionCode.mmNotAuthorisedToInvestigate}</li>
+ * CaseAssignmentRejectionCode.NotAuthorisedToInvestigate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#UnknownCase
- * CaseAssignmentRejectionCode.mmUnknownCase}</li>
+ * CaseAssignmentRejectionCode.UnknownCase}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#PaymentRejected
- * CaseAssignmentRejectionCode.mmPaymentRejected}</li>
+ * CaseAssignmentRejectionCode.PaymentRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#PaymentCancelled
- * CaseAssignmentRejectionCode.mmPaymentCancelled}</li>
+ * CaseAssignmentRejectionCode.PaymentCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseAssignmentRejectionCode#PaymentPreviouslyCancelledOrRejected
- * CaseAssignmentRejectionCode.mmPaymentPreviouslyCancelledOrRejected}</li>
+ * CaseAssignmentRejectionCode.PaymentPreviouslyCancelledOrRejected}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -275,7 +275,7 @@ public class CaseAssignmentRejectionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NFND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseAssignmentRejectionCode";

@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.TaxPayer;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Details about the entity involved in the tax paid or to be paid."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TaxParty2", propOrder = {"taxIdentification", "registrationIdentification", "taxType", "authorisation"})
 public class TaxParty2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TaxId")
 	protected Max35Text taxIdentification;
 	/**
-	 * Tax identification number of the debtor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +114,7 @@ public class TaxParty2 {
 	public static final MMMessageAttribute mmTaxIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
-			componentContext_lazy = () -> TaxParty2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +125,11 @@ public class TaxParty2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "RegnId")
 	protected Max35Text registrationIdentification;
 	/**
-	 * Unique identification, as assigned by an organisation, to unambiguously
-	 * identify a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,7 +163,7 @@ public class TaxParty2 {
 	public static final MMMessageAttribute mmRegistrationIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
-			componentContext_lazy = () -> TaxParty2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
 			isDerived = false;
 			xmlTag = "RegnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,10 +174,11 @@ public class TaxParty2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxTp")
 	protected Max35Text taxType;
 	/**
-	 * Type of tax payer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +209,7 @@ public class TaxParty2 {
 	public static final MMMessageAttribute mmTaxType = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> TaxPayer.mmObject();
-			componentContext_lazy = () -> TaxParty2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,10 +220,11 @@ public class TaxParty2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Authstn")
 	protected TaxAuthorisation1 authorisation;
 	/**
-	 * Details of the authorised tax paying party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -250,7 +254,7 @@ public class TaxParty2 {
 	public static final MMMessageAssociationEnd mmAuthorisation = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> TaxPartyRole.mmObject();
-			componentContext_lazy = () -> TaxParty2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
 			isDerived = false;
 			xmlTag = "Authstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,9 +270,10 @@ public class TaxParty2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TaxParty2.mmTaxIdentification, TaxParty2.mmRegistrationIdentification, TaxParty2.mmTaxType, TaxParty2.mmAuthorisation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxParty2.mmTaxIdentification, com.tools20022.repository.msg.TaxParty2.mmRegistrationIdentification, com.tools20022.repository.msg.TaxParty2.mmTaxType,
+						com.tools20022.repository.msg.TaxParty2.mmAuthorisation);
 				trace_lazy = () -> TaxPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxParty2";
 				definition = "Details about the entity involved in the tax paid or to be paid.";
@@ -277,39 +282,39 @@ public class TaxParty2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TaxId")
-	public Max35Text getTaxIdentification() {
-		return taxIdentification;
+	public Optional<Max35Text> getTaxIdentification() {
+		return taxIdentification == null ? Optional.empty() : Optional.of(taxIdentification);
 	}
 
-	public void setTaxIdentification(Max35Text taxIdentification) {
+	public TaxParty2 setTaxIdentification(Max35Text taxIdentification) {
 		this.taxIdentification = taxIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "RegnId")
-	public Max35Text getRegistrationIdentification() {
-		return registrationIdentification;
+	public Optional<Max35Text> getRegistrationIdentification() {
+		return registrationIdentification == null ? Optional.empty() : Optional.of(registrationIdentification);
 	}
 
-	public void setRegistrationIdentification(Max35Text registrationIdentification) {
+	public TaxParty2 setRegistrationIdentification(Max35Text registrationIdentification) {
 		this.registrationIdentification = registrationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TaxTp")
-	public Max35Text getTaxType() {
-		return taxType;
+	public Optional<Max35Text> getTaxType() {
+		return taxType == null ? Optional.empty() : Optional.of(taxType);
 	}
 
-	public void setTaxType(Max35Text taxType) {
+	public TaxParty2 setTaxType(Max35Text taxType) {
 		this.taxType = taxType;
+		return this;
 	}
 
-	@XmlElement(name = "Authstn")
-	public TaxAuthorisation1 getAuthorisation() {
-		return authorisation;
+	public Optional<TaxAuthorisation1> getAuthorisation() {
+		return authorisation == null ? Optional.empty() : Optional.of(authorisation);
 	}
 
-	public void setAuthorisation(com.tools20022.repository.msg.TaxAuthorisation1 authorisation) {
+	public TaxParty2 setAuthorisation(com.tools20022.repository.msg.TaxAuthorisation1 authorisation) {
 		this.authorisation = authorisation;
+		return this;
 	}
 }

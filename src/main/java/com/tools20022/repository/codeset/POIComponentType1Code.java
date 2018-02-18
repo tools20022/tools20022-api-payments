@@ -37,25 +37,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.POIComponentType1Code#Soft
- * POIComponentType1Code.mmSoft}</li>
+ * POIComponentType1Code.Soft}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#EMVKernel
- * POIComponentType1Code.mmEMVKernel}</li>
+ * POIComponentType1Code.EMVKernel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#EMVLevel1
- * POIComponentType1Code.mmEMVLevel1}</li>
+ * POIComponentType1Code.EMVLevel1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#MerchantInterface
- * POIComponentType1Code.mmMerchantInterface}</li>
+ * POIComponentType1Code.MerchantInterface}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#CardholderInterface
- * POIComponentType1Code.mmCardholderInterface}</li>
+ * POIComponentType1Code.CardholderInterface}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#SecureModule
- * POIComponentType1Code.mmSecureModule}</li>
+ * POIComponentType1Code.SecureModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType1Code#PINEntryDevice
- * POIComponentType1Code.mmPINEntryDevice}</li>
+ * POIComponentType1Code.PINEntryDevice}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -263,7 +263,7 @@ public class POIComponentType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SOFT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentType1Code";

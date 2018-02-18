@@ -23,9 +23,11 @@ import com.tools20022.repository.codeset.TradingCapacityCode;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Trading party in a commercial, securities, treasury trade. This role may also
@@ -85,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,9 +106,8 @@ public class TradePartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Account> account;
 	/**
-	 * Unambiguous identification of the account used in the context of the
-	 * party role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,8 +154,8 @@ public class TradePartyRole extends Role {
 	};
 	protected TradingCapacityCode tradingPartyCapacity;
 	/**
-	 * Specifies the role of a trading party in a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,8 +201,8 @@ public class TradePartyRole extends Role {
 	};
 	protected OptionPartyCode buyerOrSeller;
 	/**
-	 * Specifies the party which is the buyer or the seller.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,8 +248,8 @@ public class TradePartyRole extends Role {
 	};
 	protected List<com.tools20022.repository.entity.Trade> trade;
 	/**
-	 * Trade in which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,7 +296,7 @@ public class TradePartyRole extends Role {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradePartyRole";
 				definition = "Trading party in a commercial, securities, treasury trade. This role may also represent parties which play different intermediary roles in a trade.";
@@ -316,34 +317,38 @@ public class TradePartyRole extends Role {
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public TradePartyRole setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public TradingCapacityCode getTradingPartyCapacity() {
 		return tradingPartyCapacity;
 	}
 
-	public void setTradingPartyCapacity(TradingCapacityCode tradingPartyCapacity) {
-		this.tradingPartyCapacity = tradingPartyCapacity;
+	public TradePartyRole setTradingPartyCapacity(TradingCapacityCode tradingPartyCapacity) {
+		this.tradingPartyCapacity = Objects.requireNonNull(tradingPartyCapacity);
+		return this;
 	}
 
 	public OptionPartyCode getBuyerOrSeller() {
 		return buyerOrSeller;
 	}
 
-	public void setBuyerOrSeller(OptionPartyCode buyerOrSeller) {
-		this.buyerOrSeller = buyerOrSeller;
+	public TradePartyRole setBuyerOrSeller(OptionPartyCode buyerOrSeller) {
+		this.buyerOrSeller = Objects.requireNonNull(buyerOrSeller);
+		return this;
 	}
 
 	public List<Trade> getTrade() {
-		return trade;
+		return trade == null ? trade = new ArrayList<>() : trade;
 	}
 
-	public void setTrade(List<com.tools20022.repository.entity.Trade> trade) {
-		this.trade = trade;
+	public TradePartyRole setTrade(List<com.tools20022.repository.entity.Trade> trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 }

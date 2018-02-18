@@ -24,6 +24,7 @@ import com.tools20022.repository.entity.AmountRange;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Range of amount values."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FromToAmountRange", propOrder = {"fromAmount", "toAmount"})
 public class FromToAmountRange {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrAmt", required = true)
 	protected AmountRangeBoundary1 fromAmount;
 	/**
-	 * Lower boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +106,7 @@ public class FromToAmountRange {
 	public static final MMMessageAttribute mmFromAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmFromAmount;
-			componentContext_lazy = () -> FromToAmountRange.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FromToAmountRange.mmObject();
 			isDerived = false;
 			xmlTag = "FrAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,10 +117,11 @@ public class FromToAmountRange {
 			complexType_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
 		}
 	};
+	@XmlElement(name = "ToAmt", required = true)
 	protected AmountRangeBoundary1 toAmount;
 	/**
-	 * Upper boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +155,7 @@ public class FromToAmountRange {
 	public static final MMMessageAttribute mmToAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AmountRange.mmToAmount;
-			componentContext_lazy = () -> FromToAmountRange.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FromToAmountRange.mmObject();
 			isDerived = false;
 			xmlTag = "ToAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,9 +170,9 @@ public class FromToAmountRange {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FromToAmountRange.mmFromAmount, FromToAmountRange.mmToAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FromToAmountRange.mmFromAmount, com.tools20022.repository.msg.FromToAmountRange.mmToAmount);
 				trace_lazy = () -> AmountRange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FromToAmountRange";
 				definition = "Range of amount values.";
@@ -178,21 +181,21 @@ public class FromToAmountRange {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrAmt", required = true)
 	public AmountRangeBoundary1 getFromAmount() {
 		return fromAmount;
 	}
 
-	public void setFromAmount(com.tools20022.repository.msg.AmountRangeBoundary1 fromAmount) {
-		this.fromAmount = fromAmount;
+	public FromToAmountRange setFromAmount(com.tools20022.repository.msg.AmountRangeBoundary1 fromAmount) {
+		this.fromAmount = Objects.requireNonNull(fromAmount);
+		return this;
 	}
 
-	@XmlElement(name = "ToAmt", required = true)
 	public AmountRangeBoundary1 getToAmount() {
 		return toAmount;
 	}
 
-	public void setToAmount(com.tools20022.repository.msg.AmountRangeBoundary1 toAmount) {
-		this.toAmount = toAmount;
+	public FromToAmountRange setToAmount(com.tools20022.repository.msg.AmountRangeBoundary1 toAmount) {
+		this.toAmount = Objects.requireNonNull(toAmount);
+		return this;
 	}
 }

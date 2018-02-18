@@ -22,9 +22,11 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Related financial instrument into which the security can be converted.
@@ -67,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,8 +87,8 @@ public class UnderlyingRatio {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesConversion> securitiesConversion;
 	/**
-	 * Other parameters used to convert securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +135,8 @@ public class UnderlyingRatio {
 	};
 	protected SecuritiesQuantity underlyingQuantityDenominator;
 	/**
-	 * Number of held securities for the exercise.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,8 +183,8 @@ public class UnderlyingRatio {
 	};
 	protected SecuritiesQuantity underlyingQuantityNumerator;
 	/**
-	 * Number of related securities for the exercise.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,7 +233,7 @@ public class UnderlyingRatio {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingRatio";
 				definition = "Related financial instrument into which the security can be converted.";
@@ -250,26 +252,29 @@ public class UnderlyingRatio {
 	}
 
 	public List<SecuritiesConversion> getSecuritiesConversion() {
-		return securitiesConversion;
+		return securitiesConversion == null ? securitiesConversion = new ArrayList<>() : securitiesConversion;
 	}
 
-	public void setSecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> securitiesConversion) {
-		this.securitiesConversion = securitiesConversion;
+	public UnderlyingRatio setSecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> securitiesConversion) {
+		this.securitiesConversion = Objects.requireNonNull(securitiesConversion);
+		return this;
 	}
 
 	public SecuritiesQuantity getUnderlyingQuantityDenominator() {
 		return underlyingQuantityDenominator;
 	}
 
-	public void setUnderlyingQuantityDenominator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityDenominator) {
-		this.underlyingQuantityDenominator = underlyingQuantityDenominator;
+	public UnderlyingRatio setUnderlyingQuantityDenominator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityDenominator) {
+		this.underlyingQuantityDenominator = Objects.requireNonNull(underlyingQuantityDenominator);
+		return this;
 	}
 
 	public SecuritiesQuantity getUnderlyingQuantityNumerator() {
 		return underlyingQuantityNumerator;
 	}
 
-	public void setUnderlyingQuantityNumerator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityNumerator) {
-		this.underlyingQuantityNumerator = underlyingQuantityNumerator;
+	public UnderlyingRatio setUnderlyingQuantityNumerator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityNumerator) {
+		this.underlyingQuantityNumerator = Objects.requireNonNull(underlyingQuantityNumerator);
+		return this;
 	}
 }

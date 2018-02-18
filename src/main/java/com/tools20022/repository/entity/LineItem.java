@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Unit of information showing the related provision of products and/or services
@@ -141,8 +140,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -160,9 +159,8 @@ public class LineItem {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Adjustment financialAdjustment;
 	/**
-	 * Modification on the value of goods and / or services taking into account
-	 * discounts, allowances and charges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,8 +208,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.Charges> logisticsCharge;
 	/**
-	 * Logistics service charge for this line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,9 +253,8 @@ public class LineItem {
 	};
 	protected CurrencyAndAmount grossAmount;
 	/**
-	 * Monetary value of the line amount total being reported for this
-	 * settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,8 +301,8 @@ public class LineItem {
 	};
 	protected Max35Text identification;
 	/**
-	 * Uniquely identifies a line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,8 +346,8 @@ public class LineItem {
 	};
 	protected Product invoicedProduct;
 	/**
-	 * Specifies the product and the quantity for which an invoice is generated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,8 +394,8 @@ public class LineItem {
 	};
 	protected ProductQuantity netWeight;
 	/**
-	 * Net weight of the physical item which is invoiced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,8 +441,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> billedQuantity;
 	/**
-	 * Quantity billed for this line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -490,8 +487,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> chargeFreeQuantity;
 	/**
-	 * Quantity that is free of charge for this line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -536,8 +533,8 @@ public class LineItem {
 	};
 	protected ProductQuantity measureQuantityStartRelatedLineItem;
 	/**
-	 * Line item for which a measure quantity end is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -583,8 +580,8 @@ public class LineItem {
 	};
 	protected ProductQuantity measureQuantityEndRelatedLineItem;
 	/**
-	 * Line item for which a measure quantity end is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -630,8 +627,8 @@ public class LineItem {
 	};
 	protected ISODateTime measureDateTimeStart;
 	/**
-	 * Date/time on which the clock time measure started for a line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -676,8 +673,8 @@ public class LineItem {
 	};
 	protected ISODateTime measureDateTimeEnd;
 	/**
-	 * Date/time on which the clock time measure ended for a line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -722,8 +719,8 @@ public class LineItem {
 	};
 	protected Invoice invoice;
 	/**
-	 * Specifies the invoice in which the line item is included.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -769,9 +766,8 @@ public class LineItem {
 	};
 	protected CurrencyAndAmount netAmount;
 	/**
-	 * Total amount resulting from the gross amount plus freight charges, tax
-	 * and plus/minus Adjustments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -818,8 +814,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.Packaging> packaging;
 	/**
-	 * Physical packaging of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -864,9 +860,8 @@ public class LineItem {
 	};
 	protected ISODateTime deliveryDateTime;
 	/**
-	 * Actual delivery date/time of the products and/or services for this line
-	 * item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -912,8 +907,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.Charges> charges;
 	/**
-	 * Charges specified for this line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -957,9 +952,8 @@ public class LineItem {
 	};
 	protected Charges netPriceCharge;
 	/**
-	 * Allowance or charge applied to the net price. When the charge amount is
-	 * added (credit)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1006,9 +1000,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> grossPriceQuantity;
 	/**
-	 * Quantity and conversion factor on which the gross price is based for this
-	 * line item product and/or service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1055,9 +1048,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> netPriceQuantity;
 	/**
-	 * Quantity and conversion factor on which the net price is based for this
-	 * line item product and/or service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1104,8 +1096,8 @@ public class LineItem {
 	};
 	protected List<com.tools20022.repository.entity.ProductQuantity> grossWeight;
 	/**
-	 * Gross weight of the physical item which is invoiced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1152,7 +1144,7 @@ public class LineItem {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LineItem";
 				definition = "Unit of information  showing the related  provision of products and/or services and monetary summations reported as a discrete line item.";
@@ -1184,167 +1176,188 @@ public class LineItem {
 		return financialAdjustment;
 	}
 
-	public void setFinancialAdjustment(com.tools20022.repository.entity.Adjustment financialAdjustment) {
-		this.financialAdjustment = financialAdjustment;
+	public LineItem setFinancialAdjustment(com.tools20022.repository.entity.Adjustment financialAdjustment) {
+		this.financialAdjustment = Objects.requireNonNull(financialAdjustment);
+		return this;
 	}
 
 	public List<Charges> getLogisticsCharge() {
-		return logisticsCharge;
+		return logisticsCharge == null ? logisticsCharge = new ArrayList<>() : logisticsCharge;
 	}
 
-	public void setLogisticsCharge(List<com.tools20022.repository.entity.Charges> logisticsCharge) {
-		this.logisticsCharge = logisticsCharge;
+	public LineItem setLogisticsCharge(List<com.tools20022.repository.entity.Charges> logisticsCharge) {
+		this.logisticsCharge = Objects.requireNonNull(logisticsCharge);
+		return this;
 	}
 
 	public CurrencyAndAmount getGrossAmount() {
 		return grossAmount;
 	}
 
-	public void setGrossAmount(CurrencyAndAmount grossAmount) {
-		this.grossAmount = grossAmount;
+	public LineItem setGrossAmount(CurrencyAndAmount grossAmount) {
+		this.grossAmount = Objects.requireNonNull(grossAmount);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public LineItem setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Product getInvoicedProduct() {
 		return invoicedProduct;
 	}
 
-	public void setInvoicedProduct(com.tools20022.repository.entity.Product invoicedProduct) {
-		this.invoicedProduct = invoicedProduct;
+	public LineItem setInvoicedProduct(com.tools20022.repository.entity.Product invoicedProduct) {
+		this.invoicedProduct = Objects.requireNonNull(invoicedProduct);
+		return this;
 	}
 
 	public ProductQuantity getNetWeight() {
 		return netWeight;
 	}
 
-	public void setNetWeight(com.tools20022.repository.entity.ProductQuantity netWeight) {
-		this.netWeight = netWeight;
+	public LineItem setNetWeight(com.tools20022.repository.entity.ProductQuantity netWeight) {
+		this.netWeight = Objects.requireNonNull(netWeight);
+		return this;
 	}
 
 	public List<ProductQuantity> getBilledQuantity() {
-		return billedQuantity;
+		return billedQuantity == null ? billedQuantity = new ArrayList<>() : billedQuantity;
 	}
 
-	public void setBilledQuantity(List<com.tools20022.repository.entity.ProductQuantity> billedQuantity) {
-		this.billedQuantity = billedQuantity;
+	public LineItem setBilledQuantity(List<com.tools20022.repository.entity.ProductQuantity> billedQuantity) {
+		this.billedQuantity = Objects.requireNonNull(billedQuantity);
+		return this;
 	}
 
 	public List<ProductQuantity> getChargeFreeQuantity() {
-		return chargeFreeQuantity;
+		return chargeFreeQuantity == null ? chargeFreeQuantity = new ArrayList<>() : chargeFreeQuantity;
 	}
 
-	public void setChargeFreeQuantity(List<com.tools20022.repository.entity.ProductQuantity> chargeFreeQuantity) {
-		this.chargeFreeQuantity = chargeFreeQuantity;
+	public LineItem setChargeFreeQuantity(List<com.tools20022.repository.entity.ProductQuantity> chargeFreeQuantity) {
+		this.chargeFreeQuantity = Objects.requireNonNull(chargeFreeQuantity);
+		return this;
 	}
 
 	public ProductQuantity getMeasureQuantityStartRelatedLineItem() {
 		return measureQuantityStartRelatedLineItem;
 	}
 
-	public void setMeasureQuantityStartRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityStartRelatedLineItem) {
-		this.measureQuantityStartRelatedLineItem = measureQuantityStartRelatedLineItem;
+	public LineItem setMeasureQuantityStartRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityStartRelatedLineItem) {
+		this.measureQuantityStartRelatedLineItem = Objects.requireNonNull(measureQuantityStartRelatedLineItem);
+		return this;
 	}
 
 	public ProductQuantity getMeasureQuantityEndRelatedLineItem() {
 		return measureQuantityEndRelatedLineItem;
 	}
 
-	public void setMeasureQuantityEndRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityEndRelatedLineItem) {
-		this.measureQuantityEndRelatedLineItem = measureQuantityEndRelatedLineItem;
+	public LineItem setMeasureQuantityEndRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityEndRelatedLineItem) {
+		this.measureQuantityEndRelatedLineItem = Objects.requireNonNull(measureQuantityEndRelatedLineItem);
+		return this;
 	}
 
 	public ISODateTime getMeasureDateTimeStart() {
 		return measureDateTimeStart;
 	}
 
-	public void setMeasureDateTimeStart(ISODateTime measureDateTimeStart) {
-		this.measureDateTimeStart = measureDateTimeStart;
+	public LineItem setMeasureDateTimeStart(ISODateTime measureDateTimeStart) {
+		this.measureDateTimeStart = Objects.requireNonNull(measureDateTimeStart);
+		return this;
 	}
 
 	public ISODateTime getMeasureDateTimeEnd() {
 		return measureDateTimeEnd;
 	}
 
-	public void setMeasureDateTimeEnd(ISODateTime measureDateTimeEnd) {
-		this.measureDateTimeEnd = measureDateTimeEnd;
+	public LineItem setMeasureDateTimeEnd(ISODateTime measureDateTimeEnd) {
+		this.measureDateTimeEnd = Objects.requireNonNull(measureDateTimeEnd);
+		return this;
 	}
 
-	public Invoice getInvoice() {
-		return invoice;
+	public Optional<Invoice> getInvoice() {
+		return invoice == null ? Optional.empty() : Optional.of(invoice);
 	}
 
-	public void setInvoice(com.tools20022.repository.entity.Invoice invoice) {
+	public LineItem setInvoice(com.tools20022.repository.entity.Invoice invoice) {
 		this.invoice = invoice;
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(CurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public LineItem setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
 	public List<Packaging> getPackaging() {
-		return packaging;
+		return packaging == null ? packaging = new ArrayList<>() : packaging;
 	}
 
-	public void setPackaging(List<com.tools20022.repository.entity.Packaging> packaging) {
-		this.packaging = packaging;
+	public LineItem setPackaging(List<com.tools20022.repository.entity.Packaging> packaging) {
+		this.packaging = Objects.requireNonNull(packaging);
+		return this;
 	}
 
 	public ISODateTime getDeliveryDateTime() {
 		return deliveryDateTime;
 	}
 
-	public void setDeliveryDateTime(ISODateTime deliveryDateTime) {
-		this.deliveryDateTime = deliveryDateTime;
+	public LineItem setDeliveryDateTime(ISODateTime deliveryDateTime) {
+		this.deliveryDateTime = Objects.requireNonNull(deliveryDateTime);
+		return this;
 	}
 
 	public List<Charges> getCharges() {
-		return charges;
+		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public void setCharges(List<com.tools20022.repository.entity.Charges> charges) {
-		this.charges = charges;
+	public LineItem setCharges(List<com.tools20022.repository.entity.Charges> charges) {
+		this.charges = Objects.requireNonNull(charges);
+		return this;
 	}
 
 	public Charges getNetPriceCharge() {
 		return netPriceCharge;
 	}
 
-	public void setNetPriceCharge(com.tools20022.repository.entity.Charges netPriceCharge) {
-		this.netPriceCharge = netPriceCharge;
+	public LineItem setNetPriceCharge(com.tools20022.repository.entity.Charges netPriceCharge) {
+		this.netPriceCharge = Objects.requireNonNull(netPriceCharge);
+		return this;
 	}
 
 	public List<ProductQuantity> getGrossPriceQuantity() {
-		return grossPriceQuantity;
+		return grossPriceQuantity == null ? grossPriceQuantity = new ArrayList<>() : grossPriceQuantity;
 	}
 
-	public void setGrossPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> grossPriceQuantity) {
-		this.grossPriceQuantity = grossPriceQuantity;
+	public LineItem setGrossPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> grossPriceQuantity) {
+		this.grossPriceQuantity = Objects.requireNonNull(grossPriceQuantity);
+		return this;
 	}
 
 	public List<ProductQuantity> getNetPriceQuantity() {
-		return netPriceQuantity;
+		return netPriceQuantity == null ? netPriceQuantity = new ArrayList<>() : netPriceQuantity;
 	}
 
-	public void setNetPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> netPriceQuantity) {
-		this.netPriceQuantity = netPriceQuantity;
+	public LineItem setNetPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> netPriceQuantity) {
+		this.netPriceQuantity = Objects.requireNonNull(netPriceQuantity);
+		return this;
 	}
 
 	public List<ProductQuantity> getGrossWeight() {
-		return grossWeight;
+		return grossWeight == null ? grossWeight = new ArrayList<>() : grossWeight;
 	}
 
-	public void setGrossWeight(List<com.tools20022.repository.entity.ProductQuantity> grossWeight) {
-		this.grossWeight = grossWeight;
+	public LineItem setGrossWeight(List<com.tools20022.repository.entity.ProductQuantity> grossWeight) {
+		this.grossWeight = Objects.requireNonNull(grossWeight);
+		return this;
 	}
 }

@@ -29,9 +29,8 @@ import com.tools20022.repository.entity.Balance;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Numerical representation of the net increases and decreases in an account at
@@ -139,8 +138,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,8 +157,8 @@ public class CashBalance extends Balance {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Cash account for which a balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,9 +227,8 @@ public class CashBalance extends Balance {
 	};
 	protected BalanceCounterpartyCode calculationType;
 	/**
-	 * Specifies whether the balance is calculated against one other party or
-	 * against a group of parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,10 +275,8 @@ public class CashBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.SystemMemberRole> counterparty;
 	/**
-	 * Party against which a balance is calculated (from the point of view of
-	 * the account owner). A bilateral balance is calculated against one other
-	 * party; a multilateral balance is calculated against a group of parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -327,8 +323,8 @@ public class CashBalance extends Balance {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Currency and amount of money of the cash balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,9 +392,8 @@ public class CashBalance extends Balance {
 	};
 	protected CashAvailability availability;
 	/**
-	 * Elements used to indicate when the booked amount of money will become
-	 * available, that is can be accessed and start generating interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -461,8 +456,8 @@ public class CashBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.CashEntry> cashBalanceEntry;
 	/**
-	 * Credit or debit postings used to calculate a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,8 +520,8 @@ public class CashBalance extends Balance {
 	};
 	protected BalanceAdjustmentTypeCode balanceAdjustmentCode;
 	/**
-	 * Defines the type of allowed balance adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -579,8 +574,8 @@ public class CashBalance extends Balance {
 	};
 	protected CardPaymentValidation relatedCardPaymentValidationProcess;
 	/**
-	 * Validation process which verifies the balance attached to the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -628,12 +623,8 @@ public class CashBalance extends Balance {
 	};
 	protected ISODate cutOffDate;
 	/**
-	 * Predetermined date in a billing or processing cycle when account activity
-	 * for the previous reporting period is summarized (when checks written
-	 * against an account are collected and summarized in a monthly statement).
-	 * Checks paid or deposits received after the cut-off date are included in
-	 * the next month's statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -679,8 +670,8 @@ public class CashBalance extends Balance {
 	};
 	protected RegisteredContract relatedRegisteredContract;
 	/**
-	 * Related contract balance on date of contract registration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -729,7 +720,7 @@ public class CashBalance extends Balance {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashBalance";
 				definition = "Numerical representation of the net increases and decreases in an account at a specific point in time. A cash balance is calculated from a sum of cash credits minus a sum of cash debits.";
@@ -755,82 +746,92 @@ public class CashBalance extends Balance {
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public CashBalance setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public BalanceCounterpartyCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(BalanceCounterpartyCode calculationType) {
-		this.calculationType = calculationType;
+	public CashBalance setCalculationType(BalanceCounterpartyCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public List<SystemMemberRole> getCounterparty() {
-		return counterparty;
+		return counterparty == null ? counterparty = new ArrayList<>() : counterparty;
 	}
 
-	public void setCounterparty(List<com.tools20022.repository.entity.SystemMemberRole> counterparty) {
-		this.counterparty = counterparty;
+	public CashBalance setCounterparty(List<com.tools20022.repository.entity.SystemMemberRole> counterparty) {
+		this.counterparty = Objects.requireNonNull(counterparty);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public CashBalance setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public CashAvailability getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(com.tools20022.repository.entity.CashAvailability availability) {
-		this.availability = availability;
+	public CashBalance setAvailability(com.tools20022.repository.entity.CashAvailability availability) {
+		this.availability = Objects.requireNonNull(availability);
+		return this;
 	}
 
 	public List<CashEntry> getCashBalanceEntry() {
-		return cashBalanceEntry;
+		return cashBalanceEntry == null ? cashBalanceEntry = new ArrayList<>() : cashBalanceEntry;
 	}
 
-	public void setCashBalanceEntry(List<com.tools20022.repository.entity.CashEntry> cashBalanceEntry) {
-		this.cashBalanceEntry = cashBalanceEntry;
+	public CashBalance setCashBalanceEntry(List<com.tools20022.repository.entity.CashEntry> cashBalanceEntry) {
+		this.cashBalanceEntry = Objects.requireNonNull(cashBalanceEntry);
+		return this;
 	}
 
 	public BalanceAdjustmentTypeCode getBalanceAdjustmentCode() {
 		return balanceAdjustmentCode;
 	}
 
-	public void setBalanceAdjustmentCode(BalanceAdjustmentTypeCode balanceAdjustmentCode) {
-		this.balanceAdjustmentCode = balanceAdjustmentCode;
+	public CashBalance setBalanceAdjustmentCode(BalanceAdjustmentTypeCode balanceAdjustmentCode) {
+		this.balanceAdjustmentCode = Objects.requireNonNull(balanceAdjustmentCode);
+		return this;
 	}
 
-	public CardPaymentValidation getRelatedCardPaymentValidationProcess() {
-		return relatedCardPaymentValidationProcess;
+	public Optional<CardPaymentValidation> getRelatedCardPaymentValidationProcess() {
+		return relatedCardPaymentValidationProcess == null ? Optional.empty() : Optional.of(relatedCardPaymentValidationProcess);
 	}
 
-	public void setRelatedCardPaymentValidationProcess(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidationProcess) {
+	public CashBalance setRelatedCardPaymentValidationProcess(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidationProcess) {
 		this.relatedCardPaymentValidationProcess = relatedCardPaymentValidationProcess;
+		return this;
 	}
 
 	public ISODate getCutOffDate() {
 		return cutOffDate;
 	}
 
-	public void setCutOffDate(ISODate cutOffDate) {
-		this.cutOffDate = cutOffDate;
+	public CashBalance setCutOffDate(ISODate cutOffDate) {
+		this.cutOffDate = Objects.requireNonNull(cutOffDate);
+		return this;
 	}
 
 	public RegisteredContract getRelatedRegisteredContract() {
 		return relatedRegisteredContract;
 	}
 
-	public void setRelatedRegisteredContract(com.tools20022.repository.entity.RegisteredContract relatedRegisteredContract) {
-		this.relatedRegisteredContract = relatedRegisteredContract;
+	public CashBalance setRelatedRegisteredContract(com.tools20022.repository.entity.RegisteredContract relatedRegisteredContract) {
+		this.relatedRegisteredContract = Objects.requireNonNull(relatedRegisteredContract);
+		return this;
 	}
 }

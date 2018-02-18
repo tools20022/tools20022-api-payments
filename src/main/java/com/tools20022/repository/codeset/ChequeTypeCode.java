@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CrossedCheque
- * ChequeTypeCode.mmCrossedCheque}</li>
+ * ChequeTypeCode.CrossedCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OpenCheque
- * ChequeTypeCode.mmOpenCheque}</li>
+ * ChequeTypeCode.OpenCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OrderCheque
- * ChequeTypeCode.mmOrderCheque}</li>
+ * ChequeTypeCode.OrderCheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CircularCheque
- * ChequeTypeCode.mmCircularCheque}</li>
+ * ChequeTypeCode.CircularCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#BankDraft
- * ChequeTypeCode.mmBankDraft}</li>
+ * ChequeTypeCode.BankDraft}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CustomerCheque
- * ChequeTypeCode.mmCustomerCheque}</li>
+ * ChequeTypeCode.CustomerCheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#CertifiedCustomerCheque
- * ChequeTypeCode.mmCertifiedCustomerCheque}</li>
+ * ChequeTypeCode.CertifiedCustomerCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#BankCheque
- * ChequeTypeCode.mmBankCheque}</li>
+ * ChequeTypeCode.BankCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeTypeCode#Draft
- * ChequeTypeCode.mmDraft}</li>
+ * ChequeTypeCode.Draft}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#ElectronicDraft
- * ChequeTypeCode.mmElectronicDraft}</li>
+ * ChequeTypeCode.ElectronicDraft}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeTypeCode#OnlineCheque
- * ChequeTypeCode.mmOnlineCheque}</li>
+ * ChequeTypeCode.OnlineCheque}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -76,8 +76,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -473,7 +473,7 @@ public class ChequeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CRCQ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequeTypeCode";

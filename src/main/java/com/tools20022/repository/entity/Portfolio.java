@@ -22,9 +22,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Wrapper for a specific product or a specific sub-product owned by a set of
@@ -88,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +106,8 @@ public class Portfolio {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PortfolioValuation valuation;
 	/**
-	 * Valuation process for the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,8 +153,8 @@ public class Portfolio {
 	};
 	protected PortfolioTransfer transfer;
 	/**
-	 * Transfer information related to a portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,8 +200,8 @@ public class Portfolio {
 	};
 	protected List<com.tools20022.repository.entity.Asset> assetDescription;
 	/**
-	 * Specifies the assets included in the portfolio together with their value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,8 +247,8 @@ public class Portfolio {
 	};
 	protected Max350Text name;
 	/**
-	 * Name of the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,8 +292,8 @@ public class Portfolio {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification of the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -338,8 +337,8 @@ public class Portfolio {
 	};
 	protected List<com.tools20022.repository.entity.PortfolioStrategy> strategy;
 	/**
-	 * Strategy set for the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,8 +383,8 @@ public class Portfolio {
 	};
 	protected List<com.tools20022.repository.entity.PortfolioBenchmark> benchmark;
 	/**
-	 * Information on the benchmark set for the portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,8 +429,8 @@ public class Portfolio {
 	};
 	protected InvestmentPlan investmentPlan;
 	/**
-	 * Investment plan associated with a portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -477,8 +476,8 @@ public class Portfolio {
 	};
 	protected InvestmentAccount account;
 	/**
-	 * Account on which the portfolio is held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,7 +525,7 @@ public class Portfolio {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Portfolio";
 				definition = "Wrapper for a specific product or a specific sub-product owned by a set of beneficial owners.";
@@ -546,75 +545,84 @@ public class Portfolio {
 		return mmObject_lazy.get();
 	}
 
-	public PortfolioValuation getValuation() {
-		return valuation;
+	public Optional<PortfolioValuation> getValuation() {
+		return valuation == null ? Optional.empty() : Optional.of(valuation);
 	}
 
-	public void setValuation(com.tools20022.repository.entity.PortfolioValuation valuation) {
+	public Portfolio setValuation(com.tools20022.repository.entity.PortfolioValuation valuation) {
 		this.valuation = valuation;
+		return this;
 	}
 
-	public PortfolioTransfer getTransfer() {
-		return transfer;
+	public Optional<PortfolioTransfer> getTransfer() {
+		return transfer == null ? Optional.empty() : Optional.of(transfer);
 	}
 
-	public void setTransfer(com.tools20022.repository.entity.PortfolioTransfer transfer) {
+	public Portfolio setTransfer(com.tools20022.repository.entity.PortfolioTransfer transfer) {
 		this.transfer = transfer;
+		return this;
 	}
 
 	public List<Asset> getAssetDescription() {
-		return assetDescription;
+		return assetDescription == null ? assetDescription = new ArrayList<>() : assetDescription;
 	}
 
-	public void setAssetDescription(List<com.tools20022.repository.entity.Asset> assetDescription) {
-		this.assetDescription = assetDescription;
+	public Portfolio setAssetDescription(List<com.tools20022.repository.entity.Asset> assetDescription) {
+		this.assetDescription = Objects.requireNonNull(assetDescription);
+		return this;
 	}
 
 	public Max350Text getName() {
 		return name;
 	}
 
-	public void setName(Max350Text name) {
-		this.name = name;
+	public Portfolio setName(Max350Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Portfolio setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<PortfolioStrategy> getStrategy() {
-		return strategy;
+		return strategy == null ? strategy = new ArrayList<>() : strategy;
 	}
 
-	public void setStrategy(List<com.tools20022.repository.entity.PortfolioStrategy> strategy) {
-		this.strategy = strategy;
+	public Portfolio setStrategy(List<com.tools20022.repository.entity.PortfolioStrategy> strategy) {
+		this.strategy = Objects.requireNonNull(strategy);
+		return this;
 	}
 
 	public List<PortfolioBenchmark> getBenchmark() {
-		return benchmark;
+		return benchmark == null ? benchmark = new ArrayList<>() : benchmark;
 	}
 
-	public void setBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> benchmark) {
-		this.benchmark = benchmark;
+	public Portfolio setBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> benchmark) {
+		this.benchmark = Objects.requireNonNull(benchmark);
+		return this;
 	}
 
 	public InvestmentPlan getInvestmentPlan() {
 		return investmentPlan;
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
-		this.investmentPlan = investmentPlan;
+	public Portfolio setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+		this.investmentPlan = Objects.requireNonNull(investmentPlan);
+		return this;
 	}
 
 	public InvestmentAccount getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.InvestmentAccount account) {
-		this.account = account;
+	public Portfolio setAccount(com.tools20022.repository.entity.InvestmentAccount account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

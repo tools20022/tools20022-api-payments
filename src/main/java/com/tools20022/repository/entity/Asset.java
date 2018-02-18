@@ -28,9 +28,8 @@ import com.tools20022.repository.msg.CashCollateral5;
 import com.tools20022.repository.msg.LoanContract1;
 import com.tools20022.repository.msg.LoanContractTranche1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Tangible items of value to a business.
@@ -131,8 +130,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -148,10 +147,8 @@ public class Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime expiryDate;
 	/**
-	 * Date on which an order, a privilege, an entitlement or an offer
-	 * terminates. For an interest bearing asset, it is the date/time at which
-	 * it becomes due and has to be repaid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,10 +194,8 @@ public class Asset {
 	};
 	protected ISODateTime maturityDate;
 	/**
-	 * Planned date, at the time of issuance, on which an interest bearing
-	 * financial instrument becomes due and principal is repaid by the issuer to
-	 * the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,9 +259,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.Derivative> derivative;
 	/**
-	 * Specifies the parameters of a derivative instrument based on a specific
-	 * asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,8 +307,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.AssetHolding> assetValue;
 	/**
-	 * Specifies the different values of an asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,8 +353,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.AssetClassification> assetClassification;
 	/**
-	 * Classification of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,8 +399,8 @@ public class Asset {
 	};
 	protected FinancialAssetTypeCategoryCode financialAssetCategory;
 	/**
-	 * Categorization of financial asset type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,8 +445,8 @@ public class Asset {
 	};
 	protected AssetPartyRole assetPartyRole;
 	/**
-	 * Party which plays a role for a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -498,8 +492,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.Issuance> issuance;
 	/**
-	 * Details regarding the issuance of an asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -543,8 +537,8 @@ public class Asset {
 	};
 	protected Portfolio portfolio;
 	/**
-	 * Asset which is part of a portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,8 +584,8 @@ public class Asset {
 	};
 	protected CurrencyAndAmount investmentAmount;
 	/**
-	 * Invested amount of the portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -636,8 +630,8 @@ public class Asset {
 	};
 	protected PercentageRate investmentRate;
 	/**
-	 * Invested percentage of the portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -682,8 +676,8 @@ public class Asset {
 	};
 	protected ISODateTime effectiveDate;
 	/**
-	 * Cut off date/time for the information of the specified portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -729,8 +723,8 @@ public class Asset {
 	};
 	protected InstrumentSubStructureTypeCode financialInstrumentSubStructure;
 	/**
-	 * Indicates the type of deal for structured finance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -775,8 +769,8 @@ public class Asset {
 	};
 	protected InvestmentPlan investmentPlan;
 	/**
-	 * Investment plan that invests in a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -822,8 +816,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.Trade> trade;
 	/**
-	 * Trade which which involves a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -866,9 +860,8 @@ public class Asset {
 	};
 	protected Tranche tranche;
 	/**
-	 * One of a number of related assets offered as part of the same
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -922,8 +915,8 @@ public class Asset {
 	};
 	protected List<com.tools20022.repository.entity.Leg> legAdditionalInformation;
 	/**
-	 * Provides details about the leg.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -967,8 +960,8 @@ public class Asset {
 	};
 	protected StandingSettlementInstruction standingSettlementInstruction;
 	/**
-	 * Standing settlement instruction for which an asset is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1018,7 +1011,7 @@ public class Asset {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Asset";
 				definition = "Tangible items of value to a business.";
@@ -1047,143 +1040,161 @@ public class Asset {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISODateTime expiryDate) {
-		this.expiryDate = expiryDate;
+	public Asset setExpiryDate(ISODateTime expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public ISODateTime getMaturityDate() {
 		return maturityDate;
 	}
 
-	public void setMaturityDate(ISODateTime maturityDate) {
-		this.maturityDate = maturityDate;
+	public Asset setMaturityDate(ISODateTime maturityDate) {
+		this.maturityDate = Objects.requireNonNull(maturityDate);
+		return this;
 	}
 
 	public List<Derivative> getDerivative() {
-		return derivative;
+		return derivative == null ? derivative = new ArrayList<>() : derivative;
 	}
 
-	public void setDerivative(List<com.tools20022.repository.entity.Derivative> derivative) {
-		this.derivative = derivative;
+	public Asset setDerivative(List<com.tools20022.repository.entity.Derivative> derivative) {
+		this.derivative = Objects.requireNonNull(derivative);
+		return this;
 	}
 
 	public List<AssetHolding> getAssetValue() {
-		return assetValue;
+		return assetValue == null ? assetValue = new ArrayList<>() : assetValue;
 	}
 
-	public void setAssetValue(List<com.tools20022.repository.entity.AssetHolding> assetValue) {
-		this.assetValue = assetValue;
+	public Asset setAssetValue(List<com.tools20022.repository.entity.AssetHolding> assetValue) {
+		this.assetValue = Objects.requireNonNull(assetValue);
+		return this;
 	}
 
 	public List<AssetClassification> getAssetClassification() {
-		return assetClassification;
+		return assetClassification == null ? assetClassification = new ArrayList<>() : assetClassification;
 	}
 
-	public void setAssetClassification(List<com.tools20022.repository.entity.AssetClassification> assetClassification) {
-		this.assetClassification = assetClassification;
+	public Asset setAssetClassification(List<com.tools20022.repository.entity.AssetClassification> assetClassification) {
+		this.assetClassification = Objects.requireNonNull(assetClassification);
+		return this;
 	}
 
 	public FinancialAssetTypeCategoryCode getFinancialAssetCategory() {
 		return financialAssetCategory;
 	}
 
-	public void setFinancialAssetCategory(FinancialAssetTypeCategoryCode financialAssetCategory) {
-		this.financialAssetCategory = financialAssetCategory;
+	public Asset setFinancialAssetCategory(FinancialAssetTypeCategoryCode financialAssetCategory) {
+		this.financialAssetCategory = Objects.requireNonNull(financialAssetCategory);
+		return this;
 	}
 
-	public AssetPartyRole getAssetPartyRole() {
-		return assetPartyRole;
+	public Optional<AssetPartyRole> getAssetPartyRole() {
+		return assetPartyRole == null ? Optional.empty() : Optional.of(assetPartyRole);
 	}
 
-	public void setAssetPartyRole(com.tools20022.repository.entity.AssetPartyRole assetPartyRole) {
+	public Asset setAssetPartyRole(com.tools20022.repository.entity.AssetPartyRole assetPartyRole) {
 		this.assetPartyRole = assetPartyRole;
+		return this;
 	}
 
 	public List<Issuance> getIssuance() {
-		return issuance;
+		return issuance == null ? issuance = new ArrayList<>() : issuance;
 	}
 
-	public void setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
-		this.issuance = issuance;
+	public Asset setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
-	public Portfolio getPortfolio() {
-		return portfolio;
+	public Optional<Portfolio> getPortfolio() {
+		return portfolio == null ? Optional.empty() : Optional.of(portfolio);
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+	public Asset setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
 		this.portfolio = portfolio;
+		return this;
 	}
 
 	public CurrencyAndAmount getInvestmentAmount() {
 		return investmentAmount;
 	}
 
-	public void setInvestmentAmount(CurrencyAndAmount investmentAmount) {
-		this.investmentAmount = investmentAmount;
+	public Asset setInvestmentAmount(CurrencyAndAmount investmentAmount) {
+		this.investmentAmount = Objects.requireNonNull(investmentAmount);
+		return this;
 	}
 
 	public PercentageRate getInvestmentRate() {
 		return investmentRate;
 	}
 
-	public void setInvestmentRate(PercentageRate investmentRate) {
-		this.investmentRate = investmentRate;
+	public Asset setInvestmentRate(PercentageRate investmentRate) {
+		this.investmentRate = Objects.requireNonNull(investmentRate);
+		return this;
 	}
 
 	public ISODateTime getEffectiveDate() {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODateTime effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public Asset setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public InstrumentSubStructureTypeCode getFinancialInstrumentSubStructure() {
 		return financialInstrumentSubStructure;
 	}
 
-	public void setFinancialInstrumentSubStructure(InstrumentSubStructureTypeCode financialInstrumentSubStructure) {
-		this.financialInstrumentSubStructure = financialInstrumentSubStructure;
+	public Asset setFinancialInstrumentSubStructure(InstrumentSubStructureTypeCode financialInstrumentSubStructure) {
+		this.financialInstrumentSubStructure = Objects.requireNonNull(financialInstrumentSubStructure);
+		return this;
 	}
 
-	public InvestmentPlan getInvestmentPlan() {
-		return investmentPlan;
+	public Optional<InvestmentPlan> getInvestmentPlan() {
+		return investmentPlan == null ? Optional.empty() : Optional.of(investmentPlan);
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+	public Asset setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
 		this.investmentPlan = investmentPlan;
+		return this;
 	}
 
 	public List<Trade> getTrade() {
-		return trade;
+		return trade == null ? trade = new ArrayList<>() : trade;
 	}
 
-	public void setTrade(List<com.tools20022.repository.entity.Trade> trade) {
-		this.trade = trade;
+	public Asset setTrade(List<com.tools20022.repository.entity.Trade> trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public Tranche getTranche() {
 		return tranche;
 	}
 
-	public void setTranche(com.tools20022.repository.entity.Tranche tranche) {
-		this.tranche = tranche;
+	public Asset setTranche(com.tools20022.repository.entity.Tranche tranche) {
+		this.tranche = Objects.requireNonNull(tranche);
+		return this;
 	}
 
 	public List<Leg> getLegAdditionalInformation() {
-		return legAdditionalInformation;
+		return legAdditionalInformation == null ? legAdditionalInformation = new ArrayList<>() : legAdditionalInformation;
 	}
 
-	public void setLegAdditionalInformation(List<com.tools20022.repository.entity.Leg> legAdditionalInformation) {
-		this.legAdditionalInformation = legAdditionalInformation;
+	public Asset setLegAdditionalInformation(List<com.tools20022.repository.entity.Leg> legAdditionalInformation) {
+		this.legAdditionalInformation = Objects.requireNonNull(legAdditionalInformation);
+		return this;
 	}
 
 	public StandingSettlementInstruction getStandingSettlementInstruction() {
 		return standingSettlementInstruction;
 	}
 
-	public void setStandingSettlementInstruction(com.tools20022.repository.entity.StandingSettlementInstruction standingSettlementInstruction) {
-		this.standingSettlementInstruction = standingSettlementInstruction;
+	public Asset setStandingSettlementInstruction(com.tools20022.repository.entity.StandingSettlementInstruction standingSettlementInstruction) {
+		this.standingSettlementInstruction = Objects.requireNonNull(standingSettlementInstruction);
+		return this;
 	}
 }

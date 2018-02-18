@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -93,8 +92,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,18 +106,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GroupHeader47", propOrder = {"messageIdentification", "creationDateTime", "authorisation", "initiatingParty", "instructingAgent", "instructedAgent"})
 public class GroupHeader47 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected Max35Text messageIdentification;
 	/**
-	 * Point to point reference, as assigned by the instructing party, and sent
-	 * to the instructed party, to unambiguously identify the message. Usage:
-	 * The instructing party has to make sure that MessageIdentification is
-	 * unique per instructed party for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +149,7 @@ public class GroupHeader47 {
 	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,10 +160,11 @@ public class GroupHeader47 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +196,7 @@ public class GroupHeader47 {
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -209,17 +207,11 @@ public class GroupHeader47 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "Authstn")
 	protected List<Authorisation1Choice> authorisation;
 	/**
-	 * User identification or any user key to be used to check the authority of
-	 * the initiating party.
 	 * 
-	 * Usage: The content is not of a technical nature, but reflects the
-	 * organisational structure at the initiating side. The authorisation
-	 * element can typically be used in relay scenarios, payment initiations,
-	 * payment returns or payment reversals that are initiated on behalf of a
-	 * party different from the initiating party.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,7 +240,7 @@ public class GroupHeader47 {
 	 */
 	public static final MMMessageAttribute mmAuthorisation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "Authstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -259,10 +251,11 @@ public class GroupHeader47 {
 			complexType_lazy = () -> Authorisation1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "InitgPty")
 	protected PartyIdentification43 initiatingParty;
 	/**
-	 * Party that initiates the mandate message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -293,7 +286,7 @@ public class GroupHeader47 {
 	public static final MMMessageAssociationEnd mmInitiatingParty = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "InitgPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,18 +298,11 @@ public class GroupHeader47 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "InstgAgt")
 	protected BranchAndFinancialInstitutionIdentification5 instructingAgent;
 	/**
-	 * Agent that instructs the next party in the chain to carry out an
-	 * instruction.
 	 * 
-	 * Usage Rule: In case of amendment and cancellation request messages, the
-	 * instructing agent is the party sending the amendment and cancellation
-	 * request message and not the party that sent the original mandate
-	 * initiation request message. In case of acceptance report message, the
-	 * instructing agent is the party sending the acceptance report message and
-	 * not the party that sent the original mandate request message.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -350,7 +336,7 @@ public class GroupHeader47 {
 	public static final MMMessageAssociationEnd mmInstructingAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "InstgAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -362,18 +348,11 @@ public class GroupHeader47 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "InstdAgt")
 	protected BranchAndFinancialInstitutionIdentification5 instructedAgent;
 	/**
-	 * Agent that is instructed by the previous party in the chain to carry out
-	 * an instruction.
 	 * 
-	 * Usage Rule: In case of amendment and cancellation request messages, the
-	 * instructed agent is the party receiving the amendment and cancellation
-	 * request message and not the party that received the original mandate
-	 * initiation request message. In case of acceptance report message, the
-	 * instructed agent is the party receiving the acceptance report message and
-	 * not the party that received the original mandate request message.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -407,7 +386,7 @@ public class GroupHeader47 {
 	public static final MMMessageAssociationEnd mmInstructedAgent = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> GroupHeader47.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader47.mmObject();
 			isDerived = false;
 			xmlTag = "InstdAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -423,12 +402,13 @@ public class GroupHeader47 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GroupHeader47.mmMessageIdentification, GroupHeader47.mmCreationDateTime, GroupHeader47.mmAuthorisation, GroupHeader47.mmInitiatingParty, GroupHeader47.mmInstructingAgent,
-						GroupHeader47.mmInstructedAgent);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GroupHeader47.mmMessageIdentification, com.tools20022.repository.msg.GroupHeader47.mmCreationDateTime,
+						com.tools20022.repository.msg.GroupHeader47.mmAuthorisation, com.tools20022.repository.msg.GroupHeader47.mmInitiatingParty, com.tools20022.repository.msg.GroupHeader47.mmInstructingAgent,
+						com.tools20022.repository.msg.GroupHeader47.mmInstructedAgent);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MandateAcceptanceReportV05.mmGroupHeader, MandateAmendmentRequestV05.mmGroupHeader, MandateInitiationRequestV05.mmGroupHeader, MandateCancellationRequestV05.mmGroupHeader,
 						MandateSuspensionRequestV01.mmGroupHeader, MandateCopyRequestV01.mmGroupHeader);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupHeader47";
 				definition = "Set of characteristics shared by all individual transactions included in the message.";
@@ -437,57 +417,57 @@ public class GroupHeader47 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public Max35Text getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(Max35Text messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public GroupHeader47 setMessageIdentification(Max35Text messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public GroupHeader47 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "Authstn")
 	public List<Authorisation1Choice> getAuthorisation() {
-		return authorisation;
+		return authorisation == null ? authorisation = new ArrayList<>() : authorisation;
 	}
 
-	public void setAuthorisation(List<Authorisation1Choice> authorisation) {
-		this.authorisation = authorisation;
+	public GroupHeader47 setAuthorisation(List<Authorisation1Choice> authorisation) {
+		this.authorisation = Objects.requireNonNull(authorisation);
+		return this;
 	}
 
-	@XmlElement(name = "InitgPty")
-	public PartyIdentification43 getInitiatingParty() {
-		return initiatingParty;
+	public Optional<PartyIdentification43> getInitiatingParty() {
+		return initiatingParty == null ? Optional.empty() : Optional.of(initiatingParty);
 	}
 
-	public void setInitiatingParty(com.tools20022.repository.msg.PartyIdentification43 initiatingParty) {
+	public GroupHeader47 setInitiatingParty(com.tools20022.repository.msg.PartyIdentification43 initiatingParty) {
 		this.initiatingParty = initiatingParty;
+		return this;
 	}
 
-	@XmlElement(name = "InstgAgt")
-	public BranchAndFinancialInstitutionIdentification5 getInstructingAgent() {
-		return instructingAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getInstructingAgent() {
+		return instructingAgent == null ? Optional.empty() : Optional.of(instructingAgent);
 	}
 
-	public void setInstructingAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructingAgent) {
+	public GroupHeader47 setInstructingAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructingAgent) {
 		this.instructingAgent = instructingAgent;
+		return this;
 	}
 
-	@XmlElement(name = "InstdAgt")
-	public BranchAndFinancialInstitutionIdentification5 getInstructedAgent() {
-		return instructedAgent;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getInstructedAgent() {
+		return instructedAgent == null ? Optional.empty() : Optional.of(instructedAgent);
 	}
 
-	public void setInstructedAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructedAgent) {
+	public GroupHeader47 setInstructedAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 instructedAgent) {
 		this.instructedAgent = instructedAgent;
+		return this;
 	}
 }

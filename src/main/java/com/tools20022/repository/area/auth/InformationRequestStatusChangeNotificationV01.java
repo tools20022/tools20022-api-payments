@@ -26,9 +26,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -76,16 +78,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InformationRequestStatusChangeNotificationV01", propOrder = {"originalBusinessQuery", "confidentialityStatus", "supplementaryData"})
 public class InformationRequestStatusChangeNotificationV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlBizQry", required = true)
 	protected Max35Text originalBusinessQuery;
 	/**
-	 * Reference of the information request opening message that this message is
-	 * an update of.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +128,11 @@ public class InformationRequestStatusChangeNotificationV01 {
 			}
 		}
 	};
+	@XmlElement(name = "CnfdtltySts", required = true)
 	protected YesNoIndicator confidentialityStatus;
 	/**
-	 * Specifies the confidentiality status of the investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,11 +173,11 @@ public class InformationRequestStatusChangeNotificationV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,34 +248,34 @@ public class InformationRequestStatusChangeNotificationV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlBizQry", required = true)
 	public Max35Text getOriginalBusinessQuery() {
 		return originalBusinessQuery;
 	}
 
-	public void setOriginalBusinessQuery(Max35Text originalBusinessQuery) {
-		this.originalBusinessQuery = originalBusinessQuery;
+	public InformationRequestStatusChangeNotificationV01 setOriginalBusinessQuery(Max35Text originalBusinessQuery) {
+		this.originalBusinessQuery = Objects.requireNonNull(originalBusinessQuery);
+		return this;
 	}
 
-	@XmlElement(name = "CnfdtltySts", required = true)
 	public YesNoIndicator getConfidentialityStatus() {
 		return confidentialityStatus;
 	}
 
-	public void setConfidentialityStatus(YesNoIndicator confidentialityStatus) {
-		this.confidentialityStatus = confidentialityStatus;
+	public InformationRequestStatusChangeNotificationV01 setConfidentialityStatus(YesNoIndicator confidentialityStatus) {
+		this.confidentialityStatus = Objects.requireNonNull(confidentialityStatus);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public InformationRequestStatusChangeNotificationV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.003.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.003.001.01")
 	static public class Document {
 		@XmlElement(name = "InfReqStsChngNtfctn", required = true)
 		public InformationRequestStatusChangeNotificationV01 messageBody;

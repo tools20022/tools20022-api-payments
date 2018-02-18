@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.PaymentTerms;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestPaymentDateRange2", propOrder = {"interestScheduleIdentification", "amount", "dueDate", "additionalInformation"})
 public class InterestPaymentDateRange2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "IntrstSchdlId")
 	protected Max35Text interestScheduleIdentification;
 	/**
-	 * Unique and unambiguous identification of the interest payment schedule.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +118,7 @@ public class InterestPaymentDateRange2 {
 	 */
 	public static final MMMessageAttribute mmInterestScheduleIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> InterestPaymentDateRange2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstSchdlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,10 +129,11 @@ public class InterestPaymentDateRange2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Interest amount that must be paid at due date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +167,7 @@ public class InterestPaymentDateRange2 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentTerms.mmAmount;
-			componentContext_lazy = () -> InterestPaymentDateRange2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,10 +178,11 @@ public class InterestPaymentDateRange2 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "DueDt", required = true)
 	protected ISODate dueDate;
 	/**
-	 * Latest date whereby the interest must be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +215,7 @@ public class InterestPaymentDateRange2 {
 	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Obligation.mmRequestedSettlementDate;
-			componentContext_lazy = () -> InterestPaymentDateRange2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
 			xmlTag = "DueDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,10 +226,11 @@ public class InterestPaymentDateRange2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max1025Text additionalInformation;
 	/**
-	 * Further details on the interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,7 +257,7 @@ public class InterestPaymentDateRange2 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> InterestPaymentDateRange2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,10 +272,10 @@ public class InterestPaymentDateRange2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestPaymentDateRange2.mmInterestScheduleIdentification, InterestPaymentDateRange2.mmAmount, InterestPaymentDateRange2.mmDueDate,
-						InterestPaymentDateRange2.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestPaymentDateRange2.mmInterestScheduleIdentification, com.tools20022.repository.msg.InterestPaymentDateRange2.mmAmount,
+						com.tools20022.repository.msg.InterestPaymentDateRange2.mmDueDate, com.tools20022.repository.msg.InterestPaymentDateRange2.mmAdditionalInformation);
 				trace_lazy = () -> PaymentTerms.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestPaymentDateRange2";
 				definition = "Specifies an interest payment schedule, that is an amount that must be paid no sooner than the expected payment date and no later than the due date.";
@@ -278,39 +284,39 @@ public class InterestPaymentDateRange2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "IntrstSchdlId")
-	public Max35Text getInterestScheduleIdentification() {
-		return interestScheduleIdentification;
+	public Optional<Max35Text> getInterestScheduleIdentification() {
+		return interestScheduleIdentification == null ? Optional.empty() : Optional.of(interestScheduleIdentification);
 	}
 
-	public void setInterestScheduleIdentification(Max35Text interestScheduleIdentification) {
+	public InterestPaymentDateRange2 setInterestScheduleIdentification(Max35Text interestScheduleIdentification) {
 		this.interestScheduleIdentification = interestScheduleIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public InterestPaymentDateRange2 setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "DueDt", required = true)
 	public ISODate getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(ISODate dueDate) {
-		this.dueDate = dueDate;
+	public InterestPaymentDateRange2 setDueDate(ISODate dueDate) {
+		this.dueDate = Objects.requireNonNull(dueDate);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max1025Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max1025Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max1025Text additionalInformation) {
+	public InterestPaymentDateRange2 setAdditionalInformation(Max1025Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

@@ -38,77 +38,77 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LVPCutOff
- * SystemEventTypeCode.mmLVPCutOff}</li>
+ * SystemEventTypeCode.LVPCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LVPCancellationCutOff
- * SystemEventTypeCode.mmLVPCancellationCutOff}</li>
+ * SystemEventTypeCode.LVPCancellationCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LVPCutOffReportTime
- * SystemEventTypeCode.mmLVPCutOffReportTime}</li>
+ * SystemEventTypeCode.LVPCutOffReportTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#Euro1StartUp
- * SystemEventTypeCode.mmEuro1StartUp}</li>
+ * SystemEventTypeCode.Euro1StartUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#Step1StartUp
- * SystemEventTypeCode.mmStep1StartUp}</li>
+ * SystemEventTypeCode.Step1StartUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LimitWarningStartUp
- * SystemEventTypeCode.mmLimitWarningStartUp}</li>
+ * SystemEventTypeCode.LimitWarningStartUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#Euro1CutOff
- * SystemEventTypeCode.mmEuro1CutOff}</li>
+ * SystemEventTypeCode.Euro1CutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#FinalReporting
- * SystemEventTypeCode.mmFinalReporting}</li>
+ * SystemEventTypeCode.FinalReporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#StartOfDay
- * SystemEventTypeCode.mmStartOfDay}</li>
+ * SystemEventTypeCode.StartOfDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LTNCutOff
- * SystemEventTypeCode.mmLTNCutOff}</li>
+ * SystemEventTypeCode.LTNCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#CashReservationCutOff
- * SystemEventTypeCode.mmCashReservationCutOff}</li>
+ * SystemEventTypeCode.CashReservationCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#RecCutOff
- * SystemEventTypeCode.mmRecCutOff}</li>
+ * SystemEventTypeCode.RecCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LTGCutOff
- * SystemEventTypeCode.mmLTGCutOff}</li>
+ * SystemEventTypeCode.LTGCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#LTDCutOff
- * SystemEventTypeCode.mmLTDCutOff}</li>
+ * SystemEventTypeCode.LTDCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#CustomerCutOff
- * SystemEventTypeCode.mmCustomerCutOff}</li>
+ * SystemEventTypeCode.CustomerCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#InterbankCutOff
- * SystemEventTypeCode.mmInterbankCutOff}</li>
+ * SystemEventTypeCode.InterbankCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#SystemCutOff
- * SystemEventTypeCode.mmSystemCutOff}</li>
+ * SystemEventTypeCode.SystemCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#NetSSSReservationCutOff
- * SystemEventTypeCode.mmNetSSSReservationCutOff}</li>
+ * SystemEventTypeCode.NetSSSReservationCutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#ResumeOperation
- * SystemEventTypeCode.mmResumeOperation}</li>
+ * SystemEventTypeCode.ResumeOperation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#ProcessingCutOffTime
- * SystemEventTypeCode.mmProcessingCutOffTime}</li>
+ * SystemEventTypeCode.ProcessingCutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#NewPaymentCutOffTime
- * SystemEventTypeCode.mmNewPaymentCutOffTime}</li>
+ * SystemEventTypeCode.NewPaymentCutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemEventTypeCode#EndOfStandingFacilities
- * SystemEventTypeCode.mmEndOfStandingFacilities}</li>
+ * SystemEventTypeCode.EndOfStandingFacilities}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -826,7 +826,7 @@ public class SystemEventTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LVCO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemEventTypeCode";

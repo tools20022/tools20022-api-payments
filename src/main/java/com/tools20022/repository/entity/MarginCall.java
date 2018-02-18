@@ -25,9 +25,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the calculation and the resulting margin and independent amount
@@ -128,8 +130,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -147,8 +149,8 @@ public class MarginCall {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime marginCallValuationDate;
 	/**
-	 * Close of business date that initiating party is valuing the margin call.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,8 +196,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount agreedAmount;
 	/**
-	 * Specifies the amount which is undisputed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,9 +242,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount variationMargin;
 	/**
-	 * Provides the summation of the call amounts for the variation margin and
-	 * optionally the segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,9 +290,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount segregatedIndependentAmount;
 	/**
-	 * Provides the summation of the call amounts for the segregated independent
-	 * amount only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -338,9 +338,8 @@ public class MarginCall {
 	};
 	protected DefaultFundContribution defaultFundContribution;
 	/**
-	 * Portion of the participation to the default fund that clearing member
-	 * must provide. It is the sum of the individual contributions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -389,8 +388,8 @@ public class MarginCall {
 	};
 	protected ExpectedCollateralType expectedVariationMarginType;
 	/**
-	 * Specifies the expected collateral type and direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -437,8 +436,8 @@ public class MarginCall {
 	};
 	protected ExpectedCollateralType expectedSegregatedIndependentAmountType;
 	/**
-	 * Specifies the expected collateral type and direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -485,9 +484,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount totalMarkToMarket;
 	/**
-	 * Net unrealised profit or loss on the value of the netted, gross and
-	 * failing positions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -534,8 +532,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount markToMarketNetted;
 	/**
-	 * Unrealised net loss calculated at the participant portfolio level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -581,8 +579,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount markToMarketGross;
 	/**
-	 * Unrealised net loss calculated in that market/boundary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -627,8 +625,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount markToMarketFails;
 	/**
-	 * Sum of the unrealised loss without taking profit into consideration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -674,9 +672,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount failsHaircut;
 	/**
-	 * Haircut applied to the absolute value of the participants net positions.
-	 * Calculation depends on a participants credit rating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -723,10 +720,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount initialMargin;
 	/**
-	 * Margin required for absorbing future market price fluctuations (market
-	 * risks) occurring between the default of a member and close-out of
-	 * unsettled securities positions by the CCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -773,9 +768,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount increaseCoverage;
 	/**
-	 * Amount added to the requirement amount. Its value is at the discretion of
-	 * the central clearing counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -822,10 +816,8 @@ public class MarginCall {
 	};
 	protected YesNoIndicator collateralisedMarginAccountIndicator;
 	/**
-	 * Used to indicate whether the reported margin account is collateralised or
-	 * not. If not collateralised, the account is configured for informational
-	 * reporting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -872,8 +864,8 @@ public class MarginCall {
 	};
 	protected List<com.tools20022.repository.entity.CollateralMovement> collateralMovement;
 	/**
-	 * Movements resulting from the margin call calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -918,8 +910,8 @@ public class MarginCall {
 	};
 	protected CollateralManagement relatedManagementProcess;
 	/**
-	 * Process which groups the activities related to collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -967,8 +959,8 @@ public class MarginCall {
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Description of the securities related to the margin call.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1013,8 +1005,8 @@ public class MarginCall {
 	};
 	protected MarginProductCode marginProduct;
 	/**
-	 * Specifies the underlying product of the margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1059,9 +1051,8 @@ public class MarginCall {
 	};
 	protected MarginTypeCode marginType;
 	/**
-	 * Specifies the type of margin, for example, initial margin, variation
-	 * margin, initial deposit or coupon margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1108,10 +1099,8 @@ public class MarginCall {
 	};
 	protected ActiveCurrencyAndAmount totalMarginAmount;
 	/**
-	 * Total margin requirement (expressed in the reporting currency) that must
-	 * be provided. This is the total requirement calculated to cover the
-	 * initial margin and the variation margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1160,7 +1149,7 @@ public class MarginCall {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "MarginCall";
 				definition = "Specifies the calculation and the resulting margin and independent amount needed to cover the risk exposure of one party versus another.";
@@ -1189,167 +1178,188 @@ public class MarginCall {
 		return marginCallValuationDate;
 	}
 
-	public void setMarginCallValuationDate(ISODateTime marginCallValuationDate) {
-		this.marginCallValuationDate = marginCallValuationDate;
+	public MarginCall setMarginCallValuationDate(ISODateTime marginCallValuationDate) {
+		this.marginCallValuationDate = Objects.requireNonNull(marginCallValuationDate);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAgreedAmount() {
 		return agreedAmount;
 	}
 
-	public void setAgreedAmount(ActiveCurrencyAndAmount agreedAmount) {
-		this.agreedAmount = agreedAmount;
+	public MarginCall setAgreedAmount(ActiveCurrencyAndAmount agreedAmount) {
+		this.agreedAmount = Objects.requireNonNull(agreedAmount);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getVariationMargin() {
 		return variationMargin;
 	}
 
-	public void setVariationMargin(ActiveCurrencyAndAmount variationMargin) {
-		this.variationMargin = variationMargin;
+	public MarginCall setVariationMargin(ActiveCurrencyAndAmount variationMargin) {
+		this.variationMargin = Objects.requireNonNull(variationMargin);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getSegregatedIndependentAmount() {
 		return segregatedIndependentAmount;
 	}
 
-	public void setSegregatedIndependentAmount(ActiveCurrencyAndAmount segregatedIndependentAmount) {
-		this.segregatedIndependentAmount = segregatedIndependentAmount;
+	public MarginCall setSegregatedIndependentAmount(ActiveCurrencyAndAmount segregatedIndependentAmount) {
+		this.segregatedIndependentAmount = Objects.requireNonNull(segregatedIndependentAmount);
+		return this;
 	}
 
 	public DefaultFundContribution getDefaultFundContribution() {
 		return defaultFundContribution;
 	}
 
-	public void setDefaultFundContribution(com.tools20022.repository.entity.DefaultFundContribution defaultFundContribution) {
-		this.defaultFundContribution = defaultFundContribution;
+	public MarginCall setDefaultFundContribution(com.tools20022.repository.entity.DefaultFundContribution defaultFundContribution) {
+		this.defaultFundContribution = Objects.requireNonNull(defaultFundContribution);
+		return this;
 	}
 
 	public ExpectedCollateralType getExpectedVariationMarginType() {
 		return expectedVariationMarginType;
 	}
 
-	public void setExpectedVariationMarginType(com.tools20022.repository.entity.ExpectedCollateralType expectedVariationMarginType) {
-		this.expectedVariationMarginType = expectedVariationMarginType;
+	public MarginCall setExpectedVariationMarginType(com.tools20022.repository.entity.ExpectedCollateralType expectedVariationMarginType) {
+		this.expectedVariationMarginType = Objects.requireNonNull(expectedVariationMarginType);
+		return this;
 	}
 
 	public ExpectedCollateralType getExpectedSegregatedIndependentAmountType() {
 		return expectedSegregatedIndependentAmountType;
 	}
 
-	public void setExpectedSegregatedIndependentAmountType(com.tools20022.repository.entity.ExpectedCollateralType expectedSegregatedIndependentAmountType) {
-		this.expectedSegregatedIndependentAmountType = expectedSegregatedIndependentAmountType;
+	public MarginCall setExpectedSegregatedIndependentAmountType(com.tools20022.repository.entity.ExpectedCollateralType expectedSegregatedIndependentAmountType) {
+		this.expectedSegregatedIndependentAmountType = Objects.requireNonNull(expectedSegregatedIndependentAmountType);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getTotalMarkToMarket() {
 		return totalMarkToMarket;
 	}
 
-	public void setTotalMarkToMarket(ActiveCurrencyAndAmount totalMarkToMarket) {
-		this.totalMarkToMarket = totalMarkToMarket;
+	public MarginCall setTotalMarkToMarket(ActiveCurrencyAndAmount totalMarkToMarket) {
+		this.totalMarkToMarket = Objects.requireNonNull(totalMarkToMarket);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMarkToMarketNetted() {
 		return markToMarketNetted;
 	}
 
-	public void setMarkToMarketNetted(ActiveCurrencyAndAmount markToMarketNetted) {
-		this.markToMarketNetted = markToMarketNetted;
+	public MarginCall setMarkToMarketNetted(ActiveCurrencyAndAmount markToMarketNetted) {
+		this.markToMarketNetted = Objects.requireNonNull(markToMarketNetted);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMarkToMarketGross() {
 		return markToMarketGross;
 	}
 
-	public void setMarkToMarketGross(ActiveCurrencyAndAmount markToMarketGross) {
-		this.markToMarketGross = markToMarketGross;
+	public MarginCall setMarkToMarketGross(ActiveCurrencyAndAmount markToMarketGross) {
+		this.markToMarketGross = Objects.requireNonNull(markToMarketGross);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMarkToMarketFails() {
 		return markToMarketFails;
 	}
 
-	public void setMarkToMarketFails(ActiveCurrencyAndAmount markToMarketFails) {
-		this.markToMarketFails = markToMarketFails;
+	public MarginCall setMarkToMarketFails(ActiveCurrencyAndAmount markToMarketFails) {
+		this.markToMarketFails = Objects.requireNonNull(markToMarketFails);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getFailsHaircut() {
 		return failsHaircut;
 	}
 
-	public void setFailsHaircut(ActiveCurrencyAndAmount failsHaircut) {
-		this.failsHaircut = failsHaircut;
+	public MarginCall setFailsHaircut(ActiveCurrencyAndAmount failsHaircut) {
+		this.failsHaircut = Objects.requireNonNull(failsHaircut);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getInitialMargin() {
 		return initialMargin;
 	}
 
-	public void setInitialMargin(ActiveCurrencyAndAmount initialMargin) {
-		this.initialMargin = initialMargin;
+	public MarginCall setInitialMargin(ActiveCurrencyAndAmount initialMargin) {
+		this.initialMargin = Objects.requireNonNull(initialMargin);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getIncreaseCoverage() {
 		return increaseCoverage;
 	}
 
-	public void setIncreaseCoverage(ActiveCurrencyAndAmount increaseCoverage) {
-		this.increaseCoverage = increaseCoverage;
+	public MarginCall setIncreaseCoverage(ActiveCurrencyAndAmount increaseCoverage) {
+		this.increaseCoverage = Objects.requireNonNull(increaseCoverage);
+		return this;
 	}
 
 	public YesNoIndicator getCollateralisedMarginAccountIndicator() {
 		return collateralisedMarginAccountIndicator;
 	}
 
-	public void setCollateralisedMarginAccountIndicator(YesNoIndicator collateralisedMarginAccountIndicator) {
-		this.collateralisedMarginAccountIndicator = collateralisedMarginAccountIndicator;
+	public MarginCall setCollateralisedMarginAccountIndicator(YesNoIndicator collateralisedMarginAccountIndicator) {
+		this.collateralisedMarginAccountIndicator = Objects.requireNonNull(collateralisedMarginAccountIndicator);
+		return this;
 	}
 
 	public List<CollateralMovement> getCollateralMovement() {
-		return collateralMovement;
+		return collateralMovement == null ? collateralMovement = new ArrayList<>() : collateralMovement;
 	}
 
-	public void setCollateralMovement(List<com.tools20022.repository.entity.CollateralMovement> collateralMovement) {
-		this.collateralMovement = collateralMovement;
+	public MarginCall setCollateralMovement(List<com.tools20022.repository.entity.CollateralMovement> collateralMovement) {
+		this.collateralMovement = Objects.requireNonNull(collateralMovement);
+		return this;
 	}
 
 	public CollateralManagement getRelatedManagementProcess() {
 		return relatedManagementProcess;
 	}
 
-	public void setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
-		this.relatedManagementProcess = relatedManagementProcess;
+	public MarginCall setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
+		this.relatedManagementProcess = Objects.requireNonNull(relatedManagementProcess);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public MarginCall setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public MarginProductCode getMarginProduct() {
 		return marginProduct;
 	}
 
-	public void setMarginProduct(MarginProductCode marginProduct) {
-		this.marginProduct = marginProduct;
+	public MarginCall setMarginProduct(MarginProductCode marginProduct) {
+		this.marginProduct = Objects.requireNonNull(marginProduct);
+		return this;
 	}
 
 	public MarginTypeCode getMarginType() {
 		return marginType;
 	}
 
-	public void setMarginType(MarginTypeCode marginType) {
-		this.marginType = marginType;
+	public MarginCall setMarginType(MarginTypeCode marginType) {
+		this.marginType = Objects.requireNonNull(marginType);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getTotalMarginAmount() {
 		return totalMarginAmount;
 	}
 
-	public void setTotalMarginAmount(ActiveCurrencyAndAmount totalMarginAmount) {
-		this.totalMarginAmount = totalMarginAmount;
+	public MarginCall setTotalMarginAmount(ActiveCurrencyAndAmount totalMarginAmount) {
+		this.totalMarginAmount = Objects.requireNonNull(totalMarginAmount);
+		return this;
 	}
 }

@@ -108,8 +108,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,17 +129,17 @@ public class CashManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Cash Management - Latest version - master";
 				definition = "Messages that support the reporting and advicing of the cash side of any financial transactions, including cash movements, transactions and balances, plus any exceptions and investigations related to cash transactions.";
-				code = "camt";
 				messageDefinition_lazy = () -> Arrays.asList(AccountReportingRequestV03.mmObject(), NotificationOfCaseAssignmentV04.mmObject(), RejectInvestigationV04.mmObject(), CancelCaseAssignmentV03.mmObject(),
 						RequestForDuplicateV04.mmObject(), DuplicateV04.mmObject(), ProprietaryFormatInvestigationV03.mmObject(), DebitAuthorisationResponseV03.mmObject(), CaseStatusReportRequestV03.mmObject(),
 						CaseStatusReportV04.mmObject(), BankToCustomerAccountReportV06.mmObject(), BankServicesBillingStatementV02.mmObject(), NotificationToReceiveStatusReportV05.mmObject(),
 						NotificationToReceiveCancellationAdviceV05.mmObject(), BankToCustomerStatementV06.mmObject(), BankToCustomerDebitCreditNotificationV06.mmObject(), NotificationToReceiveV05.mmObject(), UnableToApplyV05.mmObject(),
 						CustomerPaymentCancellationRequestV06.mmObject(), AdditionalPaymentInformationV07.mmObject(), ResolutionOfInvestigationV07.mmObject(), FIToFIPaymentCancellationRequestV06.mmObject(),
 						DebitAuthorisationRequestV05.mmObject(), ClaimNonReceiptV05.mmObject(), RequestToModifyPaymentV04.mmObject());
+				code = "camt";
 			}
 		});
 		return mmObject_lazy.get();

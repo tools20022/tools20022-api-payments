@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.LocationCategoryCode#Fixed
- * LocationCategoryCode.mmFixed}</li>
+ * LocationCategoryCode.Fixed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#Aboard
- * LocationCategoryCode.mmAboard}</li>
+ * LocationCategoryCode.Aboard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#Nomadic
- * LocationCategoryCode.mmNomadic}</li>
+ * LocationCategoryCode.Nomadic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#MailOrderTelephoneOrder
- * LocationCategoryCode.mmMailOrderTelephoneOrder}</li>
+ * LocationCategoryCode.MailOrderTelephoneOrder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LocationCategoryCode#Home
- * LocationCategoryCode.mmHome}</li>
+ * LocationCategoryCode.Home}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#Indoor
- * LocationCategoryCode.mmIndoor}</li>
+ * LocationCategoryCode.Indoor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#InsidePump
- * LocationCategoryCode.mmInsidePump}</li>
+ * LocationCategoryCode.InsidePump}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#MultiplePump
- * LocationCategoryCode.mmMultiplePump}</li>
+ * LocationCategoryCode.MultiplePump}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#MultiplePOITerminal
- * LocationCategoryCode.mmMultiplePOITerminal}</li>
+ * LocationCategoryCode.MultiplePOITerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#MultipleSaleTerminal
- * LocationCategoryCode.mmMultipleSaleTerminal}</li>
+ * LocationCategoryCode.MultipleSaleTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#SingleSaleTerminal
- * LocationCategoryCode.mmSingleSaleTerminal}</li>
+ * LocationCategoryCode.SingleSaleTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategoryCode#VendingMachine
- * LocationCategoryCode.mmVendingMachine}</li>
+ * LocationCategoryCode.VendingMachine}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -468,7 +468,7 @@ public class LocationCategoryCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FIXD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocationCategoryCode";

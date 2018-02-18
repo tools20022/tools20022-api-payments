@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Describes the details of the currency exchange."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CurrencyExchange6", propOrder = {"sourceCurrency", "targetCurrency", "exchangeRate", "description", "unitCurrency", "comments", "quotationDate"})
 public class CurrencyExchange6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SrcCcy", required = true)
 	protected ActiveOrHistoricCurrencyCode sourceCurrency;
 	/**
-	 * Currency from which an amount is to be converted in a currency
-	 * conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +130,7 @@ public class CurrencyExchange6 {
 	public static final MMMessageAttribute mmSourceCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmSourceCurrency;
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "SrcCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,11 +141,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "TrgtCcy", required = true)
 	protected ActiveOrHistoricCurrencyCode targetCurrency;
 	/**
-	 * Currency into which an amount is to be converted in a currency
-	 * conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,7 +181,7 @@ public class CurrencyExchange6 {
 	public static final MMMessageAttribute mmTargetCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmTargetCurrency;
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "TrgtCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,12 +192,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "XchgRate", required = true)
 	protected BaseOneRate exchangeRate;
 	/**
-	 * Factor used to convert an amount from one currency into another. This
-	 * reflects the price at which one currency was bought with another
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,7 +231,7 @@ public class CurrencyExchange6 {
 	public static final MMMessageAttribute mmExchangeRate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmExchangeRate;
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "XchgRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,11 +242,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max40Text description;
 	/**
-	 * Unique identification to unambiguously identify the foreign exchange
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +275,7 @@ public class CurrencyExchange6 {
 	 */
 	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,11 +286,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> Max40Text.mmObject();
 		}
 	};
+	@XmlElement(name = "UnitCcy")
 	protected ActiveOrHistoricCurrencyCode unitCurrency;
 	/**
-	 * Currency in which the rate of exchange is expressed in a currency
-	 * exchange. In the example 1GBP = xxxCUR, the unit currency is GBP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,7 +326,7 @@ public class CurrencyExchange6 {
 	public static final MMMessageAttribute mmUnitCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmUnitCurrency;
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "UnitCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -336,10 +337,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "Cmnts")
 	protected Max70Text comments;
 	/**
-	 * Further information on the exchange rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,7 +368,7 @@ public class CurrencyExchange6 {
 	 */
 	public static final MMMessageAttribute mmComments = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "Cmnts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -377,10 +379,11 @@ public class CurrencyExchange6 {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
+	@XmlElement(name = "QtnDt")
 	protected ISODateTime quotationDate;
 	/**
-	 * Date and time at which an exchange rate is quoted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,7 +416,7 @@ public class CurrencyExchange6 {
 	public static final MMMessageAttribute mmQuotationDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmQuotationDate;
-			componentContext_lazy = () -> CurrencyExchange6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyExchange6.mmObject();
 			isDerived = false;
 			xmlTag = "QtnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -428,10 +431,11 @@ public class CurrencyExchange6 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CurrencyExchange6.mmSourceCurrency, CurrencyExchange6.mmTargetCurrency, CurrencyExchange6.mmExchangeRate, CurrencyExchange6.mmDescription, CurrencyExchange6.mmUnitCurrency,
-						CurrencyExchange6.mmComments, CurrencyExchange6.mmQuotationDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CurrencyExchange6.mmSourceCurrency, com.tools20022.repository.msg.CurrencyExchange6.mmTargetCurrency,
+						com.tools20022.repository.msg.CurrencyExchange6.mmExchangeRate, com.tools20022.repository.msg.CurrencyExchange6.mmDescription, com.tools20022.repository.msg.CurrencyExchange6.mmUnitCurrency,
+						com.tools20022.repository.msg.CurrencyExchange6.mmComments, com.tools20022.repository.msg.CurrencyExchange6.mmQuotationDate);
 				trace_lazy = () -> CurrencyExchange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyExchange6";
 				definition = "Describes the details of the currency exchange.";
@@ -440,66 +444,66 @@ public class CurrencyExchange6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SrcCcy", required = true)
 	public ActiveOrHistoricCurrencyCode getSourceCurrency() {
 		return sourceCurrency;
 	}
 
-	public void setSourceCurrency(ActiveOrHistoricCurrencyCode sourceCurrency) {
-		this.sourceCurrency = sourceCurrency;
+	public CurrencyExchange6 setSourceCurrency(ActiveOrHistoricCurrencyCode sourceCurrency) {
+		this.sourceCurrency = Objects.requireNonNull(sourceCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "TrgtCcy", required = true)
 	public ActiveOrHistoricCurrencyCode getTargetCurrency() {
 		return targetCurrency;
 	}
 
-	public void setTargetCurrency(ActiveOrHistoricCurrencyCode targetCurrency) {
-		this.targetCurrency = targetCurrency;
+	public CurrencyExchange6 setTargetCurrency(ActiveOrHistoricCurrencyCode targetCurrency) {
+		this.targetCurrency = Objects.requireNonNull(targetCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "XchgRate", required = true)
 	public BaseOneRate getExchangeRate() {
 		return exchangeRate;
 	}
 
-	public void setExchangeRate(BaseOneRate exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public CurrencyExchange6 setExchangeRate(BaseOneRate exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max40Text getDescription() {
-		return description;
+	public Optional<Max40Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max40Text description) {
+	public CurrencyExchange6 setDescription(Max40Text description) {
 		this.description = description;
+		return this;
 	}
 
-	@XmlElement(name = "UnitCcy")
-	public ActiveOrHistoricCurrencyCode getUnitCurrency() {
-		return unitCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getUnitCurrency() {
+		return unitCurrency == null ? Optional.empty() : Optional.of(unitCurrency);
 	}
 
-	public void setUnitCurrency(ActiveOrHistoricCurrencyCode unitCurrency) {
+	public CurrencyExchange6 setUnitCurrency(ActiveOrHistoricCurrencyCode unitCurrency) {
 		this.unitCurrency = unitCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "Cmnts")
-	public Max70Text getComments() {
-		return comments;
+	public Optional<Max70Text> getComments() {
+		return comments == null ? Optional.empty() : Optional.of(comments);
 	}
 
-	public void setComments(Max70Text comments) {
+	public CurrencyExchange6 setComments(Max70Text comments) {
 		this.comments = comments;
+		return this;
 	}
 
-	@XmlElement(name = "QtnDt")
-	public ISODateTime getQuotationDate() {
-		return quotationDate;
+	public Optional<ISODateTime> getQuotationDate() {
+		return quotationDate == null ? Optional.empty() : Optional.of(quotationDate);
 	}
 
-	public void setQuotationDate(ISODateTime quotationDate) {
+	public CurrencyExchange6 setQuotationDate(ISODateTime quotationDate) {
 		this.quotationDate = quotationDate;
+		return this;
 	}
 }

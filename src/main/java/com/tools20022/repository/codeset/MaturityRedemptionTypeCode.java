@@ -38,32 +38,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#FinalRedemption
- * MaturityRedemptionTypeCode.mmFinalRedemption}</li>
+ * MaturityRedemptionTypeCode.FinalRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#PartialRedemptionWithoutReduction
- * MaturityRedemptionTypeCode.mmPartialRedemptionWithoutReduction}</li>
+ * MaturityRedemptionTypeCode.PartialRedemptionWithoutReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#PartialRedemptionWithReduction
- * MaturityRedemptionTypeCode.mmPartialRedemptionWithReduction}</li>
+ * MaturityRedemptionTypeCode.PartialRedemptionWithReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#DrawingAtRandom
- * MaturityRedemptionTypeCode.mmDrawingAtRandom}</li>
+ * MaturityRedemptionTypeCode.DrawingAtRandom}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#DrawingProRata
- * MaturityRedemptionTypeCode.mmDrawingProRata}</li>
+ * MaturityRedemptionTypeCode.DrawingProRata}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#Call
- * MaturityRedemptionTypeCode.mmCall}</li>
+ * MaturityRedemptionTypeCode.Call}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MaturityRedemptionTypeCode#Put
- * MaturityRedemptionTypeCode.mmPut}</li>
+ * MaturityRedemptionTypeCode.Put}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -314,7 +314,7 @@ public class MaturityRedemptionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FRED");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MaturityRedemptionTypeCode";

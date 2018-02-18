@@ -30,6 +30,7 @@ import com.tools20022.repository.msg.UnderlyingPaymentTransaction2;
 import com.tools20022.repository.msg.UnderlyingStatementEntry1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -82,8 +83,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,16 +97,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnderlyingTransaction3Choice", propOrder = {"initiation", "interbank", "statementEntry"})
 public class UnderlyingTransaction3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Initn", required = true)
 	protected UnderlyingPaymentInstruction3 initiation;
 	/**
-	 * Set of elements used to reference the details of the original payment
-	 * initiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -140,7 +141,7 @@ public class UnderlyingTransaction3Choice {
 	public static final MMMessageAssociationEnd mmInitiation = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> PaymentInstruction.mmObject();
-			componentContext_lazy = () -> UnderlyingTransaction3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Initn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,11 +153,11 @@ public class UnderlyingTransaction3Choice {
 			type_lazy = () -> UnderlyingPaymentInstruction3.mmObject();
 		}
 	};
+	@XmlElement(name = "IntrBk", required = true)
 	protected UnderlyingPaymentTransaction2 interbank;
 	/**
-	 * Set of elements used to reference the details of the original interbank
-	 * payment transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -190,7 +191,7 @@ public class UnderlyingTransaction3Choice {
 	public static final MMMessageAssociationEnd mmInterbank = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> UnderlyingTransaction3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrBk";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,10 +203,11 @@ public class UnderlyingTransaction3Choice {
 			type_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
 		}
 	};
+	@XmlElement(name = "StmtNtry", required = true)
 	protected UnderlyingStatementEntry1 statementEntry;
 	/**
-	 * Reference details on the underlying statement cash entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -238,7 +240,7 @@ public class UnderlyingTransaction3Choice {
 	public static final MMMessageAssociationEnd mmStatementEntry = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashEntry.mmObject();
-			componentContext_lazy = () -> UnderlyingTransaction3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "StmtNtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -254,11 +256,12 @@ public class UnderlyingTransaction3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnderlyingTransaction3Choice.mmInitiation, UnderlyingTransaction3Choice.mmInterbank, UnderlyingTransaction3Choice.mmStatementEntry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmInitiation, com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmInterbank,
+						com.tools20022.repository.choice.UnderlyingTransaction3Choice.mmStatementEntry);
 				messageBuildingBlock_lazy = () -> Arrays.asList(UnableToApplyV05.mmUnderlying, AdditionalPaymentInformationV07.mmUnderlying, DebitAuthorisationRequestV05.mmUnderlying, ClaimNonReceiptV05.mmUnderlying,
 						RequestToModifyPaymentV04.mmUnderlying);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTransaction3Choice";
 				definition = "Specifies the details of the underlying transaction on which the investigation is processed.";
@@ -267,30 +270,30 @@ public class UnderlyingTransaction3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Initn", required = true)
 	public UnderlyingPaymentInstruction3 getInitiation() {
 		return initiation;
 	}
 
-	public void setInitiation(UnderlyingPaymentInstruction3 initiation) {
-		this.initiation = initiation;
+	public UnderlyingTransaction3Choice setInitiation(UnderlyingPaymentInstruction3 initiation) {
+		this.initiation = Objects.requireNonNull(initiation);
+		return this;
 	}
 
-	@XmlElement(name = "IntrBk", required = true)
 	public UnderlyingPaymentTransaction2 getInterbank() {
 		return interbank;
 	}
 
-	public void setInterbank(UnderlyingPaymentTransaction2 interbank) {
-		this.interbank = interbank;
+	public UnderlyingTransaction3Choice setInterbank(UnderlyingPaymentTransaction2 interbank) {
+		this.interbank = Objects.requireNonNull(interbank);
+		return this;
 	}
 
-	@XmlElement(name = "StmtNtry", required = true)
 	public UnderlyingStatementEntry1 getStatementEntry() {
 		return statementEntry;
 	}
 
-	public void setStatementEntry(UnderlyingStatementEntry1 statementEntry) {
-		this.statementEntry = statementEntry;
+	public UnderlyingTransaction3Choice setStatementEntry(UnderlyingStatementEntry1 statementEntry) {
+		this.statementEntry = Objects.requireNonNull(statementEntry);
+		return this;
 	}
 }

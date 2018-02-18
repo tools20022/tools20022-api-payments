@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.GroupHeader60;
 import com.tools20022.repository.msg.OriginalNotification9;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -85,15 +87,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NotificationToReceiveStatusReportV05", propOrder = {"groupHeader", "originalNotificationAndStatus", "supplementaryData"})
 public class NotificationToReceiveStatusReportV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected GroupHeader60 groupHeader;
 	/**
-	 * Set of elements used to provide further details on the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,11 +136,11 @@ public class NotificationToReceiveStatusReportV05 {
 			}
 		}
 	};
+	@XmlElement(name = "OrgnlNtfctnAndSts", required = true)
 	protected OriginalNotification9 originalNotificationAndStatus;
 	/**
-	 * Set of elements used to identify the original notification and to provide
-	 * the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,11 +182,11 @@ public class NotificationToReceiveStatusReportV05 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,34 +257,34 @@ public class NotificationToReceiveStatusReportV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public GroupHeader60 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(GroupHeader60 groupHeader) {
-		this.groupHeader = groupHeader;
+	public NotificationToReceiveStatusReportV05 setGroupHeader(GroupHeader60 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlNtfctnAndSts", required = true)
 	public OriginalNotification9 getOriginalNotificationAndStatus() {
 		return originalNotificationAndStatus;
 	}
 
-	public void setOriginalNotificationAndStatus(OriginalNotification9 originalNotificationAndStatus) {
-		this.originalNotificationAndStatus = originalNotificationAndStatus;
+	public NotificationToReceiveStatusReportV05 setOriginalNotificationAndStatus(OriginalNotification9 originalNotificationAndStatus) {
+		this.originalNotificationAndStatus = Objects.requireNonNull(originalNotificationAndStatus);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public NotificationToReceiveStatusReportV05 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.059.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:camt.059.001.05")
 	static public class Document {
 		@XmlElement(name = "NtfctnToRcvStsRpt", required = true)
 		public NotificationToReceiveStatusReportV05 messageBody;

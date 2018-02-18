@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Email
- * CommunicationMethod2Code.mmEmail}</li>
+ * CommunicationMethod2Code.Email}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Fax
- * CommunicationMethod2Code.mmFax}</li>
+ * CommunicationMethod2Code.Fax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#File
- * CommunicationMethod2Code.mmFile}</li>
+ * CommunicationMethod2Code.File}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Online
- * CommunicationMethod2Code.mmOnline}</li>
+ * CommunicationMethod2Code.Online}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#PostalService
- * CommunicationMethod2Code.mmPostalService}</li>
+ * CommunicationMethod2Code.PostalService}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class CommunicationMethod2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EMAL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationMethod2Code";

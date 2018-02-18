@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Special conditions for the loan."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SpecialCondition1", propOrder = {"incomingAmount", "outgoingAmount", "incomingAmountToOtherAccount", "paymentFromOtherAccount"})
 public class SpecialCondition1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "IncmgAmt", required = true)
 	protected ActiveCurrencyAndAmount incomingAmount;
 	/**
-	 * Incoming amount on special conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +115,7 @@ public class SpecialCondition1 {
 	public static final MMMessageAttribute mmIncomingAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> SpecialCondition1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
 			isDerived = false;
 			xmlTag = "IncmgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +126,11 @@ public class SpecialCondition1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "OutgngAmt", required = true)
 	protected ActiveCurrencyAndAmount outgoingAmount;
 	/**
-	 * Outgoing amount on special conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +164,7 @@ public class SpecialCondition1 {
 	public static final MMMessageAttribute mmOutgoingAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> SpecialCondition1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
 			isDerived = false;
 			xmlTag = "OutgngAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,10 +175,11 @@ public class SpecialCondition1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "IncmgAmtToOthrAcct")
 	protected ActiveCurrencyAndAmount incomingAmountToOtherAccount;
 	/**
-	 * Incoming amount to other account on special conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +213,7 @@ public class SpecialCondition1 {
 	public static final MMMessageAttribute mmIncomingAmountToOtherAccount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> SpecialCondition1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
 			isDerived = false;
 			xmlTag = "IncmgAmtToOthrAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,10 +224,11 @@ public class SpecialCondition1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "PmtFrOthrAcct")
 	protected ActiveCurrencyAndAmount paymentFromOtherAccount;
 	/**
-	 * Outgoing payment amount from other account on special conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,7 +263,7 @@ public class SpecialCondition1 {
 	public static final MMMessageAttribute mmPaymentFromOtherAccount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> SpecialCondition1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
 			isDerived = false;
 			xmlTag = "PmtFrOthrAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,9 +278,10 @@ public class SpecialCondition1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SpecialCondition1.mmIncomingAmount, SpecialCondition1.mmOutgoingAmount, SpecialCondition1.mmIncomingAmountToOtherAccount, SpecialCondition1.mmPaymentFromOtherAccount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SpecialCondition1.mmIncomingAmount, com.tools20022.repository.msg.SpecialCondition1.mmOutgoingAmount,
+						com.tools20022.repository.msg.SpecialCondition1.mmIncomingAmountToOtherAccount, com.tools20022.repository.msg.SpecialCondition1.mmPaymentFromOtherAccount);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SpecialCondition1";
 				definition = "Special conditions for the loan.";
@@ -283,39 +290,39 @@ public class SpecialCondition1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "IncmgAmt", required = true)
 	public ActiveCurrencyAndAmount getIncomingAmount() {
 		return incomingAmount;
 	}
 
-	public void setIncomingAmount(ActiveCurrencyAndAmount incomingAmount) {
-		this.incomingAmount = incomingAmount;
+	public SpecialCondition1 setIncomingAmount(ActiveCurrencyAndAmount incomingAmount) {
+		this.incomingAmount = Objects.requireNonNull(incomingAmount);
+		return this;
 	}
 
-	@XmlElement(name = "OutgngAmt", required = true)
 	public ActiveCurrencyAndAmount getOutgoingAmount() {
 		return outgoingAmount;
 	}
 
-	public void setOutgoingAmount(ActiveCurrencyAndAmount outgoingAmount) {
-		this.outgoingAmount = outgoingAmount;
+	public SpecialCondition1 setOutgoingAmount(ActiveCurrencyAndAmount outgoingAmount) {
+		this.outgoingAmount = Objects.requireNonNull(outgoingAmount);
+		return this;
 	}
 
-	@XmlElement(name = "IncmgAmtToOthrAcct")
-	public ActiveCurrencyAndAmount getIncomingAmountToOtherAccount() {
-		return incomingAmountToOtherAccount;
+	public Optional<ActiveCurrencyAndAmount> getIncomingAmountToOtherAccount() {
+		return incomingAmountToOtherAccount == null ? Optional.empty() : Optional.of(incomingAmountToOtherAccount);
 	}
 
-	public void setIncomingAmountToOtherAccount(ActiveCurrencyAndAmount incomingAmountToOtherAccount) {
+	public SpecialCondition1 setIncomingAmountToOtherAccount(ActiveCurrencyAndAmount incomingAmountToOtherAccount) {
 		this.incomingAmountToOtherAccount = incomingAmountToOtherAccount;
+		return this;
 	}
 
-	@XmlElement(name = "PmtFrOthrAcct")
-	public ActiveCurrencyAndAmount getPaymentFromOtherAccount() {
-		return paymentFromOtherAccount;
+	public Optional<ActiveCurrencyAndAmount> getPaymentFromOtherAccount() {
+		return paymentFromOtherAccount == null ? Optional.empty() : Optional.of(paymentFromOtherAccount);
 	}
 
-	public void setPaymentFromOtherAccount(ActiveCurrencyAndAmount paymentFromOtherAccount) {
+	public SpecialCondition1 setPaymentFromOtherAccount(ActiveCurrencyAndAmount paymentFromOtherAccount) {
 		this.paymentFromOtherAccount = paymentFromOtherAccount;
+		return this;
 	}
 }

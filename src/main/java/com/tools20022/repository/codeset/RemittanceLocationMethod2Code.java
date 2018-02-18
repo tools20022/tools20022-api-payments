@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#Fax
- * RemittanceLocationMethod2Code.mmFax}</li>
+ * RemittanceLocationMethod2Code.Fax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#ElectronicDataInterchange
- * RemittanceLocationMethod2Code.mmElectronicDataInterchange}</li>
+ * RemittanceLocationMethod2Code.ElectronicDataInterchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#UniformResourceIdentifier
- * RemittanceLocationMethod2Code.mmUniformResourceIdentifier}</li>
+ * RemittanceLocationMethod2Code.UniformResourceIdentifier}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#EMail
- * RemittanceLocationMethod2Code.mmEMail}</li>
+ * RemittanceLocationMethod2Code.EMail}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#Post
- * RemittanceLocationMethod2Code.mmPost}</li>
+ * RemittanceLocationMethod2Code.Post}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethod2Code#SMS
- * RemittanceLocationMethod2Code.mmSMS}</li>
+ * RemittanceLocationMethod2Code.SMS}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -237,7 +237,7 @@ public class RemittanceLocationMethod2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FAXI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocationMethod2Code";

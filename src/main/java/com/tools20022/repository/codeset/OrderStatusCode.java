@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,83 +38,86 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#New
- * OrderStatusCode.mmNew}</li>
+ * OrderStatusCode.New}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#PartialFill
- * OrderStatusCode.mmPartialFill}</li>
+ * OrderStatusCode.PartialFill}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Filled
- * OrderStatusCode.mmFilled}</li>
+ * OrderStatusCode.Filled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#DoneForDay
- * OrderStatusCode.mmDoneForDay}</li>
+ * OrderStatusCode.DoneForDay}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Cancelled
- * OrderStatusCode.mmCancelled}</li>
+ * OrderStatusCode.Cancelled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Replaced
- * OrderStatusCode.mmReplaced}</li>
+ * OrderStatusCode.Replaced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#PendingCancel
- * OrderStatusCode.mmPendingCancel}</li>
+ * OrderStatusCode.PendingCancel}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Stopped
- * OrderStatusCode.mmStopped}</li>
+ * OrderStatusCode.Stopped}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Rejected
- * OrderStatusCode.mmRejected}</li>
+ * OrderStatusCode.Rejected}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Suspended
- * OrderStatusCode.mmSuspended}</li>
+ * OrderStatusCode.Suspended}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#PendingNew
- * OrderStatusCode.mmPendingNew}</li>
+ * OrderStatusCode.PendingNew}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Calculated
- * OrderStatusCode.mmCalculated}</li>
+ * OrderStatusCode.Calculated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Expired
- * OrderStatusCode.mmExpired}</li>
+ * OrderStatusCode.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#AcceptedForBidding
- * OrderStatusCode.mmAcceptedForBidding}</li>
+ * OrderStatusCode.AcceptedForBidding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#PendingReplace
- * OrderStatusCode.mmPendingReplace}</li>
+ * OrderStatusCode.PendingReplace}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Completed
- * OrderStatusCode.mmCompleted}</li>
+ * OrderStatusCode.Completed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Accepted
- * OrderStatusCode.mmAccepted}</li>
+ * OrderStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#AlreadyExecuted
- * OrderStatusCode.mmAlreadyExecuted}</li>
+ * OrderStatusCode.AlreadyExecuted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#SentToNextParty
- * OrderStatusCode.mmSentToNextParty}</li>
+ * OrderStatusCode.SentToNextParty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Received
- * OrderStatusCode.mmReceived}</li>
+ * OrderStatusCode.Received}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Settled
- * OrderStatusCode.mmSettled}</li>
+ * OrderStatusCode.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#CommunicationProblemNextParty
- * OrderStatusCode.mmCommunicationProblemNextParty}</li>
+ * OrderStatusCode.CommunicationProblemNextParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#ConfirmationAmendment
- * OrderStatusCode.mmConfirmationAmendment}</li>
+ * OrderStatusCode.ConfirmationAmendment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#PartiallyDone
- * OrderStatusCode.mmPartiallyDone}</li>
+ * OrderStatusCode.PartiallyDone}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Open
- * OrderStatusCode.mmOpen}</li>
+ * OrderStatusCode.Open}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#InvalidAgentConfirmation
- * OrderStatusCode.mmInvalidAgentConfirmation}</li>
+ * OrderStatusCode.InvalidAgentConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatusCode#CashSettledOrderNotExecuted
- * OrderStatusCode.mmCashSettledOrderNotExecuted}</li>
+ * OrderStatusCode.CashSettledOrderNotExecuted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Executing
- * OrderStatusCode.mmExecuting}</li>
+ * OrderStatusCode.Executing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Cancelling
- * OrderStatusCode.mmCancelling}</li>
+ * OrderStatusCode.Cancelling}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatusCode#Alert
- * OrderStatusCode.mmAlert}</li>
+ * OrderStatusCode.Alert}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: FIX 39</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -145,6 +149,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NEWW"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -157,6 +164,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode New = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "New";
 			definition = "Outstanding order with no executions.";
@@ -175,6 +183,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PARF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -188,6 +199,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode PartialFill = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialFill";
 			definition = "Outstanding order with executions and remaining quantity.";
@@ -206,6 +218,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FILL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -218,6 +233,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Filled = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Filled";
 			definition = "Order completely filled, no remaining quantity.";
@@ -237,6 +253,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DONE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -251,6 +270,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode DoneForDay = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DoneForDay";
 			definition = "Order has been partially filled, and is done for the day, ie, no further executions will take place today.";
@@ -269,6 +289,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CANC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -281,6 +304,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Cancelled = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancelled";
 			definition = "Cancelled order with or without executions.";
@@ -299,6 +323,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REPL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -311,6 +338,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Replaced = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Replaced";
 			definition = "Order has been replaced.";
@@ -331,6 +359,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CANP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -345,6 +376,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode PendingCancel = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingCancel";
 			definition = "Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request.  Does not indicate that the order has been cancelled.";
@@ -364,6 +396,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STOP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -378,6 +413,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Stopped = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stopped";
 			definition = "Order has been stopped at the exchange. Used when guaranteeing or protecting a price and quantity.";
@@ -398,6 +434,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REJT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -412,6 +451,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Rejected = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rejected";
 			definition = "Order has been rejected by sell-side.  NOTE:  An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.";
@@ -430,6 +470,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SUSP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -443,6 +486,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Suspended = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Suspended";
 			definition = "Order has been placed in suspended state at the request of the client.";
@@ -463,6 +507,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PENN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -477,6 +524,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode PendingNew = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingNew";
 			definition = "Order has been received by sell-side system but not yet accepted for execution.  An execution message with this status will only be sent in response to a Status Request message.";
@@ -497,6 +545,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CALC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -511,6 +562,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Calculated = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Calculated";
 			definition = "Order has been completed for the day (either filled or done for day).  Commission or currency settlement details have been calculated and reported in this execution message.";
@@ -530,6 +582,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EXPI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -544,6 +599,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode Expired = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Expired";
 			definition = "Order has been cancelled in the broker's system due to time in force instructions.";
@@ -562,6 +618,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ACBI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -575,6 +634,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode AcceptedForBidding = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedForBidding";
 			definition = "Order has been received and is being evaluated for pricing.";
@@ -595,6 +655,9 @@ public class OrderStatusCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PENR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -609,6 +672,7 @@ public class OrderStatusCode extends MMCode {
 	 */
 	public static final OrderStatusCode PendingReplace = new OrderStatusCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingReplace";
 			definition = "Order with an Order Cancel/Replace Request pending, used to confirm receipt of an Order Cancel/Replace Request. Does not indicate that the order has been replaced.";
@@ -1104,7 +1168,8 @@ public class OrderStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 				example = Arrays.asList("NEWW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderStatusCode";

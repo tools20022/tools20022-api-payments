@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.CashAccountContract;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -82,8 +83,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,16 +96,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies target dates dates related to account opening and closing."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountContract2", propOrder = {"targetGoLiveDate", "targetClosingDate", "urgencyFlag"})
 public class AccountContract2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TrgtGoLiveDt")
 	protected ISODate targetGoLiveDate;
 	/**
-	 * Date on which the account and related basic services are expected to be
-	 * operational for the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,7 +140,7 @@ public class AccountContract2 {
 	public static final MMMessageAttribute mmTargetGoLiveDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTargetGoLiveDate;
-			componentContext_lazy = () -> AccountContract2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract2.mmObject();
 			isDerived = false;
 			xmlTag = "TrgtGoLiveDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,11 +151,11 @@ public class AccountContract2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "TrgtClsgDt")
 	protected ISODate targetClosingDate;
 	/**
-	 * Date on which the account and related services are expected to cease to
-	 * be operational for the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +190,7 @@ public class AccountContract2 {
 	public static final MMMessageAttribute mmTargetClosingDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTargetClosingDate;
-			componentContext_lazy = () -> AccountContract2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract2.mmObject();
 			isDerived = false;
 			xmlTag = "TrgtClsgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,13 +201,11 @@ public class AccountContract2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "UrgcyFlg")
 	protected YesNoIndicator urgencyFlag;
 	/**
-	 * Indicator that the account opening/maintenance/closing process needs to
-	 * be treated urgently, that is, sooner than the terms established by the
-	 * service level agreed between the account holder customer and the account
-	 * servicing institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,7 +241,7 @@ public class AccountContract2 {
 	public static final MMMessageAttribute mmUrgencyFlag = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmUrgencyFlag;
-			componentContext_lazy = () -> AccountContract2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract2.mmObject();
 			isDerived = false;
 			xmlTag = "UrgcyFlg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -257,11 +256,12 @@ public class AccountContract2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountContract2.mmTargetGoLiveDate, AccountContract2.mmTargetClosingDate, AccountContract2.mmUrgencyFlag);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountContract2.mmTargetGoLiveDate, com.tools20022.repository.msg.AccountContract2.mmTargetClosingDate,
+						com.tools20022.repository.msg.AccountContract2.mmUrgencyFlag);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountExcludedMandateMaintenanceAmendmentRequestV02.mmContractDates, AccountExcludedMandateMaintenanceRequestV02.mmContractDates,
 						AccountMandateMaintenanceAmendmentRequestV02.mmContractDates, AccountMandateMaintenanceRequestV02.mmContractDates, AccountOpeningAmendmentRequestV02.mmContractDates, AccountOpeningRequestV02.mmContractDates);
 				trace_lazy = () -> CashAccountContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountContract2";
 				definition = "Specifies target dates dates related to account opening and closing.";
@@ -270,30 +270,30 @@ public class AccountContract2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TrgtGoLiveDt")
-	public ISODate getTargetGoLiveDate() {
-		return targetGoLiveDate;
+	public Optional<ISODate> getTargetGoLiveDate() {
+		return targetGoLiveDate == null ? Optional.empty() : Optional.of(targetGoLiveDate);
 	}
 
-	public void setTargetGoLiveDate(ISODate targetGoLiveDate) {
+	public AccountContract2 setTargetGoLiveDate(ISODate targetGoLiveDate) {
 		this.targetGoLiveDate = targetGoLiveDate;
+		return this;
 	}
 
-	@XmlElement(name = "TrgtClsgDt")
-	public ISODate getTargetClosingDate() {
-		return targetClosingDate;
+	public Optional<ISODate> getTargetClosingDate() {
+		return targetClosingDate == null ? Optional.empty() : Optional.of(targetClosingDate);
 	}
 
-	public void setTargetClosingDate(ISODate targetClosingDate) {
+	public AccountContract2 setTargetClosingDate(ISODate targetClosingDate) {
 		this.targetClosingDate = targetClosingDate;
+		return this;
 	}
 
-	@XmlElement(name = "UrgcyFlg")
-	public YesNoIndicator getUrgencyFlag() {
-		return urgencyFlag;
+	public Optional<YesNoIndicator> getUrgencyFlag() {
+		return urgencyFlag == null ? Optional.empty() : Optional.of(urgencyFlag);
 	}
 
-	public void setUrgencyFlag(YesNoIndicator urgencyFlag) {
+	public AccountContract2 setUrgencyFlag(YesNoIndicator urgencyFlag) {
 		this.urgencyFlag = urgencyFlag;
+		return this;
 	}
 }

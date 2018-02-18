@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,21 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentIdentification3", propOrder = {"instructionIdentification", "endToEndIdentification", "transactionIdentification", "clearingSystemReference"})
 public class PaymentIdentification3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstrId")
 	protected Max35Text instructionIdentification;
 	/**
-	 * Unique identification, as assigned by an instructing party for an
-	 * instructed party, to unambiguously identify the instruction.
 	 * 
-	 * Usage: The instruction identification is a point to point reference that
-	 * can be used between the instructing party and the instructed party to
-	 * refer to the individual instruction. It can be included in several
-	 * messages related to the instruction.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +120,7 @@ public class PaymentIdentification3 {
 	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
-			componentContext_lazy = () -> PaymentIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "InstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,20 +131,11 @@ public class PaymentIdentification3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "EndToEndId", required = true)
 	protected Max35Text endToEndIdentification;
 	/**
-	 * Unique identification, as assigned by the initiating party, to
-	 * unambiguously identify the transaction. This identification is passed on,
-	 * unchanged, throughout the entire end-to-end chain.
 	 * 
-	 * Usage: The end-to-end identification can be used for reconciliation or to
-	 * link tasks relating to the transaction. It can be included in several
-	 * messages related to the transaction.
-	 * 
-	 * Usage: In case there are technical limitations to pass on multiple
-	 * references, the end-to-end identification must be passed on throughout
-	 * the entire end-to-end chain.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,7 +170,7 @@ public class PaymentIdentification3 {
 	public static final MMMessageAttribute mmEndToEndIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
-			componentContext_lazy = () -> PaymentIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "EndToEndId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,16 +181,11 @@ public class PaymentIdentification3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unique identification, as assigned by the first instructing agent, to
-	 * unambiguously identify the transaction that is passed on, unchanged,
-	 * throughout the entire interbank chain. Usage: The transaction
-	 * identification can be used for reconciliation, tracking or to link tasks
-	 * relating to the transaction on the interbank level. Usage: The
-	 * instructing agent has to make sure that the transaction identification is
-	 * unique for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +220,7 @@ public class PaymentIdentification3 {
 	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
-			componentContext_lazy = () -> PaymentIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -248,11 +231,11 @@ public class PaymentIdentification3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "ClrSysRef")
 	protected Max35Text clearingSystemReference;
 	/**
-	 * Unique reference, as assigned by a clearing system, to unambiguously
-	 * identify the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,7 +270,7 @@ public class PaymentIdentification3 {
 	public static final MMMessageAttribute mmClearingSystemReference = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmClearingSystemReference;
-			componentContext_lazy = () -> PaymentIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "ClrSysRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,10 +285,10 @@ public class PaymentIdentification3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentIdentification3.mmInstructionIdentification, PaymentIdentification3.mmEndToEndIdentification, PaymentIdentification3.mmTransactionIdentification,
-						PaymentIdentification3.mmClearingSystemReference);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentIdentification3.mmInstructionIdentification, com.tools20022.repository.msg.PaymentIdentification3.mmEndToEndIdentification,
+						com.tools20022.repository.msg.PaymentIdentification3.mmTransactionIdentification, com.tools20022.repository.msg.PaymentIdentification3.mmClearingSystemReference);
 				trace_lazy = () -> PaymentIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentIdentification3";
 				definition = "Set of elements used to provide further means of referencing a payment transaction.";
@@ -314,39 +297,39 @@ public class PaymentIdentification3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstrId")
-	public Max35Text getInstructionIdentification() {
-		return instructionIdentification;
+	public Optional<Max35Text> getInstructionIdentification() {
+		return instructionIdentification == null ? Optional.empty() : Optional.of(instructionIdentification);
 	}
 
-	public void setInstructionIdentification(Max35Text instructionIdentification) {
+	public PaymentIdentification3 setInstructionIdentification(Max35Text instructionIdentification) {
 		this.instructionIdentification = instructionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "EndToEndId", required = true)
 	public Max35Text getEndToEndIdentification() {
 		return endToEndIdentification;
 	}
 
-	public void setEndToEndIdentification(Max35Text endToEndIdentification) {
-		this.endToEndIdentification = endToEndIdentification;
+	public PaymentIdentification3 setEndToEndIdentification(Max35Text endToEndIdentification) {
+		this.endToEndIdentification = Objects.requireNonNull(endToEndIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public PaymentIdentification3 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ClrSysRef")
-	public Max35Text getClearingSystemReference() {
-		return clearingSystemReference;
+	public Optional<Max35Text> getClearingSystemReference() {
+		return clearingSystemReference == null ? Optional.empty() : Optional.of(clearingSystemReference);
 	}
 
-	public void setClearingSystemReference(Max35Text clearingSystemReference) {
+	public PaymentIdentification3 setClearingSystemReference(Max35Text clearingSystemReference) {
 		this.clearingSystemReference = clearingSystemReference;
+		return this;
 	}
 }

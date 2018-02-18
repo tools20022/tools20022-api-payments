@@ -38,42 +38,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatusCode#PendingProcessing
- * StatusCode.mmPendingProcessing}</li>
+ * StatusCode.PendingProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatusCode#AcknowledgedAccepted
- * StatusCode.mmAcknowledgedAccepted}</li>
+ * StatusCode.AcknowledgedAccepted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Rejected
- * StatusCode.mmRejected}</li>
+ * StatusCode.Rejected}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Accepted
- * StatusCode.mmAccepted}</li>
+ * StatusCode.Accepted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Completed
- * StatusCode.mmCompleted}</li>
+ * StatusCode.Completed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#NotReceived
- * StatusCode.mmNotReceived}</li>
+ * StatusCode.NotReceived}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Cancelled
- * StatusCode.mmCancelled}</li>
+ * StatusCode.Cancelled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#BeingCancelled
- * StatusCode.mmBeingCancelled}</li>
+ * StatusCode.BeingCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatusCode#ReceivedByIssuerOrRegistrar
- * StatusCode.mmReceivedByIssuerOrRegistrar}</li>
+ * StatusCode.ReceivedByIssuerOrRegistrar}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Pending
- * StatusCode.mmPending}</li>
+ * StatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatusCode#StandingInstruction
- * StatusCode.mmStandingInstruction}</li>
+ * StatusCode.StandingInstruction}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatusCode#Queued
- * StatusCode.mmQueued}</li>
+ * StatusCode.Queued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatusCode#CancelledBySubcustodian
- * StatusCode.mmCancelledBySubcustodian}</li>
+ * StatusCode.CancelledBySubcustodian}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -487,7 +487,7 @@ public class StatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PPRC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusCode";

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.PartyTypeCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Unique and unambiguous way to identify a party
@@ -173,8 +173,12 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = type=BusinessComment, BusinessComment="Information" to be
+ * removed when PartyIdentification message component is removed.</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -190,9 +194,8 @@ public class PartyIdentificationInformation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected GenericIdentification otherIdentification;
 	/**
-	 * Identifier issued to a party for which no specific identifier has been
-	 * defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,8 +264,8 @@ public class PartyIdentificationInformation {
 	};
 	protected Party identifiedParty;
 	/**
-	 * Party for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -308,8 +311,8 @@ public class PartyIdentificationInformation {
 	};
 	protected Max35Text taxIdentificationNumber;
 	/**
-	 * Number assigned by a tax authority to an entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,9 +385,8 @@ public class PartyIdentificationInformation {
 	};
 	protected Max35Text nationalRegistrationNumber;
 	/**
-	 * Number assigned by a national registration authority to an entity. In
-	 * Singapore this is known as the NRIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -431,9 +433,8 @@ public class PartyIdentificationInformation {
 	};
 	protected TypeOfIdentificationCode typeOfIdentification;
 	/**
-	 * Specifies the type of alternate identification which can be used to
-	 * identify a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -481,8 +482,8 @@ public class PartyIdentificationInformation {
 	};
 	protected Max350Text declaration;
 	/**
-	 * Provides declaration details relative to the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,8 +528,8 @@ public class PartyIdentificationInformation {
 	};
 	protected PartyTypeCode partyType;
 	/**
-	 * Specifies the type of party in different business contexts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,9 +576,8 @@ public class PartyIdentificationInformation {
 	};
 	protected List<com.tools20022.repository.entity.PartyName> partyName;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -625,8 +625,8 @@ public class PartyIdentificationInformation {
 	};
 	protected DateTimePeriod validityPeriod;
 	/**
-	 * Specifies the period during which an identification is valid
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -674,8 +674,8 @@ public class PartyIdentificationInformation {
 	};
 	protected Market identifiedMarket;
 	/**
-	 * Market for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -721,9 +721,8 @@ public class PartyIdentificationInformation {
 	};
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal Entity Identifier is a code allocated to a party as described in
-	 * ISO 17442 "Financial Services - Legal Entity Identifier (LEI)".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -773,7 +772,8 @@ public class PartyIdentificationInformation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "BusinessComment", new String[]{"BusinessComment", "\"Information\" to be removed when PartyIdentification message component is removed."}));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentificationInformation";
 				definition = "Unique and unambiguous way to identify a party";
@@ -805,87 +805,98 @@ public class PartyIdentificationInformation {
 		return otherIdentification;
 	}
 
-	public void setOtherIdentification(com.tools20022.repository.entity.GenericIdentification otherIdentification) {
-		this.otherIdentification = otherIdentification;
+	public PartyIdentificationInformation setOtherIdentification(com.tools20022.repository.entity.GenericIdentification otherIdentification) {
+		this.otherIdentification = Objects.requireNonNull(otherIdentification);
+		return this;
 	}
 
-	public Party getIdentifiedParty() {
-		return identifiedParty;
+	public Optional<Party> getIdentifiedParty() {
+		return identifiedParty == null ? Optional.empty() : Optional.of(identifiedParty);
 	}
 
-	public void setIdentifiedParty(com.tools20022.repository.entity.Party identifiedParty) {
+	public PartyIdentificationInformation setIdentifiedParty(com.tools20022.repository.entity.Party identifiedParty) {
 		this.identifiedParty = identifiedParty;
+		return this;
 	}
 
 	public Max35Text getTaxIdentificationNumber() {
 		return taxIdentificationNumber;
 	}
 
-	public void setTaxIdentificationNumber(Max35Text taxIdentificationNumber) {
-		this.taxIdentificationNumber = taxIdentificationNumber;
+	public PartyIdentificationInformation setTaxIdentificationNumber(Max35Text taxIdentificationNumber) {
+		this.taxIdentificationNumber = Objects.requireNonNull(taxIdentificationNumber);
+		return this;
 	}
 
-	public Max35Text getNationalRegistrationNumber() {
-		return nationalRegistrationNumber;
+	public Optional<Max35Text> getNationalRegistrationNumber() {
+		return nationalRegistrationNumber == null ? Optional.empty() : Optional.of(nationalRegistrationNumber);
 	}
 
-	public void setNationalRegistrationNumber(Max35Text nationalRegistrationNumber) {
+	public PartyIdentificationInformation setNationalRegistrationNumber(Max35Text nationalRegistrationNumber) {
 		this.nationalRegistrationNumber = nationalRegistrationNumber;
+		return this;
 	}
 
 	public TypeOfIdentificationCode getTypeOfIdentification() {
 		return typeOfIdentification;
 	}
 
-	public void setTypeOfIdentification(TypeOfIdentificationCode typeOfIdentification) {
-		this.typeOfIdentification = typeOfIdentification;
+	public PartyIdentificationInformation setTypeOfIdentification(TypeOfIdentificationCode typeOfIdentification) {
+		this.typeOfIdentification = Objects.requireNonNull(typeOfIdentification);
+		return this;
 	}
 
-	public Max350Text getDeclaration() {
-		return declaration;
+	public Optional<Max350Text> getDeclaration() {
+		return declaration == null ? Optional.empty() : Optional.of(declaration);
 	}
 
-	public void setDeclaration(Max350Text declaration) {
+	public PartyIdentificationInformation setDeclaration(Max350Text declaration) {
 		this.declaration = declaration;
+		return this;
 	}
 
 	public PartyTypeCode getPartyType() {
 		return partyType;
 	}
 
-	public void setPartyType(PartyTypeCode partyType) {
-		this.partyType = partyType;
+	public PartyIdentificationInformation setPartyType(PartyTypeCode partyType) {
+		this.partyType = Objects.requireNonNull(partyType);
+		return this;
 	}
 
 	public List<PartyName> getPartyName() {
-		return partyName;
+		return partyName == null ? partyName = new ArrayList<>() : partyName;
 	}
 
-	public void setPartyName(List<com.tools20022.repository.entity.PartyName> partyName) {
-		this.partyName = partyName;
+	public PartyIdentificationInformation setPartyName(List<com.tools20022.repository.entity.PartyName> partyName) {
+		this.partyName = Objects.requireNonNull(partyName);
+		return this;
 	}
 
-	public DateTimePeriod getValidityPeriod() {
-		return validityPeriod;
+	public Optional<DateTimePeriod> getValidityPeriod() {
+		return validityPeriod == null ? Optional.empty() : Optional.of(validityPeriod);
 	}
 
-	public void setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+	public PartyIdentificationInformation setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
 		this.validityPeriod = validityPeriod;
+		return this;
 	}
 
 	public Market getIdentifiedMarket() {
 		return identifiedMarket;
 	}
 
-	public void setIdentifiedMarket(com.tools20022.repository.entity.Market identifiedMarket) {
-		this.identifiedMarket = identifiedMarket;
+	public PartyIdentificationInformation setIdentifiedMarket(com.tools20022.repository.entity.Market identifiedMarket) {
+		this.identifiedMarket = Objects.requireNonNull(identifiedMarket);
+		return this;
 	}
 
 	public LEIIdentifier getLEI() {
 		return lEI;
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
-		this.lEI = lEI;
+	public PartyIdentificationInformation setLEI(LEIIdentifier lEI) {
+		this.lEI = Objects.requireNonNull(lEI);
+		return this;
 	}
 }

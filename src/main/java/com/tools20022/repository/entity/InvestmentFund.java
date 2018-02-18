@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.codeset.FundLegalFormCode;
@@ -27,9 +28,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Distinct pool of financial instruments managed by a single investment policy.
@@ -122,8 +122,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -141,8 +141,8 @@ public class InvestmentFund {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Country domicileCountry;
 	/**
-	 * Country in which the investment fund is domiciled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,8 +188,8 @@ public class InvestmentFund {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> orderDesk;
 	/**
-	 * Entity appointed by the fund, to which orders should be submitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,8 +236,8 @@ public class InvestmentFund {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass;
 	/**
-	 * Sub-set of an investment fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +283,8 @@ public class InvestmentFund {
 	};
 	protected Max35Text fundType;
 	/**
-	 * Legal form of the fund, eg, UCITS, SICAV, OEIC, Unit Trust, and FCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,8 +330,8 @@ public class InvestmentFund {
 	};
 	protected TreasuryTradingParty treasuryTradingParty;
 	/**
-	 * Party which executes a treasury trade on behalf of an investment fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,8 +380,8 @@ public class InvestmentFund {
 	};
 	protected BICNonFIIdentifier identification;
 	/**
-	 * Identification of the investment fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -427,8 +427,8 @@ public class InvestmentFund {
 	};
 	protected List<com.tools20022.repository.entity.CustodianRole> custodian;
 	/**
-	 * Party which settles the trades for the account of the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,9 +475,8 @@ public class InvestmentFund {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundPartyRole> partyRole;
 	/**
-	 * Specifies each role linked to an investment fund and played by a party in
-	 * that context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,8 +525,8 @@ public class InvestmentFund {
 	};
 	protected InvestmentFundFamily family;
 	/**
-	 * Family to which the investment fund belongs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,8 +574,8 @@ public class InvestmentFund {
 	};
 	protected FundStructureCode structure;
 	/**
-	 * Structure of the subfund, eg, single fund, multi-class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -622,8 +621,8 @@ public class InvestmentFund {
 	};
 	protected FundLegalFormCode legalForm;
 	/**
-	 * Legal form of a fund, eg, corporation or trust.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -669,10 +668,8 @@ public class InvestmentFund {
 	};
 	protected YesNoIndicator subFundIndicator;
 	/**
-	 * Indicates whether the investment fund is a subfund, when it is a
-	 * compartment of an umbrella fund. In this case, subfund is a synonym of
-	 * investment fund and therefore has the same attributes as investment fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,6 +682,9 @@ public class InvestmentFund {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.InvestmentFund
 	 * InvestmentFund}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, name=Fund compartment, context=EFAMA</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -702,6 +702,7 @@ public class InvestmentFund {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"name", "Fund compartment"}, new String[]{"context", "EFAMA"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubFundIndicator";
 			definition = "Indicates whether the investment fund is a subfund, when it is a compartment of an umbrella fund. In this case, subfund is a synonym of investment fund and therefore has the same attributes as investment fund.";
@@ -720,8 +721,8 @@ public class InvestmentFund {
 	};
 	protected ISODate endOfFiscalYear;
 	/**
-	 * Date at which the books are closed and profit and loss is determined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -767,8 +768,8 @@ public class InvestmentFund {
 	};
 	protected ISODate accountingYearEndDate;
 	/**
-	 * Last day of the accounting year for the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -813,8 +814,8 @@ public class InvestmentFund {
 	};
 	protected ISODate firstAccountingYearEndDate;
 	/**
-	 * Last day of the first accounting year for the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -859,8 +860,8 @@ public class InvestmentFund {
 	};
 	protected UmbrellaFund umbrellaFund;
 	/**
-	 * Umbrella fund for which compartments are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -907,8 +908,8 @@ public class InvestmentFund {
 	};
 	protected CountryCode authorisedCountry;
 	/**
-	 * Country in which it is authorised to commercialise the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -956,7 +957,7 @@ public class InvestmentFund {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFund";
 				definition = "Distinct pool of financial instruments managed by a single investment policy. May or not be part of an umbrella fund. The pool is issued in at least one investment fund class.";
@@ -983,135 +984,152 @@ public class InvestmentFund {
 		return domicileCountry;
 	}
 
-	public void setDomicileCountry(com.tools20022.repository.entity.Country domicileCountry) {
-		this.domicileCountry = domicileCountry;
+	public InvestmentFund setDomicileCountry(com.tools20022.repository.entity.Country domicileCountry) {
+		this.domicileCountry = Objects.requireNonNull(domicileCountry);
+		return this;
 	}
 
 	public List<ContactPoint> getOrderDesk() {
-		return orderDesk;
+		return orderDesk == null ? orderDesk = new ArrayList<>() : orderDesk;
 	}
 
-	public void setOrderDesk(List<com.tools20022.repository.entity.ContactPoint> orderDesk) {
-		this.orderDesk = orderDesk;
+	public InvestmentFund setOrderDesk(List<com.tools20022.repository.entity.ContactPoint> orderDesk) {
+		this.orderDesk = Objects.requireNonNull(orderDesk);
+		return this;
 	}
 
 	public List<InvestmentFundClass> getInvestmentFundClass() {
-		return investmentFundClass;
+		return investmentFundClass == null ? investmentFundClass = new ArrayList<>() : investmentFundClass;
 	}
 
-	public void setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
-		this.investmentFundClass = investmentFundClass;
+	public InvestmentFund setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
+		this.investmentFundClass = Objects.requireNonNull(investmentFundClass);
+		return this;
 	}
 
 	public Max35Text getFundType() {
 		return fundType;
 	}
 
-	public void setFundType(Max35Text fundType) {
-		this.fundType = fundType;
+	public InvestmentFund setFundType(Max35Text fundType) {
+		this.fundType = Objects.requireNonNull(fundType);
+		return this;
 	}
 
 	public TreasuryTradingParty getTreasuryTradingParty() {
 		return treasuryTradingParty;
 	}
 
-	public void setTreasuryTradingParty(com.tools20022.repository.entity.TreasuryTradingParty treasuryTradingParty) {
-		this.treasuryTradingParty = treasuryTradingParty;
+	public InvestmentFund setTreasuryTradingParty(com.tools20022.repository.entity.TreasuryTradingParty treasuryTradingParty) {
+		this.treasuryTradingParty = Objects.requireNonNull(treasuryTradingParty);
+		return this;
 	}
 
 	public BICNonFIIdentifier getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(BICNonFIIdentifier identification) {
-		this.identification = identification;
+	public InvestmentFund setIdentification(BICNonFIIdentifier identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<CustodianRole> getCustodian() {
-		return custodian;
+		return custodian == null ? custodian = new ArrayList<>() : custodian;
 	}
 
-	public void setCustodian(List<com.tools20022.repository.entity.CustodianRole> custodian) {
-		this.custodian = custodian;
+	public InvestmentFund setCustodian(List<com.tools20022.repository.entity.CustodianRole> custodian) {
+		this.custodian = Objects.requireNonNull(custodian);
+		return this;
 	}
 
 	public List<InvestmentFundPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.InvestmentFundPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public InvestmentFund setPartyRole(List<com.tools20022.repository.entity.InvestmentFundPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
-	public InvestmentFundFamily getFamily() {
-		return family;
+	public Optional<InvestmentFundFamily> getFamily() {
+		return family == null ? Optional.empty() : Optional.of(family);
 	}
 
-	public void setFamily(com.tools20022.repository.entity.InvestmentFundFamily family) {
+	public InvestmentFund setFamily(com.tools20022.repository.entity.InvestmentFundFamily family) {
 		this.family = family;
+		return this;
 	}
 
 	public FundStructureCode getStructure() {
 		return structure;
 	}
 
-	public void setStructure(FundStructureCode structure) {
-		this.structure = structure;
+	public InvestmentFund setStructure(FundStructureCode structure) {
+		this.structure = Objects.requireNonNull(structure);
+		return this;
 	}
 
 	public FundLegalFormCode getLegalForm() {
 		return legalForm;
 	}
 
-	public void setLegalForm(FundLegalFormCode legalForm) {
-		this.legalForm = legalForm;
+	public InvestmentFund setLegalForm(FundLegalFormCode legalForm) {
+		this.legalForm = Objects.requireNonNull(legalForm);
+		return this;
 	}
 
 	public YesNoIndicator getSubFundIndicator() {
 		return subFundIndicator;
 	}
 
-	public void setSubFundIndicator(YesNoIndicator subFundIndicator) {
-		this.subFundIndicator = subFundIndicator;
+	public InvestmentFund setSubFundIndicator(YesNoIndicator subFundIndicator) {
+		this.subFundIndicator = Objects.requireNonNull(subFundIndicator);
+		return this;
 	}
 
 	public ISODate getEndOfFiscalYear() {
 		return endOfFiscalYear;
 	}
 
-	public void setEndOfFiscalYear(ISODate endOfFiscalYear) {
-		this.endOfFiscalYear = endOfFiscalYear;
+	public InvestmentFund setEndOfFiscalYear(ISODate endOfFiscalYear) {
+		this.endOfFiscalYear = Objects.requireNonNull(endOfFiscalYear);
+		return this;
 	}
 
 	public ISODate getAccountingYearEndDate() {
 		return accountingYearEndDate;
 	}
 
-	public void setAccountingYearEndDate(ISODate accountingYearEndDate) {
-		this.accountingYearEndDate = accountingYearEndDate;
+	public InvestmentFund setAccountingYearEndDate(ISODate accountingYearEndDate) {
+		this.accountingYearEndDate = Objects.requireNonNull(accountingYearEndDate);
+		return this;
 	}
 
 	public ISODate getFirstAccountingYearEndDate() {
 		return firstAccountingYearEndDate;
 	}
 
-	public void setFirstAccountingYearEndDate(ISODate firstAccountingYearEndDate) {
-		this.firstAccountingYearEndDate = firstAccountingYearEndDate;
+	public InvestmentFund setFirstAccountingYearEndDate(ISODate firstAccountingYearEndDate) {
+		this.firstAccountingYearEndDate = Objects.requireNonNull(firstAccountingYearEndDate);
+		return this;
 	}
 
-	public UmbrellaFund getUmbrellaFund() {
-		return umbrellaFund;
+	public Optional<UmbrellaFund> getUmbrellaFund() {
+		return umbrellaFund == null ? Optional.empty() : Optional.of(umbrellaFund);
 	}
 
-	public void setUmbrellaFund(com.tools20022.repository.entity.UmbrellaFund umbrellaFund) {
+	public InvestmentFund setUmbrellaFund(com.tools20022.repository.entity.UmbrellaFund umbrellaFund) {
 		this.umbrellaFund = umbrellaFund;
+		return this;
 	}
 
 	public CountryCode getAuthorisedCountry() {
 		return authorisedCountry;
 	}
 
-	public void setAuthorisedCountry(CountryCode authorisedCountry) {
-		this.authorisedCountry = authorisedCountry;
+	public InvestmentFund setAuthorisedCountry(CountryCode authorisedCountry) {
+		this.authorisedCountry = Objects.requireNonNull(authorisedCountry);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.entity.CashAccountService;
@@ -25,6 +26,7 @@ import com.tools20022.repository.msg.CashBalance7;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Specifies the conditions for overdraft on the account or for positive
@@ -68,8 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,8 +89,8 @@ public class DebitCreditFacility extends CashAccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Limit creditLine;
 	/**
-	 * Credit or Debit limit applied to a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,9 +144,8 @@ public class DebitCreditFacility extends CashAccountService {
 	};
 	protected Interest cashAccountInterest;
 	/**
-	 * Interest that applies to a cash account at a particular moment in time,
-	 * as per a contractual relationship.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,8 +193,8 @@ public class DebitCreditFacility extends CashAccountService {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Specifies if the line is a debit limit or a credit limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,6 +207,17 @@ public class DebitCreditFacility extends CashAccountService {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.DebitCreditFacility
 	 * DebitCreditFacility}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -222,6 +234,13 @@ public class DebitCreditFacility extends CashAccountService {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies if the line is a debit limit or a credit limit.";
@@ -242,7 +261,7 @@ public class DebitCreditFacility extends CashAccountService {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitCreditFacility";
 				definition = "Specifies the conditions for overdraft on the account or for positive amounts.";
@@ -264,23 +283,26 @@ public class DebitCreditFacility extends CashAccountService {
 		return creditLine;
 	}
 
-	public void setCreditLine(com.tools20022.repository.entity.Limit creditLine) {
-		this.creditLine = creditLine;
+	public DebitCreditFacility setCreditLine(com.tools20022.repository.entity.Limit creditLine) {
+		this.creditLine = Objects.requireNonNull(creditLine);
+		return this;
 	}
 
 	public Interest getCashAccountInterest() {
 		return cashAccountInterest;
 	}
 
-	public void setCashAccountInterest(com.tools20022.repository.entity.Interest cashAccountInterest) {
-		this.cashAccountInterest = cashAccountInterest;
+	public DebitCreditFacility setCashAccountInterest(com.tools20022.repository.entity.Interest cashAccountInterest) {
+		this.cashAccountInterest = Objects.requireNonNull(cashAccountInterest);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public DebitCreditFacility setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 }

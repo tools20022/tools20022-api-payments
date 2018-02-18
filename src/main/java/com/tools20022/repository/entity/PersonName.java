@@ -27,6 +27,8 @@ import com.tools20022.repository.msg.ContactDetails3;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Name by which a person is known and that is usually used to identify that
@@ -70,8 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +91,8 @@ public class PersonName extends PartyName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text birthName;
 	/**
-	 * Name received at birth, eg, maiden name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,8 +136,8 @@ public class PersonName extends PartyName {
 	};
 	protected NamePrefix1Code namePrefix;
 	/**
-	 * Specifies the terms used to formally address a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,8 +194,8 @@ public class PersonName extends PartyName {
 	};
 	protected Max35Text givenName;
 	/**
-	 * First name of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,8 +239,8 @@ public class PersonName extends PartyName {
 	};
 	protected Max35Text middleName;
 	/**
-	 * Second name of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,9 +284,8 @@ public class PersonName extends PartyName {
 	};
 	protected Max35Text nameSuffix;
 	/**
-	 * Additional information about a person that follows a person's name, eg,
-	 * qualification such as Doctor of Philosophy (PhD).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,8 +331,8 @@ public class PersonName extends PartyName {
 	};
 	protected PersonIdentification identification;
 	/**
-	 * Person identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +381,7 @@ public class PersonName extends PartyName {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonName";
 				definition = "Name by which a person is known and that is usually used to identify that person.";
@@ -402,47 +403,53 @@ public class PersonName extends PartyName {
 		return birthName;
 	}
 
-	public void setBirthName(Max35Text birthName) {
-		this.birthName = birthName;
+	public PersonName setBirthName(Max35Text birthName) {
+		this.birthName = Objects.requireNonNull(birthName);
+		return this;
 	}
 
 	public NamePrefix1Code getNamePrefix() {
 		return namePrefix;
 	}
 
-	public void setNamePrefix(NamePrefix1Code namePrefix) {
-		this.namePrefix = namePrefix;
+	public PersonName setNamePrefix(NamePrefix1Code namePrefix) {
+		this.namePrefix = Objects.requireNonNull(namePrefix);
+		return this;
 	}
 
 	public Max35Text getGivenName() {
 		return givenName;
 	}
 
-	public void setGivenName(Max35Text givenName) {
-		this.givenName = givenName;
+	public PersonName setGivenName(Max35Text givenName) {
+		this.givenName = Objects.requireNonNull(givenName);
+		return this;
 	}
 
 	public Max35Text getMiddleName() {
 		return middleName;
 	}
 
-	public void setMiddleName(Max35Text middleName) {
-		this.middleName = middleName;
+	public PersonName setMiddleName(Max35Text middleName) {
+		this.middleName = Objects.requireNonNull(middleName);
+		return this;
 	}
 
 	public Max35Text getNameSuffix() {
 		return nameSuffix;
 	}
 
-	public void setNameSuffix(Max35Text nameSuffix) {
-		this.nameSuffix = nameSuffix;
+	public PersonName setNameSuffix(Max35Text nameSuffix) {
+		this.nameSuffix = Objects.requireNonNull(nameSuffix);
+		return this;
 	}
 
-	public PersonIdentification getIdentification() {
-		return identification;
+	public Optional<PersonIdentification> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(com.tools20022.repository.entity.PersonIdentification identification) {
+	public PersonName setIdentification(com.tools20022.repository.entity.PersonIdentification identification) {
 		this.identification = identification;
+		return this;
 	}
 }

@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.DocumentIssuer;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the type of the document referred in the remittance information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReferredDocumentType4", propOrder = {"codeOrProprietary", "issuer"})
 public class ReferredDocumentType4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CdOrPrtry", required = true)
 	protected ReferredDocumentType3Choice codeOrProprietary;
 	/**
-	 * Provides the type details of the referred document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,7 +110,7 @@ public class ReferredDocumentType4 {
 	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
-			componentContext_lazy = () -> ReferredDocumentType4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReferredDocumentType4.mmObject();
 			isDerived = false;
 			xmlTag = "CdOrPrtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +122,11 @@ public class ReferredDocumentType4 {
 			type_lazy = () -> ReferredDocumentType3Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Issr")
 	protected Max35Text issuer;
 	/**
-	 * Identification of the issuer of the reference document type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +160,7 @@ public class ReferredDocumentType4 {
 	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
-			componentContext_lazy = () -> ReferredDocumentType4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReferredDocumentType4.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,9 +175,9 @@ public class ReferredDocumentType4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReferredDocumentType4.mmCodeOrProprietary, ReferredDocumentType4.mmIssuer);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReferredDocumentType4.mmCodeOrProprietary, com.tools20022.repository.msg.ReferredDocumentType4.mmIssuer);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReferredDocumentType4";
 				definition = "Specifies the type of the document referred in the remittance information.";
@@ -182,21 +186,21 @@ public class ReferredDocumentType4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CdOrPrtry", required = true)
 	public ReferredDocumentType3Choice getCodeOrProprietary() {
 		return codeOrProprietary;
 	}
 
-	public void setCodeOrProprietary(ReferredDocumentType3Choice codeOrProprietary) {
-		this.codeOrProprietary = codeOrProprietary;
+	public ReferredDocumentType4 setCodeOrProprietary(ReferredDocumentType3Choice codeOrProprietary) {
+		this.codeOrProprietary = Objects.requireNonNull(codeOrProprietary);
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public Max35Text getIssuer() {
-		return issuer;
+	public Optional<Max35Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max35Text issuer) {
+	public ReferredDocumentType4 setIssuer(Max35Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 }

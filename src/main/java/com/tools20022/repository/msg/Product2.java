@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Product purchased to be paid."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Product2", propOrder = {"productCode", "unitOfMeasure", "productQuantity", "unitPrice", "productAmount", "taxType", "additionalProductInformation"})
 public class Product2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PdctCd", required = true)
 	protected Max70Text productCode;
 	/**
-	 * Product code of the item purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,7 +122,7 @@ public class Product2 {
 	public static final MMMessageAttribute mmProductCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmIdentifier;
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "PdctCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,10 +133,11 @@ public class Product2 {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
+	@XmlElement(name = "UnitOfMeasr")
 	protected UnitOfMeasure1Code unitOfMeasure;
 	/**
-	 * Unit of measure of the item purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +170,7 @@ public class Product2 {
 	public static final MMMessageAttribute mmUnitOfMeasure = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmUnitOfMeasure;
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "UnitOfMeasr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,10 +181,11 @@ public class Product2 {
 			simpleType_lazy = () -> UnitOfMeasure1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "PdctQty")
 	protected DecimalNumber productQuantity;
 	/**
-	 * Product quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,7 +218,7 @@ public class Product2 {
 	public static final MMMessageAttribute mmProductQuantity = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "PdctQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,10 +229,11 @@ public class Product2 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "UnitPric")
 	protected ImpliedCurrencyAndAmount unitPrice;
 	/**
-	 * Price per unit of product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +266,7 @@ public class Product2 {
 	public static final MMMessageAttribute mmUnitPrice = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "UnitPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -271,10 +277,11 @@ public class Product2 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "PdctAmt")
 	protected ImpliedCurrencyAndAmount productAmount;
 	/**
-	 * Monetary value of purchased product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,7 +308,7 @@ public class Product2 {
 	 */
 	public static final MMMessageAttribute mmProductAmount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "PdctAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -312,10 +319,11 @@ public class Product2 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxTp")
 	protected Max35Text taxType;
 	/**
-	 * Information on tax paid on the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -341,7 +349,7 @@ public class Product2 {
 	 */
 	public static final MMMessageAttribute mmTaxType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -352,10 +360,11 @@ public class Product2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlPdctInf")
 	protected Max35Text additionalProductInformation;
 	/**
-	 * Additional information related to the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,7 +390,7 @@ public class Product2 {
 	 */
 	public static final MMMessageAttribute mmAdditionalProductInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Product2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlPdctInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -396,10 +405,11 @@ public class Product2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Product2.mmProductCode, Product2.mmUnitOfMeasure, Product2.mmProductQuantity, Product2.mmUnitPrice, Product2.mmProductAmount, Product2.mmTaxType,
-						Product2.mmAdditionalProductInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Product2.mmProductCode, com.tools20022.repository.msg.Product2.mmUnitOfMeasure, com.tools20022.repository.msg.Product2.mmProductQuantity,
+						com.tools20022.repository.msg.Product2.mmUnitPrice, com.tools20022.repository.msg.Product2.mmProductAmount, com.tools20022.repository.msg.Product2.mmTaxType,
+						com.tools20022.repository.msg.Product2.mmAdditionalProductInformation);
 				trace_lazy = () -> Product.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Product2";
 				definition = "Product purchased to be paid.";
@@ -408,66 +418,66 @@ public class Product2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PdctCd", required = true)
 	public Max70Text getProductCode() {
 		return productCode;
 	}
 
-	public void setProductCode(Max70Text productCode) {
-		this.productCode = productCode;
+	public Product2 setProductCode(Max70Text productCode) {
+		this.productCode = Objects.requireNonNull(productCode);
+		return this;
 	}
 
-	@XmlElement(name = "UnitOfMeasr")
-	public UnitOfMeasure1Code getUnitOfMeasure() {
-		return unitOfMeasure;
+	public Optional<UnitOfMeasure1Code> getUnitOfMeasure() {
+		return unitOfMeasure == null ? Optional.empty() : Optional.of(unitOfMeasure);
 	}
 
-	public void setUnitOfMeasure(UnitOfMeasure1Code unitOfMeasure) {
+	public Product2 setUnitOfMeasure(UnitOfMeasure1Code unitOfMeasure) {
 		this.unitOfMeasure = unitOfMeasure;
+		return this;
 	}
 
-	@XmlElement(name = "PdctQty")
-	public DecimalNumber getProductQuantity() {
-		return productQuantity;
+	public Optional<DecimalNumber> getProductQuantity() {
+		return productQuantity == null ? Optional.empty() : Optional.of(productQuantity);
 	}
 
-	public void setProductQuantity(DecimalNumber productQuantity) {
+	public Product2 setProductQuantity(DecimalNumber productQuantity) {
 		this.productQuantity = productQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "UnitPric")
-	public ImpliedCurrencyAndAmount getUnitPrice() {
-		return unitPrice;
+	public Optional<ImpliedCurrencyAndAmount> getUnitPrice() {
+		return unitPrice == null ? Optional.empty() : Optional.of(unitPrice);
 	}
 
-	public void setUnitPrice(ImpliedCurrencyAndAmount unitPrice) {
+	public Product2 setUnitPrice(ImpliedCurrencyAndAmount unitPrice) {
 		this.unitPrice = unitPrice;
+		return this;
 	}
 
-	@XmlElement(name = "PdctAmt")
-	public ImpliedCurrencyAndAmount getProductAmount() {
-		return productAmount;
+	public Optional<ImpliedCurrencyAndAmount> getProductAmount() {
+		return productAmount == null ? Optional.empty() : Optional.of(productAmount);
 	}
 
-	public void setProductAmount(ImpliedCurrencyAndAmount productAmount) {
+	public Product2 setProductAmount(ImpliedCurrencyAndAmount productAmount) {
 		this.productAmount = productAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TaxTp")
-	public Max35Text getTaxType() {
-		return taxType;
+	public Optional<Max35Text> getTaxType() {
+		return taxType == null ? Optional.empty() : Optional.of(taxType);
 	}
 
-	public void setTaxType(Max35Text taxType) {
+	public Product2 setTaxType(Max35Text taxType) {
 		this.taxType = taxType;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlPdctInf")
-	public Max35Text getAdditionalProductInformation() {
-		return additionalProductInformation;
+	public Optional<Max35Text> getAdditionalProductInformation() {
+		return additionalProductInformation == null ? Optional.empty() : Optional.of(additionalProductInformation);
 	}
 
-	public void setAdditionalProductInformation(Max35Text additionalProductInformation) {
+	public Product2 setAdditionalProductInformation(Max35Text additionalProductInformation) {
 		this.additionalProductInformation = additionalProductInformation;
+		return this;
 	}
 }

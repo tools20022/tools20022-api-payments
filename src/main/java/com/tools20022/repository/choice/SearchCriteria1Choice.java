@@ -27,9 +27,11 @@ import com.tools20022.repository.msg.AccountAndParties1;
 import com.tools20022.repository.msg.CustomerIdentification1;
 import com.tools20022.repository.msg.PaymentInstrumentType1;
 import com.tools20022.repository.msg.RequestType1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,16 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of search criteria for the financial investigation."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SearchCriteria1Choice", propOrder = {"account", "customerIdentification", "paymentInstrument", "originalTransactionNumber"})
 public class SearchCriteria1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Acct", required = true)
 	protected AccountAndParties1 account;
 	/**
-	 * Identifies the account as the search criteria for the financial
-	 * institution to do the investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +126,7 @@ public class SearchCriteria1Choice {
 	 */
 	public static final MMMessageAttribute mmAccount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +137,11 @@ public class SearchCriteria1Choice {
 			complexType_lazy = () -> AccountAndParties1.mmObject();
 		}
 	};
+	@XmlElement(name = "CstmrId", required = true)
 	protected CustomerIdentification1 customerIdentification;
 	/**
-	 * Identifies a customer identification as the search criteria for the
-	 * financial institution to do the investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +171,7 @@ public class SearchCriteria1Choice {
 	 */
 	public static final MMMessageAttribute mmCustomerIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CstmrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +182,11 @@ public class SearchCriteria1Choice {
 			complexType_lazy = () -> CustomerIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "PmtInstrm", required = true)
 	protected PaymentInstrumentType1 paymentInstrument;
 	/**
-	 * Identifies a payment instrument as the search criteria for the financial
-	 * institution to do the investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +216,7 @@ public class SearchCriteria1Choice {
 	 */
 	public static final MMMessageAttribute mmPaymentInstrument = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PmtInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,10 +227,11 @@ public class SearchCriteria1Choice {
 			complexType_lazy = () -> PaymentInstrumentType1.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlTxNb", required = true)
 	protected List<RequestType1> originalTransactionNumber;
 	/**
-	 * Specifies the original transaction number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +258,7 @@ public class SearchCriteria1Choice {
 	 */
 	public static final MMMessageAttribute mmOriginalTransactionNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlTxNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,9 +272,10 @@ public class SearchCriteria1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SearchCriteria1Choice.mmAccount, SearchCriteria1Choice.mmCustomerIdentification, SearchCriteria1Choice.mmPaymentInstrument, SearchCriteria1Choice.mmOriginalTransactionNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SearchCriteria1Choice.mmAccount, com.tools20022.repository.choice.SearchCriteria1Choice.mmCustomerIdentification,
+						com.tools20022.repository.choice.SearchCriteria1Choice.mmPaymentInstrument, com.tools20022.repository.choice.SearchCriteria1Choice.mmOriginalTransactionNumber);
 				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestOpeningV01.mmSearchCriteria, InformationRequestResponseV01.mmSearchCriteria);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SearchCriteria1Choice";
 				definition = "Choice of search criteria for the financial investigation.";
@@ -280,39 +284,39 @@ public class SearchCriteria1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Acct", required = true)
 	public AccountAndParties1 getAccount() {
 		return account;
 	}
 
-	public void setAccount(AccountAndParties1 account) {
-		this.account = account;
+	public SearchCriteria1Choice setAccount(AccountAndParties1 account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
-	@XmlElement(name = "CstmrId", required = true)
 	public CustomerIdentification1 getCustomerIdentification() {
 		return customerIdentification;
 	}
 
-	public void setCustomerIdentification(CustomerIdentification1 customerIdentification) {
-		this.customerIdentification = customerIdentification;
+	public SearchCriteria1Choice setCustomerIdentification(CustomerIdentification1 customerIdentification) {
+		this.customerIdentification = Objects.requireNonNull(customerIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PmtInstrm", required = true)
 	public PaymentInstrumentType1 getPaymentInstrument() {
 		return paymentInstrument;
 	}
 
-	public void setPaymentInstrument(PaymentInstrumentType1 paymentInstrument) {
-		this.paymentInstrument = paymentInstrument;
+	public SearchCriteria1Choice setPaymentInstrument(PaymentInstrumentType1 paymentInstrument) {
+		this.paymentInstrument = Objects.requireNonNull(paymentInstrument);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlTxNb", required = true)
 	public List<RequestType1> getOriginalTransactionNumber() {
-		return originalTransactionNumber;
+		return originalTransactionNumber == null ? originalTransactionNumber = new ArrayList<>() : originalTransactionNumber;
 	}
 
-	public void setOriginalTransactionNumber(List<RequestType1> originalTransactionNumber) {
-		this.originalTransactionNumber = originalTransactionNumber;
+	public SearchCriteria1Choice setOriginalTransactionNumber(List<RequestType1> originalTransactionNumber) {
+		this.originalTransactionNumber = Objects.requireNonNull(originalTransactionNumber);
+		return this;
 	}
 }

@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,16 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the details for the adjustment of the mandate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateAdjustment1", propOrder = {"dateAdjustmentRuleIndicator", "category", "amount", "rate"})
 public class MandateAdjustment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DtAdjstmntRuleInd", required = true)
 	protected TrueFalseIndicator dateAdjustmentRuleIndicator;
 	/**
-	 * Specifies whether an adjustment is to be applied on pre-agreed collection
-	 * date or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +114,7 @@ public class MandateAdjustment1 {
 	 */
 	public static final MMMessageAttribute mmDateAdjustmentRuleIndicator = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MandateAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "DtAdjstmntRuleInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +125,11 @@ public class MandateAdjustment1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "Ctgy")
 	protected Frequency37Choice category;
 	/**
-	 * Defines the category of adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,7 +161,7 @@ public class MandateAdjustment1 {
 	public static final MMMessageAssociationEnd mmCategory = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFrequency;
-			componentContext_lazy = () -> MandateAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Ctgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +173,11 @@ public class MandateAdjustment1 {
 			type_lazy = () -> Frequency37Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt")
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Pre-agreed amount to increase or decrease the mandate amount as justified
-	 * per information in the category.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +213,7 @@ public class MandateAdjustment1 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmCollectionAmount;
-			componentContext_lazy = () -> MandateAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,11 +224,11 @@ public class MandateAdjustment1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Rate")
 	protected PercentageRate rate;
 	/**
-	 * Pre-agreed increase or decrease rate that will be applied to the
-	 * collection amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,7 +264,7 @@ public class MandateAdjustment1 {
 	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmRate;
-			componentContext_lazy = () -> MandateAdjustment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,9 +279,10 @@ public class MandateAdjustment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateAdjustment1.mmDateAdjustmentRuleIndicator, MandateAdjustment1.mmCategory, MandateAdjustment1.mmAmount, MandateAdjustment1.mmRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateAdjustment1.mmDateAdjustmentRuleIndicator, com.tools20022.repository.msg.MandateAdjustment1.mmCategory,
+						com.tools20022.repository.msg.MandateAdjustment1.mmAmount, com.tools20022.repository.msg.MandateAdjustment1.mmRate);
 				trace_lazy = () -> DirectDebitMandate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAdjustment1";
 				definition = "Specifies the details for the adjustment of the mandate.";
@@ -287,39 +291,39 @@ public class MandateAdjustment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DtAdjstmntRuleInd", required = true)
 	public TrueFalseIndicator getDateAdjustmentRuleIndicator() {
 		return dateAdjustmentRuleIndicator;
 	}
 
-	public void setDateAdjustmentRuleIndicator(TrueFalseIndicator dateAdjustmentRuleIndicator) {
-		this.dateAdjustmentRuleIndicator = dateAdjustmentRuleIndicator;
+	public MandateAdjustment1 setDateAdjustmentRuleIndicator(TrueFalseIndicator dateAdjustmentRuleIndicator) {
+		this.dateAdjustmentRuleIndicator = Objects.requireNonNull(dateAdjustmentRuleIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "Ctgy")
-	public Frequency37Choice getCategory() {
-		return category;
+	public Optional<Frequency37Choice> getCategory() {
+		return category == null ? Optional.empty() : Optional.of(category);
 	}
 
-	public void setCategory(Frequency37Choice category) {
+	public MandateAdjustment1 setCategory(Frequency37Choice category) {
 		this.category = category;
+		return this;
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
+	public MandateAdjustment1 setAmount(ActiveCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "Rate")
-	public PercentageRate getRate() {
-		return rate;
+	public Optional<PercentageRate> getRate() {
+		return rate == null ? Optional.empty() : Optional.of(rate);
 	}
 
-	public void setRate(PercentageRate rate) {
+	public MandateAdjustment1 setRate(PercentageRate rate) {
 		this.rate = rate;
+		return this;
 	}
 }

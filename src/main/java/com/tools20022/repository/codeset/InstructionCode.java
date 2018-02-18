@@ -39,28 +39,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#PayTheBeneficiary
- * InstructionCode.mmPayTheBeneficiary}</li>
+ * InstructionCode.PayTheBeneficiary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InstructionCode#TimeTill
- * InstructionCode.mmTimeTill}</li>
+ * InstructionCode.TimeTill}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InstructionCode#TimeFrom
- * InstructionCode.mmTimeFrom}</li>
+ * InstructionCode.TimeFrom}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#PayCreditorByCheque
- * InstructionCode.mmPayCreditorByCheque}</li>
+ * InstructionCode.PayCreditorByCheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#HoldCashForCreditor
- * InstructionCode.mmHoldCashForCreditor}</li>
+ * InstructionCode.HoldCashForCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#PhoneBeneficiary
- * InstructionCode.mmPhoneBeneficiary}</li>
+ * InstructionCode.PhoneBeneficiary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.InstructionCode#Telecom
- * InstructionCode.mmTelecom}</li>
+ * InstructionCode.Telecom}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#PhoneNextAgent
- * InstructionCode.mmPhoneNextAgent}</li>
+ * InstructionCode.PhoneNextAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionCode#TelecomNextAgent
- * InstructionCode.mmTelecomNextAgent}</li>
+ * InstructionCode.TelecomNextAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -396,7 +396,7 @@ public class InstructionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PBEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstructionCode";

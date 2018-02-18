@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Ratio expressed as a quotient of amounts.
@@ -57,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,8 +75,8 @@ public class AmountRatio {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Pricing which uses the ratio as format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,8 +122,8 @@ public class AmountRatio {
 	};
 	protected ActiveCurrencyAndAmount amount1;
 	/**
-	 * Numerator of the quotient of amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,8 +168,8 @@ public class AmountRatio {
 	};
 	protected ActiveCurrencyAndAmount amount2;
 	/**
-	 * Denominator of the quotient of amounts
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +216,7 @@ public class AmountRatio {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRatio";
 				definition = "Ratio expressed as a quotient of amounts.";
@@ -235,23 +236,26 @@ public class AmountRatio {
 		return securitiesPricing;
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
-		this.securitiesPricing = securitiesPricing;
+	public AmountRatio setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = Objects.requireNonNull(securitiesPricing);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAmount1() {
 		return amount1;
 	}
 
-	public void setAmount1(ActiveCurrencyAndAmount amount1) {
-		this.amount1 = amount1;
+	public AmountRatio setAmount1(ActiveCurrencyAndAmount amount1) {
+		this.amount1 = Objects.requireNonNull(amount1);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAmount2() {
 		return amount2;
 	}
 
-	public void setAmount2(ActiveCurrencyAndAmount amount2) {
-		this.amount2 = amount2;
+	public AmountRatio setAmount2(ActiveCurrencyAndAmount amount2) {
+		this.amount2 = Objects.requireNonNull(amount2);
+		return this;
 	}
 }

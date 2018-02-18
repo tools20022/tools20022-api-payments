@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Amendment details and reason related to the registered contract."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegisteredContractAmendment1", propOrder = {"amendmentDate", "document", "startDate", "amendmentReason", "additionalInformation"})
 public class RegisteredContractAmendment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AmdmntDt", required = true)
 	protected ISODate amendmentDate;
 	/**
-	 * Date of the amendment of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +124,7 @@ public class RegisteredContractAmendment1 {
 	public static final MMMessageAttribute mmAmendmentDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmSubmissionDate;
-			componentContext_lazy = () -> RegisteredContractAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "AmdmntDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,10 +135,11 @@ public class RegisteredContractAmendment1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Doc", required = true)
 	protected DocumentIdentification28 document;
 	/**
-	 * Reference of the amendment document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -168,7 +172,7 @@ public class RegisteredContractAmendment1 {
 	public static final MMMessageAssociationEnd mmDocument = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDocument;
-			componentContext_lazy = () -> RegisteredContractAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "Doc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,10 +184,11 @@ public class RegisteredContractAmendment1 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
 		}
 	};
+	@XmlElement(name = "StartDt")
 	protected ISODate startDate;
 	/**
-	 * Date from which the amendment is applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +221,7 @@ public class RegisteredContractAmendment1 {
 	public static final MMMessageAttribute mmStartDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDateSigned;
-			componentContext_lazy = () -> RegisteredContractAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "StartDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,10 +232,11 @@ public class RegisteredContractAmendment1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "AmdmntRsn")
 	protected Max35Text amendmentReason;
 	/**
-	 * Reason for the amendment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,7 +269,7 @@ public class RegisteredContractAmendment1 {
 	public static final MMMessageAttribute mmAmendmentReason = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> RegisteredContractAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "AmdmntRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,10 +280,11 @@ public class RegisteredContractAmendment1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max1025Text additionalInformation;
 	/**
-	 * Further details on the amendment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,7 +311,7 @@ public class RegisteredContractAmendment1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> RegisteredContractAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -319,10 +326,11 @@ public class RegisteredContractAmendment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegisteredContractAmendment1.mmAmendmentDate, RegisteredContractAmendment1.mmDocument, RegisteredContractAmendment1.mmStartDate, RegisteredContractAmendment1.mmAmendmentReason,
-						RegisteredContractAmendment1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractAmendment1.mmAmendmentDate, com.tools20022.repository.msg.RegisteredContractAmendment1.mmDocument,
+						com.tools20022.repository.msg.RegisteredContractAmendment1.mmStartDate, com.tools20022.repository.msg.RegisteredContractAmendment1.mmAmendmentReason,
+						com.tools20022.repository.msg.RegisteredContractAmendment1.mmAdditionalInformation);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContractAmendment1";
 				definition = "Amendment details and reason related to the registered contract.";
@@ -331,48 +339,48 @@ public class RegisteredContractAmendment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AmdmntDt", required = true)
 	public ISODate getAmendmentDate() {
 		return amendmentDate;
 	}
 
-	public void setAmendmentDate(ISODate amendmentDate) {
-		this.amendmentDate = amendmentDate;
+	public RegisteredContractAmendment1 setAmendmentDate(ISODate amendmentDate) {
+		this.amendmentDate = Objects.requireNonNull(amendmentDate);
+		return this;
 	}
 
-	@XmlElement(name = "Doc", required = true)
 	public DocumentIdentification28 getDocument() {
 		return document;
 	}
 
-	public void setDocument(com.tools20022.repository.msg.DocumentIdentification28 document) {
-		this.document = document;
+	public RegisteredContractAmendment1 setDocument(com.tools20022.repository.msg.DocumentIdentification28 document) {
+		this.document = Objects.requireNonNull(document);
+		return this;
 	}
 
-	@XmlElement(name = "StartDt")
-	public ISODate getStartDate() {
-		return startDate;
+	public Optional<ISODate> getStartDate() {
+		return startDate == null ? Optional.empty() : Optional.of(startDate);
 	}
 
-	public void setStartDate(ISODate startDate) {
+	public RegisteredContractAmendment1 setStartDate(ISODate startDate) {
 		this.startDate = startDate;
+		return this;
 	}
 
-	@XmlElement(name = "AmdmntRsn")
-	public Max35Text getAmendmentReason() {
-		return amendmentReason;
+	public Optional<Max35Text> getAmendmentReason() {
+		return amendmentReason == null ? Optional.empty() : Optional.of(amendmentReason);
 	}
 
-	public void setAmendmentReason(Max35Text amendmentReason) {
+	public RegisteredContractAmendment1 setAmendmentReason(Max35Text amendmentReason) {
 		this.amendmentReason = amendmentReason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max1025Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max1025Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max1025Text additionalInformation) {
+	public RegisteredContractAmendment1 setAdditionalInformation(Max1025Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

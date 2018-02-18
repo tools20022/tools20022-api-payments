@@ -37,24 +37,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Annual
- * Frequency7Code.mmAnnual}</li>
+ * Frequency7Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Daily
- * Frequency7Code.mmDaily}</li>
+ * Frequency7Code.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Monthly
- * Frequency7Code.mmMonthly}</li>
+ * Frequency7Code.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Quarterly
- * Frequency7Code.mmQuarterly}</li>
+ * Frequency7Code.Quarterly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#SemiAnnual
- * Frequency7Code.mmSemiAnnual}</li>
+ * Frequency7Code.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#TenDays
- * Frequency7Code.mmTenDays}</li>
+ * Frequency7Code.TenDays}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Frequency7Code#TriggeredByMovement
- * Frequency7Code.mmTriggeredByMovement}</li>
+ * Frequency7Code.TriggeredByMovement}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Weekly
- * Frequency7Code.mmWeekly}</li>
+ * Frequency7Code.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#IntraDay
- * Frequency7Code.mmIntraDay}</li>
+ * Frequency7Code.IntraDay}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -308,7 +308,7 @@ public class Frequency7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency7Code";

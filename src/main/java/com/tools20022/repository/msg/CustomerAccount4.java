@@ -31,9 +31,8 @@ import com.tools20022.repository.codeset.ActiveCurrencyCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -110,8 +109,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -122,16 +121,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Account owned by a customer."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CustomerAccount4", propOrder = {"identification", "name", "status", "type", "currency", "monthlyPaymentValue", "monthlyReceivedValue", "monthlyTransactionNumber", "averageBalance", "accountPurpose",
 		"floorNotificationAmount", "ceilingNotificationAmount", "statementFrequencyAndFormat", "closingDate", "restriction"})
 public class CustomerAccount4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected AccountIdentification4Choice identification;
 	/**
-	 * Identification of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +165,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,12 +176,11 @@ public class CustomerAccount4 {
 			complexType_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max70Text name;
 	/**
-	 * Name of the account. It provides an additional means of identification,
-	 * and is designated by the account servicer in agreement with the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +215,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,10 +226,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Sts")
 	protected AccountStatus3Code status;
 	/**
-	 * Specifies the current state of an account, eg, enabled or deleted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,7 +265,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountStatus.mmStatus;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,10 +276,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> AccountStatus3Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Tp")
 	protected CashAccountType2Choice type;
 	/**
-	 * Type of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,7 +313,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -323,10 +324,11 @@ public class CustomerAccount4 {
 			complexType_lazy = () -> CashAccountType2Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Ccy", required = true)
 	protected ActiveCurrencyCode currency;
 	/**
-	 * Medium of exchange of value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,7 +362,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -371,11 +373,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "MnthlyPmtVal")
 	protected ImpliedCurrencyAndAmount monthlyPaymentValue;
 	/**
-	 * Monthly average of the payment amounts (that is, payments going out) over
-	 * a year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -411,7 +413,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmMonthlyPaymentValue = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyPaymentValue;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "MnthlyPmtVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -422,11 +424,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "MnthlyRcvdVal")
 	protected ImpliedCurrencyAndAmount monthlyReceivedValue;
 	/**
-	 * Monthly average of the received amounts over a year (that is, payments
-	 * coming in).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,7 +464,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmMonthlyReceivedValue = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyReceivedValue;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "MnthlyRcvdVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -473,11 +475,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "MnthlyTxNb")
 	protected Max5NumericText monthlyTransactionNumber;
 	/**
-	 * Monthly average of the number of payments (coming in and going out) over
-	 * a year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -513,7 +515,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmMonthlyTransactionNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyTransactionNumber;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "MnthlyTxNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -524,11 +526,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> Max5NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "AvrgBal")
 	protected ImpliedCurrencyAndAmount averageBalance;
 	/**
-	 * Sum of the end of day balances over a month divided by the number of
-	 * business days in the month.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -564,7 +566,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmAverageBalance = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmAverageBalance;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "AvrgBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -575,10 +577,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctPurp")
 	protected Max140Text accountPurpose;
 	/**
-	 * Specifies the purpose of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -611,7 +614,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmAccountPurpose = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Account.mmPurpose;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "AcctPurp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -622,11 +625,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "FlrNtfctnAmt")
 	protected ImpliedCurrencyAndAmount floorNotificationAmount;
 	/**
-	 * Specifies the value of the balance under which a notification will be
-	 * sent to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -662,7 +665,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmFloorNotificationAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmFloorNotificationAmount;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "FlrNtfctnAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -673,11 +676,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "ClngNtfctnAmt")
 	protected ImpliedCurrencyAndAmount ceilingNotificationAmount;
 	/**
-	 * Specifies the value of the balance above which a notification will be
-	 * sent to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -713,7 +716,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmCeilingNotificationAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmCeilingNotificationAmount;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "ClngNtfctnAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -724,11 +727,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "StmtFrqcyAndFrmt")
 	protected List<com.tools20022.repository.msg.StatementFrequencyAndForm1> statementFrequencyAndFormat;
 	/**
-	 * Specifies how often statements (for audit purposes) will be sent, in
-	 * which format, to which address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -764,7 +767,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmStatementFrequencyAndFormat = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmStatementFrequency;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "StmtFrqcyAndFrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -774,10 +777,11 @@ public class CustomerAccount4 {
 			complexType_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 		}
 	};
+	@XmlElement(name = "ClsgDt")
 	protected ISODate closingDate;
 	/**
-	 * Date when the account will be or was closed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -810,7 +814,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAttribute mmClosingDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Account.mmClosingDate;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -821,10 +825,11 @@ public class CustomerAccount4 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Rstrctn")
 	protected List<com.tools20022.repository.msg.Restriction1> restriction;
 	/**
-	 * Restriction on capability or operations allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -856,7 +861,7 @@ public class CustomerAccount4 {
 	public static final MMMessageAssociationEnd mmRestriction = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Account.mmAccountRestriction;
-			componentContext_lazy = () -> CustomerAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Rstrctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -871,12 +876,14 @@ public class CustomerAccount4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CustomerAccount4.mmIdentification, CustomerAccount4.mmName, CustomerAccount4.mmStatus, CustomerAccount4.mmType, CustomerAccount4.mmCurrency, CustomerAccount4.mmMonthlyPaymentValue,
-						CustomerAccount4.mmMonthlyReceivedValue, CustomerAccount4.mmMonthlyTransactionNumber, CustomerAccount4.mmAverageBalance, CustomerAccount4.mmAccountPurpose, CustomerAccount4.mmFloorNotificationAmount,
-						CustomerAccount4.mmCeilingNotificationAmount, CustomerAccount4.mmStatementFrequencyAndFormat, CustomerAccount4.mmClosingDate, CustomerAccount4.mmRestriction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CustomerAccount4.mmIdentification, com.tools20022.repository.msg.CustomerAccount4.mmName, com.tools20022.repository.msg.CustomerAccount4.mmStatus,
+						com.tools20022.repository.msg.CustomerAccount4.mmType, com.tools20022.repository.msg.CustomerAccount4.mmCurrency, com.tools20022.repository.msg.CustomerAccount4.mmMonthlyPaymentValue,
+						com.tools20022.repository.msg.CustomerAccount4.mmMonthlyReceivedValue, com.tools20022.repository.msg.CustomerAccount4.mmMonthlyTransactionNumber, com.tools20022.repository.msg.CustomerAccount4.mmAverageBalance,
+						com.tools20022.repository.msg.CustomerAccount4.mmAccountPurpose, com.tools20022.repository.msg.CustomerAccount4.mmFloorNotificationAmount, com.tools20022.repository.msg.CustomerAccount4.mmCeilingNotificationAmount,
+						com.tools20022.repository.msg.CustomerAccount4.mmStatementFrequencyAndFormat, com.tools20022.repository.msg.CustomerAccount4.mmClosingDate, com.tools20022.repository.msg.CustomerAccount4.mmRestriction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountOpeningAdditionalInformationRequestV02.mmAccount, AccountOpeningAmendmentRequestV02.mmAccount, AccountOpeningRequestV02.mmAccount);
 				trace_lazy = () -> CashAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerAccount4";
 				definition = "Account owned by a customer.";
@@ -885,138 +892,138 @@ public class CustomerAccount4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
-	public AccountIdentification4Choice getIdentification() {
-		return identification;
+	public Optional<AccountIdentification4Choice> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(AccountIdentification4Choice identification) {
+	public CustomerAccount4 setIdentification(AccountIdentification4Choice identification) {
 		this.identification = identification;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max70Text getName() {
-		return name;
+	public Optional<Max70Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max70Text name) {
+	public CustomerAccount4 setName(Max70Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "Sts")
-	public AccountStatus3Code getStatus() {
-		return status;
+	public Optional<AccountStatus3Code> getStatus() {
+		return status == null ? Optional.empty() : Optional.of(status);
 	}
 
-	public void setStatus(AccountStatus3Code status) {
+	public CustomerAccount4 setStatus(AccountStatus3Code status) {
 		this.status = status;
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public CashAccountType2Choice getType() {
-		return type;
+	public Optional<CashAccountType2Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(CashAccountType2Choice type) {
+	public CustomerAccount4 setType(CashAccountType2Choice type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Ccy", required = true)
 	public ActiveCurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(ActiveCurrencyCode currency) {
-		this.currency = currency;
+	public CustomerAccount4 setCurrency(ActiveCurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
-	@XmlElement(name = "MnthlyPmtVal")
-	public ImpliedCurrencyAndAmount getMonthlyPaymentValue() {
-		return monthlyPaymentValue;
+	public Optional<ImpliedCurrencyAndAmount> getMonthlyPaymentValue() {
+		return monthlyPaymentValue == null ? Optional.empty() : Optional.of(monthlyPaymentValue);
 	}
 
-	public void setMonthlyPaymentValue(ImpliedCurrencyAndAmount monthlyPaymentValue) {
+	public CustomerAccount4 setMonthlyPaymentValue(ImpliedCurrencyAndAmount monthlyPaymentValue) {
 		this.monthlyPaymentValue = monthlyPaymentValue;
+		return this;
 	}
 
-	@XmlElement(name = "MnthlyRcvdVal")
-	public ImpliedCurrencyAndAmount getMonthlyReceivedValue() {
-		return monthlyReceivedValue;
+	public Optional<ImpliedCurrencyAndAmount> getMonthlyReceivedValue() {
+		return monthlyReceivedValue == null ? Optional.empty() : Optional.of(monthlyReceivedValue);
 	}
 
-	public void setMonthlyReceivedValue(ImpliedCurrencyAndAmount monthlyReceivedValue) {
+	public CustomerAccount4 setMonthlyReceivedValue(ImpliedCurrencyAndAmount monthlyReceivedValue) {
 		this.monthlyReceivedValue = monthlyReceivedValue;
+		return this;
 	}
 
-	@XmlElement(name = "MnthlyTxNb")
-	public Max5NumericText getMonthlyTransactionNumber() {
-		return monthlyTransactionNumber;
+	public Optional<Max5NumericText> getMonthlyTransactionNumber() {
+		return monthlyTransactionNumber == null ? Optional.empty() : Optional.of(monthlyTransactionNumber);
 	}
 
-	public void setMonthlyTransactionNumber(Max5NumericText monthlyTransactionNumber) {
+	public CustomerAccount4 setMonthlyTransactionNumber(Max5NumericText monthlyTransactionNumber) {
 		this.monthlyTransactionNumber = monthlyTransactionNumber;
+		return this;
 	}
 
-	@XmlElement(name = "AvrgBal")
-	public ImpliedCurrencyAndAmount getAverageBalance() {
-		return averageBalance;
+	public Optional<ImpliedCurrencyAndAmount> getAverageBalance() {
+		return averageBalance == null ? Optional.empty() : Optional.of(averageBalance);
 	}
 
-	public void setAverageBalance(ImpliedCurrencyAndAmount averageBalance) {
+	public CustomerAccount4 setAverageBalance(ImpliedCurrencyAndAmount averageBalance) {
 		this.averageBalance = averageBalance;
+		return this;
 	}
 
-	@XmlElement(name = "AcctPurp")
-	public Max140Text getAccountPurpose() {
-		return accountPurpose;
+	public Optional<Max140Text> getAccountPurpose() {
+		return accountPurpose == null ? Optional.empty() : Optional.of(accountPurpose);
 	}
 
-	public void setAccountPurpose(Max140Text accountPurpose) {
+	public CustomerAccount4 setAccountPurpose(Max140Text accountPurpose) {
 		this.accountPurpose = accountPurpose;
+		return this;
 	}
 
-	@XmlElement(name = "FlrNtfctnAmt")
-	public ImpliedCurrencyAndAmount getFloorNotificationAmount() {
-		return floorNotificationAmount;
+	public Optional<ImpliedCurrencyAndAmount> getFloorNotificationAmount() {
+		return floorNotificationAmount == null ? Optional.empty() : Optional.of(floorNotificationAmount);
 	}
 
-	public void setFloorNotificationAmount(ImpliedCurrencyAndAmount floorNotificationAmount) {
+	public CustomerAccount4 setFloorNotificationAmount(ImpliedCurrencyAndAmount floorNotificationAmount) {
 		this.floorNotificationAmount = floorNotificationAmount;
+		return this;
 	}
 
-	@XmlElement(name = "ClngNtfctnAmt")
-	public ImpliedCurrencyAndAmount getCeilingNotificationAmount() {
-		return ceilingNotificationAmount;
+	public Optional<ImpliedCurrencyAndAmount> getCeilingNotificationAmount() {
+		return ceilingNotificationAmount == null ? Optional.empty() : Optional.of(ceilingNotificationAmount);
 	}
 
-	public void setCeilingNotificationAmount(ImpliedCurrencyAndAmount ceilingNotificationAmount) {
+	public CustomerAccount4 setCeilingNotificationAmount(ImpliedCurrencyAndAmount ceilingNotificationAmount) {
 		this.ceilingNotificationAmount = ceilingNotificationAmount;
+		return this;
 	}
 
-	@XmlElement(name = "StmtFrqcyAndFrmt")
 	public List<StatementFrequencyAndForm1> getStatementFrequencyAndFormat() {
-		return statementFrequencyAndFormat;
+		return statementFrequencyAndFormat == null ? statementFrequencyAndFormat = new ArrayList<>() : statementFrequencyAndFormat;
 	}
 
-	public void setStatementFrequencyAndFormat(List<com.tools20022.repository.msg.StatementFrequencyAndForm1> statementFrequencyAndFormat) {
-		this.statementFrequencyAndFormat = statementFrequencyAndFormat;
+	public CustomerAccount4 setStatementFrequencyAndFormat(List<com.tools20022.repository.msg.StatementFrequencyAndForm1> statementFrequencyAndFormat) {
+		this.statementFrequencyAndFormat = Objects.requireNonNull(statementFrequencyAndFormat);
+		return this;
 	}
 
-	@XmlElement(name = "ClsgDt")
-	public ISODate getClosingDate() {
-		return closingDate;
+	public Optional<ISODate> getClosingDate() {
+		return closingDate == null ? Optional.empty() : Optional.of(closingDate);
 	}
 
-	public void setClosingDate(ISODate closingDate) {
+	public CustomerAccount4 setClosingDate(ISODate closingDate) {
 		this.closingDate = closingDate;
+		return this;
 	}
 
-	@XmlElement(name = "Rstrctn")
 	public List<Restriction1> getRestriction() {
-		return restriction;
+		return restriction == null ? restriction = new ArrayList<>() : restriction;
 	}
 
-	public void setRestriction(List<com.tools20022.repository.msg.Restriction1> restriction) {
-		this.restriction = restriction;
+	public CustomerAccount4 setRestriction(List<com.tools20022.repository.msg.Restriction1> restriction) {
+		this.restriction = Objects.requireNonNull(restriction);
+		return this;
 	}
 }

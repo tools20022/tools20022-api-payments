@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Provides the dispute details on the variation margin and/or the segregated
@@ -65,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +86,8 @@ public class DisputeManagement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveCurrencyAndAmount disputedAmount;
 	/**
-	 * Disputed amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,8 +133,8 @@ public class DisputeManagement {
 	};
 	protected ISODate disputeDate;
 	/**
-	 * Date of dispute.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,9 +179,8 @@ public class DisputeManagement {
 	};
 	protected DisputeResolutionTypeCode disputeResolutionType;
 	/**
-	 * Specifies the type of dispute that is to be resolved regarding the
-	 * disputed collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,8 +228,8 @@ public class DisputeManagement {
 	};
 	protected CollateralManagement relatedManagementProcess;
 	/**
-	 * Process which groups the activities related to collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +280,7 @@ public class DisputeManagement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "DisputeManagement";
 				definition = "Provides the dispute details on the variation margin and/or the segregated independent amount.";
@@ -300,31 +301,35 @@ public class DisputeManagement {
 		return disputedAmount;
 	}
 
-	public void setDisputedAmount(ActiveCurrencyAndAmount disputedAmount) {
-		this.disputedAmount = disputedAmount;
+	public DisputeManagement setDisputedAmount(ActiveCurrencyAndAmount disputedAmount) {
+		this.disputedAmount = Objects.requireNonNull(disputedAmount);
+		return this;
 	}
 
 	public ISODate getDisputeDate() {
 		return disputeDate;
 	}
 
-	public void setDisputeDate(ISODate disputeDate) {
-		this.disputeDate = disputeDate;
+	public DisputeManagement setDisputeDate(ISODate disputeDate) {
+		this.disputeDate = Objects.requireNonNull(disputeDate);
+		return this;
 	}
 
 	public DisputeResolutionTypeCode getDisputeResolutionType() {
 		return disputeResolutionType;
 	}
 
-	public void setDisputeResolutionType(DisputeResolutionTypeCode disputeResolutionType) {
-		this.disputeResolutionType = disputeResolutionType;
+	public DisputeManagement setDisputeResolutionType(DisputeResolutionTypeCode disputeResolutionType) {
+		this.disputeResolutionType = Objects.requireNonNull(disputeResolutionType);
+		return this;
 	}
 
-	public CollateralManagement getRelatedManagementProcess() {
-		return relatedManagementProcess;
+	public Optional<CollateralManagement> getRelatedManagementProcess() {
+		return relatedManagementProcess == null ? Optional.empty() : Optional.of(relatedManagementProcess);
 	}
 
-	public void setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
+	public DisputeManagement setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
 		this.relatedManagementProcess = relatedManagementProcess;
+		return this;
 	}
 }

@@ -25,9 +25,8 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies how a payment must be processed, for instance through which
@@ -114,8 +113,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -133,10 +132,8 @@ public class PaymentProcessing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PriorityCode priority;
 	/**
-	 * Indicator of the urgency or order of importance that the instructing
-	 * party would like the instructed party to apply to the processing of the
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,9 +218,8 @@ public class PaymentProcessing {
 	};
 	protected ServiceLevel serviceLevel;
 	/**
-	 * Agreement under which or rules under which the transaction should be
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,9 +290,8 @@ public class PaymentProcessing {
 	};
 	protected ClearingChannelCode clearingChannel;
 	/**
-	 * Specifies the clearing channel to be used to process the payment
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,9 +354,8 @@ public class PaymentProcessing {
 	};
 	protected ExternalCode localInstrument;
 	/**
-	 * User community specific instrument. Usage : When available, codes
-	 * provided by local authorities should be used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -433,9 +427,8 @@ public class PaymentProcessing {
 	};
 	protected PaymentCategoryPurposeCode categoryPurpose;
 	/**
-	 * Specifies the high level purpose of the instruction based on a set of
-	 * pre-defined categories.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -524,8 +517,8 @@ public class PaymentProcessing {
 	};
 	protected PaymentExecution paymentExecution;
 	/**
-	 * Payment execution process for which processing parameters are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -574,8 +567,8 @@ public class PaymentProcessing {
 	};
 	protected SequenceTypeCode sequenceType;
 	/**
-	 * Identifies the payment sequence where applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -636,8 +629,8 @@ public class PaymentProcessing {
 	};
 	protected DirectDebitMandate relatedMandate;
 	/**
-	 * Mandate for which payment processing parametres are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,8 +678,8 @@ public class PaymentProcessing {
 	};
 	protected List<com.tools20022.repository.entity.BankTransaction> bankTransaction;
 	/**
-	 * Code of the underlying bank transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -732,8 +725,8 @@ public class PaymentProcessing {
 	};
 	protected List<com.tools20022.repository.entity.ContactPoint> contactPoint;
 	/**
-	 * Specifies the notification method to be used to inform the beneficiary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -783,7 +776,7 @@ public class PaymentProcessing {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentProcessing";
 				definition = "Specifies how a payment must be processed, for instance through which specific clearing channel.";
@@ -809,79 +802,89 @@ public class PaymentProcessing {
 		return priority;
 	}
 
-	public void setPriority(PriorityCode priority) {
-		this.priority = priority;
+	public PaymentProcessing setPriority(PriorityCode priority) {
+		this.priority = Objects.requireNonNull(priority);
+		return this;
 	}
 
-	public ServiceLevel getServiceLevel() {
-		return serviceLevel;
+	public Optional<ServiceLevel> getServiceLevel() {
+		return serviceLevel == null ? Optional.empty() : Optional.of(serviceLevel);
 	}
 
-	public void setServiceLevel(com.tools20022.repository.entity.ServiceLevel serviceLevel) {
+	public PaymentProcessing setServiceLevel(com.tools20022.repository.entity.ServiceLevel serviceLevel) {
 		this.serviceLevel = serviceLevel;
+		return this;
 	}
 
 	public ClearingChannelCode getClearingChannel() {
 		return clearingChannel;
 	}
 
-	public void setClearingChannel(ClearingChannelCode clearingChannel) {
-		this.clearingChannel = clearingChannel;
+	public PaymentProcessing setClearingChannel(ClearingChannelCode clearingChannel) {
+		this.clearingChannel = Objects.requireNonNull(clearingChannel);
+		return this;
 	}
 
 	public ExternalCode getLocalInstrument() {
 		return localInstrument;
 	}
 
-	public void setLocalInstrument(ExternalCode localInstrument) {
-		this.localInstrument = localInstrument;
+	public PaymentProcessing setLocalInstrument(ExternalCode localInstrument) {
+		this.localInstrument = Objects.requireNonNull(localInstrument);
+		return this;
 	}
 
 	public PaymentCategoryPurposeCode getCategoryPurpose() {
 		return categoryPurpose;
 	}
 
-	public void setCategoryPurpose(PaymentCategoryPurposeCode categoryPurpose) {
-		this.categoryPurpose = categoryPurpose;
+	public PaymentProcessing setCategoryPurpose(PaymentCategoryPurposeCode categoryPurpose) {
+		this.categoryPurpose = Objects.requireNonNull(categoryPurpose);
+		return this;
 	}
 
-	public PaymentExecution getPaymentExecution() {
-		return paymentExecution;
+	public Optional<PaymentExecution> getPaymentExecution() {
+		return paymentExecution == null ? Optional.empty() : Optional.of(paymentExecution);
 	}
 
-	public void setPaymentExecution(com.tools20022.repository.entity.PaymentExecution paymentExecution) {
+	public PaymentProcessing setPaymentExecution(com.tools20022.repository.entity.PaymentExecution paymentExecution) {
 		this.paymentExecution = paymentExecution;
+		return this;
 	}
 
 	public SequenceTypeCode getSequenceType() {
 		return sequenceType;
 	}
 
-	public void setSequenceType(SequenceTypeCode sequenceType) {
-		this.sequenceType = sequenceType;
+	public PaymentProcessing setSequenceType(SequenceTypeCode sequenceType) {
+		this.sequenceType = Objects.requireNonNull(sequenceType);
+		return this;
 	}
 
-	public DirectDebitMandate getRelatedMandate() {
-		return relatedMandate;
+	public Optional<DirectDebitMandate> getRelatedMandate() {
+		return relatedMandate == null ? Optional.empty() : Optional.of(relatedMandate);
 	}
 
-	public void setRelatedMandate(com.tools20022.repository.entity.DirectDebitMandate relatedMandate) {
+	public PaymentProcessing setRelatedMandate(com.tools20022.repository.entity.DirectDebitMandate relatedMandate) {
 		this.relatedMandate = relatedMandate;
+		return this;
 	}
 
 	public List<BankTransaction> getBankTransaction() {
-		return bankTransaction;
+		return bankTransaction == null ? bankTransaction = new ArrayList<>() : bankTransaction;
 	}
 
-	public void setBankTransaction(List<com.tools20022.repository.entity.BankTransaction> bankTransaction) {
-		this.bankTransaction = bankTransaction;
+	public PaymentProcessing setBankTransaction(List<com.tools20022.repository.entity.BankTransaction> bankTransaction) {
+		this.bankTransaction = Objects.requireNonNull(bankTransaction);
+		return this;
 	}
 
 	public List<ContactPoint> getContactPoint() {
-		return contactPoint;
+		return contactPoint == null ? contactPoint = new ArrayList<>() : contactPoint;
 	}
 
-	public void setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
-		this.contactPoint = contactPoint;
+	public PaymentProcessing setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
+		this.contactPoint = Objects.requireNonNull(contactPoint);
+		return this;
 	}
 }

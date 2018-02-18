@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Act of provding an amount of money, a property or other material goods to a
@@ -87,8 +88,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,9 +107,8 @@ public class Loan extends Debt {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount principalAmount;
 	/**
-	 * Amount of money borrowed, or part of that amount which remains unpaid
-	 * (excluding interest).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,8 +171,8 @@ public class Loan extends Debt {
 	};
 	protected PaymentTerms interestPaymentsSchedule;
 	/**
-	 * Schedule for the payment of the interests due on the loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,8 +228,8 @@ public class Loan extends Debt {
 	};
 	protected YesNoIndicator intraCompanyLoanIndicator;
 	/**
-	 * Loan is an intra-company loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +291,7 @@ public class Loan extends Debt {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Loan";
 				definition = "Act of provding an amount of money, a property or other material goods to a another party in exchange for future repayment of the principal amount along with interest or other finance charges.";
@@ -315,23 +315,26 @@ public class Loan extends Debt {
 		return principalAmount;
 	}
 
-	public void setPrincipalAmount(CurrencyAndAmount principalAmount) {
-		this.principalAmount = principalAmount;
+	public Loan setPrincipalAmount(CurrencyAndAmount principalAmount) {
+		this.principalAmount = Objects.requireNonNull(principalAmount);
+		return this;
 	}
 
 	public PaymentTerms getInterestPaymentsSchedule() {
 		return interestPaymentsSchedule;
 	}
 
-	public void setInterestPaymentsSchedule(com.tools20022.repository.entity.PaymentTerms interestPaymentsSchedule) {
-		this.interestPaymentsSchedule = interestPaymentsSchedule;
+	public Loan setInterestPaymentsSchedule(com.tools20022.repository.entity.PaymentTerms interestPaymentsSchedule) {
+		this.interestPaymentsSchedule = Objects.requireNonNull(interestPaymentsSchedule);
+		return this;
 	}
 
 	public YesNoIndicator getIntraCompanyLoanIndicator() {
 		return intraCompanyLoanIndicator;
 	}
 
-	public void setIntraCompanyLoanIndicator(YesNoIndicator intraCompanyLoanIndicator) {
-		this.intraCompanyLoanIndicator = intraCompanyLoanIndicator;
+	public Loan setIntraCompanyLoanIndicator(YesNoIndicator intraCompanyLoanIndicator) {
+		this.intraCompanyLoanIndicator = Objects.requireNonNull(intraCompanyLoanIndicator);
+		return this;
 	}
 }

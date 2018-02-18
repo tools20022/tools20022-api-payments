@@ -38,23 +38,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#Executed
- * CrossTradeExecutionCode.mmExecuted}</li>
+ * CrossTradeExecutionCode.Executed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#PartialCancel
- * CrossTradeExecutionCode.mmPartialCancel}</li>
+ * CrossTradeExecutionCode.PartialCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#PartialActive
- * CrossTradeExecutionCode.mmPartialActive}</li>
+ * CrossTradeExecutionCode.PartialActive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CrossTradeExecutionCode#ExecutedWithExisting
- * CrossTradeExecutionCode.mmExecutedWithExisting}</li>
+ * CrossTradeExecutionCode.ExecutedWithExisting}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -221,7 +221,7 @@ public class CrossTradeExecutionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EXEC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTradeExecutionCode";

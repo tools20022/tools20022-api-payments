@@ -24,9 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice;
 import com.tools20022.repository.entity.OperationThreshold;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Autorisation of the mandate holder."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Authorisation2", propOrder = {"maximumAmountByTransaction", "maximumAmountByPeriod", "maximumAmountByBulkSubmission"})
 public class Authorisation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MaxAmtByTx")
 	protected FixedAmountOrUnlimited1Choice maximumAmountByTransaction;
 	/**
-	 * Maximum amount allowed by the mandate for each transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +112,7 @@ public class Authorisation2 {
 	public static final MMMessageAttribute mmMaximumAmountByTransaction = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> OperationThreshold.mmMaximumAmount;
-			componentContext_lazy = () -> Authorisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Authorisation2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAmtByTx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +123,11 @@ public class Authorisation2 {
 			complexType_lazy = () -> FixedAmountOrUnlimited1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "MaxAmtByPrd")
 	protected List<com.tools20022.repository.msg.MaximumAmountByPeriod1> maximumAmountByPeriod;
 	/**
-	 * Maximum amount allowed over a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,7 +158,7 @@ public class Authorisation2 {
 	public static final MMMessageAssociationEnd mmMaximumAmountByPeriod = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> OperationThreshold.mmMaximumAmount;
-			componentContext_lazy = () -> Authorisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Authorisation2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAmtByPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,10 +169,11 @@ public class Authorisation2 {
 			type_lazy = () -> com.tools20022.repository.msg.MaximumAmountByPeriod1.mmObject();
 		}
 	};
+	@XmlElement(name = "MaxAmtByBlkSubmissn")
 	protected FixedAmountOrUnlimited1Choice maximumAmountByBulkSubmission;
 	/**
-	 * Specifies the maximum amount for each bulk submission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,7 +206,7 @@ public class Authorisation2 {
 	public static final MMMessageAttribute mmMaximumAmountByBulkSubmission = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> OperationThreshold.mmMaximumAmount;
-			componentContext_lazy = () -> Authorisation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Authorisation2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAmtByBlkSubmissn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,9 +221,10 @@ public class Authorisation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Authorisation2.mmMaximumAmountByTransaction, Authorisation2.mmMaximumAmountByPeriod, Authorisation2.mmMaximumAmountByBulkSubmission);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Authorisation2.mmMaximumAmountByTransaction, com.tools20022.repository.msg.Authorisation2.mmMaximumAmountByPeriod,
+						com.tools20022.repository.msg.Authorisation2.mmMaximumAmountByBulkSubmission);
 				trace_lazy = () -> OperationThreshold.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Authorisation2";
 				definition = "Autorisation of the mandate holder.";
@@ -230,30 +233,30 @@ public class Authorisation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MaxAmtByTx")
-	public FixedAmountOrUnlimited1Choice getMaximumAmountByTransaction() {
-		return maximumAmountByTransaction;
+	public Optional<FixedAmountOrUnlimited1Choice> getMaximumAmountByTransaction() {
+		return maximumAmountByTransaction == null ? Optional.empty() : Optional.of(maximumAmountByTransaction);
 	}
 
-	public void setMaximumAmountByTransaction(FixedAmountOrUnlimited1Choice maximumAmountByTransaction) {
+	public Authorisation2 setMaximumAmountByTransaction(FixedAmountOrUnlimited1Choice maximumAmountByTransaction) {
 		this.maximumAmountByTransaction = maximumAmountByTransaction;
+		return this;
 	}
 
-	@XmlElement(name = "MaxAmtByPrd")
 	public List<MaximumAmountByPeriod1> getMaximumAmountByPeriod() {
-		return maximumAmountByPeriod;
+		return maximumAmountByPeriod == null ? maximumAmountByPeriod = new ArrayList<>() : maximumAmountByPeriod;
 	}
 
-	public void setMaximumAmountByPeriod(List<com.tools20022.repository.msg.MaximumAmountByPeriod1> maximumAmountByPeriod) {
-		this.maximumAmountByPeriod = maximumAmountByPeriod;
+	public Authorisation2 setMaximumAmountByPeriod(List<com.tools20022.repository.msg.MaximumAmountByPeriod1> maximumAmountByPeriod) {
+		this.maximumAmountByPeriod = Objects.requireNonNull(maximumAmountByPeriod);
+		return this;
 	}
 
-	@XmlElement(name = "MaxAmtByBlkSubmissn")
-	public FixedAmountOrUnlimited1Choice getMaximumAmountByBulkSubmission() {
-		return maximumAmountByBulkSubmission;
+	public Optional<FixedAmountOrUnlimited1Choice> getMaximumAmountByBulkSubmission() {
+		return maximumAmountByBulkSubmission == null ? Optional.empty() : Optional.of(maximumAmountByBulkSubmission);
 	}
 
-	public void setMaximumAmountByBulkSubmission(FixedAmountOrUnlimited1Choice maximumAmountByBulkSubmission) {
+	public Authorisation2 setMaximumAmountByBulkSubmission(FixedAmountOrUnlimited1Choice maximumAmountByBulkSubmission) {
 		this.maximumAmountByBulkSubmission = maximumAmountByBulkSubmission;
+		return this;
 	}
 }

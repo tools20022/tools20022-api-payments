@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Payment, initiated by the creditor, to debit a debtor's account in favour of
@@ -105,8 +106,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -124,10 +125,8 @@ public class DirectDebit extends IndividualPayment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text registrationIdentification;
 	/**
-	 * Reference assigned to a creditor by its financial institution, or
-	 * relevant authority, authorising the creditor to take part in a direct
-	 * debit scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,9 +172,8 @@ public class DirectDebit extends IndividualPayment {
 	};
 	protected DirectDebitMandate directDebitMandate;
 	/**
-	 * Set of elements providing information specific to the direct debit
-	 * mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,11 +230,8 @@ public class DirectDebit extends IndividualPayment {
 	};
 	protected Max35Text preNotificationIdentification;
 	/**
-	 * Unique and unambiguous identification of the pre-notification which is
-	 * sent separately from the direct debit instruction. Usage: the direct
-	 * debit pre-notification is used to reconcile separately sent collection
-	 * information with the direct debit transaction information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,10 +286,8 @@ public class DirectDebit extends IndividualPayment {
 	};
 	protected ISODate preNotificationDate;
 	/**
-	 * Date on which the creditor notifies the debtor about the amount and date
-	 * on which the direct debit instruction will be presented to the debtor's
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,7 +344,7 @@ public class DirectDebit extends IndividualPayment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DirectDebit";
 				definition = "Payment, initiated by the creditor, to debit a debtor's account in favour of the creditor. A direct debit can be pre-authorised or not. In most countries, authorisation is in the form of a mandate between the debtor and creditor.";
@@ -377,31 +370,35 @@ public class DirectDebit extends IndividualPayment {
 		return registrationIdentification;
 	}
 
-	public void setRegistrationIdentification(Max35Text registrationIdentification) {
-		this.registrationIdentification = registrationIdentification;
+	public DirectDebit setRegistrationIdentification(Max35Text registrationIdentification) {
+		this.registrationIdentification = Objects.requireNonNull(registrationIdentification);
+		return this;
 	}
 
 	public DirectDebitMandate getDirectDebitMandate() {
 		return directDebitMandate;
 	}
 
-	public void setDirectDebitMandate(com.tools20022.repository.entity.DirectDebitMandate directDebitMandate) {
-		this.directDebitMandate = directDebitMandate;
+	public DirectDebit setDirectDebitMandate(com.tools20022.repository.entity.DirectDebitMandate directDebitMandate) {
+		this.directDebitMandate = Objects.requireNonNull(directDebitMandate);
+		return this;
 	}
 
 	public Max35Text getPreNotificationIdentification() {
 		return preNotificationIdentification;
 	}
 
-	public void setPreNotificationIdentification(Max35Text preNotificationIdentification) {
-		this.preNotificationIdentification = preNotificationIdentification;
+	public DirectDebit setPreNotificationIdentification(Max35Text preNotificationIdentification) {
+		this.preNotificationIdentification = Objects.requireNonNull(preNotificationIdentification);
+		return this;
 	}
 
 	public ISODate getPreNotificationDate() {
 		return preNotificationDate;
 	}
 
-	public void setPreNotificationDate(ISODate preNotificationDate) {
-		this.preNotificationDate = preNotificationDate;
+	public DirectDebit setPreNotificationDate(ISODate preNotificationDate) {
+		this.preNotificationDate = Objects.requireNonNull(preNotificationDate);
+		return this;
 	}
 }

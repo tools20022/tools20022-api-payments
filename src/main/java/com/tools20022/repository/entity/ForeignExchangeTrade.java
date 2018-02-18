@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.TreasuryTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Agreement between two parties in which one party buys a currency and the
@@ -122,8 +121,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -141,9 +140,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyExchange agreedRate;
 	/**
-	 * Exchange rate between two currencies. The rate is agreed by the trading
-	 * parties during the negotiation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,8 +190,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected Max35Text typeOfProduct;
 	/**
-	 * Specifies the type of trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,8 +236,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected CurrencyAndAmount buyAmount;
 	/**
-	 * Currency and amount bought in a foreign exchange trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,8 +283,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected CurrencyAndAmount sellAmount;
 	/**
-	 * Currency and amount sold in a foreign exchange trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,11 +330,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> resultingSettlement;
 	/**
-	 * Payment of the settlement amount to the account(s) of the final
-	 * beneficiary. A payment may be settled gross, through split amounts at
-	 * several agents of the buyer, or netted with several other treasury
-	 * agreements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,8 +379,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected SecuritiesSettlement currencyExchangeForSecuritiesSettlement;
 	/**
-	 * Securities settlement process for which a currency exchange is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,8 +430,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected NonDeliverableTrade openingLegRelatedNonDeliverableTrade;
 	/**
-	 * Non deliverable trade for which an opening closing leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -484,8 +479,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected NonDeliverableTrade closingLegRelatedNonDeliverableTrade;
 	/**
-	 * Non deliverable trade for which a closing leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -533,8 +528,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected ForeignExchangeSwap relatedSwap;
 	/**
-	 * FX swap for which the FX trade is one leg.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -581,8 +576,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected CurrencyOption relatedOption;
 	/**
-	 * Option which is executed by one (or more) FX trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -629,8 +624,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected TaxVoucher currencyExchangeForTaxVoucher;
 	/**
-	 * Tax voucher for which currency exchange information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -678,10 +673,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	};
 	protected DecimalNumber exchangeForwardPoint;
 	/**
-	 * Difference between the foreign exchange spot rate and the foreign
-	 * exchange forward rate expressed in basis points quoted in accordance with
-	 * the prevailing market conventions for the currency pair.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -731,7 +724,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ForeignExchangeTrade";
 				definition = "Agreement between two parties in which one party buys a currency and the other party sells a different currency.";
@@ -761,95 +754,107 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 		return agreedRate;
 	}
 
-	public void setAgreedRate(com.tools20022.repository.entity.CurrencyExchange agreedRate) {
-		this.agreedRate = agreedRate;
+	public ForeignExchangeTrade setAgreedRate(com.tools20022.repository.entity.CurrencyExchange agreedRate) {
+		this.agreedRate = Objects.requireNonNull(agreedRate);
+		return this;
 	}
 
 	public Max35Text getTypeOfProduct() {
 		return typeOfProduct;
 	}
 
-	public void setTypeOfProduct(Max35Text typeOfProduct) {
-		this.typeOfProduct = typeOfProduct;
+	public ForeignExchangeTrade setTypeOfProduct(Max35Text typeOfProduct) {
+		this.typeOfProduct = Objects.requireNonNull(typeOfProduct);
+		return this;
 	}
 
 	public CurrencyAndAmount getBuyAmount() {
 		return buyAmount;
 	}
 
-	public void setBuyAmount(CurrencyAndAmount buyAmount) {
-		this.buyAmount = buyAmount;
+	public ForeignExchangeTrade setBuyAmount(CurrencyAndAmount buyAmount) {
+		this.buyAmount = Objects.requireNonNull(buyAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getSellAmount() {
 		return sellAmount;
 	}
 
-	public void setSellAmount(CurrencyAndAmount sellAmount) {
-		this.sellAmount = sellAmount;
+	public ForeignExchangeTrade setSellAmount(CurrencyAndAmount sellAmount) {
+		this.sellAmount = Objects.requireNonNull(sellAmount);
+		return this;
 	}
 
 	public List<PaymentObligation> getResultingSettlement() {
-		return resultingSettlement;
+		return resultingSettlement == null ? resultingSettlement = new ArrayList<>() : resultingSettlement;
 	}
 
-	public void setResultingSettlement(List<com.tools20022.repository.entity.PaymentObligation> resultingSettlement) {
-		this.resultingSettlement = resultingSettlement;
+	public ForeignExchangeTrade setResultingSettlement(List<com.tools20022.repository.entity.PaymentObligation> resultingSettlement) {
+		this.resultingSettlement = Objects.requireNonNull(resultingSettlement);
+		return this;
 	}
 
-	public SecuritiesSettlement getCurrencyExchangeForSecuritiesSettlement() {
-		return currencyExchangeForSecuritiesSettlement;
+	public Optional<SecuritiesSettlement> getCurrencyExchangeForSecuritiesSettlement() {
+		return currencyExchangeForSecuritiesSettlement == null ? Optional.empty() : Optional.of(currencyExchangeForSecuritiesSettlement);
 	}
 
-	public void setCurrencyExchangeForSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement currencyExchangeForSecuritiesSettlement) {
+	public ForeignExchangeTrade setCurrencyExchangeForSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement currencyExchangeForSecuritiesSettlement) {
 		this.currencyExchangeForSecuritiesSettlement = currencyExchangeForSecuritiesSettlement;
+		return this;
 	}
 
-	public NonDeliverableTrade getOpeningLegRelatedNonDeliverableTrade() {
-		return openingLegRelatedNonDeliverableTrade;
+	public Optional<NonDeliverableTrade> getOpeningLegRelatedNonDeliverableTrade() {
+		return openingLegRelatedNonDeliverableTrade == null ? Optional.empty() : Optional.of(openingLegRelatedNonDeliverableTrade);
 	}
 
-	public void setOpeningLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade openingLegRelatedNonDeliverableTrade) {
+	public ForeignExchangeTrade setOpeningLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade openingLegRelatedNonDeliverableTrade) {
 		this.openingLegRelatedNonDeliverableTrade = openingLegRelatedNonDeliverableTrade;
+		return this;
 	}
 
-	public NonDeliverableTrade getClosingLegRelatedNonDeliverableTrade() {
-		return closingLegRelatedNonDeliverableTrade;
+	public Optional<NonDeliverableTrade> getClosingLegRelatedNonDeliverableTrade() {
+		return closingLegRelatedNonDeliverableTrade == null ? Optional.empty() : Optional.of(closingLegRelatedNonDeliverableTrade);
 	}
 
-	public void setClosingLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade closingLegRelatedNonDeliverableTrade) {
+	public ForeignExchangeTrade setClosingLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade closingLegRelatedNonDeliverableTrade) {
 		this.closingLegRelatedNonDeliverableTrade = closingLegRelatedNonDeliverableTrade;
+		return this;
 	}
 
-	public ForeignExchangeSwap getRelatedSwap() {
-		return relatedSwap;
+	public Optional<ForeignExchangeSwap> getRelatedSwap() {
+		return relatedSwap == null ? Optional.empty() : Optional.of(relatedSwap);
 	}
 
-	public void setRelatedSwap(com.tools20022.repository.entity.ForeignExchangeSwap relatedSwap) {
+	public ForeignExchangeTrade setRelatedSwap(com.tools20022.repository.entity.ForeignExchangeSwap relatedSwap) {
 		this.relatedSwap = relatedSwap;
+		return this;
 	}
 
-	public CurrencyOption getRelatedOption() {
-		return relatedOption;
+	public Optional<CurrencyOption> getRelatedOption() {
+		return relatedOption == null ? Optional.empty() : Optional.of(relatedOption);
 	}
 
-	public void setRelatedOption(com.tools20022.repository.entity.CurrencyOption relatedOption) {
+	public ForeignExchangeTrade setRelatedOption(com.tools20022.repository.entity.CurrencyOption relatedOption) {
 		this.relatedOption = relatedOption;
+		return this;
 	}
 
-	public TaxVoucher getCurrencyExchangeForTaxVoucher() {
-		return currencyExchangeForTaxVoucher;
+	public Optional<TaxVoucher> getCurrencyExchangeForTaxVoucher() {
+		return currencyExchangeForTaxVoucher == null ? Optional.empty() : Optional.of(currencyExchangeForTaxVoucher);
 	}
 
-	public void setCurrencyExchangeForTaxVoucher(com.tools20022.repository.entity.TaxVoucher currencyExchangeForTaxVoucher) {
+	public ForeignExchangeTrade setCurrencyExchangeForTaxVoucher(com.tools20022.repository.entity.TaxVoucher currencyExchangeForTaxVoucher) {
 		this.currencyExchangeForTaxVoucher = currencyExchangeForTaxVoucher;
+		return this;
 	}
 
-	public DecimalNumber getExchangeForwardPoint() {
-		return exchangeForwardPoint;
+	public Optional<DecimalNumber> getExchangeForwardPoint() {
+		return exchangeForwardPoint == null ? Optional.empty() : Optional.of(exchangeForwardPoint);
 	}
 
-	public void setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
+	public ForeignExchangeTrade setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
 		this.exchangeForwardPoint = exchangeForwardPoint;
+		return this;
 	}
 }

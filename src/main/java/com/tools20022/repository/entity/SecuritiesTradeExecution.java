@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.OffMarketCode;
 import com.tools20022.repository.codeset.ProcessingPositionCode;
@@ -26,9 +28,11 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.EntryTransaction8;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Transaction between two counterparties in which they agree to buy and sell a
@@ -119,8 +123,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,8 +142,8 @@ public class SecuritiesTradeExecution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator stampDutyIndicator;
 	/**
-	 * Whether the net proceeds include stamp duty amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,6 +156,9 @@ public class SecuritiesTradeExecution {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution
 	 * SecuritiesTradeExecution}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :17B::STAM</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -167,6 +174,7 @@ public class SecuritiesTradeExecution {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":17B::STAM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StampDutyIndicator";
 			definition = "Whether the net proceeds include stamp duty amount.";
@@ -185,8 +193,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected ProcessingPositionCode processingPosition;
 	/**
-	 * When the transaction is to be executed relative to a linked transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,6 +207,9 @@ public class SecuritiesTradeExecution {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution
 	 * SecuritiesTradeExecution}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::LINK</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -216,6 +227,7 @@ public class SecuritiesTradeExecution {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::LINK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingPosition";
 			definition = "When the transaction is to be executed relative to a linked transaction.";
@@ -234,8 +246,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement;
 	/**
-	 * Process of settling securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,13 +294,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected SecuritiesPricing dealPrice;
 	/**
-	 * Specifies the price of the traded financial instrument. This is the deal
-	 * price of the individual trade transaction. If there is only one trade
-	 * transaction for the execution of the trade, then the deal price could
-	 * equal the executed trade price (unless, for example, the price includes
-	 * commissions or rounding, or some other factor has been applied to the
-	 * deal price or the executed trade price, or both).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,6 +324,9 @@ public class SecuritiesTradeExecution {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution
 	 * SecuritiesTradeExecution}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :90a::DEAL, FIXSynonym: 31 and 651</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -334,6 +344,7 @@ public class SecuritiesTradeExecution {
 			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmRelatedPrice);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":90a::DEAL"), new FIXSynonym(this, "31 and 651"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealPrice";
 			definition = "Specifies the price of the traded financial instrument.\nThis is the deal price of the individual trade transaction. \nIf there is only one trade transaction for the execution of the trade, then the deal price could equal the executed trade price (unless, for example, the price includes commissions or rounding, or some other factor has been applied to the deal price or the executed trade price, or both).";
@@ -346,8 +357,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected CurrencyAndAmount marginAmount;
 	/**
-	 * Difference in prices at which a dealer will buy and sell.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,6 +371,9 @@ public class SecuritiesTradeExecution {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution
 	 * SecuritiesTradeExecution}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::MARG</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -376,6 +390,7 @@ public class SecuritiesTradeExecution {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::MARG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginAmount";
 			definition = "Difference in prices at which a dealer will buy and sell.";
@@ -394,8 +409,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> executedTradeQuantity;
 	/**
-	 * Quantity of financial instrument executed by the trading party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -442,8 +457,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected OffMarketCode offMarketReason;
 	/**
-	 * Reason for which the trade was executed off-market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -489,8 +504,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected SecuritiesTrade relatedTrade;
 	/**
-	 * Trade which is executed through one or more execution trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -538,9 +553,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected CurrencyAndAmount dealExecutionAmount;
 	/**
-	 * Deal price multiplied by the quantity of a financial instrument traded
-	 * for the specific trade transaction i.e. the partially filled quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -553,6 +567,9 @@ public class SecuritiesTradeExecution {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution
 	 * SecuritiesTradeExecution}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::DEAL</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -570,6 +587,7 @@ public class SecuritiesTradeExecution {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::DEAL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealExecutionAmount";
 			definition = "Deal price multiplied by the quantity of a financial instrument traded for the specific trade transaction i.e. the partially filled quantity.";
@@ -588,8 +606,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
-	 * Specifies the cash delivery obligations resulting from the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -636,8 +654,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
 	/**
-	 * Specifies the securities delivery obligations resulting from the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -686,8 +704,8 @@ public class SecuritiesTradeExecution {
 	};
 	protected ReportingCode reportingType;
 	/**
-	 * Specifies that a trade is to be reported to a third party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -736,7 +754,7 @@ public class SecuritiesTradeExecution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeExecution";
 				definition = "Transaction between two counterparties in which they agree to buy and sell a financial instrument. A trade transaction occurs with the matching of the two counterparties orders. There could be several trade transactions necessary to execute the trade.";
@@ -764,95 +782,107 @@ public class SecuritiesTradeExecution {
 		return stampDutyIndicator;
 	}
 
-	public void setStampDutyIndicator(YesNoIndicator stampDutyIndicator) {
-		this.stampDutyIndicator = stampDutyIndicator;
+	public SecuritiesTradeExecution setStampDutyIndicator(YesNoIndicator stampDutyIndicator) {
+		this.stampDutyIndicator = Objects.requireNonNull(stampDutyIndicator);
+		return this;
 	}
 
 	public ProcessingPositionCode getProcessingPosition() {
 		return processingPosition;
 	}
 
-	public void setProcessingPosition(ProcessingPositionCode processingPosition) {
-		this.processingPosition = processingPosition;
+	public SecuritiesTradeExecution setProcessingPosition(ProcessingPositionCode processingPosition) {
+		this.processingPosition = Objects.requireNonNull(processingPosition);
+		return this;
 	}
 
 	public List<SecuritiesSettlement> getSecuritiesSettlement() {
-		return securitiesSettlement;
+		return securitiesSettlement == null ? securitiesSettlement = new ArrayList<>() : securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public SecuritiesTradeExecution setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 
 	public SecuritiesPricing getDealPrice() {
 		return dealPrice;
 	}
 
-	public void setDealPrice(com.tools20022.repository.entity.SecuritiesPricing dealPrice) {
-		this.dealPrice = dealPrice;
+	public SecuritiesTradeExecution setDealPrice(com.tools20022.repository.entity.SecuritiesPricing dealPrice) {
+		this.dealPrice = Objects.requireNonNull(dealPrice);
+		return this;
 	}
 
 	public CurrencyAndAmount getMarginAmount() {
 		return marginAmount;
 	}
 
-	public void setMarginAmount(CurrencyAndAmount marginAmount) {
-		this.marginAmount = marginAmount;
+	public SecuritiesTradeExecution setMarginAmount(CurrencyAndAmount marginAmount) {
+		this.marginAmount = Objects.requireNonNull(marginAmount);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getExecutedTradeQuantity() {
-		return executedTradeQuantity;
+		return executedTradeQuantity == null ? executedTradeQuantity = new ArrayList<>() : executedTradeQuantity;
 	}
 
-	public void setExecutedTradeQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> executedTradeQuantity) {
-		this.executedTradeQuantity = executedTradeQuantity;
+	public SecuritiesTradeExecution setExecutedTradeQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> executedTradeQuantity) {
+		this.executedTradeQuantity = Objects.requireNonNull(executedTradeQuantity);
+		return this;
 	}
 
 	public OffMarketCode getOffMarketReason() {
 		return offMarketReason;
 	}
 
-	public void setOffMarketReason(OffMarketCode offMarketReason) {
-		this.offMarketReason = offMarketReason;
+	public SecuritiesTradeExecution setOffMarketReason(OffMarketCode offMarketReason) {
+		this.offMarketReason = Objects.requireNonNull(offMarketReason);
+		return this;
 	}
 
 	public SecuritiesTrade getRelatedTrade() {
 		return relatedTrade;
 	}
 
-	public void setRelatedTrade(com.tools20022.repository.entity.SecuritiesTrade relatedTrade) {
-		this.relatedTrade = relatedTrade;
+	public SecuritiesTradeExecution setRelatedTrade(com.tools20022.repository.entity.SecuritiesTrade relatedTrade) {
+		this.relatedTrade = Objects.requireNonNull(relatedTrade);
+		return this;
 	}
 
 	public CurrencyAndAmount getDealExecutionAmount() {
 		return dealExecutionAmount;
 	}
 
-	public void setDealExecutionAmount(CurrencyAndAmount dealExecutionAmount) {
-		this.dealExecutionAmount = dealExecutionAmount;
+	public SecuritiesTradeExecution setDealExecutionAmount(CurrencyAndAmount dealExecutionAmount) {
+		this.dealExecutionAmount = Objects.requireNonNull(dealExecutionAmount);
+		return this;
 	}
 
 	public List<PaymentObligation> getPaymentObligation() {
-		return paymentObligation;
+		return paymentObligation == null ? paymentObligation = new ArrayList<>() : paymentObligation;
 	}
 
-	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
-		this.paymentObligation = paymentObligation;
+	public SecuritiesTradeExecution setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = Objects.requireNonNull(paymentObligation);
+		return this;
 	}
 
 	public List<SecuritiesDeliveryObligation> getSecuritiesDeliveryObligation() {
-		return securitiesDeliveryObligation;
+		return securitiesDeliveryObligation == null ? securitiesDeliveryObligation = new ArrayList<>() : securitiesDeliveryObligation;
 	}
 
-	public void setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
-		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	public SecuritiesTradeExecution setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = Objects.requireNonNull(securitiesDeliveryObligation);
+		return this;
 	}
 
 	public ReportingCode getReportingType() {
 		return reportingType;
 	}
 
-	public void setReportingType(ReportingCode reportingType) {
-		this.reportingType = reportingType;
+	public SecuritiesTradeExecution setReportingType(ReportingCode reportingType) {
+		this.reportingType = Objects.requireNonNull(reportingType);
+		return this;
 	}
 }

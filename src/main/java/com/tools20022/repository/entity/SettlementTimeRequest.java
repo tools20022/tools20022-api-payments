@@ -24,6 +24,8 @@ import com.tools20022.repository.msg.SettlementTimeRequest2;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Provides information on the requested settlement time(s) of the payment
@@ -76,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,8 +97,8 @@ public class SettlementTimeRequest {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Payment payment;
 	/**
-	 * Payment for which settlement times are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,10 +144,8 @@ public class SettlementTimeRequest {
 	};
 	protected ISODateTime cLSTime;
 	/**
-	 * Time by which the amount of money must be credited, with confirmation, to
-	 * the CLS Bank's account at the central bank.<br>
-	 * Usage: Time must be expressed in Central European Time (CET).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,8 +201,8 @@ public class SettlementTimeRequest {
 	};
 	protected ISODateTime tillTime;
 	/**
-	 * Time until when the payment may be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,8 +256,8 @@ public class SettlementTimeRequest {
 	};
 	protected ISODateTime fromTime;
 	/**
-	 * Time as from when the payment may be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -311,8 +311,8 @@ public class SettlementTimeRequest {
 	};
 	protected ISODateTime rejectTime;
 	/**
-	 * Time by when the payment must be settled to avoid rejection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,7 +369,7 @@ public class SettlementTimeRequest {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTimeRequest";
 				definition = "Provides information on the requested settlement time(s) of the payment instruction.";
@@ -387,43 +387,48 @@ public class SettlementTimeRequest {
 		return mmObject_lazy.get();
 	}
 
-	public Payment getPayment() {
-		return payment;
+	public Optional<Payment> getPayment() {
+		return payment == null ? Optional.empty() : Optional.of(payment);
 	}
 
-	public void setPayment(com.tools20022.repository.entity.Payment payment) {
+	public SettlementTimeRequest setPayment(com.tools20022.repository.entity.Payment payment) {
 		this.payment = payment;
+		return this;
 	}
 
 	public ISODateTime getCLSTime() {
 		return cLSTime;
 	}
 
-	public void setCLSTime(ISODateTime cLSTime) {
-		this.cLSTime = cLSTime;
+	public SettlementTimeRequest setCLSTime(ISODateTime cLSTime) {
+		this.cLSTime = Objects.requireNonNull(cLSTime);
+		return this;
 	}
 
 	public ISODateTime getTillTime() {
 		return tillTime;
 	}
 
-	public void setTillTime(ISODateTime tillTime) {
-		this.tillTime = tillTime;
+	public SettlementTimeRequest setTillTime(ISODateTime tillTime) {
+		this.tillTime = Objects.requireNonNull(tillTime);
+		return this;
 	}
 
 	public ISODateTime getFromTime() {
 		return fromTime;
 	}
 
-	public void setFromTime(ISODateTime fromTime) {
-		this.fromTime = fromTime;
+	public SettlementTimeRequest setFromTime(ISODateTime fromTime) {
+		this.fromTime = Objects.requireNonNull(fromTime);
+		return this;
 	}
 
 	public ISODateTime getRejectTime() {
 		return rejectTime;
 	}
 
-	public void setRejectTime(ISODateTime rejectTime) {
-		this.rejectTime = rejectTime;
+	public SettlementTimeRequest setRejectTime(ISODateTime rejectTime) {
+		this.rejectTime = Objects.requireNonNull(rejectTime);
+		return this;
 	}
 }

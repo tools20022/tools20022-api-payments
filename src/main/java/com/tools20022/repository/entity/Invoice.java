@@ -28,9 +28,11 @@ import com.tools20022.repository.msg.BillingCompensation1;
 import com.tools20022.repository.msg.BillingStatement2;
 import com.tools20022.repository.msg.RemittanceAmount2;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * General information about an invoice, such as number, issue date date and
@@ -139,8 +141,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,8 +160,8 @@ public class Invoice {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount creditDebitNoteAmount;
 	/**
-	 * Amount of credit/debit note related to the invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,9 +215,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount totalTaxAmount;
 	/**
-	 * Sum of all tax amounts related to the invoice. It is derived from the
-	 * association between line item and tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,10 +272,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount totalInvoiceAmount;
 	/**
-	 * Total amount of the invoice, being the sum of total invoice lines
-	 * amounts, total invoice additional amounts (allowances and charges) and
-	 * total tax amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -321,8 +320,8 @@ public class Invoice {
 	};
 	protected CurrencyCode invoiceCurrency;
 	/**
-	 * Code specifying the currency of the invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,9 +365,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.DateTimePeriod> periodCovered;
 	/**
-	 * Specifies the period covered by an invoice for instance for recurring
-	 * services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,8 +422,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement;
 	/**
-	 * Specifies the process which takes place to settle an invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -472,8 +470,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount totalCharge;
 	/**
-	 * Algebraical sum of charges related to the invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -518,9 +516,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount totalPrepaidAmount;
 	/**
-	 * Monetary value of the total prepaid amount being reported for this
-	 * settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -567,9 +564,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.LineItem> lineItem;
 	/**
-	 * Unit of information showing the related provision of products and/or
-	 * services and monetary summations reported as a discrete line item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,8 +611,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount totalNetAmount;
 	/**
-	 * Total amount after taxes, adjustments and charges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -661,9 +657,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
-	 * Specifies currency exchange information which is used when currency
-	 * conversion is necessary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -719,8 +714,8 @@ public class Invoice {
 	};
 	protected ExternalBillingCompensationTypeCode billingCompensationType;
 	/**
-	 * Defines the type of billing compensation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -780,8 +775,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.InvoicePartyRole> invoicePartyRole;
 	/**
-	 * Role played by a party in the context of invoices.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -826,8 +821,8 @@ public class Invoice {
 	};
 	protected Invoice originalInvoice;
 	/**
-	 * Invoice to which another invoice is associated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -872,9 +867,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.Invoice> relatedInvoice;
 	/**
-	 * Specifies another invoice linked to the current one, for instance a
-	 * previous invoice for which a credit note is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -920,8 +914,8 @@ public class Invoice {
 	};
 	protected InvoiceFinancingAgreement invoiceFinancingTransaction;
 	/**
-	 * Financing transaction related to an invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -968,8 +962,8 @@ public class Invoice {
 	};
 	protected CurrencyAndAmount billingCompensationAmount;
 	/**
-	 * Specifies the compensation amount of an incorrect billing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1015,8 +1009,8 @@ public class Invoice {
 	};
 	protected InvoiceStatus invoiceStatus;
 	/**
-	 * Status of the invoice or of the billing process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1062,8 +1056,8 @@ public class Invoice {
 	};
 	protected List<com.tools20022.repository.entity.Payment> payment;
 	/**
-	 * Payment related to an invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1107,8 +1101,8 @@ public class Invoice {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates the direction of the invoice amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1155,7 +1149,7 @@ public class Invoice {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Invoice";
 				definition = "General information about an invoice, such as number, issue date date and monetary amounts.";
@@ -1185,159 +1179,179 @@ public class Invoice {
 		return creditDebitNoteAmount;
 	}
 
-	public void setCreditDebitNoteAmount(CurrencyAndAmount creditDebitNoteAmount) {
-		this.creditDebitNoteAmount = creditDebitNoteAmount;
+	public Invoice setCreditDebitNoteAmount(CurrencyAndAmount creditDebitNoteAmount) {
+		this.creditDebitNoteAmount = Objects.requireNonNull(creditDebitNoteAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalTaxAmount() {
 		return totalTaxAmount;
 	}
 
-	public void setTotalTaxAmount(CurrencyAndAmount totalTaxAmount) {
-		this.totalTaxAmount = totalTaxAmount;
+	public Invoice setTotalTaxAmount(CurrencyAndAmount totalTaxAmount) {
+		this.totalTaxAmount = Objects.requireNonNull(totalTaxAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalInvoiceAmount() {
 		return totalInvoiceAmount;
 	}
 
-	public void setTotalInvoiceAmount(CurrencyAndAmount totalInvoiceAmount) {
-		this.totalInvoiceAmount = totalInvoiceAmount;
+	public Invoice setTotalInvoiceAmount(CurrencyAndAmount totalInvoiceAmount) {
+		this.totalInvoiceAmount = Objects.requireNonNull(totalInvoiceAmount);
+		return this;
 	}
 
 	public CurrencyCode getInvoiceCurrency() {
 		return invoiceCurrency;
 	}
 
-	public void setInvoiceCurrency(CurrencyCode invoiceCurrency) {
-		this.invoiceCurrency = invoiceCurrency;
+	public Invoice setInvoiceCurrency(CurrencyCode invoiceCurrency) {
+		this.invoiceCurrency = Objects.requireNonNull(invoiceCurrency);
+		return this;
 	}
 
 	public List<DateTimePeriod> getPeriodCovered() {
-		return periodCovered;
+		return periodCovered == null ? periodCovered = new ArrayList<>() : periodCovered;
 	}
 
-	public void setPeriodCovered(List<com.tools20022.repository.entity.DateTimePeriod> periodCovered) {
-		this.periodCovered = periodCovered;
+	public Invoice setPeriodCovered(List<com.tools20022.repository.entity.DateTimePeriod> periodCovered) {
+		this.periodCovered = Objects.requireNonNull(periodCovered);
+		return this;
 	}
 
 	public List<CommercialTradeSettlement> getTradeSettlement() {
-		return tradeSettlement;
+		return tradeSettlement == null ? tradeSettlement = new ArrayList<>() : tradeSettlement;
 	}
 
-	public void setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
-		this.tradeSettlement = tradeSettlement;
+	public Invoice setTradeSettlement(List<com.tools20022.repository.entity.CommercialTradeSettlement> tradeSettlement) {
+		this.tradeSettlement = Objects.requireNonNull(tradeSettlement);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalCharge() {
 		return totalCharge;
 	}
 
-	public void setTotalCharge(CurrencyAndAmount totalCharge) {
-		this.totalCharge = totalCharge;
+	public Invoice setTotalCharge(CurrencyAndAmount totalCharge) {
+		this.totalCharge = Objects.requireNonNull(totalCharge);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalPrepaidAmount() {
 		return totalPrepaidAmount;
 	}
 
-	public void setTotalPrepaidAmount(CurrencyAndAmount totalPrepaidAmount) {
-		this.totalPrepaidAmount = totalPrepaidAmount;
+	public Invoice setTotalPrepaidAmount(CurrencyAndAmount totalPrepaidAmount) {
+		this.totalPrepaidAmount = Objects.requireNonNull(totalPrepaidAmount);
+		return this;
 	}
 
 	public List<LineItem> getLineItem() {
-		return lineItem;
+		return lineItem == null ? lineItem = new ArrayList<>() : lineItem;
 	}
 
-	public void setLineItem(List<com.tools20022.repository.entity.LineItem> lineItem) {
-		this.lineItem = lineItem;
+	public Invoice setLineItem(List<com.tools20022.repository.entity.LineItem> lineItem) {
+		this.lineItem = Objects.requireNonNull(lineItem);
+		return this;
 	}
 
 	public CurrencyAndAmount getTotalNetAmount() {
 		return totalNetAmount;
 	}
 
-	public void setTotalNetAmount(CurrencyAndAmount totalNetAmount) {
-		this.totalNetAmount = totalNetAmount;
+	public Invoice setTotalNetAmount(CurrencyAndAmount totalNetAmount) {
+		this.totalNetAmount = Objects.requireNonNull(totalNetAmount);
+		return this;
 	}
 
 	public List<CurrencyExchange> getCurrencyExchange() {
-		return currencyExchange;
+		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public Invoice setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public ExternalBillingCompensationTypeCode getBillingCompensationType() {
 		return billingCompensationType;
 	}
 
-	public void setBillingCompensationType(ExternalBillingCompensationTypeCode billingCompensationType) {
-		this.billingCompensationType = billingCompensationType;
+	public Invoice setBillingCompensationType(ExternalBillingCompensationTypeCode billingCompensationType) {
+		this.billingCompensationType = Objects.requireNonNull(billingCompensationType);
+		return this;
 	}
 
 	public List<InvoicePartyRole> getInvoicePartyRole() {
-		return invoicePartyRole;
+		return invoicePartyRole == null ? invoicePartyRole = new ArrayList<>() : invoicePartyRole;
 	}
 
-	public void setInvoicePartyRole(List<com.tools20022.repository.entity.InvoicePartyRole> invoicePartyRole) {
-		this.invoicePartyRole = invoicePartyRole;
+	public Invoice setInvoicePartyRole(List<com.tools20022.repository.entity.InvoicePartyRole> invoicePartyRole) {
+		this.invoicePartyRole = Objects.requireNonNull(invoicePartyRole);
+		return this;
 	}
 
 	public Invoice getOriginalInvoice() {
 		return originalInvoice;
 	}
 
-	public void setOriginalInvoice(com.tools20022.repository.entity.Invoice originalInvoice) {
-		this.originalInvoice = originalInvoice;
+	public Invoice setOriginalInvoice(com.tools20022.repository.entity.Invoice originalInvoice) {
+		this.originalInvoice = Objects.requireNonNull(originalInvoice);
+		return this;
 	}
 
 	public List<Invoice> getRelatedInvoice() {
-		return relatedInvoice;
+		return relatedInvoice == null ? relatedInvoice = new ArrayList<>() : relatedInvoice;
 	}
 
-	public void setRelatedInvoice(List<com.tools20022.repository.entity.Invoice> relatedInvoice) {
-		this.relatedInvoice = relatedInvoice;
+	public Invoice setRelatedInvoice(List<com.tools20022.repository.entity.Invoice> relatedInvoice) {
+		this.relatedInvoice = Objects.requireNonNull(relatedInvoice);
+		return this;
 	}
 
 	public InvoiceFinancingAgreement getInvoiceFinancingTransaction() {
 		return invoiceFinancingTransaction;
 	}
 
-	public void setInvoiceFinancingTransaction(com.tools20022.repository.entity.InvoiceFinancingAgreement invoiceFinancingTransaction) {
-		this.invoiceFinancingTransaction = invoiceFinancingTransaction;
+	public Invoice setInvoiceFinancingTransaction(com.tools20022.repository.entity.InvoiceFinancingAgreement invoiceFinancingTransaction) {
+		this.invoiceFinancingTransaction = Objects.requireNonNull(invoiceFinancingTransaction);
+		return this;
 	}
 
 	public CurrencyAndAmount getBillingCompensationAmount() {
 		return billingCompensationAmount;
 	}
 
-	public void setBillingCompensationAmount(CurrencyAndAmount billingCompensationAmount) {
-		this.billingCompensationAmount = billingCompensationAmount;
+	public Invoice setBillingCompensationAmount(CurrencyAndAmount billingCompensationAmount) {
+		this.billingCompensationAmount = Objects.requireNonNull(billingCompensationAmount);
+		return this;
 	}
 
 	public InvoiceStatus getInvoiceStatus() {
 		return invoiceStatus;
 	}
 
-	public void setInvoiceStatus(com.tools20022.repository.entity.InvoiceStatus invoiceStatus) {
-		this.invoiceStatus = invoiceStatus;
+	public Invoice setInvoiceStatus(com.tools20022.repository.entity.InvoiceStatus invoiceStatus) {
+		this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
+		return this;
 	}
 
 	public List<Payment> getPayment() {
-		return payment;
+		return payment == null ? payment = new ArrayList<>() : payment;
 	}
 
-	public void setPayment(List<com.tools20022.repository.entity.Payment> payment) {
-		this.payment = payment;
+	public Invoice setPayment(List<com.tools20022.repository.entity.Payment> payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Invoice setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 }

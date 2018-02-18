@@ -39,555 +39,555 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InsufficientMoney
- * RejectionReasonV2Code.mmInsufficientMoney}</li>
+ * RejectionReasonV2Code.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidReference
- * RejectionReasonV2Code.mmInvalidReference}</li>
+ * RejectionReasonV2Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SafekeepingAccountRejection
- * RejectionReasonV2Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReasonV2Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InsufficientTresholdPosition
- * RejectionReasonV2Code.mmInsufficientTresholdPosition}</li>
+ * RejectionReasonV2Code.InsufficientTresholdPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#QuantityRejection
- * RejectionReasonV2Code.mmQuantityRejection}</li>
+ * RejectionReasonV2Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#AccountServicerDeadlineMissed
- * RejectionReasonV2Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReasonV2Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SplitVoteNotAllowed
- * RejectionReasonV2Code.mmSplitVoteNotAllowed}</li>
+ * RejectionReasonV2Code.SplitVoteNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PartialVoteNotAllowed
- * RejectionReasonV2Code.mmPartialVoteNotAllowed}</li>
+ * RejectionReasonV2Code.PartialVoteNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingOrInvalidPOA
- * RejectionReasonV2Code.mmMissingOrInvalidPOA}</li>
+ * RejectionReasonV2Code.MissingOrInvalidPOA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ProxyCardDiscrepancy
- * RejectionReasonV2Code.mmProxyCardDiscrepancy}</li>
+ * RejectionReasonV2Code.ProxyCardDiscrepancy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RegistrationDiscrepancy
- * RejectionReasonV2Code.mmRegistrationDiscrepancy}</li>
+ * RejectionReasonV2Code.RegistrationDiscrepancy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RejectedByIssuerOrRegistrar
- * RejectionReasonV2Code.mmRejectedByIssuerOrRegistrar}</li>
+ * RejectionReasonV2Code.RejectedByIssuerOrRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidSecurity
- * RejectionReasonV2Code.mmInvalidSecurity}</li>
+ * RejectionReasonV2Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InstructionIrrevocable
- * RejectionReasonV2Code.mmInstructionIrrevocable}</li>
+ * RejectionReasonV2Code.InstructionIrrevocable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#OptionCancelled
- * RejectionReasonV2Code.mmOptionCancelled}</li>
+ * RejectionReasonV2Code.OptionCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#OptionInactive
- * RejectionReasonV2Code.mmOptionInactive}</li>
+ * RejectionReasonV2Code.OptionInactive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidForTaxAuthorities
- * RejectionReasonV2Code.mmInvalidForTaxAuthorities}</li>
+ * RejectionReasonV2Code.InvalidForTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RefusedByTaxAuthorities
- * RejectionReasonV2Code.mmRefusedByTaxAuthorities}</li>
+ * RejectionReasonV2Code.RefusedByTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#LackofSecurities
- * RejectionReasonV2Code.mmLackofSecurities}</li>
+ * RejectionReasonV2Code.LackofSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MarketDeadlineMissed
- * RejectionReasonV2Code.mmMarketDeadlineMissed}</li>
+ * RejectionReasonV2Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#Mismatch
- * RejectionReasonV2Code.mmMismatch}</li>
+ * RejectionReasonV2Code.Mismatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#OptionNumberRejection
- * RejectionReasonV2Code.mmOptionNumberRejection}</li>
+ * RejectionReasonV2Code.OptionNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidOptionType
- * RejectionReasonV2Code.mmInvalidOptionType}</li>
+ * RejectionReasonV2Code.InvalidOptionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RejectedSinceAlreadyCancelled
- * RejectionReasonV2Code.mmRejectedSinceAlreadyCancelled}</li>
+ * RejectionReasonV2Code.RejectedSinceAlreadyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RejectedSinceInProgress
- * RejectionReasonV2Code.mmRejectedSinceInProgress}</li>
+ * RejectionReasonV2Code.RejectedSinceInProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#UnrecognisedIdentification
- * RejectionReasonV2Code.mmUnrecognisedIdentification}</li>
+ * RejectionReasonV2Code.UnrecognisedIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#UnknownSymbol
- * RejectionReasonV2Code.mmUnknownSymbol}</li>
+ * RejectionReasonV2Code.UnknownSymbol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ClosedExchange
- * RejectionReasonV2Code.mmClosedExchange}</li>
+ * RejectionReasonV2Code.ClosedExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ExceedsLimit
- * RejectionReasonV2Code.mmExceedsLimit}</li>
+ * RejectionReasonV2Code.ExceedsLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TooLate
- * RejectionReasonV2Code.mmTooLate}</li>
+ * RejectionReasonV2Code.TooLate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidPrice
- * RejectionReasonV2Code.mmInvalidPrice}</li>
+ * RejectionReasonV2Code.InvalidPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotAuthorised
- * RejectionReasonV2Code.mmNotAuthorised}</li>
+ * RejectionReasonV2Code.NotAuthorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoMatchInquiry
- * RejectionReasonV2Code.mmNoMatchInquiry}</li>
+ * RejectionReasonV2Code.NoMatchInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoInstrumentMarket
- * RejectionReasonV2Code.mmNoInstrumentMarket}</li>
+ * RejectionReasonV2Code.NoInstrumentMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoInventory
- * RejectionReasonV2Code.mmNoInventory}</li>
+ * RejectionReasonV2Code.NoInventory}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#Pass
- * RejectionReasonV2Code.mmPass}</li>
+ * RejectionReasonV2Code.Pass}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PriceExceeds
- * RejectionReasonV2Code.mmPriceExceeds}</li>
+ * RejectionReasonV2Code.PriceExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#QuantityExceeds
- * RejectionReasonV2Code.mmQuantityExceeds}</li>
+ * RejectionReasonV2Code.QuantityExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#WrongSide
- * RejectionReasonV2Code.mmWrongSide}</li>
+ * RejectionReasonV2Code.WrongSide}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CalculationDifference
- * RejectionReasonV2Code.mmCalculationDifference}</li>
+ * RejectionReasonV2Code.CalculationDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InsufficientCredit
- * RejectionReasonV2Code.mmInsufficientCredit}</li>
+ * RejectionReasonV2Code.InsufficientCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#AgreementStartDate
- * RejectionReasonV2Code.mmAgreementStartDate}</li>
+ * RejectionReasonV2Code.AgreementStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TransactionCallDelay
- * RejectionReasonV2Code.mmTransactionCallDelay}</li>
+ * RejectionReasonV2Code.TransactionCallDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CashAccount
- * RejectionReasonV2Code.mmCashAccount}</li>
+ * RejectionReasonV2Code.CashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#DealPrice
- * RejectionReasonV2Code.mmDealPrice}</li>
+ * RejectionReasonV2Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ForfeitAmount
- * RejectionReasonV2Code.mmForfeitAmount}</li>
+ * RejectionReasonV2Code.ForfeitAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#DeliveringCustodian
- * RejectionReasonV2Code.mmDeliveringCustodian}</li>
+ * RejectionReasonV2Code.DeliveringCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingCustodian
- * RejectionReasonV2Code.mmReceivingCustodian}</li>
+ * RejectionReasonV2Code.ReceivingCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotFoundRejection
- * RejectionReasonV2Code.mmNotFoundRejection}</li>
+ * RejectionReasonV2Code.NotFoundRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#QuantityUnitType
- * RejectionReasonV2Code.mmQuantityUnitType}</li>
+ * RejectionReasonV2Code.QuantityUnitType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TerminationTransactionAmount
- * RejectionReasonV2Code.mmTerminationTransactionAmount}</li>
+ * RejectionReasonV2Code.TerminationTransactionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RepurchaseRate
- * RejectionReasonV2Code.mmRepurchaseRate}</li>
+ * RejectionReasonV2Code.RepurchaseRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PremiumAmount
- * RejectionReasonV2Code.mmPremiumAmount}</li>
+ * RejectionReasonV2Code.PremiumAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RepurchaseRateType
- * RejectionReasonV2Code.mmRepurchaseRateType}</li>
+ * RejectionReasonV2Code.RepurchaseRateType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SpreadRate
- * RejectionReasonV2Code.mmSpreadRate}</li>
+ * RejectionReasonV2Code.SpreadRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TradedSecuritiesQuantity
- * RejectionReasonV2Code.mmTradedSecuritiesQuantity}</li>
+ * RejectionReasonV2Code.TradedSecuritiesQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TradeDate
- * RejectionReasonV2Code.mmTradeDate}</li>
+ * RejectionReasonV2Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingAgent
- * RejectionReasonV2Code.mmReceivingAgent}</li>
+ * RejectionReasonV2Code.ReceivingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#Intermediary
- * RejectionReasonV2Code.mmIntermediary}</li>
+ * RejectionReasonV2Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PlaceOfTrade
- * RejectionReasonV2Code.mmPlaceOfTrade}</li>
+ * RejectionReasonV2Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvestorNameAddressUnknown
- * RejectionReasonV2Code.mmInvestorNameAddressUnknown}</li>
+ * RejectionReasonV2Code.InvestorNameAddressUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ImpossibleToUseTheRTGSSystemInstructed
- * RejectionReasonV2Code.mmImpossibleToUseTheRTGSSystemInstructed}</li>
+ * RejectionReasonV2Code.ImpossibleToUseTheRTGSSystemInstructed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SettlementAmountCurrencyRejection
- * RejectionReasonV2Code.mmSettlementAmountCurrencyRejection}</li>
+ * RejectionReasonV2Code.SettlementAmountCurrencyRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#LetterOfGuaranteeIndicatorRejection
- * RejectionReasonV2Code.mmLetterOfGuaranteeIndicatorRejection}</li>
+ * RejectionReasonV2Code.LetterOfGuaranteeIndicatorRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingCreditAuthorisation
- * RejectionReasonV2Code.mmMissingCreditAuthorisation}</li>
+ * RejectionReasonV2Code.MissingCreditAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#AddressDetailsRejection
- * RejectionReasonV2Code.mmAddressDetailsRejection}</li>
+ * RejectionReasonV2Code.AddressDetailsRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PhysicalSettlementImpossible
- * RejectionReasonV2Code.mmPhysicalSettlementImpossible}</li>
+ * RejectionReasonV2Code.PhysicalSettlementImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReferenceRejection
- * RejectionReasonV2Code.mmReferenceRejection}</li>
+ * RejectionReasonV2Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SettlementAmountRejection
- * RejectionReasonV2Code.mmSettlementAmountRejection}</li>
+ * RejectionReasonV2Code.SettlementAmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingStatutes
- * RejectionReasonV2Code.mmMissingStatutes}</li>
+ * RejectionReasonV2Code.MissingStatutes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotStampedOrSigned
- * RejectionReasonV2Code.mmNotStampedOrSigned}</li>
+ * RejectionReasonV2Code.NotStampedOrSigned}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidSignature
- * RejectionReasonV2Code.mmInvalidSignature}</li>
+ * RejectionReasonV2Code.InvalidSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ShareholderNumberRejection
- * RejectionReasonV2Code.mmShareholderNumberRejection}</li>
+ * RejectionReasonV2Code.ShareholderNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MinimumSettlementQuantity
- * RejectionReasonV2Code.mmMinimumSettlementQuantity}</li>
+ * RejectionReasonV2Code.MinimumSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoMatch
- * RejectionReasonV2Code.mmNoMatch}</li>
+ * RejectionReasonV2Code.NoMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingLegalPower
- * RejectionReasonV2Code.mmMissingLegalPower}</li>
+ * RejectionReasonV2Code.MissingLegalPower}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ProcessingBatchRejection
- * RejectionReasonV2Code.mmProcessingBatchRejection}</li>
+ * RejectionReasonV2Code.ProcessingBatchRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TypeOfOwnershipRejection
- * RejectionReasonV2Code.mmTypeOfOwnershipRejection}</li>
+ * RejectionReasonV2Code.TypeOfOwnershipRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MultipleSettlementQuantity
- * RejectionReasonV2Code.mmMultipleSettlementQuantity}</li>
+ * RejectionReasonV2Code.MultipleSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#WrongRegistrationRequest
- * RejectionReasonV2Code.mmWrongRegistrationRequest}</li>
+ * RejectionReasonV2Code.WrongRegistrationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TaxStatusRejection
- * RejectionReasonV2Code.mmTaxStatusRejection}</li>
+ * RejectionReasonV2Code.TaxStatusRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#DisagreementInRegistrationReason
- * RejectionReasonV2Code.mmDisagreementInRegistrationReason}</li>
+ * RejectionReasonV2Code.DisagreementInRegistrationReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingRegistrationRequest
- * RejectionReasonV2Code.mmMissingRegistrationRequest}</li>
+ * RejectionReasonV2Code.MissingRegistrationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SettlementSystemMethodRejection
- * RejectionReasonV2Code.mmSettlementSystemMethodRejection}</li>
+ * RejectionReasonV2Code.SettlementSystemMethodRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CommonReferenceRejection
- * RejectionReasonV2Code.mmCommonReferenceRejection}</li>
+ * RejectionReasonV2Code.CommonReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NarrativeInformationRejection
- * RejectionReasonV2Code.mmNarrativeInformationRejection}</li>
+ * RejectionReasonV2Code.NarrativeInformationRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#IncorrectProgramConversion
- * RejectionReasonV2Code.mmIncorrectProgramConversion}</li>
+ * RejectionReasonV2Code.IncorrectProgramConversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InsufficientCollateral
- * RejectionReasonV2Code.mmInsufficientCollateral}</li>
+ * RejectionReasonV2Code.InsufficientCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#BusinessPartnerNumberRejection
- * RejectionReasonV2Code.mmBusinessPartnerNumberRejection}</li>
+ * RejectionReasonV2Code.BusinessPartnerNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#BankReferenceNumberRejection
- * RejectionReasonV2Code.mmBankReferenceNumberRejection}</li>
+ * RejectionReasonV2Code.BankReferenceNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TypeOfOrderRejection
- * RejectionReasonV2Code.mmTypeOfOrderRejection}</li>
+ * RejectionReasonV2Code.TypeOfOrderRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CorporateActionRejection
- * RejectionReasonV2Code.mmCorporateActionRejection}</li>
+ * RejectionReasonV2Code.CorporateActionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ImpossibleCashSettlementSystem
- * RejectionReasonV2Code.mmImpossibleCashSettlementSystem}</li>
+ * RejectionReasonV2Code.ImpossibleCashSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CommercializationContractRejection
- * RejectionReasonV2Code.mmCommercializationContractRejection}</li>
+ * RejectionReasonV2Code.CommercializationContractRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ConcentrationLimitExceeded
- * RejectionReasonV2Code.mmConcentrationLimitExceeded}</li>
+ * RejectionReasonV2Code.ConcentrationLimitExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#UnknownDealExposure
- * RejectionReasonV2Code.mmUnknownDealExposure}</li>
+ * RejectionReasonV2Code.UnknownDealExposure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SettlementDateRejection
- * RejectionReasonV2Code.mmSettlementDateRejection}</li>
+ * RejectionReasonV2Code.SettlementDateRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#DisagreeWithCallAmount
- * RejectionReasonV2Code.mmDisagreeWithCallAmount}</li>
+ * RejectionReasonV2Code.DisagreeWithCallAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#DisagreeWithExposureAmount
- * RejectionReasonV2Code.mmDisagreeWithExposureAmount}</li>
+ * RejectionReasonV2Code.DisagreeWithExposureAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RegistrationRequestDataAndOrderRejection
- * RejectionReasonV2Code.mmRegistrationRequestDataAndOrderRejection}</li>
+ * RejectionReasonV2Code.RegistrationRequestDataAndOrderRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#FeeCommissionRejection
- * RejectionReasonV2Code.mmFeeCommissionRejection}</li>
+ * RejectionReasonV2Code.FeeCommissionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#IncorrectActivityType
- * RejectionReasonV2Code.mmIncorrectActivityType}</li>
+ * RejectionReasonV2Code.IncorrectActivityType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SettlementTransactionRejection
- * RejectionReasonV2Code.mmSettlementTransactionRejection}</li>
+ * RejectionReasonV2Code.SettlementTransactionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ClosingDateTimeRejection
- * RejectionReasonV2Code.mmClosingDateTimeRejection}</li>
+ * RejectionReasonV2Code.ClosingDateTimeRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#VariableRateSupportRejection
- * RejectionReasonV2Code.mmVariableRateSupportRejection}</li>
+ * RejectionReasonV2Code.VariableRateSupportRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingOption
- * RejectionReasonV2Code.mmMissingOption}</li>
+ * RejectionReasonV2Code.MissingOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotDefinedAgent
- * RejectionReasonV2Code.mmNotDefinedAgent}</li>
+ * RejectionReasonV2Code.NotDefinedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingPeriodEndDate
- * RejectionReasonV2Code.mmMissingPeriodEndDate}</li>
+ * RejectionReasonV2Code.MissingPeriodEndDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingPeriodStartDate
- * RejectionReasonV2Code.mmMissingPeriodStartDate}</li>
+ * RejectionReasonV2Code.MissingPeriodStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingResultingAmount
- * RejectionReasonV2Code.mmMissingResultingAmount}</li>
+ * RejectionReasonV2Code.MissingResultingAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#WrongSecurityType
- * RejectionReasonV2Code.mmWrongSecurityType}</li>
+ * RejectionReasonV2Code.WrongSecurityType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotEligibleDisperseSecurity
- * RejectionReasonV2Code.mmNotEligibleDisperseSecurity}</li>
+ * RejectionReasonV2Code.NotEligibleDisperseSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NonEligibleSecurity
- * RejectionReasonV2Code.mmNonEligibleSecurity}</li>
+ * RejectionReasonV2Code.NonEligibleSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingExchangeRate
- * RejectionReasonV2Code.mmMissingExchangeRate}</li>
+ * RejectionReasonV2Code.MissingExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ValueDateBeforePaymentDate
- * RejectionReasonV2Code.mmValueDateBeforePaymentDate}</li>
+ * RejectionReasonV2Code.ValueDateBeforePaymentDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#UnexpectedAccruedInterest
- * RejectionReasonV2Code.mmUnexpectedAccruedInterest}</li>
+ * RejectionReasonV2Code.UnexpectedAccruedInterest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoAccessToService
- * RejectionReasonV2Code.mmNoAccessToService}</li>
+ * RejectionReasonV2Code.NoAccessToService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#IncorrectCertification
- * RejectionReasonV2Code.mmIncorrectCertification}</li>
+ * RejectionReasonV2Code.IncorrectCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotBusinessDay
- * RejectionReasonV2Code.mmNotBusinessDay}</li>
+ * RejectionReasonV2Code.NotBusinessDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#EffectiveDayAfterPaymentDate
- * RejectionReasonV2Code.mmEffectiveDayAfterPaymentDate}</li>
+ * RejectionReasonV2Code.EffectiveDayAfterPaymentDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#GrossAmountLessThanNetAmount
- * RejectionReasonV2Code.mmGrossAmountLessThanNetAmount}</li>
+ * RejectionReasonV2Code.GrossAmountLessThanNetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingDefaultOption
- * RejectionReasonV2Code.mmMissingDefaultOption}</li>
+ * RejectionReasonV2Code.MissingDefaultOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NonActiveParty
- * RejectionReasonV2Code.mmNonActiveParty}</li>
+ * RejectionReasonV2Code.NonActiveParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PeriodEndDateBeforeStartDate
- * RejectionReasonV2Code.mmPeriodEndDateBeforeStartDate}</li>
+ * RejectionReasonV2Code.PeriodEndDateBeforeStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#RecordDateAfterPaymentDate
- * RejectionReasonV2Code.mmRecordDateAfterPaymentDate}</li>
+ * RejectionReasonV2Code.RecordDateAfterPaymentDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#FailedValidation
- * RejectionReasonV2Code.mmFailedValidation}</li>
+ * RejectionReasonV2Code.FailedValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#EventAlreadyDeactivated
- * RejectionReasonV2Code.mmEventAlreadyDeactivated}</li>
+ * RejectionReasonV2Code.EventAlreadyDeactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoPendingDeactivationInstruction
- * RejectionReasonV2Code.mmNoPendingDeactivationInstruction}</li>
+ * RejectionReasonV2Code.NoPendingDeactivationInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#AmendmentNotAllowed
- * RejectionReasonV2Code.mmAmendmentNotAllowed}</li>
+ * RejectionReasonV2Code.AmendmentNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#CancellationNotAllowed
- * RejectionReasonV2Code.mmCancellationNotAllowed}</li>
+ * RejectionReasonV2Code.CancellationNotAllowed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#Late
- * RejectionReasonV2Code.mmLate}</li>
+ * RejectionReasonV2Code.Late}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ElectionAlreadyCancelled
- * RejectionReasonV2Code.mmElectionAlreadyCancelled}</li>
+ * RejectionReasonV2Code.ElectionAlreadyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ElectionAlreadyAmended
- * RejectionReasonV2Code.mmElectionAlreadyAmended}</li>
+ * RejectionReasonV2Code.ElectionAlreadyAmended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SameCAIdentification
- * RejectionReasonV2Code.mmSameCAIdentification}</li>
+ * RejectionReasonV2Code.SameCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidCAIdentification
- * RejectionReasonV2Code.mmInvalidCAIdentification}</li>
+ * RejectionReasonV2Code.InvalidCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidAgent
- * RejectionReasonV2Code.mmInvalidAgent}</li>
+ * RejectionReasonV2Code.InvalidAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotMainAgent
- * RejectionReasonV2Code.mmNotMainAgent}</li>
+ * RejectionReasonV2Code.NotMainAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidOption
- * RejectionReasonV2Code.mmInvalidOption}</li>
+ * RejectionReasonV2Code.InvalidOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PendingDeactivation
- * RejectionReasonV2Code.mmPendingDeactivation}</li>
+ * RejectionReasonV2Code.PendingDeactivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotIdentifiedCashAccount
- * RejectionReasonV2Code.mmNotIdentifiedCashAccount}</li>
+ * RejectionReasonV2Code.NotIdentifiedCashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotIdentifiedCorrespondentBank
- * RejectionReasonV2Code.mmNotIdentifiedCorrespondentBank}</li>
+ * RejectionReasonV2Code.NotIdentifiedCorrespondentBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidStandingInstructionType
- * RejectionReasonV2Code.mmInvalidStandingInstructionType}</li>
+ * RejectionReasonV2Code.InvalidStandingInstructionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoHolding
- * RejectionReasonV2Code.mmNoHolding}</li>
+ * RejectionReasonV2Code.NoHolding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InsufficientBalance
- * RejectionReasonV2Code.mmInsufficientBalance}</li>
+ * RejectionReasonV2Code.InsufficientBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#SameIdentification
- * RejectionReasonV2Code.mmSameIdentification}</li>
+ * RejectionReasonV2Code.SameIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#OptionAlreadyDeactivated
- * RejectionReasonV2Code.mmOptionAlreadyDeactivated}</li>
+ * RejectionReasonV2Code.OptionAlreadyDeactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidEventType
- * RejectionReasonV2Code.mmInvalidEventType}</li>
+ * RejectionReasonV2Code.InvalidEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidUnderlyingSecurity
- * RejectionReasonV2Code.mmInvalidUnderlyingSecurity}</li>
+ * RejectionReasonV2Code.InvalidUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidEventProcessingType
- * RejectionReasonV2Code.mmInvalidEventProcessingType}</li>
+ * RejectionReasonV2Code.InvalidEventProcessingType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidMandatoryVoluntaryEventType
- * RejectionReasonV2Code.mmInvalidMandatoryVoluntaryEventType}</li>
+ * RejectionReasonV2Code.InvalidMandatoryVoluntaryEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidCorporateActionInformation
- * RejectionReasonV2Code.mmInvalidCorporateActionInformation}</li>
+ * RejectionReasonV2Code.InvalidCorporateActionInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidDetails
- * RejectionReasonV2Code.mmInvalidDetails}</li>
+ * RejectionReasonV2Code.InvalidDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NoRemainingOption
- * RejectionReasonV2Code.mmNoRemainingOption}</li>
+ * RejectionReasonV2Code.NoRemainingOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MismatchedCAIdentification
- * RejectionReasonV2Code.mmMismatchedCAIdentification}</li>
+ * RejectionReasonV2Code.MismatchedCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotApplicable
- * RejectionReasonV2Code.mmNotApplicable}</li>
+ * RejectionReasonV2Code.NotApplicable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidMovementInformation
- * RejectionReasonV2Code.mmInvalidMovementInformation}</li>
+ * RejectionReasonV2Code.InvalidMovementInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MovementAlreadySettled
- * RejectionReasonV2Code.mmMovementAlreadySettled}</li>
+ * RejectionReasonV2Code.MovementAlreadySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NarrativeReason
- * RejectionReasonV2Code.mmNarrativeReason}</li>
+ * RejectionReasonV2Code.NarrativeReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidIdentification
- * RejectionReasonV2Code.mmInvalidIdentification}</li>
+ * RejectionReasonV2Code.InvalidIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingCertification
- * RejectionReasonV2Code.mmMissingCertification}</li>
+ * RejectionReasonV2Code.MissingCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#LackOfStampDuty
- * RejectionReasonV2Code.mmLackOfStampDuty}</li>
+ * RejectionReasonV2Code.LackOfStampDuty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidRequest
- * RejectionReasonV2Code.mmInvalidRequest}</li>
+ * RejectionReasonV2Code.InvalidRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PlaceOfSafekeeping
- * RejectionReasonV2Code.mmPlaceOfSafekeeping}</li>
+ * RejectionReasonV2Code.PlaceOfSafekeeping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#Other
- * RejectionReasonV2Code.mmOther}</li>
+ * RejectionReasonV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingDeliveringParty3
- * RejectionReasonV2Code.mmReceivingDeliveringParty3}</li>
+ * RejectionReasonV2Code.ReceivingDeliveringParty3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingDeliveringParty2
- * RejectionReasonV2Code.mmReceivingDeliveringParty2}</li>
+ * RejectionReasonV2Code.ReceivingDeliveringParty2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingDeliveringParty1
- * RejectionReasonV2Code.mmReceivingDeliveringParty1}</li>
+ * RejectionReasonV2Code.ReceivingDeliveringParty1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ReceivingDeliveringDepository
- * RejectionReasonV2Code.mmReceivingDeliveringDepository}</li>
+ * RejectionReasonV2Code.ReceivingDeliveringDepository}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidModificationRequest
- * RejectionReasonV2Code.mmInvalidModificationRequest}</li>
+ * RejectionReasonV2Code.InvalidModificationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidLink
- * RejectionReasonV2Code.mmInvalidLink}</li>
+ * RejectionReasonV2Code.InvalidLink}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidBalance
- * RejectionReasonV2Code.mmInvalidBalance}</li>
+ * RejectionReasonV2Code.InvalidBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidLotNumber
- * RejectionReasonV2Code.mmInvalidLotNumber}</li>
+ * RejectionReasonV2Code.InvalidLotNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidRule
- * RejectionReasonV2Code.mmInvalidRule}</li>
+ * RejectionReasonV2Code.InvalidRule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#PlaceOfListing
- * RejectionReasonV2Code.mmPlaceOfListing}</li>
+ * RejectionReasonV2Code.PlaceOfListing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#InvalidInvestorParty
- * RejectionReasonV2Code.mmInvalidInvestorParty}</li>
+ * RejectionReasonV2Code.InvalidInvestorParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#MissingBeneficiaryOwnerDetails
- * RejectionReasonV2Code.mmMissingBeneficiaryOwnerDetails}</li>
+ * RejectionReasonV2Code.MissingBeneficiaryOwnerDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#ClosingTransactionAmount
- * RejectionReasonV2Code.mmClosingTransactionAmount}</li>
+ * RejectionReasonV2Code.ClosingTransactionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#OrderDateNotProvided
- * RejectionReasonV2Code.mmOrderDateNotProvided}</li>
+ * RejectionReasonV2Code.OrderDateNotProvided}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TradedQuantityHigherThanOriginalOrderQuantity
- * RejectionReasonV2Code.mmTradedQuantityHigherThanOriginalOrderQuantity}</li>
+ * RejectionReasonV2Code.TradedQuantityHigherThanOriginalOrderQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TransactionNoticeAlreadyAcceptedOrRejected
- * RejectionReasonV2Code.mmTransactionNoticeAlreadyAcceptedOrRejected}</li>
+ * RejectionReasonV2Code.TransactionNoticeAlreadyAcceptedOrRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#TransactionNoticeIDUnknown
- * RejectionReasonV2Code.mmTransactionNoticeIDUnknown}</li>
+ * RejectionReasonV2Code.TransactionNoticeIDUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV2Code#NotAvailable
- * RejectionReasonV2Code.mmNotAvailable}</li>
+ * RejectionReasonV2Code.NotAvailable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -6241,7 +6241,7 @@ public class RejectionReasonV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ULNK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReasonV2Code";

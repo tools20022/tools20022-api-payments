@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Time span defined by a start date and time, and an end date and time.
@@ -471,8 +470,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -489,8 +488,8 @@ public class DateTimePeriod {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime fromDateTime;
 	/**
-	 * Date and time at which the range starts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -572,8 +571,8 @@ public class DateTimePeriod {
 	};
 	protected ISODateTime toDateTime;
 	/**
-	 * Date and time at which the range ends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,8 +646,8 @@ public class DateTimePeriod {
 	};
 	protected StandingOrder relatedStandingOrder;
 	/**
-	 * Standing order for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -695,8 +694,8 @@ public class DateTimePeriod {
 	};
 	protected PaymentInstruction paymentInstruction;
 	/**
-	 * Payment instruction for which a processing validity time is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -744,8 +743,8 @@ public class DateTimePeriod {
 	};
 	protected Number numberOfDays;
 	/**
-	 * Period specified as a number of days.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -798,8 +797,8 @@ public class DateTimePeriod {
 	};
 	protected ValuationStatistics valuationStatistics;
 	/**
-	 * Valuation statistics for which a reference period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -847,8 +846,8 @@ public class DateTimePeriod {
 	};
 	protected PerformanceFactors performanceFactors;
 	/**
-	 * Performance factors for which an accumulation period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -896,8 +895,8 @@ public class DateTimePeriod {
 	};
 	protected Status status;
 	/**
-	 * Status for which a validity time is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -943,8 +942,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesPricing priceCalculationRelatedPricing;
 	/**
-	 * Securities pricing for which a price calculation period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -992,8 +991,8 @@ public class DateTimePeriod {
 	};
 	protected CorporateActionOption corporateActionOption;
 	/**
-	 * Corporate action option for which an action period is defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1042,8 +1041,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesProceedsDefinition parallelTradingProceedsDefinition;
 	/**
-	 * Securities proceeds for which a parallel trading period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1092,8 +1091,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod privilegeSuspensionCorporateAction;
 	/**
-	 * Corporate event for which a privilege suspension period has been defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1142,9 +1141,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod withdrawalSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for withdrawals is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1193,8 +1191,8 @@ public class DateTimePeriod {
 	};
 	protected InterestCalculation relatedInterestCalculation;
 	/**
-	 * Interest calculation process for which an interest period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1243,8 +1241,8 @@ public class DateTimePeriod {
 	};
 	protected BiddingConditions biddingConditions;
 	/**
-	 * Bidding conditions for which a compulsory purchase period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1293,8 +1291,8 @@ public class DateTimePeriod {
 	};
 	protected ClassAction classAction;
 	/**
-	 * Class action for which a claim period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1341,9 +1339,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod bookEntryTransferSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for book entry transfers is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1392,9 +1389,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod depositAtAgentSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for deposits at agent is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1443,8 +1439,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod depositSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for deposits is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1493,8 +1489,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod pledgeSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for pledges is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1543,9 +1539,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod segregationPeriodRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for segregation is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1594,9 +1589,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for withdrawals at agent is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1645,9 +1639,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for withdrawals in nominee
-	 * name is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1696,9 +1689,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for withdrawals in street
-	 * name is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1747,8 +1739,8 @@ public class DateTimePeriod {
 	};
 	protected CorporateActionEvent bookClosureCorporateAction;
 	/**
-	 * Corporate action for which a book closure period has been specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1797,9 +1789,8 @@ public class DateTimePeriod {
 	};
 	protected SuspensionPeriod coDepositoriesSuspensionRelatedEvent;
 	/**
-	 * Corporate event for which a suspension period for co-depositories is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1848,8 +1839,8 @@ public class DateTimePeriod {
 	};
 	protected Debt extendiblePeriodDebt;
 	/**
-	 * Debt for which an extendible period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1895,8 +1886,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesConversion securitiesConversion;
 	/**
-	 * Securities conversion process for which a conversion period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1946,8 +1937,8 @@ public class DateTimePeriod {
 	};
 	protected YieldCalculation yieldCalculation;
 	/**
-	 * Yield calculation for which a value period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1994,8 +1985,8 @@ public class DateTimePeriod {
 	};
 	protected Debt customDateDebt;
 	/**
-	 * Debt for which a custom date is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2041,8 +2032,8 @@ public class DateTimePeriod {
 	};
 	protected TaxPeriod taxPeriod;
 	/**
-	 * Tax period for which a from/to date is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2089,8 +2080,8 @@ public class DateTimePeriod {
 	};
 	protected Account account;
 	/**
-	 * Account for which a reported period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2136,8 +2127,8 @@ public class DateTimePeriod {
 	};
 	protected Agreement relatedAgreement;
 	/**
-	 * Agreement for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2184,8 +2175,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition;
 	/**
-	 * Securities proceeds for which an assented line period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2234,8 +2225,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition;
 	/**
-	 * Securities proceeds for which a sell thru issuer period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2284,8 +2275,8 @@ public class DateTimePeriod {
 	};
 	protected ProductDelivery relatedProductDelivery;
 	/**
-	 * Trade delivery process for which a delivery period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2333,8 +2324,8 @@ public class DateTimePeriod {
 	};
 	protected Invoice relatedInvoice;
 	/**
-	 * Invoice for which a period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2380,8 +2371,8 @@ public class DateTimePeriod {
 	};
 	protected TradeCertificate tradeCertificate;
 	/**
-	 * Trade certificate for which an inspection date is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2429,8 +2420,8 @@ public class DateTimePeriod {
 	};
 	protected PortfolioValuation relatedPortfolioValuation;
 	/**
-	 * Portfolio valuation process for which a valuation period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2478,8 +2469,8 @@ public class DateTimePeriod {
 	};
 	protected System system;
 	/**
-	 * System for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2525,8 +2516,8 @@ public class DateTimePeriod {
 	};
 	protected AccountRestriction accountRestriction;
 	/**
-	 * Account restriction for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2574,8 +2565,8 @@ public class DateTimePeriod {
 	};
 	protected BankOperation bankOperation;
 	/**
-	 * Bank operation for which an applicable period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2623,8 +2614,8 @@ public class DateTimePeriod {
 	};
 	protected CorporateActionEvent relatedCorporateAction;
 	/**
-	 * Corporate action event for which a trading period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2673,8 +2664,8 @@ public class DateTimePeriod {
 	};
 	protected List<com.tools20022.repository.entity.Limit> relatedLimit;
 	/**
-	 * Limit for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2719,8 +2710,8 @@ public class DateTimePeriod {
 	};
 	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification;
 	/**
-	 * Party identification for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2768,8 +2759,8 @@ public class DateTimePeriod {
 	};
 	protected Scheme assessmentValidityScheme;
 	/**
-	 * Scheme for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2815,9 +2806,8 @@ public class DateTimePeriod {
 	};
 	protected Distribution exercisePeriodDistribution;
 	/**
-	 * Cash and securities distribution information for which an exercise period
-	 * is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2866,9 +2856,8 @@ public class DateTimePeriod {
 	};
 	protected Distribution offerPeriodDistribution;
 	/**
-	 * Cash and securities distribution information for which an offer period is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2917,9 +2906,8 @@ public class DateTimePeriod {
 	};
 	protected Distribution tradingPeriodDistribution;
 	/**
-	 * Cash and securities distribution information for which a trading period
-	 * is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2968,9 +2956,8 @@ public class DateTimePeriod {
 	};
 	protected Distribution blockingPeriodDistribution;
 	/**
-	 * Cash and securities distribution information for which a blocking period
-	 * is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3019,8 +3006,8 @@ public class DateTimePeriod {
 	};
 	protected Guarantee guarantee;
 	/**
-	 * Guarantee for which an effective period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3067,8 +3054,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesPricing priceFactRelatedPricing;
 	/**
-	 * Securities pricing for which a price fact period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3116,8 +3103,8 @@ public class DateTimePeriod {
 	};
 	protected Distribution cashDistribution;
 	/**
-	 * Cash distribution for which an interest period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3165,8 +3152,8 @@ public class DateTimePeriod {
 	};
 	protected ComponentSecurity componentSecurity;
 	/**
-	 * Security component for which a separation period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3214,8 +3201,8 @@ public class DateTimePeriod {
 	};
 	protected TradingSession tradingSession;
 	/**
-	 * Trading session for which a time bracket is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3262,8 +3249,8 @@ public class DateTimePeriod {
 	};
 	protected FinancialInstrumentSwap financialInstrumentSwap;
 	/**
-	 * Swap for which a maturity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3311,8 +3298,8 @@ public class DateTimePeriod {
 	};
 	protected PostalAddress relatedPostalAddress;
 	/**
-	 * Postal address for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3359,8 +3346,8 @@ public class DateTimePeriod {
 	};
 	protected RedemptionSchedule redemptionSchedule;
 	/**
-	 * Redemption schedule for which a notice period is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3408,8 +3395,8 @@ public class DateTimePeriod {
 	};
 	protected AccountLink relatedAccountLink;
 	/**
-	 * Link between two accounts for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3457,8 +3444,8 @@ public class DateTimePeriod {
 	};
 	protected Adjustment relatedAdjustment;
 	/**
-	 * Adjustment for which a validity period is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3505,8 +3492,8 @@ public class DateTimePeriod {
 	};
 	protected SecuritiesIdentification relatedSecuritiesIdentification;
 	/**
-	 * Securities identification for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3555,8 +3542,8 @@ public class DateTimePeriod {
 	};
 	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction;
 	/**
-	 * SSI for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3603,8 +3590,8 @@ public class DateTimePeriod {
 	};
 	protected BasicSecuritiesRegistration relatedSecuritiesRegistration;
 	/**
-	 * Securities registration process for which a split period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3653,8 +3640,8 @@ public class DateTimePeriod {
 	};
 	protected AmountAndPeriod amount;
 	/**
-	 * Relationship with an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3701,8 +3688,8 @@ public class DateTimePeriod {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan;
 	/**
-	 * InvestmentPlan for which an investment period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3749,8 +3736,8 @@ public class DateTimePeriod {
 	};
 	protected Issuance issuance;
 	/**
-	 * Issuance for which subscription information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3796,8 +3783,8 @@ public class DateTimePeriod {
 	};
 	protected PaymentTerms relatedPaymentTerms;
 	/**
-	 * Payment terms for which a period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3844,8 +3831,8 @@ public class DateTimePeriod {
 	};
 	protected PercentageAndPeriod percentage;
 	/**
-	 * Relationship with a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3892,8 +3879,8 @@ public class DateTimePeriod {
 	};
 	protected List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer;
 	/**
-	 * Role player for which a validity period is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3939,8 +3926,8 @@ public class DateTimePeriod {
 	};
 	protected SystemAvailability relatedSystemAvailability;
 	/**
-	 * System availability for which the closure period is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -3990,7 +3977,7 @@ public class DateTimePeriod {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateTimePeriod";
 				definition = "Time span defined by a start date and time, and an end date and time.";
@@ -4065,559 +4052,629 @@ public class DateTimePeriod {
 		return fromDateTime;
 	}
 
-	public void setFromDateTime(ISODateTime fromDateTime) {
-		this.fromDateTime = fromDateTime;
+	public DateTimePeriod setFromDateTime(ISODateTime fromDateTime) {
+		this.fromDateTime = Objects.requireNonNull(fromDateTime);
+		return this;
 	}
 
 	public ISODateTime getToDateTime() {
 		return toDateTime;
 	}
 
-	public void setToDateTime(ISODateTime toDateTime) {
-		this.toDateTime = toDateTime;
+	public DateTimePeriod setToDateTime(ISODateTime toDateTime) {
+		this.toDateTime = Objects.requireNonNull(toDateTime);
+		return this;
 	}
 
 	public StandingOrder getRelatedStandingOrder() {
 		return relatedStandingOrder;
 	}
 
-	public void setRelatedStandingOrder(com.tools20022.repository.entity.StandingOrder relatedStandingOrder) {
-		this.relatedStandingOrder = relatedStandingOrder;
+	public DateTimePeriod setRelatedStandingOrder(com.tools20022.repository.entity.StandingOrder relatedStandingOrder) {
+		this.relatedStandingOrder = Objects.requireNonNull(relatedStandingOrder);
+		return this;
 	}
 
 	public PaymentInstruction getPaymentInstruction() {
 		return paymentInstruction;
 	}
 
-	public void setPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction paymentInstruction) {
-		this.paymentInstruction = paymentInstruction;
+	public DateTimePeriod setPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction paymentInstruction) {
+		this.paymentInstruction = Objects.requireNonNull(paymentInstruction);
+		return this;
 	}
 
 	public Number getNumberOfDays() {
 		return numberOfDays;
 	}
 
-	public void setNumberOfDays(Number numberOfDays) {
-		this.numberOfDays = numberOfDays;
+	public DateTimePeriod setNumberOfDays(Number numberOfDays) {
+		this.numberOfDays = Objects.requireNonNull(numberOfDays);
+		return this;
 	}
 
 	public ValuationStatistics getValuationStatistics() {
 		return valuationStatistics;
 	}
 
-	public void setValuationStatistics(com.tools20022.repository.entity.ValuationStatistics valuationStatistics) {
-		this.valuationStatistics = valuationStatistics;
+	public DateTimePeriod setValuationStatistics(com.tools20022.repository.entity.ValuationStatistics valuationStatistics) {
+		this.valuationStatistics = Objects.requireNonNull(valuationStatistics);
+		return this;
 	}
 
 	public PerformanceFactors getPerformanceFactors() {
 		return performanceFactors;
 	}
 
-	public void setPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors performanceFactors) {
-		this.performanceFactors = performanceFactors;
+	public DateTimePeriod setPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors performanceFactors) {
+		this.performanceFactors = Objects.requireNonNull(performanceFactors);
+		return this;
 	}
 
 	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(com.tools20022.repository.entity.Status status) {
-		this.status = status;
+	public DateTimePeriod setStatus(com.tools20022.repository.entity.Status status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public SecuritiesPricing getPriceCalculationRelatedPricing() {
 		return priceCalculationRelatedPricing;
 	}
 
-	public void setPriceCalculationRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceCalculationRelatedPricing) {
-		this.priceCalculationRelatedPricing = priceCalculationRelatedPricing;
+	public DateTimePeriod setPriceCalculationRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceCalculationRelatedPricing) {
+		this.priceCalculationRelatedPricing = Objects.requireNonNull(priceCalculationRelatedPricing);
+		return this;
 	}
 
 	public CorporateActionOption getCorporateActionOption() {
 		return corporateActionOption;
 	}
 
-	public void setCorporateActionOption(com.tools20022.repository.entity.CorporateActionOption corporateActionOption) {
-		this.corporateActionOption = corporateActionOption;
+	public DateTimePeriod setCorporateActionOption(com.tools20022.repository.entity.CorporateActionOption corporateActionOption) {
+		this.corporateActionOption = Objects.requireNonNull(corporateActionOption);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getParallelTradingProceedsDefinition() {
 		return parallelTradingProceedsDefinition;
 	}
 
-	public void setParallelTradingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition parallelTradingProceedsDefinition) {
-		this.parallelTradingProceedsDefinition = parallelTradingProceedsDefinition;
+	public DateTimePeriod setParallelTradingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition parallelTradingProceedsDefinition) {
+		this.parallelTradingProceedsDefinition = Objects.requireNonNull(parallelTradingProceedsDefinition);
+		return this;
 	}
 
 	public SuspensionPeriod getPrivilegeSuspensionCorporateAction() {
 		return privilegeSuspensionCorporateAction;
 	}
 
-	public void setPrivilegeSuspensionCorporateAction(com.tools20022.repository.entity.SuspensionPeriod privilegeSuspensionCorporateAction) {
-		this.privilegeSuspensionCorporateAction = privilegeSuspensionCorporateAction;
+	public DateTimePeriod setPrivilegeSuspensionCorporateAction(com.tools20022.repository.entity.SuspensionPeriod privilegeSuspensionCorporateAction) {
+		this.privilegeSuspensionCorporateAction = Objects.requireNonNull(privilegeSuspensionCorporateAction);
+		return this;
 	}
 
 	public SuspensionPeriod getWithdrawalSuspensionRelatedEvent() {
 		return withdrawalSuspensionRelatedEvent;
 	}
 
-	public void setWithdrawalSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalSuspensionRelatedEvent) {
-		this.withdrawalSuspensionRelatedEvent = withdrawalSuspensionRelatedEvent;
+	public DateTimePeriod setWithdrawalSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalSuspensionRelatedEvent) {
+		this.withdrawalSuspensionRelatedEvent = Objects.requireNonNull(withdrawalSuspensionRelatedEvent);
+		return this;
 	}
 
 	public InterestCalculation getRelatedInterestCalculation() {
 		return relatedInterestCalculation;
 	}
 
-	public void setRelatedInterestCalculation(com.tools20022.repository.entity.InterestCalculation relatedInterestCalculation) {
-		this.relatedInterestCalculation = relatedInterestCalculation;
+	public DateTimePeriod setRelatedInterestCalculation(com.tools20022.repository.entity.InterestCalculation relatedInterestCalculation) {
+		this.relatedInterestCalculation = Objects.requireNonNull(relatedInterestCalculation);
+		return this;
 	}
 
 	public BiddingConditions getBiddingConditions() {
 		return biddingConditions;
 	}
 
-	public void setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
-		this.biddingConditions = biddingConditions;
+	public DateTimePeriod setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+		this.biddingConditions = Objects.requireNonNull(biddingConditions);
+		return this;
 	}
 
 	public ClassAction getClassAction() {
 		return classAction;
 	}
 
-	public void setClassAction(com.tools20022.repository.entity.ClassAction classAction) {
-		this.classAction = classAction;
+	public DateTimePeriod setClassAction(com.tools20022.repository.entity.ClassAction classAction) {
+		this.classAction = Objects.requireNonNull(classAction);
+		return this;
 	}
 
 	public SuspensionPeriod getBookEntryTransferSuspensionRelatedEvent() {
 		return bookEntryTransferSuspensionRelatedEvent;
 	}
 
-	public void setBookEntryTransferSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod bookEntryTransferSuspensionRelatedEvent) {
-		this.bookEntryTransferSuspensionRelatedEvent = bookEntryTransferSuspensionRelatedEvent;
+	public DateTimePeriod setBookEntryTransferSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod bookEntryTransferSuspensionRelatedEvent) {
+		this.bookEntryTransferSuspensionRelatedEvent = Objects.requireNonNull(bookEntryTransferSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getDepositAtAgentSuspensionRelatedEvent() {
 		return depositAtAgentSuspensionRelatedEvent;
 	}
 
-	public void setDepositAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositAtAgentSuspensionRelatedEvent) {
-		this.depositAtAgentSuspensionRelatedEvent = depositAtAgentSuspensionRelatedEvent;
+	public DateTimePeriod setDepositAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositAtAgentSuspensionRelatedEvent) {
+		this.depositAtAgentSuspensionRelatedEvent = Objects.requireNonNull(depositAtAgentSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getDepositSuspensionRelatedEvent() {
 		return depositSuspensionRelatedEvent;
 	}
 
-	public void setDepositSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositSuspensionRelatedEvent) {
-		this.depositSuspensionRelatedEvent = depositSuspensionRelatedEvent;
+	public DateTimePeriod setDepositSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositSuspensionRelatedEvent) {
+		this.depositSuspensionRelatedEvent = Objects.requireNonNull(depositSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getPledgeSuspensionRelatedEvent() {
 		return pledgeSuspensionRelatedEvent;
 	}
 
-	public void setPledgeSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod pledgeSuspensionRelatedEvent) {
-		this.pledgeSuspensionRelatedEvent = pledgeSuspensionRelatedEvent;
+	public DateTimePeriod setPledgeSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod pledgeSuspensionRelatedEvent) {
+		this.pledgeSuspensionRelatedEvent = Objects.requireNonNull(pledgeSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getSegregationPeriodRelatedEvent() {
 		return segregationPeriodRelatedEvent;
 	}
 
-	public void setSegregationPeriodRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod segregationPeriodRelatedEvent) {
-		this.segregationPeriodRelatedEvent = segregationPeriodRelatedEvent;
+	public DateTimePeriod setSegregationPeriodRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod segregationPeriodRelatedEvent) {
+		this.segregationPeriodRelatedEvent = Objects.requireNonNull(segregationPeriodRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getWithdrawalAtAgentSuspensionRelatedEvent() {
 		return withdrawalAtAgentSuspensionRelatedEvent;
 	}
 
-	public void setWithdrawalAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent) {
-		this.withdrawalAtAgentSuspensionRelatedEvent = withdrawalAtAgentSuspensionRelatedEvent;
+	public DateTimePeriod setWithdrawalAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent) {
+		this.withdrawalAtAgentSuspensionRelatedEvent = Objects.requireNonNull(withdrawalAtAgentSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getWithdrawalInNomineeNameSuspensionRelatedEvent() {
 		return withdrawalInNomineeNameSuspensionRelatedEvent;
 	}
 
-	public void setWithdrawalInNomineeNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent) {
-		this.withdrawalInNomineeNameSuspensionRelatedEvent = withdrawalInNomineeNameSuspensionRelatedEvent;
+	public DateTimePeriod setWithdrawalInNomineeNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent) {
+		this.withdrawalInNomineeNameSuspensionRelatedEvent = Objects.requireNonNull(withdrawalInNomineeNameSuspensionRelatedEvent);
+		return this;
 	}
 
 	public SuspensionPeriod getWithdrawalInStreetNameSuspensionRelatedEvent() {
 		return withdrawalInStreetNameSuspensionRelatedEvent;
 	}
 
-	public void setWithdrawalInStreetNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent) {
-		this.withdrawalInStreetNameSuspensionRelatedEvent = withdrawalInStreetNameSuspensionRelatedEvent;
+	public DateTimePeriod setWithdrawalInStreetNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent) {
+		this.withdrawalInStreetNameSuspensionRelatedEvent = Objects.requireNonNull(withdrawalInStreetNameSuspensionRelatedEvent);
+		return this;
 	}
 
 	public CorporateActionEvent getBookClosureCorporateAction() {
 		return bookClosureCorporateAction;
 	}
 
-	public void setBookClosureCorporateAction(com.tools20022.repository.entity.CorporateActionEvent bookClosureCorporateAction) {
-		this.bookClosureCorporateAction = bookClosureCorporateAction;
+	public DateTimePeriod setBookClosureCorporateAction(com.tools20022.repository.entity.CorporateActionEvent bookClosureCorporateAction) {
+		this.bookClosureCorporateAction = Objects.requireNonNull(bookClosureCorporateAction);
+		return this;
 	}
 
 	public SuspensionPeriod getCoDepositoriesSuspensionRelatedEvent() {
 		return coDepositoriesSuspensionRelatedEvent;
 	}
 
-	public void setCoDepositoriesSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod coDepositoriesSuspensionRelatedEvent) {
-		this.coDepositoriesSuspensionRelatedEvent = coDepositoriesSuspensionRelatedEvent;
+	public DateTimePeriod setCoDepositoriesSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod coDepositoriesSuspensionRelatedEvent) {
+		this.coDepositoriesSuspensionRelatedEvent = Objects.requireNonNull(coDepositoriesSuspensionRelatedEvent);
+		return this;
 	}
 
 	public Debt getExtendiblePeriodDebt() {
 		return extendiblePeriodDebt;
 	}
 
-	public void setExtendiblePeriodDebt(com.tools20022.repository.entity.Debt extendiblePeriodDebt) {
-		this.extendiblePeriodDebt = extendiblePeriodDebt;
+	public DateTimePeriod setExtendiblePeriodDebt(com.tools20022.repository.entity.Debt extendiblePeriodDebt) {
+		this.extendiblePeriodDebt = Objects.requireNonNull(extendiblePeriodDebt);
+		return this;
 	}
 
 	public SecuritiesConversion getSecuritiesConversion() {
 		return securitiesConversion;
 	}
 
-	public void setSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion securitiesConversion) {
-		this.securitiesConversion = securitiesConversion;
+	public DateTimePeriod setSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion securitiesConversion) {
+		this.securitiesConversion = Objects.requireNonNull(securitiesConversion);
+		return this;
 	}
 
 	public YieldCalculation getYieldCalculation() {
 		return yieldCalculation;
 	}
 
-	public void setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
-		this.yieldCalculation = yieldCalculation;
+	public DateTimePeriod setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
+		this.yieldCalculation = Objects.requireNonNull(yieldCalculation);
+		return this;
 	}
 
 	public Debt getCustomDateDebt() {
 		return customDateDebt;
 	}
 
-	public void setCustomDateDebt(com.tools20022.repository.entity.Debt customDateDebt) {
-		this.customDateDebt = customDateDebt;
+	public DateTimePeriod setCustomDateDebt(com.tools20022.repository.entity.Debt customDateDebt) {
+		this.customDateDebt = Objects.requireNonNull(customDateDebt);
+		return this;
 	}
 
 	public TaxPeriod getTaxPeriod() {
 		return taxPeriod;
 	}
 
-	public void setTaxPeriod(com.tools20022.repository.entity.TaxPeriod taxPeriod) {
-		this.taxPeriod = taxPeriod;
+	public DateTimePeriod setTaxPeriod(com.tools20022.repository.entity.TaxPeriod taxPeriod) {
+		this.taxPeriod = Objects.requireNonNull(taxPeriod);
+		return this;
 	}
 
-	public Account getAccount() {
-		return account;
+	public Optional<Account> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
+	public DateTimePeriod setAccount(com.tools20022.repository.entity.Account account) {
 		this.account = account;
+		return this;
 	}
 
 	public Agreement getRelatedAgreement() {
 		return relatedAgreement;
 	}
 
-	public void setRelatedAgreement(com.tools20022.repository.entity.Agreement relatedAgreement) {
-		this.relatedAgreement = relatedAgreement;
+	public DateTimePeriod setRelatedAgreement(com.tools20022.repository.entity.Agreement relatedAgreement) {
+		this.relatedAgreement = Objects.requireNonNull(relatedAgreement);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getAssentedLinePeriodProceedsDefinition() {
 		return assentedLinePeriodProceedsDefinition;
 	}
 
-	public void setAssentedLinePeriodProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition) {
-		this.assentedLinePeriodProceedsDefinition = assentedLinePeriodProceedsDefinition;
+	public DateTimePeriod setAssentedLinePeriodProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition) {
+		this.assentedLinePeriodProceedsDefinition = Objects.requireNonNull(assentedLinePeriodProceedsDefinition);
+		return this;
 	}
 
 	public SecuritiesProceedsDefinition getSellThruIssuerProceedsDefinition() {
 		return sellThruIssuerProceedsDefinition;
 	}
 
-	public void setSellThruIssuerProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition) {
-		this.sellThruIssuerProceedsDefinition = sellThruIssuerProceedsDefinition;
+	public DateTimePeriod setSellThruIssuerProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition) {
+		this.sellThruIssuerProceedsDefinition = Objects.requireNonNull(sellThruIssuerProceedsDefinition);
+		return this;
 	}
 
 	public ProductDelivery getRelatedProductDelivery() {
 		return relatedProductDelivery;
 	}
 
-	public void setRelatedProductDelivery(com.tools20022.repository.entity.ProductDelivery relatedProductDelivery) {
-		this.relatedProductDelivery = relatedProductDelivery;
+	public DateTimePeriod setRelatedProductDelivery(com.tools20022.repository.entity.ProductDelivery relatedProductDelivery) {
+		this.relatedProductDelivery = Objects.requireNonNull(relatedProductDelivery);
+		return this;
 	}
 
 	public Invoice getRelatedInvoice() {
 		return relatedInvoice;
 	}
 
-	public void setRelatedInvoice(com.tools20022.repository.entity.Invoice relatedInvoice) {
-		this.relatedInvoice = relatedInvoice;
+	public DateTimePeriod setRelatedInvoice(com.tools20022.repository.entity.Invoice relatedInvoice) {
+		this.relatedInvoice = Objects.requireNonNull(relatedInvoice);
+		return this;
 	}
 
 	public TradeCertificate getTradeCertificate() {
 		return tradeCertificate;
 	}
 
-	public void setTradeCertificate(com.tools20022.repository.entity.TradeCertificate tradeCertificate) {
-		this.tradeCertificate = tradeCertificate;
+	public DateTimePeriod setTradeCertificate(com.tools20022.repository.entity.TradeCertificate tradeCertificate) {
+		this.tradeCertificate = Objects.requireNonNull(tradeCertificate);
+		return this;
 	}
 
-	public PortfolioValuation getRelatedPortfolioValuation() {
-		return relatedPortfolioValuation;
+	public Optional<PortfolioValuation> getRelatedPortfolioValuation() {
+		return relatedPortfolioValuation == null ? Optional.empty() : Optional.of(relatedPortfolioValuation);
 	}
 
-	public void setRelatedPortfolioValuation(com.tools20022.repository.entity.PortfolioValuation relatedPortfolioValuation) {
+	public DateTimePeriod setRelatedPortfolioValuation(com.tools20022.repository.entity.PortfolioValuation relatedPortfolioValuation) {
 		this.relatedPortfolioValuation = relatedPortfolioValuation;
+		return this;
 	}
 
 	public System getSystem() {
 		return system;
 	}
 
-	public void setSystem(com.tools20022.repository.entity.System system) {
-		this.system = system;
+	public DateTimePeriod setSystem(com.tools20022.repository.entity.System system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 
 	public AccountRestriction getAccountRestriction() {
 		return accountRestriction;
 	}
 
-	public void setAccountRestriction(com.tools20022.repository.entity.AccountRestriction accountRestriction) {
-		this.accountRestriction = accountRestriction;
+	public DateTimePeriod setAccountRestriction(com.tools20022.repository.entity.AccountRestriction accountRestriction) {
+		this.accountRestriction = Objects.requireNonNull(accountRestriction);
+		return this;
 	}
 
-	public BankOperation getBankOperation() {
-		return bankOperation;
+	public Optional<BankOperation> getBankOperation() {
+		return bankOperation == null ? Optional.empty() : Optional.of(bankOperation);
 	}
 
-	public void setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
+	public DateTimePeriod setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
 		this.bankOperation = bankOperation;
+		return this;
 	}
 
 	public CorporateActionEvent getRelatedCorporateAction() {
 		return relatedCorporateAction;
 	}
 
-	public void setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateAction) {
-		this.relatedCorporateAction = relatedCorporateAction;
+	public DateTimePeriod setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateAction) {
+		this.relatedCorporateAction = Objects.requireNonNull(relatedCorporateAction);
+		return this;
 	}
 
 	public List<Limit> getRelatedLimit() {
-		return relatedLimit;
+		return relatedLimit == null ? relatedLimit = new ArrayList<>() : relatedLimit;
 	}
 
-	public void setRelatedLimit(List<com.tools20022.repository.entity.Limit> relatedLimit) {
-		this.relatedLimit = relatedLimit;
+	public DateTimePeriod setRelatedLimit(List<com.tools20022.repository.entity.Limit> relatedLimit) {
+		this.relatedLimit = Objects.requireNonNull(relatedLimit);
+		return this;
 	}
 
 	public List<PartyIdentificationInformation> getRelatedIdentification() {
-		return relatedIdentification;
+		return relatedIdentification == null ? relatedIdentification = new ArrayList<>() : relatedIdentification;
 	}
 
-	public void setRelatedIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification) {
-		this.relatedIdentification = relatedIdentification;
+	public DateTimePeriod setRelatedIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification) {
+		this.relatedIdentification = Objects.requireNonNull(relatedIdentification);
+		return this;
 	}
 
 	public Scheme getAssessmentValidityScheme() {
 		return assessmentValidityScheme;
 	}
 
-	public void setAssessmentValidityScheme(com.tools20022.repository.entity.Scheme assessmentValidityScheme) {
-		this.assessmentValidityScheme = assessmentValidityScheme;
+	public DateTimePeriod setAssessmentValidityScheme(com.tools20022.repository.entity.Scheme assessmentValidityScheme) {
+		this.assessmentValidityScheme = Objects.requireNonNull(assessmentValidityScheme);
+		return this;
 	}
 
 	public Distribution getExercisePeriodDistribution() {
 		return exercisePeriodDistribution;
 	}
 
-	public void setExercisePeriodDistribution(com.tools20022.repository.entity.Distribution exercisePeriodDistribution) {
-		this.exercisePeriodDistribution = exercisePeriodDistribution;
+	public DateTimePeriod setExercisePeriodDistribution(com.tools20022.repository.entity.Distribution exercisePeriodDistribution) {
+		this.exercisePeriodDistribution = Objects.requireNonNull(exercisePeriodDistribution);
+		return this;
 	}
 
 	public Distribution getOfferPeriodDistribution() {
 		return offerPeriodDistribution;
 	}
 
-	public void setOfferPeriodDistribution(com.tools20022.repository.entity.Distribution offerPeriodDistribution) {
-		this.offerPeriodDistribution = offerPeriodDistribution;
+	public DateTimePeriod setOfferPeriodDistribution(com.tools20022.repository.entity.Distribution offerPeriodDistribution) {
+		this.offerPeriodDistribution = Objects.requireNonNull(offerPeriodDistribution);
+		return this;
 	}
 
 	public Distribution getTradingPeriodDistribution() {
 		return tradingPeriodDistribution;
 	}
 
-	public void setTradingPeriodDistribution(com.tools20022.repository.entity.Distribution tradingPeriodDistribution) {
-		this.tradingPeriodDistribution = tradingPeriodDistribution;
+	public DateTimePeriod setTradingPeriodDistribution(com.tools20022.repository.entity.Distribution tradingPeriodDistribution) {
+		this.tradingPeriodDistribution = Objects.requireNonNull(tradingPeriodDistribution);
+		return this;
 	}
 
 	public Distribution getBlockingPeriodDistribution() {
 		return blockingPeriodDistribution;
 	}
 
-	public void setBlockingPeriodDistribution(com.tools20022.repository.entity.Distribution blockingPeriodDistribution) {
-		this.blockingPeriodDistribution = blockingPeriodDistribution;
+	public DateTimePeriod setBlockingPeriodDistribution(com.tools20022.repository.entity.Distribution blockingPeriodDistribution) {
+		this.blockingPeriodDistribution = Objects.requireNonNull(blockingPeriodDistribution);
+		return this;
 	}
 
 	public Guarantee getGuarantee() {
 		return guarantee;
 	}
 
-	public void setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
-		this.guarantee = guarantee;
+	public DateTimePeriod setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
+		this.guarantee = Objects.requireNonNull(guarantee);
+		return this;
 	}
 
 	public SecuritiesPricing getPriceFactRelatedPricing() {
 		return priceFactRelatedPricing;
 	}
 
-	public void setPriceFactRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceFactRelatedPricing) {
-		this.priceFactRelatedPricing = priceFactRelatedPricing;
+	public DateTimePeriod setPriceFactRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceFactRelatedPricing) {
+		this.priceFactRelatedPricing = Objects.requireNonNull(priceFactRelatedPricing);
+		return this;
 	}
 
 	public Distribution getCashDistribution() {
 		return cashDistribution;
 	}
 
-	public void setCashDistribution(com.tools20022.repository.entity.Distribution cashDistribution) {
-		this.cashDistribution = cashDistribution;
+	public DateTimePeriod setCashDistribution(com.tools20022.repository.entity.Distribution cashDistribution) {
+		this.cashDistribution = Objects.requireNonNull(cashDistribution);
+		return this;
 	}
 
 	public ComponentSecurity getComponentSecurity() {
 		return componentSecurity;
 	}
 
-	public void setComponentSecurity(com.tools20022.repository.entity.ComponentSecurity componentSecurity) {
-		this.componentSecurity = componentSecurity;
+	public DateTimePeriod setComponentSecurity(com.tools20022.repository.entity.ComponentSecurity componentSecurity) {
+		this.componentSecurity = Objects.requireNonNull(componentSecurity);
+		return this;
 	}
 
 	public TradingSession getTradingSession() {
 		return tradingSession;
 	}
 
-	public void setTradingSession(com.tools20022.repository.entity.TradingSession tradingSession) {
-		this.tradingSession = tradingSession;
+	public DateTimePeriod setTradingSession(com.tools20022.repository.entity.TradingSession tradingSession) {
+		this.tradingSession = Objects.requireNonNull(tradingSession);
+		return this;
 	}
 
 	public FinancialInstrumentSwap getFinancialInstrumentSwap() {
 		return financialInstrumentSwap;
 	}
 
-	public void setFinancialInstrumentSwap(com.tools20022.repository.entity.FinancialInstrumentSwap financialInstrumentSwap) {
-		this.financialInstrumentSwap = financialInstrumentSwap;
+	public DateTimePeriod setFinancialInstrumentSwap(com.tools20022.repository.entity.FinancialInstrumentSwap financialInstrumentSwap) {
+		this.financialInstrumentSwap = Objects.requireNonNull(financialInstrumentSwap);
+		return this;
 	}
 
 	public PostalAddress getRelatedPostalAddress() {
 		return relatedPostalAddress;
 	}
 
-	public void setRelatedPostalAddress(com.tools20022.repository.entity.PostalAddress relatedPostalAddress) {
-		this.relatedPostalAddress = relatedPostalAddress;
+	public DateTimePeriod setRelatedPostalAddress(com.tools20022.repository.entity.PostalAddress relatedPostalAddress) {
+		this.relatedPostalAddress = Objects.requireNonNull(relatedPostalAddress);
+		return this;
 	}
 
 	public RedemptionSchedule getRedemptionSchedule() {
 		return redemptionSchedule;
 	}
 
-	public void setRedemptionSchedule(com.tools20022.repository.entity.RedemptionSchedule redemptionSchedule) {
-		this.redemptionSchedule = redemptionSchedule;
+	public DateTimePeriod setRedemptionSchedule(com.tools20022.repository.entity.RedemptionSchedule redemptionSchedule) {
+		this.redemptionSchedule = Objects.requireNonNull(redemptionSchedule);
+		return this;
 	}
 
 	public AccountLink getRelatedAccountLink() {
 		return relatedAccountLink;
 	}
 
-	public void setRelatedAccountLink(com.tools20022.repository.entity.AccountLink relatedAccountLink) {
-		this.relatedAccountLink = relatedAccountLink;
+	public DateTimePeriod setRelatedAccountLink(com.tools20022.repository.entity.AccountLink relatedAccountLink) {
+		this.relatedAccountLink = Objects.requireNonNull(relatedAccountLink);
+		return this;
 	}
 
 	public Adjustment getRelatedAdjustment() {
 		return relatedAdjustment;
 	}
 
-	public void setRelatedAdjustment(com.tools20022.repository.entity.Adjustment relatedAdjustment) {
-		this.relatedAdjustment = relatedAdjustment;
+	public DateTimePeriod setRelatedAdjustment(com.tools20022.repository.entity.Adjustment relatedAdjustment) {
+		this.relatedAdjustment = Objects.requireNonNull(relatedAdjustment);
+		return this;
 	}
 
 	public SecuritiesIdentification getRelatedSecuritiesIdentification() {
 		return relatedSecuritiesIdentification;
 	}
 
-	public void setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
-		this.relatedSecuritiesIdentification = relatedSecuritiesIdentification;
+	public DateTimePeriod setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
+		this.relatedSecuritiesIdentification = Objects.requireNonNull(relatedSecuritiesIdentification);
+		return this;
 	}
 
 	public List<StandingSettlementInstruction> getRelatedStandingSettlementInstruction() {
-		return relatedStandingSettlementInstruction;
+		return relatedStandingSettlementInstruction == null ? relatedStandingSettlementInstruction = new ArrayList<>() : relatedStandingSettlementInstruction;
 	}
 
-	public void setRelatedStandingSettlementInstruction(List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction) {
-		this.relatedStandingSettlementInstruction = relatedStandingSettlementInstruction;
+	public DateTimePeriod setRelatedStandingSettlementInstruction(List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction) {
+		this.relatedStandingSettlementInstruction = Objects.requireNonNull(relatedStandingSettlementInstruction);
+		return this;
 	}
 
 	public BasicSecuritiesRegistration getRelatedSecuritiesRegistration() {
 		return relatedSecuritiesRegistration;
 	}
 
-	public void setRelatedSecuritiesRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration relatedSecuritiesRegistration) {
-		this.relatedSecuritiesRegistration = relatedSecuritiesRegistration;
+	public DateTimePeriod setRelatedSecuritiesRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration relatedSecuritiesRegistration) {
+		this.relatedSecuritiesRegistration = Objects.requireNonNull(relatedSecuritiesRegistration);
+		return this;
 	}
 
 	public AmountAndPeriod getAmount() {
 		return amount;
 	}
 
-	public void setAmount(com.tools20022.repository.entity.AmountAndPeriod amount) {
-		this.amount = amount;
+	public DateTimePeriod setAmount(com.tools20022.repository.entity.AmountAndPeriod amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public List<InvestmentPlan> getRelatedInvestmentPlan() {
-		return relatedInvestmentPlan;
+		return relatedInvestmentPlan == null ? relatedInvestmentPlan = new ArrayList<>() : relatedInvestmentPlan;
 	}
 
-	public void setRelatedInvestmentPlan(List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan) {
-		this.relatedInvestmentPlan = relatedInvestmentPlan;
+	public DateTimePeriod setRelatedInvestmentPlan(List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan) {
+		this.relatedInvestmentPlan = Objects.requireNonNull(relatedInvestmentPlan);
+		return this;
 	}
 
 	public Issuance getIssuance() {
 		return issuance;
 	}
 
-	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
-		this.issuance = issuance;
+	public DateTimePeriod setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
 	public PaymentTerms getRelatedPaymentTerms() {
 		return relatedPaymentTerms;
 	}
 
-	public void setRelatedPaymentTerms(com.tools20022.repository.entity.PaymentTerms relatedPaymentTerms) {
-		this.relatedPaymentTerms = relatedPaymentTerms;
+	public DateTimePeriod setRelatedPaymentTerms(com.tools20022.repository.entity.PaymentTerms relatedPaymentTerms) {
+		this.relatedPaymentTerms = Objects.requireNonNull(relatedPaymentTerms);
+		return this;
 	}
 
 	public PercentageAndPeriod getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(com.tools20022.repository.entity.PercentageAndPeriod percentage) {
-		this.percentage = percentage;
+	public DateTimePeriod setPercentage(com.tools20022.repository.entity.PercentageAndPeriod percentage) {
+		this.percentage = Objects.requireNonNull(percentage);
+		return this;
 	}
 
 	public List<RolePlayer> getRelatedRolePlayer() {
-		return relatedRolePlayer;
+		return relatedRolePlayer == null ? relatedRolePlayer = new ArrayList<>() : relatedRolePlayer;
 	}
 
-	public void setRelatedRolePlayer(List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer) {
-		this.relatedRolePlayer = relatedRolePlayer;
+	public DateTimePeriod setRelatedRolePlayer(List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer) {
+		this.relatedRolePlayer = Objects.requireNonNull(relatedRolePlayer);
+		return this;
 	}
 
 	public SystemAvailability getRelatedSystemAvailability() {
 		return relatedSystemAvailability;
 	}
 
-	public void setRelatedSystemAvailability(com.tools20022.repository.entity.SystemAvailability relatedSystemAvailability) {
-		this.relatedSystemAvailability = relatedSystemAvailability;
+	public DateTimePeriod setRelatedSystemAvailability(com.tools20022.repository.entity.SystemAvailability relatedSystemAvailability) {
+		this.relatedSystemAvailability = Objects.requireNonNull(relatedSystemAvailability);
+		return this;
 	}
 }

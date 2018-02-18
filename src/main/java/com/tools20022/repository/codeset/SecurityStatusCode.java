@@ -37,34 +37,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.SecurityStatusCode#Active
- * SecurityStatusCode.mmActive}</li>
+ * SecurityStatusCode.Active}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#Inactive
- * SecurityStatusCode.mmInactive}</li>
+ * SecurityStatusCode.Inactive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#WhenIssued
- * SecurityStatusCode.mmWhenIssued}</li>
+ * SecurityStatusCode.WhenIssued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#WhenDistributed
- * SecurityStatusCode.mmWhenDistributed}</li>
+ * SecurityStatusCode.WhenDistributed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SecurityStatusCode#Issued
- * SecurityStatusCode.mmIssued}</li>
+ * SecurityStatusCode.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#Suspended
- * SecurityStatusCode.mmSuspended}</li>
+ * SecurityStatusCode.Suspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#InDefault
- * SecurityStatusCode.mmInDefault}</li>
+ * SecurityStatusCode.InDefault}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecurityStatusCode#Worthless
- * SecurityStatusCode.mmWorthless}</li>
+ * SecurityStatusCode.Worthless}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -334,7 +334,7 @@ public class SecurityStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTV");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityStatusCode";

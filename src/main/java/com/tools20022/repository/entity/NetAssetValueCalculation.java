@@ -23,9 +23,8 @@ import com.tools20022.repository.codeset.ValuationTimingCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Calculation of the net asset value for an investment fund/fund class.
@@ -141,8 +140,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -159,8 +158,8 @@ public class NetAssetValueCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected EventFrequencyCode valuationFrequency;
 	/**
-	 * Frequency of the valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,8 +205,8 @@ public class NetAssetValueCalculation {
 	};
 	protected ISODateTime valuationDateTime;
 	/**
-	 * Date and time of the price valuation for the investment fund/fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,9 +253,8 @@ public class NetAssetValueCalculation {
 	};
 	protected CurrencyAndAmount netAssetValue;
 	/**
-	 * Value of all the holdings, less the fund's liabilities, attributable to a
-	 * specific investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,8 +302,8 @@ public class NetAssetValueCalculation {
 	};
 	protected InvestmentFundClass relatedFund;
 	/**
-	 * Specifies the fund for which the NAV is calculated (per fund unit).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,9 +351,8 @@ public class NetAssetValueCalculation {
 	};
 	protected ValuationTimingCode valuationType;
 	/**
-	 * Specifies how the valuation is done, based on the schedule stated in the
-	 * prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,9 +400,8 @@ public class NetAssetValueCalculation {
 	};
 	protected YesNoIndicator suspendedIndicator;
 	/**
-	 * Indicates whether the valuation of the investment fund class is
-	 * suspended.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -453,9 +449,8 @@ public class NetAssetValueCalculation {
 	};
 	protected YesNoIndicator forExecutionIndicator;
 	/**
-	 * Indicates whether the price information can be used for the execution of
-	 * a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -503,8 +498,8 @@ public class NetAssetValueCalculation {
 	};
 	protected Tax taxLiability;
 	/**
-	 * Information related to taxes that are due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -550,8 +545,8 @@ public class NetAssetValueCalculation {
 	};
 	protected Tax taxRefund;
 	/**
-	 * Information related to taxes that are paid back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,8 +592,8 @@ public class NetAssetValueCalculation {
 	};
 	protected YesNoIndicator officialValuationIndicator;
 	/**
-	 * Indicates whether the valuation is an official valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -645,8 +640,8 @@ public class NetAssetValueCalculation {
 	};
 	protected YesNoIndicator estimatedPriceIndicator;
 	/**
-	 * Indicates whether the price is an estimated price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -692,8 +687,8 @@ public class NetAssetValueCalculation {
 	};
 	protected List<com.tools20022.repository.entity.ValuationStatistics> valuationStatistics;
 	/**
-	 * Information related to the price variations of an investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -741,8 +736,8 @@ public class NetAssetValueCalculation {
 	};
 	protected PerformanceFactors investmentFundPerformanceFactors;
 	/**
-	 * Factors that give indications about the performance of a fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -790,8 +785,8 @@ public class NetAssetValueCalculation {
 	};
 	protected SecuritiesPricing price;
 	/**
-	 * Price derived from the net asset value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -838,8 +833,8 @@ public class NetAssetValueCalculation {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
 	/**
-	 * Quantity on which the NAV is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -885,9 +880,8 @@ public class NetAssetValueCalculation {
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
-	 * Interest that has accumulated between the most recent payment of interest
-	 * and the sale of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -934,8 +928,8 @@ public class NetAssetValueCalculation {
 	};
 	protected FundsCashFlow fundsCashFlow;
 	/**
-	 * Net cash flow for a valuation date, which is incorporated in the NAV.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -983,8 +977,8 @@ public class NetAssetValueCalculation {
 	};
 	protected Max35Text declarationChannel;
 	/**
-	 * Means of the net asset value publication, for example, a newspaper.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1030,8 +1024,8 @@ public class NetAssetValueCalculation {
 	};
 	protected ISODateTime declarationDate;
 	/**
-	 * Date/time of the net asset value publication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1076,8 +1070,8 @@ public class NetAssetValueCalculation {
 	};
 	protected ISODate firstValuationDate;
 	/**
-	 * Date on which the investment fund class was first priced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1123,8 +1117,8 @@ public class NetAssetValueCalculation {
 	};
 	protected YesNoIndicator historicPricingIndicator;
 	/**
-	 * Indicates whether the price is historic or forward.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1172,7 +1166,7 @@ public class NetAssetValueCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetAssetValueCalculation";
 				definition = "Calculation of the net asset value for an investment fund/fund class.";
@@ -1205,167 +1199,188 @@ public class NetAssetValueCalculation {
 		return valuationFrequency;
 	}
 
-	public void setValuationFrequency(EventFrequencyCode valuationFrequency) {
-		this.valuationFrequency = valuationFrequency;
+	public NetAssetValueCalculation setValuationFrequency(EventFrequencyCode valuationFrequency) {
+		this.valuationFrequency = Objects.requireNonNull(valuationFrequency);
+		return this;
 	}
 
 	public ISODateTime getValuationDateTime() {
 		return valuationDateTime;
 	}
 
-	public void setValuationDateTime(ISODateTime valuationDateTime) {
-		this.valuationDateTime = valuationDateTime;
+	public NetAssetValueCalculation setValuationDateTime(ISODateTime valuationDateTime) {
+		this.valuationDateTime = Objects.requireNonNull(valuationDateTime);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAssetValue() {
 		return netAssetValue;
 	}
 
-	public void setNetAssetValue(CurrencyAndAmount netAssetValue) {
-		this.netAssetValue = netAssetValue;
+	public NetAssetValueCalculation setNetAssetValue(CurrencyAndAmount netAssetValue) {
+		this.netAssetValue = Objects.requireNonNull(netAssetValue);
+		return this;
 	}
 
 	public InvestmentFundClass getRelatedFund() {
 		return relatedFund;
 	}
 
-	public void setRelatedFund(com.tools20022.repository.entity.InvestmentFundClass relatedFund) {
-		this.relatedFund = relatedFund;
+	public NetAssetValueCalculation setRelatedFund(com.tools20022.repository.entity.InvestmentFundClass relatedFund) {
+		this.relatedFund = Objects.requireNonNull(relatedFund);
+		return this;
 	}
 
 	public ValuationTimingCode getValuationType() {
 		return valuationType;
 	}
 
-	public void setValuationType(ValuationTimingCode valuationType) {
-		this.valuationType = valuationType;
+	public NetAssetValueCalculation setValuationType(ValuationTimingCode valuationType) {
+		this.valuationType = Objects.requireNonNull(valuationType);
+		return this;
 	}
 
 	public YesNoIndicator getSuspendedIndicator() {
 		return suspendedIndicator;
 	}
 
-	public void setSuspendedIndicator(YesNoIndicator suspendedIndicator) {
-		this.suspendedIndicator = suspendedIndicator;
+	public NetAssetValueCalculation setSuspendedIndicator(YesNoIndicator suspendedIndicator) {
+		this.suspendedIndicator = Objects.requireNonNull(suspendedIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getForExecutionIndicator() {
 		return forExecutionIndicator;
 	}
 
-	public void setForExecutionIndicator(YesNoIndicator forExecutionIndicator) {
-		this.forExecutionIndicator = forExecutionIndicator;
+	public NetAssetValueCalculation setForExecutionIndicator(YesNoIndicator forExecutionIndicator) {
+		this.forExecutionIndicator = Objects.requireNonNull(forExecutionIndicator);
+		return this;
 	}
 
 	public Tax getTaxLiability() {
 		return taxLiability;
 	}
 
-	public void setTaxLiability(com.tools20022.repository.entity.Tax taxLiability) {
-		this.taxLiability = taxLiability;
+	public NetAssetValueCalculation setTaxLiability(com.tools20022.repository.entity.Tax taxLiability) {
+		this.taxLiability = Objects.requireNonNull(taxLiability);
+		return this;
 	}
 
 	public Tax getTaxRefund() {
 		return taxRefund;
 	}
 
-	public void setTaxRefund(com.tools20022.repository.entity.Tax taxRefund) {
-		this.taxRefund = taxRefund;
+	public NetAssetValueCalculation setTaxRefund(com.tools20022.repository.entity.Tax taxRefund) {
+		this.taxRefund = Objects.requireNonNull(taxRefund);
+		return this;
 	}
 
 	public YesNoIndicator getOfficialValuationIndicator() {
 		return officialValuationIndicator;
 	}
 
-	public void setOfficialValuationIndicator(YesNoIndicator officialValuationIndicator) {
-		this.officialValuationIndicator = officialValuationIndicator;
+	public NetAssetValueCalculation setOfficialValuationIndicator(YesNoIndicator officialValuationIndicator) {
+		this.officialValuationIndicator = Objects.requireNonNull(officialValuationIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getEstimatedPriceIndicator() {
 		return estimatedPriceIndicator;
 	}
 
-	public void setEstimatedPriceIndicator(YesNoIndicator estimatedPriceIndicator) {
-		this.estimatedPriceIndicator = estimatedPriceIndicator;
+	public NetAssetValueCalculation setEstimatedPriceIndicator(YesNoIndicator estimatedPriceIndicator) {
+		this.estimatedPriceIndicator = Objects.requireNonNull(estimatedPriceIndicator);
+		return this;
 	}
 
 	public List<ValuationStatistics> getValuationStatistics() {
-		return valuationStatistics;
+		return valuationStatistics == null ? valuationStatistics = new ArrayList<>() : valuationStatistics;
 	}
 
-	public void setValuationStatistics(List<com.tools20022.repository.entity.ValuationStatistics> valuationStatistics) {
-		this.valuationStatistics = valuationStatistics;
+	public NetAssetValueCalculation setValuationStatistics(List<com.tools20022.repository.entity.ValuationStatistics> valuationStatistics) {
+		this.valuationStatistics = Objects.requireNonNull(valuationStatistics);
+		return this;
 	}
 
-	public PerformanceFactors getInvestmentFundPerformanceFactors() {
-		return investmentFundPerformanceFactors;
+	public Optional<PerformanceFactors> getInvestmentFundPerformanceFactors() {
+		return investmentFundPerformanceFactors == null ? Optional.empty() : Optional.of(investmentFundPerformanceFactors);
 	}
 
-	public void setInvestmentFundPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors investmentFundPerformanceFactors) {
+	public NetAssetValueCalculation setInvestmentFundPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors investmentFundPerformanceFactors) {
 		this.investmentFundPerformanceFactors = investmentFundPerformanceFactors;
+		return this;
 	}
 
 	public SecuritiesPricing getPrice() {
 		return price;
 	}
 
-	public void setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
-		this.price = price;
+	public NetAssetValueCalculation setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
+		this.price = Objects.requireNonNull(price);
+		return this;
 	}
 
 	public List<SecuritiesQuantity> getSecuritiesQuantity() {
-		return securitiesQuantity;
+		return securitiesQuantity == null ? securitiesQuantity = new ArrayList<>() : securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public NetAssetValueCalculation setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public NetAssetValueCalculation setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
-	public FundsCashFlow getFundsCashFlow() {
-		return fundsCashFlow;
+	public Optional<FundsCashFlow> getFundsCashFlow() {
+		return fundsCashFlow == null ? Optional.empty() : Optional.of(fundsCashFlow);
 	}
 
-	public void setFundsCashFlow(com.tools20022.repository.entity.FundsCashFlow fundsCashFlow) {
+	public NetAssetValueCalculation setFundsCashFlow(com.tools20022.repository.entity.FundsCashFlow fundsCashFlow) {
 		this.fundsCashFlow = fundsCashFlow;
+		return this;
 	}
 
 	public Max35Text getDeclarationChannel() {
 		return declarationChannel;
 	}
 
-	public void setDeclarationChannel(Max35Text declarationChannel) {
-		this.declarationChannel = declarationChannel;
+	public NetAssetValueCalculation setDeclarationChannel(Max35Text declarationChannel) {
+		this.declarationChannel = Objects.requireNonNull(declarationChannel);
+		return this;
 	}
 
 	public ISODateTime getDeclarationDate() {
 		return declarationDate;
 	}
 
-	public void setDeclarationDate(ISODateTime declarationDate) {
-		this.declarationDate = declarationDate;
+	public NetAssetValueCalculation setDeclarationDate(ISODateTime declarationDate) {
+		this.declarationDate = Objects.requireNonNull(declarationDate);
+		return this;
 	}
 
 	public ISODate getFirstValuationDate() {
 		return firstValuationDate;
 	}
 
-	public void setFirstValuationDate(ISODate firstValuationDate) {
-		this.firstValuationDate = firstValuationDate;
+	public NetAssetValueCalculation setFirstValuationDate(ISODate firstValuationDate) {
+		this.firstValuationDate = Objects.requireNonNull(firstValuationDate);
+		return this;
 	}
 
 	public YesNoIndicator getHistoricPricingIndicator() {
 		return historicPricingIndicator;
 	}
 
-	public void setHistoricPricingIndicator(YesNoIndicator historicPricingIndicator) {
-		this.historicPricingIndicator = historicPricingIndicator;
+	public NetAssetValueCalculation setHistoricPricingIndicator(YesNoIndicator historicPricingIndicator) {
+		this.historicPricingIndicator = Objects.requireNonNull(historicPricingIndicator);
+		return this;
 	}
 }

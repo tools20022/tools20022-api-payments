@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,15 +38,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Never
- * Frequency10Code.mmNever}</li>
+ * Frequency10Code.Never}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Annual
- * Frequency10Code.mmAnnual}</li>
+ * Frequency10Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Rate
- * Frequency10Code.mmRate}</li>
+ * Frequency10Code.Rate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#SemiAnnual
- * Frequency10Code.mmSemiAnnual}</li>
+ * Frequency10Code.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Quarterly
- * Frequency10Code.mmQuarterly}</li>
+ * Frequency10Code.Quarterly}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,6 +103,10 @@ public class Frequency10Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.Frequency10Code
 	 * Frequency10Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//ANNU, ISO15022Synonym:
+	 * :22F::SFRE//YEAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -111,6 +116,7 @@ public class Frequency10Code extends MMCode {
 	 */
 	public static final Frequency10Code Annual = new Frequency10Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//ANNU"), new ISO15022Synonym(this, ":22F::SFRE//YEAR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
 			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
@@ -150,6 +156,9 @@ public class Frequency10Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.Frequency10Code
 	 * Frequency10Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//SEMI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -159,6 +168,7 @@ public class Frequency10Code extends MMCode {
 	 */
 	public static final Frequency10Code SemiAnnual = new Frequency10Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//SEMI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAnnual";
 			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
@@ -174,6 +184,10 @@ public class Frequency10Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.Frequency10Code
 	 * Frequency10Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//QUTR, ISO15022Synonym:
+	 * :22F::SFRE//QUAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -183,6 +197,7 @@ public class Frequency10Code extends MMCode {
 	 */
 	public static final Frequency10Code Quarterly = new Frequency10Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//QUTR"), new ISO15022Synonym(this, ":22F::SFRE//QUAR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quarterly";
 			owner_lazy = () -> com.tools20022.repository.codeset.Frequency10Code.mmObject();
@@ -197,7 +212,7 @@ public class Frequency10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency10Code";
 				definition = "Specifies the regularity of an event.";

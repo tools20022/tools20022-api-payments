@@ -23,9 +23,11 @@ import com.tools20022.repository.codeset.PEPISACode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Transfer by the delivering account servicer to the receiving account servicer
@@ -109,8 +111,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -128,9 +130,8 @@ public class PortfolioTransfer {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISOYear transferredYear;
 	/**
-	 * Specifies the year during which the investment plan to be transferred was
-	 * issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,9 +178,8 @@ public class PortfolioTransfer {
 	};
 	protected YesNoIndicator cashComponentIndicator;
 	/**
-	 * Indicates whether an ISA investment plan contains a cash component asset
-	 * for transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,9 +227,8 @@ public class PortfolioTransfer {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> accountFrom;
 	/**
-	 * Specifies the account owned by an investor and from which the assets are
-	 * transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,9 +276,8 @@ public class PortfolioTransfer {
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> accountTo;
 	/**
-	 * Specifies the account owned by an investor and to which the assets are
-	 * transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -327,9 +325,8 @@ public class PortfolioTransfer {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
-	 * Specifies the cash amount to be transferred in relation with a portfolio
-	 * transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -377,8 +374,8 @@ public class PortfolioTransfer {
 	};
 	protected List<com.tools20022.repository.entity.Portfolio> transferredPortfolio;
 	/**
-	 * Specifies the portfolio which has to be transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,9 +421,8 @@ public class PortfolioTransfer {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
 	/**
-	 * Specifies the financial instrument to be transferred in relation with a
-	 * portfolio transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,9 +471,8 @@ public class PortfolioTransfer {
 	};
 	protected CurrencyAndAmount transferredAmount;
 	/**
-	 * Quantity of financial instrument to transfer expressed as an amount of
-	 * money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,9 +520,8 @@ public class PortfolioTransfer {
 	};
 	protected PercentageRate transferredPercentage;
 	/**
-	 * Quantity of financial instrument to transfer expressed as a percentage of
-	 * the investor's total holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -575,8 +569,8 @@ public class PortfolioTransfer {
 	};
 	protected ISODateTime transferDate;
 	/**
-	 * Execution date of the transfer instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -621,9 +615,8 @@ public class PortfolioTransfer {
 	};
 	protected InvestmentAccount nomineeAccount;
 	/**
-	 * Account held in the name of a party that is not the name of the
-	 * beneficial owner of the shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -672,8 +665,8 @@ public class PortfolioTransfer {
 	};
 	protected PEPISACode pEPOrISAPlan;
 	/**
-	 * Specifies whether the investment plan is a PEP or ISA type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -719,9 +712,8 @@ public class PortfolioTransfer {
 	};
 	protected ISATypeCode currentYearISAType;
 	/**
-	 * Current year ISA is an ISA that was issued during the current fiscal
-	 * year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -770,7 +762,7 @@ public class PortfolioTransfer {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioTransfer";
 				definition = "Transfer by the delivering account servicer to the receiving account servicer of a retail or institutional client portfolio. A portfolio can be any grouping of  investments, for example  stocks, bonds, options, warrants. held by an institution or an individual.";
@@ -796,103 +788,116 @@ public class PortfolioTransfer {
 		return transferredYear;
 	}
 
-	public void setTransferredYear(ISOYear transferredYear) {
-		this.transferredYear = transferredYear;
+	public PortfolioTransfer setTransferredYear(ISOYear transferredYear) {
+		this.transferredYear = Objects.requireNonNull(transferredYear);
+		return this;
 	}
 
 	public YesNoIndicator getCashComponentIndicator() {
 		return cashComponentIndicator;
 	}
 
-	public void setCashComponentIndicator(YesNoIndicator cashComponentIndicator) {
-		this.cashComponentIndicator = cashComponentIndicator;
+	public PortfolioTransfer setCashComponentIndicator(YesNoIndicator cashComponentIndicator) {
+		this.cashComponentIndicator = Objects.requireNonNull(cashComponentIndicator);
+		return this;
 	}
 
 	public List<InvestmentAccount> getAccountFrom() {
-		return accountFrom;
+		return accountFrom == null ? accountFrom = new ArrayList<>() : accountFrom;
 	}
 
-	public void setAccountFrom(List<com.tools20022.repository.entity.InvestmentAccount> accountFrom) {
-		this.accountFrom = accountFrom;
+	public PortfolioTransfer setAccountFrom(List<com.tools20022.repository.entity.InvestmentAccount> accountFrom) {
+		this.accountFrom = Objects.requireNonNull(accountFrom);
+		return this;
 	}
 
 	public List<InvestmentAccount> getAccountTo() {
-		return accountTo;
+		return accountTo == null ? accountTo = new ArrayList<>() : accountTo;
 	}
 
-	public void setAccountTo(List<com.tools20022.repository.entity.InvestmentAccount> accountTo) {
-		this.accountTo = accountTo;
+	public PortfolioTransfer setAccountTo(List<com.tools20022.repository.entity.InvestmentAccount> accountTo) {
+		this.accountTo = Objects.requireNonNull(accountTo);
+		return this;
 	}
 
 	public List<PaymentObligation> getPaymentObligation() {
-		return paymentObligation;
+		return paymentObligation == null ? paymentObligation = new ArrayList<>() : paymentObligation;
 	}
 
-	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
-		this.paymentObligation = paymentObligation;
+	public PortfolioTransfer setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = Objects.requireNonNull(paymentObligation);
+		return this;
 	}
 
 	public List<Portfolio> getTransferredPortfolio() {
-		return transferredPortfolio;
+		return transferredPortfolio == null ? transferredPortfolio = new ArrayList<>() : transferredPortfolio;
 	}
 
-	public void setTransferredPortfolio(List<com.tools20022.repository.entity.Portfolio> transferredPortfolio) {
-		this.transferredPortfolio = transferredPortfolio;
+	public PortfolioTransfer setTransferredPortfolio(List<com.tools20022.repository.entity.Portfolio> transferredPortfolio) {
+		this.transferredPortfolio = Objects.requireNonNull(transferredPortfolio);
+		return this;
 	}
 
 	public List<SecuritiesDeliveryObligation> getSecuritiesDeliveryObligation() {
-		return securitiesDeliveryObligation;
+		return securitiesDeliveryObligation == null ? securitiesDeliveryObligation = new ArrayList<>() : securitiesDeliveryObligation;
 	}
 
-	public void setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
-		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	public PortfolioTransfer setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = Objects.requireNonNull(securitiesDeliveryObligation);
+		return this;
 	}
 
 	public CurrencyAndAmount getTransferredAmount() {
 		return transferredAmount;
 	}
 
-	public void setTransferredAmount(CurrencyAndAmount transferredAmount) {
-		this.transferredAmount = transferredAmount;
+	public PortfolioTransfer setTransferredAmount(CurrencyAndAmount transferredAmount) {
+		this.transferredAmount = Objects.requireNonNull(transferredAmount);
+		return this;
 	}
 
 	public PercentageRate getTransferredPercentage() {
 		return transferredPercentage;
 	}
 
-	public void setTransferredPercentage(PercentageRate transferredPercentage) {
-		this.transferredPercentage = transferredPercentage;
+	public PortfolioTransfer setTransferredPercentage(PercentageRate transferredPercentage) {
+		this.transferredPercentage = Objects.requireNonNull(transferredPercentage);
+		return this;
 	}
 
 	public ISODateTime getTransferDate() {
 		return transferDate;
 	}
 
-	public void setTransferDate(ISODateTime transferDate) {
-		this.transferDate = transferDate;
+	public PortfolioTransfer setTransferDate(ISODateTime transferDate) {
+		this.transferDate = Objects.requireNonNull(transferDate);
+		return this;
 	}
 
 	public InvestmentAccount getNomineeAccount() {
 		return nomineeAccount;
 	}
 
-	public void setNomineeAccount(com.tools20022.repository.entity.InvestmentAccount nomineeAccount) {
-		this.nomineeAccount = nomineeAccount;
+	public PortfolioTransfer setNomineeAccount(com.tools20022.repository.entity.InvestmentAccount nomineeAccount) {
+		this.nomineeAccount = Objects.requireNonNull(nomineeAccount);
+		return this;
 	}
 
 	public PEPISACode getPEPOrISAPlan() {
 		return pEPOrISAPlan;
 	}
 
-	public void setPEPOrISAPlan(PEPISACode pEPOrISAPlan) {
-		this.pEPOrISAPlan = pEPOrISAPlan;
+	public PortfolioTransfer setPEPOrISAPlan(PEPISACode pEPOrISAPlan) {
+		this.pEPOrISAPlan = Objects.requireNonNull(pEPOrISAPlan);
+		return this;
 	}
 
 	public ISATypeCode getCurrentYearISAType() {
 		return currentYearISAType;
 	}
 
-	public void setCurrentYearISAType(ISATypeCode currentYearISAType) {
-		this.currentYearISAType = currentYearISAType;
+	public PortfolioTransfer setCurrentYearISAType(ISATypeCode currentYearISAType) {
+		this.currentYearISAType = Objects.requireNonNull(currentYearISAType);
+		return this;
 	}
 }

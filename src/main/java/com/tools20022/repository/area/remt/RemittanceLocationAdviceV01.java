@@ -26,9 +26,11 @@ import com.tools20022.repository.msg.GroupHeader62;
 import com.tools20022.repository.msg.RemittanceLocation3;
 import com.tools20022.repository.msg.SupplementaryData1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,16 +77,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RemittanceLocationAdviceV01", propOrder = {"groupHeader", "remittanceLocation", "supplementaryData"})
 public class RemittanceLocationAdviceV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GrpHdr", required = true)
 	protected GroupHeader62 groupHeader;
 	/**
-	 * Set of characteristics shared by all remittance location information
-	 * included in the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,13 +127,11 @@ public class RemittanceLocationAdviceV01 {
 			}
 		}
 	};
+	@XmlElement(name = "RmtLctn", required = true)
 	protected List<RemittanceLocation3> remittanceLocation;
 	/**
-	 * Provides information related to location and/or delivery of the
-	 * remittance information. This information is used to enable the matching
-	 * of an entry with the items that the associated payment is intended to
-	 * settle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,11 +172,11 @@ public class RemittanceLocationAdviceV01 {
 			}
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,34 +247,34 @@ public class RemittanceLocationAdviceV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GrpHdr", required = true)
 	public GroupHeader62 getGroupHeader() {
 		return groupHeader;
 	}
 
-	public void setGroupHeader(GroupHeader62 groupHeader) {
-		this.groupHeader = groupHeader;
+	public RemittanceLocationAdviceV01 setGroupHeader(GroupHeader62 groupHeader) {
+		this.groupHeader = Objects.requireNonNull(groupHeader);
+		return this;
 	}
 
-	@XmlElement(name = "RmtLctn", required = true)
 	public List<RemittanceLocation3> getRemittanceLocation() {
-		return remittanceLocation;
+		return remittanceLocation == null ? remittanceLocation = new ArrayList<>() : remittanceLocation;
 	}
 
-	public void setRemittanceLocation(List<RemittanceLocation3> remittanceLocation) {
-		this.remittanceLocation = remittanceLocation;
+	public RemittanceLocationAdviceV01 setRemittanceLocation(List<RemittanceLocation3> remittanceLocation) {
+		this.remittanceLocation = Objects.requireNonNull(remittanceLocation);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public RemittanceLocationAdviceV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:remt.002.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:remt.002.001.01")
 	static public class Document {
 		@XmlElement(name = "RmtLctnAdvc", required = true)
 		public RemittanceLocationAdviceV01 messageBody;

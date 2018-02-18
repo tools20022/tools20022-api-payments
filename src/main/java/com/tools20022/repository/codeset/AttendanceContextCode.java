@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#Attended
- * AttendanceContextCode.mmAttended}</li>
+ * AttendanceContextCode.Attended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#SemiAttended
- * AttendanceContextCode.mmSemiAttended}</li>
+ * AttendanceContextCode.SemiAttended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#Unattended
- * AttendanceContextCode.mmUnattended}</li>
+ * AttendanceContextCode.Unattended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#AttendantDelivery
- * AttendanceContextCode.mmAttendantDelivery}</li>
+ * AttendanceContextCode.AttendantDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#CustomerDelivery
- * AttendanceContextCode.mmCustomerDelivery}</li>
+ * AttendanceContextCode.CustomerDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#CarrierDelivery
- * AttendanceContextCode.mmCarrierDelivery}</li>
+ * AttendanceContextCode.CarrierDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#FullServe
- * AttendanceContextCode.mmFullServe}</li>
+ * AttendanceContextCode.FullServe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttendanceContextCode#SelfServe
- * AttendanceContextCode.mmSelfServe}</li>
+ * AttendanceContextCode.SelfServe}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -345,7 +345,7 @@ public class AttendanceContextCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ATTD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AttendanceContextCode";

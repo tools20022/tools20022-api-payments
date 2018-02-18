@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Price;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Set of elements used to identify a proprietary price."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProprietaryPrice2", propOrder = {"type", "price"})
 public class ProprietaryPrice2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Max35Text type;
 	/**
-	 * Specifies the type of price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,7 +100,7 @@ public class ProprietaryPrice2 {
 	 */
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ProprietaryPrice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryPrice2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,10 +111,11 @@ public class ProprietaryPrice2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Pric", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount price;
 	/**
-	 * Proprietary price specification related to the underlying transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +149,7 @@ public class ProprietaryPrice2 {
 	public static final MMMessageAttribute mmPrice = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> Price.mmObject();
-			componentContext_lazy = () -> ProprietaryPrice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryPrice2.mmObject();
 			isDerived = false;
 			xmlTag = "Pric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,9 +164,9 @@ public class ProprietaryPrice2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProprietaryPrice2.mmType, ProprietaryPrice2.mmPrice);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryPrice2.mmType, com.tools20022.repository.msg.ProprietaryPrice2.mmPrice);
 				trace_lazy = () -> Price.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProprietaryPrice2";
 				definition = "Set of elements used to identify a proprietary price.";
@@ -172,21 +175,21 @@ public class ProprietaryPrice2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Max35Text getType() {
 		return type;
 	}
 
-	public void setType(Max35Text type) {
-		this.type = type;
+	public ProprietaryPrice2 setType(Max35Text type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Pric", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getPrice() {
 		return price;
 	}
 
-	public void setPrice(ActiveOrHistoricCurrencyAndAmount price) {
-		this.price = price;
+	public ProprietaryPrice2 setPrice(ActiveOrHistoricCurrencyAndAmount price) {
+		this.price = Objects.requireNonNull(price);
+		return this;
 	}
 }

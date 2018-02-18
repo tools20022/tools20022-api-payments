@@ -37,13 +37,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Opening
- * UseCases1Code.mmOpening}</li>
+ * UseCases1Code.Opening}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Maintenance
- * UseCases1Code.mmMaintenance}</li>
+ * UseCases1Code.Maintenance}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Closing
- * UseCases1Code.mmClosing}</li>
+ * UseCases1Code.Closing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#View
- * UseCases1Code.mmView}</li>
+ * UseCases1Code.View}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -177,7 +177,7 @@ public class UseCases1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OPEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UseCases1Code";

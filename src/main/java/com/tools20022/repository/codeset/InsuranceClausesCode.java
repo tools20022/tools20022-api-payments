@@ -40,44 +40,44 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteCargoClauseA
- * InsuranceClausesCode.mmInstituteCargoClauseA}</li>
+ * InsuranceClausesCode.InstituteCargoClauseA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteCargoClauseB
- * InsuranceClausesCode.mmInstituteCargoClauseB}</li>
+ * InsuranceClausesCode.InstituteCargoClauseB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteCargoClauseC
- * InsuranceClausesCode.mmInstituteCargoClauseC}</li>
+ * InsuranceClausesCode.InstituteCargoClauseC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteCargoClauseAir
- * InsuranceClausesCode.mmInstituteCargoClauseAir}</li>
+ * InsuranceClausesCode.InstituteCargoClauseAir}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteWarClauseCargo
- * InsuranceClausesCode.mmInstituteWarClauseCargo}</li>
+ * InsuranceClausesCode.InstituteWarClauseCargo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteStrikesClauseCargo
- * InsuranceClausesCode.mmInstituteStrikesClauseCargo}</li>
+ * InsuranceClausesCode.InstituteStrikesClauseCargo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteReplacementClause
- * InsuranceClausesCode.mmInstituteReplacementClause}</li>
+ * InsuranceClausesCode.InstituteReplacementClause}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteClassificationClause
- * InsuranceClausesCode.mmInstituteClassificationClause}</li>
+ * InsuranceClausesCode.InstituteClassificationClause}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#ISMCodeEndorsement
- * InsuranceClausesCode.mmISMCodeEndorsement}</li>
+ * InsuranceClausesCode.ISMCodeEndorsement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#ComputerMilleniumClauseCargo
- * InsuranceClausesCode.mmComputerMilleniumClauseCargo}</li>
+ * InsuranceClausesCode.ComputerMilleniumClauseCargo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceClausesCode#InstituteRadioactiveContaminationExclusionClause
- * InsuranceClausesCode.mmInstituteRadioactiveContaminationExclusionClause}</li>
+ * InsuranceClausesCode.InstituteRadioactiveContaminationExclusionClause}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -481,7 +481,7 @@ public class InsuranceClausesCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ICCA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsuranceClausesCode";

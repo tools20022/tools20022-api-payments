@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * TimeFrame or period concept that allows definition of a period as number of
@@ -77,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,10 +97,8 @@ public class TimeFrame {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Number tradeMinus;
 	/**
-	 * An agreed number of days before the Trade date (T) used to define
-	 * standard timeframes e.g. T-1 Dealing cut off or T-2 prepayment condition<br>
-	 * Where = T is the date that the price is applied to a transaction,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,9 +144,8 @@ public class TimeFrame {
 	};
 	protected Number renunciationMinus;
 	/**
-	 * An agreed number of days before the Renunciation of Title documents are
-	 * received used to define standard timeframes in redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,8 +191,8 @@ public class TimeFrame {
 	};
 	protected InvestmentFundClassProcessingCharacteristics subscriptionSettlementRelatedFundProcessing;
 	/**
-	 * Fund processing characteristics related to a subscription cycle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,10 +240,8 @@ public class TimeFrame {
 	};
 	protected Number tradePlus;
 	/**
-	 * An agreed number of days after the Trade date (T) used to define standard
-	 * timeframes e.g T+3 settlement period. <br>
-	 * Where = T is the date that the price is applied to a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,10 +287,8 @@ public class TimeFrame {
 	};
 	protected Number renunciationPlus;
 	/**
-	 * An agreed number of days after the renunciation of title documents are
-	 * received used to define standard timeframes in Redemption e.g R+3
-	 * Redemption settlement cycle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,8 +334,8 @@ public class TimeFrame {
 	};
 	protected YesNoIndicator prepayment;
 	/**
-	 * Indicates whether pre-payment is necessary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,9 +380,8 @@ public class TimeFrame {
 	};
 	protected Max350Text otherTimeFrameDescription;
 	/**
-	 * Specifies a description of any other TimeFrame that may be used for the
-	 * DealingCutOffTimeFrame
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -434,8 +427,8 @@ public class TimeFrame {
 	};
 	protected InvestmentFundClassProcessingCharacteristics relatedProcessingCharacteristics;
 	/**
-	 * Processing characteristics for which a cut off time frame is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -486,7 +479,7 @@ public class TimeFrame {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TimeFrame";
 				definition = "TimeFrame or period concept that allows definition of a period as number of days before or after a defined activity.";
@@ -509,63 +502,71 @@ public class TimeFrame {
 		return tradeMinus;
 	}
 
-	public void setTradeMinus(Number tradeMinus) {
-		this.tradeMinus = tradeMinus;
+	public TimeFrame setTradeMinus(Number tradeMinus) {
+		this.tradeMinus = Objects.requireNonNull(tradeMinus);
+		return this;
 	}
 
 	public Number getRenunciationMinus() {
 		return renunciationMinus;
 	}
 
-	public void setRenunciationMinus(Number renunciationMinus) {
-		this.renunciationMinus = renunciationMinus;
+	public TimeFrame setRenunciationMinus(Number renunciationMinus) {
+		this.renunciationMinus = Objects.requireNonNull(renunciationMinus);
+		return this;
 	}
 
 	public InvestmentFundClassProcessingCharacteristics getSubscriptionSettlementRelatedFundProcessing() {
 		return subscriptionSettlementRelatedFundProcessing;
 	}
 
-	public void setSubscriptionSettlementRelatedFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics subscriptionSettlementRelatedFundProcessing) {
-		this.subscriptionSettlementRelatedFundProcessing = subscriptionSettlementRelatedFundProcessing;
+	public TimeFrame setSubscriptionSettlementRelatedFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics subscriptionSettlementRelatedFundProcessing) {
+		this.subscriptionSettlementRelatedFundProcessing = Objects.requireNonNull(subscriptionSettlementRelatedFundProcessing);
+		return this;
 	}
 
 	public Number getTradePlus() {
 		return tradePlus;
 	}
 
-	public void setTradePlus(Number tradePlus) {
-		this.tradePlus = tradePlus;
+	public TimeFrame setTradePlus(Number tradePlus) {
+		this.tradePlus = Objects.requireNonNull(tradePlus);
+		return this;
 	}
 
 	public Number getRenunciationPlus() {
 		return renunciationPlus;
 	}
 
-	public void setRenunciationPlus(Number renunciationPlus) {
-		this.renunciationPlus = renunciationPlus;
+	public TimeFrame setRenunciationPlus(Number renunciationPlus) {
+		this.renunciationPlus = Objects.requireNonNull(renunciationPlus);
+		return this;
 	}
 
 	public YesNoIndicator getPrepayment() {
 		return prepayment;
 	}
 
-	public void setPrepayment(YesNoIndicator prepayment) {
-		this.prepayment = prepayment;
+	public TimeFrame setPrepayment(YesNoIndicator prepayment) {
+		this.prepayment = Objects.requireNonNull(prepayment);
+		return this;
 	}
 
 	public Max350Text getOtherTimeFrameDescription() {
 		return otherTimeFrameDescription;
 	}
 
-	public void setOtherTimeFrameDescription(Max350Text otherTimeFrameDescription) {
-		this.otherTimeFrameDescription = otherTimeFrameDescription;
+	public TimeFrame setOtherTimeFrameDescription(Max350Text otherTimeFrameDescription) {
+		this.otherTimeFrameDescription = Objects.requireNonNull(otherTimeFrameDescription);
+		return this;
 	}
 
 	public InvestmentFundClassProcessingCharacteristics getRelatedProcessingCharacteristics() {
 		return relatedProcessingCharacteristics;
 	}
 
-	public void setRelatedProcessingCharacteristics(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics relatedProcessingCharacteristics) {
-		this.relatedProcessingCharacteristics = relatedProcessingCharacteristics;
+	public TimeFrame setRelatedProcessingCharacteristics(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics relatedProcessingCharacteristics) {
+		this.relatedProcessingCharacteristics = Objects.requireNonNull(relatedProcessingCharacteristics);
+		return this;
 	}
 }

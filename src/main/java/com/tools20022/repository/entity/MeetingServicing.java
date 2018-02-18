@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CorporateActionServicing;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Services which consists in notifying the investor or its agent of a meeting,
@@ -85,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,8 +106,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Meeting> meetingSpecification;
 	/**
-	 * Meeting for which services are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +152,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.MeetingNotice> meetingNotice;
 	/**
-	 * Service which consists in notifying the investor of a meeting. It may
-	 * contain details of the meeting as defined by the agent in addition to the
-	 * details defined by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,8 +201,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement;
 	/**
-	 * Calculation of the entitlementbased on the balance in the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,9 +249,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction;
 	/**
-	 * Service which consists in validating, calculating and transferring the
-	 * investor's instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,9 +299,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination;
 	/**
-	 * Service which consists in distributing the results of the meeting to the
-	 * investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -353,7 +351,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingServicing";
 				definition = "Services which consists in notifying the investor or its agent of a meeting, in validating and relaying its instructions and in calculating its entitlement based on its holdings.";
@@ -375,42 +373,47 @@ public class MeetingServicing extends CorporateActionServicing {
 	}
 
 	public List<Meeting> getMeetingSpecification() {
-		return meetingSpecification;
+		return meetingSpecification == null ? meetingSpecification = new ArrayList<>() : meetingSpecification;
 	}
 
-	public void setMeetingSpecification(List<com.tools20022.repository.entity.Meeting> meetingSpecification) {
-		this.meetingSpecification = meetingSpecification;
+	public MeetingServicing setMeetingSpecification(List<com.tools20022.repository.entity.Meeting> meetingSpecification) {
+		this.meetingSpecification = Objects.requireNonNull(meetingSpecification);
+		return this;
 	}
 
 	public List<MeetingNotice> getMeetingNotice() {
-		return meetingNotice;
+		return meetingNotice == null ? meetingNotice = new ArrayList<>() : meetingNotice;
 	}
 
-	public void setMeetingNotice(List<com.tools20022.repository.entity.MeetingNotice> meetingNotice) {
-		this.meetingNotice = meetingNotice;
+	public MeetingServicing setMeetingNotice(List<com.tools20022.repository.entity.MeetingNotice> meetingNotice) {
+		this.meetingNotice = Objects.requireNonNull(meetingNotice);
+		return this;
 	}
 
 	public List<MeetingEntitlement> getMeetingEntitlement() {
-		return meetingEntitlement;
+		return meetingEntitlement == null ? meetingEntitlement = new ArrayList<>() : meetingEntitlement;
 	}
 
-	public void setMeetingEntitlement(List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement) {
-		this.meetingEntitlement = meetingEntitlement;
+	public MeetingServicing setMeetingEntitlement(List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement) {
+		this.meetingEntitlement = Objects.requireNonNull(meetingEntitlement);
+		return this;
 	}
 
 	public List<InstructionForMeeting> getMeetingInstruction() {
-		return meetingInstruction;
+		return meetingInstruction == null ? meetingInstruction = new ArrayList<>() : meetingInstruction;
 	}
 
-	public void setMeetingInstruction(List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction) {
-		this.meetingInstruction = meetingInstruction;
+	public MeetingServicing setMeetingInstruction(List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction) {
+		this.meetingInstruction = Objects.requireNonNull(meetingInstruction);
+		return this;
 	}
 
 	public List<MeetingResultDissemination> getMeetingResultDissemination() {
-		return meetingResultDissemination;
+		return meetingResultDissemination == null ? meetingResultDissemination = new ArrayList<>() : meetingResultDissemination;
 	}
 
-	public void setMeetingResultDissemination(List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination) {
-		this.meetingResultDissemination = meetingResultDissemination;
+	public MeetingServicing setMeetingResultDissemination(List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination) {
+		this.meetingResultDissemination = Objects.requireNonNull(meetingResultDissemination);
+		return this;
 	}
 }

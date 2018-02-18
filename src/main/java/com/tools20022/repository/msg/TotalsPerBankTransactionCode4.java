@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.BankTransaction;
 import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TotalsPerBankTransactionCode4", propOrder = {"numberOfEntries", "sum", "totalNetEntry", "forecastIndicator", "bankTransactionCode", "availability"})
 public class TotalsPerBankTransactionCode4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NbOfNtries")
 	protected Max15NumericText numberOfEntries;
 	/**
-	 * Number of individual entries for the bank transaction code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,7 +119,7 @@ public class TotalsPerBankTransactionCode4 {
 	 */
 	public static final MMMessageAttribute mmNumberOfEntries = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfNtries";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,10 +130,11 @@ public class TotalsPerBankTransactionCode4 {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "Sum")
 	protected DecimalNumber sum;
 	/**
-	 * Total of all individual entries included in the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,7 +162,7 @@ public class TotalsPerBankTransactionCode4 {
 	 */
 	public static final MMMessageAttribute mmSum = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "Sum";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,11 +173,11 @@ public class TotalsPerBankTransactionCode4 {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "TtlNetNtry")
 	protected AmountAndDirection35 totalNetEntry;
 	/**
-	 * Total debit or credit amount that is the result of the netted amounts for
-	 * all debit and credit entries per bank transaction code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +207,7 @@ public class TotalsPerBankTransactionCode4 {
 	 */
 	public static final MMMessageAttribute mmTotalNetEntry = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNetNtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,11 +218,11 @@ public class TotalsPerBankTransactionCode4 {
 			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection35.mmObject();
 		}
 	};
+	@XmlElement(name = "FcstInd")
 	protected TrueFalseIndicator forecastIndicator;
 	/**
-	 * Indicates whether the bank transaction code is related to booked or
-	 * forecast items.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,7 +252,7 @@ public class TotalsPerBankTransactionCode4 {
 	 */
 	public static final MMMessageAttribute mmForecastIndicator = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "FcstInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,11 +263,11 @@ public class TotalsPerBankTransactionCode4 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "BkTxCd", required = true)
 	protected BankTransactionCodeStructure4 bankTransactionCode;
 	/**
-	 * Set of elements used to fully identify the type of underlying transaction
-	 * resulting in an entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -301,7 +302,7 @@ public class TotalsPerBankTransactionCode4 {
 	public static final MMMessageAssociationEnd mmBankTransactionCode = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> BankTransaction.mmObject();
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "BkTxCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -313,11 +314,11 @@ public class TotalsPerBankTransactionCode4 {
 			type_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure4.mmObject();
 		}
 	};
+	@XmlElement(name = "Avlbty")
 	protected List<com.tools20022.repository.msg.CashAvailability1> availability;
 	/**
-	 * Set of elements used to indicate when the booked amount of money will
-	 * become available, that is can be accessed and starts generating interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -351,7 +352,7 @@ public class TotalsPerBankTransactionCode4 {
 	public static final MMMessageAssociationEnd mmAvailability = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAvailability;
-			componentContext_lazy = () -> TotalsPerBankTransactionCode4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmObject();
 			isDerived = false;
 			xmlTag = "Avlbty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -366,9 +367,10 @@ public class TotalsPerBankTransactionCode4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TotalsPerBankTransactionCode4.mmNumberOfEntries, TotalsPerBankTransactionCode4.mmSum, TotalsPerBankTransactionCode4.mmTotalNetEntry,
-						TotalsPerBankTransactionCode4.mmForecastIndicator, TotalsPerBankTransactionCode4.mmBankTransactionCode, TotalsPerBankTransactionCode4.mmAvailability);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmNumberOfEntries, com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmSum,
+						com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmTotalNetEntry, com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmForecastIndicator,
+						com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmBankTransactionCode, com.tools20022.repository.msg.TotalsPerBankTransactionCode4.mmAvailability);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TotalsPerBankTransactionCode4";
 				definition = "Set of elements used to provide the total sum of entries per bank transaction code.";
@@ -377,57 +379,57 @@ public class TotalsPerBankTransactionCode4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NbOfNtries")
-	public Max15NumericText getNumberOfEntries() {
-		return numberOfEntries;
+	public Optional<Max15NumericText> getNumberOfEntries() {
+		return numberOfEntries == null ? Optional.empty() : Optional.of(numberOfEntries);
 	}
 
-	public void setNumberOfEntries(Max15NumericText numberOfEntries) {
+	public TotalsPerBankTransactionCode4 setNumberOfEntries(Max15NumericText numberOfEntries) {
 		this.numberOfEntries = numberOfEntries;
+		return this;
 	}
 
-	@XmlElement(name = "Sum")
-	public DecimalNumber getSum() {
-		return sum;
+	public Optional<DecimalNumber> getSum() {
+		return sum == null ? Optional.empty() : Optional.of(sum);
 	}
 
-	public void setSum(DecimalNumber sum) {
+	public TotalsPerBankTransactionCode4 setSum(DecimalNumber sum) {
 		this.sum = sum;
+		return this;
 	}
 
-	@XmlElement(name = "TtlNetNtry")
-	public AmountAndDirection35 getTotalNetEntry() {
-		return totalNetEntry;
+	public Optional<AmountAndDirection35> getTotalNetEntry() {
+		return totalNetEntry == null ? Optional.empty() : Optional.of(totalNetEntry);
 	}
 
-	public void setTotalNetEntry(com.tools20022.repository.msg.AmountAndDirection35 totalNetEntry) {
+	public TotalsPerBankTransactionCode4 setTotalNetEntry(com.tools20022.repository.msg.AmountAndDirection35 totalNetEntry) {
 		this.totalNetEntry = totalNetEntry;
+		return this;
 	}
 
-	@XmlElement(name = "FcstInd")
-	public TrueFalseIndicator getForecastIndicator() {
-		return forecastIndicator;
+	public Optional<TrueFalseIndicator> getForecastIndicator() {
+		return forecastIndicator == null ? Optional.empty() : Optional.of(forecastIndicator);
 	}
 
-	public void setForecastIndicator(TrueFalseIndicator forecastIndicator) {
+	public TotalsPerBankTransactionCode4 setForecastIndicator(TrueFalseIndicator forecastIndicator) {
 		this.forecastIndicator = forecastIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "BkTxCd", required = true)
 	public BankTransactionCodeStructure4 getBankTransactionCode() {
 		return bankTransactionCode;
 	}
 
-	public void setBankTransactionCode(com.tools20022.repository.msg.BankTransactionCodeStructure4 bankTransactionCode) {
-		this.bankTransactionCode = bankTransactionCode;
+	public TotalsPerBankTransactionCode4 setBankTransactionCode(com.tools20022.repository.msg.BankTransactionCodeStructure4 bankTransactionCode) {
+		this.bankTransactionCode = Objects.requireNonNull(bankTransactionCode);
+		return this;
 	}
 
-	@XmlElement(name = "Avlbty")
 	public List<CashAvailability1> getAvailability() {
-		return availability;
+		return availability == null ? availability = new ArrayList<>() : availability;
 	}
 
-	public void setAvailability(List<com.tools20022.repository.msg.CashAvailability1> availability) {
-		this.availability = availability;
+	public TotalsPerBankTransactionCode4 setAvailability(List<com.tools20022.repository.msg.CashAvailability1> availability) {
+		this.availability = Objects.requireNonNull(availability);
+		return this;
 	}
 }

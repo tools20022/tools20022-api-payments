@@ -23,9 +23,8 @@ import com.tools20022.repository.entity.RolePlayer;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Entity involved in an activity.
@@ -119,8 +118,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -136,8 +135,8 @@ public class Party extends RolePlayer {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.ContactPoint> contactPoint;
 	/**
-	 * Number, physical or virtual address, used for communication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,8 +210,8 @@ public class Party extends RolePlayer {
 	};
 	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> identification;
 	/**
-	 * Specific identification assigned to a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -698,9 +697,8 @@ public class Party extends RolePlayer {
 	};
 	protected MoneyLaunderingCheckCode moneyLaunderingCheck;
 	/**
-	 * Status of an identity check to prevent money laundering. This includes
-	 * the counter-terrorism check.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -747,9 +745,8 @@ public class Party extends RolePlayer {
 	};
 	protected Tax taxationConditions;
 	/**
-	 * Taxation parameters which apply to an individual person or to an
-	 * organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -796,9 +793,8 @@ public class Party extends RolePlayer {
 	};
 	protected Location domicile;
 	/**
-	 * Location in which a person is permanently domiciled (the place of a
-	 * person's permanent home).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -845,9 +841,8 @@ public class Party extends RolePlayer {
 	};
 	protected List<com.tools20022.repository.entity.Location> residence;
 	/**
-	 * Location from which the affairs of a company are directed or location in
-	 * which a person resides (the place of a person's home).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -893,8 +888,8 @@ public class Party extends RolePlayer {
 	};
 	protected PowerOfAttorney powerOfAttorney;
 	/**
-	 * Power of attorney which is held by the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -940,8 +935,8 @@ public class Party extends RolePlayer {
 	};
 	protected Location location;
 	/**
-	 * Location of the taxable party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -986,8 +981,8 @@ public class Party extends RolePlayer {
 	};
 	protected Security closeLinkSecurity;
 	/**
-	 * Security for which a close link with a party is identified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1035,7 +1030,7 @@ public class Party extends RolePlayer {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party";
 				definition = "Entity involved in an activity.";
@@ -1060,74 +1055,83 @@ public class Party extends RolePlayer {
 	}
 
 	public List<ContactPoint> getContactPoint() {
-		return contactPoint;
+		return contactPoint == null ? contactPoint = new ArrayList<>() : contactPoint;
 	}
 
-	public void setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
-		this.contactPoint = contactPoint;
+	public Party setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
+		this.contactPoint = Objects.requireNonNull(contactPoint);
+		return this;
 	}
 
 	public List<PartyIdentificationInformation> getIdentification() {
-		return identification;
+		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public void setIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> identification) {
-		this.identification = identification;
+	public Party setIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public MoneyLaunderingCheckCode getMoneyLaunderingCheck() {
 		return moneyLaunderingCheck;
 	}
 
-	public void setMoneyLaunderingCheck(MoneyLaunderingCheckCode moneyLaunderingCheck) {
-		this.moneyLaunderingCheck = moneyLaunderingCheck;
+	public Party setMoneyLaunderingCheck(MoneyLaunderingCheckCode moneyLaunderingCheck) {
+		this.moneyLaunderingCheck = Objects.requireNonNull(moneyLaunderingCheck);
+		return this;
 	}
 
 	public Tax getTaxationConditions() {
 		return taxationConditions;
 	}
 
-	public void setTaxationConditions(com.tools20022.repository.entity.Tax taxationConditions) {
-		this.taxationConditions = taxationConditions;
+	public Party setTaxationConditions(com.tools20022.repository.entity.Tax taxationConditions) {
+		this.taxationConditions = Objects.requireNonNull(taxationConditions);
+		return this;
 	}
 
 	public Location getDomicile() {
 		return domicile;
 	}
 
-	public void setDomicile(com.tools20022.repository.entity.Location domicile) {
-		this.domicile = domicile;
+	public Party setDomicile(com.tools20022.repository.entity.Location domicile) {
+		this.domicile = Objects.requireNonNull(domicile);
+		return this;
 	}
 
 	public List<Location> getResidence() {
-		return residence;
+		return residence == null ? residence = new ArrayList<>() : residence;
 	}
 
-	public void setResidence(List<com.tools20022.repository.entity.Location> residence) {
-		this.residence = residence;
+	public Party setResidence(List<com.tools20022.repository.entity.Location> residence) {
+		this.residence = Objects.requireNonNull(residence);
+		return this;
 	}
 
-	public PowerOfAttorney getPowerOfAttorney() {
-		return powerOfAttorney;
+	public Optional<PowerOfAttorney> getPowerOfAttorney() {
+		return powerOfAttorney == null ? Optional.empty() : Optional.of(powerOfAttorney);
 	}
 
-	public void setPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney powerOfAttorney) {
+	public Party setPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney powerOfAttorney) {
 		this.powerOfAttorney = powerOfAttorney;
+		return this;
 	}
 
 	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(com.tools20022.repository.entity.Location location) {
-		this.location = location;
+	public Party setLocation(com.tools20022.repository.entity.Location location) {
+		this.location = Objects.requireNonNull(location);
+		return this;
 	}
 
 	public Security getCloseLinkSecurity() {
 		return closeLinkSecurity;
 	}
 
-	public void setCloseLinkSecurity(com.tools20022.repository.entity.Security closeLinkSecurity) {
-		this.closeLinkSecurity = closeLinkSecurity;
+	public Party setCloseLinkSecurity(com.tools20022.repository.entity.Security closeLinkSecurity) {
+		this.closeLinkSecurity = Objects.requireNonNull(closeLinkSecurity);
+		return this;
 	}
 }

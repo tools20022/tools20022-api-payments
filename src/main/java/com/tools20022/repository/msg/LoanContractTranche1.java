@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.PaymentTerms;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides details on the tranches defined for the loan contract."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LoanContractTranche1", propOrder = {"trancheNumber", "expectedDate", "amount", "dueDate", "durationCode", "lastTrancheIndicator"})
 public class LoanContractTranche1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TrchNb", required = true)
 	protected Number trancheNumber;
 	/**
-	 * Unique sequence number of the tranche.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +116,7 @@ public class LoanContractTranche1 {
 	 */
 	public static final MMMessageAttribute mmTrancheNumber = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "TrchNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +127,11 @@ public class LoanContractTranche1 {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	@XmlElement(name = "XpctdDt", required = true)
 	protected ISODate expectedDate;
 	/**
-	 * Expected tranche payment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +164,7 @@ public class LoanContractTranche1 {
 	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,10 +175,11 @@ public class LoanContractTranche1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of the tranche as defined in the loan contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +213,7 @@ public class LoanContractTranche1 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentTerms.mmAmount;
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,10 +224,11 @@ public class LoanContractTranche1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "DueDt")
 	protected ISODate dueDate;
 	/**
-	 * Loan tranche due date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +261,7 @@ public class LoanContractTranche1 {
 	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "DueDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,10 +272,11 @@ public class LoanContractTranche1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "DrtnCd")
 	protected Exact1NumericText durationCode;
 	/**
-	 * Loan tranche duration in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -297,7 +304,7 @@ public class LoanContractTranche1 {
 	 */
 	public static final MMMessageAttribute mmDurationCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "DrtnCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -308,10 +315,11 @@ public class LoanContractTranche1 {
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "LastTrchInd")
 	protected YesNoIndicator lastTrancheIndicator;
 	/**
-	 * Indicates whether this tranche is the last tranche of the full report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,7 +348,7 @@ public class LoanContractTranche1 {
 	 */
 	public static final MMMessageAttribute mmLastTrancheIndicator = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> LoanContractTranche1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
 			xmlTag = "LastTrchInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -355,10 +363,11 @@ public class LoanContractTranche1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LoanContractTranche1.mmTrancheNumber, LoanContractTranche1.mmExpectedDate, LoanContractTranche1.mmAmount, LoanContractTranche1.mmDueDate, LoanContractTranche1.mmDurationCode,
-						LoanContractTranche1.mmLastTrancheIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LoanContractTranche1.mmTrancheNumber, com.tools20022.repository.msg.LoanContractTranche1.mmExpectedDate,
+						com.tools20022.repository.msg.LoanContractTranche1.mmAmount, com.tools20022.repository.msg.LoanContractTranche1.mmDueDate, com.tools20022.repository.msg.LoanContractTranche1.mmDurationCode,
+						com.tools20022.repository.msg.LoanContractTranche1.mmLastTrancheIndicator);
 				trace_lazy = () -> Loan.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LoanContractTranche1";
 				definition = "Provides details on the tranches defined for the loan contract.";
@@ -367,57 +376,57 @@ public class LoanContractTranche1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TrchNb", required = true)
 	public Number getTrancheNumber() {
 		return trancheNumber;
 	}
 
-	public void setTrancheNumber(Number trancheNumber) {
-		this.trancheNumber = trancheNumber;
+	public LoanContractTranche1 setTrancheNumber(Number trancheNumber) {
+		this.trancheNumber = Objects.requireNonNull(trancheNumber);
+		return this;
 	}
 
-	@XmlElement(name = "XpctdDt", required = true)
 	public ISODate getExpectedDate() {
 		return expectedDate;
 	}
 
-	public void setExpectedDate(ISODate expectedDate) {
-		this.expectedDate = expectedDate;
+	public LoanContractTranche1 setExpectedDate(ISODate expectedDate) {
+		this.expectedDate = Objects.requireNonNull(expectedDate);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public LoanContractTranche1 setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "DueDt")
-	public ISODate getDueDate() {
-		return dueDate;
+	public Optional<ISODate> getDueDate() {
+		return dueDate == null ? Optional.empty() : Optional.of(dueDate);
 	}
 
-	public void setDueDate(ISODate dueDate) {
+	public LoanContractTranche1 setDueDate(ISODate dueDate) {
 		this.dueDate = dueDate;
+		return this;
 	}
 
-	@XmlElement(name = "DrtnCd")
-	public Exact1NumericText getDurationCode() {
-		return durationCode;
+	public Optional<Exact1NumericText> getDurationCode() {
+		return durationCode == null ? Optional.empty() : Optional.of(durationCode);
 	}
 
-	public void setDurationCode(Exact1NumericText durationCode) {
+	public LoanContractTranche1 setDurationCode(Exact1NumericText durationCode) {
 		this.durationCode = durationCode;
+		return this;
 	}
 
-	@XmlElement(name = "LastTrchInd")
-	public YesNoIndicator getLastTrancheIndicator() {
-		return lastTrancheIndicator;
+	public Optional<YesNoIndicator> getLastTrancheIndicator() {
+		return lastTrancheIndicator == null ? Optional.empty() : Optional.of(lastTrancheIndicator);
 	}
 
-	public void setLastTrancheIndicator(YesNoIndicator lastTrancheIndicator) {
+	public LoanContractTranche1 setLastTrancheIndicator(YesNoIndicator lastTrancheIndicator) {
 		this.lastTrancheIndicator = lastTrancheIndicator;
+		return this;
 	}
 }

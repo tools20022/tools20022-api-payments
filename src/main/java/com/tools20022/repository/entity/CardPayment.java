@@ -29,9 +29,8 @@ import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Payment through an electronic money product.
@@ -152,8 +151,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -169,8 +168,8 @@ public class CardPayment extends IndividualPayment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PaymentCard paymentCard;
 	/**
-	 * Specifies the card which is used in a payment by card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,8 +225,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected List<com.tools20022.repository.entity.Product> product;
 	/**
-	 * Product purchased with the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,8 +279,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected ImpliedCurrencyAndAmount detailedAmount;
 	/**
-	 * Detailed amount value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -326,8 +325,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected TypeOfAmountCode amountQualifier;
 	/**
-	 * Identification of the type of amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,8 +371,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentAcquiring> cardPaymentAcquiring;
 	/**
-	 * Parameters of the process of acquiring a card payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,9 +427,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentPartyRole> paymentCardPartyRole;
 	/**
-	 * Specifies each role played by a party in the process of a payment by
-	 * card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -478,8 +476,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentStatus> cardPaymentStatus;
 	/**
-	 * Status of the payment by card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -524,8 +522,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected Max35Text detailedAmountLabel;
 	/**
-	 * Short description of the amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -569,8 +567,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected ReconciliationTransaction reconciliation;
 	/**
-	 * Total of a certain type of transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -617,8 +615,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected ExternalCardTransactionCategoryCode transactionCategory;
 	/**
-	 * Specifies the category to which the card transaction belongs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -664,9 +662,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected CurrencyAndAmount cashBackAmount;
 	/**
-	 * Amount added to the total price of the transaction and received in cash
-	 * by the customer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -713,8 +710,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected CurrencyAndAmount gratuity;
 	/**
-	 * Amount tendered for a service performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -759,8 +756,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected DebitCreditCode debitCreditDirection;
 	/**
-	 * Specifies the direction of a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -805,8 +802,8 @@ public class CardPayment extends IndividualPayment {
 	};
 	protected List<com.tools20022.repository.entity.ATMTotal> aTMTotal;
 	/**
-	 * Current totals of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -852,7 +849,7 @@ public class CardPayment extends IndividualPayment {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPayment";
 				definition = "Payment through an electronic money product.";
@@ -882,111 +879,125 @@ public class CardPayment extends IndividualPayment {
 		return paymentCard;
 	}
 
-	public void setPaymentCard(com.tools20022.repository.entity.PaymentCard paymentCard) {
-		this.paymentCard = paymentCard;
+	public CardPayment setPaymentCard(com.tools20022.repository.entity.PaymentCard paymentCard) {
+		this.paymentCard = Objects.requireNonNull(paymentCard);
+		return this;
 	}
 
 	public List<Product> getProduct() {
-		return product;
+		return product == null ? product = new ArrayList<>() : product;
 	}
 
-	public void setProduct(List<com.tools20022.repository.entity.Product> product) {
-		this.product = product;
+	public CardPayment setProduct(List<com.tools20022.repository.entity.Product> product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getDetailedAmount() {
 		return detailedAmount;
 	}
 
-	public void setDetailedAmount(ImpliedCurrencyAndAmount detailedAmount) {
-		this.detailedAmount = detailedAmount;
+	public CardPayment setDetailedAmount(ImpliedCurrencyAndAmount detailedAmount) {
+		this.detailedAmount = Objects.requireNonNull(detailedAmount);
+		return this;
 	}
 
 	public TypeOfAmountCode getAmountQualifier() {
 		return amountQualifier;
 	}
 
-	public void setAmountQualifier(TypeOfAmountCode amountQualifier) {
-		this.amountQualifier = amountQualifier;
+	public CardPayment setAmountQualifier(TypeOfAmountCode amountQualifier) {
+		this.amountQualifier = Objects.requireNonNull(amountQualifier);
+		return this;
 	}
 
 	public List<CardPaymentAcquiring> getCardPaymentAcquiring() {
-		return cardPaymentAcquiring;
+		return cardPaymentAcquiring == null ? cardPaymentAcquiring = new ArrayList<>() : cardPaymentAcquiring;
 	}
 
-	public void setCardPaymentAcquiring(List<com.tools20022.repository.entity.CardPaymentAcquiring> cardPaymentAcquiring) {
-		this.cardPaymentAcquiring = cardPaymentAcquiring;
+	public CardPayment setCardPaymentAcquiring(List<com.tools20022.repository.entity.CardPaymentAcquiring> cardPaymentAcquiring) {
+		this.cardPaymentAcquiring = Objects.requireNonNull(cardPaymentAcquiring);
+		return this;
 	}
 
 	public List<CardPaymentPartyRole> getPaymentCardPartyRole() {
-		return paymentCardPartyRole;
+		return paymentCardPartyRole == null ? paymentCardPartyRole = new ArrayList<>() : paymentCardPartyRole;
 	}
 
-	public void setPaymentCardPartyRole(List<com.tools20022.repository.entity.CardPaymentPartyRole> paymentCardPartyRole) {
-		this.paymentCardPartyRole = paymentCardPartyRole;
+	public CardPayment setPaymentCardPartyRole(List<com.tools20022.repository.entity.CardPaymentPartyRole> paymentCardPartyRole) {
+		this.paymentCardPartyRole = Objects.requireNonNull(paymentCardPartyRole);
+		return this;
 	}
 
 	public List<CardPaymentStatus> getCardPaymentStatus() {
-		return cardPaymentStatus;
+		return cardPaymentStatus == null ? cardPaymentStatus = new ArrayList<>() : cardPaymentStatus;
 	}
 
-	public void setCardPaymentStatus(List<com.tools20022.repository.entity.CardPaymentStatus> cardPaymentStatus) {
-		this.cardPaymentStatus = cardPaymentStatus;
+	public CardPayment setCardPaymentStatus(List<com.tools20022.repository.entity.CardPaymentStatus> cardPaymentStatus) {
+		this.cardPaymentStatus = Objects.requireNonNull(cardPaymentStatus);
+		return this;
 	}
 
 	public Max35Text getDetailedAmountLabel() {
 		return detailedAmountLabel;
 	}
 
-	public void setDetailedAmountLabel(Max35Text detailedAmountLabel) {
-		this.detailedAmountLabel = detailedAmountLabel;
+	public CardPayment setDetailedAmountLabel(Max35Text detailedAmountLabel) {
+		this.detailedAmountLabel = Objects.requireNonNull(detailedAmountLabel);
+		return this;
 	}
 
-	public ReconciliationTransaction getReconciliation() {
-		return reconciliation;
+	public Optional<ReconciliationTransaction> getReconciliation() {
+		return reconciliation == null ? Optional.empty() : Optional.of(reconciliation);
 	}
 
-	public void setReconciliation(com.tools20022.repository.entity.ReconciliationTransaction reconciliation) {
+	public CardPayment setReconciliation(com.tools20022.repository.entity.ReconciliationTransaction reconciliation) {
 		this.reconciliation = reconciliation;
+		return this;
 	}
 
 	public ExternalCardTransactionCategoryCode getTransactionCategory() {
 		return transactionCategory;
 	}
 
-	public void setTransactionCategory(ExternalCardTransactionCategoryCode transactionCategory) {
-		this.transactionCategory = transactionCategory;
+	public CardPayment setTransactionCategory(ExternalCardTransactionCategoryCode transactionCategory) {
+		this.transactionCategory = Objects.requireNonNull(transactionCategory);
+		return this;
 	}
 
 	public CurrencyAndAmount getCashBackAmount() {
 		return cashBackAmount;
 	}
 
-	public void setCashBackAmount(CurrencyAndAmount cashBackAmount) {
-		this.cashBackAmount = cashBackAmount;
+	public CardPayment setCashBackAmount(CurrencyAndAmount cashBackAmount) {
+		this.cashBackAmount = Objects.requireNonNull(cashBackAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getGratuity() {
 		return gratuity;
 	}
 
-	public void setGratuity(CurrencyAndAmount gratuity) {
-		this.gratuity = gratuity;
+	public CardPayment setGratuity(CurrencyAndAmount gratuity) {
+		this.gratuity = Objects.requireNonNull(gratuity);
+		return this;
 	}
 
 	public DebitCreditCode getDebitCreditDirection() {
 		return debitCreditDirection;
 	}
 
-	public void setDebitCreditDirection(DebitCreditCode debitCreditDirection) {
-		this.debitCreditDirection = debitCreditDirection;
+	public CardPayment setDebitCreditDirection(DebitCreditCode debitCreditDirection) {
+		this.debitCreditDirection = Objects.requireNonNull(debitCreditDirection);
+		return this;
 	}
 
 	public List<ATMTotal> getATMTotal() {
-		return aTMTotal;
+		return aTMTotal == null ? aTMTotal = new ArrayList<>() : aTMTotal;
 	}
 
-	public void setATMTotal(List<com.tools20022.repository.entity.ATMTotal> aTMTotal) {
-		this.aTMTotal = aTMTotal;
+	public CardPayment setATMTotal(List<com.tools20022.repository.entity.ATMTotal> aTMTotal) {
+		this.aTMTotal = Objects.requireNonNull(aTMTotal);
+		return this;
 	}
 }

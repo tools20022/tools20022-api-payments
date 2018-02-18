@@ -21,9 +21,11 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Provides the agreed amount and the collateral movement direction.
@@ -84,8 +86,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +104,8 @@ public class CollateralMovement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CollateralProposal relatedCollateralProposal;
 	/**
-	 * Collateral proposal for which collateral movements are detailed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,10 +153,8 @@ public class CollateralMovement {
 	};
 	protected CurrencyAndAmount variationMargin;
 	/**
-	 * Amount of margin that will be delivered to one party by the other party
-	 * after rounding, threshold and minimum transfer amount are taken into
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,10 +202,8 @@ public class CollateralMovement {
 	};
 	protected CurrencyAndAmount segregatedIndependentAmount;
 	/**
-	 * Amount of margin that will be delivered to one party by the other party
-	 * after rounding, threshold and minimum transfer amount are taken into
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,8 +251,8 @@ public class CollateralMovement {
 	};
 	protected List<com.tools20022.repository.entity.MarginCall> marginCall;
 	/**
-	 * Magin call which needs to be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,8 +298,8 @@ public class CollateralMovement {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement;
 	/**
-	 * Movement of assets in relation with collateral updates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,8 +346,8 @@ public class CollateralMovement {
 	};
 	protected List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement;
 	/**
-	 * Movement of assets in relation with collateral updates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -395,8 +393,8 @@ public class CollateralMovement {
 	};
 	protected FinancialTransaction financialTransaction;
 	/**
-	 * Financial transaction to which the collateral management is associated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -448,7 +446,7 @@ public class CollateralMovement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralMovement";
 				definition = "Provides the agreed amount and the collateral movement direction.";
@@ -473,55 +471,62 @@ public class CollateralMovement {
 		return relatedCollateralProposal;
 	}
 
-	public void setRelatedCollateralProposal(com.tools20022.repository.entity.CollateralProposal relatedCollateralProposal) {
-		this.relatedCollateralProposal = relatedCollateralProposal;
+	public CollateralMovement setRelatedCollateralProposal(com.tools20022.repository.entity.CollateralProposal relatedCollateralProposal) {
+		this.relatedCollateralProposal = Objects.requireNonNull(relatedCollateralProposal);
+		return this;
 	}
 
 	public CurrencyAndAmount getVariationMargin() {
 		return variationMargin;
 	}
 
-	public void setVariationMargin(CurrencyAndAmount variationMargin) {
-		this.variationMargin = variationMargin;
+	public CollateralMovement setVariationMargin(CurrencyAndAmount variationMargin) {
+		this.variationMargin = Objects.requireNonNull(variationMargin);
+		return this;
 	}
 
 	public CurrencyAndAmount getSegregatedIndependentAmount() {
 		return segregatedIndependentAmount;
 	}
 
-	public void setSegregatedIndependentAmount(CurrencyAndAmount segregatedIndependentAmount) {
-		this.segregatedIndependentAmount = segregatedIndependentAmount;
+	public CollateralMovement setSegregatedIndependentAmount(CurrencyAndAmount segregatedIndependentAmount) {
+		this.segregatedIndependentAmount = Objects.requireNonNull(segregatedIndependentAmount);
+		return this;
 	}
 
 	public List<MarginCall> getMarginCall() {
-		return marginCall;
+		return marginCall == null ? marginCall = new ArrayList<>() : marginCall;
 	}
 
-	public void setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
-		this.marginCall = marginCall;
+	public CollateralMovement setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
+		this.marginCall = Objects.requireNonNull(marginCall);
+		return this;
 	}
 
 	public List<SecuritiesDeliveryObligation> getSecuritiesCollateralMovement() {
-		return securitiesCollateralMovement;
+		return securitiesCollateralMovement == null ? securitiesCollateralMovement = new ArrayList<>() : securitiesCollateralMovement;
 	}
 
-	public void setSecuritiesCollateralMovement(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement) {
-		this.securitiesCollateralMovement = securitiesCollateralMovement;
+	public CollateralMovement setSecuritiesCollateralMovement(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement) {
+		this.securitiesCollateralMovement = Objects.requireNonNull(securitiesCollateralMovement);
+		return this;
 	}
 
 	public List<PaymentObligation> getCashCollateralMovement() {
-		return cashCollateralMovement;
+		return cashCollateralMovement == null ? cashCollateralMovement = new ArrayList<>() : cashCollateralMovement;
 	}
 
-	public void setCashCollateralMovement(List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement) {
-		this.cashCollateralMovement = cashCollateralMovement;
+	public CollateralMovement setCashCollateralMovement(List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement) {
+		this.cashCollateralMovement = Objects.requireNonNull(cashCollateralMovement);
+		return this;
 	}
 
 	public FinancialTransaction getFinancialTransaction() {
 		return financialTransaction;
 	}
 
-	public void setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
-		this.financialTransaction = financialTransaction;
+	public CollateralMovement setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
+		this.financialTransaction = Objects.requireNonNull(financialTransaction);
+		return this;
 	}
 }

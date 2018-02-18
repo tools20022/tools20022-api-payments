@@ -29,6 +29,7 @@ import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Contract registered for regulatory purpose by a registration agent for the
@@ -222,8 +223,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -241,9 +242,8 @@ public class RegisteredContract extends Contract {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected GenericIdentification certificate;
 	/**
-	 * Certificate against which all transactions in the scope of the regulatory
-	 * requirements are registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,8 +305,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected CashBalance contractBalance;
 	/**
-	 * Contract balance on date of contract registration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -371,8 +371,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected RegulatoryReportingRole reportingParty;
 	/**
-	 * Party which must register the contract for regulatory reporting reasons.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -457,8 +457,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -568,8 +568,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected ISODate deliveryDate;
 	/**
-	 * Provides the date for the delivery of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,8 +615,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected RegulatoryReportingRole registrationAgent;
 	/**
-	 * Agent which is in charge of the registration of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -709,8 +709,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected RegulatoryReportingRole receivingParty;
 	/**
-	 * Party which receives support information about the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -769,8 +769,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected PriorityCode priority;
 	/**
-	 * Priority requested for the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,8 +830,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected ISODate registrationDate;
 	/**
-	 * Provides the date for the registration of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -877,8 +877,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected StatusReason closureReason;
 	/**
-	 * Reason of closure of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -937,8 +937,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected ISODate closureDate;
 	/**
-	 * Date of closure of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -983,8 +983,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected PaymentTerms paymentScheduleType;
 	/**
-	 * Type of the payment schedule provided in the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1049,8 +1049,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected ISODate submissionDate;
 	/**
-	 * Provides the date for the submission of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1105,8 +1105,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected RegulatoryReportingRole sendingParty;
 	/**
-	 * Party which sends support information about the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1164,9 +1164,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected CommunicationMethodCode deliveryMethod;
 	/**
-	 * Provides the communication method for the delivery of the registered
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1226,9 +1225,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected CommunicationMethodCode submissionMethod;
 	/**
-	 * Provides the communication method for the submission of the registered
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1288,8 +1286,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected Payment relatedPayment;
 	/**
-	 * Provides the payment related of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1335,8 +1333,8 @@ public class RegisteredContract extends Contract {
 	};
 	protected Document attachment;
 	/**
-	 * Documents provided as attachments to the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1412,7 +1410,7 @@ public class RegisteredContract extends Contract {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContract";
 				definition = "Contract registered for regulatory purpose by a registration agent for the journaling of payments made against the contract.";
@@ -1451,143 +1449,161 @@ public class RegisteredContract extends Contract {
 		return certificate;
 	}
 
-	public void setCertificate(com.tools20022.repository.entity.GenericIdentification certificate) {
-		this.certificate = certificate;
+	public RegisteredContract setCertificate(com.tools20022.repository.entity.GenericIdentification certificate) {
+		this.certificate = Objects.requireNonNull(certificate);
+		return this;
 	}
 
 	public CashBalance getContractBalance() {
 		return contractBalance;
 	}
 
-	public void setContractBalance(com.tools20022.repository.entity.CashBalance contractBalance) {
-		this.contractBalance = contractBalance;
+	public RegisteredContract setContractBalance(com.tools20022.repository.entity.CashBalance contractBalance) {
+		this.contractBalance = Objects.requireNonNull(contractBalance);
+		return this;
 	}
 
 	public RegulatoryReportingRole getReportingParty() {
 		return reportingParty;
 	}
 
-	public void setReportingParty(com.tools20022.repository.entity.RegulatoryReportingRole reportingParty) {
-		this.reportingParty = reportingParty;
+	public RegisteredContract setReportingParty(com.tools20022.repository.entity.RegulatoryReportingRole reportingParty) {
+		this.reportingParty = Objects.requireNonNull(reportingParty);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public RegisteredContract setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public ISODate getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(ISODate deliveryDate) {
-		this.deliveryDate = deliveryDate;
+	public RegisteredContract setDeliveryDate(ISODate deliveryDate) {
+		this.deliveryDate = Objects.requireNonNull(deliveryDate);
+		return this;
 	}
 
 	public RegulatoryReportingRole getRegistrationAgent() {
 		return registrationAgent;
 	}
 
-	public void setRegistrationAgent(com.tools20022.repository.entity.RegulatoryReportingRole registrationAgent) {
-		this.registrationAgent = registrationAgent;
+	public RegisteredContract setRegistrationAgent(com.tools20022.repository.entity.RegulatoryReportingRole registrationAgent) {
+		this.registrationAgent = Objects.requireNonNull(registrationAgent);
+		return this;
 	}
 
 	public RegulatoryReportingRole getReceivingParty() {
 		return receivingParty;
 	}
 
-	public void setReceivingParty(com.tools20022.repository.entity.RegulatoryReportingRole receivingParty) {
-		this.receivingParty = receivingParty;
+	public RegisteredContract setReceivingParty(com.tools20022.repository.entity.RegulatoryReportingRole receivingParty) {
+		this.receivingParty = Objects.requireNonNull(receivingParty);
+		return this;
 	}
 
 	public PriorityCode getPriority() {
 		return priority;
 	}
 
-	public void setPriority(PriorityCode priority) {
-		this.priority = priority;
+	public RegisteredContract setPriority(PriorityCode priority) {
+		this.priority = Objects.requireNonNull(priority);
+		return this;
 	}
 
 	public ISODate getRegistrationDate() {
 		return registrationDate;
 	}
 
-	public void setRegistrationDate(ISODate registrationDate) {
-		this.registrationDate = registrationDate;
+	public RegisteredContract setRegistrationDate(ISODate registrationDate) {
+		this.registrationDate = Objects.requireNonNull(registrationDate);
+		return this;
 	}
 
 	public StatusReason getClosureReason() {
 		return closureReason;
 	}
 
-	public void setClosureReason(com.tools20022.repository.entity.StatusReason closureReason) {
-		this.closureReason = closureReason;
+	public RegisteredContract setClosureReason(com.tools20022.repository.entity.StatusReason closureReason) {
+		this.closureReason = Objects.requireNonNull(closureReason);
+		return this;
 	}
 
 	public ISODate getClosureDate() {
 		return closureDate;
 	}
 
-	public void setClosureDate(ISODate closureDate) {
-		this.closureDate = closureDate;
+	public RegisteredContract setClosureDate(ISODate closureDate) {
+		this.closureDate = Objects.requireNonNull(closureDate);
+		return this;
 	}
 
 	public PaymentTerms getPaymentScheduleType() {
 		return paymentScheduleType;
 	}
 
-	public void setPaymentScheduleType(com.tools20022.repository.entity.PaymentTerms paymentScheduleType) {
-		this.paymentScheduleType = paymentScheduleType;
+	public RegisteredContract setPaymentScheduleType(com.tools20022.repository.entity.PaymentTerms paymentScheduleType) {
+		this.paymentScheduleType = Objects.requireNonNull(paymentScheduleType);
+		return this;
 	}
 
 	public ISODate getSubmissionDate() {
 		return submissionDate;
 	}
 
-	public void setSubmissionDate(ISODate submissionDate) {
-		this.submissionDate = submissionDate;
+	public RegisteredContract setSubmissionDate(ISODate submissionDate) {
+		this.submissionDate = Objects.requireNonNull(submissionDate);
+		return this;
 	}
 
 	public RegulatoryReportingRole getSendingParty() {
 		return sendingParty;
 	}
 
-	public void setSendingParty(com.tools20022.repository.entity.RegulatoryReportingRole sendingParty) {
-		this.sendingParty = sendingParty;
+	public RegisteredContract setSendingParty(com.tools20022.repository.entity.RegulatoryReportingRole sendingParty) {
+		this.sendingParty = Objects.requireNonNull(sendingParty);
+		return this;
 	}
 
 	public CommunicationMethodCode getDeliveryMethod() {
 		return deliveryMethod;
 	}
 
-	public void setDeliveryMethod(CommunicationMethodCode deliveryMethod) {
-		this.deliveryMethod = deliveryMethod;
+	public RegisteredContract setDeliveryMethod(CommunicationMethodCode deliveryMethod) {
+		this.deliveryMethod = Objects.requireNonNull(deliveryMethod);
+		return this;
 	}
 
 	public CommunicationMethodCode getSubmissionMethod() {
 		return submissionMethod;
 	}
 
-	public void setSubmissionMethod(CommunicationMethodCode submissionMethod) {
-		this.submissionMethod = submissionMethod;
+	public RegisteredContract setSubmissionMethod(CommunicationMethodCode submissionMethod) {
+		this.submissionMethod = Objects.requireNonNull(submissionMethod);
+		return this;
 	}
 
 	public Payment getRelatedPayment() {
 		return relatedPayment;
 	}
 
-	public void setRelatedPayment(com.tools20022.repository.entity.Payment relatedPayment) {
-		this.relatedPayment = relatedPayment;
+	public RegisteredContract setRelatedPayment(com.tools20022.repository.entity.Payment relatedPayment) {
+		this.relatedPayment = Objects.requireNonNull(relatedPayment);
+		return this;
 	}
 
 	public Document getAttachment() {
 		return attachment;
 	}
 
-	public void setAttachment(com.tools20022.repository.entity.Document attachment) {
-		this.attachment = attachment;
+	public RegisteredContract setAttachment(com.tools20022.repository.entity.Document attachment) {
+		this.attachment = Objects.requireNonNull(attachment);
+		return this;
 	}
 }

@@ -25,6 +25,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies how the additional rights can be granted to the shareholder. These
@@ -64,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,8 +85,8 @@ public class AdditionalRight {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Meeting meeting;
 	/**
-	 * Meeting for which additional rights are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,8 +132,8 @@ public class AdditionalRight {
 	};
 	protected AdditionalRightCode type;
 	/**
-	 * Specifies the additional right type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,9 +179,8 @@ public class AdditionalRight {
 	};
 	protected Max350Text additionalRightThreshold;
 	/**
-	 * Additional right granted to specify the minimum stake in share capital or
-	 * cash value or number of security holders required to table resolutions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,10 +227,8 @@ public class AdditionalRight {
 	};
 	protected PercentageRate additionalRightThresholdPercentage;
 	/**
-	 * Additional right granted to specify the minimum stake in share capital or
-	 * cash value or number of security holders required to table resolutions.
-	 * This minimum is expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +278,7 @@ public class AdditionalRight {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalRight";
 				definition = "Specifies how the additional rights can be granted to the shareholder. These rights can be exercised at shareholders meetings (for example, the right to ask questions, the right to add items to the agenda or table draft resolutions).";
@@ -296,35 +295,39 @@ public class AdditionalRight {
 		return mmObject_lazy.get();
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public AdditionalRight setMeeting(com.tools20022.repository.entity.Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 
 	public AdditionalRightCode getType() {
 		return type;
 	}
 
-	public void setType(AdditionalRightCode type) {
-		this.type = type;
+	public AdditionalRight setType(AdditionalRightCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public Max350Text getAdditionalRightThreshold() {
 		return additionalRightThreshold;
 	}
 
-	public void setAdditionalRightThreshold(Max350Text additionalRightThreshold) {
-		this.additionalRightThreshold = additionalRightThreshold;
+	public AdditionalRight setAdditionalRightThreshold(Max350Text additionalRightThreshold) {
+		this.additionalRightThreshold = Objects.requireNonNull(additionalRightThreshold);
+		return this;
 	}
 
 	public PercentageRate getAdditionalRightThresholdPercentage() {
 		return additionalRightThresholdPercentage;
 	}
 
-	public void setAdditionalRightThresholdPercentage(PercentageRate additionalRightThresholdPercentage) {
-		this.additionalRightThresholdPercentage = additionalRightThresholdPercentage;
+	public AdditionalRight setAdditionalRightThresholdPercentage(PercentageRate additionalRightThresholdPercentage) {
+		this.additionalRightThresholdPercentage = Objects.requireNonNull(additionalRightThresholdPercentage);
+		return this;
 	}
 }

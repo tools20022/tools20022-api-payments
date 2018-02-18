@@ -23,6 +23,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * information about the periods of activity and non-activity of a system.
@@ -71,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +91,8 @@ public class SystemAvailability {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TimePeriod availableSessionPeriod;
 	/**
-	 * Time window of system activity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,8 +139,8 @@ public class SystemAvailability {
 	};
 	protected System system;
 	/**
-	 * System for which the system availability is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,8 +186,8 @@ public class SystemAvailability {
 	};
 	protected SystemClosureInformation closureInformation;
 	/**
-	 * System availability parameters which contain closure information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,8 +236,8 @@ public class SystemAvailability {
 	};
 	protected ISODate date;
 	/**
-	 * Date for which the availability information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,8 +282,8 @@ public class SystemAvailability {
 	};
 	protected DateTimePeriod closurePeriod;
 	/**
-	 * Period for which the system is closed/not operating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,7 +332,7 @@ public class SystemAvailability {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemAvailability";
 				definition = "information about the periods of activity and non-activity of a system.";
@@ -352,39 +354,44 @@ public class SystemAvailability {
 		return availableSessionPeriod;
 	}
 
-	public void setAvailableSessionPeriod(com.tools20022.repository.entity.TimePeriod availableSessionPeriod) {
-		this.availableSessionPeriod = availableSessionPeriod;
+	public SystemAvailability setAvailableSessionPeriod(com.tools20022.repository.entity.TimePeriod availableSessionPeriod) {
+		this.availableSessionPeriod = Objects.requireNonNull(availableSessionPeriod);
+		return this;
 	}
 
-	public System getSystem() {
-		return system;
+	public Optional<System> getSystem() {
+		return system == null ? Optional.empty() : Optional.of(system);
 	}
 
-	public void setSystem(com.tools20022.repository.entity.System system) {
+	public SystemAvailability setSystem(com.tools20022.repository.entity.System system) {
 		this.system = system;
+		return this;
 	}
 
 	public SystemClosureInformation getClosureInformation() {
 		return closureInformation;
 	}
 
-	public void setClosureInformation(com.tools20022.repository.entity.SystemClosureInformation closureInformation) {
-		this.closureInformation = closureInformation;
+	public SystemAvailability setClosureInformation(com.tools20022.repository.entity.SystemClosureInformation closureInformation) {
+		this.closureInformation = Objects.requireNonNull(closureInformation);
+		return this;
 	}
 
 	public ISODate getDate() {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public SystemAvailability setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public DateTimePeriod getClosurePeriod() {
 		return closurePeriod;
 	}
 
-	public void setClosurePeriod(com.tools20022.repository.entity.DateTimePeriod closurePeriod) {
-		this.closurePeriod = closurePeriod;
+	public SystemAvailability setClosurePeriod(com.tools20022.repository.entity.DateTimePeriod closurePeriod) {
+		this.closurePeriod = Objects.requireNonNull(closurePeriod);
+		return this;
 	}
 }

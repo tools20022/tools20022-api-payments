@@ -23,9 +23,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Assessment for the components of a system.
@@ -62,8 +64,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,8 +81,8 @@ public class Assessment extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected POIComponentAssessmentCode assessmentType;
 	/**
-	 * Type of assessment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,8 +127,8 @@ public class Assessment extends Document {
 	};
 	protected List<com.tools20022.repository.entity.System> system;
 	/**
-	 * System for which an assessment is produced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,8 +172,8 @@ public class Assessment extends Document {
 	};
 	protected ISODateTime expiryDate;
 	/**
-	 * Date when the assessment expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,8 +217,8 @@ public class Assessment extends Document {
 	};
 	protected ISODateTime deliveryDate;
 	/**
-	 * Date when the assessment document was delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +264,7 @@ public class Assessment extends Document {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Assessment";
 				definition = "Assessment for the components of a system.";
@@ -284,31 +286,35 @@ public class Assessment extends Document {
 		return assessmentType;
 	}
 
-	public void setAssessmentType(POIComponentAssessmentCode assessmentType) {
-		this.assessmentType = assessmentType;
+	public Assessment setAssessmentType(POIComponentAssessmentCode assessmentType) {
+		this.assessmentType = Objects.requireNonNull(assessmentType);
+		return this;
 	}
 
 	public List<System> getSystem() {
-		return system;
+		return system == null ? system = new ArrayList<>() : system;
 	}
 
-	public void setSystem(List<com.tools20022.repository.entity.System> system) {
-		this.system = system;
+	public Assessment setSystem(List<com.tools20022.repository.entity.System> system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 
 	public ISODateTime getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISODateTime expiryDate) {
-		this.expiryDate = expiryDate;
+	public Assessment setExpiryDate(ISODateTime expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public ISODateTime getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(ISODateTime deliveryDate) {
-		this.deliveryDate = deliveryDate;
+	public Assessment setDeliveryDate(ISODateTime deliveryDate) {
+		this.deliveryDate = Objects.requireNonNull(deliveryDate);
+		return this;
 	}
 }

@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -92,8 +94,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,16 +106,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the characteristics of the cash account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashAccountCharacteristics2", propOrder = {"accountLevel", "cashAccount", "accountServicer", "parentAccount", "compensationMethod", "debitAccount", "delayedDebitDate", "settlementAdvice", "accountBalanceCurrencyCode",
 		"settlementCurrencyCode", "hostCurrencyCode", "tax", "accountServicerContact"})
 public class CashAccountCharacteristics2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcctLvl", required = true)
 	protected AccountLevel2Code accountLevel;
 	/**
-	 * Defines the account level within an account hierarchy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +150,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmAccountLevel = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmLevel;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctLvl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,10 +161,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> AccountLevel2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "CshAcct", required = true)
 	protected CashAccount24 cashAccount;
 	/**
-	 * Account to or from which a cash entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -192,7 +196,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAssociationEnd mmCashAccount = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "CshAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,11 +208,11 @@ public class CashAccountCharacteristics2 {
 			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctSvcr")
 	protected BranchAndFinancialInstitutionIdentification5 accountServicer;
 	/**
-	 * Usage: the account servicer is the domicile agent servicing the local
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,7 +248,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmAccountServicer = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,10 +259,11 @@ public class CashAccountCharacteristics2 {
 			complexType_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "PrntAcct")
 	protected ParentCashAccount2 parentAccount;
 	/**
-	 * Defines a parent account to which the cash account is related to.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -291,7 +296,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAssociationEnd mmParentAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Account.mmParentAccount;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "PrntAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -303,11 +308,11 @@ public class CashAccountCharacteristics2 {
 			type_lazy = () -> com.tools20022.repository.msg.ParentCashAccount2.mmObject();
 		}
 	};
+	@XmlElement(name = "CompstnMtd", required = true)
 	protected CompensationMethod1Code compensationMethod;
 	/**
-	 * Defines if and how charges and taxes due are paid to the financial
-	 * institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +348,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmCompensationMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmCompensationMethod;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "CompstnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,11 +359,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> CompensationMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "DbtAcct")
 	protected AccountIdentification4Choice debitAccount;
 	/**
-	 * Defines the account debited for charges and taxes due on the cash
-	 * account, if different from the cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -393,7 +398,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAssociationEnd mmDebitAccount = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "DbtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -405,11 +410,11 @@ public class CashAccountCharacteristics2 {
 			type_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "DelydDbtDt")
 	protected ISODate delayedDebitDate;
 	/**
-	 * Future date on which the account will be automatically debited for
-	 * charges and taxes due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,7 +449,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmDelayedDebitDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmValueDate;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "DelydDbtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -455,11 +460,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "SttlmAdvc")
 	protected Max105Text settlementAdvice;
 	/**
-	 * Free form message advising the customer about the settlement of charges
-	 * and taxes due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -488,7 +493,7 @@ public class CashAccountCharacteristics2 {
 	 */
 	public static final MMMessageAttribute mmSettlementAdvice = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -499,10 +504,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctBalCcyCd", required = true)
 	protected ActiveOrHistoricCurrencyCode accountBalanceCurrencyCode;
 	/**
-	 * Currency used to specify the account's balance currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -536,7 +542,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmAccountBalanceCurrencyCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Account.mmReportingCurrency;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctBalCcyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -547,10 +553,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "SttlmCcyCd")
 	protected ActiveOrHistoricCurrencyCode settlementCurrencyCode;
 	/**
-	 * Currency used to specify the account's settlement currency
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -585,7 +592,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmSettlementCurrencyCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmSettlementCurrency;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmCcyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -596,10 +603,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "HstCcyCd")
 	protected ActiveOrHistoricCurrencyCode hostCurrencyCode;
 	/**
-	 * Currency used to specify the account's taxing host currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -634,7 +642,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmHostCurrencyCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmCurrency;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "HstCcyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -645,10 +653,11 @@ public class CashAccountCharacteristics2 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "Tax")
 	protected AccountTax1 tax;
 	/**
-	 * Describes account taxing parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -680,7 +689,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAssociationEnd mmTax = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmTax;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "Tax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -692,11 +701,11 @@ public class CashAccountCharacteristics2 {
 			type_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctSvcrCtct", required = true)
 	protected ContactDetails3 accountServicerContact;
 	/**
-	 * Individual to contact at the financial institution's location regarding
-	 * problems of a business nature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -731,7 +740,7 @@ public class CashAccountCharacteristics2 {
 	public static final MMMessageAttribute mmAccountServicerContact = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Person.mmPersonIdentification;
-			componentContext_lazy = () -> CashAccountCharacteristics2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccountCharacteristics2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcrCtct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -746,12 +755,15 @@ public class CashAccountCharacteristics2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmAccountLevel, CashAccountCharacteristics2.mmCashAccount, CashAccountCharacteristics2.mmAccountServicer, CashAccountCharacteristics2.mmParentAccount,
-						CashAccountCharacteristics2.mmCompensationMethod, CashAccountCharacteristics2.mmDebitAccount, CashAccountCharacteristics2.mmDelayedDebitDate, CashAccountCharacteristics2.mmSettlementAdvice,
-						CashAccountCharacteristics2.mmAccountBalanceCurrencyCode, CashAccountCharacteristics2.mmSettlementCurrencyCode, CashAccountCharacteristics2.mmHostCurrencyCode, CashAccountCharacteristics2.mmTax,
-						CashAccountCharacteristics2.mmAccountServicerContact);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccountCharacteristics2.mmAccountLevel, com.tools20022.repository.msg.CashAccountCharacteristics2.mmCashAccount,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmAccountServicer, com.tools20022.repository.msg.CashAccountCharacteristics2.mmParentAccount,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmCompensationMethod, com.tools20022.repository.msg.CashAccountCharacteristics2.mmDebitAccount,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmDelayedDebitDate, com.tools20022.repository.msg.CashAccountCharacteristics2.mmSettlementAdvice,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmAccountBalanceCurrencyCode, com.tools20022.repository.msg.CashAccountCharacteristics2.mmSettlementCurrencyCode,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmHostCurrencyCode, com.tools20022.repository.msg.CashAccountCharacteristics2.mmTax,
+						com.tools20022.repository.msg.CashAccountCharacteristics2.mmAccountServicerContact);
 				trace_lazy = () -> CashAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountCharacteristics2";
 				definition = "Specifies the characteristics of the cash account.";
@@ -760,120 +772,120 @@ public class CashAccountCharacteristics2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcctLvl", required = true)
 	public AccountLevel2Code getAccountLevel() {
 		return accountLevel;
 	}
 
-	public void setAccountLevel(AccountLevel2Code accountLevel) {
-		this.accountLevel = accountLevel;
+	public CashAccountCharacteristics2 setAccountLevel(AccountLevel2Code accountLevel) {
+		this.accountLevel = Objects.requireNonNull(accountLevel);
+		return this;
 	}
 
-	@XmlElement(name = "CshAcct", required = true)
 	public CashAccount24 getCashAccount() {
 		return cashAccount;
 	}
 
-	public void setCashAccount(com.tools20022.repository.msg.CashAccount24 cashAccount) {
-		this.cashAccount = cashAccount;
+	public CashAccountCharacteristics2 setCashAccount(com.tools20022.repository.msg.CashAccount24 cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcr")
-	public BranchAndFinancialInstitutionIdentification5 getAccountServicer() {
-		return accountServicer;
+	public Optional<BranchAndFinancialInstitutionIdentification5> getAccountServicer() {
+		return accountServicer == null ? Optional.empty() : Optional.of(accountServicer);
 	}
 
-	public void setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
+	public CashAccountCharacteristics2 setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
 		this.accountServicer = accountServicer;
+		return this;
 	}
 
-	@XmlElement(name = "PrntAcct")
-	public ParentCashAccount2 getParentAccount() {
-		return parentAccount;
+	public Optional<ParentCashAccount2> getParentAccount() {
+		return parentAccount == null ? Optional.empty() : Optional.of(parentAccount);
 	}
 
-	public void setParentAccount(com.tools20022.repository.msg.ParentCashAccount2 parentAccount) {
+	public CashAccountCharacteristics2 setParentAccount(com.tools20022.repository.msg.ParentCashAccount2 parentAccount) {
 		this.parentAccount = parentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "CompstnMtd", required = true)
 	public CompensationMethod1Code getCompensationMethod() {
 		return compensationMethod;
 	}
 
-	public void setCompensationMethod(CompensationMethod1Code compensationMethod) {
-		this.compensationMethod = compensationMethod;
+	public CashAccountCharacteristics2 setCompensationMethod(CompensationMethod1Code compensationMethod) {
+		this.compensationMethod = Objects.requireNonNull(compensationMethod);
+		return this;
 	}
 
-	@XmlElement(name = "DbtAcct")
-	public AccountIdentification4Choice getDebitAccount() {
-		return debitAccount;
+	public Optional<AccountIdentification4Choice> getDebitAccount() {
+		return debitAccount == null ? Optional.empty() : Optional.of(debitAccount);
 	}
 
-	public void setDebitAccount(AccountIdentification4Choice debitAccount) {
+	public CashAccountCharacteristics2 setDebitAccount(AccountIdentification4Choice debitAccount) {
 		this.debitAccount = debitAccount;
+		return this;
 	}
 
-	@XmlElement(name = "DelydDbtDt")
-	public ISODate getDelayedDebitDate() {
-		return delayedDebitDate;
+	public Optional<ISODate> getDelayedDebitDate() {
+		return delayedDebitDate == null ? Optional.empty() : Optional.of(delayedDebitDate);
 	}
 
-	public void setDelayedDebitDate(ISODate delayedDebitDate) {
+	public CashAccountCharacteristics2 setDelayedDebitDate(ISODate delayedDebitDate) {
 		this.delayedDebitDate = delayedDebitDate;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAdvc")
-	public Max105Text getSettlementAdvice() {
-		return settlementAdvice;
+	public Optional<Max105Text> getSettlementAdvice() {
+		return settlementAdvice == null ? Optional.empty() : Optional.of(settlementAdvice);
 	}
 
-	public void setSettlementAdvice(Max105Text settlementAdvice) {
+	public CashAccountCharacteristics2 setSettlementAdvice(Max105Text settlementAdvice) {
 		this.settlementAdvice = settlementAdvice;
+		return this;
 	}
 
-	@XmlElement(name = "AcctBalCcyCd", required = true)
 	public ActiveOrHistoricCurrencyCode getAccountBalanceCurrencyCode() {
 		return accountBalanceCurrencyCode;
 	}
 
-	public void setAccountBalanceCurrencyCode(ActiveOrHistoricCurrencyCode accountBalanceCurrencyCode) {
-		this.accountBalanceCurrencyCode = accountBalanceCurrencyCode;
+	public CashAccountCharacteristics2 setAccountBalanceCurrencyCode(ActiveOrHistoricCurrencyCode accountBalanceCurrencyCode) {
+		this.accountBalanceCurrencyCode = Objects.requireNonNull(accountBalanceCurrencyCode);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmCcyCd")
-	public ActiveOrHistoricCurrencyCode getSettlementCurrencyCode() {
-		return settlementCurrencyCode;
+	public Optional<ActiveOrHistoricCurrencyCode> getSettlementCurrencyCode() {
+		return settlementCurrencyCode == null ? Optional.empty() : Optional.of(settlementCurrencyCode);
 	}
 
-	public void setSettlementCurrencyCode(ActiveOrHistoricCurrencyCode settlementCurrencyCode) {
+	public CashAccountCharacteristics2 setSettlementCurrencyCode(ActiveOrHistoricCurrencyCode settlementCurrencyCode) {
 		this.settlementCurrencyCode = settlementCurrencyCode;
+		return this;
 	}
 
-	@XmlElement(name = "HstCcyCd")
-	public ActiveOrHistoricCurrencyCode getHostCurrencyCode() {
-		return hostCurrencyCode;
+	public Optional<ActiveOrHistoricCurrencyCode> getHostCurrencyCode() {
+		return hostCurrencyCode == null ? Optional.empty() : Optional.of(hostCurrencyCode);
 	}
 
-	public void setHostCurrencyCode(ActiveOrHistoricCurrencyCode hostCurrencyCode) {
+	public CashAccountCharacteristics2 setHostCurrencyCode(ActiveOrHistoricCurrencyCode hostCurrencyCode) {
 		this.hostCurrencyCode = hostCurrencyCode;
+		return this;
 	}
 
-	@XmlElement(name = "Tax")
-	public AccountTax1 getTax() {
-		return tax;
+	public Optional<AccountTax1> getTax() {
+		return tax == null ? Optional.empty() : Optional.of(tax);
 	}
 
-	public void setTax(com.tools20022.repository.msg.AccountTax1 tax) {
+	public CashAccountCharacteristics2 setTax(com.tools20022.repository.msg.AccountTax1 tax) {
 		this.tax = tax;
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcrCtct", required = true)
 	public ContactDetails3 getAccountServicerContact() {
 		return accountServicerContact;
 	}
 
-	public void setAccountServicerContact(com.tools20022.repository.msg.ContactDetails3 accountServicerContact) {
-		this.accountServicerContact = accountServicerContact;
+	public CashAccountCharacteristics2 setAccountServicerContact(com.tools20022.repository.msg.ContactDetails3 accountServicerContact) {
+		this.accountServicerContact = Objects.requireNonNull(accountServicerContact);
+		return this;
 	}
 }

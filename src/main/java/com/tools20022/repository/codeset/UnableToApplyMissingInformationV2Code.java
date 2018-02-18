@@ -38,59 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingRemittanceInformation
- * UnableToApplyMissingInformationV2Code.mmMissingRemittanceInformation}</li>
+ * UnableToApplyMissingInformationV2Code.MissingRemittanceInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstructionForNextAgent
- * UnableToApplyMissingInformationV2Code.mmMissingInstructionForNextAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingInstructionForNextAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingDebtor
- * UnableToApplyMissingInformationV2Code.mmMissingDebtor}</li>
+ * UnableToApplyMissingInformationV2Code.MissingDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingDebtorAccount
- * UnableToApplyMissingInformationV2Code.mmMissingDebtorAccount}</li>
+ * UnableToApplyMissingInformationV2Code.MissingDebtorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingDebtorAgent
- * UnableToApplyMissingInformationV2Code.mmMissingDebtorAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingDebtorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingAmount
- * UnableToApplyMissingInformationV2Code.mmMissingAmount}</li>
+ * UnableToApplyMissingInformationV2Code.MissingAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingSettlementAccount
- * UnableToApplyMissingInformationV2Code.mmMissingSettlementAccount}</li>
+ * UnableToApplyMissingInformationV2Code.MissingSettlementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingIntermediary
- * UnableToApplyMissingInformationV2Code.mmMissingIntermediary}</li>
+ * UnableToApplyMissingInformationV2Code.MissingIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstructingReimbursementAgent
- * UnableToApplyMissingInformationV2Code.mmMissingInstructingReimbursementAgent}
- * </li>
+ * UnableToApplyMissingInformationV2Code.MissingInstructingReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstructedReimbursementAgent
- * UnableToApplyMissingInformationV2Code.mmMissingInstructedReimbursementAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingInstructedReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingThirdReimbursementAgent
- * UnableToApplyMissingInformationV2Code.mmMissingThirdReimbursementAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingThirdReimbursementAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingCreditor
- * UnableToApplyMissingInformationV2Code.mmMissingCreditor}</li>
+ * UnableToApplyMissingInformationV2Code.MissingCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingCreditorAccount
- * UnableToApplyMissingInformationV2Code.mmMissingCreditorAccount}</li>
+ * UnableToApplyMissingInformationV2Code.MissingCreditorAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstruction
- * UnableToApplyMissingInformationV2Code.mmMissingInstruction}</li>
+ * UnableToApplyMissingInformationV2Code.MissingInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingCreditorAgent
- * UnableToApplyMissingInformationV2Code.mmMissingCreditorAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingCreditorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstructionForCreditorAgent
- * UnableToApplyMissingInformationV2Code.mmMissingInstructionForCreditorAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingInstructionForCreditorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#MissingInstructionForDebtorAgent
- * UnableToApplyMissingInformationV2Code.mmMissingInstructionForDebtorAgent}</li>
+ * UnableToApplyMissingInformationV2Code.MissingInstructionForDebtorAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code#Narrative
- * UnableToApplyMissingInformationV2Code.mmNarrative}</li>
+ * UnableToApplyMissingInformationV2Code.Narrative}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -104,8 +103,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -700,7 +699,7 @@ public class UnableToApplyMissingInformationV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MS01");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyMissingInformationV2Code";

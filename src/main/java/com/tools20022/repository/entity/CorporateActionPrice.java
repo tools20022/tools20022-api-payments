@@ -24,6 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Prices related to a corporate action.
@@ -96,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +115,8 @@ public class CorporateActionPrice {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionEvent corporateActionEvent;
 	/**
-	 * Corporate event for which a price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,13 +164,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing corporateActionExercisePrice;
 	/**
-	 * 1. Price at which security will be purchased/sold if warrant is
-	 * exercised, either as an actual amount or a percentage.<br>
-	 * 2. Price at which a bond is converted to underlying security either as an
-	 * actual amount or a percentage.<br>
-	 * 3. Strike price of an option, represented either as an actual amount or a
-	 * percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,9 +214,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing genericCashPriceReceivedPerProduct;
 	/**
-	 * Generic cash price received per product by the underlying security holder
-	 * either as a percentage or an amount, eg, redemption price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,10 +264,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing genericCashPricePaidPerProduct;
 	/**
-	 * Amount included in the dividend/NAV that is identified as gains directly
-	 * or indirectly derived from interest payments within the scope of the EU
-	 * Savings directive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,9 +314,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing cashInLieuOfSharePrice;
 	/**
-	 * Cash disbursement in lieu of equities; usually in lieu of fractional
-	 * quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -371,9 +364,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing overSubscriptionDepositPrice;
 	/**
-	 * Amount of money required per over-subscribed equity as defined by the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,9 +414,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing cashValueForTax;
 	/**
-	 * Cash value of resulting securities proceeds for tax calculation and/or
-	 * reporting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -473,8 +464,8 @@ public class CorporateActionPrice {
 	};
 	protected SecuritiesPricing pricingCalculation;
 	/**
-	 * Specifies the parameters taken into account to calculate the price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -524,7 +515,7 @@ public class CorporateActionPrice {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionPrice";
 				definition = "Prices related to a corporate action.";
@@ -547,67 +538,75 @@ public class CorporateActionPrice {
 		return mmObject_lazy.get();
 	}
 
-	public CorporateActionEvent getCorporateActionEvent() {
-		return corporateActionEvent;
+	public Optional<CorporateActionEvent> getCorporateActionEvent() {
+		return corporateActionEvent == null ? Optional.empty() : Optional.of(corporateActionEvent);
 	}
 
-	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+	public CorporateActionPrice setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
 		this.corporateActionEvent = corporateActionEvent;
+		return this;
 	}
 
 	public SecuritiesPricing getCorporateActionExercisePrice() {
 		return corporateActionExercisePrice;
 	}
 
-	public void setCorporateActionExercisePrice(com.tools20022.repository.entity.SecuritiesPricing corporateActionExercisePrice) {
-		this.corporateActionExercisePrice = corporateActionExercisePrice;
+	public CorporateActionPrice setCorporateActionExercisePrice(com.tools20022.repository.entity.SecuritiesPricing corporateActionExercisePrice) {
+		this.corporateActionExercisePrice = Objects.requireNonNull(corporateActionExercisePrice);
+		return this;
 	}
 
 	public SecuritiesPricing getGenericCashPriceReceivedPerProduct() {
 		return genericCashPriceReceivedPerProduct;
 	}
 
-	public void setGenericCashPriceReceivedPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPriceReceivedPerProduct) {
-		this.genericCashPriceReceivedPerProduct = genericCashPriceReceivedPerProduct;
+	public CorporateActionPrice setGenericCashPriceReceivedPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPriceReceivedPerProduct) {
+		this.genericCashPriceReceivedPerProduct = Objects.requireNonNull(genericCashPriceReceivedPerProduct);
+		return this;
 	}
 
 	public SecuritiesPricing getGenericCashPricePaidPerProduct() {
 		return genericCashPricePaidPerProduct;
 	}
 
-	public void setGenericCashPricePaidPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPricePaidPerProduct) {
-		this.genericCashPricePaidPerProduct = genericCashPricePaidPerProduct;
+	public CorporateActionPrice setGenericCashPricePaidPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPricePaidPerProduct) {
+		this.genericCashPricePaidPerProduct = Objects.requireNonNull(genericCashPricePaidPerProduct);
+		return this;
 	}
 
 	public SecuritiesPricing getCashInLieuOfSharePrice() {
 		return cashInLieuOfSharePrice;
 	}
 
-	public void setCashInLieuOfSharePrice(com.tools20022.repository.entity.SecuritiesPricing cashInLieuOfSharePrice) {
-		this.cashInLieuOfSharePrice = cashInLieuOfSharePrice;
+	public CorporateActionPrice setCashInLieuOfSharePrice(com.tools20022.repository.entity.SecuritiesPricing cashInLieuOfSharePrice) {
+		this.cashInLieuOfSharePrice = Objects.requireNonNull(cashInLieuOfSharePrice);
+		return this;
 	}
 
 	public SecuritiesPricing getOverSubscriptionDepositPrice() {
 		return overSubscriptionDepositPrice;
 	}
 
-	public void setOverSubscriptionDepositPrice(com.tools20022.repository.entity.SecuritiesPricing overSubscriptionDepositPrice) {
-		this.overSubscriptionDepositPrice = overSubscriptionDepositPrice;
+	public CorporateActionPrice setOverSubscriptionDepositPrice(com.tools20022.repository.entity.SecuritiesPricing overSubscriptionDepositPrice) {
+		this.overSubscriptionDepositPrice = Objects.requireNonNull(overSubscriptionDepositPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getCashValueForTax() {
 		return cashValueForTax;
 	}
 
-	public void setCashValueForTax(com.tools20022.repository.entity.SecuritiesPricing cashValueForTax) {
-		this.cashValueForTax = cashValueForTax;
+	public CorporateActionPrice setCashValueForTax(com.tools20022.repository.entity.SecuritiesPricing cashValueForTax) {
+		this.cashValueForTax = Objects.requireNonNull(cashValueForTax);
+		return this;
 	}
 
 	public SecuritiesPricing getPricingCalculation() {
 		return pricingCalculation;
 	}
 
-	public void setPricingCalculation(com.tools20022.repository.entity.SecuritiesPricing pricingCalculation) {
-		this.pricingCalculation = pricingCalculation;
+	public CorporateActionPrice setPricingCalculation(com.tools20022.repository.entity.SecuritiesPricing pricingCalculation) {
+		this.pricingCalculation = Objects.requireNonNull(pricingCalculation);
+		return this;
 	}
 }

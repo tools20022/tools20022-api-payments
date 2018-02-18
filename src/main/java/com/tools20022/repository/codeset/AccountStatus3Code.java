@@ -37,15 +37,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Enabled
- * AccountStatus3Code.mmEnabled}</li>
+ * AccountStatus3Code.Enabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Disabled
- * AccountStatus3Code.mmDisabled}</li>
+ * AccountStatus3Code.Disabled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Deleted
- * AccountStatus3Code.mmDeleted}</li>
+ * AccountStatus3Code.Deleted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#ProForma
- * AccountStatus3Code.mmProForma}</li>
+ * AccountStatus3Code.ProForma}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -180,7 +180,7 @@ public class AccountStatus3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ENAB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus3Code";

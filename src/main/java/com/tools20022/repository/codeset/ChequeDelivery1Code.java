@@ -38,40 +38,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#MailToDebtor
- * ChequeDelivery1Code.mmMailToDebtor}</li>
+ * ChequeDelivery1Code.MailToDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#MailToCreditor
- * ChequeDelivery1Code.mmMailToCreditor}</li>
+ * ChequeDelivery1Code.MailToCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#MailToFinalAgent
- * ChequeDelivery1Code.mmMailToFinalAgent}</li>
+ * ChequeDelivery1Code.MailToFinalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#CourierToDebtor
- * ChequeDelivery1Code.mmCourierToDebtor}</li>
+ * ChequeDelivery1Code.CourierToDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#CourierToCreditor
- * ChequeDelivery1Code.mmCourierToCreditor}</li>
+ * ChequeDelivery1Code.CourierToCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#CourierToFinalAgent
- * ChequeDelivery1Code.mmCourierToFinalAgent}</li>
+ * ChequeDelivery1Code.CourierToFinalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#PickUpByDebtor
- * ChequeDelivery1Code.mmPickUpByDebtor}</li>
+ * ChequeDelivery1Code.PickUpByDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#PickUpByCreditor
- * ChequeDelivery1Code.mmPickUpByCreditor}</li>
+ * ChequeDelivery1Code.PickUpByCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#PickUpByFinalAgent
- * ChequeDelivery1Code.mmPickUpByFinalAgent}</li>
+ * ChequeDelivery1Code.PickUpByFinalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#RegisteredMailToDebtor
- * ChequeDelivery1Code.mmRegisteredMailToDebtor}</li>
+ * ChequeDelivery1Code.RegisteredMailToDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#RegisteredMailToCreditor
- * ChequeDelivery1Code.mmRegisteredMailToCreditor}</li>
+ * ChequeDelivery1Code.RegisteredMailToCreditor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeDelivery1Code#RegisteredMailToFinalAgent
- * ChequeDelivery1Code.mmRegisteredMailToFinalAgent}</li>
+ * ChequeDelivery1Code.RegisteredMailToFinalAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -399,7 +399,7 @@ public class ChequeDelivery1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MLDB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequeDelivery1Code";

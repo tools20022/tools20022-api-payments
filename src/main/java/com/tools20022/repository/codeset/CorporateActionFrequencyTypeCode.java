@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyTypeCode#Final
- * CorporateActionFrequencyTypeCode.mmFinal}</li>
+ * CorporateActionFrequencyTypeCode.Final}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyTypeCode#Interim
- * CorporateActionFrequencyTypeCode.mmInterim}</li>
+ * CorporateActionFrequencyTypeCode.Interim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyTypeCode#Regular
- * CorporateActionFrequencyTypeCode.mmRegular}</li>
+ * CorporateActionFrequencyTypeCode.Regular}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyTypeCode#Special
- * CorporateActionFrequencyTypeCode.mmSpecial}</li>
+ * CorporateActionFrequencyTypeCode.Special}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyTypeCode#FundCashDistributionReinvestment
- * CorporateActionFrequencyTypeCode.mmFundCashDistributionReinvestment}</li>
+ * CorporateActionFrequencyTypeCode.FundCashDistributionReinvestment}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -246,7 +246,7 @@ public class CorporateActionFrequencyTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FINL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionFrequencyTypeCode";

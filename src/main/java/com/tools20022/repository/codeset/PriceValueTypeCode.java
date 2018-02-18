@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,52 +39,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Discount
- * PriceValueTypeCode.mmDiscount}</li>
+ * PriceValueTypeCode.Discount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Premium
- * PriceValueTypeCode.mmPremium}</li>
+ * PriceValueTypeCode.Premium}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Par
- * PriceValueTypeCode.mmPar}</li>
+ * PriceValueTypeCode.Par}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Yield
- * PriceValueTypeCode.mmYield}</li>
+ * PriceValueTypeCode.Yield}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Spread
- * PriceValueTypeCode.mmSpread}</li>
+ * PriceValueTypeCode.Spread}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#PerUnit
- * PriceValueTypeCode.mmPerUnit}</li>
+ * PriceValueTypeCode.PerUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Absolute
- * PriceValueTypeCode.mmAbsolute}</li>
+ * PriceValueTypeCode.Absolute}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#TEDPrice
- * PriceValueTypeCode.mmTEDPrice}</li>
+ * PriceValueTypeCode.TEDPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#TEDYield
- * PriceValueTypeCode.mmTEDYield}</li>
+ * PriceValueTypeCode.TEDYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#FixedCabinetTrade
- * PriceValueTypeCode.mmFixedCabinetTrade}</li>
+ * PriceValueTypeCode.FixedCabinetTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#VariableCabinetTrade
- * PriceValueTypeCode.mmVariableCabinetTrade}</li>
+ * PriceValueTypeCode.VariableCabinetTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Percentage
- * PriceValueTypeCode.mmPercentage}</li>
+ * PriceValueTypeCode.Percentage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Unknown
- * PriceValueTypeCode.mmUnknown}</li>
+ * PriceValueTypeCode.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#OpenDated
- * PriceValueTypeCode.mmOpenDated}</li>
+ * PriceValueTypeCode.OpenDated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#Unspecified
- * PriceValueTypeCode.mmUnspecified}</li>
+ * PriceValueTypeCode.Unspecified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#ToBeSpecified
- * PriceValueTypeCode.mmToBeSpecified}</li>
+ * PriceValueTypeCode.ToBeSpecified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#ActualAmount
- * PriceValueTypeCode.mmActualAmount}</li>
+ * PriceValueTypeCode.ActualAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueTypeCode#NilPayment
- * PriceValueTypeCode.mmNilPayment}</li>
+ * PriceValueTypeCode.NilPayment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -96,8 +97,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -130,6 +131,9 @@ public class PriceValueTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DISC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: DISC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -144,6 +148,7 @@ public class PriceValueTypeCode extends MMCode {
 	 */
 	public static final PriceValueTypeCode Discount = new PriceValueTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "DISC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discount";
 			definition = "Price expressed as a number of percentage points below par, for example, a discount price of 2.0% equals a price of 98 when par is 100.";
@@ -163,6 +168,9 @@ public class PriceValueTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PREM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: PREM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -177,6 +185,7 @@ public class PriceValueTypeCode extends MMCode {
 	 */
 	public static final PriceValueTypeCode Premium = new PriceValueTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "PREM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Premium";
 			definition = "Price expressed as a number of percentage points above par, for example, a premium price of 2.0% equals a price of 102 when par is 100.";
@@ -682,7 +691,7 @@ public class PriceValueTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DISC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceValueTypeCode";

@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PaymentDateRange1;
 import com.tools20022.repository.msg.PaymentDateRange2;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * ShipmentSchedule2Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentSchedule1Choice", propOrder = {"dateRange", "subSchedule"})
 public class PaymentSchedule1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DtRg", required = true)
 	protected PaymentDateRange1 dateRange;
 	/**
-	 * Specifies an expected date and a due date for the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,7 +113,7 @@ public class PaymentSchedule1Choice {
 	 */
 	public static final MMMessageAssociationEnd mmDateRange = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> PaymentSchedule1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PaymentSchedule1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DtRg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,12 +126,11 @@ public class PaymentSchedule1Choice {
 			type_lazy = () -> PaymentDateRange1.mmObject();
 		}
 	};
+	@XmlElement(name = "SubSchdl", required = true)
 	protected List<PaymentDateRange2> subSchedule;
 	/**
-	 * Specifies a payment sub-schedule, that is the amount of money that must
-	 * be paid no sooner than the expected date and no later than the latest
-	 * shipment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,7 +163,7 @@ public class PaymentSchedule1Choice {
 	 */
 	public static final MMMessageAssociationEnd mmSubSchedule = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> PaymentSchedule1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PaymentSchedule1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SubSchdl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,8 +179,8 @@ public class PaymentSchedule1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentSchedule1Choice.mmDateRange, PaymentSchedule1Choice.mmSubSchedule);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PaymentSchedule1Choice.mmDateRange, com.tools20022.repository.choice.PaymentSchedule1Choice.mmSubSchedule);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentSchedule1Choice";
 				definition = "Choice between expected/due payment date and a payment schedule per amount and due date.";
@@ -188,21 +190,21 @@ public class PaymentSchedule1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DtRg", required = true)
 	public PaymentDateRange1 getDateRange() {
 		return dateRange;
 	}
 
-	public void setDateRange(PaymentDateRange1 dateRange) {
-		this.dateRange = dateRange;
+	public PaymentSchedule1Choice setDateRange(PaymentDateRange1 dateRange) {
+		this.dateRange = Objects.requireNonNull(dateRange);
+		return this;
 	}
 
-	@XmlElement(name = "SubSchdl", required = true)
 	public List<PaymentDateRange2> getSubSchedule() {
-		return subSchedule;
+		return subSchedule == null ? subSchedule = new ArrayList<>() : subSchedule;
 	}
 
-	public void setSubSchedule(List<PaymentDateRange2> subSchedule) {
-		this.subSchedule = subSchedule;
+	public PaymentSchedule1Choice setSubSchedule(List<PaymentDateRange2> subSchedule) {
+		this.subSchedule = Objects.requireNonNull(subSchedule);
+		return this;
 	}
 }

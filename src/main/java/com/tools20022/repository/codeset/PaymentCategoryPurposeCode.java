@@ -38,65 +38,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#IntraCompanyPayment
- * PaymentCategoryPurposeCode.mmIntraCompanyPayment}</li>
+ * PaymentCategoryPurposeCode.IntraCompanyPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TradeSettlementPayment
- * PaymentCategoryPurposeCode.mmTradeSettlementPayment}</li>
+ * PaymentCategoryPurposeCode.TradeSettlementPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SalaryPayment
- * PaymentCategoryPurposeCode.mmSalaryPayment}</li>
+ * PaymentCategoryPurposeCode.SalaryPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TreasuryPayment
- * PaymentCategoryPurposeCode.mmTreasuryPayment}</li>
+ * PaymentCategoryPurposeCode.TreasuryPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#CashManagementTransfer
- * PaymentCategoryPurposeCode.mmCashManagementTransfer}</li>
+ * PaymentCategoryPurposeCode.CashManagementTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Dividend
- * PaymentCategoryPurposeCode.mmDividend}</li>
+ * PaymentCategoryPurposeCode.Dividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#GovernmentPayment
- * PaymentCategoryPurposeCode.mmGovernmentPayment}</li>
+ * PaymentCategoryPurposeCode.GovernmentPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Interest
- * PaymentCategoryPurposeCode.mmInterest}</li>
+ * PaymentCategoryPurposeCode.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Loan
- * PaymentCategoryPurposeCode.mmLoan}</li>
+ * PaymentCategoryPurposeCode.Loan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#PensionPayment
- * PaymentCategoryPurposeCode.mmPensionPayment}</li>
+ * PaymentCategoryPurposeCode.PensionPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Securities
- * PaymentCategoryPurposeCode.mmSecurities}</li>
+ * PaymentCategoryPurposeCode.Securities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SocialSecurityBenefit
- * PaymentCategoryPurposeCode.mmSocialSecurityBenefit}</li>
+ * PaymentCategoryPurposeCode.SocialSecurityBenefit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#TaxPayment
- * PaymentCategoryPurposeCode.mmTaxPayment}</li>
+ * PaymentCategoryPurposeCode.TaxPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#ValueAddedTaxPayment
- * PaymentCategoryPurposeCode.mmValueAddedTaxPayment}</li>
+ * PaymentCategoryPurposeCode.ValueAddedTaxPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#SupplierPayment
- * PaymentCategoryPurposeCode.mmSupplierPayment}</li>
+ * PaymentCategoryPurposeCode.SupplierPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Hedging
- * PaymentCategoryPurposeCode.mmHedging}</li>
+ * PaymentCategoryPurposeCode.Hedging}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#Trade
- * PaymentCategoryPurposeCode.mmTrade}</li>
+ * PaymentCategoryPurposeCode.Trade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentCategoryPurposeCode#WithHolding
- * PaymentCategoryPurposeCode.mmWithHolding}</li>
+ * PaymentCategoryPurposeCode.WithHolding}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -679,7 +679,7 @@ public class PaymentCategoryPurposeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INTC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCategoryPurposeCode";

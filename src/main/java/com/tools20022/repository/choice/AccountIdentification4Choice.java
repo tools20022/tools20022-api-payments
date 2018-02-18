@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericAccountIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,20 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "AccountIdentification4Choice", propOrder = {"IBAN", "other"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "AccountIdentification4Choice", propOrder = {"iBAN", "other"})
 public class AccountIdentification4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "IBAN", required = true)
 	protected IBAN2007Identifier iBAN;
 	/**
-	 * International Bank Account Number (IBAN) - identifier used
-	 * internationally by financial institutions to uniquely identify the
-	 * account of a customer. Further specifications of the format and content
-	 * of the IBAN can be found in the standard ISO 13616
-	 * "Banking and related financial services - International Bank Account Number (IBAN)"
-	 * version 1997-10-01, or later revisions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,7 +116,7 @@ public class AccountIdentification4Choice {
 	public static final MMMessageAttribute mmIBAN = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmIBAN;
-			componentContext_lazy = () -> AccountIdentification4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IBAN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,11 +127,11 @@ public class AccountIdentification4Choice {
 			simpleType_lazy = () -> IBAN2007Identifier.mmObject();
 		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected GenericAccountIdentification1 other;
 	/**
-	 * Unique identification of an account, as assigned by the account servicer,
-	 * using an identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -169,7 +166,7 @@ public class AccountIdentification4Choice {
 	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmIBAN;
-			componentContext_lazy = () -> AccountIdentification4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,9 +182,9 @@ public class AccountIdentification4Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountIdentification4Choice.mmIBAN, AccountIdentification4Choice.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AccountIdentification4Choice.mmIBAN, com.tools20022.repository.choice.AccountIdentification4Choice.mmOther);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification4Choice";
 				definition = "Specifies the unique identification of an account as assigned by the account servicer.";
@@ -196,21 +193,21 @@ public class AccountIdentification4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "IBAN", required = true)
 	public IBAN2007Identifier getIBAN() {
 		return iBAN;
 	}
 
-	public void setIBAN(IBAN2007Identifier iBAN) {
-		this.iBAN = iBAN;
+	public AccountIdentification4Choice setIBAN(IBAN2007Identifier iBAN) {
+		this.iBAN = Objects.requireNonNull(iBAN);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public GenericAccountIdentification1 getOther() {
 		return other;
 	}
 
-	public void setOther(GenericAccountIdentification1 other) {
-		this.other = other;
+	public AccountIdentification4Choice setOther(GenericAccountIdentification1 other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

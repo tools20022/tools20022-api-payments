@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#SWIFTMT
- * CommunicationMethodCode.mmSWIFTMT}</li>
+ * CommunicationMethodCode.SWIFTMT}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#SWIFTMX
- * CommunicationMethodCode.mmSWIFTMX}</li>
+ * CommunicationMethodCode.SWIFTMX}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#Fax
- * CommunicationMethodCode.mmFax}</li>
+ * CommunicationMethodCode.Fax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#Email
- * CommunicationMethodCode.mmEmail}</li>
+ * CommunicationMethodCode.Email}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#Proprietary
- * CommunicationMethodCode.mmProprietary}</li>
+ * CommunicationMethodCode.Proprietary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#Online
- * CommunicationMethodCode.mmOnline}</li>
+ * CommunicationMethodCode.Online}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#Phone
- * CommunicationMethodCode.mmPhone}</li>
+ * CommunicationMethodCode.Phone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#PostalService
- * CommunicationMethodCode.mmPostalService}</li>
+ * CommunicationMethodCode.PostalService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommunicationMethodCode#File
- * CommunicationMethodCode.mmFile}</li>
+ * CommunicationMethodCode.File}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -79,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -379,7 +379,7 @@ public class CommunicationMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SWMT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationMethodCode";

@@ -22,9 +22,11 @@ import com.tools20022.repository.codeset.PartyTypeCode;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of a payment by card.
@@ -67,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +86,8 @@ public class CardPaymentPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CardPayment> cardPayment;
 	/**
-	 * Identifies the payment by card for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,9 +134,8 @@ public class CardPaymentPartyRole extends Role {
 	};
 	protected PartyTypeCode partyType;
 	/**
-	 * Specifies the type of party which plays a role in the context od a card
-	 * payment process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,7 +185,7 @@ public class CardPaymentPartyRole extends Role {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentPartyRole";
 				definition = "Role played by a party in the context of a payment by card.";
@@ -203,18 +204,20 @@ public class CardPaymentPartyRole extends Role {
 	}
 
 	public List<CardPayment> getCardPayment() {
-		return cardPayment;
+		return cardPayment == null ? cardPayment = new ArrayList<>() : cardPayment;
 	}
 
-	public void setCardPayment(List<com.tools20022.repository.entity.CardPayment> cardPayment) {
-		this.cardPayment = cardPayment;
+	public CardPaymentPartyRole setCardPayment(List<com.tools20022.repository.entity.CardPayment> cardPayment) {
+		this.cardPayment = Objects.requireNonNull(cardPayment);
+		return this;
 	}
 
 	public PartyTypeCode getPartyType() {
 		return partyType;
 	}
 
-	public void setPartyType(PartyTypeCode partyType) {
-		this.partyType = partyType;
+	public CardPaymentPartyRole setPartyType(PartyTypeCode partyType) {
+		this.partyType = Objects.requireNonNull(partyType);
+		return this;
 	}
 }

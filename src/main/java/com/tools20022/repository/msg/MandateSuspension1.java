@@ -25,9 +25,8 @@ import com.tools20022.repository.area.pain.MandateSuspensionRequestV01;
 import com.tools20022.repository.choice.OriginalMandate4Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identifies the mandate, which is being suspended."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateSuspension1", propOrder = {"suspensionRequestIdentification", "originalMessageInformation", "suspensionReason", "originalMandate", "supplementaryData"})
 public class MandateSuspension1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SspnsnReqId", required = true)
 	protected Max35Text suspensionRequestIdentification;
 	/**
-	 * Unique identification, as assigned by the initiating party, to
-	 * unambiguously identify the suspension request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +120,7 @@ public class MandateSuspension1 {
 	 */
 	public static final MMMessageAttribute mmSuspensionRequestIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MandateSuspension1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateSuspension1.mmObject();
 			isDerived = false;
 			xmlTag = "SspnsnReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,10 +131,11 @@ public class MandateSuspension1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMsgInf")
 	protected OriginalMessageInformation1 originalMessageInformation;
 	/**
-	 * Provides information on the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,7 +162,7 @@ public class MandateSuspension1 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateSuspension1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateSuspension1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,10 +174,11 @@ public class MandateSuspension1 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 		}
 	};
+	@XmlElement(name = "SspnsnRsn", required = true)
 	protected MandateSuspensionReason1 suspensionReason;
 	/**
-	 * Provides detailed information on the suspension reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -204,7 +205,7 @@ public class MandateSuspension1 {
 	 */
 	public static final MMMessageAssociationEnd mmSuspensionReason = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateSuspension1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateSuspension1.mmObject();
 			isDerived = false;
 			xmlTag = "SspnsnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,10 +217,11 @@ public class MandateSuspension1 {
 			type_lazy = () -> com.tools20022.repository.msg.MandateSuspensionReason1.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMndt", required = true)
 	protected OriginalMandate4Choice originalMandate;
 	/**
-	 * Provides the original mandate data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -246,7 +248,7 @@ public class MandateSuspension1 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateSuspension1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateSuspension1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -258,11 +260,11 @@ public class MandateSuspension1 {
 			type_lazy = () -> OriginalMandate4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -290,7 +292,7 @@ public class MandateSuspension1 {
 	 */
 	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateSuspension1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateSuspension1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,10 +307,10 @@ public class MandateSuspension1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateSuspension1.mmSuspensionRequestIdentification, MandateSuspension1.mmOriginalMessageInformation, MandateSuspension1.mmSuspensionReason, MandateSuspension1.mmOriginalMandate,
-						MandateSuspension1.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateSuspension1.mmSuspensionRequestIdentification, com.tools20022.repository.msg.MandateSuspension1.mmOriginalMessageInformation,
+						com.tools20022.repository.msg.MandateSuspension1.mmSuspensionReason, com.tools20022.repository.msg.MandateSuspension1.mmOriginalMandate, com.tools20022.repository.msg.MandateSuspension1.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MandateSuspensionRequestV01.mmUnderlyingSuspensionDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateSuspension1";
 				definition = "Identifies the mandate, which is being suspended.";
@@ -317,48 +319,48 @@ public class MandateSuspension1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SspnsnReqId", required = true)
 	public Max35Text getSuspensionRequestIdentification() {
 		return suspensionRequestIdentification;
 	}
 
-	public void setSuspensionRequestIdentification(Max35Text suspensionRequestIdentification) {
-		this.suspensionRequestIdentification = suspensionRequestIdentification;
+	public MandateSuspension1 setSuspensionRequestIdentification(Max35Text suspensionRequestIdentification) {
+		this.suspensionRequestIdentification = Objects.requireNonNull(suspensionRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMsgInf")
-	public OriginalMessageInformation1 getOriginalMessageInformation() {
-		return originalMessageInformation;
+	public Optional<OriginalMessageInformation1> getOriginalMessageInformation() {
+		return originalMessageInformation == null ? Optional.empty() : Optional.of(originalMessageInformation);
 	}
 
-	public void setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+	public MandateSuspension1 setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
 		this.originalMessageInformation = originalMessageInformation;
+		return this;
 	}
 
-	@XmlElement(name = "SspnsnRsn", required = true)
 	public MandateSuspensionReason1 getSuspensionReason() {
 		return suspensionReason;
 	}
 
-	public void setSuspensionReason(com.tools20022.repository.msg.MandateSuspensionReason1 suspensionReason) {
-		this.suspensionReason = suspensionReason;
+	public MandateSuspension1 setSuspensionReason(com.tools20022.repository.msg.MandateSuspensionReason1 suspensionReason) {
+		this.suspensionReason = Objects.requireNonNull(suspensionReason);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMndt", required = true)
 	public OriginalMandate4Choice getOriginalMandate() {
 		return originalMandate;
 	}
 
-	public void setOriginalMandate(OriginalMandate4Choice originalMandate) {
-		this.originalMandate = originalMandate;
+	public MandateSuspension1 setOriginalMandate(OriginalMandate4Choice originalMandate) {
+		this.originalMandate = Objects.requireNonNull(originalMandate);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MandateSuspension1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

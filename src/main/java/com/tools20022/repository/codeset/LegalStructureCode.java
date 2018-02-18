@@ -38,39 +38,39 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Corporation
- * LegalStructureCode.mmCorporation}</li>
+ * LegalStructureCode.Corporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Individual
- * LegalStructureCode.mmIndividual}</li>
+ * LegalStructureCode.Individual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Supranational
- * LegalStructureCode.mmSupranational}</li>
+ * LegalStructureCode.Supranational}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Sovereign
- * LegalStructureCode.mmSovereign}</li>
+ * LegalStructureCode.Sovereign}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Municipal
- * LegalStructureCode.mmMunicipal}</li>
+ * LegalStructureCode.Municipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Province
- * LegalStructureCode.mmProvince}</li>
+ * LegalStructureCode.Province}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LegalStructureCode#State
- * LegalStructureCode.mmState}</li>
+ * LegalStructureCode.State}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LegalStructureCode#County
- * LegalStructureCode.mmCounty}</li>
+ * LegalStructureCode.County}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#Partnership
- * LegalStructureCode.mmPartnership}</li>
+ * LegalStructureCode.Partnership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalStructureCode#FinancialInstitution
- * LegalStructureCode.mmFinancialInstitution}</li>
+ * LegalStructureCode.FinancialInstitution}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -399,7 +399,7 @@ public class LegalStructureCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CORR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalStructureCode";

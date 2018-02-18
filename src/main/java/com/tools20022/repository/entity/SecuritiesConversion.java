@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.LoanContract1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Conversion exchange of securities, generally convertible bonds or preferred
@@ -162,8 +161,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -181,8 +180,8 @@ public class SecuritiesConversion {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing conversionPrice;
 	/**
-	 * Price of one target security in the conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,9 +228,8 @@ public class SecuritiesConversion {
 	};
 	protected ISODateTime conversionDate;
 	/**
-	 * Deadline by which a convertible security must be converted according to
-	 * the terms of the issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -278,9 +276,8 @@ public class SecuritiesConversion {
 	};
 	protected SecuritiesQuantity minimumExercisableQuantity;
 	/**
-	 * Minimum quantity of financial instrument or lot of rights/warrants that
-	 * must be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,9 +326,8 @@ public class SecuritiesConversion {
 	};
 	protected SecuritiesQuantity minimumExercisableMultipleQuantity;
 	/**
-	 * Minimum multiple quantity of financial instrument or lot of
-	 * rights/warrants that must be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,9 +377,8 @@ public class SecuritiesConversion {
 	};
 	protected SecuritiesQuantity maximumExercisableQuantity;
 	/**
-	 * Indicates the maximum quantity of financial instrument that may be
-	 * exercised in the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,8 +427,8 @@ public class SecuritiesConversion {
 	};
 	protected ConversionTypeCode conversionType;
 	/**
-	 * Specifies the conversion type of an instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,9 +474,8 @@ public class SecuritiesConversion {
 	};
 	protected DateTimePeriod conversionPeriod;
 	/**
-	 * Period during which a convertible security may be converted according to
-	 * the terms of the issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -530,8 +524,8 @@ public class SecuritiesConversion {
 	};
 	protected SecuritiesQuantity conversionRatioDenominator;
 	/**
-	 * Number of held securities for the conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -578,8 +572,8 @@ public class SecuritiesConversion {
 	};
 	protected SecuritiesQuantity conversionRatioNumerator;
 	/**
-	 * Number of target securities for the conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -626,8 +620,8 @@ public class SecuritiesConversion {
 	};
 	protected List<com.tools20022.repository.entity.UnderlyingRatio> ratio;
 	/**
-	 * Ratio applied to convert the related security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -673,9 +667,8 @@ public class SecuritiesConversion {
 	};
 	protected CurrencyExchange conversionUnitCurrency;
 	/**
-	 * Currency in which the rate of exchange is expressed in a currency
-	 * exchange. In the example 1GBP = xxxCUR, the unit currency is GBP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -724,8 +717,8 @@ public class SecuritiesConversion {
 	};
 	protected Option relatedOption;
 	/**
-	 * Option for which securities conversion information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -772,8 +765,8 @@ public class SecuritiesConversion {
 	};
 	protected BusinessDayConventionCode businessDayConvention;
 	/**
-	 * Convention used for adjusting a date when it is not a business day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -820,8 +813,8 @@ public class SecuritiesConversion {
 	};
 	protected ChoiceCode conversionChoice;
 	/**
-	 * Specifies whether the conversion is mandatory or optional.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -867,9 +860,8 @@ public class SecuritiesConversion {
 	};
 	protected BaseOneRate conversionFixedExchangeRate;
 	/**
-	 * Currency exchange rate between the bond currency and the underlying
-	 * equity currency used to calculate the convertion ratio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -916,8 +908,8 @@ public class SecuritiesConversion {
 	};
 	protected CurrencyAndAmount conversionMarginAmount;
 	/**
-	 * Amount of cash needed for the conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -963,9 +955,8 @@ public class SecuritiesConversion {
 	};
 	protected CorporateActionOptionCode conversionOption;
 	/**
-	 * Specifies information about the choices offered to the holder of a
-	 * conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1013,9 +1004,8 @@ public class SecuritiesConversion {
 	};
 	protected CurrencyCode conversionQuotedCurrency;
 	/**
-	 * Currency into which the base currency is converted, in a currency
-	 * exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1071,9 +1061,8 @@ public class SecuritiesConversion {
 	};
 	protected FinancialCenterCode financialCenter;
 	/**
-	 * Financial place taken into account to adjust the date and time, as
-	 * defined within the business day convention.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1121,9 +1110,8 @@ public class SecuritiesConversion {
 	};
 	protected Number minimumNoticeDays;
 	/**
-	 * Minimum number of days that must be given by either the issuer or the
-	 * holder before conversion can take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1170,8 +1158,8 @@ public class SecuritiesConversion {
 	};
 	protected NoticePeriodTypeCode noticePeriodType;
 	/**
-	 * Specifies the type of notice period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1217,9 +1205,8 @@ public class SecuritiesConversion {
 	};
 	protected YesNoIndicator protectionAgainstDilutionIndicator;
 	/**
-	 * Indicates whether the security is protected against dilution with regards
-	 * to capital events.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1267,9 +1254,8 @@ public class SecuritiesConversion {
 	};
 	protected YesNoIndicator reverseConversionIndicator;
 	/**
-	 * Indicates whether the bond is convertible into an equity and back to the
-	 * bond.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1317,9 +1303,8 @@ public class SecuritiesConversion {
 	};
 	protected Security securityIdentification;
 	/**
-	 * ISIN identification of the related financial instrument into which this
-	 * security can be converted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1367,9 +1352,8 @@ public class SecuritiesConversion {
 	};
 	protected PartyTypeCode partyType;
 	/**
-	 * Specifies if the issuer or the holder are allowed to convert the security
-	 * into another one.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1417,8 +1401,8 @@ public class SecuritiesConversion {
 	};
 	protected BaseOneRate contractSize;
 	/**
-	 * Ratio or multiplying factor used to convert one contract into a quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1467,7 +1451,7 @@ public class SecuritiesConversion {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesConversion";
 				definition = "Conversion exchange of securities, generally convertible bonds or preferred equities, into another form of securities, usually common equities.";
@@ -1504,207 +1488,233 @@ public class SecuritiesConversion {
 		return conversionPrice;
 	}
 
-	public void setConversionPrice(com.tools20022.repository.entity.SecuritiesPricing conversionPrice) {
-		this.conversionPrice = conversionPrice;
+	public SecuritiesConversion setConversionPrice(com.tools20022.repository.entity.SecuritiesPricing conversionPrice) {
+		this.conversionPrice = Objects.requireNonNull(conversionPrice);
+		return this;
 	}
 
 	public ISODateTime getConversionDate() {
 		return conversionDate;
 	}
 
-	public void setConversionDate(ISODateTime conversionDate) {
-		this.conversionDate = conversionDate;
+	public SecuritiesConversion setConversionDate(ISODateTime conversionDate) {
+		this.conversionDate = Objects.requireNonNull(conversionDate);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumExercisableQuantity() {
 		return minimumExercisableQuantity;
 	}
 
-	public void setMinimumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableQuantity) {
-		this.minimumExercisableQuantity = minimumExercisableQuantity;
+	public SecuritiesConversion setMinimumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableQuantity) {
+		this.minimumExercisableQuantity = Objects.requireNonNull(minimumExercisableQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumExercisableMultipleQuantity() {
 		return minimumExercisableMultipleQuantity;
 	}
 
-	public void setMinimumExercisableMultipleQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableMultipleQuantity) {
-		this.minimumExercisableMultipleQuantity = minimumExercisableMultipleQuantity;
+	public SecuritiesConversion setMinimumExercisableMultipleQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableMultipleQuantity) {
+		this.minimumExercisableMultipleQuantity = Objects.requireNonNull(minimumExercisableMultipleQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getMaximumExercisableQuantity() {
 		return maximumExercisableQuantity;
 	}
 
-	public void setMaximumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumExercisableQuantity) {
-		this.maximumExercisableQuantity = maximumExercisableQuantity;
+	public SecuritiesConversion setMaximumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumExercisableQuantity) {
+		this.maximumExercisableQuantity = Objects.requireNonNull(maximumExercisableQuantity);
+		return this;
 	}
 
 	public ConversionTypeCode getConversionType() {
 		return conversionType;
 	}
 
-	public void setConversionType(ConversionTypeCode conversionType) {
-		this.conversionType = conversionType;
+	public SecuritiesConversion setConversionType(ConversionTypeCode conversionType) {
+		this.conversionType = Objects.requireNonNull(conversionType);
+		return this;
 	}
 
 	public DateTimePeriod getConversionPeriod() {
 		return conversionPeriod;
 	}
 
-	public void setConversionPeriod(com.tools20022.repository.entity.DateTimePeriod conversionPeriod) {
-		this.conversionPeriod = conversionPeriod;
+	public SecuritiesConversion setConversionPeriod(com.tools20022.repository.entity.DateTimePeriod conversionPeriod) {
+		this.conversionPeriod = Objects.requireNonNull(conversionPeriod);
+		return this;
 	}
 
 	public SecuritiesQuantity getConversionRatioDenominator() {
 		return conversionRatioDenominator;
 	}
 
-	public void setConversionRatioDenominator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioDenominator) {
-		this.conversionRatioDenominator = conversionRatioDenominator;
+	public SecuritiesConversion setConversionRatioDenominator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioDenominator) {
+		this.conversionRatioDenominator = Objects.requireNonNull(conversionRatioDenominator);
+		return this;
 	}
 
 	public SecuritiesQuantity getConversionRatioNumerator() {
 		return conversionRatioNumerator;
 	}
 
-	public void setConversionRatioNumerator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioNumerator) {
-		this.conversionRatioNumerator = conversionRatioNumerator;
+	public SecuritiesConversion setConversionRatioNumerator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioNumerator) {
+		this.conversionRatioNumerator = Objects.requireNonNull(conversionRatioNumerator);
+		return this;
 	}
 
 	public List<UnderlyingRatio> getRatio() {
-		return ratio;
+		return ratio == null ? ratio = new ArrayList<>() : ratio;
 	}
 
-	public void setRatio(List<com.tools20022.repository.entity.UnderlyingRatio> ratio) {
-		this.ratio = ratio;
+	public SecuritiesConversion setRatio(List<com.tools20022.repository.entity.UnderlyingRatio> ratio) {
+		this.ratio = Objects.requireNonNull(ratio);
+		return this;
 	}
 
 	public CurrencyExchange getConversionUnitCurrency() {
 		return conversionUnitCurrency;
 	}
 
-	public void setConversionUnitCurrency(com.tools20022.repository.entity.CurrencyExchange conversionUnitCurrency) {
-		this.conversionUnitCurrency = conversionUnitCurrency;
+	public SecuritiesConversion setConversionUnitCurrency(com.tools20022.repository.entity.CurrencyExchange conversionUnitCurrency) {
+		this.conversionUnitCurrency = Objects.requireNonNull(conversionUnitCurrency);
+		return this;
 	}
 
-	public Option getRelatedOption() {
-		return relatedOption;
+	public Optional<Option> getRelatedOption() {
+		return relatedOption == null ? Optional.empty() : Optional.of(relatedOption);
 	}
 
-	public void setRelatedOption(com.tools20022.repository.entity.Option relatedOption) {
+	public SecuritiesConversion setRelatedOption(com.tools20022.repository.entity.Option relatedOption) {
 		this.relatedOption = relatedOption;
+		return this;
 	}
 
 	public BusinessDayConventionCode getBusinessDayConvention() {
 		return businessDayConvention;
 	}
 
-	public void setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
-		this.businessDayConvention = businessDayConvention;
+	public SecuritiesConversion setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
+		this.businessDayConvention = Objects.requireNonNull(businessDayConvention);
+		return this;
 	}
 
 	public ChoiceCode getConversionChoice() {
 		return conversionChoice;
 	}
 
-	public void setConversionChoice(ChoiceCode conversionChoice) {
-		this.conversionChoice = conversionChoice;
+	public SecuritiesConversion setConversionChoice(ChoiceCode conversionChoice) {
+		this.conversionChoice = Objects.requireNonNull(conversionChoice);
+		return this;
 	}
 
 	public BaseOneRate getConversionFixedExchangeRate() {
 		return conversionFixedExchangeRate;
 	}
 
-	public void setConversionFixedExchangeRate(BaseOneRate conversionFixedExchangeRate) {
-		this.conversionFixedExchangeRate = conversionFixedExchangeRate;
+	public SecuritiesConversion setConversionFixedExchangeRate(BaseOneRate conversionFixedExchangeRate) {
+		this.conversionFixedExchangeRate = Objects.requireNonNull(conversionFixedExchangeRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getConversionMarginAmount() {
 		return conversionMarginAmount;
 	}
 
-	public void setConversionMarginAmount(CurrencyAndAmount conversionMarginAmount) {
-		this.conversionMarginAmount = conversionMarginAmount;
+	public SecuritiesConversion setConversionMarginAmount(CurrencyAndAmount conversionMarginAmount) {
+		this.conversionMarginAmount = Objects.requireNonNull(conversionMarginAmount);
+		return this;
 	}
 
 	public CorporateActionOptionCode getConversionOption() {
 		return conversionOption;
 	}
 
-	public void setConversionOption(CorporateActionOptionCode conversionOption) {
-		this.conversionOption = conversionOption;
+	public SecuritiesConversion setConversionOption(CorporateActionOptionCode conversionOption) {
+		this.conversionOption = Objects.requireNonNull(conversionOption);
+		return this;
 	}
 
 	public CurrencyCode getConversionQuotedCurrency() {
 		return conversionQuotedCurrency;
 	}
 
-	public void setConversionQuotedCurrency(CurrencyCode conversionQuotedCurrency) {
-		this.conversionQuotedCurrency = conversionQuotedCurrency;
+	public SecuritiesConversion setConversionQuotedCurrency(CurrencyCode conversionQuotedCurrency) {
+		this.conversionQuotedCurrency = Objects.requireNonNull(conversionQuotedCurrency);
+		return this;
 	}
 
 	public FinancialCenterCode getFinancialCenter() {
 		return financialCenter;
 	}
 
-	public void setFinancialCenter(FinancialCenterCode financialCenter) {
-		this.financialCenter = financialCenter;
+	public SecuritiesConversion setFinancialCenter(FinancialCenterCode financialCenter) {
+		this.financialCenter = Objects.requireNonNull(financialCenter);
+		return this;
 	}
 
 	public Number getMinimumNoticeDays() {
 		return minimumNoticeDays;
 	}
 
-	public void setMinimumNoticeDays(Number minimumNoticeDays) {
-		this.minimumNoticeDays = minimumNoticeDays;
+	public SecuritiesConversion setMinimumNoticeDays(Number minimumNoticeDays) {
+		this.minimumNoticeDays = Objects.requireNonNull(minimumNoticeDays);
+		return this;
 	}
 
 	public NoticePeriodTypeCode getNoticePeriodType() {
 		return noticePeriodType;
 	}
 
-	public void setNoticePeriodType(NoticePeriodTypeCode noticePeriodType) {
-		this.noticePeriodType = noticePeriodType;
+	public SecuritiesConversion setNoticePeriodType(NoticePeriodTypeCode noticePeriodType) {
+		this.noticePeriodType = Objects.requireNonNull(noticePeriodType);
+		return this;
 	}
 
 	public YesNoIndicator getProtectionAgainstDilutionIndicator() {
 		return protectionAgainstDilutionIndicator;
 	}
 
-	public void setProtectionAgainstDilutionIndicator(YesNoIndicator protectionAgainstDilutionIndicator) {
-		this.protectionAgainstDilutionIndicator = protectionAgainstDilutionIndicator;
+	public SecuritiesConversion setProtectionAgainstDilutionIndicator(YesNoIndicator protectionAgainstDilutionIndicator) {
+		this.protectionAgainstDilutionIndicator = Objects.requireNonNull(protectionAgainstDilutionIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getReverseConversionIndicator() {
 		return reverseConversionIndicator;
 	}
 
-	public void setReverseConversionIndicator(YesNoIndicator reverseConversionIndicator) {
-		this.reverseConversionIndicator = reverseConversionIndicator;
+	public SecuritiesConversion setReverseConversionIndicator(YesNoIndicator reverseConversionIndicator) {
+		this.reverseConversionIndicator = Objects.requireNonNull(reverseConversionIndicator);
+		return this;
 	}
 
 	public Security getSecurityIdentification() {
 		return securityIdentification;
 	}
 
-	public void setSecurityIdentification(com.tools20022.repository.entity.Security securityIdentification) {
-		this.securityIdentification = securityIdentification;
+	public SecuritiesConversion setSecurityIdentification(com.tools20022.repository.entity.Security securityIdentification) {
+		this.securityIdentification = Objects.requireNonNull(securityIdentification);
+		return this;
 	}
 
 	public PartyTypeCode getPartyType() {
 		return partyType;
 	}
 
-	public void setPartyType(PartyTypeCode partyType) {
-		this.partyType = partyType;
+	public SecuritiesConversion setPartyType(PartyTypeCode partyType) {
+		this.partyType = Objects.requireNonNull(partyType);
+		return this;
 	}
 
 	public BaseOneRate getContractSize() {
 		return contractSize;
 	}
 
-	public void setContractSize(BaseOneRate contractSize) {
-		this.contractSize = contractSize;
+	public SecuritiesConversion setContractSize(BaseOneRate contractSize) {
+		this.contractSize = Objects.requireNonNull(contractSize);
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identification of the transaction in an unambiguous way."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionIdentifier1", propOrder = {"transactionDateTime", "transactionReference"})
 public class TransactionIdentifier1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxDtTm", required = true)
 	protected ISODateTime transactionDateTime;
 	/**
-	 * Local date and time of the transaction assigned by the POI (Point Of
-	 * Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +111,7 @@ public class TransactionIdentifier1 {
 	public static final MMMessageAttribute mmTransactionDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionDateTime;
-			componentContext_lazy = () -> TransactionIdentifier1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
 			isDerived = false;
 			xmlTag = "TxDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +122,11 @@ public class TransactionIdentifier1 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "TxRef", required = true)
 	protected Max35Text transactionReference;
 	/**
-	 * Identification of the transaction that has to be unique for a time
-	 * period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +161,7 @@ public class TransactionIdentifier1 {
 	public static final MMMessageAttribute mmTransactionReference = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionIdentification;
-			componentContext_lazy = () -> TransactionIdentifier1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
 			isDerived = false;
 			xmlTag = "TxRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,9 +176,9 @@ public class TransactionIdentifier1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionIdentifier1.mmTransactionDateTime, TransactionIdentifier1.mmTransactionReference);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionIdentifier1.mmTransactionDateTime, com.tools20022.repository.msg.TransactionIdentifier1.mmTransactionReference);
 				trace_lazy = () -> CardPaymentAcquiring.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionIdentifier1";
 				definition = "Identification of the transaction in an unambiguous way.";
@@ -186,21 +187,21 @@ public class TransactionIdentifier1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxDtTm", required = true)
 	public ISODateTime getTransactionDateTime() {
 		return transactionDateTime;
 	}
 
-	public void setTransactionDateTime(ISODateTime transactionDateTime) {
-		this.transactionDateTime = transactionDateTime;
+	public TransactionIdentifier1 setTransactionDateTime(ISODateTime transactionDateTime) {
+		this.transactionDateTime = Objects.requireNonNull(transactionDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "TxRef", required = true)
 	public Max35Text getTransactionReference() {
 		return transactionReference;
 	}
 
-	public void setTransactionReference(Max35Text transactionReference) {
-		this.transactionReference = transactionReference;
+	public TransactionIdentifier1 setTransactionReference(Max35Text transactionReference) {
+		this.transactionReference = Objects.requireNonNull(transactionReference);
+		return this;
 	}
 }

@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Status of the corporate action process.
@@ -102,8 +101,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,8 +118,8 @@ public class CorporateActionStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max350Text agentStandingInstructionStatus;
 	/**
-	 * Specifies the state or the condition.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,8 +164,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected ProcessingStatusCode processingStatus;
 	/**
-	 * Specifies the status of the details of the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,8 +211,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionEventProcessingStatusCode eventProcessingStatus;
 	/**
-	 * Processing status of the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,9 +258,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionStatusReason> corporateActionStatusReason;
 	/**
-	 * Specifies the reasons for the status. It is derived from the relationship
-	 * between Status and Status Reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,8 +308,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionInstructionCancellationProcessingStatusCode instructionCancellationStatus;
 	/**
-	 * Status of the instruction cancellation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,8 +355,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionInstructionProcessingStatusCode corporateActionInstructionProcessingStatus;
 	/**
-	 * Status of the corporate action instruction process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -404,8 +402,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected RateStatusCode rateStatus;
 	/**
-	 * Specifies whether the rate is indicative or actual.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,8 +449,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected OptionAvailabilityStatusCode optionAvailabilityStatus;
 	/**
-	 * Availability status of the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -498,8 +496,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionEvent corporateActionEvent;
 	/**
-	 * Corporate event for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -547,8 +545,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionEventStatusCode eventStatus;
 	/**
-	 * Status of the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -594,9 +592,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected CorporateActionProcessedStatusCode relatedInstructionProcessedStatus;
 	/**
-	 * Information on the status of the processing of an instruction related to
-	 * a corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -644,9 +641,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected ISODateTime deactivationDateAndTime;
 	/**
-	 * Date and time at which the the corporate action event or the option is
-	 * deactivated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -693,8 +689,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected EventConfirmationStatusCode eventConfirmationStatus;
 	/**
-	 * Indicates the status of the occurrence of an event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -740,9 +736,8 @@ public class CorporateActionStatus extends Status {
 	};
 	protected EventCompletenessStatusCode eventCompletenessStatus;
 	/**
-	 * Indicates whether the details provided about an event are complete or
-	 * incomplete.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -792,7 +787,7 @@ public class CorporateActionStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStatus";
 				definition = "Status of the corporate action process.";
@@ -819,111 +814,125 @@ public class CorporateActionStatus extends Status {
 		return agentStandingInstructionStatus;
 	}
 
-	public void setAgentStandingInstructionStatus(Max350Text agentStandingInstructionStatus) {
-		this.agentStandingInstructionStatus = agentStandingInstructionStatus;
+	public CorporateActionStatus setAgentStandingInstructionStatus(Max350Text agentStandingInstructionStatus) {
+		this.agentStandingInstructionStatus = Objects.requireNonNull(agentStandingInstructionStatus);
+		return this;
 	}
 
 	public ProcessingStatusCode getProcessingStatus() {
 		return processingStatus;
 	}
 
-	public void setProcessingStatus(ProcessingStatusCode processingStatus) {
-		this.processingStatus = processingStatus;
+	public CorporateActionStatus setProcessingStatus(ProcessingStatusCode processingStatus) {
+		this.processingStatus = Objects.requireNonNull(processingStatus);
+		return this;
 	}
 
 	public CorporateActionEventProcessingStatusCode getEventProcessingStatus() {
 		return eventProcessingStatus;
 	}
 
-	public void setEventProcessingStatus(CorporateActionEventProcessingStatusCode eventProcessingStatus) {
-		this.eventProcessingStatus = eventProcessingStatus;
+	public CorporateActionStatus setEventProcessingStatus(CorporateActionEventProcessingStatusCode eventProcessingStatus) {
+		this.eventProcessingStatus = Objects.requireNonNull(eventProcessingStatus);
+		return this;
 	}
 
 	public List<CorporateActionStatusReason> getCorporateActionStatusReason() {
-		return corporateActionStatusReason;
+		return corporateActionStatusReason == null ? corporateActionStatusReason = new ArrayList<>() : corporateActionStatusReason;
 	}
 
-	public void setCorporateActionStatusReason(List<com.tools20022.repository.entity.CorporateActionStatusReason> corporateActionStatusReason) {
-		this.corporateActionStatusReason = corporateActionStatusReason;
+	public CorporateActionStatus setCorporateActionStatusReason(List<com.tools20022.repository.entity.CorporateActionStatusReason> corporateActionStatusReason) {
+		this.corporateActionStatusReason = Objects.requireNonNull(corporateActionStatusReason);
+		return this;
 	}
 
 	public CorporateActionInstructionCancellationProcessingStatusCode getInstructionCancellationStatus() {
 		return instructionCancellationStatus;
 	}
 
-	public void setInstructionCancellationStatus(CorporateActionInstructionCancellationProcessingStatusCode instructionCancellationStatus) {
-		this.instructionCancellationStatus = instructionCancellationStatus;
+	public CorporateActionStatus setInstructionCancellationStatus(CorporateActionInstructionCancellationProcessingStatusCode instructionCancellationStatus) {
+		this.instructionCancellationStatus = Objects.requireNonNull(instructionCancellationStatus);
+		return this;
 	}
 
 	public CorporateActionInstructionProcessingStatusCode getCorporateActionInstructionProcessingStatus() {
 		return corporateActionInstructionProcessingStatus;
 	}
 
-	public void setCorporateActionInstructionProcessingStatus(CorporateActionInstructionProcessingStatusCode corporateActionInstructionProcessingStatus) {
-		this.corporateActionInstructionProcessingStatus = corporateActionInstructionProcessingStatus;
+	public CorporateActionStatus setCorporateActionInstructionProcessingStatus(CorporateActionInstructionProcessingStatusCode corporateActionInstructionProcessingStatus) {
+		this.corporateActionInstructionProcessingStatus = Objects.requireNonNull(corporateActionInstructionProcessingStatus);
+		return this;
 	}
 
 	public RateStatusCode getRateStatus() {
 		return rateStatus;
 	}
 
-	public void setRateStatus(RateStatusCode rateStatus) {
-		this.rateStatus = rateStatus;
+	public CorporateActionStatus setRateStatus(RateStatusCode rateStatus) {
+		this.rateStatus = Objects.requireNonNull(rateStatus);
+		return this;
 	}
 
 	public OptionAvailabilityStatusCode getOptionAvailabilityStatus() {
 		return optionAvailabilityStatus;
 	}
 
-	public void setOptionAvailabilityStatus(OptionAvailabilityStatusCode optionAvailabilityStatus) {
-		this.optionAvailabilityStatus = optionAvailabilityStatus;
+	public CorporateActionStatus setOptionAvailabilityStatus(OptionAvailabilityStatusCode optionAvailabilityStatus) {
+		this.optionAvailabilityStatus = Objects.requireNonNull(optionAvailabilityStatus);
+		return this;
 	}
 
-	public CorporateActionEvent getCorporateActionEvent() {
-		return corporateActionEvent;
+	public Optional<CorporateActionEvent> getCorporateActionEvent() {
+		return corporateActionEvent == null ? Optional.empty() : Optional.of(corporateActionEvent);
 	}
 
-	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+	public CorporateActionStatus setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
 		this.corporateActionEvent = corporateActionEvent;
+		return this;
 	}
 
 	public CorporateActionEventStatusCode getEventStatus() {
 		return eventStatus;
 	}
 
-	public void setEventStatus(CorporateActionEventStatusCode eventStatus) {
-		this.eventStatus = eventStatus;
+	public CorporateActionStatus setEventStatus(CorporateActionEventStatusCode eventStatus) {
+		this.eventStatus = Objects.requireNonNull(eventStatus);
+		return this;
 	}
 
 	public CorporateActionProcessedStatusCode getRelatedInstructionProcessedStatus() {
 		return relatedInstructionProcessedStatus;
 	}
 
-	public void setRelatedInstructionProcessedStatus(CorporateActionProcessedStatusCode relatedInstructionProcessedStatus) {
-		this.relatedInstructionProcessedStatus = relatedInstructionProcessedStatus;
+	public CorporateActionStatus setRelatedInstructionProcessedStatus(CorporateActionProcessedStatusCode relatedInstructionProcessedStatus) {
+		this.relatedInstructionProcessedStatus = Objects.requireNonNull(relatedInstructionProcessedStatus);
+		return this;
 	}
 
 	public ISODateTime getDeactivationDateAndTime() {
 		return deactivationDateAndTime;
 	}
 
-	public void setDeactivationDateAndTime(ISODateTime deactivationDateAndTime) {
-		this.deactivationDateAndTime = deactivationDateAndTime;
+	public CorporateActionStatus setDeactivationDateAndTime(ISODateTime deactivationDateAndTime) {
+		this.deactivationDateAndTime = Objects.requireNonNull(deactivationDateAndTime);
+		return this;
 	}
 
 	public EventConfirmationStatusCode getEventConfirmationStatus() {
 		return eventConfirmationStatus;
 	}
 
-	public void setEventConfirmationStatus(EventConfirmationStatusCode eventConfirmationStatus) {
-		this.eventConfirmationStatus = eventConfirmationStatus;
+	public CorporateActionStatus setEventConfirmationStatus(EventConfirmationStatusCode eventConfirmationStatus) {
+		this.eventConfirmationStatus = Objects.requireNonNull(eventConfirmationStatus);
+		return this;
 	}
 
 	public EventCompletenessStatusCode getEventCompletenessStatus() {
 		return eventCompletenessStatus;
 	}
 
-	public void setEventCompletenessStatus(EventCompletenessStatusCode eventCompletenessStatus) {
-		this.eventCompletenessStatus = eventCompletenessStatus;
+	public CorporateActionStatus setEventCompletenessStatus(EventCompletenessStatusCode eventCompletenessStatus) {
+		this.eventCompletenessStatus = Objects.requireNonNull(eventCompletenessStatus);
+		return this;
 	}
 }

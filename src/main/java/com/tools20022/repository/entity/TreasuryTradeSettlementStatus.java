@@ -29,6 +29,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the status of a treasury trade at a specified time.
@@ -86,8 +88,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,8 +106,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradeStatusCode tradeStatus;
 	/**
-	 * Status of a treasury trade in a central matching/settlement system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,9 +154,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected YesNoIndicator allegedTrade;
 	/**
-	 * Specifies whether a trade is alleged (notified by the counterparty) or
-	 * not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,8 +203,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected TreasuryTrade treasuryTrade;
 	/**
-	 * Treasury trade for which a settlement status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +252,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected SettlementStatusCode settlement;
 	/**
-	 * Specifies the status of a settlement eg rejected, settled or awaiting
-	 * authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,8 +301,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected ActiveOrHistoricCurrencyAndAmount rejectedAmount;
 	/**
-	 * Amount that cannot be settled for instance by a settlement system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,8 +349,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected YesNoIndicator settlementSuspended;
 	/**
-	 * Cash settlement is suspended.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,8 +396,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected YesNoIndicator pendingSettlement;
 	/**
-	 * Cash settlement is pending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -443,8 +443,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected ISODateTime settlementDate;
 	/**
-	 * Date on which the trade is actually settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -489,8 +489,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	};
 	protected Max35Text withdrawalReason;
 	/**
-	 * Reason that an alleged trade is withdrawn.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -537,7 +537,7 @@ public class TreasuryTradeSettlementStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TreasuryTradeSettlementStatus";
 				definition = "Specifies the status of a treasury trade at a specified time.";
@@ -562,71 +562,80 @@ public class TreasuryTradeSettlementStatus extends Status {
 		return tradeStatus;
 	}
 
-	public void setTradeStatus(TradeStatusCode tradeStatus) {
-		this.tradeStatus = tradeStatus;
+	public TreasuryTradeSettlementStatus setTradeStatus(TradeStatusCode tradeStatus) {
+		this.tradeStatus = Objects.requireNonNull(tradeStatus);
+		return this;
 	}
 
 	public YesNoIndicator getAllegedTrade() {
 		return allegedTrade;
 	}
 
-	public void setAllegedTrade(YesNoIndicator allegedTrade) {
-		this.allegedTrade = allegedTrade;
+	public TreasuryTradeSettlementStatus setAllegedTrade(YesNoIndicator allegedTrade) {
+		this.allegedTrade = Objects.requireNonNull(allegedTrade);
+		return this;
 	}
 
-	public TreasuryTrade getTreasuryTrade() {
-		return treasuryTrade;
+	public Optional<TreasuryTrade> getTreasuryTrade() {
+		return treasuryTrade == null ? Optional.empty() : Optional.of(treasuryTrade);
 	}
 
-	public void setTreasuryTrade(com.tools20022.repository.entity.TreasuryTrade treasuryTrade) {
+	public TreasuryTradeSettlementStatus setTreasuryTrade(com.tools20022.repository.entity.TreasuryTrade treasuryTrade) {
 		this.treasuryTrade = treasuryTrade;
+		return this;
 	}
 
 	public SettlementStatusCode getSettlement() {
 		return settlement;
 	}
 
-	public void setSettlement(SettlementStatusCode settlement) {
-		this.settlement = settlement;
+	public TreasuryTradeSettlementStatus setSettlement(SettlementStatusCode settlement) {
+		this.settlement = Objects.requireNonNull(settlement);
+		return this;
 	}
 
 	public ActiveOrHistoricCurrencyAndAmount getRejectedAmount() {
 		return rejectedAmount;
 	}
 
-	public void setRejectedAmount(ActiveOrHistoricCurrencyAndAmount rejectedAmount) {
-		this.rejectedAmount = rejectedAmount;
+	public TreasuryTradeSettlementStatus setRejectedAmount(ActiveOrHistoricCurrencyAndAmount rejectedAmount) {
+		this.rejectedAmount = Objects.requireNonNull(rejectedAmount);
+		return this;
 	}
 
 	public YesNoIndicator getSettlementSuspended() {
 		return settlementSuspended;
 	}
 
-	public void setSettlementSuspended(YesNoIndicator settlementSuspended) {
-		this.settlementSuspended = settlementSuspended;
+	public TreasuryTradeSettlementStatus setSettlementSuspended(YesNoIndicator settlementSuspended) {
+		this.settlementSuspended = Objects.requireNonNull(settlementSuspended);
+		return this;
 	}
 
 	public YesNoIndicator getPendingSettlement() {
 		return pendingSettlement;
 	}
 
-	public void setPendingSettlement(YesNoIndicator pendingSettlement) {
-		this.pendingSettlement = pendingSettlement;
+	public TreasuryTradeSettlementStatus setPendingSettlement(YesNoIndicator pendingSettlement) {
+		this.pendingSettlement = Objects.requireNonNull(pendingSettlement);
+		return this;
 	}
 
 	public ISODateTime getSettlementDate() {
 		return settlementDate;
 	}
 
-	public void setSettlementDate(ISODateTime settlementDate) {
-		this.settlementDate = settlementDate;
+	public TreasuryTradeSettlementStatus setSettlementDate(ISODateTime settlementDate) {
+		this.settlementDate = Objects.requireNonNull(settlementDate);
+		return this;
 	}
 
 	public Max35Text getWithdrawalReason() {
 		return withdrawalReason;
 	}
 
-	public void setWithdrawalReason(Max35Text withdrawalReason) {
-		this.withdrawalReason = withdrawalReason;
+	public TreasuryTradeSettlementStatus setWithdrawalReason(Max35Text withdrawalReason) {
+		this.withdrawalReason = Objects.requireNonNull(withdrawalReason);
+		return this;
 	}
 }

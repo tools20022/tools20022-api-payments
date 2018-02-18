@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +56,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintRegionPresenceRule#forServiceTaxDesignation1
+ * ConstraintRegionPresenceRule.forServiceTaxDesignation1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Designates the tax calculation to be applied on a service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ServiceTaxDesignation1", propOrder = {"code", "region", "taxReason"})
 public class ServiceTaxDesignation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ServiceTaxDesignation1Code code;
 	/**
-	 * Identifies the taxable status of the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +113,7 @@ public class ServiceTaxDesignation1 {
 	 */
 	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +124,11 @@ public class ServiceTaxDesignation1 {
 			simpleType_lazy = () -> ServiceTaxDesignation1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Rgn")
 	protected Max35Text region;
 	/**
-	 * Defines the tax region associated with the service. This element must be
-	 * present if taxes are involved with any portion of the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +163,7 @@ public class ServiceTaxDesignation1 {
 	public static final MMMessageAttribute mmRegion = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
-			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 			isDerived = false;
 			xmlTag = "Rgn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,11 +174,11 @@ public class ServiceTaxDesignation1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxRsn")
 	protected List<com.tools20022.repository.msg.TaxReason1> taxReason;
 	/**
-	 * Provides free form explanations of the various tax codes used within the
-	 * statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +207,7 @@ public class ServiceTaxDesignation1 {
 	 */
 	public static final MMMessageAttribute mmTaxReason = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,9 +221,11 @@ public class ServiceTaxDesignation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ServiceTaxDesignation1.mmCode, ServiceTaxDesignation1.mmRegion, ServiceTaxDesignation1.mmTaxReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ServiceTaxDesignation1.mmCode, com.tools20022.repository.msg.ServiceTaxDesignation1.mmRegion,
+						com.tools20022.repository.msg.ServiceTaxDesignation1.mmTaxReason);
 				trace_lazy = () -> TaxRecord.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintRegionPresenceRule.forServiceTaxDesignation1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceTaxDesignation1";
 				definition = "Designates the tax calculation to be applied on a service.";
@@ -224,30 +234,30 @@ public class ServiceTaxDesignation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ServiceTaxDesignation1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ServiceTaxDesignation1Code code) {
-		this.code = code;
+	public ServiceTaxDesignation1 setCode(ServiceTaxDesignation1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Rgn")
-	public Max35Text getRegion() {
-		return region;
+	public Optional<Max35Text> getRegion() {
+		return region == null ? Optional.empty() : Optional.of(region);
 	}
 
-	public void setRegion(Max35Text region) {
+	public ServiceTaxDesignation1 setRegion(Max35Text region) {
 		this.region = region;
+		return this;
 	}
 
-	@XmlElement(name = "TaxRsn")
 	public List<TaxReason1> getTaxReason() {
-		return taxReason;
+		return taxReason == null ? taxReason = new ArrayList<>() : taxReason;
 	}
 
-	public void setTaxReason(List<com.tools20022.repository.msg.TaxReason1> taxReason) {
-		this.taxReason = taxReason;
+	public ServiceTaxDesignation1 setTaxReason(List<com.tools20022.repository.msg.TaxReason1> taxReason) {
+		this.taxReason = Objects.requireNonNull(taxReason);
+		return this;
 	}
 }

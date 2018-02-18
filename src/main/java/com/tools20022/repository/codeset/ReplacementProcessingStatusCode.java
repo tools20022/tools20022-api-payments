@@ -38,38 +38,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#Denied
- * ReplacementProcessingStatusCode.mmDenied}</li>
+ * ReplacementProcessingStatusCode.Denied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#ReceivedAtStockExchange
- * ReplacementProcessingStatusCode.mmReceivedAtStockExchange}</li>
+ * ReplacementProcessingStatusCode.ReceivedAtStockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#ReceivedAtIntermediary
- * ReplacementProcessingStatusCode.mmReceivedAtIntermediary}</li>
+ * ReplacementProcessingStatusCode.ReceivedAtIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#Accepted
- * ReplacementProcessingStatusCode.mmAccepted}</li>
+ * ReplacementProcessingStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#PartialReplacementAccepted
- * ReplacementProcessingStatusCode.mmPartialReplacementAccepted}</li>
+ * ReplacementProcessingStatusCode.PartialReplacementAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#Pending
- * ReplacementProcessingStatusCode.mmPending}</li>
+ * ReplacementProcessingStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#Rejected
- * ReplacementProcessingStatusCode.mmRejected}</li>
+ * ReplacementProcessingStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#Completed
- * ReplacementProcessingStatusCode.mmCompleted}</li>
+ * ReplacementProcessingStatusCode.Completed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReplacementProcessingStatusCode#InRepair
- * ReplacementProcessingStatusCode.mmInRepair}</li>
+ * ReplacementProcessingStatusCode.InRepair}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -382,7 +382,7 @@ public class ReplacementProcessingStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DEND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReplacementProcessingStatusCode";

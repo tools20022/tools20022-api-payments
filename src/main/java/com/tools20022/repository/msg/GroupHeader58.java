@@ -33,6 +33,8 @@ import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -87,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,19 +101,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides further details on the message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GroupHeader58", propOrder = {"messageIdentification", "creationDateTime", "messageRecipient", "messagePagination", "originalBusinessQuery", "additionalInformation"})
 public class GroupHeader58 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected Max35Text messageIdentification;
 	/**
-	 * Point to point reference, as assigned by the account servicing
-	 * institution, and sent to the account owner or the party authorised to
-	 * receive the message, to unambiguously identify the message. Usage: The
-	 * account servicing institution has to make sure that MessageIdentification
-	 * is unique per account owner for a pre-agreed period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +144,7 @@ public class GroupHeader58 {
 	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,10 +155,11 @@ public class GroupHeader58 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +191,7 @@ public class GroupHeader58 {
 	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,12 +202,11 @@ public class GroupHeader58 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgRcpt")
 	protected PartyIdentification43 messageRecipient;
 	/**
-	 * Party authorised by the account owner to receive information about
-	 * movements on the account. Usage: MessageRecipient should only be
-	 * identified when different from the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -234,7 +233,7 @@ public class GroupHeader58 {
 	 */
 	public static final MMMessageAssociationEnd mmMessageRecipient = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "MsgRcpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,13 +245,11 @@ public class GroupHeader58 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgPgntn")
 	protected Pagination messagePagination;
 	/**
-	 * Provides details on the page number of the message.
 	 * 
-	 * Usage: The pagination of the message is only allowed when agreed between
-	 * the parties.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -278,7 +275,7 @@ public class GroupHeader58 {
 	 */
 	public static final MMMessageAssociationEnd mmMessagePagination = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "MsgPgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -290,11 +287,11 @@ public class GroupHeader58 {
 			type_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlBizQry")
 	protected OriginalBusinessQuery1 originalBusinessQuery;
 	/**
-	 * Unique identification, as assigned by the original requestor, to
-	 * unambiguously identify the business query message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -323,7 +320,7 @@ public class GroupHeader58 {
 	 */
 	public static final MMMessageAttribute mmOriginalBusinessQuery = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlBizQry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -334,10 +331,11 @@ public class GroupHeader58 {
 			complexType_lazy = () -> com.tools20022.repository.msg.OriginalBusinessQuery1.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max500Text additionalInformation;
 	/**
-	 * Further details of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,7 +361,7 @@ public class GroupHeader58 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> GroupHeader58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GroupHeader58.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -378,11 +376,12 @@ public class GroupHeader58 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GroupHeader58.mmMessageIdentification, GroupHeader58.mmCreationDateTime, GroupHeader58.mmMessageRecipient, GroupHeader58.mmMessagePagination, GroupHeader58.mmOriginalBusinessQuery,
-						GroupHeader58.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GroupHeader58.mmMessageIdentification, com.tools20022.repository.msg.GroupHeader58.mmCreationDateTime,
+						com.tools20022.repository.msg.GroupHeader58.mmMessageRecipient, com.tools20022.repository.msg.GroupHeader58.mmMessagePagination, com.tools20022.repository.msg.GroupHeader58.mmOriginalBusinessQuery,
+						com.tools20022.repository.msg.GroupHeader58.mmAdditionalInformation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(BankToCustomerAccountReportV06.mmGroupHeader, BankToCustomerStatementV06.mmGroupHeader, BankToCustomerDebitCreditNotificationV06.mmGroupHeader);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupHeader58";
 				definition = "Provides further details on the message.";
@@ -391,57 +390,57 @@ public class GroupHeader58 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public Max35Text getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(Max35Text messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public GroupHeader58 setMessageIdentification(Max35Text messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public GroupHeader58 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "MsgRcpt")
-	public PartyIdentification43 getMessageRecipient() {
-		return messageRecipient;
+	public Optional<PartyIdentification43> getMessageRecipient() {
+		return messageRecipient == null ? Optional.empty() : Optional.of(messageRecipient);
 	}
 
-	public void setMessageRecipient(com.tools20022.repository.msg.PartyIdentification43 messageRecipient) {
+	public GroupHeader58 setMessageRecipient(com.tools20022.repository.msg.PartyIdentification43 messageRecipient) {
 		this.messageRecipient = messageRecipient;
+		return this;
 	}
 
-	@XmlElement(name = "MsgPgntn")
-	public Pagination getMessagePagination() {
-		return messagePagination;
+	public Optional<Pagination> getMessagePagination() {
+		return messagePagination == null ? Optional.empty() : Optional.of(messagePagination);
 	}
 
-	public void setMessagePagination(com.tools20022.repository.msg.Pagination messagePagination) {
+	public GroupHeader58 setMessagePagination(com.tools20022.repository.msg.Pagination messagePagination) {
 		this.messagePagination = messagePagination;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlBizQry")
-	public OriginalBusinessQuery1 getOriginalBusinessQuery() {
-		return originalBusinessQuery;
+	public Optional<OriginalBusinessQuery1> getOriginalBusinessQuery() {
+		return originalBusinessQuery == null ? Optional.empty() : Optional.of(originalBusinessQuery);
 	}
 
-	public void setOriginalBusinessQuery(com.tools20022.repository.msg.OriginalBusinessQuery1 originalBusinessQuery) {
+	public GroupHeader58 setOriginalBusinessQuery(com.tools20022.repository.msg.OriginalBusinessQuery1 originalBusinessQuery) {
 		this.originalBusinessQuery = originalBusinessQuery;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max500Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max500Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max500Text additionalInformation) {
+	public GroupHeader58 setAdditionalInformation(Max500Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

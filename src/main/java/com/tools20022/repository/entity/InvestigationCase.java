@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set of activities performed to handle an exception to a normal transaction
@@ -117,8 +116,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -136,8 +135,8 @@ public class InvestigationCase {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text assignmentIdentification;
 	/**
-	 * Uniquely identifies the case assignment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,8 +190,8 @@ public class InvestigationCase {
 	};
 	protected ISODateTime creationDateTime;
 	/**
-	 * Creation date and time of the case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,8 +245,8 @@ public class InvestigationCase {
 	};
 	protected Max35Text identification;
 	/**
-	 * Uniquely identifies the case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,9 +299,8 @@ public class InvestigationCase {
 	};
 	protected List<com.tools20022.repository.entity.InvestigationCaseStatus> status;
 	/**
-	 * Specifies the status of the case together with the reason and the date
-	 * and time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -373,8 +371,8 @@ public class InvestigationCase {
 	};
 	protected List<com.tools20022.repository.entity.InvestigationPartyRole> investigationPartyRole;
 	/**
-	 * Role played by a party in the context of an investigation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,9 +420,8 @@ public class InvestigationCase {
 	};
 	protected DuplicateCase duplicateCaseResolution;
 	/**
-	 * Solution which consists in closing the case as it is a duplicate of an
-	 * original one.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -473,8 +470,8 @@ public class InvestigationCase {
 	};
 	protected List<com.tools20022.repository.entity.InvestigationResolution> investigationResolution;
 	/**
-	 * Specifies the actions taken as a result of an investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -531,8 +528,8 @@ public class InvestigationCase {
 	};
 	protected List<com.tools20022.repository.entity.InvestigationCase> originalInvestigationCase;
 	/**
-	 * Original case to which another one is linked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -578,9 +575,8 @@ public class InvestigationCase {
 	};
 	protected List<com.tools20022.repository.entity.InvestigationCase> linkedCase;
 	/**
-	 * Step in the resolution process of an investigation case. The assigned
-	 * case is linked to the investigation case in the previous step.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -628,8 +624,8 @@ public class InvestigationCase {
 	};
 	protected Reassignment reassignment;
 	/**
-	 * Action which is taken to forward the case to another party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -679,7 +675,7 @@ public class InvestigationCase {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationCase";
 				definition = "Set of activities performed to handle an exception to a normal transaction flow..";
@@ -706,79 +702,89 @@ public class InvestigationCase {
 		return assignmentIdentification;
 	}
 
-	public void setAssignmentIdentification(Max35Text assignmentIdentification) {
-		this.assignmentIdentification = assignmentIdentification;
+	public InvestigationCase setAssignmentIdentification(Max35Text assignmentIdentification) {
+		this.assignmentIdentification = Objects.requireNonNull(assignmentIdentification);
+		return this;
 	}
 
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public InvestigationCase setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public InvestigationCase setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<InvestigationCaseStatus> getStatus() {
-		return status;
+		return status == null ? status = new ArrayList<>() : status;
 	}
 
-	public void setStatus(List<com.tools20022.repository.entity.InvestigationCaseStatus> status) {
-		this.status = status;
+	public InvestigationCase setStatus(List<com.tools20022.repository.entity.InvestigationCaseStatus> status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public List<InvestigationPartyRole> getInvestigationPartyRole() {
-		return investigationPartyRole;
+		return investigationPartyRole == null ? investigationPartyRole = new ArrayList<>() : investigationPartyRole;
 	}
 
-	public void setInvestigationPartyRole(List<com.tools20022.repository.entity.InvestigationPartyRole> investigationPartyRole) {
-		this.investigationPartyRole = investigationPartyRole;
+	public InvestigationCase setInvestigationPartyRole(List<com.tools20022.repository.entity.InvestigationPartyRole> investigationPartyRole) {
+		this.investigationPartyRole = Objects.requireNonNull(investigationPartyRole);
+		return this;
 	}
 
-	public DuplicateCase getDuplicateCaseResolution() {
-		return duplicateCaseResolution;
+	public Optional<DuplicateCase> getDuplicateCaseResolution() {
+		return duplicateCaseResolution == null ? Optional.empty() : Optional.of(duplicateCaseResolution);
 	}
 
-	public void setDuplicateCaseResolution(com.tools20022.repository.entity.DuplicateCase duplicateCaseResolution) {
+	public InvestigationCase setDuplicateCaseResolution(com.tools20022.repository.entity.DuplicateCase duplicateCaseResolution) {
 		this.duplicateCaseResolution = duplicateCaseResolution;
+		return this;
 	}
 
 	public List<InvestigationResolution> getInvestigationResolution() {
-		return investigationResolution;
+		return investigationResolution == null ? investigationResolution = new ArrayList<>() : investigationResolution;
 	}
 
-	public void setInvestigationResolution(List<com.tools20022.repository.entity.InvestigationResolution> investigationResolution) {
-		this.investigationResolution = investigationResolution;
+	public InvestigationCase setInvestigationResolution(List<com.tools20022.repository.entity.InvestigationResolution> investigationResolution) {
+		this.investigationResolution = Objects.requireNonNull(investigationResolution);
+		return this;
 	}
 
 	public List<InvestigationCase> getOriginalInvestigationCase() {
-		return originalInvestigationCase;
+		return originalInvestigationCase == null ? originalInvestigationCase = new ArrayList<>() : originalInvestigationCase;
 	}
 
-	public void setOriginalInvestigationCase(List<com.tools20022.repository.entity.InvestigationCase> originalInvestigationCase) {
-		this.originalInvestigationCase = originalInvestigationCase;
+	public InvestigationCase setOriginalInvestigationCase(List<com.tools20022.repository.entity.InvestigationCase> originalInvestigationCase) {
+		this.originalInvestigationCase = Objects.requireNonNull(originalInvestigationCase);
+		return this;
 	}
 
 	public List<InvestigationCase> getLinkedCase() {
-		return linkedCase;
+		return linkedCase == null ? linkedCase = new ArrayList<>() : linkedCase;
 	}
 
-	public void setLinkedCase(List<com.tools20022.repository.entity.InvestigationCase> linkedCase) {
-		this.linkedCase = linkedCase;
+	public InvestigationCase setLinkedCase(List<com.tools20022.repository.entity.InvestigationCase> linkedCase) {
+		this.linkedCase = Objects.requireNonNull(linkedCase);
+		return this;
 	}
 
-	public Reassignment getReassignment() {
-		return reassignment;
+	public Optional<Reassignment> getReassignment() {
+		return reassignment == null ? Optional.empty() : Optional.of(reassignment);
 	}
 
-	public void setReassignment(com.tools20022.repository.entity.Reassignment reassignment) {
+	public InvestigationCase setReassignment(com.tools20022.repository.entity.Reassignment reassignment) {
 		this.reassignment = reassignment;
+		return this;
 	}
 }

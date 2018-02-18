@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#UnderlyingPaymentNotFound
- * InvestigationRejectionCode.mmUnderlyingPaymentNotFound}</li>
+ * InvestigationRejectionCode.UnderlyingPaymentNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#NotAuthorisedToInvestigate
- * InvestigationRejectionCode.mmNotAuthorisedToInvestigate}</li>
+ * InvestigationRejectionCode.NotAuthorisedToInvestigate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#UnknownCase
- * InvestigationRejectionCode.mmUnknownCase}</li>
+ * InvestigationRejectionCode.UnknownCase}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#PaymentPreviouslyCancelledOrRejected
- * InvestigationRejectionCode.mmPaymentPreviouslyCancelledOrRejected}</li>
+ * InvestigationRejectionCode.PaymentPreviouslyCancelledOrRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#WrongMessage
- * InvestigationRejectionCode.mmWrongMessage}</li>
+ * InvestigationRejectionCode.WrongMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#RejectNonCashRelated
- * InvestigationRejectionCode.mmRejectNonCashRelated}</li>
+ * InvestigationRejectionCode.RejectNonCashRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationRejectionCode#MissingResolutionOfInvestigation
- * InvestigationRejectionCode.mmMissingResolutionOfInvestigation}</li>
+ * InvestigationRejectionCode.MissingResolutionOfInvestigation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -70,8 +70,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -322,7 +322,7 @@ public class InvestigationRejectionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NFND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationRejectionCode";

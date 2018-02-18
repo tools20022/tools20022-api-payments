@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Common Reporting Standard (CRS) status and the status source of the investor.
@@ -66,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,8 +86,8 @@ public class CRSStatus {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CRSStatusCode cRSStatus;
 	/**
-	 * Common Reporting Standard (CRS) status of the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,9 +132,8 @@ public class CRSStatus {
 	};
 	protected CountryCode exceptionalReportingCountry;
 	/**
-	 * Reporting country for the CRS status when there is an exception at the
-	 * country level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,8 +179,8 @@ public class CRSStatus {
 	};
 	protected CRSSourceStatusCode cRSSourceStatus;
 	/**
-	 * Source of the Common Reporting Standard (CRS) status expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,10 +227,8 @@ public class CRSStatus {
 	};
 	protected ISODate cRSReportingDate;
 	/**
-	 * Date provided by the account owner to inform the account servicer of the
-	 * date on which the holdings must be reported before the account is
-	 * subsequently closed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,9 +274,8 @@ public class CRSStatus {
 	};
 	protected InvestmentAccountPartyRole investmentAccountParty;
 	/**
-	 * Common Reporting Standard (CRS) status linked to an investment account
-	 * and played by a party in that context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,7 +326,7 @@ public class CRSStatus {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CRSStatus";
 				definition = "Common Reporting Standard (CRS) status and the status source of the investor.";
@@ -350,39 +347,44 @@ public class CRSStatus {
 		return cRSStatus;
 	}
 
-	public void setCRSStatus(CRSStatusCode cRSStatus) {
-		this.cRSStatus = cRSStatus;
+	public CRSStatus setCRSStatus(CRSStatusCode cRSStatus) {
+		this.cRSStatus = Objects.requireNonNull(cRSStatus);
+		return this;
 	}
 
 	public CountryCode getExceptionalReportingCountry() {
 		return exceptionalReportingCountry;
 	}
 
-	public void setExceptionalReportingCountry(CountryCode exceptionalReportingCountry) {
-		this.exceptionalReportingCountry = exceptionalReportingCountry;
+	public CRSStatus setExceptionalReportingCountry(CountryCode exceptionalReportingCountry) {
+		this.exceptionalReportingCountry = Objects.requireNonNull(exceptionalReportingCountry);
+		return this;
 	}
 
 	public CRSSourceStatusCode getCRSSourceStatus() {
 		return cRSSourceStatus;
 	}
 
-	public void setCRSSourceStatus(CRSSourceStatusCode cRSSourceStatus) {
-		this.cRSSourceStatus = cRSSourceStatus;
+	public CRSStatus setCRSSourceStatus(CRSSourceStatusCode cRSSourceStatus) {
+		this.cRSSourceStatus = Objects.requireNonNull(cRSSourceStatus);
+		return this;
 	}
 
 	public ISODate getCRSReportingDate() {
 		return cRSReportingDate;
 	}
 
-	public void setCRSReportingDate(ISODate cRSReportingDate) {
-		this.cRSReportingDate = cRSReportingDate;
+	public CRSStatus setCRSReportingDate(ISODate cRSReportingDate) {
+		this.cRSReportingDate = Objects.requireNonNull(cRSReportingDate);
+		return this;
 	}
 
 	public InvestmentAccountPartyRole getInvestmentAccountParty() {
 		return investmentAccountParty;
 	}
 
-	public void setInvestmentAccountParty(com.tools20022.repository.entity.InvestmentAccountPartyRole investmentAccountParty) {
-		this.investmentAccountParty = investmentAccountParty;
+	public CRSStatus setInvestmentAccountParty(com.tools20022.repository.entity.InvestmentAccountPartyRole investmentAccountParty) {
+		this.investmentAccountParty = Objects.requireNonNull(investmentAccountParty);
+		return this;
 	}
 }

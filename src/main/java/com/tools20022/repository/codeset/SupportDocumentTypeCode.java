@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SupportDocumentTypeCode#SupportingDocument
- * SupportDocumentTypeCode.mmSupportingDocument}</li>
+ * SupportDocumentTypeCode.SupportingDocument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SupportDocumentTypeCode#LetterFromBank
- * SupportDocumentTypeCode.mmLetterFromBank}</li>
+ * SupportDocumentTypeCode.LetterFromBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SupportDocumentTypeCode#LetterToBank
- * SupportDocumentTypeCode.mmLetterToBank}</li>
+ * SupportDocumentTypeCode.LetterToBank}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -171,7 +171,7 @@ public class SupportDocumentTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupportDocumentTypeCode";
 				definition = "Specifies a type of supporting document.";

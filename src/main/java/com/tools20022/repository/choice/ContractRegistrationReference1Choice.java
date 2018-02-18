@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
@@ -28,6 +29,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.DocumentIdentification28;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Reference details of the contract registration."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContractRegistrationReference1Choice", propOrder = {"registeredContractIdentification", "contract"})
 public class ContractRegistrationReference1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RegdCtrctId", required = true)
 	protected Max35Text registeredContractIdentification;
 	/**
-	 * Unique and unambiguous identification of the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,6 +99,10 @@ public class ContractRegistrationReference1Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "RegdCtrctId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=RU-CMPG, value=Deal Passport
+	 * Identification</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -110,9 +117,10 @@ public class ContractRegistrationReference1Choice {
 	public static final MMMessageAttribute mmRegisteredContractIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
-			componentContext_lazy = () -> ContractRegistrationReference1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RegdCtrctId";
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "RU-CMPG"}, new String[]{"value", "Deal Passport Identification"}));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegisteredContractIdentification";
 			definition = "Unique and unambiguous identification of the registered contract.";
@@ -121,10 +129,11 @@ public class ContractRegistrationReference1Choice {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Ctrct", required = true)
 	protected DocumentIdentification28 contract;
 	/**
-	 * Identification of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,7 +166,7 @@ public class ContractRegistrationReference1Choice {
 	public static final MMMessageAssociationEnd mmContract = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> ContractRegistrationReference1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ctrct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,9 +182,10 @@ public class ContractRegistrationReference1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContractRegistrationReference1Choice.mmRegisteredContractIdentification, ContractRegistrationReference1Choice.mmContract);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmRegisteredContractIdentification,
+						com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmContract);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractRegistrationReference1Choice";
 				definition = "Reference details of the contract registration.";
@@ -184,21 +194,21 @@ public class ContractRegistrationReference1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RegdCtrctId", required = true)
 	public Max35Text getRegisteredContractIdentification() {
 		return registeredContractIdentification;
 	}
 
-	public void setRegisteredContractIdentification(Max35Text registeredContractIdentification) {
-		this.registeredContractIdentification = registeredContractIdentification;
+	public ContractRegistrationReference1Choice setRegisteredContractIdentification(Max35Text registeredContractIdentification) {
+		this.registeredContractIdentification = Objects.requireNonNull(registeredContractIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Ctrct", required = true)
 	public DocumentIdentification28 getContract() {
 		return contract;
 	}
 
-	public void setContract(DocumentIdentification28 contract) {
-		this.contract = contract;
+	public ContractRegistrationReference1Choice setContract(DocumentIdentification28 contract) {
+		this.contract = Objects.requireNonNull(contract);
+		return this;
 	}
 }

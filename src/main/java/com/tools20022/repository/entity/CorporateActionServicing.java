@@ -22,9 +22,11 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Services which consists in notifying the investor or its agent of a corporate
@@ -100,8 +102,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,8 +121,8 @@ public class CorporateActionServicing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
-	 * Account on which the entitlement is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,9 +168,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionNotification> corporateActionEventNotification;
 	/**
-	 * Service which consists in notifying the investor or its agent of a
-	 * corporate event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,9 +218,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionDistribution> corporateActionDistribution;
 	/**
-	 * Distribution of cash or securities as a result of a corporate action
-	 * election.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,9 +268,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing;
 	/**
-	 * Service which consists in notifying the investor or its entitlement per
-	 * option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,8 +318,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionEvent> event;
 	/**
-	 * Specifies the event which is at the origin of the action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,9 +367,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionElection> corporateActionElection;
 	/**
-	 * Service which consists in validating, calculating and transferring the
-	 * investor's instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,8 +417,8 @@ public class CorporateActionServicing {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionEntitlement> corporateActionEntitlement;
 	/**
-	 * Calculation of the proceeds based on the balance in the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -470,7 +468,7 @@ public class CorporateActionServicing {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionServicing";
 				definition = "Services which consists in notifying the investor or its agent of a corporate event and calculating its proceeds based on its holdings.";
@@ -494,58 +492,65 @@ public class CorporateActionServicing {
 	}
 
 	public List<SecuritiesAccount> getSecuritiesAccount() {
-		return securitiesAccount;
+		return securitiesAccount == null ? securitiesAccount = new ArrayList<>() : securitiesAccount;
 	}
 
-	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
-		this.securitiesAccount = securitiesAccount;
+	public CorporateActionServicing setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = Objects.requireNonNull(securitiesAccount);
+		return this;
 	}
 
 	public List<CorporateActionNotification> getCorporateActionEventNotification() {
-		return corporateActionEventNotification;
+		return corporateActionEventNotification == null ? corporateActionEventNotification = new ArrayList<>() : corporateActionEventNotification;
 	}
 
-	public void setCorporateActionEventNotification(List<com.tools20022.repository.entity.CorporateActionNotification> corporateActionEventNotification) {
-		this.corporateActionEventNotification = corporateActionEventNotification;
+	public CorporateActionServicing setCorporateActionEventNotification(List<com.tools20022.repository.entity.CorporateActionNotification> corporateActionEventNotification) {
+		this.corporateActionEventNotification = Objects.requireNonNull(corporateActionEventNotification);
+		return this;
 	}
 
 	public List<CorporateActionDistribution> getCorporateActionDistribution() {
-		return corporateActionDistribution;
+		return corporateActionDistribution == null ? corporateActionDistribution = new ArrayList<>() : corporateActionDistribution;
 	}
 
-	public void setCorporateActionDistribution(List<com.tools20022.repository.entity.CorporateActionDistribution> corporateActionDistribution) {
-		this.corporateActionDistribution = corporateActionDistribution;
+	public CorporateActionServicing setCorporateActionDistribution(List<com.tools20022.repository.entity.CorporateActionDistribution> corporateActionDistribution) {
+		this.corporateActionDistribution = Objects.requireNonNull(corporateActionDistribution);
+		return this;
 	}
 
 	public List<CorporateActionOptionServicing> getCorporateActionOptionServicing() {
-		return corporateActionOptionServicing;
+		return corporateActionOptionServicing == null ? corporateActionOptionServicing = new ArrayList<>() : corporateActionOptionServicing;
 	}
 
-	public void setCorporateActionOptionServicing(List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing) {
-		this.corporateActionOptionServicing = corporateActionOptionServicing;
+	public CorporateActionServicing setCorporateActionOptionServicing(List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing) {
+		this.corporateActionOptionServicing = Objects.requireNonNull(corporateActionOptionServicing);
+		return this;
 	}
 
 	public List<CorporateActionEvent> getEvent() {
-		return event;
+		return event == null ? event = new ArrayList<>() : event;
 	}
 
-	public void setEvent(List<com.tools20022.repository.entity.CorporateActionEvent> event) {
-		this.event = event;
+	public CorporateActionServicing setEvent(List<com.tools20022.repository.entity.CorporateActionEvent> event) {
+		this.event = Objects.requireNonNull(event);
+		return this;
 	}
 
 	public List<CorporateActionElection> getCorporateActionElection() {
-		return corporateActionElection;
+		return corporateActionElection == null ? corporateActionElection = new ArrayList<>() : corporateActionElection;
 	}
 
-	public void setCorporateActionElection(List<com.tools20022.repository.entity.CorporateActionElection> corporateActionElection) {
-		this.corporateActionElection = corporateActionElection;
+	public CorporateActionServicing setCorporateActionElection(List<com.tools20022.repository.entity.CorporateActionElection> corporateActionElection) {
+		this.corporateActionElection = Objects.requireNonNull(corporateActionElection);
+		return this;
 	}
 
 	public List<CorporateActionEntitlement> getCorporateActionEntitlement() {
-		return corporateActionEntitlement;
+		return corporateActionEntitlement == null ? corporateActionEntitlement = new ArrayList<>() : corporateActionEntitlement;
 	}
 
-	public void setCorporateActionEntitlement(List<com.tools20022.repository.entity.CorporateActionEntitlement> corporateActionEntitlement) {
-		this.corporateActionEntitlement = corporateActionEntitlement;
+	public CorporateActionServicing setCorporateActionEntitlement(List<com.tools20022.repository.entity.CorporateActionEntitlement> corporateActionEntitlement) {
+		this.corporateActionEntitlement = Objects.requireNonNull(corporateActionEntitlement);
+		return this;
 	}
 }

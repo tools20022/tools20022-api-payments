@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.CashAccountType2Choice;
 import com.tools20022.repository.codeset.AccountLevelCode;
@@ -26,9 +27,8 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Account to or from which a cash entry is made.
@@ -266,8 +266,11 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :97a::CASH</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -283,8 +286,8 @@ public class CashAccount extends Account {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashAccountTypeCode cashAccountType;
 	/**
-	 * Specifies the nature, or use, of the cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,6 +315,10 @@ public class CashAccount extends Account {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.CashAccount CashAccount}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :97A::CASH, ISO15022Synonym:
+	 * :97A::COMM, ISO15022Synonym: :97A::TAXE, ISO15022Synonym: :97A::CHAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -327,6 +334,7 @@ public class CashAccount extends Account {
 			derivation_lazy = () -> Arrays.asList(CashAccountType2Choice.mmCode, CashAccountType2Choice.mmProprietary, CashAccount24.mmType, CashAccount25.mmType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":97A::CASH"), new ISO15022Synonym(this, ":97A::COMM"), new ISO15022Synonym(this, ":97A::TAXE"), new ISO15022Synonym(this, ":97A::CHAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountType";
 			definition = "Specifies the nature, or use, of the cash account.";
@@ -345,8 +353,8 @@ public class CashAccount extends Account {
 	};
 	protected InvestmentAccount relatedInvestmentAccount;
 	/**
-	 * Investment account for which a cash branch is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -392,9 +400,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.CashEntry> cashEntry;
 	/**
-	 * Record of the cash movements into or out of a cash account. It is derived
-	 * from the association between Account and Entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,10 +457,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.CashBalance> cashBalance;
 	/**
-	 * Overall position representing the net debits and credits in an account at
-	 * a specific point in time. It is derived from the association between
-	 * Account and Balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,9 +517,8 @@ public class CashAccount extends Account {
 	};
 	protected PaymentPartyRole paymentPartyRole;
 	/**
-	 * Specifies each role linked to a payment and using a specific cash account
-	 * in the payment context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,9 +566,8 @@ public class CashAccount extends Account {
 	};
 	protected StandingOrder relatedCreditStandingOrder;
 	/**
-	 * Instruction given by an account holder to an account servicer to make
-	 * regular transfers on given dates to the same beneficiary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -612,9 +615,8 @@ public class CashAccount extends Account {
 	};
 	protected StandingOrder relatedDebitStandingOrder;
 	/**
-	 * Instruction given by an account holder to an account servicer to make
-	 * regular transfers on given dates to the same beneficiary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -662,9 +664,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract;
 	/**
-	 * Contract which manages the account. It is derived from the relation
-	 * between AccountContract and Account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -711,8 +712,8 @@ public class CashAccount extends Account {
 	};
 	protected CorporateActionElection relatedCorporateActionElection;
 	/**
-	 * Election process which uses specific cash accounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -759,8 +760,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.Charges> charges;
 	/**
-	 * Specifies the charges which are debited from the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -805,8 +806,8 @@ public class CashAccount extends Account {
 	};
 	protected Tax tax;
 	/**
-	 * Tax charged on a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -860,8 +861,8 @@ public class CashAccount extends Account {
 	};
 	protected CashSettlement relatedSettlementInstruction;
 	/**
-	 * Settlement process which uses specific cash accounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -907,9 +908,8 @@ public class CashAccount extends Account {
 	};
 	protected CashSettlementInstructionPartyRole cashSettlementPartyRole;
 	/**
-	 * Specifies each role linked to a payment settlement and using a specific
-	 * cash account in the payment context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -958,8 +958,8 @@ public class CashAccount extends Account {
 	};
 	protected UndertakingUltimateObligor ultimateObligor;
 	/**
-	 * Party for which different types of cash accounts are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1007,8 +1007,8 @@ public class CashAccount extends Account {
 	};
 	protected PaymentCard relatedPaymentCard;
 	/**
-	 * Payment card for which an account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1054,8 +1054,8 @@ public class CashAccount extends Account {
 	};
 	protected SecuritiesPartyRole securitiesPartyRole;
 	/**
-	 * Specifies the role which uses a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1101,9 +1101,8 @@ public class CashAccount extends Account {
 	};
 	protected InvoiceFinancingPartyRole relatedInvoiceFinancingPartyRole;
 	/**
-	 * Specifies each role using a specific account in the context of invoice
-	 * financing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1152,8 +1151,8 @@ public class CashAccount extends Account {
 	};
 	protected CommercialTrade relatedCommercialTrade;
 	/**
-	 * Commercial trade for which a purchase account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1200,8 +1199,8 @@ public class CashAccount extends Account {
 	};
 	protected AccountLevelCode level;
 	/**
-	 * Defines the level of an account within the account hierarchy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1258,9 +1257,8 @@ public class CashAccount extends Account {
 	};
 	protected CurrencyCode settlementCurrency;
 	/**
-	 * Specifies the currency used for settlement, if different from the account
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1315,9 +1313,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.AccountReportedMovement> reportedMovements;
 	/**
-	 * Provides statistical information on the number of movements and their
-	 * value for a particular account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1365,9 +1362,8 @@ public class CashAccount extends Account {
 	};
 	protected CashAccountContract closedAccountContract;
 	/**
-	 * Contract which specifies the cash account to/from which the balance of a
-	 * closed account must be transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1415,8 +1411,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.AccountLink> accountLink;
 	/**
-	 * Defines the link between a cash account and a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1462,8 +1458,8 @@ public class CashAccount extends Account {
 	};
 	protected CashStandingOrder cashStandingOrder;
 	/**
-	 * Standing order which applies on a specific account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1509,8 +1505,8 @@ public class CashAccount extends Account {
 	};
 	protected List<com.tools20022.repository.entity.Cheque> cheque;
 	/**
-	 * Cheques drawn on a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1554,10 +1550,8 @@ public class CashAccount extends Account {
 	};
 	protected CashAccountService cashAccountService;
 	/**
-	 * Services linked to the cash account and specified in the cash account
-	 * contract. It is derived from the association between Account and
-	 * AccountService.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1605,8 +1599,8 @@ public class CashAccount extends Account {
 	};
 	protected Payment payment;
 	/**
-	 * Payment for which an account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1651,8 +1645,8 @@ public class CashAccount extends Account {
 	};
 	protected Commission commission;
 	/**
-	 * Amount of money due to a party as compensation for a service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1701,7 +1695,8 @@ public class CashAccount extends Account {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":97a::CASH"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccount";
 				definition = "Account to or from which a cash entry is made.";
@@ -1744,223 +1739,251 @@ public class CashAccount extends Account {
 		return cashAccountType;
 	}
 
-	public void setCashAccountType(CashAccountTypeCode cashAccountType) {
-		this.cashAccountType = cashAccountType;
+	public CashAccount setCashAccountType(CashAccountTypeCode cashAccountType) {
+		this.cashAccountType = Objects.requireNonNull(cashAccountType);
+		return this;
 	}
 
 	public InvestmentAccount getRelatedInvestmentAccount() {
 		return relatedInvestmentAccount;
 	}
 
-	public void setRelatedInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount relatedInvestmentAccount) {
-		this.relatedInvestmentAccount = relatedInvestmentAccount;
+	public CashAccount setRelatedInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount relatedInvestmentAccount) {
+		this.relatedInvestmentAccount = Objects.requireNonNull(relatedInvestmentAccount);
+		return this;
 	}
 
 	public List<CashEntry> getCashEntry() {
-		return cashEntry;
+		return cashEntry == null ? cashEntry = new ArrayList<>() : cashEntry;
 	}
 
-	public void setCashEntry(List<com.tools20022.repository.entity.CashEntry> cashEntry) {
-		this.cashEntry = cashEntry;
+	public CashAccount setCashEntry(List<com.tools20022.repository.entity.CashEntry> cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public List<CashBalance> getCashBalance() {
-		return cashBalance;
+		return cashBalance == null ? cashBalance = new ArrayList<>() : cashBalance;
 	}
 
-	public void setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
-		this.cashBalance = cashBalance;
+	public CashAccount setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
+		this.cashBalance = Objects.requireNonNull(cashBalance);
+		return this;
 	}
 
 	public PaymentPartyRole getPaymentPartyRole() {
 		return paymentPartyRole;
 	}
 
-	public void setPaymentPartyRole(com.tools20022.repository.entity.PaymentPartyRole paymentPartyRole) {
-		this.paymentPartyRole = paymentPartyRole;
+	public CashAccount setPaymentPartyRole(com.tools20022.repository.entity.PaymentPartyRole paymentPartyRole) {
+		this.paymentPartyRole = Objects.requireNonNull(paymentPartyRole);
+		return this;
 	}
 
 	public StandingOrder getRelatedCreditStandingOrder() {
 		return relatedCreditStandingOrder;
 	}
 
-	public void setRelatedCreditStandingOrder(com.tools20022.repository.entity.StandingOrder relatedCreditStandingOrder) {
-		this.relatedCreditStandingOrder = relatedCreditStandingOrder;
+	public CashAccount setRelatedCreditStandingOrder(com.tools20022.repository.entity.StandingOrder relatedCreditStandingOrder) {
+		this.relatedCreditStandingOrder = Objects.requireNonNull(relatedCreditStandingOrder);
+		return this;
 	}
 
 	public StandingOrder getRelatedDebitStandingOrder() {
 		return relatedDebitStandingOrder;
 	}
 
-	public void setRelatedDebitStandingOrder(com.tools20022.repository.entity.StandingOrder relatedDebitStandingOrder) {
-		this.relatedDebitStandingOrder = relatedDebitStandingOrder;
+	public CashAccount setRelatedDebitStandingOrder(com.tools20022.repository.entity.StandingOrder relatedDebitStandingOrder) {
+		this.relatedDebitStandingOrder = Objects.requireNonNull(relatedDebitStandingOrder);
+		return this;
 	}
 
 	public List<CashAccountContract> getCashAccountContract() {
-		return cashAccountContract;
+		return cashAccountContract == null ? cashAccountContract = new ArrayList<>() : cashAccountContract;
 	}
 
-	public void setCashAccountContract(List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract) {
-		this.cashAccountContract = cashAccountContract;
+	public CashAccount setCashAccountContract(List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract) {
+		this.cashAccountContract = Objects.requireNonNull(cashAccountContract);
+		return this;
 	}
 
 	public CorporateActionElection getRelatedCorporateActionElection() {
 		return relatedCorporateActionElection;
 	}
 
-	public void setRelatedCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection relatedCorporateActionElection) {
-		this.relatedCorporateActionElection = relatedCorporateActionElection;
+	public CashAccount setRelatedCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection relatedCorporateActionElection) {
+		this.relatedCorporateActionElection = Objects.requireNonNull(relatedCorporateActionElection);
+		return this;
 	}
 
 	public List<Charges> getCharges() {
-		return charges;
+		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public void setCharges(List<com.tools20022.repository.entity.Charges> charges) {
-		this.charges = charges;
+	public CashAccount setCharges(List<com.tools20022.repository.entity.Charges> charges) {
+		this.charges = Objects.requireNonNull(charges);
+		return this;
 	}
 
-	public Tax getTax() {
-		return tax;
+	public Optional<Tax> getTax() {
+		return tax == null ? Optional.empty() : Optional.of(tax);
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
+	public CashAccount setTax(com.tools20022.repository.entity.Tax tax) {
 		this.tax = tax;
+		return this;
 	}
 
-	public CashSettlement getRelatedSettlementInstruction() {
-		return relatedSettlementInstruction;
+	public Optional<CashSettlement> getRelatedSettlementInstruction() {
+		return relatedSettlementInstruction == null ? Optional.empty() : Optional.of(relatedSettlementInstruction);
 	}
 
-	public void setRelatedSettlementInstruction(com.tools20022.repository.entity.CashSettlement relatedSettlementInstruction) {
+	public CashAccount setRelatedSettlementInstruction(com.tools20022.repository.entity.CashSettlement relatedSettlementInstruction) {
 		this.relatedSettlementInstruction = relatedSettlementInstruction;
+		return this;
 	}
 
 	public CashSettlementInstructionPartyRole getCashSettlementPartyRole() {
 		return cashSettlementPartyRole;
 	}
 
-	public void setCashSettlementPartyRole(com.tools20022.repository.entity.CashSettlementInstructionPartyRole cashSettlementPartyRole) {
-		this.cashSettlementPartyRole = cashSettlementPartyRole;
+	public CashAccount setCashSettlementPartyRole(com.tools20022.repository.entity.CashSettlementInstructionPartyRole cashSettlementPartyRole) {
+		this.cashSettlementPartyRole = Objects.requireNonNull(cashSettlementPartyRole);
+		return this;
 	}
 
 	public UndertakingUltimateObligor getUltimateObligor() {
 		return ultimateObligor;
 	}
 
-	public void setUltimateObligor(com.tools20022.repository.entity.UndertakingUltimateObligor ultimateObligor) {
-		this.ultimateObligor = ultimateObligor;
+	public CashAccount setUltimateObligor(com.tools20022.repository.entity.UndertakingUltimateObligor ultimateObligor) {
+		this.ultimateObligor = Objects.requireNonNull(ultimateObligor);
+		return this;
 	}
 
-	public PaymentCard getRelatedPaymentCard() {
-		return relatedPaymentCard;
+	public Optional<PaymentCard> getRelatedPaymentCard() {
+		return relatedPaymentCard == null ? Optional.empty() : Optional.of(relatedPaymentCard);
 	}
 
-	public void setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
+	public CashAccount setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
 		this.relatedPaymentCard = relatedPaymentCard;
+		return this;
 	}
 
 	public SecuritiesPartyRole getSecuritiesPartyRole() {
 		return securitiesPartyRole;
 	}
 
-	public void setSecuritiesPartyRole(com.tools20022.repository.entity.SecuritiesPartyRole securitiesPartyRole) {
-		this.securitiesPartyRole = securitiesPartyRole;
+	public CashAccount setSecuritiesPartyRole(com.tools20022.repository.entity.SecuritiesPartyRole securitiesPartyRole) {
+		this.securitiesPartyRole = Objects.requireNonNull(securitiesPartyRole);
+		return this;
 	}
 
 	public InvoiceFinancingPartyRole getRelatedInvoiceFinancingPartyRole() {
 		return relatedInvoiceFinancingPartyRole;
 	}
 
-	public void setRelatedInvoiceFinancingPartyRole(com.tools20022.repository.entity.InvoiceFinancingPartyRole relatedInvoiceFinancingPartyRole) {
-		this.relatedInvoiceFinancingPartyRole = relatedInvoiceFinancingPartyRole;
+	public CashAccount setRelatedInvoiceFinancingPartyRole(com.tools20022.repository.entity.InvoiceFinancingPartyRole relatedInvoiceFinancingPartyRole) {
+		this.relatedInvoiceFinancingPartyRole = Objects.requireNonNull(relatedInvoiceFinancingPartyRole);
+		return this;
 	}
 
 	public CommercialTrade getRelatedCommercialTrade() {
 		return relatedCommercialTrade;
 	}
 
-	public void setRelatedCommercialTrade(com.tools20022.repository.entity.CommercialTrade relatedCommercialTrade) {
-		this.relatedCommercialTrade = relatedCommercialTrade;
+	public CashAccount setRelatedCommercialTrade(com.tools20022.repository.entity.CommercialTrade relatedCommercialTrade) {
+		this.relatedCommercialTrade = Objects.requireNonNull(relatedCommercialTrade);
+		return this;
 	}
 
 	public AccountLevelCode getLevel() {
 		return level;
 	}
 
-	public void setLevel(AccountLevelCode level) {
-		this.level = level;
+	public CashAccount setLevel(AccountLevelCode level) {
+		this.level = Objects.requireNonNull(level);
+		return this;
 	}
 
 	public CurrencyCode getSettlementCurrency() {
 		return settlementCurrency;
 	}
 
-	public void setSettlementCurrency(CurrencyCode settlementCurrency) {
-		this.settlementCurrency = settlementCurrency;
+	public CashAccount setSettlementCurrency(CurrencyCode settlementCurrency) {
+		this.settlementCurrency = Objects.requireNonNull(settlementCurrency);
+		return this;
 	}
 
 	public List<AccountReportedMovement> getReportedMovements() {
-		return reportedMovements;
+		return reportedMovements == null ? reportedMovements = new ArrayList<>() : reportedMovements;
 	}
 
-	public void setReportedMovements(List<com.tools20022.repository.entity.AccountReportedMovement> reportedMovements) {
-		this.reportedMovements = reportedMovements;
+	public CashAccount setReportedMovements(List<com.tools20022.repository.entity.AccountReportedMovement> reportedMovements) {
+		this.reportedMovements = Objects.requireNonNull(reportedMovements);
+		return this;
 	}
 
 	public CashAccountContract getClosedAccountContract() {
 		return closedAccountContract;
 	}
 
-	public void setClosedAccountContract(com.tools20022.repository.entity.CashAccountContract closedAccountContract) {
-		this.closedAccountContract = closedAccountContract;
+	public CashAccount setClosedAccountContract(com.tools20022.repository.entity.CashAccountContract closedAccountContract) {
+		this.closedAccountContract = Objects.requireNonNull(closedAccountContract);
+		return this;
 	}
 
 	public List<AccountLink> getAccountLink() {
-		return accountLink;
+		return accountLink == null ? accountLink = new ArrayList<>() : accountLink;
 	}
 
-	public void setAccountLink(List<com.tools20022.repository.entity.AccountLink> accountLink) {
-		this.accountLink = accountLink;
+	public CashAccount setAccountLink(List<com.tools20022.repository.entity.AccountLink> accountLink) {
+		this.accountLink = Objects.requireNonNull(accountLink);
+		return this;
 	}
 
 	public CashStandingOrder getCashStandingOrder() {
 		return cashStandingOrder;
 	}
 
-	public void setCashStandingOrder(com.tools20022.repository.entity.CashStandingOrder cashStandingOrder) {
-		this.cashStandingOrder = cashStandingOrder;
+	public CashAccount setCashStandingOrder(com.tools20022.repository.entity.CashStandingOrder cashStandingOrder) {
+		this.cashStandingOrder = Objects.requireNonNull(cashStandingOrder);
+		return this;
 	}
 
 	public List<Cheque> getCheque() {
-		return cheque;
+		return cheque == null ? cheque = new ArrayList<>() : cheque;
 	}
 
-	public void setCheque(List<com.tools20022.repository.entity.Cheque> cheque) {
-		this.cheque = cheque;
+	public CashAccount setCheque(List<com.tools20022.repository.entity.Cheque> cheque) {
+		this.cheque = Objects.requireNonNull(cheque);
+		return this;
 	}
 
 	public CashAccountService getCashAccountService() {
 		return cashAccountService;
 	}
 
-	public void setCashAccountService(com.tools20022.repository.entity.CashAccountService cashAccountService) {
-		this.cashAccountService = cashAccountService;
+	public CashAccount setCashAccountService(com.tools20022.repository.entity.CashAccountService cashAccountService) {
+		this.cashAccountService = Objects.requireNonNull(cashAccountService);
+		return this;
 	}
 
 	public Payment getPayment() {
 		return payment;
 	}
 
-	public void setPayment(com.tools20022.repository.entity.Payment payment) {
-		this.payment = payment;
+	public CashAccount setPayment(com.tools20022.repository.entity.Payment payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 
 	public Commission getCommission() {
 		return commission;
 	}
 
-	public void setCommission(com.tools20022.repository.entity.Commission commission) {
-		this.commission = commission;
+	public CashAccount setCommission(com.tools20022.repository.entity.Commission commission) {
+		this.commission = Objects.requireNonNull(commission);
+		return this;
 	}
 }

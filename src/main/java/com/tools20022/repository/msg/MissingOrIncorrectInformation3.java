@@ -22,9 +22,8 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.AMLIndicator;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MissingOrIncorrectInformation3", propOrder = {"antiMoneyLaunderingRequest", "missingInformation", "incorrectInformation"})
 public class MissingOrIncorrectInformation3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AMLReq")
 	protected AMLIndicator antiMoneyLaunderingRequest;
 	/**
-	 * Indicates whether the request is related to an AML (Anti Money
-	 * Laundering) investigation or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +106,7 @@ public class MissingOrIncorrectInformation3 {
 	 */
 	public static final MMMessageAttribute mmAntiMoneyLaunderingRequest = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MissingOrIncorrectInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "AMLReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,10 +117,11 @@ public class MissingOrIncorrectInformation3 {
 			simpleType_lazy = () -> AMLIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "MssngInf")
 	protected List<com.tools20022.repository.msg.UnableToApplyMissing1> missingInformation;
 	/**
-	 * Indicates the missing information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +149,7 @@ public class MissingOrIncorrectInformation3 {
 	 */
 	public static final MMMessageAttribute mmMissingInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MissingOrIncorrectInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "MssngInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,10 +160,11 @@ public class MissingOrIncorrectInformation3 {
 			complexType_lazy = () -> com.tools20022.repository.msg.UnableToApplyMissing1.mmObject();
 		}
 	};
+	@XmlElement(name = "IncrrctInf")
 	protected List<com.tools20022.repository.msg.UnableToApplyIncorrect1> incorrectInformation;
 	/**
-	 * Indicates, in a coded form, the incorrect information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +192,7 @@ public class MissingOrIncorrectInformation3 {
 	 */
 	public static final MMMessageAttribute mmIncorrectInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> MissingOrIncorrectInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "IncrrctInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,8 +207,9 @@ public class MissingOrIncorrectInformation3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MissingOrIncorrectInformation3.mmAntiMoneyLaunderingRequest, MissingOrIncorrectInformation3.mmMissingInformation, MissingOrIncorrectInformation3.mmIncorrectInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmAntiMoneyLaunderingRequest, com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmMissingInformation,
+						com.tools20022.repository.msg.MissingOrIncorrectInformation3.mmIncorrectInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MissingOrIncorrectInformation3";
 				definition = "Set of elements used to provide further information on the reason for the unable to apply investigation.";
@@ -216,30 +218,30 @@ public class MissingOrIncorrectInformation3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AMLReq")
-	public AMLIndicator getAntiMoneyLaunderingRequest() {
-		return antiMoneyLaunderingRequest;
+	public Optional<AMLIndicator> getAntiMoneyLaunderingRequest() {
+		return antiMoneyLaunderingRequest == null ? Optional.empty() : Optional.of(antiMoneyLaunderingRequest);
 	}
 
-	public void setAntiMoneyLaunderingRequest(AMLIndicator antiMoneyLaunderingRequest) {
+	public MissingOrIncorrectInformation3 setAntiMoneyLaunderingRequest(AMLIndicator antiMoneyLaunderingRequest) {
 		this.antiMoneyLaunderingRequest = antiMoneyLaunderingRequest;
+		return this;
 	}
 
-	@XmlElement(name = "MssngInf")
 	public List<UnableToApplyMissing1> getMissingInformation() {
-		return missingInformation;
+		return missingInformation == null ? missingInformation = new ArrayList<>() : missingInformation;
 	}
 
-	public void setMissingInformation(List<com.tools20022.repository.msg.UnableToApplyMissing1> missingInformation) {
-		this.missingInformation = missingInformation;
+	public MissingOrIncorrectInformation3 setMissingInformation(List<com.tools20022.repository.msg.UnableToApplyMissing1> missingInformation) {
+		this.missingInformation = Objects.requireNonNull(missingInformation);
+		return this;
 	}
 
-	@XmlElement(name = "IncrrctInf")
 	public List<UnableToApplyIncorrect1> getIncorrectInformation() {
-		return incorrectInformation;
+		return incorrectInformation == null ? incorrectInformation = new ArrayList<>() : incorrectInformation;
 	}
 
-	public void setIncorrectInformation(List<com.tools20022.repository.msg.UnableToApplyIncorrect1> incorrectInformation) {
-		this.incorrectInformation = incorrectInformation;
+	public MissingOrIncorrectInformation3 setIncorrectInformation(List<com.tools20022.repository.msg.UnableToApplyIncorrect1> incorrectInformation) {
+		this.incorrectInformation = Objects.requireNonNull(incorrectInformation);
+		return this;
 	}
 }

@@ -22,9 +22,11 @@ import com.tools20022.repository.codeset.MemberTypeCode;
 import com.tools20022.repository.entity.SystemPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information about the members of a system.
@@ -74,8 +76,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,8 +93,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashBalance> cashBalance;
 	/**
-	 * Cash balance for which a counterparty is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,8 +140,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	};
 	protected MemberTypeCode type;
 	/**
-	 * Nature of the relationship a member has with a system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,8 +187,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.SystemStatus> memberStatus;
 	/**
-	 * Specifies the status of a member.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,15 +234,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	};
 	protected RiskManagementLimit limit;
 	/**
-	 * Cash management feature limiting the maximum risk a party accepts to take
-	 * with respect to a counterparty or a set of counterparties. A risk
-	 * management limit is either bilateral, ie, for a counterparty, or
-	 * multilateral, ie, for a set of counterparties or all other members in a
-	 * system.The limit may also apply to sponsored members, ie, indirect
-	 * members. In principle, a risk management limit is calculated on the net
-	 * position between two members and is expressed as a credit or debit limit,
-	 * from the point of view of the party setting the limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,25 +284,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	};
 	protected Account account;
 	/**
-	 * Account owned by the member of a system with the system.<br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,7 +335,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemMemberRole";
 				definition = "Information about the members of a system.";
@@ -377,42 +355,47 @@ public class SystemMemberRole extends SystemPartyRole {
 	}
 
 	public List<CashBalance> getCashBalance() {
-		return cashBalance;
+		return cashBalance == null ? cashBalance = new ArrayList<>() : cashBalance;
 	}
 
-	public void setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
-		this.cashBalance = cashBalance;
+	public SystemMemberRole setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
+		this.cashBalance = Objects.requireNonNull(cashBalance);
+		return this;
 	}
 
 	public MemberTypeCode getType() {
 		return type;
 	}
 
-	public void setType(MemberTypeCode type) {
-		this.type = type;
+	public SystemMemberRole setType(MemberTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public List<SystemStatus> getMemberStatus() {
-		return memberStatus;
+		return memberStatus == null ? memberStatus = new ArrayList<>() : memberStatus;
 	}
 
-	public void setMemberStatus(List<com.tools20022.repository.entity.SystemStatus> memberStatus) {
-		this.memberStatus = memberStatus;
+	public SystemMemberRole setMemberStatus(List<com.tools20022.repository.entity.SystemStatus> memberStatus) {
+		this.memberStatus = Objects.requireNonNull(memberStatus);
+		return this;
 	}
 
 	public RiskManagementLimit getLimit() {
 		return limit;
 	}
 
-	public void setLimit(com.tools20022.repository.entity.RiskManagementLimit limit) {
-		this.limit = limit;
+	public SystemMemberRole setLimit(com.tools20022.repository.entity.RiskManagementLimit limit) {
+		this.limit = Objects.requireNonNull(limit);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public SystemMemberRole setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

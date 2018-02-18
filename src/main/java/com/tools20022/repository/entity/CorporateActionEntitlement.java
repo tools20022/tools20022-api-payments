@@ -21,9 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Rights entitled to the account owner based on the terms of the corporate
@@ -100,8 +99,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,9 +118,8 @@ public class CorporateActionEntitlement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> eligibleBalance;
 	/**
-	 * Total balance of securities eligible for this corporate action event. The
-	 * entitlement calculation is based on this balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,8 +167,8 @@ public class CorporateActionEntitlement {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance;
 	/**
-	 * Specifies any type of balance related to a corporate action entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,8 +216,8 @@ public class CorporateActionEntitlement {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> instructedBalance;
 	/**
-	 * Balance of instructed position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,8 +263,8 @@ public class CorporateActionEntitlement {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> uninstructedBalance;
 	/**
-	 * Balance of uninstructed position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,10 +310,8 @@ public class CorporateActionEntitlement {
 	};
 	protected YesNoIndicator eligibleBalanceIndicator;
 	/**
-	 * Indicates whether the eligible balance is final except for a voluntary
-	 * corporate action event where it can represent the current eligible
-	 * balance when communicated before expiration date of that event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,9 +359,8 @@ public class CorporateActionEntitlement {
 	};
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,9 +410,8 @@ public class CorporateActionEntitlement {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> notEligibleBalance;
 	/**
-	 * Total balance of securities which are not eligible for this corporate
-	 * action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -467,7 +461,7 @@ public class CorporateActionEntitlement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEntitlement";
 				definition = "Rights entitled to the account owner based on the terms of the corporate action event and the balance of underlying securities.";
@@ -490,58 +484,65 @@ public class CorporateActionEntitlement {
 	}
 
 	public List<SecuritiesBalance> getEligibleBalance() {
-		return eligibleBalance;
+		return eligibleBalance == null ? eligibleBalance = new ArrayList<>() : eligibleBalance;
 	}
 
-	public void setEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> eligibleBalance) {
-		this.eligibleBalance = eligibleBalance;
+	public CorporateActionEntitlement setEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> eligibleBalance) {
+		this.eligibleBalance = Objects.requireNonNull(eligibleBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getSecuritiesBalance() {
-		return securitiesBalance;
+		return securitiesBalance == null ? securitiesBalance = new ArrayList<>() : securitiesBalance;
 	}
 
-	public void setSecuritiesBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance) {
-		this.securitiesBalance = securitiesBalance;
+	public CorporateActionEntitlement setSecuritiesBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance) {
+		this.securitiesBalance = Objects.requireNonNull(securitiesBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getInstructedBalance() {
-		return instructedBalance;
+		return instructedBalance == null ? instructedBalance = new ArrayList<>() : instructedBalance;
 	}
 
-	public void setInstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> instructedBalance) {
-		this.instructedBalance = instructedBalance;
+	public CorporateActionEntitlement setInstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> instructedBalance) {
+		this.instructedBalance = Objects.requireNonNull(instructedBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getUninstructedBalance() {
-		return uninstructedBalance;
+		return uninstructedBalance == null ? uninstructedBalance = new ArrayList<>() : uninstructedBalance;
 	}
 
-	public void setUninstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> uninstructedBalance) {
-		this.uninstructedBalance = uninstructedBalance;
+	public CorporateActionEntitlement setUninstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> uninstructedBalance) {
+		this.uninstructedBalance = Objects.requireNonNull(uninstructedBalance);
+		return this;
 	}
 
 	public YesNoIndicator getEligibleBalanceIndicator() {
 		return eligibleBalanceIndicator;
 	}
 
-	public void setEligibleBalanceIndicator(YesNoIndicator eligibleBalanceIndicator) {
-		this.eligibleBalanceIndicator = eligibleBalanceIndicator;
+	public CorporateActionEntitlement setEligibleBalanceIndicator(YesNoIndicator eligibleBalanceIndicator) {
+		this.eligibleBalanceIndicator = Objects.requireNonNull(eligibleBalanceIndicator);
+		return this;
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionEntitlement setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public List<SecuritiesBalance> getNotEligibleBalance() {
-		return notEligibleBalance;
+		return notEligibleBalance == null ? notEligibleBalance = new ArrayList<>() : notEligibleBalance;
 	}
 
-	public void setNotEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> notEligibleBalance) {
-		this.notEligibleBalance = notEligibleBalance;
+	public CorporateActionEntitlement setNotEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> notEligibleBalance) {
+		this.notEligibleBalance = Objects.requireNonNull(notEligibleBalance);
+		return this;
 	}
 }

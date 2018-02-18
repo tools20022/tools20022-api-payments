@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.Max2048Text;
 import com.tools20022.repository.datatype.PhoneNumber;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Communication device number or electronic address used for communication."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContactDetails3", propOrder = {"namePrefix", "name", "phoneNumber", "mobileNumber", "faxNumber", "emailAddress", "other", "preferredMethod"})
 public class ContactDetails3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NmPrfx")
 	protected NamePrefix1Code namePrefix;
 	/**
-	 * Specifies the terms used to formally address a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +124,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmNamePrefix = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmNamePrefix;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "NmPrfx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +135,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> NamePrefix1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max140Text name;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,7 +174,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,11 +185,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "PhneNb")
 	protected PhoneNumber phoneNumber;
 	/**
-	 * Collection of information that identifies a phone number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +224,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmPhoneNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmPhoneNumber;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "PhneNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,11 +235,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "MobNb")
 	protected PhoneNumber mobileNumber;
 	/**
-	 * Collection of information that identifies a mobile phone number, as
-	 * defined by telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +274,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmMobileNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmMobileNumber;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "MobNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,11 +285,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "FaxNb")
 	protected PhoneNumber faxNumber;
 	/**
-	 * Collection of information that identifies a FAX number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +324,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmFaxNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmFaxNumber;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "FaxNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -335,10 +335,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
 	};
+	@XmlElement(name = "EmailAdr")
 	protected Max2048Text emailAddress;
 	/**
-	 * Address for electronic mail (e-mail).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -371,7 +372,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmEmailAddress = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmEmailAddress;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "EmailAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -382,10 +383,11 @@ public class ContactDetails3 {
 			simpleType_lazy = () -> Max2048Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Othr")
 	protected List<com.tools20022.repository.msg.OtherContact1> other;
 	/**
-	 * Contact details in an other form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,7 +420,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmOther = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -428,10 +430,11 @@ public class ContactDetails3 {
 			complexType_lazy = () -> com.tools20022.repository.msg.OtherContact1.mmObject();
 		}
 	};
+	@XmlElement(name = "PrefrdMtd")
 	protected PreferredContactMethod1Code preferredMethod;
 	/**
-	 * Preferred method used to reach the technical contact.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -465,7 +468,7 @@ public class ContactDetails3 {
 	public static final MMMessageAttribute mmPreferredMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Party.mmContactPoint;
-			componentContext_lazy = () -> ContactDetails3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 			isDerived = false;
 			xmlTag = "PrefrdMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -480,10 +483,11 @@ public class ContactDetails3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContactDetails3.mmNamePrefix, ContactDetails3.mmName, ContactDetails3.mmPhoneNumber, ContactDetails3.mmMobileNumber, ContactDetails3.mmFaxNumber, ContactDetails3.mmEmailAddress,
-						ContactDetails3.mmOther, ContactDetails3.mmPreferredMethod);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContactDetails3.mmNamePrefix, com.tools20022.repository.msg.ContactDetails3.mmName, com.tools20022.repository.msg.ContactDetails3.mmPhoneNumber,
+						com.tools20022.repository.msg.ContactDetails3.mmMobileNumber, com.tools20022.repository.msg.ContactDetails3.mmFaxNumber, com.tools20022.repository.msg.ContactDetails3.mmEmailAddress,
+						com.tools20022.repository.msg.ContactDetails3.mmOther, com.tools20022.repository.msg.ContactDetails3.mmPreferredMethod);
 				trace_lazy = () -> PersonIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContactDetails3";
 				definition = "Communication device number or electronic address used for communication.";
@@ -492,75 +496,75 @@ public class ContactDetails3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NmPrfx")
-	public NamePrefix1Code getNamePrefix() {
-		return namePrefix;
+	public Optional<NamePrefix1Code> getNamePrefix() {
+		return namePrefix == null ? Optional.empty() : Optional.of(namePrefix);
 	}
 
-	public void setNamePrefix(NamePrefix1Code namePrefix) {
+	public ContactDetails3 setNamePrefix(NamePrefix1Code namePrefix) {
 		this.namePrefix = namePrefix;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max140Text getName() {
-		return name;
+	public Optional<Max140Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max140Text name) {
+	public ContactDetails3 setName(Max140Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "PhneNb")
-	public PhoneNumber getPhoneNumber() {
-		return phoneNumber;
+	public Optional<PhoneNumber> getPhoneNumber() {
+		return phoneNumber == null ? Optional.empty() : Optional.of(phoneNumber);
 	}
 
-	public void setPhoneNumber(PhoneNumber phoneNumber) {
+	public ContactDetails3 setPhoneNumber(PhoneNumber phoneNumber) {
 		this.phoneNumber = phoneNumber;
+		return this;
 	}
 
-	@XmlElement(name = "MobNb")
-	public PhoneNumber getMobileNumber() {
-		return mobileNumber;
+	public Optional<PhoneNumber> getMobileNumber() {
+		return mobileNumber == null ? Optional.empty() : Optional.of(mobileNumber);
 	}
 
-	public void setMobileNumber(PhoneNumber mobileNumber) {
+	public ContactDetails3 setMobileNumber(PhoneNumber mobileNumber) {
 		this.mobileNumber = mobileNumber;
+		return this;
 	}
 
-	@XmlElement(name = "FaxNb")
-	public PhoneNumber getFaxNumber() {
-		return faxNumber;
+	public Optional<PhoneNumber> getFaxNumber() {
+		return faxNumber == null ? Optional.empty() : Optional.of(faxNumber);
 	}
 
-	public void setFaxNumber(PhoneNumber faxNumber) {
+	public ContactDetails3 setFaxNumber(PhoneNumber faxNumber) {
 		this.faxNumber = faxNumber;
+		return this;
 	}
 
-	@XmlElement(name = "EmailAdr")
-	public Max2048Text getEmailAddress() {
-		return emailAddress;
+	public Optional<Max2048Text> getEmailAddress() {
+		return emailAddress == null ? Optional.empty() : Optional.of(emailAddress);
 	}
 
-	public void setEmailAddress(Max2048Text emailAddress) {
+	public ContactDetails3 setEmailAddress(Max2048Text emailAddress) {
 		this.emailAddress = emailAddress;
+		return this;
 	}
 
-	@XmlElement(name = "Othr")
 	public List<OtherContact1> getOther() {
-		return other;
+		return other == null ? other = new ArrayList<>() : other;
 	}
 
-	public void setOther(List<com.tools20022.repository.msg.OtherContact1> other) {
-		this.other = other;
+	public ContactDetails3 setOther(List<com.tools20022.repository.msg.OtherContact1> other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 
-	@XmlElement(name = "PrefrdMtd")
-	public PreferredContactMethod1Code getPreferredMethod() {
-		return preferredMethod;
+	public Optional<PreferredContactMethod1Code> getPreferredMethod() {
+		return preferredMethod == null ? Optional.empty() : Optional.of(preferredMethod);
 	}
 
-	public void setPreferredMethod(PreferredContactMethod1Code preferredMethod) {
+	public ContactDetails3 setPreferredMethod(PreferredContactMethod1Code preferredMethod) {
 		this.preferredMethod = preferredMethod;
+		return this;
 	}
 }

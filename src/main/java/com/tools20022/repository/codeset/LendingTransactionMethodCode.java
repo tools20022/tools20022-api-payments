@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#OnDemandTrade
- * LendingTransactionMethodCode.mmOnDemandTrade}</li>
+ * LendingTransactionMethodCode.OnDemandTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LendingTransactionMethodCode#ExclusiveTrade
- * LendingTransactionMethodCode.mmExclusiveTrade}</li>
+ * LendingTransactionMethodCode.ExclusiveTrade}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -140,7 +140,7 @@ public class LendingTransactionMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ODTR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LendingTransactionMethodCode";

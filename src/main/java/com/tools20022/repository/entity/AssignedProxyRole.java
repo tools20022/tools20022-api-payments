@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.MeetingPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Party appointed by the rights holder to attend a meeting and vote in its
@@ -69,8 +71,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,8 +90,8 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Person> proxyPerson;
 	/**
-	 * Specifies the person who is the assigned proxy for a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,8 +137,8 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	};
 	protected List<com.tools20022.repository.entity.Person> preAssignedProxyRole;
 	/**
-	 * Identifies a proxy that has been assigned by the issuer of the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,7 +187,7 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssignedProxyRole";
 				definition = "Party appointed by the rights holder to attend a meeting and vote in its name. The proxy can be the chairman of the meeting or another party selected by the issuer. The proxy can also be a third party selected by the rights holder.\r\nThe proxy can be assigned by a specific instruction or pre-assigned by the issuer of the meeting.";
@@ -203,18 +205,20 @@ public class AssignedProxyRole extends MeetingPartyRole {
 	}
 
 	public List<Person> getProxyPerson() {
-		return proxyPerson;
+		return proxyPerson == null ? proxyPerson = new ArrayList<>() : proxyPerson;
 	}
 
-	public void setProxyPerson(List<com.tools20022.repository.entity.Person> proxyPerson) {
-		this.proxyPerson = proxyPerson;
+	public AssignedProxyRole setProxyPerson(List<com.tools20022.repository.entity.Person> proxyPerson) {
+		this.proxyPerson = Objects.requireNonNull(proxyPerson);
+		return this;
 	}
 
 	public List<Person> getPreAssignedProxyRole() {
-		return preAssignedProxyRole;
+		return preAssignedProxyRole == null ? preAssignedProxyRole = new ArrayList<>() : preAssignedProxyRole;
 	}
 
-	public void setPreAssignedProxyRole(List<com.tools20022.repository.entity.Person> preAssignedProxyRole) {
-		this.preAssignedProxyRole = preAssignedProxyRole;
+	public AssignedProxyRole setPreAssignedProxyRole(List<com.tools20022.repository.entity.Person> preAssignedProxyRole) {
+		this.preAssignedProxyRole = Objects.requireNonNull(preAssignedProxyRole);
+		return this;
 	}
 }

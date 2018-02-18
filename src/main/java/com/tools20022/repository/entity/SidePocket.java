@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Separate account containing illiquid assets of a hedge fund portfolio. Only
@@ -67,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,9 +87,8 @@ public class SidePocket {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator sidePocketInclusionIndicator;
 	/**
-	 * Indicates whether the investor wants to participate in the optional side
-	 * pocket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,13 +135,8 @@ public class SidePocket {
 	};
 	protected Max35Text sidePocketIdentification;
 	/**
-	 * Identifies the side pocket.<br>
-	 * Type of account used in hedge funds to separate illiquid assets from
-	 * other more liquid investments. <br>
-	 * Once an asset is designated for inclusion in a side pocket, new investors
-	 * do not share in it, and when existing investors redeem from the hedge
-	 * fund, they remain as investors in the side pocket until it is liquidated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,8 +182,8 @@ public class SidePocket {
 	};
 	protected InvestmentAccount investmentAccount;
 	/**
-	 * Investment account which contains the liquid assets of a hedge fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +230,8 @@ public class SidePocket {
 	};
 	protected SecuritiesQuantity sidePocketQuantity;
 	/**
-	 * Quantity of the side pocket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,7 +279,7 @@ public class SidePocket {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SidePocket";
 				definition = "Separate account containing illiquid assets of a hedge fund portfolio. Only the present participants in the hedge fund will be entitled to a share of it.";
@@ -305,31 +300,35 @@ public class SidePocket {
 		return sidePocketInclusionIndicator;
 	}
 
-	public void setSidePocketInclusionIndicator(YesNoIndicator sidePocketInclusionIndicator) {
-		this.sidePocketInclusionIndicator = sidePocketInclusionIndicator;
+	public SidePocket setSidePocketInclusionIndicator(YesNoIndicator sidePocketInclusionIndicator) {
+		this.sidePocketInclusionIndicator = Objects.requireNonNull(sidePocketInclusionIndicator);
+		return this;
 	}
 
 	public Max35Text getSidePocketIdentification() {
 		return sidePocketIdentification;
 	}
 
-	public void setSidePocketIdentification(Max35Text sidePocketIdentification) {
-		this.sidePocketIdentification = sidePocketIdentification;
+	public SidePocket setSidePocketIdentification(Max35Text sidePocketIdentification) {
+		this.sidePocketIdentification = Objects.requireNonNull(sidePocketIdentification);
+		return this;
 	}
 
 	public InvestmentAccount getInvestmentAccount() {
 		return investmentAccount;
 	}
 
-	public void setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
-		this.investmentAccount = investmentAccount;
+	public SidePocket setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
+		this.investmentAccount = Objects.requireNonNull(investmentAccount);
+		return this;
 	}
 
 	public SecuritiesQuantity getSidePocketQuantity() {
 		return sidePocketQuantity;
 	}
 
-	public void setSidePocketQuantity(com.tools20022.repository.entity.SecuritiesQuantity sidePocketQuantity) {
-		this.sidePocketQuantity = sidePocketQuantity;
+	public SidePocket setSidePocketQuantity(com.tools20022.repository.entity.SecuritiesQuantity sidePocketQuantity) {
+		this.sidePocketQuantity = Objects.requireNonNull(sidePocketQuantity);
+		return this;
 	}
 }

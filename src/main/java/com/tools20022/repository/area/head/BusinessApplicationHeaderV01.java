@@ -34,6 +34,8 @@ import com.tools20022.repository.other.SignatureEnvelope;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -118,6 +120,14 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code head.001.001.01}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl#forBusinessApplicationHeaderV01
+ * ConstraintRelatedPresentWhenCopyDupl.forBusinessApplicationHeaderV01}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,17 +140,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BusinessApplicationHeaderV01", propOrder = {"characterSet", "from", "to", "businessMessageIdentifier", "messageDefinitionIdentifier", "businessService", "creationDate", "copyDuplicate", "possibleDuplicate", "priority",
 		"signature", "related"})
 public class BusinessApplicationHeaderV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CharSet")
 	protected UnicodeChartsCode characterSet;
 	/**
-	 * Contains the character set of the text-based elements used in the
-	 * Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,15 +192,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "Fr", required = true)
 	protected Party9Choice from;
 	/**
-	 * The sending MessagingEndpoint that has created this Business Message for
-	 * the receiving MessagingEndpoint that will process this Business Message.<br>
-	 * <br>
-	 * Note the sending MessagingEndpoint might be different from the sending
-	 * address potentially contained in the transport header (as defined in the
-	 * transport layer).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,15 +237,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "To", required = true)
 	protected Party9Choice to;
 	/**
-	 * The MessagingEndpoint designated by the sending MessagingEndpoint to be
-	 * the recipient who will ultimately process this Business Message.<br>
-	 * <br>
-	 * Note the receiving MessagingEndpoint might be different from the
-	 * receiving address potentially contained in the transport header (as
-	 * defined in the transport layer).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,11 +282,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "BizMsgIdr", required = true)
 	protected Max35Text businessMessageIdentifier;
 	/**
-	 * Unambiguously identifies the Business Message to the MessagingEndpoint
-	 * that has created the Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,13 +327,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "MsgDefIdr", required = true)
 	protected Max35Text messageDefinitionIdentifier;
 	/**
-	 * Contains the MessageIdentifier that defines the BusinessMessage.<br>
-	 * It must contain a MessageIdentifier published on the ISO 20022 website.<br>
-	 * <br>
-	 * example camt.001.001.03
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,14 +372,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "BizSvc")
 	protected Max35Text businessService;
 	/**
-	 * Specifies the business service agreed between the two MessagingEndpoints
-	 * under which rules this Business Message is exchanged.<br>
-	 * To be used when there is a choice of processing services or processing
-	 * service levels.<br>
-	 * Example: E&amp;I
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -420,11 +417,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "CreDt", required = true)
 	protected ISONormalisedDateTime creationDate;
 	/**
-	 * Date and time when this Business Message (header) was created.<br>
-	 * Note Times must be normalized, using the "Z" annotation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,11 +463,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "CpyDplct")
 	protected CopyDuplicate1Code copyDuplicate;
 	/**
-	 * Indicates whether the message is a Copy, a Duplicate or a copy of a
-	 * duplicate of a previously sent ISO 20022 Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,22 +509,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "PssblDplct")
 	protected YesNoIndicator possibleDuplicate;
 	/**
-	 * Flag indicating if the Business Message exchanged between the
-	 * MessagingEndpoints is possibly a duplicate. <br>
-	 * If the receiving MessagingEndpoint did not receive the original, then
-	 * this Business Message should be processed as if it were the original. <br>
-	 * <br>
-	 * If the receiving MessagingEndpoint did receive the original, then it
-	 * should perform necessary actions to avoid processing this Business
-	 * Message again.<br>
-	 * <br>
-	 * This will guarantee business idempotent behaviour.<br>
-	 * <br>
-	 * NOTE: this is named "PossResend" in FIX - this is an application level
-	 * resend not a network level retransmission
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -569,11 +555,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "Prty")
 	protected BusinessMessagePriorityCode priority;
 	/**
-	 * Relative indication of the processing precedence of the message over a
-	 * (set of) Business Messages with assigned priorities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,11 +601,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "Sgntr")
 	protected SignatureEnvelope signature;
 	/**
-	 * Contains the digital signature of the Business Entity authorised to sign
-	 * this Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -661,13 +647,11 @@ public class BusinessApplicationHeaderV01 {
 			}
 		}
 	};
+	@XmlElement(name = "Rltd")
 	protected BusinessApplicationHeader1 related;
 	/**
-	 * Specifies the Business Application Header of the Business Message to
-	 * which this Business Message relates.<br>
-	 * Can be used when replying to a query; can also be used when canceling or
-	 * amending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -713,6 +697,7 @@ public class BusinessApplicationHeaderV01 {
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl.forBusinessApplicationHeaderV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessApplicationHeaderV01";
 				definition = "The Business Layer deals with Business Messages. The behaviour of the Business Messages is fully described by the Business Transaction and the structure of the Business Messages is fully described by the Message Definitions and related Message Rules, Rules and Market Practices. All of which are registered in the ISO 20022 Repository.\r\nA single new Business Message (with its accompagnying business application header) is created - by the sending MessagingEndpoint - for each business event; that is each interaction in a Business Transaction. A Business Message adheres to the following principles:\r\n\" A Business Message (and its business application header) must not contain information about the Message Transport System or the mechanics or mechanism of message sending, transportation, or receipt. \r\n\" A Business Message must be comprehensible outside of the context of the Transport Message. That is the Business Message must not require knowledge of the Transport Message to be understood.\r\n\" A Business Message may contain headers, footers, and envelopes that are meaningful for the business. When present, they are treated as any other message content, which means that they are considered part of the Message Definition of the Business Message and as such will be part of the ISO 20022 Repository.\r\n\" A Business Message refers to Business Actors by their Name. Each instance of a Business Actor has one Name. The Business Actor must not be referred to in the Transport Layer.\r\nSpecific usage of this BusinessMessageHeader may be defined by the relevant SEG.";
@@ -743,115 +728,115 @@ public class BusinessApplicationHeaderV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CharSet")
-	public UnicodeChartsCode getCharacterSet() {
-		return characterSet;
+	public Optional<UnicodeChartsCode> getCharacterSet() {
+		return characterSet == null ? Optional.empty() : Optional.of(characterSet);
 	}
 
-	public void setCharacterSet(UnicodeChartsCode characterSet) {
+	public BusinessApplicationHeaderV01 setCharacterSet(UnicodeChartsCode characterSet) {
 		this.characterSet = characterSet;
+		return this;
 	}
 
-	@XmlElement(name = "Fr", required = true)
 	public Party9Choice getFrom() {
 		return from;
 	}
 
-	public void setFrom(Party9Choice from) {
-		this.from = from;
+	public BusinessApplicationHeaderV01 setFrom(Party9Choice from) {
+		this.from = Objects.requireNonNull(from);
+		return this;
 	}
 
-	@XmlElement(name = "To", required = true)
 	public Party9Choice getTo() {
 		return to;
 	}
 
-	public void setTo(Party9Choice to) {
-		this.to = to;
+	public BusinessApplicationHeaderV01 setTo(Party9Choice to) {
+		this.to = Objects.requireNonNull(to);
+		return this;
 	}
 
-	@XmlElement(name = "BizMsgIdr", required = true)
 	public Max35Text getBusinessMessageIdentifier() {
 		return businessMessageIdentifier;
 	}
 
-	public void setBusinessMessageIdentifier(Max35Text businessMessageIdentifier) {
-		this.businessMessageIdentifier = businessMessageIdentifier;
+	public BusinessApplicationHeaderV01 setBusinessMessageIdentifier(Max35Text businessMessageIdentifier) {
+		this.businessMessageIdentifier = Objects.requireNonNull(businessMessageIdentifier);
+		return this;
 	}
 
-	@XmlElement(name = "MsgDefIdr", required = true)
 	public Max35Text getMessageDefinitionIdentifier() {
 		return messageDefinitionIdentifier;
 	}
 
-	public void setMessageDefinitionIdentifier(Max35Text messageDefinitionIdentifier) {
-		this.messageDefinitionIdentifier = messageDefinitionIdentifier;
+	public BusinessApplicationHeaderV01 setMessageDefinitionIdentifier(Max35Text messageDefinitionIdentifier) {
+		this.messageDefinitionIdentifier = Objects.requireNonNull(messageDefinitionIdentifier);
+		return this;
 	}
 
-	@XmlElement(name = "BizSvc")
-	public Max35Text getBusinessService() {
-		return businessService;
+	public Optional<Max35Text> getBusinessService() {
+		return businessService == null ? Optional.empty() : Optional.of(businessService);
 	}
 
-	public void setBusinessService(Max35Text businessService) {
+	public BusinessApplicationHeaderV01 setBusinessService(Max35Text businessService) {
 		this.businessService = businessService;
+		return this;
 	}
 
-	@XmlElement(name = "CreDt", required = true)
 	public ISONormalisedDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(ISONormalisedDateTime creationDate) {
-		this.creationDate = creationDate;
+	public BusinessApplicationHeaderV01 setCreationDate(ISONormalisedDateTime creationDate) {
+		this.creationDate = Objects.requireNonNull(creationDate);
+		return this;
 	}
 
-	@XmlElement(name = "CpyDplct")
-	public CopyDuplicate1Code getCopyDuplicate() {
-		return copyDuplicate;
+	public Optional<CopyDuplicate1Code> getCopyDuplicate() {
+		return copyDuplicate == null ? Optional.empty() : Optional.of(copyDuplicate);
 	}
 
-	public void setCopyDuplicate(CopyDuplicate1Code copyDuplicate) {
+	public BusinessApplicationHeaderV01 setCopyDuplicate(CopyDuplicate1Code copyDuplicate) {
 		this.copyDuplicate = copyDuplicate;
+		return this;
 	}
 
-	@XmlElement(name = "PssblDplct")
-	public YesNoIndicator getPossibleDuplicate() {
-		return possibleDuplicate;
+	public Optional<YesNoIndicator> getPossibleDuplicate() {
+		return possibleDuplicate == null ? Optional.empty() : Optional.of(possibleDuplicate);
 	}
 
-	public void setPossibleDuplicate(YesNoIndicator possibleDuplicate) {
+	public BusinessApplicationHeaderV01 setPossibleDuplicate(YesNoIndicator possibleDuplicate) {
 		this.possibleDuplicate = possibleDuplicate;
+		return this;
 	}
 
-	@XmlElement(name = "Prty")
-	public BusinessMessagePriorityCode getPriority() {
-		return priority;
+	public Optional<BusinessMessagePriorityCode> getPriority() {
+		return priority == null ? Optional.empty() : Optional.of(priority);
 	}
 
-	public void setPriority(BusinessMessagePriorityCode priority) {
+	public BusinessApplicationHeaderV01 setPriority(BusinessMessagePriorityCode priority) {
 		this.priority = priority;
+		return this;
 	}
 
-	@XmlElement(name = "Sgntr")
-	public SignatureEnvelope getSignature() {
-		return signature;
+	public Optional<SignatureEnvelope> getSignature() {
+		return signature == null ? Optional.empty() : Optional.of(signature);
 	}
 
-	public void setSignature(SignatureEnvelope signature) {
+	public BusinessApplicationHeaderV01 setSignature(SignatureEnvelope signature) {
 		this.signature = signature;
+		return this;
 	}
 
-	@XmlElement(name = "Rltd")
-	public BusinessApplicationHeader1 getRelated() {
-		return related;
+	public Optional<BusinessApplicationHeader1> getRelated() {
+		return related == null ? Optional.empty() : Optional.of(related);
 	}
 
-	public void setRelated(BusinessApplicationHeader1 related) {
+	public BusinessApplicationHeaderV01 setRelated(BusinessApplicationHeader1 related) {
 		this.related = related;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01")
 	static public class Document {
 		@XmlElement(name = "AppHdr", required = true)
 		public BusinessApplicationHeaderV01 messageBody;

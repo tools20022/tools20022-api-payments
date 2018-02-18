@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.Exact3NumericText;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Provides information about the alternatives available to an account owner
@@ -118,8 +117,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -137,8 +136,8 @@ public class CorporateActionOption {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Exact3NumericText optionNumber;
 	/**
-	 * Number identifying the available corporate action options.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,8 +184,8 @@ public class CorporateActionOption {
 	};
 	protected CorporateActionOptionCode optionType;
 	/**
-	 * Type of corporate action options available to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,10 +232,8 @@ public class CorporateActionOption {
 	};
 	protected FractionDispositionTypeCode fractionDisposition;
 	/**
-	 * Treatment of the fractions resulting from derived securities will be
-	 * processed or how prorated decisions will be rounding, if provided with a
-	 * pro ration rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,8 +281,8 @@ public class CorporateActionOption {
 	};
 	protected CurrencyCode currencyOption;
 	/**
-	 * Currency choice given to the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,8 +327,8 @@ public class CorporateActionOption {
 	};
 	protected ChoiceCorporateAction relatedChoiceCorporateAction;
 	/**
-	 * Corporate action for which one or more options are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,8 +377,8 @@ public class CorporateActionOption {
 	};
 	protected CorporateActionElection corporateActionElection;
 	/**
-	 * Election process which selected a specific option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,8 +426,8 @@ public class CorporateActionOption {
 	};
 	protected OptionFeaturesCode optionFeatures;
 	/**
-	 * Features that may apply to a corporate action option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -476,8 +473,8 @@ public class CorporateActionOption {
 	};
 	protected DateTimePeriod actionPeriod;
 	/**
-	 * Period during which the specified option remains valid, eg, offer period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,8 +523,8 @@ public class CorporateActionOption {
 	};
 	protected OfferTypeV2Code offerType;
 	/**
-	 * Conditions that apply to the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -573,9 +570,8 @@ public class CorporateActionOption {
 	};
 	protected YesNoIndicator chargesAppliedIndicator;
 	/**
-	 * Indicates whether charges apply to the holder, for instance redemption
-	 * charges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -623,8 +619,8 @@ public class CorporateActionOption {
 	};
 	protected YesNoIndicator withdrawalAllowedIndicator;
 	/**
-	 * Indicates whether withdrawal of instruction is allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -670,8 +666,8 @@ public class CorporateActionOption {
 	};
 	protected YesNoIndicator changeAllowedIndicator;
 	/**
-	 * Indicates whether change of instruction is allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -717,8 +713,8 @@ public class CorporateActionOption {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing;
 	/**
-	 * Calculation of the entitlement on the basis of the proposed option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -766,9 +762,8 @@ public class CorporateActionOption {
 	};
 	protected List<com.tools20022.repository.entity.ProceedsDefinition> proceedsDefinition;
 	/**
-	 * Definition of exchanges of cash and / or securities available in the
-	 * processing of corporate actions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -816,8 +811,8 @@ public class CorporateActionOption {
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionDistribution> distribution;
 	/**
-	 * Distribution process for which an option is selected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -864,8 +859,8 @@ public class CorporateActionOption {
 	};
 	protected YesNoIndicator default_;
 	/**
-	 * Specifies whether the option is the default option or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -914,7 +909,7 @@ public class CorporateActionOption {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOption";
 				definition = "Provides information about the alternatives available to an account owner when participating to a corporate action event. This is defined at a general level without looking at the specificities of the securities balances.";
@@ -942,127 +937,143 @@ public class CorporateActionOption {
 		return optionNumber;
 	}
 
-	public void setOptionNumber(Exact3NumericText optionNumber) {
-		this.optionNumber = optionNumber;
+	public CorporateActionOption setOptionNumber(Exact3NumericText optionNumber) {
+		this.optionNumber = Objects.requireNonNull(optionNumber);
+		return this;
 	}
 
 	public CorporateActionOptionCode getOptionType() {
 		return optionType;
 	}
 
-	public void setOptionType(CorporateActionOptionCode optionType) {
-		this.optionType = optionType;
+	public CorporateActionOption setOptionType(CorporateActionOptionCode optionType) {
+		this.optionType = Objects.requireNonNull(optionType);
+		return this;
 	}
 
 	public FractionDispositionTypeCode getFractionDisposition() {
 		return fractionDisposition;
 	}
 
-	public void setFractionDisposition(FractionDispositionTypeCode fractionDisposition) {
-		this.fractionDisposition = fractionDisposition;
+	public CorporateActionOption setFractionDisposition(FractionDispositionTypeCode fractionDisposition) {
+		this.fractionDisposition = Objects.requireNonNull(fractionDisposition);
+		return this;
 	}
 
 	public CurrencyCode getCurrencyOption() {
 		return currencyOption;
 	}
 
-	public void setCurrencyOption(CurrencyCode currencyOption) {
-		this.currencyOption = currencyOption;
+	public CorporateActionOption setCurrencyOption(CurrencyCode currencyOption) {
+		this.currencyOption = Objects.requireNonNull(currencyOption);
+		return this;
 	}
 
-	public ChoiceCorporateAction getRelatedChoiceCorporateAction() {
-		return relatedChoiceCorporateAction;
+	public Optional<ChoiceCorporateAction> getRelatedChoiceCorporateAction() {
+		return relatedChoiceCorporateAction == null ? Optional.empty() : Optional.of(relatedChoiceCorporateAction);
 	}
 
-	public void setRelatedChoiceCorporateAction(com.tools20022.repository.entity.ChoiceCorporateAction relatedChoiceCorporateAction) {
+	public CorporateActionOption setRelatedChoiceCorporateAction(com.tools20022.repository.entity.ChoiceCorporateAction relatedChoiceCorporateAction) {
 		this.relatedChoiceCorporateAction = relatedChoiceCorporateAction;
+		return this;
 	}
 
 	public CorporateActionElection getCorporateActionElection() {
 		return corporateActionElection;
 	}
 
-	public void setCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection corporateActionElection) {
-		this.corporateActionElection = corporateActionElection;
+	public CorporateActionOption setCorporateActionElection(com.tools20022.repository.entity.CorporateActionElection corporateActionElection) {
+		this.corporateActionElection = Objects.requireNonNull(corporateActionElection);
+		return this;
 	}
 
 	public OptionFeaturesCode getOptionFeatures() {
 		return optionFeatures;
 	}
 
-	public void setOptionFeatures(OptionFeaturesCode optionFeatures) {
-		this.optionFeatures = optionFeatures;
+	public CorporateActionOption setOptionFeatures(OptionFeaturesCode optionFeatures) {
+		this.optionFeatures = Objects.requireNonNull(optionFeatures);
+		return this;
 	}
 
 	public DateTimePeriod getActionPeriod() {
 		return actionPeriod;
 	}
 
-	public void setActionPeriod(com.tools20022.repository.entity.DateTimePeriod actionPeriod) {
-		this.actionPeriod = actionPeriod;
+	public CorporateActionOption setActionPeriod(com.tools20022.repository.entity.DateTimePeriod actionPeriod) {
+		this.actionPeriod = Objects.requireNonNull(actionPeriod);
+		return this;
 	}
 
 	public OfferTypeV2Code getOfferType() {
 		return offerType;
 	}
 
-	public void setOfferType(OfferTypeV2Code offerType) {
-		this.offerType = offerType;
+	public CorporateActionOption setOfferType(OfferTypeV2Code offerType) {
+		this.offerType = Objects.requireNonNull(offerType);
+		return this;
 	}
 
 	public YesNoIndicator getChargesAppliedIndicator() {
 		return chargesAppliedIndicator;
 	}
 
-	public void setChargesAppliedIndicator(YesNoIndicator chargesAppliedIndicator) {
-		this.chargesAppliedIndicator = chargesAppliedIndicator;
+	public CorporateActionOption setChargesAppliedIndicator(YesNoIndicator chargesAppliedIndicator) {
+		this.chargesAppliedIndicator = Objects.requireNonNull(chargesAppliedIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getWithdrawalAllowedIndicator() {
 		return withdrawalAllowedIndicator;
 	}
 
-	public void setWithdrawalAllowedIndicator(YesNoIndicator withdrawalAllowedIndicator) {
-		this.withdrawalAllowedIndicator = withdrawalAllowedIndicator;
+	public CorporateActionOption setWithdrawalAllowedIndicator(YesNoIndicator withdrawalAllowedIndicator) {
+		this.withdrawalAllowedIndicator = Objects.requireNonNull(withdrawalAllowedIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getChangeAllowedIndicator() {
 		return changeAllowedIndicator;
 	}
 
-	public void setChangeAllowedIndicator(YesNoIndicator changeAllowedIndicator) {
-		this.changeAllowedIndicator = changeAllowedIndicator;
+	public CorporateActionOption setChangeAllowedIndicator(YesNoIndicator changeAllowedIndicator) {
+		this.changeAllowedIndicator = Objects.requireNonNull(changeAllowedIndicator);
+		return this;
 	}
 
 	public List<CorporateActionOptionServicing> getCorporateActionOptionServicing() {
-		return corporateActionOptionServicing;
+		return corporateActionOptionServicing == null ? corporateActionOptionServicing = new ArrayList<>() : corporateActionOptionServicing;
 	}
 
-	public void setCorporateActionOptionServicing(List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing) {
-		this.corporateActionOptionServicing = corporateActionOptionServicing;
+	public CorporateActionOption setCorporateActionOptionServicing(List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing) {
+		this.corporateActionOptionServicing = Objects.requireNonNull(corporateActionOptionServicing);
+		return this;
 	}
 
 	public List<ProceedsDefinition> getProceedsDefinition() {
-		return proceedsDefinition;
+		return proceedsDefinition == null ? proceedsDefinition = new ArrayList<>() : proceedsDefinition;
 	}
 
-	public void setProceedsDefinition(List<com.tools20022.repository.entity.ProceedsDefinition> proceedsDefinition) {
-		this.proceedsDefinition = proceedsDefinition;
+	public CorporateActionOption setProceedsDefinition(List<com.tools20022.repository.entity.ProceedsDefinition> proceedsDefinition) {
+		this.proceedsDefinition = Objects.requireNonNull(proceedsDefinition);
+		return this;
 	}
 
 	public List<CorporateActionDistribution> getDistribution() {
-		return distribution;
+		return distribution == null ? distribution = new ArrayList<>() : distribution;
 	}
 
-	public void setDistribution(List<com.tools20022.repository.entity.CorporateActionDistribution> distribution) {
-		this.distribution = distribution;
+	public CorporateActionOption setDistribution(List<com.tools20022.repository.entity.CorporateActionDistribution> distribution) {
+		this.distribution = Objects.requireNonNull(distribution);
+		return this;
 	}
 
 	public YesNoIndicator getDefault() {
 		return default_;
 	}
 
-	public void setDefault(YesNoIndicator default_) {
-		this.default_ = default_;
+	public CorporateActionOption setDefault(YesNoIndicator default_) {
+		this.default_ = Objects.requireNonNull(default_);
+		return this;
 	}
 }

@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#Completed
- * ModificationProcessingStatusCode.mmCompleted}</li>
+ * ModificationProcessingStatusCode.Completed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#Pending
- * ModificationProcessingStatusCode.mmPending}</li>
+ * ModificationProcessingStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#Denied
- * ModificationProcessingStatusCode.mmDenied}</li>
+ * ModificationProcessingStatusCode.Denied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#Accepted
- * ModificationProcessingStatusCode.mmAccepted}</li>
+ * ModificationProcessingStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#Rejected
- * ModificationProcessingStatusCode.mmRejected}</li>
+ * ModificationProcessingStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ModificationProcessingStatusCode#InRepair
- * ModificationProcessingStatusCode.mmInRepair}</li>
+ * ModificationProcessingStatusCode.InRepair}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -275,7 +275,7 @@ public class ModificationProcessingStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MODC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationProcessingStatusCode";

@@ -121,10 +121,10 @@
 							<packages>com.tools20022.repository*</packages>
 						</group>
 					</groups>
+					<linksource>true</linksource>
 					<keywords>true</keywords>
 					<show>public</show>
 					<docfilessubdirs>true</docfilessubdirs>
-					<quiet>true</quiet>
 					<nohelp>true</nohelp>
 					<splitindex>true</splitindex>
 					<quiet>true</quiet>

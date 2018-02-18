@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the underlying reason for the status of an object.
@@ -138,8 +137,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -155,8 +154,8 @@ public class StatusReason {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Status status;
 	/**
-	 * Status for which a reason is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,8 +200,8 @@ public class StatusReason {
 	};
 	protected Max35Text reason;
 	/**
-	 * Reason provided for the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,8 +278,8 @@ public class StatusReason {
 	};
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * Indicates that there is no reason available or to report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,8 +324,8 @@ public class StatusReason {
 	};
 	protected List<com.tools20022.repository.entity.GenericIdentification> dataSourceScheme;
 	/**
-	 * Proprietary identification of the reason for the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,8 +371,8 @@ public class StatusReason {
 	};
 	protected RejectedStatusReasonCode rejectedStatusReason;
 	/**
-	 * Reason for the rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,8 +417,8 @@ public class StatusReason {
 	};
 	protected PendingFailingReasonCode failingReason;
 	/**
-	 * Reason why a transaction has a failing status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -464,9 +463,8 @@ public class StatusReason {
 	};
 	protected CancelledStatusReasonV2Code cancellationReason;
 	/**
-	 * Specifies the reason why the related instruction is cancelled, or the
-	 * related cancellation request is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -513,8 +511,8 @@ public class StatusReason {
 	};
 	protected PendingFailingReasonCode pendingReason;
 	/**
-	 * Specifies the reason why the instruction processing is pending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,9 +558,8 @@ public class StatusReason {
 	};
 	protected RejectionReasonV2Code rejectionReason;
 	/**
-	 * Specifies the reason why the instruction/request has a repair or
-	 * rejection status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -609,8 +606,8 @@ public class StatusReason {
 	};
 	protected AcknowledgementReasonCode acknowledgedAcceptedReason;
 	/**
-	 * Specifies additional information about the processed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -656,8 +653,8 @@ public class StatusReason {
 	};
 	protected RegisteredContract relatedClosureReason;
 	/**
-	 * Related reason of closure of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -705,7 +702,7 @@ public class StatusReason {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusReason";
 				definition = "Specifies the underlying reason for the status of an object.";
@@ -729,91 +726,102 @@ public class StatusReason {
 		return mmObject_lazy.get();
 	}
 
-	public Status getStatus() {
-		return status;
+	public Optional<Status> getStatus() {
+		return status == null ? Optional.empty() : Optional.of(status);
 	}
 
-	public void setStatus(com.tools20022.repository.entity.Status status) {
+	public StatusReason setStatus(com.tools20022.repository.entity.Status status) {
 		this.status = status;
+		return this;
 	}
 
 	public Max35Text getReason() {
 		return reason;
 	}
 
-	public void setReason(Max35Text reason) {
-		this.reason = reason;
+	public StatusReason setReason(Max35Text reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public StatusReason setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
 	public List<GenericIdentification> getDataSourceScheme() {
-		return dataSourceScheme;
+		return dataSourceScheme == null ? dataSourceScheme = new ArrayList<>() : dataSourceScheme;
 	}
 
-	public void setDataSourceScheme(List<com.tools20022.repository.entity.GenericIdentification> dataSourceScheme) {
-		this.dataSourceScheme = dataSourceScheme;
+	public StatusReason setDataSourceScheme(List<com.tools20022.repository.entity.GenericIdentification> dataSourceScheme) {
+		this.dataSourceScheme = Objects.requireNonNull(dataSourceScheme);
+		return this;
 	}
 
 	public RejectedStatusReasonCode getRejectedStatusReason() {
 		return rejectedStatusReason;
 	}
 
-	public void setRejectedStatusReason(RejectedStatusReasonCode rejectedStatusReason) {
-		this.rejectedStatusReason = rejectedStatusReason;
+	public StatusReason setRejectedStatusReason(RejectedStatusReasonCode rejectedStatusReason) {
+		this.rejectedStatusReason = Objects.requireNonNull(rejectedStatusReason);
+		return this;
 	}
 
 	public PendingFailingReasonCode getFailingReason() {
 		return failingReason;
 	}
 
-	public void setFailingReason(PendingFailingReasonCode failingReason) {
-		this.failingReason = failingReason;
+	public StatusReason setFailingReason(PendingFailingReasonCode failingReason) {
+		this.failingReason = Objects.requireNonNull(failingReason);
+		return this;
 	}
 
 	public CancelledStatusReasonV2Code getCancellationReason() {
 		return cancellationReason;
 	}
 
-	public void setCancellationReason(CancelledStatusReasonV2Code cancellationReason) {
-		this.cancellationReason = cancellationReason;
+	public StatusReason setCancellationReason(CancelledStatusReasonV2Code cancellationReason) {
+		this.cancellationReason = Objects.requireNonNull(cancellationReason);
+		return this;
 	}
 
 	public PendingFailingReasonCode getPendingReason() {
 		return pendingReason;
 	}
 
-	public void setPendingReason(PendingFailingReasonCode pendingReason) {
-		this.pendingReason = pendingReason;
+	public StatusReason setPendingReason(PendingFailingReasonCode pendingReason) {
+		this.pendingReason = Objects.requireNonNull(pendingReason);
+		return this;
 	}
 
 	public RejectionReasonV2Code getRejectionReason() {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(RejectionReasonV2Code rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public StatusReason setRejectionReason(RejectionReasonV2Code rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 
 	public AcknowledgementReasonCode getAcknowledgedAcceptedReason() {
 		return acknowledgedAcceptedReason;
 	}
 
-	public void setAcknowledgedAcceptedReason(AcknowledgementReasonCode acknowledgedAcceptedReason) {
-		this.acknowledgedAcceptedReason = acknowledgedAcceptedReason;
+	public StatusReason setAcknowledgedAcceptedReason(AcknowledgementReasonCode acknowledgedAcceptedReason) {
+		this.acknowledgedAcceptedReason = Objects.requireNonNull(acknowledgedAcceptedReason);
+		return this;
 	}
 
 	public RegisteredContract getRelatedClosureReason() {
 		return relatedClosureReason;
 	}
 
-	public void setRelatedClosureReason(com.tools20022.repository.entity.RegisteredContract relatedClosureReason) {
-		this.relatedClosureReason = relatedClosureReason;
+	public StatusReason setRelatedClosureReason(com.tools20022.repository.entity.RegisteredContract relatedClosureReason) {
+		this.relatedClosureReason = Objects.requireNonNull(relatedClosureReason);
+		return this;
 	}
 }

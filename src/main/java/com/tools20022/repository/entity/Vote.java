@@ -22,9 +22,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Number of votes assigned to each voting option.
@@ -83,8 +82,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,8 +99,8 @@ public class Vote {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected VoteInstructionRequest voteRequest;
 	/**
-	 * Request which contains the vote instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,8 +147,8 @@ public class Vote {
 	};
 	protected Number for_;
 	/**
-	 * Number of votes in favour of one resolution
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,8 +192,8 @@ public class Vote {
 	};
 	protected Number against;
 	/**
-	 * Number of votes against one resolution
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,8 +237,8 @@ public class Vote {
 	};
 	protected Number abstain;
 	/**
-	 * Number of votes declared abstained for one resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +282,8 @@ public class Vote {
 	};
 	protected Number withhold;
 	/**
-	 * Number of votes withheld for one resolution
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,8 +327,8 @@ public class Vote {
 	};
 	protected Number withManagement;
 	/**
-	 * Number of votes in line with the votes of the management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,8 +373,8 @@ public class Vote {
 	};
 	protected Number againstManagement;
 	/**
-	 * Number of votes against the voting recommendation of the management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -420,8 +419,8 @@ public class Vote {
 	};
 	protected List<com.tools20022.repository.entity.Resolution> resolution;
 	/**
-	 * Specifies the agenda item on which a vote is/was cast.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,8 +465,8 @@ public class Vote {
 	};
 	protected Number noAction;
 	/**
-	 * Number of votes for which no action has been taken.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,8 +510,8 @@ public class Vote {
 	};
 	protected VoteResult result;
 	/**
-	 * Information on the vote result for a specific resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -559,9 +558,8 @@ public class Vote {
 	};
 	protected Number twoYears;
 	/**
-	 * Number of votes in favour of two years for "say on pay" type of
-	 * resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -607,9 +605,8 @@ public class Vote {
 	};
 	protected Number oneYear;
 	/**
-	 * Number of votes in favour for one year for "say on pay" type of
-	 * resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -655,8 +652,8 @@ public class Vote {
 	};
 	protected YesNoIndicator withdrawn;
 	/**
-	 * Resolution withdrawn at the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,9 +698,8 @@ public class Vote {
 	};
 	protected Number threeYears;
 	/**
-	 * Number of votes in favour of three years for "say on pay" type of
-	 * resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -751,7 +747,7 @@ public class Vote {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Vote";
 				definition = "Number of votes assigned to each voting option.";
@@ -771,115 +767,129 @@ public class Vote {
 		return mmObject_lazy.get();
 	}
 
-	public VoteInstructionRequest getVoteRequest() {
-		return voteRequest;
+	public Optional<VoteInstructionRequest> getVoteRequest() {
+		return voteRequest == null ? Optional.empty() : Optional.of(voteRequest);
 	}
 
-	public void setVoteRequest(com.tools20022.repository.entity.VoteInstructionRequest voteRequest) {
+	public Vote setVoteRequest(com.tools20022.repository.entity.VoteInstructionRequest voteRequest) {
 		this.voteRequest = voteRequest;
+		return this;
 	}
 
 	public Number getFor() {
 		return for_;
 	}
 
-	public void setFor(Number for_) {
-		this.for_ = for_;
+	public Vote setFor(Number for_) {
+		this.for_ = Objects.requireNonNull(for_);
+		return this;
 	}
 
 	public Number getAgainst() {
 		return against;
 	}
 
-	public void setAgainst(Number against) {
-		this.against = against;
+	public Vote setAgainst(Number against) {
+		this.against = Objects.requireNonNull(against);
+		return this;
 	}
 
 	public Number getAbstain() {
 		return abstain;
 	}
 
-	public void setAbstain(Number abstain) {
-		this.abstain = abstain;
+	public Vote setAbstain(Number abstain) {
+		this.abstain = Objects.requireNonNull(abstain);
+		return this;
 	}
 
 	public Number getWithhold() {
 		return withhold;
 	}
 
-	public void setWithhold(Number withhold) {
-		this.withhold = withhold;
+	public Vote setWithhold(Number withhold) {
+		this.withhold = Objects.requireNonNull(withhold);
+		return this;
 	}
 
 	public Number getWithManagement() {
 		return withManagement;
 	}
 
-	public void setWithManagement(Number withManagement) {
-		this.withManagement = withManagement;
+	public Vote setWithManagement(Number withManagement) {
+		this.withManagement = Objects.requireNonNull(withManagement);
+		return this;
 	}
 
 	public Number getAgainstManagement() {
 		return againstManagement;
 	}
 
-	public void setAgainstManagement(Number againstManagement) {
-		this.againstManagement = againstManagement;
+	public Vote setAgainstManagement(Number againstManagement) {
+		this.againstManagement = Objects.requireNonNull(againstManagement);
+		return this;
 	}
 
 	public List<Resolution> getResolution() {
-		return resolution;
+		return resolution == null ? resolution = new ArrayList<>() : resolution;
 	}
 
-	public void setResolution(List<com.tools20022.repository.entity.Resolution> resolution) {
-		this.resolution = resolution;
+	public Vote setResolution(List<com.tools20022.repository.entity.Resolution> resolution) {
+		this.resolution = Objects.requireNonNull(resolution);
+		return this;
 	}
 
 	public Number getNoAction() {
 		return noAction;
 	}
 
-	public void setNoAction(Number noAction) {
-		this.noAction = noAction;
+	public Vote setNoAction(Number noAction) {
+		this.noAction = Objects.requireNonNull(noAction);
+		return this;
 	}
 
-	public VoteResult getResult() {
-		return result;
+	public Optional<VoteResult> getResult() {
+		return result == null ? Optional.empty() : Optional.of(result);
 	}
 
-	public void setResult(com.tools20022.repository.entity.VoteResult result) {
+	public Vote setResult(com.tools20022.repository.entity.VoteResult result) {
 		this.result = result;
+		return this;
 	}
 
 	public Number getTwoYears() {
 		return twoYears;
 	}
 
-	public void setTwoYears(Number twoYears) {
-		this.twoYears = twoYears;
+	public Vote setTwoYears(Number twoYears) {
+		this.twoYears = Objects.requireNonNull(twoYears);
+		return this;
 	}
 
 	public Number getOneYear() {
 		return oneYear;
 	}
 
-	public void setOneYear(Number oneYear) {
-		this.oneYear = oneYear;
+	public Vote setOneYear(Number oneYear) {
+		this.oneYear = Objects.requireNonNull(oneYear);
+		return this;
 	}
 
 	public YesNoIndicator getWithdrawn() {
 		return withdrawn;
 	}
 
-	public void setWithdrawn(YesNoIndicator withdrawn) {
-		this.withdrawn = withdrawn;
+	public Vote setWithdrawn(YesNoIndicator withdrawn) {
+		this.withdrawn = Objects.requireNonNull(withdrawn);
+		return this;
 	}
 
 	public Number getThreeYears() {
 		return threeYears;
 	}
 
-	public void setThreeYears(Number threeYears) {
-		this.threeYears = threeYears;
+	public Vote setThreeYears(Number threeYears) {
+		this.threeYears = Objects.requireNonNull(threeYears);
+		return this;
 	}
 }

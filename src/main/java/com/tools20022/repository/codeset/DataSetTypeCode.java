@@ -37,29 +37,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.DataSetTypeCode#Baseline
- * DataSetTypeCode.mmBaseline}</li>
+ * DataSetTypeCode.Baseline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetTypeCode#TransportDataSet
- * DataSetTypeCode.mmTransportDataSet}</li>
+ * DataSetTypeCode.TransportDataSet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetTypeCode#CommercialDataSet
- * DataSetTypeCode.mmCommercialDataSet}</li>
+ * DataSetTypeCode.CommercialDataSet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetTypeCode#InsuranceDataSet
- * DataSetTypeCode.mmInsuranceDataSet}</li>
+ * DataSetTypeCode.InsuranceDataSet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetTypeCode#CertificateDataSet
- * DataSetTypeCode.mmCertificateDataSet}</li>
+ * DataSetTypeCode.CertificateDataSet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetTypeCode#OtherCertificateDataSet
- * DataSetTypeCode.mmOtherCertificateDataSet}</li>
+ * DataSetTypeCode.OtherCertificateDataSet}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -268,7 +268,7 @@ public class DataSetTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BASE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetTypeCode";

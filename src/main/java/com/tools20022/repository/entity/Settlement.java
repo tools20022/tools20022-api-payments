@@ -21,9 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Process which consists in transferring the proceeds related to a trade from
@@ -79,8 +78,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,9 +97,8 @@ public class Settlement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator centralCounterpartyEligibilityIndicator;
 	/**
-	 * Specifies whether the settlement transaction is CCP (Central
-	 * Counterparty) eligible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,8 +145,8 @@ public class Settlement {
 	};
 	protected StandingSettlementInstruction standingSettlementInstruction;
 	/**
-	 * Settlement Standing Instruction database to be used for settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,8 +194,8 @@ public class Settlement {
 	};
 	protected List<com.tools20022.repository.entity.SettlementPartyRole> settlementPartyRole;
 	/**
-	 * Specifies roles played by a party in the settlement process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,8 +241,8 @@ public class Settlement {
 	};
 	protected Trade trade;
 	/**
-	 * Trade for which settlement information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +289,7 @@ public class Settlement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Settlement";
 				definition = "Process which consists in transferring the proceeds related to a trade from one party to the next one.";
@@ -314,31 +312,35 @@ public class Settlement {
 		return centralCounterpartyEligibilityIndicator;
 	}
 
-	public void setCentralCounterpartyEligibilityIndicator(YesNoIndicator centralCounterpartyEligibilityIndicator) {
-		this.centralCounterpartyEligibilityIndicator = centralCounterpartyEligibilityIndicator;
+	public Settlement setCentralCounterpartyEligibilityIndicator(YesNoIndicator centralCounterpartyEligibilityIndicator) {
+		this.centralCounterpartyEligibilityIndicator = Objects.requireNonNull(centralCounterpartyEligibilityIndicator);
+		return this;
 	}
 
-	public StandingSettlementInstruction getStandingSettlementInstruction() {
-		return standingSettlementInstruction;
+	public Optional<StandingSettlementInstruction> getStandingSettlementInstruction() {
+		return standingSettlementInstruction == null ? Optional.empty() : Optional.of(standingSettlementInstruction);
 	}
 
-	public void setStandingSettlementInstruction(com.tools20022.repository.entity.StandingSettlementInstruction standingSettlementInstruction) {
+	public Settlement setStandingSettlementInstruction(com.tools20022.repository.entity.StandingSettlementInstruction standingSettlementInstruction) {
 		this.standingSettlementInstruction = standingSettlementInstruction;
+		return this;
 	}
 
 	public List<SettlementPartyRole> getSettlementPartyRole() {
-		return settlementPartyRole;
+		return settlementPartyRole == null ? settlementPartyRole = new ArrayList<>() : settlementPartyRole;
 	}
 
-	public void setSettlementPartyRole(List<com.tools20022.repository.entity.SettlementPartyRole> settlementPartyRole) {
-		this.settlementPartyRole = settlementPartyRole;
+	public Settlement setSettlementPartyRole(List<com.tools20022.repository.entity.SettlementPartyRole> settlementPartyRole) {
+		this.settlementPartyRole = Objects.requireNonNull(settlementPartyRole);
+		return this;
 	}
 
 	public Trade getTrade() {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public Settlement setTrade(com.tools20022.repository.entity.Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 }

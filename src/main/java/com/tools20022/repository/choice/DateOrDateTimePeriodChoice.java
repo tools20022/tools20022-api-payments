@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.DatePeriodDetails;
 import com.tools20022.repository.msg.DateTimePeriodDetails;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DateOrDateTimePeriodChoice", propOrder = {"date", "dateTime"})
 public class DateOrDateTimePeriodChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Dt", required = true)
 	protected DatePeriodDetails date;
 	/**
-	 * Period expressed with dates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,7 +109,7 @@ public class DateOrDateTimePeriodChoice {
 	 */
 	public static final MMMessageAssociationEnd mmDate = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DateOrDateTimePeriodChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,10 +121,11 @@ public class DateOrDateTimePeriodChoice {
 			type_lazy = () -> DatePeriodDetails.mmObject();
 		}
 	};
+	@XmlElement(name = "DtTm", required = true)
 	protected DateTimePeriodDetails dateTime;
 	/**
-	 * Period expressed a dates and times.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,7 +151,7 @@ public class DateOrDateTimePeriodChoice {
 	 */
 	public static final MMMessageAssociationEnd mmDateTime = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DateOrDateTimePeriodChoice.mmObject();
 			isDerived = false;
 			xmlTag = "DtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,9 +167,9 @@ public class DateOrDateTimePeriodChoice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DateOrDateTimePeriodChoice.mmDate, DateOrDateTimePeriodChoice.mmDateTime);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.DateOrDateTimePeriodChoice.mmDate, com.tools20022.repository.choice.DateOrDateTimePeriodChoice.mmDateTime);
 				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestOpeningV01.mmInvestigationPeriod);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateOrDateTimePeriodChoice";
 				definition = "Choice between a date or a date and time format for a period.";
@@ -175,21 +178,21 @@ public class DateOrDateTimePeriodChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dt", required = true)
 	public DatePeriodDetails getDate() {
 		return date;
 	}
 
-	public void setDate(DatePeriodDetails date) {
-		this.date = date;
+	public DateOrDateTimePeriodChoice setDate(DatePeriodDetails date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
-	@XmlElement(name = "DtTm", required = true)
 	public DateTimePeriodDetails getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(DateTimePeriodDetails dateTime) {
-		this.dateTime = dateTime;
+	public DateOrDateTimePeriodChoice setDateTime(DateTimePeriodDetails dateTime) {
+		this.dateTime = Objects.requireNonNull(dateTime);
+		return this;
 	}
 }

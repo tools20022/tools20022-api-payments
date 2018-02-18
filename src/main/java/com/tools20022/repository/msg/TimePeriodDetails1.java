@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.TimePeriod;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TimePeriodDetails1", propOrder = {"fromTime", "toTime"})
 public class TimePeriodDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrTm", required = true)
 	protected ISOTime fromTime;
 	/**
-	 * Time at which the time span starts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +109,7 @@ public class TimePeriodDetails1 {
 	public static final MMMessageAttribute mmFromTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TimePeriod.mmFromTime;
-			componentContext_lazy = () -> TimePeriodDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TimePeriodDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "FrTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,10 +120,11 @@ public class TimePeriodDetails1 {
 			simpleType_lazy = () -> ISOTime.mmObject();
 		}
 	};
+	@XmlElement(name = "ToTm")
 	protected ISOTime toTime;
 	/**
-	 * Time at which the time span ends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +157,7 @@ public class TimePeriodDetails1 {
 	public static final MMMessageAttribute mmToTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> TimePeriod.mmToTime;
-			componentContext_lazy = () -> TimePeriodDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TimePeriodDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ToTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,9 +172,9 @@ public class TimePeriodDetails1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TimePeriodDetails1.mmFromTime, TimePeriodDetails1.mmToTime);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TimePeriodDetails1.mmFromTime, com.tools20022.repository.msg.TimePeriodDetails1.mmToTime);
 				trace_lazy = () -> TimePeriod.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TimePeriodDetails1";
 				definition = "Particular time span specified between a start time and an end time. The time period cannot exceed 24 hours.";
@@ -179,21 +183,21 @@ public class TimePeriodDetails1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrTm", required = true)
 	public ISOTime getFromTime() {
 		return fromTime;
 	}
 
-	public void setFromTime(ISOTime fromTime) {
-		this.fromTime = fromTime;
+	public TimePeriodDetails1 setFromTime(ISOTime fromTime) {
+		this.fromTime = Objects.requireNonNull(fromTime);
+		return this;
 	}
 
-	@XmlElement(name = "ToTm")
-	public ISOTime getToTime() {
-		return toTime;
+	public Optional<ISOTime> getToTime() {
+		return toTime == null ? Optional.empty() : Optional.of(toTime);
 	}
 
-	public void setToTime(ISOTime toTime) {
+	public TimePeriodDetails1 setToTime(ISOTime toTime) {
 		this.toTime = toTime;
+		return this;
 	}
 }

@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Predefined variations that may be attributable to an undertaking such as a
@@ -66,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,8 +87,8 @@ public class AutomaticVariation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Undertaking undertaking;
 	/**
-	 * Undertaking for which a predefined variation is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,8 +136,8 @@ public class AutomaticVariation {
 	};
 	protected VariationTypeCode type;
 	/**
-	 * Type of predefined variation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,9 +183,8 @@ public class AutomaticVariation {
 	};
 	protected CurrencyAndAmount variationAmount;
 	/**
-	 * Variation specified as a monetary amount increase or decrease to the
-	 * undertaking amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,8 +232,8 @@ public class AutomaticVariation {
 	};
 	protected Trigger trigger;
 	/**
-	 * Trigger that causes the variation to come into effect.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +281,7 @@ public class AutomaticVariation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AutomaticVariation";
 				definition = "Predefined variations that may be attributable to an undertaking such as a guarantee or standby letter of credit.";
@@ -301,31 +302,35 @@ public class AutomaticVariation {
 		return undertaking;
 	}
 
-	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
-		this.undertaking = undertaking;
+	public AutomaticVariation setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = Objects.requireNonNull(undertaking);
+		return this;
 	}
 
 	public VariationTypeCode getType() {
 		return type;
 	}
 
-	public void setType(VariationTypeCode type) {
-		this.type = type;
+	public AutomaticVariation setType(VariationTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CurrencyAndAmount getVariationAmount() {
 		return variationAmount;
 	}
 
-	public void setVariationAmount(CurrencyAndAmount variationAmount) {
-		this.variationAmount = variationAmount;
+	public AutomaticVariation setVariationAmount(CurrencyAndAmount variationAmount) {
+		this.variationAmount = Objects.requireNonNull(variationAmount);
+		return this;
 	}
 
-	public Trigger getTrigger() {
-		return trigger;
+	public Optional<Trigger> getTrigger() {
+		return trigger == null ? Optional.empty() : Optional.of(trigger);
 	}
 
-	public void setTrigger(com.tools20022.repository.entity.Trigger trigger) {
+	public AutomaticVariation setTrigger(com.tools20022.repository.entity.Trigger trigger) {
 		this.trigger = trigger;
+		return this;
 	}
 }

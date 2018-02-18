@@ -38,59 +38,59 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#CancelledAsPerRequest
- * InvestigationExecutionConfirmation3Code.mmCancelledAsPerRequest}</li>
+ * InvestigationExecutionConfirmation3Code.CancelledAsPerRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#ModifiedAsPerRequest
- * InvestigationExecutionConfirmation3Code.mmModifiedAsPerRequest}</li>
+ * InvestigationExecutionConfirmation3Code.ModifiedAsPerRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#PaymentInitiated
- * InvestigationExecutionConfirmation3Code.mmPaymentInitiated}</li>
+ * InvestigationExecutionConfirmation3Code.PaymentInitiated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#CoverInitiated
- * InvestigationExecutionConfirmation3Code.mmCoverInitiated}</li>
+ * InvestigationExecutionConfirmation3Code.CoverInitiated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#CoverModified
- * InvestigationExecutionConfirmation3Code.mmCoverModified}</li>
+ * InvestigationExecutionConfirmation3Code.CoverModified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#AdditionalInformationSent
- * InvestigationExecutionConfirmation3Code.mmAdditionalInformationSent}</li>
+ * InvestigationExecutionConfirmation3Code.AdditionalInformationSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#ConfirmationOfPayment
- * InvestigationExecutionConfirmation3Code.mmConfirmationOfPayment}</li>
+ * InvestigationExecutionConfirmation3Code.ConfirmationOfPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#CancellationWillFollow
- * InvestigationExecutionConfirmation3Code.mmCancellationWillFollow}</li>
+ * InvestigationExecutionConfirmation3Code.CancellationWillFollow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#ModificationWillFollow
- * InvestigationExecutionConfirmation3Code.mmModificationWillFollow}</li>
+ * InvestigationExecutionConfirmation3Code.ModificationWillFollow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#UnableToApplyWillFollow
- * InvestigationExecutionConfirmation3Code.mmUnableToApplyWillFollow}</li>
+ * InvestigationExecutionConfirmation3Code.UnableToApplyWillFollow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#PartiallyExecutedCancellationRequest
- * InvestigationExecutionConfirmation3Code.
- * mmPartiallyExecutedCancellationRequest}</li>
+ * InvestigationExecutionConfirmation3Code.PartiallyExecutedCancellationRequest}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#PendingCancellationRequest
- * InvestigationExecutionConfirmation3Code.mmPendingCancellationRequest}</li>
+ * InvestigationExecutionConfirmation3Code.PendingCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#RejectedCancellationRequest
- * InvestigationExecutionConfirmation3Code.mmRejectedCancellationRequest}</li>
+ * InvestigationExecutionConfirmation3Code.RejectedCancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#StatementEntryCorrect
- * InvestigationExecutionConfirmation3Code.mmStatementEntryCorrect}</li>
+ * InvestigationExecutionConfirmation3Code.StatementEntryCorrect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#StatementEntryIncorrect
- * InvestigationExecutionConfirmation3Code.mmStatementEntryIncorrect}</li>
+ * InvestigationExecutionConfirmation3Code.StatementEntryIncorrect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#ChargesDetailsProvided
- * InvestigationExecutionConfirmation3Code.mmChargesDetailsProvided}</li>
+ * InvestigationExecutionConfirmation3Code.ChargesDetailsProvided}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#PurposeDetailsProvided
- * InvestigationExecutionConfirmation3Code.mmPurposeDetailsProvided}</li>
+ * InvestigationExecutionConfirmation3Code.PurposeDetailsProvided}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code#InstructionIsDuplicate
- * InvestigationExecutionConfirmation3Code.mmInstructionIsDuplicate}</li>
+ * InvestigationExecutionConfirmation3Code.InstructionIsDuplicate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -99,8 +99,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -561,7 +561,7 @@ public class InvestigationExecutionConfirmation3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CNCL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationExecutionConfirmation3Code";

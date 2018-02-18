@@ -37,52 +37,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Multilateral
- * LimitTypeCode.mmMultilateral}</li>
+ * LimitTypeCode.Multilateral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Bilateral
- * LimitTypeCode.mmBilateral}</li>
+ * LimitTypeCode.Bilateral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#NetBilateral
- * LimitTypeCode.mmNetBilateral}</li>
+ * LimitTypeCode.NetBilateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#IndirectBilateral
- * LimitTypeCode.mmIndirectBilateral}</li>
+ * LimitTypeCode.IndirectBilateral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Global
- * LimitTypeCode.mmGlobal}</li>
+ * LimitTypeCode.Global}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#MandatoryBilateral
- * LimitTypeCode.mmMandatoryBilateral}</li>
+ * LimitTypeCode.MandatoryBilateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#DiscretionaryBilateral
- * LimitTypeCode.mmDiscretionaryBilateral}</li>
+ * LimitTypeCode.DiscretionaryBilateral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#DirectDebit
- * LimitTypeCode.mmDirectDebit}</li>
+ * LimitTypeCode.DirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#SingleCustomerDirectDebit
- * LimitTypeCode.mmSingleCustomerDirectDebit}</li>
+ * LimitTypeCode.SingleCustomerDirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#SingleFinancialInstitutionDirectDebit
- * LimitTypeCode.mmSingleFinancialInstitutionDirectDebit}</li>
+ * LimitTypeCode.SingleFinancialInstitutionDirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#TotalDailyCustomerDirectDebit
- * LimitTypeCode.mmTotalDailyCustomerDirectDebit}</li>
+ * LimitTypeCode.TotalDailyCustomerDirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#TotalDailyFinancialInstitutionDirectDebit
- * LimitTypeCode.mmTotalDailyFinancialInstitutionDirectDebit}</li>
+ * LimitTypeCode.TotalDailyFinancialInstitutionDirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#AutoCollateralisation
- * LimitTypeCode.mmAutoCollateralisation}</li>
+ * LimitTypeCode.AutoCollateralisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#UnsecuredCredit
- * LimitTypeCode.mmUnsecuredCredit}</li>
+ * LimitTypeCode.UnsecuredCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#ExternalGuarantee
- * LimitTypeCode.mmExternalGuarantee}</li>
+ * LimitTypeCode.ExternalGuarantee}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -632,7 +632,7 @@ public class LimitTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MULT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitTypeCode";

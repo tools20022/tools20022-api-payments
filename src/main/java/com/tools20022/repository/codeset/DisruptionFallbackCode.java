@@ -39,44 +39,44 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#AssignmentOfClaim
- * DisruptionFallbackCode.mmAssignmentOfClaim}</li>
+ * DisruptionFallbackCode.AssignmentOfClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#CalculationAgentDeterminationOfSettlementRate
- * DisruptionFallbackCode.mmCalculationAgentDeterminationOfSettlementRate}</li>
+ * DisruptionFallbackCode.CalculationAgentDeterminationOfSettlementRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#DeliverableSubstitute
- * DisruptionFallbackCode.mmDeliverableSubstitute}</li>
+ * DisruptionFallbackCode.DeliverableSubstitute}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#EscrowArrangement
- * DisruptionFallbackCode.mmEscrowArrangement}</li>
+ * DisruptionFallbackCode.EscrowArrangement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#FallbackReferencePrice
- * DisruptionFallbackCode.mmFallbackReferencePrice}</li>
+ * DisruptionFallbackCode.FallbackReferencePrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#LocalAssetSubstituteGross
- * DisruptionFallbackCode.mmLocalAssetSubstituteGross}</li>
+ * DisruptionFallbackCode.LocalAssetSubstituteGross}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#LocalAssetSubstituteNet
- * DisruptionFallbackCode.mmLocalAssetSubstituteNet}</li>
+ * DisruptionFallbackCode.LocalAssetSubstituteNet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#LocalCurrencySubstitute
- * DisruptionFallbackCode.mmLocalCurrencySubstitute}</li>
+ * DisruptionFallbackCode.LocalCurrencySubstitute}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#NoFaultTermination
- * DisruptionFallbackCode.mmNoFaultTermination}</li>
+ * DisruptionFallbackCode.NoFaultTermination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#NonDeliverableSubstitute
- * DisruptionFallbackCode.mmNonDeliverableSubstitute}</li>
+ * DisruptionFallbackCode.NonDeliverableSubstitute}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisruptionFallbackCode#SettlementPostponement
- * DisruptionFallbackCode.mmSettlementPostponement}</li>
+ * DisruptionFallbackCode.SettlementPostponement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -481,7 +481,7 @@ public class DisruptionFallbackCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AOCL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisruptionFallbackCode";

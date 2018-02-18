@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#UnknownMethod
- * AuthenticationMethod1Code.mmUnknownMethod}</li>
+ * AuthenticationMethod1Code.UnknownMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#Bypass
- * AuthenticationMethod1Code.mmBypass}</li>
+ * AuthenticationMethod1Code.Bypass}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#OnLinePIN
- * AuthenticationMethod1Code.mmOnLinePIN}</li>
+ * AuthenticationMethod1Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#OfflinePIN
- * AuthenticationMethod1Code.mmOfflinePIN}</li>
+ * AuthenticationMethod1Code.OfflinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#SignatureCapture
- * AuthenticationMethod1Code.mmSignatureCapture}</li>
+ * AuthenticationMethod1Code.SignatureCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#PaperSignature
- * AuthenticationMethod1Code.mmPaperSignature}</li>
+ * AuthenticationMethod1Code.PaperSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#ManualVerification
- * AuthenticationMethod1Code.mmManualVerification}</li>
+ * AuthenticationMethod1Code.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#MerchantAuthentication
- * AuthenticationMethod1Code.mmMerchantAuthentication}</li>
+ * AuthenticationMethod1Code.MerchantAuthentication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#SecureCertificate
- * AuthenticationMethod1Code.mmSecureCertificate}</li>
+ * AuthenticationMethod1Code.SecureCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#SecureNoCertificate
- * AuthenticationMethod1Code.mmSecureNoCertificate}</li>
+ * AuthenticationMethod1Code.SecureNoCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod1Code#SecuredChannel
- * AuthenticationMethod1Code.mmSecuredChannel}</li>
+ * AuthenticationMethod1Code.SecuredChannel}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -371,7 +371,7 @@ public class AuthenticationMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UKNW");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationMethod1Code";

@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.LoanContract1;
 import com.tools20022.repository.msg.TradeContract1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of the type of underlying contract."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnderlyingContract1Choice", propOrder = {"loan", "trade"})
 public class UnderlyingContract1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ln", required = true)
 	protected LoanContract1 loan;
 	/**
-	 * Underlying registered contract is a loan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,7 +108,7 @@ public class UnderlyingContract1Choice {
 	public static final MMMessageAssociationEnd mmLoan = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Loan.mmObject();
-			componentContext_lazy = () -> UnderlyingContract1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingContract1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,10 +120,11 @@ public class UnderlyingContract1Choice {
 			type_lazy = () -> LoanContract1.mmObject();
 		}
 	};
+	@XmlElement(name = "Trad", required = true)
 	protected TradeContract1 trade;
 	/**
-	 * Underlying registered contract is a commercial trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,7 +156,7 @@ public class UnderlyingContract1Choice {
 	public static final MMMessageAssociationEnd mmTrade = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> CommercialTrade.mmObject();
-			componentContext_lazy = () -> UnderlyingContract1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingContract1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Trad";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,9 +172,9 @@ public class UnderlyingContract1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnderlyingContract1Choice.mmLoan, UnderlyingContract1Choice.mmTrade);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.UnderlyingContract1Choice.mmLoan, com.tools20022.repository.choice.UnderlyingContract1Choice.mmTrade);
 				trace_lazy = () -> Contract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingContract1Choice";
 				definition = "Choice of the type of underlying contract.";
@@ -180,21 +183,21 @@ public class UnderlyingContract1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ln", required = true)
 	public LoanContract1 getLoan() {
 		return loan;
 	}
 
-	public void setLoan(LoanContract1 loan) {
-		this.loan = loan;
+	public UnderlyingContract1Choice setLoan(LoanContract1 loan) {
+		this.loan = Objects.requireNonNull(loan);
+		return this;
 	}
 
-	@XmlElement(name = "Trad", required = true)
 	public TradeContract1 getTrade() {
 		return trade;
 	}
 
-	public void setTrade(TradeContract1 trade) {
-		this.trade = trade;
+	public UnderlyingContract1Choice setTrade(TradeContract1 trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 }

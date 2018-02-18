@@ -37,28 +37,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Declined
- * ResponseCode.mmDeclined}</li>
+ * ResponseCode.Declined}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Approved
- * ResponseCode.mmApproved}</li>
+ * ResponseCode.Approved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseCode#PartialApproved
- * ResponseCode.mmPartialApproved}</li>
+ * ResponseCode.PartialApproved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseCode#TechnicalError
- * ResponseCode.mmTechnicalError}</li>
+ * ResponseCode.TechnicalError}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#FurtherAction
- * ResponseCode.mmFurtherAction}</li>
+ * ResponseCode.FurtherAction}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#NotProcessed
- * ResponseCode.mmNotProcessed}</li>
+ * ResponseCode.NotProcessed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Processed
- * ResponseCode.mmProcessed}</li>
+ * ResponseCode.Processed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -296,7 +296,7 @@ public class ResponseCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DECL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseCode";

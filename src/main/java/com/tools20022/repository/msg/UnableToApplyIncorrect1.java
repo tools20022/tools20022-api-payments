@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +51,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAdditionalIncorrectInformationRule#forUnableToApplyIncorrect1
+ * ConstraintAdditionalIncorrectInformationRule.forUnableToApplyIncorrect1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the details of incorrect information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnableToApplyIncorrect1", propOrder = {"code", "additionalIncorrectInformation"})
 public class UnableToApplyIncorrect1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected UnableToApplyIncorrectInformation4Code code;
 	/**
-	 * Specifies the missing information in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,7 +108,7 @@ public class UnableToApplyIncorrect1 {
 	 */
 	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnableToApplyIncorrect1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyIncorrect1.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,10 +119,11 @@ public class UnableToApplyIncorrect1 {
 			simpleType_lazy = () -> UnableToApplyIncorrectInformation4Code.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlIncrrctInf")
 	protected Max140Text additionalIncorrectInformation;
 	/**
-	 * Further details about the incorrect information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +150,7 @@ public class UnableToApplyIncorrect1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalIncorrectInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnableToApplyIncorrect1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyIncorrect1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlIncrrctInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,8 +165,9 @@ public class UnableToApplyIncorrect1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnableToApplyIncorrect1.mmCode, UnableToApplyIncorrect1.mmAdditionalIncorrectInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnableToApplyIncorrect1.mmCode, com.tools20022.repository.msg.UnableToApplyIncorrect1.mmAdditionalIncorrectInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAdditionalIncorrectInformationRule.forUnableToApplyIncorrect1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyIncorrect1";
 				definition = "Specifies the details of incorrect information.";
@@ -163,21 +176,21 @@ public class UnableToApplyIncorrect1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public UnableToApplyIncorrectInformation4Code getCode() {
 		return code;
 	}
 
-	public void setCode(UnableToApplyIncorrectInformation4Code code) {
-		this.code = code;
+	public UnableToApplyIncorrect1 setCode(UnableToApplyIncorrectInformation4Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlIncrrctInf")
-	public Max140Text getAdditionalIncorrectInformation() {
-		return additionalIncorrectInformation;
+	public Optional<Max140Text> getAdditionalIncorrectInformation() {
+		return additionalIncorrectInformation == null ? Optional.empty() : Optional.of(additionalIncorrectInformation);
 	}
 
-	public void setAdditionalIncorrectInformation(Max140Text additionalIncorrectInformation) {
+	public UnableToApplyIncorrect1 setAdditionalIncorrectInformation(Max140Text additionalIncorrectInformation) {
 		this.additionalIncorrectInformation = additionalIncorrectInformation;
+		return this;
 	}
 }

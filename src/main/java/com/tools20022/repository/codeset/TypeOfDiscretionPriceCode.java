@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,32 +39,35 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#DisplayedPrice
- * TypeOfDiscretionPriceCode.mmDisplayedPrice}</li>
+ * TypeOfDiscretionPriceCode.DisplayedPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#MarketPrice
- * TypeOfDiscretionPriceCode.mmMarketPrice}</li>
+ * TypeOfDiscretionPriceCode.MarketPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#PrimaryPrice
- * TypeOfDiscretionPriceCode.mmPrimaryPrice}</li>
+ * TypeOfDiscretionPriceCode.PrimaryPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#LocalPrimaryPrice
- * TypeOfDiscretionPriceCode.mmLocalPrimaryPrice}</li>
+ * TypeOfDiscretionPriceCode.LocalPrimaryPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#MidpointPrice
- * TypeOfDiscretionPriceCode.mmMidpointPrice}</li>
+ * TypeOfDiscretionPriceCode.MidpointPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#VolumeWeightedAveragePrice
- * TypeOfDiscretionPriceCode.mmVolumeWeightedAveragePrice}</li>
+ * TypeOfDiscretionPriceCode.VolumeWeightedAveragePrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfDiscretionPriceCode#AveragePriceGuarantee
- * TypeOfDiscretionPriceCode.mmAveragePriceGuarantee}</li>
+ * TypeOfDiscretionPriceCode.AveragePriceGuarantee}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: 388</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -310,7 +314,8 @@ public class TypeOfDiscretionPriceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "388"));
 				example = Arrays.asList("DISP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfDiscretionPriceCode";

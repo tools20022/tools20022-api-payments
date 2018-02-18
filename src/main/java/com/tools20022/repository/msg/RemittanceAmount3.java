@@ -27,9 +27,8 @@ import com.tools20022.repository.entity.Discount;
 import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * RemittanceAmount2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RemittanceAmount3", propOrder = {"duePayableAmount", "discountAppliedAmount", "creditNoteAmount", "taxAmount", "adjustmentAmountAndReason", "remittedAmount"})
 public class RemittanceAmount3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DuePyblAmt")
 	protected ActiveOrHistoricCurrencyAndAmount duePayableAmount;
 	/**
-	 * Amount specified is the exact amount due and payable to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,7 +134,7 @@ public class RemittanceAmount3 {
 	public static final MMMessageAttribute mmDuePayableAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmAmount;
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "DuePyblAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -146,11 +146,11 @@ public class RemittanceAmount3 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "DscntApldAmt")
 	protected List<com.tools20022.repository.msg.DiscountAmountAndType1> discountAppliedAmount;
 	/**
-	 * Amount of discount to be applied to the amount due and payable to the
-	 * creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +191,7 @@ public class RemittanceAmount3 {
 	public static final MMMessageAttribute mmDiscountAppliedAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Discount.mmDiscountAppliedAmount;
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "DscntApldAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,10 +202,11 @@ public class RemittanceAmount3 {
 			complexType_lazy = () -> com.tools20022.repository.msg.DiscountAmountAndType1.mmObject();
 		}
 	};
+	@XmlElement(name = "CdtNoteAmt")
 	protected ActiveOrHistoricCurrencyAndAmount creditNoteAmount;
 	/**
-	 * Amount of a credit note.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,7 +239,7 @@ public class RemittanceAmount3 {
 	 */
 	public static final MMMessageAttribute mmCreditNoteAmount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "CdtNoteAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,10 +251,11 @@ public class RemittanceAmount3 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "TaxAmt")
 	protected List<com.tools20022.repository.msg.TaxAmountAndType1> taxAmount;
 	/**
-	 * Amount of the tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +293,7 @@ public class RemittanceAmount3 {
 	public static final MMMessageAttribute mmTaxAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "TaxAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,11 +304,11 @@ public class RemittanceAmount3 {
 			complexType_lazy = () -> com.tools20022.repository.msg.TaxAmountAndType1.mmObject();
 		}
 	};
+	@XmlElement(name = "AdjstmntAmtAndRsn")
 	protected List<com.tools20022.repository.msg.DocumentAdjustment1> adjustmentAmountAndReason;
 	/**
-	 * Specifies detailed information on the amount and reason of the
-	 * adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -344,7 +346,7 @@ public class RemittanceAmount3 {
 	public static final MMMessageAssociationEnd mmAdjustmentAmountAndReason = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Adjustment.mmObject();
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "AdjstmntAmtAndRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -356,10 +358,11 @@ public class RemittanceAmount3 {
 			type_lazy = () -> com.tools20022.repository.msg.DocumentAdjustment1.mmObject();
 		}
 	};
+	@XmlElement(name = "RmtdAmt")
 	protected ActiveOrHistoricCurrencyAndAmount remittedAmount;
 	/**
-	 * Amount of money remitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -392,7 +395,7 @@ public class RemittanceAmount3 {
 	 */
 	public static final MMMessageAttribute mmRemittedAmount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> RemittanceAmount3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 			isDerived = false;
 			xmlTag = "RmtdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -408,9 +411,10 @@ public class RemittanceAmount3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RemittanceAmount3.mmDuePayableAmount, RemittanceAmount3.mmDiscountAppliedAmount, RemittanceAmount3.mmCreditNoteAmount, RemittanceAmount3.mmTaxAmount,
-						RemittanceAmount3.mmAdjustmentAmountAndReason, RemittanceAmount3.mmRemittedAmount);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceAmount3.mmDuePayableAmount, com.tools20022.repository.msg.RemittanceAmount3.mmDiscountAppliedAmount,
+						com.tools20022.repository.msg.RemittanceAmount3.mmCreditNoteAmount, com.tools20022.repository.msg.RemittanceAmount3.mmTaxAmount, com.tools20022.repository.msg.RemittanceAmount3.mmAdjustmentAmountAndReason,
+						com.tools20022.repository.msg.RemittanceAmount3.mmRemittedAmount);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceAmount3";
 				definition = "Nature of the amount and currency on a document referred to in the remittance section, typically either the original amount due/payable or the amount actually remitted for the referenced document.";
@@ -420,57 +424,57 @@ public class RemittanceAmount3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DuePyblAmt")
-	public ActiveOrHistoricCurrencyAndAmount getDuePayableAmount() {
-		return duePayableAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getDuePayableAmount() {
+		return duePayableAmount == null ? Optional.empty() : Optional.of(duePayableAmount);
 	}
 
-	public void setDuePayableAmount(ActiveOrHistoricCurrencyAndAmount duePayableAmount) {
+	public RemittanceAmount3 setDuePayableAmount(ActiveOrHistoricCurrencyAndAmount duePayableAmount) {
 		this.duePayableAmount = duePayableAmount;
+		return this;
 	}
 
-	@XmlElement(name = "DscntApldAmt")
 	public List<DiscountAmountAndType1> getDiscountAppliedAmount() {
-		return discountAppliedAmount;
+		return discountAppliedAmount == null ? discountAppliedAmount = new ArrayList<>() : discountAppliedAmount;
 	}
 
-	public void setDiscountAppliedAmount(List<com.tools20022.repository.msg.DiscountAmountAndType1> discountAppliedAmount) {
-		this.discountAppliedAmount = discountAppliedAmount;
+	public RemittanceAmount3 setDiscountAppliedAmount(List<com.tools20022.repository.msg.DiscountAmountAndType1> discountAppliedAmount) {
+		this.discountAppliedAmount = Objects.requireNonNull(discountAppliedAmount);
+		return this;
 	}
 
-	@XmlElement(name = "CdtNoteAmt")
-	public ActiveOrHistoricCurrencyAndAmount getCreditNoteAmount() {
-		return creditNoteAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getCreditNoteAmount() {
+		return creditNoteAmount == null ? Optional.empty() : Optional.of(creditNoteAmount);
 	}
 
-	public void setCreditNoteAmount(ActiveOrHistoricCurrencyAndAmount creditNoteAmount) {
+	public RemittanceAmount3 setCreditNoteAmount(ActiveOrHistoricCurrencyAndAmount creditNoteAmount) {
 		this.creditNoteAmount = creditNoteAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TaxAmt")
 	public List<TaxAmountAndType1> getTaxAmount() {
-		return taxAmount;
+		return taxAmount == null ? taxAmount = new ArrayList<>() : taxAmount;
 	}
 
-	public void setTaxAmount(List<com.tools20022.repository.msg.TaxAmountAndType1> taxAmount) {
-		this.taxAmount = taxAmount;
+	public RemittanceAmount3 setTaxAmount(List<com.tools20022.repository.msg.TaxAmountAndType1> taxAmount) {
+		this.taxAmount = Objects.requireNonNull(taxAmount);
+		return this;
 	}
 
-	@XmlElement(name = "AdjstmntAmtAndRsn")
 	public List<DocumentAdjustment1> getAdjustmentAmountAndReason() {
-		return adjustmentAmountAndReason;
+		return adjustmentAmountAndReason == null ? adjustmentAmountAndReason = new ArrayList<>() : adjustmentAmountAndReason;
 	}
 
-	public void setAdjustmentAmountAndReason(List<com.tools20022.repository.msg.DocumentAdjustment1> adjustmentAmountAndReason) {
-		this.adjustmentAmountAndReason = adjustmentAmountAndReason;
+	public RemittanceAmount3 setAdjustmentAmountAndReason(List<com.tools20022.repository.msg.DocumentAdjustment1> adjustmentAmountAndReason) {
+		this.adjustmentAmountAndReason = Objects.requireNonNull(adjustmentAmountAndReason);
+		return this;
 	}
 
-	@XmlElement(name = "RmtdAmt")
-	public ActiveOrHistoricCurrencyAndAmount getRemittedAmount() {
-		return remittedAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getRemittedAmount() {
+		return remittedAmount == null ? Optional.empty() : Optional.of(remittedAmount);
 	}
 
-	public void setRemittedAmount(ActiveOrHistoricCurrencyAndAmount remittedAmount) {
+	public RemittanceAmount3 setRemittedAmount(ActiveOrHistoricCurrencyAndAmount remittedAmount) {
 		this.remittedAmount = remittedAmount;
+		return this;
 	}
 }

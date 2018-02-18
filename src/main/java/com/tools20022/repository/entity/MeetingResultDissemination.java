@@ -22,9 +22,8 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Provides information on the voting results of a shareholders meeting.
@@ -62,8 +61,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +79,8 @@ public class MeetingResultDissemination {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected MeetingServicing relatedServicing;
 	/**
-	 * Meeting servicing process which comprises the dissemination of the
-	 * results.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,9 +129,8 @@ public class MeetingResultDissemination {
 	};
 	protected List<com.tools20022.repository.entity.VoteResult> voteResult;
 	/**
-	 * Specifies whether a resolution is accepted and the number of votes which
-	 * were cast.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,7 +180,7 @@ public class MeetingResultDissemination {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingResultDissemination";
 				definition = "Provides information on the voting results of a shareholders meeting.";
@@ -199,19 +196,21 @@ public class MeetingResultDissemination {
 		return mmObject_lazy.get();
 	}
 
-	public MeetingServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<MeetingServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.MeetingServicing relatedServicing) {
+	public MeetingResultDissemination setRelatedServicing(com.tools20022.repository.entity.MeetingServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public List<VoteResult> getVoteResult() {
-		return voteResult;
+		return voteResult == null ? voteResult = new ArrayList<>() : voteResult;
 	}
 
-	public void setVoteResult(List<com.tools20022.repository.entity.VoteResult> voteResult) {
-		this.voteResult = voteResult;
+	public MeetingResultDissemination setVoteResult(List<com.tools20022.repository.entity.VoteResult> voteResult) {
+		this.voteResult = Objects.requireNonNull(voteResult);
+		return this;
 	}
 }

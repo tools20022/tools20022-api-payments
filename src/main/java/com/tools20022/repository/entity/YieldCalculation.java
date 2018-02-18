@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Characteristics related to the yield.
@@ -85,8 +84,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +101,8 @@ public class YieldCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing redemptionPrice;
 	/**
-	 * Price on which the yield is computed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,8 +149,8 @@ public class YieldCalculation {
 	};
 	protected PercentageRate value;
 	/**
-	 * Result of the yield calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,8 +196,8 @@ public class YieldCalculation {
 	};
 	protected CalculationTypeCode calculationType;
 	/**
-	 * Specifies the type of calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,9 +243,8 @@ public class YieldCalculation {
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time on which the calculation is based, for example, valuation on
-	 * October 1 (price date) based on price of September 19 ( value date).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,8 +291,8 @@ public class YieldCalculation {
 	};
 	protected DateTimePeriod valuePeriod;
 	/**
-	 * Period on which the calculation is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -341,9 +339,8 @@ public class YieldCalculation {
 	};
 	protected ISODateTime yieldCalculationDate;
 	/**
-	 * Clarifies the yield irregularities associated with the date to which the
-	 * yield has been calculated, eg, when it falls on a non-business day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -390,8 +387,8 @@ public class YieldCalculation {
 	};
 	protected RateAndAmount yieldRange;
 	/**
-	 * Range of allowed yield.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,8 +435,8 @@ public class YieldCalculation {
 	};
 	protected List<com.tools20022.repository.entity.VariableInterest> variableInterest;
 	/**
-	 * Variable interest used for the calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,7 +484,7 @@ public class YieldCalculation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "YieldCalculation";
 				definition = "Characteristics related to the yield.";
@@ -506,67 +503,75 @@ public class YieldCalculation {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesPricing getRedemptionPrice() {
-		return redemptionPrice;
+	public Optional<SecuritiesPricing> getRedemptionPrice() {
+		return redemptionPrice == null ? Optional.empty() : Optional.of(redemptionPrice);
 	}
 
-	public void setRedemptionPrice(com.tools20022.repository.entity.SecuritiesPricing redemptionPrice) {
+	public YieldCalculation setRedemptionPrice(com.tools20022.repository.entity.SecuritiesPricing redemptionPrice) {
 		this.redemptionPrice = redemptionPrice;
+		return this;
 	}
 
 	public PercentageRate getValue() {
 		return value;
 	}
 
-	public void setValue(PercentageRate value) {
-		this.value = value;
+	public YieldCalculation setValue(PercentageRate value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
 	public CalculationTypeCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(CalculationTypeCode calculationType) {
-		this.calculationType = calculationType;
+	public YieldCalculation setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public YieldCalculation setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DateTimePeriod getValuePeriod() {
 		return valuePeriod;
 	}
 
-	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
-		this.valuePeriod = valuePeriod;
+	public YieldCalculation setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+		this.valuePeriod = Objects.requireNonNull(valuePeriod);
+		return this;
 	}
 
 	public ISODateTime getYieldCalculationDate() {
 		return yieldCalculationDate;
 	}
 
-	public void setYieldCalculationDate(ISODateTime yieldCalculationDate) {
-		this.yieldCalculationDate = yieldCalculationDate;
+	public YieldCalculation setYieldCalculationDate(ISODateTime yieldCalculationDate) {
+		this.yieldCalculationDate = Objects.requireNonNull(yieldCalculationDate);
+		return this;
 	}
 
 	public RateAndAmount getYieldRange() {
 		return yieldRange;
 	}
 
-	public void setYieldRange(com.tools20022.repository.entity.RateAndAmount yieldRange) {
-		this.yieldRange = yieldRange;
+	public YieldCalculation setYieldRange(com.tools20022.repository.entity.RateAndAmount yieldRange) {
+		this.yieldRange = Objects.requireNonNull(yieldRange);
+		return this;
 	}
 
 	public List<VariableInterest> getVariableInterest() {
-		return variableInterest;
+		return variableInterest == null ? variableInterest = new ArrayList<>() : variableInterest;
 	}
 
-	public void setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
-		this.variableInterest = variableInterest;
+	public YieldCalculation setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 }

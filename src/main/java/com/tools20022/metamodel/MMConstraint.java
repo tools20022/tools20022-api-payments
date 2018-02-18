@@ -21,6 +21,7 @@ import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import com.tools20022.core.metamodel.RuntimeValidatorAware;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
@@ -33,7 +34,7 @@ import java.util.Optional;
  * A rule that must be universally satisfied i.e. all conditions required for
  * the Constraint to be applicable, are known.
  */
-public class MMConstraint implements MMRepositoryConcept {
+public class MMConstraint implements RuntimeValidatorAware, MMRepositoryConcept {
 
 	/**
 	 * The description of a Constraint in a specific language, defined in

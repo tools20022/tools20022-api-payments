@@ -22,9 +22,11 @@ import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.entity.ForeignExchangeTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Foreign exchange contract where one of the exchanged amounts is specified in
@@ -75,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,8 +96,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyCode settlementCurrency;
 	/**
-	 * Currency in which a non-deliverable contract is settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,9 +142,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	};
 	protected FixingCondition fixingConditions;
 	/**
-	 * Set of parameters used to calculate a rate for instance the fixing rate
-	 * to be applied to a non-deliverable agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,9 +192,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	};
 	protected List<ForeignExchangeTrade> openingLeg;
 	/**
-	 * Specifies the opening leg of a non deliverable trade in which the forward
-	 * rate and amount are specified together with the fixing conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,10 +242,8 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	};
 	protected List<ForeignExchangeTrade> closingLeg;
 	/**
-	 * Specifies the closing leg of a non deliverable trade in which the amount
-	 * to be settled is the difference in the deliverable currency betweem its
-	 * original value and the countervalue calculated against the fixing rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -296,7 +294,7 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonDeliverableTrade";
 				definition = "Foreign exchange contract where one of the exchanged amounts is specified in a non-deliverable currency.";
@@ -319,31 +317,35 @@ public class NonDeliverableTrade extends ForeignExchangeTrade {
 		return settlementCurrency;
 	}
 
-	public void setSettlementCurrency(CurrencyCode settlementCurrency) {
-		this.settlementCurrency = settlementCurrency;
+	public NonDeliverableTrade setSettlementCurrency(CurrencyCode settlementCurrency) {
+		this.settlementCurrency = Objects.requireNonNull(settlementCurrency);
+		return this;
 	}
 
 	public FixingCondition getFixingConditions() {
 		return fixingConditions;
 	}
 
-	public void setFixingConditions(com.tools20022.repository.entity.FixingCondition fixingConditions) {
-		this.fixingConditions = fixingConditions;
+	public NonDeliverableTrade setFixingConditions(com.tools20022.repository.entity.FixingCondition fixingConditions) {
+		this.fixingConditions = Objects.requireNonNull(fixingConditions);
+		return this;
 	}
 
 	public List<ForeignExchangeTrade> getOpeningLeg() {
-		return openingLeg;
+		return openingLeg == null ? openingLeg = new ArrayList<>() : openingLeg;
 	}
 
-	public void setOpeningLeg(List<ForeignExchangeTrade> openingLeg) {
-		this.openingLeg = openingLeg;
+	public NonDeliverableTrade setOpeningLeg(List<ForeignExchangeTrade> openingLeg) {
+		this.openingLeg = Objects.requireNonNull(openingLeg);
+		return this;
 	}
 
 	public List<ForeignExchangeTrade> getClosingLeg() {
-		return closingLeg;
+		return closingLeg == null ? closingLeg = new ArrayList<>() : closingLeg;
 	}
 
-	public void setClosingLeg(List<ForeignExchangeTrade> closingLeg) {
-		this.closingLeg = closingLeg;
+	public NonDeliverableTrade setClosingLeg(List<ForeignExchangeTrade> closingLeg) {
+		this.closingLeg = Objects.requireNonNull(closingLeg);
+		return this;
 	}
 }

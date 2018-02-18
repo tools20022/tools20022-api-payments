@@ -37,91 +37,91 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Piece
- * UnitOfMeasure1Code.mmPiece}</li>
+ * UnitOfMeasure1Code.Piece}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Ton
- * UnitOfMeasure1Code.mmTon}</li>
+ * UnitOfMeasure1Code.Ton}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Foot
- * UnitOfMeasure1Code.mmFoot}</li>
+ * UnitOfMeasure1Code.Foot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#GBGallon
- * UnitOfMeasure1Code.mmGBGallon}</li>
+ * UnitOfMeasure1Code.GBGallon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#USGallon
- * UnitOfMeasure1Code.mmUSGallon}</li>
+ * UnitOfMeasure1Code.USGallon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Gram
- * UnitOfMeasure1Code.mmGram}</li>
+ * UnitOfMeasure1Code.Gram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Inch
- * UnitOfMeasure1Code.mmInch}</li>
+ * UnitOfMeasure1Code.Inch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Kilogram
- * UnitOfMeasure1Code.mmKilogram}</li>
+ * UnitOfMeasure1Code.Kilogram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Pound
- * UnitOfMeasure1Code.mmPound}</li>
+ * UnitOfMeasure1Code.Pound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Metre
- * UnitOfMeasure1Code.mmMetre}</li>
+ * UnitOfMeasure1Code.Metre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Centimetre
- * UnitOfMeasure1Code.mmCentimetre}</li>
+ * UnitOfMeasure1Code.Centimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Millimetre
- * UnitOfMeasure1Code.mmMillimetre}</li>
+ * UnitOfMeasure1Code.Millimetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Litre
- * UnitOfMeasure1Code.mmLitre}</li>
+ * UnitOfMeasure1Code.Litre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Centilitre
- * UnitOfMeasure1Code.mmCentilitre}</li>
+ * UnitOfMeasure1Code.Centilitre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#MilliLitre
- * UnitOfMeasure1Code.mmMilliLitre}</li>
+ * UnitOfMeasure1Code.MilliLitre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#GBOunce
- * UnitOfMeasure1Code.mmGBOunce}</li>
+ * UnitOfMeasure1Code.GBOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#USOunce
- * UnitOfMeasure1Code.mmUSOunce}</li>
+ * UnitOfMeasure1Code.USOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#GBQuart
- * UnitOfMeasure1Code.mmGBQuart}</li>
+ * UnitOfMeasure1Code.GBQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#USQuart
- * UnitOfMeasure1Code.mmUSQuart}</li>
+ * UnitOfMeasure1Code.USQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#GBPint
- * UnitOfMeasure1Code.mmGBPint}</li>
+ * UnitOfMeasure1Code.GBPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#USPint
- * UnitOfMeasure1Code.mmUSPint}</li>
+ * UnitOfMeasure1Code.USPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Mile
- * UnitOfMeasure1Code.mmMile}</li>
+ * UnitOfMeasure1Code.Mile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Kilometre
- * UnitOfMeasure1Code.mmKilometre}</li>
+ * UnitOfMeasure1Code.Kilometre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Yard
- * UnitOfMeasure1Code.mmYard}</li>
+ * UnitOfMeasure1Code.Yard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareKilometre
- * UnitOfMeasure1Code.mmSquareKilometre}</li>
+ * UnitOfMeasure1Code.SquareKilometre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Hectare
- * UnitOfMeasure1Code.mmHectare}</li>
+ * UnitOfMeasure1Code.Hectare}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Are
- * UnitOfMeasure1Code.mmAre}</li>
+ * UnitOfMeasure1Code.Are}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareMetre
- * UnitOfMeasure1Code.mmSquareMetre}</li>
+ * UnitOfMeasure1Code.SquareMetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareCentimetre
- * UnitOfMeasure1Code.mmSquareCentimetre}</li>
+ * UnitOfMeasure1Code.SquareCentimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareMillimetre
- * UnitOfMeasure1Code.mmSquareMillimetre}</li>
+ * UnitOfMeasure1Code.SquareMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareMile
- * UnitOfMeasure1Code.mmSquareMile}</li>
+ * UnitOfMeasure1Code.SquareMile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareYard
- * UnitOfMeasure1Code.mmSquareYard}</li>
+ * UnitOfMeasure1Code.SquareYard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareFoot
- * UnitOfMeasure1Code.mmSquareFoot}</li>
+ * UnitOfMeasure1Code.SquareFoot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#SquareInch
- * UnitOfMeasure1Code.mmSquareInch}</li>
+ * UnitOfMeasure1Code.SquareInch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure1Code#Acre
- * UnitOfMeasure1Code.mmAcre}</li>
+ * UnitOfMeasure1Code.Acre}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -130,8 +130,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1000,7 +1000,7 @@ public class UnitOfMeasure1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PIEC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnitOfMeasure1Code";

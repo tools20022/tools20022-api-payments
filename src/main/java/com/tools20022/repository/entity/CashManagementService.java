@@ -23,9 +23,8 @@ import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TransactionType1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set of applications that provides services which facilitate the management of
@@ -82,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,10 +100,8 @@ public class CashManagementService extends CashAccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.RiskManagementLimit> riskManagementLimit;
 	/**
-	 * Maximum amount value applied to or by a party versus a specific
-	 * counterparty or a set of counterparts. The limit can be expressed as a
-	 * debit limit or a credit limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,9 +149,8 @@ public class CashManagementService extends CashAccountService {
 	};
 	protected List<com.tools20022.repository.entity.CashStandingOrder> standingOrder;
 	/**
-	 * Specifies standing orders that must be executed in the context of cash
-	 * management. This service may be offered by a transaction administrator.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,8 +198,8 @@ public class CashManagementService extends CashAccountService {
 	};
 	protected TransactionAdministrator relatedTransactionAdministrator;
 	/**
-	 * Transaction administrator of a cash management service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,12 +247,8 @@ public class CashManagementService extends CashAccountService {
 	};
 	protected LiquidityManagementLimit liquidityManagementLimit;
 	/**
-	 * Cash management feature limiting the amount of liquidity needed to
-	 * perform clearing and settlement operations. At any point in time during
-	 * the process, the limit imposes the maximum amount of liquidity available
-	 * for operations concerning the system or other managed elements, eg,
-	 * transaction amount or counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,9 +307,8 @@ public class CashManagementService extends CashAccountService {
 	};
 	protected CallInCode callInType;
 	/**
-	 * Type of call when additional funding from a settlement member is
-	 * requested by a central settlement system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,7 +357,7 @@ public class CashManagementService extends CashAccountService {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashManagementService";
 				definition = "Set of applications that provides services which facilitate the management of cash positions on an account.";
@@ -387,42 +378,47 @@ public class CashManagementService extends CashAccountService {
 	}
 
 	public List<RiskManagementLimit> getRiskManagementLimit() {
-		return riskManagementLimit;
+		return riskManagementLimit == null ? riskManagementLimit = new ArrayList<>() : riskManagementLimit;
 	}
 
-	public void setRiskManagementLimit(List<com.tools20022.repository.entity.RiskManagementLimit> riskManagementLimit) {
-		this.riskManagementLimit = riskManagementLimit;
+	public CashManagementService setRiskManagementLimit(List<com.tools20022.repository.entity.RiskManagementLimit> riskManagementLimit) {
+		this.riskManagementLimit = Objects.requireNonNull(riskManagementLimit);
+		return this;
 	}
 
 	public List<CashStandingOrder> getStandingOrder() {
-		return standingOrder;
+		return standingOrder == null ? standingOrder = new ArrayList<>() : standingOrder;
 	}
 
-	public void setStandingOrder(List<com.tools20022.repository.entity.CashStandingOrder> standingOrder) {
-		this.standingOrder = standingOrder;
+	public CashManagementService setStandingOrder(List<com.tools20022.repository.entity.CashStandingOrder> standingOrder) {
+		this.standingOrder = Objects.requireNonNull(standingOrder);
+		return this;
 	}
 
-	public TransactionAdministrator getRelatedTransactionAdministrator() {
-		return relatedTransactionAdministrator;
+	public Optional<TransactionAdministrator> getRelatedTransactionAdministrator() {
+		return relatedTransactionAdministrator == null ? Optional.empty() : Optional.of(relatedTransactionAdministrator);
 	}
 
-	public void setRelatedTransactionAdministrator(com.tools20022.repository.entity.TransactionAdministrator relatedTransactionAdministrator) {
+	public CashManagementService setRelatedTransactionAdministrator(com.tools20022.repository.entity.TransactionAdministrator relatedTransactionAdministrator) {
 		this.relatedTransactionAdministrator = relatedTransactionAdministrator;
+		return this;
 	}
 
-	public LiquidityManagementLimit getLiquidityManagementLimit() {
-		return liquidityManagementLimit;
+	public Optional<LiquidityManagementLimit> getLiquidityManagementLimit() {
+		return liquidityManagementLimit == null ? Optional.empty() : Optional.of(liquidityManagementLimit);
 	}
 
-	public void setLiquidityManagementLimit(com.tools20022.repository.entity.LiquidityManagementLimit liquidityManagementLimit) {
+	public CashManagementService setLiquidityManagementLimit(com.tools20022.repository.entity.LiquidityManagementLimit liquidityManagementLimit) {
 		this.liquidityManagementLimit = liquidityManagementLimit;
+		return this;
 	}
 
 	public CallInCode getCallInType() {
 		return callInType;
 	}
 
-	public void setCallInType(CallInCode callInType) {
-		this.callInType = callInType;
+	public CashManagementService setCallInType(CallInCode callInType) {
+		this.callInType = Objects.requireNonNull(callInType);
+		return this;
 	}
 }

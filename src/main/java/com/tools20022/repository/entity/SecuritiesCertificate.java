@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
@@ -24,6 +25,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Physical representation of a security.
@@ -67,8 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +87,8 @@ public class SecuritiesCertificate {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected GenericIdentification number;
 	/**
-	 * Identifier of a certificate assigned by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,6 +110,9 @@ public class SecuritiesCertificate {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate
 	 * SecuritiesCertificate}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13B::CERT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -121,6 +127,7 @@ public class SecuritiesCertificate {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13B::CERT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Identifier of a certificate assigned by the issuer.";
@@ -133,8 +140,8 @@ public class SecuritiesCertificate {
 	};
 	protected BasicSecuritiesRegistration basicRegistration;
 	/**
-	 * Registration process which requires a securities certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,8 +190,8 @@ public class SecuritiesCertificate {
 	};
 	protected PhysicalDelivery relatedDelivery;
 	/**
-	 * Delivery parameters which specify the certificate parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,7 +241,7 @@ public class SecuritiesCertificate {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesCertificate";
 				definition = "Physical representation of a security.";
@@ -256,23 +263,26 @@ public class SecuritiesCertificate {
 		return number;
 	}
 
-	public void setNumber(com.tools20022.repository.entity.GenericIdentification number) {
-		this.number = number;
+	public SecuritiesCertificate setNumber(com.tools20022.repository.entity.GenericIdentification number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
-	public BasicSecuritiesRegistration getBasicRegistration() {
-		return basicRegistration;
+	public Optional<BasicSecuritiesRegistration> getBasicRegistration() {
+		return basicRegistration == null ? Optional.empty() : Optional.of(basicRegistration);
 	}
 
-	public void setBasicRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration basicRegistration) {
+	public SecuritiesCertificate setBasicRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration basicRegistration) {
 		this.basicRegistration = basicRegistration;
+		return this;
 	}
 
-	public PhysicalDelivery getRelatedDelivery() {
-		return relatedDelivery;
+	public Optional<PhysicalDelivery> getRelatedDelivery() {
+		return relatedDelivery == null ? Optional.empty() : Optional.of(relatedDelivery);
 	}
 
-	public void setRelatedDelivery(com.tools20022.repository.entity.PhysicalDelivery relatedDelivery) {
+	public SecuritiesCertificate setRelatedDelivery(com.tools20022.repository.entity.PhysicalDelivery relatedDelivery) {
 		this.relatedDelivery = relatedDelivery;
+		return this;
 	}
 }

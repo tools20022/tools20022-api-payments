@@ -26,9 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SupportingDocumentEntry1;
 import com.tools20022.repository.msg.TradeContract1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Moving of goods or people from one place to another by vehicle.
@@ -117,8 +116,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -135,8 +134,8 @@ public class Transport {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Incoterms incoterms;
 	/**
-	 * Specifies the applicable Incoterm and associated location.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,9 +182,8 @@ public class Transport {
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique identification of the means of transport, such as the
-	 * International Maritime Organization number of a vessel.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,8 +229,8 @@ public class Transport {
 	};
 	protected Packaging packaging;
 	/**
-	 * Physical packaging of goods for transport.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -278,8 +276,8 @@ public class Transport {
 	};
 	protected ISODateTime arrivalDateTime;
 	/**
-	 * Date and time when the goods reach their destination..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -323,8 +321,8 @@ public class Transport {
 	};
 	protected YesNoIndicator partialShipment;
 	/**
-	 * Indicates whether or not partial shipments are allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,8 +367,8 @@ public class Transport {
 	};
 	protected YesNoIndicator transShipment;
 	/**
-	 * Indicates whether or not transshipment of goods is allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -416,8 +414,8 @@ public class Transport {
 	};
 	protected ProductDelivery productDelivery;
 	/**
-	 * Specifies the delivery parameters of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,8 +461,8 @@ public class Transport {
 	};
 	protected Location placeOfDeparture;
 	/**
-	 * Place from where the goods must leave.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,8 +507,8 @@ public class Transport {
 	};
 	protected Location placeOfDestination;
 	/**
-	 * Place where the goods must arrive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -555,8 +553,8 @@ public class Transport {
 	};
 	protected List<com.tools20022.repository.entity.Charges> transportCharges;
 	/**
-	 * Charges related to the conveyance of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -600,9 +598,8 @@ public class Transport {
 	};
 	protected FreightChargesCode freightChargesPrepaidOrCollect;
 	/**
-	 * Identifies whether the freight charges associated with the items are
-	 * "prepaid" or "collect".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -649,9 +646,8 @@ public class Transport {
 	};
 	protected ShipmentDateRange shipmentDates;
 	/**
-	 * Specifies the shipment date, the earliest shipment date and the latest
-	 * shipment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -711,8 +707,8 @@ public class Transport {
 	};
 	protected List<com.tools20022.repository.entity.Goods> transportedGoods;
 	/**
-	 * Goods that are transported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -756,8 +752,8 @@ public class Transport {
 	};
 	protected TransportPartyRole partyRole;
 	/**
-	 * Specifies each role linked to the transport of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -803,8 +799,8 @@ public class Transport {
 	};
 	protected List<com.tools20022.repository.entity.Location> transitLocation;
 	/**
-	 * Place through which the goods are transiting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -848,9 +844,8 @@ public class Transport {
 	};
 	protected Document transportDocuments;
 	/**
-	 * Documents which may be required in relation with the transportation of
-	 * goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -899,7 +894,7 @@ public class Transport {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Transport";
 				definition = "Moving of goods or people from one place to another by vehicle.";
@@ -927,127 +922,143 @@ public class Transport {
 		return incoterms;
 	}
 
-	public void setIncoterms(com.tools20022.repository.entity.Incoterms incoterms) {
-		this.incoterms = incoterms;
+	public Transport setIncoterms(com.tools20022.repository.entity.Incoterms incoterms) {
+		this.incoterms = Objects.requireNonNull(incoterms);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Transport setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Packaging getPackaging() {
 		return packaging;
 	}
 
-	public void setPackaging(com.tools20022.repository.entity.Packaging packaging) {
-		this.packaging = packaging;
+	public Transport setPackaging(com.tools20022.repository.entity.Packaging packaging) {
+		this.packaging = Objects.requireNonNull(packaging);
+		return this;
 	}
 
 	public ISODateTime getArrivalDateTime() {
 		return arrivalDateTime;
 	}
 
-	public void setArrivalDateTime(ISODateTime arrivalDateTime) {
-		this.arrivalDateTime = arrivalDateTime;
+	public Transport setArrivalDateTime(ISODateTime arrivalDateTime) {
+		this.arrivalDateTime = Objects.requireNonNull(arrivalDateTime);
+		return this;
 	}
 
 	public YesNoIndicator getPartialShipment() {
 		return partialShipment;
 	}
 
-	public void setPartialShipment(YesNoIndicator partialShipment) {
-		this.partialShipment = partialShipment;
+	public Transport setPartialShipment(YesNoIndicator partialShipment) {
+		this.partialShipment = Objects.requireNonNull(partialShipment);
+		return this;
 	}
 
 	public YesNoIndicator getTransShipment() {
 		return transShipment;
 	}
 
-	public void setTransShipment(YesNoIndicator transShipment) {
-		this.transShipment = transShipment;
+	public Transport setTransShipment(YesNoIndicator transShipment) {
+		this.transShipment = Objects.requireNonNull(transShipment);
+		return this;
 	}
 
-	public ProductDelivery getProductDelivery() {
-		return productDelivery;
+	public Optional<ProductDelivery> getProductDelivery() {
+		return productDelivery == null ? Optional.empty() : Optional.of(productDelivery);
 	}
 
-	public void setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
+	public Transport setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
 		this.productDelivery = productDelivery;
+		return this;
 	}
 
 	public Location getPlaceOfDeparture() {
 		return placeOfDeparture;
 	}
 
-	public void setPlaceOfDeparture(com.tools20022.repository.entity.Location placeOfDeparture) {
-		this.placeOfDeparture = placeOfDeparture;
+	public Transport setPlaceOfDeparture(com.tools20022.repository.entity.Location placeOfDeparture) {
+		this.placeOfDeparture = Objects.requireNonNull(placeOfDeparture);
+		return this;
 	}
 
 	public Location getPlaceOfDestination() {
 		return placeOfDestination;
 	}
 
-	public void setPlaceOfDestination(com.tools20022.repository.entity.Location placeOfDestination) {
-		this.placeOfDestination = placeOfDestination;
+	public Transport setPlaceOfDestination(com.tools20022.repository.entity.Location placeOfDestination) {
+		this.placeOfDestination = Objects.requireNonNull(placeOfDestination);
+		return this;
 	}
 
 	public List<Charges> getTransportCharges() {
-		return transportCharges;
+		return transportCharges == null ? transportCharges = new ArrayList<>() : transportCharges;
 	}
 
-	public void setTransportCharges(List<com.tools20022.repository.entity.Charges> transportCharges) {
-		this.transportCharges = transportCharges;
+	public Transport setTransportCharges(List<com.tools20022.repository.entity.Charges> transportCharges) {
+		this.transportCharges = Objects.requireNonNull(transportCharges);
+		return this;
 	}
 
 	public FreightChargesCode getFreightChargesPrepaidOrCollect() {
 		return freightChargesPrepaidOrCollect;
 	}
 
-	public void setFreightChargesPrepaidOrCollect(FreightChargesCode freightChargesPrepaidOrCollect) {
-		this.freightChargesPrepaidOrCollect = freightChargesPrepaidOrCollect;
+	public Transport setFreightChargesPrepaidOrCollect(FreightChargesCode freightChargesPrepaidOrCollect) {
+		this.freightChargesPrepaidOrCollect = Objects.requireNonNull(freightChargesPrepaidOrCollect);
+		return this;
 	}
 
 	public ShipmentDateRange getShipmentDates() {
 		return shipmentDates;
 	}
 
-	public void setShipmentDates(com.tools20022.repository.entity.ShipmentDateRange shipmentDates) {
-		this.shipmentDates = shipmentDates;
+	public Transport setShipmentDates(com.tools20022.repository.entity.ShipmentDateRange shipmentDates) {
+		this.shipmentDates = Objects.requireNonNull(shipmentDates);
+		return this;
 	}
 
 	public List<Goods> getTransportedGoods() {
-		return transportedGoods;
+		return transportedGoods == null ? transportedGoods = new ArrayList<>() : transportedGoods;
 	}
 
-	public void setTransportedGoods(List<com.tools20022.repository.entity.Goods> transportedGoods) {
-		this.transportedGoods = transportedGoods;
+	public Transport setTransportedGoods(List<com.tools20022.repository.entity.Goods> transportedGoods) {
+		this.transportedGoods = Objects.requireNonNull(transportedGoods);
+		return this;
 	}
 
-	public TransportPartyRole getPartyRole() {
-		return partyRole;
+	public Optional<TransportPartyRole> getPartyRole() {
+		return partyRole == null ? Optional.empty() : Optional.of(partyRole);
 	}
 
-	public void setPartyRole(com.tools20022.repository.entity.TransportPartyRole partyRole) {
+	public Transport setPartyRole(com.tools20022.repository.entity.TransportPartyRole partyRole) {
 		this.partyRole = partyRole;
+		return this;
 	}
 
 	public List<Location> getTransitLocation() {
-		return transitLocation;
+		return transitLocation == null ? transitLocation = new ArrayList<>() : transitLocation;
 	}
 
-	public void setTransitLocation(List<com.tools20022.repository.entity.Location> transitLocation) {
-		this.transitLocation = transitLocation;
+	public Transport setTransitLocation(List<com.tools20022.repository.entity.Location> transitLocation) {
+		this.transitLocation = Objects.requireNonNull(transitLocation);
+		return this;
 	}
 
 	public Document getTransportDocuments() {
 		return transportDocuments;
 	}
 
-	public void setTransportDocuments(com.tools20022.repository.entity.Document transportDocuments) {
-		this.transportDocuments = transportDocuments;
+	public Transport setTransportDocuments(com.tools20022.repository.entity.Document transportDocuments) {
+		this.transportDocuments = Objects.requireNonNull(transportDocuments);
+		return this;
 	}
 }

@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.DebitAuthorisation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies whether or not the debit authorisation is granted."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DebitAuthorisationConfirmation2", propOrder = {"debitAuthorisation", "amountToDebit", "valueDateToDebit", "reason"})
 public class DebitAuthorisationConfirmation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DbtAuthstn", required = true)
 	protected YesNoIndicator debitAuthorisation;
 	/**
-	 * Code expressing the decision taken by the account owner relative to the
-	 * request for debit authorization.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,7 +128,7 @@ public class DebitAuthorisationConfirmation2 {
 	public static final MMMessageAttribute mmDebitAuthorisation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmDebitAuthorisationDecision;
-			componentContext_lazy = () -> DebitAuthorisationConfirmation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
 			isDerived = false;
 			xmlTag = "DbtAuthstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,13 +139,11 @@ public class DebitAuthorisationConfirmation2 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "AmtToDbt")
 	protected ActiveCurrencyAndAmount amountToDebit;
 	/**
-	 * Amount of money authorised for debit. Usage: The party approving the
-	 * debit may want to authorise the amount less charges and may only be
-	 * prepared to approve the debit for value today rather than the original
-	 * value date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,7 +179,7 @@ public class DebitAuthorisationConfirmation2 {
 	public static final MMMessageAttribute mmAmountToDebit = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmAmountToDebit;
-			componentContext_lazy = () -> DebitAuthorisationConfirmation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
 			isDerived = false;
 			xmlTag = "AmtToDbt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,10 +190,11 @@ public class DebitAuthorisationConfirmation2 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "ValDtToDbt")
 	protected ISODate valueDateToDebit;
 	/**
-	 * Value date for debiting the amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,7 +227,7 @@ public class DebitAuthorisationConfirmation2 {
 	public static final MMMessageAttribute mmValueDateToDebit = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmValueDateToDebit;
-			componentContext_lazy = () -> DebitAuthorisationConfirmation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
 			isDerived = false;
 			xmlTag = "ValDtToDbt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -237,10 +238,11 @@ public class DebitAuthorisationConfirmation2 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Rsn")
 	protected Max140Text reason;
 	/**
-	 * Specifies the reason for the debit authorisation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +276,7 @@ public class DebitAuthorisationConfirmation2 {
 	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmReason;
-			componentContext_lazy = () -> DebitAuthorisationConfirmation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -289,10 +291,10 @@ public class DebitAuthorisationConfirmation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmDebitAuthorisation, DebitAuthorisationConfirmation2.mmAmountToDebit, DebitAuthorisationConfirmation2.mmValueDateToDebit,
-						DebitAuthorisationConfirmation2.mmReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmDebitAuthorisation, com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmAmountToDebit,
+						com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmValueDateToDebit, com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmReason);
 				messageBuildingBlock_lazy = () -> Arrays.asList(DebitAuthorisationResponseV03.mmConfirmation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitAuthorisationConfirmation2";
 				definition = "Specifies whether or not the debit authorisation is granted.";
@@ -301,39 +303,39 @@ public class DebitAuthorisationConfirmation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DbtAuthstn", required = true)
 	public YesNoIndicator getDebitAuthorisation() {
 		return debitAuthorisation;
 	}
 
-	public void setDebitAuthorisation(YesNoIndicator debitAuthorisation) {
-		this.debitAuthorisation = debitAuthorisation;
+	public DebitAuthorisationConfirmation2 setDebitAuthorisation(YesNoIndicator debitAuthorisation) {
+		this.debitAuthorisation = Objects.requireNonNull(debitAuthorisation);
+		return this;
 	}
 
-	@XmlElement(name = "AmtToDbt")
-	public ActiveCurrencyAndAmount getAmountToDebit() {
-		return amountToDebit;
+	public Optional<ActiveCurrencyAndAmount> getAmountToDebit() {
+		return amountToDebit == null ? Optional.empty() : Optional.of(amountToDebit);
 	}
 
-	public void setAmountToDebit(ActiveCurrencyAndAmount amountToDebit) {
+	public DebitAuthorisationConfirmation2 setAmountToDebit(ActiveCurrencyAndAmount amountToDebit) {
 		this.amountToDebit = amountToDebit;
+		return this;
 	}
 
-	@XmlElement(name = "ValDtToDbt")
-	public ISODate getValueDateToDebit() {
-		return valueDateToDebit;
+	public Optional<ISODate> getValueDateToDebit() {
+		return valueDateToDebit == null ? Optional.empty() : Optional.of(valueDateToDebit);
 	}
 
-	public void setValueDateToDebit(ISODate valueDateToDebit) {
+	public DebitAuthorisationConfirmation2 setValueDateToDebit(ISODate valueDateToDebit) {
 		this.valueDateToDebit = valueDateToDebit;
+		return this;
 	}
 
-	@XmlElement(name = "Rsn")
-	public Max140Text getReason() {
-		return reason;
+	public Optional<Max140Text> getReason() {
+		return reason == null ? Optional.empty() : Optional.of(reason);
 	}
 
-	public void setReason(Max140Text reason) {
+	public DebitAuthorisationConfirmation2 setReason(Max140Text reason) {
 		this.reason = reason;
+		return this;
 	}
 }

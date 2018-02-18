@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.CashDeposit;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Deposit of an amount of money defined in cash notes and/or coins."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashDeposit1", propOrder = {"noteDenomination", "numberOfNotes", "amount"})
 public class CashDeposit1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoteDnmtn", required = true)
 	protected ActiveCurrencyAndAmount noteDenomination;
 	/**
-	 * Specifies the note or coin denomination, including the currency, such as
-	 * a 50 euro note.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +113,7 @@ public class CashDeposit1 {
 	public static final MMMessageAttribute mmNoteDenomination = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmNoteDenomination;
-			componentContext_lazy = () -> CashDeposit1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
 			isDerived = false;
 			xmlTag = "NoteDnmtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,10 +124,11 @@ public class CashDeposit1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "NbOfNotes", required = true)
 	protected Max15NumericText numberOfNotes;
 	/**
-	 * Specifies the number of notes of the same denomination in the deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +162,7 @@ public class CashDeposit1 {
 	public static final MMMessageAttribute mmNumberOfNotes = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmNumberOfNotes;
-			componentContext_lazy = () -> CashDeposit1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfNotes";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,11 +173,11 @@ public class CashDeposit1 {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Specifies the total amount of money in the cash deposit, that is the note
-	 * denomination times the number of notes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +212,7 @@ public class CashDeposit1 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmDepositAmount;
-			componentContext_lazy = () -> CashDeposit1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,9 +227,9 @@ public class CashDeposit1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashDeposit1.mmNoteDenomination, CashDeposit1.mmNumberOfNotes, CashDeposit1.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashDeposit1.mmNoteDenomination, com.tools20022.repository.msg.CashDeposit1.mmNumberOfNotes, com.tools20022.repository.msg.CashDeposit1.mmAmount);
 				trace_lazy = () -> CashDeposit.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashDeposit1";
 				definition = "Deposit of an amount of money defined in cash notes and/or coins.";
@@ -236,30 +238,30 @@ public class CashDeposit1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoteDnmtn", required = true)
 	public ActiveCurrencyAndAmount getNoteDenomination() {
 		return noteDenomination;
 	}
 
-	public void setNoteDenomination(ActiveCurrencyAndAmount noteDenomination) {
-		this.noteDenomination = noteDenomination;
+	public CashDeposit1 setNoteDenomination(ActiveCurrencyAndAmount noteDenomination) {
+		this.noteDenomination = Objects.requireNonNull(noteDenomination);
+		return this;
 	}
 
-	@XmlElement(name = "NbOfNotes", required = true)
 	public Max15NumericText getNumberOfNotes() {
 		return numberOfNotes;
 	}
 
-	public void setNumberOfNotes(Max15NumericText numberOfNotes) {
-		this.numberOfNotes = numberOfNotes;
+	public CashDeposit1 setNumberOfNotes(Max15NumericText numberOfNotes) {
+		this.numberOfNotes = Objects.requireNonNull(numberOfNotes);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public CashDeposit1 setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

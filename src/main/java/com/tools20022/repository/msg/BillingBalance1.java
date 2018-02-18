@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the balance for the billing services."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingBalance1", propOrder = {"type", "value", "currencyType"})
 public class BillingBalance1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected BillingBalanceType1Choice type;
 	/**
-	 * Defines the type of balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,7 +113,7 @@ public class BillingBalance1 {
 	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BillingBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,10 +125,11 @@ public class BillingBalance1 {
 			type_lazy = () -> BillingBalanceType1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected AmountAndDirection34 value;
 	/**
-	 * Balance value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,7 +161,7 @@ public class BillingBalance1 {
 	public static final MMMessageAssociationEnd mmValue = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmCashBalanceEntry;
-			componentContext_lazy = () -> BillingBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,11 +173,11 @@ public class BillingBalance1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "CcyTp")
 	protected BillingCurrencyType1Code currencyType;
 	/**
-	 * Identifies the currency type used to report the balance. This is not the
-	 * ISO code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +213,7 @@ public class BillingBalance1 {
 	public static final MMMessageAttribute mmCurrencyType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmBillingCurrency;
-			componentContext_lazy = () -> BillingBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "CcyTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,9 +228,9 @@ public class BillingBalance1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingBalance1.mmType, BillingBalance1.mmValue, BillingBalance1.mmCurrencyType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingBalance1.mmType, com.tools20022.repository.msg.BillingBalance1.mmValue, com.tools20022.repository.msg.BillingBalance1.mmCurrencyType);
 				trace_lazy = () -> CashBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingBalance1";
 				definition = "Provides the balance for the billing services.";
@@ -235,30 +239,30 @@ public class BillingBalance1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public BillingBalanceType1Choice getType() {
 		return type;
 	}
 
-	public void setType(BillingBalanceType1Choice type) {
-		this.type = type;
+	public BillingBalance1 setType(BillingBalanceType1Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public AmountAndDirection34 getValue() {
 		return value;
 	}
 
-	public void setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
-		this.value = value;
+	public BillingBalance1 setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
-	@XmlElement(name = "CcyTp")
-	public BillingCurrencyType1Code getCurrencyType() {
-		return currencyType;
+	public Optional<BillingCurrencyType1Code> getCurrencyType() {
+		return currencyType == null ? Optional.empty() : Optional.of(currencyType);
 	}
 
-	public void setCurrencyType(BillingCurrencyType1Code currencyType) {
+	public BillingBalance1 setCurrencyType(BillingCurrencyType1Code currencyType) {
 		this.currencyType = currencyType;
+		return this;
 	}
 }

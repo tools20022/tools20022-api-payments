@@ -29,6 +29,8 @@ import com.tools20022.repository.msg.InterestRecord1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Range of amount values.
@@ -104,8 +106,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -121,8 +123,8 @@ public class AmountRange {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AmountRangeBoundary fromAmount;
 	/**
-	 * Lower boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +182,8 @@ public class AmountRange {
 	};
 	protected AmountRangeBoundary toAmount;
 	/**
-	 * Upper boundary of a range of amount values.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,8 +241,8 @@ public class AmountRange {
 	};
 	protected CurrencyAndAmount equalAmount;
 	/**
-	 * Exact value an amount must match to be considered valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,8 +296,8 @@ public class AmountRange {
 	};
 	protected CurrencyAndAmount notEqualAmount;
 	/**
-	 * Value that an amount must not match to be considered valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,8 +352,8 @@ public class AmountRange {
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether the amount is a credited or debited amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,8 +411,8 @@ public class AmountRange {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Medium of exchange of value, used to qualify an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,8 +465,8 @@ public class AmountRange {
 	};
 	protected InterestCalculation relatedInterest;
 	/**
-	 * Interest which applies on a specific amount range.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,7 +514,7 @@ public class AmountRange {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRange";
 				definition = "Range of amount values.";
@@ -537,55 +539,62 @@ public class AmountRange {
 		return fromAmount;
 	}
 
-	public void setFromAmount(com.tools20022.repository.entity.AmountRangeBoundary fromAmount) {
-		this.fromAmount = fromAmount;
+	public AmountRange setFromAmount(com.tools20022.repository.entity.AmountRangeBoundary fromAmount) {
+		this.fromAmount = Objects.requireNonNull(fromAmount);
+		return this;
 	}
 
 	public AmountRangeBoundary getToAmount() {
 		return toAmount;
 	}
 
-	public void setToAmount(com.tools20022.repository.entity.AmountRangeBoundary toAmount) {
-		this.toAmount = toAmount;
+	public AmountRange setToAmount(com.tools20022.repository.entity.AmountRangeBoundary toAmount) {
+		this.toAmount = Objects.requireNonNull(toAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getEqualAmount() {
 		return equalAmount;
 	}
 
-	public void setEqualAmount(CurrencyAndAmount equalAmount) {
-		this.equalAmount = equalAmount;
+	public AmountRange setEqualAmount(CurrencyAndAmount equalAmount) {
+		this.equalAmount = Objects.requireNonNull(equalAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getNotEqualAmount() {
 		return notEqualAmount;
 	}
 
-	public void setNotEqualAmount(CurrencyAndAmount notEqualAmount) {
-		this.notEqualAmount = notEqualAmount;
+	public AmountRange setNotEqualAmount(CurrencyAndAmount notEqualAmount) {
+		this.notEqualAmount = Objects.requireNonNull(notEqualAmount);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public AmountRange setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public AmountRange setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
-	public InterestCalculation getRelatedInterest() {
-		return relatedInterest;
+	public Optional<InterestCalculation> getRelatedInterest() {
+		return relatedInterest == null ? Optional.empty() : Optional.of(relatedInterest);
 	}
 
-	public void setRelatedInterest(com.tools20022.repository.entity.InterestCalculation relatedInterest) {
+	public AmountRange setRelatedInterest(com.tools20022.repository.entity.InterestCalculation relatedInterest) {
 		this.relatedInterest = relatedInterest;
+		return this;
 	}
 }

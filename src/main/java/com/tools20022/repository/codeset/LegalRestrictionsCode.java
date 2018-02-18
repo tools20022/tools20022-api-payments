@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#JurisdictionOwnership
- * LegalRestrictionsCode.mmJurisdictionOwnership}</li>
+ * LegalRestrictionsCode.JurisdictionOwnership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#PrivatePlacements
- * LegalRestrictionsCode.mmPrivatePlacements}</li>
+ * LegalRestrictionsCode.PrivatePlacements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#AccreditedInvestor
- * LegalRestrictionsCode.mmAccreditedInvestor}</li>
+ * LegalRestrictionsCode.AccreditedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Margin
- * LegalRestrictionsCode.mmMargin}</li>
+ * LegalRestrictionsCode.Margin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Privilege
- * LegalRestrictionsCode.mmPrivilege}</li>
+ * LegalRestrictionsCode.Privilege}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -252,7 +252,7 @@ public class LegalRestrictionsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("JURO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalRestrictionsCode";

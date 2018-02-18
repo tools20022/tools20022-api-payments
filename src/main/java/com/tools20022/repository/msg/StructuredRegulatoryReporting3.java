@@ -28,9 +28,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Country;
 import com.tools20022.repository.entity.RegulatoryReport;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information needed due to regulatory and statutory requirements."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StructuredRegulatoryReporting3", propOrder = {"type", "date", "country", "code", "amount", "information"})
 public class StructuredRegulatoryReporting3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp")
 	protected Max35Text type;
 	/**
-	 * Specifies the type of the information supplied in the regulatory
-	 * reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +127,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmType;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,10 +138,11 @@ public class StructuredRegulatoryReporting3 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISODate date;
 	/**
-	 * Date related to the specified type of regulatory reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +176,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmDate;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,10 +187,11 @@ public class StructuredRegulatoryReporting3 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "Ctry")
 	protected CountryCode country;
 	/**
-	 * Country related to the specified type of regulatory reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +225,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,11 +236,11 @@ public class StructuredRegulatoryReporting3 {
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
+	@XmlElement(name = "Cd")
 	protected Max10Text code;
 	/**
-	 * Specifies the nature, purpose, and reason for the transaction to be
-	 * reported for regulatory and statutory requirements in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +275,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmCode;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,10 +286,11 @@ public class StructuredRegulatoryReporting3 {
 			simpleType_lazy = () -> Max10Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Amt")
 	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
-	 * Amount of money to be reported for regulatory and statutory requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +326,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmAmount;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -335,11 +337,11 @@ public class StructuredRegulatoryReporting3 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Inf")
 	protected List<Max35Text> information;
 	/**
-	 * Additional details that cater for specific domestic regulatory
-	 * requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,7 +376,7 @@ public class StructuredRegulatoryReporting3 {
 	public static final MMMessageAttribute mmInformation = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmDescription;
-			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
 			isDerived = false;
 			xmlTag = "Inf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -388,10 +390,11 @@ public class StructuredRegulatoryReporting3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StructuredRegulatoryReporting3.mmType, StructuredRegulatoryReporting3.mmDate, StructuredRegulatoryReporting3.mmCountry, StructuredRegulatoryReporting3.mmCode,
-						StructuredRegulatoryReporting3.mmAmount, StructuredRegulatoryReporting3.mmInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmType, com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmDate,
+						com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmCountry, com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmCode, com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmAmount,
+						com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmInformation);
 				trace_lazy = () -> RegulatoryReport.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StructuredRegulatoryReporting3";
 				definition = "Information needed due to regulatory and statutory requirements.";
@@ -400,57 +403,57 @@ public class StructuredRegulatoryReporting3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp")
-	public Max35Text getType() {
-		return type;
+	public Optional<Max35Text> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(Max35Text type) {
+	public StructuredRegulatoryReporting3 setType(Max35Text type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISODate getDate() {
-		return date;
+	public Optional<ISODate> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISODate date) {
+	public StructuredRegulatoryReporting3 setDate(ISODate date) {
 		this.date = date;
+		return this;
 	}
 
-	@XmlElement(name = "Ctry")
-	public CountryCode getCountry() {
-		return country;
+	public Optional<CountryCode> getCountry() {
+		return country == null ? Optional.empty() : Optional.of(country);
 	}
 
-	public void setCountry(CountryCode country) {
+	public StructuredRegulatoryReporting3 setCountry(CountryCode country) {
 		this.country = country;
+		return this;
 	}
 
-	@XmlElement(name = "Cd")
-	public Max10Text getCode() {
-		return code;
+	public Optional<Max10Text> getCode() {
+		return code == null ? Optional.empty() : Optional.of(code);
 	}
 
-	public void setCode(Max10Text code) {
+	public StructuredRegulatoryReporting3 setCode(Max10Text code) {
 		this.code = code;
+		return this;
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveOrHistoricCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+	public StructuredRegulatoryReporting3 setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "Inf")
 	public List<Max35Text> getInformation() {
-		return information;
+		return information == null ? information = new ArrayList<>() : information;
 	}
 
-	public void setInformation(List<Max35Text> information) {
-		this.information = information;
+	public StructuredRegulatoryReporting3 setInformation(List<Max35Text> information) {
+		this.information = Objects.requireNonNull(information);
+		return this;
 	}
 }

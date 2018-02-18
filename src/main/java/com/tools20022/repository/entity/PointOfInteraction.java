@@ -28,6 +28,8 @@ import com.tools20022.repository.msg.PointOfInteractionComponent1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Point of interaction (POI) is the entry point to a card payment system. It
@@ -128,8 +130,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -147,8 +149,8 @@ public class PointOfInteraction extends System {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CardPaymentAcquiring cardPaymentAcquiring;
 	/**
-	 * Process which uses the point of interaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,8 +198,8 @@ public class PointOfInteraction extends System {
 	};
 	protected CardDataReadingCode cardReadingCapabilities;
 	/**
-	 * Card reading capabilities of the POI performing the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,9 +255,8 @@ public class PointOfInteraction extends System {
 	};
 	protected CardholderVerificationCapabilityCode cardholderVerificationCapabilities;
 	/**
-	 * Type of cardholder verification that could be performed during a
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,8 +313,8 @@ public class PointOfInteraction extends System {
 	};
 	protected OnLineCapabilityCode onLineCapabilities;
 	/**
-	 * On-line and off-line capabilities of the POI.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,8 +369,8 @@ public class PointOfInteraction extends System {
 	};
 	protected UserInterfaceCode displayCapabilities;
 	/**
-	 * Display interfaces components.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,8 +425,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max3NumericText printLineWidth;
 	/**
-	 * Number of columns of the printer component.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -480,8 +481,8 @@ public class PointOfInteraction extends System {
 	};
 	protected POIComponentTypeCode component;
 	/**
-	 * Type of components belonging to a POI.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -536,8 +537,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max35Text componentIdentification;
 	/**
-	 * Identification of the POI component assigned by its provider.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -583,9 +584,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max35Text groupIdentifier;
 	/**
-	 * Identifier assigned by the merchant identifying a set of POI terminals
-	 * performing some categories of transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -632,8 +632,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max3NumericText lineWidth;
 	/**
-	 * Number of columns of the display component.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -679,8 +679,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max2NumericText numberOfLines;
 	/**
-	 * Number of lines of the display component.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -726,9 +726,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max140Text errorLog;
 	/**
-	 * Error logging transferred by the point of interaction to the terminal
-	 * management system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -775,8 +774,8 @@ public class PointOfInteraction extends System {
 	};
 	protected Max16Text componentVersionNumber;
 	/**
-	 * Identification of a version of component belonging to a given model.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -822,8 +821,8 @@ public class PointOfInteraction extends System {
 	};
 	protected TerminalManagementSystem controllingTerminalManagementSystem;
 	/**
-	 * Terminal management system for which a point of interaction is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -875,7 +874,7 @@ public class PointOfInteraction extends System {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PointOfInteraction";
 				definition = "Point of interaction (POI) is the entry point to a card payment system. It could be a physical or logical card payment terminal containing software and hardware components, it could be a payment system including a set of card payment terminals linked to a local or remote server, or it could be just an interface to make payments as telephone or Internet browser.";
@@ -899,115 +898,129 @@ public class PointOfInteraction extends System {
 		return mmObject_lazy.get();
 	}
 
-	public CardPaymentAcquiring getCardPaymentAcquiring() {
-		return cardPaymentAcquiring;
+	public Optional<CardPaymentAcquiring> getCardPaymentAcquiring() {
+		return cardPaymentAcquiring == null ? Optional.empty() : Optional.of(cardPaymentAcquiring);
 	}
 
-	public void setCardPaymentAcquiring(com.tools20022.repository.entity.CardPaymentAcquiring cardPaymentAcquiring) {
+	public PointOfInteraction setCardPaymentAcquiring(com.tools20022.repository.entity.CardPaymentAcquiring cardPaymentAcquiring) {
 		this.cardPaymentAcquiring = cardPaymentAcquiring;
+		return this;
 	}
 
 	public CardDataReadingCode getCardReadingCapabilities() {
 		return cardReadingCapabilities;
 	}
 
-	public void setCardReadingCapabilities(CardDataReadingCode cardReadingCapabilities) {
-		this.cardReadingCapabilities = cardReadingCapabilities;
+	public PointOfInteraction setCardReadingCapabilities(CardDataReadingCode cardReadingCapabilities) {
+		this.cardReadingCapabilities = Objects.requireNonNull(cardReadingCapabilities);
+		return this;
 	}
 
 	public CardholderVerificationCapabilityCode getCardholderVerificationCapabilities() {
 		return cardholderVerificationCapabilities;
 	}
 
-	public void setCardholderVerificationCapabilities(CardholderVerificationCapabilityCode cardholderVerificationCapabilities) {
-		this.cardholderVerificationCapabilities = cardholderVerificationCapabilities;
+	public PointOfInteraction setCardholderVerificationCapabilities(CardholderVerificationCapabilityCode cardholderVerificationCapabilities) {
+		this.cardholderVerificationCapabilities = Objects.requireNonNull(cardholderVerificationCapabilities);
+		return this;
 	}
 
 	public OnLineCapabilityCode getOnLineCapabilities() {
 		return onLineCapabilities;
 	}
 
-	public void setOnLineCapabilities(OnLineCapabilityCode onLineCapabilities) {
-		this.onLineCapabilities = onLineCapabilities;
+	public PointOfInteraction setOnLineCapabilities(OnLineCapabilityCode onLineCapabilities) {
+		this.onLineCapabilities = Objects.requireNonNull(onLineCapabilities);
+		return this;
 	}
 
 	public UserInterfaceCode getDisplayCapabilities() {
 		return displayCapabilities;
 	}
 
-	public void setDisplayCapabilities(UserInterfaceCode displayCapabilities) {
-		this.displayCapabilities = displayCapabilities;
+	public PointOfInteraction setDisplayCapabilities(UserInterfaceCode displayCapabilities) {
+		this.displayCapabilities = Objects.requireNonNull(displayCapabilities);
+		return this;
 	}
 
 	public Max3NumericText getPrintLineWidth() {
 		return printLineWidth;
 	}
 
-	public void setPrintLineWidth(Max3NumericText printLineWidth) {
-		this.printLineWidth = printLineWidth;
+	public PointOfInteraction setPrintLineWidth(Max3NumericText printLineWidth) {
+		this.printLineWidth = Objects.requireNonNull(printLineWidth);
+		return this;
 	}
 
 	public POIComponentTypeCode getComponent() {
 		return component;
 	}
 
-	public void setComponent(POIComponentTypeCode component) {
-		this.component = component;
+	public PointOfInteraction setComponent(POIComponentTypeCode component) {
+		this.component = Objects.requireNonNull(component);
+		return this;
 	}
 
 	public Max35Text getComponentIdentification() {
 		return componentIdentification;
 	}
 
-	public void setComponentIdentification(Max35Text componentIdentification) {
-		this.componentIdentification = componentIdentification;
+	public PointOfInteraction setComponentIdentification(Max35Text componentIdentification) {
+		this.componentIdentification = Objects.requireNonNull(componentIdentification);
+		return this;
 	}
 
 	public Max35Text getGroupIdentifier() {
 		return groupIdentifier;
 	}
 
-	public void setGroupIdentifier(Max35Text groupIdentifier) {
-		this.groupIdentifier = groupIdentifier;
+	public PointOfInteraction setGroupIdentifier(Max35Text groupIdentifier) {
+		this.groupIdentifier = Objects.requireNonNull(groupIdentifier);
+		return this;
 	}
 
 	public Max3NumericText getLineWidth() {
 		return lineWidth;
 	}
 
-	public void setLineWidth(Max3NumericText lineWidth) {
-		this.lineWidth = lineWidth;
+	public PointOfInteraction setLineWidth(Max3NumericText lineWidth) {
+		this.lineWidth = Objects.requireNonNull(lineWidth);
+		return this;
 	}
 
 	public Max2NumericText getNumberOfLines() {
 		return numberOfLines;
 	}
 
-	public void setNumberOfLines(Max2NumericText numberOfLines) {
-		this.numberOfLines = numberOfLines;
+	public PointOfInteraction setNumberOfLines(Max2NumericText numberOfLines) {
+		this.numberOfLines = Objects.requireNonNull(numberOfLines);
+		return this;
 	}
 
 	public Max140Text getErrorLog() {
 		return errorLog;
 	}
 
-	public void setErrorLog(Max140Text errorLog) {
-		this.errorLog = errorLog;
+	public PointOfInteraction setErrorLog(Max140Text errorLog) {
+		this.errorLog = Objects.requireNonNull(errorLog);
+		return this;
 	}
 
 	public Max16Text getComponentVersionNumber() {
 		return componentVersionNumber;
 	}
 
-	public void setComponentVersionNumber(Max16Text componentVersionNumber) {
-		this.componentVersionNumber = componentVersionNumber;
+	public PointOfInteraction setComponentVersionNumber(Max16Text componentVersionNumber) {
+		this.componentVersionNumber = Objects.requireNonNull(componentVersionNumber);
+		return this;
 	}
 
-	public TerminalManagementSystem getControllingTerminalManagementSystem() {
-		return controllingTerminalManagementSystem;
+	public Optional<TerminalManagementSystem> getControllingTerminalManagementSystem() {
+		return controllingTerminalManagementSystem == null ? Optional.empty() : Optional.of(controllingTerminalManagementSystem);
 	}
 
-	public void setControllingTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem controllingTerminalManagementSystem) {
+	public PointOfInteraction setControllingTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem controllingTerminalManagementSystem) {
 		this.controllingTerminalManagementSystem = controllingTerminalManagementSystem;
+		return this;
 	}
 }

@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.Price;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the billing price of a service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BillingPrice1", propOrder = {"currency", "unitPrice", "method", "rule"})
 public class BillingPrice1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ccy")
 	protected ActiveOrHistoricCurrencyCode currency;
 	/**
-	 * Currency code in which the unit price and original charge price are
-	 * expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,7 +115,7 @@ public class BillingPrice1 {
 	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Price.mmCurrency;
-			componentContext_lazy = () -> BillingPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +126,11 @@ public class BillingPrice1 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	@XmlElement(name = "UnitPric")
 	protected AmountAndDirection34 unitPrice;
 	/**
-	 * Price per item or unit used to calculate the charge expressed in the
-	 * pricing currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,7 +162,7 @@ public class BillingPrice1 {
 	public static final MMMessageAssociationEnd mmUnitPrice = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Price.mmObject();
-			componentContext_lazy = () -> BillingPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "UnitPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,13 +174,11 @@ public class BillingPrice1 {
 			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	@XmlElement(name = "Mtd")
 	protected BillingChargeMethod1Code method;
 	/**
-	 * Identifies how the charge was calculated.
 	 * 
-	 * Usage: The absence of this code assumes that the charge is calculated as
-	 * the product of (volume x unit price).
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +213,7 @@ public class BillingPrice1 {
 	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmBillingChargeMethod;
-			componentContext_lazy = () -> BillingPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "Mtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,11 +224,11 @@ public class BillingPrice1 {
 			simpleType_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "Rule")
 	protected Max20Text rule;
 	/**
-	 * Indicates that the charge calculation is based on a particular rule. The
-	 * rule name is carried here and is defined by the trading partners.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,7 +256,7 @@ public class BillingPrice1 {
 	 */
 	public static final MMMessageAttribute mmRule = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "Rule";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,9 +271,10 @@ public class BillingPrice1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BillingPrice1.mmCurrency, BillingPrice1.mmUnitPrice, BillingPrice1.mmMethod, BillingPrice1.mmRule);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingPrice1.mmCurrency, com.tools20022.repository.msg.BillingPrice1.mmUnitPrice, com.tools20022.repository.msg.BillingPrice1.mmMethod,
+						com.tools20022.repository.msg.BillingPrice1.mmRule);
 				trace_lazy = () -> Price.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingPrice1";
 				definition = "Specifies the billing price of a service.";
@@ -283,39 +283,39 @@ public class BillingPrice1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ccy")
-	public ActiveOrHistoricCurrencyCode getCurrency() {
-		return currency;
+	public Optional<ActiveOrHistoricCurrencyCode> getCurrency() {
+		return currency == null ? Optional.empty() : Optional.of(currency);
 	}
 
-	public void setCurrency(ActiveOrHistoricCurrencyCode currency) {
+	public BillingPrice1 setCurrency(ActiveOrHistoricCurrencyCode currency) {
 		this.currency = currency;
+		return this;
 	}
 
-	@XmlElement(name = "UnitPric")
-	public AmountAndDirection34 getUnitPrice() {
-		return unitPrice;
+	public Optional<AmountAndDirection34> getUnitPrice() {
+		return unitPrice == null ? Optional.empty() : Optional.of(unitPrice);
 	}
 
-	public void setUnitPrice(com.tools20022.repository.msg.AmountAndDirection34 unitPrice) {
+	public BillingPrice1 setUnitPrice(com.tools20022.repository.msg.AmountAndDirection34 unitPrice) {
 		this.unitPrice = unitPrice;
+		return this;
 	}
 
-	@XmlElement(name = "Mtd")
-	public BillingChargeMethod1Code getMethod() {
-		return method;
+	public Optional<BillingChargeMethod1Code> getMethod() {
+		return method == null ? Optional.empty() : Optional.of(method);
 	}
 
-	public void setMethod(BillingChargeMethod1Code method) {
+	public BillingPrice1 setMethod(BillingChargeMethod1Code method) {
 		this.method = method;
+		return this;
 	}
 
-	@XmlElement(name = "Rule")
-	public Max20Text getRule() {
-		return rule;
+	public Optional<Max20Text> getRule() {
+		return rule == null ? Optional.empty() : Optional.of(rule);
 	}
 
-	public void setRule(Max20Text rule) {
+	public BillingPrice1 setRule(Max20Text rule) {
 		this.rule = rule;
+		return this;
 	}
 }

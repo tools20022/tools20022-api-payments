@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Document presented.
@@ -69,8 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +87,8 @@ public class UndertakingDocument {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExternalUndertakingDocumentTypeCode documentType;
 	/**
-	 * Type of document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +134,8 @@ public class UndertakingDocument {
 	};
 	protected ExternalDocumentFormatCode format;
 	/**
-	 * Format of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,8 +181,8 @@ public class UndertakingDocument {
 	};
 	protected Undertaking undertaking;
 	/**
-	 * Undertaking for which document content is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,8 +229,8 @@ public class UndertakingDocument {
 	};
 	protected YesNoIndicator copyIndicator;
 	/**
-	 * Indicates whether the document is a copy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,8 +276,8 @@ public class UndertakingDocument {
 	};
 	protected Demand demand;
 	/**
-	 * Demand for which associated documents are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +325,7 @@ public class UndertakingDocument {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingDocument";
 				definition = "Document presented.";
@@ -345,39 +346,44 @@ public class UndertakingDocument {
 		return documentType;
 	}
 
-	public void setDocumentType(ExternalUndertakingDocumentTypeCode documentType) {
-		this.documentType = documentType;
+	public UndertakingDocument setDocumentType(ExternalUndertakingDocumentTypeCode documentType) {
+		this.documentType = Objects.requireNonNull(documentType);
+		return this;
 	}
 
 	public ExternalDocumentFormatCode getFormat() {
 		return format;
 	}
 
-	public void setFormat(ExternalDocumentFormatCode format) {
-		this.format = format;
+	public UndertakingDocument setFormat(ExternalDocumentFormatCode format) {
+		this.format = Objects.requireNonNull(format);
+		return this;
 	}
 
 	public Undertaking getUndertaking() {
 		return undertaking;
 	}
 
-	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
-		this.undertaking = undertaking;
+	public UndertakingDocument setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = Objects.requireNonNull(undertaking);
+		return this;
 	}
 
 	public YesNoIndicator getCopyIndicator() {
 		return copyIndicator;
 	}
 
-	public void setCopyIndicator(YesNoIndicator copyIndicator) {
-		this.copyIndicator = copyIndicator;
+	public UndertakingDocument setCopyIndicator(YesNoIndicator copyIndicator) {
+		this.copyIndicator = Objects.requireNonNull(copyIndicator);
+		return this;
 	}
 
 	public Demand getDemand() {
 		return demand;
 	}
 
-	public void setDemand(com.tools20022.repository.entity.Demand demand) {
-		this.demand = demand;
+	public UndertakingDocument setDemand(com.tools20022.repository.entity.Demand demand) {
+		this.demand = Objects.requireNonNull(demand);
+		return this;
 	}
 }

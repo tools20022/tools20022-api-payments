@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,17 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Computer file stored in a binary format."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "BinaryFile1", propOrder = {"MIMEType", "encodingType", "characterSet", "includedBinaryObject"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "BinaryFile1", propOrder = {"mIMEType", "encodingType", "characterSet", "includedBinaryObject"})
 public class BinaryFile1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MIMETp")
 	protected Max35Text mIMEType;
 	/**
-	 * Code specifying the Multipurpose Internet Mail Extensions (MIME) type for
-	 * this attached binary file. Reference IANA (Internet Assigned Numbers
-	 * Authority) - MIME Media Types (www.iana.org/assignments/media-types).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +103,7 @@ public class BinaryFile1 {
 	 */
 	public static final MMMessageAttribute mmMIMEType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BinaryFile1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
 			xmlTag = "MIMETp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,12 +114,11 @@ public class BinaryFile1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "NcodgTp")
 	protected Max35Text encodingType;
 	/**
-	 * Specifies the encoding algorithm used for this attached binary file.
-	 * Reference IANA (Internet Assigned Numbers Authority) - Transfer Encodings
-	 * (www.iana.org/assignments/transfer-encodings).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +146,7 @@ public class BinaryFile1 {
 	 */
 	public static final MMMessageAttribute mmEncodingType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BinaryFile1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
 			xmlTag = "NcodgTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,12 +157,11 @@ public class BinaryFile1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CharSet")
 	protected Max35Text characterSet;
 	/**
-	 * Specifies a code signifying the particular character set used for this
-	 * attached binary file. Reference IANA (Internet Assigned Numbers
-	 * Authority) - Character Sets (www.iana.org/assignments/character-sets).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +189,7 @@ public class BinaryFile1 {
 	 */
 	public static final MMMessageAttribute mmCharacterSet = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BinaryFile1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
 			xmlTag = "CharSet";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,10 +200,11 @@ public class BinaryFile1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "InclBinryObjct")
 	protected Max100KBinary includedBinaryObject;
 	/**
-	 * Binary object included in this attached binary file.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +231,7 @@ public class BinaryFile1 {
 	 */
 	public static final MMMessageAttribute mmIncludedBinaryObject = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BinaryFile1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
 			xmlTag = "InclBinryObjct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,8 +246,9 @@ public class BinaryFile1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BinaryFile1.mmMIMEType, BinaryFile1.mmEncodingType, BinaryFile1.mmCharacterSet, BinaryFile1.mmIncludedBinaryObject);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BinaryFile1.mmMIMEType, com.tools20022.repository.msg.BinaryFile1.mmEncodingType, com.tools20022.repository.msg.BinaryFile1.mmCharacterSet,
+						com.tools20022.repository.msg.BinaryFile1.mmIncludedBinaryObject);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BinaryFile1";
 				definition = "Computer file stored in a binary format.";
@@ -257,39 +257,39 @@ public class BinaryFile1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MIMETp")
-	public Max35Text getMIMEType() {
-		return mIMEType;
+	public Optional<Max35Text> getMIMEType() {
+		return mIMEType == null ? Optional.empty() : Optional.of(mIMEType);
 	}
 
-	public void setMIMEType(Max35Text mIMEType) {
+	public BinaryFile1 setMIMEType(Max35Text mIMEType) {
 		this.mIMEType = mIMEType;
+		return this;
 	}
 
-	@XmlElement(name = "NcodgTp")
-	public Max35Text getEncodingType() {
-		return encodingType;
+	public Optional<Max35Text> getEncodingType() {
+		return encodingType == null ? Optional.empty() : Optional.of(encodingType);
 	}
 
-	public void setEncodingType(Max35Text encodingType) {
+	public BinaryFile1 setEncodingType(Max35Text encodingType) {
 		this.encodingType = encodingType;
+		return this;
 	}
 
-	@XmlElement(name = "CharSet")
-	public Max35Text getCharacterSet() {
-		return characterSet;
+	public Optional<Max35Text> getCharacterSet() {
+		return characterSet == null ? Optional.empty() : Optional.of(characterSet);
 	}
 
-	public void setCharacterSet(Max35Text characterSet) {
+	public BinaryFile1 setCharacterSet(Max35Text characterSet) {
 		this.characterSet = characterSet;
+		return this;
 	}
 
-	@XmlElement(name = "InclBinryObjct")
-	public Max100KBinary getIncludedBinaryObject() {
-		return includedBinaryObject;
+	public Optional<Max100KBinary> getIncludedBinaryObject() {
+		return includedBinaryObject == null ? Optional.empty() : Optional.of(includedBinaryObject);
 	}
 
-	public void setIncludedBinaryObject(Max100KBinary includedBinaryObject) {
+	public BinaryFile1 setIncludedBinaryObject(Max100KBinary includedBinaryObject) {
 		this.includedBinaryObject = includedBinaryObject;
+		return this;
 	}
 }

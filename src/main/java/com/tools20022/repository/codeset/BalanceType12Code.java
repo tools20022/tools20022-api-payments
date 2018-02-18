@@ -37,34 +37,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceType12Code#Expected
- * BalanceType12Code.mmExpected}</li>
+ * BalanceType12Code.Expected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningAvailable
- * BalanceType12Code.mmOpeningAvailable}</li>
+ * BalanceType12Code.OpeningAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimAvailable
- * BalanceType12Code.mmInterimAvailable}</li>
+ * BalanceType12Code.InterimAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingAvailable
- * BalanceType12Code.mmClosingAvailable}</li>
+ * BalanceType12Code.ClosingAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ForwardAvailable
- * BalanceType12Code.mmForwardAvailable}</li>
+ * BalanceType12Code.ForwardAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingBooked
- * BalanceType12Code.mmClosingBooked}</li>
+ * BalanceType12Code.ClosingBooked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimBooked
- * BalanceType12Code.mmInterimBooked}</li>
+ * BalanceType12Code.InterimBooked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningBooked
- * BalanceType12Code.mmOpeningBooked}</li>
+ * BalanceType12Code.OpeningBooked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#PreviouslyClosedBooked
- * BalanceType12Code.mmPreviouslyClosedBooked}</li>
+ * BalanceType12Code.PreviouslyClosedBooked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#Information
- * BalanceType12Code.mmInformation}</li>
+ * BalanceType12Code.Information}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -343,7 +343,7 @@ public class BalanceType12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("XPCD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceType12Code";

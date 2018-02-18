@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnderlyingGroupInformation1", propOrder = {"originalMessageIdentification", "originalMessageNameIdentification", "originalCreationDateTime", "originalMessageDeliveryChannel"})
 public class UnderlyingGroupInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlMsgId", required = true)
 	protected Max35Text originalMessageIdentification;
 	/**
-	 * Point to point reference, as assigned by the original instructing party,
-	 * to unambiguously identify the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +111,7 @@ public class UnderlyingGroupInformation1 {
 	 */
 	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +122,11 @@ public class UnderlyingGroupInformation1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMsgNmId", required = true)
 	protected Max35Text originalMessageNameIdentification;
 	/**
-	 * Specifies the original message name identifier to which the message
-	 * refers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +155,7 @@ public class UnderlyingGroupInformation1 {
 	 */
 	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgNmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,10 +166,11 @@ public class UnderlyingGroupInformation1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlCreDtTm")
 	protected ISODateTime originalCreationDateTime;
 	/**
-	 * Date and time at which the original message was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,7 +197,7 @@ public class UnderlyingGroupInformation1 {
 	 */
 	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,11 +208,11 @@ public class UnderlyingGroupInformation1 {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMsgDlvryChanl")
 	protected Max35Text originalMessageDeliveryChannel;
 	/**
-	 * Original channel used for the delivery of the message, to allow the
-	 * receiver of the request to locate the payment with greater ease.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,7 +241,7 @@ public class UnderlyingGroupInformation1 {
 	 */
 	public static final MMMessageAttribute mmOriginalMessageDeliveryChannel = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgDlvryChanl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -253,9 +256,10 @@ public class UnderlyingGroupInformation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnderlyingGroupInformation1.mmOriginalMessageIdentification, UnderlyingGroupInformation1.mmOriginalMessageNameIdentification, UnderlyingGroupInformation1.mmOriginalCreationDateTime,
-						UnderlyingGroupInformation1.mmOriginalMessageDeliveryChannel);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnderlyingGroupInformation1.mmOriginalMessageIdentification,
+						com.tools20022.repository.msg.UnderlyingGroupInformation1.mmOriginalMessageNameIdentification, com.tools20022.repository.msg.UnderlyingGroupInformation1.mmOriginalCreationDateTime,
+						com.tools20022.repository.msg.UnderlyingGroupInformation1.mmOriginalMessageDeliveryChannel);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingGroupInformation1";
 				definition = "Unique identification, as assigned by the first instructing agent, to unambiguously identify the group of transactions.";
@@ -264,39 +268,39 @@ public class UnderlyingGroupInformation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlMsgId", required = true)
 	public Max35Text getOriginalMessageIdentification() {
 		return originalMessageIdentification;
 	}
 
-	public void setOriginalMessageIdentification(Max35Text originalMessageIdentification) {
-		this.originalMessageIdentification = originalMessageIdentification;
+	public UnderlyingGroupInformation1 setOriginalMessageIdentification(Max35Text originalMessageIdentification) {
+		this.originalMessageIdentification = Objects.requireNonNull(originalMessageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMsgNmId", required = true)
 	public Max35Text getOriginalMessageNameIdentification() {
 		return originalMessageNameIdentification;
 	}
 
-	public void setOriginalMessageNameIdentification(Max35Text originalMessageNameIdentification) {
-		this.originalMessageNameIdentification = originalMessageNameIdentification;
+	public UnderlyingGroupInformation1 setOriginalMessageNameIdentification(Max35Text originalMessageNameIdentification) {
+		this.originalMessageNameIdentification = Objects.requireNonNull(originalMessageNameIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlCreDtTm")
-	public ISODateTime getOriginalCreationDateTime() {
-		return originalCreationDateTime;
+	public Optional<ISODateTime> getOriginalCreationDateTime() {
+		return originalCreationDateTime == null ? Optional.empty() : Optional.of(originalCreationDateTime);
 	}
 
-	public void setOriginalCreationDateTime(ISODateTime originalCreationDateTime) {
+	public UnderlyingGroupInformation1 setOriginalCreationDateTime(ISODateTime originalCreationDateTime) {
 		this.originalCreationDateTime = originalCreationDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMsgDlvryChanl")
-	public Max35Text getOriginalMessageDeliveryChannel() {
-		return originalMessageDeliveryChannel;
+	public Optional<Max35Text> getOriginalMessageDeliveryChannel() {
+		return originalMessageDeliveryChannel == null ? Optional.empty() : Optional.of(originalMessageDeliveryChannel);
 	}
 
-	public void setOriginalMessageDeliveryChannel(Max35Text originalMessageDeliveryChannel) {
+	public UnderlyingGroupInformation1 setOriginalMessageDeliveryChannel(Max35Text originalMessageDeliveryChannel) {
 		this.originalMessageDeliveryChannel = originalMessageDeliveryChannel;
+		return this;
 	}
 }

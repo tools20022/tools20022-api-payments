@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementMethod1Code#InstructedAgent
- * SettlementMethod1Code.mmInstructedAgent}</li>
+ * SettlementMethod1Code.InstructedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementMethod1Code#InstructingAgent
- * SettlementMethod1Code.mmInstructingAgent}</li>
+ * SettlementMethod1Code.InstructingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementMethod1Code#CoverMethod
- * SettlementMethod1Code.mmCoverMethod}</li>
+ * SettlementMethod1Code.CoverMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementMethod1Code#ClearingSystem
- * SettlementMethod1Code.mmClearingSystem}</li>
+ * SettlementMethod1Code.ClearingSystem}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -183,7 +183,7 @@ public class SettlementMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INDA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementMethod1Code";

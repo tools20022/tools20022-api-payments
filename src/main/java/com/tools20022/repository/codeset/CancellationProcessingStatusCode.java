@@ -38,38 +38,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#CancellationCompleted
- * CancellationProcessingStatusCode.mmCancellationCompleted}</li>
+ * CancellationProcessingStatusCode.CancellationCompleted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#PendingCancellation
- * CancellationProcessingStatusCode.mmPendingCancellation}</li>
+ * CancellationProcessingStatusCode.PendingCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#Denied
- * CancellationProcessingStatusCode.mmDenied}</li>
+ * CancellationProcessingStatusCode.Denied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#ReceivedAtStockExchange
- * CancellationProcessingStatusCode.mmReceivedAtStockExchange}</li>
+ * CancellationProcessingStatusCode.ReceivedAtStockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#ReceivedAtIntermediary
- * CancellationProcessingStatusCode.mmReceivedAtIntermediary}</li>
+ * CancellationProcessingStatusCode.ReceivedAtIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#Accepted
- * CancellationProcessingStatusCode.mmAccepted}</li>
+ * CancellationProcessingStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#PartiallyFilled
- * CancellationProcessingStatusCode.mmPartiallyFilled}</li>
+ * CancellationProcessingStatusCode.PartiallyFilled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#Rejected
- * CancellationProcessingStatusCode.mmRejected}</li>
+ * CancellationProcessingStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationProcessingStatusCode#InRepair
- * CancellationProcessingStatusCode.mmInRepair}</li>
+ * CancellationProcessingStatusCode.InRepair}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -377,7 +377,7 @@ public class CancellationProcessingStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationProcessingStatusCode";

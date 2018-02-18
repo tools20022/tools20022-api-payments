@@ -28,9 +28,8 @@ import com.tools20022.repository.entity.Contract;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Authorisation given by an issuing party to a holder party to act on the
@@ -132,8 +131,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -151,8 +150,8 @@ public class Mandate extends Contract {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SignatureCondition> signatureConditions;
 	/**
-	 * Specifies the signature requirements related to the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,8 +197,8 @@ public class Mandate extends Contract {
 	};
 	protected Max35Text mandateIdentification;
 	/**
-	 * Unique and unambiguous identification of the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,8 +264,8 @@ public class Mandate extends Contract {
 	};
 	protected Mandate originalMandate;
 	/**
-	 * Mandate which is amended.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,8 +319,8 @@ public class Mandate extends Contract {
 	};
 	protected Mandate amendment;
 	/**
-	 * Improvement on a mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -383,9 +382,8 @@ public class Mandate extends Contract {
 	};
 	protected List<com.tools20022.repository.entity.MandatePartyRole> mandatePartyRole;
 	/**
-	 * Specifies each role linked to a mandate and played by a party in that
-	 * context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,8 +430,8 @@ public class Mandate extends Contract {
 	};
 	protected List<com.tools20022.repository.entity.MandateStatus> mandateStatus;
 	/**
-	 * Specifies the status of a mandate
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,8 +485,8 @@ public class Mandate extends Contract {
 	};
 	protected AccountContract accountContract;
 	/**
-	 * Contract on which a mandate applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -534,8 +532,8 @@ public class Mandate extends Contract {
 	};
 	protected Authentication authentication;
 	/**
-	 * Specifies the transport authentication details related to the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -596,8 +594,8 @@ public class Mandate extends Contract {
 	};
 	protected Max35NumericText trackingDays;
 	/**
-	 * Specifies the number of days the mandate must be tracked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -655,9 +653,8 @@ public class Mandate extends Contract {
 	};
 	protected TrueFalseIndicator trackingIndicator;
 	/**
-	 * Specifies whether the direct debit instructions should be automatically
-	 * re-submitted periodically when bilaterally agreed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -722,9 +719,8 @@ public class Mandate extends Contract {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Pre-agreed increase or decrease rate that will be applied to the
-	 * collection amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -781,7 +777,7 @@ public class Mandate extends Contract {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Mandate";
 				definition = "Authorisation given by an issuing party to a holder party to act on the issuer's behalf.";
@@ -807,90 +803,101 @@ public class Mandate extends Contract {
 	}
 
 	public List<SignatureCondition> getSignatureConditions() {
-		return signatureConditions;
+		return signatureConditions == null ? signatureConditions = new ArrayList<>() : signatureConditions;
 	}
 
-	public void setSignatureConditions(List<com.tools20022.repository.entity.SignatureCondition> signatureConditions) {
-		this.signatureConditions = signatureConditions;
+	public Mandate setSignatureConditions(List<com.tools20022.repository.entity.SignatureCondition> signatureConditions) {
+		this.signatureConditions = Objects.requireNonNull(signatureConditions);
+		return this;
 	}
 
 	public Max35Text getMandateIdentification() {
 		return mandateIdentification;
 	}
 
-	public void setMandateIdentification(Max35Text mandateIdentification) {
-		this.mandateIdentification = mandateIdentification;
+	public Mandate setMandateIdentification(Max35Text mandateIdentification) {
+		this.mandateIdentification = Objects.requireNonNull(mandateIdentification);
+		return this;
 	}
 
 	public Mandate getOriginalMandate() {
 		return originalMandate;
 	}
 
-	public void setOriginalMandate(com.tools20022.repository.entity.Mandate originalMandate) {
-		this.originalMandate = originalMandate;
+	public Mandate setOriginalMandate(com.tools20022.repository.entity.Mandate originalMandate) {
+		this.originalMandate = Objects.requireNonNull(originalMandate);
+		return this;
 	}
 
 	public Mandate getAmendment() {
 		return amendment;
 	}
 
-	public void setAmendment(com.tools20022.repository.entity.Mandate amendment) {
-		this.amendment = amendment;
+	public Mandate setAmendment(com.tools20022.repository.entity.Mandate amendment) {
+		this.amendment = Objects.requireNonNull(amendment);
+		return this;
 	}
 
 	public List<MandatePartyRole> getMandatePartyRole() {
-		return mandatePartyRole;
+		return mandatePartyRole == null ? mandatePartyRole = new ArrayList<>() : mandatePartyRole;
 	}
 
-	public void setMandatePartyRole(List<com.tools20022.repository.entity.MandatePartyRole> mandatePartyRole) {
-		this.mandatePartyRole = mandatePartyRole;
+	public Mandate setMandatePartyRole(List<com.tools20022.repository.entity.MandatePartyRole> mandatePartyRole) {
+		this.mandatePartyRole = Objects.requireNonNull(mandatePartyRole);
+		return this;
 	}
 
 	public List<MandateStatus> getMandateStatus() {
-		return mandateStatus;
+		return mandateStatus == null ? mandateStatus = new ArrayList<>() : mandateStatus;
 	}
 
-	public void setMandateStatus(List<com.tools20022.repository.entity.MandateStatus> mandateStatus) {
-		this.mandateStatus = mandateStatus;
+	public Mandate setMandateStatus(List<com.tools20022.repository.entity.MandateStatus> mandateStatus) {
+		this.mandateStatus = Objects.requireNonNull(mandateStatus);
+		return this;
 	}
 
-	public AccountContract getAccountContract() {
-		return accountContract;
+	public Optional<AccountContract> getAccountContract() {
+		return accountContract == null ? Optional.empty() : Optional.of(accountContract);
 	}
 
-	public void setAccountContract(com.tools20022.repository.entity.AccountContract accountContract) {
+	public Mandate setAccountContract(com.tools20022.repository.entity.AccountContract accountContract) {
 		this.accountContract = accountContract;
+		return this;
 	}
 
 	public Authentication getAuthentication() {
 		return authentication;
 	}
 
-	public void setAuthentication(com.tools20022.repository.entity.Authentication authentication) {
-		this.authentication = authentication;
+	public Mandate setAuthentication(com.tools20022.repository.entity.Authentication authentication) {
+		this.authentication = Objects.requireNonNull(authentication);
+		return this;
 	}
 
 	public Max35NumericText getTrackingDays() {
 		return trackingDays;
 	}
 
-	public void setTrackingDays(Max35NumericText trackingDays) {
-		this.trackingDays = trackingDays;
+	public Mandate setTrackingDays(Max35NumericText trackingDays) {
+		this.trackingDays = Objects.requireNonNull(trackingDays);
+		return this;
 	}
 
 	public TrueFalseIndicator getTrackingIndicator() {
 		return trackingIndicator;
 	}
 
-	public void setTrackingIndicator(TrueFalseIndicator trackingIndicator) {
-		this.trackingIndicator = trackingIndicator;
+	public Mandate setTrackingIndicator(TrueFalseIndicator trackingIndicator) {
+		this.trackingIndicator = Objects.requireNonNull(trackingIndicator);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public Mandate setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 }

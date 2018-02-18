@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,99 +40,99 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#PartialAllowed
- * SettlementTransactionConditionCode.mmPartialAllowed}</li>
+ * SettlementTransactionConditionCode.PartialAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#PartialNotAllowed
- * SettlementTransactionConditionCode.mmPartialNotAllowed}</li>
+ * SettlementTransactionConditionCode.PartialNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#PartialSettlementCashThresholdAllowed
- * SettlementTransactionConditionCode.mmPartialSettlementCashThresholdAllowed}</li>
+ * SettlementTransactionConditionCode.PartialSettlementCashThresholdAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#PartialSettlementQuantityThresholdAllowed
- * SettlementTransactionConditionCode.
- * mmPartialSettlementQuantityThresholdAllowed}</li>
+ * SettlementTransactionConditionCode.PartialSettlementQuantityThresholdAllowed}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Assignement
- * SettlementTransactionConditionCode.mmAssignement}</li>
+ * SettlementTransactionConditionCode.Assignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#BuytoCover
- * SettlementTransactionConditionCode.mmBuytoCover}</li>
+ * SettlementTransactionConditionCode.BuytoCover}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Clean
- * SettlementTransactionConditionCode.mmClean}</li>
+ * SettlementTransactionConditionCode.Clean}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Dirty
- * SettlementTransactionConditionCode.mmDirty}</li>
+ * SettlementTransactionConditionCode.Dirty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#DeliveryWithoutMatching
- * SettlementTransactionConditionCode.mmDeliveryWithoutMatching}</li>
+ * SettlementTransactionConditionCode.DeliveryWithoutMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Drawn
- * SettlementTransactionConditionCode.mmDrawn}</li>
+ * SettlementTransactionConditionCode.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Exercised
- * SettlementTransactionConditionCode.mmExercised}</li>
+ * SettlementTransactionConditionCode.Exercised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#FreeCleanSettlement
- * SettlementTransactionConditionCode.mmFreeCleanSettlement}</li>
+ * SettlementTransactionConditionCode.FreeCleanSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#KnockedOut
- * SettlementTransactionConditionCode.mmKnockedOut}</li>
+ * SettlementTransactionConditionCode.KnockedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Physical
- * SettlementTransactionConditionCode.mmPhysical}</li>
+ * SettlementTransactionConditionCode.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Residual
- * SettlementTransactionConditionCode.mmResidual}</li>
+ * SettlementTransactionConditionCode.Residual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#ShortSell
- * SettlementTransactionConditionCode.mmShortSell}</li>
+ * SettlementTransactionConditionCode.ShortSell}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#SplitCurrencySettlement
- * SettlementTransactionConditionCode.mmSplitCurrencySettlement}</li>
+ * SettlementTransactionConditionCode.SplitCurrencySettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#SpecialDelivery
- * SettlementTransactionConditionCode.mmSpecialDelivery}</li>
+ * SettlementTransactionConditionCode.SpecialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#SplitSettlement
- * SettlementTransactionConditionCode.mmSplitSettlement}</li>
+ * SettlementTransactionConditionCode.SplitSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Unexposed
- * SettlementTransactionConditionCode.mmUnexposed}</li>
+ * SettlementTransactionConditionCode.Unexposed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Expired
- * SettlementTransactionConditionCode.mmExpired}</li>
+ * SettlementTransactionConditionCode.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#PendingSale
- * SettlementTransactionConditionCode.mmPendingSale}</li>
+ * SettlementTransactionConditionCode.PendingSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#TripartySegregation
- * SettlementTransactionConditionCode.mmTripartySegregation}</li>
+ * SettlementTransactionConditionCode.TripartySegregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#NoAutomaticMarketClaim
- * SettlementTransactionConditionCode.mmNoAutomaticMarketClaim}</li>
+ * SettlementTransactionConditionCode.NoAutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Transformation
- * SettlementTransactionConditionCode.mmTransformation}</li>
+ * SettlementTransactionConditionCode.Transformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Rehypothecation
- * SettlementTransactionConditionCode.mmRehypothecation}</li>
+ * SettlementTransactionConditionCode.Rehypothecation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#AcceptAfterRegularSettlementDeadline
- * SettlementTransactionConditionCode.mmAcceptAfterRegularSettlementDeadline}</li>
+ * SettlementTransactionConditionCode.AcceptAfterRegularSettlementDeadline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#Reporting
- * SettlementTransactionConditionCode.mmReporting}</li>
+ * SettlementTransactionConditionCode.Reporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionCode#NotAccountingRelated
- * SettlementTransactionConditionCode.mmNotAccountingRelated}</li>
+ * SettlementTransactionConditionCode.NotAccountingRelated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -165,6 +166,9 @@ public class SettlementTransactionConditionCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PART"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::STCO//PART</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -177,6 +181,7 @@ public class SettlementTransactionConditionCode extends MMCode {
 	 */
 	public static final SettlementTransactionConditionCode PartialAllowed = new SettlementTransactionConditionCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::STCO//PART"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialAllowed";
 			definition = "Partial settlement is allowed.";
@@ -195,6 +200,9 @@ public class SettlementTransactionConditionCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NPAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::STCO//NPAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -207,6 +215,7 @@ public class SettlementTransactionConditionCode extends MMCode {
 	 */
 	public static final SettlementTransactionConditionCode PartialNotAllowed = new SettlementTransactionConditionCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::STCO//NPAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialNotAllowed";
 			definition = "Partial settlement is not allowed.";
@@ -1075,7 +1084,7 @@ public class SettlementTransactionConditionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PART");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTransactionConditionCode";

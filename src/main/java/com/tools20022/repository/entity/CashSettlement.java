@@ -26,9 +26,8 @@ import com.tools20022.repository.entity.Settlement;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Instruction between two financial institutions stipulating the cash transfer
@@ -139,8 +138,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,9 +157,8 @@ public class CashSettlement extends Settlement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount interbankSettlementAmount;
 	/**
-	 * Amount of money moved between the instructing agent and the instructed
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,10 +281,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected ISODateTime interbankSettlementDate;
 	/**
-	 * Date on which the amount of money ceases to be available to the agent
-	 * that owes it and when the amount of money becomes available to the agent
-	 * to which it is due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -404,8 +400,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected Max4AlphaNumericText rTGS;
 	/**
-	 * Qualifies the RTGS status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,9 +447,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected ISODateTime creditDateTime;
 	/**
-	 * Information on the occurred settlement time(s) of the payment transaction
-	 * for the credit side.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,8 +504,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected PaymentInstruction relatedPaymentInstruction;
 	/**
-	 * PaymentInstruction which is the source of the settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -558,8 +553,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected SettlementMethodCode settlementMethod;
 	/**
-	 * Method used to settle the (batch of) payment instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -618,9 +613,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected CashAccount settlementAccount;
 	/**
-	 * A specific purpose account used to post debit and credit entries as a
-	 * result of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -681,9 +675,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected ISODateTime debitDateTime;
 	/**
-	 * Information on the occurred settlement time(s) of the payment transaction
-	 * for the debit side.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -739,9 +732,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected List<com.tools20022.repository.entity.CashSettlementInstructionPartyRole> partyRole;
 	/**
-	 * Specifies each role linked to the settlement of a payment and played by a
-	 * party at that step in a payment flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -790,9 +782,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected List<com.tools20022.repository.entity.TransactionAdministrator> relatedTransactionAdministrator;
 	/**
-	 * Transaction administrator which manages the related settlement
-	 * instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -841,9 +832,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected BookEntry bookEntry;
 	/**
-	 * Movement of cash between two accounts in the same financial institution,
-	 * resulting from the settlement of an instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -892,9 +882,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCase;
 	/**
-	 * Case resolution which is the source of the correction of a settlement
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -944,8 +933,8 @@ public class CashSettlement extends Settlement {
 	};
 	protected Reservation reservation;
 	/**
-	 * Liquidity set aside by the payer for specific purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -994,7 +983,7 @@ public class CashSettlement extends Settlement {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlement";
 				definition = "Instruction between two financial institutions stipulating the cash transfer characteristics between the two parties.";
@@ -1025,103 +1014,116 @@ public class CashSettlement extends Settlement {
 		return interbankSettlementAmount;
 	}
 
-	public void setInterbankSettlementAmount(CurrencyAndAmount interbankSettlementAmount) {
-		this.interbankSettlementAmount = interbankSettlementAmount;
+	public CashSettlement setInterbankSettlementAmount(CurrencyAndAmount interbankSettlementAmount) {
+		this.interbankSettlementAmount = Objects.requireNonNull(interbankSettlementAmount);
+		return this;
 	}
 
 	public ISODateTime getInterbankSettlementDate() {
 		return interbankSettlementDate;
 	}
 
-	public void setInterbankSettlementDate(ISODateTime interbankSettlementDate) {
-		this.interbankSettlementDate = interbankSettlementDate;
+	public CashSettlement setInterbankSettlementDate(ISODateTime interbankSettlementDate) {
+		this.interbankSettlementDate = Objects.requireNonNull(interbankSettlementDate);
+		return this;
 	}
 
 	public Max4AlphaNumericText getRTGS() {
 		return rTGS;
 	}
 
-	public void setRTGS(Max4AlphaNumericText rTGS) {
-		this.rTGS = rTGS;
+	public CashSettlement setRTGS(Max4AlphaNumericText rTGS) {
+		this.rTGS = Objects.requireNonNull(rTGS);
+		return this;
 	}
 
 	public ISODateTime getCreditDateTime() {
 		return creditDateTime;
 	}
 
-	public void setCreditDateTime(ISODateTime creditDateTime) {
-		this.creditDateTime = creditDateTime;
+	public CashSettlement setCreditDateTime(ISODateTime creditDateTime) {
+		this.creditDateTime = Objects.requireNonNull(creditDateTime);
+		return this;
 	}
 
 	public PaymentInstruction getRelatedPaymentInstruction() {
 		return relatedPaymentInstruction;
 	}
 
-	public void setRelatedPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction relatedPaymentInstruction) {
-		this.relatedPaymentInstruction = relatedPaymentInstruction;
+	public CashSettlement setRelatedPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction relatedPaymentInstruction) {
+		this.relatedPaymentInstruction = Objects.requireNonNull(relatedPaymentInstruction);
+		return this;
 	}
 
 	public SettlementMethodCode getSettlementMethod() {
 		return settlementMethod;
 	}
 
-	public void setSettlementMethod(SettlementMethodCode settlementMethod) {
-		this.settlementMethod = settlementMethod;
+	public CashSettlement setSettlementMethod(SettlementMethodCode settlementMethod) {
+		this.settlementMethod = Objects.requireNonNull(settlementMethod);
+		return this;
 	}
 
-	public CashAccount getSettlementAccount() {
-		return settlementAccount;
+	public Optional<CashAccount> getSettlementAccount() {
+		return settlementAccount == null ? Optional.empty() : Optional.of(settlementAccount);
 	}
 
-	public void setSettlementAccount(com.tools20022.repository.entity.CashAccount settlementAccount) {
+	public CashSettlement setSettlementAccount(com.tools20022.repository.entity.CashAccount settlementAccount) {
 		this.settlementAccount = settlementAccount;
+		return this;
 	}
 
 	public ISODateTime getDebitDateTime() {
 		return debitDateTime;
 	}
 
-	public void setDebitDateTime(ISODateTime debitDateTime) {
-		this.debitDateTime = debitDateTime;
+	public CashSettlement setDebitDateTime(ISODateTime debitDateTime) {
+		this.debitDateTime = Objects.requireNonNull(debitDateTime);
+		return this;
 	}
 
 	public List<CashSettlementInstructionPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.CashSettlementInstructionPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public CashSettlement setPartyRole(List<com.tools20022.repository.entity.CashSettlementInstructionPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public List<TransactionAdministrator> getRelatedTransactionAdministrator() {
-		return relatedTransactionAdministrator;
+		return relatedTransactionAdministrator == null ? relatedTransactionAdministrator = new ArrayList<>() : relatedTransactionAdministrator;
 	}
 
-	public void setRelatedTransactionAdministrator(List<com.tools20022.repository.entity.TransactionAdministrator> relatedTransactionAdministrator) {
-		this.relatedTransactionAdministrator = relatedTransactionAdministrator;
+	public CashSettlement setRelatedTransactionAdministrator(List<com.tools20022.repository.entity.TransactionAdministrator> relatedTransactionAdministrator) {
+		this.relatedTransactionAdministrator = Objects.requireNonNull(relatedTransactionAdministrator);
+		return this;
 	}
 
-	public BookEntry getBookEntry() {
-		return bookEntry;
+	public Optional<BookEntry> getBookEntry() {
+		return bookEntry == null ? Optional.empty() : Optional.of(bookEntry);
 	}
 
-	public void setBookEntry(com.tools20022.repository.entity.BookEntry bookEntry) {
+	public CashSettlement setBookEntry(com.tools20022.repository.entity.BookEntry bookEntry) {
 		this.bookEntry = bookEntry;
+		return this;
 	}
 
-	public PaymentInvestigationCaseResolution getRelatedInvestigationCase() {
-		return relatedInvestigationCase;
+	public Optional<PaymentInvestigationCaseResolution> getRelatedInvestigationCase() {
+		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public void setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCase) {
+	public CashSettlement setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
+		return this;
 	}
 
-	public Reservation getReservation() {
-		return reservation;
+	public Optional<Reservation> getReservation() {
+		return reservation == null ? Optional.empty() : Optional.of(reservation);
 	}
 
-	public void setReservation(com.tools20022.repository.entity.Reservation reservation) {
+	public CashSettlement setReservation(com.tools20022.repository.entity.Reservation reservation) {
 		this.reservation = reservation;
+		return this;
 	}
 }

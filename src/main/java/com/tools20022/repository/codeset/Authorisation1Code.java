@@ -39,16 +39,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#PreAuthorisedFile
- * Authorisation1Code.mmPreAuthorisedFile}</li>
+ * Authorisation1Code.PreAuthorisedFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#FileLevelAuthorisationDetails
- * Authorisation1Code.mmFileLevelAuthorisationDetails}</li>
+ * Authorisation1Code.FileLevelAuthorisationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#FileLevelAuthorisationSummary
- * Authorisation1Code.mmFileLevelAuthorisationSummary}</li>
+ * Authorisation1Code.FileLevelAuthorisationSummary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Authorisation1Code#InstructionLevelAuthorisation
- * Authorisation1Code.mmInstructionLevelAuthorisation}</li>
+ * Authorisation1Code.InstructionLevelAuthorisation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -185,7 +185,7 @@ public class Authorisation1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AUTH");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Authorisation1Code";

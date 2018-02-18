@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Garnishment1", propOrder = {"type", "garnishee", "garnishmentAdministrator", "referenceNumber", "date", "remittedAmount", "familyMedicalInsuranceIndicator", "employeeTerminationIndicator"})
 public class Garnishment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected GarnishmentType1 type;
 	/**
-	 * Specifies the type of garnishment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -124,7 +127,7 @@ public class Garnishment1 {
 	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmAssociatedDocument;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +139,11 @@ public class Garnishment1 {
 			type_lazy = () -> com.tools20022.repository.msg.GarnishmentType1.mmObject();
 		}
 	};
+	@XmlElement(name = "Grnshee")
 	protected PartyIdentification43 garnishee;
 	/**
-	 * Ultimate party that owes an amount of money to the (ultimate) creditor,
-	 * in this case, to the garnisher.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,7 +176,7 @@ public class Garnishment1 {
 	public static final MMMessageAssociationEnd mmGarnishee = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> UltimateDebtorRole.mmObject();
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "Grnshee";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,11 +188,11 @@ public class Garnishment1 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "GrnshmtAdmstr")
 	protected PartyIdentification43 garnishmentAdministrator;
 	/**
-	 * Party on the credit side of the transaction who administers the
-	 * garnishment on behalf of the ultimate beneficiary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -222,7 +225,7 @@ public class Garnishment1 {
 	public static final MMMessageAssociationEnd mmGarnishmentAdministrator = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "GrnshmtAdmstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,11 +237,11 @@ public class Garnishment1 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "RefNb")
 	protected Max140Text referenceNumber;
 	/**
-	 * Reference information that is specific to the agency receiving the
-	 * garnishment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,7 +275,7 @@ public class Garnishment1 {
 	public static final MMMessageAttribute mmReferenceNumber = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmIdentification;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "RefNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,10 +286,11 @@ public class Garnishment1 {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISODate date;
 	/**
-	 * Date of payment which garnishment was taken from.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,7 +322,7 @@ public class Garnishment1 {
 	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -329,10 +333,11 @@ public class Garnishment1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "RmtdAmt")
 	protected ActiveOrHistoricCurrencyAndAmount remittedAmount;
 	/**
-	 * Amount of money remitted for the referred document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -365,7 +370,7 @@ public class Garnishment1 {
 	public static final MMMessageAttribute mmRemittedAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmRemittedAmount;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "RmtdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -376,11 +381,11 @@ public class Garnishment1 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "FmlyMdclInsrncInd")
 	protected TrueFalseIndicator familyMedicalInsuranceIndicator;
 	/**
-	 * Indicates if the person to whom the garnishment applies (that is, the
-	 * ultimate debtor) has family medical insurance coverage available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,7 +420,7 @@ public class Garnishment1 {
 	public static final MMMessageAttribute mmFamilyMedicalInsuranceIndicator = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PersonProfile.mmFamilyMedicalInsuranceIndicator;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "FmlyMdclInsrncInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -426,11 +431,11 @@ public class Garnishment1 {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "MplyeeTermntnInd")
 	protected TrueFalseIndicator employeeTerminationIndicator;
 	/**
-	 * Indicates if the employment of the person to whom the garnishment applies
-	 * (that is, the ultimate debtor) has been terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -465,7 +470,7 @@ public class Garnishment1 {
 	public static final MMMessageAttribute mmEmployeeTerminationIndicator = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PersonProfile.mmEmployeeTerminationIndicator;
-			componentContext_lazy = () -> Garnishment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
 			isDerived = false;
 			xmlTag = "MplyeeTermntnInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -480,10 +485,11 @@ public class Garnishment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Garnishment1.mmType, Garnishment1.mmGarnishee, Garnishment1.mmGarnishmentAdministrator, Garnishment1.mmReferenceNumber, Garnishment1.mmDate, Garnishment1.mmRemittedAmount,
-						Garnishment1.mmFamilyMedicalInsuranceIndicator, Garnishment1.mmEmployeeTerminationIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Garnishment1.mmType, com.tools20022.repository.msg.Garnishment1.mmGarnishee, com.tools20022.repository.msg.Garnishment1.mmGarnishmentAdministrator,
+						com.tools20022.repository.msg.Garnishment1.mmReferenceNumber, com.tools20022.repository.msg.Garnishment1.mmDate, com.tools20022.repository.msg.Garnishment1.mmRemittedAmount,
+						com.tools20022.repository.msg.Garnishment1.mmFamilyMedicalInsuranceIndicator, com.tools20022.repository.msg.Garnishment1.mmEmployeeTerminationIndicator);
 				trace_lazy = () -> Garnishment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Garnishment1";
 				definition = "Provides remittance information about a payment for garnishment-related purposes. ";
@@ -492,75 +498,75 @@ public class Garnishment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public GarnishmentType1 getType() {
 		return type;
 	}
 
-	public void setType(com.tools20022.repository.msg.GarnishmentType1 type) {
-		this.type = type;
+	public Garnishment1 setType(com.tools20022.repository.msg.GarnishmentType1 type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Grnshee")
-	public PartyIdentification43 getGarnishee() {
-		return garnishee;
+	public Optional<PartyIdentification43> getGarnishee() {
+		return garnishee == null ? Optional.empty() : Optional.of(garnishee);
 	}
 
-	public void setGarnishee(com.tools20022.repository.msg.PartyIdentification43 garnishee) {
+	public Garnishment1 setGarnishee(com.tools20022.repository.msg.PartyIdentification43 garnishee) {
 		this.garnishee = garnishee;
+		return this;
 	}
 
-	@XmlElement(name = "GrnshmtAdmstr")
-	public PartyIdentification43 getGarnishmentAdministrator() {
-		return garnishmentAdministrator;
+	public Optional<PartyIdentification43> getGarnishmentAdministrator() {
+		return garnishmentAdministrator == null ? Optional.empty() : Optional.of(garnishmentAdministrator);
 	}
 
-	public void setGarnishmentAdministrator(com.tools20022.repository.msg.PartyIdentification43 garnishmentAdministrator) {
+	public Garnishment1 setGarnishmentAdministrator(com.tools20022.repository.msg.PartyIdentification43 garnishmentAdministrator) {
 		this.garnishmentAdministrator = garnishmentAdministrator;
+		return this;
 	}
 
-	@XmlElement(name = "RefNb")
-	public Max140Text getReferenceNumber() {
-		return referenceNumber;
+	public Optional<Max140Text> getReferenceNumber() {
+		return referenceNumber == null ? Optional.empty() : Optional.of(referenceNumber);
 	}
 
-	public void setReferenceNumber(Max140Text referenceNumber) {
+	public Garnishment1 setReferenceNumber(Max140Text referenceNumber) {
 		this.referenceNumber = referenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISODate getDate() {
-		return date;
+	public Optional<ISODate> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISODate date) {
+	public Garnishment1 setDate(ISODate date) {
 		this.date = date;
+		return this;
 	}
 
-	@XmlElement(name = "RmtdAmt")
-	public ActiveOrHistoricCurrencyAndAmount getRemittedAmount() {
-		return remittedAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getRemittedAmount() {
+		return remittedAmount == null ? Optional.empty() : Optional.of(remittedAmount);
 	}
 
-	public void setRemittedAmount(ActiveOrHistoricCurrencyAndAmount remittedAmount) {
+	public Garnishment1 setRemittedAmount(ActiveOrHistoricCurrencyAndAmount remittedAmount) {
 		this.remittedAmount = remittedAmount;
+		return this;
 	}
 
-	@XmlElement(name = "FmlyMdclInsrncInd")
-	public TrueFalseIndicator getFamilyMedicalInsuranceIndicator() {
-		return familyMedicalInsuranceIndicator;
+	public Optional<TrueFalseIndicator> getFamilyMedicalInsuranceIndicator() {
+		return familyMedicalInsuranceIndicator == null ? Optional.empty() : Optional.of(familyMedicalInsuranceIndicator);
 	}
 
-	public void setFamilyMedicalInsuranceIndicator(TrueFalseIndicator familyMedicalInsuranceIndicator) {
+	public Garnishment1 setFamilyMedicalInsuranceIndicator(TrueFalseIndicator familyMedicalInsuranceIndicator) {
 		this.familyMedicalInsuranceIndicator = familyMedicalInsuranceIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "MplyeeTermntnInd")
-	public TrueFalseIndicator getEmployeeTerminationIndicator() {
-		return employeeTerminationIndicator;
+	public Optional<TrueFalseIndicator> getEmployeeTerminationIndicator() {
+		return employeeTerminationIndicator == null ? Optional.empty() : Optional.of(employeeTerminationIndicator);
 	}
 
-	public void setEmployeeTerminationIndicator(TrueFalseIndicator employeeTerminationIndicator) {
+	public Garnishment1 setEmployeeTerminationIndicator(TrueFalseIndicator employeeTerminationIndicator) {
 		this.employeeTerminationIndicator = employeeTerminationIndicator;
+		return this;
 	}
 }

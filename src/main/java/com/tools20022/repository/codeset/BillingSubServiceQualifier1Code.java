@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#Lockbox
- * BillingSubServiceQualifier1Code.mmLockbox}</li>
+ * BillingSubServiceQualifier1Code.Lockbox}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#Store
- * BillingSubServiceQualifier1Code.mmStore}</li>
+ * BillingSubServiceQualifier1Code.Store}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#BilaterallyAgreed
- * BillingSubServiceQualifier1Code.mmBilaterallyAgreed}</li>
+ * BillingSubServiceQualifier1Code.BilaterallyAgreed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#SequenceNumber
- * BillingSubServiceQualifier1Code.mmSequenceNumber}</li>
+ * BillingSubServiceQualifier1Code.SequenceNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BillingSubServiceQualifier1Code#MemberAccount
- * BillingSubServiceQualifier1Code.mmMemberAccount}</li>
+ * BillingSubServiceQualifier1Code.MemberAccount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class BillingSubServiceQualifier1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LBOX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingSubServiceQualifier1Code";

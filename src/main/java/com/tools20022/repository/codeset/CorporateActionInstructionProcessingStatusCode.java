@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Cancelled
- * CorporateActionInstructionProcessingStatusCode.mmCancelled}</li>
+ * CorporateActionInstructionProcessingStatusCode.Cancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#DefaultAction
- * CorporateActionInstructionProcessingStatusCode.mmDefaultAction}</li>
+ * CorporateActionInstructionProcessingStatusCode.DefaultAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Accepted
- * CorporateActionInstructionProcessingStatusCode.mmAccepted}</li>
+ * CorporateActionInstructionProcessingStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Pending
- * CorporateActionInstructionProcessingStatusCode.mmPending}</li>
+ * CorporateActionInstructionProcessingStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#Rejected
- * CorporateActionInstructionProcessingStatusCode.mmRejected}</li>
+ * CorporateActionInstructionProcessingStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionInstructionProcessingStatusCode#StandingInstruction
- * CorporateActionInstructionProcessingStatusCode.mmStandingInstruction}</li>
+ * CorporateActionInstructionProcessingStatusCode.StandingInstruction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -276,7 +276,7 @@ public class CorporateActionInstructionProcessingStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionInstructionProcessingStatusCode";

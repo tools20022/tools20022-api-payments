@@ -38,53 +38,53 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#BuyersItemSpecification
- * ProductCharacteristicsCode.mmBuyersItemSpecification}</li>
+ * ProductCharacteristicsCode.BuyersItemSpecification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#ChassisNumber
- * ProductCharacteristicsCode.mmChassisNumber}</li>
+ * ProductCharacteristicsCode.ChassisNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#Colour
- * ProductCharacteristicsCode.mmColour}</li>
+ * ProductCharacteristicsCode.Colour}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#EngineDisplacement
- * ProductCharacteristicsCode.mmEngineDisplacement}</li>
+ * ProductCharacteristicsCode.EngineDisplacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#EngineNumber
- * ProductCharacteristicsCode.mmEngineNumber}</li>
+ * ProductCharacteristicsCode.EngineNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#Option
- * ProductCharacteristicsCode.mmOption}</li>
+ * ProductCharacteristicsCode.Option}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#OriginCriterion
- * ProductCharacteristicsCode.mmOriginCriterion}</li>
+ * ProductCharacteristicsCode.OriginCriterion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#PercentageByVolume
- * ProductCharacteristicsCode.mmPercentageByVolume}</li>
+ * ProductCharacteristicsCode.PercentageByVolume}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#SellersItemSpecification
- * ProductCharacteristicsCode.mmSellersItemSpecification}</li>
+ * ProductCharacteristicsCode.SellersItemSpecification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#Size
- * ProductCharacteristicsCode.mmSize}</li>
+ * ProductCharacteristicsCode.Size}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#SizeRange
- * ProductCharacteristicsCode.mmSizeRange}</li>
+ * ProductCharacteristicsCode.SizeRange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#SpecialRemarks
- * ProductCharacteristicsCode.mmSpecialRemarks}</li>
+ * ProductCharacteristicsCode.SpecialRemarks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#StorageCode
- * ProductCharacteristicsCode.mmStorageCode}</li>
+ * ProductCharacteristicsCode.StorageCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristicsCode#VehicleIdentificationNumber
- * ProductCharacteristicsCode.mmVehicleIdentificationNumber}</li>
+ * ProductCharacteristicsCode.VehicleIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -548,7 +548,7 @@ public class ProductCharacteristicsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BISP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCharacteristicsCode";

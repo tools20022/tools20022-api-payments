@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentAmendment1", propOrder = {"correctionIdentification", "originalDocumentIdentification"})
 public class DocumentAmendment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CrrctnId", required = true)
 	protected Number correctionIdentification;
 	/**
-	 * Provides the correction sequence number used to identify the amendment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +109,7 @@ public class DocumentAmendment1 {
 	 */
 	public static final MMMessageAttribute mmCorrectionIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> DocumentAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "CrrctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,10 +120,11 @@ public class DocumentAmendment1 {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlDocId")
 	protected Max35Text originalDocumentIdentification;
 	/**
-	 * Identification of the original document being amended.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +157,7 @@ public class DocumentAmendment1 {
 	public static final MMMessageAttribute mmOriginalDocumentIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
-			componentContext_lazy = () -> DocumentAmendment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlDocId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,9 +172,9 @@ public class DocumentAmendment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentAmendment1.mmCorrectionIdentification, DocumentAmendment1.mmOriginalDocumentIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentAmendment1.mmCorrectionIdentification, com.tools20022.repository.msg.DocumentAmendment1.mmOriginalDocumentIdentification);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentAmendment1";
 				definition = "Indicates whether the supporting document is amending an original document or not, and the reference of the original supporting document, when applicable.";
@@ -179,21 +183,21 @@ public class DocumentAmendment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CrrctnId", required = true)
 	public Number getCorrectionIdentification() {
 		return correctionIdentification;
 	}
 
-	public void setCorrectionIdentification(Number correctionIdentification) {
-		this.correctionIdentification = correctionIdentification;
+	public DocumentAmendment1 setCorrectionIdentification(Number correctionIdentification) {
+		this.correctionIdentification = Objects.requireNonNull(correctionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlDocId")
-	public Max35Text getOriginalDocumentIdentification() {
-		return originalDocumentIdentification;
+	public Optional<Max35Text> getOriginalDocumentIdentification() {
+		return originalDocumentIdentification == null ? Optional.empty() : Optional.of(originalDocumentIdentification);
 	}
 
-	public void setOriginalDocumentIdentification(Max35Text originalDocumentIdentification) {
+	public DocumentAmendment1 setOriginalDocumentIdentification(Max35Text originalDocumentIdentification) {
 		this.originalDocumentIdentification = originalDocumentIdentification;
+		return this;
 	}
 }

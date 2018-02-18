@@ -27,6 +27,8 @@ import com.tools20022.repository.msg.AcceptanceResult6;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies whether a mandate is accepted or rejected.
@@ -73,8 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +92,8 @@ public class MandateStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator accepted;
 	/**
-	 * Indicates whether the mandate request was accepted or rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,8 +149,8 @@ public class MandateStatus extends Status {
 	};
 	protected ExternalCode rejectReason;
 	/**
-	 * Specifies the reason for the rejection of a mandate request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,8 +205,8 @@ public class MandateStatus extends Status {
 	};
 	protected Mandate mandate;
 	/**
-	 * Mandate for which a status applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,8 +252,8 @@ public class MandateStatus extends Status {
 	};
 	protected ExternalMandateReason1Code mandateReason;
 	/**
-	 * Specifies the reason for the request or status of a mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,7 +302,7 @@ public class MandateStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateStatus";
 				definition = "Specifies whether a mandate is accepted or rejected.";
@@ -323,31 +325,35 @@ public class MandateStatus extends Status {
 		return accepted;
 	}
 
-	public void setAccepted(YesNoIndicator accepted) {
-		this.accepted = accepted;
+	public MandateStatus setAccepted(YesNoIndicator accepted) {
+		this.accepted = Objects.requireNonNull(accepted);
+		return this;
 	}
 
 	public ExternalCode getRejectReason() {
 		return rejectReason;
 	}
 
-	public void setRejectReason(ExternalCode rejectReason) {
-		this.rejectReason = rejectReason;
+	public MandateStatus setRejectReason(ExternalCode rejectReason) {
+		this.rejectReason = Objects.requireNonNull(rejectReason);
+		return this;
 	}
 
-	public Mandate getMandate() {
-		return mandate;
+	public Optional<Mandate> getMandate() {
+		return mandate == null ? Optional.empty() : Optional.of(mandate);
 	}
 
-	public void setMandate(com.tools20022.repository.entity.Mandate mandate) {
+	public MandateStatus setMandate(com.tools20022.repository.entity.Mandate mandate) {
 		this.mandate = mandate;
+		return this;
 	}
 
 	public ExternalMandateReason1Code getMandateReason() {
 		return mandateReason;
 	}
 
-	public void setMandateReason(ExternalMandateReason1Code mandateReason) {
-		this.mandateReason = mandateReason;
+	public MandateStatus setMandateReason(ExternalMandateReason1Code mandateReason) {
+		this.mandateReason = Objects.requireNonNull(mandateReason);
+		return this;
 	}
 }

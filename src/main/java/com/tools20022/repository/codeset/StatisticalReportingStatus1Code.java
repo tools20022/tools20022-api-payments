@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Accepted
- * StatisticalReportingStatus1Code.mmAccepted}</li>
+ * StatisticalReportingStatus1Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#AcceptedTechnicalValidation
- * StatisticalReportingStatus1Code.mmAcceptedTechnicalValidation}</li>
+ * StatisticalReportingStatus1Code.AcceptedTechnicalValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#PartiallyAccepted
- * StatisticalReportingStatus1Code.mmPartiallyAccepted}</li>
+ * StatisticalReportingStatus1Code.PartiallyAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Pending
- * StatisticalReportingStatus1Code.mmPending}</li>
+ * StatisticalReportingStatus1Code.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Received
- * StatisticalReportingStatus1Code.mmReceived}</li>
+ * StatisticalReportingStatus1Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Rejected
- * StatisticalReportingStatus1Code.mmRejected}</li>
+ * StatisticalReportingStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#Reminder
- * StatisticalReportingStatus1Code.mmReminder}</li>
+ * StatisticalReportingStatus1Code.Reminder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#IncorrectFilename
- * StatisticalReportingStatus1Code.mmIncorrectFilename}</li>
+ * StatisticalReportingStatus1Code.IncorrectFilename}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatisticalReportingStatus1Code#CorruptedFile
- * StatisticalReportingStatus1Code.mmCorruptedFile}</li>
+ * StatisticalReportingStatus1Code.CorruptedFile}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -312,7 +312,7 @@ public class StatisticalReportingStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatisticalReportingStatus1Code";
 				definition = "Specifies the status of a group of statistical reporting transactions.";

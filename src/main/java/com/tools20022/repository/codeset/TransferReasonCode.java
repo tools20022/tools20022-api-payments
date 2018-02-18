@@ -38,42 +38,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#OrdinaryTransfer
- * TransferReasonCode.mmOrdinaryTransfer}</li>
+ * TransferReasonCode.OrdinaryTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#TransferBetweenSpouses
- * TransferReasonCode.mmTransferBetweenSpouses}</li>
+ * TransferReasonCode.TransferBetweenSpouses}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#Demerger
- * TransferReasonCode.mmDemerger}</li>
+ * TransferReasonCode.Demerger}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TransferReasonCode#Gift
- * TransferReasonCode.mmGift}</li>
+ * TransferReasonCode.Gift}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#Heritage
- * TransferReasonCode.mmHeritage}</li>
+ * TransferReasonCode.Heritage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#BetweenOwnAccounts
- * TransferReasonCode.mmBetweenOwnAccounts}</li>
+ * TransferReasonCode.BetweenOwnAccounts}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TransferReasonCode#Trade
- * TransferReasonCode.mmTrade}</li>
+ * TransferReasonCode.Trade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#UndividedPossession
- * TransferReasonCode.mmUndividedPossession}</li>
+ * TransferReasonCode.UndividedPossession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#PledgedAccountTransfer
- * TransferReasonCode.mmPledgedAccountTransfer}</li>
+ * TransferReasonCode.PledgedAccountTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#TransferBetweenDifferentBeneficiaries
- * TransferReasonCode.mmTransferBetweenDifferentBeneficiaries}</li>
+ * TransferReasonCode.TransferBetweenDifferentBeneficiaries}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReasonCode#TDTFrameworkTransfer
- * TransferReasonCode.mmTDTFrameworkTransfer}</li>
+ * TransferReasonCode.TDTFrameworkTransfer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -444,7 +444,7 @@ public class TransferReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TRAO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransferReasonCode";

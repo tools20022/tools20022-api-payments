@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SupplementaryDataEnvelope1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the investigation results."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestigationResult1Choice", propOrder = {"result", "investigationStatus"})
 public class InvestigationResult1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rslt", required = true)
 	protected SupplementaryDataEnvelope1 result;
 	/**
-	 * Provides the result.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,7 +100,7 @@ public class InvestigationResult1Choice {
 	 */
 	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> InvestigationResult1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,10 +111,11 @@ public class InvestigationResult1Choice {
 			complexType_lazy = () -> SupplementaryDataEnvelope1.mmObject();
 		}
 	};
+	@XmlElement(name = "InvstgtnSts", required = true)
 	protected InvestigationStatus1Code investigationStatus;
 	/**
-	 * Provides the investigation status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +143,7 @@ public class InvestigationResult1Choice {
 	 */
 	public static final MMMessageAttribute mmInvestigationStatus = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> InvestigationResult1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "InvstgtnSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,8 +158,8 @@ public class InvestigationResult1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestigationResult1Choice.mmResult, InvestigationResult1Choice.mmInvestigationStatus);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InvestigationResult1Choice.mmResult, com.tools20022.repository.choice.InvestigationResult1Choice.mmInvestigationStatus);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationResult1Choice";
 				definition = "Provides the investigation results.";
@@ -165,21 +168,21 @@ public class InvestigationResult1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rslt", required = true)
 	public SupplementaryDataEnvelope1 getResult() {
 		return result;
 	}
 
-	public void setResult(SupplementaryDataEnvelope1 result) {
-		this.result = result;
+	public InvestigationResult1Choice setResult(SupplementaryDataEnvelope1 result) {
+		this.result = Objects.requireNonNull(result);
+		return this;
 	}
 
-	@XmlElement(name = "InvstgtnSts", required = true)
 	public InvestigationStatus1Code getInvestigationStatus() {
 		return investigationStatus;
 	}
 
-	public void setInvestigationStatus(InvestigationStatus1Code investigationStatus) {
-		this.investigationStatus = investigationStatus;
+	public InvestigationResult1Choice setInvestigationStatus(InvestigationStatus1Code investigationStatus) {
+		this.investigationStatus = Objects.requireNonNull(investigationStatus);
+		return this;
 	}
 }

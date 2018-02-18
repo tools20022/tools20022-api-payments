@@ -23,6 +23,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Amount applied as an add-on to the exposure usually intended to cover a
@@ -63,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,8 +84,8 @@ public class IndependentAmount {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExposureCalculation relatedRiskCalculation;
 	/**
-	 * Risk coverage for which an independent amount is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,9 +133,8 @@ public class IndependentAmount {
 	};
 	protected ActiveCurrencyAndAmount independentAmountPerTrade;
 	/**
-	 * Independent amounts that are related to specific trades or groups of
-	 * trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,10 +182,8 @@ public class IndependentAmount {
 	};
 	protected ActiveCurrencyAndAmount independentAmountValueAtRisk;
 	/**
-	 * Portfolio level independent amount which reflects portfolio change over a
-	 * short time period using statistical techniques such as volatility and
-	 * risk factor correlations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,11 +231,8 @@ public class IndependentAmount {
 	};
 	protected ActiveCurrencyAndAmount independentAmountNetOpenPosition;
 	/**
-	 * Portfolio level independent amount related to FX net open position, i.e.
-	 * to the difference between assets and liabilities in a particular
-	 * currency. This may be measured on a per currency basis or the position of
-	 * all currencies when calculated in base currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -286,7 +282,7 @@ public class IndependentAmount {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "IndependentAmount";
 				definition = "Amount applied as an add-on to the exposure usually intended to cover a possible increase in exposure before the next valuation date.";
@@ -303,35 +299,39 @@ public class IndependentAmount {
 		return mmObject_lazy.get();
 	}
 
-	public ExposureCalculation getRelatedRiskCalculation() {
-		return relatedRiskCalculation;
+	public Optional<ExposureCalculation> getRelatedRiskCalculation() {
+		return relatedRiskCalculation == null ? Optional.empty() : Optional.of(relatedRiskCalculation);
 	}
 
-	public void setRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation relatedRiskCalculation) {
+	public IndependentAmount setRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation relatedRiskCalculation) {
 		this.relatedRiskCalculation = relatedRiskCalculation;
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getIndependentAmountPerTrade() {
 		return independentAmountPerTrade;
 	}
 
-	public void setIndependentAmountPerTrade(ActiveCurrencyAndAmount independentAmountPerTrade) {
-		this.independentAmountPerTrade = independentAmountPerTrade;
+	public IndependentAmount setIndependentAmountPerTrade(ActiveCurrencyAndAmount independentAmountPerTrade) {
+		this.independentAmountPerTrade = Objects.requireNonNull(independentAmountPerTrade);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getIndependentAmountValueAtRisk() {
 		return independentAmountValueAtRisk;
 	}
 
-	public void setIndependentAmountValueAtRisk(ActiveCurrencyAndAmount independentAmountValueAtRisk) {
-		this.independentAmountValueAtRisk = independentAmountValueAtRisk;
+	public IndependentAmount setIndependentAmountValueAtRisk(ActiveCurrencyAndAmount independentAmountValueAtRisk) {
+		this.independentAmountValueAtRisk = Objects.requireNonNull(independentAmountValueAtRisk);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getIndependentAmountNetOpenPosition() {
 		return independentAmountNetOpenPosition;
 	}
 
-	public void setIndependentAmountNetOpenPosition(ActiveCurrencyAndAmount independentAmountNetOpenPosition) {
-		this.independentAmountNetOpenPosition = independentAmountNetOpenPosition;
+	public IndependentAmount setIndependentAmountNetOpenPosition(ActiveCurrencyAndAmount independentAmountNetOpenPosition) {
+		this.independentAmountNetOpenPosition = Objects.requireNonNull(independentAmountNetOpenPosition);
+		return this;
 	}
 }

@@ -38,50 +38,50 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Unit
- * OrderQuantityTypeCode.mmUnit}</li>
+ * OrderQuantityTypeCode.Unit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Amount
- * OrderQuantityTypeCode.mmAmount}</li>
+ * OrderQuantityTypeCode.Amount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Other
- * OrderQuantityTypeCode.mmOther}</li>
+ * OrderQuantityTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#UnitsOfMeasurePerTimeUnit
- * OrderQuantityTypeCode.mmUnitsOfMeasurePerTimeUnit}</li>
+ * OrderQuantityTypeCode.UnitsOfMeasurePerTimeUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#CancelledQuantity
- * OrderQuantityTypeCode.mmCancelledQuantity}</li>
+ * OrderQuantityTypeCode.CancelledQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#Confirmed
- * OrderQuantityTypeCode.mmConfirmed}</li>
+ * OrderQuantityTypeCode.Confirmed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#MatchIncrement
- * OrderQuantityTypeCode.mmMatchIncrement}</li>
+ * OrderQuantityTypeCode.MatchIncrement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#OriginalOrdered
- * OrderQuantityTypeCode.mmOriginalOrdered}</li>
+ * OrderQuantityTypeCode.OriginalOrdered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#PreviouslyExecuted
- * OrderQuantityTypeCode.mmPreviouslyExecuted}</li>
+ * OrderQuantityTypeCode.PreviouslyExecuted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RemainingOnOrder
- * OrderQuantityTypeCode.mmRemainingOnOrder}</li>
+ * OrderQuantityTypeCode.RemainingOnOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#ReplacedQuantity
- * OrderQuantityTypeCode.mmReplacedQuantity}</li>
+ * OrderQuantityTypeCode.ReplacedQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RequestedToBeCancelledQuantity
- * OrderQuantityTypeCode.mmRequestedToBeCancelledQuantity}</li>
+ * OrderQuantityTypeCode.RequestedToBeCancelledQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderQuantityTypeCode#RequestedToBeReplacedQuantity
- * OrderQuantityTypeCode.mmRequestedToBeReplacedQuantity}</li>
+ * OrderQuantityTypeCode.RequestedToBeReplacedQuantity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -523,7 +523,7 @@ public class OrderQuantityTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNIT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderQuantityTypeCode";

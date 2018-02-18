@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.OriginalAndCurrentQuantities1;
 import com.tools20022.repository.msg.ProprietaryQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,16 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionQuantities2Choice", propOrder = {"quantity", "originalAndCurrentFaceAmount", "proprietary"})
 public class TransactionQuantities2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Qty", required = true)
 	protected FinancialInstrumentQuantityChoice quantity;
 	/**
-	 * Specifies the quantity (such as securities) in the underlying
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -116,7 +117,7 @@ public class TransactionQuantities2Choice {
 	public static final MMMessageAssociationEnd mmQuantity = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> TransactionQuantities2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Qty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,10 +129,11 @@ public class TransactionQuantities2Choice {
 			type_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlAndCurFaceAmt", required = true)
 	protected OriginalAndCurrentQuantities1 originalAndCurrentFaceAmount;
 	/**
-	 * Face amount and amortised value of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +167,7 @@ public class TransactionQuantities2Choice {
 	public static final MMMessageAttribute mmOriginalAndCurrentFaceAmount = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> TransactionQuantities2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlAndCurFaceAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,11 +178,11 @@ public class TransactionQuantities2Choice {
 			complexType_lazy = () -> OriginalAndCurrentQuantities1.mmObject();
 		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected ProprietaryQuantity1 proprietary;
 	/**
-	 * Proprietary quantities specification defined in the underlying
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -214,7 +216,7 @@ public class TransactionQuantities2Choice {
 	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> TransactionQuantities2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,9 +232,10 @@ public class TransactionQuantities2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionQuantities2Choice.mmQuantity, TransactionQuantities2Choice.mmOriginalAndCurrentFaceAmount, TransactionQuantities2Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TransactionQuantities2Choice.mmQuantity, com.tools20022.repository.choice.TransactionQuantities2Choice.mmOriginalAndCurrentFaceAmount,
+						com.tools20022.repository.choice.TransactionQuantities2Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesQuantity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionQuantities2Choice";
 				definition = "Specifies the quantities (such as securities) in the underlying transaction.";
@@ -241,30 +244,30 @@ public class TransactionQuantities2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Qty", required = true)
 	public FinancialInstrumentQuantityChoice getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(com.tools20022.repository.choice.FinancialInstrumentQuantityChoice quantity) {
-		this.quantity = quantity;
+	public TransactionQuantities2Choice setQuantity(com.tools20022.repository.choice.FinancialInstrumentQuantityChoice quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlAndCurFaceAmt", required = true)
 	public OriginalAndCurrentQuantities1 getOriginalAndCurrentFaceAmount() {
 		return originalAndCurrentFaceAmount;
 	}
 
-	public void setOriginalAndCurrentFaceAmount(OriginalAndCurrentQuantities1 originalAndCurrentFaceAmount) {
-		this.originalAndCurrentFaceAmount = originalAndCurrentFaceAmount;
+	public TransactionQuantities2Choice setOriginalAndCurrentFaceAmount(OriginalAndCurrentQuantities1 originalAndCurrentFaceAmount) {
+		this.originalAndCurrentFaceAmount = Objects.requireNonNull(originalAndCurrentFaceAmount);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public ProprietaryQuantity1 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(ProprietaryQuantity1 proprietary) {
-		this.proprietary = proprietary;
+	public TransactionQuantities2Choice setProprietary(ProprietaryQuantity1 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

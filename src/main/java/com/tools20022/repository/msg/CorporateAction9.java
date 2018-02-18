@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.CorporateActionEventRegistration;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateAction9", propOrder = {"eventType", "eventIdentification"})
 public class CorporateAction9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EvtTp", required = true)
 	protected Max35Text eventType;
 	/**
-	 * Type of corporate action event, in a free-text format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +111,7 @@ public class CorporateAction9 {
 	public static final MMMessageAttribute mmEventType = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateAction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction9.mmObject();
 			isDerived = false;
 			xmlTag = "EvtTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +122,11 @@ public class CorporateAction9 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "EvtId", required = true)
 	protected Max35Text eventIdentification;
 	/**
-	 * Identification of a corporate action assigned by an official central
-	 * body/entity within a given market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,7 +161,7 @@ public class CorporateAction9 {
 	public static final MMMessageAttribute mmEventIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEventRegistration.mmCorporateActionEventIdentification;
-			componentContext_lazy = () -> CorporateAction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction9.mmObject();
 			isDerived = false;
 			xmlTag = "EvtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,9 +176,9 @@ public class CorporateAction9 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateAction9.mmEventType, CorporateAction9.mmEventIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateAction9.mmEventType, com.tools20022.repository.msg.CorporateAction9.mmEventIdentification);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateAction9";
 				definition = "An event determined by a corporation's board of directors, that changes the existing corporate capital structure or financial condition.";
@@ -185,21 +187,21 @@ public class CorporateAction9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EvtTp", required = true)
 	public Max35Text getEventType() {
 		return eventType;
 	}
 
-	public void setEventType(Max35Text eventType) {
-		this.eventType = eventType;
+	public CorporateAction9 setEventType(Max35Text eventType) {
+		this.eventType = Objects.requireNonNull(eventType);
+		return this;
 	}
 
-	@XmlElement(name = "EvtId", required = true)
 	public Max35Text getEventIdentification() {
 		return eventIdentification;
 	}
 
-	public void setEventIdentification(Max35Text eventIdentification) {
-		this.eventIdentification = eventIdentification;
+	public CorporateAction9 setEventIdentification(Max35Text eventIdentification) {
+		this.eventIdentification = Objects.requireNonNull(eventIdentification);
+		return this;
 	}
 }

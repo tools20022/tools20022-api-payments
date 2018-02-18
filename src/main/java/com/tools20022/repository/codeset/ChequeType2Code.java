@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeType2Code#CustomerCheque
- * ChequeType2Code.mmCustomerCheque}</li>
+ * ChequeType2Code.CustomerCheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeType2Code#CertifiedCustomerCheque
- * ChequeType2Code.mmCertifiedCustomerCheque}</li>
+ * ChequeType2Code.CertifiedCustomerCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeType2Code#BankCheque
- * ChequeType2Code.mmBankCheque}</li>
+ * ChequeType2Code.BankCheque}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChequeType2Code#Draft
- * ChequeType2Code.mmDraft}</li>
+ * ChequeType2Code.Draft}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChequeType2Code#ElectronicDraft
- * ChequeType2Code.mmElectronicDraft}</li>
+ * ChequeType2Code.ElectronicDraft}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -206,7 +206,7 @@ public class ChequeType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CCHQ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequeType2Code";

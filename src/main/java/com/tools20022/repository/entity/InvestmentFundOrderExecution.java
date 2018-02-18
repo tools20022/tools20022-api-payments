@@ -25,9 +25,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.SecuritiesTradeExecution;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Creation/cancellation of investment units on the books of the fund or its
@@ -130,8 +129,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -149,8 +148,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity unitsNumber;
 	/**
-	 * Number of investment fund units subscribed or redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,9 +196,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected Max350Text nonStandardSettlementInformation;
 	/**
-	 * Additional specific settlement information for non-regulated traded
-	 * funds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,8 +244,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected InvestmentFundOrder order;
 	/**
-	 * Order which is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,9 +292,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected Max35Text dealIdentification;
 	/**
-	 * Unique and unambiguous identifier for an order execution, as assigned by
-	 * a confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,8 +340,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected SecuritiesPricing executedTradePrice;
 	/**
-	 * Price at which the order was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -391,10 +388,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected YesNoIndicator partiallyExecutedIndicator;
 	/**
-	 * Indicates whether the order has been partially executed, ie, the
-	 * confirmed quantity does not match the ordered quantity for a given
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -442,9 +437,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected CurrencyAndAmount interimProfitAmount;
 	/**
-	 * Part of the price deemed as accrued income or profit rather than capital.
-	 * The interim profit amount is used for tax purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,8 +486,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected SecuritiesPricing informativePrice;
 	/**
-	 * Other quoted price than the one at which the order was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -541,9 +535,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected BestExecutionCode bestExecution;
 	/**
-	 * Specifies that the execution was subject to best execution rules as
-	 * defined by MiFID.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -591,8 +584,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected PercentageRate partialSettlementOfUnits;
 	/**
-	 * Percentage of units partially settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -638,8 +631,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected PercentageRate partialSettlementOfCash;
 	/**
-	 * Percentage of cash partially settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,8 +678,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected LateReportCode lateReport;
 	/**
-	 * Specifies whether the order execution confirmation is late.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -733,9 +726,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected YesNoIndicator settledIndicator;
 	/**
-	 * Indicates whether the cash payment with respect to the executed order is
-	 * settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -783,9 +775,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected YesNoIndicator registeredIndicator;
 	/**
-	 * Indicates whether the executed order has a registered status on the books
-	 * of the transfer agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -833,9 +824,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected CurrencyAndAmount executedAmount;
 	/**
-	 * Amount of money invested or redeemed as a result of an investment fund
-	 * order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -883,8 +873,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected InvestmentFundTransaction investmentFundTransaction;
 	/**
-	 * Transaction which is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -932,8 +922,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected List<com.tools20022.repository.entity.FundsCashFlow> cashFlow;
 	/**
-	 * Specifies the cash flow resulting from the execution of an order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -980,8 +970,8 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	};
 	protected SourceOfCashCode sourceOfCash;
 	/**
-	 * Source of cash used for the settlement of the execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1029,7 +1019,7 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundOrderExecution";
 				definition = "Creation/cancellation of investment units on the books of the fund or its designated agent, as a result of executing an investment fund order.";
@@ -1060,143 +1050,161 @@ public class InvestmentFundOrderExecution extends SecuritiesTradeExecution {
 		return unitsNumber;
 	}
 
-	public void setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
-		this.unitsNumber = unitsNumber;
+	public InvestmentFundOrderExecution setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
+		this.unitsNumber = Objects.requireNonNull(unitsNumber);
+		return this;
 	}
 
 	public Max350Text getNonStandardSettlementInformation() {
 		return nonStandardSettlementInformation;
 	}
 
-	public void setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
-		this.nonStandardSettlementInformation = nonStandardSettlementInformation;
+	public InvestmentFundOrderExecution setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
+		this.nonStandardSettlementInformation = Objects.requireNonNull(nonStandardSettlementInformation);
+		return this;
 	}
 
-	public InvestmentFundOrder getOrder() {
-		return order;
+	public Optional<InvestmentFundOrder> getOrder() {
+		return order == null ? Optional.empty() : Optional.of(order);
 	}
 
-	public void setOrder(com.tools20022.repository.entity.InvestmentFundOrder order) {
+	public InvestmentFundOrderExecution setOrder(com.tools20022.repository.entity.InvestmentFundOrder order) {
 		this.order = order;
+		return this;
 	}
 
 	public Max35Text getDealIdentification() {
 		return dealIdentification;
 	}
 
-	public void setDealIdentification(Max35Text dealIdentification) {
-		this.dealIdentification = dealIdentification;
+	public InvestmentFundOrderExecution setDealIdentification(Max35Text dealIdentification) {
+		this.dealIdentification = Objects.requireNonNull(dealIdentification);
+		return this;
 	}
 
 	public SecuritiesPricing getExecutedTradePrice() {
 		return executedTradePrice;
 	}
 
-	public void setExecutedTradePrice(com.tools20022.repository.entity.SecuritiesPricing executedTradePrice) {
-		this.executedTradePrice = executedTradePrice;
+	public InvestmentFundOrderExecution setExecutedTradePrice(com.tools20022.repository.entity.SecuritiesPricing executedTradePrice) {
+		this.executedTradePrice = Objects.requireNonNull(executedTradePrice);
+		return this;
 	}
 
 	public YesNoIndicator getPartiallyExecutedIndicator() {
 		return partiallyExecutedIndicator;
 	}
 
-	public void setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
-		this.partiallyExecutedIndicator = partiallyExecutedIndicator;
+	public InvestmentFundOrderExecution setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
+		this.partiallyExecutedIndicator = Objects.requireNonNull(partiallyExecutedIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getInterimProfitAmount() {
 		return interimProfitAmount;
 	}
 
-	public void setInterimProfitAmount(CurrencyAndAmount interimProfitAmount) {
-		this.interimProfitAmount = interimProfitAmount;
+	public InvestmentFundOrderExecution setInterimProfitAmount(CurrencyAndAmount interimProfitAmount) {
+		this.interimProfitAmount = Objects.requireNonNull(interimProfitAmount);
+		return this;
 	}
 
 	public SecuritiesPricing getInformativePrice() {
 		return informativePrice;
 	}
 
-	public void setInformativePrice(com.tools20022.repository.entity.SecuritiesPricing informativePrice) {
-		this.informativePrice = informativePrice;
+	public InvestmentFundOrderExecution setInformativePrice(com.tools20022.repository.entity.SecuritiesPricing informativePrice) {
+		this.informativePrice = Objects.requireNonNull(informativePrice);
+		return this;
 	}
 
 	public BestExecutionCode getBestExecution() {
 		return bestExecution;
 	}
 
-	public void setBestExecution(BestExecutionCode bestExecution) {
-		this.bestExecution = bestExecution;
+	public InvestmentFundOrderExecution setBestExecution(BestExecutionCode bestExecution) {
+		this.bestExecution = Objects.requireNonNull(bestExecution);
+		return this;
 	}
 
 	public PercentageRate getPartialSettlementOfUnits() {
 		return partialSettlementOfUnits;
 	}
 
-	public void setPartialSettlementOfUnits(PercentageRate partialSettlementOfUnits) {
-		this.partialSettlementOfUnits = partialSettlementOfUnits;
+	public InvestmentFundOrderExecution setPartialSettlementOfUnits(PercentageRate partialSettlementOfUnits) {
+		this.partialSettlementOfUnits = Objects.requireNonNull(partialSettlementOfUnits);
+		return this;
 	}
 
 	public PercentageRate getPartialSettlementOfCash() {
 		return partialSettlementOfCash;
 	}
 
-	public void setPartialSettlementOfCash(PercentageRate partialSettlementOfCash) {
-		this.partialSettlementOfCash = partialSettlementOfCash;
+	public InvestmentFundOrderExecution setPartialSettlementOfCash(PercentageRate partialSettlementOfCash) {
+		this.partialSettlementOfCash = Objects.requireNonNull(partialSettlementOfCash);
+		return this;
 	}
 
 	public LateReportCode getLateReport() {
 		return lateReport;
 	}
 
-	public void setLateReport(LateReportCode lateReport) {
-		this.lateReport = lateReport;
+	public InvestmentFundOrderExecution setLateReport(LateReportCode lateReport) {
+		this.lateReport = Objects.requireNonNull(lateReport);
+		return this;
 	}
 
 	public YesNoIndicator getSettledIndicator() {
 		return settledIndicator;
 	}
 
-	public void setSettledIndicator(YesNoIndicator settledIndicator) {
-		this.settledIndicator = settledIndicator;
+	public InvestmentFundOrderExecution setSettledIndicator(YesNoIndicator settledIndicator) {
+		this.settledIndicator = Objects.requireNonNull(settledIndicator);
+		return this;
 	}
 
 	public YesNoIndicator getRegisteredIndicator() {
 		return registeredIndicator;
 	}
 
-	public void setRegisteredIndicator(YesNoIndicator registeredIndicator) {
-		this.registeredIndicator = registeredIndicator;
+	public InvestmentFundOrderExecution setRegisteredIndicator(YesNoIndicator registeredIndicator) {
+		this.registeredIndicator = Objects.requireNonNull(registeredIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getExecutedAmount() {
 		return executedAmount;
 	}
 
-	public void setExecutedAmount(CurrencyAndAmount executedAmount) {
-		this.executedAmount = executedAmount;
+	public InvestmentFundOrderExecution setExecutedAmount(CurrencyAndAmount executedAmount) {
+		this.executedAmount = Objects.requireNonNull(executedAmount);
+		return this;
 	}
 
-	public InvestmentFundTransaction getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+	public Optional<InvestmentFundTransaction> getInvestmentFundTransaction() {
+		return investmentFundTransaction == null ? Optional.empty() : Optional.of(investmentFundTransaction);
 	}
 
-	public void setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
+	public InvestmentFundOrderExecution setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
 		this.investmentFundTransaction = investmentFundTransaction;
+		return this;
 	}
 
 	public List<FundsCashFlow> getCashFlow() {
-		return cashFlow;
+		return cashFlow == null ? cashFlow = new ArrayList<>() : cashFlow;
 	}
 
-	public void setCashFlow(List<com.tools20022.repository.entity.FundsCashFlow> cashFlow) {
-		this.cashFlow = cashFlow;
+	public InvestmentFundOrderExecution setCashFlow(List<com.tools20022.repository.entity.FundsCashFlow> cashFlow) {
+		this.cashFlow = Objects.requireNonNull(cashFlow);
+		return this;
 	}
 
 	public SourceOfCashCode getSourceOfCash() {
 		return sourceOfCash;
 	}
 
-	public void setSourceOfCash(SourceOfCashCode sourceOfCash) {
-		this.sourceOfCash = sourceOfCash;
+	public InvestmentFundOrderExecution setSourceOfCash(SourceOfCashCode sourceOfCash) {
+		this.sourceOfCash = Objects.requireNonNull(sourceOfCash);
+		return this;
 	}
 }

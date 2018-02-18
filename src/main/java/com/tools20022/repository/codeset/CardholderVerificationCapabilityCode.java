@@ -39,55 +39,55 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#ManualSignature
- * CardholderVerificationCapabilityCode.mmManualSignature}</li>
+ * CardholderVerificationCapabilityCode.ManualSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OnLinePIN
- * CardholderVerificationCapabilityCode.mmOnLinePIN}</li>
+ * CardholderVerificationCapabilityCode.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OfflinePINClear
- * CardholderVerificationCapabilityCode.mmOfflinePINClear}</li>
+ * CardholderVerificationCapabilityCode.OfflinePINClear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OfflinePINEncrypted
- * CardholderVerificationCapabilityCode.mmOfflinePINEncrypted}</li>
+ * CardholderVerificationCapabilityCode.OfflinePINEncrypted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OfflineDigitalSignature
- * CardholderVerificationCapabilityCode.mmOfflineDigitalSignature}</li>
+ * CardholderVerificationCapabilityCode.OfflineDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OfflineBiometrics
- * CardholderVerificationCapabilityCode.mmOfflineBiometrics}</li>
+ * CardholderVerificationCapabilityCode.OfflineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#ManualVerification
- * CardholderVerificationCapabilityCode.mmManualVerification}</li>
+ * CardholderVerificationCapabilityCode.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OfflineBiographics
- * CardholderVerificationCapabilityCode.mmOfflineBiographics}</li>
+ * CardholderVerificationCapabilityCode.OfflineBiographics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#AccountDigitalSignature
- * CardholderVerificationCapabilityCode.mmAccountDigitalSignature}</li>
+ * CardholderVerificationCapabilityCode.AccountDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#PKISignature
- * CardholderVerificationCapabilityCode.mmPKISignature}</li>
+ * CardholderVerificationCapabilityCode.PKISignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#CardholderData
- * CardholderVerificationCapabilityCode.mmCardholderData}</li>
+ * CardholderVerificationCapabilityCode.CardholderData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#SecureElectronicCommerce
- * CardholderVerificationCapabilityCode.mmSecureElectronicCommerce}</li>
+ * CardholderVerificationCapabilityCode.SecureElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#Unknown
- * CardholderVerificationCapabilityCode.mmUnknown}</li>
+ * CardholderVerificationCapabilityCode.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#PersonalCode
- * CardholderVerificationCapabilityCode.mmPersonalCode}</li>
+ * CardholderVerificationCapabilityCode.PersonalCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#NoCapabilities
- * CardholderVerificationCapabilityCode.mmNoCapabilities}</li>
+ * CardholderVerificationCapabilityCode.NoCapabilities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#OnLineBiometrics
- * CardholderVerificationCapabilityCode.mmOnLineBiometrics}</li>
+ * CardholderVerificationCapabilityCode.OnLineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapabilityCode#Other
- * CardholderVerificationCapabilityCode.mmOther}</li>
+ * CardholderVerificationCapabilityCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -101,8 +101,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -647,7 +647,7 @@ public class CardholderVerificationCapabilityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MNSG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderVerificationCapabilityCode";

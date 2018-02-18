@@ -23,9 +23,8 @@ import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Role played by a party in the context of a tax due.
@@ -92,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,8 +108,8 @@ public class TaxPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Tax> tax;
 	/**
-	 * Identifies the taxfor which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,8 +152,8 @@ public class TaxPartyRole extends Role {
 	};
 	protected Max35Text vATRegistrationNumber;
 	/**
-	 * Value added tax (VAT) registration number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +208,7 @@ public class TaxPartyRole extends Role {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxPartyRole";
 				definition = "Role played by a party in the context of a tax due.";
@@ -230,18 +229,20 @@ public class TaxPartyRole extends Role {
 	}
 
 	public List<Tax> getTax() {
-		return tax;
+		return tax == null ? tax = new ArrayList<>() : tax;
 	}
 
-	public void setTax(List<com.tools20022.repository.entity.Tax> tax) {
-		this.tax = tax;
+	public TaxPartyRole setTax(List<com.tools20022.repository.entity.Tax> tax) {
+		this.tax = Objects.requireNonNull(tax);
+		return this;
 	}
 
-	public Max35Text getVATRegistrationNumber() {
-		return vATRegistrationNumber;
+	public Optional<Max35Text> getVATRegistrationNumber() {
+		return vATRegistrationNumber == null ? Optional.empty() : Optional.of(vATRegistrationNumber);
 	}
 
-	public void setVATRegistrationNumber(Max35Text vATRegistrationNumber) {
+	public TaxPartyRole setVATRegistrationNumber(Max35Text vATRegistrationNumber) {
 		this.vATRegistrationNumber = vATRegistrationNumber;
+		return this;
 	}
 }

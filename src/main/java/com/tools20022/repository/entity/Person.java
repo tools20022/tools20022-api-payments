@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CivilStatusCode;
 import com.tools20022.repository.codeset.GenderCode;
@@ -32,9 +33,11 @@ import com.tools20022.repository.msg.CashAccountCharacteristics2;
 import com.tools20022.repository.msg.DateAndPlaceOfBirth;
 import com.tools20022.repository.msg.TaxAuthorisation1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Human entity, as distinguished from a corporate entity (which is sometimes
@@ -136,8 +139,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -155,8 +158,8 @@ public class Person extends Party {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected GenderCode gender;
 	/**
-	 * Specifies the gender of the person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,8 +203,8 @@ public class Person extends Party {
 	};
 	protected LanguageCode language;
 	/**
-	 * Language in which a person communicates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,6 +215,9 @@ public class Person extends Party {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Person
 	 * Person}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::LANG</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -227,6 +233,7 @@ public class Person extends Party {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::LANG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which a person communicates.";
@@ -245,8 +252,8 @@ public class Person extends Party {
 	};
 	protected ISODateTime birthDate;
 	/**
-	 * Date on which a person is born.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,8 +306,8 @@ public class Person extends Party {
 	};
 	protected Location placeOfBirth;
 	/**
-	 * Place (for instance Country and City) where a person was born.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -346,8 +353,8 @@ public class Person extends Party {
 	};
 	protected Max35Text profession;
 	/**
-	 * Name of the occupation or job of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -391,8 +398,8 @@ public class Person extends Party {
 	};
 	protected ResidentialStatusCode residentialStatus;
 	/**
-	 * Residential status of an individual, for example, non-permanent resident.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -439,9 +446,8 @@ public class Person extends Party {
 	};
 	protected List<com.tools20022.repository.entity.Country> nationality;
 	/**
-	 * Specifies the country where a person was born or is legally accepted as
-	 * belonging to the country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -487,10 +493,8 @@ public class Person extends Party {
 	};
 	protected YesNoIndicator minorIndicator;
 	/**
-	 * Indicates whether the person is a legal minor. It may depend on the
-	 * nationality, the domicile country or the transaction in which the person
-	 * is involved.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -537,8 +541,8 @@ public class Person extends Party {
 	};
 	protected Max35Text businessFunctionTitle;
 	/**
-	 * Title of the function in an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,9 +594,8 @@ public class Person extends Party {
 	};
 	protected List<com.tools20022.repository.entity.PersonIdentification> personIdentification;
 	/**
-	 * Specific identification assigned to a person. It is derived from the
-	 * association between Party and PartyIdentification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -652,8 +655,8 @@ public class Person extends Party {
 	};
 	protected EmployingPartyRole employingParty;
 	/**
-	 * Party which is the employer of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -699,8 +702,8 @@ public class Person extends Party {
 	};
 	protected MeetingAttendeeRole meetingAttendee;
 	/**
-	 * Specifies the meeting attendee which is an individual person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -747,8 +750,8 @@ public class Person extends Party {
 	};
 	protected List<com.tools20022.repository.entity.AssignedProxyRole> relatedRole;
 	/**
-	 * Role performed by the person for the proxy voting process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -794,8 +797,8 @@ public class Person extends Party {
 	};
 	protected AssignedProxyRole preAssignedProxyPerson;
 	/**
-	 * Specifies the person who is the pre-assigned proxy for a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -842,8 +845,8 @@ public class Person extends Party {
 	};
 	protected PersonProfile personProfile;
 	/**
-	 * Information to support the Know Your Customer processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -889,8 +892,8 @@ public class Person extends Party {
 	};
 	protected ContactPersonRole contactPersonRole;
 	/**
-	 * Contact role played by a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -936,9 +939,8 @@ public class Person extends Party {
 	};
 	protected Household household;
 	/**
-	 * Specifies the members of a household in relation with the ownership of an
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -986,8 +988,8 @@ public class Person extends Party {
 	};
 	protected CivilStatusCode civilStatus;
 	/**
-	 * Specifies the civil status of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1032,8 +1034,8 @@ public class Person extends Party {
 	};
 	protected ISODateTime deathDate;
 	/**
-	 * Date on which a person is dead.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1079,7 +1081,7 @@ public class Person extends Party {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Person";
 				definition = "Human entity, as distinguished from a corporate entity (which is sometimes referred to as an 'artificial person').";
@@ -1110,151 +1112,170 @@ public class Person extends Party {
 		return gender;
 	}
 
-	public void setGender(GenderCode gender) {
-		this.gender = gender;
+	public Person setGender(GenderCode gender) {
+		this.gender = Objects.requireNonNull(gender);
+		return this;
 	}
 
 	public LanguageCode getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(LanguageCode language) {
-		this.language = language;
+	public Person setLanguage(LanguageCode language) {
+		this.language = Objects.requireNonNull(language);
+		return this;
 	}
 
 	public ISODateTime getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(ISODateTime birthDate) {
-		this.birthDate = birthDate;
+	public Person setBirthDate(ISODateTime birthDate) {
+		this.birthDate = Objects.requireNonNull(birthDate);
+		return this;
 	}
 
 	public Location getPlaceOfBirth() {
 		return placeOfBirth;
 	}
 
-	public void setPlaceOfBirth(com.tools20022.repository.entity.Location placeOfBirth) {
-		this.placeOfBirth = placeOfBirth;
+	public Person setPlaceOfBirth(com.tools20022.repository.entity.Location placeOfBirth) {
+		this.placeOfBirth = Objects.requireNonNull(placeOfBirth);
+		return this;
 	}
 
 	public Max35Text getProfession() {
 		return profession;
 	}
 
-	public void setProfession(Max35Text profession) {
-		this.profession = profession;
+	public Person setProfession(Max35Text profession) {
+		this.profession = Objects.requireNonNull(profession);
+		return this;
 	}
 
 	public ResidentialStatusCode getResidentialStatus() {
 		return residentialStatus;
 	}
 
-	public void setResidentialStatus(ResidentialStatusCode residentialStatus) {
-		this.residentialStatus = residentialStatus;
+	public Person setResidentialStatus(ResidentialStatusCode residentialStatus) {
+		this.residentialStatus = Objects.requireNonNull(residentialStatus);
+		return this;
 	}
 
 	public List<Country> getNationality() {
-		return nationality;
+		return nationality == null ? nationality = new ArrayList<>() : nationality;
 	}
 
-	public void setNationality(List<com.tools20022.repository.entity.Country> nationality) {
-		this.nationality = nationality;
+	public Person setNationality(List<com.tools20022.repository.entity.Country> nationality) {
+		this.nationality = Objects.requireNonNull(nationality);
+		return this;
 	}
 
 	public YesNoIndicator getMinorIndicator() {
 		return minorIndicator;
 	}
 
-	public void setMinorIndicator(YesNoIndicator minorIndicator) {
-		this.minorIndicator = minorIndicator;
+	public Person setMinorIndicator(YesNoIndicator minorIndicator) {
+		this.minorIndicator = Objects.requireNonNull(minorIndicator);
+		return this;
 	}
 
 	public Max35Text getBusinessFunctionTitle() {
 		return businessFunctionTitle;
 	}
 
-	public void setBusinessFunctionTitle(Max35Text businessFunctionTitle) {
-		this.businessFunctionTitle = businessFunctionTitle;
+	public Person setBusinessFunctionTitle(Max35Text businessFunctionTitle) {
+		this.businessFunctionTitle = Objects.requireNonNull(businessFunctionTitle);
+		return this;
 	}
 
 	public List<PersonIdentification> getPersonIdentification() {
-		return personIdentification;
+		return personIdentification == null ? personIdentification = new ArrayList<>() : personIdentification;
 	}
 
-	public void setPersonIdentification(List<com.tools20022.repository.entity.PersonIdentification> personIdentification) {
-		this.personIdentification = personIdentification;
+	public Person setPersonIdentification(List<com.tools20022.repository.entity.PersonIdentification> personIdentification) {
+		this.personIdentification = Objects.requireNonNull(personIdentification);
+		return this;
 	}
 
 	public EmployingPartyRole getEmployingParty() {
 		return employingParty;
 	}
 
-	public void setEmployingParty(com.tools20022.repository.entity.EmployingPartyRole employingParty) {
-		this.employingParty = employingParty;
+	public Person setEmployingParty(com.tools20022.repository.entity.EmployingPartyRole employingParty) {
+		this.employingParty = Objects.requireNonNull(employingParty);
+		return this;
 	}
 
 	public MeetingAttendeeRole getMeetingAttendee() {
 		return meetingAttendee;
 	}
 
-	public void setMeetingAttendee(com.tools20022.repository.entity.MeetingAttendeeRole meetingAttendee) {
-		this.meetingAttendee = meetingAttendee;
+	public Person setMeetingAttendee(com.tools20022.repository.entity.MeetingAttendeeRole meetingAttendee) {
+		this.meetingAttendee = Objects.requireNonNull(meetingAttendee);
+		return this;
 	}
 
 	public List<AssignedProxyRole> getRelatedRole() {
-		return relatedRole;
+		return relatedRole == null ? relatedRole = new ArrayList<>() : relatedRole;
 	}
 
-	public void setRelatedRole(List<com.tools20022.repository.entity.AssignedProxyRole> relatedRole) {
-		this.relatedRole = relatedRole;
+	public Person setRelatedRole(List<com.tools20022.repository.entity.AssignedProxyRole> relatedRole) {
+		this.relatedRole = Objects.requireNonNull(relatedRole);
+		return this;
 	}
 
 	public AssignedProxyRole getPreAssignedProxyPerson() {
 		return preAssignedProxyPerson;
 	}
 
-	public void setPreAssignedProxyPerson(com.tools20022.repository.entity.AssignedProxyRole preAssignedProxyPerson) {
-		this.preAssignedProxyPerson = preAssignedProxyPerson;
+	public Person setPreAssignedProxyPerson(com.tools20022.repository.entity.AssignedProxyRole preAssignedProxyPerson) {
+		this.preAssignedProxyPerson = Objects.requireNonNull(preAssignedProxyPerson);
+		return this;
 	}
 
 	public PersonProfile getPersonProfile() {
 		return personProfile;
 	}
 
-	public void setPersonProfile(com.tools20022.repository.entity.PersonProfile personProfile) {
-		this.personProfile = personProfile;
+	public Person setPersonProfile(com.tools20022.repository.entity.PersonProfile personProfile) {
+		this.personProfile = Objects.requireNonNull(personProfile);
+		return this;
 	}
 
 	public ContactPersonRole getContactPersonRole() {
 		return contactPersonRole;
 	}
 
-	public void setContactPersonRole(com.tools20022.repository.entity.ContactPersonRole contactPersonRole) {
-		this.contactPersonRole = contactPersonRole;
+	public Person setContactPersonRole(com.tools20022.repository.entity.ContactPersonRole contactPersonRole) {
+		this.contactPersonRole = Objects.requireNonNull(contactPersonRole);
+		return this;
 	}
 
 	public Household getHousehold() {
 		return household;
 	}
 
-	public void setHousehold(com.tools20022.repository.entity.Household household) {
-		this.household = household;
+	public Person setHousehold(com.tools20022.repository.entity.Household household) {
+		this.household = Objects.requireNonNull(household);
+		return this;
 	}
 
 	public CivilStatusCode getCivilStatus() {
 		return civilStatus;
 	}
 
-	public void setCivilStatus(CivilStatusCode civilStatus) {
-		this.civilStatus = civilStatus;
+	public Person setCivilStatus(CivilStatusCode civilStatus) {
+		this.civilStatus = Objects.requireNonNull(civilStatus);
+		return this;
 	}
 
 	public ISODateTime getDeathDate() {
 		return deathDate;
 	}
 
-	public void setDeathDate(ISODateTime deathDate) {
-		this.deathDate = deathDate;
+	public Person setDeathDate(ISODateTime deathDate) {
+		this.deathDate = Objects.requireNonNull(deathDate);
+		return this;
 	}
 }

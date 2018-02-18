@@ -32,6 +32,7 @@ import com.tools20022.repository.entity.ShipmentDateRange;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +69,17 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionAmountInContractCurrencyPresenceRule#forTransactionCertificateContract1
+ * ConstraintTransactionAmountInContractCurrencyPresenceRule.
+ * forTransactionCertificateContract1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,16 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Certificate and contract reference of a transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionCertificateContract1", propOrder = {"contractReference", "transactionAmountInContractCurrency", "expectedShipmentDate", "expectedAdvancePaymentReturnDate", "additionalInformation"})
 public class TransactionCertificateContract1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CtrctRef")
 	protected ContractRegistrationReference1Choice contractReference;
 	/**
-	 * Reference of the contract provided as through the date and identification
-	 * of the contract or through the registered contract identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -124,7 +134,7 @@ public class TransactionCertificateContract1 {
 	public static final MMMessageAssociationEnd mmContractReference = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
-			componentContext_lazy = () -> TransactionCertificateContract1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
 			xmlTag = "CtrctRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +146,11 @@ public class TransactionCertificateContract1 {
 			type_lazy = () -> ContractRegistrationReference1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "TxAmtInCtrctCcy")
 	protected ActiveCurrencyAndAmount transactionAmountInContractCurrency;
 	/**
-	 * Provides the amount of the transaction in the currency of the registered
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +186,7 @@ public class TransactionCertificateContract1 {
 	public static final MMMessageAttribute mmTransactionAmountInContractCurrency = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
-			componentContext_lazy = () -> TransactionCertificateContract1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
 			xmlTag = "TxAmtInCtrctCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,10 +197,11 @@ public class TransactionCertificateContract1 {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "XpctdShipmntDt")
 	protected ISODate expectedShipmentDate;
 	/**
-	 * Expected shipment date as per registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,7 +234,7 @@ public class TransactionCertificateContract1 {
 	public static final MMMessageAttribute mmExpectedShipmentDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmShipmentDate;
-			componentContext_lazy = () -> TransactionCertificateContract1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdShipmntDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,11 +245,11 @@ public class TransactionCertificateContract1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "XpctdAdvncPmtRtrDt")
 	protected ISODate expectedAdvancePaymentReturnDate;
 	/**
-	 * Expected advance payment (or prepayment) return date in case counterparty
-	 * will not deliver the goods/services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,7 +284,7 @@ public class TransactionCertificateContract1 {
 	public static final MMMessageAttribute mmExpectedAdvancePaymentReturnDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentDueDate;
-			componentContext_lazy = () -> TransactionCertificateContract1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdAdvncPmtRtrDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -284,10 +295,11 @@ public class TransactionCertificateContract1 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max1025Text additionalInformation;
 	/**
-	 * Further details on the transaction certificate contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,7 +326,7 @@ public class TransactionCertificateContract1 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> TransactionCertificateContract1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -329,10 +341,12 @@ public class TransactionCertificateContract1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionCertificateContract1.mmContractReference, TransactionCertificateContract1.mmTransactionAmountInContractCurrency, TransactionCertificateContract1.mmExpectedShipmentDate,
-						TransactionCertificateContract1.mmExpectedAdvancePaymentReturnDate, TransactionCertificateContract1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionCertificateContract1.mmContractReference,
+						com.tools20022.repository.msg.TransactionCertificateContract1.mmTransactionAmountInContractCurrency, com.tools20022.repository.msg.TransactionCertificateContract1.mmExpectedShipmentDate,
+						com.tools20022.repository.msg.TransactionCertificateContract1.mmExpectedAdvancePaymentReturnDate, com.tools20022.repository.msg.TransactionCertificateContract1.mmAdditionalInformation);
 				trace_lazy = () -> Contract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintTransactionAmountInContractCurrencyPresenceRule.forTransactionCertificateContract1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionCertificateContract1";
 				definition = "Certificate and contract reference of a transaction.";
@@ -341,48 +355,48 @@ public class TransactionCertificateContract1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CtrctRef")
-	public ContractRegistrationReference1Choice getContractReference() {
-		return contractReference;
+	public Optional<ContractRegistrationReference1Choice> getContractReference() {
+		return contractReference == null ? Optional.empty() : Optional.of(contractReference);
 	}
 
-	public void setContractReference(ContractRegistrationReference1Choice contractReference) {
+	public TransactionCertificateContract1 setContractReference(ContractRegistrationReference1Choice contractReference) {
 		this.contractReference = contractReference;
+		return this;
 	}
 
-	@XmlElement(name = "TxAmtInCtrctCcy")
-	public ActiveCurrencyAndAmount getTransactionAmountInContractCurrency() {
-		return transactionAmountInContractCurrency;
+	public Optional<ActiveCurrencyAndAmount> getTransactionAmountInContractCurrency() {
+		return transactionAmountInContractCurrency == null ? Optional.empty() : Optional.of(transactionAmountInContractCurrency);
 	}
 
-	public void setTransactionAmountInContractCurrency(ActiveCurrencyAndAmount transactionAmountInContractCurrency) {
+	public TransactionCertificateContract1 setTransactionAmountInContractCurrency(ActiveCurrencyAndAmount transactionAmountInContractCurrency) {
 		this.transactionAmountInContractCurrency = transactionAmountInContractCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdShipmntDt")
-	public ISODate getExpectedShipmentDate() {
-		return expectedShipmentDate;
+	public Optional<ISODate> getExpectedShipmentDate() {
+		return expectedShipmentDate == null ? Optional.empty() : Optional.of(expectedShipmentDate);
 	}
 
-	public void setExpectedShipmentDate(ISODate expectedShipmentDate) {
+	public TransactionCertificateContract1 setExpectedShipmentDate(ISODate expectedShipmentDate) {
 		this.expectedShipmentDate = expectedShipmentDate;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdAdvncPmtRtrDt")
-	public ISODate getExpectedAdvancePaymentReturnDate() {
-		return expectedAdvancePaymentReturnDate;
+	public Optional<ISODate> getExpectedAdvancePaymentReturnDate() {
+		return expectedAdvancePaymentReturnDate == null ? Optional.empty() : Optional.of(expectedAdvancePaymentReturnDate);
 	}
 
-	public void setExpectedAdvancePaymentReturnDate(ISODate expectedAdvancePaymentReturnDate) {
+	public TransactionCertificateContract1 setExpectedAdvancePaymentReturnDate(ISODate expectedAdvancePaymentReturnDate) {
 		this.expectedAdvancePaymentReturnDate = expectedAdvancePaymentReturnDate;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max1025Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max1025Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max1025Text additionalInformation) {
+	public TransactionCertificateContract1 setAdditionalInformation(Max1025Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

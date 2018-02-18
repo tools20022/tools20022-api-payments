@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the requested reporting period."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportingPeriod1", propOrder = {"fromToDate", "fromToTime", "type"})
 public class ReportingPeriod1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrToDt", required = true)
 	protected DatePeriodDetails1 fromToDate;
 	/**
-	 * Specifies a date range.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class ReportingPeriod1 {
 	public static final MMMessageAttribute mmFromToDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
-			componentContext_lazy = () -> ReportingPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportingPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "FrToDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,10 +120,11 @@ public class ReportingPeriod1 {
 			complexType_lazy = () -> com.tools20022.repository.msg.DatePeriodDetails1.mmObject();
 		}
 	};
+	@XmlElement(name = "FrToTm", required = true)
 	protected TimePeriodDetails1 fromToTime;
 	/**
-	 * Specifies a time range.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +158,7 @@ public class ReportingPeriod1 {
 	public static final MMMessageAttribute mmFromToTime = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
-			componentContext_lazy = () -> ReportingPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportingPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "FrToTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,12 +169,11 @@ public class ReportingPeriod1 {
 			complexType_lazy = () -> com.tools20022.repository.msg.TimePeriodDetails1.mmObject();
 		}
 	};
+	@XmlElement(name = "Tp", required = true)
 	protected QueryType3Code type;
 	/**
-	 * Specifies whether all matching items need to be reported or only those
-	 * items that are new or have changed since the last similar request was
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,7 +203,7 @@ public class ReportingPeriod1 {
 	 */
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ReportingPeriod1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportingPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,9 +218,9 @@ public class ReportingPeriod1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportingPeriod1.mmFromToDate, ReportingPeriod1.mmFromToTime, ReportingPeriod1.mmType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportingPeriod1.mmFromToDate, com.tools20022.repository.msg.ReportingPeriod1.mmFromToTime, com.tools20022.repository.msg.ReportingPeriod1.mmType);
 				trace_lazy = () -> DateTimePeriod.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingPeriod1";
 				definition = "Specifies the requested reporting period.";
@@ -227,30 +229,30 @@ public class ReportingPeriod1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrToDt", required = true)
 	public DatePeriodDetails1 getFromToDate() {
 		return fromToDate;
 	}
 
-	public void setFromToDate(com.tools20022.repository.msg.DatePeriodDetails1 fromToDate) {
-		this.fromToDate = fromToDate;
+	public ReportingPeriod1 setFromToDate(com.tools20022.repository.msg.DatePeriodDetails1 fromToDate) {
+		this.fromToDate = Objects.requireNonNull(fromToDate);
+		return this;
 	}
 
-	@XmlElement(name = "FrToTm", required = true)
 	public TimePeriodDetails1 getFromToTime() {
 		return fromToTime;
 	}
 
-	public void setFromToTime(com.tools20022.repository.msg.TimePeriodDetails1 fromToTime) {
-		this.fromToTime = fromToTime;
+	public ReportingPeriod1 setFromToTime(com.tools20022.repository.msg.TimePeriodDetails1 fromToTime) {
+		this.fromToTime = Objects.requireNonNull(fromToTime);
+		return this;
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public QueryType3Code getType() {
 		return type;
 	}
 
-	public void setType(QueryType3Code type) {
-		this.type = type;
+	public ReportingPeriod1 setType(QueryType3Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 }

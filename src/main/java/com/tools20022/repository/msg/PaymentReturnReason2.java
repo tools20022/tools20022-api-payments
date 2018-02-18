@@ -27,9 +27,8 @@ import com.tools20022.repository.entity.BankTransaction;
 import com.tools20022.repository.entity.StatusOriginator;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintReturnReasonRule#forPaymentReturnReason2
+ * ConstraintReturnReasonRule.forPaymentReturnReason2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides further details on the reason of the return of the transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentReturnReason2", propOrder = {"originalBankTransactionCode", "originator", "reason", "additionalInformation"})
 public class PaymentReturnReason2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlBkTxCd")
 	protected BankTransactionCodeStructure4 originalBankTransactionCode;
 	/**
-	 * Bank transaction code included in the original entry for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -119,7 +127,7 @@ public class PaymentReturnReason2 {
 	public static final MMMessageAssociationEnd mmOriginalBankTransactionCode = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> BankTransaction.mmObject();
-			componentContext_lazy = () -> PaymentReturnReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReturnReason2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlBkTxCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,10 +139,11 @@ public class PaymentReturnReason2 {
 			type_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure4.mmObject();
 		}
 	};
+	@XmlElement(name = "Orgtr")
 	protected PartyIdentification43 originator;
 	/**
-	 * Party that issues the return.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -166,7 +175,7 @@ public class PaymentReturnReason2 {
 	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> StatusOriginator.mmObject();
-			componentContext_lazy = () -> PaymentReturnReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReturnReason2.mmObject();
 			isDerived = false;
 			xmlTag = "Orgtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,10 +187,11 @@ public class PaymentReturnReason2 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	@XmlElement(name = "Rsn")
 	protected ReturnReason5Choice reason;
 	/**
-	 * Specifies the reason for the return.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -213,7 +223,7 @@ public class PaymentReturnReason2 {
 	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> PaymentReturnReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReturnReason2.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,10 +235,11 @@ public class PaymentReturnReason2 {
 			type_lazy = () -> ReturnReason5Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected List<Max105Text> additionalInformation;
 	/**
-	 * Further details on the return reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +266,7 @@ public class PaymentReturnReason2 {
 	 */
 	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> PaymentReturnReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentReturnReason2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,9 +280,11 @@ public class PaymentReturnReason2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentReturnReason2.mmOriginalBankTransactionCode, PaymentReturnReason2.mmOriginator, PaymentReturnReason2.mmReason, PaymentReturnReason2.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentReturnReason2.mmOriginalBankTransactionCode, com.tools20022.repository.msg.PaymentReturnReason2.mmOriginator,
+						com.tools20022.repository.msg.PaymentReturnReason2.mmReason, com.tools20022.repository.msg.PaymentReturnReason2.mmAdditionalInformation);
 				trace_lazy = () -> StatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintReturnReasonRule.forPaymentReturnReason2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentReturnReason2";
 				definition = "Provides further details on the reason of the return of the transaction.";
@@ -280,39 +293,39 @@ public class PaymentReturnReason2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlBkTxCd")
-	public BankTransactionCodeStructure4 getOriginalBankTransactionCode() {
-		return originalBankTransactionCode;
+	public Optional<BankTransactionCodeStructure4> getOriginalBankTransactionCode() {
+		return originalBankTransactionCode == null ? Optional.empty() : Optional.of(originalBankTransactionCode);
 	}
 
-	public void setOriginalBankTransactionCode(com.tools20022.repository.msg.BankTransactionCodeStructure4 originalBankTransactionCode) {
+	public PaymentReturnReason2 setOriginalBankTransactionCode(com.tools20022.repository.msg.BankTransactionCodeStructure4 originalBankTransactionCode) {
 		this.originalBankTransactionCode = originalBankTransactionCode;
+		return this;
 	}
 
-	@XmlElement(name = "Orgtr")
-	public PartyIdentification43 getOriginator() {
-		return originator;
+	public Optional<PartyIdentification43> getOriginator() {
+		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public void setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
+	public PaymentReturnReason2 setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
 		this.originator = originator;
+		return this;
 	}
 
-	@XmlElement(name = "Rsn")
-	public ReturnReason5Choice getReason() {
-		return reason;
+	public Optional<ReturnReason5Choice> getReason() {
+		return reason == null ? Optional.empty() : Optional.of(reason);
 	}
 
-	public void setReason(ReturnReason5Choice reason) {
+	public PaymentReturnReason2 setReason(ReturnReason5Choice reason) {
 		this.reason = reason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
 	public List<Max105Text> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<Max105Text> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public PaymentReturnReason2 setAdditionalInformation(List<Max105Text> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 }

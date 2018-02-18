@@ -17,14 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Indicates whether the quote details are indicated as an offer, a bid or a mid
@@ -142,8 +142,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -161,8 +161,8 @@ public class Quote {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity maximumQuantity;
 	/**
-	 * Specifies the maximum quantity of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,6 +182,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 134, FIXSynonym: 135</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -197,6 +200,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "134"), new FIXSynonym(this, "135"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantity";
 			definition = "Specifies the maximum quantity of the financial instrument.";
@@ -209,8 +213,8 @@ public class Quote {
 	};
 	protected SecuritiesQuantity quantity;
 	/**
-	 * Quantity of a Financial Instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,6 +234,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 134, FIXSynonym: 135</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -244,6 +251,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "134"), new FIXSynonym(this, "135"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Quantity of a Financial Instrument.";
@@ -256,8 +264,8 @@ public class Quote {
 	};
 	protected SecuritiesQuantity minimumQuantity;
 	/**
-	 * Specifies the minimal quantity of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,6 +285,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 647, FIXSynonym: 648</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -292,6 +303,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "647"), new FIXSynonym(this, "648"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantity";
 			definition = "Specifies the minimal quantity of the financial instrument.";
@@ -304,8 +316,8 @@ public class Quote {
 	};
 	protected List<com.tools20022.repository.entity.InformationPartyRole> partyRole;
 	/**
-	 * Specifies each role played by a party in a quotation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -352,8 +364,8 @@ public class Quote {
 	};
 	protected Negotiation relatedNegotiation;
 	/**
-	 * Negotiation process during which quotes are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,8 +411,8 @@ public class Quote {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> quotedRate;
 	/**
-	 * Exchange rate specified in a quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -445,9 +457,8 @@ public class Quote {
 	};
 	protected SecuritiesPricing previousClosingPrice;
 	/**
-	 * Previous closing price of the financial instrument - Useful for verifying
-	 * its identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -495,10 +506,8 @@ public class Quote {
 	};
 	protected SecuritiesPricing requestedPrice;
 	/**
-	 * Is used to specify the desired currency of the quoted price when they
-	 * differ from the normal trading currency of the instrument being quote
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -518,6 +527,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 15</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -534,6 +546,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "15"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedPrice";
 			definition = "Is used to specify the desired currency of the quoted price when they differ from the normal trading currency of the instrument being quote requested.";
@@ -546,8 +559,8 @@ public class Quote {
 	};
 	protected SecuritiesPricing price;
 	/**
-	 * Indicates the price of the instrument, applicable to the quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -567,6 +580,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 44</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -582,6 +598,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "44"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Indicates the price of the instrument, applicable to the quote.";
@@ -594,8 +611,8 @@ public class Quote {
 	};
 	protected SecuritiesPricing marketPrice;
 	/**
-	 * Used by markets to indicate the current best bid and offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,6 +632,9 @@ public class Quote {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 645, FIXSynonym: 646</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -630,6 +650,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "645"), new FIXSynonym(this, "646"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketPrice";
 			definition = "Used by markets to indicate the current best bid and offer.";
@@ -642,8 +663,8 @@ public class Quote {
 	};
 	protected SecuritiesQuoteVariable midSideQuoteVariable;
 	/**
-	 * Quote details for which mid information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -690,8 +711,8 @@ public class Quote {
 	};
 	protected SecuritiesQuoteVariable bidSideQuoteVariable;
 	/**
-	 * Quote details for which bid information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -738,8 +759,8 @@ public class Quote {
 	};
 	protected SecuritiesQuoteVariable offerSideQuoteVariable;
 	/**
-	 * Quote details for which offer information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -786,8 +807,8 @@ public class Quote {
 	};
 	protected SecuritiesQuoteVariable securityQuoteVariable;
 	/**
-	 * Proposition of price for a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -834,9 +855,8 @@ public class Quote {
 	};
 	protected FinancialInstrumentSwap quoteSwap;
 	/**
-	 * Characteristics and conditions, quoted by the seller, by which a borrower
-	 * can exchange one type of fund for another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -885,8 +905,8 @@ public class Quote {
 	};
 	protected ISODateTime validUntilDateTime;
 	/**
-	 * Expresses the validity date and time of the Quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -897,6 +917,9 @@ public class Quote {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Quote
 	 * Quote}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 126</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -912,6 +935,7 @@ public class Quote {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "126"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidUntilDateTime";
 			definition = "Expresses the validity date and time of the Quote.";
@@ -930,10 +954,8 @@ public class Quote {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Can be used to specify the desired currency of the quoted price that may
-	 * differ from the normal trading currency of the instrument being quote
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -979,8 +1001,8 @@ public class Quote {
 	};
 	protected QuoteStatus status;
 	/**
-	 * Provide the status for the quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1026,8 +1048,8 @@ public class Quote {
 	};
 	protected Security quotedSecurity;
 	/**
-	 * Security specified in a quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1074,7 +1096,7 @@ public class Quote {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Quote";
 				definition = "Indicates whether the quote details are indicated as an offer, a bid or a mid of a security, commodity, currency (the latter being an average of the offer and the bid).";
@@ -1107,151 +1129,170 @@ public class Quote {
 		return maximumQuantity;
 	}
 
-	public void setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
-		this.maximumQuantity = maximumQuantity;
+	public Quote setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
+		this.maximumQuantity = Objects.requireNonNull(maximumQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(com.tools20022.repository.entity.SecuritiesQuantity quantity) {
-		this.quantity = quantity;
+	public Quote setQuantity(com.tools20022.repository.entity.SecuritiesQuantity quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumQuantity() {
 		return minimumQuantity;
 	}
 
-	public void setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
-		this.minimumQuantity = minimumQuantity;
+	public Quote setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
+		this.minimumQuantity = Objects.requireNonNull(minimumQuantity);
+		return this;
 	}
 
 	public List<InformationPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Quote setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
-	public Negotiation getRelatedNegotiation() {
-		return relatedNegotiation;
+	public Optional<Negotiation> getRelatedNegotiation() {
+		return relatedNegotiation == null ? Optional.empty() : Optional.of(relatedNegotiation);
 	}
 
-	public void setRelatedNegotiation(com.tools20022.repository.entity.Negotiation relatedNegotiation) {
+	public Quote setRelatedNegotiation(com.tools20022.repository.entity.Negotiation relatedNegotiation) {
 		this.relatedNegotiation = relatedNegotiation;
+		return this;
 	}
 
 	public List<CurrencyExchange> getQuotedRate() {
-		return quotedRate;
+		return quotedRate == null ? quotedRate = new ArrayList<>() : quotedRate;
 	}
 
-	public void setQuotedRate(List<com.tools20022.repository.entity.CurrencyExchange> quotedRate) {
-		this.quotedRate = quotedRate;
+	public Quote setQuotedRate(List<com.tools20022.repository.entity.CurrencyExchange> quotedRate) {
+		this.quotedRate = Objects.requireNonNull(quotedRate);
+		return this;
 	}
 
 	public SecuritiesPricing getPreviousClosingPrice() {
 		return previousClosingPrice;
 	}
 
-	public void setPreviousClosingPrice(com.tools20022.repository.entity.SecuritiesPricing previousClosingPrice) {
-		this.previousClosingPrice = previousClosingPrice;
+	public Quote setPreviousClosingPrice(com.tools20022.repository.entity.SecuritiesPricing previousClosingPrice) {
+		this.previousClosingPrice = Objects.requireNonNull(previousClosingPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getRequestedPrice() {
 		return requestedPrice;
 	}
 
-	public void setRequestedPrice(com.tools20022.repository.entity.SecuritiesPricing requestedPrice) {
-		this.requestedPrice = requestedPrice;
+	public Quote setRequestedPrice(com.tools20022.repository.entity.SecuritiesPricing requestedPrice) {
+		this.requestedPrice = Objects.requireNonNull(requestedPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getPrice() {
 		return price;
 	}
 
-	public void setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
-		this.price = price;
+	public Quote setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
+		this.price = Objects.requireNonNull(price);
+		return this;
 	}
 
 	public SecuritiesPricing getMarketPrice() {
 		return marketPrice;
 	}
 
-	public void setMarketPrice(com.tools20022.repository.entity.SecuritiesPricing marketPrice) {
-		this.marketPrice = marketPrice;
+	public Quote setMarketPrice(com.tools20022.repository.entity.SecuritiesPricing marketPrice) {
+		this.marketPrice = Objects.requireNonNull(marketPrice);
+		return this;
 	}
 
 	public SecuritiesQuoteVariable getMidSideQuoteVariable() {
 		return midSideQuoteVariable;
 	}
 
-	public void setMidSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable midSideQuoteVariable) {
-		this.midSideQuoteVariable = midSideQuoteVariable;
+	public Quote setMidSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable midSideQuoteVariable) {
+		this.midSideQuoteVariable = Objects.requireNonNull(midSideQuoteVariable);
+		return this;
 	}
 
 	public SecuritiesQuoteVariable getBidSideQuoteVariable() {
 		return bidSideQuoteVariable;
 	}
 
-	public void setBidSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable bidSideQuoteVariable) {
-		this.bidSideQuoteVariable = bidSideQuoteVariable;
+	public Quote setBidSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable bidSideQuoteVariable) {
+		this.bidSideQuoteVariable = Objects.requireNonNull(bidSideQuoteVariable);
+		return this;
 	}
 
 	public SecuritiesQuoteVariable getOfferSideQuoteVariable() {
 		return offerSideQuoteVariable;
 	}
 
-	public void setOfferSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable offerSideQuoteVariable) {
-		this.offerSideQuoteVariable = offerSideQuoteVariable;
+	public Quote setOfferSideQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable offerSideQuoteVariable) {
+		this.offerSideQuoteVariable = Objects.requireNonNull(offerSideQuoteVariable);
+		return this;
 	}
 
-	public SecuritiesQuoteVariable getSecurityQuoteVariable() {
-		return securityQuoteVariable;
+	public Optional<SecuritiesQuoteVariable> getSecurityQuoteVariable() {
+		return securityQuoteVariable == null ? Optional.empty() : Optional.of(securityQuoteVariable);
 	}
 
-	public void setSecurityQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable securityQuoteVariable) {
+	public Quote setSecurityQuoteVariable(com.tools20022.repository.entity.SecuritiesQuoteVariable securityQuoteVariable) {
 		this.securityQuoteVariable = securityQuoteVariable;
+		return this;
 	}
 
 	public FinancialInstrumentSwap getQuoteSwap() {
 		return quoteSwap;
 	}
 
-	public void setQuoteSwap(com.tools20022.repository.entity.FinancialInstrumentSwap quoteSwap) {
-		this.quoteSwap = quoteSwap;
+	public Quote setQuoteSwap(com.tools20022.repository.entity.FinancialInstrumentSwap quoteSwap) {
+		this.quoteSwap = Objects.requireNonNull(quoteSwap);
+		return this;
 	}
 
 	public ISODateTime getValidUntilDateTime() {
 		return validUntilDateTime;
 	}
 
-	public void setValidUntilDateTime(ISODateTime validUntilDateTime) {
-		this.validUntilDateTime = validUntilDateTime;
+	public Quote setValidUntilDateTime(ISODateTime validUntilDateTime) {
+		this.validUntilDateTime = Objects.requireNonNull(validUntilDateTime);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Quote setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public QuoteStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(com.tools20022.repository.entity.QuoteStatus status) {
-		this.status = status;
+	public Quote setStatus(com.tools20022.repository.entity.QuoteStatus status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public Security getQuotedSecurity() {
 		return quotedSecurity;
 	}
 
-	public void setQuotedSecurity(com.tools20022.repository.entity.Security quotedSecurity) {
-		this.quotedSecurity = quotedSecurity;
+	public Quote setQuotedSecurity(com.tools20022.repository.entity.Security quotedSecurity) {
+		this.quotedSecurity = Objects.requireNonNull(quotedSecurity);
+		return this;
 	}
 }

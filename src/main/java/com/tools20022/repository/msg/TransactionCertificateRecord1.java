@@ -27,9 +27,8 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionCertificateRecord1", propOrder = {"certificateRecordIdentification", "transaction", "contract", "attachment"})
 public class TransactionCertificateRecord1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CertRcrdId", required = true)
 	protected Max35Text certificateRecordIdentification;
 	/**
-	 * Unique and unambiguous identification of the certificate record.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,7 +120,7 @@ public class TransactionCertificateRecord1 {
 	public static final MMMessageAttribute mmCertificateRecordIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> TransactionCertificateRecord1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateRecord1.mmObject();
 			isDerived = false;
 			xmlTag = "CertRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,10 +131,11 @@ public class TransactionCertificateRecord1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected TransactionCertificate2 transaction;
 	/**
-	 * Details of the transaction for which the record has been generated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -167,7 +168,7 @@ public class TransactionCertificateRecord1 {
 	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> TransactionCertificateRecord1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateRecord1.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,10 +180,11 @@ public class TransactionCertificateRecord1 {
 			type_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
 		}
 	};
+	@XmlElement(name = "Ctrct")
 	protected TransactionCertificateContract1 contract;
 	/**
-	 * Contract registration details related to the certificate record.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -215,7 +217,7 @@ public class TransactionCertificateRecord1 {
 	public static final MMMessageAssociationEnd mmContract = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> Contract.mmObject();
-			componentContext_lazy = () -> TransactionCertificateRecord1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateRecord1.mmObject();
 			isDerived = false;
 			xmlTag = "Ctrct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,10 +229,11 @@ public class TransactionCertificateRecord1 {
 			type_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 		}
 	};
+	@XmlElement(name = "Attchmnt")
 	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
 	/**
-	 * Documents provided as attachments to the registered contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -264,7 +267,7 @@ public class TransactionCertificateRecord1 {
 	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
-			componentContext_lazy = () -> TransactionCertificateRecord1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateRecord1.mmObject();
 			isDerived = false;
 			xmlTag = "Attchmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,10 +282,10 @@ public class TransactionCertificateRecord1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionCertificateRecord1.mmCertificateRecordIdentification, TransactionCertificateRecord1.mmTransaction, TransactionCertificateRecord1.mmContract,
-						TransactionCertificateRecord1.mmAttachment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionCertificateRecord1.mmCertificateRecordIdentification, com.tools20022.repository.msg.TransactionCertificateRecord1.mmTransaction,
+						com.tools20022.repository.msg.TransactionCertificateRecord1.mmContract, com.tools20022.repository.msg.TransactionCertificateRecord1.mmAttachment);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionCertificateRecord1";
 				definition = "Certificate record in which all currency control transactions are registered.";
@@ -291,39 +294,39 @@ public class TransactionCertificateRecord1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CertRcrdId", required = true)
 	public Max35Text getCertificateRecordIdentification() {
 		return certificateRecordIdentification;
 	}
 
-	public void setCertificateRecordIdentification(Max35Text certificateRecordIdentification) {
-		this.certificateRecordIdentification = certificateRecordIdentification;
+	public TransactionCertificateRecord1 setCertificateRecordIdentification(Max35Text certificateRecordIdentification) {
+		this.certificateRecordIdentification = Objects.requireNonNull(certificateRecordIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public TransactionCertificate2 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.TransactionCertificate2 transaction) {
-		this.transaction = transaction;
+	public TransactionCertificateRecord1 setTransaction(com.tools20022.repository.msg.TransactionCertificate2 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 
-	@XmlElement(name = "Ctrct")
-	public TransactionCertificateContract1 getContract() {
-		return contract;
+	public Optional<TransactionCertificateContract1> getContract() {
+		return contract == null ? Optional.empty() : Optional.of(contract);
 	}
 
-	public void setContract(com.tools20022.repository.msg.TransactionCertificateContract1 contract) {
+	public TransactionCertificateRecord1 setContract(com.tools20022.repository.msg.TransactionCertificateContract1 contract) {
 		this.contract = contract;
+		return this;
 	}
 
-	@XmlElement(name = "Attchmnt")
 	public List<DocumentGeneralInformation3> getAttachment() {
-		return attachment;
+		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public void setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
-		this.attachment = attachment;
+	public TransactionCertificateRecord1 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+		this.attachment = Objects.requireNonNull(attachment);
+		return this;
 	}
 }

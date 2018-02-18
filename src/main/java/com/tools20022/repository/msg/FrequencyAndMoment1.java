@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Exact2NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,16 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FrequencyAndMoment1", propOrder = {"type", "pointInTime"})
 public class FrequencyAndMoment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Frequency6Code type;
 	/**
-	 * Period for which the number of instructions are to be created and
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +104,7 @@ public class FrequencyAndMoment1 {
 	 */
 	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FrequencyAndMoment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyAndMoment1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +115,11 @@ public class FrequencyAndMoment1 {
 			simpleType_lazy = () -> Frequency6Code.mmObject();
 		}
 	};
+	@XmlElement(name = "PtInTm", required = true)
 	protected Exact2NumericText pointInTime;
 	/**
-	 * Further information on the exact point in time the event should take
-	 * place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +149,7 @@ public class FrequencyAndMoment1 {
 	 */
 	public static final MMMessageAttribute mmPointInTime = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> FrequencyAndMoment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyAndMoment1.mmObject();
 			isDerived = false;
 			xmlTag = "PtInTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,8 +164,8 @@ public class FrequencyAndMoment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FrequencyAndMoment1.mmType, FrequencyAndMoment1.mmPointInTime);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FrequencyAndMoment1.mmType, com.tools20022.repository.msg.FrequencyAndMoment1.mmPointInTime);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyAndMoment1";
 				definition = "Defines a frequency in terms a specific moment within a specified period type.";
@@ -173,21 +174,21 @@ public class FrequencyAndMoment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Frequency6Code getType() {
 		return type;
 	}
 
-	public void setType(Frequency6Code type) {
-		this.type = type;
+	public FrequencyAndMoment1 setType(Frequency6Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "PtInTm", required = true)
 	public Exact2NumericText getPointInTime() {
 		return pointInTime;
 	}
 
-	public void setPointInTime(Exact2NumericText pointInTime) {
-		this.pointInTime = pointInTime;
+	public FrequencyAndMoment1 setPointInTime(Exact2NumericText pointInTime) {
+		this.pointInTime = Objects.requireNonNull(pointInTime);
+		return this;
 	}
 }

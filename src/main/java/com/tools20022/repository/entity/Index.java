@@ -28,9 +28,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FloatingInterestRate4;
 import com.tools20022.repository.msg.InterestRateContractTerm1;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Identifies the index.
@@ -99,8 +98,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,8 +115,8 @@ public class Index {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate indexRateBasis;
 	/**
-	 * Specifies the reference rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,9 +161,8 @@ public class Index {
 	};
 	protected RateAndAmount indexFactor;
 	/**
-	 * Index rate applied to the amount paid to adjust it for instance to
-	 * inflation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,8 +210,8 @@ public class Index {
 	};
 	protected DecimalNumber indexPoints;
 	/**
-	 * Number of points above the index used to calculate a price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,8 +257,8 @@ public class Index {
 	};
 	protected ISODateTime indexFixingDate;
 	/**
-	 * Date/time at which an index rate will be determined .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,8 +302,8 @@ public class Index {
 	};
 	protected Max35Text identification;
 	/**
-	 * Identifies the index by a name for instance LIBOR.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -358,9 +356,8 @@ public class Index {
 	};
 	protected Max35Text referenceSource;
 	/**
-	 * Identifies the reference source. The source can be the fixing agent or a
-	 * system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -406,10 +403,8 @@ public class Index {
 	};
 	protected CurrencyCode indexRateCurrency;
 	/**
-	 * Specifies the currency of the reference rate for fixed income instruments
-	 * where the price of the instrument is indexed to the price of an
-	 * underlying benchmark.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,8 +450,8 @@ public class Index {
 	};
 	protected FrequencyCode indexRateFrequency;
 	/**
-	 * Frequency at which the index changes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -501,8 +496,8 @@ public class Index {
 	};
 	protected DecimalNumber indexRateMultiplier;
 	/**
-	 * Multiplier for the variable rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -556,9 +551,8 @@ public class Index {
 	};
 	protected Spread spread;
 	/**
-	 * Percentage to be added to or deducted from the index rate to calculate
-	 * the effective rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -604,8 +598,8 @@ public class Index {
 	};
 	protected List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark;
 	/**
-	 * Portfolio benchmark which uses an index for decomposition,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -651,8 +645,8 @@ public class Index {
 	};
 	protected VariableInterest variableInterest;
 	/**
-	 * Variable interest which uises the index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -698,8 +692,8 @@ public class Index {
 	};
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Pricing which uses an index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -747,7 +741,7 @@ public class Index {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Index";
 				definition = "Identifies the index.";
@@ -773,103 +767,116 @@ public class Index {
 		return indexRateBasis;
 	}
 
-	public void setIndexRateBasis(PercentageRate indexRateBasis) {
-		this.indexRateBasis = indexRateBasis;
+	public Index setIndexRateBasis(PercentageRate indexRateBasis) {
+		this.indexRateBasis = Objects.requireNonNull(indexRateBasis);
+		return this;
 	}
 
 	public RateAndAmount getIndexFactor() {
 		return indexFactor;
 	}
 
-	public void setIndexFactor(com.tools20022.repository.entity.RateAndAmount indexFactor) {
-		this.indexFactor = indexFactor;
+	public Index setIndexFactor(com.tools20022.repository.entity.RateAndAmount indexFactor) {
+		this.indexFactor = Objects.requireNonNull(indexFactor);
+		return this;
 	}
 
 	public DecimalNumber getIndexPoints() {
 		return indexPoints;
 	}
 
-	public void setIndexPoints(DecimalNumber indexPoints) {
-		this.indexPoints = indexPoints;
+	public Index setIndexPoints(DecimalNumber indexPoints) {
+		this.indexPoints = Objects.requireNonNull(indexPoints);
+		return this;
 	}
 
 	public ISODateTime getIndexFixingDate() {
 		return indexFixingDate;
 	}
 
-	public void setIndexFixingDate(ISODateTime indexFixingDate) {
-		this.indexFixingDate = indexFixingDate;
+	public Index setIndexFixingDate(ISODateTime indexFixingDate) {
+		this.indexFixingDate = Objects.requireNonNull(indexFixingDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Index setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getReferenceSource() {
 		return referenceSource;
 	}
 
-	public void setReferenceSource(Max35Text referenceSource) {
-		this.referenceSource = referenceSource;
+	public Index setReferenceSource(Max35Text referenceSource) {
+		this.referenceSource = Objects.requireNonNull(referenceSource);
+		return this;
 	}
 
 	public CurrencyCode getIndexRateCurrency() {
 		return indexRateCurrency;
 	}
 
-	public void setIndexRateCurrency(CurrencyCode indexRateCurrency) {
-		this.indexRateCurrency = indexRateCurrency;
+	public Index setIndexRateCurrency(CurrencyCode indexRateCurrency) {
+		this.indexRateCurrency = Objects.requireNonNull(indexRateCurrency);
+		return this;
 	}
 
 	public FrequencyCode getIndexRateFrequency() {
 		return indexRateFrequency;
 	}
 
-	public void setIndexRateFrequency(FrequencyCode indexRateFrequency) {
-		this.indexRateFrequency = indexRateFrequency;
+	public Index setIndexRateFrequency(FrequencyCode indexRateFrequency) {
+		this.indexRateFrequency = Objects.requireNonNull(indexRateFrequency);
+		return this;
 	}
 
 	public DecimalNumber getIndexRateMultiplier() {
 		return indexRateMultiplier;
 	}
 
-	public void setIndexRateMultiplier(DecimalNumber indexRateMultiplier) {
-		this.indexRateMultiplier = indexRateMultiplier;
+	public Index setIndexRateMultiplier(DecimalNumber indexRateMultiplier) {
+		this.indexRateMultiplier = Objects.requireNonNull(indexRateMultiplier);
+		return this;
 	}
 
-	public Spread getSpread() {
-		return spread;
+	public Optional<Spread> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Index setSpread(com.tools20022.repository.entity.Spread spread) {
 		this.spread = spread;
+		return this;
 	}
 
 	public List<PortfolioBenchmark> getPortfolioBenchmark() {
-		return portfolioBenchmark;
+		return portfolioBenchmark == null ? portfolioBenchmark = new ArrayList<>() : portfolioBenchmark;
 	}
 
-	public void setPortfolioBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark) {
-		this.portfolioBenchmark = portfolioBenchmark;
+	public Index setPortfolioBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark) {
+		this.portfolioBenchmark = Objects.requireNonNull(portfolioBenchmark);
+		return this;
 	}
 
 	public VariableInterest getVariableInterest() {
 		return variableInterest;
 	}
 
-	public void setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
-		this.variableInterest = variableInterest;
+	public Index setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 
 	public SecuritiesPricing getSecuritiesPricing() {
 		return securitiesPricing;
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
-		this.securitiesPricing = securitiesPricing;
+	public Index setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = Objects.requireNonNull(securitiesPricing);
+		return this;
 	}
 }

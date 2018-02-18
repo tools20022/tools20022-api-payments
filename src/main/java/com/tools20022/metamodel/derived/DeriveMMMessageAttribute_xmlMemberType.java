@@ -25,7 +25,7 @@ import com.tools20022.metamodel.MMMessageAttribute;
 /**
  * Calculate derived attribute {@link MMMessageAttribute#getXmlMemberType()}
  * 
- * @see MMMessageAttribute_#checkMessageAttributeHasExactlyOneType
+ * @see MMMessageAttribute#checkMessageAttributeHasExactlyOneType
  */
 public class DeriveMMMessageAttribute_xmlMemberType implements Function<MMMessageAttribute, MMLogicalType> {
 

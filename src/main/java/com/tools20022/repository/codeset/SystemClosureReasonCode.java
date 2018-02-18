@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemClosureReasonCode#BankingHoliday
- * SystemClosureReasonCode.mmBankingHoliday}</li>
+ * SystemClosureReasonCode.BankingHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemClosureReasonCode#SystemMaintenance
- * SystemClosureReasonCode.mmSystemMaintenance}</li>
+ * SystemClosureReasonCode.SystemMaintenance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemClosureReasonCode#NoOperation
- * SystemClosureReasonCode.mmNoOperation}</li>
+ * SystemClosureReasonCode.NoOperation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemClosureReasonCode#Recovery
- * SystemClosureReasonCode.mmRecovery}</li>
+ * SystemClosureReasonCode.Recovery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SystemClosureReasonCode#AllowedDowntimeWindow
- * SystemClosureReasonCode.mmAllowedDowntimeWindow}</li>
+ * SystemClosureReasonCode.AllowedDowntimeWindow}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -237,7 +237,7 @@ public class SystemClosureReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BHOL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemClosureReasonCode";

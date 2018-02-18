@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#DueFormationAndOrganisation
- * CertificateTypeCode.mmDueFormationAndOrganisation}</li>
+ * CertificateTypeCode.DueFormationAndOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#GoodStanding
- * CertificateTypeCode.mmGoodStanding}</li>
+ * CertificateTypeCode.GoodStanding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#LetterOfReference
- * CertificateTypeCode.mmLetterOfReference}</li>
+ * CertificateTypeCode.LetterOfReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#AntiMoneyLaundering
- * CertificateTypeCode.mmAntiMoneyLaundering}</li>
+ * CertificateTypeCode.AntiMoneyLaundering}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#Incumbency
- * CertificateTypeCode.mmIncumbency}</li>
+ * CertificateTypeCode.Incumbency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#Passport
- * CertificateTypeCode.mmPassport}</li>
+ * CertificateTypeCode.Passport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#DrivingLicense
- * CertificateTypeCode.mmDrivingLicense}</li>
+ * CertificateTypeCode.DrivingLicense}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#IdentityCard
- * CertificateTypeCode.mmIdentityCard}</li>
+ * CertificateTypeCode.IdentityCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#ProofOfAddress
- * CertificateTypeCode.mmProofOfAddress}</li>
+ * CertificateTypeCode.ProofOfAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateTypeCode#PublicKeyInfrastructureCertificate
- * CertificateTypeCode.mmPublicKeyInfrastructureCertificate}</li>
+ * CertificateTypeCode.PublicKeyInfrastructureCertificate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -404,7 +404,7 @@ public class CertificateTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DFOR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CertificateTypeCode";

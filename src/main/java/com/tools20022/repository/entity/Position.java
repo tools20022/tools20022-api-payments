@@ -23,6 +23,7 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Specifies the status of trades and their value inside a system.
@@ -73,8 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,9 +92,8 @@ public class Position {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity netQuantity;
 	/**
-	 * Specifies the net quantity position of the trade legs of one member
-	 * within the system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +141,8 @@ public class Position {
 	};
 	protected CurrencyAndAmount netPositionAmount;
 	/**
-	 * Specifies the net position amount of the trade legs of one member within
-	 * the system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,8 +189,8 @@ public class Position {
 	};
 	protected System system;
 	/**
-	 * System for which trades position is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,8 +235,8 @@ public class Position {
 	};
 	protected SecuritiesPricing price;
 	/**
-	 * Price applied to the position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,8 +282,8 @@ public class Position {
 	};
 	protected SecuritiesSettlement securitiesSettlement;
 	/**
-	 * Information related to the settlement of the position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,8 +330,8 @@ public class Position {
 	};
 	protected CurrencyAndAmount initialPositionAmount;
 	/**
-	 * Specifies the position at the beginning of a reporting period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +379,7 @@ public class Position {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Position";
 				definition = "Specifies the status of trades and their value inside a system.";
@@ -402,47 +401,53 @@ public class Position {
 		return netQuantity;
 	}
 
-	public void setNetQuantity(com.tools20022.repository.entity.SecuritiesQuantity netQuantity) {
-		this.netQuantity = netQuantity;
+	public Position setNetQuantity(com.tools20022.repository.entity.SecuritiesQuantity netQuantity) {
+		this.netQuantity = Objects.requireNonNull(netQuantity);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetPositionAmount() {
 		return netPositionAmount;
 	}
 
-	public void setNetPositionAmount(CurrencyAndAmount netPositionAmount) {
-		this.netPositionAmount = netPositionAmount;
+	public Position setNetPositionAmount(CurrencyAndAmount netPositionAmount) {
+		this.netPositionAmount = Objects.requireNonNull(netPositionAmount);
+		return this;
 	}
 
 	public System getSystem() {
 		return system;
 	}
 
-	public void setSystem(com.tools20022.repository.entity.System system) {
-		this.system = system;
+	public Position setSystem(com.tools20022.repository.entity.System system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 
 	public SecuritiesPricing getPrice() {
 		return price;
 	}
 
-	public void setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
-		this.price = price;
+	public Position setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
+		this.price = Objects.requireNonNull(price);
+		return this;
 	}
 
 	public SecuritiesSettlement getSecuritiesSettlement() {
 		return securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public Position setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 
 	public CurrencyAndAmount getInitialPositionAmount() {
 		return initialPositionAmount;
 	}
 
-	public void setInitialPositionAmount(CurrencyAndAmount initialPositionAmount) {
-		this.initialPositionAmount = initialPositionAmount;
+	public Position setInitialPositionAmount(CurrencyAndAmount initialPositionAmount) {
+		this.initialPositionAmount = Objects.requireNonNull(initialPositionAmount);
+		return this;
 	}
 }

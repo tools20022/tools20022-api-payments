@@ -25,9 +25,11 @@ import com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificat
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the details on the regulatory notification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegulatoryReportingNotification1", propOrder = {"transactionNotificationIdentification", "accountOwner", "accountServicer", "transactionCertificate"})
 public class RegulatoryReportingNotification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxNtfctnId", required = true)
 	protected Max35Text transactionNotificationIdentification;
 	/**
-	 * Unique and unambiguous identification of the transaction notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,7 +128,7 @@ public class RegulatoryReportingNotification1 {
 	public static final MMMessageAttribute mmTransactionNotificationIdentification = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
-			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryReportingNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "TxNtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,10 +139,11 @@ public class RegulatoryReportingNotification1 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctOwnr", required = true)
 	protected PartyIdentification77 accountOwner;
 	/**
-	 * Party that legally owns the cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -171,7 +175,7 @@ public class RegulatoryReportingNotification1 {
 	public static final MMMessageAssociationEnd mmAccountOwner = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
-			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryReportingNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,13 +187,11 @@ public class RegulatoryReportingNotification1 {
 			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctSvcr", required = true)
 	protected BranchAndFinancialInstitutionIdentification5 accountServicer;
 	/**
-	 * Party that manages the account on behalf of the account owner, that is
-	 * manages the registration and booking of entries on the account,
-	 * calculates balances on the account and provides information about the
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -224,7 +226,7 @@ public class RegulatoryReportingNotification1 {
 	public static final MMMessageAssociationEnd mmAccountServicer = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
-			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryReportingNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -236,11 +238,11 @@ public class RegulatoryReportingNotification1 {
 			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	@XmlElement(name = "TxCert", required = true)
 	protected List<com.tools20022.repository.msg.TransactionCertificate1> transactionCertificate;
 	/**
-	 * Certificate against which all currency control transactions are
-	 * registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -275,7 +277,7 @@ public class RegulatoryReportingNotification1 {
 	public static final MMMessageAssociationEnd mmTransactionCertificate = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmCertificate;
-			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryReportingNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "TxCert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -290,11 +292,12 @@ public class RegulatoryReportingNotification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegulatoryReportingNotification1.mmTransactionNotificationIdentification, RegulatoryReportingNotification1.mmAccountOwner, RegulatoryReportingNotification1.mmAccountServicer,
-						RegulatoryReportingNotification1.mmTransactionCertificate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegulatoryReportingNotification1.mmTransactionNotificationIdentification,
+						com.tools20022.repository.msg.RegulatoryReportingNotification1.mmAccountOwner, com.tools20022.repository.msg.RegulatoryReportingNotification1.mmAccountServicer,
+						com.tools20022.repository.msg.RegulatoryReportingNotification1.mmTransactionCertificate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(PaymentRegulatoryInformationNotificationV01.mmTransactionNotification);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReportingNotification1";
 				definition = "Provides the details on the regulatory notification.";
@@ -303,39 +306,39 @@ public class RegulatoryReportingNotification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxNtfctnId", required = true)
 	public Max35Text getTransactionNotificationIdentification() {
 		return transactionNotificationIdentification;
 	}
 
-	public void setTransactionNotificationIdentification(Max35Text transactionNotificationIdentification) {
-		this.transactionNotificationIdentification = transactionNotificationIdentification;
+	public RegulatoryReportingNotification1 setTransactionNotificationIdentification(Max35Text transactionNotificationIdentification) {
+		this.transactionNotificationIdentification = Objects.requireNonNull(transactionNotificationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnr", required = true)
 	public PartyIdentification77 getAccountOwner() {
 		return accountOwner;
 	}
 
-	public void setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
-		this.accountOwner = accountOwner;
+	public RegulatoryReportingNotification1 setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
+		this.accountOwner = Objects.requireNonNull(accountOwner);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcr", required = true)
 	public BranchAndFinancialInstitutionIdentification5 getAccountServicer() {
 		return accountServicer;
 	}
 
-	public void setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
-		this.accountServicer = accountServicer;
+	public RegulatoryReportingNotification1 setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
+		this.accountServicer = Objects.requireNonNull(accountServicer);
+		return this;
 	}
 
-	@XmlElement(name = "TxCert", required = true)
 	public List<TransactionCertificate1> getTransactionCertificate() {
-		return transactionCertificate;
+		return transactionCertificate == null ? transactionCertificate = new ArrayList<>() : transactionCertificate;
 	}
 
-	public void setTransactionCertificate(List<com.tools20022.repository.msg.TransactionCertificate1> transactionCertificate) {
-		this.transactionCertificate = transactionCertificate;
+	public RegulatoryReportingNotification1 setTransactionCertificate(List<com.tools20022.repository.msg.TransactionCertificate1> transactionCertificate) {
+		this.transactionCertificate = Objects.requireNonNull(transactionCertificate);
+		return this;
 	}
 }

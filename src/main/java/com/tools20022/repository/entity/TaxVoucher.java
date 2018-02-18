@@ -21,9 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Statement showing the amount or value of a distribution and either the tax
@@ -109,8 +108,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -128,9 +127,8 @@ public class TaxVoucher {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate requestedTaxationRate;
 	/**
-	 * Requested tax rate in case of breakdown of tax rate, for example, used
-	 * for adjustment of tax rate. This is the new requested applicable rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,8 +175,8 @@ public class TaxVoucher {
 	};
 	protected PercentageRate creditRate;
 	/**
-	 * Applicable tax rate on the tax credit amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,9 +221,8 @@ public class TaxVoucher {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTax> relatedSecurityTax;
 	/**
-	 * Specifies tax elements on the security which is involved in the corporate
-	 * event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,8 +269,8 @@ public class TaxVoucher {
 	};
 	protected CurrencyAndAmount sundryOrOtherAmount;
 	/**
-	 * Amount of money related to taxable income that cannot be categorised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,8 +316,8 @@ public class TaxVoucher {
 	};
 	protected CurrencyAndAmount creditAmount;
 	/**
-	 * Amount of money per equity allocated as the result of a tax credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,8 +363,8 @@ public class TaxVoucher {
 	};
 	protected CurrencyAndAmount cashAmountBroughtForward;
 	/**
-	 * Cash amount retained from previous dividend or interest payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,8 +410,8 @@ public class TaxVoucher {
 	};
 	protected CurrencyAndAmount cashAmountCarriedForward;
 	/**
-	 * Cash amount carried forward to next dividend or interest payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,9 +457,8 @@ public class TaxVoucher {
 	};
 	protected CurrencyAndAmount notionalTaxAmount;
 	/**
-	 * Tax on the amount of cash that would have been paid when new securities
-	 * are issued in lieu of a cash dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,9 +505,8 @@ public class TaxVoucher {
 	};
 	protected CorporateActionDistribution distribution;
 	/**
-	 * Corporate action distribution process for which tax voucher information
-	 * is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,8 +555,8 @@ public class TaxVoucher {
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification for the tax voucher.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -606,8 +601,8 @@ public class TaxVoucher {
 	};
 	protected ISODate bargainDate;
 	/**
-	 * Date on which DRIP purchase completed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -651,8 +646,8 @@ public class TaxVoucher {
 	};
 	protected ISODate bargainSettlementDate;
 	/**
-	 * Settlement date of the DRIP purchase transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -696,8 +691,8 @@ public class TaxVoucher {
 	};
 	protected BaseOneRate taxVoucherRate;
 	/**
-	 * Distribution rate per share.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -741,8 +736,8 @@ public class TaxVoucher {
 	};
 	protected SecuritiesQuantity recordDateHolding;
 	/**
-	 * Securities holding on record date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -788,8 +783,8 @@ public class TaxVoucher {
 	};
 	protected SecuritiesPricing scripDividendReinvestmentPricePerShare;
 	/**
-	 * Cost per share of new shares allotted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -835,8 +830,8 @@ public class TaxVoucher {
 	};
 	protected ActiveCurrencyAndAmount allotedSharesCost;
 	/**
-	 * Total cash amount required to purchase shares allotted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -881,8 +876,8 @@ public class TaxVoucher {
 	};
 	protected List<com.tools20022.repository.entity.ForeignExchangeTrade> foreignExchangeTransaction;
 	/**
-	 * Provides information about the foreign exchange transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -931,7 +926,7 @@ public class TaxVoucher {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxVoucher";
 				definition = "Statement showing the amount or value of a distribution and either the tax credit to which the recipient is entitled in respect of that distribution; or the amount of tax deducted from the distribution.";
@@ -959,135 +954,152 @@ public class TaxVoucher {
 		return requestedTaxationRate;
 	}
 
-	public void setRequestedTaxationRate(PercentageRate requestedTaxationRate) {
-		this.requestedTaxationRate = requestedTaxationRate;
+	public TaxVoucher setRequestedTaxationRate(PercentageRate requestedTaxationRate) {
+		this.requestedTaxationRate = Objects.requireNonNull(requestedTaxationRate);
+		return this;
 	}
 
 	public PercentageRate getCreditRate() {
 		return creditRate;
 	}
 
-	public void setCreditRate(PercentageRate creditRate) {
-		this.creditRate = creditRate;
+	public TaxVoucher setCreditRate(PercentageRate creditRate) {
+		this.creditRate = Objects.requireNonNull(creditRate);
+		return this;
 	}
 
 	public List<SecuritiesTax> getRelatedSecurityTax() {
-		return relatedSecurityTax;
+		return relatedSecurityTax == null ? relatedSecurityTax = new ArrayList<>() : relatedSecurityTax;
 	}
 
-	public void setRelatedSecurityTax(List<com.tools20022.repository.entity.SecuritiesTax> relatedSecurityTax) {
-		this.relatedSecurityTax = relatedSecurityTax;
+	public TaxVoucher setRelatedSecurityTax(List<com.tools20022.repository.entity.SecuritiesTax> relatedSecurityTax) {
+		this.relatedSecurityTax = Objects.requireNonNull(relatedSecurityTax);
+		return this;
 	}
 
 	public CurrencyAndAmount getSundryOrOtherAmount() {
 		return sundryOrOtherAmount;
 	}
 
-	public void setSundryOrOtherAmount(CurrencyAndAmount sundryOrOtherAmount) {
-		this.sundryOrOtherAmount = sundryOrOtherAmount;
+	public TaxVoucher setSundryOrOtherAmount(CurrencyAndAmount sundryOrOtherAmount) {
+		this.sundryOrOtherAmount = Objects.requireNonNull(sundryOrOtherAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getCreditAmount() {
 		return creditAmount;
 	}
 
-	public void setCreditAmount(CurrencyAndAmount creditAmount) {
-		this.creditAmount = creditAmount;
+	public TaxVoucher setCreditAmount(CurrencyAndAmount creditAmount) {
+		this.creditAmount = Objects.requireNonNull(creditAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getCashAmountBroughtForward() {
 		return cashAmountBroughtForward;
 	}
 
-	public void setCashAmountBroughtForward(CurrencyAndAmount cashAmountBroughtForward) {
-		this.cashAmountBroughtForward = cashAmountBroughtForward;
+	public TaxVoucher setCashAmountBroughtForward(CurrencyAndAmount cashAmountBroughtForward) {
+		this.cashAmountBroughtForward = Objects.requireNonNull(cashAmountBroughtForward);
+		return this;
 	}
 
 	public CurrencyAndAmount getCashAmountCarriedForward() {
 		return cashAmountCarriedForward;
 	}
 
-	public void setCashAmountCarriedForward(CurrencyAndAmount cashAmountCarriedForward) {
-		this.cashAmountCarriedForward = cashAmountCarriedForward;
+	public TaxVoucher setCashAmountCarriedForward(CurrencyAndAmount cashAmountCarriedForward) {
+		this.cashAmountCarriedForward = Objects.requireNonNull(cashAmountCarriedForward);
+		return this;
 	}
 
 	public CurrencyAndAmount getNotionalTaxAmount() {
 		return notionalTaxAmount;
 	}
 
-	public void setNotionalTaxAmount(CurrencyAndAmount notionalTaxAmount) {
-		this.notionalTaxAmount = notionalTaxAmount;
+	public TaxVoucher setNotionalTaxAmount(CurrencyAndAmount notionalTaxAmount) {
+		this.notionalTaxAmount = Objects.requireNonNull(notionalTaxAmount);
+		return this;
 	}
 
-	public CorporateActionDistribution getDistribution() {
-		return distribution;
+	public Optional<CorporateActionDistribution> getDistribution() {
+		return distribution == null ? Optional.empty() : Optional.of(distribution);
 	}
 
-	public void setDistribution(com.tools20022.repository.entity.CorporateActionDistribution distribution) {
+	public TaxVoucher setDistribution(com.tools20022.repository.entity.CorporateActionDistribution distribution) {
 		this.distribution = distribution;
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public TaxVoucher setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public ISODate getBargainDate() {
 		return bargainDate;
 	}
 
-	public void setBargainDate(ISODate bargainDate) {
-		this.bargainDate = bargainDate;
+	public TaxVoucher setBargainDate(ISODate bargainDate) {
+		this.bargainDate = Objects.requireNonNull(bargainDate);
+		return this;
 	}
 
 	public ISODate getBargainSettlementDate() {
 		return bargainSettlementDate;
 	}
 
-	public void setBargainSettlementDate(ISODate bargainSettlementDate) {
-		this.bargainSettlementDate = bargainSettlementDate;
+	public TaxVoucher setBargainSettlementDate(ISODate bargainSettlementDate) {
+		this.bargainSettlementDate = Objects.requireNonNull(bargainSettlementDate);
+		return this;
 	}
 
 	public BaseOneRate getTaxVoucherRate() {
 		return taxVoucherRate;
 	}
 
-	public void setTaxVoucherRate(BaseOneRate taxVoucherRate) {
-		this.taxVoucherRate = taxVoucherRate;
+	public TaxVoucher setTaxVoucherRate(BaseOneRate taxVoucherRate) {
+		this.taxVoucherRate = Objects.requireNonNull(taxVoucherRate);
+		return this;
 	}
 
 	public SecuritiesQuantity getRecordDateHolding() {
 		return recordDateHolding;
 	}
 
-	public void setRecordDateHolding(com.tools20022.repository.entity.SecuritiesQuantity recordDateHolding) {
-		this.recordDateHolding = recordDateHolding;
+	public TaxVoucher setRecordDateHolding(com.tools20022.repository.entity.SecuritiesQuantity recordDateHolding) {
+		this.recordDateHolding = Objects.requireNonNull(recordDateHolding);
+		return this;
 	}
 
 	public SecuritiesPricing getScripDividendReinvestmentPricePerShare() {
 		return scripDividendReinvestmentPricePerShare;
 	}
 
-	public void setScripDividendReinvestmentPricePerShare(com.tools20022.repository.entity.SecuritiesPricing scripDividendReinvestmentPricePerShare) {
-		this.scripDividendReinvestmentPricePerShare = scripDividendReinvestmentPricePerShare;
+	public TaxVoucher setScripDividendReinvestmentPricePerShare(com.tools20022.repository.entity.SecuritiesPricing scripDividendReinvestmentPricePerShare) {
+		this.scripDividendReinvestmentPricePerShare = Objects.requireNonNull(scripDividendReinvestmentPricePerShare);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getAllotedSharesCost() {
 		return allotedSharesCost;
 	}
 
-	public void setAllotedSharesCost(ActiveCurrencyAndAmount allotedSharesCost) {
-		this.allotedSharesCost = allotedSharesCost;
+	public TaxVoucher setAllotedSharesCost(ActiveCurrencyAndAmount allotedSharesCost) {
+		this.allotedSharesCost = Objects.requireNonNull(allotedSharesCost);
+		return this;
 	}
 
 	public List<ForeignExchangeTrade> getForeignExchangeTransaction() {
-		return foreignExchangeTransaction;
+		return foreignExchangeTransaction == null ? foreignExchangeTransaction = new ArrayList<>() : foreignExchangeTransaction;
 	}
 
-	public void setForeignExchangeTransaction(List<com.tools20022.repository.entity.ForeignExchangeTrade> foreignExchangeTransaction) {
-		this.foreignExchangeTransaction = foreignExchangeTransaction;
+	public TaxVoucher setForeignExchangeTransaction(List<com.tools20022.repository.entity.ForeignExchangeTrade> foreignExchangeTransaction) {
+		this.foreignExchangeTransaction = Objects.requireNonNull(foreignExchangeTransaction);
+		return this;
 	}
 }

@@ -29,9 +29,8 @@ import com.tools20022.repository.entity.CashEntry;
 import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -81,8 +80,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,15 +94,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatementResolutionEntry2", propOrder = {"originalGroupInformation", "originalStatementIdentification", "accountServicerReference", "correctedAmount", "charges", "purpose"})
 public class StatementResolutionEntry2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlGrpInf")
 	protected OriginalGroupInformation3 originalGroupInformation;
 	/**
-	 * Provides information on the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -130,7 +130,7 @@ public class StatementResolutionEntry2 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalGroupInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlGrpInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,11 +142,11 @@ public class StatementResolutionEntry2 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation3.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlStmtId")
 	protected Max35Text originalStatementIdentification;
 	/**
-	 * Unique identification, as assigned by the account servicer, to
-	 * unambiguously identify the original statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +175,7 @@ public class StatementResolutionEntry2 {
 	 */
 	public static final MMMessageAttribute mmOriginalStatementIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlStmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,11 +186,11 @@ public class StatementResolutionEntry2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AcctSvcrRef")
 	protected Max35Text accountServicerReference;
 	/**
-	 * Unique reference, as assigned by the account servicing institution, to
-	 * unambiguously identify the entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -225,7 +225,7 @@ public class StatementResolutionEntry2 {
 	public static final MMMessageAttribute mmAccountServicerReference = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmAccountServicerTransactionIdentification;
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -236,14 +236,11 @@ public class StatementResolutionEntry2 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "CrrctdAmt")
 	protected ActiveOrHistoricCurrencyAndAmount correctedAmount;
 	/**
-	 * Corrected debit or credit amount, compared to the original entry where
-	 * the amount is incorrect.
 	 * 
-	 * Usage: This amount may only be present if an incorrect statement entry
-	 * has been reported.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +276,7 @@ public class StatementResolutionEntry2 {
 	public static final MMMessageAttribute mmCorrectedAmount = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmAmount;
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "CrrctdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -290,11 +287,11 @@ public class StatementResolutionEntry2 {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	@XmlElement(name = "Chrgs")
 	protected List<com.tools20022.repository.msg.Charges3> charges;
 	/**
-	 * Provides information on the charges included in the original entry
-	 * amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -327,7 +324,7 @@ public class StatementResolutionEntry2 {
 	public static final MMMessageAssociationEnd mmCharges = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmCharges;
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "Chrgs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -338,14 +335,11 @@ public class StatementResolutionEntry2 {
 			type_lazy = () -> com.tools20022.repository.msg.Charges3.mmObject();
 		}
 	};
+	@XmlElement(name = "Purp")
 	protected Purpose2Choice purpose;
 	/**
-	 * Underlying reason for the payment transaction. Usage: Purpose is used by
-	 * the end-customers, that is initiating party, (ultimate) debtor,
-	 * (ultimate) creditor to provide information concerning the nature of the
-	 * payment. Purpose is a content element, which is not used for processing
-	 * by any of the agents involved in the payment chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -379,7 +373,7 @@ public class StatementResolutionEntry2 {
 	public static final MMMessageAssociationEnd mmPurpose = new MMMessageAssociationEnd() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
-			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "Purp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -395,11 +389,12 @@ public class StatementResolutionEntry2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatementResolutionEntry2.mmOriginalGroupInformation, StatementResolutionEntry2.mmOriginalStatementIdentification, StatementResolutionEntry2.mmAccountServicerReference,
-						StatementResolutionEntry2.mmCorrectedAmount, StatementResolutionEntry2.mmCharges, StatementResolutionEntry2.mmPurpose);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementResolutionEntry2.mmOriginalGroupInformation, com.tools20022.repository.msg.StatementResolutionEntry2.mmOriginalStatementIdentification,
+						com.tools20022.repository.msg.StatementResolutionEntry2.mmAccountServicerReference, com.tools20022.repository.msg.StatementResolutionEntry2.mmCorrectedAmount,
+						com.tools20022.repository.msg.StatementResolutionEntry2.mmCharges, com.tools20022.repository.msg.StatementResolutionEntry2.mmPurpose);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ResolutionOfInvestigationV07.mmStatementDetails);
 				trace_lazy = () -> CashEntry.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementResolutionEntry2";
 				definition = "Provides further details on the statement entry for the resolution of the investigation.";
@@ -408,57 +403,57 @@ public class StatementResolutionEntry2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlGrpInf")
-	public OriginalGroupInformation3 getOriginalGroupInformation() {
-		return originalGroupInformation;
+	public Optional<OriginalGroupInformation3> getOriginalGroupInformation() {
+		return originalGroupInformation == null ? Optional.empty() : Optional.of(originalGroupInformation);
 	}
 
-	public void setOriginalGroupInformation(com.tools20022.repository.msg.OriginalGroupInformation3 originalGroupInformation) {
+	public StatementResolutionEntry2 setOriginalGroupInformation(com.tools20022.repository.msg.OriginalGroupInformation3 originalGroupInformation) {
 		this.originalGroupInformation = originalGroupInformation;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlStmtId")
-	public Max35Text getOriginalStatementIdentification() {
-		return originalStatementIdentification;
+	public Optional<Max35Text> getOriginalStatementIdentification() {
+		return originalStatementIdentification == null ? Optional.empty() : Optional.of(originalStatementIdentification);
 	}
 
-	public void setOriginalStatementIdentification(Max35Text originalStatementIdentification) {
+	public StatementResolutionEntry2 setOriginalStatementIdentification(Max35Text originalStatementIdentification) {
 		this.originalStatementIdentification = originalStatementIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcrRef")
-	public Max35Text getAccountServicerReference() {
-		return accountServicerReference;
+	public Optional<Max35Text> getAccountServicerReference() {
+		return accountServicerReference == null ? Optional.empty() : Optional.of(accountServicerReference);
 	}
 
-	public void setAccountServicerReference(Max35Text accountServicerReference) {
+	public StatementResolutionEntry2 setAccountServicerReference(Max35Text accountServicerReference) {
 		this.accountServicerReference = accountServicerReference;
+		return this;
 	}
 
-	@XmlElement(name = "CrrctdAmt")
-	public ActiveOrHistoricCurrencyAndAmount getCorrectedAmount() {
-		return correctedAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getCorrectedAmount() {
+		return correctedAmount == null ? Optional.empty() : Optional.of(correctedAmount);
 	}
 
-	public void setCorrectedAmount(ActiveOrHistoricCurrencyAndAmount correctedAmount) {
+	public StatementResolutionEntry2 setCorrectedAmount(ActiveOrHistoricCurrencyAndAmount correctedAmount) {
 		this.correctedAmount = correctedAmount;
+		return this;
 	}
 
-	@XmlElement(name = "Chrgs")
 	public List<Charges3> getCharges() {
-		return charges;
+		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public void setCharges(List<com.tools20022.repository.msg.Charges3> charges) {
-		this.charges = charges;
+	public StatementResolutionEntry2 setCharges(List<com.tools20022.repository.msg.Charges3> charges) {
+		this.charges = Objects.requireNonNull(charges);
+		return this;
 	}
 
-	@XmlElement(name = "Purp")
-	public Purpose2Choice getPurpose() {
-		return purpose;
+	public Optional<Purpose2Choice> getPurpose() {
+		return purpose == null ? Optional.empty() : Optional.of(purpose);
 	}
 
-	public void setPurpose(Purpose2Choice purpose) {
+	public StatementResolutionEntry2 setPurpose(Purpose2Choice purpose) {
 		this.purpose = purpose;
+		return this;
 	}
 }

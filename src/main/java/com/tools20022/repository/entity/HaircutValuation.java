@@ -23,9 +23,8 @@ import com.tools20022.repository.datatype.PlusOrMinusIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashCollateral5;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Basic valuation details of an asset's market value.
@@ -65,8 +64,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,8 +81,8 @@ public class HaircutValuation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AssetHolding assetHolding;
 	/**
-	 * Asset holding for which a haircut is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,8 +129,8 @@ public class HaircutValuation {
 	};
 	protected PercentageRate haircut;
 	/**
-	 * Haircut or valuation factor on the security expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,10 +185,8 @@ public class HaircutValuation {
 	};
 	protected PlusOrMinusIndicator sign;
 	/**
-	 * One of the following PlusOrMinusIndicator values must be used:<br>
-	 * MeaningWhenTrue: Plus (the haircut is added)<br>
-	 * MeaningWhenFalse: Minus (the haircut is deducted)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,8 +234,8 @@ public class HaircutValuation {
 	};
 	protected List<com.tools20022.repository.entity.InformationPartyRole> partyRole;
 	/**
-	 * Specifies the role of a party in the haircut valuation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,7 +285,7 @@ public class HaircutValuation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HaircutValuation";
 				definition = "Basic valuation details of an asset's market value.";
@@ -305,35 +302,39 @@ public class HaircutValuation {
 		return mmObject_lazy.get();
 	}
 
-	public AssetHolding getAssetHolding() {
-		return assetHolding;
+	public Optional<AssetHolding> getAssetHolding() {
+		return assetHolding == null ? Optional.empty() : Optional.of(assetHolding);
 	}
 
-	public void setAssetHolding(com.tools20022.repository.entity.AssetHolding assetHolding) {
+	public HaircutValuation setAssetHolding(com.tools20022.repository.entity.AssetHolding assetHolding) {
 		this.assetHolding = assetHolding;
+		return this;
 	}
 
 	public PercentageRate getHaircut() {
 		return haircut;
 	}
 
-	public void setHaircut(PercentageRate haircut) {
-		this.haircut = haircut;
+	public HaircutValuation setHaircut(PercentageRate haircut) {
+		this.haircut = Objects.requireNonNull(haircut);
+		return this;
 	}
 
 	public PlusOrMinusIndicator getSign() {
 		return sign;
 	}
 
-	public void setSign(PlusOrMinusIndicator sign) {
-		this.sign = sign;
+	public HaircutValuation setSign(PlusOrMinusIndicator sign) {
+		this.sign = Objects.requireNonNull(sign);
+		return this;
 	}
 
 	public List<InformationPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public HaircutValuation setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 }

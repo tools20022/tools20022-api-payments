@@ -37,16 +37,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Closed
- * CaseStatusCode.mmClosed}</li>
+ * CaseStatusCode.Closed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Assigned
- * CaseStatusCode.mmAssigned}</li>
+ * CaseStatusCode.Assigned}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseStatusCode#UnderInvestigation
- * CaseStatusCode.mmUnderInvestigation}</li>
+ * CaseStatusCode.UnderInvestigation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Unknown
- * CaseStatusCode.mmUnknown}</li>
+ * CaseStatusCode.Unknown}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CaseStatusCode#Overdue
- * CaseStatusCode.mmOverdue}</li>
+ * CaseStatusCode.Overdue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -239,7 +239,7 @@ public class CaseStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CLSD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseStatusCode";

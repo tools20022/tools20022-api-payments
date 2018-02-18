@@ -38,107 +38,107 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CrossCurrencyIRS
- * ExposureTypeCode.mmCrossCurrencyIRS}</li>
+ * ExposureTypeCode.CrossCurrencyIRS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#Commodities
- * ExposureTypeCode.mmCommodities}</li>
+ * ExposureTypeCode.Commodities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CreditDefaultSwap
- * ExposureTypeCode.mmCreditDefaultSwap}</li>
+ * ExposureTypeCode.CreditDefaultSwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CrossProduct
- * ExposureTypeCode.mmCrossProduct}</li>
+ * ExposureTypeCode.CrossProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CreditSupport
- * ExposureTypeCode.mmCreditSupport}</li>
+ * ExposureTypeCode.CreditSupport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CreditLine
- * ExposureTypeCode.mmCreditLine}</li>
+ * ExposureTypeCode.CreditLine}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#EquityOption
- * ExposureTypeCode.mmEquityOption}</li>
+ * ExposureTypeCode.EquityOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#EquitySwap
- * ExposureTypeCode.mmEquitySwap}</li>
+ * ExposureTypeCode.EquitySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ExoticOption
- * ExposureTypeCode.mmExoticOption}</li>
+ * ExposureTypeCode.ExoticOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ExchangeTradedDerivatives
- * ExposureTypeCode.mmExchangeTradedDerivatives}</li>
+ * ExposureTypeCode.ExchangeTradedDerivatives}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#FixedIncome
- * ExposureTypeCode.mmFixedIncome}</li>
+ * ExposureTypeCode.FixedIncome}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ForwardForeignExchange
- * ExposureTypeCode.mmForwardForeignExchange}</li>
+ * ExposureTypeCode.ForwardForeignExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ForeignExchange
- * ExposureTypeCode.mmForeignExchange}</li>
+ * ExposureTypeCode.ForeignExchange}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#Futures
- * ExposureTypeCode.mmFutures}</li>
+ * ExposureTypeCode.Futures}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#Liquidity
- * ExposureTypeCode.mmLiquidity}</li>
+ * ExposureTypeCode.Liquidity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#FXOption
- * ExposureTypeCode.mmFXOption}</li>
+ * ExposureTypeCode.FXOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#OTCDerivatives
- * ExposureTypeCode.mmOTCDerivatives}</li>
+ * ExposureTypeCode.OTCDerivatives}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CashSettlement
- * ExposureTypeCode.mmCashSettlement}</li>
+ * ExposureTypeCode.CashSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#RepurchaseAgreement
- * ExposureTypeCode.mmRepurchaseAgreement}</li>
+ * ExposureTypeCode.RepurchaseAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SecuritiesBuySellSellBuyBack
- * ExposureTypeCode.mmSecuritiesBuySellSellBuyBack}</li>
+ * ExposureTypeCode.SecuritiesBuySellSellBuyBack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SingleCurrencyIRSExotic
- * ExposureTypeCode.mmSingleCurrencyIRSExotic}</li>
+ * ExposureTypeCode.SingleCurrencyIRSExotic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SingleCurrencyIRS
- * ExposureTypeCode.mmSingleCurrencyIRS}</li>
+ * ExposureTypeCode.SingleCurrencyIRS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SecuritiesCrossProducts
- * ExposureTypeCode.mmSecuritiesCrossProducts}</li>
+ * ExposureTypeCode.SecuritiesCrossProducts}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SecuritiesLendingAndBorrowing
- * ExposureTypeCode.mmSecuritiesLendingAndBorrowing}</li>
+ * ExposureTypeCode.SecuritiesLendingAndBorrowing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#SecuredLoan
- * ExposureTypeCode.mmSecuredLoan}</li>
+ * ExposureTypeCode.SecuredLoan}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#Swaption
- * ExposureTypeCode.mmSwaption}</li>
+ * ExposureTypeCode.Swaption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#TreasuryCorssProduct
- * ExposureTypeCode.mmTreasuryCorssProduct}</li>
+ * ExposureTypeCode.TreasuryCorssProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#BondForward
- * ExposureTypeCode.mmBondForward}</li>
+ * ExposureTypeCode.BondForward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ReverseRepurchaseAgreement
- * ExposureTypeCode.mmReverseRepurchaseAgreement}</li>
+ * ExposureTypeCode.ReverseRepurchaseAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ToBeAnnounced
- * ExposureTypeCode.mmToBeAnnounced}</li>
+ * ExposureTypeCode.ToBeAnnounced}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#ShortSell
- * ExposureTypeCode.mmShortSell}</li>
+ * ExposureTypeCode.ShortSell}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#CCPCollateral
- * ExposureTypeCode.mmCCPCollateral}</li>
+ * ExposureTypeCode.CCPCollateral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeCode#Equity
- * ExposureTypeCode.mmEquity}</li>
+ * ExposureTypeCode.Equity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExposureTypeCode#TreasuryBonds
- * ExposureTypeCode.mmTreasuryBonds}</li>
+ * ExposureTypeCode.TreasuryBonds}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1201,7 +1201,7 @@ public class ExposureTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CCIR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExposureTypeCode";

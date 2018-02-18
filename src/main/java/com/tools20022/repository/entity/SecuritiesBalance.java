@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code;
 import com.tools20022.repository.codeset.ShortLongCode;
@@ -25,9 +26,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Balance;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Net position of a segregated holding, in a single security, within the
@@ -183,8 +183,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -202,10 +202,8 @@ public class SecuritiesBalance extends Balance {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount netGainLoss;
 	/**
-	 * Amount representing the difference between the cost and the current price
-	 * of a security. In the context of securities settlement, it is the amount
-	 * paid or received when the instructions are netted or paired off.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,6 +216,9 @@ public class SecuritiesBalance extends Balance {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance
 	 * SecuritiesBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::ANTO</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -235,6 +236,7 @@ public class SecuritiesBalance extends Balance {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::ANTO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetGainLoss";
 			definition = "Amount representing the difference between the cost and the current price of a security. In the context of securities settlement, it is the amount paid or received when the instructions are netted or paired off.";
@@ -253,9 +255,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesAccount securitiesAccount;
 	/**
-	 * Account or sub-account for which a balance is calculated. It is derived
-	 * from the association between Balance and Account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,8 +305,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CorporateActionEntitlement eligibleBalanceRelatedEntitlement;
 	/**
-	 * Corporate action entitlement for which an eligible balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -355,8 +356,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected ShortLongCode shortLong;
 	/**
-	 * Indication that the position is short or long.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,8 +403,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesQuantity aggregateQuantity;
 	/**
-	 * Total quantity of financial instruments of the balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,6 +425,9 @@ public class SecuritiesBalance extends Balance {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance
 	 * SecuritiesBalance}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93B::AGGR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -438,6 +442,7 @@ public class SecuritiesBalance extends Balance {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93B::AGGR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AggregateQuantity";
 			definition = "Total quantity of financial instruments of the balance.";
@@ -450,8 +455,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CorporateActionEntitlement corporateActionEntitlement;
 	/**
-	 * Corporate action entitlement for which a balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,9 +505,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CorporateActionEntitlement instructedBalanceRelatedEntitlement;
 	/**
-	 * Corporate action entitlement for which an instructed balance is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,9 +556,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CorporateActionEntitlement uninstructedBalanceRelatedEntitlement;
 	/**
-	 * Corporate action entitlement for which an uninstructed balance is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -604,8 +607,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesBalance mainSecuritiesBalance;
 	/**
-	 * Balance which is divided in sub-balances.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -652,9 +655,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesSubBalance;
 	/**
-	 * Net position of a segregated holding of a single security within the
-	 * overall position held in an account, eg, sub-balance per status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -702,10 +704,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesBalanceTypeV2Code securitiesBalanceType;
 	/**
-	 * Reason a security is not available or additional information about the
-	 * financial instrument for which the balance is given, for example,
-	 * unregistered, registered in nominee name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -753,10 +753,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesQuantity subBalanceQuantity;
 	/**
-	 * Net position of a segregated holding of a single security within the
-	 * overall position held in a securities account, for instance. sub-balance
-	 * per type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -805,8 +803,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
 	/**
-	 * Security for which a balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -851,9 +849,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate;
 	/**
-	 * Specifies the exchange rate used to convert the balance value in another
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -901,8 +898,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected YesNoIndicator availabilityIndicator;
 	/**
-	 * Indicates whether the quantity of securities on the balance is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -950,8 +947,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesQuantity availableQuantity;
 	/**
-	 * Total quantity of financial instruments of the balance that is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1000,8 +997,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected MeetingEntitlement relatedMeetingEntitlement;
 	/**
-	 * Entitlement for which an eligible posistion is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1049,9 +1046,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected SecuritiesQuantity unavailableQuantity;
 	/**
-	 * Total quantity of financial instruments of the balance that is not
-	 * available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1100,8 +1096,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace;
 	/**
-	 * Safekeeping place at which the securities are held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1147,9 +1143,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry;
 	/**
-	 * Postings used to calculate a balance. It is derived from the association
-	 * between Balance and Entry
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1197,9 +1192,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CorporateActionEntitlement notEligibleBalanceRelatedEntitlement;
 	/**
-	 * Corporate action entitlement for which a non eligible balance is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1249,8 +1243,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected IntraPositionTransfer relatedIntraPositionTransfer;
 	/**
-	 * Transfer between two balances or sub balances.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1298,9 +1292,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected CurrencyAndAmount costAdjustment;
 	/**
-	 * Specifies the amount added or substracted to the original cost of a
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1348,8 +1341,8 @@ public class SecuritiesBalance extends Balance {
 	};
 	protected List<com.tools20022.repository.entity.Pledgee> pledgee;
 	/**
-	 * Pledgee at which the securities are held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1396,7 +1389,7 @@ public class SecuritiesBalance extends Balance {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalance";
 				definition = "Net position of a segregated holding, in a single security, within the overall position held in a securities account. A securities balance is calculated from the sum of securities' receipts minus the sum of securities' deliveries.";
@@ -1435,191 +1428,215 @@ public class SecuritiesBalance extends Balance {
 		return netGainLoss;
 	}
 
-	public void setNetGainLoss(CurrencyAndAmount netGainLoss) {
-		this.netGainLoss = netGainLoss;
+	public SecuritiesBalance setNetGainLoss(CurrencyAndAmount netGainLoss) {
+		this.netGainLoss = Objects.requireNonNull(netGainLoss);
+		return this;
 	}
 
-	public SecuritiesAccount getSecuritiesAccount() {
-		return securitiesAccount;
+	public Optional<SecuritiesAccount> getSecuritiesAccount() {
+		return securitiesAccount == null ? Optional.empty() : Optional.of(securitiesAccount);
 	}
 
-	public void setSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount securitiesAccount) {
+	public SecuritiesBalance setSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount securitiesAccount) {
 		this.securitiesAccount = securitiesAccount;
+		return this;
 	}
 
-	public CorporateActionEntitlement getEligibleBalanceRelatedEntitlement() {
-		return eligibleBalanceRelatedEntitlement;
+	public Optional<CorporateActionEntitlement> getEligibleBalanceRelatedEntitlement() {
+		return eligibleBalanceRelatedEntitlement == null ? Optional.empty() : Optional.of(eligibleBalanceRelatedEntitlement);
 	}
 
-	public void setEligibleBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement eligibleBalanceRelatedEntitlement) {
+	public SecuritiesBalance setEligibleBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement eligibleBalanceRelatedEntitlement) {
 		this.eligibleBalanceRelatedEntitlement = eligibleBalanceRelatedEntitlement;
+		return this;
 	}
 
 	public ShortLongCode getShortLong() {
 		return shortLong;
 	}
 
-	public void setShortLong(ShortLongCode shortLong) {
-		this.shortLong = shortLong;
+	public SecuritiesBalance setShortLong(ShortLongCode shortLong) {
+		this.shortLong = Objects.requireNonNull(shortLong);
+		return this;
 	}
 
 	public SecuritiesQuantity getAggregateQuantity() {
 		return aggregateQuantity;
 	}
 
-	public void setAggregateQuantity(com.tools20022.repository.entity.SecuritiesQuantity aggregateQuantity) {
-		this.aggregateQuantity = aggregateQuantity;
+	public SecuritiesBalance setAggregateQuantity(com.tools20022.repository.entity.SecuritiesQuantity aggregateQuantity) {
+		this.aggregateQuantity = Objects.requireNonNull(aggregateQuantity);
+		return this;
 	}
 
 	public CorporateActionEntitlement getCorporateActionEntitlement() {
 		return corporateActionEntitlement;
 	}
 
-	public void setCorporateActionEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement corporateActionEntitlement) {
-		this.corporateActionEntitlement = corporateActionEntitlement;
+	public SecuritiesBalance setCorporateActionEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement corporateActionEntitlement) {
+		this.corporateActionEntitlement = Objects.requireNonNull(corporateActionEntitlement);
+		return this;
 	}
 
-	public CorporateActionEntitlement getInstructedBalanceRelatedEntitlement() {
-		return instructedBalanceRelatedEntitlement;
+	public Optional<CorporateActionEntitlement> getInstructedBalanceRelatedEntitlement() {
+		return instructedBalanceRelatedEntitlement == null ? Optional.empty() : Optional.of(instructedBalanceRelatedEntitlement);
 	}
 
-	public void setInstructedBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement instructedBalanceRelatedEntitlement) {
+	public SecuritiesBalance setInstructedBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement instructedBalanceRelatedEntitlement) {
 		this.instructedBalanceRelatedEntitlement = instructedBalanceRelatedEntitlement;
+		return this;
 	}
 
-	public CorporateActionEntitlement getUninstructedBalanceRelatedEntitlement() {
-		return uninstructedBalanceRelatedEntitlement;
+	public Optional<CorporateActionEntitlement> getUninstructedBalanceRelatedEntitlement() {
+		return uninstructedBalanceRelatedEntitlement == null ? Optional.empty() : Optional.of(uninstructedBalanceRelatedEntitlement);
 	}
 
-	public void setUninstructedBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement uninstructedBalanceRelatedEntitlement) {
+	public SecuritiesBalance setUninstructedBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement uninstructedBalanceRelatedEntitlement) {
 		this.uninstructedBalanceRelatedEntitlement = uninstructedBalanceRelatedEntitlement;
+		return this;
 	}
 
-	public SecuritiesBalance getMainSecuritiesBalance() {
-		return mainSecuritiesBalance;
+	public Optional<SecuritiesBalance> getMainSecuritiesBalance() {
+		return mainSecuritiesBalance == null ? Optional.empty() : Optional.of(mainSecuritiesBalance);
 	}
 
-	public void setMainSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance mainSecuritiesBalance) {
+	public SecuritiesBalance setMainSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance mainSecuritiesBalance) {
 		this.mainSecuritiesBalance = mainSecuritiesBalance;
+		return this;
 	}
 
 	public List<SecuritiesBalance> getSecuritiesSubBalance() {
-		return securitiesSubBalance;
+		return securitiesSubBalance == null ? securitiesSubBalance = new ArrayList<>() : securitiesSubBalance;
 	}
 
-	public void setSecuritiesSubBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesSubBalance) {
-		this.securitiesSubBalance = securitiesSubBalance;
+	public SecuritiesBalance setSecuritiesSubBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesSubBalance) {
+		this.securitiesSubBalance = Objects.requireNonNull(securitiesSubBalance);
+		return this;
 	}
 
 	public SecuritiesBalanceTypeV2Code getSecuritiesBalanceType() {
 		return securitiesBalanceType;
 	}
 
-	public void setSecuritiesBalanceType(SecuritiesBalanceTypeV2Code securitiesBalanceType) {
-		this.securitiesBalanceType = securitiesBalanceType;
+	public SecuritiesBalance setSecuritiesBalanceType(SecuritiesBalanceTypeV2Code securitiesBalanceType) {
+		this.securitiesBalanceType = Objects.requireNonNull(securitiesBalanceType);
+		return this;
 	}
 
 	public SecuritiesQuantity getSubBalanceQuantity() {
 		return subBalanceQuantity;
 	}
 
-	public void setSubBalanceQuantity(com.tools20022.repository.entity.SecuritiesQuantity subBalanceQuantity) {
-		this.subBalanceQuantity = subBalanceQuantity;
+	public SecuritiesBalance setSubBalanceQuantity(com.tools20022.repository.entity.SecuritiesQuantity subBalanceQuantity) {
+		this.subBalanceQuantity = Objects.requireNonNull(subBalanceQuantity);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public SecuritiesBalance setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public List<CurrencyExchange> getExchangeRate() {
-		return exchangeRate;
+		return exchangeRate == null ? exchangeRate = new ArrayList<>() : exchangeRate;
 	}
 
-	public void setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public SecuritiesBalance setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 
 	public YesNoIndicator getAvailabilityIndicator() {
 		return availabilityIndicator;
 	}
 
-	public void setAvailabilityIndicator(YesNoIndicator availabilityIndicator) {
-		this.availabilityIndicator = availabilityIndicator;
+	public SecuritiesBalance setAvailabilityIndicator(YesNoIndicator availabilityIndicator) {
+		this.availabilityIndicator = Objects.requireNonNull(availabilityIndicator);
+		return this;
 	}
 
 	public SecuritiesQuantity getAvailableQuantity() {
 		return availableQuantity;
 	}
 
-	public void setAvailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity availableQuantity) {
-		this.availableQuantity = availableQuantity;
+	public SecuritiesBalance setAvailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity availableQuantity) {
+		this.availableQuantity = Objects.requireNonNull(availableQuantity);
+		return this;
 	}
 
-	public MeetingEntitlement getRelatedMeetingEntitlement() {
-		return relatedMeetingEntitlement;
+	public Optional<MeetingEntitlement> getRelatedMeetingEntitlement() {
+		return relatedMeetingEntitlement == null ? Optional.empty() : Optional.of(relatedMeetingEntitlement);
 	}
 
-	public void setRelatedMeetingEntitlement(com.tools20022.repository.entity.MeetingEntitlement relatedMeetingEntitlement) {
+	public SecuritiesBalance setRelatedMeetingEntitlement(com.tools20022.repository.entity.MeetingEntitlement relatedMeetingEntitlement) {
 		this.relatedMeetingEntitlement = relatedMeetingEntitlement;
+		return this;
 	}
 
 	public SecuritiesQuantity getUnavailableQuantity() {
 		return unavailableQuantity;
 	}
 
-	public void setUnavailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity unavailableQuantity) {
-		this.unavailableQuantity = unavailableQuantity;
+	public SecuritiesBalance setUnavailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity unavailableQuantity) {
+		this.unavailableQuantity = Objects.requireNonNull(unavailableQuantity);
+		return this;
 	}
 
 	public List<SafekeepingPlace> getSafekeepingPlace() {
-		return safekeepingPlace;
+		return safekeepingPlace == null ? safekeepingPlace = new ArrayList<>() : safekeepingPlace;
 	}
 
-	public void setSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace) {
-		this.safekeepingPlace = safekeepingPlace;
+	public SecuritiesBalance setSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace) {
+		this.safekeepingPlace = Objects.requireNonNull(safekeepingPlace);
+		return this;
 	}
 
 	public List<SecuritiesEntry> getSecuritiesEntry() {
-		return securitiesEntry;
+		return securitiesEntry == null ? securitiesEntry = new ArrayList<>() : securitiesEntry;
 	}
 
-	public void setSecuritiesEntry(List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry) {
-		this.securitiesEntry = securitiesEntry;
+	public SecuritiesBalance setSecuritiesEntry(List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry) {
+		this.securitiesEntry = Objects.requireNonNull(securitiesEntry);
+		return this;
 	}
 
 	public CorporateActionEntitlement getNotEligibleBalanceRelatedEntitlement() {
 		return notEligibleBalanceRelatedEntitlement;
 	}
 
-	public void setNotEligibleBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement notEligibleBalanceRelatedEntitlement) {
-		this.notEligibleBalanceRelatedEntitlement = notEligibleBalanceRelatedEntitlement;
+	public SecuritiesBalance setNotEligibleBalanceRelatedEntitlement(com.tools20022.repository.entity.CorporateActionEntitlement notEligibleBalanceRelatedEntitlement) {
+		this.notEligibleBalanceRelatedEntitlement = Objects.requireNonNull(notEligibleBalanceRelatedEntitlement);
+		return this;
 	}
 
 	public IntraPositionTransfer getRelatedIntraPositionTransfer() {
 		return relatedIntraPositionTransfer;
 	}
 
-	public void setRelatedIntraPositionTransfer(com.tools20022.repository.entity.IntraPositionTransfer relatedIntraPositionTransfer) {
-		this.relatedIntraPositionTransfer = relatedIntraPositionTransfer;
+	public SecuritiesBalance setRelatedIntraPositionTransfer(com.tools20022.repository.entity.IntraPositionTransfer relatedIntraPositionTransfer) {
+		this.relatedIntraPositionTransfer = Objects.requireNonNull(relatedIntraPositionTransfer);
+		return this;
 	}
 
 	public CurrencyAndAmount getCostAdjustment() {
 		return costAdjustment;
 	}
 
-	public void setCostAdjustment(CurrencyAndAmount costAdjustment) {
-		this.costAdjustment = costAdjustment;
+	public SecuritiesBalance setCostAdjustment(CurrencyAndAmount costAdjustment) {
+		this.costAdjustment = Objects.requireNonNull(costAdjustment);
+		return this;
 	}
 
 	public List<Pledgee> getPledgee() {
-		return pledgee;
+		return pledgee == null ? pledgee = new ArrayList<>() : pledgee;
 	}
 
-	public void setPledgee(List<com.tools20022.repository.entity.Pledgee> pledgee) {
-		this.pledgee = pledgee;
+	public SecuritiesBalance setPledgee(List<com.tools20022.repository.entity.Pledgee> pledgee) {
+		this.pledgee = Objects.requireNonNull(pledgee);
+		return this;
 	}
 }

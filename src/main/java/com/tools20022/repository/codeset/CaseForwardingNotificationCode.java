@@ -40,25 +40,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#FurtherInvestigation
- * CaseForwardingNotificationCode.mmFurtherInvestigation}</li>
+ * CaseForwardingNotificationCode.FurtherInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#RequestToCancel
- * CaseForwardingNotificationCode.mmRequestToCancel}</li>
+ * CaseForwardingNotificationCode.RequestToCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#RequestToModify
- * CaseForwardingNotificationCode.mmRequestToModify}</li>
+ * CaseForwardingNotificationCode.RequestToModify}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#RequestDebitAuthorisation
- * CaseForwardingNotificationCode.mmRequestDebitAuthorisation}</li>
+ * CaseForwardingNotificationCode.RequestDebitAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#SentAdditionalInformation
- * CaseForwardingNotificationCode.mmSentAdditionalInformation}</li>
+ * CaseForwardingNotificationCode.SentAdditionalInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#FoundInvestigatingAgent
- * CaseForwardingNotificationCode.mmFoundInvestigatingAgent}</li>
+ * CaseForwardingNotificationCode.FoundInvestigatingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CaseForwardingNotificationCode#MineInvestigationCase
- * CaseForwardingNotificationCode.mmMineInvestigationCase}</li>
+ * CaseForwardingNotificationCode.MineInvestigationCase}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -319,7 +319,7 @@ public class CaseForwardingNotificationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FTHI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseForwardingNotificationCode";

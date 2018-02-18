@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the status of the collateral or of an event related to collateral.
@@ -76,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,9 +97,8 @@ public class CollateralStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ResponseStatusCode responseStatus;
 	/**
-	 * Specifies the status of the response to a collateral claim, proposal or
-	 * substitution proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,8 +146,8 @@ public class CollateralStatus extends Status {
 	};
 	protected CollateralManagementCancellationReasonCode collateralManagementCancellationReason;
 	/**
-	 * Specifies the reason for the cancellation of a message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,9 +193,8 @@ public class CollateralStatus extends Status {
 	};
 	protected CollateralSubstitutionConfirmationCode substitutionStatus;
 	/**
-	 * Provides details about the status of the collateral substitution, either
-	 * released or returned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,8 +242,8 @@ public class CollateralStatus extends Status {
 	};
 	protected InterestRejectionReasonCode interestRejectionReason;
 	/**
-	 * Provides the interest rejection reason using an ISO 20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,9 +290,8 @@ public class CollateralStatus extends Status {
 	};
 	protected MarginCallResponseCode marginCallResponse;
 	/**
-	 * Specifies whether the margin call request was sent on a non valuation day
-	 * or was received after notification time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,8 +339,8 @@ public class CollateralStatus extends Status {
 	};
 	protected SettlementStatusCode settlement;
 	/**
-	 * Provides the settlement status of the collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,8 +386,8 @@ public class CollateralStatus extends Status {
 	};
 	protected CancellationReasonCode cancellationReason;
 	/**
-	 * Provides details about the status of the collateral cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,8 +434,8 @@ public class CollateralStatus extends Status {
 	};
 	protected Collateral collateral;
 	/**
-	 * Collateral for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -485,7 +484,7 @@ public class CollateralStatus extends Status {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralStatus";
 				definition = "Specifies the status of the collateral or of an event related to collateral.";
@@ -509,63 +508,71 @@ public class CollateralStatus extends Status {
 		return responseStatus;
 	}
 
-	public void setResponseStatus(ResponseStatusCode responseStatus) {
-		this.responseStatus = responseStatus;
+	public CollateralStatus setResponseStatus(ResponseStatusCode responseStatus) {
+		this.responseStatus = Objects.requireNonNull(responseStatus);
+		return this;
 	}
 
 	public CollateralManagementCancellationReasonCode getCollateralManagementCancellationReason() {
 		return collateralManagementCancellationReason;
 	}
 
-	public void setCollateralManagementCancellationReason(CollateralManagementCancellationReasonCode collateralManagementCancellationReason) {
-		this.collateralManagementCancellationReason = collateralManagementCancellationReason;
+	public CollateralStatus setCollateralManagementCancellationReason(CollateralManagementCancellationReasonCode collateralManagementCancellationReason) {
+		this.collateralManagementCancellationReason = Objects.requireNonNull(collateralManagementCancellationReason);
+		return this;
 	}
 
 	public CollateralSubstitutionConfirmationCode getSubstitutionStatus() {
 		return substitutionStatus;
 	}
 
-	public void setSubstitutionStatus(CollateralSubstitutionConfirmationCode substitutionStatus) {
-		this.substitutionStatus = substitutionStatus;
+	public CollateralStatus setSubstitutionStatus(CollateralSubstitutionConfirmationCode substitutionStatus) {
+		this.substitutionStatus = Objects.requireNonNull(substitutionStatus);
+		return this;
 	}
 
 	public InterestRejectionReasonCode getInterestRejectionReason() {
 		return interestRejectionReason;
 	}
 
-	public void setInterestRejectionReason(InterestRejectionReasonCode interestRejectionReason) {
-		this.interestRejectionReason = interestRejectionReason;
+	public CollateralStatus setInterestRejectionReason(InterestRejectionReasonCode interestRejectionReason) {
+		this.interestRejectionReason = Objects.requireNonNull(interestRejectionReason);
+		return this;
 	}
 
 	public MarginCallResponseCode getMarginCallResponse() {
 		return marginCallResponse;
 	}
 
-	public void setMarginCallResponse(MarginCallResponseCode marginCallResponse) {
-		this.marginCallResponse = marginCallResponse;
+	public CollateralStatus setMarginCallResponse(MarginCallResponseCode marginCallResponse) {
+		this.marginCallResponse = Objects.requireNonNull(marginCallResponse);
+		return this;
 	}
 
 	public SettlementStatusCode getSettlement() {
 		return settlement;
 	}
 
-	public void setSettlement(SettlementStatusCode settlement) {
-		this.settlement = settlement;
+	public CollateralStatus setSettlement(SettlementStatusCode settlement) {
+		this.settlement = Objects.requireNonNull(settlement);
+		return this;
 	}
 
 	public CancellationReasonCode getCancellationReason() {
 		return cancellationReason;
 	}
 
-	public void setCancellationReason(CancellationReasonCode cancellationReason) {
-		this.cancellationReason = cancellationReason;
+	public CollateralStatus setCancellationReason(CancellationReasonCode cancellationReason) {
+		this.cancellationReason = Objects.requireNonNull(cancellationReason);
+		return this;
 	}
 
-	public Collateral getCollateral() {
-		return collateral;
+	public Optional<Collateral> getCollateral() {
+		return collateral == null ? Optional.empty() : Optional.of(collateral);
 	}
 
-	public void setCollateral(com.tools20022.repository.entity.Collateral collateral) {
+	public CollateralStatus setCollateral(com.tools20022.repository.entity.Collateral collateral) {
 		this.collateral = collateral;
+		return this;
 	}
 }

@@ -24,9 +24,8 @@ import com.tools20022.repository.area.pain.MandateCopyRequestV01;
 import com.tools20022.repository.choice.MandateStatus1Choice;
 import com.tools20022.repository.choice.OriginalMandate4Choice;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identifies the mandate, for which a copy of the details is requested."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MandateCopy1", propOrder = {"originalMessageInformation", "originalMandate", "mandateStatus", "supplementaryData"})
 public class MandateCopy1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrgnlMsgInf")
 	protected OriginalMessageInformation1 originalMessageInformation;
 	/**
-	 * Provides information on the original message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -112,7 +112,7 @@ public class MandateCopy1 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateCopy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,10 +124,11 @@ public class MandateCopy1 {
 			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 		}
 	};
+	@XmlElement(name = "OrgnlMndt", required = true)
 	protected OriginalMandate4Choice originalMandate;
 	/**
-	 * Provides the original mandate data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,7 +154,7 @@ public class MandateCopy1 {
 	 */
 	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateCopy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,10 +166,11 @@ public class MandateCopy1 {
 			type_lazy = () -> OriginalMandate4Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "MndtSts")
 	protected MandateStatus1Choice mandateStatus;
 	/**
-	 * Indicates the status of the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -194,7 +196,7 @@ public class MandateCopy1 {
 	 */
 	public static final MMMessageAssociationEnd mmMandateStatus = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateCopy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
 			xmlTag = "MndtSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,11 +208,11 @@ public class MandateCopy1 {
 			type_lazy = () -> MandateStatus1Choice.mmObject();
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -237,7 +239,7 @@ public class MandateCopy1 {
 	 */
 	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateCopy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,9 +254,10 @@ public class MandateCopy1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MandateCopy1.mmOriginalMessageInformation, MandateCopy1.mmOriginalMandate, MandateCopy1.mmMandateStatus, MandateCopy1.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateCopy1.mmOriginalMessageInformation, com.tools20022.repository.msg.MandateCopy1.mmOriginalMandate,
+						com.tools20022.repository.msg.MandateCopy1.mmMandateStatus, com.tools20022.repository.msg.MandateCopy1.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MandateCopyRequestV01.mmUnderlyingCopyRequestDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateCopy1";
 				definition = "Identifies the mandate, for which a copy of the details is requested.";
@@ -263,39 +266,39 @@ public class MandateCopy1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrgnlMsgInf")
-	public OriginalMessageInformation1 getOriginalMessageInformation() {
-		return originalMessageInformation;
+	public Optional<OriginalMessageInformation1> getOriginalMessageInformation() {
+		return originalMessageInformation == null ? Optional.empty() : Optional.of(originalMessageInformation);
 	}
 
-	public void setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+	public MandateCopy1 setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
 		this.originalMessageInformation = originalMessageInformation;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlMndt", required = true)
 	public OriginalMandate4Choice getOriginalMandate() {
 		return originalMandate;
 	}
 
-	public void setOriginalMandate(OriginalMandate4Choice originalMandate) {
-		this.originalMandate = originalMandate;
+	public MandateCopy1 setOriginalMandate(OriginalMandate4Choice originalMandate) {
+		this.originalMandate = Objects.requireNonNull(originalMandate);
+		return this;
 	}
 
-	@XmlElement(name = "MndtSts")
-	public MandateStatus1Choice getMandateStatus() {
-		return mandateStatus;
+	public Optional<MandateStatus1Choice> getMandateStatus() {
+		return mandateStatus == null ? Optional.empty() : Optional.of(mandateStatus);
 	}
 
-	public void setMandateStatus(MandateStatus1Choice mandateStatus) {
+	public MandateCopy1 setMandateStatus(MandateStatus1Choice mandateStatus) {
 		this.mandateStatus = mandateStatus;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MandateCopy1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

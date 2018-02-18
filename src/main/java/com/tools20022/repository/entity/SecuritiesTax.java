@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
@@ -25,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Amount of money due to the government or tax authority, according to various
@@ -116,8 +119,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -135,10 +138,8 @@ public class SecuritiesTax extends Tax {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveCurrencyAndAmount taxableIncomePerShare;
 	/**
-	 * Amount included in the NAV that corresponds to gains directly or
-	 * indirectly derived from interest payment in the scope of the European
-	 * Directive on taxation of savings income in the form of interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,8 +187,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected TaxableIncomePerShareCalculatedCode taxableIncomePerShareCalculated;
 	/**
-	 * Specifies whether the fund calculates a taxable interest per share (TIS).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,11 +236,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected EUCapitalGainCode eUCapitalGain;
 	/**
-	 * Specifies whether capital gain is in the scope of the European directive
-	 * on taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,11 +285,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected EUDividendStatusCode eUDividendStatus;
 	/**
-	 * Specifies whether dividend is in the scope of the European directive on
-	 * taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -339,10 +334,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected CurrencyAndAmount taxableIncomePerDividend;
 	/**
-	 * Amount included in the dividend that corresponds to gains directly or
-	 * indirectly derived from interest payment in the scope of the European
-	 * Directive on taxation of savings income in the form of interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -390,8 +383,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected StampDutyTypeCode stampDutyType;
 	/**
-	 * Indicates how the stamp duty should be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -437,9 +430,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected Max4AlphaNumericText stampDutyTaxBasis;
 	/**
-	 * Specifies the stamp duty type or exemption reason applicable to the
-	 * settlement transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -452,6 +444,9 @@ public class SecuritiesTax extends Tax {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesTax SecuritiesTax}
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::STAM</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -469,6 +464,7 @@ public class SecuritiesTax extends Tax {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::STAM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StampDutyTaxBasis";
 			definition = "Specifies the stamp duty type or exemption reason applicable to the settlement transaction.";
@@ -487,8 +483,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected TaxVoucher taxVoucher;
 	/**
-	 * Tax voucher which is related to a securities tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -535,10 +531,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected ActiveCurrencyAndAmount taxableIncomePerDividendShare;
 	/**
-	 * Amount included in the dividend/NAV that is identified as gains directly
-	 * or indirectly derived from interest payments within the scope of the EU
-	 * Savings directive
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -586,8 +580,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected RateAndAmount relatedTax;
 	/**
-	 * Percentage of the gross dividend rate on which tax must be paid .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -635,9 +629,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected Max15NumericText taxLotNumber;
 	/**
-	 * Identification, for tax purposes, of a lot of identical securities that
-	 * are bought at a certain date and at a certain price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,8 +678,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected Security security;
 	/**
-	 * Security on which the tax applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -732,9 +725,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected YesNoIndicator taxRuleExemptIndicator;
 	/**
-	 * Indicates whether the tax rule applies within the jurisdiction as a
-	 * condition of this security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -782,8 +774,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the tax rule applies within the jurisdiction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,8 +822,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected PercentageRate frankedRate;
 	/**
-	 * Percentage of dividend for which tax is already paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -877,8 +869,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected TEFRARulesCode tEFRARule;
 	/**
-	 * Indicates the TEFRA rule under which the security is issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -925,8 +917,8 @@ public class SecuritiesTax extends Tax {
 	};
 	protected Jurisdiction jurisdiction;
 	/**
-	 * Jurisdiction in which the tax rule applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -975,7 +967,7 @@ public class SecuritiesTax extends Tax {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTax";
 				definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters such as thresholds or income.";
@@ -1003,135 +995,152 @@ public class SecuritiesTax extends Tax {
 		return taxableIncomePerShare;
 	}
 
-	public void setTaxableIncomePerShare(ActiveCurrencyAndAmount taxableIncomePerShare) {
-		this.taxableIncomePerShare = taxableIncomePerShare;
+	public SecuritiesTax setTaxableIncomePerShare(ActiveCurrencyAndAmount taxableIncomePerShare) {
+		this.taxableIncomePerShare = Objects.requireNonNull(taxableIncomePerShare);
+		return this;
 	}
 
 	public TaxableIncomePerShareCalculatedCode getTaxableIncomePerShareCalculated() {
 		return taxableIncomePerShareCalculated;
 	}
 
-	public void setTaxableIncomePerShareCalculated(TaxableIncomePerShareCalculatedCode taxableIncomePerShareCalculated) {
-		this.taxableIncomePerShareCalculated = taxableIncomePerShareCalculated;
+	public SecuritiesTax setTaxableIncomePerShareCalculated(TaxableIncomePerShareCalculatedCode taxableIncomePerShareCalculated) {
+		this.taxableIncomePerShareCalculated = Objects.requireNonNull(taxableIncomePerShareCalculated);
+		return this;
 	}
 
 	public EUCapitalGainCode getEUCapitalGain() {
 		return eUCapitalGain;
 	}
 
-	public void setEUCapitalGain(EUCapitalGainCode eUCapitalGain) {
-		this.eUCapitalGain = eUCapitalGain;
+	public SecuritiesTax setEUCapitalGain(EUCapitalGainCode eUCapitalGain) {
+		this.eUCapitalGain = Objects.requireNonNull(eUCapitalGain);
+		return this;
 	}
 
 	public EUDividendStatusCode getEUDividendStatus() {
 		return eUDividendStatus;
 	}
 
-	public void setEUDividendStatus(EUDividendStatusCode eUDividendStatus) {
-		this.eUDividendStatus = eUDividendStatus;
+	public SecuritiesTax setEUDividendStatus(EUDividendStatusCode eUDividendStatus) {
+		this.eUDividendStatus = Objects.requireNonNull(eUDividendStatus);
+		return this;
 	}
 
 	public CurrencyAndAmount getTaxableIncomePerDividend() {
 		return taxableIncomePerDividend;
 	}
 
-	public void setTaxableIncomePerDividend(CurrencyAndAmount taxableIncomePerDividend) {
-		this.taxableIncomePerDividend = taxableIncomePerDividend;
+	public SecuritiesTax setTaxableIncomePerDividend(CurrencyAndAmount taxableIncomePerDividend) {
+		this.taxableIncomePerDividend = Objects.requireNonNull(taxableIncomePerDividend);
+		return this;
 	}
 
 	public StampDutyTypeCode getStampDutyType() {
 		return stampDutyType;
 	}
 
-	public void setStampDutyType(StampDutyTypeCode stampDutyType) {
-		this.stampDutyType = stampDutyType;
+	public SecuritiesTax setStampDutyType(StampDutyTypeCode stampDutyType) {
+		this.stampDutyType = Objects.requireNonNull(stampDutyType);
+		return this;
 	}
 
 	public Max4AlphaNumericText getStampDutyTaxBasis() {
 		return stampDutyTaxBasis;
 	}
 
-	public void setStampDutyTaxBasis(Max4AlphaNumericText stampDutyTaxBasis) {
-		this.stampDutyTaxBasis = stampDutyTaxBasis;
+	public SecuritiesTax setStampDutyTaxBasis(Max4AlphaNumericText stampDutyTaxBasis) {
+		this.stampDutyTaxBasis = Objects.requireNonNull(stampDutyTaxBasis);
+		return this;
 	}
 
-	public TaxVoucher getTaxVoucher() {
-		return taxVoucher;
+	public Optional<TaxVoucher> getTaxVoucher() {
+		return taxVoucher == null ? Optional.empty() : Optional.of(taxVoucher);
 	}
 
-	public void setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
+	public SecuritiesTax setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
 		this.taxVoucher = taxVoucher;
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getTaxableIncomePerDividendShare() {
 		return taxableIncomePerDividendShare;
 	}
 
-	public void setTaxableIncomePerDividendShare(ActiveCurrencyAndAmount taxableIncomePerDividendShare) {
-		this.taxableIncomePerDividendShare = taxableIncomePerDividendShare;
+	public SecuritiesTax setTaxableIncomePerDividendShare(ActiveCurrencyAndAmount taxableIncomePerDividendShare) {
+		this.taxableIncomePerDividendShare = Objects.requireNonNull(taxableIncomePerDividendShare);
+		return this;
 	}
 
 	public RateAndAmount getRelatedTax() {
 		return relatedTax;
 	}
 
-	public void setRelatedTax(com.tools20022.repository.entity.RateAndAmount relatedTax) {
-		this.relatedTax = relatedTax;
+	public SecuritiesTax setRelatedTax(com.tools20022.repository.entity.RateAndAmount relatedTax) {
+		this.relatedTax = Objects.requireNonNull(relatedTax);
+		return this;
 	}
 
 	public Max15NumericText getTaxLotNumber() {
 		return taxLotNumber;
 	}
 
-	public void setTaxLotNumber(Max15NumericText taxLotNumber) {
-		this.taxLotNumber = taxLotNumber;
+	public SecuritiesTax setTaxLotNumber(Max15NumericText taxLotNumber) {
+		this.taxLotNumber = Objects.requireNonNull(taxLotNumber);
+		return this;
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public SecuritiesTax setSecurity(com.tools20022.repository.entity.Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public YesNoIndicator getTaxRuleExemptIndicator() {
 		return taxRuleExemptIndicator;
 	}
 
-	public void setTaxRuleExemptIndicator(YesNoIndicator taxRuleExemptIndicator) {
-		this.taxRuleExemptIndicator = taxRuleExemptIndicator;
+	public SecuritiesTax setTaxRuleExemptIndicator(YesNoIndicator taxRuleExemptIndicator) {
+		this.taxRuleExemptIndicator = Objects.requireNonNull(taxRuleExemptIndicator);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public SecuritiesTax setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public PercentageRate getFrankedRate() {
 		return frankedRate;
 	}
 
-	public void setFrankedRate(PercentageRate frankedRate) {
-		this.frankedRate = frankedRate;
+	public SecuritiesTax setFrankedRate(PercentageRate frankedRate) {
+		this.frankedRate = Objects.requireNonNull(frankedRate);
+		return this;
 	}
 
 	public TEFRARulesCode getTEFRARule() {
 		return tEFRARule;
 	}
 
-	public void setTEFRARule(TEFRARulesCode tEFRARule) {
-		this.tEFRARule = tEFRARule;
+	public SecuritiesTax setTEFRARule(TEFRARulesCode tEFRARule) {
+		this.tEFRARule = Objects.requireNonNull(tEFRARule);
+		return this;
 	}
 
 	public Jurisdiction getJurisdiction() {
 		return jurisdiction;
 	}
 
-	public void setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
-		this.jurisdiction = jurisdiction;
+	public SecuritiesTax setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
+		this.jurisdiction = Objects.requireNonNull(jurisdiction);
+		return this;
 	}
 }

@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.PaymentCard;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "CardSecurityInformation1", propOrder = {"CSCManagement", "CSCValue"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "CardSecurityInformation1", propOrder = {"cSCManagement", "cSCValue"})
 public class CardSecurityInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CSCMgmt", required = true)
 	protected CSCManagement1Code cSCManagement;
 	/**
-	 * Card security code (CSC) management associated with the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,7 +114,7 @@ public class CardSecurityInformation1 {
 	public static final MMMessageAttribute mmCSCManagement = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCodeManagement;
-			componentContext_lazy = () -> CardSecurityInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardSecurityInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "CSCMgmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,10 +125,11 @@ public class CardSecurityInformation1 {
 			simpleType_lazy = () -> CSCManagement1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "CSCVal")
 	protected Min3Max4NumericText cSCValue;
 	/**
-	 * Card security code (CSC).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,7 +163,7 @@ public class CardSecurityInformation1 {
 	public static final MMMessageAttribute mmCSCValue = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCode;
-			componentContext_lazy = () -> CardSecurityInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardSecurityInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "CSCVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,9 +178,9 @@ public class CardSecurityInformation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCManagement, CardSecurityInformation1.mmCSCValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardSecurityInformation1.mmCSCManagement, com.tools20022.repository.msg.CardSecurityInformation1.mmCSCValue);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardSecurityInformation1";
 				definition = "Card security code (CSC) associated with the card performing the transaction.";
@@ -185,21 +189,21 @@ public class CardSecurityInformation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CSCMgmt", required = true)
 	public CSCManagement1Code getCSCManagement() {
 		return cSCManagement;
 	}
 
-	public void setCSCManagement(CSCManagement1Code cSCManagement) {
-		this.cSCManagement = cSCManagement;
+	public CardSecurityInformation1 setCSCManagement(CSCManagement1Code cSCManagement) {
+		this.cSCManagement = Objects.requireNonNull(cSCManagement);
+		return this;
 	}
 
-	@XmlElement(name = "CSCVal")
-	public Min3Max4NumericText getCSCValue() {
-		return cSCValue;
+	public Optional<Min3Max4NumericText> getCSCValue() {
+		return cSCValue == null ? Optional.empty() : Optional.of(cSCValue);
 	}
 
-	public void setCSCValue(Min3Max4NumericText cSCValue) {
+	public CardSecurityInformation1 setCSCValue(Min3Max4NumericText cSCValue) {
 		this.cSCValue = cSCValue;
+		return this;
 	}
 }

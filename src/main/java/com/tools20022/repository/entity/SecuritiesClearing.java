@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Clearing;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process of settling securities through a central system.
@@ -75,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +94,8 @@ public class SecuritiesClearing extends Clearing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement;
 	/**
-	 * Settlement process performed as part of the securities clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,8 +143,8 @@ public class SecuritiesClearing extends Clearing {
 	};
 	protected List<com.tools20022.repository.entity.BuyIn> buyIn;
 	/**
-	 * Buy-in process performed as part of the securities clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,8 +190,8 @@ public class SecuritiesClearing extends Clearing {
 	};
 	protected List<com.tools20022.repository.entity.Novation> novation;
 	/**
-	 * Novation process performed as part of the securities clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,8 +237,8 @@ public class SecuritiesClearing extends Clearing {
 	};
 	protected List<com.tools20022.repository.entity.Netting> netting;
 	/**
-	 * Netting process performed as part of the securities clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,7 +286,7 @@ public class SecuritiesClearing extends Clearing {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesClearing";
 				definition = "Process of settling securities through a central system.";
@@ -304,34 +306,38 @@ public class SecuritiesClearing extends Clearing {
 	}
 
 	public List<SecuritiesSettlement> getSecuritiesSettlement() {
-		return securitiesSettlement;
+		return securitiesSettlement == null ? securitiesSettlement = new ArrayList<>() : securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public SecuritiesClearing setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 
 	public List<BuyIn> getBuyIn() {
-		return buyIn;
+		return buyIn == null ? buyIn = new ArrayList<>() : buyIn;
 	}
 
-	public void setBuyIn(List<com.tools20022.repository.entity.BuyIn> buyIn) {
-		this.buyIn = buyIn;
+	public SecuritiesClearing setBuyIn(List<com.tools20022.repository.entity.BuyIn> buyIn) {
+		this.buyIn = Objects.requireNonNull(buyIn);
+		return this;
 	}
 
 	public List<Novation> getNovation() {
-		return novation;
+		return novation == null ? novation = new ArrayList<>() : novation;
 	}
 
-	public void setNovation(List<com.tools20022.repository.entity.Novation> novation) {
-		this.novation = novation;
+	public SecuritiesClearing setNovation(List<com.tools20022.repository.entity.Novation> novation) {
+		this.novation = Objects.requireNonNull(novation);
+		return this;
 	}
 
 	public List<Netting> getNetting() {
-		return netting;
+		return netting == null ? netting = new ArrayList<>() : netting;
 	}
 
-	public void setNetting(List<com.tools20022.repository.entity.Netting> netting) {
-		this.netting = netting;
+	public SecuritiesClearing setNetting(List<com.tools20022.repository.entity.Netting> netting) {
+		this.netting = Objects.requireNonNull(netting);
+		return this;
 	}
 }

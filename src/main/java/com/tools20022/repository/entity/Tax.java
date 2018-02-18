@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.BillingMethod1Choice;
 import com.tools20022.repository.choice.TaxAmountType1Choice;
@@ -26,9 +27,8 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Amount of money due to the government or tax authority, according to various
@@ -226,8 +226,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -245,8 +245,8 @@ public class Tax {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TaxExemptReasonCode exemptionReason;
 	/**
-	 * Reason for a tax exemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,9 +302,8 @@ public class Tax {
 	};
 	protected Country country;
 	/**
-	 * Place of taxation of an individual person or an organisation, where the
-	 * tax is due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -349,9 +348,8 @@ public class Tax {
 	};
 	protected NetAssetValueCalculation taxLiabilityValueCalculation;
 	/**
-	 * Net asset value calculation for which tax liability information is
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,8 +397,8 @@ public class Tax {
 	};
 	protected TaxTypeCode type;
 	/**
-	 * Type of tax applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -457,8 +455,8 @@ public class Tax {
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money resulting from the calculation of the tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -545,8 +543,8 @@ public class Tax {
 	};
 	protected PercentageRate rate;
 	/**
-	 * Rate used for calculation of the tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -600,8 +598,8 @@ public class Tax {
 	};
 	protected Party taxableParty;
 	/**
-	 * Party which is taxable at a specific location
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -645,8 +643,8 @@ public class Tax {
 	};
 	protected NetAssetValueCalculation taxRefundValueCalculation;
 	/**
-	 * Net asset value calculation for which tax refund information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -694,8 +692,8 @@ public class Tax {
 	};
 	protected TaxationBasisCode basis;
 	/**
-	 * Basis used to determine the capital gain or loss, eg, the purchase price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -706,6 +704,9 @@ public class Tax {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Tax Tax}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::CATB</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -723,6 +724,7 @@ public class Tax {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::CATB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Basis";
 			definition = "Basis used to determine the capital gain or loss, eg, the purchase price.";
@@ -741,8 +743,8 @@ public class Tax {
 	};
 	protected SecuritiesTransfer securitiesTransfer;
 	/**
-	 * Transfer process for which a tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -787,8 +789,8 @@ public class Tax {
 	};
 	protected RateTypeCode taxRateType;
 	/**
-	 * Specifies the type of tax rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -831,8 +833,8 @@ public class Tax {
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> taxAccount;
 	/**
-	 * Account to be used for taxes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -876,8 +878,8 @@ public class Tax {
 	};
 	protected Max350Text taxationConditions;
 	/**
-	 * Specifies other taxation conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -920,8 +922,8 @@ public class Tax {
 	};
 	protected Adjustment adjustment;
 	/**
-	 * Specifies the adjustments subject to a tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -966,8 +968,8 @@ public class Tax {
 	};
 	protected Interest interest;
 	/**
-	 * Interest for which a tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1011,9 +1013,8 @@ public class Tax {
 	};
 	protected Max35Text identification;
 	/**
-	 * Reference used to identify the nature of tax levied, such as Value Added
-	 * Tax (VAT).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1076,8 +1077,8 @@ public class Tax {
 	};
 	protected Payment relatedPaymentSettlement;
 	/**
-	 * Payment to which the tax applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1121,8 +1122,8 @@ public class Tax {
 	};
 	protected CurrencyAndAmount taxableBaseAmount;
 	/**
-	 * Amount of money on which the tax is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1181,8 +1182,8 @@ public class Tax {
 	};
 	protected ISODate taxDate;
 	/**
-	 * Date by which tax is due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1238,8 +1239,8 @@ public class Tax {
 	};
 	protected Max35Text certificateIdentification;
 	/**
-	 * Document issued by taxing authority identifying the tax payer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1292,8 +1293,8 @@ public class Tax {
 	};
 	protected Max140Text administrationZone;
 	/**
-	 * Territorial part of a country to which the tax payment is related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1361,8 +1362,8 @@ public class Tax {
 	};
 	protected Max35Text method;
 	/**
-	 * Method used to indicate the underlying business or how the tax is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1417,8 +1418,8 @@ public class Tax {
 	};
 	protected List<com.tools20022.repository.entity.TaxRecord> record;
 	/**
-	 * Record of tax details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1487,8 +1488,8 @@ public class Tax {
 	};
 	protected Product product;
 	/**
-	 * Product on which a tax is applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1531,8 +1532,8 @@ public class Tax {
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
-	 * Currency exchange applicable to a tax
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1576,8 +1577,8 @@ public class Tax {
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Currency in which the tax must be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1632,9 +1633,8 @@ public class Tax {
 	};
 	protected List<com.tools20022.repository.entity.TaxPartyRole> partyRole;
 	/**
-	 * Specifies each role linked to a tax and played by a party in that
-	 * context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1689,8 +1689,8 @@ public class Tax {
 	};
 	protected CurrencyAndAmount taxDeduction;
 	/**
-	 * Amount of tax that have been previously deducted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1734,8 +1734,8 @@ public class Tax {
 	};
 	protected Distribution relatedCorporateActionDistribution;
 	/**
-	 * Distribution process for which a tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1780,8 +1780,8 @@ public class Tax {
 	};
 	protected ISODate calculationDate;
 	/**
-	 * Date on which the tax is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1824,8 +1824,8 @@ public class Tax {
 	};
 	protected List<com.tools20022.repository.entity.Dividend> dividend;
 	/**
-	 * Dividend for which a tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1867,8 +1867,8 @@ public class Tax {
 	};
 	protected WithholdingTaxRateTypeCode withholdingTaxType;
 	/**
-	 * Type of withholding tax rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1912,8 +1912,8 @@ public class Tax {
 	};
 	protected CorporateActionEvent corporateActionEvent;
 	/**
-	 * Event for which a transaction tax is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1959,8 +1959,8 @@ public class Tax {
 	};
 	protected TaxIdentificationNumberTypeCode taxIdentificationType;
 	/**
-	 * Type of tax identification number or identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2006,7 +2006,7 @@ public class Tax {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Tax";
 				definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters such as thresholds or income.";
@@ -2046,271 +2046,305 @@ public class Tax {
 		return exemptionReason;
 	}
 
-	public void setExemptionReason(TaxExemptReasonCode exemptionReason) {
-		this.exemptionReason = exemptionReason;
+	public Tax setExemptionReason(TaxExemptReasonCode exemptionReason) {
+		this.exemptionReason = Objects.requireNonNull(exemptionReason);
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public Tax setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	public NetAssetValueCalculation getTaxLiabilityValueCalculation() {
-		return taxLiabilityValueCalculation;
+	public Optional<NetAssetValueCalculation> getTaxLiabilityValueCalculation() {
+		return taxLiabilityValueCalculation == null ? Optional.empty() : Optional.of(taxLiabilityValueCalculation);
 	}
 
-	public void setTaxLiabilityValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation taxLiabilityValueCalculation) {
+	public Tax setTaxLiabilityValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation taxLiabilityValueCalculation) {
 		this.taxLiabilityValueCalculation = taxLiabilityValueCalculation;
+		return this;
 	}
 
 	public TaxTypeCode getType() {
 		return type;
 	}
 
-	public void setType(TaxTypeCode type) {
-		this.type = type;
+	public Tax setType(TaxTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Tax setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public Tax setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
-	public Party getTaxableParty() {
-		return taxableParty;
+	public Optional<Party> getTaxableParty() {
+		return taxableParty == null ? Optional.empty() : Optional.of(taxableParty);
 	}
 
-	public void setTaxableParty(com.tools20022.repository.entity.Party taxableParty) {
+	public Tax setTaxableParty(com.tools20022.repository.entity.Party taxableParty) {
 		this.taxableParty = taxableParty;
+		return this;
 	}
 
-	public NetAssetValueCalculation getTaxRefundValueCalculation() {
-		return taxRefundValueCalculation;
+	public Optional<NetAssetValueCalculation> getTaxRefundValueCalculation() {
+		return taxRefundValueCalculation == null ? Optional.empty() : Optional.of(taxRefundValueCalculation);
 	}
 
-	public void setTaxRefundValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation taxRefundValueCalculation) {
+	public Tax setTaxRefundValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation taxRefundValueCalculation) {
 		this.taxRefundValueCalculation = taxRefundValueCalculation;
+		return this;
 	}
 
 	public TaxationBasisCode getBasis() {
 		return basis;
 	}
 
-	public void setBasis(TaxationBasisCode basis) {
-		this.basis = basis;
+	public Tax setBasis(TaxationBasisCode basis) {
+		this.basis = Objects.requireNonNull(basis);
+		return this;
 	}
 
-	public SecuritiesTransfer getSecuritiesTransfer() {
-		return securitiesTransfer;
+	public Optional<SecuritiesTransfer> getSecuritiesTransfer() {
+		return securitiesTransfer == null ? Optional.empty() : Optional.of(securitiesTransfer);
 	}
 
-	public void setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
+	public Tax setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
 		this.securitiesTransfer = securitiesTransfer;
+		return this;
 	}
 
 	public RateTypeCode getTaxRateType() {
 		return taxRateType;
 	}
 
-	public void setTaxRateType(RateTypeCode taxRateType) {
-		this.taxRateType = taxRateType;
+	public Tax setTaxRateType(RateTypeCode taxRateType) {
+		this.taxRateType = Objects.requireNonNull(taxRateType);
+		return this;
 	}
 
 	public List<CashAccount> getTaxAccount() {
-		return taxAccount;
+		return taxAccount == null ? taxAccount = new ArrayList<>() : taxAccount;
 	}
 
-	public void setTaxAccount(List<com.tools20022.repository.entity.CashAccount> taxAccount) {
-		this.taxAccount = taxAccount;
+	public Tax setTaxAccount(List<com.tools20022.repository.entity.CashAccount> taxAccount) {
+		this.taxAccount = Objects.requireNonNull(taxAccount);
+		return this;
 	}
 
 	public Max350Text getTaxationConditions() {
 		return taxationConditions;
 	}
 
-	public void setTaxationConditions(Max350Text taxationConditions) {
-		this.taxationConditions = taxationConditions;
+	public Tax setTaxationConditions(Max350Text taxationConditions) {
+		this.taxationConditions = Objects.requireNonNull(taxationConditions);
+		return this;
 	}
 
 	public Adjustment getAdjustment() {
 		return adjustment;
 	}
 
-	public void setAdjustment(com.tools20022.repository.entity.Adjustment adjustment) {
-		this.adjustment = adjustment;
+	public Tax setAdjustment(com.tools20022.repository.entity.Adjustment adjustment) {
+		this.adjustment = Objects.requireNonNull(adjustment);
+		return this;
 	}
 
-	public Interest getInterest() {
-		return interest;
+	public Optional<Interest> getInterest() {
+		return interest == null ? Optional.empty() : Optional.of(interest);
 	}
 
-	public void setInterest(com.tools20022.repository.entity.Interest interest) {
+	public Tax setInterest(com.tools20022.repository.entity.Interest interest) {
 		this.interest = interest;
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Tax setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	public Payment getRelatedPaymentSettlement() {
-		return relatedPaymentSettlement;
+	public Optional<Payment> getRelatedPaymentSettlement() {
+		return relatedPaymentSettlement == null ? Optional.empty() : Optional.of(relatedPaymentSettlement);
 	}
 
-	public void setRelatedPaymentSettlement(com.tools20022.repository.entity.Payment relatedPaymentSettlement) {
+	public Tax setRelatedPaymentSettlement(com.tools20022.repository.entity.Payment relatedPaymentSettlement) {
 		this.relatedPaymentSettlement = relatedPaymentSettlement;
+		return this;
 	}
 
 	public CurrencyAndAmount getTaxableBaseAmount() {
 		return taxableBaseAmount;
 	}
 
-	public void setTaxableBaseAmount(CurrencyAndAmount taxableBaseAmount) {
-		this.taxableBaseAmount = taxableBaseAmount;
+	public Tax setTaxableBaseAmount(CurrencyAndAmount taxableBaseAmount) {
+		this.taxableBaseAmount = Objects.requireNonNull(taxableBaseAmount);
+		return this;
 	}
 
 	public ISODate getTaxDate() {
 		return taxDate;
 	}
 
-	public void setTaxDate(ISODate taxDate) {
-		this.taxDate = taxDate;
+	public Tax setTaxDate(ISODate taxDate) {
+		this.taxDate = Objects.requireNonNull(taxDate);
+		return this;
 	}
 
 	public Max35Text getCertificateIdentification() {
 		return certificateIdentification;
 	}
 
-	public void setCertificateIdentification(Max35Text certificateIdentification) {
-		this.certificateIdentification = certificateIdentification;
+	public Tax setCertificateIdentification(Max35Text certificateIdentification) {
+		this.certificateIdentification = Objects.requireNonNull(certificateIdentification);
+		return this;
 	}
 
 	public Max140Text getAdministrationZone() {
 		return administrationZone;
 	}
 
-	public void setAdministrationZone(Max140Text administrationZone) {
-		this.administrationZone = administrationZone;
+	public Tax setAdministrationZone(Max140Text administrationZone) {
+		this.administrationZone = Objects.requireNonNull(administrationZone);
+		return this;
 	}
 
 	public Max35Text getMethod() {
 		return method;
 	}
 
-	public void setMethod(Max35Text method) {
-		this.method = method;
+	public Tax setMethod(Max35Text method) {
+		this.method = Objects.requireNonNull(method);
+		return this;
 	}
 
 	public List<TaxRecord> getRecord() {
-		return record;
+		return record == null ? record = new ArrayList<>() : record;
 	}
 
-	public void setRecord(List<com.tools20022.repository.entity.TaxRecord> record) {
-		this.record = record;
+	public Tax setRecord(List<com.tools20022.repository.entity.TaxRecord> record) {
+		this.record = Objects.requireNonNull(record);
+		return this;
 	}
 
 	public Product getProduct() {
 		return product;
 	}
 
-	public void setProduct(com.tools20022.repository.entity.Product product) {
-		this.product = product;
+	public Tax setProduct(com.tools20022.repository.entity.Product product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 
 	public List<CurrencyExchange> getCurrencyExchange() {
-		return currencyExchange;
+		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public Tax setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Tax setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public List<TaxPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.TaxPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public Tax setPartyRole(List<com.tools20022.repository.entity.TaxPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 
 	public CurrencyAndAmount getTaxDeduction() {
 		return taxDeduction;
 	}
 
-	public void setTaxDeduction(CurrencyAndAmount taxDeduction) {
-		this.taxDeduction = taxDeduction;
+	public Tax setTaxDeduction(CurrencyAndAmount taxDeduction) {
+		this.taxDeduction = Objects.requireNonNull(taxDeduction);
+		return this;
 	}
 
-	public Distribution getRelatedCorporateActionDistribution() {
-		return relatedCorporateActionDistribution;
+	public Optional<Distribution> getRelatedCorporateActionDistribution() {
+		return relatedCorporateActionDistribution == null ? Optional.empty() : Optional.of(relatedCorporateActionDistribution);
 	}
 
-	public void setRelatedCorporateActionDistribution(com.tools20022.repository.entity.Distribution relatedCorporateActionDistribution) {
+	public Tax setRelatedCorporateActionDistribution(com.tools20022.repository.entity.Distribution relatedCorporateActionDistribution) {
 		this.relatedCorporateActionDistribution = relatedCorporateActionDistribution;
+		return this;
 	}
 
 	public ISODate getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODate calculationDate) {
-		this.calculationDate = calculationDate;
+	public Tax setCalculationDate(ISODate calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public List<Dividend> getDividend() {
-		return dividend;
+		return dividend == null ? dividend = new ArrayList<>() : dividend;
 	}
 
-	public void setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
-		this.dividend = dividend;
+	public Tax setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
+		this.dividend = Objects.requireNonNull(dividend);
+		return this;
 	}
 
 	public WithholdingTaxRateTypeCode getWithholdingTaxType() {
 		return withholdingTaxType;
 	}
 
-	public void setWithholdingTaxType(WithholdingTaxRateTypeCode withholdingTaxType) {
-		this.withholdingTaxType = withholdingTaxType;
+	public Tax setWithholdingTaxType(WithholdingTaxRateTypeCode withholdingTaxType) {
+		this.withholdingTaxType = Objects.requireNonNull(withholdingTaxType);
+		return this;
 	}
 
 	public CorporateActionEvent getCorporateActionEvent() {
 		return corporateActionEvent;
 	}
 
-	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
-		this.corporateActionEvent = corporateActionEvent;
+	public Tax setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+		this.corporateActionEvent = Objects.requireNonNull(corporateActionEvent);
+		return this;
 	}
 
 	public TaxIdentificationNumberTypeCode getTaxIdentificationType() {
 		return taxIdentificationType;
 	}
 
-	public void setTaxIdentificationType(TaxIdentificationNumberTypeCode taxIdentificationType) {
-		this.taxIdentificationType = taxIdentificationType;
+	public Tax setTaxIdentificationType(TaxIdentificationNumberTypeCode taxIdentificationType) {
+		this.taxIdentificationType = Objects.requireNonNull(taxIdentificationType);
+		return this;
 	}
 }

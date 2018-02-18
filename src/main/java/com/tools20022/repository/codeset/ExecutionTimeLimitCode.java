@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,41 +40,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#AtTheOpening
- * ExecutionTimeLimitCode.mmAtTheOpening}</li>
+ * ExecutionTimeLimitCode.AtTheOpening}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#AtTheClosing
- * ExecutionTimeLimitCode.mmAtTheClosing}</li>
+ * ExecutionTimeLimitCode.AtTheClosing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodUntilCancelled
- * ExecutionTimeLimitCode.mmGoodUntilCancelled}</li>
+ * ExecutionTimeLimitCode.GoodUntilCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodForTheDay
- * ExecutionTimeLimitCode.mmGoodForTheDay}</li>
+ * ExecutionTimeLimitCode.GoodForTheDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodThroughDate
- * ExecutionTimeLimitCode.mmGoodThroughDate}</li>
+ * ExecutionTimeLimitCode.GoodThroughDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodForTheMonth
- * ExecutionTimeLimitCode.mmGoodForTheMonth}</li>
+ * ExecutionTimeLimitCode.GoodForTheMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#FillOrKill
- * ExecutionTimeLimitCode.mmFillOrKill}</li>
+ * ExecutionTimeLimitCode.FillOrKill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodUntilTheEndOfNextMonth
- * ExecutionTimeLimitCode.mmGoodUntilTheEndOfNextMonth}</li>
+ * ExecutionTimeLimitCode.GoodUntilTheEndOfNextMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#GoodTillCrossed
- * ExecutionTimeLimitCode.mmGoodTillCrossed}</li>
+ * ExecutionTimeLimitCode.GoodTillCrossed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExecutionTimeLimitCode#ImmediateOrCancel
- * ExecutionTimeLimitCode.mmImmediateOrCancel}</li>
+ * ExecutionTimeLimitCode.ImmediateOrCancel}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -104,6 +106,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OPEN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//OPEN, FIXSynonym: 59 value
+	 * 2</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -117,6 +123,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode AtTheOpening = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//OPEN"), new FIXSynonym(this, "59 value 2"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtTheOpening";
 			definition = "A round lot order to be executed at the opening of the market.";
@@ -137,6 +144,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CLOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//CLOS, FIXSynonym: 59 value
+	 * 7</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -151,6 +162,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode AtTheClosing = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//CLOS"), new FIXSynonym(this, "59 value 7"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtTheClosing";
 			definition = "An order to buy or sell at the closing price or an odd lot order to buy or sell to be filled at the closing of the round lot offer, plus a differential for a buy order or minus the differential on a sell order.";
@@ -169,6 +181,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GTCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GTCA, FIXSynonym: 59 value
+	 * 1</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -183,6 +199,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodUntilCancelled = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GTCA"), new FIXSynonym(this, "59 value 1"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodUntilCancelled";
 			definition = "An order that remains in effect until it is either executed or cancelled.";
@@ -202,6 +219,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GDAY"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GDAY, FIXSynonym: 59 value
+	 * 6</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -216,6 +237,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodForTheDay = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GDAY"), new FIXSynonym(this, "59 value 6"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodForTheDay";
 			definition = "An order that, if not executed, expires at the end of the trading day on which the order is entered.";
@@ -235,6 +257,9 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GTHD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GTHD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -249,6 +274,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodThroughDate = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GTHD"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodThroughDate";
 			definition = "An Order that if not executed, expires at the end of the specified expiry date.";
@@ -268,6 +294,9 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GTMO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GTMO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -282,6 +311,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodForTheMonth = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GTMO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodForTheMonth";
 			definition = "An order that, if not executed, expires at the end of the month on which the order is entered.";
@@ -301,6 +331,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FIKI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//FIKI, FIXSynonym: 50 value
+	 * 4</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -315,6 +349,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode FillOrKill = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//FIKI"), new FIXSynonym(this, "50 value 4"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FillOrKill";
 			definition = "A market or limit order that is to be executed in its entirety as soon as it is submitted; if not so executed, the order is to be cancelled.";
@@ -333,6 +368,9 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GTNM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GTNM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -346,6 +384,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodUntilTheEndOfNextMonth = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GTNM"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodUntilTheEndOfNextMonth";
 			definition = "Indicates an order that is good until the end of next month.";
@@ -364,6 +403,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GTXO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//GTXO, FIXSynonym: 59 value
+	 * 5</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -376,6 +419,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode GoodTillCrossed = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//GTXO"), new FIXSynonym(this, "59 value 5"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GoodTillCrossed";
 			definition = "Indicates an order that is good till crossed.";
@@ -395,6 +439,10 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "IOCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//IOCA, FIXSynonym: 59 value
+	 * 3</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -409,6 +457,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	 */
 	public static final ExecutionTimeLimitCode ImmediateOrCancel = new ExecutionTimeLimitCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//IOCA"), new FIXSynonym(this, "59 value 3"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImmediateOrCancel";
 			definition = "A market or limit order to be executed in whole or in part as soon as it is submitted; any portion not so executed is to be cancelled.";
@@ -424,7 +473,7 @@ public class ExecutionTimeLimitCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OPEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExecutionTimeLimitCode";

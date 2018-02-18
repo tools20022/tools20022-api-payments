@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.FinancialInstrumentQuantityChoice;
 import com.tools20022.repository.codeset.BlockedReasonCode;
@@ -29,9 +30,11 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashCollateral5;
 import com.tools20022.repository.msg.OriginalAndCurrentQuantities1;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies in terms of value and quantity the assets.
@@ -134,8 +137,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -151,8 +154,8 @@ public class AssetHolding {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveOrHistoricCurrencyAndAmount holdingValue;
 	/**
-	 * Value of the balance of an individual securities holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,9 +201,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount bookValue;
 	/**
-	 * Value of a security, as booked/acquired in an account. Book value is
-	 * often different from the current market value of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,6 +214,9 @@ public class AssetHolding {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::BOOK</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -229,6 +234,7 @@ public class AssetHolding {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::BOOK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookValue";
 			definition = "Value of a security, as booked/acquired in an account. Book value is often different from the current market value of the security.";
@@ -247,9 +253,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount faceAmount;
 	/**
-	 * Quantity expressed as an amount representing the face amount, ie, the
-	 * principal, of a debt instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,6 +278,9 @@ public class AssetHolding {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: FAMT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -290,6 +298,7 @@ public class AssetHolding {
 			derivation_lazy = () -> Arrays.asList(OriginalAndCurrentQuantities1.mmFaceAmount, FinancialInstrumentQuantityChoice.mmFaceAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "FAMT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FaceAmount";
 			definition = "Quantity expressed as an amount representing the face amount, ie, the principal, of a debt instrument.";
@@ -308,10 +317,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount amortisedFaceValue;
 	/**
-	 * Quantity expressed as an amount representing the current amortised face
-	 * amount of a bond, for example, a periodic reduction/increase of a bond's
-	 * principal amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,6 +342,9 @@ public class AssetHolding {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: AMOR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -352,6 +362,7 @@ public class AssetHolding {
 			derivation_lazy = () -> Arrays.asList(OriginalAndCurrentQuantities1.mmAmortisedValue, FinancialInstrumentQuantityChoice.mmAmortisedValue);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "AMOR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmortisedFaceValue";
 			definition = "Quantity expressed as an amount representing the current amortised face amount of a bond, for example, a periodic reduction/increase of a bond's principal amount.";
@@ -370,8 +381,8 @@ public class AssetHolding {
 	};
 	protected ActiveCurrencyAndAmount marketValue;
 	/**
-	 * Value of the asset holding based on current market prices.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,8 +428,8 @@ public class AssetHolding {
 	};
 	protected List<com.tools20022.repository.entity.Balance> balance;
 	/**
-	 * Specifies the balance of the asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,8 +473,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount unrealisedGainOrLoss;
 	/**
-	 * Difference between the holding value and the book value of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,8 +520,8 @@ public class AssetHolding {
 	};
 	protected Asset asset;
 	/**
-	 * Specifies the asset included in the holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -555,9 +566,8 @@ public class AssetHolding {
 	};
 	protected List<com.tools20022.repository.entity.HaircutValuation> haircut;
 	/**
-	 * Percentage by which an asset's market value is reduced for the purpose of
-	 * calculating capital requirement, margin and collateral levels.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -604,9 +614,8 @@ public class AssetHolding {
 	};
 	protected ActiveCurrencyAndAmount eligibleCollateralValue;
 	/**
-	 * Value of the position eligible for collateral purposes. This corresponds
-	 * to the sub balance with a type AvailableForCollateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -653,9 +662,8 @@ public class AssetHolding {
 	};
 	protected CurrencyExchange exchangeRate;
 	/**
-	 * Specifies the exchange rate between the currency of the asset and the
-	 * reporting currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -712,8 +720,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount capValue;
 	/**
-	 * Maximum notional value for a financial instrument that is capped.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -759,9 +767,8 @@ public class AssetHolding {
 	};
 	protected ActiveCurrencyAndAmount riskAdjustedValue;
 	/**
-	 * Value of the asset holding after deduction of a percentage (the haircut)
-	 * that reflects the perceived risk associated with holding this asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -817,9 +824,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount realisedGainOrLoss;
 	/**
-	 * Difference between the realised value caused by the actual
-	 * trade/re-evaluation and the book value of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -866,8 +872,8 @@ public class AssetHolding {
 	};
 	protected UnrealisedCode unrealisedType;
 	/**
-	 * Specifies whether the unrealised amount is a gain or a loss.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -913,9 +919,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount postHaircutValue;
 	/**
-	 * Value of the collateral after deduction of a percentage (the haircut)
-	 * that reflects the perceived risk associated with holding this collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -962,8 +967,8 @@ public class AssetHolding {
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
-	 * interest relative to the asset and the parameters used to calculate it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1009,8 +1014,8 @@ public class AssetHolding {
 	};
 	protected List<com.tools20022.repository.entity.Collateral> collateral;
 	/**
-	 * Specifies the collateral information in relation with some assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1056,8 +1061,8 @@ public class AssetHolding {
 	};
 	protected FinancialAssetBalanceTypeCode financialAssetType;
 	/**
-	 * Specifies the asset type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1102,9 +1107,8 @@ public class AssetHolding {
 	};
 	protected Collateral variationMarginCollateral;
 	/**
-	 * Specifies the collateral information in relation with the segregated
-	 * independent amount asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1152,9 +1156,8 @@ public class AssetHolding {
 	};
 	protected Collateral independentAmountCollateral;
 	/**
-	 * Specifies the collateral information in relation with the segregated
-	 * independent amount asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1202,8 +1205,8 @@ public class AssetHolding {
 	};
 	protected BlockedReasonCode holdingType;
 	/**
-	 * Specifies the type of holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1248,8 +1251,8 @@ public class AssetHolding {
 	};
 	protected CurrencyAndAmount guaranteeAmount;
 	/**
-	 * Amount of the bank guarantee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1296,7 +1299,7 @@ public class AssetHolding {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetHolding";
 				definition = "Specifies in terms of value and quantity the assets.";
@@ -1325,183 +1328,206 @@ public class AssetHolding {
 		return holdingValue;
 	}
 
-	public void setHoldingValue(ActiveOrHistoricCurrencyAndAmount holdingValue) {
-		this.holdingValue = holdingValue;
+	public AssetHolding setHoldingValue(ActiveOrHistoricCurrencyAndAmount holdingValue) {
+		this.holdingValue = Objects.requireNonNull(holdingValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getBookValue() {
 		return bookValue;
 	}
 
-	public void setBookValue(CurrencyAndAmount bookValue) {
-		this.bookValue = bookValue;
+	public AssetHolding setBookValue(CurrencyAndAmount bookValue) {
+		this.bookValue = Objects.requireNonNull(bookValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getFaceAmount() {
 		return faceAmount;
 	}
 
-	public void setFaceAmount(CurrencyAndAmount faceAmount) {
-		this.faceAmount = faceAmount;
+	public AssetHolding setFaceAmount(CurrencyAndAmount faceAmount) {
+		this.faceAmount = Objects.requireNonNull(faceAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmortisedFaceValue() {
 		return amortisedFaceValue;
 	}
 
-	public void setAmortisedFaceValue(CurrencyAndAmount amortisedFaceValue) {
-		this.amortisedFaceValue = amortisedFaceValue;
+	public AssetHolding setAmortisedFaceValue(CurrencyAndAmount amortisedFaceValue) {
+		this.amortisedFaceValue = Objects.requireNonNull(amortisedFaceValue);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMarketValue() {
 		return marketValue;
 	}
 
-	public void setMarketValue(ActiveCurrencyAndAmount marketValue) {
-		this.marketValue = marketValue;
+	public AssetHolding setMarketValue(ActiveCurrencyAndAmount marketValue) {
+		this.marketValue = Objects.requireNonNull(marketValue);
+		return this;
 	}
 
 	public List<Balance> getBalance() {
-		return balance;
+		return balance == null ? balance = new ArrayList<>() : balance;
 	}
 
-	public void setBalance(List<com.tools20022.repository.entity.Balance> balance) {
-		this.balance = balance;
+	public AssetHolding setBalance(List<com.tools20022.repository.entity.Balance> balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
 	public CurrencyAndAmount getUnrealisedGainOrLoss() {
 		return unrealisedGainOrLoss;
 	}
 
-	public void setUnrealisedGainOrLoss(CurrencyAndAmount unrealisedGainOrLoss) {
-		this.unrealisedGainOrLoss = unrealisedGainOrLoss;
+	public AssetHolding setUnrealisedGainOrLoss(CurrencyAndAmount unrealisedGainOrLoss) {
+		this.unrealisedGainOrLoss = Objects.requireNonNull(unrealisedGainOrLoss);
+		return this;
 	}
 
 	public Asset getAsset() {
 		return asset;
 	}
 
-	public void setAsset(com.tools20022.repository.entity.Asset asset) {
-		this.asset = asset;
+	public AssetHolding setAsset(com.tools20022.repository.entity.Asset asset) {
+		this.asset = Objects.requireNonNull(asset);
+		return this;
 	}
 
 	public List<HaircutValuation> getHaircut() {
-		return haircut;
+		return haircut == null ? haircut = new ArrayList<>() : haircut;
 	}
 
-	public void setHaircut(List<com.tools20022.repository.entity.HaircutValuation> haircut) {
-		this.haircut = haircut;
+	public AssetHolding setHaircut(List<com.tools20022.repository.entity.HaircutValuation> haircut) {
+		this.haircut = Objects.requireNonNull(haircut);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getEligibleCollateralValue() {
 		return eligibleCollateralValue;
 	}
 
-	public void setEligibleCollateralValue(ActiveCurrencyAndAmount eligibleCollateralValue) {
-		this.eligibleCollateralValue = eligibleCollateralValue;
+	public AssetHolding setEligibleCollateralValue(ActiveCurrencyAndAmount eligibleCollateralValue) {
+		this.eligibleCollateralValue = Objects.requireNonNull(eligibleCollateralValue);
+		return this;
 	}
 
 	public CurrencyExchange getExchangeRate() {
 		return exchangeRate;
 	}
 
-	public void setExchangeRate(com.tools20022.repository.entity.CurrencyExchange exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public AssetHolding setExchangeRate(com.tools20022.repository.entity.CurrencyExchange exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getCapValue() {
 		return capValue;
 	}
 
-	public void setCapValue(CurrencyAndAmount capValue) {
-		this.capValue = capValue;
+	public AssetHolding setCapValue(CurrencyAndAmount capValue) {
+		this.capValue = Objects.requireNonNull(capValue);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getRiskAdjustedValue() {
 		return riskAdjustedValue;
 	}
 
-	public void setRiskAdjustedValue(ActiveCurrencyAndAmount riskAdjustedValue) {
-		this.riskAdjustedValue = riskAdjustedValue;
+	public AssetHolding setRiskAdjustedValue(ActiveCurrencyAndAmount riskAdjustedValue) {
+		this.riskAdjustedValue = Objects.requireNonNull(riskAdjustedValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getRealisedGainOrLoss() {
 		return realisedGainOrLoss;
 	}
 
-	public void setRealisedGainOrLoss(CurrencyAndAmount realisedGainOrLoss) {
-		this.realisedGainOrLoss = realisedGainOrLoss;
+	public AssetHolding setRealisedGainOrLoss(CurrencyAndAmount realisedGainOrLoss) {
+		this.realisedGainOrLoss = Objects.requireNonNull(realisedGainOrLoss);
+		return this;
 	}
 
 	public UnrealisedCode getUnrealisedType() {
 		return unrealisedType;
 	}
 
-	public void setUnrealisedType(UnrealisedCode unrealisedType) {
-		this.unrealisedType = unrealisedType;
+	public AssetHolding setUnrealisedType(UnrealisedCode unrealisedType) {
+		this.unrealisedType = Objects.requireNonNull(unrealisedType);
+		return this;
 	}
 
 	public CurrencyAndAmount getPostHaircutValue() {
 		return postHaircutValue;
 	}
 
-	public void setPostHaircutValue(CurrencyAndAmount postHaircutValue) {
-		this.postHaircutValue = postHaircutValue;
+	public AssetHolding setPostHaircutValue(CurrencyAndAmount postHaircutValue) {
+		this.postHaircutValue = Objects.requireNonNull(postHaircutValue);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public AssetHolding setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public List<Collateral> getCollateral() {
-		return collateral;
+		return collateral == null ? collateral = new ArrayList<>() : collateral;
 	}
 
-	public void setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
-		this.collateral = collateral;
+	public AssetHolding setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
+		this.collateral = Objects.requireNonNull(collateral);
+		return this;
 	}
 
 	public FinancialAssetBalanceTypeCode getFinancialAssetType() {
 		return financialAssetType;
 	}
 
-	public void setFinancialAssetType(FinancialAssetBalanceTypeCode financialAssetType) {
-		this.financialAssetType = financialAssetType;
+	public AssetHolding setFinancialAssetType(FinancialAssetBalanceTypeCode financialAssetType) {
+		this.financialAssetType = Objects.requireNonNull(financialAssetType);
+		return this;
 	}
 
 	public Collateral getVariationMarginCollateral() {
 		return variationMarginCollateral;
 	}
 
-	public void setVariationMarginCollateral(com.tools20022.repository.entity.Collateral variationMarginCollateral) {
-		this.variationMarginCollateral = variationMarginCollateral;
+	public AssetHolding setVariationMarginCollateral(com.tools20022.repository.entity.Collateral variationMarginCollateral) {
+		this.variationMarginCollateral = Objects.requireNonNull(variationMarginCollateral);
+		return this;
 	}
 
 	public Collateral getIndependentAmountCollateral() {
 		return independentAmountCollateral;
 	}
 
-	public void setIndependentAmountCollateral(com.tools20022.repository.entity.Collateral independentAmountCollateral) {
-		this.independentAmountCollateral = independentAmountCollateral;
+	public AssetHolding setIndependentAmountCollateral(com.tools20022.repository.entity.Collateral independentAmountCollateral) {
+		this.independentAmountCollateral = Objects.requireNonNull(independentAmountCollateral);
+		return this;
 	}
 
 	public BlockedReasonCode getHoldingType() {
 		return holdingType;
 	}
 
-	public void setHoldingType(BlockedReasonCode holdingType) {
-		this.holdingType = holdingType;
+	public AssetHolding setHoldingType(BlockedReasonCode holdingType) {
+		this.holdingType = Objects.requireNonNull(holdingType);
+		return this;
 	}
 
 	public CurrencyAndAmount getGuaranteeAmount() {
 		return guaranteeAmount;
 	}
 
-	public void setGuaranteeAmount(CurrencyAndAmount guaranteeAmount) {
-		this.guaranteeAmount = guaranteeAmount;
+	public AssetHolding setGuaranteeAmount(CurrencyAndAmount guaranteeAmount) {
+		this.guaranteeAmount = Objects.requireNonNull(guaranteeAmount);
+		return this;
 	}
 }

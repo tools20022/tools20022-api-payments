@@ -24,6 +24,8 @@ import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Conditions that must be met to appoint a proxy.
@@ -67,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +86,8 @@ public class ProxyAppointmentCondition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ContactPoint notificationAddress;
 	/**
-	 * Address where the information on the proxy should be sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,8 +135,8 @@ public class ProxyAppointmentCondition {
 	};
 	protected Meeting meeting;
 	/**
-	 * Specifies the meeting to which the proxy appointment conditions aplly.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,8 +183,8 @@ public class ProxyAppointmentCondition {
 	};
 	protected Max350Text registrationMethod;
 	/**
-	 * Indicates how to register a proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,8 +229,8 @@ public class ProxyAppointmentCondition {
 	};
 	protected ProxyTypeCode allowedProxyType;
 	/**
-	 * Specifies who can be assigned as a proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,7 +278,7 @@ public class ProxyAppointmentCondition {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProxyAppointmentCondition";
 				definition = "Conditions that must be met to appoint a proxy.";
@@ -297,31 +299,35 @@ public class ProxyAppointmentCondition {
 		return notificationAddress;
 	}
 
-	public void setNotificationAddress(com.tools20022.repository.entity.ContactPoint notificationAddress) {
-		this.notificationAddress = notificationAddress;
+	public ProxyAppointmentCondition setNotificationAddress(com.tools20022.repository.entity.ContactPoint notificationAddress) {
+		this.notificationAddress = Objects.requireNonNull(notificationAddress);
+		return this;
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public ProxyAppointmentCondition setMeeting(com.tools20022.repository.entity.Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 
 	public Max350Text getRegistrationMethod() {
 		return registrationMethod;
 	}
 
-	public void setRegistrationMethod(Max350Text registrationMethod) {
-		this.registrationMethod = registrationMethod;
+	public ProxyAppointmentCondition setRegistrationMethod(Max350Text registrationMethod) {
+		this.registrationMethod = Objects.requireNonNull(registrationMethod);
+		return this;
 	}
 
 	public ProxyTypeCode getAllowedProxyType() {
 		return allowedProxyType;
 	}
 
-	public void setAllowedProxyType(ProxyTypeCode allowedProxyType) {
-		this.allowedProxyType = allowedProxyType;
+	public ProxyAppointmentCondition setAllowedProxyType(ProxyTypeCode allowedProxyType) {
+		this.allowedProxyType = Objects.requireNonNull(allowedProxyType);
+		return this;
 	}
 }

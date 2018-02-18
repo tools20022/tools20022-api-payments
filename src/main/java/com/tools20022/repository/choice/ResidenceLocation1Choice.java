@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of location of a residence of a party."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ResidenceLocation1Choice", propOrder = {"country", "area"})
 public class ResidenceLocation1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctry", required = true)
 	protected CountryCode country;
 	/**
-	 * Specifies the account owner's resident country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +111,7 @@ public class ResidenceLocation1Choice {
 	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> ResidenceLocation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ResidenceLocation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,10 +122,11 @@ public class ResidenceLocation1Choice {
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
+	@XmlElement(name = "Area", required = true)
 	protected Max35Text area;
 	/**
-	 * Specifies the account owner's resident geographical region or area.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +160,7 @@ public class ResidenceLocation1Choice {
 	public static final MMMessageAttribute mmArea = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmRegionIdentification;
-			componentContext_lazy = () -> ResidenceLocation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ResidenceLocation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Area";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,9 +175,9 @@ public class ResidenceLocation1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ResidenceLocation1Choice.mmCountry, ResidenceLocation1Choice.mmArea);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ResidenceLocation1Choice.mmCountry, com.tools20022.repository.choice.ResidenceLocation1Choice.mmArea);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResidenceLocation1Choice";
 				definition = "Choice of location of a residence of a party.";
@@ -183,21 +186,21 @@ public class ResidenceLocation1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public CountryCode getCountry() {
 		return country;
 	}
 
-	public void setCountry(CountryCode country) {
-		this.country = country;
+	public ResidenceLocation1Choice setCountry(CountryCode country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	@XmlElement(name = "Area", required = true)
 	public Max35Text getArea() {
 		return area;
 	}
 
-	public void setArea(Max35Text area) {
-		this.area = area;
+	public ResidenceLocation1Choice setArea(Max35Text area) {
+		this.area = Objects.requireNonNull(area);
+		return this;
 	}
 }

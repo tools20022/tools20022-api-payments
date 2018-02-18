@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,20 +40,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#BookOnExecutionDay
- * GoodTillBookingInstructionCode.mmBookOnExecutionDay}</li>
+ * GoodTillBookingInstructionCode.BookOnExecutionDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#AccumulateTillEnd
- * GoodTillBookingInstructionCode.mmAccumulateTillEnd}</li>
+ * GoodTillBookingInstructionCode.AccumulateTillEnd}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GoodTillBookingInstructionCode#AccumulateTillTold
- * GoodTillBookingInstructionCode.mmAccumulateTillTold}</li>
+ * GoodTillBookingInstructionCode.AccumulateTillTold}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: 427</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -173,7 +177,8 @@ public class GoodTillBookingInstructionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "427"));
 				example = Arrays.asList("BOEX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GoodTillBookingInstructionCode";

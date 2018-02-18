@@ -31,6 +31,7 @@ import com.tools20022.repository.msg.InvestigationRejectionJustification1;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Specifies the rejection of an activity linked to a payment. The rejected
@@ -91,8 +92,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,8 +111,8 @@ public class PaymentInvestigationCaseRejection {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PaymentModificationRejectionV2Code rejectedModification;
 	/**
-	 * Reason for the rejection of a modification request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,8 +167,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected PaymentCancellationRejectionCode rejectedCancellation;
 	/**
-	 * Justification for the rejection of the cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -225,8 +226,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected Max140Text rejectedCancellationReason;
 	/**
-	 * Free text justification for rejecting a cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,10 +272,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected YesNoIndicator assignmentCancellationConfirmation;
 	/**
-	 * If yes, it means the cancellation of the assignment is confirmed. If no,
-	 * it means the cancellation of the assignment is rejected and the
-	 * investigation process will continue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,8 +330,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected CaseAssignmentRejectionCode rejectionReason;
 	/**
-	 * Reason for the rejection of a case assignment, in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -379,8 +378,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCaseResolution;
 	/**
-	 * Resolution which consists in rejecting the case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,8 +427,8 @@ public class PaymentInvestigationCaseRejection {
 	};
 	protected InvestigationRejectionCode investigationRejection;
 	/**
-	 * Reason for the rejection of a case assignment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -486,7 +485,7 @@ public class PaymentInvestigationCaseRejection {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentInvestigationCaseRejection";
 				definition = "Specifies the rejection of an activity linked to a payment. The rejected activity may be the assignment of an investigation case, the cancellation or  the modification of a payment.";
@@ -510,55 +509,62 @@ public class PaymentInvestigationCaseRejection {
 		return rejectedModification;
 	}
 
-	public void setRejectedModification(PaymentModificationRejectionV2Code rejectedModification) {
-		this.rejectedModification = rejectedModification;
+	public PaymentInvestigationCaseRejection setRejectedModification(PaymentModificationRejectionV2Code rejectedModification) {
+		this.rejectedModification = Objects.requireNonNull(rejectedModification);
+		return this;
 	}
 
 	public PaymentCancellationRejectionCode getRejectedCancellation() {
 		return rejectedCancellation;
 	}
 
-	public void setRejectedCancellation(PaymentCancellationRejectionCode rejectedCancellation) {
-		this.rejectedCancellation = rejectedCancellation;
+	public PaymentInvestigationCaseRejection setRejectedCancellation(PaymentCancellationRejectionCode rejectedCancellation) {
+		this.rejectedCancellation = Objects.requireNonNull(rejectedCancellation);
+		return this;
 	}
 
 	public Max140Text getRejectedCancellationReason() {
 		return rejectedCancellationReason;
 	}
 
-	public void setRejectedCancellationReason(Max140Text rejectedCancellationReason) {
-		this.rejectedCancellationReason = rejectedCancellationReason;
+	public PaymentInvestigationCaseRejection setRejectedCancellationReason(Max140Text rejectedCancellationReason) {
+		this.rejectedCancellationReason = Objects.requireNonNull(rejectedCancellationReason);
+		return this;
 	}
 
 	public YesNoIndicator getAssignmentCancellationConfirmation() {
 		return assignmentCancellationConfirmation;
 	}
 
-	public void setAssignmentCancellationConfirmation(YesNoIndicator assignmentCancellationConfirmation) {
-		this.assignmentCancellationConfirmation = assignmentCancellationConfirmation;
+	public PaymentInvestigationCaseRejection setAssignmentCancellationConfirmation(YesNoIndicator assignmentCancellationConfirmation) {
+		this.assignmentCancellationConfirmation = Objects.requireNonNull(assignmentCancellationConfirmation);
+		return this;
 	}
 
 	public CaseAssignmentRejectionCode getRejectionReason() {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(CaseAssignmentRejectionCode rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public PaymentInvestigationCaseRejection setRejectionReason(CaseAssignmentRejectionCode rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 
 	public PaymentInvestigationCaseResolution getRelatedInvestigationCaseResolution() {
 		return relatedInvestigationCaseResolution;
 	}
 
-	public void setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
-		this.relatedInvestigationCaseResolution = relatedInvestigationCaseResolution;
+	public PaymentInvestigationCaseRejection setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
+		this.relatedInvestigationCaseResolution = Objects.requireNonNull(relatedInvestigationCaseResolution);
+		return this;
 	}
 
 	public InvestigationRejectionCode getInvestigationRejection() {
 		return investigationRejection;
 	}
 
-	public void setInvestigationRejection(InvestigationRejectionCode investigationRejection) {
-		this.investigationRejection = investigationRejection;
+	public PaymentInvestigationCaseRejection setInvestigationRejection(InvestigationRejectionCode investigationRejection) {
+		this.investigationRejection = Objects.requireNonNull(investigationRejection);
+		return this;
 	}
 }

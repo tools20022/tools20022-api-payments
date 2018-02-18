@@ -27,9 +27,8 @@ import com.tools20022.repository.codeset.UseCases1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +76,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,15 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "References5", propOrder = {"requestType", "messageIdentification", "processIdentification", "acknowledgedMessageIdentification", "status", "attachedDocumentName"})
 public class References5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ReqTp", required = true)
 	protected UseCases1Code requestType;
 	/**
-	 * Identifies the type of acknowledged request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,7 +126,7 @@ public class References5 {
 	 */
 	public static final MMMessageAttribute mmRequestType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "ReqTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,11 +137,11 @@ public class References5 {
 			simpleType_lazy = () -> UseCases1Code.mmObject();
 		}
 	};
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Identifies a message by a unique identifier and the date and time when
-	 * the message was created by the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -168,7 +168,7 @@ public class References5 {
 	 */
 	public static final MMMessageAssociationEnd mmMessageIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,14 +180,11 @@ public class References5 {
 			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "PrcId", required = true)
 	protected MessageIdentification1 processIdentification;
 	/**
-	 * Identifies a process by a unique identifier and the date and time when
-	 * the first message belonging to the process was created by the sender. The
-	 * process identification remains the same in all messages belonging to the
-	 * same process, from the initial request message to the final account
-	 * report closing the process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -214,7 +211,7 @@ public class References5 {
 	 */
 	public static final MMMessageAssociationEnd mmProcessIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "PrcId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -226,10 +223,11 @@ public class References5 {
 			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "AckdMsgId")
 	protected List<com.tools20022.repository.msg.MessageIdentification1> acknowledgedMessageIdentification;
 	/**
-	 * Reference to the message that is acknowledged.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -254,7 +252,7 @@ public class References5 {
 	 */
 	public static final MMMessageAssociationEnd mmAcknowledgedMessageIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "AckdMsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,10 +263,11 @@ public class References5 {
 			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 		}
 	};
+	@XmlElement(name = "Sts")
 	protected Max35Text status;
 	/**
-	 * Status of the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,7 +293,7 @@ public class References5 {
 	 */
 	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,10 +304,11 @@ public class References5 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	@XmlElement(name = "AttchdDocNm")
 	protected List<Max70Text> attachedDocumentName;
 	/**
-	 * File name of a document logically related to the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,7 +335,7 @@ public class References5 {
 	 */
 	public static final MMMessageAttribute mmAttachedDocumentName = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> References5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
 			xmlTag = "AttchdDocNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -349,10 +349,11 @@ public class References5 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(References5.mmRequestType, References5.mmMessageIdentification, References5.mmProcessIdentification, References5.mmAcknowledgedMessageIdentification, References5.mmStatus,
-						References5.mmAttachedDocumentName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.References5.mmRequestType, com.tools20022.repository.msg.References5.mmMessageIdentification,
+						com.tools20022.repository.msg.References5.mmProcessIdentification, com.tools20022.repository.msg.References5.mmAcknowledgedMessageIdentification, com.tools20022.repository.msg.References5.mmStatus,
+						com.tools20022.repository.msg.References5.mmAttachedDocumentName);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountReportV02.mmReferences, AccountRequestAcknowledgementV02.mmReferences);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "References5";
 				definition = "Set of elements for the identification of the message and related references.";
@@ -361,57 +362,57 @@ public class References5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ReqTp", required = true)
 	public UseCases1Code getRequestType() {
 		return requestType;
 	}
 
-	public void setRequestType(UseCases1Code requestType) {
-		this.requestType = requestType;
+	public References5 setRequestType(UseCases1Code requestType) {
+		this.requestType = Objects.requireNonNull(requestType);
+		return this;
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(com.tools20022.repository.msg.MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public References5 setMessageIdentification(com.tools20022.repository.msg.MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PrcId", required = true)
 	public MessageIdentification1 getProcessIdentification() {
 		return processIdentification;
 	}
 
-	public void setProcessIdentification(com.tools20022.repository.msg.MessageIdentification1 processIdentification) {
-		this.processIdentification = processIdentification;
+	public References5 setProcessIdentification(com.tools20022.repository.msg.MessageIdentification1 processIdentification) {
+		this.processIdentification = Objects.requireNonNull(processIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AckdMsgId")
 	public List<MessageIdentification1> getAcknowledgedMessageIdentification() {
-		return acknowledgedMessageIdentification;
+		return acknowledgedMessageIdentification == null ? acknowledgedMessageIdentification = new ArrayList<>() : acknowledgedMessageIdentification;
 	}
 
-	public void setAcknowledgedMessageIdentification(List<com.tools20022.repository.msg.MessageIdentification1> acknowledgedMessageIdentification) {
-		this.acknowledgedMessageIdentification = acknowledgedMessageIdentification;
+	public References5 setAcknowledgedMessageIdentification(List<com.tools20022.repository.msg.MessageIdentification1> acknowledgedMessageIdentification) {
+		this.acknowledgedMessageIdentification = Objects.requireNonNull(acknowledgedMessageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Sts")
-	public Max35Text getStatus() {
-		return status;
+	public Optional<Max35Text> getStatus() {
+		return status == null ? Optional.empty() : Optional.of(status);
 	}
 
-	public void setStatus(Max35Text status) {
+	public References5 setStatus(Max35Text status) {
 		this.status = status;
+		return this;
 	}
 
-	@XmlElement(name = "AttchdDocNm")
 	public List<Max70Text> getAttachedDocumentName() {
-		return attachedDocumentName;
+		return attachedDocumentName == null ? attachedDocumentName = new ArrayList<>() : attachedDocumentName;
 	}
 
-	public void setAttachedDocumentName(List<Max70Text> attachedDocumentName) {
-		this.attachedDocumentName = attachedDocumentName;
+	public References5 setAttachedDocumentName(List<Max70Text> attachedDocumentName) {
+		this.attachedDocumentName = Objects.requireNonNull(attachedDocumentName);
+		return this;
 	}
 }

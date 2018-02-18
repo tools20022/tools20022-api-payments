@@ -37,45 +37,45 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Approved
- * CapitalTypeCode.mmApproved}</li>
+ * CapitalTypeCode.Approved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#IssuedVotingRights
- * CapitalTypeCode.mmIssuedVotingRights}</li>
+ * CapitalTypeCode.IssuedVotingRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#MaximumIncrease
- * CapitalTypeCode.mmMaximumIncrease}</li>
+ * CapitalTypeCode.MaximumIncrease}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Outstanding
- * CapitalTypeCode.mmOutstanding}</li>
+ * CapitalTypeCode.Outstanding}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Redeemed
- * CapitalTypeCode.mmRedeemed}</li>
+ * CapitalTypeCode.Redeemed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#StatedCapital
- * CapitalTypeCode.mmStatedCapital}</li>
+ * CapitalTypeCode.StatedCapital}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#TreasuryStock
- * CapitalTypeCode.mmTreasuryStock}</li>
+ * CapitalTypeCode.TreasuryStock}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Unissued
- * CapitalTypeCode.mmUnissued}</li>
+ * CapitalTypeCode.Unissued}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Withdrawn
- * CapitalTypeCode.mmWithdrawn}</li>
+ * CapitalTypeCode.Withdrawn}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Authorised
- * CapitalTypeCode.mmAuthorised}</li>
+ * CapitalTypeCode.Authorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#InCirculation
- * CapitalTypeCode.mmInCirculation}</li>
+ * CapitalTypeCode.InCirculation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CapitalTypeCode#Issued
- * CapitalTypeCode.mmIssued}</li>
+ * CapitalTypeCode.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CapitalTypeCode#IssuedReserveCapital
- * CapitalTypeCode.mmIssuedReserveCapital}</li>
+ * CapitalTypeCode.IssuedReserveCapital}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -494,7 +494,7 @@ public class CapitalTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("APPD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CapitalTypeCode";

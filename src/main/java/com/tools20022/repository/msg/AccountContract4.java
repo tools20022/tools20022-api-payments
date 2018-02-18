@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.CashAccountContract;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,16 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies target dates dates related to account opening and closing."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountContract4", propOrder = {"targetClosingDate", "urgencyFlag", "removalIndicator"})
 public class AccountContract4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TrgtClsgDt")
 	protected ISODate targetClosingDate;
 	/**
-	 * Date on which the account and related services are expected to cease to
-	 * be operational for the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +129,7 @@ public class AccountContract4 {
 	public static final MMMessageAttribute mmTargetClosingDate = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTargetClosingDate;
-			componentContext_lazy = () -> AccountContract4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract4.mmObject();
 			isDerived = false;
 			xmlTag = "TrgtClsgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,13 +140,11 @@ public class AccountContract4 {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	@XmlElement(name = "UrgcyFlg")
 	protected YesNoIndicator urgencyFlag;
 	/**
-	 * Indicator that the account opening/maintenance/closing process needs to
-	 * be treated urgently, that is, sooner than the terms established by the
-	 * service level agreed between the account holder customer and the account
-	 * servicing institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,7 +180,7 @@ public class AccountContract4 {
 	public static final MMMessageAttribute mmUrgencyFlag = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmUrgencyFlag;
-			componentContext_lazy = () -> AccountContract4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract4.mmObject();
 			isDerived = false;
 			xmlTag = "UrgcyFlg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,11 +191,11 @@ public class AccountContract4 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	@XmlElement(name = "RmvlInd")
 	protected YesNoIndicator removalIndicator;
 	/**
-	 * Indicates removal of the account. After removal, an account will not
-	 * appear anymore in reports.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +231,7 @@ public class AccountContract4 {
 	public static final MMMessageAttribute mmRemovalIndicator = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmRemovalIndicator;
-			componentContext_lazy = () -> AccountContract4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract4.mmObject();
 			isDerived = false;
 			xmlTag = "RmvlInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,10 +246,11 @@ public class AccountContract4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountContract4.mmTargetClosingDate, AccountContract4.mmUrgencyFlag, AccountContract4.mmRemovalIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountContract4.mmTargetClosingDate, com.tools20022.repository.msg.AccountContract4.mmUrgencyFlag,
+						com.tools20022.repository.msg.AccountContract4.mmRemovalIndicator);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountClosingAmendmentRequestV02.mmContractDates, AccountClosingRequestV02.mmContractDates);
 				trace_lazy = () -> CashAccountContract.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountContract4";
 				definition = "Specifies target dates dates related to account opening and closing.";
@@ -259,30 +259,30 @@ public class AccountContract4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TrgtClsgDt")
-	public ISODate getTargetClosingDate() {
-		return targetClosingDate;
+	public Optional<ISODate> getTargetClosingDate() {
+		return targetClosingDate == null ? Optional.empty() : Optional.of(targetClosingDate);
 	}
 
-	public void setTargetClosingDate(ISODate targetClosingDate) {
+	public AccountContract4 setTargetClosingDate(ISODate targetClosingDate) {
 		this.targetClosingDate = targetClosingDate;
+		return this;
 	}
 
-	@XmlElement(name = "UrgcyFlg")
-	public YesNoIndicator getUrgencyFlag() {
-		return urgencyFlag;
+	public Optional<YesNoIndicator> getUrgencyFlag() {
+		return urgencyFlag == null ? Optional.empty() : Optional.of(urgencyFlag);
 	}
 
-	public void setUrgencyFlag(YesNoIndicator urgencyFlag) {
+	public AccountContract4 setUrgencyFlag(YesNoIndicator urgencyFlag) {
 		this.urgencyFlag = urgencyFlag;
+		return this;
 	}
 
-	@XmlElement(name = "RmvlInd")
-	public YesNoIndicator getRemovalIndicator() {
-		return removalIndicator;
+	public Optional<YesNoIndicator> getRemovalIndicator() {
+		return removalIndicator == null ? Optional.empty() : Optional.of(removalIndicator);
 	}
 
-	public void setRemovalIndicator(YesNoIndicator removalIndicator) {
+	public AccountContract4 setRemovalIndicator(YesNoIndicator removalIndicator) {
 		this.removalIndicator = removalIndicator;
+		return this;
 	}
 }

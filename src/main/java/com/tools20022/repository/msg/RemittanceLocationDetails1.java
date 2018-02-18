@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information on the remittance advice."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RemittanceLocationDetails1", propOrder = {"method", "electronicAddress", "postalAddress"})
 public class RemittanceLocationDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Mtd", required = true)
 	protected RemittanceLocationMethod2Code method;
 	/**
-	 * Method used to deliver the remittance advice information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +119,7 @@ public class RemittanceLocationDetails1 {
 	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmRemittanceDeliveryMethod;
-			componentContext_lazy = () -> RemittanceLocationDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "Mtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +130,11 @@ public class RemittanceLocationDetails1 {
 			simpleType_lazy = () -> RemittanceLocationMethod2Code.mmObject();
 		}
 	};
+	@XmlElement(name = "ElctrncAdr")
 	protected Max2048Text electronicAddress;
 	/**
-	 * Electronic address to which an agent is to send the remittance
-	 * information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +169,7 @@ public class RemittanceLocationDetails1 {
 	public static final MMMessageAttribute mmElectronicAddress = new MMMessageAttribute() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
-			componentContext_lazy = () -> RemittanceLocationDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ElctrncAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,10 +180,11 @@ public class RemittanceLocationDetails1 {
 			simpleType_lazy = () -> Max2048Text.mmObject();
 		}
 	};
+	@XmlElement(name = "PstlAdr")
 	protected NameAndAddress10 postalAddress;
 	/**
-	 * Postal address to which an agent is to send the remittance information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -214,7 +218,7 @@ public class RemittanceLocationDetails1 {
 	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> RemittanceLocationDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "PstlAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,9 +234,10 @@ public class RemittanceLocationDetails1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RemittanceLocationDetails1.mmMethod, RemittanceLocationDetails1.mmElectronicAddress, RemittanceLocationDetails1.mmPostalAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceLocationDetails1.mmMethod, com.tools20022.repository.msg.RemittanceLocationDetails1.mmElectronicAddress,
+						com.tools20022.repository.msg.RemittanceLocationDetails1.mmPostalAddress);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocationDetails1";
 				definition = "Provides information on the remittance advice.";
@@ -241,30 +246,30 @@ public class RemittanceLocationDetails1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Mtd", required = true)
 	public RemittanceLocationMethod2Code getMethod() {
 		return method;
 	}
 
-	public void setMethod(RemittanceLocationMethod2Code method) {
-		this.method = method;
+	public RemittanceLocationDetails1 setMethod(RemittanceLocationMethod2Code method) {
+		this.method = Objects.requireNonNull(method);
+		return this;
 	}
 
-	@XmlElement(name = "ElctrncAdr")
-	public Max2048Text getElectronicAddress() {
-		return electronicAddress;
+	public Optional<Max2048Text> getElectronicAddress() {
+		return electronicAddress == null ? Optional.empty() : Optional.of(electronicAddress);
 	}
 
-	public void setElectronicAddress(Max2048Text electronicAddress) {
+	public RemittanceLocationDetails1 setElectronicAddress(Max2048Text electronicAddress) {
 		this.electronicAddress = electronicAddress;
+		return this;
 	}
 
-	@XmlElement(name = "PstlAdr")
-	public NameAndAddress10 getPostalAddress() {
-		return postalAddress;
+	public Optional<NameAndAddress10> getPostalAddress() {
+		return postalAddress == null ? Optional.empty() : Optional.of(postalAddress);
 	}
 
-	public void setPostalAddress(com.tools20022.repository.msg.NameAndAddress10 postalAddress) {
+	public RemittanceLocationDetails1 setPostalAddress(com.tools20022.repository.msg.NameAndAddress10 postalAddress) {
 		this.postalAddress = postalAddress;
+		return this;
 	}
 }

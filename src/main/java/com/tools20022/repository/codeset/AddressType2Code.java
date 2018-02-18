@@ -37,19 +37,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.AddressType2Code#Postal
- * AddressType2Code.mmPostal}</li>
+ * AddressType2Code.Postal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AddressType2Code#POBox
- * AddressType2Code.mmPOBox}</li>
+ * AddressType2Code.POBox}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AddressType2Code#Residential
- * AddressType2Code.mmResidential}</li>
+ * AddressType2Code.Residential}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AddressType2Code#Business
- * AddressType2Code.mmBusiness}</li>
+ * AddressType2Code.Business}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AddressType2Code#MailTo
- * AddressType2Code.mmMailTo}</li>
+ * AddressType2Code.MailTo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AddressType2Code#DeliveryTo
- * AddressType2Code.mmDeliveryTo}</li>
+ * AddressType2Code.DeliveryTo}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -232,7 +232,7 @@ public class AddressType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADDR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AddressType2Code";

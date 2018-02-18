@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Number;
@@ -24,9 +25,8 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FloatingInterestRate4;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Margin over or under an index which determines a rate.
@@ -96,8 +96,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +113,8 @@ public class Spread {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Security benchmarkSecurity;
 	/**
-	 * Security used as a reference to express the value of another security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,8 +160,8 @@ public class Spread {
 	};
 	protected SecuritiesFinancing securitiesFinancing;
 	/**
-	 * Securities financing process for which a repurchase spread is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,9 +209,8 @@ public class Spread {
 	};
 	protected PercentageRate spreadRate;
 	/**
-	 * Margin over or under an index which determines the interest rate of an
-	 * interest bearing instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,8 +257,8 @@ public class Spread {
 	};
 	protected Number basisPointSpread;
 	/**
-	 * Specifies the number of points to be added or substracted to the rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,8 +312,8 @@ public class Spread {
 	};
 	protected Index index;
 	/**
-	 * Index for which a spread is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -358,8 +357,8 @@ public class Spread {
 	};
 	protected SecuritiesPricing benchmarkPrice;
 	/**
-	 * Identifies the price of the benchmark security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,9 +404,8 @@ public class Spread {
 	};
 	protected List<com.tools20022.repository.entity.BuyOrSellIndicationOfInterest> relatedIndicationOfInterest;
 	/**
-	 * Indication of interest process for which a spread to benchmark is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,8 +453,8 @@ public class Spread {
 	};
 	protected BuyOrSellIndicationOfInterest indicationOfInterest;
 	/**
-	 * Indication of interest process for which a spread is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -504,8 +502,8 @@ public class Spread {
 	};
 	protected InterestCalculation relatedInterest;
 	/**
-	 * Interest calculation process for which a spread is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,8 +550,8 @@ public class Spread {
 	};
 	protected Curve benchmarkCurve;
 	/**
-	 * Describes a benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,12 +595,8 @@ public class Spread {
 	};
 	protected DecimalNumber priceOffset;
 	/**
-	 * Either a swap spread or spread to benchmark depending upon order type. In
-	 * case of a spread to benchmark, the price offset is expressed in terms of
-	 * basis points relative to a benchmark - this can be a positive or a
-	 * negative spread. In case of a swap spread, the price offset is target
-	 * spread for a swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -614,6 +608,9 @@ public class Spread {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Spread
 	 * Spread}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 218</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -631,6 +628,7 @@ public class Spread {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "218"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceOffset";
 			definition = "Either a swap spread or spread to benchmark depending upon order type.  In case of a spread to benchmark, the price offset is expressed in terms of basis points relative to a benchmark - this can be a positive or a negative spread.  In case of a swap spread, the price offset is target spread for a swap.";
@@ -651,7 +649,7 @@ public class Spread {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Spread";
 				definition = "Margin over or under an index which determines a rate.";
@@ -676,87 +674,98 @@ public class Spread {
 		return benchmarkSecurity;
 	}
 
-	public void setBenchmarkSecurity(com.tools20022.repository.entity.Security benchmarkSecurity) {
-		this.benchmarkSecurity = benchmarkSecurity;
+	public Spread setBenchmarkSecurity(com.tools20022.repository.entity.Security benchmarkSecurity) {
+		this.benchmarkSecurity = Objects.requireNonNull(benchmarkSecurity);
+		return this;
 	}
 
-	public SecuritiesFinancing getSecuritiesFinancing() {
-		return securitiesFinancing;
+	public Optional<SecuritiesFinancing> getSecuritiesFinancing() {
+		return securitiesFinancing == null ? Optional.empty() : Optional.of(securitiesFinancing);
 	}
 
-	public void setSecuritiesFinancing(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancing) {
+	public Spread setSecuritiesFinancing(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancing) {
 		this.securitiesFinancing = securitiesFinancing;
+		return this;
 	}
 
 	public PercentageRate getSpreadRate() {
 		return spreadRate;
 	}
 
-	public void setSpreadRate(PercentageRate spreadRate) {
-		this.spreadRate = spreadRate;
+	public Spread setSpreadRate(PercentageRate spreadRate) {
+		this.spreadRate = Objects.requireNonNull(spreadRate);
+		return this;
 	}
 
 	public Number getBasisPointSpread() {
 		return basisPointSpread;
 	}
 
-	public void setBasisPointSpread(Number basisPointSpread) {
-		this.basisPointSpread = basisPointSpread;
+	public Spread setBasisPointSpread(Number basisPointSpread) {
+		this.basisPointSpread = Objects.requireNonNull(basisPointSpread);
+		return this;
 	}
 
-	public Index getIndex() {
-		return index;
+	public Optional<Index> getIndex() {
+		return index == null ? Optional.empty() : Optional.of(index);
 	}
 
-	public void setIndex(com.tools20022.repository.entity.Index index) {
+	public Spread setIndex(com.tools20022.repository.entity.Index index) {
 		this.index = index;
+		return this;
 	}
 
 	public SecuritiesPricing getBenchmarkPrice() {
 		return benchmarkPrice;
 	}
 
-	public void setBenchmarkPrice(com.tools20022.repository.entity.SecuritiesPricing benchmarkPrice) {
-		this.benchmarkPrice = benchmarkPrice;
+	public Spread setBenchmarkPrice(com.tools20022.repository.entity.SecuritiesPricing benchmarkPrice) {
+		this.benchmarkPrice = Objects.requireNonNull(benchmarkPrice);
+		return this;
 	}
 
 	public List<BuyOrSellIndicationOfInterest> getRelatedIndicationOfInterest() {
-		return relatedIndicationOfInterest;
+		return relatedIndicationOfInterest == null ? relatedIndicationOfInterest = new ArrayList<>() : relatedIndicationOfInterest;
 	}
 
-	public void setRelatedIndicationOfInterest(List<com.tools20022.repository.entity.BuyOrSellIndicationOfInterest> relatedIndicationOfInterest) {
-		this.relatedIndicationOfInterest = relatedIndicationOfInterest;
+	public Spread setRelatedIndicationOfInterest(List<com.tools20022.repository.entity.BuyOrSellIndicationOfInterest> relatedIndicationOfInterest) {
+		this.relatedIndicationOfInterest = Objects.requireNonNull(relatedIndicationOfInterest);
+		return this;
 	}
 
-	public BuyOrSellIndicationOfInterest getIndicationOfInterest() {
-		return indicationOfInterest;
+	public Optional<BuyOrSellIndicationOfInterest> getIndicationOfInterest() {
+		return indicationOfInterest == null ? Optional.empty() : Optional.of(indicationOfInterest);
 	}
 
-	public void setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
+	public Spread setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
 		this.indicationOfInterest = indicationOfInterest;
+		return this;
 	}
 
 	public InterestCalculation getRelatedInterest() {
 		return relatedInterest;
 	}
 
-	public void setRelatedInterest(com.tools20022.repository.entity.InterestCalculation relatedInterest) {
-		this.relatedInterest = relatedInterest;
+	public Spread setRelatedInterest(com.tools20022.repository.entity.InterestCalculation relatedInterest) {
+		this.relatedInterest = Objects.requireNonNull(relatedInterest);
+		return this;
 	}
 
 	public Curve getBenchmarkCurve() {
 		return benchmarkCurve;
 	}
 
-	public void setBenchmarkCurve(com.tools20022.repository.entity.Curve benchmarkCurve) {
-		this.benchmarkCurve = benchmarkCurve;
+	public Spread setBenchmarkCurve(com.tools20022.repository.entity.Curve benchmarkCurve) {
+		this.benchmarkCurve = Objects.requireNonNull(benchmarkCurve);
+		return this;
 	}
 
 	public DecimalNumber getPriceOffset() {
 		return priceOffset;
 	}
 
-	public void setPriceOffset(DecimalNumber priceOffset) {
-		this.priceOffset = priceOffset;
+	public Spread setPriceOffset(DecimalNumber priceOffset) {
+		this.priceOffset = Objects.requireNonNull(priceOffset);
+		return this;
 	}
 }

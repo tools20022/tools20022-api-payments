@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PreferredContactMethodCode#Letter
- * PreferredContactMethodCode.mmLetter}</li>
+ * PreferredContactMethodCode.Letter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PreferredContactMethodCode#Email
- * PreferredContactMethodCode.mmEmail}</li>
+ * PreferredContactMethodCode.Email}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PreferredContactMethodCode#Phone
- * PreferredContactMethodCode.mmPhone}</li>
+ * PreferredContactMethodCode.Phone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PreferredContactMethodCode#Fax
- * PreferredContactMethodCode.mmFax}</li>
+ * PreferredContactMethodCode.Fax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PreferredContactMethodCode#MobileOrCellPhone
- * PreferredContactMethodCode.mmMobileOrCellPhone}</li>
+ * PreferredContactMethodCode.MobileOrCellPhone}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -249,7 +249,7 @@ public class PreferredContactMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LETT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PreferredContactMethodCode";

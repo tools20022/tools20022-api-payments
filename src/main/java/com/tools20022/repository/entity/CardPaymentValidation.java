@@ -28,9 +28,8 @@ import com.tools20022.repository.datatype.Min6Max8Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Results and parameters of the card payment verification.
@@ -113,8 +112,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,8 +129,8 @@ public class CardPaymentValidation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TrueFalseIndicator transactionSuccess;
 	/**
-	 * Outcome of the transaction at the acceptor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,10 +176,8 @@ public class CardPaymentValidation {
 	};
 	protected TrueFalseIndicator merchantOverride;
 	/**
-	 * Indicate that the acceptor has forced the transaction in spite of the
-	 * authorisation result (online or offline), or incident to complete the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,8 +225,8 @@ public class CardPaymentValidation {
 	};
 	protected ISODate validityDate;
 	/**
-	 * Transaction authorisation deadline to complete the related payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,8 +272,8 @@ public class CardPaymentValidation {
 	};
 	protected CardPaymentAcquiring cardPayment;
 	/**
-	 * Card payment to which the validation process applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,8 +321,8 @@ public class CardPaymentValidation {
 	};
 	protected List<com.tools20022.repository.entity.Response> response;
 	/**
-	 * Response to an authorisation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,8 +367,8 @@ public class CardPaymentValidation {
 	};
 	protected Min6Max8Text authorisationCode;
 	/**
-	 * Value assigned by the authorising party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,8 +414,8 @@ public class CardPaymentValidation {
 	};
 	protected OnLineReasonCode onLineReason;
 	/**
-	 * Reason to process an online authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -464,8 +461,8 @@ public class CardPaymentValidation {
 	};
 	protected CashBalance balance;
 	/**
-	 * Balance of the account attached to the payment card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,9 +509,8 @@ public class CardPaymentValidation {
 	};
 	protected CardholderAddressVerificationResultCode cardholderAddressVerificationResult;
 	/**
-	 * Result of the cardholder verification address checks on the street number
-	 * and the postal code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,8 +558,8 @@ public class CardPaymentValidation {
 	};
 	protected CSCResultCode cSCResult;
 	/**
-	 * Result of the printed CSC (Card Security Code) validation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -610,8 +606,8 @@ public class CardPaymentValidation {
 	};
 	protected List<com.tools20022.repository.entity.ProductCategory> declinedProductCode;
 	/**
-	 * Product code for which the payment authorisation was declined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -658,8 +654,8 @@ public class CardPaymentValidation {
 	};
 	protected Max500Text electronicCommerceAuthenticationResult;
 	/**
-	 * Result of an e-commerce authentication process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -704,8 +700,8 @@ public class CardPaymentValidation {
 	};
 	protected FailureReasonCode failureReason;
 	/**
-	 * Incident occuring during the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -751,8 +747,8 @@ public class CardPaymentValidation {
 	};
 	protected List<com.tools20022.repository.entity.Signature> signature;
 	/**
-	 * Signature of the message to display or print.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -800,7 +796,7 @@ public class CardPaymentValidation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentValidation";
 				definition = "Results and parameters of the card payment verification.";
@@ -827,111 +823,125 @@ public class CardPaymentValidation {
 		return transactionSuccess;
 	}
 
-	public void setTransactionSuccess(TrueFalseIndicator transactionSuccess) {
-		this.transactionSuccess = transactionSuccess;
+	public CardPaymentValidation setTransactionSuccess(TrueFalseIndicator transactionSuccess) {
+		this.transactionSuccess = Objects.requireNonNull(transactionSuccess);
+		return this;
 	}
 
 	public TrueFalseIndicator getMerchantOverride() {
 		return merchantOverride;
 	}
 
-	public void setMerchantOverride(TrueFalseIndicator merchantOverride) {
-		this.merchantOverride = merchantOverride;
+	public CardPaymentValidation setMerchantOverride(TrueFalseIndicator merchantOverride) {
+		this.merchantOverride = Objects.requireNonNull(merchantOverride);
+		return this;
 	}
 
 	public ISODate getValidityDate() {
 		return validityDate;
 	}
 
-	public void setValidityDate(ISODate validityDate) {
-		this.validityDate = validityDate;
+	public CardPaymentValidation setValidityDate(ISODate validityDate) {
+		this.validityDate = Objects.requireNonNull(validityDate);
+		return this;
 	}
 
-	public CardPaymentAcquiring getCardPayment() {
-		return cardPayment;
+	public Optional<CardPaymentAcquiring> getCardPayment() {
+		return cardPayment == null ? Optional.empty() : Optional.of(cardPayment);
 	}
 
-	public void setCardPayment(com.tools20022.repository.entity.CardPaymentAcquiring cardPayment) {
+	public CardPaymentValidation setCardPayment(com.tools20022.repository.entity.CardPaymentAcquiring cardPayment) {
 		this.cardPayment = cardPayment;
+		return this;
 	}
 
 	public List<Response> getResponse() {
-		return response;
+		return response == null ? response = new ArrayList<>() : response;
 	}
 
-	public void setResponse(List<com.tools20022.repository.entity.Response> response) {
-		this.response = response;
+	public CardPaymentValidation setResponse(List<com.tools20022.repository.entity.Response> response) {
+		this.response = Objects.requireNonNull(response);
+		return this;
 	}
 
 	public Min6Max8Text getAuthorisationCode() {
 		return authorisationCode;
 	}
 
-	public void setAuthorisationCode(Min6Max8Text authorisationCode) {
-		this.authorisationCode = authorisationCode;
+	public CardPaymentValidation setAuthorisationCode(Min6Max8Text authorisationCode) {
+		this.authorisationCode = Objects.requireNonNull(authorisationCode);
+		return this;
 	}
 
 	public OnLineReasonCode getOnLineReason() {
 		return onLineReason;
 	}
 
-	public void setOnLineReason(OnLineReasonCode onLineReason) {
-		this.onLineReason = onLineReason;
+	public CardPaymentValidation setOnLineReason(OnLineReasonCode onLineReason) {
+		this.onLineReason = Objects.requireNonNull(onLineReason);
+		return this;
 	}
 
-	public CashBalance getBalance() {
-		return balance;
+	public Optional<CashBalance> getBalance() {
+		return balance == null ? Optional.empty() : Optional.of(balance);
 	}
 
-	public void setBalance(com.tools20022.repository.entity.CashBalance balance) {
+	public CardPaymentValidation setBalance(com.tools20022.repository.entity.CashBalance balance) {
 		this.balance = balance;
+		return this;
 	}
 
 	public CardholderAddressVerificationResultCode getCardholderAddressVerificationResult() {
 		return cardholderAddressVerificationResult;
 	}
 
-	public void setCardholderAddressVerificationResult(CardholderAddressVerificationResultCode cardholderAddressVerificationResult) {
-		this.cardholderAddressVerificationResult = cardholderAddressVerificationResult;
+	public CardPaymentValidation setCardholderAddressVerificationResult(CardholderAddressVerificationResultCode cardholderAddressVerificationResult) {
+		this.cardholderAddressVerificationResult = Objects.requireNonNull(cardholderAddressVerificationResult);
+		return this;
 	}
 
 	public CSCResultCode getCSCResult() {
 		return cSCResult;
 	}
 
-	public void setCSCResult(CSCResultCode cSCResult) {
-		this.cSCResult = cSCResult;
+	public CardPaymentValidation setCSCResult(CSCResultCode cSCResult) {
+		this.cSCResult = Objects.requireNonNull(cSCResult);
+		return this;
 	}
 
 	public List<ProductCategory> getDeclinedProductCode() {
-		return declinedProductCode;
+		return declinedProductCode == null ? declinedProductCode = new ArrayList<>() : declinedProductCode;
 	}
 
-	public void setDeclinedProductCode(List<com.tools20022.repository.entity.ProductCategory> declinedProductCode) {
-		this.declinedProductCode = declinedProductCode;
+	public CardPaymentValidation setDeclinedProductCode(List<com.tools20022.repository.entity.ProductCategory> declinedProductCode) {
+		this.declinedProductCode = Objects.requireNonNull(declinedProductCode);
+		return this;
 	}
 
 	public Max500Text getElectronicCommerceAuthenticationResult() {
 		return electronicCommerceAuthenticationResult;
 	}
 
-	public void setElectronicCommerceAuthenticationResult(Max500Text electronicCommerceAuthenticationResult) {
-		this.electronicCommerceAuthenticationResult = electronicCommerceAuthenticationResult;
+	public CardPaymentValidation setElectronicCommerceAuthenticationResult(Max500Text electronicCommerceAuthenticationResult) {
+		this.electronicCommerceAuthenticationResult = Objects.requireNonNull(electronicCommerceAuthenticationResult);
+		return this;
 	}
 
 	public FailureReasonCode getFailureReason() {
 		return failureReason;
 	}
 
-	public void setFailureReason(FailureReasonCode failureReason) {
-		this.failureReason = failureReason;
+	public CardPaymentValidation setFailureReason(FailureReasonCode failureReason) {
+		this.failureReason = Objects.requireNonNull(failureReason);
+		return this;
 	}
 
 	public List<Signature> getSignature() {
-		return signature;
+		return signature == null ? signature = new ArrayList<>() : signature;
 	}
 
-	public void setSignature(List<com.tools20022.repository.entity.Signature> signature) {
-		this.signature = signature;
+	public CardPaymentValidation setSignature(List<com.tools20022.repository.entity.Signature> signature) {
+		this.signature = Objects.requireNonNull(signature);
+		return this;
 	}
 }

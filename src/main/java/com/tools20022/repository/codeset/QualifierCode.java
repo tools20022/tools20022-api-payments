@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,52 +38,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#AllOrNone
- * QualifierCode.mmAllOrNone}</li>
+ * QualifierCode.AllOrNone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QualifierCode#MarketOnClose
- * QualifierCode.mmMarketOnClose}</li>
+ * QualifierCode.MarketOnClose}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#AtClose
- * QualifierCode.mmAtClose}</li>
+ * QualifierCode.AtClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QualifierCode#VolumeWeightedAveragePrice
- * QualifierCode.mmVolumeWeightedAveragePrice}</li>
+ * QualifierCode.VolumeWeightedAveragePrice}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#InTouchWith
- * QualifierCode.mmInTouchWith}</li>
+ * QualifierCode.InTouchWith}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#Limit
- * QualifierCode.mmLimit}</li>
+ * QualifierCode.Limit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#MoreBehind
- * QualifierCode.mmMoreBehind}</li>
+ * QualifierCode.MoreBehind}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#AtOpen
- * QualifierCode.mmAtOpen}</li>
+ * QualifierCode.AtOpen}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QualifierCode#TakingPosition
- * QualifierCode.mmTakingPosition}</li>
+ * QualifierCode.TakingPosition}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#AtMarket
- * QualifierCode.mmAtMarket}</li>
+ * QualifierCode.AtMarket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#ReadyToTrade
- * QualifierCode.mmReadyToTrade}</li>
+ * QualifierCode.ReadyToTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.QualifierCode#PortfolioShown
- * QualifierCode.mmPortfolioShown}</li>
+ * QualifierCode.PortfolioShown}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#ThroughDay
- * QualifierCode.mmThroughDay}</li>
+ * QualifierCode.ThroughDay}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#Versus
- * QualifierCode.mmVersus}</li>
+ * QualifierCode.Versus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#WorkingAway
- * QualifierCode.mmWorkingAway}</li>
+ * QualifierCode.WorkingAway}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#Crossing
- * QualifierCode.mmCrossing}</li>
+ * QualifierCode.Crossing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#AtMidpoint
- * QualifierCode.mmAtMidpoint}</li>
+ * QualifierCode.AtMidpoint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.QualifierCode#PreOpen
- * QualifierCode.mmPreOpen}</li>
+ * QualifierCode.PreOpen}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -122,6 +123,9 @@ public class QualifierCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ALNO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//ALNO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -136,6 +140,7 @@ public class QualifierCode extends MMCode {
 	 */
 	public static final QualifierCode AllOrNone = new QualifierCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//ALNO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllOrNone";
 			definition = "A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty.  Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd.  Instead it remains alive until executed or cancelled.  The making of \"all or none\" bids or offers in stocks is prohibited, and the making of \"all or none\" bids or offers in bonds is subject to the restrictions of Rule 61.";
@@ -192,6 +197,9 @@ public class QualifierCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CLOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//CLOS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -206,6 +214,7 @@ public class QualifierCode extends MMCode {
 	 */
 	public static final QualifierCode AtClose = new QualifierCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//CLOS"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtClose";
 			definition = "An all or none market order that is to be executed at the closing price of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.\n\nNote that this attribute does not apply to trading of fixed income securities.";
@@ -296,6 +305,9 @@ public class QualifierCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIMI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a:TOOR//LMTO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -310,6 +322,7 @@ public class QualifierCode extends MMCode {
 	 */
 	public static final QualifierCode Limit = new QualifierCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a:TOOR//LMTO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Limit";
 			definition = "An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price.  The customer specifies a price, and the order can be executed only if the market reaches or betters that price.  A conditional trading order designed to avoid the danger of adverse unexpected price movements.";
@@ -366,6 +379,9 @@ public class QualifierCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OPEN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//OPEN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -380,6 +396,7 @@ public class QualifierCode extends MMCode {
 	 */
 	public static final QualifierCode AtOpen = new QualifierCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//OPEN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtOpen";
 			definition = "An order that is to be executed at the opening (and corresponding price) of the security or not at all, and any such order or portion thereof not executed is to be treated as cancelled.";
@@ -431,6 +448,9 @@ public class QualifierCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MAKT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TOOR//MAKT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -445,6 +465,7 @@ public class QualifierCode extends MMCode {
 	 */
 	public static final QualifierCode AtMarket = new QualifierCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//MAKT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtMarket";
 			definition = "An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd.  Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order.";
@@ -714,7 +735,7 @@ public class QualifierCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ALNO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QualifierCode";

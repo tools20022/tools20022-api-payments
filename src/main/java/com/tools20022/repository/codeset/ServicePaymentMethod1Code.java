@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#BalanceCompensable
- * ServicePaymentMethod1Code.mmBalanceCompensable}</li>
+ * ServicePaymentMethod1Code.BalanceCompensable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#HardCharge
- * ServicePaymentMethod1Code.mmHardCharge}</li>
+ * ServicePaymentMethod1Code.HardCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#PreviouslyCharged
- * ServicePaymentMethod1Code.mmPreviouslyCharged}</li>
+ * ServicePaymentMethod1Code.PreviouslyCharged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#InvoicedSeparately
- * ServicePaymentMethod1Code.mmInvoicedSeparately}</li>
+ * ServicePaymentMethod1Code.InvoicedSeparately}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#Waived
- * ServicePaymentMethod1Code.mmWaived}</li>
+ * ServicePaymentMethod1Code.Waived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethod1Code#Free
- * ServicePaymentMethod1Code.mmFree}</li>
+ * ServicePaymentMethod1Code.Free}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class ServicePaymentMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BCMP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServicePaymentMethod1Code";
